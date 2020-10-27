@@ -1,4 +1,4 @@
-import Tippy from "@tippyjs/react";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { styled } from "twin.macro";
 
@@ -25,11 +25,11 @@ export const TruncateMiddle = ({ text, maxChars, showTooltip, ...props }: Props)
 	}, [maxChars, text]);
 
 	return (
-		<Tippy content={text} disabled={!showTooltip}>
+		<Tooltip content={text} disabled={!showTooltip}>
 			<Wrapper data-testid="TruncateMiddle" {...props}>
 				{result}
 			</Wrapper>
-		</Tippy>
+		</Tooltip>
 	);
 };
 

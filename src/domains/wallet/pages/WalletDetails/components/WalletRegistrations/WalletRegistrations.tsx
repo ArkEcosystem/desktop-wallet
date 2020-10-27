@@ -1,10 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Enums } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -99,7 +99,7 @@ export const WalletRegistrations = ({
 				</Circle>
 			);
 
-			return tooltip ? <Tippy content={tooltip}>{circle}</Tippy> : circle;
+			return tooltip ? <Tooltip content={tooltip}>{circle}</Tooltip> : circle;
 		};
 
 		const renderBusinessIcon = () => {

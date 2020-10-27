@@ -1,10 +1,10 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import { useActiveProfile } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
@@ -79,11 +79,11 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 					walletTypes.map((type: string) =>
 						// @ts-ignore
 						wallet[`is${type}`]() ? (
-							<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-								<div className={`inline-block ${getIconColor(type)}`}>
-									<Icon name={getIconName(type)} width={18} />
+							<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+								<div className={`inline-block p-1 ${getIconColor(type)}`}>
+									<Icon name={getIconName(type)} width={20} />
 								</div>
-							</Tippy>
+							</Tooltip>
 						) : null,
 					)
 				}

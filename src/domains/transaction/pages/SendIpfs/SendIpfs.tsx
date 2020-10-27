@@ -7,7 +7,7 @@ import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useClipboard } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -32,20 +32,18 @@ export const SendIpfs = () => {
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
+	const { sendIpfs, common } = useValidation();
 
 	const form = useForm({ mode: "onChange" });
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
+	const { fees } = form.watch();
 
 	useEffect(() => {
-		register("network", { required: true });
-		register("senderAddress", { required: true });
-		register("fee", { required: true });
-		register("hash", {
-			required: true,
-			validate: (value) =>
-				/(Qm[A-HJ-NP-Za-km-z1-9]{44,45})/.test(value) ||
-				t("TRANSACTION.INPUT_IPFS_HASH.VALIDATION.NOT_VALID").toString(),
-		});
+		register("network", sendIpfs.network());
+		register("senderAddress", sendIpfs.senderAddress());
+		register("hash", sendIpfs.hash());
+		register("fees");
+		register("fee", common.fee(fees, activeWallet?.balance?.(), activeWallet?.network?.()));
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
@@ -56,7 +54,7 @@ export const SendIpfs = () => {
 				break;
 			}
 		}
-	}, [activeWallet, networks, register, setValue, t]);
+	}, [activeWallet, networks, register, setValue, t, fees, sendIpfs, common]);
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");

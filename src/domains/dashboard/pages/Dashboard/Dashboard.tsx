@@ -1,5 +1,6 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
+import { DropdownOption } from "app/components/Dropdown";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { BarItem, PercentageBar } from "app/components/PercentageBar";
@@ -30,6 +31,12 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	);
 	const [{ showTransactions }, setShowTransactions] = useState(
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { showTransactions: true },
+	);
+	const [{ viewType }, setViewType] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { viewType: "grid" },
+	);
+	const [{ walletsDisplayType }, setWalletsDisplayType] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { walletsDisplayType: "all" },
 	);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
@@ -79,7 +86,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 		setIsLoadingTransactions(true);
 
-		const response = await activeProfile.transactionAggregate().transactions({ limit: 10 });
+		const response = await activeProfile.transactionAggregate().transactions({ limit: 30 });
 		const transactions = response.items();
 
 		setIsLoadingTransactions(false);
@@ -94,16 +101,26 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	useEffect(() => {
 		const updateDashboardSettings = async () => {
-			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions });
+			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, {
+				showPortfolio,
+				showTransactions,
+				viewType,
+				walletsDisplayType,
+			});
 			await persist();
 		};
 
 		updateDashboardSettings();
-	}, [activeProfile, persist, showPortfolio, showTransactions]);
+	}, [activeProfile, persist, showPortfolio, showTransactions, viewType, walletsDisplayType]);
 
 	// Wallet controls data
+	const toggleViewType = (viewType: string) => {
+		setViewType({ viewType });
+	};
+
 	const filterProperties = {
 		networks,
+		walletsDisplayType,
 		visiblePortfolioView: showPortfolio,
 		visibleTransactionsView: showTransactions,
 		togglePortfolioView: (showPortfolio: boolean) => {
@@ -111,6 +128,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		},
 		toggleTransactionsView: (showTransactions: boolean) => {
 			setShowTransactions({ showTransactions });
+		},
+		onWalletsDisplayType: ({ value }: DropdownOption) => {
+			setWalletsDisplayType({ walletsDisplayType: value });
 		},
 	};
 
@@ -150,15 +170,16 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 				<Section className={!showTransactions ? "flex-1" : undefined}>
 					<Wallets
+						title={t("COMMON.WALLETS")}
+						filterProperties={filterProperties}
+						viewType={viewType}
+						wallets={wallets}
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
 						onImportLedgerWallet={() =>
 							history.push(`/profiles/${activeProfile.id()}/wallets/import?ledger=true`)
 						}
-						viewType="grid"
-						title={t("COMMON.WALLETS")}
-						wallets={wallets}
-						filterProperties={filterProperties}
+						onSelectViewType={toggleViewType}
 					/>
 				</Section>
 

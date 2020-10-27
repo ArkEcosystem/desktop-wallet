@@ -1,6 +1,6 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormLabel } from "app/components/Form";
+import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { useEnvironmentContext } from "app/contexts";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
@@ -54,7 +54,7 @@ export const SendTransactionForm = ({
 				.findByType(senderWallet.coinId(), senderWallet.networkId(), transactionType);
 
 			setFees(transactionFees);
-
+			setValue("fees", transactionFees);
 			setValue("fee", transactionFees.avg, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [env, setFees, setValue, profile, senderAddress, transactionType]);
@@ -129,6 +129,7 @@ export const SendTransactionForm = ({
 						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 					}}
 				/>
+				<FormHelperText />
 			</FormField>
 		</div>
 	);

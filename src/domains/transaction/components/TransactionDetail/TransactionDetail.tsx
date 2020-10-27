@@ -42,7 +42,7 @@ export const TransactionDetail = ({
 					{labelExtra ? (
 						<>
 							<span className="mr-1">{label}</span>
-							<Label color={labelExtraColor || "warning"}>
+							<Label color={labelExtraColor || "warning"} variant="solid">
 								<span className="text-sm">{labelExtra}</span>
 							</Label>
 						</>

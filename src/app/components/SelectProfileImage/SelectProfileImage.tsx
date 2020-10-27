@@ -1,6 +1,6 @@
-import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
@@ -72,7 +72,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 
 			<div className="flex flex-row mt-2">
 				{!value ? (
-					<Tippy content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
+					<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
 						<div className="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded border-theme-primary-contrast">
 							<div className="overflow-hidden rounded-full w-22 h-22">
 								<UploadButtonWrapper>
@@ -87,10 +87,10 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								</UploadButtonWrapper>
 							</div>
 						</div>
-					</Tippy>
+					</Tooltip>
 				) : (
 					<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
-						<Tippy content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
+						<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
 							<ProfileImageStyled>
 								<img
 									src={isSvg ? `data:image/svg+xml;utf8,${value}` : value}
@@ -113,9 +113,9 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 									</div>
 								</div>
 							</ProfileImageStyled>
-						</Tippy>
+						</Tooltip>
 						{!isSvg && (
-							<Tippy content={t("SETTINGS.GENERAL.PERSONAL.DELETE_AVATAR")}>
+							<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.DELETE_AVATAR")}>
 								<Button
 									size="icon"
 									color="danger"
@@ -126,7 +126,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								>
 									<Icon name="Close" width={12} height={12} />
 								</Button>
-							</Tippy>
+							</Tooltip>
 						)}
 					</div>
 				)}

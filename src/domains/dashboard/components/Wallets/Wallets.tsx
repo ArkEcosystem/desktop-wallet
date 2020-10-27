@@ -14,32 +14,34 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 type WalletsProps = {
-	wallets: ReadWriteWallet[];
 	title?: string;
-	walletsEmptyText?: string;
 	filterProperties: any;
 	viewType?: "grid" | "list";
+	wallets: ReadWriteWallet[];
+	walletsEmptyText?: string;
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onImportLedgerWallet?: () => void;
+	onSelectViewType?: any;
 	onWalletAction?: any;
 };
 
 type GridWallet = {
-	wallet?: ReadWriteWallet;
 	isBlank?: boolean;
+	wallet?: ReadWriteWallet;
 };
 
 export const Wallets = ({
-	viewType,
 	title,
-	wallets,
 	filterProperties,
+	viewType,
+	wallets,
+	walletsEmptyText,
 	onCreateWallet,
 	onImportWallet,
 	onImportLedgerWallet,
+	onSelectViewType,
 	onWalletAction,
-	walletsEmptyText,
 }: WalletsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 	const [allWallets, setAllWallets] = useState<any>(undefined);
@@ -51,6 +53,8 @@ export const Wallets = ({
 	const history = useHistory();
 
 	const { t } = useTranslation();
+
+	const { walletsDisplayType } = filterProperties;
 
 	// const walletCardActions: DropdownOption[] = [{ label: t("COMMON.SHOW"), value: "show" }];
 	const walletCardActions: DropdownOption[] = [];
@@ -85,9 +89,26 @@ export const Wallets = ({
 		spaceBetween: 20,
 	};
 
+	const toggleViewType = (viewType: "grid" | "list") => {
+		setWalletsViewType(viewType);
+		onSelectViewType?.(viewType);
+	};
+
 	// Grid
 	const loadGridWallets = () => {
-		const walletObjects = wallets.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
+		const walletObjects = wallets
+			.filter((wallet: ReadWriteWallet) => {
+				if (walletsDisplayType === "favorites") {
+					return wallet.isStarred();
+				}
+
+				if (walletsDisplayType === "ledger") {
+					return wallet.isLedger();
+				}
+
+				return wallet;
+			})
+			.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
 
 		if (walletObjects.length <= walletSliderOptions.slidesPerView) {
 			return walletObjects.concat(
@@ -115,7 +136,20 @@ export const Wallets = ({
 	};
 
 	// List
-	const getWalletsForList = () => wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
+	const getWalletsForList = () =>
+		wallets
+			.filter((wallet: any) => {
+				if (walletsDisplayType === "favorites") {
+					return wallet.isStarred();
+				}
+
+				if (walletsDisplayType === "ledger") {
+					return wallet.isLedger();
+				}
+
+				return wallet && !wallet.isBlank;
+			})
+			.map((wallet) => ({ wallet }));
 
 	const loadListWallets = () => allWallets || getWalletsForList().slice(0, 10);
 
@@ -141,13 +175,13 @@ export const Wallets = ({
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
+						filterProperties={filterProperties}
+						viewType={walletsViewType}
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
 						onImportLedgerWallet={() => setIsWaitingLedger(true)}
-						onSelectGridView={() => setWalletsViewType("grid")}
-						onSelectListView={() => setWalletsViewType("list")}
-						filterProperties={filterProperties}
-						viewType={walletsViewType}
+						onSelectGridView={() => toggleViewType("grid")}
+						onSelectListView={() => toggleViewType("list")}
 					/>
 				</div>
 			</div>
@@ -193,7 +227,7 @@ export const Wallets = ({
 
 Wallets.defaultProps = {
 	networks: [],
+	viewType: "grid",
 	wallets: [],
 	walletsEmptyText: "",
-	viewType: "grid",
 };

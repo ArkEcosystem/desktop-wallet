@@ -1049,7 +1049,7 @@ exports[`Registration should go to review step after successfully filling form d
                                 Sender
                               </span>
                               <div
-                                class="sc-fzoLsD jBzTcb"
+                                class="sc-fzoLsD eMOsue"
                                 color="warning"
                               >
                                 <span
@@ -2109,6 +2109,32 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 <div
                                   class="select-list-option__label"
                                 >
+                                  Product
+                                </div>
+                              </li>
+                              <li
+                                aria-selected="false"
+                                class="select-list-option cursor-default "
+                                data-testid="select-list__toggle-option-2"
+                                id="downshift-81-item-2"
+                                role="option"
+                              >
+                                <div
+                                  class="select-list-option__label"
+                                >
+                                  Plugin
+                                </div>
+                              </li>
+                              <li
+                                aria-selected="false"
+                                class="select-list-option cursor-default "
+                                data-testid="select-list__toggle-option-3"
+                                id="downshift-81-item-3"
+                                role="option"
+                              >
+                                <div
+                                  class="select-list-option__label"
+                                >
                                   MultiSignature
                                 </div>
                               </li>
@@ -2348,7 +2374,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 Delegate
               </span>
               <input
-                aria-activedescendant="downshift-37-item-1"
+                aria-activedescendant="downshift-37-item-3"
                 aria-autocomplete="list"
                 aria-controls="downshift-37-menu"
                 aria-labelledby="downshift-37-label"
@@ -2381,8 +2407,8 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 </div>
               </li>
               <li
-                aria-selected="true"
-                class="select-list-option cursor-default is-highlighted"
+                aria-selected="false"
+                class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-1"
                 id="downshift-37-item-1"
                 role="option"
@@ -2390,7 +2416,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 <div
                   class="select-list-option__label"
                 >
-                  Delegate
+                  Product
                 </div>
               </li>
               <li
@@ -2403,14 +2429,40 @@ exports[`Registration should not set fee if no fee options 1`] = `
                 <div
                   class="select-list-option__label"
                 >
+                  Plugin
+                </div>
+              </li>
+              <li
+                aria-selected="true"
+                class="select-list-option cursor-default is-highlighted"
+                data-testid="select-list__toggle-option-3"
+                id="downshift-37-item-3"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Delegate
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-4"
+                id="downshift-37-item-4"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
                   MultiSignature
                 </div>
               </li>
               <li
                 aria-selected="false"
                 class="select-list-option cursor-default "
-                data-testid="select-list__toggle-option-3"
-                id="downshift-37-item-3"
+                data-testid="select-list__toggle-option-5"
+                id="downshift-37-item-5"
                 role="option"
               >
                 <div
@@ -2828,7 +2880,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                                 Sender
                               </span>
                               <div
-                                class="sc-fzoLsD jBzTcb"
+                                class="sc-fzoLsD eMOsue"
                                 color="warning"
                               >
                                 <span
@@ -3214,7 +3266,7 @@ exports[`Registration should render 1st step 1`] = `
                 Delegate
               </span>
               <input
-                aria-activedescendant="downshift-27-item-1"
+                aria-activedescendant="downshift-27-item-3"
                 aria-autocomplete="list"
                 aria-controls="downshift-27-menu"
                 aria-labelledby="downshift-27-label"
@@ -3247,8 +3299,8 @@ exports[`Registration should render 1st step 1`] = `
                 </div>
               </li>
               <li
-                aria-selected="true"
-                class="select-list-option cursor-default is-highlighted"
+                aria-selected="false"
+                class="select-list-option cursor-default "
                 data-testid="select-list__toggle-option-1"
                 id="downshift-27-item-1"
                 role="option"
@@ -3256,7 +3308,7 @@ exports[`Registration should render 1st step 1`] = `
                 <div
                   class="select-list-option__label"
                 >
-                  Delegate
+                  Product
                 </div>
               </li>
               <li
@@ -3269,14 +3321,40 @@ exports[`Registration should render 1st step 1`] = `
                 <div
                   class="select-list-option__label"
                 >
+                  Plugin
+                </div>
+              </li>
+              <li
+                aria-selected="true"
+                class="select-list-option cursor-default is-highlighted"
+                data-testid="select-list__toggle-option-3"
+                id="downshift-27-item-3"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
+                  Delegate
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="select-list-option cursor-default "
+                data-testid="select-list__toggle-option-4"
+                id="downshift-27-item-4"
+                role="option"
+              >
+                <div
+                  class="select-list-option__label"
+                >
                   MultiSignature
                 </div>
               </li>
               <li
                 aria-selected="false"
                 class="select-list-option cursor-default "
-                data-testid="select-list__toggle-option-3"
-                id="downshift-27-item-3"
+                data-testid="select-list__toggle-option-5"
+                id="downshift-27-item-5"
                 role="option"
               >
                 <div
@@ -5371,7 +5449,7 @@ exports[`Registration should select registration type & show form 1`] = `
                               Sender
                             </span>
                             <div
-                              class="sc-fzoLsD jBzTcb"
+                              class="sc-fzoLsD eMOsue"
                               color="warning"
                             >
                               <span
@@ -5927,7 +6005,7 @@ exports[`Registration should should go back and forth & correctly register field
                               Sender
                             </span>
                             <div
-                              class="sc-fzoLsD jBzTcb"
+                              class="sc-fzoLsD eMOsue"
                               color="warning"
                             >
                               <span
@@ -6549,7 +6627,7 @@ exports[`Registration should successfully register entity 1`] = `
                               Sender
                             </span>
                             <div
-                              class="sc-fzoLsD jBzTcb"
+                              class="sc-fzoLsD eMOsue"
                               color="warning"
                             >
                               <span

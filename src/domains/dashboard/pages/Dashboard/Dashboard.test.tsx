@@ -3,6 +3,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
+import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -53,8 +54,14 @@ beforeAll(async () => {
 	const profile = env.profiles().findById(fixtureProfileId);
 	const wallet = await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
 
+	jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+
 	await syncDelegates();
 	await wallet.syncVotes();
+});
+
+afterAll(() => {
+	useRandomNumberHook.useRandomNumber.mockRestore();
 });
 
 beforeEach(() => {
@@ -215,7 +222,69 @@ describe("Dashboard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should change wallet view type from grid to list", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard balances={balances} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			const toggle = getByTestId("LayoutControls__list--icon");
+
+			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+
+			fireEvent.click(toggle);
+
+			await waitFor(() => expect(() => getAllByTestId("WalletTable")).toBeTruthy());
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
+	});
+
 	it("should hide portfolio view", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard balances={balances} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			await waitFor(
+				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+				{ timeout: 5000 },
+			);
+
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
+
+			await waitFor(() =>
+				expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy(),
+			);
+
+			const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
+
+			fireEvent.click(toggle);
+
+			await waitFor(() => expect(getByTestId("filter-wallets__wallets")).toBeTruthy());
+
+			const firstOption = getByTestId("dropdown__option--0");
+			await waitFor(() => expect(firstOption).toBeTruthy());
+
+			fireEvent.click(firstOption);
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		});
+	});
+
+	it("should select an option in the wallets display type", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} />

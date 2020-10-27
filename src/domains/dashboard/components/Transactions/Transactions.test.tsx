@@ -1,3 +1,4 @@
+import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { renderWithRouter } from "utils/testing-library";
 
@@ -19,7 +20,17 @@ describe("Transactions", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render with with transactions", () => {
+	it("should render with transactions", () => {
+		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+			votes.map(
+				(vote: string, index: number) =>
+					new ReadOnlyWallet({
+						address: vote,
+						username: `delegate-${index}`,
+					}),
+			),
+		);
+
 		const { container } = renderWithRouter(
 			<Transactions transactions={transactions} fetchMoreAction={() => console.log("fetchMoreAction")} />,
 		);

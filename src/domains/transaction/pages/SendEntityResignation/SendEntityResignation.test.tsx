@@ -25,10 +25,8 @@ import { SendEntityResignation } from "../SendEntityResignation";
 let wallet: ReadWriteWallet;
 let profile: Profile;
 
-let resignationType: string;
-
+let resignationUrl: string;
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
-let resignationUrl;
 
 const passphrase = "v3wallet2";
 const history = createMemoryHistory();
@@ -103,6 +101,20 @@ describe("SendEntityResignation", () => {
 			const { asFragment, getByTestId } = renderPage("entity");
 
 			await waitFor(() => expect(getByTestId("SendEntityResignation__form-step")).toBeTruthy());
+			expect(asFragment()).toMatchSnapshot();
+		});
+
+		it("should change fee", async () => {
+			const { asFragment, getByTestId } = renderPage("entity");
+
+			await waitFor(() => expect(getByTestId("SendEntityResignation__form-step")).toBeTruthy());
+
+			// Fee
+			act(() => {
+				fireEvent.input(getByTestId("InputCurrency"), { target: { value: "1" } });
+			});
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 
@@ -183,6 +195,20 @@ describe("SendEntityResignation", () => {
 			const { asFragment, getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+			expect(asFragment()).toMatchSnapshot();
+		});
+
+		it("should change fee", async () => {
+			const { asFragment, getByTestId } = renderPage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			// Fee
+			act(() => {
+				fireEvent.input(getByTestId("InputCurrency"), { target: { value: "1" } });
+			});
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 
