@@ -1,3 +1,4 @@
+import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
@@ -78,6 +79,7 @@ export const ContactForm = () => {
 				<FormLabel label={t("HELP.PAGE_CONTACT_US.FORM.MESSAGE")} />
 				<TextArea
 					name="message"
+					rows={3}
 					wrap="hard"
 					placeholder={t("HELP.PAGE_CONTACT_US.FORM.MESSAGE_PLACEHOLDER")}
 					ref={register({
@@ -88,6 +90,10 @@ export const ContactForm = () => {
 				/>
 				<FormHelperText />
 			</FormField>
+
+			<div className="relative flex flex-col justify-end flex-1">
+				<Button type="submit">{t("COMMON.SEND")}</Button>
+			</div>
 		</Form>
 	);
 };

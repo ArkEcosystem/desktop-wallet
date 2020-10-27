@@ -70,6 +70,7 @@ export const ContactUs = () => {
 							</div>
 						</div>
 					</div>
+
 					<div className="flex flex-col flex-1 lg:px-5">
 						<h3 className="mb-1 text-3xl font-bold">{t("HELP.PAGE_CONTACT_US.SECTION_FOURTH.TITLE")}</h3>
 						<div className="mt-4 text-theme-secondary-text">
