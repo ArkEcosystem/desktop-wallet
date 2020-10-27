@@ -60,8 +60,11 @@ export const TransactionRow = ({
 						data-testid="TransactionRow__ID"
 						to={transaction.explorerLink()}
 						tooltip={transaction.id()}
+						showExternalIcon={false}
 						isExternal
-					/>
+					>
+						<Icon name="Id" />
+					</Link>
 				</TableCell>
 			)}
 

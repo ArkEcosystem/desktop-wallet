@@ -141,7 +141,7 @@ const Row = ({
 			<TableCell variant="start">
 				<Tooltip content={transaction.id()}>
 					<span className="text-theme-neutral-300 dark:text-theme-neutral-800">
-						<Icon name="Redirect" />
+						<Icon name="Id" />
 					</span>
 				</Tooltip>
 			</TableCell>
