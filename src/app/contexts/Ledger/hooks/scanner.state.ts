@@ -63,11 +63,11 @@ export const scannerReducer = (state: State, action: Action): State => {
 			};
 		}
 		case "toggleSelect": {
-			let current = state.selected;
+			const current = state.selected;
 			const indexOf = state.selected.indexOf(action.index);
 
 			if (indexOf >= 0) {
-				current = current.splice(indexOf, 1);
+				current.splice(indexOf, 1);
 			} else {
 				current.push(action.index);
 			}

@@ -2,13 +2,16 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
+import { Alert } from "app/components/Alert";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
+import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Circle } from "app/components/Circle";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
+import { Label } from "app/components/Label";
 import { Spinner } from "app/components/Spinner";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import { useLedgerContext } from "app/contexts";
@@ -92,6 +95,7 @@ export const LedgerTable = ({
 					<TableCell isSelected={isSelected(wallet.index)} variant="start" innerClassName="space-x-3">
 						<Avatar address={wallet.address} noShadow />
 						<Address address={wallet.address} />
+						{wallet.isNew && <Label size="sm">New</Label>}
 					</TableCell>
 					<TableCell isSelected={isSelected(wallet.index)} innerClassName="font-semibold" className="w-64">
 						<AmountWrapper isLoading={isLoading(wallet.index)} isFailed={isFailed(wallet.index)}>
@@ -116,25 +120,24 @@ export const LedgerScanStep = ({
 	setRetryFn,
 }: {
 	profile: Profile;
-	setRetryFn: (fn?: () => void) => void;
+	setRetryFn?: (fn?: () => void) => void;
 }) => {
 	const { t } = useTranslation();
 	const { watch, register, setValue } = useFormContext();
-
-	const { isBusy, isAwaitingConnection } = useLedgerContext();
-
 	const [network] = useState<Network>(() => watch("network"));
 
+	const { isBusy, error: connectionError } = useLedgerContext();
+
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id(), profile);
-	const { scanUntilNewOrFail, selectedWallets, scanRetry, canRetry } = ledgerScanner;
+	const { scanUntilNewOrFail, selectedWallets, scanRetry, canRetry, scanMore } = ledgerScanner;
 
 	useEffect(() => {
 		if (canRetry) {
-			setRetryFn(() => scanRetry());
+			setRetryFn?.(() => scanRetry());
 		} else {
-			setRetryFn(undefined);
+			setRetryFn?.(undefined);
 		}
-		return () => setRetryFn(undefined);
+		return () => setRetryFn?.(undefined);
 	}, [setRetryFn, scanRetry, canRetry]);
 
 	useEffect(() => {
@@ -161,14 +164,20 @@ export const LedgerScanStep = ({
 				<SelectNetwork id="ImportWallet__network" networks={[]} selected={network} disabled />
 			</FormField>
 
+			{connectionError && <Alert>{connectionError}</Alert>}
+
 			<LedgerTable network={network} {...ledgerScanner} />
 
-			{(isBusy || isAwaitingConnection) && (
-				<div className="inline-flex items-center justify-center w-full mt-8 space-x-3">
-					<Spinner color="primary" />
-					<span className="text-theme-secondary-text animate-pulse">{t("COMMON.LOADING_LEDGER")}</span>
-				</div>
-			)}
+			<Button variant="plain" className="w-full" disabled={canRetry || isBusy} onClick={scanMore}>
+				{isBusy ? (
+					<div className="inline-flex items-center space-x-3">
+						<Spinner size="sm" color="primary" />
+						<span>{t("COMMON.LOADING_LEDGER")}</span>
+					</div>
+				) : (
+					<span>{t("COMMON.VIEW_MORE")}</span>
+				)}
+			</Button>
 		</section>
 	);
 };

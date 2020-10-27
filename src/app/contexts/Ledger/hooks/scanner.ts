@@ -2,12 +2,13 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useCallback, useMemo, useReducer } from "react";
 
 import { useEnvironmentContext } from "../../Environment";
+import { useLedgerContext } from "../Ledger";
 import { scannerReducer } from "./scanner.state";
 import { createRange, searchAddresses, searchWallets } from "./scanner.utils";
 
 export const useLedgerScanner = (coin: string, network: string, profile: Profile) => {
 	const { env } = useEnvironmentContext();
-
+	const { setBusy, setIdle } = useLedgerContext();
 	const [state, dispatch] = useReducer(scannerReducer, {
 		page: 0,
 		selected: [],
@@ -30,6 +31,8 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 
 	const scan = useCallback(
 		async (indexes: number[]) => {
+			setBusy();
+
 			try {
 				const instance = await env.coin(coin, network);
 
@@ -44,8 +47,10 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 				console.error(e);
 				dispatch({ type: "failed" });
 			}
+
+			setIdle();
 		},
-		[coin, network, env, profile],
+		[coin, network, env, profile, setBusy, setIdle],
 	);
 
 	// Actions - Scan

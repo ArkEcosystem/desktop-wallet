@@ -85,6 +85,9 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 		dispatch({ type: "disconnected" });
 	}, []);
 
+	const setBusy = useCallback(() => dispatch({ type: "busy" }), []);
+	const setIdle = useCallback(() => dispatch({ type: "connected" }), []);
+
 	const abortConnectionRetry = useCallback(() => (abortRetryRef.current = true), []);
 	const isAwaitingConnection = useMemo(() => state.isWaiting && !state.isConnected, [state]);
 	const isAwaitingDeviceConfirmation = useMemo(() => state.isWaiting && state.isConnected, [state]);
@@ -103,6 +106,8 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 		disconnect,
 		dispatch,
 		error,
+		setBusy,
+		setIdle,
 		hasDeviceAvailable,
 		importLedgerWallets,
 		isAwaitingConnection,
