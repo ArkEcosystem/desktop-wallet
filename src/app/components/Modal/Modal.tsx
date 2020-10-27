@@ -118,6 +118,7 @@ export const Modal = (props: ModalProps) => {
 		const originalStyle = window.getComputedStyle(document.body).overflow;
 
 		document.body.style.width = "100vw";
+		document.body.style.overflowX = "hidden";
 
 		if (props.isOpen) {
 			document.body.style.overflow = "hidden";
