@@ -50,6 +50,8 @@ export const Wallets = ({
 
 	const { t } = useTranslation();
 
+	const { walletsDisplayType } = filterProperties;
+
 	// const walletCardActions: DropdownOption[] = [{ label: t("COMMON.SHOW"), value: "show" }];
 	const walletCardActions: DropdownOption[] = [];
 
@@ -90,7 +92,19 @@ export const Wallets = ({
 
 	// Grid
 	const loadGridWallets = () => {
-		const walletObjects = wallets.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
+		const walletObjects = wallets
+			.filter((wallet: ReadWriteWallet) => {
+				if (walletsDisplayType === "favorites") {
+					return wallet.isStarred();
+				}
+
+				if (walletsDisplayType === "ledger") {
+					return wallet.isLedger();
+				}
+
+				return wallet;
+			})
+			.map((wallet: ReadWriteWallet) => ({ wallet, actions: walletCardActions }));
 
 		if (walletObjects.length <= walletSliderOptions.slidesPerView) {
 			return walletObjects.concat(
@@ -118,7 +132,20 @@ export const Wallets = ({
 	};
 
 	// List
-	const getWalletsForList = () => wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
+	const getWalletsForList = () =>
+		wallets
+			.filter((wallet: any) => {
+				if (walletsDisplayType === "favorites") {
+					return wallet.isStarred();
+				}
+
+				if (walletsDisplayType === "ledger") {
+					return wallet.isLedger();
+				}
+
+				return wallet && !wallet.isBlank;
+			})
+			.map((wallet) => ({ wallet }));
 
 	const loadListWallets = () => allWallets || getWalletsForList().slice(0, 10);
 
