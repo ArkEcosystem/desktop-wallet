@@ -126,7 +126,10 @@ module.exports = {
 			minWidth: {
 				"200px": "200px",
 				1: "1%",
+				24: "6rem",
 				32: "8rem",
+				50: "12.5rem",
+				96: "24rem",
 			},
 			maxWidth: {
 				"1/4": "25%",
