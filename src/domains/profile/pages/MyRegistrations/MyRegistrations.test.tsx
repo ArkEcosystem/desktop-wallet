@@ -119,7 +119,7 @@ describe("MyRegistrations", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render empty with unsynced wallets", async () => {
+	it("should render with unsynced wallets", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
@@ -136,7 +136,9 @@ describe("MyRegistrations", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("MyRegistrations__empty-state")).toBeTruthy());
+		await waitFor(() =>
+			expect(within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")).toHaveLength(1),
+		);
 		expect(asFragment()).toMatchSnapshot();
 		mockWalletSync.mockRestore();
 	});
