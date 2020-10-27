@@ -4,7 +4,7 @@ import React from "react";
 
 type SocialButtonProps = {
 	icon: string;
-	link: string;
+	link?: string;
 };
 
 export const SocialButton = ({ icon, link }: SocialButtonProps) => (

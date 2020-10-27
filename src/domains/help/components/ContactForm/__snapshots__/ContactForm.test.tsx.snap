@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm should render 1`] = `
+<DocumentFragment>
+  <form
+    class="flex flex-col flex-1 mt-8 space-y-8"
+    data-testid="Form"
+  >
+    <div
+      class="flex flex-col space-y-8 sm:flex-row sm:space-x-3 sm:space-y-0"
+    >
+      <div
+        class="w-full"
+      >
+        <fieldset
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="name"
+          >
+            Name
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <input
+            class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+            data-testid="Input"
+            name="name"
+          />
+        </fieldset>
+      </div>
+      <div
+        class="w-full"
+      >
+        <fieldset
+          class="sc-AxirZ izhStr flex flex-col space-y-2"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            data-testid="FormLabel"
+            for="email"
+          >
+            Email
+            <div
+              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+              data-testid="FormLabel__required"
+            />
+          </label>
+          <input
+            class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+            data-testid="Input"
+            name="email"
+          />
+        </fieldset>
+      </div>
+    </div>
+    <fieldset
+      class="sc-AxirZ izhStr flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="subject"
+      >
+        Subject
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div
+        class="relative w-full"
+      >
+        <input
+          class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+          data-testid="select-list__input"
+          name="subject"
+          readonly=""
+          type="text"
+          value=""
+        />
+        <div
+          class="relative w-full"
+        >
+          <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="downshift-1-menu"
+            role="combobox"
+          >
+            <label
+              for="downshift-0-input"
+              id="downshift-1-label"
+            />
+            <div
+              class="sc-Axmtr jzhOwR"
+              data-testid="SelectDropdownInput"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="downshift-1-menu"
+                aria-labelledby="downshift-1-label"
+                autocomplete="off"
+                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                data-testid="SelectDropdownInput__input"
+                id="downshift-0-input"
+                name="subject"
+                placeholder="Select Subject"
+                value=""
+              />
+            </div>
+            <ul
+              aria-labelledby="downshift-1-label"
+              class="sc-fzplWN iZavvq"
+              id="downshift-1-menu"
+              role="listbox"
+            />
+          </div>
+          <div
+            class="sc-AxhUy sc-AxheI bYHtKZ w-10 pointer-events-none text-theme-neutral"
+          >
+            <div
+              class="sc-AxhCb jfKWih"
+              height="5"
+              width="7"
+            >
+              <svg>
+                caret-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxirZ izhStr flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="message"
+      >
+        Message
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <textarea
+        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+        data-testid="TextArea"
+        name="message"
+        placeholder="How can we help?"
+        rows="3"
+        wrap="hard"
+      />
+    </fieldset>
+    <div
+      class="relative flex flex-col justify-end flex-1"
+    >
+      <button
+        class="sc-AxjAm colAFb"
+        color="primary"
+        data-testid="ContactForm__submit-button"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

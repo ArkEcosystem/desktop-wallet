@@ -29,12 +29,12 @@ export const translations: { [key: string]: any } = {
 	PAGE_CONTACT_US: {
 		TITLE: "Contact Us",
 		SUBTITLE: "Have questions? Contact our Team for additional support.",
-		SECTION_FIRST: {
+		FIRST_SECTION: {
 			TITLE: "Let Us Help!",
 			DESCRIPTION:
 				"Whether you want to learn more about ARK, need help with your Blockchain, or just want to know how ARK technology could work for you, get in touch and a member of the team will follow up with you.",
 		},
-		SECTION_SECOND: {
+		SECOND_SECTION: {
 			TITLE: "Additional Support",
 			DESCRIPTION:
 				"Need more help? Check out our documentation below or reach out to our team members on Slack and Discord.",
@@ -42,10 +42,10 @@ export const translations: { [key: string]: any } = {
 			SLACK: "Slack",
 			DISCORD: "Discord",
 		},
-		SECTION_THIRD: {
+		THIRD_SECTION: {
 			TITLE: "We're on social networks",
 		},
-		SECTION_FOURTH: {
+		FOURTH_SECTION: {
 			TITLE: "Contact Our Team",
 			DESCRIPTION: "We'd be happy to answer your questions.",
 		},

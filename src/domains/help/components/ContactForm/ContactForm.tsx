@@ -18,7 +18,7 @@ export const ContactForm = () => {
 		{ label: "Other", value: "other" },
 	];
 
-	const handleSubmit = ({ name }: any) => {
+	const handleSubmit = ({ name, email, subject, message }: any) => {
 		console.log(name);
 	};
 
@@ -66,11 +66,6 @@ export const ContactForm = () => {
 						}).toString(),
 					})}
 					options={subjects}
-					onChange={() => {
-						if (form.errors.subject) {
-							form.clearErrors("subject");
-						}
-					}}
 				/>
 				<FormHelperText />
 			</FormField>
@@ -92,7 +87,9 @@ export const ContactForm = () => {
 			</FormField>
 
 			<div className="relative flex flex-col justify-end flex-1">
-				<Button type="submit">{t("COMMON.SEND")}</Button>
+				<Button type="submit" data-testid="ContactForm__submit-button">
+					{t("COMMON.SEND")}
+				</Button>
 			</div>
 		</Form>
 	);

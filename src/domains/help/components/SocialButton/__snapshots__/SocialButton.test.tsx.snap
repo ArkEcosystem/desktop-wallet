@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialButton should render 1`] = `
+<DocumentFragment>
+  <a
+    class="sc-AxirZ fYobRB block w-16 border rounded-lg cursor-pointer border-theme-neutral-300 dark:border-theme-neutral-800 h-14 lg:w-14 lg:h-12 transition-default hover:bg-theme-danger-400 hover:text-white"
+    data-testid="Link"
+    rel="noopener noreferrer"
+    to="https://twitter.ark.io/"
+  >
+    <div
+      class="flex items-center justify-center h-full"
+    >
+      <div
+        class="sc-AxjAm buCJuk"
+        height="20"
+        width="20"
+      >
+        <svg>
+          twitter.svg
+        </svg>
+      </div>
+    </div>
+  </a>
+</DocumentFragment>
+`;
