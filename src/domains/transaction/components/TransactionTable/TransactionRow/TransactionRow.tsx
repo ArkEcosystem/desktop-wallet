@@ -21,7 +21,7 @@ type Props = {
 	walletName?: string;
 	isLoading?: boolean;
 	showExplorerLink?: boolean;
-	showSign?: boolean;
+	showSignColumn?: boolean;
 } & React.HTMLProps<any>;
 
 export const TransactionRow = ({
@@ -33,7 +33,7 @@ export const TransactionRow = ({
 	isSignaturePending,
 	isLoading,
 	showExplorerLink,
-	showSign,
+	showSignColumn,
 	...props
 }: Props) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
@@ -42,8 +42,8 @@ export const TransactionRow = ({
 		return (
 			<TransactionRowSkeleton
 				data-testid="TransactionRow__skeleton"
-				showCurrency={!!exchangeCurrency && !isSignaturePending}
-				showSign={showSign || isSignaturePending}
+				showCurrencyColumn={!!exchangeCurrency && !isSignaturePending}
+				showSignColumn={showSignColumn || isSignaturePending}
 			/>
 		);
 
@@ -112,6 +112,6 @@ export const TransactionRow = ({
 TransactionRow.defaultProps = {
 	isSignaturePending: false,
 	isLoading: false,
-	showSign: false,
+	showSignColumn: false,
 	showExplorerLink: true,
 };
