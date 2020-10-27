@@ -1,5 +1,6 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
+import { DropdownOption } from "app/components/Dropdown";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { BarItem, PercentageBar } from "app/components/PercentageBar";
@@ -33,6 +34,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 	);
 	const [{ viewType }, setViewType] = useState(
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { viewType: "grid" },
+	);
+	const [{ walletsDisplayType }, setWalletsDisplayType] = useState(
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || { walletsDisplayType: "all" },
 	);
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
@@ -97,14 +101,17 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	useEffect(() => {
 		const updateDashboardSettings = async () => {
-			activeProfile
-				.settings()
-				.set(ProfileSetting.DashboardConfiguration, { showPortfolio, showTransactions, viewType });
+			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, {
+				showPortfolio,
+				showTransactions,
+				viewType,
+				walletsDisplayType,
+			});
 			await persist();
 		};
 
 		updateDashboardSettings();
-	}, [activeProfile, persist, showPortfolio, showTransactions, viewType]);
+	}, [activeProfile, persist, showPortfolio, showTransactions, viewType, walletsDisplayType]);
 
 	// Wallet controls data
 	const toggleViewType = (viewType: string) => {
@@ -113,6 +120,7 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 
 	const filterProperties = {
 		networks,
+		walletsDisplayType,
 		visiblePortfolioView: showPortfolio,
 		visibleTransactionsView: showTransactions,
 		togglePortfolioView: (showPortfolio: boolean) => {
@@ -120,6 +128,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		},
 		toggleTransactionsView: (showTransactions: boolean) => {
 			setShowTransactions({ showTransactions });
+		},
+		onWalletsDisplayType: ({ value }: DropdownOption) => {
+			setWalletsDisplayType({ walletsDisplayType: value });
 		},
 	};
 
