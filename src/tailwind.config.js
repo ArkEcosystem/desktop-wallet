@@ -201,7 +201,7 @@ module.exports = {
 	},
 	variants: {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
-		borderWidth: [...defaultConfig.variants.borderWidth, "first", "last"],
+		borderWidth: [...defaultConfig.variants.borderWidth, "first", "last", "even"],
 		opacity: [...defaultConfig.variants.opacity, "group-hover"],
 		padding: [...defaultConfig.variants.padding, "first", "last"],
 	},
