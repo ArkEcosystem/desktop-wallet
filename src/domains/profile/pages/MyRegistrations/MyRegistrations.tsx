@@ -81,6 +81,7 @@ export const MyRegistrations = () => {
 
 			setIsLoading(false);
 		};
+
 		fetchRegistrations();
 	}, [activeProfile]);
 
