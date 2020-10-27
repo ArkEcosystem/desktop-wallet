@@ -29,7 +29,7 @@ export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal
 	const color = isSent ? "danger" : "success";
 
 	return (
-		<Label data-testid="TransactionRowAmount" color={color}>
+		<Label data-testid="TransactionRowAmount" color={color} className="whitespace-no-wrap">
 			<Amount ticker={wallet?.currency() || ""} value={total} isNegative={isNegative} showSign />
 		</Label>
 	);
