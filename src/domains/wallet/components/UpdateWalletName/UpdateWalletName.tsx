@@ -1,4 +1,3 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
@@ -14,8 +13,6 @@ type UpdateWalletNameProps = {
 	onCancel?: any;
 	onSave: any;
 };
-
-const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
 export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: UpdateWalletNameProps) => {
 	const methods = useForm<Record<string, any>>({ mode: "onChange", defaultValues: { name } });
@@ -36,7 +33,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 		<Modal
 			title={t("WALLETS.MODAL_NAME_WALLET.TITLE")}
 			description={t("WALLETS.MODAL_NAME_WALLET.DESCRIPTION")}
-			image={<NameWalletBanner className="my-8" />}
+			size="lg"
 			isOpen={isOpen}
 			onClose={onClose}
 		>
