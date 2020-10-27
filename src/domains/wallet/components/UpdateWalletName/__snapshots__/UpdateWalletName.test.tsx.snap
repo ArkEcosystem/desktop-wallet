@@ -5,7 +5,7 @@ exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment
 exports[`UpdateWalletName should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -106,7 +106,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
 exports[`UpdateWalletName should render form input with existing name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -207,7 +207,7 @@ exports[`UpdateWalletName should render form input with existing name 1`] = `
 exports[`UpdateWalletName should show error message when name consists only of whitespace 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -315,7 +315,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
 exports[`UpdateWalletName should show error message when name exceeds 42 characters 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
