@@ -49,6 +49,13 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Contact Our Team",
 			DESCRIPTION: "We'd be happy to answer your questions.",
 		},
+		FORM: {
+			NAME: "Name",
+			EMAIL: "Email",
+			SUBJECT: "Subject",
+			MESSAGE: "Message",
+			MESSAGE_PLACEHOLDER: "How can we help?",
+		},
 	},
 
 	MODAL_CONTACT_US: {

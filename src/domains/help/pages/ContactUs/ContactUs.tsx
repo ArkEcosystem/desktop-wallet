@@ -3,6 +3,7 @@ import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks";
+import { ContactForm } from "domains/help/components/ContactForm";
 import { SocialButton } from "domains/help/components/SocialButton";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -74,6 +75,7 @@ export const ContactUs = () => {
 						<div className="mt-4 text-theme-secondary-text">
 							{t("HELP.PAGE_CONTACT_US.SECTION_FOURTH.DESCRIPTION")}
 						</div>
+						<ContactForm />
 					</div>
 				</div>
 			</Section>
