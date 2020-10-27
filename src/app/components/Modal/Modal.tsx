@@ -112,25 +112,16 @@ const ModalContent = (props: ModalContentProps) => {
 	);
 };
 
-interface BodyRightOffset {
-	[key: string]: string;
-}
-
 export const Modal = (props: ModalProps) => {
 	// Disable scrolling when open
 	useEffect(() => {
 		const originalStyle = window.getComputedStyle(document.body).overflow;
 
-		// Prevent body content `glitching` upon change,
-		// by right padding if scrollbar existed initially
-		const rightPadding: BodyRightOffset = {
-			visible: "15px",
-			hidden: "0",
-		};
+		document.body.style.width = "100vw";
 
 		if (props.isOpen) {
 			document.body.style.overflow = "hidden";
-			document.body.style.paddingRight = rightPadding[originalStyle];
+			document.body.style.paddingRight = "calc(100vw - 100%)";
 		}
 
 		return () => {
