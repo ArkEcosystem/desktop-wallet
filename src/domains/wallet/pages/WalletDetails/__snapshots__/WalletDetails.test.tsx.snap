@@ -476,7 +476,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -562,7 +562,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
@@ -1994,7 +1994,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -2080,7 +2080,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
@@ -2977,7 +2977,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -3079,7 +3079,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
@@ -4518,7 +4518,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -4620,7 +4620,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
@@ -6061,7 +6061,7 @@ exports[`WalletDetails should render 1`] = `
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -6163,7 +6163,7 @@ exports[`WalletDetails should render 1`] = `
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
@@ -7608,7 +7608,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -7694,7 +7694,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
@@ -9139,7 +9139,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -9225,7 +9225,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
@@ -10670,7 +10670,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -10772,7 +10772,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
@@ -12213,7 +12213,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             class="flex"
           >
             <div
-              class="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="flex-1 pr-12 last:pr-0"
             >
               <section
                 data-testid="WalletVote"
@@ -12315,7 +12315,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </section>
             </div>
             <div
-              class="w-1/2 pl-12"
+              class="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <section
                 data-testid="WalletRegistrations"
