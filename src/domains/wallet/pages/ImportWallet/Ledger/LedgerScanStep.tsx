@@ -11,16 +11,17 @@ import { Circle } from "app/components/Circle";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
+import { Skeleton } from "app/components/Skeleton";
 import { Spinner } from "app/components/Spinner";
 import { Table, TableCell, TableRow } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import { useLedgerContext } from "app/contexts";
 import { LedgerData, useLedgerScanner } from "app/contexts/Ledger";
+import { useRandomNumber } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import Skeleton from "react-loading-skeleton";
 
 const AmountWrapper = ({
 	isFailed,
@@ -32,9 +33,15 @@ const AmountWrapper = ({
 	children: React.ReactNode;
 }) => {
 	const { t } = useTranslation();
+	const amountWidth = useRandomNumber(100, 130);
 
 	if (isLoading) {
-		return <Skeleton width={60} height={16} />;
+		return (
+			<span className="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800">
+				<Skeleton height={16} width={amountWidth} />
+				<Skeleton height={16} width={35} />
+			</span>
+		);
 	}
 
 	if (isFailed) {
@@ -95,9 +102,12 @@ export const LedgerTable = ({
 					<TableCell isSelected={isSelected(wallet.index)} variant="start" innerClassName="space-x-3">
 						<Avatar address={wallet.address} noShadow />
 						<Address address={wallet.address} />
-						{wallet.isNew && <Label size="sm">New</Label>}
 					</TableCell>
-					<TableCell isSelected={isSelected(wallet.index)} innerClassName="font-semibold" className="w-64">
+					<TableCell
+						innerClassName="justify-end font-semibold"
+						isSelected={isSelected(wallet.index)}
+						className="w-64"
+					>
 						<AmountWrapper isLoading={isLoading(wallet.index)} isFailed={isFailed(wallet.index)}>
 							<Amount value={wallet.balance!} ticker={network.ticker()} />
 						</AmountWrapper>
@@ -123,10 +133,10 @@ export const LedgerScanStep = ({
 	setRetryFn?: (fn?: () => void) => void;
 }) => {
 	const { t } = useTranslation();
-	const { watch, register, setValue } = useFormContext();
+	const { watch, register, unregister, setValue } = useFormContext();
 	const [network] = useState<Network>(() => watch("network"));
 
-	const { isBusy, error: connectionError } = useLedgerContext();
+	const { isBusy, isConnected, error } = useLedgerContext();
 
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id(), profile);
 	const { scanUntilNewOrFail, selectedWallets, scanRetry, canRetry, scanMore } = ledgerScanner;
@@ -146,7 +156,11 @@ export const LedgerScanStep = ({
 
 	useEffect(() => {
 		register("wallets", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
-	}, [register]);
+
+		return () => {
+			unregister("wallets");
+		};
+	}, [register, unregister]);
 
 	useEffect(() => {
 		setValue("wallets", selectedWallets, { shouldValidate: true, shouldDirty: true });
@@ -164,20 +178,22 @@ export const LedgerScanStep = ({
 				<SelectNetwork id="ImportWallet__network" networks={[]} selected={network} disabled />
 			</FormField>
 
-			{connectionError && <Alert>{connectionError}</Alert>}
+			{error && <Alert variant="danger">{error}</Alert>}
 
 			<LedgerTable network={network} {...ledgerScanner} />
 
-			<Button variant="plain" className="w-full" disabled={canRetry || isBusy} onClick={scanMore}>
-				{isBusy ? (
-					<div className="inline-flex items-center space-x-3">
-						<Spinner size="sm" color="primary" />
-						<span>{t("COMMON.LOADING_LEDGER")}</span>
-					</div>
-				) : (
-					<span>{t("COMMON.VIEW_MORE")}</span>
-				)}
-			</Button>
+			<Tooltip content={t("COMMON.LEDGER_DISCONNECTED")} disabled={isConnected}>
+				<div>
+					<Button
+						variant="plain"
+						className="w-full"
+						disabled={!isConnected || canRetry || isBusy}
+						onClick={scanMore}
+					>
+						{isBusy ? <Spinner size="sm" color="primary" /> : <span>{t("COMMON.VIEW_MORE")}</span>}
+					</Button>
+				</div>
+			</Tooltip>
 		</section>
 	);
 };

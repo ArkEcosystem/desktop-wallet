@@ -81,6 +81,7 @@ export const translations: { [key: string]: any } = {
 	LANGUAGE: "Application Language",
 	LEARN_MORE: "Learn more",
 	LEDGER: "Ledger",
+	LEDGER_DISCONNECTED: "Ledger Disconnected",
 	LEDGER_WALLET: "This is a Ledger wallet",
 	LINK: "Link",
 	LOAD: "Load",
