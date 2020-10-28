@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
+import { when } from "jest-when";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -32,7 +33,7 @@ let wallet2: ReadWriteWallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
-const renderPage = async () => {
+const renderPage = async (waitForTopSection = true) => {
 	let rendered: RenderResult;
 
 	await act(async () => {
@@ -49,8 +50,11 @@ const renderPage = async () => {
 
 	const { getByTestId, queryAllByTestId } = rendered;
 
-	await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
-	await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+	if (waitForTopSection) {
+		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+	}
+
 	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1));
 
 	return rendered;
@@ -107,9 +111,63 @@ describe("WalletDetails", () => {
 	it("should render", async () => {
 		const { getByTestId, queryAllByTestId, asFragment } = await renderPage();
 
-		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
-
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not render wallet vote when the network does not support votes", async () => {
+		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
+
+		when(networkFeatureSpy).calledWith("Transaction.vote").mockReturnValue(false);
+
+		const { getByTestId } = await renderPage(false);
+
+		await waitFor(() => {
+			expect(() => getByTestId("WalletVote")).toThrow(/Unable to find an element by/);
+		});
+
+		networkFeatureSpy.mockRestore();
+	});
+
+	it("should not render wallet registrations when the network does not support second signatures, delegate registrations and entity registrations", async () => {
+		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
+
+		when(networkFeatureSpy)
+			.calledWith("Transaction.secondSignature")
+			.mockReturnValue(false)
+			.calledWith("Transaction.delegateRegistration")
+			.mockReturnValue(false)
+			.calledWith("Transaction.entityRegistration")
+			.mockReturnValue(false);
+
+		const { getByTestId } = await renderPage(false);
+
+		expect(() => getByTestId("WalletRegistrations")).toThrow(/Unable to find an element by/);
+
+		networkFeatureSpy.mockRestore();
+	});
+
+	it.each([
+		["second signatures", "secondSignature"],
+		["delegate registrations", "delegateRegistration"],
+		["entity registrations", "entityRegistration"],
+	])("should render wallet registrations when the network does support %s", async (name, type) => {
+		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
+
+		when(networkFeatureSpy)
+			.calledWith("Transaction.secondSignature")
+			.mockReturnValue(false)
+			.calledWith("Transaction.delegateRegistration")
+			.mockReturnValue(false)
+			.calledWith("Transaction.entityRegistration")
+			.mockReturnValue(false)
+			.calledWith(`Transaction.${type}`)
+			.mockReturnValue(true);
+
+		const { getAllByTestId } = await renderPage(false);
+
+		await waitFor(() => expect(getAllByTestId("WalletRegistrations")).toHaveLength(1));
+
+		networkFeatureSpy.mockRestore();
 	});
 
 	it("should render when wallet not found for votes", async () => {
@@ -129,8 +187,6 @@ describe("WalletDetails", () => {
 
 		const { getByTestId, queryAllByTestId } = await renderPage();
 
-		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
-
 		act(() => {
 			fireEvent.click(getByTestId("WalletVote__button"));
 		});
@@ -142,8 +198,6 @@ describe("WalletDetails", () => {
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId, queryAllByTestId } = await renderPage();
-
-		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
 
 		act(() => {
 			fireEvent.click(getByTestId("WalletVote__button"));
