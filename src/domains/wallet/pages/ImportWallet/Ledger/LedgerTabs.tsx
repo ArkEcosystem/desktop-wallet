@@ -93,11 +93,10 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const { env, persist } = useEnvironmentContext();
 	const { importLedgerWallets } = useLedgerContext();
 
-	const { getValues, formState, handleSubmit } = useFormContext();
+	const { formState, handleSubmit } = useFormContext();
 	const { isValid, isSubmitting } = formState;
 
-	const wallets = getValues("wallets");
-
+	const [importedWallets, setImportedWallets] = useState([]);
 	const [activeTab, setActiveTab] = useState<number>(activeIndex!);
 
 	const [showRetry, setShowRetry] = useState(false);
@@ -105,6 +104,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 
 	const importWallets = useCallback(
 		async ({ network, wallets }: any) => {
+			setImportedWallets(wallets);
 			const coin = await env.coin(network.coin(), network.id());
 			await importLedgerWallets(wallets, coin, activeProfile);
 		},
@@ -160,7 +160,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 					<LedgerScanStep profile={activeProfile} setRetryFn={handleRetry} />
 				</TabPanel>
 				<TabPanel tabId={4}>
-					<LedgerImportStep wallets={wallets} />
+					<LedgerImportStep wallets={importedWallets} />
 				</TabPanel>
 			</div>
 

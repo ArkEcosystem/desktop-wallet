@@ -158,7 +158,11 @@ export const LedgerScanStep = ({
 
 	useEffect(() => {
 		register("wallets", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
-	}, [register]);
+
+		return () => {
+			unregister("wallets");
+		};
+	}, [register, unregister]);
 
 	useEffect(() => {
 		setValue("wallets", selectedWallets, { shouldValidate: true, shouldDirty: true });
