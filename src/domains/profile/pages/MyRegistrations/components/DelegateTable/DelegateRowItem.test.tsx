@@ -1,4 +1,5 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
@@ -156,7 +157,9 @@ describe("DelegateRowItem", () => {
 		expect(onAction).toBeCalledWith({ walletId: delegates[0].id(), action: "updateDelegate" });
 	});
 
-	it("should set shadow color on mouse events", () => {
+	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");
 
@@ -173,7 +176,9 @@ describe("DelegateRowItem", () => {
 		fireEvent.mouseEnter(getByTestId("TableRow"));
 		fireEvent.mouseLeave(getByTestId("TableRow"));
 
-		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+		expect(setState).toHaveBeenCalledWith(
+			theme === "dark" ? "--theme-color-neutral-800" : "--theme-color-neutral-100",
+		);
 		expect(setState).toHaveBeenCalledWith("");
 	});
 });

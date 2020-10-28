@@ -111,7 +111,7 @@ export const TransactionTable = ({
 							transaction={row}
 							exchangeCurrency={exchangeCurrency}
 							showExplorerLink={showExplorerLinkColumn}
-							showSign={showSignColumn}
+							showSignColumn={showSignColumn}
 							isSignaturePending={row.isMultiSignature && showSignColumn}
 						/>
 					)
