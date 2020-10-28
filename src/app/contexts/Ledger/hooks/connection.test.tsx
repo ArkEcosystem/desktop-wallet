@@ -122,9 +122,14 @@ describe("Use Ledger Connection", () => {
 
 	describe("Ledger Connection", () => {
 		const Component = ({ retries = 3 }: { retries?: number }) => {
-			const { connect, isConnected, isAwaitingConnection, error, abortConnectionRetry } = useLedgerConnection(
-				transport,
-			);
+			const {
+				connect,
+				isConnected,
+				isAwaitingConnection,
+				error,
+				abortConnectionRetry,
+				disconnect,
+			} = useLedgerConnection(transport);
 			const handleConnect = async () => {
 				try {
 					await connect(wallet.coinId(), wallet.networkId(), { retries, randomize: false, minTimeout: 10 });
@@ -141,6 +146,7 @@ describe("Use Ledger Connection", () => {
 
 					<button onClick={abortConnectionRetry}>Abort</button>
 					<button onClick={handleConnect}>Connect</button>
+					<button onClick={() => disconnect(wallet.coin())}>Disconnect</button>
 				</div>
 			);
 		};
@@ -162,6 +168,31 @@ describe("Use Ledger Connection", () => {
 			await waitFor(() => expect(screen.queryByText("Connected")).toBeInTheDocument());
 
 			expect(getPublicKeySpy).toHaveBeenCalledTimes(1);
+
+			getPublicKeySpy.mockReset();
+		});
+
+		it("should disconnect", async () => {
+			const getPublicKeySpy = jest
+				.spyOn(wallet.coin().ledger(), "getPublicKey")
+				.mockResolvedValue(publicKeyPaths.values().next().value);
+
+			render(<Component />);
+
+			act(() => {
+				fireEvent.click(screen.getByText("Connect"));
+			});
+
+			expect(screen.getByText("Waiting Device")).toBeInTheDocument();
+
+			await waitFor(() => expect(screen.queryByText("Waiting Device")).not.toBeInTheDocument());
+			await waitFor(() => expect(screen.queryByText("Connected")).toBeInTheDocument());
+
+			act(() => {
+				fireEvent.click(screen.getByText("Disconnect"));
+			});
+
+			await waitFor(() => expect(screen.queryByText("Connected")).not.toBeInTheDocument());
 
 			getPublicKeySpy.mockReset();
 		});

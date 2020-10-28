@@ -53,6 +53,10 @@ describe("LedgerScanStep", () => {
 			return { unsubscribe: jest.fn() };
 		});
 
+		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockImplementation((path) =>
+			Promise.resolve(publicKeyPaths.get(path)!),
+		);
+
 		jest.useFakeTimers();
 	});
 
@@ -62,10 +66,6 @@ describe("LedgerScanStep", () => {
 	});
 
 	it("should render", async () => {
-		const getPublicKeySpy = jest
-			.spyOn(wallet.coin().ledger(), "getPublicKey")
-			.mockImplementation((path) => Promise.resolve(publicKeyPaths.get(path)!));
-
 		let formRef: ReturnType<typeof useForm>;
 		const Component = () => {
 			const form = useForm({
@@ -109,7 +109,58 @@ describe("LedgerScanStep", () => {
 		);
 
 		expect(container).toMatchSnapshot();
+	});
 
-		getPublicKeySpy.mockReset();
+	it("should handle select", async () => {
+		let formRef: ReturnType<typeof useForm>;
+
+		const Component = () => {
+			const form = useForm({
+				defaultValues: {
+					network: wallet.network(),
+				},
+			});
+			formRef = form;
+
+			return (
+				<FormProvider {...form}>
+					<LedgerProvider transport={transport}>
+						<LedgerScanStep profile={profile} />
+					</LedgerProvider>
+				</FormProvider>
+			);
+		};
+
+		const { container } = render(<Component />);
+
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(5));
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("LedgerScanStep__select-all"));
+		});
+
+		await waitFor(() => expect(screen.getAllByRole("checkbox", { checked: true })).toHaveLength(5));
+
+		// Unselect All
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("LedgerScanStep__select-all"));
+		});
+
+		await waitFor(() => expect(screen.getAllByRole("checkbox", { checked: false })).toHaveLength(5));
+
+		// Select just first
+
+		act(() => {
+			fireEvent.click(screen.getAllByRole("checkbox")[1]);
+		});
+
+		await waitFor(() => expect(formRef.getValues("wallets").length).toBe(1));
+
+		act(() => {
+			fireEvent.click(screen.getAllByRole("checkbox")[1]);
+		});
+
+		await waitFor(() => expect(formRef.getValues("wallets").length).toBe(0));
 	});
 });
