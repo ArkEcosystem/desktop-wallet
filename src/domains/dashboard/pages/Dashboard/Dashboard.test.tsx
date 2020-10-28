@@ -319,7 +319,7 @@ describe("Dashboard", () => {
 			return { unsubscribe };
 		});
 
-		const { asFragment, getAllByTestId, getByTestId, getByText, queryByTestId } = renderWithRouter(
+		const { asFragment, getByTestId, getByText, queryByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<LedgerProvider transport={transport}>
 					<Dashboard />
@@ -331,7 +331,6 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(1));
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
