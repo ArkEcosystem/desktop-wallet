@@ -93,15 +93,15 @@ export const WalletHeader = ({
 
 	return (
 		<header data-testid="WalletHeader">
-			<div className="py-8 bg-theme-neutral-900">
+			<div className="py-8 bg-theme-neutral-900 border-b border-theme-neutral-900 dark:border-theme-neutral-800">
 				<div className="container flex items-center mx-auto px-14">
 					<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800">
-						<div className="flex">
+						<div className="flex -space-x-1">
 							<NetworkIcon
 								coin={coin}
 								network={network}
 								size="lg"
-								className="-mr-1 border-theme-neutral-dark text-theme-secondary-text"
+								className="border-theme-neutral-dark text-theme-secondary-text"
 								noShadow
 							/>
 							<Avatar size="lg" address={address} shadowColor="--theme-color-neutral-900" />

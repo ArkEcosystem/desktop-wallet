@@ -28,17 +28,23 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 			return (
 				<div data-testid="WalletVote__empty" className="flex items-center space-x-4">
 					<div className="flex items-center -space-x-2">
-						<Circle size="lg" className="text-theme-neutral-light">
+						<Circle
+							size="lg"
+							className="border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+						>
 							<Icon name="Vote" width={21} height={21} />
 						</Circle>
 
 						<div className="flex -space-x-3">
 							<span className="inline-block">
-								<Circle size="lg" />
+								<Circle size="lg" className="border-theme-neutral-500 dark:border-theme-neutral-700" />
 							</span>
 							{maxVotes > 1 && (
 								<span className="inline-block">
-									<Circle size="lg" />
+									<Circle
+										size="lg"
+										className="border-theme-neutral-500 dark:border-theme-neutral-700"
+									/>
 								</span>
 							)}
 						</div>
@@ -161,7 +167,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 			<div className="flex mb-4">
 				<h2 className="mb-0 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}</h2>
 				{!isLoading && (
-					<span className="ml-1 text-2xl font-bold text-theme-neutral-light">
+					<span className="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700">
 						({votes.length}/{maxVotes})
 					</span>
 				)}

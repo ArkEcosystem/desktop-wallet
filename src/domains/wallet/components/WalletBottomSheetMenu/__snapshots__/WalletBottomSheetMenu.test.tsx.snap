@@ -15,12 +15,12 @@ exports[`WalletBottomSheetMenu should render 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             2
@@ -30,7 +30,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>

@@ -57,10 +57,13 @@ export const WalletRegistrations = ({
 			return (
 				<div data-testid="WalletRegistrations__empty" className="flex items-center space-x-4">
 					<div className="flex items-center -space-x-2">
-						<Circle size="lg" className="text-theme-neutral-light">
+						<Circle
+							size="lg"
+							className="border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+						>
 							<Icon name="Delegate" className="text-xl" />
 						</Circle>
-						<Circle size="lg" />
+						<Circle size="lg" className="border-theme-neutral-500 dark:border-theme-neutral-700" />
 					</div>
 
 					<div className="flex justify-between flex-1">
@@ -91,7 +94,7 @@ export const WalletRegistrations = ({
 		const renderIcon = (icon: string, tooltip?: string, active?: boolean) => {
 			const iconStyle = active
 				? "border-theme-text text-theme-text"
-				: "border-theme-neutral-light text-theme-neutral-light";
+				: "border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700";
 
 			const circle = (
 				<Circle size="lg" className={iconStyle}>
@@ -180,7 +183,11 @@ export const WalletRegistrations = ({
 		<section data-testid="WalletRegistrations">
 			<div className="flex mb-4">
 				<h2 className="mb-0 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.TITLE")}</h2>
-				<span className="ml-1 text-2xl font-bold text-theme-neutral-light">({registrationCount})</span>
+				{!isLoading && (
+					<span className="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700">
+						({registrationCount})
+					</span>
+				)}
 			</div>
 
 			{isLoading ? <WalletRegistrationsSkeleton /> : renderRegistrations()}
