@@ -51,8 +51,8 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 					</div>
 
 					<div className="flex justify-between flex-1">
-						<div className="flex flex-col mr-4 font-semibold text-theme-text">
-							<span>{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
+						<div className="flex flex-col mr-4 font-semibold leading-snug text-theme-text">
+							<span className="mr-2">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
 
 							<div className="mr-auto">
 								<Link

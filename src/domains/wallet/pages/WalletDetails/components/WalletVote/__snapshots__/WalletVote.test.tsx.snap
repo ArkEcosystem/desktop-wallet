@@ -198,7 +198,7 @@ exports[`WalletVote should render loading state 1`] = `
           >
             <span
               class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-              style="width: 100px; height: 48px;"
+              style="width: 100px; height: 44px;"
             >
               ‌
             </span>
@@ -576,9 +576,11 @@ exports[`WalletVote should render the maximum votes 1`] = `
         class="flex justify-between flex-1"
       >
         <div
-          class="flex flex-col mr-4 font-semibold text-theme-text"
+          class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
         >
-          <span>
+          <span
+            class="mr-2"
+          >
             You have not yet voted for a Delegate
           </span>
           <div
@@ -663,9 +665,11 @@ exports[`WalletVote should render without votes 1`] = `
         class="flex justify-between flex-1"
       >
         <div
-          class="flex flex-col mr-4 font-semibold text-theme-text"
+          class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
         >
-          <span>
+          <span
+            class="mr-2"
+          >
             You have not yet voted for a Delegate
           </span>
           <div

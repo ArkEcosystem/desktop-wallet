@@ -67,7 +67,7 @@ export const WalletRegistrations = ({
 					</div>
 
 					<div className="flex justify-between flex-1">
-						<div className="flex flex-col mr-4 font-semibold text-theme-text">
+						<div className="flex flex-col mr-4 font-semibold leading-snug text-theme-text">
 							<span className="mr-2">
 								{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY_DESCRIPTION")}
 							</span>
