@@ -61,11 +61,7 @@ export const ReviewStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) 
 			<div>
 				<TransactionNetwork network={senderWallet.network()} border={false} paddingPosition="bottom" />
 
-				<TransactionSender
-					address={senderWallet.address()}
-					alias={senderWallet.alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
-				/>
+				<TransactionSender address={senderWallet.address()} alias={senderWallet.alias()} />
 
 				{/* @TODO add TransactionType / TransactionEntityType component */}
 
