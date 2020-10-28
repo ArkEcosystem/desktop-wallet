@@ -5,7 +5,7 @@ import { useLedgerContext } from "app/contexts/Ledger/Ledger";
 import React, { useLayoutEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-const { WaitingLedgerDevice } = images.wallet.common;
+const { WaitingLedgerDevice } = images.wallet.components.Ledger;
 
 export const LedgerWaitingDevice = ({
 	isOpen,

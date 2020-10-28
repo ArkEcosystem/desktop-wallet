@@ -6,6 +6,7 @@ export class ToastService {
 	private readonly defaultOptions: ToastOptions = {
 		autoClose: 5000,
 		closeButton: false,
+		hideProgressBar: true,
 		pauseOnFocusLoss: true,
 		position: "bottom-right",
 	};

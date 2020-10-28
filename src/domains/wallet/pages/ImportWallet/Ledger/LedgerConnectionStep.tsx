@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-const { WaitingLedgerDevice } = images.wallet.common;
+const { WaitingLedgerDevice } = images.wallet.components.Ledger;
 
 const ConnectionContent = ({
 	error,
