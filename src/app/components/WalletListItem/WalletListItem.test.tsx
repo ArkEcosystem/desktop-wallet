@@ -1,4 +1,5 @@
 import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -146,34 +147,57 @@ describe("WalletListItem", () => {
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 	});
 
-	it.each(["ac38fe6d-4b67-4ef1-85be-17c5f6841129", "fake id"])(
-		"should set shadow color on mouse events",
-		(activeWalletId) => {
-			const setState = jest.fn();
-			const useStateSpy = jest.spyOn(React, "useState");
+	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
 
-			useStateSpy.mockImplementation((state) => [state, setState]);
+		const walletId = "fake-id";
 
-			const { asFragment, getByText } = render(
-				<table>
-					<tbody>
-						<WalletListItem wallet={wallet} activeWalletId={activeWalletId} />
-					</tbody>
-				</table>,
-			);
+		const setState = jest.fn();
+		const useStateSpy = jest.spyOn(React, "useState");
 
-			expect(asFragment()).toMatchSnapshot();
+		useStateSpy.mockImplementation((state) => [state, setState]);
 
-			fireEvent.mouseEnter(getByText(wallet.alias()));
-			fireEvent.mouseLeave(getByText(wallet.alias()));
+		const { asFragment, getByText } = render(
+			<table>
+				<tbody>
+					<WalletListItem wallet={wallet} activeWalletId={walletId} />
+				</tbody>
+			</table>,
+		);
 
-			expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+		expect(asFragment()).toMatchSnapshot();
 
-			if (wallet.id() === activeWalletId) {
-				expect(setState).toHaveBeenCalledWith("--theme-color-success-100");
-			} else {
-				expect(setState).toHaveBeenCalledWith("--theme-background-color");
-			}
-		},
-	);
+		fireEvent.mouseEnter(getByText(wallet.alias()));
+		fireEvent.mouseLeave(getByText(wallet.alias()));
+
+		expect(setState).toHaveBeenCalledWith("--theme-background-color");
+	});
+
+	it.each(["light", "dark"])("should set %s shadow color on mouse events for selected wallet", (theme) => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+
+		const walletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
+
+		const setState = jest.fn();
+		const useStateSpy = jest.spyOn(React, "useState");
+
+		useStateSpy.mockImplementation((state) => [state, setState]);
+
+		const { asFragment, getByText } = render(
+			<table>
+				<tbody>
+					<WalletListItem wallet={wallet} activeWalletId={walletId} />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+
+		fireEvent.mouseEnter(getByText(wallet.alias()));
+		fireEvent.mouseLeave(getByText(wallet.alias()));
+
+		expect(setState).toHaveBeenCalledWith(
+			theme === "dark" ? "--theme-color-neutral-800" : "--theme-color-neutral-100",
+		);
+	});
 });

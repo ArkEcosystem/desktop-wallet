@@ -14,7 +14,7 @@ exports[`WalletVote should render 1`] = `
         My Vote
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (1/1)
       </span>
@@ -198,7 +198,7 @@ exports[`WalletVote should render loading state 1`] = `
           >
             <span
               class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-              style="width: 100px; height: 48px;"
+              style="width: 100px; height: 44px;"
             >
               ‌
             </span>
@@ -225,7 +225,7 @@ exports[`WalletVote should render multiple votes 1`] = `
         My Vote
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (2/1)
       </span>
@@ -317,7 +317,7 @@ exports[`WalletVote should render multiple votes 2`] = `
         My Vote
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (3/1)
       </span>
@@ -427,7 +427,7 @@ exports[`WalletVote should render multiple votes 3`] = `
         My Vote
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (4/1)
       </span>
@@ -528,7 +528,7 @@ exports[`WalletVote should render the maximum votes 1`] = `
         My Votes
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (0/101)
       </span>
@@ -541,7 +541,7 @@ exports[`WalletVote should render the maximum votes 1`] = `
         class="flex items-center -space-x-2"
       >
         <div
-          class="sc-AxiKw hpQrmn text-theme-neutral-light"
+          class="sc-AxiKw hpQrmn border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxhCb gNZpvr"
@@ -560,14 +560,14 @@ exports[`WalletVote should render the maximum votes 1`] = `
             class="inline-block"
           >
             <div
-              class="sc-AxiKw hpQrmn"
+              class="sc-AxiKw hpQrmn border-theme-neutral-500 dark:border-theme-neutral-700"
             />
           </span>
           <span
             class="inline-block"
           >
             <div
-              class="sc-AxiKw hpQrmn"
+              class="sc-AxiKw hpQrmn border-theme-neutral-500 dark:border-theme-neutral-700"
             />
           </span>
         </div>
@@ -576,9 +576,11 @@ exports[`WalletVote should render the maximum votes 1`] = `
         class="flex justify-between flex-1"
       >
         <div
-          class="flex flex-col mr-4 font-semibold text-theme-text"
+          class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
         >
-          <span>
+          <span
+            class="mr-2"
+          >
             You have not yet voted for a Delegate
           </span>
           <div
@@ -622,7 +624,7 @@ exports[`WalletVote should render without votes 1`] = `
         My Vote
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (0/1)
       </span>
@@ -635,7 +637,7 @@ exports[`WalletVote should render without votes 1`] = `
         class="flex items-center -space-x-2"
       >
         <div
-          class="sc-AxiKw hpQrmn text-theme-neutral-light"
+          class="sc-AxiKw hpQrmn border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxhCb gNZpvr"
@@ -654,7 +656,7 @@ exports[`WalletVote should render without votes 1`] = `
             class="inline-block"
           >
             <div
-              class="sc-AxiKw hpQrmn"
+              class="sc-AxiKw hpQrmn border-theme-neutral-500 dark:border-theme-neutral-700"
             />
           </span>
         </div>
@@ -663,9 +665,11 @@ exports[`WalletVote should render without votes 1`] = `
         class="flex justify-between flex-1"
       >
         <div
-          class="flex flex-col mr-4 font-semibold text-theme-text"
+          class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
         >
-          <span>
+          <span
+            class="mr-2"
+          >
             You have not yet voted for a Delegate
           </span>
           <div
