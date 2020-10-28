@@ -14,7 +14,7 @@ exports[`WalletRegistrations should render empty mode 1`] = `
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (0)
       </span>
@@ -27,7 +27,7 @@ exports[`WalletRegistrations should render empty mode 1`] = `
         class="flex items-center -space-x-2"
       >
         <div
-          class="sc-AxirZ dxHwgH text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw dzBdqj text-xl"
@@ -40,14 +40,14 @@ exports[`WalletRegistrations should render empty mode 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700"
         />
       </div>
       <div
         class="flex justify-between flex-1"
       >
         <div
-          class="flex flex-col mr-4 font-semibold text-theme-text"
+          class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
         >
           <span
             class="mr-2"
@@ -95,7 +95,7 @@ exports[`WalletRegistrations should render inactive icons when there are no enti
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (3)
       </span>
@@ -151,7 +151,7 @@ exports[`WalletRegistrations should render inactive icons when there are no enti
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -191,7 +191,7 @@ exports[`WalletRegistrations should render inactive icons withour a multi signat
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (2)
       </span>
@@ -234,7 +234,7 @@ exports[`WalletRegistrations should render inactive icons withour a multi signat
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -247,7 +247,7 @@ exports[`WalletRegistrations should render inactive icons withour a multi signat
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -287,7 +287,7 @@ exports[`WalletRegistrations should render inactive icons without a second signa
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (1)
       </span>
@@ -317,7 +317,7 @@ exports[`WalletRegistrations should render inactive icons without a second signa
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -330,7 +330,7 @@ exports[`WalletRegistrations should render inactive icons without a second signa
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -343,7 +343,7 @@ exports[`WalletRegistrations should render inactive icons without a second signa
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -382,11 +382,6 @@ exports[`WalletRegistrations should render loading state 1`] = `
       >
         Registrations
       </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
-      >
-        (0)
-      </span>
     </div>
     <div
       class="flex items-center"
@@ -469,7 +464,7 @@ exports[`WalletRegistrations should render loading state 1`] = `
           >
             <span
               class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-              style="width: 100px; height: 48px;"
+              style="width: 100px; height: 44px;"
             >
               ‌
             </span>
@@ -496,7 +491,7 @@ exports[`WalletRegistrations should show business icon 1`] = `
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (3)
       </span>
@@ -548,7 +543,7 @@ exports[`WalletRegistrations should show business icon 1`] = `
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -561,7 +556,7 @@ exports[`WalletRegistrations should show business icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -574,7 +569,7 @@ exports[`WalletRegistrations should show business icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -614,7 +609,7 @@ exports[`WalletRegistrations should show business icon for multiple business ent
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (2)
       </span>
@@ -644,7 +639,7 @@ exports[`WalletRegistrations should show business icon for multiple business ent
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -657,7 +652,7 @@ exports[`WalletRegistrations should show business icon for multiple business ent
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -670,7 +665,7 @@ exports[`WalletRegistrations should show business icon for multiple business ent
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -710,7 +705,7 @@ exports[`WalletRegistrations should show delegate icon 1`] = `
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (1)
       </span>
@@ -740,7 +735,7 @@ exports[`WalletRegistrations should show delegate icon 1`] = `
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -753,7 +748,7 @@ exports[`WalletRegistrations should show delegate icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -766,7 +761,7 @@ exports[`WalletRegistrations should show delegate icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -806,7 +801,7 @@ exports[`WalletRegistrations should show generic icon 1`] = `
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (1)
       </span>
@@ -832,7 +827,7 @@ exports[`WalletRegistrations should show generic icon 1`] = `
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -845,7 +840,7 @@ exports[`WalletRegistrations should show generic icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -858,7 +853,7 @@ exports[`WalletRegistrations should show generic icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -898,7 +893,7 @@ exports[`WalletRegistrations should show plugin icon 1`] = `
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (3)
       </span>
@@ -950,7 +945,7 @@ exports[`WalletRegistrations should show plugin icon 1`] = `
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -963,7 +958,7 @@ exports[`WalletRegistrations should show plugin icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -976,7 +971,7 @@ exports[`WalletRegistrations should show plugin icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -1016,7 +1011,7 @@ exports[`WalletRegistrations should show plugin icon for multiple plugin entitie
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (2)
       </span>
@@ -1046,7 +1041,7 @@ exports[`WalletRegistrations should show plugin icon for multiple plugin entitie
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -1059,7 +1054,7 @@ exports[`WalletRegistrations should show plugin icon for multiple plugin entitie
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -1072,7 +1067,7 @@ exports[`WalletRegistrations should show plugin icon for multiple plugin entitie
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -1112,7 +1107,7 @@ exports[`WalletRegistrations should show resigned delegate icon 1`] = `
         Registrations
       </h2>
       <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-light"
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
       >
         (1)
       </span>
@@ -1142,7 +1137,7 @@ exports[`WalletRegistrations should show resigned delegate icon 1`] = `
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -1155,7 +1150,7 @@ exports[`WalletRegistrations should show resigned delegate icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"
@@ -1168,7 +1163,7 @@ exports[`WalletRegistrations should show resigned delegate icon 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-light text-theme-neutral-light"
+          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
             class="sc-AxiKw jcWfEX"

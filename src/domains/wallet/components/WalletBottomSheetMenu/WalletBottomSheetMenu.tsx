@@ -93,15 +93,18 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 			<Backdrop isVisible={isOpen} />
 
 			<aside data-testid="WalletBottomSheetMenu" className="sticky bottom-0 z-50 w-full">
-				<div data-testid="WalletBottomSheetMenu__header" className="flex items-center bg-theme-neutral-900">
+				<div
+					data-testid="WalletBottomSheetMenu__header"
+					className="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
+				>
 					<div className="container flex items-center justify-between mx-auto px-14 py-7">
 						<div>
-							<span className="text-lg font-bold text-theme-neutral-light">
+							<span className="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200">
 								{t("WALLETS.PAGE_WALLET_DETAILS.YOUR_WALLETS")}
 							</span>
 							<span
 								data-testid="WalletBottomSheetMenu__counter"
-								className="ml-1 font-bold text-theme-secondary-text"
+								className="ml-1 font-bold text-theme-neutral-700"
 							>
 								{wallets.length}
 							</span>
@@ -110,7 +113,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 							{isOpen && (
 								<button
 									data-testid="WalletBottomSheetMenu__filters"
-									className="flex items-center px-5 py-1 font-medium border-r text-theme-secondary-text border-theme-neutral-800 focus:outline-none"
+									className="flex items-center px-5 py-1 font-medium border-r text-theme-neutral-400 dark:text-theme-neutral-200 border-theme-neutral-800 dark:border-theme-neutral-600 focus:outline-none"
 								>
 									<Icon name="Filters" width={16} height={20} />
 								</button>
@@ -118,7 +121,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 							<CollapseToggleButton
 								data-testid="WalletBottomSheetMenu__toggle"
 								isOpen={isOpen}
-								className="text-theme-secondary-text"
+								className="text-theme-neutral-400 dark:text-theme-neutral-200"
 								onClick={() => setIsOpen(!isOpen)}
 							/>
 						</div>

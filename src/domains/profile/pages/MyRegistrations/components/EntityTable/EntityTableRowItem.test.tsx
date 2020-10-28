@@ -1,4 +1,5 @@
 import { Enums, ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import nock from "nock";
 import React from "react";
 import { env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
@@ -36,7 +37,9 @@ describe("EntityTableRowItem", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should set shadow color on mouse events", () => {
+	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");
 
@@ -53,7 +56,9 @@ describe("EntityTableRowItem", () => {
 		fireEvent.mouseEnter(getByTestId("TableRow"));
 		fireEvent.mouseLeave(getByTestId("TableRow"));
 
-		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+		expect(setState).toHaveBeenCalledWith(
+			theme === "dark" ? "--theme-color-neutral-800" : "--theme-color-neutral-100",
+		);
 		expect(setState).toHaveBeenCalledWith("");
 	});
 });
