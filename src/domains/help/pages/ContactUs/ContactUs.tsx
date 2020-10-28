@@ -30,7 +30,7 @@ export const ContactUs = () => {
 					<div className="flex-1 space-y-8 border-theme-neutral-300 dark:border-theme-neutral-800 lg:border-r lg:pr-8 xl:pr-24">
 						<div className="pb-8 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
 							<h3 className="mb-1 text-3xl font-bold">{t("HELP.PAGE_CONTACT_US.FIRST_SECTION.TITLE")}</h3>
-							<div className="mt-4 leading-7 text-justify text-theme-secondary-text">
+							<div className="mt-4 leading-7 text-theme-secondary-text">
 								{t("HELP.PAGE_CONTACT_US.FIRST_SECTION.DESCRIPTION")}
 							</div>
 						</div>
@@ -39,7 +39,7 @@ export const ContactUs = () => {
 							<h3 className="mb-1 text-3xl font-bold">
 								{t("HELP.PAGE_CONTACT_US.SECOND_SECTION.TITLE")}
 							</h3>
-							<div className="mt-4 leading-7 text-justify text-theme-secondary-text">
+							<div className="mt-4 leading-7 text-theme-secondary-text">
 								{t("HELP.PAGE_CONTACT_US.SECOND_SECTION.DESCRIPTION")}
 							</div>
 							<div className="flex flex-col mt-6 space-y-3 sm:flex-row sm:space-x-2 sm:space-y-0 sm:items-center">
