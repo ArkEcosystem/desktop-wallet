@@ -58,7 +58,7 @@ export const Wallets = ({
 	const listColumns = [
 		{
 			Header: t("COMMON.WALLET_ADDRESS"),
-			accessor: "address",
+			accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet.alias() || wallet.address(),
 			className: "ml-24",
 		},
 		{
@@ -67,7 +67,7 @@ export const Wallets = ({
 		},
 		{
 			Header: t("COMMON.BALANCE"),
-			accessor: "balance",
+			accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet.balance?.().toFixed(),
 			className: "justify-end",
 		},
 		{
