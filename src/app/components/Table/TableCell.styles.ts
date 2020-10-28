@@ -5,8 +5,8 @@ const baseStyle = tw`flex items-center px-3 my-1 transition-colors duration-100`
 const getHeight = (isCompact?: boolean): any => (isCompact ? tw`h-16` : tw`h-20`);
 
 const getHoverStyles = (isSelected?: boolean): any => [
-	tw`group-hover:bg-theme-neutral-100`,
-	isSelected ? tw`bg-theme-success-100` : "",
+	tw`group-hover:bg-theme-neutral-100 group-hover:dark:bg-theme-neutral-800`,
+	isSelected ? tw`bg-theme-success-100 dark:bg-theme-success-900` : "",
 ];
 
 const getVariant = (variant: "start" | "middle" | "end"): any => {
