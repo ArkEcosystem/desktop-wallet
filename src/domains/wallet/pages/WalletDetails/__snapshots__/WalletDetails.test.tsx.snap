@@ -280,7 +280,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -289,11 +289,11 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -490,7 +490,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0/1)
                   </span>
@@ -503,7 +503,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw jcWfEX"
@@ -522,7 +522,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         class="inline-block"
                       >
                         <div
-                          class="sc-AxhUy iDenJW"
+                          class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                         />
                       </span>
                     </div>
@@ -576,7 +576,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -589,7 +589,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -602,7 +602,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -814,7 +814,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -823,13 +823,12 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -837,7 +836,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -849,7 +848,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -898,7 +897,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -910,7 +909,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -931,7 +930,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -948,7 +947,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -985,7 +984,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -993,12 +992,12 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             4
@@ -1008,7 +1007,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -1171,7 +1170,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -1227,7 +1226,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1236,18 +1235,18 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1263,7 +1262,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -1313,7 +1312,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1322,18 +1321,18 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1349,7 +1348,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -1399,7 +1398,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1408,18 +1407,18 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1435,7 +1434,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <td>
                     <div
-                      class="sc-Axmtr dwNMHN space-x-4"
+                      class="sc-Axmtr ejQnbO space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -1485,7 +1484,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr CTpMI justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -1494,18 +1493,18 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb font-semibold justify-end"
+                      class="sc-Axmtr CTpMI font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr cCIVgZ justify-end text-theme-neutral-light"
+                      class="sc-Axmtr sxZWC justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -1798,7 +1797,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -1807,11 +1806,11 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -2008,7 +2007,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0/1)
                   </span>
@@ -2021,7 +2020,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw jcWfEX"
@@ -2040,7 +2039,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="inline-block"
                       >
                         <div
-                          class="sc-AxhUy iDenJW"
+                          class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                         />
                       </span>
                     </div>
@@ -2094,7 +2093,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -2107,7 +2106,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -2120,7 +2119,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -2332,7 +2331,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -2341,13 +2340,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -2355,7 +2353,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -2367,7 +2365,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -2416,7 +2414,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -2428,7 +2426,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -2449,7 +2447,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -2466,7 +2464,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -2781,7 +2779,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -2790,11 +2788,11 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -2991,7 +2989,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (1/1)
                   </span>
@@ -3093,7 +3091,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -3106,7 +3104,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -3119,7 +3117,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -3331,7 +3329,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -3340,13 +3338,12 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -3354,7 +3351,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -3366,7 +3363,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -3415,7 +3412,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -3427,7 +3424,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -3448,7 +3445,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -3465,7 +3462,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -3502,7 +3499,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -3510,12 +3507,12 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             4
@@ -3525,7 +3522,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -3688,7 +3685,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr dwNMHN space-x-4"
+                      class="sc-Axmtr ejQnbO space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -3738,7 +3735,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr CTpMI justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -3747,18 +3744,18 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb font-semibold justify-end"
+                      class="sc-Axmtr CTpMI font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr cCIVgZ justify-end text-theme-neutral-light"
+                      class="sc-Axmtr sxZWC justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -3774,7 +3771,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -3830,7 +3827,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -3839,18 +3836,18 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -3866,7 +3863,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -3916,7 +3913,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -3925,18 +3922,18 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -3952,7 +3949,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -4002,7 +3999,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -4011,18 +4008,18 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -4322,7 +4319,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -4331,11 +4328,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -4532,7 +4529,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (1/1)
                   </span>
@@ -4634,7 +4631,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -4647,7 +4644,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -4660,7 +4657,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -4872,7 +4869,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -4881,13 +4878,12 @@ exports[`WalletDetails should remove wallet name 1`] = `
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -4895,7 +4891,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -4907,7 +4903,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -4956,7 +4952,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -4968,7 +4964,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -4989,7 +4985,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -5006,7 +5002,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -5043,7 +5039,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -5051,12 +5047,12 @@ exports[`WalletDetails should remove wallet name 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             4
@@ -5066,7 +5062,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -5229,7 +5225,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr dwNMHN space-x-4"
+                      class="sc-Axmtr ejQnbO space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -5279,7 +5275,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr CTpMI justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5288,18 +5284,18 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb font-semibold justify-end"
+                      class="sc-Axmtr CTpMI font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr cCIVgZ justify-end text-theme-neutral-light"
+                      class="sc-Axmtr sxZWC justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5315,7 +5311,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -5371,7 +5367,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5380,18 +5376,18 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5407,7 +5403,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -5457,7 +5453,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5466,18 +5462,18 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5493,7 +5489,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -5543,7 +5539,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -5552,18 +5548,18 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -5863,7 +5859,7 @@ exports[`WalletDetails should render 1`] = `
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -5872,11 +5868,11 @@ exports[`WalletDetails should render 1`] = `
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -6075,7 +6071,7 @@ exports[`WalletDetails should render 1`] = `
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (1/1)
                   </span>
@@ -6177,7 +6173,7 @@ exports[`WalletDetails should render 1`] = `
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -6190,7 +6186,7 @@ exports[`WalletDetails should render 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -6203,7 +6199,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -6415,7 +6411,7 @@ exports[`WalletDetails should render 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -6424,13 +6420,12 @@ exports[`WalletDetails should render 1`] = `
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -6438,7 +6433,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -6450,7 +6445,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -6499,7 +6494,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -6511,7 +6506,7 @@ exports[`WalletDetails should render 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -6532,7 +6527,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -6549,7 +6544,7 @@ exports[`WalletDetails should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -6586,7 +6581,7 @@ exports[`WalletDetails should render 1`] = `
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -6594,12 +6589,12 @@ exports[`WalletDetails should render 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             4
@@ -6609,7 +6604,7 @@ exports[`WalletDetails should render 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -6772,7 +6767,7 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr dwNMHN space-x-4"
+                      class="sc-Axmtr ejQnbO space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -6828,7 +6823,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr CTpMI justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6837,18 +6832,18 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb font-semibold justify-end"
+                      class="sc-Axmtr CTpMI font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr cCIVgZ justify-end text-theme-neutral-light"
+                      class="sc-Axmtr sxZWC justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6864,7 +6859,7 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -6920,7 +6915,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -6929,18 +6924,18 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -6956,7 +6951,7 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -7006,7 +7001,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -7015,18 +7010,18 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -7042,7 +7037,7 @@ exports[`WalletDetails should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -7092,7 +7087,7 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -7101,18 +7096,18 @@ exports[`WalletDetails should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -7412,7 +7407,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -7421,11 +7416,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -7622,7 +7617,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0/1)
                   </span>
@@ -7635,7 +7630,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw jcWfEX"
@@ -7654,7 +7649,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="inline-block"
                       >
                         <div
-                          class="sc-AxhUy iDenJW"
+                          class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                         />
                       </span>
                     </div>
@@ -7708,7 +7703,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -7721,7 +7716,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -7734,7 +7729,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -7946,7 +7941,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -7955,13 +7950,12 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -7969,7 +7963,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -7981,7 +7975,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -8030,7 +8024,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -8042,7 +8036,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -8063,7 +8057,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -8080,7 +8074,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -8117,7 +8111,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -8125,12 +8119,12 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             4
@@ -8140,7 +8134,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -8303,7 +8297,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -8359,7 +8353,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -8368,18 +8362,18 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -8395,7 +8389,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -8451,7 +8445,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -8460,18 +8454,18 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -8487,7 +8481,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -8537,7 +8531,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -8546,18 +8540,18 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -8573,7 +8567,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr dwNMHN space-x-4"
+                      class="sc-Axmtr ejQnbO space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -8623,7 +8617,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr CTpMI justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -8632,18 +8626,18 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb font-semibold justify-end"
+                      class="sc-Axmtr CTpMI font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr cCIVgZ justify-end text-theme-neutral-light"
+                      class="sc-Axmtr sxZWC justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -8943,7 +8937,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -8952,11 +8946,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -9153,7 +9147,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0/1)
                   </span>
@@ -9166,7 +9160,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw jcWfEX"
@@ -9185,7 +9179,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="inline-block"
                       >
                         <div
-                          class="sc-AxhUy iDenJW"
+                          class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                         />
                       </span>
                     </div>
@@ -9239,7 +9233,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -9252,7 +9246,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -9265,7 +9259,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -9477,7 +9471,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -9486,13 +9480,12 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -9500,7 +9493,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -9512,7 +9505,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -9561,7 +9554,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -9573,7 +9566,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -9594,7 +9587,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -9611,7 +9604,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -9648,7 +9641,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -9656,12 +9649,12 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             4
@@ -9671,7 +9664,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -9834,7 +9827,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -9890,7 +9883,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -9899,18 +9892,18 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -9926,7 +9919,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -9982,7 +9975,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -9991,18 +9984,18 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -10018,7 +10011,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr dwNMHN space-x-4"
+                      class="sc-Axmtr ejQnbO space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -10068,7 +10061,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr CTpMI justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -10077,18 +10070,18 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb font-semibold justify-end"
+                      class="sc-Axmtr CTpMI font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr cCIVgZ justify-end text-theme-neutral-light"
+                      class="sc-Axmtr sxZWC justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -10104,7 +10097,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -10154,7 +10147,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -10163,18 +10156,18 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -10474,7 +10467,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -10483,11 +10476,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -10684,7 +10677,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (1/1)
                   </span>
@@ -10786,7 +10779,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -10799,7 +10792,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -10812,7 +10805,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -11024,7 +11017,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -11033,13 +11026,12 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -11047,7 +11039,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -11059,7 +11051,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -11108,7 +11100,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -11120,7 +11112,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -11141,7 +11133,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -11158,7 +11150,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -11195,7 +11187,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -11203,12 +11195,12 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             4
@@ -11218,7 +11210,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -11381,7 +11373,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr dwNMHN space-x-4"
+                      class="sc-Axmtr ejQnbO space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -11431,7 +11423,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr CTpMI justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -11440,18 +11432,18 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb font-semibold justify-end"
+                      class="sc-Axmtr CTpMI font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr cCIVgZ justify-end text-theme-neutral-light"
+                      class="sc-Axmtr sxZWC justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -11467,7 +11459,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -11523,7 +11515,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -11532,18 +11524,18 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -11559,7 +11551,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -11609,7 +11601,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -11618,18 +11610,18 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -11645,7 +11637,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -11695,7 +11687,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -11704,18 +11696,18 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -12015,7 +12007,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         data-testid="WalletHeader"
       >
         <div
-          class="py-8 bg-theme-neutral-900"
+          class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
             class="container flex items-center mx-auto px-14"
@@ -12024,11 +12016,11 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
             >
               <div
-                class="flex"
+                class="flex -space-x-1"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxhUy cjgpZM -mr-1 border-theme-neutral-dark text-theme-secondary-text"
+                  class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -12227,7 +12219,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     My Vote
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (1/1)
                   </span>
@@ -12329,7 +12321,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     Registrations
                   </h2>
                   <span
-                    class="ml-1 text-2xl font-bold text-theme-neutral-light"
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
                   >
                     (0)
                   </span>
@@ -12342,7 +12334,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW text-theme-neutral-light"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
                       <div
                         class="sc-AxiKw dzBdqj text-xl"
@@ -12355,7 +12347,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
                     />
                   </div>
                   <div
@@ -12567,7 +12559,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     >
                       <td>
                         <div
-                          class="sc-Axmtr fBDKCJ"
+                          class="sc-Axmtr gaELvy"
                         >
                           <a
                             class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -12576,13 +12568,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                           >
                             <div
-                              class="sc-AxiKw dzBdqj flex-shrink-0 "
-                              data-testid="Link__external"
+                              class="sc-AxiKw dzBdqj"
                               height="1em"
                               width="1em"
                             >
                               <svg>
-                                redirect.svg
+                                id.svg
                               </svg>
                             </div>
                           </a>
@@ -12590,7 +12581,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D text-theme-secondary-text"
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
                         >
                           <span
                             class="whitespace-no-wrap"
@@ -12602,7 +12593,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D space-x-4"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
                             class="flex items-center -space-x-1"
@@ -12651,7 +12642,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex space-x-1 align-middle"
@@ -12663,7 +12654,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="sc-Axmtr jaatA-D justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
                           <div
                             class="inline-flex p-1 align-middle"
@@ -12684,7 +12675,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr jaatA-D justify-end"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
                           <div
                             class="sc-fzozJi bXfNeq whitespace-no-wrap"
@@ -12701,7 +12692,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr bOVYHF justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
                             data-testid="TransactionRow__currency"
@@ -12738,7 +12729,7 @@ exports[`WalletDetails should update wallet name 1`] = `
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -12746,12 +12737,12 @@ exports[`WalletDetails should update wallet name 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             4
@@ -12761,7 +12752,7 @@ exports[`WalletDetails should update wallet name 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -12924,7 +12915,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr dwNMHN space-x-4"
+                      class="sc-Axmtr ejQnbO space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -12980,7 +12971,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr CTpMI justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -12989,18 +12980,18 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jlZiRb font-semibold justify-end"
+                      class="sc-Axmtr CTpMI font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr cCIVgZ justify-end text-theme-neutral-light"
+                      class="sc-Axmtr sxZWC justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -13016,7 +13007,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -13072,7 +13063,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -13081,18 +13072,18 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -13108,7 +13099,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -13158,7 +13149,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -13167,18 +13158,18 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -13194,7 +13185,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-Axmtr fBDKCJ space-x-4"
+                      class="sc-Axmtr gaELvy space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -13244,7 +13235,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D justify-center text-sm font-bold text-center align-middle"
+                      class="sc-Axmtr eisuEY justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -13253,18 +13244,18 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr jaatA-D font-semibold justify-end"
+                      class="sc-Axmtr eisuEY font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 0 DARK
+                        0 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-Axmtr bOVYHF justify-end text-theme-neutral-light"
+                      class="sc-Axmtr exQntG justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
