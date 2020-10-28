@@ -7,7 +7,7 @@ import { Icon } from "../Icon";
 type AlertProps = {
 	children: React.ReactNode;
 	title?: string;
-	variant?: "primary" | "success" | "danger" | "warning" | "neutral";
+	variant?: "info" | "success" | "warning" | "danger" | "hint";
 	size?: Size;
 };
 
@@ -15,11 +15,11 @@ const AlertContent = styled.div<{ size?: Size }>`
 	${({ size }) => {
 		switch (size) {
 			case "sm":
-				return tw`px-6 py-4`;
+				return tw`py-4`;
 			case "lg":
-				return tw`px-8 py-8`;
+				return tw`py-8`;
 			default:
-				return tw`px-8 py-6`;
+				return tw`py-6`;
 		}
 	}}
 `;
@@ -28,36 +28,34 @@ const AlertIconWrapper = styled.div<{ size?: Size }>`
 	${({ size }) => {
 		switch (size) {
 			case "sm":
-				return tw`px-4 py-2`;
+				return tw`px-4 py-4`;
 			case "lg":
-				return tw`px-10 py-6`;
+				return tw`px-10 py-8`;
 			default:
-				return tw`px-6 py-4`;
+				return tw`px-6 py-6`;
 		}
 	}}
 `;
 
 const AlertIcon = ({ variant }: { variant: string }) => {
 	const iconVariant: Record<string, string> = {
-		primary: "AlertDefault",
+		info: "AlertInfo",
 		success: "AlertSuccess",
+		warning: "AlertWarning",
 		danger: "AlertDanger",
-		warning: "AlertDefault",
-		neutral: "AlertDefault",
+		hint: "AlertHint",
 	};
 
-	return <Icon name={iconVariant[variant]} width={30} height={30} />;
+	return <Icon name={iconVariant[variant]} width={26} height={26} />;
 };
 
 export const Alert = ({ variant, title, size, children }: AlertProps) => (
-	<div className={`flex rounded-lg overflow-hidden bg-theme-${variant}`}>
-		<AlertIconWrapper
-			size={size}
-			className={`flex items-center justify-center text-theme-${variant} bg-theme-${variant}-200`}
-		>
+	<div className={`flex rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300`}>
+		<AlertIconWrapper size={size} className={`flex justify-center text-theme-${variant}-600`}>
 			<AlertIcon variant={variant!} />
+			<div className={`h-full border-r border-theme-${variant}-600 ml-4`} />
 		</AlertIconWrapper>
-		<AlertContent size={size} className={`flex-1 bg-theme-${variant}-100 space-y-2`}>
+		<AlertContent size={size} className="flex-1">
 			{title && (
 				<p className={`text-lg font-bold text-theme-${variant}`} data-testid="alert__title">
 					{title}
