@@ -93,7 +93,7 @@ describe("Use Ledger Scanner", () => {
 		});
 
 		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(4));
-		await waitFor(() => expect(screen.queryByText("Loading")).not.toBeInTheDocument());
+		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
 
 		expect(container).toMatchSnapshot();
 	});
