@@ -6,6 +6,7 @@ import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
+import { useDarkMode } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -18,6 +19,8 @@ type EntityTableRowItemProps = {
 export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowItemProps) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
+	const isDark = useDarkMode();
+
 	const { t } = useTranslation();
 
 	const options = [
@@ -29,7 +32,7 @@ export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowIte
 
 	return (
 		<TableRow
-			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
+			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
 			<TableCell variant="start" innerClassName="space-x-4">

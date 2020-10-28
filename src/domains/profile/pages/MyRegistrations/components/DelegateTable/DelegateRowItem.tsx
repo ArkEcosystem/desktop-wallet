@@ -6,6 +6,7 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
+import { useDarkMode } from "app/hooks";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -31,6 +32,8 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 	const [delegateInfo, setDelegateInfo] = useState<ReadOnlyWallet>();
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
+	const isDark = useDarkMode();
+
 	const { t } = useTranslation();
 
 	const options = [
@@ -48,7 +51,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 
 	return (
 		<TableRow
-			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
+			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
 			<TableCell variant="start" innerClassName="space-x-4">

@@ -16,7 +16,7 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -65,6 +65,18 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	};
 
 	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+
+	const [showWalletVote, setShowWalletVote] = useState(false);
+	const [showWalletRegistrations, setShowWalletRegistrations] = useState(false);
+
+	useLayoutEffect(() => {
+		setShowWalletVote(activeWallet.network().can("Transaction.vote"));
+		setShowWalletRegistrations(
+			activeWallet.network().can("Transaction.secondSignature") ||
+				activeWallet.network().can("Transaction.delegateRegistration") ||
+				activeWallet.network().can("Transaction.entityRegistration"),
+		);
+	}, [activeWallet]);
 
 	const coinName = activeWallet.coinId();
 	const networkId = activeWallet.networkId();
@@ -169,43 +181,49 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
 				/>
 
-				<Section marginTop={false}>
-					<div className="flex">
-						<div className="w-1/2 pr-12 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
-							<WalletVote
-								votes={activeWallet.hasSyncedWithNetwork() ? walletVotes() : []}
-								maxVotes={activeWallet.network().maximumVotesPerWallet()}
-								isLoading={isLoading}
-								onButtonClick={handleVoteButton}
-							/>
-						</div>
+				{(showWalletVote || showWalletRegistrations) && (
+					<Section marginTop={false}>
+						<div className="flex">
+							{showWalletVote && (
+								<div className="flex-1 pr-12 last:pr-0">
+									<WalletVote
+										votes={activeWallet.hasSyncedWithNetwork() ? walletVotes() : []}
+										maxVotes={activeWallet.network().maximumVotesPerWallet()}
+										isLoading={isLoading}
+										onButtonClick={handleVoteButton}
+									/>
+								</div>
+							)}
 
-						<div className="w-1/2 pl-12">
-							<WalletRegistrations
-								delegate={
-									activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
-										? {
-												username: activeWallet.username(),
-												isResigned: activeWallet.isResignedDelegate(),
-										  }
-										: undefined
-								}
-								entities={activeWallet.hasSyncedWithNetwork() ? activeWallet.entities() : []}
-								isLoading={isLoading}
-								isMultiSignature={
-									activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()
-								}
-								isSecondSignature={
-									activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()
-								}
-								onButtonClick={handleRegistrationsButton}
-							/>
+							{showWalletRegistrations && (
+								<div className="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800">
+									<WalletRegistrations
+										delegate={
+											activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
+												? {
+														username: activeWallet.username(),
+														isResigned: activeWallet.isResignedDelegate(),
+												  }
+												: undefined
+										}
+										entities={activeWallet.hasSyncedWithNetwork() ? activeWallet.entities() : []}
+										isLoading={isLoading}
+										isMultiSignature={
+											activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()
+										}
+										isSecondSignature={
+											activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()
+										}
+										onButtonClick={handleRegistrationsButton}
+									/>
+								</div>
+							)}
 						</div>
-					</div>
-				</Section>
+					</Section>
+				)}
 
-				<Section className="flex-1">
-					{pendingMultiSignatureTransactions.length ? (
+				<Section className="flex-1" marginTop={showWalletVote || showWalletRegistrations}>
+					{pendingMultiSignatureTransactions.length > 0 && (
 						<div className="mb-16">
 							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 							<SignedTransactionTable
@@ -214,7 +232,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 								onClick={setSignedTransactionModalItem}
 							/>
 						</div>
-					) : null}
+					)}
 
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}</h2>
