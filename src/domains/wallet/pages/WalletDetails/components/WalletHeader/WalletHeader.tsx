@@ -93,7 +93,7 @@ export const WalletHeader = ({
 
 	return (
 		<header data-testid="WalletHeader">
-			<div className="py-8 bg-theme-neutral-900 border-b border-theme-neutral-900 dark:border-theme-neutral-800">
+			<div className="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800">
 				<div className="container flex items-center mx-auto px-14">
 					<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800">
 						<div className="flex -space-x-1">

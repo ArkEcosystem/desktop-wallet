@@ -128,135 +128,7 @@ exports[`WalletListItem should render 1`] = `
 </div>
 `;
 
-exports[`WalletListItem should set shadow color on mouse events 1`] = `
-<DocumentFragment>
-  <table>
-    <tbody>
-      <tr
-        class="sc-AxhUy gFzLrG group"
-        data-testid="TableRow"
-      >
-        <td>
-          <div
-            class="sc-AxhCb gDwTgM space-x-4"
-          >
-            <div
-              class="-space-x-2"
-            >
-              <div
-                aria-label="ARK Devnet"
-                class="sc-AxgMl koaRDQ border-theme-primary-100 text-theme-primary-400"
-                data-testid="NetworkIcon-ARK-ark.devnet"
-              >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  data-testid="NetworkIcon__icon"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    ark.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 dxvPns"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="inline-flex items-center"
-            >
-              <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
-              >
-                ARK Wallet 1
-              </span>
-              <span
-                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                D8rr7B1d6 … VBMs6YUYD
-              </span>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="sc-AxhCb cudLTu justify-center text-sm font-bold text-center align-middle"
-          >
-            <div
-              class="inline-flex items-center space-x-2"
-            >
-              <span
-                class="text-theme-neutral-600"
-              >
-                <div
-                  class="sc-AxirZ EmuJz"
-                  height="1em"
-                  width="18"
-                >
-                  <svg>
-                    ledger.svg
-                  </svg>
-                </div>
-              </span>
-              <span
-                class="text-theme-warning-400"
-              >
-                <div
-                  class="sc-AxirZ EmuJz"
-                  height="1em"
-                  width="18"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-              </span>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="sc-AxhCb cudLTu font-semibold justify-end"
-          >
-            <span
-              data-testid="Amount"
-            >
-              33.75089801 DARK
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="sc-AxhCb lfwVtc justify-end text-theme-neutral-light"
-          >
-            <span
-              data-testid="Amount"
-            >
-              0 BTC
-            </span>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</DocumentFragment>
-`;
-
-exports[`WalletListItem should set shadow color on mouse events 2`] = `
+exports[`WalletListItem should set dark shadow color on mouse events 1`] = `
 <DocumentFragment>
   <table>
     <tbody>
@@ -370,6 +242,390 @@ exports[`WalletListItem should set shadow color on mouse events 2`] = `
         <td>
           <div
             class="sc-AxhCb jICmmE justify-end text-theme-neutral-light"
+          >
+            <span
+              data-testid="Amount"
+            >
+              0 BTC
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`WalletListItem should set dark shadow color on mouse events for selected wallet 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="sc-AxhUy gFzLrG group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="sc-AxhCb gDwTgM space-x-4"
+          >
+            <div
+              class="-space-x-2"
+            >
+              <div
+                aria-label="ARK Devnet"
+                class="sc-AxgMl kkKcXQ border-theme-primary-100 text-theme-primary-400"
+                data-testid="NetworkIcon-ARK-ark.devnet"
+              >
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 JiyBs"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex items-center"
+            >
+              <span
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                data-testid="address__wallet-name"
+              >
+                ARK Wallet 1
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B1d6 … VBMs6YUYD
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb cudLTu justify-center text-sm font-bold text-center align-middle"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <span
+                class="text-theme-neutral-600"
+              >
+                <div
+                  class="sc-AxirZ EmuJz"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    ledger.svg
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="text-theme-warning-400"
+              >
+                <div
+                  class="sc-AxirZ EmuJz"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb cudLTu font-semibold justify-end"
+          >
+            <span
+              data-testid="Amount"
+            >
+              33.75089801 DARK
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb lfwVtc justify-end text-theme-neutral-light"
+          >
+            <span
+              data-testid="Amount"
+            >
+              0 BTC
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`WalletListItem should set light shadow color on mouse events 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="sc-AxhUy gFzLrG group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="sc-AxhCb lisEJY space-x-4"
+          >
+            <div
+              class="-space-x-2"
+            >
+              <div
+                aria-label="ARK Devnet"
+                class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
+                data-testid="NetworkIcon-ARK-ark.devnet"
+              >
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex items-center"
+            >
+              <span
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                data-testid="address__wallet-name"
+              >
+                ARK Wallet 1
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B1d6 … VBMs6YUYD
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb kmFgJm justify-center text-sm font-bold text-center align-middle"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <span
+                class="text-theme-neutral-600"
+              >
+                <div
+                  class="sc-AxirZ EmuJz"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    ledger.svg
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="text-theme-warning-400"
+              >
+                <div
+                  class="sc-AxirZ EmuJz"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb kmFgJm font-semibold justify-end"
+          >
+            <span
+              data-testid="Amount"
+            >
+              33.75089801 DARK
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb jICmmE justify-end text-theme-neutral-light"
+          >
+            <span
+              data-testid="Amount"
+            >
+              0 BTC
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`WalletListItem should set light shadow color on mouse events for selected wallet 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="sc-AxhUy gFzLrG group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="sc-AxhCb gDwTgM space-x-4"
+          >
+            <div
+              class="-space-x-2"
+            >
+              <div
+                aria-label="ARK Devnet"
+                class="sc-AxgMl koaRDQ border-theme-primary-100 text-theme-primary-400"
+                data-testid="NetworkIcon-ARK-ark.devnet"
+              >
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 dxvPns"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-flex items-center"
+            >
+              <span
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                data-testid="address__wallet-name"
+              >
+                ARK Wallet 1
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B1d6 … VBMs6YUYD
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb cudLTu justify-center text-sm font-bold text-center align-middle"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <span
+                class="text-theme-neutral-600"
+              >
+                <div
+                  class="sc-AxirZ EmuJz"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    ledger.svg
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="text-theme-warning-400"
+              >
+                <div
+                  class="sc-AxirZ EmuJz"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb cudLTu font-semibold justify-end"
+          >
+            <span
+              data-testid="Amount"
+            >
+              33.75089801 DARK
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxhCb lfwVtc justify-end text-theme-neutral-light"
           >
             <span
               data-testid="Amount"
