@@ -15,10 +15,10 @@ exports[`Use Ledger Scanner should render 1`] = `
           Failed: false
         </p>
         <p>
-          Selected: true
+          Selected: false
         </p>
         <p>
-          Balance: 2
+          Balance: Loading
         </p>
       </li>
       <li>
@@ -32,10 +32,10 @@ exports[`Use Ledger Scanner should render 1`] = `
           Failed: false
         </p>
         <p>
-          Selected: true
+          Selected: false
         </p>
         <p>
-          Balance: 1
+          Balance: Loading
         </p>
       </li>
       <li>
@@ -49,10 +49,10 @@ exports[`Use Ledger Scanner should render 1`] = `
           Failed: false
         </p>
         <p>
-          Selected: true
+          Selected: false
         </p>
         <p>
-          Balance: 3
+          Balance: Loading
         </p>
       </li>
       <li>
@@ -69,7 +69,7 @@ exports[`Use Ledger Scanner should render 1`] = `
           Selected: false
         </p>
         <p>
-          Balance: 0
+          Balance: Loading
         </p>
       </li>
     </ul>
