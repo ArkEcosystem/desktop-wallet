@@ -71,6 +71,7 @@ export const LedgerTable = ({
 	network: Network;
 } & ReturnType<typeof useLedgerScanner>) => {
 	const { t } = useTranslation();
+	const isAllSelected = wallets.length > 0 && selectedWallets.length === wallets.length;
 
 	const columns = [
 		{
@@ -83,10 +84,11 @@ export const LedgerTable = ({
 		},
 		{
 			Header: (
-				<Tippy content={t("COMMON.SELECT_ALL")}>
+				<Tippy content={isAllSelected ? t("COMMON.UNSELECT_ALL") : t("COMMON.SELECT_ALL")}>
 					<Checkbox
+						data-testid="LedgerScanStep__select-all"
 						onChange={() => toggleSelectAll()}
-						checked={wallets.length > 0 && selectedWallets.length === wallets.length}
+						checked={isAllSelected}
 					/>
 				</Tippy>
 			),
@@ -156,11 +158,7 @@ export const LedgerScanStep = ({
 
 	useEffect(() => {
 		register("wallets", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
-
-		return () => {
-			unregister("wallets");
-		};
-	}, [register, unregister]);
+	}, [register]);
 
 	useEffect(() => {
 		setValue("wallets", selectedWallets, { shouldValidate: true, shouldDirty: true });

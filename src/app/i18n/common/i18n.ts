@@ -171,6 +171,7 @@ export const translations: { [key: string]: any } = {
 	TRANSFER: "Transfer",
 	TYPE: "Type",
 	UNSELECT: "Unselect",
+	UNSELECT_ALL: "Unselect All",
 	UNSELECTED: "Unselected",
 	UNVOTE: "Unvote",
 	UPDATE: "Update",

@@ -1,13 +1,17 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import Transport from "@ledgerhq/hw-transport";
+import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
+import { LedgerProvider } from "../Ledger";
 import { useLedgerScanner } from "./scanner";
 
 describe("Use Ledger Scanner", () => {
 	let profile: Profile;
 	let wallet: ReadWriteWallet;
+	let transport: typeof Transport;
 	let publicKeyPaths = new Map();
 
 	beforeAll(() => {
@@ -37,6 +41,7 @@ describe("Use Ledger Scanner", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+		transport = createTransportReplayer(RecordStore.fromString(""));
 
 		publicKeyPaths = new Map([
 			["44'/1'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],
@@ -77,7 +82,11 @@ describe("Use Ledger Scanner", () => {
 			);
 		};
 
-		const { container } = render(<Component />);
+		const { container } = render(
+			<LedgerProvider transport={transport}>
+				<Component />
+			</LedgerProvider>,
+		);
 
 		act(() => {
 			fireEvent.click(screen.getByRole("button"));

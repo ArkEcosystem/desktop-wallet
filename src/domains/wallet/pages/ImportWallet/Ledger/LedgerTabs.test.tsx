@@ -150,7 +150,7 @@ describe("LedgerTabs", () => {
 
 		// Auto redirect to next step
 		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(3));
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(5));
 
 		getPublicKeySpy.mockReset();
 	});
@@ -227,7 +227,7 @@ describe("LedgerTabs", () => {
 		renderWithRouter(<Component />, { routes: [`/profiles/${profile.id()}`] });
 
 		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(3));
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(5));
 
 		expect(profile.wallets().values()).toHaveLength(2);
 
@@ -238,10 +238,10 @@ describe("LedgerTabs", () => {
 		await waitFor(() => expect(screen.getByTestId("LedgerImportStep")).toBeInTheDocument());
 
 		// Import wallets before entering the last step
-		expect(profile.wallets().values()).toHaveLength(4);
+		expect(profile.wallets().values()).toHaveLength(3);
 
 		act(() => {
-			fireEvent.input(screen.getAllByTestId("ImportWallet__name-input")[1], {
+			fireEvent.input(screen.getAllByTestId("ImportWallet__name-input")[0], {
 				target: {
 					value: "Custom Name",
 				},

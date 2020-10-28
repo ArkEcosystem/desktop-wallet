@@ -9,6 +9,7 @@ import { createRange, searchAddresses, searchWallets } from "./scanner.utils";
 export const useLedgerScanner = (coin: string, network: string, profile: Profile) => {
 	const { env } = useEnvironmentContext();
 	const { setBusy, setIdle } = useLedgerContext();
+
 	const [state, dispatch] = useReducer(scannerReducer, {
 		page: 0,
 		selected: [],
@@ -55,9 +56,11 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 
 	// Actions - Scan
 
-	const scanInit = useCallback(() => scan(createRange(0, limitPerPage)), [scan]);
 	const scanMore = useCallback(() => scan(createRange(page, limitPerPage)), [scan, page]);
 	const scanRetry = useCallback(() => scan(failed), [scan, failed]);
+
+	// Recursive callback that will increase the page
+	// and run on each re-rendering until it finds a new wallet or fail
 	const scanUntilNewOrFail = useCallback(async () => {
 		if (hasNewWallet || canRetry) {
 			return;
@@ -77,7 +80,6 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 		isFailed,
 		isLoading,
 		isSelected,
-		scanInit,
 		scanMore,
 		scanRetry,
 		scanUntilNewOrFail,

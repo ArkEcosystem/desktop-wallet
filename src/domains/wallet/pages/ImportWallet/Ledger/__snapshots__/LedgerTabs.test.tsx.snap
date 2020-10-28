@@ -4,19 +4,19 @@ exports[`LedgerTabs should render connection step 1`] = `
 <div>
   <div>
     <ul
-      class="sc-AxhCb jRNSUv"
+      class="sc-AxhUy dqZzRu"
     >
       <li
-        class="sc-AxiKw dTMwbM"
+        class="sc-AxhCb hZvNDs"
       />
       <li
-        class="sc-AxiKw gMzoQF"
+        class="sc-AxhCb ehiyCR"
       />
       <li
-        class="sc-AxiKw gMzoQF"
+        class="sc-AxhCb ehiyCR"
       />
       <li
-        class="sc-AxiKw gMzoQF"
+        class="sc-AxhCb ehiyCR"
       />
     </ul>
     <div
@@ -49,7 +49,7 @@ exports[`LedgerTabs should render connection step 1`] = `
             </div>
           </div>
           <fieldset
-            class="sc-AxheI dThsOi flex flex-col space-y-2"
+            class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -82,7 +82,7 @@ exports[`LedgerTabs should render connection step 1`] = `
                     class="sc-fzoLsD sc-fzpans kLdrHH px-4"
                   >
                     <div
-                      class="sc-Axmtr WRRDf border-theme-neutral-light text-theme-neutral"
+                      class="sc-AxmLO hSwYaC border-theme-neutral-light text-theme-neutral"
                       data-testid="SelectNetworkInput__network"
                     />
                   </div>
@@ -111,26 +111,31 @@ exports[`LedgerTabs should render connection step 1`] = `
       </div>
     </div>
     <div
-      class="flex justify-end mt-10 space-x-3"
+      class="flex justify-between mt-10"
     >
-      <button
-        class="sc-AxjAm joLCoM"
-        color="primary"
-        data-testid="Paginator__back-button"
-        disabled=""
-        type="button"
+      <div />
+      <div
+        class="flex space-x-3"
       >
-        Back
-      </button>
-      <button
-        class="sc-AxjAm BsmvP"
-        color="primary"
-        data-testid="Paginator__continue-button"
-        disabled=""
-        type="button"
-      >
-        Continue
-      </button>
+        <button
+          class="sc-AxjAm fCKjFI"
+          color="primary"
+          data-testid="Paginator__back-button"
+          disabled=""
+          type="button"
+        >
+          Back
+        </button>
+        <button
+          class="sc-AxjAm colAFb"
+          color="primary"
+          data-testid="Paginator__continue-button"
+          disabled=""
+          type="button"
+        >
+          Continue
+        </button>
+      </div>
     </div>
   </div>
 </div>

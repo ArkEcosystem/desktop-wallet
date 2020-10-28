@@ -25,7 +25,11 @@ describe("LedgerScanStep", () => {
 				data: [
 					{
 						address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
-						balance: "0",
+						balance: "2",
+					},
+					{
+						address: "DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve",
+						balance: "3",
 					},
 				],
 			})
@@ -82,24 +86,25 @@ describe("LedgerScanStep", () => {
 
 		const { container } = render(<Component />);
 
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(3));
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(5));
 		await waitFor(() => expect(screen.getByText("DJpFwW … DJ28jq")).toBeInTheDocument());
 
-		await waitFor(() => expect(screen.getAllByRole("checkbox")).toHaveLength(2));
+		await waitFor(() => expect(screen.getAllByRole("checkbox")).toHaveLength(5));
+
 		await waitFor(() =>
 			expect(formRef.getValues("wallets")).toMatchObject([
 				{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", index: 0 },
-				{ address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", index: 2, isNew: true },
+				{ address: "DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve", index: 3 },
 			]),
 		);
 
 		act(() => {
-			fireEvent.click(screen.getAllByRole("checkbox")[0]);
+			fireEvent.click(screen.getAllByRole("checkbox")[1]);
 		});
 
 		await waitFor(() =>
 			expect(formRef.getValues("wallets")).toMatchObject([
-				{ address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", index: 2, isNew: true },
+				{ address: "DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve", index: 3 },
 			]),
 		);
 

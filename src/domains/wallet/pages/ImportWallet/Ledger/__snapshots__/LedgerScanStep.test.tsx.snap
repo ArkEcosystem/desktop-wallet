@@ -25,7 +25,7 @@ exports[`LedgerScanStep should render 1`] = `
       </div>
     </div>
     <fieldset
-      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+      class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -51,19 +51,19 @@ exports[`LedgerScanStep should render 1`] = `
             id="ImportWallet__network-label"
           />
           <div
-            class="sc-fznyAO dnZZBi"
+            class="sc-fzokOt feJGYk"
             data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-fzoLsD sc-fzpans kLdrHH px-4"
+              class="sc-fznyAO sc-fznKkj dKbLCT px-4"
             >
               <div
                 aria-label="ARK Devnet"
-                class="sc-AxmLO hSwYaC border-theme-primary-100 text-theme-primary-400"
+                class="sc-AxheI iJrbEo border-theme-primary-100 text-theme-primary-400"
                 data-testid="SelectNetworkInput__network"
               >
                 <div
-                  class="sc-AxhUy hSYVGy"
+                  class="sc-AxirZ eEbZjj"
                   data-testid="NetworkIcon__icon"
                   height="20"
                   width="20"
@@ -79,7 +79,7 @@ exports[`LedgerScanStep should render 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-fzozJi gNOhWM overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzplWN fiVAA-D overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -97,7 +97,7 @@ exports[`LedgerScanStep should render 1`] = `
       </div>
     </fieldset>
     <div
-      class="sc-AxgMl bcDffM -mt-3"
+      class="sc-fzozJi foZcox -mt-3"
       role="table"
     >
       <table
@@ -110,7 +110,7 @@ exports[`LedgerScanStep should render 1`] = `
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -128,7 +128,7 @@ exports[`LedgerScanStep should render 1`] = `
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxhUy bOJNLB"
+                    class="sc-AxirZ jMwzyA"
                     height="12"
                     width="15"
                   >
@@ -140,7 +140,7 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -158,7 +158,7 @@ exports[`LedgerScanStep should render 1`] = `
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxhUy bOJNLB"
+                    class="sc-AxirZ jMwzyA"
                     height="12"
                     width="15"
                   >
@@ -170,16 +170,21 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center pr-3"
               >
                 <div>
-                  Select
+                  <input
+                    class="sc-AxgMl ldaxEm"
+                    color="success"
+                    data-testid="LedgerScanStep__select-all"
+                    type="checkbox"
+                  />
                 </div>
               </div>
             </th>
@@ -189,12 +194,12 @@ exports[`LedgerScanStep should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-Axmtr rUOKR group"
+            class="sc-fzpans dLtzIH group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxheI hqJHZW space-x-3"
+                class="sc-fzoLsD crljEb space-x-3"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
@@ -211,10 +216,10 @@ exports[`LedgerScanStep should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     DJpFwW … DJ28jq
@@ -222,23 +227,27 @@ exports[`LedgerScanStep should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-64"
+            >
               <div
-                class="sc-AxheI jcbimQ font-semibold"
+                class="sc-fzoLsD iIOjwN justify-end font-semibold"
               >
-                <span
-                  data-testid="Amount"
-                >
-                  0 DARK
-                </span>
+                <div>
+                  <span
+                    data-testid="Amount"
+                  >
+                    0.00000002 DARK
+                  </span>
+                </div>
               </div>
             </td>
             <td>
               <div
-                class="sc-AxheI jcbimQ justify-center"
+                class="sc-fzoLsD iIOjwN justify-center"
               >
                 <input
-                  class="sc-AxirZ dMNlTF"
+                  class="sc-AxgMl ldaxEm"
                   color="success"
                   type="checkbox"
                 />
@@ -246,12 +255,12 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
           </tr>
           <tr
-            class="sc-Axmtr rUOKR group"
+            class="sc-fzpans dLtzIH group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxheI jMktVy space-x-3"
+                class="sc-fzoLsD crljEb space-x-3"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
@@ -268,10 +277,10 @@ exports[`LedgerScanStep should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-block truncate align-middle"
+                  class="inline-flex items-center"
                 >
                   <span
-                    class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                    class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     DRgF3P … Ay23ES
@@ -279,23 +288,149 @@ exports[`LedgerScanStep should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="w-64"
+            >
               <div
-                class="sc-AxheI gAPAsk font-semibold"
+                class="sc-fzoLsD iIOjwN justify-end font-semibold"
               >
-                <span
-                  data-testid="Amount"
-                >
-                  0 DARK
-                </span>
+                <div>
+                  <span
+                    data-testid="Amount"
+                  >
+                    0 DARK
+                  </span>
+                </div>
               </div>
             </td>
             <td>
               <div
-                class="sc-AxheI gAPAsk justify-center"
+                class="sc-fzoLsD iIOjwN justify-center"
               >
                 <input
-                  class="sc-AxirZ dMNlTF"
+                  class="sc-AxgMl ldaxEm"
+                  color="success"
+                  type="checkbox"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="sc-fzpans dLtzIH group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-fzoLsD bMmqGb space-x-3"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      title="DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="inline-flex items-center"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    DSyG9h … Ldw2ve
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-64"
+            >
+              <div
+                class="sc-fzoLsD eyMXSh justify-end font-semibold"
+              >
+                <div>
+                  <span
+                    data-testid="Amount"
+                  >
+                    0.00000003 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-fzoLsD eyMXSh justify-center"
+              >
+                <input
+                  class="sc-AxgMl ldaxEm"
+                  color="success"
+                  type="checkbox"
+                />
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="sc-fzpans dLtzIH group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-fzoLsD crljEb space-x-3"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="inline-flex items-center"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    DFJ5Z5 … LZkc6T
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-64"
+            >
+              <div
+                class="sc-fzoLsD iIOjwN justify-end font-semibold"
+              >
+                <div>
+                  <span
+                    data-testid="Amount"
+                  >
+                    0 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="sc-fzoLsD iIOjwN justify-center"
+              >
+                <input
+                  class="sc-AxgMl ldaxEm"
                   color="success"
                   type="checkbox"
                 />
@@ -304,6 +439,17 @@ exports[`LedgerScanStep should render 1`] = `
           </tr>
         </tbody>
       </table>
+    </div>
+    <div>
+      <button
+        class="sc-AxhUy bnigta w-full"
+        color="primary"
+        type="button"
+      >
+        <span>
+          View More
+        </span>
+      </button>
     </div>
   </section>
 </div>
