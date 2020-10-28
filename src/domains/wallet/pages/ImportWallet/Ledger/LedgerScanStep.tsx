@@ -37,7 +37,10 @@ const AmountWrapper = ({
 
 	if (isLoading) {
 		return (
-			<span className="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800">
+			<span
+				data-testid="LedgerScanStep__amount-skeleton"
+				className="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+			>
 				<Skeleton height={16} width={amountWidth} />
 				<Skeleton height={16} width={35} />
 			</span>
@@ -46,7 +49,10 @@ const AmountWrapper = ({
 
 	if (isFailed) {
 		return (
-			<div className="flex items-center space-x-3 text-theme-danger-400">
+			<div
+				data-testid="LedgerScanStep__amount-error"
+				className="flex items-center space-x-3 text-theme-danger-400"
+			>
 				<Circle className="border-theme-danger-400" noShadow size="sm">
 					<Icon name="CrossSlim" />
 				</Circle>
@@ -171,8 +177,8 @@ export const LedgerScanStep = ({
 	return (
 		<section data-testid="LedgerScanStep" className="space-y-8">
 			<Header
-				title={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_CONNECTION_STEP.TITLE")}
-				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_CONNECTION_STEP.SUBTITLE")}
+				title={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_SCAN_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_SCAN_STEP.SUBTITLE")}
 			/>
 
 			<FormField name="network">
@@ -187,6 +193,7 @@ export const LedgerScanStep = ({
 			<Tooltip content={t("COMMON.LEDGER_DISCONNECTED")} disabled={isConnected}>
 				<div>
 					<Button
+						data-testid="LedgerScanStep__view-more"
 						variant="plain"
 						className="w-full"
 						disabled={!isConnected || canRetry || isBusy}

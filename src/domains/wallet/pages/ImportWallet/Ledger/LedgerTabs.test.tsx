@@ -25,6 +25,10 @@ describe("LedgerTabs", () => {
 				meta: {},
 				data: [
 					{
+						address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES",
+						balance: "1",
+					},
+					{
 						address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
 						balance: "0",
 					},
@@ -238,10 +242,10 @@ describe("LedgerTabs", () => {
 		await waitFor(() => expect(screen.getByTestId("LedgerImportStep")).toBeInTheDocument());
 
 		// Import wallets before entering the last step
-		expect(profile.wallets().values()).toHaveLength(3);
+		expect(profile.wallets().values()).toHaveLength(4);
 
 		act(() => {
-			fireEvent.input(screen.getAllByTestId("ImportWallet__name-input")[0], {
+			fireEvent.input(screen.getAllByTestId("ImportWallet__name-input")[1], {
 				target: {
 					value: "Custom Name",
 				},
@@ -253,6 +257,70 @@ describe("LedgerTabs", () => {
 		});
 
 		await waitFor(() => expect(profile.wallets().last().alias()).toBe("Custom Name"));
+
+		getPublicKeySpy.mockReset();
+	});
+
+	it("should render scan step with failing fetch", async () => {
+		nock.cleanAll();
+
+		nock("https://dwallets.ark.io/api")
+			.get("/wallets")
+			.query((params) => !!params.address)
+			.replyWithError(new Error("Failed"))
+			.persist();
+
+		const getPublicKeySpy = jest
+			.spyOn(wallet.coin().ledger(), "getPublicKey")
+			.mockImplementation((path) => Promise.resolve(publicKeyPaths.get(path)!));
+
+		const Component = () => {
+			const form = useForm({
+				mode: "onChange",
+				defaultValues: {
+					network: wallet.network(),
+				},
+			});
+
+			const { register } = form;
+
+			useEffect(() => {
+				register("network");
+			}, [register]);
+
+			return (
+				<FormProvider {...form}>
+					<BaseComponent activeIndex={2} />
+				</FormProvider>
+			);
+		};
+
+		const { container } = renderWithRouter(<Component />, { routes: [`/profiles/${profile.id()}`] });
+
+		await waitFor(() => expect(screen.getByTestId("LedgerConnectionStep")).toBeInTheDocument());
+
+		// Auto redirect to next step
+		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
+		await waitFor(() => expect(screen.queryAllByTestId("LedgerScanStep__amount-error")).toHaveLength(2));
+
+		expect(screen.getByTestId("LedgerScanStep__view-more")).toBeDisabled();
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("Paginator__retry-button"));
+		});
+
+		await waitFor(() => expect(screen.queryAllByTestId("LedgerScanStep__amount-skeleton")).toHaveLength(0), {
+			interval: 5,
+		});
+		await waitFor(() => expect(screen.queryAllByTestId("LedgerScanStep__amount-error")).toHaveLength(2));
+
+		expect(container).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(backSelector());
+		});
+
+		await waitFor(() => expect(screen.getByTestId("SelectNetwork")).toBeInTheDocument());
 
 		getPublicKeySpy.mockReset();
 	});

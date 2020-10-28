@@ -104,6 +104,11 @@ export const translations: { [key: string]: any } = {
 			SUBTITLE: "Information from your device is expected",
 		},
 
+		LEDGER_SCAN_STEP: {
+			TITLE: "Accounts",
+			SUBTITLE: "Select the addresses that you want to import",
+		},
+
 		METHOD_STEP: {
 			TITLE: "Import Wallet",
 			SUBTITLE:
