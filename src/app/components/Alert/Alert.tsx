@@ -49,15 +49,27 @@ const AlertIcon = ({ variant }: { variant: string }) => {
 	return <Icon name={iconVariant[variant]} width={26} height={26} />;
 };
 
+const getColorVariant = ({ variant }: { vartian: string }) => {
+	const colorVariant: Record<string, string> = {
+		info: "primary",
+		success: "success",
+		warning: "warning",
+		danger: "danger",
+		hint: "hint",
+	};
+
+	return colorVariant[variant];
+};
+
 export const Alert = ({ variant, title, size, children }: AlertProps) => (
 	<div className={`flex rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300`}>
-		<AlertIconWrapper size={size} className={`flex justify-center text-theme-${variant}-600`}>
+		<AlertIconWrapper size={size} className={`flex justify-center text-theme-${getColorVariant(variant)}-600`}>
 			<AlertIcon variant={variant!} />
-			<div className={`h-full border-r border-theme-${variant}-600 ml-4`} />
+			<div className={`h-full border-r border-theme-${getColorVariant(variant)}-600 ml-4`} />
 		</AlertIconWrapper>
 		<AlertContent size={size} className="flex-1">
 			{title && (
-				<p className={`text-lg font-bold text-theme-${variant}`} data-testid="alert__title">
+				<p className={`text-lg font-bold text-theme-${getColorVariant(variant)}`} data-testid="alert__title">
 					{title}
 				</p>
 			)}
