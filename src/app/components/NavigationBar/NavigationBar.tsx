@@ -319,10 +319,11 @@ NavigationBar.defaultProps = {
 			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
 		},
 		{
+			icon: "Redirect",
+			isExternal: true,
 			label: "Support",
 			value: "support",
 			mountPath: () => "https://ark.io/contact",
-			isExternal: true,
 		},
 		{
 			label: "Exit",
