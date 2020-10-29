@@ -72,7 +72,7 @@ export const Wallets = ({
 		},
 		{
 			Header: t("COMMON.FIAT_VALUE"),
-			accessor: "fiat",
+			accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet.convertedBalance?.().toFixed(),
 			className: "justify-end",
 		},
 	];
