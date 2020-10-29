@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-.tippy-box {
-  max-width: 96%;
-  max-width: calc(100% - 20px);
-}
-
-@media (min-width: 1024px) {
-  .tippy-box {
-    max-width: 600px;
-    @apply break-all;
-  }
-}
-
-.theme-dark .tippy-arrow {
-  color: var(--theme-color-neutral-700);
-}
-
-.theme-dark .tippy-box {
-  background-color: var(--theme-color-neutral-700);
-  color: var(--theme-color-neutral-200);
-=======
 @import "tippy.js/dist/tippy.css";
 
 .tippy-box {
@@ -50,5 +29,4 @@
 
 .tippy-box[data-theme~="dark"] .tippy-arrow {
 	color: var(--theme-color-neutral-700);
->>>>>>> develop
 }

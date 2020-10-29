@@ -95,7 +95,7 @@ exports[`Transactions should render with transactions 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -125,7 +125,7 @@ exports[`Transactions should render with transactions 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96"
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -207,7 +207,7 @@ exports[`Transactions should render with transactions 1`] = `
           >
             <td>
               <div
-                class="sc-AxhCb ktNNWH"
+                class="sc-AxhCb lisEJY"
               >
                 <a
                   class="sc-AxmLO fFHGCy inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -216,13 +216,12 @@ exports[`Transactions should render with transactions 1`] = `
                   to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
                   <div
-                    class="sc-AxirZ iQaTP flex-shrink-0 "
-                    data-testid="Link__external"
+                    class="sc-AxirZ iQaTP"
                     height="1em"
                     width="1em"
                   >
                     <svg>
-                      redirect.svg
+                      id.svg
                     </svg>
                   </div>
                 </a>
@@ -230,9 +229,10 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR text-theme-secondary-text"
+                class="sc-AxhCb kmFgJm text-theme-secondary-text"
               >
                 <span
+                  class="whitespace-no-wrap"
                   data-testid="TransactionRow__timestamp"
                 >
                   31 Jul 2020 16:34:41
@@ -241,7 +241,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR space-x-4"
+                class="sc-AxhCb kmFgJm space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -290,7 +290,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR justify-center"
+                class="sc-AxhCb kmFgJm justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -317,7 +317,7 @@ exports[`Transactions should render with transactions 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxhCb bdOpBR justify-center"
+                class="sc-AxhCb kmFgJm justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -338,10 +338,10 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR justify-end"
+                class="sc-AxhCb kmFgJm justify-end"
               >
                 <div
-                  class="sc-AxgMl iBQFZY"
+                  class="sc-AxgMl iBQFZY whitespace-no-wrap"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -355,7 +355,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb ffkQgz justify-end"
+                class="sc-AxhCb jICmmE justify-end"
               />
             </td>
           </tr>
@@ -365,7 +365,7 @@ exports[`Transactions should render with transactions 1`] = `
           >
             <td>
               <div
-                class="sc-AxhCb ktNNWH"
+                class="sc-AxhCb lisEJY"
               >
                 <a
                   class="sc-AxmLO fFHGCy inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -374,13 +374,12 @@ exports[`Transactions should render with transactions 1`] = `
                   to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
                   <div
-                    class="sc-AxirZ iQaTP flex-shrink-0 "
-                    data-testid="Link__external"
+                    class="sc-AxirZ iQaTP"
                     height="1em"
                     width="1em"
                   >
                     <svg>
-                      redirect.svg
+                      id.svg
                     </svg>
                   </div>
                 </a>
@@ -388,9 +387,10 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR text-theme-secondary-text"
+                class="sc-AxhCb kmFgJm text-theme-secondary-text"
               >
                 <span
+                  class="whitespace-no-wrap"
                   data-testid="TransactionRow__timestamp"
                 >
                   31 Jul 2020 16:34:41
@@ -399,7 +399,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR space-x-4"
+                class="sc-AxhCb kmFgJm space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -448,7 +448,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR justify-center"
+                class="sc-AxhCb kmFgJm justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -475,7 +475,7 @@ exports[`Transactions should render with transactions 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxhCb bdOpBR justify-center"
+                class="sc-AxhCb kmFgJm justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -496,10 +496,10 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR justify-end"
+                class="sc-AxhCb kmFgJm justify-end"
               >
                 <div
-                  class="sc-AxgMl iBQFZY"
+                  class="sc-AxgMl iBQFZY whitespace-no-wrap"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -513,7 +513,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb ffkQgz justify-end"
+                class="sc-AxhCb jICmmE justify-end"
               />
             </td>
           </tr>
@@ -523,7 +523,7 @@ exports[`Transactions should render with transactions 1`] = `
           >
             <td>
               <div
-                class="sc-AxhCb ktNNWH"
+                class="sc-AxhCb lisEJY"
               >
                 <a
                   class="sc-AxmLO fFHGCy inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -532,13 +532,12 @@ exports[`Transactions should render with transactions 1`] = `
                   to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
                   <div
-                    class="sc-AxirZ iQaTP flex-shrink-0 "
-                    data-testid="Link__external"
+                    class="sc-AxirZ iQaTP"
                     height="1em"
                     width="1em"
                   >
                     <svg>
-                      redirect.svg
+                      id.svg
                     </svg>
                   </div>
                 </a>
@@ -546,9 +545,10 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR text-theme-secondary-text"
+                class="sc-AxhCb kmFgJm text-theme-secondary-text"
               >
                 <span
+                  class="whitespace-no-wrap"
                   data-testid="TransactionRow__timestamp"
                 >
                   31 Jul 2020 16:34:41
@@ -557,7 +557,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR space-x-4"
+                class="sc-AxhCb kmFgJm space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -622,7 +622,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR justify-center"
+                class="sc-AxhCb kmFgJm justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -649,7 +649,7 @@ exports[`Transactions should render with transactions 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxhCb bdOpBR justify-center"
+                class="sc-AxhCb kmFgJm justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -670,10 +670,10 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR justify-end"
+                class="sc-AxhCb kmFgJm justify-end"
               >
                 <div
-                  class="sc-AxgMl iBQFZY"
+                  class="sc-AxgMl iBQFZY whitespace-no-wrap"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -687,7 +687,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb ffkQgz justify-end"
+                class="sc-AxhCb jICmmE justify-end"
               />
             </td>
           </tr>
@@ -697,7 +697,7 @@ exports[`Transactions should render with transactions 1`] = `
           >
             <td>
               <div
-                class="sc-AxhCb ktNNWH"
+                class="sc-AxhCb lisEJY"
               >
                 <a
                   class="sc-AxmLO fFHGCy inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -706,13 +706,12 @@ exports[`Transactions should render with transactions 1`] = `
                   to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                 >
                   <div
-                    class="sc-AxirZ iQaTP flex-shrink-0 "
-                    data-testid="Link__external"
+                    class="sc-AxirZ iQaTP"
                     height="1em"
                     width="1em"
                   >
                     <svg>
-                      redirect.svg
+                      id.svg
                     </svg>
                   </div>
                 </a>
@@ -720,9 +719,10 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR text-theme-secondary-text"
+                class="sc-AxhCb kmFgJm text-theme-secondary-text"
               >
                 <span
+                  class="whitespace-no-wrap"
                   data-testid="TransactionRow__timestamp"
                 >
                   31 Jul 2020 16:34:41
@@ -731,7 +731,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR space-x-4"
+                class="sc-AxhCb kmFgJm space-x-4"
               >
                 <div
                   class="flex items-center -space-x-1"
@@ -796,7 +796,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR justify-center"
+                class="sc-AxhCb kmFgJm justify-center"
               >
                 <div
                   class="inline-flex space-x-1 align-middle"
@@ -823,7 +823,7 @@ exports[`Transactions should render with transactions 1`] = `
               class="w-16"
             >
               <div
-                class="sc-AxhCb bdOpBR justify-center"
+                class="sc-AxhCb kmFgJm justify-center"
               >
                 <div
                   class="inline-flex p-1 align-middle"
@@ -844,10 +844,10 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb bdOpBR justify-end"
+                class="sc-AxhCb kmFgJm justify-end"
               >
                 <div
-                  class="sc-AxgMl iBQFZY"
+                  class="sc-AxgMl iBQFZY whitespace-no-wrap"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -861,7 +861,7 @@ exports[`Transactions should render with transactions 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxhCb ffkQgz justify-end"
+                class="sc-AxhCb jICmmE justify-end"
               />
             </td>
           </tr>
