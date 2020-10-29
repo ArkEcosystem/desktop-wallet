@@ -9,6 +9,7 @@ import { Icon } from "app/components/Icon";
 import { SearchResource } from "app/components/SearchResource";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
+import { useDarkMode } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -39,11 +40,13 @@ const SearchWalletListItem = ({
 }: SearchWalletListItemProps) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
+	const isDark = useDarkMode();
+
 	const { t } = useTranslation();
 
 	return (
 		<TableRow
-			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
+			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
 			<TableCell variant="start">

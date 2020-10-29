@@ -1,4 +1,5 @@
 import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -65,7 +66,9 @@ describe("SearchWallet", () => {
 		expect(onClose).toHaveBeenCalled();
 	});
 
-	it("should set shadow color on mouse events", () => {
+	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");
 
@@ -84,7 +87,9 @@ describe("SearchWallet", () => {
 		fireEvent.mouseEnter(getByText(wallets[0].alias()));
 		fireEvent.mouseLeave(getByText(wallets[0].alias()));
 
-		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+		expect(setState).toHaveBeenCalledWith(
+			theme === "dark" ? "--theme-color-neutral-800" : "--theme-color-neutral-100",
+		);
 		expect(setState).toHaveBeenCalledWith("");
 	});
 });

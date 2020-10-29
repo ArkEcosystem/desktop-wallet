@@ -1,4 +1,5 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
@@ -227,7 +228,9 @@ describe("Signed Transaction Table", () => {
 		awaitingMock.mockReset();
 	});
 
-	it("should set shadow colors on mouse events", async () => {
+	it.each(["light", "dark"])("should set %s shadow color on mouse events", async (theme) => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+
 		render(<SignedTransactionTable transactions={[fixtures.multiSignature]} wallet={wallet} />);
 		act(() => {
 			fireEvent.mouseEnter(screen.getAllByRole("row")[1]);
