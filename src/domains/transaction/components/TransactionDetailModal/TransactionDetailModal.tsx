@@ -22,6 +22,7 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 	const activeProfile = useActiveProfile();
 
 	const senderWallet = useMemo(() => activeProfile.wallets().findByAddress(transactionItem.sender()), [
+		activeProfile,
 		transactionItem,
 	]);
 	const wallet = useMemo(() => transactionItem.wallet(), [transactionItem]);
