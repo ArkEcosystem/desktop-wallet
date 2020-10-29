@@ -4,7 +4,6 @@ import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
@@ -47,9 +46,6 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					<div className="flex-1 space-y-2">
 						<div className="text-theme-neutral">
 							<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
-							<Label color="warning" variant="solid">
-								<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
-							</Label>
 						</div>
 						<Address address={wallet.address()} walletName={wallet.alias()} />
 					</div>

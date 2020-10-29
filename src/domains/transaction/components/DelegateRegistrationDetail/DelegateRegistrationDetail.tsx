@@ -25,12 +25,7 @@ export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: Del
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				alias={wallet.alias()}
-				labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} alias={wallet.alias()} border={false} />
 
 			<TransactionDetail
 				label={t("TRANSACTION.DELEGATE_NAME")}

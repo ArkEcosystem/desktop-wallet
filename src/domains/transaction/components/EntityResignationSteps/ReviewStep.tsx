@@ -26,11 +26,7 @@ export const ReviewStep = ({ entity, fees }: EntityResignationStepProps) => {
 			<div>
 				<TransactionNetwork network={entity.wallet().network()} border={false} paddingPosition="bottom" />
 
-				<TransactionSender
-					address={entity.wallet().address()}
-					alias={entity.wallet().alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
-				/>
+				<TransactionSender address={entity.wallet().address()} alias={entity.wallet().alias()} />
 
 				<TransactionDetail label={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.ENTITY_NAME")}>
 					{data.name}
