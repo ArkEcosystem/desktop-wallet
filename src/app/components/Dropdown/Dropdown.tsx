@@ -7,6 +7,7 @@ import { Position, Size } from "types";
 import { defaultClasses, getStyles } from "./Dropdown.styles";
 
 export type DropdownOption = {
+	icon?: string;
 	label: string;
 	value: string | number;
 };
@@ -41,7 +42,9 @@ const renderOptions = (options: DropdownOption[], onSelect: any) => (
 					e.stopPropagation();
 				}}
 			>
-				{option.label}
+				<div className={`${option?.icon ? "inline-flex space-x-2 items-center" : ""}`}>
+					<span>{option.label}</span> {option?.icon && <Icon name={option.icon} />}
+				</div>
 			</li>
 		))}
 	</ul>
