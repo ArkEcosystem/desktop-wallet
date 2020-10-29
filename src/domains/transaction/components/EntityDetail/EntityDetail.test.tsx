@@ -8,11 +8,7 @@ import { EntityDetail } from "./EntityDetail";
 describe("EntityDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
-			<EntityDetail
-				isOpen={false}
-				transaction={TransactionFixture}
-				wallet={TransactionFixture.wallet()}
-			/>
+			<EntityDetail isOpen={false} transaction={TransactionFixture} wallet={TransactionFixture.wallet()} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);

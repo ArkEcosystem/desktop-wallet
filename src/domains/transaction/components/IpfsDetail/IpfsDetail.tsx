@@ -21,22 +21,12 @@ type IpfsDetailProps = {
 	onClose?: any;
 };
 
-export const IpfsDetail = ({
-	isOpen,
-	senderWallet,
-	transaction,
-	wallet,
-	onClose,
-}: IpfsDetailProps) => {
+export const IpfsDetail = ({ isOpen, senderWallet, transaction, wallet, onClose }: IpfsDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_IPFS_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				wallet={senderWallet}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} wallet={senderWallet} border={false} />
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 

@@ -21,22 +21,12 @@ type MultiPaymentDetailProps = {
 	onClose?: any;
 };
 
-export const MultiPaymentDetail = ({
-	isOpen,
-	senderWallet,
-	transaction,
-	wallet,
-	onClose,
-}: MultiPaymentDetailProps) => {
+export const MultiPaymentDetail = ({ isOpen, senderWallet, transaction, wallet, onClose }: MultiPaymentDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				wallet={senderWallet}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} wallet={senderWallet} border={false} />
 
 			<TransactionRecipients currency={wallet.currency()} recipients={transaction.recipients()} />
 

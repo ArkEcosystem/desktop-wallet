@@ -20,13 +20,7 @@ type VoteDetailProps = {
 	onClose?: () => void;
 };
 
-export const VoteDetail = ({
-	isOpen,
-	senderWallet,
-	transaction,
-	wallet,
-	onClose,
-}: VoteDetailProps) => {
+export const VoteDetail = ({ isOpen, senderWallet, transaction, wallet, onClose }: VoteDetailProps) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
@@ -58,11 +52,7 @@ export const VoteDetail = ({
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_VOTE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				wallet={senderWallet}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} wallet={senderWallet} border={false} />
 
 			<TransactionVotes isLoading={isLoadingDelegates} {...delegates} />
 

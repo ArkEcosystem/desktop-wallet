@@ -7,7 +7,7 @@ import {
 	TransactionSender,
 	TransactionTimestamp,
 } from "domains/transaction/components/TransactionDetail";
-import React, { useMemo } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 
 type EntityDetailProps = {
@@ -18,13 +18,7 @@ type EntityDetailProps = {
 	onClose?: any;
 };
 
-export const EntityDetail = ({
-	isOpen,
-	senderWallet,
-	transaction,
-	wallet,
-	onClose,
-}: EntityDetailProps) => {
+export const EntityDetail = ({ isOpen, senderWallet, transaction, wallet, onClose }: EntityDetailProps) => {
 	const { t } = useTranslation();
 
 	const getEntityTitle = () => {
@@ -83,11 +77,7 @@ export const EntityDetail = ({
 
 	return (
 		<Modal title={getEntityTitle()} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				wallet={senderWallet}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} wallet={senderWallet} border={false} />
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 

@@ -20,10 +20,15 @@ describe("TransactionSender", () => {
 	});
 
 	it("should render the alias if available", () => {
-		const { container } = render(<TransactionSender address={wallet.address()} wallet={{
-			...wallet,
-			alias: () => "test-alias",
-		}} />);
+		const { container } = render(
+			<TransactionSender
+				address={wallet.address()}
+				wallet={{
+					...wallet,
+					alias: () => "test-alias",
+				}}
+			/>,
+		);
 
 		expect(container).toHaveTextContent(wallet.address());
 		expect(container).toHaveTextContent("test-alias");
@@ -33,10 +38,15 @@ describe("TransactionSender", () => {
 
 	describe("if wallet is a delegate", () => {
 		it("should render delegate name", () => {
-			const { container } = render(<TransactionSender address={wallet.address()} wallet={{
-				...wallet,
-				isDelegate: () => true,
-			}} />);
+			const { container } = render(
+				<TransactionSender
+					address={wallet.address()}
+					wallet={{
+						...wallet,
+						isDelegate: () => true,
+					}}
+				/>,
+			);
 
 			expect(container).toHaveTextContent(wallet.username());
 
@@ -44,11 +54,16 @@ describe("TransactionSender", () => {
 		});
 
 		it("should render alias over delegate name", () => {
-			const { container } = render(<TransactionSender address={wallet.address()} wallet={{
-				...wallet,
-				alias: () => "test-alias",
-				isDelegate: () => true,
-			}} />);
+			const { container } = render(
+				<TransactionSender
+					address={wallet.address()}
+					wallet={{
+						...wallet,
+						alias: () => "test-alias",
+						isDelegate: () => true,
+					}}
+				/>,
+			);
 
 			expect(container).toHaveTextContent("test-alias");
 			expect(container).not.toHaveTextContent(wallet.username());
@@ -57,10 +72,15 @@ describe("TransactionSender", () => {
 		});
 
 		it("should render delegate icon", () => {
-			const { container } = render(<TransactionSender address={wallet.address()} wallet={{
-				...wallet,
-				isDelegate: () => true,
-			}} />);
+			const { container } = render(
+				<TransactionSender
+					address={wallet.address()}
+					wallet={{
+						...wallet,
+						isDelegate: () => true,
+					}}
+				/>,
+			);
 
 			expect(container).toHaveTextContent("delegate.svg");
 
@@ -68,11 +88,16 @@ describe("TransactionSender", () => {
 		});
 
 		it("should not render delegate icon if wallet is a resigned delegate", () => {
-			const { container } = render(<TransactionSender address={wallet.address()} wallet={{
-				...wallet,
-				isDelegate: () => true,
-				isResignedDelegate: () => true,
-			}} />);
+			const { container } = render(
+				<TransactionSender
+					address={wallet.address()}
+					wallet={{
+						...wallet,
+						isDelegate: () => true,
+						isResignedDelegate: () => true,
+					}}
+				/>,
+			);
 
 			expect(container).not.toHaveTextContent("delegate.svg");
 

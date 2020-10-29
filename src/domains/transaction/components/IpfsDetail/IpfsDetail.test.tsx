@@ -9,11 +9,7 @@ import { IpfsDetail } from "./IpfsDetail";
 describe("IpfsDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
-			<IpfsDetail
-				isOpen={false}
-				transaction={TransactionFixture}
-				wallet={TransactionFixture.wallet()}
-			/>
+			<IpfsDetail isOpen={false} transaction={TransactionFixture} wallet={TransactionFixture.wallet()} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -22,11 +18,7 @@ describe("IpfsDetail", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
-			<IpfsDetail
-				isOpen={true}
-				transaction={TransactionFixture}
-				wallet={TransactionFixture.wallet()}
-			/>
+			<IpfsDetail isOpen={true} transaction={TransactionFixture} wallet={TransactionFixture.wallet()} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_IPFS_DETAIL.TITLE);

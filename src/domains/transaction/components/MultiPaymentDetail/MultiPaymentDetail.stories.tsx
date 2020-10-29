@@ -11,6 +11,6 @@ export const Default = () => (
 		isOpen={boolean("Is Open", true)}
 		onClose={() => alert("closed")}
 		transaction={TransactionFixture}
-    wallet={TransactionFixture.wallet()}
+		wallet={TransactionFixture.wallet()}
 	/>
 );

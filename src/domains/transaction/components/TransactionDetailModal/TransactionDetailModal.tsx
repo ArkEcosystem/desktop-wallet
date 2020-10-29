@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { useActiveProfile } from "app/hooks";
 import { DelegateRegistrationDetail } from "domains/transaction/components/DelegateRegistrationDetail";
 import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
@@ -21,7 +21,9 @@ type TransactionDetailModalProps = {
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
 	const activeProfile = useActiveProfile();
 
-	const senderWallet = useMemo(() => activeProfile.wallets().findByAddress(transactionItem.sender()), [transactionItem]);
+	const senderWallet = useMemo(() => activeProfile.wallets().findByAddress(transactionItem.sender()), [
+		transactionItem,
+	]);
 	const wallet = useMemo(() => transactionItem.wallet(), [transactionItem]);
 
 	const transactionType = transactionItem.type();

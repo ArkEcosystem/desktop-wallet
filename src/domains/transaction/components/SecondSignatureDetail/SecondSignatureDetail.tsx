@@ -29,11 +29,7 @@ export const SecondSignatureDetail = ({
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_SECOND_SIGNATURE_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				wallet={senderWallet}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} wallet={senderWallet} border={false} />
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 

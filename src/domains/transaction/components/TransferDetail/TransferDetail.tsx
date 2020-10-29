@@ -21,22 +21,12 @@ type TransferDetailProps = {
 	onClose?: any;
 };
 
-export const TransferDetail = ({
-	isOpen,
-	senderWallet,
-	transaction,
-	wallet,
-	onClose,
-}: TransferDetailProps) => {
+export const TransferDetail = ({ isOpen, senderWallet, transaction, wallet, onClose }: TransferDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				wallet={senderWallet}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} wallet={senderWallet} border={false} />
 
 			<TransactionRecipients currency={wallet.currency()} recipients={[{ address: transaction.recipient() }]} />
 

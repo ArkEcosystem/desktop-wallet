@@ -48,11 +48,7 @@ describe("VoteDetail", () => {
 	it("should not render if not open", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<VoteDetail
-					isOpen={false}
-					transaction={TransactionFixture}
-					wallet={TransactionFixture.wallet()}
-				/>
+				<VoteDetail isOpen={false} transaction={TransactionFixture} wallet={TransactionFixture.wallet()} />
 			</Route>,
 			{
 				routes: [dashboardURL],

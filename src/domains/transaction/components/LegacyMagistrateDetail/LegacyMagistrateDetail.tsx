@@ -38,11 +38,7 @@ export const LegacyMagistrateDetail = ({
 
 	return (
 		<Modal title={titles[transaction.type()]} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				wallet={senderWallet}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} wallet={senderWallet} border={false} />
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 

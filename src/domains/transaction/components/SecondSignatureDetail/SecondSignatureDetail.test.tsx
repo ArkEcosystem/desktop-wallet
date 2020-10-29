@@ -8,8 +8,11 @@ import { SecondSignatureDetail } from "./SecondSignatureDetail";
 describe("SecondSignatureDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
-			<SecondSignatureDetail isOpen={false} transaction={TransactionFixture}
-				wallet={TransactionFixture.wallet()} />,
+			<SecondSignatureDetail
+				isOpen={false}
+				transaction={TransactionFixture}
+				wallet={TransactionFixture.wallet()}
+			/>,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -18,8 +21,11 @@ describe("SecondSignatureDetail", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
-			<SecondSignatureDetail isOpen={true} transaction={TransactionFixture}
-				wallet={TransactionFixture.wallet()} />,
+			<SecondSignatureDetail
+				isOpen={true}
+				transaction={TransactionFixture}
+				wallet={TransactionFixture.wallet()}
+			/>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SECOND_SIGNATURE_DETAIL.TITLE);

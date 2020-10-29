@@ -27,16 +27,12 @@ export const DelegateRegistrationDetail = ({
 	transaction,
 	wallet,
 	onClose,
- }: DelegateRegistrationDetailProps) => {
+}: DelegateRegistrationDetailProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_DELEGATE_REGISTRATION_DETAIL.TITLE")} isOpen={isOpen} onClose={onClose}>
-			<TransactionSender
-				address={transaction.sender()}
-				wallet={senderWallet}
-				border={false}
-			/>
+			<TransactionSender address={transaction.sender()} wallet={senderWallet} border={false} />
 
 			<TransactionDetail
 				label={t("TRANSACTION.DELEGATE_NAME")}
