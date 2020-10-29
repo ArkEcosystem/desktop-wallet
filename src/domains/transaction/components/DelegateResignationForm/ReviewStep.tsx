@@ -23,11 +23,7 @@ export const ReviewStep = ({ fees, senderWallet }: StepProps) => {
 			<div>
 				<TransactionNetwork network={senderWallet.network()} border={false} paddingPosition="bottom" />
 
-				<TransactionSender
-					address={senderWallet.address()}
-					alias={senderWallet.alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
-				/>
+				<TransactionSender address={senderWallet.address()} alias={senderWallet.alias()} />
 
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
 
