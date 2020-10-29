@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import electron from "electron";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
@@ -7,6 +8,12 @@ import { Route } from "react-router-dom";
 import { env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
+
+jest.mock("electron", () => ({
+	shell: {
+		openExternal: jest.fn(),
+	},
+}));
 
 let profile: Profile;
 
@@ -130,7 +137,14 @@ describe("NavigationBar", () => {
 
 			expect(await findByText(label)).toBeTruthy();
 			fireEvent.click(await findByText(label));
-			expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
+
+			if (label === "Support") {
+				const externalLink = "https://ark.io/contact";
+				const openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
+				expect(openExternalMock).toHaveBeenCalledWith(externalLink);
+			} else {
+				expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
+			}
 		},
 	);
 
