@@ -61,6 +61,7 @@ describe("LedgerScanStep", () => {
 	});
 
 	afterEach(() => {
+		jest.clearAllMocks();
 		jest.runOnlyPendingTimers();
 		jest.useRealTimers();
 	});
@@ -131,7 +132,7 @@ describe("LedgerScanStep", () => {
 			);
 		};
 
-		const { container } = render(<Component />);
+		render(<Component />);
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(5));
 

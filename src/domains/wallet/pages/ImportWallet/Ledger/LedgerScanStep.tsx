@@ -2,7 +2,6 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
-import { Alert } from "app/components/Alert";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -144,7 +143,7 @@ export const LedgerScanStep = ({
 	const { watch, register, unregister, setValue } = useFormContext();
 	const [network] = useState<Network>(() => watch("network"));
 
-	const { isBusy, isConnected, error } = useLedgerContext();
+	const { isBusy, isConnected } = useLedgerContext();
 
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id(), profile);
 	const { scanUntilNewOrFail, selectedWallets, scanRetry, canRetry, scanMore } = ledgerScanner;
@@ -185,8 +184,6 @@ export const LedgerScanStep = ({
 				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork id="ImportWallet__network" networks={[]} selected={network} disabled />
 			</FormField>
-
-			{error && <Alert variant="danger">{error}</Alert>}
 
 			<LedgerTable network={network} {...ledgerScanner} />
 

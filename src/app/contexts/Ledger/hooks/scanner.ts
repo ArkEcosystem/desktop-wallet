@@ -43,8 +43,9 @@ export const useLedgerScanner = (coin: string, network: string, profile: Profile
 				dispatch({ type: "load", payload: lazyWallets });
 
 				const wallets = await searchWallets(addressMap, instance);
+
 				dispatch({ type: "success", payload: wallets });
-			} catch (e) {
+			} catch {
 				dispatch({ type: "failed" });
 			}
 

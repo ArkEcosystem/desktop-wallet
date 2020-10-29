@@ -38,7 +38,8 @@ export const scannerReducer = (state: State, action: Action): State => {
 			let nextWallets = [];
 
 			if (loading.length > payload.length) {
-				const newWallets = wallets.filter((item) => !payloadIndexes.includes(item.index));
+				const loadingWallets = wallets.filter((item) => loading.includes(item.index));
+				const newWallets = loadingWallets.filter((item) => !payloadIndexes.includes(item.index));
 
 				for (const data of newWallets) {
 					data.balance = BigNumber.ZERO;
@@ -90,6 +91,7 @@ export const scannerReducer = (state: State, action: Action): State => {
 				failed: uniq([...state.failed, ...state.loading]),
 			};
 		}
+		/* istanbul ignore next */
 		default:
 			throw new Error();
 	}
