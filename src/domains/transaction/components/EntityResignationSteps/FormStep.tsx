@@ -27,7 +27,6 @@ export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 				<TransactionSender
 					address={entity.wallet().address()}
 					alias={entity.wallet().alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 					border={false}
 					paddingPosition="bottom"
 				/>

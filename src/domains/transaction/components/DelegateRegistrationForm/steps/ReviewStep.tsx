@@ -31,11 +31,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			<div>
 				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
 
-				<TransactionSender
-					address={wallet.address()}
-					alias={wallet.alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
-				/>
+				<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{username}</TransactionDetail>
 
