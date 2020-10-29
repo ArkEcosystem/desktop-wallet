@@ -37,6 +37,7 @@ export const scannerReducer = (state: State, action: Action): State => {
 
 			let nextWallets = [];
 
+			/* istanbul ignore next */
 			if (loading.length > payload.length) {
 				const loadingWallets = wallets.filter((item) => loading.includes(item.index));
 				const newWallets = loadingWallets.filter((item) => !payloadIndexes.includes(item.index));
