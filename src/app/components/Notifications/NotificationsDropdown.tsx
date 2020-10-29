@@ -4,12 +4,25 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
+import { WalletUpdate } from "domains/wallet/components/WalletUpdate";
 import React, { useState } from "react";
 
 export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData>();
+	const [isWalletUpdateOpen, setIsWalletUpdateOpen] = useState<boolean>();
 
 	const hasUnread = profile.notifications().unread().length > 0;
+
+	const handleNotificationAction = (id: string) => {
+		const notification = profile.notifications().get(id);
+		const action = `${notification.type}.${notification.action}`;
+
+		switch (action) {
+			case "wallet.update":
+				setIsWalletUpdateOpen(true);
+				break;
+		}
+	};
 
 	return (
 		<div>
@@ -33,7 +46,11 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 				}
 			>
 				<div className="mt-2">
-					<Notifications profile={profile} onTransactionClick={setTransactionModalItem} />
+					<Notifications
+						profile={profile}
+						onTransactionClick={setTransactionModalItem}
+						onNotificationAction={handleNotificationAction}
+					/>
 				</div>
 			</Dropdown>
 
@@ -44,6 +61,12 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 					onClose={() => setTransactionModalItem(undefined)}
 				/>
 			)}
+
+			<WalletUpdate
+				isOpen={isWalletUpdateOpen}
+				onClose={() => setIsWalletUpdateOpen(false)}
+				onCancel={() => setIsWalletUpdateOpen(false)}
+			/>
 		</div>
 	);
 };
