@@ -66,7 +66,7 @@ const getColorVariant = (variant: string) => {
 };
 
 export const Alert = ({ variant, title, size, children }: AlertProps) => (
-	<div className="sm:flex-row md:flex rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300 sm:px-8 md:px-0">
+	<div className="overflow-hidden border rounded-lg sm:flex-row md:flex bg-theme-neutral-100 border-theme-neutral-300 sm:px-8 md:px-0">
 		<AlertIconWrapper
 			size={size}
 			className={`sm:flex-row md:flex justify-center items-center text-center text-theme-${getColorVariant(
