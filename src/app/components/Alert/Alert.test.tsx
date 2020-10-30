@@ -18,7 +18,7 @@ describe("Alert", () => {
 	});
 
 	it("should render with children", () => {
-		const { getByTestId } = render(<Alert title="Hello!">I am a children</Alert>);
+		const { getByTestId, getByText } = render(<Alert title="Hello!">I am a children</Alert>);
 
 		expect(getByTestId("alert__title")).toHaveTextContent("Hello!");
 		expect(getByText("I am a children")).toBeTruthy();
