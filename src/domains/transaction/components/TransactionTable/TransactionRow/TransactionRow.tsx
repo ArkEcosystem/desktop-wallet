@@ -102,7 +102,7 @@ export const TransactionRow = ({
 					</Button>
 				) : (
 					exchangeCurrency && (
-						<span data-testid="TransactionRow__currency">
+						<span data-testid="TransactionRow__currency" className="whitespace-no-wrap">
 							<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 						</span>
 					)
