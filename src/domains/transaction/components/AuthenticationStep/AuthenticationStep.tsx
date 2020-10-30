@@ -56,7 +56,7 @@ export const AuthenticationStep = ({
 					<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
 					<InputPassword
 						data-testid="AuthenticationStep__second-mnemonic"
-						ref={register(authentication.secondMnemonic())}
+						ref={register(authentication.secondMnemonic(wallet.coin(), wallet.secondPublicKey()!))}
 					/>
 					<FormHelperText />
 				</FormField>
