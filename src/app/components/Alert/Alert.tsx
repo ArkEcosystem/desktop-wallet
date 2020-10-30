@@ -30,7 +30,7 @@ const AlertIconWrapper = styled.div<{ size?: Size }>`
 			case "sm":
 				return tw`px-4 py-4`;
 			case "lg":
-				return tw`px-10 py-8`;
+				return tw`sm:px-0 md:px-10 pt-8 sm:pb-0 md:pb-8`;
 			default:
 				return tw`px-6 py-6`;
 		}
@@ -46,7 +46,11 @@ const AlertIcon = ({ variant }: { variant: string }) => {
 		hint: "AlertHint",
 	};
 
-	return <Icon name={iconVariant[variant]} width={26} height={26} />;
+	return (
+		<div className="items-center">
+			<Icon name={iconVariant[variant]} width={26} height={26} className="inline-block" />
+		</div>
+	);
 };
 
 const getColorVariant = (variant: string) => {
@@ -62,12 +66,21 @@ const getColorVariant = (variant: string) => {
 };
 
 export const Alert = ({ variant, title, size, children }: AlertProps) => (
-	<div className={`flex rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300`}>
-		<AlertIconWrapper size={size} className={`flex justify-center text-theme-${getColorVariant(variant)}-600`}>
+	<div className="sm:flex-row md:flex rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300 sm:px-8 md:px-0">
+		<AlertIconWrapper
+			size={size}
+			className={`sm:flex-row md:flex justify-center items-center text-center text-theme-${getColorVariant(
+				variant,
+			)}-600 sm:space-y-4 md:space-y-0`}
+		>
 			<AlertIcon variant={variant} />
-			<div className={`h-full border-r border-theme-${getColorVariant(variant)}-600 ml-4`} />
+			<div
+				className={`sm:h-px md:h-full sm:border-b md:border-r border-theme-${getColorVariant(
+					variant,
+				)}-600 md:ml-6 sm:mt-8 md:mt-0`}
+			/>
 		</AlertIconWrapper>
-		<AlertContent size={size} className="flex-1">
+		<AlertContent size={size} className="flex-1 pr-8">
 			{title && (
 				<p className={`text-lg font-bold text-theme-${getColorVariant(variant)}`} data-testid="alert__title">
 					{title}
