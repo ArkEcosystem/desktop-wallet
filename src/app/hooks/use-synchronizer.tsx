@@ -1,8 +1,7 @@
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 
-import { useNotifications } from "./notifications";
-import { useUpdater } from "./use-updater";
+import { useNotifications, useUpdater } from "./";
 
 type Callback = () => Promise<void | any>;
 
