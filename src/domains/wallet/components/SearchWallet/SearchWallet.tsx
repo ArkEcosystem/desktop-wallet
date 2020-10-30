@@ -18,6 +18,7 @@ type SearchWalletListItemProps = {
 	address: string;
 	balance: BigNumber;
 	convertedBalance: BigNumber;
+	coinId: string;
 	coinName: string;
 	currency: string;
 	exchangeCurrency: string;
@@ -31,6 +32,7 @@ const SearchWalletListItem = ({
 	address,
 	balance,
 	convertedBalance,
+	coinId,
 	coinName,
 	currency,
 	exchangeCurrency,
@@ -74,7 +76,7 @@ const SearchWalletListItem = ({
 				<Button
 					data-testid={`SearchWalletListItem__select-${index}`}
 					variant="plain"
-					onClick={() => onAction({ address, coinName, name })}
+					onClick={() => onAction({ address, coinId, coinName, name })}
 				>
 					{t("COMMON.SELECT")}
 				</Button>
@@ -150,6 +152,7 @@ export const SearchWallet = ({
 							address={wallet.address()}
 							balance={wallet.balance()}
 							convertedBalance={wallet.convertedBalance()}
+							coinId={wallet.networkId()}
 							coinName={wallet.coinId()}
 							currency={wallet.currency()}
 							exchangeCurrency={wallet.exchangeCurrency() || "BTC"} // @TODO get default from SDK
