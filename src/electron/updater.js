@@ -44,6 +44,7 @@ const updaterEvents = [
 
 const setupUpdater = ({ ipcMain, mainWindow, isDev }) => {
 	setupConfig();
+
 	if (isDev) setupDev();
 
 	const { QUIT_INSTALL, CANCEL, CHECK_UPDATES, DOWNLOAD_UPDATE } = ipcEvents();
@@ -54,27 +55,24 @@ const setupUpdater = ({ ipcMain, mainWindow, isDev }) => {
 		}),
 	);
 
-	ipcMain.on(QUIT_INSTALL, () => {
+	ipcMain.handle(QUIT_INSTALL, () => {
 		setImmediate(() => autoUpdater.quitAndInstall());
 	});
 
-	ipcMain.on(CANCEL, () => {
+	ipcMain.handle(CANCEL, () => {
 		if (!autoUpdater.cancellationToken) {
 			autoUpdater.cancellationToken.cancel();
 		}
 	});
 
-	ipcMain.on(CHECK_UPDATES, async () => {
+	ipcMain.handle(CHECK_UPDATES, async () => {
 		const result = await autoUpdater.checkForUpdates();
 
-		if (result) {
-			autoUpdater.cancellationToken = result.cancellationToken;
-		}
+		if (result) autoUpdater.cancellationToken = result.cancellationToken;
+		return result;
 	});
 
-	ipcMain.on(DOWNLOAD_UPDATE, () => {
-		autoUpdater.downloadUpdate(autoUpdater.cancellationToken);
-	});
+	ipcMain.handle(DOWNLOAD_UPDATE, () => autoUpdater.downloadUpdate(autoUpdater.cancellationToken));
 };
 
 module.exports = { setupUpdater };
