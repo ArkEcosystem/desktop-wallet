@@ -1,3 +1,4 @@
+import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import React from "react";
 import { TransactionFixture } from "tests/fixtures/transactions";
 import { fireEvent, renderWithRouter } from "utils/testing-library";
@@ -31,7 +32,9 @@ describe("TransactionCompactRow", () => {
 		expect(getByTestId("TransactionRowAmount")).toBeTruthy();
 	});
 
-	it("should set shadow color on mouse events", () => {
+	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");
 
@@ -48,7 +51,9 @@ describe("TransactionCompactRow", () => {
 		fireEvent.mouseEnter(getByTestId("TableRow"));
 		fireEvent.mouseLeave(getByTestId("TableRow"));
 
-		expect(setState).toHaveBeenCalledWith("--theme-color-neutral-100");
+		expect(setState).toHaveBeenCalledWith(
+			theme === "dark" ? "--theme-color-neutral-800" : "--theme-color-neutral-100",
+		);
 		expect(setState).toHaveBeenCalledWith("");
 	});
 });
