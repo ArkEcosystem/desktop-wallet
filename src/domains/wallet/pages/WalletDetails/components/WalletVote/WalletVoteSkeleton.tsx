@@ -19,7 +19,7 @@ export const WalletVoteSkeleton = () => (
 		</div>
 
 		<div className="ml-auto">
-			<Skeleton height={48} width={100} />
+			<Skeleton height={44} width={100} />
 		</div>
 	</div>
 );

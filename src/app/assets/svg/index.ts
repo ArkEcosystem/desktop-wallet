@@ -51,6 +51,7 @@ import { ReactComponent as Forward } from "./forward.svg";
 import { ReactComponent as General } from "./general.svg";
 import { ReactComponent as Grant } from "./grant.svg";
 import { ReactComponent as GridView } from "./grid-view.svg";
+import { ReactComponent as Id } from "./id.svg";
 import { ReactComponent as Import } from "./import.svg";
 import { ReactComponent as Ipfs } from "./ipfs.svg";
 import { ReactComponent as Key } from "./key.svg";
@@ -157,6 +158,7 @@ export const SvgCollection: any = {
 	General,
 	Grant,
 	GridView,
+	Id,
 	Import,
 	Ipfs,
 	Key,

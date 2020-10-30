@@ -108,7 +108,7 @@ const Main = () => {
 
 	return (
 		<main className={`theme-${isDark ? "dark" : "light"} ${className}`} data-testid="Main">
-			<ToastContainer />
+			<ToastContainer newestOnTop />
 
 			{renderContent()}
 		</main>

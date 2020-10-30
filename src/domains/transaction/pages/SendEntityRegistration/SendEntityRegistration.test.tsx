@@ -979,6 +979,10 @@ describe("Registration", () => {
 	it("should successfully register entity", async () => {
 		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
 
+		const secondPublicKeyMock = jest
+			.spyOn(secondWallet, "secondPublicKey")
+			.mockReturnValue(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
 
 		act(() => {
@@ -1068,10 +1072,12 @@ describe("Registration", () => {
 			fireEvent.input(mnemonic, { target: { value: "v3wallet2" } });
 		});
 
-		fireEvent.input(secondMnemonic, { target: { value: "passphrase" } });
+		act(() => {
+			fireEvent.input(secondMnemonic, { target: { value: "second mnemonic" } });
+		});
 
 		await waitFor(() => expect(mnemonic).toHaveValue("v3wallet2"));
-		await waitFor(() => expect(secondMnemonic).toHaveValue("passphrase"));
+		await waitFor(() => expect(secondMnemonic).toHaveValue("second mnemonic"));
 
 		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
 		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
@@ -1093,6 +1099,7 @@ describe("Registration", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
+		secondPublicKeyMock.mockRestore();
 
 		// Step 5 - sent screen
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());

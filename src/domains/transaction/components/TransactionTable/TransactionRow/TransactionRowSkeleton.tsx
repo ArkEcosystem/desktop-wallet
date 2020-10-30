@@ -5,11 +5,11 @@ import { useRandomNumber } from "app/hooks";
 import React, { useMemo } from "react";
 
 type Props = {
-	showSign?: boolean;
-	showCurrency?: boolean | "";
+	showSignColumn?: boolean;
+	showCurrencyColumn?: boolean | "";
 } & React.HTMLProps<any>;
 
-export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Props) => {
+export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn, ...props }: Props) => {
 	const recipientWidth = useRandomNumber(120, 150);
 	const infoIconCount = useRandomNumber(0, 3);
 	const amountWidth = useRandomNumber(100, 130);
@@ -61,13 +61,13 @@ export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Pro
 				</span>
 			</TableCell>
 
-			{showSign && (
+			{showSignColumn && (
 				<TableCell variant="end" innerClassName="justify-end" noHover>
 					<Skeleton height={44} width={100} />
 				</TableCell>
 			)}
 
-			{showCurrency && (
+			{showCurrencyColumn && (
 				<TableCell variant="end" innerClassName="justify-end" noHover>
 					<span className="flex items-center space-x-1">
 						<Skeleton height={16} width={currencyWidth} />
@@ -80,6 +80,6 @@ export const TransactionRowSkeleton = ({ showSign, showCurrency, ...props }: Pro
 };
 
 TransactionRowSkeleton.defaultProps = {
-	showSign: false,
-	showCurrency: false,
+	showSignColumn: false,
+	showCurrencyColumn: false,
 };
