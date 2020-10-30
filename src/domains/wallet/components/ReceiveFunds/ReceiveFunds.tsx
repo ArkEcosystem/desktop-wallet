@@ -9,14 +9,14 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type ReceiveFundsProps = {
-	isOpen: boolean;
-	name?: string;
 	address: string;
 	icon: string;
-	handleClose?: any;
+	name?: string;
+	isOpen: boolean;
+	onClose?: () => void;
 };
 
-export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: ReceiveFundsProps) => {
+export const ReceiveFunds = ({ address, icon, name, isOpen, onClose }: ReceiveFundsProps) => {
 	const { t } = useTranslation();
 
 	const [qrCode, setQrCode] = useState<string | undefined>();
@@ -32,7 +32,7 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 	}, [address, isOpen]);
 
 	return (
-		<Modal isOpen={isOpen} title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} onClose={() => handleClose()}>
+		<Modal title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} size="lg" isOpen={isOpen} onClose={onClose}>
 			{name && (
 				<div data-testid="ReceiveFunds__info">
 					<TransactionDetail
