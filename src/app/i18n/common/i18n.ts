@@ -246,6 +246,7 @@ export const translations: { [key: string]: any } = {
 		VALIDATION: {
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
 			MNEMONIC_NOT_MATCH_ADDRESS: "The mnemonic does not match the sender address",
+			MNEMONIC_NOT_MATCH_PUBLIC_KEY: "The mnemonic does not match the second public key",
 		},
 	},
 
