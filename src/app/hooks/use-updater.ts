@@ -1,5 +1,5 @@
 import { ipcRenderer } from "electron";
-import { useCallback,useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { useNotifications } from "./notifications";
 

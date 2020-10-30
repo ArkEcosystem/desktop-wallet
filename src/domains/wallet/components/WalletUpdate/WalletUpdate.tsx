@@ -4,7 +4,7 @@ import { Button } from "app/components/Button";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useUpdater } from "app/hooks/use-updater";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { FirstStep } from "./Step1";
