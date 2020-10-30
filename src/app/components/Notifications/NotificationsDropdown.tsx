@@ -10,6 +10,7 @@ import React, { useState } from "react";
 export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData>();
 	const [isWalletUpdateOpen, setIsWalletUpdateOpen] = useState<boolean>();
+	const [walletUpdateVersion, setIsWalletUpdateVersion] = useState<string>();
 
 	const hasUnread = profile.notifications().unread().length > 0;
 
@@ -19,6 +20,7 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 
 		switch (action) {
 			case "wallet.update":
+				setIsWalletUpdateVersion(notification?.meta?.version);
 				setIsWalletUpdateOpen(true);
 				break;
 		}
@@ -63,6 +65,7 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 			)}
 
 			<WalletUpdate
+				version={walletUpdateVersion}
 				isOpen={isWalletUpdateOpen}
 				onClose={() => setIsWalletUpdateOpen(false)}
 				onCancel={() => setIsWalletUpdateOpen(false)}
