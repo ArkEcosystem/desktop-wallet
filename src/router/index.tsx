@@ -1,7 +1,6 @@
 import { ContactRoutes } from "domains/contact/routing";
 import { DashboardRoutes } from "domains/dashboard/routing";
 import { ExchangeRoutes } from "domains/exchange/routing";
-import { HelpRoutes } from "domains/help/routing";
 import { NewsRoutes } from "domains/news/routing";
 import { PluginRoutes } from "domains/plugin/routing";
 import { ProfileMiddleware } from "domains/profile/middleware";
@@ -20,7 +19,6 @@ export const routes: Array<Object> = [
 	...ContactRoutes,
 	...DashboardRoutes,
 	...ExchangeRoutes,
-	...HelpRoutes,
 	...NewsRoutes,
 	...PluginRoutes,
 	...SettingRoutes,
