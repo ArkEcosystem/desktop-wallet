@@ -20,6 +20,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 import { NavbarVariant } from "types";
+import { openExternal } from "utils/electron-utils";
 
 import { Amount } from "../Amount";
 import { defaultStyle } from "./NavigationBar.styles";
@@ -111,7 +112,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 };
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center my-auto mr-4 text-white bg-logo rounded h-12 w-12`};
+	${tw`flex items-center justify-center w-12 h-12 my-auto mr-4 text-white rounded bg-logo`};
 `;
 
 export const NavigationBar = ({ title, profile, variant, menu, userActions }: NavigationBarProps) => {
@@ -234,7 +235,13 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									exchangeCurrency={getExchangeCurrency()}
 									avatarImage={profile?.avatar()}
 									userActions={userActions}
-									onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
+									onUserAction={(action: any) => {
+										if (action?.isExternal) {
+											return openExternal(action.mountPath());
+										}
+
+										return history.push(action.mountPath(profile?.id()));
+									}}
 								/>
 							</div>
 						</>
@@ -312,9 +319,11 @@ NavigationBar.defaultProps = {
 			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
 		},
 		{
+			icon: "Redirect",
+			isExternal: true,
 			label: "Support",
 			value: "support",
-			mountPath: (profileId: string) => `/profiles/${profileId}/support`,
+			mountPath: () => "https://ark.io/contact",
 		},
 		{
 			label: "Exit",
