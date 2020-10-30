@@ -45,7 +45,6 @@ export const SecondStep = ({
 				<TransactionSender
 					address={wallet.address()}
 					alias={wallet.alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 					isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
 				/>
 
