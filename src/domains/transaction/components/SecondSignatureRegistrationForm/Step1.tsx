@@ -54,7 +54,6 @@ export const GenerationStep = ({
 			<TransactionSender
 				address={wallet.address()}
 				alias={wallet.alias()}
-				labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 				borderPosition="bottom"
 				paddingPosition="bottom"
 			/>

@@ -3,11 +3,11 @@
 exports[`WalletBottomSheetMenu should render 1`] = `
 <DocumentFragment>
   <aside
-    class="sticky bottom-0 z-50 w-full"
+    class="z-auto sticky bottom-0 w-full"
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center bg-theme-neutral-900"
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
@@ -15,12 +15,12 @@ exports[`WalletBottomSheetMenu should render 1`] = `
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-light"
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
             Your Wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-secondary-text"
+            class="ml-1 font-bold text-theme-neutral-700"
             data-testid="WalletBottomSheetMenu__counter"
           >
             2
@@ -30,7 +30,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
           class="inline-flex items-center -mr-4 space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-text"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -193,7 +193,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb heWWDv space-x-4"
+                      class="sc-AxhCb gDwTgM space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -249,7 +249,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb gavpkh justify-center text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb cudLTu justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -258,18 +258,18 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb gavpkh font-semibold justify-end"
+                      class="sc-AxhCb cudLTu font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 33.75089801 DARK
+                        33.75089801 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bcgvLf justify-end text-theme-neutral-light"
+                      class="sc-AxhCb lfwVtc justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"
@@ -285,7 +285,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-AxhCb ktNNWH space-x-4"
+                      class="sc-AxhCb lisEJY space-x-4"
                     >
                       <div
                         class="-space-x-2"
@@ -341,7 +341,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdOpBR justify-center text-sm font-bold text-center align-middle"
+                      class="sc-AxhCb kmFgJm justify-center text-sm font-bold text-center align-middle"
                     >
                       <div
                         class="inline-flex items-center space-x-2"
@@ -350,18 +350,18 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb bdOpBR font-semibold justify-end"
+                      class="sc-AxhCb kmFgJm font-semibold justify-end"
                     >
                       <span
                         data-testid="Amount"
                       >
-                        + 57.68 DARK
+                        57.68 DARK
                       </span>
                     </div>
                   </td>
                   <td>
                     <div
-                      class="sc-AxhCb ffkQgz justify-end text-theme-neutral-light"
+                      class="sc-AxhCb jICmmE justify-end text-theme-neutral-light"
                     >
                       <span
                         data-testid="Amount"

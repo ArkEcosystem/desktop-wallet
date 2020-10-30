@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { TableCell, TableRow } from "app/components/Table";
+import { useDarkMode } from "app/hooks";
 import React from "react";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
@@ -21,7 +22,7 @@ type Props = {
 	walletName?: string;
 	isLoading?: boolean;
 	showExplorerLink?: boolean;
-	showSign?: boolean;
+	showSignColumn?: boolean;
 } & React.HTMLProps<any>;
 
 export const TransactionRow = ({
@@ -33,24 +34,26 @@ export const TransactionRow = ({
 	isSignaturePending,
 	isLoading,
 	showExplorerLink,
-	showSign,
+	showSignColumn,
 	...props
 }: Props) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
+
+	const isDark = useDarkMode();
 
 	if (isLoading)
 		return (
 			<TransactionRowSkeleton
 				data-testid="TransactionRow__skeleton"
-				showCurrency={!!exchangeCurrency && !isSignaturePending}
-				showSign={showSign || isSignaturePending}
+				showCurrencyColumn={!!exchangeCurrency && !isSignaturePending}
+				showSignColumn={showSignColumn || isSignaturePending}
 			/>
 		);
 
 	return (
 		<TableRow
 			onClick={onClick}
-			onMouseEnter={() => setShadowColor("--theme-color-neutral-100")}
+			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 			{...props}
 		>
@@ -60,8 +63,11 @@ export const TransactionRow = ({
 						data-testid="TransactionRow__ID"
 						to={transaction.explorerLink()}
 						tooltip={transaction.id()}
+						showExternalIcon={false}
 						isExternal
-					/>
+					>
+						<Icon name="Id" />
+					</Link>
 				</TableCell>
 			)}
 
@@ -96,7 +102,7 @@ export const TransactionRow = ({
 					</Button>
 				) : (
 					exchangeCurrency && (
-						<span data-testid="TransactionRow__currency">
+						<span data-testid="TransactionRow__currency" className="whitespace-no-wrap">
 							<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 						</span>
 					)
@@ -109,6 +115,6 @@ export const TransactionRow = ({
 TransactionRow.defaultProps = {
 	isSignaturePending: false,
 	isLoading: false,
-	showSign: false,
+	showSignColumn: false,
 	showExplorerLink: true,
 };

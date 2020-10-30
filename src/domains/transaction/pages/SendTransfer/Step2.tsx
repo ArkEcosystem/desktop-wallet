@@ -41,11 +41,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
-			<TransactionSender
-				address={wallet.address()}
-				alias={wallet.alias()}
-				labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
-			/>
+			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
 			<TransactionRecipients currency={wallet.currency()} recipients={recipients} />
 

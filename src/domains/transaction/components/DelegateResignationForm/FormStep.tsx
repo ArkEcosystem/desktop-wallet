@@ -26,7 +26,6 @@ export const FormStep = ({ fees, senderWallet }: StepProps) => {
 				<TransactionSender
 					address={senderWallet.address()}
 					alias={senderWallet.alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 					border={false}
 					paddingPosition="bottom"
 				/>
