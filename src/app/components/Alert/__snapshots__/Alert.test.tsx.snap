@@ -3,23 +3,30 @@
 exports[`Alert should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex rounded-lg overflow-hidden bg-theme-warning"
+    class="sm:flex-row md:flex rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300 sm:px-8 md:px-0"
   >
     <div
-      class="sc-AxiKw cPQbnD flex items-center justify-center text-theme-warning bg-theme-warning-200"
+      class="sc-AxiKw igrMcP sm:flex-row md:flex justify-center items-center text-center text-theme-warning-600 sm:space-y-4 md:space-y-0"
     >
       <div
-        class="sc-AxjAm bIZXgI"
-        height="30"
-        width="30"
+        class="items-center"
       >
-        <svg>
-          alert-default.svg
-        </svg>
+        <div
+          class="sc-AxjAm jakjmk inline-block"
+          height="26"
+          width="26"
+        >
+          <svg>
+            alert-warning.svg
+          </svg>
+        </div>
       </div>
+      <div
+        class="sm:h-px md:h-full sm:border-b md:border-r border-theme-warning-600 md:ml-6 sm:mt-8 md:mt-0"
+      />
     </div>
     <div
-      class="sc-AxirZ evPsEn flex-1 bg-theme-warning-100 space-y-2"
+      class="sc-AxirZ hvHpGo flex-1 pr-8"
     />
   </div>
 </DocumentFragment>
@@ -28,23 +35,30 @@ exports[`Alert should render 1`] = `
 exports[`Alert should render a large one 1`] = `
 <div>
   <div
-    class="flex rounded-lg overflow-hidden bg-theme-warning"
+    class="sm:flex-row md:flex rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300 sm:px-8 md:px-0"
   >
     <div
-      class="sc-AxiKw bbrPqH flex items-center justify-center text-theme-warning bg-theme-warning-200"
+      class="sc-AxiKw eDpFKd sm:flex-row md:flex justify-center items-center text-center text-theme-warning-600 sm:space-y-4 md:space-y-0"
     >
       <div
-        class="sc-AxjAm bIZXgI"
-        height="30"
-        width="30"
+        class="items-center"
       >
-        <svg>
-          alert-default.svg
-        </svg>
+        <div
+          class="sc-AxjAm jakjmk inline-block"
+          height="26"
+          width="26"
+        >
+          <svg>
+            alert-warning.svg
+          </svg>
+        </div>
       </div>
+      <div
+        class="sm:h-px md:h-full sm:border-b md:border-r border-theme-warning-600 md:ml-6 sm:mt-8 md:mt-0"
+      />
     </div>
     <div
-      class="sc-AxirZ dvrJkn flex-1 bg-theme-warning-100 space-y-2"
+      class="sc-AxirZ XrDuE flex-1 pr-8"
     />
   </div>
 </div>
@@ -53,23 +67,30 @@ exports[`Alert should render a large one 1`] = `
 exports[`Alert should render a small one 1`] = `
 <div>
   <div
-    class="flex rounded-lg overflow-hidden bg-theme-warning"
+    class="sm:flex-row md:flex rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300 sm:px-8 md:px-0"
   >
     <div
-      class="sc-AxiKw eEYCTT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+      class="sc-AxiKw iKOEKH sm:flex-row md:flex justify-center items-center text-center text-theme-warning-600 sm:space-y-4 md:space-y-0"
     >
       <div
-        class="sc-AxjAm bIZXgI"
-        height="30"
-        width="30"
+        class="items-center"
       >
-        <svg>
-          alert-default.svg
-        </svg>
+        <div
+          class="sc-AxjAm jakjmk inline-block"
+          height="26"
+          width="26"
+        >
+          <svg>
+            alert-warning.svg
+          </svg>
+        </div>
       </div>
+      <div
+        class="sm:h-px md:h-full sm:border-b md:border-r border-theme-warning-600 md:ml-6 sm:mt-8 md:mt-0"
+      />
     </div>
     <div
-      class="sc-AxirZ dzRQiL flex-1 bg-theme-warning-100 space-y-2"
+      class="sc-AxirZ dtXhZs flex-1 pr-8"
     />
   </div>
 </div>
