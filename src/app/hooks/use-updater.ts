@@ -10,20 +10,20 @@ const ipcEvents = (prefix = "updater") => ({
 export const useUpdater = () => {
 	const { CANCEL, QUIT_INSTALL, CHECK_UPDATES, DOWNLOAD_UPDATE } = ipcEvents();
 
-	const cancel = (callback?: () => void) => {
-		ipcRenderer.send(CANCEL, callback);
+	const cancel = () => {
+		ipcRenderer.send(CANCEL);
 	};
 
-	const checkForUpdates = (callback?: () => void) => {
-		ipcRenderer.send(CHECK_UPDATES, callback);
+	const checkForUpdates = () => {
+		ipcRenderer.send(CHECK_UPDATES);
 	};
 
-	const quitInstall = (callback?: () => void) => {
-		ipcRenderer.send(QUIT_INSTALL, callback);
+	const quitInstall = () => {
+		ipcRenderer.send(QUIT_INSTALL);
 	};
 
-	const downloadUpdate = (callback?: () => void) => {
-		ipcRenderer.send(DOWNLOAD_UPDATE, callback);
+	const downloadUpdate = () => {
+		ipcRenderer.send(DOWNLOAD_UPDATE);
 	};
 
 	return {
