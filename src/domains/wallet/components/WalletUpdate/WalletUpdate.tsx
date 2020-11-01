@@ -39,9 +39,7 @@ export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdat
 	const handleClose = () => {
 		setActiveStep(1);
 
-		const isInProgress = downloadProgress.total > downloadProgress.transferred;
-		if (isInProgress) cancel();
-
+		cancel();
 		onClose?.();
 	};
 
