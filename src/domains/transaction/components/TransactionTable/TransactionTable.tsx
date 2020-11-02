@@ -34,7 +34,7 @@ export const TransactionTable = ({
 	const commonColumns: any = [
 		{
 			Header: t("COMMON.DATE"),
-			accessor: "timestamp",
+			accessor: (transaction: ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
 			cellWidth: "w-50",
 		},
 		{
@@ -53,7 +53,7 @@ export const TransactionTable = ({
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
-			accessor: "amount",
+			accessor: (transaction: ExtendedTransactionData) => transaction.total?.().toHuman(),
 			className: "justify-end",
 		},
 	];
@@ -66,7 +66,7 @@ export const TransactionTable = ({
 				},
 				{
 					Header: t("COMMON.AMOUNT"),
-					accessor: "amount",
+					accessor: (transaction: ExtendedTransactionData) => transaction.total?.().toHuman(),
 					className: "justify-end",
 				},
 			];
