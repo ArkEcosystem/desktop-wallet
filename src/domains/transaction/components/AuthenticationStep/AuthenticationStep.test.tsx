@@ -62,6 +62,63 @@ describe("AuthenticationStep", () => {
 
 		await waitFor(() => expect(screen.queryByText("Valid")).toBeInTheDocument());
 
+		profile.wallets().forget(wallet.id());
+		jest.clearAllMocks();
+	});
+
+	it("should validate if second mnemonic match the wallet second public key", async () => {
+		wallet = await profile.wallets().importByMnemonic("passphrase", "ARK", "ark.devnet");
+		const secondMnemonic = "my second mnemonic";
+
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
+		jest.spyOn(wallet, "secondPublicKey").mockReturnValue(
+			await wallet.coin().identity().publicKey().fromMnemonic(secondMnemonic),
+		);
+
+		const TestValidation = () => {
+			const form = useForm({ mode: "onChange" });
+			const { formState } = form;
+			const { isValid } = formState;
+
+			return (
+				<div>
+					<span>{isValid ? "Valid" : "Invalid"}</span>
+					<Component form={form} />
+				</div>
+			);
+		};
+
+		renderWithRouter(<TestValidation />);
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "passphrase",
+				},
+			});
+		});
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: "wrong second mnemonic",
+				},
+			});
+		});
+
+		await waitFor(() => expect(screen.queryByText("Invalid")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.input(screen.getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: secondMnemonic,
+				},
+			});
+		});
+
+		await waitFor(() => expect(screen.queryByText("Valid")).toBeInTheDocument());
+
+		profile.wallets().forget(wallet.id());
 		jest.clearAllMocks();
 	});
 

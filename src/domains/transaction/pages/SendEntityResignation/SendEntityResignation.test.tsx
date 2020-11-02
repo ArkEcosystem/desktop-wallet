@@ -135,6 +135,10 @@ describe("SendEntityResignation", () => {
 		it("should successfully sign and submit an entity resignation transaction", async () => {
 			history.push(resignationUrl, { type: "entity", entity });
 
+			const secondPublicKeyMock = jest
+				.spyOn(wallet, "secondPublicKey")
+				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signEntityResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
@@ -165,12 +169,14 @@ describe("SendEntityResignation", () => {
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
 					target: {
-						value: "test",
+						value: "second mnemonic",
 					},
 				});
 			});
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+			await waitFor(() =>
+				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("second mnemonic"),
+			);
 
 			act(() => {
 				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -179,6 +185,7 @@ describe("SendEntityResignation", () => {
 			await waitFor(() => expect(getByTestId("SendEntityResignation__summary-step")).toBeTruthy());
 			expect(asFragment()).toMatchSnapshot();
 
+			secondPublicKeyMock.mockRestore();
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
@@ -264,6 +271,9 @@ describe("SendEntityResignation", () => {
 				throw new Error();
 			});
 			const consoleMock = jest.spyOn(console, "log").mockImplementation();
+			const secondPublicKeyMock = jest
+				.spyOn(wallet, "secondPublicKey")
+				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
 
 			const { asFragment, getByTestId } = renderPage();
 
@@ -289,12 +299,14 @@ describe("SendEntityResignation", () => {
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
 					target: {
-						value: "test",
+						value: "second mnemonic",
 					},
 				});
 			});
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+			await waitFor(() =>
+				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("second mnemonic"),
+			);
 
 			act(() => {
 				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -306,11 +318,15 @@ describe("SendEntityResignation", () => {
 			expect(getByTestId("AuthenticationStep")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
 
+			secondPublicKeyMock.mockRestore();
 			signMock.mockRestore();
 			consoleMock.mockRestore();
 		});
 
 		it("should successfully sign and submit resignation transaction", async () => {
+			const secondPublicKeyMock = jest
+				.spyOn(wallet, "secondPublicKey")
+				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
@@ -341,12 +357,14 @@ describe("SendEntityResignation", () => {
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
 					target: {
-						value: "test",
+						value: "second mnemonic",
 					},
 				});
 			});
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+			await waitFor(() =>
+				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("second mnemonic"),
+			);
 
 			act(() => {
 				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -355,6 +373,7 @@ describe("SendEntityResignation", () => {
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
 			expect(asFragment()).toMatchSnapshot();
 
+			secondPublicKeyMock.mockRestore();
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
@@ -416,6 +435,9 @@ describe("SendEntityResignation", () => {
 		// });
 
 		it("should back button after successful submission", async () => {
+			const secondPublicKeyMock = jest
+				.spyOn(wallet, "secondPublicKey")
+				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
@@ -446,12 +468,14 @@ describe("SendEntityResignation", () => {
 			act(() => {
 				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
 					target: {
-						value: "test",
+						value: "second mnemonic",
 					},
 				});
 			});
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("test"));
+			await waitFor(() =>
+				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("second mnemonic"),
+			);
 
 			act(() => {
 				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
@@ -465,6 +489,7 @@ describe("SendEntityResignation", () => {
 
 			expect(history.location.pathname).toMatch(dashboardUrl);
 
+			secondPublicKeyMock.mockRestore();
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();

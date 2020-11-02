@@ -9,11 +9,7 @@ const {
 } = require("customize-cra");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
-const { EnvironmentPlugin } = require("webpack");
-const { dependencies } = require("./package.json");
 const nodeExternals = require("webpack-node-externals");
-
-const whiteListedModules = [];
 
 const addNodeExternals = () =>
 	addWebpackExternals([

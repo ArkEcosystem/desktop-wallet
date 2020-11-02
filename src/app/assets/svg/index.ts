@@ -3,7 +3,10 @@ import { Providers } from "app/assets/svg/providers";
 
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
+import { ReactComponent as AlertHint } from "./alert-hint.svg";
+import { ReactComponent as AlertInfo } from "./alert-info.svg";
 import { ReactComponent as AlertSuccess } from "./alert-success.svg";
+import { ReactComponent as AlertWarning } from "./alert-warning.svg";
 import { ReactComponent as ArkLogo } from "./ark-logo.svg";
 import { ReactComponent as ArrowLeft } from "./arrow-left.svg";
 import { ReactComponent as ArrowRight } from "./arrow-right.svg";
@@ -106,8 +109,11 @@ export const SvgCollection: any = {
 	...Currencies,
 	...Providers,
 	AlertDanger,
+	AlertInfo,
+	AlertHint,
 	AlertDefault,
 	AlertSuccess,
+	AlertWarning,
 	ArkLogo,
 	ArrowLeft,
 	ArrowRight,

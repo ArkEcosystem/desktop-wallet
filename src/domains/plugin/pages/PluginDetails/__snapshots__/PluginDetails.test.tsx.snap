@@ -623,23 +623,26 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="flex rounded-lg overflow-hidden bg-theme-warning"
+              class="sc-fznMAR dMWPjk flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
             >
               <div
-                class="sc-fznWOq IEXFQ flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="flex items-center justify-center text-theme-warning-600"
               >
                 <div
-                  class="sc-AxiKw iRsrJT"
-                  height="30"
-                  width="30"
+                  class="sc-AxiKw jmfLGj"
+                  height="1.75em"
+                  width="1.75em"
                 >
                   <svg>
-                    alert-default.svg
+                    alert-warning.svg
                   </svg>
                 </div>
               </div>
+              <span
+                class="pointer-events-none border rounded-md border-theme-warning-600"
+              />
               <div
-                class="sc-fznMAR gsyxtf flex-1 bg-theme-warning-100 space-y-2"
+                class="flex flex-col space-y-2"
               >
                 <p
                   class="text-lg font-bold text-theme-warning"
@@ -647,11 +650,11 @@ exports[`PluginDetails should render properly 1`] = `
                 >
                   Disclaimer
                 </p>
-                <div
-                  class="text-sm"
+                <p
+                  class="leading-relaxed break-words"
                 >
                   The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -1266,7 +1269,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj hIeVKC h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq ughZR h-2 rounded-lg bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -1329,7 +1332,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj ePWdGZ h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq dANOzu h-2 rounded-lg bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -1383,7 +1386,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj kzoauJ h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq fCErQa h-2 rounded-lg bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -1428,7 +1431,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj gqcMvb h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq eSwHfA h-2 rounded-lg bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -1464,7 +1467,7 @@ exports[`PluginDetails should render properly 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj eChsZg h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq keFxgH h-2 rounded-lg bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />
@@ -2137,23 +2140,26 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="flex rounded-lg overflow-hidden bg-theme-warning"
+              class="sc-fznMAR dMWPjk flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
             >
               <div
-                class="sc-fznWOq IEXFQ flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                class="flex items-center justify-center text-theme-warning-600"
               >
                 <div
-                  class="sc-AxiKw iRsrJT"
-                  height="30"
-                  width="30"
+                  class="sc-AxiKw jmfLGj"
+                  height="1.75em"
+                  width="1.75em"
                 >
                   <svg>
-                    alert-default.svg
+                    alert-warning.svg
                   </svg>
                 </div>
               </div>
+              <span
+                class="pointer-events-none border rounded-md border-theme-warning-600"
+              />
               <div
-                class="sc-fznMAR gsyxtf flex-1 bg-theme-warning-100 space-y-2"
+                class="flex flex-col space-y-2"
               >
                 <p
                   class="text-lg font-bold text-theme-warning"
@@ -2161,11 +2167,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 >
                   Disclaimer
                 </p>
-                <div
-                  class="text-sm"
+                <p
+                  class="leading-relaxed break-words"
                 >
                   The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -2780,7 +2786,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj hIeVKC h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq ughZR h-2 rounded-lg bg-theme-warning-400"
                           data-testid="5-stars__rating-count"
                           width="44.95677233429395"
                         />
@@ -2843,7 +2849,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj ePWdGZ h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq dANOzu h-2 rounded-lg bg-theme-warning-400"
                           data-testid="4-stars__rating-count"
                           width="55.907780979827095"
                         />
@@ -2897,7 +2903,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj kzoauJ h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq fCErQa h-2 rounded-lg bg-theme-warning-400"
                           data-testid="3-stars__rating-count"
                           width="7.204610951008646"
                         />
@@ -2942,7 +2948,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj gqcMvb h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq eSwHfA h-2 rounded-lg bg-theme-warning-400"
                           data-testid="2-stars__rating-count"
                           width="12.103746397694524"
                         />
@@ -2978,7 +2984,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
                         <div
-                          class="sc-fzolEj eChsZg h-2 rounded-lg bg-theme-warning-400"
+                          class="sc-fznWOq keFxgH h-2 rounded-lg bg-theme-warning-400"
                           data-testid="1-stars__rating-count"
                           width="2.0172910662824206"
                         />
