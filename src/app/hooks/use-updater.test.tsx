@@ -7,6 +7,7 @@ import { useUpdater } from "./use-updater";
 
 jest.mock(`electron`, () => {
 	let isUpdateCalled = false;
+	let updateDownloadedCalls = 0;
 
 	return {
 		ipcRenderer: {
@@ -21,9 +22,15 @@ jest.mock(`electron`, () => {
 				}
 				return true;
 			},
-			on: (evt: any, callback: (evt: any, progress: any) => void) => {
+			on: (evt: any, callback: (evt: any, data?: any) => void) => {
+				console.log({ evt });
 				if (evt === "updater:download-progress") {
 					callback(evt, { total: 10, percent: 30, transferred: 3 });
+				}
+
+				if (evt === "updater:update-downloaded" && updateDownloadedCalls === 0) {
+					updateDownloadedCalls += 1;
+					callback(evt);
 				}
 			},
 			handle: jest.fn(),
