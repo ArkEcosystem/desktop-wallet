@@ -1,5 +1,4 @@
 import { QRCode } from "@arkecosystem/platform-sdk-support";
-import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Clipboard } from "app/components/Clipboard";
 import { Icon } from "app/components/Icon";
@@ -34,7 +33,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 	}, [address, isOpen]);
 
 	return (
-		<Modal title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} size="lg" isOpen={isOpen} onClose={onClose}>
+		<Modal title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{name && (
 				<div data-testid="ReceiveFunds__info">
 					<TransactionDetail
@@ -59,7 +58,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					}
 				>
 					<div className="flex items-center space-x-3">
-						<Address address={address} maxChars={name ? 30 : 25} />
+						<span>{address}</span>
 						<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
 							<Clipboard data={address}>
 								<Icon name="Copy" />
