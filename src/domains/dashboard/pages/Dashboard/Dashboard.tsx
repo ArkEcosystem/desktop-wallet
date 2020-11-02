@@ -185,6 +185,9 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 						wallets={wallets}
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
+						onImportLedgerWallet={() =>
+							history.push(`/profiles/${activeProfile.id()}/wallets/import?ledger=true`)
+						}
 						onSelectViewType={handleSelectViewType}
 					/>
 				</Section>

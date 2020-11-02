@@ -1,8 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LedgerWallet should not render if not open 1`] = `<DocumentFragment />`;
-
-exports[`LedgerWallet should render a modal 1`] = `
+exports[`LedgerWaitingDevice should emit false when closed by button 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
@@ -47,31 +45,29 @@ exports[`LedgerWallet should render a modal 1`] = `
           class="flex-1"
         >
           <div
-            class="container"
+            class="mt-8 text-center text-theme-neutral-dark"
+            data-testid="LedgerWaitingDevice-description"
           >
-            <p
-              class="mt-1 text-sm text-theme-secondary-text md:text-base"
-            >
-              Connect your Ledger to PC and confirm the input.
-            </p>
-            <svg
-              class="my-8"
-            >
-              waiting-ledger.svg
-            </svg>
+            Connect your Ledger to PC and confirm the input.
+          </div>
+          <svg
+            class="mx-auto my-8"
+          >
+            waiting-ledger-device.svg
+          </svg>
+          <div
+            class="inline-flex items-center justify-center w-full mt-8 space-x-3"
+          >
             <div
-              class="inline-flex items-center space-x-4"
+              class="sc-AxhCb irNmep"
+              color="primary"
+            />
+            <span
+              class="text-theme-text"
+              data-testid="LedgerWaitingDevice-loading_message"
             >
-              <div
-                class="sc-AxhCb irNmep"
-                color="primary"
-              />
-              <span
-                class="font-semibold text-black"
-              >
-                Waiting for Ledger...
-              </span>
-            </div>
+              Waiting for Ledger device...
+            </span>
           </div>
         </div>
       </div>

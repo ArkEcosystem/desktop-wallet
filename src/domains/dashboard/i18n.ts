@@ -27,6 +27,7 @@ export const translations: { [key: string]: any } = {
 	WALLET_CONTROLS: {
 		CREATE: "Create",
 		IMPORT: "Import",
+		IMPORT_LEDGER: "Import Ledger",
 	},
 
 	DASHBOARD_PAGE: {

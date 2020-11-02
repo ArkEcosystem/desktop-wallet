@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import Transport, { Observer } from "@ledgerhq/hw-transport";
+import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
+import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
@@ -26,6 +29,8 @@ let emptyProfile: Profile;
 
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
+
+const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
 
 beforeAll(async () => {
 	useDefaultNetMocks();
@@ -304,6 +309,55 @@ describe("Dashboard", () => {
 
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
+	});
+
+	it("should navigate to import ledger page", async () => {
+		const unsubscribe = jest.fn();
+		let observer: Observer<any>;
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
+
+		const { asFragment, getByTestId, getByText, queryByTestId, getAllByRole } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<LedgerProvider transport={transport}>
+					<Dashboard />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByRole("row").length).toBeGreaterThan(1));
+
+		act(() => {
+			fireEvent.click(getByText("Import Ledger"));
+		});
+
+		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() => expect(queryByTestId("LedgerWaitingDevice-description")).not.toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByText("Import Ledger"));
+		});
+
+		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+
+		act(() => {
+			observer!.next({ type: "add", descriptor: "" });
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
+		expect(asFragment()).toMatchSnapshot();
+		listenSpy.mockReset();
 	});
 
 	it("should navigate to import page", async () => {

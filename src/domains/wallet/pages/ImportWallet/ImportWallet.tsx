@@ -7,12 +7,14 @@ import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks";
+import { useQueryParams } from "app/hooks";
+import { useActiveProfile } from "app/hooks/env";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+import { LedgerTabs } from "./Ledger/LedgerTabs";
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
@@ -20,6 +22,9 @@ import { ThirdStep } from "./Step3";
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [walletData, setWalletData] = useState<ReadWriteWallet | null>(null);
+
+	const queryParams = useQueryParams();
+	const isLedgerImport = !!queryParams.get("ledger");
 
 	const history = useHistory();
 	const { env, persist } = useEnvironmentContext();
@@ -123,70 +128,77 @@ export const ImportWallet = () => {
 					onSubmit={handleSubmit as any}
 					data-testid="ImportWallet__form"
 				>
-					<Tabs activeId={activeTab}>
-						<StepIndicator size={3} activeIndex={activeTab} />
+					{isLedgerImport ? (
+						<LedgerTabs />
+					) : (
+						<Tabs activeId={activeTab}>
+							<StepIndicator size={3} activeIndex={activeTab} />
 
-						<div className="mt-8">
-							<TabPanel tabId={1}>
-								<FirstStep />
-							</TabPanel>
-							<TabPanel tabId={2}>
-								<SecondStep profile={activeProfile} />
-							</TabPanel>
-							<TabPanel tabId={3}>
-								<ThirdStep address={walletData?.address() as string} nameMaxLength={nameMaxLength} />
-							</TabPanel>
+							<div className="mt-8">
+								<TabPanel tabId={1}>
+									<FirstStep />
+								</TabPanel>
+								<TabPanel tabId={2}>
+									<SecondStep profile={activeProfile} />
+								</TabPanel>
+								<TabPanel tabId={3}>
+									<ThirdStep
+										address={walletData?.address() as string}
+										nameMaxLength={nameMaxLength}
+									/>
+								</TabPanel>
 
-							<div className="flex justify-end mt-10 space-x-3">
-								{activeTab < 3 && (
-									<Button
-										disabled={activeTab === 1 || isSubmitting}
-										variant="plain"
-										onClick={handleBack}
-										data-testid="ImportWallet__back-button"
-									>
-										{t("COMMON.BACK")}
-									</Button>
-								)}
+								<div className="flex justify-end mt-10 space-x-3">
+									{activeTab < 3 && (
+										<Button
+											disabled={activeTab === 1 || isSubmitting}
+											variant="plain"
+											onClick={handleBack}
+											data-testid="ImportWallet__back-button"
+										>
+											{t("COMMON.BACK")}
+										</Button>
+									)}
 
-								{activeTab === 1 && (
-									<Button
-										disabled={!isValid}
-										onClick={handleNext}
-										data-testid="ImportWallet__continue-button"
-									>
-										{t("COMMON.CONTINUE")}
-									</Button>
-								)}
+									{activeTab === 1 && (
+										<Button
+											disabled={!isValid}
+											onClick={handleNext}
+											data-testid="ImportWallet__continue-button"
+										>
+											{t("COMMON.CONTINUE")}
+										</Button>
+									)}
 
-								{activeTab === 2 && (
-									<Button
-										disabled={!isValid || isSubmitting}
-										type="submit"
-										data-testid="ImportWallet__continue-button"
-									>
-										{isSubmitting ? (
-											<span className="px-3">
-												<Spinner size="sm" />
-											</span>
-										) : (
-											t("COMMON.CONTINUE")
-										)}
-									</Button>
-								)}
+									{activeTab === 2 && (
+										<Button
+											disabled={!isValid || isSubmitting}
+											type="submit"
+											data-testid="ImportWallet__continue-button"
+										>
+											{isSubmitting ? (
+												<span className="px-3">
+													<Spinner size="sm" />
+												</span>
+											) : (
+												t("COMMON.CONTINUE")
+											)}
+										</Button>
+									)}
 
-								{activeTab === 3 && (
-									<Button
-										disabled={isSubmitting}
-										type="submit"
-										data-testid="ImportWallet__gotowallet-button"
-									>
-										{t("COMMON.GO_TO_WALLET")}
-									</Button>
-								)}
+									{activeTab === 3 && (
+										<Button
+											disabled={isSubmitting}
+											type="submit"
+											data-testid="ImportWallet__gotowallet-button"
+										>
+											{t("COMMON.GO_TO_WALLET")}
+										</Button>
+									)}
+								</div>
 							</div>
-						</div>
-					</Tabs>
+						</Tabs>
+					)}
 				</Form>
 			</Section>
 		</Page>

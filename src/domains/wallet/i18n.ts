@@ -20,8 +20,10 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_LEDGER_WALLET: {
 		TITLE: "Ledger Wallet",
-		DESCRIPTION: "Connect your Ledger to PC and confirm the input.",
-		WAITING_FOR_LEDGER: "Waiting for Ledger...",
+		CONNECT_DEVICE: "Connect your Ledger to PC and confirm the input.",
+		WAITING_DEVICE: "Waiting for Ledger device...",
+		OPEN_APP: "Open the {{coin}} app on your device...",
+		CONNECT_SUCCESS: "Successfully connected",
 	},
 
 	MODAL_WALLET_UPDATE: {
@@ -95,6 +97,16 @@ export const translations: { [key: string]: any } = {
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to import your existing wallet address",
+		},
+
+		LEDGER_CONNECTION_STEP: {
+			TITLE: "Opening of the app",
+			SUBTITLE: "Information from your device is expected",
+		},
+
+		LEDGER_SCAN_STEP: {
+			TITLE: "Accounts",
+			SUBTITLE: "Select the addresses that you want to import",
 		},
 
 		METHOD_STEP: {
