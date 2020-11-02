@@ -10,14 +10,13 @@ const setupConfig = () => {
 };
 
 const setupDev = () => {
-	autoUpdater.updateConfigPath = "app-update.yml";
-	// TODO: review APPIMAGE assignment. Temporary fix to prevent from erroring in linux
-	if (process.platform === "linux") {
-		process.env.APPIMAGE = `dist/target/ark-desktop-wallet-linux-x86_64-${version}.AppImage`;
-	}
 	const testVersion = process.env.AUTO_UPDATER_VERSION;
 	if (testVersion) {
 		autoUpdater.currentVersion = testVersion;
+	}
+
+	if (process.platform === "linux") {
+		process.env.APPIMAGE = `dist/target/ark-desktop-wallet-linux-x86_64-${testVersion || version}.AppImage`;
 	}
 };
 
