@@ -8,6 +8,7 @@ import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
+import { LedgerWaitingDevice } from "domains/wallet/components/Ledger/LedgerWaitingDevice";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -20,6 +21,7 @@ type WalletsProps = {
 	walletsEmptyText?: string;
 	onCreateWallet?: any;
 	onImportWallet?: any;
+	onImportLedgerWallet?: () => void;
 	onSelectViewType?: any;
 	onWalletAction?: any;
 };
@@ -37,12 +39,14 @@ export const Wallets = ({
 	walletsEmptyText,
 	onCreateWallet,
 	onImportWallet,
+	onImportLedgerWallet,
 	onSelectViewType,
 	onWalletAction,
 }: WalletsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 	const [allWallets, setAllWallets] = useState<any>(undefined);
 	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
+	const [isWaitingLedger, setIsWaitingLedger] = useState(false);
 
 	const activeProfile = useActiveProfile();
 
@@ -158,6 +162,13 @@ export const Wallets = ({
 		history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
 	};
 
+	const onLedgerModalClose = (hasDeviceAvailable: boolean) => {
+		setIsWaitingLedger(false);
+		if (hasDeviceAvailable) {
+			onImportLedgerWallet?.();
+		}
+	};
+
 	return (
 		<div>
 			<div className="flex items-center justify-between mb-8">
@@ -168,6 +179,7 @@ export const Wallets = ({
 						viewType={walletsViewType}
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
+						onImportLedgerWallet={() => setIsWaitingLedger(true)}
 						onSelectGridView={() => toggleViewType("grid")}
 						onSelectListView={() => toggleViewType("list")}
 					/>
@@ -207,6 +219,8 @@ export const Wallets = ({
 					</div>
 				)}
 			</div>
+
+			{isWaitingLedger && <LedgerWaitingDevice isOpen={true} onClose={onLedgerModalClose} />}
 		</div>
 	);
 };

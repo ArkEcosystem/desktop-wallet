@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import Transport, { Observer } from "@ledgerhq/hw-transport";
+import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { LedgerProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -700,5 +703,36 @@ describe("ImportWallet", () => {
 		});
 
 		await waitFor(() => expect(profile.wallets().first().exchangeCurrency()).toBe("BTC"));
+	});
+
+	it("should render as ledger import", async () => {
+		const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
+		let observer: Observer<any>;
+		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe: jest.fn() };
+		});
+
+		const history = createMemoryHistory();
+
+		history.push({
+			pathname: route,
+			search: `?ledger=true`,
+		});
+
+		const { getByTestId, container } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/import">
+				<LedgerProvider transport={transport}>
+					<ImportWallet />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [route],
+				history,
+			},
+		);
+
+		expect(container).toMatchSnapshot();
+		await waitFor(() => expect(getByTestId("LedgerTabs")).toBeInTheDocument());
 	});
 });
