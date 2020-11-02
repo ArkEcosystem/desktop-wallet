@@ -64,7 +64,7 @@ const setupUpdater = ({ ipcMain, mainWindow, isDev }) => {
 	});
 
 	ipcMain.handle(CANCEL, () => {
-		if (!autoUpdater.cancellationToken) {
+		if (autoUpdater.cancellationToken) {
 			autoUpdater.cancellationToken.cancel();
 		}
 	});
