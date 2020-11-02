@@ -266,9 +266,10 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 						<ReceiveFunds
 							isOpen={receiveFundsIsOpen}
 							address={selectedWallet.address}
-							name={selectedWallet.name}
 							icon={selectedWallet.coinName}
-							handleClose={() => setSelectedWallet(undefined)}
+							name={selectedWallet.name}
+							network={selectedWallet.coinId}
+							onClose={() => setSelectedWallet(undefined)}
 						/>
 					)}
 				</>
