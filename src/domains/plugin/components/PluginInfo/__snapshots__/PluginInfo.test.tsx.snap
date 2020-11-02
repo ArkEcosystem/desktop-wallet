@@ -127,30 +127,26 @@ exports[`PluginInfo should render properly 1`] = `
       </div>
     </div>
     <div
-      class="overflow-hidden border rounded-lg sm:flex-row md:flex bg-theme-neutral-100 border-theme-neutral-300 sm:px-8 md:px-0"
+      class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="sc-AxiKw igrMcP sm:flex-row md:flex justify-center items-center text-center text-theme-warning-600 sm:space-y-4 md:space-y-0"
+        class="flex items-center justify-center text-theme-warning-600"
       >
         <div
-          class="items-center"
+          class="sc-AxjAm fYfzg"
+          height="1.75em"
+          width="1.75em"
         >
-          <div
-            class="sc-AxjAm jakjmk inline-block"
-            height="26"
-            width="26"
-          >
-            <svg>
-              alert-warning.svg
-            </svg>
-          </div>
+          <svg>
+            alert-warning.svg
+          </svg>
         </div>
-        <div
-          class="sm:h-px md:h-full sm:border-b md:border-r border-theme-warning-600 md:ml-6 sm:mt-8 md:mt-0"
-        />
       </div>
+      <span
+        class="pointer-events-none border rounded-md border-theme-warning-600"
+      />
       <div
-        class="sc-AxirZ hvHpGo flex-1 pr-8"
+        class="flex flex-col space-y-2"
       >
         <p
           class="text-lg font-bold text-theme-warning"
@@ -158,11 +154,11 @@ exports[`PluginInfo should render properly 1`] = `
         >
           Disclaimer
         </p>
-        <div
-          class="text-sm"
+        <p
+          class="leading-relaxed break-words"
         >
           The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
-        </div>
+        </p>
       </div>
     </div>
   </div>

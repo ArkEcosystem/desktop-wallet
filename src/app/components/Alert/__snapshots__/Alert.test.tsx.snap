@@ -3,30 +3,26 @@
 exports[`Alert should render 1`] = `
 <DocumentFragment>
   <div
-    class="overflow-hidden border rounded-lg sm:flex-row md:flex bg-theme-neutral-100 border-theme-neutral-300 sm:px-8 md:px-0"
+    class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
   >
     <div
-      class="sc-AxiKw igrMcP sm:flex-row md:flex justify-center items-center text-center text-theme-warning-600 sm:space-y-4 md:space-y-0"
+      class="flex items-center justify-center text-theme-warning-600"
     >
       <div
-        class="items-center"
+        class="sc-AxjAm fYfzg"
+        height="1.75em"
+        width="1.75em"
       >
-        <div
-          class="sc-AxjAm jakjmk inline-block"
-          height="26"
-          width="26"
-        >
-          <svg>
-            alert-warning.svg
-          </svg>
-        </div>
+        <svg>
+          alert-warning.svg
+        </svg>
       </div>
-      <div
-        class="sm:h-px md:h-full sm:border-b md:border-r border-theme-warning-600 md:ml-6 sm:mt-8 md:mt-0"
-      />
     </div>
+    <span
+      class="pointer-events-none border rounded-md border-theme-warning-600"
+    />
     <div
-      class="sc-AxirZ hvHpGo flex-1 pr-8"
+      class="flex flex-col space-y-2"
     />
   </div>
 </DocumentFragment>
@@ -35,30 +31,26 @@ exports[`Alert should render 1`] = `
 exports[`Alert should render a large one 1`] = `
 <div>
   <div
-    class="overflow-hidden border rounded-lg sm:flex-row md:flex bg-theme-neutral-100 border-theme-neutral-300 sm:px-8 md:px-0"
+    class="sc-AxirZ iJRAXo flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
   >
     <div
-      class="sc-AxiKw eDpFKd sm:flex-row md:flex justify-center items-center text-center text-theme-warning-600 sm:space-y-4 md:space-y-0"
+      class="flex items-center justify-center text-theme-warning-600"
     >
       <div
-        class="items-center"
+        class="sc-AxjAm fYfzg"
+        height="1.75em"
+        width="1.75em"
       >
-        <div
-          class="sc-AxjAm jakjmk inline-block"
-          height="26"
-          width="26"
-        >
-          <svg>
-            alert-warning.svg
-          </svg>
-        </div>
+        <svg>
+          alert-warning.svg
+        </svg>
       </div>
-      <div
-        class="sm:h-px md:h-full sm:border-b md:border-r border-theme-warning-600 md:ml-6 sm:mt-8 md:mt-0"
-      />
     </div>
+    <span
+      class="pointer-events-none border rounded-md border-theme-warning-600"
+    />
     <div
-      class="sc-AxirZ XrDuE flex-1 pr-8"
+      class="flex flex-col space-y-2"
     />
   </div>
 </div>
@@ -67,30 +59,26 @@ exports[`Alert should render a large one 1`] = `
 exports[`Alert should render a small one 1`] = `
 <div>
   <div
-    class="overflow-hidden border rounded-lg sm:flex-row md:flex bg-theme-neutral-100 border-theme-neutral-300 sm:px-8 md:px-0"
+    class="sc-AxirZ fxcyOH flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
   >
     <div
-      class="sc-AxiKw iKOEKH sm:flex-row md:flex justify-center items-center text-center text-theme-warning-600 sm:space-y-4 md:space-y-0"
+      class="flex items-center justify-center text-theme-warning-600"
     >
       <div
-        class="items-center"
+        class="sc-AxjAm fYfzg"
+        height="1.75em"
+        width="1.75em"
       >
-        <div
-          class="sc-AxjAm jakjmk inline-block"
-          height="26"
-          width="26"
-        >
-          <svg>
-            alert-warning.svg
-          </svg>
-        </div>
+        <svg>
+          alert-warning.svg
+        </svg>
       </div>
-      <div
-        class="sm:h-px md:h-full sm:border-b md:border-r border-theme-warning-600 md:ml-6 sm:mt-8 md:mt-0"
-      />
     </div>
+    <span
+      class="pointer-events-none border rounded-md border-theme-warning-600"
+    />
     <div
-      class="sc-AxirZ dtXhZs flex-1 pr-8"
+      class="flex flex-col space-y-2"
     />
   </div>
 </div>

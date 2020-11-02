@@ -51,7 +51,7 @@ const getColorVariant = (variant: string) => {
 export const Alert = ({ variant, title, size, children }: AlertProps) => (
 	<AlertWrapper
 		size={size}
-		className="flex flex-col rounded-lg overflow-hidden bg-theme-neutral-100 border border-theme-neutral-300 space-y-5 sm:space-y-0 sm:space-x-5 sm:flex-row"
+		className="flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
 	>
 		<div className={`flex items-center justify-center text-theme-${getColorVariant(variant)}-600`}>
 			<AlertIcon variant={variant} />
@@ -63,7 +63,7 @@ export const Alert = ({ variant, title, size, children }: AlertProps) => (
 					{title}
 				</p>
 			)}
-			{children && <p className="break-words leading-relaxed">{children}</p>}
+			{children && <p className="leading-relaxed break-words">{children}</p>}
 		</div>
 	</AlertWrapper>
 );
