@@ -25,7 +25,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       </div>
     </div>
     <fieldset
-      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -51,15 +51,15 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
             id="ImportWallet__network-label"
           />
           <div
-            class="sc-fzoLsD rzdyj"
+            class="sc-fzozJi OgXfh"
             data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-Axmtr sc-AxmLO VVqBg px-4"
+              class="sc-AxheI sc-Axmtr kSmZlB px-4"
             >
               <div
                 aria-label="ARK Devnet"
-                class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
+                class="sc-AxhUy iUervI border-theme-primary-100 text-theme-primary-400"
                 data-testid="SelectNetworkInput__network"
               >
                 <div
@@ -79,7 +79,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-AxheI fa-DppL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -97,29 +97,32 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       </div>
     </fieldset>
     <div
-      class="flex rounded-lg overflow-hidden bg-theme-success"
+      class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="sc-AxiKw cPQbnD flex items-center justify-center text-theme-success bg-theme-success-200"
+        class="flex items-center justify-center text-theme-success-600"
       >
         <div
-          class="sc-AxjAm bIZXgI"
-          height="30"
-          width="30"
+          class="sc-AxjAm fYfzg"
+          height="1.75em"
+          width="1.75em"
         >
           <svg>
             alert-success.svg
           </svg>
         </div>
       </div>
+      <span
+        class="pointer-events-none border rounded-md border-theme-success-600"
+      />
       <div
-        class="sc-AxirZ evPsEn flex-1 bg-theme-success-100 space-y-2"
+        class="flex flex-col space-y-2"
       >
-        <div
-          class="text-sm"
+        <p
+          class="leading-relaxed break-words"
         >
           Successfully connected
-        </div>
+        </p>
       </div>
     </div>
   </section>
@@ -151,7 +154,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       </div>
     </div>
     <fieldset
-      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -177,15 +180,15 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
             id="ImportWallet__network-label"
           />
           <div
-            class="sc-fzoLsD rzdyj"
+            class="sc-fzozJi OgXfh"
             data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-Axmtr sc-AxmLO VVqBg px-4"
+              class="sc-AxheI sc-Axmtr kSmZlB px-4"
             >
               <div
                 aria-label="ARK Devnet"
-                class="sc-AxgMl eLFBRi border-theme-primary-100 text-theme-primary-400"
+                class="sc-AxhUy iUervI border-theme-primary-100 text-theme-primary-400"
                 data-testid="SelectNetworkInput__network"
               >
                 <div
@@ -205,7 +208,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-AxheI fa-DppL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -223,29 +226,32 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       </div>
     </fieldset>
     <div
-      class="flex rounded-lg overflow-hidden bg-theme-danger"
+      class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="sc-AxiKw cPQbnD flex items-center justify-center text-theme-danger bg-theme-danger-200"
+        class="flex items-center justify-center text-theme-danger-600"
       >
         <div
-          class="sc-AxjAm bIZXgI"
-          height="30"
-          width="30"
+          class="sc-AxjAm fYfzg"
+          height="1.75em"
+          width="1.75em"
         >
           <svg>
             alert-danger.svg
           </svg>
         </div>
       </div>
+      <span
+        class="pointer-events-none border rounded-md border-theme-danger-600"
+      />
       <div
-        class="sc-AxirZ evPsEn flex-1 bg-theme-danger-100 space-y-2"
+        class="flex flex-col space-y-2"
       >
-        <div
-          class="text-sm"
+        <p
+          class="leading-relaxed break-words"
         >
           Failed
-        </div>
+        </p>
       </div>
     </div>
   </section>
