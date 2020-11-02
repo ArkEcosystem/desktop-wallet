@@ -11,7 +11,7 @@ jest.mock(`electron`, () => {
 
 	return {
 		ipcRenderer: {
-			invoke: (event: string, data) => {
+			invoke: (event: string) => {
 				if (event === "updater:check-for-updates") {
 					const response = {
 						cancellationToken: isUpdateCalled ? null : "1",
@@ -23,7 +23,6 @@ jest.mock(`electron`, () => {
 				return true;
 			},
 			on: (evt: any, callback: (evt: any, data?: any) => void) => {
-				console.log({ evt });
 				if (evt === "updater:download-progress") {
 					callback(evt, { total: 10, percent: 30, transferred: 3 });
 				}
