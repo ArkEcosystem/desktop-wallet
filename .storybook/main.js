@@ -1,4 +1,4 @@
-const { override, addWebpackModuleRule } = require("customize-cra");
+const { override, addWebpackModuleRule, addWebpackAlias } = require("customize-cra");
 const { injectTailwindCSS } = require("../config-overrides");
 
 const injectNode = () =>
@@ -20,6 +20,9 @@ module.exports = {
 		"storybook-addon-themes",
 	],
 	webpackFinal: override(
+		addWebpackAlias({
+			"@liskhq/lisk-cryptography": "@liskhq/lisk-cryptography/dist-browser/index.min.js",
+		}),
 		injectTailwindCSS(),
 		injectNode(),
 		addWebpackModuleRule({
