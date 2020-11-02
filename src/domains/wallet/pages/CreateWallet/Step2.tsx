@@ -55,7 +55,7 @@ export const SecondStep = () => {
 		<section data-testid="CreateWallet__second-step" className="space-y-8">
 			<Header title={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.TITLE")} />
 
-			<Alert size="lg">{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.WARNING")}</Alert>
+			<Alert>{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.WARNING")}</Alert>
 			<MnemonicList mnemonic={mnemonic} />
 
 			<div className="flex justify-end w-full">
