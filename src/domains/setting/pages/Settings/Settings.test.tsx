@@ -18,6 +18,13 @@ jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
 
 	return {
+		ipcRenderer: {
+			invoke: jest.fn(),
+			on: jest.fn(),
+			handle: jest.fn(),
+			send: jest.fn(),
+			removeListener: jest.fn(),
+		},
 		remote: {
 			dialog: {
 				showOpenDialog: jest.fn(),

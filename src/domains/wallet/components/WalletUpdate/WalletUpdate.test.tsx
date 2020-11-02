@@ -11,7 +11,13 @@ import { ThirdStep } from "./Step3";
 import { WalletUpdate } from "./WalletUpdate";
 
 jest.mock("electron", () => ({
-	ipcRenderer: { on: jest.fn(), invoke: jest.fn(), removeListener: jest.fn(), send: jest.fn() },
+	ipcRenderer: {
+		invoke: jest.fn(),
+		on: jest.fn(),
+		handle: jest.fn(),
+		send: jest.fn(),
+		removeListener: jest.fn(),
+	},
 }));
 
 describe("WalletUpdate", () => {
