@@ -49,12 +49,11 @@ export const GenerationStep = ({
 				subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.DESCRIPTION")}
 			/>
 
-			<Alert size="lg">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
+			<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
 
 			<TransactionSender
 				address={wallet.address()}
 				alias={wallet.alias()}
-				labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 				borderPosition="bottom"
 				paddingPosition="bottom"
 			/>

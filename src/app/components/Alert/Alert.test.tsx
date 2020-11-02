@@ -17,6 +17,13 @@ describe("Alert", () => {
 		expect(getByTestId("alert__title")).toHaveTextContent("Hello!");
 	});
 
+	it("should render with children", () => {
+		const { getByTestId, getByText } = render(<Alert title="Hello!">I am a children</Alert>);
+
+		expect(getByTestId("alert__title")).toHaveTextContent("Hello!");
+		expect(getByText("I am a children")).toBeTruthy();
+	});
+
 	it("should render a small one", () => {
 		const { container } = render(<Alert size="sm" />);
 

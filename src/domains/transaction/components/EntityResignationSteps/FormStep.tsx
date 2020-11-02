@@ -21,13 +21,12 @@ export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 				subtitle={t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.DESCRIPTION`)}
 			/>
 
-			<Alert size="lg">{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.WARNING`)}</Alert>
+			<Alert>{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.WARNING`)}</Alert>
 
 			<div>
 				<TransactionSender
 					address={entity.wallet().address()}
 					alias={entity.wallet().alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 					border={false}
 					paddingPosition="bottom"
 				/>

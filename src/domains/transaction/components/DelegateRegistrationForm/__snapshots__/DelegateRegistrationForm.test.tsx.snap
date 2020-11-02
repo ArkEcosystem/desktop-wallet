@@ -29,29 +29,32 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
           </div>
         </div>
         <div
-          class="flex rounded-lg overflow-hidden bg-theme-warning"
+          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
-            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+            class="flex items-center justify-center text-theme-warning-600"
           >
             <div
-              class="sc-AxirZ bMjbpr"
-              height="30"
-              width="30"
+              class="sc-AxirZ edwhgf"
+              height="1.75em"
+              width="1.75em"
             >
               <svg>
-                alert-default.svg
+                alert-warning.svg
               </svg>
             </div>
           </div>
+          <span
+            class="pointer-events-none border rounded-md border-theme-warning-600"
+          />
           <div
-            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+            class="flex flex-col space-y-2"
           >
-            <div
-              class="text-sm"
+            <p
+              class="leading-relaxed break-words"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
-            </div>
+            </p>
           </div>
         </div>
         <div
@@ -64,21 +67,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral-700"
             >
-              <span
-                class="mr-1"
-              >
-                Sender
-              </span>
-              <div
-                class="sc-AxhUy hthPiX"
-                color="warning"
-              >
-                <span
-                  class="text-sm"
-                >
-                  Your address
-                </span>
-              </div>
+              Sender
             </div>
             <div
               class="font-semibold"
@@ -124,7 +113,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="sc-fznZeY kYLJCb flex flex-col space-y-2"
+            class="sc-fznKkj bETwhb flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -139,7 +128,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
             </label>
             <input
               aria-invalid="true"
-              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="invalid delegate"
@@ -151,7 +140,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
             </p>
           </fieldset>
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -172,10 +161,10 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="sc-fzoLag hoOQgq"
+                  class="sc-fzoyAV khmTmm"
                 >
                   <input
-                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -189,19 +178,19 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                       data-testid="Range"
                     >
                       <div
-                        class="sc-fzoXzr dYWnKg"
+                        class="sc-fzoLag iUplou"
                         data-testid="Range__track"
                         style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpjYC csTNzu"
+                          class="sc-fzoXzr hvdrCN"
                           data-testid="Range__track__filled"
                         >
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="sc-fznxsB fjEYYX"
+                            class="sc-fzpjYC gjAIiE"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -222,7 +211,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -231,7 +220,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -240,7 +229,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -287,29 +276,32 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
           </div>
         </div>
         <div
-          class="flex rounded-lg overflow-hidden bg-theme-warning"
+          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
-            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+            class="flex items-center justify-center text-theme-warning-600"
           >
             <div
-              class="sc-AxirZ bMjbpr"
-              height="30"
-              width="30"
+              class="sc-AxirZ edwhgf"
+              height="1.75em"
+              width="1.75em"
             >
               <svg>
-                alert-default.svg
+                alert-warning.svg
               </svg>
             </div>
           </div>
+          <span
+            class="pointer-events-none border rounded-md border-theme-warning-600"
+          />
           <div
-            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+            class="flex flex-col space-y-2"
           >
-            <div
-              class="text-sm"
+            <p
+              class="leading-relaxed break-words"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
-            </div>
+            </p>
           </div>
         </div>
         <div
@@ -322,21 +314,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral-700"
             >
-              <span
-                class="mr-1"
-              >
-                Sender
-              </span>
-              <div
-                class="sc-AxhUy hthPiX"
-                color="warning"
-              >
-                <span
-                  class="text-sm"
-                >
-                  Your address
-                </span>
-              </div>
+              Sender
             </div>
             <div
               class="font-semibold"
@@ -382,7 +360,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="sc-fznZeY kYLJCb flex flex-col space-y-2"
+            class="sc-fznKkj bETwhb flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -397,7 +375,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
             </label>
             <input
               aria-invalid="true"
-              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="thisisaveryveryverylongdelegatename"
@@ -409,7 +387,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
             </p>
           </fieldset>
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -430,10 +408,10 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="sc-fzoLag hoOQgq"
+                  class="sc-fzoyAV khmTmm"
                 >
                   <input
-                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -447,19 +425,19 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                       data-testid="Range"
                     >
                       <div
-                        class="sc-fzoXzr dYWnKg"
+                        class="sc-fzoLag iUplou"
                         data-testid="Range__track"
                         style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpjYC csTNzu"
+                          class="sc-fzoXzr hvdrCN"
                           data-testid="Range__track__filled"
                         >
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="sc-fznxsB fjEYYX"
+                            class="sc-fzpjYC gjAIiE"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -480,7 +458,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -489,7 +467,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -498,7 +476,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -545,29 +523,32 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
           </div>
         </div>
         <div
-          class="flex rounded-lg overflow-hidden bg-theme-warning"
+          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
-            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+            class="flex items-center justify-center text-theme-warning-600"
           >
             <div
-              class="sc-AxirZ bMjbpr"
-              height="30"
-              width="30"
+              class="sc-AxirZ edwhgf"
+              height="1.75em"
+              width="1.75em"
             >
               <svg>
-                alert-default.svg
+                alert-warning.svg
               </svg>
             </div>
           </div>
+          <span
+            class="pointer-events-none border rounded-md border-theme-warning-600"
+          />
           <div
-            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+            class="flex flex-col space-y-2"
           >
-            <div
-              class="text-sm"
+            <p
+              class="leading-relaxed break-words"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
-            </div>
+            </p>
           </div>
         </div>
         <div
@@ -580,21 +561,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
             <div
               class="text-sm font-semibold text-theme-neutral-700"
             >
-              <span
-                class="mr-1"
-              >
-                Sender
-              </span>
-              <div
-                class="sc-AxhUy hthPiX"
-                color="warning"
-              >
-                <span
-                  class="text-sm"
-                >
-                  Your address
-                </span>
-              </div>
+              Sender
             </div>
             <div
               class="font-semibold"
@@ -640,7 +607,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
           class="space-y-8"
         >
           <fieldset
-            class="sc-fznZeY kYLJCb flex flex-col space-y-2"
+            class="sc-fznKkj bETwhb flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -655,7 +622,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
             </label>
             <input
               aria-invalid="true"
-              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="arkx"
@@ -667,7 +634,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
             </p>
           </fieldset>
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -688,10 +655,10 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                 class="flex-1"
               >
                 <div
-                  class="sc-fzoLag hoOQgq"
+                  class="sc-fzoyAV khmTmm"
                 >
                   <input
-                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -705,19 +672,19 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                       data-testid="Range"
                     >
                       <div
-                        class="sc-fzoXzr dYWnKg"
+                        class="sc-fzoLag iUplou"
                         data-testid="Range__track"
                         style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpjYC csTNzu"
+                          class="sc-fzoXzr hvdrCN"
                           data-testid="Range__track__filled"
                         >
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="sc-fznxsB fjEYYX"
+                            class="sc-fzpjYC gjAIiE"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -738,7 +705,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -747,7 +714,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -756,7 +723,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -803,29 +770,32 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
           </div>
         </div>
         <div
-          class="flex rounded-lg overflow-hidden bg-theme-warning"
+          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
-            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+            class="flex items-center justify-center text-theme-warning-600"
           >
             <div
-              class="sc-AxirZ bMjbpr"
-              height="30"
-              width="30"
+              class="sc-AxirZ edwhgf"
+              height="1.75em"
+              width="1.75em"
             >
               <svg>
-                alert-default.svg
+                alert-warning.svg
               </svg>
             </div>
           </div>
+          <span
+            class="pointer-events-none border rounded-md border-theme-warning-600"
+          />
           <div
-            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+            class="flex flex-col space-y-2"
           >
-            <div
-              class="text-sm"
+            <p
+              class="leading-relaxed break-words"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
-            </div>
+            </p>
           </div>
         </div>
         <div
@@ -838,21 +808,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral-700"
             >
-              <span
-                class="mr-1"
-              >
-                Sender
-              </span>
-              <div
-                class="sc-AxhUy hthPiX"
-                color="warning"
-              >
-                <span
-                  class="text-sm"
-                >
-                  Your address
-                </span>
-              </div>
+              Sender
             </div>
             <div
               class="font-semibold"
@@ -898,7 +854,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -912,14 +868,14 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
               />
             </label>
             <input
-              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value=""
             />
           </fieldset>
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -940,10 +896,10 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="sc-fzoLag hoOQgq"
+                  class="sc-fzoyAV khmTmm"
                 >
                   <input
-                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -957,19 +913,19 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                       data-testid="Range"
                     >
                       <div
-                        class="sc-fzoXzr dYWnKg"
+                        class="sc-fzoLag iUplou"
                         data-testid="Range__track"
                         style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpjYC csTNzu"
+                          class="sc-fzoXzr hvdrCN"
                           data-testid="Range__track__filled"
                         >
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="sc-fznxsB fjEYYX"
+                            class="sc-fzpjYC gjAIiE"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -990,7 +946,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -999,7 +955,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1008,7 +964,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1100,21 +1056,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral-700"
               >
-                <span
-                  class="mr-1"
-                >
-                  Sender
-                </span>
-                <div
-                  class="sc-AxhUy hthPiX"
-                  color="warning"
-                >
-                  <span
-                    class="text-sm"
-                  >
-                    Your address
-                  </span>
-                </div>
+                Sender
               </div>
               <div
                 class="font-semibold"
@@ -1189,7 +1131,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                     class="flex flex-col w-1/2 justify-center px-4 py-2"
                   >
                     <span
-                      class="sc-fznWqX crDlml"
+                      class="sc-fznJRM jknkrm"
                     >
                       Transaction Amount
                     </span>
@@ -1204,7 +1146,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                     class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                   >
                     <span
-                      class="sc-fznWqX crDlml"
+                      class="sc-fznJRM jknkrm"
                     >
                       Transaction Fee
                     </span>
@@ -1238,7 +1180,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
                 class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
               >
                 <span
-                  class="sc-fznWqX crDlml"
+                  class="sc-fznJRM jknkrm"
                 >
                   Total Amount
                 </span>
@@ -1287,29 +1229,32 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="flex rounded-lg overflow-hidden bg-theme-warning"
+          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
-            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+            class="flex items-center justify-center text-theme-warning-600"
           >
             <div
-              class="sc-AxirZ bMjbpr"
-              height="30"
-              width="30"
+              class="sc-AxirZ edwhgf"
+              height="1.75em"
+              width="1.75em"
             >
               <svg>
-                alert-default.svg
+                alert-warning.svg
               </svg>
             </div>
           </div>
+          <span
+            class="pointer-events-none border rounded-md border-theme-warning-600"
+          />
           <div
-            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+            class="flex flex-col space-y-2"
           >
-            <div
-              class="text-sm"
+            <p
+              class="leading-relaxed break-words"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
-            </div>
+            </p>
           </div>
         </div>
         <div
@@ -1322,21 +1267,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral-700"
             >
-              <span
-                class="mr-1"
-              >
-                Sender
-              </span>
-              <div
-                class="sc-AxhUy hthPiX"
-                color="warning"
-              >
-                <span
-                  class="text-sm"
-                >
-                  Your address
-                </span>
-              </div>
+              Sender
             </div>
             <div
               class="font-semibold"
@@ -1382,7 +1313,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1396,14 +1327,14 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               />
             </label>
             <input
-              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value=""
             />
           </fieldset>
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1424,10 +1355,10 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="sc-fzoLag hoOQgq"
+                  class="sc-fzoyAV khmTmm"
                 >
                   <input
-                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1441,19 +1372,19 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                       data-testid="Range"
                     >
                       <div
-                        class="sc-fzoXzr dYWnKg"
+                        class="sc-fzoLag iUplou"
                         data-testid="Range__track"
                         style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpjYC csTNzu"
+                          class="sc-fzoXzr hvdrCN"
                           data-testid="Range__track__filled"
                         >
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="10"
-                            class="sc-fznxsB fjEYYX"
+                            class="sc-fzpjYC gjAIiE"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -1474,7 +1405,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1483,7 +1414,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1492,7 +1423,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   </button>
                   <button
                     aria-checked="true"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1539,29 +1470,32 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="flex rounded-lg overflow-hidden bg-theme-warning"
+          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
-            class="sc-fznKkj cAOrQT flex items-center justify-center text-theme-warning bg-theme-warning-200"
+            class="flex items-center justify-center text-theme-warning-600"
           >
             <div
-              class="sc-AxirZ bMjbpr"
-              height="30"
-              width="30"
+              class="sc-AxirZ edwhgf"
+              height="1.75em"
+              width="1.75em"
             >
               <svg>
-                alert-default.svg
+                alert-warning.svg
               </svg>
             </div>
           </div>
+          <span
+            class="pointer-events-none border rounded-md border-theme-warning-600"
+          />
           <div
-            class="sc-fznyAO kgEoFm flex-1 bg-theme-warning-100 space-y-2"
+            class="flex flex-col space-y-2"
           >
-            <div
-              class="text-sm"
+            <p
+              class="leading-relaxed break-words"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
-            </div>
+            </p>
           </div>
         </div>
         <div
@@ -1574,21 +1508,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral-700"
             >
-              <span
-                class="mr-1"
-              >
-                Sender
-              </span>
-              <div
-                class="sc-AxhUy hthPiX"
-                color="warning"
-              >
-                <span
-                  class="text-sm"
-                >
-                  Your address
-                </span>
-              </div>
+              Sender
             </div>
             <div
               class="font-semibold"
@@ -1634,7 +1554,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1648,14 +1568,14 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               />
             </label>
             <input
-              class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="test_delegate"
             />
           </fieldset>
           <fieldset
-            class="sc-fznZeY dWCRDT flex flex-col space-y-2"
+            class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
               class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1676,10 +1596,10 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="sc-fzoLag hoOQgq"
+                  class="sc-fzoyAV khmTmm"
                 >
                   <input
-                    class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1693,19 +1613,19 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                       data-testid="Range"
                     >
                       <div
-                        class="sc-fzoXzr dYWnKg"
+                        class="sc-fzoLag iUplou"
                         data-testid="Range__track"
                         style="transform: scale(1); cursor: pointer;"
                       >
                         <div
-                          class="sc-fzpjYC csTNzu"
+                          class="sc-fzoXzr hvdrCN"
                           data-testid="Range__track__filled"
                         >
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="sc-fznxsB fjEYYX"
+                            class="sc-fzpjYC gjAIiE"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -1726,7 +1646,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1735,7 +1655,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1744,7 +1664,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"

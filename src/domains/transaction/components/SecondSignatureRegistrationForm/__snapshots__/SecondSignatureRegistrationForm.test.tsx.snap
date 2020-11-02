@@ -27,29 +27,32 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </div>
           </div>
           <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
+            class="sc-fznKkj hucPFE flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
           >
             <div
-              class="sc-fznZeY bjCdbf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="flex items-center justify-center text-theme-warning-600"
             >
               <div
-                class="sc-AxiKw iRsrJT"
-                height="30"
-                width="30"
+                class="sc-AxiKw jmfLGj"
+                height="1.75em"
+                width="1.75em"
               >
                 <svg>
-                  alert-default.svg
+                  alert-warning.svg
                 </svg>
               </div>
             </div>
+            <span
+              class="pointer-events-none border rounded-md border-theme-warning-600"
+            />
             <div
-              class="sc-fznKkj juGaYD flex-1 bg-theme-warning-100 space-y-2"
+              class="flex flex-col space-y-2"
             >
-              <div
-                class="text-sm"
+              <p
+                class="leading-relaxed break-words"
               >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
-              </div>
+              </p>
             </div>
           </div>
           <ul
@@ -115,7 +118,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </div>
           </div>
           <div
-            class="sc-fznWqX kGOVcl border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="sc-fznJRM glAjFm border-theme-neutral-300 dark:border-theme-neutral-800"
             type="horizontal"
           />
           <div
@@ -169,7 +172,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </button>
           </div>
           <div
-            class="sc-fznWqX kGOVcl border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="sc-fznJRM glAjFm border-theme-neutral-300 dark:border-theme-neutral-800"
             type="horizontal"
           />
         </section>
@@ -212,29 +215,32 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
             </div>
           </div>
           <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
+            class="sc-fznKkj hucPFE flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
           >
             <div
-              class="sc-fznZeY bjCdbf flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="flex items-center justify-center text-theme-warning-600"
             >
               <div
-                class="sc-AxiKw iRsrJT"
-                height="30"
-                width="30"
+                class="sc-AxiKw jmfLGj"
+                height="1.75em"
+                width="1.75em"
               >
                 <svg>
-                  alert-default.svg
+                  alert-warning.svg
                 </svg>
               </div>
             </div>
+            <span
+              class="pointer-events-none border rounded-md border-theme-warning-600"
+            />
             <div
-              class="sc-fznKkj juGaYD flex-1 bg-theme-warning-100 space-y-2"
+              class="flex flex-col space-y-2"
             >
-              <div
-                class="text-sm"
+              <p
+                class="leading-relaxed break-words"
               >
                 Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.
-              </div>
+              </p>
             </div>
           </div>
           <div
@@ -247,21 +253,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral-700"
               >
-                <span
-                  class="mr-1"
-                >
-                  Sender
-                </span>
-                <div
-                  class="sc-AxgMl kRDGaJ"
-                  color="warning"
-                >
-                  <span
-                    class="text-sm"
-                  >
-                    Your address
-                  </span>
-                </div>
+                Sender
               </div>
               <div
                 class="font-semibold"
@@ -328,10 +320,10 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   class="flex-1"
                 >
                   <div
-                    class="sc-fzoLag hoOQgq"
+                    class="sc-fzoyAV khmTmm"
                   >
                     <input
-                      class="sc-fzokOt iaAtch overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                      class="sc-fznZeY fRbCdm overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -345,19 +337,19 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                         data-testid="Range"
                       >
                         <div
-                          class="sc-fzoXzr dYWnKg"
+                          class="sc-fzoLag iUplou"
                           data-testid="Range__track"
                           style="transform: scale(1); cursor: pointer;"
                         >
                           <div
-                            class="sc-fzpjYC csTNzu"
+                            class="sc-fzoXzr hvdrCN"
                             data-testid="Range__track__filled"
                           >
                             <div
                               aria-valuemax="10"
                               aria-valuemin="0"
                               aria-valuenow="0"
-                              class="sc-fznxsB fjEYYX"
+                              class="sc-fzpjYC gjAIiE"
                               data-testid="Range__thumb"
                               draggable="false"
                               role="slider"
@@ -378,7 +370,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   >
                     <button
                       aria-checked="true"
-                      class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -387,7 +379,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -396,7 +388,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fznJRM frbnBe relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"

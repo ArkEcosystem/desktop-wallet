@@ -20,13 +20,12 @@ export const FormStep = ({ fees, senderWallet }: StepProps) => {
 				subtitle={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.DESCRIPTION")}
 			/>
 
-			<Alert size="lg">{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.WARNING")}</Alert>
+			<Alert>{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.WARNING")}</Alert>
 
 			<div>
 				<TransactionSender
 					address={senderWallet.address()}
 					alias={senderWallet.alias()}
-					labelExtra={t("TRANSACTION.YOUR_ADDRESS")}
 					border={false}
 					paddingPosition="bottom"
 				/>

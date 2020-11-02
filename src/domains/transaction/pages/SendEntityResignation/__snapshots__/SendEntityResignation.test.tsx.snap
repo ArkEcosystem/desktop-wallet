@@ -19,7 +19,7 @@ exports[`SendEntityResignation Delegate Resignation should change fee 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -336,29 +336,32 @@ exports[`SendEntityResignation Delegate Resignation should change fee 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex rounded-lg overflow-hidden bg-theme-warning"
+                        class="sc-fznxKY AEEYs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
                       >
                         <div
-                          class="sc-fznMAR iVkjMj flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="flex items-center justify-center text-theme-warning-600"
                         >
                           <div
-                            class="sc-AxiKw iRsrJT"
-                            height="30"
-                            width="30"
+                            class="sc-AxiKw jmfLGj"
+                            height="1.75em"
+                            width="1.75em"
                           >
                             <svg>
-                              alert-default.svg
+                              alert-warning.svg
                             </svg>
                           </div>
                         </div>
+                        <span
+                          class="pointer-events-none border rounded-md border-theme-warning-600"
+                        />
                         <div
-                          class="sc-fznxKY bQCmGL flex-1 bg-theme-warning-100 space-y-2"
+                          class="flex flex-col space-y-2"
                         >
-                          <div
-                            class="text-sm"
+                          <p
+                            class="leading-relaxed break-words"
                           >
                             Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
-                          </div>
+                          </p>
                         </div>
                       </div>
                       <div>
@@ -372,21 +375,7 @@ exports[`SendEntityResignation Delegate Resignation should change fee 1`] = `
                             <div
                               class="text-sm font-semibold text-theme-neutral-700"
                             >
-                              <span
-                                class="mr-1"
-                              >
-                                Sender
-                              </span>
-                              <div
-                                class="sc-fzoLsD eMOsue"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
+                              Sender
                             </div>
                             <div
                               class="font-semibold"
@@ -492,7 +481,7 @@ exports[`SendEntityResignation Delegate Resignation should change fee 1`] = `
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -501,7 +490,7 @@ exports[`SendEntityResignation Delegate Resignation should change fee 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -510,7 +499,7 @@ exports[`SendEntityResignation Delegate Resignation should change fee 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -575,7 +564,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -892,29 +881,32 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                         </div>
                       </div>
                       <div
-                        class="flex rounded-lg overflow-hidden bg-theme-warning"
+                        class="sc-fznxKY AEEYs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
                       >
                         <div
-                          class="sc-fznMAR iVkjMj flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="flex items-center justify-center text-theme-warning-600"
                         >
                           <div
-                            class="sc-AxiKw iRsrJT"
-                            height="30"
-                            width="30"
+                            class="sc-AxiKw jmfLGj"
+                            height="1.75em"
+                            width="1.75em"
                           >
                             <svg>
-                              alert-default.svg
+                              alert-warning.svg
                             </svg>
                           </div>
                         </div>
+                        <span
+                          class="pointer-events-none border rounded-md border-theme-warning-600"
+                        />
                         <div
-                          class="sc-fznxKY bQCmGL flex-1 bg-theme-warning-100 space-y-2"
+                          class="flex flex-col space-y-2"
                         >
-                          <div
-                            class="text-sm"
+                          <p
+                            class="leading-relaxed break-words"
                           >
                             Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
-                          </div>
+                          </p>
                         </div>
                       </div>
                       <div>
@@ -928,21 +920,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                             <div
                               class="text-sm font-semibold text-theme-neutral-700"
                             >
-                              <span
-                                class="mr-1"
-                              >
-                                Sender
-                              </span>
-                              <div
-                                class="sc-fzoLsD eMOsue"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
+                              Sender
                             </div>
                             <div
                               class="font-semibold"
@@ -1048,7 +1026,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -1057,7 +1035,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -1066,7 +1044,7 @@ exports[`SendEntityResignation Delegate Resignation should render 1st step 1`] =
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -1131,7 +1109,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -1493,21 +1471,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                             <div
                               class="text-sm font-semibold text-theme-neutral-700"
                             >
-                              <span
-                                class="mr-1"
-                              >
-                                Sender
-                              </span>
-                              <div
-                                class="sc-fzoLsD eMOsue"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
+                              Sender
                             </div>
                             <div
                               class="font-semibold"
@@ -1584,7 +1548,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                                   class="flex flex-col w-1/2 justify-center px-4 py-2"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Amount
                                   </span>
@@ -1599,7 +1563,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                                   class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Fee
                                   </span>
@@ -1633,7 +1597,7 @@ exports[`SendEntityResignation Delegate Resignation should render 2nd step 1`] =
                               class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
-                                class="sc-fzolEj gcosPd"
+                                class="sc-fznWOq evvoWC"
                               >
                                 Total Amount
                               </span>
@@ -1699,7 +1663,7 @@ exports[`SendEntityResignation Delegate Resignation should render 3rd step 1`] =
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -2169,7 +2133,7 @@ exports[`SendEntityResignation Delegate Resignation should show authentication e
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -2645,7 +2609,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -3068,21 +3032,7 @@ exports[`SendEntityResignation Delegate Resignation should successfully sign and
                               <div
                                 class="text-sm font-semibold text-theme-neutral-700"
                               >
-                                <span
-                                  class="mr-1"
-                                >
-                                  Sender
-                                </span>
-                                <div
-                                  class="sc-fzoLsD eMOsue"
-                                  color="warning"
-                                >
-                                  <span
-                                    class="text-sm"
-                                  >
-                                    Your address
-                                  </span>
-                                </div>
+                                Sender
                               </div>
                               <div
                                 class="font-semibold"
@@ -3267,7 +3217,7 @@ exports[`SendEntityResignation Entity Resignation should change fee 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -3584,29 +3534,32 @@ exports[`SendEntityResignation Entity Resignation should change fee 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex rounded-lg overflow-hidden bg-theme-warning"
+                        class="sc-fznxKY AEEYs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
                       >
                         <div
-                          class="sc-fznMAR iVkjMj flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="flex items-center justify-center text-theme-warning-600"
                         >
                           <div
-                            class="sc-AxiKw iRsrJT"
-                            height="30"
-                            width="30"
+                            class="sc-AxiKw jmfLGj"
+                            height="1.75em"
+                            width="1.75em"
                           >
                             <svg>
-                              alert-default.svg
+                              alert-warning.svg
                             </svg>
                           </div>
                         </div>
+                        <span
+                          class="pointer-events-none border rounded-md border-theme-warning-600"
+                        />
                         <div
-                          class="sc-fznxKY bQCmGL flex-1 bg-theme-warning-100 space-y-2"
+                          class="flex flex-col space-y-2"
                         >
-                          <div
-                            class="text-sm"
+                          <p
+                            class="leading-relaxed break-words"
                           >
                             Keep in mind that you cannot restore your entity after the resignation has been registered on the blockchain.
-                          </div>
+                          </p>
                         </div>
                       </div>
                       <div>
@@ -3620,21 +3573,7 @@ exports[`SendEntityResignation Entity Resignation should change fee 1`] = `
                             <div
                               class="text-sm font-semibold text-theme-neutral-700"
                             >
-                              <span
-                                class="mr-1"
-                              >
-                                Sender
-                              </span>
-                              <div
-                                class="sc-fzoLsD eMOsue"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
+                              Sender
                             </div>
                             <div
                               class="font-semibold"
@@ -3738,7 +3677,7 @@ exports[`SendEntityResignation Entity Resignation should change fee 1`] = `
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3747,7 +3686,7 @@ exports[`SendEntityResignation Entity Resignation should change fee 1`] = `
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3756,7 +3695,7 @@ exports[`SendEntityResignation Entity Resignation should change fee 1`] = `
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -3821,7 +3760,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -4138,29 +4077,32 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                         </div>
                       </div>
                       <div
-                        class="flex rounded-lg overflow-hidden bg-theme-warning"
+                        class="sc-fznxKY AEEYs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
                       >
                         <div
-                          class="sc-fznMAR iVkjMj flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="flex items-center justify-center text-theme-warning-600"
                         >
                           <div
-                            class="sc-AxiKw iRsrJT"
-                            height="30"
-                            width="30"
+                            class="sc-AxiKw jmfLGj"
+                            height="1.75em"
+                            width="1.75em"
                           >
                             <svg>
-                              alert-default.svg
+                              alert-warning.svg
                             </svg>
                           </div>
                         </div>
+                        <span
+                          class="pointer-events-none border rounded-md border-theme-warning-600"
+                        />
                         <div
-                          class="sc-fznxKY bQCmGL flex-1 bg-theme-warning-100 space-y-2"
+                          class="flex flex-col space-y-2"
                         >
-                          <div
-                            class="text-sm"
+                          <p
+                            class="leading-relaxed break-words"
                           >
                             Keep in mind that you cannot restore your entity after the resignation has been registered on the blockchain.
-                          </div>
+                          </p>
                         </div>
                       </div>
                       <div>
@@ -4174,21 +4116,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                             <div
                               class="text-sm font-semibold text-theme-neutral-700"
                             >
-                              <span
-                                class="mr-1"
-                              >
-                                Sender
-                              </span>
-                              <div
-                                class="sc-fzoLsD eMOsue"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
+                              Sender
                             </div>
                             <div
                               class="font-semibold"
@@ -4292,7 +4220,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                               >
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4301,7 +4229,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4310,7 +4238,7 @@ exports[`SendEntityResignation Entity Resignation should render 1st step as enti
                                 </button>
                                 <button
                                   aria-checked="true"
-                                  class="sc-fznWOq hCtJzi relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                                  class="sc-fznMAR cAzocZ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                   type="button"
@@ -4375,7 +4303,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -4737,21 +4665,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                             <div
                               class="text-sm font-semibold text-theme-neutral-700"
                             >
-                              <span
-                                class="mr-1"
-                              >
-                                Sender
-                              </span>
-                              <div
-                                class="sc-fzoLsD eMOsue"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
+                              Sender
                             </div>
                             <div
                               class="font-semibold"
@@ -4826,7 +4740,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                                   class="flex flex-col w-1/2 justify-center px-4 py-2"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Amount
                                   </span>
@@ -4841,7 +4755,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                                   class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                                 >
                                   <span
-                                    class="sc-fzolEj gcosPd"
+                                    class="sc-fznWOq evvoWC"
                                   >
                                     Transaction Fee
                                   </span>
@@ -4875,7 +4789,7 @@ exports[`SendEntityResignation Entity Resignation should render 2nd step as enti
                               class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                             >
                               <span
-                                class="sc-fzolEj gcosPd"
+                                class="sc-fznWOq evvoWC"
                               >
                                 Total Amount
                               </span>
@@ -4941,7 +4855,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -5363,21 +5277,7 @@ exports[`SendEntityResignation Entity Resignation should successfully sign and s
                               <div
                                 class="text-sm font-semibold text-theme-neutral-700"
                               >
-                                <span
-                                  class="mr-1"
-                                >
-                                  Sender
-                                </span>
-                                <div
-                                  class="sc-fzoLsD eMOsue"
-                                  color="warning"
-                                >
-                                  <span
-                                    class="text-sm"
-                                  >
-                                    Your address
-                                  </span>
-                                </div>
+                                Sender
                               </div>
                               <div
                                 class="font-semibold"

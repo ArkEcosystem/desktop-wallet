@@ -19,7 +19,7 @@ exports[`Registration should fill all data including link collections 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -681,7 +681,7 @@ exports[`Registration should go to review step after successfully filling form d
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -1043,21 +1043,7 @@ exports[`Registration should go to review step after successfully filling form d
                             <div
                               class="text-sm font-semibold text-theme-neutral-700"
                             >
-                              <span
-                                class="mr-1"
-                              >
-                                Sender
-                              </span>
-                              <div
-                                class="sc-fzoLsD eMOsue"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
+                              Sender
                             </div>
                             <div
                               class="font-semibold"
@@ -1567,7 +1553,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -2512,7 +2498,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -2874,21 +2860,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                             <div
                               class="text-sm font-semibold text-theme-neutral-700"
                             >
-                              <span
-                                class="mr-1"
-                              >
-                                Sender
-                              </span>
-                              <div
-                                class="sc-fzoLsD eMOsue"
-                                color="warning"
-                              >
-                                <span
-                                  class="text-sm"
-                                >
-                                  Your address
-                                </span>
-                              </div>
+                              Sender
                             </div>
                             <div
                               class="font-semibold"
@@ -3404,7 +3376,7 @@ exports[`Registration should render registration form without selected wallet 1`
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -3937,7 +3909,7 @@ exports[`Registration should select cryptoasset first and see select address inp
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -4514,7 +4486,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -5091,7 +5063,7 @@ exports[`Registration should select registration type & show form 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -5408,29 +5380,32 @@ exports[`Registration should select registration type & show form 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex rounded-lg overflow-hidden bg-theme-warning"
+                        class="sc-fzqBkg hIYroz flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
                       >
                         <div
-                          class="sc-fzqPZZ hQmpwy flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="flex items-center justify-center text-theme-warning-600"
                         >
                           <div
-                            class="sc-AxiKw iRsrJT"
-                            height="30"
-                            width="30"
+                            class="sc-AxiKw jmfLGj"
+                            height="1.75em"
+                            width="1.75em"
                           >
                             <svg>
-                              alert-default.svg
+                              alert-warning.svg
                             </svg>
                           </div>
                         </div>
+                        <span
+                          class="pointer-events-none border rounded-md border-theme-warning-600"
+                        />
                         <div
-                          class="sc-fzqBkg czMUCU flex-1 bg-theme-warning-100 space-y-2"
+                          class="flex flex-col space-y-2"
                         >
-                          <div
-                            class="text-sm"
+                          <p
+                            class="leading-relaxed break-words"
                           >
                             Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
-                          </div>
+                          </p>
                         </div>
                       </div>
                       <div
@@ -5443,21 +5418,7 @@ exports[`Registration should select registration type & show form 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral-700"
                           >
-                            <span
-                              class="mr-1"
-                            >
-                              Sender
-                            </span>
-                            <div
-                              class="sc-fzoLsD eMOsue"
-                              color="warning"
-                            >
-                              <span
-                                class="text-sm"
-                              >
-                                Your address
-                              </span>
-                            </div>
+                            Sender
                           </div>
                           <div
                             class="font-semibold"
@@ -5647,7 +5608,7 @@ exports[`Registration should should go back and forth & correctly register field
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -5964,29 +5925,32 @@ exports[`Registration should should go back and forth & correctly register field
                         </div>
                       </div>
                       <div
-                        class="flex rounded-lg overflow-hidden bg-theme-warning"
+                        class="sc-fzqBkg hIYroz flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
                       >
                         <div
-                          class="sc-fzqPZZ hQmpwy flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                          class="flex items-center justify-center text-theme-warning-600"
                         >
                           <div
-                            class="sc-AxiKw iRsrJT"
-                            height="30"
-                            width="30"
+                            class="sc-AxiKw jmfLGj"
+                            height="1.75em"
+                            width="1.75em"
                           >
                             <svg>
-                              alert-default.svg
+                              alert-warning.svg
                             </svg>
                           </div>
                         </div>
+                        <span
+                          class="pointer-events-none border rounded-md border-theme-warning-600"
+                        />
                         <div
-                          class="sc-fzqBkg czMUCU flex-1 bg-theme-warning-100 space-y-2"
+                          class="flex flex-col space-y-2"
                         >
-                          <div
-                            class="text-sm"
+                          <p
+                            class="leading-relaxed break-words"
                           >
                             Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
-                          </div>
+                          </p>
                         </div>
                       </div>
                       <div
@@ -5999,21 +5963,7 @@ exports[`Registration should should go back and forth & correctly register field
                           <div
                             class="text-sm font-semibold text-theme-neutral-700"
                           >
-                            <span
-                              class="mr-1"
-                            >
-                              Sender
-                            </span>
-                            <div
-                              class="sc-fzoLsD eMOsue"
-                              color="warning"
-                            >
-                              <span
-                                class="text-sm"
-                              >
-                                Your address
-                              </span>
-                            </div>
+                            Sender
                           </div>
                           <div
                             class="font-semibold"
@@ -6202,7 +6152,7 @@ exports[`Registration should successfully register entity 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -6621,21 +6571,7 @@ exports[`Registration should successfully register entity 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral-700"
                           >
-                            <span
-                              class="mr-1"
-                            >
-                              Sender
-                            </span>
-                            <div
-                              class="sc-fzoLsD eMOsue"
-                              color="warning"
-                            >
-                              <span
-                                class="text-sm"
-                              >
-                                Your address
-                              </span>
-                            </div>
+                            Sender
                           </div>
                           <div
                             class="font-semibold"
@@ -6910,7 +6846,7 @@ exports[`Registration should validate description 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -7579,7 +7515,7 @@ exports[`Registration should validate display name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -8246,7 +8182,7 @@ exports[`Registration should validate entity name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
@@ -8913,7 +8849,7 @@ exports[`Registration should validate website url 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU bFCCVL"
+              class="sc-fzqNqU gmvYjD"
             >
               <svg
                 width="48"
