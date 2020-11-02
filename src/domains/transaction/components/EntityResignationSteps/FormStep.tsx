@@ -21,7 +21,7 @@ export const FormStep = ({ entity, fees }: EntityResignationStepProps) => {
 				subtitle={t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.DESCRIPTION`)}
 			/>
 
-			<Alert size="lg">{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.WARNING`)}</Alert>
+			<Alert>{t(`TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.ENTITY.WARNING`)}</Alert>
 
 			<div>
 				<TransactionSender

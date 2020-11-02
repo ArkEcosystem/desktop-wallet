@@ -54,8 +54,8 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 		if (verifyAddress)
 			return (
 				<div className="mt-8">
-					<Alert variant="warning">
-						<span className="text-sm font-medium">{`Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}`}</span>
+					<Alert>
+						<span>{`Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}`}</span>
 					</Alert>
 
 					<div className="mt-8">

@@ -19,29 +19,32 @@ exports[`CreateWallet 2nd step should render 1`] = `
       </div>
     </div>
     <div
-      class="flex rounded-lg overflow-hidden bg-theme-warning"
+      class="sc-fzoXWK hgutBP flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="sc-fzpmMD frEIRz flex items-center justify-center text-theme-warning bg-theme-warning-200"
+        class="flex items-center justify-center text-theme-warning-600"
       >
         <div
-          class="sc-AxhCb gCvBAn"
-          height="30"
-          width="30"
+          class="sc-AxhCb djOzjH"
+          height="1.75em"
+          width="1.75em"
         >
           <svg>
-            alert-default.svg
+            alert-warning.svg
           </svg>
         </div>
       </div>
+      <span
+        class="pointer-events-none border rounded-md border-theme-warning-600"
+      />
       <div
-        class="sc-fzoXWK YguGQ flex-1 bg-theme-warning-100 space-y-2"
+        class="flex flex-col space-y-2"
       >
-        <div
-          class="text-sm"
+        <p
+          class="leading-relaxed break-words"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
-        </div>
+        </p>
       </div>
     </div>
     <ul
