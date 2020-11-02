@@ -11,6 +11,16 @@ import { NotificationsDropdown } from "./";
 const history = createMemoryHistory();
 let profile: Profile;
 
+jest.mock("electron", () => ({
+	ipcRenderer: {
+		invoke: jest.fn(),
+		on: jest.fn(),
+		handle: jest.fn(),
+		send: jest.fn(),
+		removeListener: jest.fn(),
+	},
+}));
+
 describe("Notifications", () => {
 	beforeEach(() => {
 		const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
@@ -68,6 +78,74 @@ describe("Notifications", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/^Unable to find an element by/));
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should open and close wallet update notification modal", async () => {
+		const { container, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NotificationsDropdown profile={profile} />
+			</Route>,
+			{
+				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("dropdown__toggle")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
+
+		act(() => {
+			fireEvent.click(getAllByTestId("NotificationItem__action")[0]);
+		});
+
+		await waitFor(() => expect(getByTestId("WalletUpdate__first-step")).toBeTruthy());
+		expect(container).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/^Unable to find an element by/));
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should open and cancel wallet update notification modal", async () => {
+		const { container, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NotificationsDropdown profile={profile} />
+			</Route>,
+			{
+				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("dropdown__toggle")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(getAllByTestId("NotificationItem")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("TransactionRowMode").length).toBeGreaterThan(0));
+
+		act(() => {
+			fireEvent.click(getAllByTestId("NotificationItem__action")[0]);
+		});
+
+		await waitFor(() => expect(getByTestId("WalletUpdate__first-step")).toBeTruthy());
+		expect(container).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletUpdate__cancel-button"));
 		});
 
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/^Unable to find an element by/));
