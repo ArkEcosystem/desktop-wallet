@@ -254,7 +254,7 @@ export const AddRecipient = ({
 					</FormField>
 				</div>
 
-				{!isSingle && getValues("amount") && !!recipientAddress && (
+				{!isSingle && !BigNumber.make(getValues("amount")).isZero() && !!recipientAddress && (
 					<Button
 						disabled={
 							!!errors.amount || !!errors.recipientAddress || BigNumber.make(getValues("amount")).isZero()
