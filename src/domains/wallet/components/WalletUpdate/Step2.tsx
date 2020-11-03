@@ -1,5 +1,5 @@
 import { CircularProgressBar } from "app/components/CircularProgressBar";
-import { DownloadProgress } from "app/hooks/use-updater";
+import { DownloadProgress } from "app/hooks";
 import prettyBytes from "pretty-bytes";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -9,21 +9,29 @@ export const SecondStep = ({ transferred, total, percent }: DownloadProgress) =>
 
 	return (
 		<section data-testid="WalletUpdate__second-step">
-			<div className="flex w-2/5 mx-auto">
+			<div className="flex w-2/5 mx-auto items-center">
 				<div className="flex-1">
-					<p className="text-sm font-semibold text-theme-neutral-light">{t("COMMON.DOWNLOADED")}</p>
-					<p className="text-sm font-bold text-theme-secondary-text">
-						{prettyBytes(total)} / {prettyBytes(transferred)}
+					<p className="text-sm font-semibold text-theme-neutral-light">
+						{percent ? t("COMMON.DOWNLOADED") : t("COMMON.DOWNLOADING")}
 					</p>
+
+					{!!percent && (
+						<p className="text-sm font-bold text-theme-secondary-text">
+							{prettyBytes(total)} / {prettyBytes(transferred)}
+						</p>
+					)}
 				</div>
 				<div>
 					<div className="flex justify-center">
-						<CircularProgressBar
-							value={parseInt(percent.toFixed(0))}
-							size={50}
-							strokeWidth={5}
-							fontSize={0.8}
-						/>
+						<div className={percent ? "" : "animate-spin"}>
+							<CircularProgressBar
+								showValue={!!percent}
+								value={percent ? parseInt(percent.toFixed(0)) : 20}
+								size={50}
+								strokeWidth={5}
+								fontSize={0.8}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

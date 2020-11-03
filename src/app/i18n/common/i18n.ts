@@ -53,6 +53,7 @@ export const translations: { [key: string]: any } = {
 	DONE: "Done",
 	DOWNLOAD: "Download",
 	DOWNLOADED: "Downloaded",
+	DOWNLOADING: "Downloading",
 	EDIT: "Edit",
 	ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
 	ERROR: "Error",
