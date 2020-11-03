@@ -5,27 +5,27 @@ exports[`ReceiveFunds should not render if not open 1`] = `<DocumentFragment />`
 exports[`ReceiveFunds should not render qrcode without an address 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxiKw cTRlJa absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxiKw eyfbzP w-11 h-11"
+          class="sc-AxirZ jFqSPL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxirZ fFqjhX"
+            class="sc-AxjAm hSsKJo"
             height="14"
             width="14"
           >
@@ -76,7 +76,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxirZ iQaTP"
+                          class="sc-AxjAm cpczEI"
                           height="1em"
                           width="1em"
                         >
@@ -90,30 +90,37 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxjAm jcZnVc -mr-2"
+                class="-space-x-2"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  aria-label="ARK Devnet"
+                  class="sc-AxhCb gaiYPD border-theme-primary-100 text-theme-primary-400"
+                  data-testid="NetworkIcon-ARK-ark.devnet"
                 >
-                  <svg>
-                    ark.svg
-                  </svg>
+                  <div
+                    class="sc-AxjAm buCJuk"
+                    data-testid="NetworkIcon__icon"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                data-testid="Avatar"
-              >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt=""
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title=""
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt=""
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title=""
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -131,27 +138,27 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
 exports[`ReceiveFunds should render with a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxiKw cTRlJa absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxiKw eyfbzP w-11 h-11"
+          class="sc-AxirZ jFqSPL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxirZ fFqjhX"
+            class="sc-AxjAm hSsKJo"
             height="14"
             width="14"
           >
@@ -194,10 +201,13 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxjAm jcZnVc ml-4"
+                aria-label="ARK Devnet"
+                class="sc-AxhCb gaiYPD border-theme-primary-100 text-theme-primary-400"
+                data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-AxjAm buCJuk"
+                  data-testid="NetworkIcon__icon"
                   height="20"
                   width="20"
                 >
@@ -240,7 +250,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxirZ iQaTP"
+                          class="sc-AxjAm cpczEI"
                           height="1em"
                           width="1em"
                         >
@@ -254,17 +264,21 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                data-testid="Avatar"
+                class="-space-x-2"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="abc"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    title="abc"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="abc"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      title="abc"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -289,27 +303,27 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
 exports[`ReceiveFunds should render without a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-scroll"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhCb pcYUy absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxiKw cTRlJa absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
       >
         <button
-          class="sc-AxiKw eyfbzP w-11 h-11"
+          class="sc-AxirZ jFqSPL w-11 h-11"
           color="primary"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxirZ fFqjhX"
+            class="sc-AxjAm hSsKJo"
             height="14"
             width="14"
           >
@@ -362,7 +376,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxirZ iQaTP"
+                          class="sc-AxjAm cpczEI"
                           height="1em"
                           width="1em"
                         >
@@ -376,30 +390,37 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxjAm jcZnVc -mr-2"
+                class="-space-x-2"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  aria-label="ARK Devnet"
+                  class="sc-AxhCb gaiYPD border-theme-primary-100 text-theme-primary-400"
+                  data-testid="NetworkIcon-ARK-ark.devnet"
                 >
-                  <svg>
-                    ark.svg
-                  </svg>
+                  <div
+                    class="sc-AxjAm buCJuk"
+                    data-testid="NetworkIcon__icon"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                data-testid="Avatar"
-              >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="abc"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                    title="abc"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="abc"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      title="abc"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

@@ -7,65 +7,65 @@ import { Icon } from "../Icon";
 type AlertProps = {
 	children: React.ReactNode;
 	title?: string;
-	variant?: "primary" | "success" | "danger" | "warning" | "neutral";
+	variant: "info" | "success" | "warning" | "danger" | "hint";
 	size?: Size;
 };
 
-const AlertContent = styled.div<{ size?: Size }>`
+const AlertWrapper = styled.div<{ size?: Size }>`
 	${({ size }) => {
 		switch (size) {
 			case "sm":
-				return tw`px-6 py-4`;
+				return tw`p-4`;
 			case "lg":
-				return tw`px-8 py-8`;
+				return tw`p-8`;
 			default:
-				return tw`px-8 py-6`;
-		}
-	}}
-`;
-
-const AlertIconWrapper = styled.div<{ size?: Size }>`
-	${({ size }) => {
-		switch (size) {
-			case "sm":
-				return tw`px-4 py-2`;
-			case "lg":
-				return tw`px-10 py-6`;
-			default:
-				return tw`px-6 py-4`;
+				return tw`p-6`;
 		}
 	}}
 `;
 
 const AlertIcon = ({ variant }: { variant: string }) => {
 	const iconVariant: Record<string, string> = {
-		primary: "AlertDefault",
+		info: "AlertInfo",
 		success: "AlertSuccess",
+		warning: "AlertWarning",
 		danger: "AlertDanger",
-		warning: "AlertDefault",
-		neutral: "AlertDefault",
+		hint: "AlertHint",
 	};
 
-	return <Icon name={iconVariant[variant]} width={30} height={30} />;
+	return <Icon name={iconVariant[variant]} width="1.75em" height="1.75em" />;
+};
+
+const getColorVariant = (variant: string) => {
+	const colorVariant: Record<string, string> = {
+		info: "primary",
+		success: "success",
+		warning: "warning",
+		danger: "danger",
+		hint: "hint",
+	};
+
+	return colorVariant[variant];
 };
 
 export const Alert = ({ variant, title, size, children }: AlertProps) => (
-	<div className={`flex rounded-lg overflow-hidden bg-theme-${variant}`}>
-		<AlertIconWrapper
-			size={size}
-			className={`flex items-center justify-center text-theme-${variant} bg-theme-${variant}-200`}
-		>
-			<AlertIcon variant={variant!} />
-		</AlertIconWrapper>
-		<AlertContent size={size} className={`flex-1 bg-theme-${variant}-100 space-y-2`}>
+	<AlertWrapper
+		size={size}
+		className="flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+	>
+		<div className={`flex items-center justify-center text-theme-${getColorVariant(variant)}-600`}>
+			<AlertIcon variant={variant} />
+		</div>
+		<span className={`pointer-events-none border rounded-md border-theme-${getColorVariant(variant)}-600`} />
+		<div className="flex flex-col space-y-2">
 			{title && (
-				<p className={`text-lg font-bold text-theme-${variant}`} data-testid="alert__title">
+				<p className={`text-lg font-bold text-theme-${getColorVariant(variant)}`} data-testid="alert__title">
 					{title}
 				</p>
 			)}
-			{children && <div className="text-sm">{children}</div>}
-		</AlertContent>
-	</div>
+			{children && <p className="leading-relaxed break-words">{children}</p>}
+		</div>
+	</AlertWrapper>
 );
 
 Alert.defaultProps = {

@@ -127,23 +127,26 @@ exports[`PluginInfo should render properly 1`] = `
       </div>
     </div>
     <div
-      class="flex rounded-lg overflow-hidden bg-theme-warning"
+      class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="sc-AxiKw cPQbnD flex items-center justify-center text-theme-warning bg-theme-warning-200"
+        class="flex items-center justify-center text-theme-warning-600"
       >
         <div
-          class="sc-AxjAm bIZXgI"
-          height="30"
-          width="30"
+          class="sc-AxjAm fYfzg"
+          height="1.75em"
+          width="1.75em"
         >
           <svg>
-            alert-default.svg
+            alert-warning.svg
           </svg>
         </div>
       </div>
+      <span
+        class="pointer-events-none border rounded-md border-theme-warning-600"
+      />
       <div
-        class="sc-AxirZ evPsEn flex-1 bg-theme-warning-100 space-y-2"
+        class="flex flex-col space-y-2"
       >
         <p
           class="text-lg font-bold text-theme-warning"
@@ -151,11 +154,11 @@ exports[`PluginInfo should render properly 1`] = `
         >
           Disclaimer
         </p>
-        <div
-          class="text-sm"
+        <p
+          class="leading-relaxed break-words"
         >
           The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
-        </div>
+        </p>
       </div>
     </div>
   </div>

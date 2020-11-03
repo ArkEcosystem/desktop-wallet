@@ -16,7 +16,7 @@ const sizeOptions: Record<string, Size | undefined> = {
 };
 
 export const Default = () => {
-	const variant = select("Variant", ["primary", "success", "warning", "danger", "neutral"], "warning");
+	const variant = select("Variant", ["info", "success", "warning", "danger", "hint"], "info");
 	const size = select("Size", sizeOptions, undefined);
 	const title = text("Title", "Title");
 

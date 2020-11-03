@@ -51,7 +51,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 			/>
 
-			<Alert size="lg">{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.WARNING")}</Alert>
+			<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.WARNING")}</Alert>
 
 			<TransactionSender
 				address={wallet.address()}

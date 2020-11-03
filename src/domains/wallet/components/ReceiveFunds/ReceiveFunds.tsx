@@ -1,22 +1,23 @@
 import { QRCode } from "@arkecosystem/platform-sdk-support";
 import { Avatar } from "app/components/Avatar";
-import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type ReceiveFundsProps = {
-	isOpen: boolean;
-	name?: string;
 	address: string;
 	icon: string;
-	handleClose?: any;
+	name?: string;
+	network: string;
+	isOpen: boolean;
+	onClose?: () => void;
 };
 
-export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: ReceiveFundsProps) => {
+export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
 	const { t } = useTranslation();
 
 	const [qrCode, setQrCode] = useState<string | undefined>();
@@ -32,17 +33,13 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 	}, [address, isOpen]);
 
 	return (
-		<Modal isOpen={isOpen} title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} onClose={() => handleClose()}>
+		<Modal title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")} isOpen={isOpen} onClose={onClose}>
 			{name && (
 				<div data-testid="ReceiveFunds__info">
 					<TransactionDetail
 						borderPosition="bottom"
 						label={t("COMMON.WALLET")}
-						extra={
-							<Circle size="lg" className="ml-4">
-								<Icon name={icon} width={20} height={20} />
-							</Circle>
-						}
+						extra={<NetworkIcon size="lg" coin={icon} network={network} />}
 					>
 						{name}
 					</TransactionDetail>
@@ -54,14 +51,10 @@ export const ReceiveFunds = ({ isOpen, name, address, icon, handleClose }: Recei
 					label={t("COMMON.ADDRESS")}
 					borderPosition="bottom"
 					extra={
-						<>
-							{!name && (
-								<Circle size="lg" className="-mr-2">
-									<Icon name={icon} width={20} height={20} />
-								</Circle>
-							)}
+						<div className="-space-x-2">
+							{!name && <NetworkIcon size="lg" coin={icon} network={network} />}
 							<Avatar address={address} size="lg" />
-						</>
+						</div>
 					}
 				>
 					<div className="flex items-center space-x-3">

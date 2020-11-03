@@ -12,10 +12,11 @@ export default {
 export const Default = () => (
 	<ReceiveFunds
 		address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-		name="My Wallet"
 		icon="ARK"
+		name="My Wallet"
+		network="ark.devnet"
 		isOpen={boolean("isOpen", true)}
-		handleClose={action("handleClose")}
+		onClose={action("onClose")}
 	/>
 );
 
@@ -23,7 +24,8 @@ export const WithoutName = () => (
 	<ReceiveFunds
 		address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
 		icon="ARK"
+		network="ark.devnet"
 		isOpen={boolean("isOpen", true)}
-		handleClose={action("handleClose")}
+		onClose={action("onClose")}
 	/>
 );

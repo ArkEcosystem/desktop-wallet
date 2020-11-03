@@ -15,7 +15,6 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
-import { LedgerListener } from "domains/transaction/components/LedgerListener";
 import electron from "electron";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
@@ -27,7 +26,7 @@ import { StubStorage } from "tests/mocks";
 import { Theme } from "types";
 
 import { middlewares, RouterView, routes } from "../router";
-import { EnvironmentProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
+import { EnvironmentProvider, LedgerProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
 import { useDarkMode, useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
@@ -70,7 +69,7 @@ const Main = () => {
 			nativeTheme.themeSource = "system";
 			setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
 		}
-	}, [env, match, nativeTheme, theme, setTheme, showSplash]);
+	}, [env, match, nativeTheme, theme, setTheme]);
 
 	useLayoutEffect(() => {
 		setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
@@ -149,10 +148,10 @@ export const App = () => {
 		<ErrorBoundary FallbackComponent={ApplicationError}>
 			<I18nextProvider i18n={i18n}>
 				<EnvironmentProvider env={env}>
-					<LedgerListener transport={LedgerTransportNodeHID} />
-
 					<ThemeProvider>
-						<Main />
+						<LedgerProvider transport={LedgerTransportNodeHID}>
+							<Main />
+						</LedgerProvider>
 					</ThemeProvider>
 				</EnvironmentProvider>
 			</I18nextProvider>
