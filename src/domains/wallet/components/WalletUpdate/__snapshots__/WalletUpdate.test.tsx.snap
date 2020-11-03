@@ -121,7 +121,66 @@ exports[`WalletUpdate should render 2st step 1`] = `
     data-testid="WalletUpdate__second-step"
   >
     <div
-      class="flex w-2/5 mx-auto"
+      class="flex w-2/5 mx-auto items-center"
+    >
+      <div
+        class="flex-1"
+      >
+        <p
+          class="text-sm font-semibold text-theme-neutral-light"
+        >
+          Downloading
+        </p>
+      </div>
+      <div>
+        <div
+          class="flex justify-center"
+        >
+          <div
+            class="animate-spin"
+          >
+            <svg
+              height="50"
+              viewBox="0 0 50 50"
+              width="50"
+            >
+              <circle
+                cx="25"
+                cy="25"
+                fill="transparent"
+                r="22.5"
+                stroke="var(--theme-color-success-200)"
+                stroke-width="5"
+              />
+              <circle
+                cx="25"
+                cy="25"
+                fill="transparent"
+                r="22.5"
+                stroke="var(--theme-color-success)"
+                stroke-dasharray="141.3716694115407"
+                stroke-dashoffset="113.09733552923255"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="5"
+                transform="rotate(-90 25 25)"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`WalletUpdate should render 2st step with progress status 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletUpdate__second-step"
+  >
+    <div
+      class="flex w-2/5 mx-auto items-center"
     >
       <div
         class="flex-1"
@@ -141,54 +200,58 @@ exports[`WalletUpdate should render 2st step 1`] = `
         <div
           class="flex justify-center"
         >
-          <svg
-            height="50"
-            viewBox="0 0 50 50"
-            width="50"
+          <div
+            class=""
           >
-            <circle
-              cx="25"
-              cy="25"
-              fill="transparent"
-              r="22.5"
-              stroke="var(--theme-color-success-200)"
-              stroke-width="5"
-            />
-            <circle
-              cx="25"
-              cy="25"
-              fill="transparent"
-              r="22.5"
-              stroke="var(--theme-color-success)"
-              stroke-dasharray="141.3716694115407"
-              stroke-dashoffset="141.3716694115407"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="5"
-              transform="rotate(-90 25 25)"
-            />
-            <text
-              data-testid="CircularProgressBar__percentage"
-              dy="0.3em"
-              fill="var(--theme-color-success)"
-              font-size="0.8rem"
-              font-weight="600"
-              text-anchor="middle"
-              x="50%"
-              y="50%"
+            <svg
+              height="50"
+              viewBox="0 0 50 50"
+              width="50"
             >
-              <tspan>
-                0
-                <tspan
-                  dy="-0.6em"
-                  font-size="0.4rem"
-                  font-weight="bold"
-                >
-                  %
+              <circle
+                cx="25"
+                cy="25"
+                fill="transparent"
+                r="22.5"
+                stroke="var(--theme-color-success-200)"
+                stroke-width="5"
+              />
+              <circle
+                cx="25"
+                cy="25"
+                fill="transparent"
+                r="22.5"
+                stroke="var(--theme-color-success)"
+                stroke-dasharray="141.3716694115407"
+                stroke-dashoffset="113.09733552923255"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="5"
+                transform="rotate(-90 25 25)"
+              />
+              <text
+                data-testid="CircularProgressBar__percentage"
+                dy="0.3em"
+                fill="var(--theme-color-success)"
+                font-size="0.8rem"
+                font-weight="600"
+                text-anchor="middle"
+                x="50%"
+                y="50%"
+              >
+                <tspan>
+                  20
+                  <tspan
+                    dy="-0.6em"
+                    font-size="0.4rem"
+                    font-weight="bold"
+                  >
+                    %
+                  </tspan>
                 </tspan>
-              </tspan>
-            </text>
-          </svg>
+              </text>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
