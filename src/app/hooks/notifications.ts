@@ -84,7 +84,7 @@ const notifyReceivedTransactions: any = async ({
 	);
 };
 
-const findNotificationByVersion = (profile: Profile, version: string) =>
+const findNotificationByVersion = (profile: Profile, version?: string) =>
 	profile
 		.notifications()
 		.values()
@@ -105,6 +105,15 @@ const notifyWalletUpdate = (env: Environment, t: any) => ({ version }: { version
 					meta: { version },
 				}),
 			);
+		});
+};
+
+const deleteNotificationsByVersion = (env: Environment) => ({ version }: { version?: string }) => {
+	env.profiles()
+		.values()
+		.forEach((profile: Profile) => {
+			const notification = findNotificationByVersion(profile, version);
+			if (notification) profile.notifications().forget(notification.id);
 		});
 };
 
@@ -129,6 +138,7 @@ export const useNotifications = () => {
 				syncReceivedTransactions,
 				formatNotification,
 				notifyWalletUpdate: notifyWalletUpdate(env, t),
+				deleteNotificationsByVersion: deleteNotificationsByVersion(env),
 			},
 		};
 	}, [profiles, env, t]);

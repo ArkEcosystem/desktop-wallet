@@ -70,4 +70,30 @@ describe("Notifications Hook", () => {
 		const notificationsCount = env.profiles().values()[0].notifications().count();
 		expect(notificationsCount).toEqual(initialNotificationsCount);
 	});
+
+	it("should delete existing wallet update notification", () => {
+		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
+		const { result } = renderHook(() => useNotifications(), { wrapper });
+
+		const { notifications } = result.current;
+
+		const initialNotificationsCount = env.profiles().values()[0].notifications().count();
+		notifications.notifyWalletUpdate({ version: "2.5.6" });
+		notifications.deleteNotificationsByVersion({ version: "2.5.6" });
+
+		const notificationsCount = env.profiles().values()[0].notifications().count();
+		expect(notificationsCount).toBeLessThan(initialNotificationsCount);
+	});
+
+	it("should do nothing if notification to be deleted is not found", () => {
+		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
+		const { result } = renderHook(() => useNotifications(), { wrapper });
+
+		const { notifications } = result.current;
+
+		const initialNotificationsCount = env.profiles().values()[0].notifications().count();
+		notifications.deleteNotificationsByVersion({ version: "2.5.8" });
+		const notificationsCount = env.profiles().values()[0].notifications().count();
+		expect(notificationsCount).toEqual(initialNotificationsCount);
+	});
 });

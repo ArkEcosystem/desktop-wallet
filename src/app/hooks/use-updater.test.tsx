@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import React from "react";
@@ -77,7 +78,7 @@ describe("useUpdater hook", () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useUpdater(), { wrapper });
 
-		act(() => {
+		await act(async () => {
 			result.current.notifyForUpdates();
 		});
 

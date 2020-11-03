@@ -30,16 +30,11 @@ const downloadProgressDefaults = () => ({
 export const useUpdater = () => {
 	const [downloadProgress, setDownloadProgress] = useState<DownloadProgress>(downloadProgressDefaults());
 	const [downloadStatus, setDownloadStatus] = useState<DownloadStatus>("idle");
+	const [updateVersion, setUpdateVersion] = useState<string>();
 
 	const { notifications } = useNotifications();
 
 	const downloadUpdate = () => {
-		// const isLinux = process.platform.includes("linux");
-		// if (isLinux && !process.env.APPIMAGE) {
-		// 	console.log("no app image");
-		// 	return;
-		// }
-		//
 		setDownloadStatus("started");
 		ipcRenderer.invoke(IpcEvent.DOWNLOAD_UPDATE);
 	};
@@ -53,6 +48,7 @@ export const useUpdater = () => {
 	const quitInstall = () => {
 		setDownloadStatus("idle");
 		ipcRenderer.invoke(IpcEvent.QUIT_INSTALL);
+		notifications.deleteNotificationsByVersion({ version: updateVersion });
 	};
 
 	const notifyForUpdates: any = useCallback(async () => {
@@ -60,6 +56,7 @@ export const useUpdater = () => {
 		const hasNewerVersion = !!cancellationToken;
 		if (!hasNewerVersion) return;
 
+		setUpdateVersion(updateInfo.version);
 		notifications.notifyWalletUpdate({ version: updateInfo.version });
 	}, [notifications]);
 
