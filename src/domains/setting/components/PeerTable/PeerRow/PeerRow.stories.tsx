@@ -1,9 +1,9 @@
 import { Table } from "app/components/Table";
 import React from "react";
 
-import { PeerListItem } from "./PeerListItem";
+import { PeerRow } from "./PeerRow";
 
-export default { title: "Domains / Setting / Components / PeerListItem" };
+export default { title: "Domains / Setting / Components / PeerRow" };
 
 const data = [
 	{
@@ -43,6 +43,6 @@ const columns = [
 
 export const Default = () => (
 	<Table columns={columns} data={data}>
-		{(rowData: any) => <PeerListItem {...rowData} />}
+		{(rowData: any) => <PeerRow {...rowData} />}
 	</Table>
 );

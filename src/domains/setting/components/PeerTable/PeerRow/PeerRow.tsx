@@ -4,7 +4,7 @@ import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
 
-type PeerListItemProps = {
+type PeerRowProps = {
 	coin?: string;
 	coinClass?: string;
 	name?: string;
@@ -14,7 +14,7 @@ type PeerListItemProps = {
 	onAction?: any;
 };
 
-export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onAction }: PeerListItemProps) => (
+export const PeerRow = ({ coin, coinClass, name, peerIp, type, actions, onAction }: PeerRowProps) => (
 	<TableRow>
 		<TableCell variant="start" innerClassName="space-x-2">
 			<Circle className={coinClass} noShadow>
@@ -41,6 +41,6 @@ export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onA
 	</TableRow>
 );
 
-PeerListItem.defaultProps = {
+PeerRow.defaultProps = {
 	actions: [],
 };

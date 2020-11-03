@@ -1,17 +1,16 @@
 import { Button } from "app/components/Button";
 import { Table } from "app/components/Table";
 import { CustomPeers } from "domains/setting/components/CustomPeers";
+import { PeerRow } from "domains/setting/components/PeerTable/PeerRow";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { PeerListItem } from "../PeerListItem";
-
-type PeerListProps = {
+type PeerTableProps = {
 	peers?: any;
 	networks?: any;
 };
 
-export const PeerList = ({ peers, networks }: PeerListProps) => {
+export const PeerTable = ({ peers, networks }: PeerTableProps) => {
 	const { t } = useTranslation();
 
 	const [isCustomPeers, setIsCustomPeers] = useState(false);
@@ -39,7 +38,7 @@ export const PeerList = ({ peers, networks }: PeerListProps) => {
 	return (
 		<div>
 			<Table columns={columns} data={peers}>
-				{(rowData: any) => <PeerListItem {...rowData} />}
+				{(rowData: any) => <PeerRow {...rowData} />}
 			</Table>
 
 			<Button
@@ -56,6 +55,6 @@ export const PeerList = ({ peers, networks }: PeerListProps) => {
 	);
 };
 
-PeerList.defaultProps = {
+PeerTable.defaultProps = {
 	peers: [],
 };

@@ -1,14 +1,14 @@
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
-import { PeerListItem } from "./PeerListItem";
+import { PeerRow } from "./PeerRow";
 
-describe("PeerListItem", () => {
+describe("PeerRow", () => {
 	it("should render", () => {
 		const { container } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Bitcoin" />
+					<PeerRow coin="Bitcoin" />
 				</tbody>
 			</table>,
 		);
@@ -26,7 +26,7 @@ describe("PeerListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Bitcoin" actions={options} onAction={onAction} />
+					<PeerRow coin="Bitcoin" actions={options} onAction={onAction} />
 				</tbody>
 			</table>,
 		);
@@ -58,7 +58,7 @@ describe("PeerListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Bitcoin" actions={options} />
+					<PeerRow coin="Bitcoin" actions={options} />
 				</tbody>
 			</table>,
 		);

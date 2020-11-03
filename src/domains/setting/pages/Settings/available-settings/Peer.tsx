@@ -4,7 +4,7 @@ import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
-import { PeerList } from "domains/setting/components/PeerList";
+import { PeerTable } from "domains/setting/components/PeerTable";
 import { networks, peers } from "domains/setting/data";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -45,7 +45,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 				<ListDivided items={peerItems} />
 
 				<div className="pt-8">
-					<PeerList networks={networks} peers={peers} />
+					<PeerTable networks={networks} peers={peers} />
 				</div>
 
 				<div className="pt-2 pb-4">

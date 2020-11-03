@@ -49,6 +49,7 @@ export const translations: { [key: string]: any } = {
 		SUCCESS: "Your profile settings have been updated",
 		ERROR: "Your profile settings could not be updated",
 	},
+
 	PASSWORD: {
 		MENU_ITEM: "Password",
 		TITLE: "Profile Password",
@@ -67,6 +68,7 @@ export const translations: { [key: string]: any } = {
 		},
 		SUCCESS: "Your password has been successfully changed.",
 	},
+
 	PEERS: {
 		MENU_ITEM: "Peer",
 		TITLE: "Peer Settings",
@@ -87,6 +89,7 @@ export const translations: { [key: string]: any } = {
 		TYPE: "Type",
 		SUCCESS: "Your peer settings have been updated",
 	},
+
 	PLUGINS: {
 		MENU_ITEM: "Plugins",
 		TITLE: "Plugin Settings",
@@ -105,11 +108,13 @@ export const translations: { [key: string]: any } = {
 		OPEN_BLACKLIST: "Open List",
 		SUCCESS: "Your plugin settings have been updated",
 	},
+
 	MODAL_ADVANCED_MODE: {
 		TITLE: "Advanced Mode Disclaimer",
 		DISCLAIMER:
 			"By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
 	},
+
 	MODAL_CUSTOM_PEER: {
 		TITLE: "Custom Peer",
 	},
