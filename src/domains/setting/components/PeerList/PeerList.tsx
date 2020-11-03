@@ -1,9 +1,9 @@
 import { Button } from "app/components/Button";
 import { Table } from "app/components/Table";
+import { CustomPeers } from "domains/setting/components/CustomPeers";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { CustomPeers } from "../CustomPeers";
 import { PeerListItem } from "../PeerListItem";
 
 type PeerListProps = {
@@ -12,9 +12,9 @@ type PeerListProps = {
 };
 
 export const PeerList = ({ peers, networks }: PeerListProps) => {
-	const [modalIsOpen, setModalIsOpen] = useState(false);
-
 	const { t } = useTranslation();
+
+	const [isCustomPeers, setIsCustomPeers] = useState(false);
 
 	const columns = [
 		{
@@ -34,8 +34,6 @@ export const PeerList = ({ peers, networks }: PeerListProps) => {
 
 	return (
 		<div>
-			<CustomPeers networks={networks} isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
-
 			<Table columns={columns} data={peers}>
 				{(rowData: any) => <PeerListItem {...rowData} />}
 			</Table>
@@ -43,11 +41,13 @@ export const PeerList = ({ peers, networks }: PeerListProps) => {
 			<Button
 				variant="plain"
 				className="w-full mt-8 mb-2"
-				onClick={() => setModalIsOpen(true)}
+				onClick={() => setIsCustomPeers(true)}
 				data-testid="peer-list__add-button"
 			>
 				{t("SETTINGS.PEERS.ADD_PEER")}
 			</Button>
+
+			<CustomPeers isOpen={isCustomPeers} onClose={() => setIsCustomPeers(false)} />
 		</div>
 	);
 };
