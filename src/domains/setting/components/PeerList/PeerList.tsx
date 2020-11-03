@@ -30,6 +30,10 @@ export const PeerList = ({ peers, networks }: PeerListProps) => {
 			Header: t("SETTINGS.PEERS.TYPE"),
 			className: "flex justify-center",
 		},
+		{
+			accessor: "onSelect",
+			disableSortBy: true,
+		},
 	];
 
 	return (
