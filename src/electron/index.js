@@ -3,6 +3,7 @@ const electron = require("electron");
 const isDev = require("electron-is-dev");
 const winState = require("electron-window-state");
 const path = require("path");
+const find = require("find-process");
 const assignMenu = require("./menu");
 
 const { BrowserWindow, app, screen, ipcMain } = electron;
@@ -57,6 +58,10 @@ ipcMain.on("disable-iframe-protection", function (_event, urls) {
 			statusLine: details.statusLine,
 		});
 	});
+});
+
+ipcMain.on("exit-app", function (_event, args) {
+	app.quit();
 });
 
 function createWindow() {
@@ -128,6 +133,20 @@ app.on("open-url", (event, url) => {
 	event.preventDefault();
 	deeplinkingUrl = url;
 	broadcastURL(deeplinkingUrl);
+});
+
+app.on("before-quit", (e) => {
+	if (isDev) {
+		find("port", 3000).then(
+			function (list) {
+				if (list[0] != null) {
+					process.kill(list[0].pid, "SIGHUP");
+				}
+			}.catch((e) => {
+				console.log(e.stack || e);
+			}),
+		);
+	}
 });
 
 app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
