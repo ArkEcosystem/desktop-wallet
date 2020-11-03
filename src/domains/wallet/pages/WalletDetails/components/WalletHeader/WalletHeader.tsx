@@ -109,9 +109,11 @@ export const WalletHeader = ({
 
 						<div className="flex flex-col overflow-hidden">
 							<div className="flex items-center space-x-5 text-theme-secondary-text">
-								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
-									{name}
-								</span>
+								{name && (
+									<span data-testid="WalletHeader__name" className="text-sm font-semibold">
+										{name}
+									</span>
+								)}
 
 								<div className="flex items-center space-x-3">
 									{isLedger && (
@@ -133,8 +135,8 @@ export const WalletHeader = ({
 												<Icon
 													name="Multisig"
 													className="hover:text-theme-neutral"
-													width={16}
-													height={16}
+													width={20}
+													height={20}
 												/>
 											</span>
 										</Tooltip>
