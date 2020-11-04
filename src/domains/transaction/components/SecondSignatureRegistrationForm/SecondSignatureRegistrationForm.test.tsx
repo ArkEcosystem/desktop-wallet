@@ -18,6 +18,13 @@ import { translations as transactionTranslations } from "../../i18n";
 import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationForm";
 
 jest.mock("electron", () => ({
+	ipcRenderer: {
+		invoke: jest.fn(),
+		on: jest.fn(),
+		handle: jest.fn(),
+		send: jest.fn(),
+		removeListener: jest.fn(),
+	},
 	remote: {
 		dialog: {
 			showSaveDialog: jest.fn(),
