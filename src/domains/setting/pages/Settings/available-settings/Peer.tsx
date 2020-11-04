@@ -71,9 +71,11 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 			<Form id="peer-settings__form" context={context} onSubmit={handleSubmit} className="mt-8">
 				<ListDivided items={peerItems} />
 
-				<div className="pt-8">
-					<PeerTable networks={networks} peers={peers} />
-				</div>
+				{isCustomPeers && (
+					<div className="pt-8">
+						<PeerTable networks={networks} peers={peers} />
+					</div>
+				)}
 
 				<div className="pt-2 pb-4">
 					<Divider dashed />
