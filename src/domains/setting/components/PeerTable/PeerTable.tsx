@@ -50,7 +50,7 @@ export const PeerTable = ({ peers, networks }: PeerTableProps) => {
 				{t("SETTINGS.PEERS.ADD_PEER")}
 			</Button>
 
-			<CustomPeers isOpen={isCustomPeers} onClose={() => setIsCustomPeers(false)} />
+			<CustomPeers networks={networks} isOpen={isCustomPeers} onClose={() => setIsCustomPeers(false)} />
 		</div>
 	);
 };

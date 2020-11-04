@@ -32,7 +32,7 @@ export const PeerRow = ({ coin, coinClass, name, peerIp, type, actions, onAction
 		</TableCell>
 
 		<TableCell innerClassName="text-theme-neutral justify-center">
-			<Icon name={type!} />
+			<Icon name={type!} width={20} height={20} />
 		</TableCell>
 
 		<TableCell variant="end" innerClassName="text-theme-neutral-300">

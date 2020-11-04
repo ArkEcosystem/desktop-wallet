@@ -5,28 +5,44 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type CustomPeersProps = {
-	isOpen: boolean;
-	onClose?: any;
-	onAddPeer?: any;
 	networks?: Coins.Network[];
+	isOpen: boolean;
+	onAddPeer?: any;
+	onClose?: () => void;
 };
 
-export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeersProps) => {
-	const form = useForm({ mode: "onChange" });
+export const CustomPeers = ({ networks, isOpen, onAddPeer, onClose }: CustomPeersProps) => {
 	const { t } = useTranslation();
+
+	const form = useForm({ mode: "onChange" });
+	const { register, setValue, watch } = form;
+	const { network } = watch();
+
+	useEffect(() => {
+		register({ name: "network" });
+	}, [register]);
+
+	const handleSelectNetwork = (network?: Coins.Network | null) => {
+		setValue("network", network, { shouldValidate: true, shouldDirty: true });
+	};
 
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
 			<Form context={form} onSubmit={onAddPeer}>
 				<FormField name="network" className="my-8">
 					<FormLabel label={t("SETTINGS.PEERS.CRYPTOASSET")} />
-					<SelectNetwork id="CustomPeers__network" networks={networks} />
-					<FormHelperText />
+					<SelectNetwork
+						id="CustomPeers__network"
+						networks={networks}
+						selected={network}
+						onSelect={handleSelectNetwork}
+					/>
+					<FormHelperText errorMessage={form.errors} />
 				</FormField>
 
 				<FormField name="name">
@@ -54,7 +70,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 				</FormField>
 
 				<FormField name="peer-type">
-					<FormLabel label={t("SETTINGS.PEERS.TYPE")} />
+					<FormLabel label={t("SETTINGS.PEERS.TYPE")} required={false} optional />
 					<label htmlFor="multisig" className="inline-flex items-center">
 						<Checkbox />
 						<span className="ml-2 text-sm font-semibold text-theme-secondary-text">
