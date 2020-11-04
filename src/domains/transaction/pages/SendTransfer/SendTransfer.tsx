@@ -10,6 +10,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -54,6 +55,7 @@ export const SendTransfer = () => {
 
 	const { senderAddress, fees, remainingBalance, amount } = watch();
 	const { sendTransfer, common } = useValidation();
+	const transactionBuilder = useTransactionBuilder(activeProfile);
 
 	useEffect(() => {
 		register("remainingBalance");
@@ -93,55 +95,42 @@ export const SendTransfer = () => {
 		clearErrors("mnemonic");
 
 		const { fee, mnemonic, secondMnemonic, recipients, senderAddress, smartbridge } = getValues();
-		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		const isMultiPayment = recipients.length > 1;
-		const transferInput: Contracts.TransactionInput = {
+
+		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
+		const transactionInput: Contracts.TransactionInputs = {
 			fee,
 			from: senderAddress,
 			sign: {
 				mnemonic,
 				secondMnemonic,
 			},
+			data: {},
 		};
 
-		if (senderWallet?.isMultiSignature()) {
-			transferInput.nonce = senderWallet.nonce().plus(1).toFixed();
-			transferInput.sign = {
-				multiSignature: senderWallet?.multiSignature(),
-			};
-		}
-
 		try {
-			let transactionId: string;
-
 			if (isMultiPayment) {
-				transactionId = await senderWallet!.transaction().signMultiPayment({
-					...transferInput,
-					data: {
-						payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
-							to: address,
-							amount,
-						})),
-					},
-				});
+				transactionInput.data = {
+					payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
+						to: address,
+						amount,
+					})),
+				};
 			} else {
-				transactionId = await senderWallet!.transaction().signTransfer({
-					...transferInput,
-					data: {
-						to: recipients[0].address,
-						amount: recipients[0].amount,
-						memo: smartbridge,
-					},
-				});
+				transactionInput.data = {
+					to: recipients[0].address,
+					amount: recipients[0].amount,
+					memo: smartbridge,
+				};
 			}
 
-			await senderWallet!.transaction().broadcast(transactionId);
+			const transaction = await transactionBuilder.build(transactionType, transactionInput);
+			await transactionBuilder.broadcast(transaction.id(), transactionInput);
 
 			await env.persist();
 
-			setTransaction(senderWallet!.transaction().transaction(transactionId));
-
+			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
@@ -163,6 +152,10 @@ export const SendTransfer = () => {
 		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
 			await handleSubmit(submitForm)();
 			return;
+		}
+
+		if (newIndex === 3 && senderWallet?.isLedger()) {
+			handleSubmit(submitForm)();
 		}
 
 		setActiveTab(newIndex);
