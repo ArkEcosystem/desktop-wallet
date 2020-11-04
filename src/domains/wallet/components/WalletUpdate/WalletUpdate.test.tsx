@@ -1,12 +1,24 @@
 /* eslint-disable @typescript-eslint/require-await */
+
 import { act } from "@testing-library/react-hooks";
+import * as updaterHook from "app/hooks/use-updater";
 import React from "react";
-import { fireEvent, render, RenderResult, waitFor } from "testing-library";
+import { fireEvent, render, waitFor } from "testing-library";
 
 import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 import { WalletUpdate } from "./WalletUpdate";
+
+jest.mock("electron", () => ({
+	ipcRenderer: {
+		invoke: jest.fn(),
+		on: jest.fn(),
+		handle: jest.fn(),
+		send: jest.fn(),
+		removeListener: jest.fn(),
+	},
+}));
 
 describe("WalletUpdate", () => {
 	it("should not render if not open", () => {
@@ -30,6 +42,13 @@ describe("WalletUpdate", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render 2st step with progress status", () => {
+		const { asFragment, getByTestId } = render(<SecondStep percent={20} />);
+
+		expect(getByTestId("WalletUpdate__second-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render 3st step", () => {
 		const { asFragment, getByTestId } = render(<ThirdStep />);
 
@@ -38,32 +57,63 @@ describe("WalletUpdate", () => {
 	});
 
 	it("should render", async () => {
-		let rendered: RenderResult;
-
-		await act(async () => {
-			rendered = render(<WalletUpdate isOpen={true} />);
-			await waitFor(() => expect(rendered.getByTestId("WalletUpdate__first-step")).toBeTruthy());
-		});
-
-		const { asFragment, getByTestId } = rendered!;
+		const { asFragment, getByTestId } = render(<WalletUpdate isOpen={true} />);
+		await waitFor(() => expect(getByTestId("WalletUpdate__first-step")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
+	});
 
-		await act(async () => {
-			// Navigation between steps
-			await fireEvent.click(getByTestId("WalletUpdate__update-button"));
-			expect(getByTestId("WalletUpdate__second-step")).toBeTruthy();
-
-			// Back
-			await fireEvent.click(getByTestId("WalletUpdate__back-button"));
-			expect(getByTestId("WalletUpdate__first-step")).toBeTruthy();
-
-			// Navigation between steps
-			await fireEvent.click(getByTestId("WalletUpdate__update-button"));
-			expect(getByTestId("WalletUpdate__second-step")).toBeTruthy();
-
-			await fireEvent.click(getByTestId("WalletUpdate__continue-button"));
-			expect(getByTestId("WalletUpdate__third-step")).toBeTruthy();
+	it("should handle close", async () => {
+		const onClose = jest.fn();
+		const { getByTestId } = render(<WalletUpdate isOpen={true} onClose={onClose} />);
+		await waitFor(() => expect(getByTestId("WalletUpdate__first-step")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
 		});
+		await waitFor(() => expect(onClose).toHaveBeenCalled());
+	});
+
+	it("should handle cancel", async () => {
+		const onCancel = jest.fn();
+		const { getByTestId } = render(<WalletUpdate isOpen={true} onCancel={onCancel} />);
+		await waitFor(() => expect(getByTestId("WalletUpdate__first-step")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("WalletUpdate__cancel-button"));
+		});
+		await waitFor(() => expect(onCancel).toHaveBeenCalled());
+	});
+
+	it("should handle cancel", async () => {
+		const onCancel = jest.fn();
+		const { getByTestId } = render(<WalletUpdate isOpen={true} onCancel={onCancel} />);
+		await waitFor(() => expect(getByTestId("WalletUpdate__first-step")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("WalletUpdate__cancel-button"));
+		});
+		await waitFor(() => expect(onCancel).toHaveBeenCalled());
+	});
+
+	it("should handle update", async () => {
+		const { getByTestId } = render(<WalletUpdate isOpen={true} />);
+		await waitFor(() => expect(getByTestId("WalletUpdate__first-step")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("WalletUpdate__update-button"));
+		});
+		await waitFor(() => expect(getByTestId("WalletUpdate__second-step")).toBeTruthy());
+	});
+
+	it("should handle install", async () => {
+		const quitInstall = jest.fn();
+		// @ts-ignore
+		jest.spyOn(updaterHook, "useUpdater").mockReturnValue({
+			downloadStatus: "completed",
+			quitInstall,
+		});
+
+		const { getByTestId } = render(<WalletUpdate isOpen={true} />);
+		act(() => {
+			fireEvent.click(getByTestId("WalletUpdate__install-button"));
+		});
+		await waitFor(() => expect(quitInstall).toHaveBeenCalled());
 	});
 });
