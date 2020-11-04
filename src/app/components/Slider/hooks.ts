@@ -1,6 +1,6 @@
 import "swiper/swiper-bundle.css";
 
-import { useEffect, useMemo,useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import Swiper, { Pagination } from "swiper";
 Swiper.use([Pagination]);
 
