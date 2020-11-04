@@ -15,7 +15,7 @@ const setupConfig = ({ isDev, testVersion, isE2e }) => {
 	autoUpdater.logger.transports.file.level = "info";
 
 	autoUpdater.autoDownload = false;
-	autoUpdater.currentVersion = version;
+	autoUpdater.currentVersion = testVersion || version;
 
 	if (isDev || isE2e) autoUpdater.updateConfigPath = "app-update.yml";
 	if (isDev) setupDev(testVersion);
