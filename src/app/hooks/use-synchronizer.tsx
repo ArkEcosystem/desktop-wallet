@@ -89,7 +89,7 @@ export const useEnvSynchronizer = () => {
 
 		const syncWalletUpdates = {
 			callback: () => notifyForUpdates(),
-			interval: Intervals.Short,
+			interval: Intervals.Long,
 		};
 
 		return [syncDelegates, syncFees, syncExchangeRates, syncWallets, syncNotifications, syncWalletUpdates];
