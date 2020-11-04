@@ -8,7 +8,7 @@ import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks";
 import { PeerTable } from "domains/setting/components/PeerTable";
 import { networks, peers } from "domains/setting/data";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
@@ -19,6 +19,8 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const activeProfile = useActiveProfile();
 
 	const { context, register } = formConfig;
+
+	const [isCustomPeers, setIsCustomPeers] = useState(false);
 
 	const peerItems = [
 		{
@@ -42,7 +44,13 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION"),
 			labelAddon: (
-				<Toggle ref={register()} name="isCustomPeers" data-testid="General-peers__toggle--isCustomPeers" />
+				<Toggle
+					ref={register()}
+					name="isCustomPeers"
+					checked={isCustomPeers}
+					onChange={(event) => setIsCustomPeers(event.target.checked)}
+					data-testid="General-peers__toggle--isCustomPeers"
+				/>
 			),
 			wrapperClass: "pt-6",
 		},
