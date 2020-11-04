@@ -973,7 +973,7 @@ exports[`SendIpfs should render 1st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="SendIpfs__step--first"
+    data-testid="SendIpfs__step--form"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -1254,7 +1254,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="SendIpfs__step--second"
+    data-testid="SendIpfs__step--review"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -1318,51 +1318,47 @@ exports[`SendIpfs should render 2nd step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
+            class="text-sm font-semibold text-theme-neutral-700"
+          >
+            Sender
+          </div>
+          <div
             class="font-semibold"
           >
             <div
-              class="flex-1 space-y-2"
+              class="inline-flex items-center"
             >
-              <div
-                class="text-theme-neutral"
+              <span
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                data-testid="address__wallet-name"
               >
-                <span
-                  class="mr-1 text-sm"
-                >
-                  Sender
-                </span>
-              </div>
-              <div
-                class="inline-flex items-center"
+                ARK Wallet 1
+              </span>
+              <span
+                class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <span
-                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                  data-testid="address__wallet-name"
-                >
-                  ARK Wallet 1
-                </span>
-                <span
-                  class="sc-fzpans kkFAbe text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  D8rr7B … s6YUYD
-                </span>
-              </div>
+                D8rr7B … s6YUYD
+              </span>
             </div>
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-          data-testid="Avatar"
+          class="flex items-center -space-x-2"
         >
           <div
-            class="w-full h-full"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+            data-testid="Avatar"
           >
-            <img
-              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-            />
+            <div
+              class="w-full h-full"
+            >
+              <img
+                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -1856,7 +1852,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                 >
                   <section
                     class="space-y-8"
-                    data-testid="SendIpfs__step--first"
+                    data-testid="SendIpfs__step--form"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"

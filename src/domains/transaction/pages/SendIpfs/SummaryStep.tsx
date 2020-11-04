@@ -7,7 +7,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const FourthStep = ({
+export const SummaryStep = ({
 	transaction,
 	senderWallet,
 }: {
