@@ -4,7 +4,7 @@ import { TransactionFee, TransactionVotes } from "domains/transaction/components
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 
-export const FourthStep = ({
+export const SummaryStep = ({
 	senderWallet,
 	transaction,
 	unvotes,

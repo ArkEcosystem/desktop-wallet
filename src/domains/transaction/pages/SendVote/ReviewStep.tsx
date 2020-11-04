@@ -12,7 +12,7 @@ import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const SecondStep = ({
+export const ReviewStep = ({
 	profile,
 	unvotes,
 	votes,
@@ -33,7 +33,7 @@ export const SecondStep = ({
 	}, [unregister]);
 
 	return (
-		<section data-testid="SendVote__step--second" className="space-y-8">
+		<section data-testid="SendVote__step--review" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}
