@@ -2,23 +2,23 @@ const { autoUpdater } = require("electron-updater");
 const { version } = require("../../package.json");
 const logger = require("electron-log");
 
-const setupConfig = () => {
-	autoUpdater.logger = logger;
-	autoUpdater.logger.transports.file.level = "info";
-	autoUpdater.autoDownload = false;
-	autoUpdater.currentVersion = version;
-	autoUpdater.updateConfigPath = "app-update.yml";
-};
-
-const setupDev = () => {
-	const testVersion = process.env.AUTO_UPDATER_VERSION;
-	if (testVersion) {
-		autoUpdater.currentVersion = testVersion;
-	}
+const setupDev = (testVersion) => {
+	if (testVersion) autoUpdater.currentVersion = testVersion;
 
 	if (process.platform === "linux") {
 		process.env.APPIMAGE = `dist/target/ark-desktop-wallet-linux-x86_64-${testVersion || version}.AppImage`;
 	}
+};
+
+const setupConfig = ({ isDev, testVersion, isE2e }) => {
+	autoUpdater.logger = logger;
+	autoUpdater.logger.transports.file.level = "info";
+
+	autoUpdater.autoDownload = false;
+	autoUpdater.currentVersion = version;
+
+	if (isDev || isE2e) autoUpdater.updateConfigPath = "app-update.yml";
+	if (isDev) setupDev(testVersion);
 };
 
 const sendToWindow = (key, value, mainWindow) => {
@@ -47,9 +47,11 @@ const updaterEvents = [
 ];
 
 const setupUpdater = ({ ipcMain, mainWindow, isDev }) => {
-	setupConfig();
-
-	if (isDev) setupDev();
+	setupConfig({
+		isDev,
+		isE2e: process.env.ELECTRON_IS_E2E,
+		testVersion: process.env.AUTO_UPDATER_VERSION,
+	});
 
 	const { QUIT_INSTALL, CANCEL, CHECK_UPDATES, DOWNLOAD_UPDATE } = ipcEvents();
 
