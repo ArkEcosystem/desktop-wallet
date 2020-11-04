@@ -96,7 +96,7 @@ describe("DelegateRow", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("DelegateRow__toggle-0")).toHaveTextContent(translations.CURRENT);
-		expect(getByTestId("DelegateRow__toggle-1")).toHaveTextContent(translations.NOT_SELECTED);
+		expect(getByTestId("DelegateRow__toggle-1")).toHaveTextContent(translations.SELECT);
 		expect(getByTestId("DelegateRow__toggle-2")).toBeDisabled();
 
 		expect(asFragment()).toMatchSnapshot();
