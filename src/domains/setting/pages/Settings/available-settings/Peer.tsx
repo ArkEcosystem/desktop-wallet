@@ -1,9 +1,11 @@
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
+import { useActiveProfile } from "app/hooks";
 import { PeerTable } from "domains/setting/components/PeerTable";
 import { networks, peers } from "domains/setting/data";
 import React from "react";
@@ -11,8 +13,12 @@ import { useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
 
-export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
+export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
+
+	const activeProfile = useActiveProfile();
+
+	const { context, register } = formConfig;
 
 	const peerItems = [
 		{
@@ -20,7 +26,14 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 			label: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION"),
-			labelAddon: <Toggle />,
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="isMultiPeerBroadcast"
+					defaultChecked={activeProfile.settings().get(ProfileSetting.MultiPeerBroadcast)}
+					data-testid="General-peers__toggle--isMultiPeerBroadcast"
+				/>
+			),
 			wrapperClass: "pb-6",
 		},
 		{
@@ -28,12 +41,18 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 			label: t("SETTINGS.PEERS.CUSTOM_PEERS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION"),
-			labelAddon: <Toggle />,
+			labelAddon: (
+				<Toggle ref={register()} name="isCustomPeers" data-testid="General-peers__toggle--isCustomPeers" />
+			),
 			wrapperClass: "pt-6",
 		},
 	];
 
-	const handleSubmit = () => {
+	const handleSubmit = async ({ isMultiPeerBroadcast, isCustomPeers }: any) => {
+		activeProfile.settings().set(ProfileSetting.MultiPeerBroadcast, isMultiPeerBroadcast);
+
+		await env.persist();
+
 		onSuccess(t("SETTINGS.PEERS.SUCCESS"));
 	};
 
@@ -41,7 +60,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		<>
 			<Header title={t("SETTINGS.PEERS.TITLE")} subtitle={t("SETTINGS.PEERS.SUBTITLE")} />
 
-			<Form id="peer-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
+			<Form id="peer-settings__form" context={context} onSubmit={handleSubmit} className="mt-8">
 				<ListDivided items={peerItems} />
 
 				<div className="pt-8">
