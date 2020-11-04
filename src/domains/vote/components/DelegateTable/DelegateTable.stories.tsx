@@ -16,9 +16,9 @@ export default {
 };
 
 export const Default = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
-	<DelegateTable delegates={delegates} maxVotes={1} selectedAddress="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax" />
+	<DelegateTable delegates={delegates} maxVotes={1} selectedWallet="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax" />
 );
 
 export const SelectMultiple = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
-	<DelegateTable delegates={delegates} maxVotes={10} selectedAddress="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax" />
+	<DelegateTable delegates={delegates} maxVotes={10} selectedWallet="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax" />
 );

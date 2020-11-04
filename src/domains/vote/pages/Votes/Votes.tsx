@@ -3,7 +3,6 @@ import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
-import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
@@ -14,7 +13,6 @@ import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import { MyVoteTable } from "domains/vote/components/MyVoteTable";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -22,41 +20,6 @@ import { useHistory, useParams } from "react-router-dom";
 type TabsProps = {
 	selected: string;
 	onClick?: (item: string) => void;
-};
-
-const Tabs = ({ selected, onClick }: TabsProps) => {
-	const { t } = useTranslation();
-
-	const getTabItemClass = (item: string) =>
-		selected === item
-			? "theme-neutral-900 border-theme-primary-dark"
-			: "text-theme-secondary-text hover:text-theme-text border-transparent";
-
-	return (
-		<ul className="flex h-20 mr-auto -mt-5 -mb-5" data-testid="Tabs">
-			<li
-				className={`flex items-center mr-4 font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getTabItemClass(
-					"delegate",
-				)}`}
-				onClick={() => onClick?.("delegate")}
-				data-testid="Tab__item--delegate"
-			>
-				{t("VOTE.VOTES_PAGE.TABS.SELECT_DELEGATE")}
-			</li>
-			<li className="flex items-center mr-4">
-				<Divider type="vertical" />
-			</li>
-			<li
-				className={`flex items-center font-semibold transition-colors duration-200 cursor-pointer border-b-3 text-md ${getTabItemClass(
-					"vote",
-				)}`}
-				onClick={() => onClick?.("vote")}
-				data-testid="Tab__item--vote"
-			>
-				{t("VOTE.VOTES_PAGE.TABS.MY_VOTE")}
-			</li>
-		</ul>
-	);
 };
 
 const InputAddress = ({ address, profile }: { address: string; profile: Profile }) => {
@@ -104,7 +67,6 @@ export const Votes = () => {
 	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
 	const voteAddresses = queryParams.get("votes")?.split(",");
 
-	const [tabItem, setTabItem] = useState("delegate");
 	const [network, setNetwork] = useState<Coins.Network | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
@@ -188,7 +150,6 @@ export const Votes = () => {
 
 	const handleSelectNetwork = (networkData?: Coins.Network | null) => {
 		if (!networkData || networkData.id() !== network?.id()) {
-			setTabItem("delegate");
 			setWallets([]);
 			setAddress("");
 		}
@@ -251,35 +212,19 @@ export const Votes = () => {
 						<InputAddress address={address} profile={activeProfile} />
 					</div>
 				</div>
-
-				{address && (
-					<>
-						<Divider />
-						<Tabs selected={tabItem} onClick={(tabItem) => setTabItem(tabItem)} />
-					</>
-				)}
 			</div>
 
 			<Section className="flex-1">
 				{network?.allowsVoting() && address ? (
-					tabItem === "delegate" ? (
-						<DelegateTable
-							delegates={delegates}
-							maxVotes={network.maximumVotesPerWallet()}
-							votes={votes}
-							selectedAddress={address}
-							selectedUnvoteAddresses={unvoteAddresses}
-							selectedVoteAddresses={voteAddresses}
-							onContinue={handleContinue}
-						/>
-					) : (
-						<MyVoteTable
-							maxVotes={network.maximumVotesPerWallet()}
-							votes={votes}
-							selectedAddress={address}
-							onContinue={handleContinue}
-						/>
-					)
+					<DelegateTable
+						delegates={delegates}
+						maxVotes={network.maximumVotesPerWallet()}
+						votes={votes}
+						selectedUnvoteAddresses={unvoteAddresses}
+						selectedVoteAddresses={voteAddresses}
+						selectedWallet={address}
+						onContinue={handleContinue}
+					/>
 				) : network?.allowsVoting() ? (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
 				) : (

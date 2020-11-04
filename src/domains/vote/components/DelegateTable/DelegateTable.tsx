@@ -16,9 +16,9 @@ type DelegateTableProps = {
 	delegates: ReadOnlyWallet[];
 	maxVotes: number;
 	votes?: ReadOnlyWallet[];
-	selectedAddress: string;
 	selectedUnvoteAddresses?: string[];
 	selectedVoteAddresses?: string[];
+	selectedWallet: string;
 	itemsPerPage?: number;
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
@@ -28,9 +28,9 @@ export const DelegateTable = ({
 	delegates,
 	maxVotes,
 	votes,
-	selectedAddress,
 	selectedUnvoteAddresses,
 	selectedVoteAddresses,
+	selectedWallet,
 	itemsPerPage,
 	onContinue,
 }: DelegateTableProps) => {
@@ -212,13 +212,7 @@ export const DelegateTable = ({
 							<div className="flex font-semibold">
 								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 									<div className="inline-flex">
-										{/* 										<Circle
-											className="mr-2 bg-theme-background border-theme-text text-theme-text"
-											size="lg"
-										>
-											<Icon name="Vote" className="text-xl" />
-										</Circle> */}
-										<Avatar className="mr-2" size="lg" address={selectedAddress} noShadow />
+										<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
 										<div className="flex flex-col">
 											<div className="text-theme-neutral">
 												{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}
@@ -227,7 +221,7 @@ export const DelegateTable = ({
 												className="text-theme-text"
 												data-testid="DelegateTable__footer--address"
 											>
-												<Address address={selectedAddress} maxChars={24} />
+												<Address address={selectedWallet} maxChars={24} />
 											</div>
 										</div>
 									</div>
