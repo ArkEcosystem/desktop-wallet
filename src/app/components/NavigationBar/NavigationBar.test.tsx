@@ -13,6 +13,13 @@ jest.mock("electron", () => ({
 	shell: {
 		openExternal: jest.fn(),
 	},
+	ipcRenderer: {
+		invoke: jest.fn(),
+		on: jest.fn(),
+		handle: jest.fn(),
+		send: jest.fn(),
+		removeListener: jest.fn(),
+	},
 }));
 
 let profile: Profile;

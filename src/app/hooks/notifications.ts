@@ -1,6 +1,8 @@
 import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { TransactionDataType } from "@arkecosystem/platform-sdk/dist/contracts";
+import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 type SyncReceivedTransactionsParams = {
 	lookupLimit?: number;
@@ -28,7 +30,7 @@ const transactionNotificationExists = (profile: Profile, transaction: Transactio
 		.values()
 		.some((n) => n.type === "transaction" && n?.meta?.transactionId === transaction.id());
 
-const formatNotification = (transaction: TransactionDataType) => ({
+const formatTransactionNotification = (transaction: TransactionDataType) => ({
 	icon: "",
 	body: "",
 	name: "",
@@ -39,6 +41,19 @@ const formatNotification = (transaction: TransactionDataType) => ({
 		walletAddress: transaction.recipient(),
 	},
 });
+
+const formatNotification = (input: any) =>
+	Object.assign(
+		{
+			icon: "",
+			body: "",
+			name: "",
+			action: "update",
+			type: "wallet",
+			meta: {},
+		},
+		input,
+	);
 
 const filterUnseenTransactions = (
 	profile: Profile,
@@ -65,11 +80,47 @@ const notifyReceivedTransactions: any = async ({
 	const newUnseenTransactions = filterUnseenTransactions(profile, allRecentTransactions, allowedTransactionTypes);
 
 	return newUnseenTransactions.map((transaction: TransactionDataType) =>
-		profile.notifications().push(formatNotification(transaction)),
+		profile.notifications().push(formatTransactionNotification(transaction)),
 	);
 };
 
-export const useNotifications = (env: Environment) => {
+const findNotificationByVersion = (profile: Profile, version?: string) =>
+	profile
+		.notifications()
+		.values()
+		.find((n) => n.type === "wallet" && n.action === "update" && n?.meta?.version === version);
+
+const notifyWalletUpdate = (env: Environment, t: any) => ({ version }: { version: string }) => {
+	env.profiles()
+		.values()
+		.forEach((profile: Profile) => {
+			if (findNotificationByVersion(profile, version)) return;
+
+			profile.notifications().push(
+				formatNotification({
+					name: t("COMMON.APP_NAME"),
+					body: `- ${t("COMMON.UPDATE").toLowerCase()} v${version}`,
+					type: "wallet",
+					action: "update",
+					meta: { version },
+				}),
+			);
+		});
+};
+
+const deleteNotificationsByVersion = (env: Environment) => ({ version }: { version?: string }) => {
+	env.profiles()
+		.values()
+		.forEach((profile: Profile) => {
+			const notification = findNotificationByVersion(profile, version);
+			if (notification) profile.notifications().forget(notification.id);
+		});
+};
+
+export const useNotifications = () => {
+	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
+
 	const profiles = env.profiles();
 
 	return useMemo(() => {
@@ -85,7 +136,10 @@ export const useNotifications = (env: Environment) => {
 		return {
 			notifications: {
 				syncReceivedTransactions,
+				formatNotification,
+				notifyWalletUpdate: notifyWalletUpdate(env, t),
+				deleteNotificationsByVersion: deleteNotificationsByVersion(env),
 			},
 		};
-	}, [profiles, env]);
+	}, [profiles, env, t]);
 };
