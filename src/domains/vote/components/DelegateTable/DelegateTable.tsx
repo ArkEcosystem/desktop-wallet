@@ -12,7 +12,6 @@ import { useTranslation } from "react-i18next";
 import { DelegateRow } from "./DelegateRow";
 
 type DelegateTableProps = {
-	title?: string;
 	delegates: ReadOnlyWallet[];
 	maxVotes: number;
 	votes?: ReadOnlyWallet[];
@@ -24,7 +23,6 @@ type DelegateTableProps = {
 };
 
 export const DelegateTable = ({
-	title,
 	delegates,
 	maxVotes,
 	votes,
@@ -164,7 +162,7 @@ export const DelegateTable = ({
 
 	return (
 		<div data-testid="DelegateTable">
-			<h2 className="py-5 text-2xl font-bold">{title ? title : t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
+			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
 				{(delegate: ReadOnlyWallet, index: number) => {
 					let isVoted = false;
