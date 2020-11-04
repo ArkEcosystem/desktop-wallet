@@ -7,10 +7,11 @@ import { useTranslation } from "react-i18next";
 type MyVoteTableProps = {
 	maxVotes: number;
 	votes?: ReadOnlyWallet[];
+	selectedAddress: string;
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
-export const MyVoteTable = ({ maxVotes, votes, onContinue }: MyVoteTableProps) => {
+export const MyVoteTable = ({ maxVotes, votes, selectedAddress, onContinue }: MyVoteTableProps) => {
 	const { t } = useTranslation();
 
 	const hasVotes = votes && votes.length > 0;
@@ -23,6 +24,7 @@ export const MyVoteTable = ({ maxVotes, votes, onContinue }: MyVoteTableProps) =
 					delegates={votes}
 					maxVotes={maxVotes}
 					votes={votes}
+					selectedAddress={selectedAddress}
 					onContinue={onContinue}
 				/>
 			) : (

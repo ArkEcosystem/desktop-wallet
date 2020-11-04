@@ -267,6 +267,7 @@ export const Votes = () => {
 							delegates={delegates}
 							maxVotes={network.maximumVotesPerWallet()}
 							votes={votes}
+							selectedAddress={address}
 							selectedUnvoteAddresses={unvoteAddresses}
 							selectedVoteAddresses={voteAddresses}
 							onContinue={handleContinue}
@@ -275,6 +276,7 @@ export const Votes = () => {
 						<MyVoteTable
 							maxVotes={network.maximumVotesPerWallet()}
 							votes={votes}
+							selectedAddress={address}
 							onContinue={handleContinue}
 						/>
 					)
