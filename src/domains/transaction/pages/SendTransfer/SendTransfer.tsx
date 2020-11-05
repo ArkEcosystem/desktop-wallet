@@ -11,7 +11,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useLocation, useParams } from "react-router-dom";
@@ -19,7 +19,6 @@ import { useHistory, useLocation, useParams } from "react-router-dom";
 import { FormStep } from "./Step1";
 import { ReviewStep } from "./Step2";
 import { SummaryStep } from "./Step4";
-// import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -55,6 +54,8 @@ export const SendTransfer = () => {
 
 	const { senderAddress, fees, remainingBalance, amount } = watch();
 	const { sendTransfer, common } = useValidation();
+
+	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
 
 	useEffect(() => {
@@ -125,7 +126,10 @@ export const SendTransfer = () => {
 				};
 			}
 
-			const transaction = await transactionBuilder.build(transactionType, transactionInput);
+			const abortSignal = abortRef.current?.signal;
+			const transaction = await transactionBuilder.build(transactionType, transactionInput, {
+				abortSignal,
+			});
 			await transactionBuilder.broadcast(transaction.id(), transactionInput);
 
 			await env.persist();
@@ -141,10 +145,16 @@ export const SendTransfer = () => {
 	};
 
 	const handleBack = () => {
+		if (isSubmitting) {
+			abortRef.current.abort();
+		}
+
 		setActiveTab(activeTab - 1);
 	};
 
 	const handleNext = async () => {
+		abortRef.current = new AbortController();
+
 		const newIndex = activeTab + 1;
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 

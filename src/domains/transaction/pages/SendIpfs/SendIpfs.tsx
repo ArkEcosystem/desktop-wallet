@@ -39,7 +39,7 @@ export const SendIpfs = () => {
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
 	const { fees } = form.watch();
 
-	const transactionBuilder = useTransactionBuilder();
+	const transactionBuilder = useTransactionBuilder(activeProfile);
 
 	useEffect(() => {
 		register("network", sendIpfs.network());

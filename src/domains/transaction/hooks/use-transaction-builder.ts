@@ -38,10 +38,22 @@ const prepareLedger = async (input: Contracts.TransactionInputs, wallet: ReadWri
 	};
 };
 
+const withAbortPromise = (signal?: AbortSignal) => <T>(promise: Promise<T>) =>
+	new Promise<T>((resolve, reject) => {
+		if (signal) {
+			signal.onabort = reject;
+		}
+
+		return promise.then(resolve).catch(reject);
+	});
+
 export const useTransactionBuilder = (profile: Profile) => {
 	const build = async (
 		type: string,
 		input: Contracts.TransactionInputs,
+		options?: {
+			abortSignal?: AbortSignal;
+		},
 	): Promise<Contracts.SignedTransactionData> => {
 		// TODO: Proper handle errors
 
@@ -57,7 +69,7 @@ export const useTransactionBuilder = (profile: Profile) => {
 		}
 
 		if (wallet.isLedger()) {
-			data = await prepareLedger(data, wallet, signFn);
+			data = await withAbortPromise(options?.abortSignal)(prepareLedger(data, wallet, signFn));
 		}
 
 		const id = await signFn(data);
