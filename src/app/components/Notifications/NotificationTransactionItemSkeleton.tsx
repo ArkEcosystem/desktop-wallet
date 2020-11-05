@@ -15,10 +15,10 @@ export const NotificationTransactionItemSkeleton = () => {
 		>
 			<TableCell variant="start" innerClassName="space-x-3" noHover isCompact>
 				<div className="flex items-center -space-x-1">
-					<Circle className="border-transparent leading-none" size="sm">
+					<Circle className="leading-none border-transparent" size="sm">
 						<Skeleton circle height={32} width={32} />
 					</Circle>
-					<Circle className="border-transparent leading-none" size="sm">
+					<Circle className="leading-none border-transparent" size="sm">
 						<Skeleton circle height={32} width={32} />
 					</Circle>
 				</div>
