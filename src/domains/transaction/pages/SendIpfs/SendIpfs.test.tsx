@@ -425,4 +425,82 @@ describe("SendIpfs", () => {
 		multisignatureSpy.mockRestore();
 		isMultiSignatureSpy.mockRestore();
 	});
+
+	it("should send a ipfs transfer with a ledger wallet", async () => {
+		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+		const signTransactionSpy = jest
+			.spyOn(wallet.coin().ledger(), "signTransactionWithSchnorr")
+			.mockImplementation(
+				() =>
+					new Promise((resolve) =>
+						setTimeout(
+							() =>
+								resolve(
+									"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
+								),
+							300,
+						),
+					),
+			);
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
+
+		history.push(ipfsURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
+					<SendIpfs />
+				</Route>,
+				{
+					routes: [ipfsURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__step--first`)).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Hash
+			fireEvent.input(getByTestId("Input__hash"), {
+				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
+			});
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+
+			// Fee
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+			// Step 2
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+			await waitFor(() => expect(getByTestId("SendIpfs__step--second")).toBeTruthy());
+
+			// Step 3
+			expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+			// Auto broadcast
+			await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("81cb2fb05740c … 8e896e9daff35");
+		});
+
+		broadcastMock.mockRestore();
+		isLedgerSpy.mockRestore();
+		signTransactionSpy.mockRestore();
+	});
 });

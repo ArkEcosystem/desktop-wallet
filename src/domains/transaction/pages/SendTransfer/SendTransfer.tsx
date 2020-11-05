@@ -145,9 +145,8 @@ export const SendTransfer = () => {
 	};
 
 	const handleBack = () => {
-		if (isSubmitting) {
-			abortRef.current.abort();
-		}
+		// Abort any existing listener
+		abortRef.current.abort();
 
 		setActiveTab(activeTab - 1);
 	};

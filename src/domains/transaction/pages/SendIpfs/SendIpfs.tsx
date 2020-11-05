@@ -10,7 +10,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -39,6 +39,7 @@ export const SendIpfs = () => {
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
 	const { fees } = form.watch();
 
+	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
 
 	useEffect(() => {
@@ -75,7 +76,9 @@ export const SendIpfs = () => {
 		};
 
 		try {
-			const transaction = await transactionBuilder.build("ipfs", transactionInput);
+			const abortSignal = abortRef.current?.signal;
+
+			const transaction = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
 			await transactionBuilder.broadcast(transaction.id(), transactionInput);
 
 			await env.persist();
@@ -91,10 +94,14 @@ export const SendIpfs = () => {
 	};
 
 	const handleBack = () => {
+		// Abort any existing listener
+		abortRef.current.abort();
 		setActiveTab(activeTab - 1);
 	};
 
 	const handleNext = async () => {
+		abortRef.current = new AbortController();
+
 		const newIndex = activeTab + 1;
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
