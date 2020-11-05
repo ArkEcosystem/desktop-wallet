@@ -15,9 +15,8 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
+import { SelectionStep, SummaryStep } from "./";
 import { SendEntityRegistrationForm } from "./SendEntityRegistration.models";
-import { FirstStep } from "./Step1";
-import { ThirdStep } from "./Step3";
 
 type SendEntityRegistrationProps = {
 	formDefaultValues?: any;
@@ -196,7 +195,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep
+								<SelectionStep
 									networks={availableNetworks}
 									profile={activeProfile}
 									wallet={activeWallet}
@@ -221,7 +220,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 										<AuthenticationStep wallet={activeWallet} />
 									</TabPanel>
 									<TabPanel tabId={stepCount}>
-										<ThirdStep
+										<SummaryStep
 											transaction={transaction}
 											registrationForm={registrationForm}
 											senderWallet={activeWallet}

@@ -30,8 +30,7 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { SendEntityRegistration } from "./SendEntityRegistration";
-import { FirstStep } from "./Step1";
+import { SelectionStep,SendEntityRegistration } from "./";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
@@ -63,7 +62,7 @@ const renderPage = async (wallet?: ReadWriteWallet) => {
 		);
 
 		await waitFor(() => expect(rendered.getByTestId("Registration__form")).toBeTruthy());
-		await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
+		await waitFor(() => expect(rendered.getByTestId("Registration__selection-step")).toBeTruthy());
 	});
 
 	return {
@@ -127,14 +126,14 @@ describe("Registration", () => {
 	it("should render registration form without selected wallet", async () => {
 		const { getByTestId, asFragment } = await renderPage();
 
-		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("Registration__selection-step")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select cryptoasset first and see select address input clickable", async () => {
 		const { getByTestId, asFragment } = await renderPage();
 
-		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("Registration__selection-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
@@ -154,7 +153,7 @@ describe("Registration", () => {
 	it("should select cryptoasset with unavailable wallets and see select address input disabled", async () => {
 		const { getByTestId, asFragment } = await renderPage();
 
-		await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("Registration__selection-step")).toBeTruthy());
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
@@ -178,7 +177,7 @@ describe("Registration", () => {
 
 			return (
 				<FormProvider {...form}>
-					<FirstStep
+					<SelectionStep
 						networks={env.availableNetworks()}
 						profile={profile}
 						wallet={wallet}
@@ -232,7 +231,7 @@ describe("Registration", () => {
 		await renderHookAct(async () => {
 			rendered = render(
 				<FormProvider {...form.current}>
-					<FirstStep
+					<SelectionStep
 						networks={env.availableNetworks()}
 						profile={profile}
 						wallet={wallet}
@@ -242,7 +241,7 @@ describe("Registration", () => {
 				</FormProvider>,
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("Registration__selection-step")).toBeTruthy());
 		});
 
 		const { asFragment, getByTestId } = rendered!;
@@ -296,7 +295,7 @@ describe("Registration", () => {
 		await renderHookAct(async () => {
 			rendered = render(
 				<FormProvider {...form.current}>
-					<FirstStep
+					<SelectionStep
 						networks={env.availableNetworks()}
 						profile={profile}
 						wallet={wallet}
@@ -306,7 +305,7 @@ describe("Registration", () => {
 				</FormProvider>,
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("Registration__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("Registration__selection-step")).toBeTruthy());
 		});
 
 		const { asFragment, getByTestId } = rendered!;
@@ -352,7 +351,7 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 			await waitFor(() => expect(typeSelectInput).toHaveValue("delegateRegistration"));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
@@ -412,18 +411,18 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 			await waitFor(() => expect(getByTestId("Registration__back-button")).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(getByTestId("Registration__back-button"));
 
-			await waitFor(() => expect(getByTestId("Registration__first-step")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("Registration__selection-step")).toBeTruthy());
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).toHaveAttribute("disabled"));
 
 			act(() => {
@@ -457,7 +456,7 @@ describe("Registration", () => {
 
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).toHaveAttribute("disabled"));
 
 			act(() => {
@@ -470,18 +469,18 @@ describe("Registration", () => {
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy());
 			await waitFor(() => expect(getByTestId("Registration__back-button")).not.toHaveAttribute("disabled"));
 			await waitFor(() => expect(container).toHaveTextContent("test_delegate"));
 
 			fireEvent.click(getByTestId("Registration__back-button"));
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy());
 			await waitFor(() => expect(container).toHaveTextContent("test_delegate"));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
@@ -505,7 +504,7 @@ describe("Registration", () => {
 
 			// Step 2
 			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
 			const input = getByTestId("Input__username");
 			act(() => {
@@ -521,7 +520,7 @@ describe("Registration", () => {
 
 			// Step 3
 			fireEvent.click(getByTestId("Registration__continue-button"));
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--third")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy());
 
 			// Step 4 - signing
 			fireEvent.click(getByTestId("Registration__continue-button"));

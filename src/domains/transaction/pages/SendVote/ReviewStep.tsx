@@ -33,7 +33,7 @@ export const ReviewStep = ({
 	}, [unregister]);
 
 	return (
-		<section data-testid="SendVote__step--review" className="space-y-8">
+		<section data-testid="SendVote__review-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}

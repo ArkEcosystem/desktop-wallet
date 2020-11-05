@@ -973,7 +973,7 @@ exports[`SendIpfs should render 1st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="SendIpfs__step--form"
+    data-testid="SendIpfs__form-step"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -1254,7 +1254,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="SendIpfs__step--review"
+    data-testid="SendIpfs__review-step"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -1852,7 +1852,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                 >
                   <section
                     class="space-y-8"
-                    data-testid="SendIpfs__step--form"
+                    data-testid="SendIpfs__form-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"

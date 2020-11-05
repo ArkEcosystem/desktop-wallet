@@ -64,7 +64,7 @@ describe("SendIpfs", () => {
 			</FormProvider>,
 		);
 
-		expect(getByTestId("SendIpfs__step--form")).toBeTruthy();
+		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -85,7 +85,7 @@ describe("SendIpfs", () => {
 			</FormProvider>,
 		);
 
-		expect(getByTestId("SendIpfs__step--review")).toBeTruthy();
+		expect(getByTestId("SendIpfs__review-step")).toBeTruthy();
 		expect(container).toHaveTextContent(wallet.network().name());
 		expect(container).toHaveTextContent("D8rr7B … s6YUYD");
 		expect(container).toHaveTextContent("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
@@ -128,7 +128,7 @@ describe("SendIpfs", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__step--form`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__form-step`)).toBeTruthy());
 		});
 
 		const { getByTestId } = rendered!;
@@ -152,7 +152,7 @@ describe("SendIpfs", () => {
 
 			// Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--review")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
 			// Step 3
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
@@ -160,7 +160,7 @@ describe("SendIpfs", () => {
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--back"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--review")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
 			// Step 3
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
@@ -230,7 +230,7 @@ describe("SendIpfs", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__step--form`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__form-step`)).toBeTruthy());
 		});
 
 		const { getByTestId } = rendered!;
@@ -250,7 +250,7 @@ describe("SendIpfs", () => {
 
 			// Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--review")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
 			// Step 3
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
@@ -258,7 +258,7 @@ describe("SendIpfs", () => {
 
 			// Back to Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--back"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--review")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
 			// Step 3
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
@@ -312,7 +312,7 @@ describe("SendIpfs", () => {
 			expect(getByTestId("Input__hash")).toHaveValue("invalid-ipfs-hash");
 
 			await waitFor(() =>
-				expect(getByTestId("SendIpfs__step--form")).toHaveTextContent(
+				expect(getByTestId("SendIpfs__form-step")).toHaveTextContent(
 					transactionTranslations.INPUT_IPFS_HASH.VALIDATION.NOT_VALID,
 				),
 			);
@@ -345,7 +345,7 @@ describe("SendIpfs", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__step--form`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__form-step`)).toBeTruthy());
 		});
 
 		const { getByTestId } = rendered!;
@@ -369,7 +369,7 @@ describe("SendIpfs", () => {
 
 			// Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--review")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
 			// Step 4
 			const signMock = jest

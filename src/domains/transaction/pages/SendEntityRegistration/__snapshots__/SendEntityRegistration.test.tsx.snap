@@ -1307,7 +1307,7 @@ exports[`Registration should hide options for multisignature wallet 1`] = `
 <div>
   <section
     class="space-y-8"
-    data-testid="Registration__first-step"
+    data-testid="Registration__selection-step"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -1836,7 +1836,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                 >
                   <section
                     class="space-y-8"
-                    data-testid="Registration__first-step"
+                    data-testid="Registration__selection-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -2161,7 +2161,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="Registration__first-step"
+    data-testid="Registration__selection-step"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -2794,7 +2794,7 @@ exports[`Registration should not unregister fields when going back to step 2 onw
                   >
                     <section
                       class="space-y-8"
-                      data-testid="DelegateRegistrationForm__step--third"
+                      data-testid="DelegateRegistrationForm__review-step"
                     >
                       <div
                         class="flex items-end justify-between bg-theme-background"
@@ -3039,7 +3039,7 @@ exports[`Registration should render 1st step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="Registration__first-step"
+    data-testid="Registration__selection-step"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -3659,7 +3659,7 @@ exports[`Registration should render registration form without selected wallet 1`
                 >
                   <section
                     class="space-y-8"
-                    data-testid="Registration__first-step"
+                    data-testid="Registration__selection-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -4192,7 +4192,7 @@ exports[`Registration should select cryptoasset first and see select address inp
                 >
                   <section
                     class="space-y-8"
-                    data-testid="Registration__first-step"
+                    data-testid="Registration__selection-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -4769,7 +4769,7 @@ exports[`Registration should select cryptoasset with unavailable wallets and see
                 >
                   <section
                     class="space-y-8"
-                    data-testid="Registration__first-step"
+                    data-testid="Registration__selection-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -5359,7 +5359,7 @@ exports[`Registration should select registration type & show form 1`] = `
                   >
                     <section
                       class="space-y-8"
-                      data-testid="DelegateRegistrationForm__step--second"
+                      data-testid="DelegateRegistrationForm__form-step"
                     >
                       <div
                         class="flex items-end justify-between bg-theme-background"
@@ -5904,7 +5904,7 @@ exports[`Registration should should go back and forth & correctly register field
                   >
                     <section
                       class="space-y-8"
-                      data-testid="DelegateRegistrationForm__step--second"
+                      data-testid="DelegateRegistrationForm__form-step"
                     >
                       <div
                         class="flex items-end justify-between bg-theme-background"

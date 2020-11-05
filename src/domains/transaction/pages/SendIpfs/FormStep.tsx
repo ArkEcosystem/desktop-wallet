@@ -14,7 +14,7 @@ export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; pro
 	const { hash } = getValues();
 
 	return (
-		<section data-testid="SendIpfs__step--form" className="space-y-8">
+		<section data-testid="SendIpfs__form-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_IPFS.FIRST_STEP.DESCRIPTION")}

@@ -22,7 +22,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="DelegateRegistrationForm__step--third" className="space-y-8">
+		<section data-testid="DelegateRegistrationForm__review-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}

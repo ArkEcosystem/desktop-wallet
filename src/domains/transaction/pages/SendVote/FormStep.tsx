@@ -57,7 +57,7 @@ export const FormStep = ({
 	}, [setValue, fees]);
 
 	return (
-		<section data-testid="SendVote__step--form" className="space-y-8">
+		<section data-testid="SendVote__form-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}
