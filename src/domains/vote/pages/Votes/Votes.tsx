@@ -3,7 +3,8 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
-import React from "react";
+import { AddressTable } from "domains/vote/components/AddressTable";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -21,6 +22,22 @@ export const Votes = () => {
 		},
 	];
 
+	console.log("Wallets - allByCoin", activeProfile.wallets().allByCoin());
+
+	const walletsByCoin = useMemo(() => {
+		const wallets = activeProfile.wallets().allByCoin();
+
+		return Object.keys(wallets).reduce(
+			(acc, coin) => ({
+				...acc,
+				[coin]: Object.values(wallets[coin]),
+			}),
+			{} as any,
+		);
+	}, [activeProfile]);
+
+	console.log("walletsByCoin", walletsByCoin);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -30,6 +47,12 @@ export const Votes = () => {
 					extra={<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />}
 				/>
 			</Section>
+
+			{Object.keys(walletsByCoin).map((coin, index) => (
+				<Section className="flex-1" key={index}>
+					<AddressTable wallets={walletsByCoin[coin]} />
+				</Section>
+			))}
 		</Page>
 	);
 };
