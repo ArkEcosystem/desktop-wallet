@@ -60,6 +60,10 @@ ipcMain.on("disable-iframe-protection", function (_event, urls) {
 	});
 });
 
+ipcMain.on("exit-app", function (_event, args) {
+	app.quit();
+});
+
 function createWindow() {
 	const { width, height } = screen.getPrimaryDisplay().workAreaSize;
 
