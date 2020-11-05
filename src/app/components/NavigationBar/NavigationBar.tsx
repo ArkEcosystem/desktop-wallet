@@ -20,7 +20,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 import { NavbarVariant } from "types";
-import { openExternal } from "utils/electron-utils";
+import { exitApp, openExternal } from "utils/electron-utils";
 
 import { Amount } from "../Amount";
 import { defaultStyle } from "./NavigationBar.styles";
@@ -240,6 +240,10 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 											return openExternal(action.mountPath());
 										}
 
+										if (action?.isExecutable) {
+											return action.execute();
+										}
+
 										return history.push(action.mountPath(profile?.id()));
 									}}
 								/>
@@ -327,9 +331,15 @@ NavigationBar.defaultProps = {
 			mountPath: () => "https://ark.io/contact",
 		},
 		{
+			label: "Sign Out",
+			value: "sign-out",
+			mountPath: () => `/`,
+		},
+		{
 			label: "Exit",
 			value: "exit",
-			mountPath: () => `/`,
+			isExecutable: true,
+			execute: () => exitApp(),
 		},
 	],
 };

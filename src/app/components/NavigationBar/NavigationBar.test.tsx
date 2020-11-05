@@ -14,6 +14,7 @@ jest.mock("electron", () => ({
 		openExternal: jest.fn(),
 	},
 	ipcRenderer: {
+		send: jest.fn(),
 		invoke: jest.fn(),
 		on: jest.fn(),
 		handle: jest.fn(),
@@ -131,7 +132,7 @@ describe("NavigationBar", () => {
 		profile.settings().set(ProfileSetting.ExchangeCurrency, "BTC");
 	});
 
-	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(
+	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support", "Exit"])(
 		"should handle '%s' click on user actions dropdown",
 		async (label) => {
 			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
@@ -149,13 +150,16 @@ describe("NavigationBar", () => {
 				const externalLink = "https://ark.io/contact";
 				const openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
 				expect(openExternalMock).toHaveBeenCalledWith(externalLink);
+			} else if (label === "Exit") {
+				const sendEventMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
+				expect(sendEventMock).toHaveBeenCalledWith("exit-app");
 			} else {
 				expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
 			}
 		},
 	);
 
-	it("should handle 'Exit' click on user actions dropdown", async () => {
+	it("should handle 'Sign Out' click on user actions dropdown", async () => {
 		const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
 
 		const toggle = getByTestId("navbar__useractions");
@@ -164,8 +168,8 @@ describe("NavigationBar", () => {
 			fireEvent.click(toggle);
 		});
 
-		expect(await findByText("Exit")).toBeTruthy();
-		fireEvent.click(await findByText("Exit"));
+		expect(await findByText("Sign Out")).toBeTruthy();
+		fireEvent.click(await findByText("Sign Out"));
 		expect(history.location.pathname).toMatch(`/`);
 	});
 
