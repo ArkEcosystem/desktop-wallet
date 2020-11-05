@@ -27,7 +27,7 @@
 		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
 		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
 		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
-		"dev": "cross-env REACT_APP_BUILD_MODE=demo concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"dev": "cross-env REACT_APP_BUILD_MODE=demo concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"eject": "react-app-rewired eject",
 		"electron-rebuild": "electron-builder install-app-deps",
 		"format": "yarn lint && yarn prettier",
