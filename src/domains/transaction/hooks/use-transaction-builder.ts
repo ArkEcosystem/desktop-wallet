@@ -41,7 +41,7 @@ const prepareLedger = async (input: Contracts.TransactionInputs, wallet: ReadWri
 const withAbortPromise = (signal?: AbortSignal) => <T>(promise: Promise<T>) =>
 	new Promise<T>((resolve, reject) => {
 		if (signal) {
-			signal.onabort = reject;
+			signal.onabort = () => reject("ERR_ABORT");
 		}
 
 		return promise.then(resolve).catch(reject);
