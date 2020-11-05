@@ -30,7 +30,7 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { SelectionStep,SendEntityRegistration } from "./";
+import { RegistrationTypeStep, SendEntityRegistration } from "./";
 
 let profile: Profile;
 let wallet: ReadWriteWallet;
@@ -177,7 +177,7 @@ describe("Registration", () => {
 
 			return (
 				<FormProvider {...form}>
-					<SelectionStep
+					<RegistrationTypeStep
 						networks={env.availableNetworks()}
 						profile={profile}
 						wallet={wallet}
@@ -231,7 +231,7 @@ describe("Registration", () => {
 		await renderHookAct(async () => {
 			rendered = render(
 				<FormProvider {...form.current}>
-					<SelectionStep
+					<RegistrationTypeStep
 						networks={env.availableNetworks()}
 						profile={profile}
 						wallet={wallet}
@@ -295,7 +295,7 @@ describe("Registration", () => {
 		await renderHookAct(async () => {
 			rendered = render(
 				<FormProvider {...form.current}>
-					<SelectionStep
+					<RegistrationTypeStep
 						networks={env.availableNetworks()}
 						profile={profile}
 						wallet={wallet}

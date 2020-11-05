@@ -16,7 +16,7 @@ import { useHistory } from "react-router-dom";
 
 import { SendEntityRegistrationType } from "./SendEntityRegistration.models";
 
-type FirstStepProps = {
+type RegistrationTypeStepProps = {
 	networks: Coins.Network[];
 	profile: Profile;
 	wallet: ReadWriteWallet;
@@ -42,7 +42,13 @@ const RegistrationTypeDropdown = ({ className, defaultValue, registrationTypes, 
 	);
 };
 
-export const SelectionStep = ({ networks, profile, wallet, setRegistrationForm, fees }: FirstStepProps) => {
+export const RegistrationTypeStep = ({
+	networks,
+	profile,
+	wallet,
+	setRegistrationForm,
+	fees,
+}: RegistrationTypeStepProps) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 

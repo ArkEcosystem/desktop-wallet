@@ -7,7 +7,7 @@ import { TransactionDetail, TransactionFee } from "domains/transaction/component
 import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
 
-import { BackupStep, GenerationStep, ReviewStep,VerificationStep } from "./";
+import { BackupStep, GenerationStep, ReviewStep, VerificationStep } from "./";
 
 const component = ({
 	activeTab,

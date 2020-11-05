@@ -15,7 +15,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-import { SelectionStep, SummaryStep } from "./";
+import { RegistrationTypeStep, SummaryStep } from "./";
 import { SendEntityRegistrationForm } from "./SendEntityRegistration.models";
 
 type SendEntityRegistrationProps = {
@@ -195,7 +195,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<SelectionStep
+								<RegistrationTypeStep
 									networks={availableNetworks}
 									profile={activeProfile}
 									wallet={activeWallet}
