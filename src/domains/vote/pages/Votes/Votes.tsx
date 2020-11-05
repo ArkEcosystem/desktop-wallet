@@ -7,7 +7,6 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import { MyVoteTable } from "domains/vote/components/MyVoteTable";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -24,7 +23,6 @@ export const Votes = () => {
 	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
 	const voteAddresses = queryParams.get("votes")?.split(",");
 
-	const [tabItem, setTabItem] = useState("delegate");
 	const [network, setNetwork] = useState<Coins.Network | null>(null);
 	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
@@ -106,16 +104,6 @@ export const Votes = () => {
 		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
 	}, [activeProfile, networks]);
 
-	const handleSelectNetwork = (networkData?: Coins.Network | null) => {
-		if (!networkData || networkData.id() !== network?.id()) {
-			setTabItem("delegate");
-			setWallets([]);
-			setAddress("");
-		}
-
-		setNetwork(networkData!);
-	};
-
 	const handleSelectAddress = (address: string) => {
 		setAddress(address);
 		const wallet = activeProfile.wallets().findByAddress(address);
@@ -153,22 +141,14 @@ export const Votes = () => {
 
 			<Section className="flex-1">
 				{network?.allowsVoting() && address ? (
-					tabItem === "delegate" ? (
-						<DelegateTable
-							delegates={delegates}
-							maxVotes={network.maximumVotesPerWallet()}
-							votes={votes}
-							selectedUnvoteAddresses={unvoteAddresses}
-							selectedVoteAddresses={voteAddresses}
-							onContinue={handleContinue}
-						/>
-					) : (
-						<MyVoteTable
-							maxVotes={network.maximumVotesPerWallet()}
-							votes={votes}
-							onContinue={handleContinue}
-						/>
-					)
+					<DelegateTable
+						delegates={delegates}
+						maxVotes={network.maximumVotesPerWallet()}
+						votes={votes}
+						selectedUnvoteAddresses={unvoteAddresses}
+						selectedVoteAddresses={voteAddresses}
+						onContinue={handleContinue}
+					/>
 				) : network?.allowsVoting() ? (
 					<AddressTable wallets={wallets} onSelect={handleSelectAddress} />
 				) : (
