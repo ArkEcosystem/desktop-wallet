@@ -4,6 +4,7 @@ const isDev = require("electron-is-dev");
 const winState = require("electron-window-state");
 const path = require("path");
 const assignMenu = require("./menu");
+const { setupUpdater } = require("./updater");
 
 const { BrowserWindow, app, screen, ipcMain } = electron;
 
@@ -113,7 +114,10 @@ function createWindow() {
 
 assignMenu({ createWindow });
 
-app.on("ready", createWindow);
+app.on("ready", () => {
+	createWindow();
+	setupUpdater({ ipcMain, isDev, mainWindow });
+});
 
 app.on("window-all-closed", () => {
 	if (process.platform !== "darwin") {

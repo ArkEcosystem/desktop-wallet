@@ -12,7 +12,13 @@ const history = createMemoryHistory();
 const walletURL = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 
 jest.mock("electron", () => ({
-	ipcRenderer: { on: jest.fn(), send: jest.fn(), removeListener: jest.fn() },
+	ipcRenderer: {
+		invoke: jest.fn(),
+		on: jest.fn(),
+		handle: jest.fn(),
+		send: jest.fn(),
+		removeListener: jest.fn(),
+	},
 }));
 
 describe("useDeeplink hook", () => {

@@ -1,8 +1,10 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import React, { useState } from "react";
+import { useUpdater } from "app/hooks/use-updater";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { FirstStep } from "./Step1";
@@ -10,6 +12,8 @@ import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
 type WalletUpdateProps = {
+	version?: string;
+	profile?: Profile;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
@@ -17,33 +21,51 @@ type WalletUpdateProps = {
 
 const { WalletUpdateBanner, WalletUpdateReadyBanner } = images.wallet.components.walletUpdate;
 
-export const WalletUpdate = ({ isOpen, onClose, onCancel }: WalletUpdateProps) => {
-	const { t } = useTranslation();
+export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdateProps) => {
 	const [activeStep, setActiveStep] = useState(1);
 
-	const handleBack = () => {
-		setActiveStep(activeStep - 1);
+	const { t } = useTranslation();
+	const { downloadUpdate, downloadProgress, downloadStatus, cancel, quitInstall } = useUpdater();
+
+	const handleUpdateNow = () => {
+		downloadUpdate();
+		setActiveStep(2);
 	};
 
-	const handleNext = () => {
-		setActiveStep(activeStep + 1);
+	const handleInstall = () => {
+		quitInstall();
 	};
+
+	const handleClose = () => {
+		setActiveStep(1);
+
+		cancel();
+		onClose?.();
+	};
+
+	const handleCancel = () => {
+		onCancel?.();
+	};
+
+	useEffect(() => {
+		if (downloadStatus === "completed") setActiveStep(3);
+	}, [downloadStatus, setActiveStep]);
 
 	return (
 		<Modal
-			title={t("WALLETS.MODAL_WALLET_UPDATE.TITLE", { version: "3.0.7" })}
+			title={t("WALLETS.MODAL_WALLET_UPDATE.TITLE", { version })}
 			image={
 				activeStep < 3 ? <WalletUpdateBanner className="my-8" /> : <WalletUpdateReadyBanner className="my-8" />
 			}
 			isOpen={isOpen}
-			onClose={onClose}
+			onClose={handleClose}
 		>
 			<Tabs activeId={activeStep}>
 				<TabPanel tabId={1}>
 					<FirstStep />
 				</TabPanel>
 				<TabPanel tabId={2}>
-					<SecondStep />
+					<SecondStep {...downloadProgress} />
 				</TabPanel>
 				<TabPanel tabId={3}>
 					<ThirdStep />
@@ -55,31 +77,21 @@ export const WalletUpdate = ({ isOpen, onClose, onCancel }: WalletUpdateProps) =
 							<Button
 								variant="plain"
 								className="mt-2 sm:mt-0"
-								onClick={onCancel}
+								onClick={handleCancel}
 								data-testid="WalletUpdate__cancel-button"
 							>
 								{t("COMMON.UPDATE_LATER")}
 							</Button>
-							<Button onClick={handleNext} data-testid="WalletUpdate__update-button">
+							<Button onClick={handleUpdateNow} data-testid="WalletUpdate__update-button">
 								{t("COMMON.UPDATE_NOW")}
 							</Button>
 						</>
 					)}
 
-					{/* TODO: Remove these buttons from the second step in the functional code */}
-					{activeStep === 2 && (
-						<>
-							<Button variant="plain" onClick={handleBack} data-testid="WalletUpdate__back-button">
-								{t("COMMON.BACK")}
-							</Button>
-							<Button onClick={handleNext} data-testid="WalletUpdate__continue-button">
-								{t("COMMON.CONTINUE")}
-							</Button>
-						</>
-					)}
-
 					{activeStep === 3 && (
-						<Button data-testid="WalletUpdate__install-button">{t("COMMON.INSTALL")}</Button>
+						<Button data-testid="WalletUpdate__install-button" onClick={handleInstall}>
+							{t("COMMON.INSTALL")}
+						</Button>
 					)}
 				</div>
 			</Tabs>

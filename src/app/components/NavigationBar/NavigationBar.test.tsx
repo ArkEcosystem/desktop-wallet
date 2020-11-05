@@ -15,6 +15,11 @@ jest.mock("electron", () => ({
 	},
 	ipcRenderer: {
 		send: jest.fn(),
+		invoke: jest.fn(),
+		on: jest.fn(),
+		handle: jest.fn(),
+		send: jest.fn(),
+		removeListener: jest.fn(),
 	},
 }));
 

@@ -1,7 +1,7 @@
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 
-import { useNotifications } from "./notifications";
+import { useNotifications, useUpdater } from "./";
 
 type Callback = () => Promise<void | any>;
 
@@ -61,7 +61,8 @@ export const useSynchronizer = (jobs: Job[]) => {
 
 export const useEnvSynchronizer = () => {
 	const { env } = useEnvironmentContext();
-	const { notifications } = useNotifications(env);
+	const { notifications } = useNotifications();
+	const { notifyForUpdates } = useUpdater();
 
 	const jobs = useMemo(() => {
 		const syncDelegates = {
@@ -86,8 +87,13 @@ export const useEnvSynchronizer = () => {
 			interval: Intervals.Short,
 		};
 
-		return [syncDelegates, syncFees, syncExchangeRates, syncWallets, syncNotifications];
-	}, [env, notifications]);
+		const syncWalletUpdates = {
+			callback: () => notifyForUpdates(),
+			interval: Intervals.Long,
+		};
+
+		return [syncDelegates, syncFees, syncExchangeRates, syncWallets, syncNotifications, syncWalletUpdates];
+	}, [env, notifications, notifyForUpdates]);
 
 	return useSynchronizer(jobs);
 };

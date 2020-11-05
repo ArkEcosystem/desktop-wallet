@@ -42,10 +42,6 @@ exports[`WalletHeader should render 1`] = `
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
             >
-              <span
-                class="text-sm font-semibold"
-                data-testid="WalletHeader__name"
-              />
               <div
                 class="flex items-center space-x-3"
               />
@@ -219,10 +215,6 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
             >
-              <span
-                class="text-sm font-semibold"
-                data-testid="WalletHeader__name"
-              />
               <div
                 class="flex items-center space-x-3"
               >
@@ -243,9 +235,9 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                   data-testid="WalletHeader__multisig"
                 >
                   <div
-                    class="sc-AxirZ hPsuTj hover:text-theme-neutral"
-                    height="16"
-                    width="16"
+                    class="sc-AxirZ eEbZjj hover:text-theme-neutral"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       multisig.svg
@@ -441,10 +433,6 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
             >
-              <span
-                class="text-sm font-semibold"
-                data-testid="WalletHeader__name"
-              />
               <div
                 class="flex items-center space-x-3"
               >
@@ -465,9 +453,9 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                   data-testid="WalletHeader__multisig"
                 >
                   <div
-                    class="sc-AxirZ hPsuTj hover:text-theme-neutral"
-                    height="16"
-                    width="16"
+                    class="sc-AxirZ eEbZjj hover:text-theme-neutral"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       multisig.svg
@@ -663,10 +651,6 @@ exports[`WalletHeader should show modifiers 1`] = `
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
             >
-              <span
-                class="text-sm font-semibold"
-                data-testid="WalletHeader__name"
-              />
               <div
                 class="flex items-center space-x-3"
               >
@@ -687,9 +671,9 @@ exports[`WalletHeader should show modifiers 1`] = `
                   data-testid="WalletHeader__multisig"
                 >
                   <div
-                    class="sc-AxirZ hPsuTj hover:text-theme-neutral"
-                    height="16"
-                    width="16"
+                    class="sc-AxirZ eEbZjj hover:text-theme-neutral"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       multisig.svg

@@ -13,9 +13,9 @@ const DeleteBanner = images.common.DeleteBanner;
 type ResetProfileProps = {
 	isOpen: boolean;
 	profile: Profile;
-	onClose?: any;
-	onCancel?: any;
-	onReset?: any;
+	onClose?: () => void;
+	onCancel?: () => void;
+	onReset?: () => void;
 };
 
 export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: ResetProfileProps) => {
@@ -38,6 +38,7 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 			title={t("PROFILE.MODAL_RESET_PROFILE.TITLE")}
 			image={<DeleteBanner className="w-3/5 m-auto my-8" />}
 			description={t("PROFILE.MODAL_RESET_PROFILE.DESCRIPTION")}
+			size="lg"
 			isOpen={isOpen}
 			onClose={onClose}
 		>
