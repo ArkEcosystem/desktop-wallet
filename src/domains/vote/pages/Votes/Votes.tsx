@@ -17,11 +17,6 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-type TabsProps = {
-	selected: string;
-	onClick?: (item: string) => void;
-};
-
 const InputAddress = ({ address, profile }: { address: string; profile: Profile }) => {
 	const { t } = useTranslation();
 	const walletName = profile.wallets().findByAddress(address)?.alias();
