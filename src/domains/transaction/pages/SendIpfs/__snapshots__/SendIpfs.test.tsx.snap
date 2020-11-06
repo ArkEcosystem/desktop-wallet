@@ -876,6 +876,19 @@ exports[`SendIpfs should navigate between steps 1`] = `
                           class="flex items-center -space-x-2"
                         >
                           <div
+                            class="sc-AxgMl eQpXWo border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                          >
+                            <div
+                              class="sc-AxiKw iQZLaj"
+                              height="25"
+                              width="25"
+                            >
+                              <svg>
+                                delegate.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
                             class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
                             data-testid="Avatar"
                           >
@@ -969,7 +982,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
 
 exports[`SendIpfs should navigate between steps 2`] = `<div />`;
 
-exports[`SendIpfs should render 1st step 1`] = `
+exports[`SendIpfs should render form step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
@@ -1250,7 +1263,7 @@ exports[`SendIpfs should render 1st step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SendIpfs should render 2nd step 1`] = `
+exports[`SendIpfs should render review step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
@@ -1346,6 +1359,19 @@ exports[`SendIpfs should render 2nd step 1`] = `
         <div
           class="flex items-center -space-x-2"
         >
+          <div
+            class="sc-AxgMl eQpXWo border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+          >
+            <div
+              class="sc-AxiKw iQZLaj"
+              height="25"
+              width="25"
+            >
+              <svg>
+                delegate.svg
+              </svg>
+            </div>
+          </div>
           <div
             class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
             data-testid="Avatar"
@@ -1477,7 +1503,7 @@ exports[`SendIpfs should render 2nd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SendIpfs should render 4th step 1`] = `
+exports[`SendIpfs should render summary step 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"

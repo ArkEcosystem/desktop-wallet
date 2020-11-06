@@ -43,8 +43,10 @@ let wallet: ReadWriteWallet;
 
 describe("SendIpfs", () => {
 	beforeAll(async () => {
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
-		wallet = profile.wallets().values()[0];
+		profile = env.profiles().findById(fixtureProfileId);
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+
+		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
 
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
@@ -56,7 +58,7 @@ describe("SendIpfs", () => {
 		await syncFees();
 	});
 
-	it("should render 1st step", async () => {
+	it("should render form step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
@@ -68,7 +70,7 @@ describe("SendIpfs", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 2nd step", async () => {
+	it("should render review step", async () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -93,7 +95,7 @@ describe("SendIpfs", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 4th step", async () => {
+	it("should render summary step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
 		const transaction = (await wallet.transactions()).findById(
