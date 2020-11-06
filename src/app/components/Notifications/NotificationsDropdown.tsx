@@ -10,7 +10,7 @@ import React, { useState } from "react";
 export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData>();
 	const [isWalletUpdateOpen, setIsWalletUpdateOpen] = useState<boolean>();
-	const [walletUpdateVersion, setIsWalletUpdateVersion] = useState<string>();
+	const [walletUpdateVersion, setWalletUpdateVersion] = useState<string>();
 
 	const hasUnread = profile.notifications().unread().length > 0;
 
@@ -20,7 +20,7 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 
 		switch (action) {
 			case "wallet.update":
-				setIsWalletUpdateVersion(notification?.meta?.version);
+				setWalletUpdateVersion(notification?.meta?.version);
 				setIsWalletUpdateOpen(true);
 				break;
 		}
@@ -34,12 +34,12 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 						<Button
 							variant="transparent"
 							size="icon"
-							className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+							className="group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
 							data-testid="navbar__buttons--notifications"
 						>
 							<Icon name="Notification" width={22} height={22} className="p-1" />
 							{hasUnread && (
-								<div className="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background">
+								<div className="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800">
 									<div className="w-2 h-2 rounded-full bg-theme-danger-500" />
 								</div>
 							)}
