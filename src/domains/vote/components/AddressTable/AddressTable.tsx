@@ -15,10 +15,14 @@ type AddressTableProps = {
 export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 	const { t } = useTranslation();
 
-	const columns = [
+	const wallet = useMemo(() => wallets[0], [wallets]);
+	const maxVotes = wallet.network().maximumVotesPerWallet();
+	const networkExtendedData = getNetworkExtendedData({ coin: wallet.coinId(), network: wallet.networkId() });
+
+	const commonColumns = [
 		{
-			Header: t("COMMON.ADDRESS"),
-			accessor: "walletAddress",
+			Header: t("COMMON.MY_ADDRESS"),
+			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
 			className: "ml-15",
 		},
 		{
@@ -27,39 +31,59 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		},
 		{
 			Header: t("COMMON.BALANCE"),
-			accessor: "balance",
+			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
 			className: "justify-end",
 		},
 		{
 			Header: t("COMMON.DELEGATE"),
 			accessor: "delegate",
+			disableSortBy: true,
 			className: "ml-15",
-		},
-		{
-			Header: t("COMMON.RANK"),
-			accessor: "rank",
-			className: "justify-center",
-		},
-		{
-			Header: t("COMMON.PROFILE"),
-			accessor: "profile",
-			disableSortBy: true,
-			className: "justify-center",
-		},
-		{
-			Header: t("COMMON.STATUS"),
-			accessor: "status",
-			disableSortBy: true,
-			className: "justify-center no-border",
-		},
-		{
-			accessor: "onSelect",
-			disableSortBy: true,
 		},
 	];
 
-	const wallet = useMemo(() => wallets[0], [wallets]);
-	const networkExtendedData = getNetworkExtendedData({ coin: wallet.coinId(), network: wallet.networkId() });
+	const columns = useMemo(() => {
+		if (maxVotes > 1) {
+			return [
+				...commonColumns,
+				{
+					Header: t("COMMON.VOTES"),
+					accessor: "votes",
+					disableSortBy: true,
+				},
+				{
+					accessor: "onSelect",
+					disableSortBy: true,
+				},
+			];
+		}
+
+		return [
+			...commonColumns,
+			{
+				Header: t("COMMON.RANK"),
+				accessor: "rank",
+				disableSortBy: true,
+				className: "justify-center",
+			},
+			{
+				Header: t("COMMON.PROFILE"),
+				accessor: "profile",
+				disableSortBy: true,
+				className: "justify-center",
+			},
+			{
+				Header: t("COMMON.STATUS"),
+				accessor: "status",
+				disableSortBy: true,
+				className: "justify-center no-border",
+			},
+			{
+				accessor: "onSelect",
+				disableSortBy: true,
+			},
+		];
+	}, [commonColumns, maxVotes, t]);
 
 	return (
 		<div data-testid="AddressTable">
