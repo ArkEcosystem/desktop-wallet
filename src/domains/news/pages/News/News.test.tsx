@@ -76,9 +76,7 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(1);
-		});
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 	});
 
 	it("should retrieve blockfolio data using findByCoin", async () => {
@@ -99,25 +97,19 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(1);
-		});
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 
 		act(() => {
 			fireEvent.click(getByTestId("Pagination__next"));
 		});
 
-		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(1);
-		});
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 
 		act(() => {
 			fireEvent.click(getByTestId("Pagination__previous"));
 		});
 
-		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(1);
-		});
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 	});
 
 	it("should show no results screen", async () => {
@@ -133,9 +125,7 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(1);
-		});
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 
 		act(() => {
 			fireEvent.change(getByTestId("NewsOptions__search"), {
@@ -166,9 +156,7 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(1);
-		});
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 
 		act(() => {
 			fireEvent.change(getByTestId("NewsOptions__search"), {
@@ -192,9 +180,7 @@ describe("News", () => {
 			fireEvent.click(getByTestId("NewsOptions__submit"));
 		});
 
-		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(1);
-		});
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -212,9 +198,7 @@ describe("News", () => {
 			fireEvent.click(getByTestId("NewsOptions__submit"));
 		});
 
-		await waitFor(() => {
-			expect(getAllByTestId("NewsCard")).toHaveLength(1);
-		});
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 
 		expect(asFragment()).toMatchSnapshot();
 	});
