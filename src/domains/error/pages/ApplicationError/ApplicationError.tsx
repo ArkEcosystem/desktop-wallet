@@ -2,11 +2,12 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
 import React from "react";
+import { FallbackProps } from "react-error-boundary";
 import { useTranslation } from "react-i18next";
 
 const { ErrorBanner } = images.error.pages.ApplicationError;
 
-export const ApplicationError = ({ resetErrorBoundary }: any) => {
+export const ApplicationError = ({ resetErrorBoundary }: FallbackProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -21,7 +22,7 @@ export const ApplicationError = ({ resetErrorBoundary }: any) => {
 					<p className="text-theme-secondary-text">{t("ERROR.APPLICATION.DESCRIPTION")}</p>
 				</div>
 
-				<Button onClick={resetErrorBoundary} className="mt-8">
+				<Button data-testid="ApplicationError__button--reload" onClick={resetErrorBoundary} className="mt-8">
 					{t("ERROR.APPLICATION.RELOAD")}
 				</Button>
 			</Section>

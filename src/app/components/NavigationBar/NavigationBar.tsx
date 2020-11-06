@@ -20,7 +20,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 import { NavbarVariant } from "types";
-import { openExternal } from "utils/electron-utils";
+import { exitApp, openExternal } from "utils/electron-utils";
 
 import { Amount } from "../Amount";
 import { defaultStyle } from "./NavigationBar.styles";
@@ -149,7 +149,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 					<NavLink
 						to={menuItem.mountPath(profile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+						className="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -179,7 +179,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 					{variant === "full" && (
 						<>
-							<ul className="flex h-20 mr-auto md:h-24">{renderMenu()}</ul>
+							<ul className="flex h-20 ml-4 mr-auto space-x-8 md:h-24">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
@@ -190,7 +190,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									<Button
 										variant="transparent"
 										size="icon"
-										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
 										onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
 										data-testid="navbar__buttons--send"
 									>
@@ -204,7 +204,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									<Button
 										size="icon"
 										variant="transparent"
-										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
 										onClick={() => setSearchWalletIsOpen(true)}
 										data-testid="navbar__buttons--receive"
 									>
@@ -238,6 +238,10 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									onUserAction={(action: any) => {
 										if (action?.isExternal) {
 											return openExternal(action.mountPath());
+										}
+
+										if (action?.isExecutable) {
+											return action.execute();
 										}
 
 										return history.push(action.mountPath(profile?.id()));
@@ -327,9 +331,15 @@ NavigationBar.defaultProps = {
 			mountPath: () => "https://ark.io/contact",
 		},
 		{
+			label: "Sign Out",
+			value: "sign-out",
+			mountPath: () => `/`,
+		},
+		{
 			label: "Exit",
 			value: "exit",
-			mountPath: () => `/`,
+			isExecutable: true,
+			execute: () => exitApp(),
 		},
 	],
 };
