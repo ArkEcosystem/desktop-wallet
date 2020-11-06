@@ -1,5 +1,4 @@
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { hasProperty } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -12,16 +11,13 @@ import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { AddressRowSkeleton } from "./AddressRowSkeleton";
-
 type AddressRowProps = {
 	index: number;
 	wallet: ReadWriteWallet;
-	isLoading?: boolean;
 	onSelect?: (walletAddress: string) => void;
 };
 
-export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowProps) => {
+export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const { t } = useTranslation();
@@ -44,27 +40,21 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 
 	useEffect(() => {
 		const loadVotes = () => {
-			if (!hasProperty(wallet, "isLoading")) {
-				let votes: ReadOnlyWallet[] = [];
+			let votes: ReadOnlyWallet[] = [];
 
-				try {
-					votes = wallet.votes();
-				} catch {
-					votes = [];
-				}
-
-				setVotes(votes);
+			try {
+				votes = wallet.votes();
+			} catch {
+				votes = [];
 			}
+
+			setVotes(votes);
 		};
 
 		loadVotes();
 	}, [env, wallet]);
 
 	const hasVotes = votes.length > 0;
-
-	if (isLoading) {
-		return <AddressRowSkeleton />;
-	}
 
 	return (
 		<TableRow>
@@ -140,8 +130,4 @@ export const AddressRow = ({ index, wallet, isLoading, onSelect }: AddressRowPro
 			</TableCell>
 		</TableRow>
 	);
-};
-
-AddressRow.defaultProps = {
-	isLoading: false,
 };

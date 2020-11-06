@@ -59,12 +59,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 	];
 
 	const wallet = useMemo(() => wallets[0], [wallets]);
-
 	const networkExtendedData = getNetworkExtendedData({ coin: wallet.coinId(), network: wallet.networkId() });
-
-	const showSkeleton = useMemo(() => wallets.length === 0, [wallets]);
-	const skeletonList = new Array(8).fill({ isLoading: true });
-	const data = showSkeleton ? skeletonList : wallets;
 
 	return (
 		<div data-testid="AddressTable">
@@ -78,9 +73,9 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 				</div>
 			</div>
 
-			<Table columns={columns} data={data}>
+			<Table columns={columns} data={wallets}>
 				{(wallet: ReadWriteWallet, index: number) => (
-					<AddressRow index={index} wallet={wallet} isLoading={showSkeleton} onSelect={onSelect} />
+					<AddressRow index={index} wallet={wallet} onSelect={onSelect} />
 				)}
 			</Table>
 		</div>
