@@ -31,6 +31,7 @@ const prepareLedger = async (input: Contracts.TransactionInputs, wallet: ReadWri
 
 	return {
 		...data,
+		nonce: wallet.nonce().plus(1).toFixed(),
 		sign: {
 			senderPublicKey: wallet.publicKey(),
 			signature,
