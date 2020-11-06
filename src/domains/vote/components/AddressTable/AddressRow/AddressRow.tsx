@@ -125,7 +125,7 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 					onClick={() => onSelect?.(wallet.address())}
 					data-testid={`AddressRow__select-${index}`}
 				>
-					{t("COMMON.SELECT")}
+					{t("COMMON.VOTE")}
 				</Button>
 			</TableCell>
 		</TableRow>
