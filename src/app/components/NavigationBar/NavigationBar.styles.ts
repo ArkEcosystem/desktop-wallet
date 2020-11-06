@@ -2,10 +2,12 @@ export const defaultStyle = `
     z-index: 40;
 
     li a {
+        border-top: 3px solid transparent;
         border-bottom: 3px solid transparent;
-        &.active {
-            border-bottom-color: var(--theme-color-primary-dark);
-            color: var(--theme-color-neutral-900);
+
+        &:hover, &.active {
+            border-bottom-color: var(--theme-color-primary);
+            color: var(--theme-text-color);
         }
     }
 `;
