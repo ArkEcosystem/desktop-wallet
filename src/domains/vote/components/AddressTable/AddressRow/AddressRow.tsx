@@ -56,6 +56,15 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 	}, [env, wallet]);
 
 	const hasVotes = votes.length > 0;
+	const [first, second, third, ...rest] = votes;
+
+	const renderAvatar = (address: string, username?: string) => (
+		<Tooltip content={username}>
+			<span className="inline-block">
+				<Avatar size="lg" address={address} />
+			</span>
+		</Tooltip>
+	);
 
 	return (
 		<TableRow>
@@ -86,10 +95,30 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 			<TableCell innerClassName="space-x-4 font-bold">
 				{hasVotes ? (
-					<>
-						<Avatar size="lg" address={votes[0].address()} noShadow />
-						<span>{votes[0].username()}</span>
-					</>
+					maxVotes === 1 ? (
+						<>
+							<Avatar size="lg" address={votes[0].address()} noShadow />
+							<span>{votes[0].username()}</span>
+						</>
+					) : (
+						<div className="flex items-center h-11">
+							<div className="flex -space-x-3">
+								{renderAvatar(first.address(), first.username())}
+
+								{second && renderAvatar(second.address(), second.username())}
+
+								{third && renderAvatar(third.address(), third.username())}
+
+								{rest && rest.length === 1 && renderAvatar(rest[0].address(), rest[0].username())}
+
+								{rest && rest.length > 1 && (
+									<Circle size="lg" className="relative border-theme-text text-theme-text">
+										<span className="font-semibold">+{rest.length}</span>
+									</Circle>
+								)}
+							</div>
+						</div>
+					)
 				) : (
 					<>
 						<Circle size="lg" className="border-theme-neutral-300 dark:border-theme-neutral-800" noShadow />
@@ -123,10 +152,10 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 					</TableCell>
 				</>
 			) : (
-				<TableCell innerClassName="font-bold">
-					<div>
-						<span className="text-theme-secondary-text">{maxVotes}</span>
-						<span className="text-theme-neutral-light">/{maxVotes}</span>
+				<TableCell>
+					<div className="font-bold text-theme-neutral-light">
+						<span className="text-theme-secondary-text">{hasVotes ? votes.length : "0"}</span>
+						<span>/{maxVotes}</span>
 					</div>
 				</TableCell>
 			)}

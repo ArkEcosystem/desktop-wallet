@@ -34,22 +34,34 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
 		},
 		{
-			Header: t("COMMON.DELEGATE"),
+			Header: maxVotes === 1 ? t("COMMON.DELEGATE") : t("COMMON.DELEGATES"),
 			accessor: "delegate",
 			disableSortBy: true,
-			className: "ml-15",
+			className: maxVotes === 1 ? "ml-15" : "",
 		},
 	];
 
 	const columns = useMemo(() => {
-		if (maxVotes > 1) {
+		if (maxVotes === 1) {
 			return [
 				...commonColumns,
 				{
-					Header: t("COMMON.VOTES"),
-					accessor: "votes",
+					Header: t("COMMON.RANK"),
+					accessor: "rank",
 					disableSortBy: true,
-					className: "no-border",
+					className: "justify-center",
+				},
+				{
+					Header: t("COMMON.PROFILE"),
+					accessor: "profile",
+					disableSortBy: true,
+					className: "justify-center",
+				},
+				{
+					Header: t("COMMON.STATUS"),
+					accessor: "status",
+					disableSortBy: true,
+					className: "justify-center no-border",
 				},
 				{
 					accessor: "onSelect",
@@ -61,22 +73,10 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		return [
 			...commonColumns,
 			{
-				Header: t("COMMON.RANK"),
-				accessor: "rank",
+				Header: t("COMMON.VOTES"),
+				accessor: "votes",
 				disableSortBy: true,
-				className: "justify-center",
-			},
-			{
-				Header: t("COMMON.PROFILE"),
-				accessor: "profile",
-				disableSortBy: true,
-				className: "justify-center",
-			},
-			{
-				Header: t("COMMON.STATUS"),
-				accessor: "status",
-				disableSortBy: true,
-				className: "justify-center no-border",
+				className: "no-border",
 			},
 			{
 				accessor: "onSelect",
