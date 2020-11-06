@@ -24,6 +24,7 @@ export const Votes = () => {
 
 	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
+	const [maxVotes, setMaxVotes] = useState(hasWalletId ? activeWallet.network().maximumVotesPerWallet() : 1);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const crumbs = [
@@ -83,8 +84,11 @@ export const Votes = () => {
 	}, [activeWallet, loadDelegates, hasWalletId]);
 
 	const handleSelectAddress = (address: string) => {
-		setAddress(address);
 		const wallet = activeProfile.wallets().findByAddress(address);
+
+		setAddress(address);
+		setMaxVotes(wallet?.network().maximumVotesPerWallet() as number);
+
 		loadDelegates(wallet);
 	};
 
@@ -121,7 +125,7 @@ export const Votes = () => {
 				<Section className="flex-1">
 					<DelegateTable
 						delegates={delegates}
-						maxVotes={1}
+						maxVotes={maxVotes}
 						votes={votes}
 						selectedUnvoteAddresses={unvoteAddresses}
 						selectedVoteAddresses={voteAddresses}
