@@ -18,13 +18,7 @@ export const MyVoteTable = ({ maxVotes, votes, onContinue }: MyVoteTableProps) =
 	return (
 		<div data-testid="MyVoteTable">
 			{hasVotes ? (
-				<DelegateTable
-					title={t("VOTE.MY_VOTE_TABLE.TITLE")}
-					delegates={votes}
-					maxVotes={maxVotes}
-					votes={votes}
-					onContinue={onContinue}
-				/>
+				<DelegateTable delegates={votes} maxVotes={maxVotes} votes={votes} onContinue={onContinue} />
 			) : (
 				<>
 					<h2 className="pt-5 text-2xl font-bold">{t("VOTE.MY_VOTE_TABLE.TITLE")}</h2>

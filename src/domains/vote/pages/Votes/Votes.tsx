@@ -1,20 +1,30 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { AddressTable } from "domains/vote/components/AddressTable";
-import React, { useMemo } from "react";
+import { DelegateTable } from "domains/vote/components/DelegateTable";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 export const Votes = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
+	const { walletId: hasWalletId } = useParams();
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
+	const queryParams = useQueryParams();
+	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
+	const voteAddresses = queryParams.get("votes")?.split(",");
+
+	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
+	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const crumbs = [
 		{
@@ -35,6 +45,68 @@ export const Votes = () => {
 		);
 	}, [activeProfile]);
 
+	const loadVotes = useCallback(
+		(address) => {
+			const wallet = activeProfile.wallets().findByAddress(address);
+			let votes: ReadOnlyWallet[] = [];
+
+			try {
+				votes = wallet!.votes();
+			} catch {
+				votes = [];
+			}
+
+			setVotes(votes);
+		},
+		[activeProfile],
+	);
+
+	useEffect(() => {
+		if (address) {
+			loadVotes(address);
+		}
+	}, [address, loadVotes]);
+
+	const loadDelegates = useCallback(
+		(wallet) => {
+			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
+			setDelegates(delegates);
+		},
+		[env],
+	);
+
+	useEffect(() => {
+		if (hasWalletId) {
+			loadDelegates(activeWallet);
+		}
+	}, [activeWallet, loadDelegates, hasWalletId]);
+
+	const handleSelectAddress = (address: string) => {
+		setAddress(address);
+		const wallet = activeProfile.wallets().findByAddress(address);
+		loadDelegates(wallet);
+	};
+
+	const handleContinue = (unvotes: string[], votes: string[]) => {
+		const walletId = hasWalletId ? activeWallet.id() : activeProfile.wallets().findByAddress(address)?.id();
+
+		const params = new URLSearchParams();
+
+		if (unvotes?.length > 0) {
+			params.append("unvotes", unvotes.join());
+		}
+
+		if (votes?.length > 0) {
+			params.append("votes", votes.join());
+		}
+
+		history.push({
+			pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
+			search: `?${params}`,
+		});
+	};
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -45,11 +117,24 @@ export const Votes = () => {
 				/>
 			</Section>
 
-			{Object.keys(walletsByCoin).map((coin, index) => (
-				<Section className="flex-1" key={index}>
-					<AddressTable wallets={walletsByCoin[coin]} />
+			{address ? (
+				<Section className="flex-1">
+					<DelegateTable
+						delegates={delegates}
+						maxVotes={1}
+						votes={votes}
+						selectedUnvoteAddresses={unvoteAddresses}
+						selectedVoteAddresses={voteAddresses}
+						onContinue={handleContinue}
+					/>
 				</Section>
-			))}
+			) : (
+				Object.keys(walletsByCoin).map((coin, index) => (
+					<Section className="flex-1" key={index}>
+						<AddressTable wallets={walletsByCoin[coin]} onSelect={handleSelectAddress} />
+					</Section>
+				))
+			)}
 		</Page>
 	);
 };
