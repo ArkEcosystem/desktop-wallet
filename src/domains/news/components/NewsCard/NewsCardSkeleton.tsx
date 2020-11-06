@@ -18,10 +18,10 @@ export const NewsCardSkeleton = () => {
 					<div className="flex items-center space-x-4">
 						<div className="relative flex items-center justify-center h-12">
 							<Skeleton circle width={44} height={44} />
-							<Circle className="absolute bg-theme-background border-transparent" noShadow />
+							<Circle className="absolute border-transparent bg-theme-background" noShadow />
 						</div>
 
-						<div className="flex flex-col h-full justify-between">
+						<div className="flex flex-col justify-between h-full">
 							<Skeleton height={18} width={titleWidth} />
 
 							<div className="flex items-center space-x-4">
