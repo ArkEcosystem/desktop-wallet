@@ -1,5 +1,7 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
+import { getNetworkExtendedData } from "domains/network/helpers";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -56,13 +58,26 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		},
 	];
 
+	const wallet = useMemo(() => wallets[0], [wallets]);
+
+	const networkExtendedData = getNetworkExtendedData({ coin: wallet.coinId(), network: wallet.networkId() });
+
 	const showSkeleton = useMemo(() => wallets.length === 0, [wallets]);
 	const skeletonList = new Array(8).fill({ isLoading: true });
 	const data = showSkeleton ? skeletonList : wallets;
 
 	return (
 		<div data-testid="AddressTable">
-			<h2 className="py-5 text-2xl font-bold">{t("VOTE.ADDRESS_TABLE.TITLE")}</h2>
+			<div className="flex items-center py-5 space-x-4">
+				<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} />
+				<div className="flex">
+					<h2 className="mb-0 text-2xl font-bold">{networkExtendedData?.displayName}</h2>
+					<span className="ml-2 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700">
+						{wallets.length}
+					</span>
+				</div>
+			</div>
+
 			<Table columns={columns} data={data}>
 				{(wallet: ReadWriteWallet, index: number) => (
 					<AddressRow index={index} wallet={wallet} isLoading={showSkeleton} onSelect={onSelect} />

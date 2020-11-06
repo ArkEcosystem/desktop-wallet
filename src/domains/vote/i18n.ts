@@ -11,10 +11,6 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
-	ADDRESS_TABLE: {
-		TITLE: "Select Address",
-	},
-
 	DELEGATE_TABLE: {
 		TITLE: "Select a Delegate",
 		COMMISSION: "Comm.",

@@ -1,3 +1,4 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
@@ -22,21 +23,17 @@ export const Votes = () => {
 		},
 	];
 
-	console.log("Wallets - allByCoin", activeProfile.wallets().allByCoin());
-
 	const walletsByCoin = useMemo(() => {
 		const wallets = activeProfile.wallets().allByCoin();
 
 		return Object.keys(wallets).reduce(
-			(acc, coin) => ({
-				...acc,
+			(coins, coin) => ({
+				...coins,
 				[coin]: Object.values(wallets[coin]),
 			}),
-			{} as any,
+			{} as Record<string, ReadWriteWallet[]>,
 		);
 	}, [activeProfile]);
-
-	console.log("walletsByCoin", walletsByCoin);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
