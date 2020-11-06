@@ -32,7 +32,6 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		{
 			Header: t("COMMON.BALANCE"),
 			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
-			className: "justify-end",
 		},
 		{
 			Header: t("COMMON.DELEGATE"),
@@ -50,6 +49,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 					Header: t("COMMON.VOTES"),
 					accessor: "votes",
 					disableSortBy: true,
+					className: "no-border",
 				},
 				{
 					accessor: "onSelect",
@@ -99,7 +99,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 
 			<Table columns={columns} data={wallets}>
 				{(wallet: ReadWriteWallet, index: number) => (
-					<AddressRow index={index} wallet={wallet} onSelect={onSelect} />
+					<AddressRow index={index} maxVotes={maxVotes} wallet={wallet} onSelect={onSelect} />
 				)}
 			</Table>
 		</div>

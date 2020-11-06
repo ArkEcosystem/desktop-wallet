@@ -13,11 +13,12 @@ import { useTranslation } from "react-i18next";
 
 type AddressRowProps = {
 	index: number;
+	maxVotes: number;
 	wallet: ReadWriteWallet;
 	onSelect?: (walletAddress: string) => void;
 };
 
-export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
+export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProps) => {
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const { t } = useTranslation();
@@ -79,7 +80,7 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 				</div>
 			</TableCell>
 
-			<TableCell innerClassName="justify-end font-bold text-theme-secondary-text">
+			<TableCell innerClassName="font-bold text-theme-secondary-text">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
@@ -97,27 +98,38 @@ export const AddressRow = ({ index, wallet, onSelect }: AddressRowProps) => {
 				)}
 			</TableCell>
 
-			<TableCell innerClassName="justify-center font-bold text-theme-secondary-text">
-				{hasVotes && <span>#{votes[0].rank()}</span>}
-			</TableCell>
+			{maxVotes === 1 ? (
+				<>
+					<TableCell innerClassName="justify-center font-bold text-theme-secondary-text">
+						{hasVotes && <span>#{votes[0].rank()}</span>}
+					</TableCell>
 
-			<TableCell innerClassName="justify-center">
-				{hasVotes && (
-					<Icon name="Msq" className="text-xl text-theme-primary" data-testid="AddressRow__profile" />
-				)}
-			</TableCell>
+					<TableCell innerClassName="justify-center">
+						{hasVotes && (
+							<Icon name="Msq" className="text-xl text-theme-primary" data-testid="AddressRow__profile" />
+						)}
+					</TableCell>
 
-			<TableCell innerClassName="justify-center">
-				{hasVotes && (
-					<Icon
-						name="StatusOk"
-						className="text-theme-success"
-						width={22}
-						height={22}
-						data-testid="AddressRow__status"
-					/>
-				)}
-			</TableCell>
+					<TableCell innerClassName="justify-center">
+						{hasVotes && (
+							<Icon
+								name="StatusOk"
+								className="text-theme-success"
+								width={22}
+								height={22}
+								data-testid="AddressRow__status"
+							/>
+						)}
+					</TableCell>
+				</>
+			) : (
+				<TableCell innerClassName="font-bold">
+					<div>
+						<span className="text-theme-secondary-text">{maxVotes}</span>
+						<span className="text-theme-neutral-light">/{maxVotes}</span>
+					</div>
+				</TableCell>
+			)}
 
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
