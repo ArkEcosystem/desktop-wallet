@@ -6,4 +6,4 @@ export default {
 	title: "Domains / Error / Pages / ApplicationError",
 };
 
-export const Default = () => <ApplicationError />;
+export const Default = () => <ApplicationError resetErrorBoundary={() => alert("reseted")} />;
