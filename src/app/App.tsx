@@ -145,16 +145,16 @@ export const App = () => {
 	);
 
 	return (
-		<ErrorBoundary FallbackComponent={ApplicationError}>
-			<I18nextProvider i18n={i18n}>
-				<EnvironmentProvider env={env}>
+		<I18nextProvider i18n={i18n}>
+			<EnvironmentProvider env={env}>
+				<ErrorBoundary FallbackComponent={ApplicationError}>
 					<ThemeProvider>
 						<LedgerProvider transport={LedgerTransportNodeHID}>
 							<Main />
 						</LedgerProvider>
 					</ThemeProvider>
-				</EnvironmentProvider>
-			</I18nextProvider>
-		</ErrorBoundary>
+				</ErrorBoundary>
+			</EnvironmentProvider>
+		</I18nextProvider>
 	);
 };
