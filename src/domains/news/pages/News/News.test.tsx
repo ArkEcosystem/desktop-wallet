@@ -17,6 +17,8 @@ import page1Fixture from "tests/fixtures/news/page-1.json";
 
 let subject: Blockfolio;
 
+jest.setTimeout(10000);
+
 describe("News", () => {
 	beforeAll(async () => {
 		history.push(newsURL);
