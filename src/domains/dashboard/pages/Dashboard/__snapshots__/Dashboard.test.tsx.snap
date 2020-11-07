@@ -22154,7 +22154,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                         data-testid="LayoutControls__grid"
                       >
                         <div
-                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
@@ -22173,7 +22173,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                         data-testid="LayoutControls__list"
                       >
                         <div
-                          class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
+                          class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
@@ -22554,133 +22554,147 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
             <div
               class="mt-1"
             >
-              <div>
+              <div
+                class="w-full"
+              >
                 <div
-                  data-testid="WalletTable"
+                  class="relative"
                 >
                   <div
-                    class="sc-AxheI gYpVUW -mt-3"
-                    role="table"
+                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    style="height: 224px;"
                   >
-                    <table
-                      cellpadding="0"
-                      class="table-auto"
+                    <div
+                      class="h-full swiper-wrapper "
+                      style="transition: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                     >
-                      <thead>
-                        <tr
-                          class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-                          role="row"
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px; margin-top: 0px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
                         >
-                          <th
-                            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--0"
-                            role="columnheader"
-                            style="cursor: pointer;"
-                            title="Toggle SortBy"
+                          <div
+                            class="sc-fzoNJl dgqJXR h-48"
+                            data-testid="Card"
                           >
                             <div
-                              class="flex flex-inline align-top ml-24"
+                              class="flex flex-col justify-between h-full p-4"
                             >
-                              <div>
-                                Wallet Address
-                              </div>
                               <div
-                                class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                                data-testid="table__Sort"
+                                class="flex -space-x-2"
                               >
                                 <div
-                                  class="sc-AxirZ jMwzyA"
-                                  height="12"
-                                  width="15"
-                                >
-                                  <svg>
-                                    sort.svg
-                                  </svg>
-                                </div>
+                                  class="sc-AxhUy iDenJW bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+                                />
+                                <div
+                                  class="sc-AxhUy iDenJW bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+                                />
                               </div>
-                            </div>
-                          </th>
-                          <th
-                            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--1"
-                            role="columnheader"
-                          >
-                            <div
-                              class="flex flex-inline align-top justify-center"
-                            >
-                              <div>
-                                Wallet Type
-                              </div>
-                            </div>
-                          </th>
-                          <th
-                            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--2"
-                            role="columnheader"
-                            style="cursor: pointer;"
-                            title="Toggle SortBy"
-                          >
-                            <div
-                              class="flex flex-inline align-top justify-end"
-                            >
-                              <div>
+                              <div
+                                class="mt-auto text-lg font-bold text-theme-primary-contrast dark:text-theme-neutral-800"
+                              >
                                 Balance
                               </div>
-                              <div
-                                class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                                data-testid="table__Sort"
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-primary-contrast dark:text-theme-neutral-800"
                               >
-                                <div
-                                  class="sc-AxirZ jMwzyA"
-                                  height="12"
-                                  width="15"
-                                >
-                                  <svg>
-                                    sort.svg
-                                  </svg>
-                                </div>
-                              </div>
+                                Address
+                              </span>
                             </div>
-                          </th>
-                          <th
-                            class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                            colspan="1"
-                            data-testid="table__th--3"
-                            role="columnheader"
-                            style="cursor: pointer;"
-                            title="Toggle SortBy"
+                            <div
+                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px; margin-top: 0px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzoNJl dgqJXR h-48"
+                            data-testid="Card"
                           >
                             <div
-                              class="flex flex-inline align-top justify-end"
+                              class="flex flex-col justify-between h-full p-4"
                             >
-                              <div>
-                                Fiat Value
-                              </div>
                               <div
-                                class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                                data-testid="table__Sort"
+                                class="flex -space-x-2"
                               >
                                 <div
-                                  class="sc-AxirZ jMwzyA"
-                                  height="12"
-                                  width="15"
-                                >
-                                  <svg>
-                                    sort.svg
-                                  </svg>
-                                </div>
+                                  class="sc-AxhUy iDenJW bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+                                />
+                                <div
+                                  class="sc-AxhUy iDenJW bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+                                />
                               </div>
+                              <div
+                                class="mt-auto text-lg font-bold text-theme-primary-contrast dark:text-theme-neutral-800"
+                              >
+                                Balance
+                              </div>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-primary-contrast dark:text-theme-neutral-800"
+                              >
+                                Address
+                              </span>
                             </div>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody
-                        role="rowgroup"
-                      />
-                    </table>
+                            <div
+                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px; margin-top: 0px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__blank"
+                        >
+                          <div
+                            class="sc-fzoNJl dgqJXR h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex flex-col justify-between h-full p-4"
+                            >
+                              <div
+                                class="flex -space-x-2"
+                              >
+                                <div
+                                  class="sc-AxhUy iDenJW bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+                                />
+                                <div
+                                  class="sc-AxhUy iDenJW bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+                                />
+                              </div>
+                              <div
+                                class="mt-auto text-lg font-bold text-theme-primary-contrast dark:text-theme-neutral-800"
+                              >
+                                Balance
+                              </div>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-primary-contrast dark:text-theme-neutral-800"
+                              >
+                                Address
+                              </span>
+                            </div>
+                            <div
+                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

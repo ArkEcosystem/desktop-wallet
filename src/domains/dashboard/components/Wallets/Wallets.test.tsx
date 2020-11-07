@@ -16,7 +16,7 @@ let wallets: ReadWriteWallet[];
 // Wallet filter properties
 const filterProperties = {
 	networks,
-	selectedNetworkIds: ["ark.devnet", "eth.mainnet", "btc.mainnet"],
+	selectedNetworkIds: ["ark.devnet", "eth.mainnet"],
 	visibleTransactionsView: true,
 	visiblePortfolioView: true,
 	walletsDisplayType: "all",
