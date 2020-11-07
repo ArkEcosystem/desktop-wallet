@@ -1,17 +1,19 @@
+
 import { Badge } from "app/components/Badge";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import React, { useEffect, useState } from "react";
 
 type Network = {
+	id?: string;
 	name: string;
-	isSelected: Boolean;
+	isSelected: boolean;
 	coin: string;
 };
 
 type NetworkProps = {
-	networks?: any;
-	onChange?: any;
+	networks: Network[];
+	onChange?: (network: Network, networks: Network[]) => void;
 	onViewAll?: any;
 	hideViewAll?: boolean;
 };
@@ -49,21 +51,19 @@ export const FilterNetwork = ({ networks, onChange, onViewAll, hideViewAll }: Ne
 
 	useEffect(() => setNetworkList(networks), [networks]);
 
-	const onClick = (network: Network, index: number) => {
+	const handleClick = (network: Network, index: number) => {
 		const list = networkList.concat();
 
 		network.isSelected = !network.isSelected;
 		list.splice(index, 1, network);
 		setNetworkList(list);
 
-		if (typeof onChange === "function") {
-			onChange?.(network, list);
-		}
+		onChange?.(network, list);
 	};
 
 	return (
 		<div>
-			{renderNetworks(networkList, onClick)}
+			{renderNetworks(networkList, handleClick)}
 
 			{!hideViewAll && (
 				<Circle

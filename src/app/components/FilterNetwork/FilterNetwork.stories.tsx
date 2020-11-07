@@ -11,14 +11,20 @@ export default {
 export const Default = () => {
 	const networks = [
 		{
+			id: "ark.devnet",
+			coin: "DARK",
 			name: "ARK",
 			isSelected: true,
 		},
 		{
+			id: "eth.mainnet",
+			coin: "ETH",
 			name: "Ethereum",
 			isSelected: true,
 		},
 		{
+			id: "btc.mainnet",
+			coin: "BTC",
 			name: "Bitcoin",
 			isSelected: false,
 		},
