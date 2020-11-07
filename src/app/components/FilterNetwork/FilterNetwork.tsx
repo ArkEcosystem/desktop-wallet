@@ -1,7 +1,7 @@
-
 import { Badge } from "app/components/Badge";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useEffect, useState } from "react";
 
 type Network = {
@@ -18,29 +18,31 @@ type NetworkProps = {
 	hideViewAll?: boolean;
 };
 
-const renderNetworks = (networks: any[], onClick: any) => (
+const renderNetworks = (networks: Network[], onClick: any) => (
 	<ul data-testid="network__option" className="inline-block">
-		{networks.map((option: Network, key: number) => (
+		{networks.map((network: Network, key: number) => (
 			<li
 				className="inline-block mr-5 cursor-pointer"
 				key={key}
 				data-testid={`network__option--${key}`}
-				onClick={() => onClick(option, key)}
+				onClick={() => onClick(network, key)}
 			>
-				{option.isSelected ? (
-					<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">
-						<Icon name={option.coin} width={20} height={20} />
-						<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
-					</Circle>
-				) : (
-					<Circle
-						size="lg"
-						className="relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
-					>
-						<Icon name={option.coin} width={20} height={20} />
-						<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
-					</Circle>
-				)}
+				<Tooltip content={network.name}>
+					{network.isSelected ? (
+						<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">
+							<Icon name={network.coin} width={20} height={20} />
+							<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
+						</Circle>
+					) : (
+						<Circle
+							size="lg"
+							className="relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+						>
+							<Icon name={network.coin} width={20} height={20} />
+							<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
+						</Circle>
+					)}
+				</Tooltip>
 			</li>
 		))}
 	</ul>
