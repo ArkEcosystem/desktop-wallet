@@ -1,9 +1,7 @@
-import { images } from "app/assets/images";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import React from "react";
 import { useTranslation } from "react-i18next";
-
-const { CannotConnectBanner } = images.error.pages.Offline;
 
 export const Offline = () => {
 	const { t } = useTranslation();
@@ -12,7 +10,7 @@ export const Offline = () => {
 		<Page navbarVariant="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
 				<div className="sm:mx-auto sm:w-full sm:max-w-md">
-					<CannotConnectBanner />
+					<Image name="CannotConnectBanner" domain="error" />
 				</div>
 
 				<div data-testid="Offline__text" className="mt-8">
