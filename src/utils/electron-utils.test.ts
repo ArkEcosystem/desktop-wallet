@@ -1,6 +1,6 @@
 import electron from "electron";
 
-import { isIdle, openExternal, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
+import { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
 
 jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
@@ -27,6 +27,9 @@ jest.mock("electron", () => {
 		},
 		shell: {
 			openExternal: jest.fn(),
+		},
+		ipcRenderer: {
+			send: jest.fn(),
 		},
 	};
 });
@@ -227,6 +230,23 @@ describe("Electron utils", () => {
 		it("should open an external link", () => {
 			openExternal(externalLink);
 			expect(openExternalMock).toHaveBeenCalledWith(externalLink);
+		});
+	});
+
+	describe("exitApp", () => {
+		let ipcRendererMock: jest.SpyInstance;
+
+		beforeEach(() => {
+			ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
+		});
+
+		afterEach(() => {
+			ipcRendererMock.mockRestore();
+		});
+
+		it("should quit electron app", () => {
+			exitApp();
+			expect(ipcRendererMock).toHaveBeenCalledWith("exit-app");
 		});
 	});
 
