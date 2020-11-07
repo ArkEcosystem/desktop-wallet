@@ -4,7 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { DelegateRow } from "./DelegateRow";
@@ -157,9 +157,7 @@ export const DelegateTable = ({
 		return paginatedItems;
 	};
 
-	const showSkeleton = useMemo(() => totalDelegates === 0, [totalDelegates]);
-	const skeletonList = new Array(8).fill({});
-	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
+	const data = paginator(delegates, currentPage, itemsPerPage!);
 
 	return (
 		<div data-testid="DelegateTable">
@@ -180,7 +178,6 @@ export const DelegateTable = ({
 							selectedVotes={selectedVotes}
 							isVoted={isVoted}
 							isVoteDisabled={isVoteDisabled}
-							isLoading={showSkeleton}
 							onUnvoteSelect={toggleUnvotesSelected}
 							onVoteSelect={toggleVotesSelected}
 						/>
