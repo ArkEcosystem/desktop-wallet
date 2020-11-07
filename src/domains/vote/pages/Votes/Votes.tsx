@@ -22,9 +22,12 @@ export const Votes = () => {
 	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
 	const voteAddresses = queryParams.get("votes")?.split(",");
 
-	const [address, setAddress] = useState(hasWalletId ? activeWallet.address() : "");
+	const walletAddress = hasWalletId ? activeWallet.address() : "";
+	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
+
+	const [address, setAddress] = useState(walletAddress);
+	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
-	const [maxVotes, setMaxVotes] = useState(hasWalletId ? activeWallet.network().maximumVotesPerWallet() : 1);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
 	const crumbs = [
@@ -87,7 +90,7 @@ export const Votes = () => {
 		const wallet = activeProfile.wallets().findByAddress(address);
 
 		setAddress(address);
-		setMaxVotes(wallet?.network().maximumVotesPerWallet() as number);
+		setMaxVotes(wallet?.network().maximumVotesPerWallet());
 
 		loadDelegates(wallet);
 	};
@@ -125,7 +128,7 @@ export const Votes = () => {
 				<Section className="flex-1">
 					<DelegateTable
 						delegates={delegates}
-						maxVotes={maxVotes}
+						maxVotes={maxVotes!}
 						votes={votes}
 						selectedUnvoteAddresses={unvoteAddresses}
 						selectedVoteAddresses={voteAddresses}

@@ -37,7 +37,7 @@ export const DelegateTable = ({
 	const columns = [
 		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
-			accessor: "delegateName",
+			accessor: (delegate: ReadOnlyWallet) => delegate.username() || delegate.address(),
 			className: "ml-15",
 		},
 		{
@@ -48,12 +48,13 @@ export const DelegateTable = ({
 		},
 		{
 			Header: t("COMMON.RANK"),
-			accessor: "rank",
+			accessor: (delegate: ReadOnlyWallet) => delegate.rank(),
 			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.VOTES"),
 			accessor: "votes",
+			disableSortBy: true,
 			className: "justify-center",
 		},
 		{
@@ -65,21 +66,25 @@ export const DelegateTable = ({
 		{
 			Header: t("VOTE.DELEGATE_TABLE.COMMISSION"),
 			accessor: "commissionPercentage",
+			disableSortBy: true,
 			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.PAYOUT_INTERVAL"),
 			accessor: "payout",
+			disableSortBy: true,
 			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.MIN"),
 			accessor: "min",
+			disableSortBy: true,
 			className: "justify-center",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
 			accessor: "commissionDaily",
+			disableSortBy: true,
 			className: "justify-end",
 		},
 		{
