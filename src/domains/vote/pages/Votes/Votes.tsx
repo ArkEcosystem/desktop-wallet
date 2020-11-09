@@ -81,12 +81,12 @@ export const Votes = () => {
 		{
 			label: t("VOTE.FILTERS.ALL"),
 			value: "all",
-			isChecked: false,
+			isChecked: true,
 		},
 		{
 			label: t("VOTE.FILTERS.CURRENT_VOTES"),
 			value: "current",
-			isChecked: true,
+			isChecked: false,
 		},
 	]);
 
@@ -191,6 +191,13 @@ export const Votes = () => {
 		});
 	};
 
+	const filteredDelegates = useMemo(() => {
+		const checkedFilter = votesFilterOptions.find((o) => o.isChecked);
+		if (checkedFilter?.value === "all") return delegates;
+
+		return votes.filter((v) => delegates.some((d) => v.address() === d.address()));
+	}, [votes, votesFilterOptions]);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -232,7 +239,7 @@ export const Votes = () => {
 			<Section className="flex-1">
 				{network?.allowsVoting() && address ? (
 					<DelegateTable
-						delegates={delegates}
+						delegates={filteredDelegates}
 						maxVotes={network.maximumVotesPerWallet()}
 						votes={votes}
 						selectedUnvoteAddresses={unvoteAddresses}
