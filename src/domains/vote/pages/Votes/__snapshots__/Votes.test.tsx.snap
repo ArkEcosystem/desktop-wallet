@@ -92,7 +92,7 @@ exports[`Votes should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzplWN bBCShm group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ jFqSPL group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -124,7 +124,7 @@ exports[`Votes should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-fzplWN bBCShm text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxirZ jFqSPL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -147,7 +147,7 @@ exports[`Votes should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-fzplWN bBCShm text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxirZ jFqSPL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -231,7 +231,7 @@ exports[`Votes should render 1`] = `
                     </span>
                   </div>
                   <span
-                    class="sc-fzpans IPyPt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxjAm iepfoc"
@@ -687,7 +687,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt femqhX justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="sc-fzplWN cMffai"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -821,7 +821,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fzplWN cMffai"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -955,7 +955,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fzplWN cMffai"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -1089,7 +1089,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fzplWN cMffai"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -1117,6 +1117,185 @@ exports[`Votes should render 1`] = `
                   >
                     1
                   </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+              data-testid="DelegateTable__footer"
+            >
+              <div
+                class="flex-1"
+              >
+                <div
+                  class="flex justify-between"
+                >
+                  <div
+                    class="flex font-semibold"
+                  >
+                    <div
+                      class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-2"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            My Address
+                          </div>
+                          <div
+                            class="text-theme-text"
+                            data-testid="DelegateTable__footer--address"
+                          >
+                            <div
+                              class="inline-flex items-center"
+                            >
+                              <span
+                                class="sc-fzoyAV lgNqAT text-theme-text truncate font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                D8rr7B1d6T … 1VBMs6YUYD
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-fznyAO kAGxhi mr-2 bg-theme-background border-theme-text text-theme-text"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              vote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Votes
+                          </div>
+                          <div
+                            class="text-theme-text"
+                            data-testid="DelegateTable__footer--votes"
+                          >
+                            0
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-fznyAO kAGxhi mr-2 bg-theme-background border-theme-text text-theme-text"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              unvote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Unvotes
+                          </div>
+                          <div
+                            class="text-theme-text"
+                            data-testid="DelegateTable__footer--unvotes"
+                          >
+                            0
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-fznyAO kAGxhi mr-2 bg-theme-background border-theme-text text-theme-text"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              vote-combination.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Total
+                          </div>
+                          <div
+                            class="text-theme-text"
+                            data-testid="DelegateTable__footer--total"
+                          >
+                            0/1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="sc-AxirZ hNClQs"
+                    color="primary"
+                    data-testid="DelegateTable__continue-button"
+                    type="button"
+                  >
+                    Continue
+                  </button>
                 </div>
               </div>
             </div>
@@ -1216,7 +1395,7 @@ exports[`Votes should select a delegate 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzplWN bBCShm group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ jFqSPL group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -1248,7 +1427,7 @@ exports[`Votes should select a delegate 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-fzplWN bBCShm text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxirZ jFqSPL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -1271,7 +1450,7 @@ exports[`Votes should select a delegate 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-fzplWN bBCShm text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxirZ jFqSPL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -1355,7 +1534,7 @@ exports[`Votes should select a delegate 1`] = `
                     </span>
                   </div>
                   <span
-                    class="sc-fzpans IPyPt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
                       class="sc-AxjAm iepfoc"
@@ -1811,7 +1990,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt femqhX justify-end bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <button
-                          class="sc-fzplWN bNdZkp"
+                          class="sc-AxirZ gfCA-dQ"
                           color="danger"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -1945,7 +2124,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fzplWN cMffai"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -2079,7 +2258,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fzplWN cMffai"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -2213,7 +2392,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fzplWN cMffai"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -2413,7 +2592,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-fzplWN hYreRp"
+                    class="sc-AxirZ hNClQs"
                     color="primary"
                     data-testid="DelegateTable__continue-button"
                     type="button"

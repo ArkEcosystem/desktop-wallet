@@ -6,6 +6,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -280,12 +281,20 @@ export const DelegateTable = ({
 							</div>
 						</div>
 
-						<Button
-							onClick={() => onContinue?.(selectedUnvotes, selectedVotes)}
-							data-testid="DelegateTable__continue-button"
+						<Tooltip
+							content={t("VOTE.DELEGATE_TABLE.TOOLTIP.SELECTED_DELEGATE")}
+							disabled={!!getTotalVotes()}
 						>
-							{t("COMMON.CONTINUE")}
-						</Button>
+							<span>
+								<Button
+									disabled={!getTotalVotes()}
+									onClick={() => onContinue?.(selectedUnvotes, selectedVotes)}
+									data-testid="DelegateTable__continue-button"
+								>
+									{t("COMMON.CONTINUE")}
+								</Button>
+							</span>
+						</Tooltip>
 					</div>
 				</div>
 			</div>

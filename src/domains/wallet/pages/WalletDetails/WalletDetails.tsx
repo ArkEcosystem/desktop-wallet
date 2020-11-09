@@ -260,7 +260,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 							{!isLoading && transactions.length === 0 && (
 								<EmptyBlock
 									className="-mt-2"
-									message={t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.EMPTY_TEXT")}
+									message={t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
 								/>
 							)}
 						</>

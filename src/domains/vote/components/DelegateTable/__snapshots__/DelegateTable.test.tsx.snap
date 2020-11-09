@@ -2293,6 +2293,185 @@ exports[`DelegateTable should render 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+      data-testid="DelegateTable__footer"
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <div
+            class="flex font-semibold"
+          >
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-2"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    My Address
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--address"
+                  >
+                    <div
+                      class="inline-flex items-center"
+                    >
+                      <span
+                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        DC8ghUdhS8 … LBFhL3Dq2P
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Votes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--votes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      unvote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Unvotes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--unvotes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote-combination.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Total
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--total"
+                  >
+                    0/1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="sc-AxirZ hNClQs"
+            color="primary"
+            data-testid="DelegateTable__continue-button"
+            type="button"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -5053,6 +5232,185 @@ exports[`DelegateTable should render with empty list 1`] = `
         </button>
       </div>
     </div>
+    <div
+      class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+      data-testid="DelegateTable__footer"
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <div
+            class="flex font-semibold"
+          >
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-2"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    My Address
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--address"
+                  >
+                    <div
+                      class="inline-flex items-center"
+                    >
+                      <span
+                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        DC8ghUdhS8 … LBFhL3Dq2P
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Votes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--votes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      unvote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Unvotes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--unvotes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote-combination.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Total
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--total"
+                  >
+                    0/1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="sc-AxirZ hNClQs"
+            color="primary"
+            data-testid="DelegateTable__continue-button"
+            type="button"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -5703,6 +6061,185 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
           >
             1
           </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+      data-testid="DelegateTable__footer"
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <div
+            class="flex font-semibold"
+          >
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-2"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    My Address
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--address"
+                  >
+                    <div
+                      class="inline-flex items-center"
+                    >
+                      <span
+                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        DC8ghUdhS8 … LBFhL3Dq2P
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Votes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--votes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      unvote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Unvotes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--unvotes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote-combination.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Total
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--total"
+                  >
+                    0/1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="sc-AxirZ hNClQs"
+            color="primary"
+            data-testid="DelegateTable__continue-button"
+            type="button"
+          >
+            Continue
+          </button>
         </div>
       </div>
     </div>
@@ -7184,6 +7721,185 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+      data-testid="DelegateTable__footer"
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <div
+            class="flex font-semibold"
+          >
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-2"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    My Address
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--address"
+                  >
+                    <div
+                      class="inline-flex items-center"
+                    >
+                      <span
+                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        DC8ghUdhS8 … LBFhL3Dq2P
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Votes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--votes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      unvote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Unvotes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--unvotes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote-combination.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Total
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--total"
+                  >
+                    0/1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="sc-AxirZ hNClQs"
+            color="primary"
+            data-testid="DelegateTable__continue-button"
+            type="button"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -7999,7 +8715,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                     class="text-theme-text"
                     data-testid="DelegateTable__footer--total"
                   >
-                    3
+                    3/10
                   </div>
                 </div>
               </div>
@@ -8669,6 +9385,185 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+      data-testid="DelegateTable__footer"
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <div
+            class="flex font-semibold"
+          >
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-2"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    My Address
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--address"
+                  >
+                    <div
+                      class="inline-flex items-center"
+                    >
+                      <span
+                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        DC8ghUdhS8 … LBFhL3Dq2P
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Votes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--votes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      unvote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Unvotes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--unvotes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote-combination.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Total
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--total"
+                  >
+                    0/1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="sc-AxirZ hNClQs"
+            color="primary"
+            data-testid="DelegateTable__continue-button"
+            type="button"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -9319,6 +10214,185 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
           >
             1
           </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+      data-testid="DelegateTable__footer"
+    >
+      <div
+        class="flex-1"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <div
+            class="flex font-semibold"
+          >
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-2"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    My Address
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--address"
+                  >
+                    <div
+                      class="inline-flex items-center"
+                    >
+                      <span
+                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        DC8ghUdhS8 … LBFhL3Dq2P
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Votes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--votes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      unvote.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Unvotes
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--unvotes"
+                  >
+                    0
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="px-8"
+            >
+              <div
+                class="inline-flex"
+              >
+                <div
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                >
+                  <div
+                    class="sc-AxhCb fxrKLH text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      vote-combination.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="text-theme-neutral"
+                  >
+                    Total
+                  </div>
+                  <div
+                    class="text-theme-text"
+                    data-testid="DelegateTable__footer--total"
+                  >
+                    0/1
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="sc-AxirZ hNClQs"
+            color="primary"
+            data-testid="DelegateTable__continue-button"
+            type="button"
+          >
+            Continue
+          </button>
         </div>
       </div>
     </div>
