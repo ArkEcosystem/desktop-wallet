@@ -651,4 +651,80 @@ describe("SendVote", () => {
 		isMultiSignatureSpy.mockRestore();
 		multisignatureSpy.mockRestore();
 	});
+
+	it("should send a vote transaction with a ledger wallet", async () => {
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+		const signTransactionSpy = jest
+			.spyOn(wallet.coin().ledger(), "signTransactionWithSchnorr")
+			.mockImplementation(
+				() =>
+					new Promise((resolve) =>
+						setTimeout(
+							() =>
+								resolve(
+									"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
+								),
+							300,
+						),
+					),
+			);
+
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			unvotes: delegateData[1].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<SendVote />
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const feeOptions = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(feeOptions[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+
+			// Step 3
+			expect(getByTestId("SendVote__button--continue")).not.toBeDisabled();
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+
+			// Auto broadcast
+			await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("2eda50b7d59b3 … 7ecc8339e430");
+		});
+		signTransactionSpy.mockRestore();
+		isLedgerSpy.mockRestore();
+	});
 });
