@@ -29,22 +29,22 @@ export const VotesFilter = ({ onChange, defaultOptions }: FilterProps) => {
 		>
 			<div className="w-64 px-6 py-4">
 				{options.map(({ label, value, isChecked }, index) => (
-						<label
-							key={index}
-							className="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-							data-testid={`VotesFilter__option--${index}`}
-						>
-							<span>
-								<Checkbox
-									name={value}
-									className="rounded-lg"
-									checked={isChecked}
-									onChange={() => handleChange(index)}
-								/>
-							</span>
-							<span>{label}</span>
-						</label>
-					))}
+					<label
+						key={index}
+						className="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+						data-testid={`VotesFilter__option--${index}`}
+					>
+						<span>
+							<Checkbox
+								name={value}
+								className="rounded-lg"
+								checked={isChecked}
+								onChange={() => handleChange(index)}
+							/>
+						</span>
+						<span>{label}</span>
+					</label>
+				))}
 			</div>
 		</Dropdown>
 	);

@@ -77,6 +77,19 @@ export const Votes = () => {
 		},
 	];
 
+	const [votesFilterOptions, setVotesFilterOptions] = useState([
+		{
+			label: t("VOTE.FILTERS.ALL"),
+			value: "all",
+			isChecked: false,
+		},
+		{
+			label: t("VOTE.FILTERS.CURRENT_VOTES"),
+			value: "current",
+			isChecked: true,
+		},
+	]);
+
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	useEffect(() => {
@@ -188,7 +201,7 @@ export const Votes = () => {
 						<div className="flex items-center space-x-8 text-theme-primary-light">
 							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
-							<VotesFilter />
+							<VotesFilter defaultOptions={votesFilterOptions} onChange={setVotesFilterOptions} />
 						</div>
 					}
 				/>
