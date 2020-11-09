@@ -25,10 +25,7 @@ import {
 } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
-import { SendTransfer } from "./SendTransfer";
-import { FormStep } from "./Step1";
-import { ReviewStep } from "./Step2";
-import { SummaryStep } from "./Step4";
+import { FormStep, ReviewStep, SendTransfer, SummaryStep } from "./";
 
 const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
@@ -84,7 +81,7 @@ describe("SendTransfer", () => {
 				</FormProvider>,
 			);
 
-			expect(getByTestId("SendTransfer__step--first")).toBeTruthy();
+			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
@@ -107,7 +104,7 @@ describe("SendTransfer", () => {
 				</FormProvider>,
 			);
 
-			expect(getByTestId("SendTransfer__step--first")).toBeTruthy();
+			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
@@ -135,7 +132,7 @@ describe("SendTransfer", () => {
 			</FormProvider>,
 		);
 
-		expect(getByTestId("SendTransfer__step--second")).toBeTruthy();
+		expect(getByTestId("SendTransfer__review-step")).toBeTruthy();
 		expect(container).toHaveTextContent(wallet.network().name());
 		expect(container).toHaveTextContent("D8rr7B … s6YUYD");
 		expect(container).toHaveTextContent("test smartbridge");
@@ -178,7 +175,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		expect(rendered.asFragment()).toMatchSnapshot();
@@ -202,7 +199,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		expect(rendered.asFragment()).toMatchSnapshot();
@@ -226,7 +223,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		act(() => {
@@ -262,7 +259,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		act(() => {
@@ -299,7 +296,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -345,7 +342,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -384,16 +381,16 @@ describe("SendTransfer", () => {
 			// Step 2
 			await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 			// Back to Step 1
 			fireEvent.click(getByTestId("SendTransfer__button--back"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 			// Step 2
 			await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 			// Step 3
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
@@ -472,7 +469,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -504,7 +501,7 @@ describe("SendTransfer", () => {
 
 			// Step 2
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest
@@ -576,7 +573,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -613,7 +610,7 @@ describe("SendTransfer", () => {
 			// Step 2
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 			// Step 3
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
@@ -675,7 +672,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -732,7 +729,7 @@ describe("SendTransfer", () => {
 			// Step 2
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 			// Step 3
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
