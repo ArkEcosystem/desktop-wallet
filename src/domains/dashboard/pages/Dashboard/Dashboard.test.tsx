@@ -322,6 +322,14 @@ describe("Dashboard", () => {
 			const listViewToggle = getByTestId("LayoutControls__list--icon");
 			fireEvent.click(listViewToggle);
 			await waitFor(() => expect(getAllByTestId("TableRow").length).toBeGreaterThan(0));
+
+			fireEvent.click(gridViewType);
+			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+
+			fireEvent.click(toggle);
+
+			await waitFor(() => expect(getByTestId("network__option--0")).toBeTruthy());
+			fireEvent.click(getByTestId("network__option--0"));
 		});
 	});
 
