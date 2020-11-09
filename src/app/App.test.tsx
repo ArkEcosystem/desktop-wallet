@@ -174,8 +174,10 @@ describe("App", () => {
 	});
 
 	it("should render application error if the app fails to boot", async () => {
+		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => null);
+
 		const envSpy = jest.spyOn(Environment.prototype, "boot").mockImplementation(() => {
-			throw new Error();
+			throw new Error("failed to boot env");
 		});
 
 		process.env.REACT_APP_BUILD_MODE = "demo";
@@ -199,6 +201,7 @@ describe("App", () => {
 			expect(asFragment()).toMatchSnapshot();
 		});
 
+		consoleSpy.mockRestore();
 		envSpy.mockRestore();
 	});
 
