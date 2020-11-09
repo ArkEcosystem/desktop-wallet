@@ -1,4 +1,8 @@
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { isEmptyObject } from "@arkecosystem/utils";
+import { Icon } from "app/components//Icon";
+import { Button } from "app/components/Button";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
@@ -7,7 +11,7 @@ import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
 export const Votes = () => {
@@ -135,6 +139,44 @@ export const Votes = () => {
 						selectedWallet={address}
 						onContinue={handleContinue}
 					/>
+				</Section>
+			) : isEmptyObject(walletsByCoin) ? (
+				<Section className="flex-1">
+					<EmptyBlock>
+						<div className="flex items-center justify-between">
+							<Trans
+								i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
+								defaults="Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status"
+								values={{
+									create: t("DASHBOARD.WALLET_CONTROLS.CREATE"),
+									import: t("DASHBOARD.WALLET_CONTROLS.IMPORT"),
+								}}
+								components={{ bold: <strong /> }}
+							/>
+
+							<div className="flex -m-3 space-x-3">
+								<Button
+									onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
+									variant="plain"
+								>
+									<div className="flex items-center space-x-2">
+										<Icon name="Plus" width={12} height={12} />
+										<span>{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
+									</div>
+								</Button>
+
+								<Button
+									onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
+									variant="plain"
+								>
+									<div className="flex items-center space-x-2">
+										<Icon name="Import" width={15} height={15} />
+										<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
+									</div>
+								</Button>
+							</div>
+						</div>
+					</EmptyBlock>
 				</Section>
 			) : (
 				Object.keys(walletsByCoin).map((coin, index) => (
