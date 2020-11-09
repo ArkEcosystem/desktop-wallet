@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 // import electron from "electron";
 
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -8,7 +9,6 @@ import nock from "nock";
 import React from "react";
 import {
 	act,
-	env,
 	fireEvent,
 	getDefaultProfileId,
 	RenderResult,
@@ -174,7 +174,7 @@ describe("App", () => {
 	});
 
 	it("should render application error if the app fails to boot", async () => {
-		const envSpy = jest.spyOn(env, "boot").mockImplementation(() => {
+		const envSpy = jest.spyOn(Environment.prototype, "boot").mockImplementation(() => {
 			throw new Error();
 		});
 
