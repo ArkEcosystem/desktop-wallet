@@ -153,7 +153,7 @@ export const DelegateRow = ({
 									disabled
 									data-testid={`DelegateRow__toggle-${index}`}
 								>
-									{t("COMMON.NOT_SELECTED")}
+									{t("COMMON.SELECT")}
 								</Button>
 							</span>
 						) : (
@@ -163,7 +163,7 @@ export const DelegateRow = ({
 								onClick={() => onVoteSelect?.(delegate.address())}
 								data-testid={`DelegateRow__toggle-${index}`}
 							>
-								{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.NOT_SELECTED")}
+								{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.SELECT")}
 							</Button>
 						)}
 					</Tooltip>

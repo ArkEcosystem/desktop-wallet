@@ -10,14 +10,13 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
-import React, { useEffect, useMemo, useState } from "react";
+import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { FourthStep } from "./Step4";
+import { FormStep, ReviewStep, SummaryStep } from "./";
 
 export const SendVote = () => {
 	const { t } = useTranslation();
@@ -40,6 +39,9 @@ export const SendVote = () => {
 	const form = useForm({ mode: "onChange" });
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
 	const { sendVote, common } = useValidation();
+
+	const abortRef = useRef(new AbortController());
+	const transactionBuilder = useTransactionBuilder(activeProfile);
 
 	useEffect(() => {
 		register("network", sendVote.network());
@@ -86,6 +88,9 @@ export const SendVote = () => {
 	];
 
 	const handleBack = () => {
+		// Abort any existing listener
+		abortRef.current.abort();
+
 		if (activeTab === 1) {
 			const params = new URLSearchParams();
 
@@ -107,6 +112,8 @@ export const SendVote = () => {
 	};
 
 	const handleNext = async () => {
+		abortRef.current = new AbortController();
+
 		const newIndex = activeTab + 1;
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
@@ -114,6 +121,10 @@ export const SendVote = () => {
 		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
 			await handleSubmit(submitForm)();
 			return;
+		}
+
+		if (newIndex === 3 && senderWallet?.isLedger()) {
+			handleSubmit(submitForm)();
 		}
 
 		setActiveTab(newIndex);
@@ -144,7 +155,8 @@ export const SendVote = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 		const { fee, mnemonic, secondMnemonic, senderAddress } = getValues();
-		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
+
+		const abortSignal = abortRef.current?.signal;
 
 		try {
 			const voteTransactionInput: Contracts.TransactionInput = {
@@ -156,57 +168,62 @@ export const SendVote = () => {
 				},
 			};
 
-			if (senderWallet?.isMultiSignature()) {
-				voteTransactionInput.nonce = senderWallet.nonce().plus(1).toFixed();
-				voteTransactionInput.sign = {
-					multiSignature: senderWallet.multiSignature(),
-				};
-			}
-
 			if (unvotes.length > 0 && votes.length > 0) {
-				const unvoteTransactionId = await senderWallet!.transaction().signVote({
-					...voteTransactionInput,
-					data: {
-						vote: `-${unvotes[0].publicKey()}`,
+				const unvoteTransaction = await transactionBuilder.build(
+					"vote",
+					{
+						...voteTransactionInput,
+						data: {
+							vote: `-${unvotes[0].publicKey()}`,
+						},
 					},
-				});
+					{ abortSignal },
+				);
 
-				await senderWallet!.transaction().broadcast(unvoteTransactionId);
+				await transactionBuilder.broadcast(unvoteTransaction.id(), voteTransactionInput);
 
 				await env.persist();
 
 				await confirmSendVote("unvote");
 
-				const voteTransactionId = await senderWallet!.transaction().signVote({
-					...voteTransactionInput,
-					data: {
-						vote: `+${votes[0].publicKey()}`,
+				const voteTransaction = await transactionBuilder.build(
+					"vote",
+					{
+						...voteTransactionInput,
+						data: {
+							vote: `+${votes[0].publicKey()}`,
+						},
 					},
-				});
+					{ abortSignal },
+				);
 
-				await senderWallet!.transaction().broadcast(voteTransactionId);
+				await transactionBuilder.broadcast(voteTransaction.id(), voteTransactionInput);
 
 				await env.persist();
 
-				setTransaction(senderWallet!.transaction().transaction(voteTransactionId));
+				setTransaction(voteTransaction);
 
 				setActiveTab(4);
 
 				await confirmSendVote("vote");
 			} else {
 				const isUnvote = unvotes.length > 0;
-				const transactionId = await senderWallet!.transaction().signVote({
-					...voteTransactionInput,
-					data: {
-						vote: isUnvote ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
+				const transaction = await transactionBuilder.build(
+					"vote",
+					{
+						...voteTransactionInput,
+						data: {
+							vote: isUnvote ? `-${unvotes[0].publicKey()}` : `+${votes[0].publicKey()}`,
+						},
 					},
-				});
+					{ abortSignal },
+				);
 
-				await senderWallet!.transaction().broadcast(transactionId);
+				await transactionBuilder.broadcast(transaction.id(), voteTransactionInput);
 
 				await env.persist();
 
-				setTransaction(senderWallet!.transaction().transaction(transactionId));
+				setTransaction(transaction);
 
 				setActiveTab(4);
 
@@ -229,7 +246,7 @@ export const SendVote = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep
+								<FormStep
 									profile={activeProfile}
 									unvotes={unvotes}
 									votes={votes}
@@ -237,7 +254,7 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep
+								<ReviewStep
 									profile={activeProfile}
 									unvotes={unvotes}
 									votes={votes}
@@ -248,7 +265,7 @@ export const SendVote = () => {
 								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep
+								<SummaryStep
 									senderWallet={activeWallet}
 									transaction={transaction}
 									unvotes={unvotes}
