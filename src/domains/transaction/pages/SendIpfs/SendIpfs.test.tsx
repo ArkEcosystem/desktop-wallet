@@ -461,7 +461,7 @@ describe("SendIpfs", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__step--first`)).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__form-step`)).toBeTruthy());
 		});
 
 		const { getByTestId } = rendered!;
@@ -485,7 +485,7 @@ describe("SendIpfs", () => {
 
 			// Step 2
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-			await waitFor(() => expect(getByTestId("SendIpfs__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
 			// Step 3
 			expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();

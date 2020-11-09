@@ -590,7 +590,7 @@ describe("SendTransfer", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
 		});
 
 		const { getAllByTestId, getByTestId } = rendered!;
@@ -622,7 +622,7 @@ describe("SendTransfer", () => {
 
 			// Step 2
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			await waitFor(() => expect(getByTestId("SendTransfer__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 			// Step 3
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();

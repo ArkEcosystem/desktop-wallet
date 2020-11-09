@@ -695,9 +695,9 @@ describe("SendVote", () => {
 				},
 			);
 
-			await waitFor(() => expect(rendered.getByTestId("SendVote__step--first")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
 			await waitFor(() =>
-				expect(rendered.getByTestId("SendVote__step--first")).toHaveTextContent(delegateData[1].username),
+				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username),
 			);
 		});
 
@@ -712,7 +712,7 @@ describe("SendVote", () => {
 
 			// Step 2
 			fireEvent.click(getByTestId("SendVote__button--continue"));
-			await waitFor(() => expect(getByTestId("SendVote__step--second")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
 
 			// Step 3
 			expect(getByTestId("SendVote__button--continue")).not.toBeDisabled();
