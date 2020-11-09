@@ -99,7 +99,7 @@ describe("AddressRow", () => {
 		votesMock.mockRestore();
 	});
 
-	it("should render when the wallet has a lot of votes", () => {
+	it("should render when the wallet has many votes", () => {
 		const votesMock = jest.spyOn(wallet, "votes").mockReturnValue(
 			[0, 1, 2, 3, 4].map(
 				(index) =>
