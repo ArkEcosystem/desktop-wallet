@@ -7,20 +7,24 @@ exports[`VotesFilter should render empty with undefined defaultOptions 1`] = `<D
 exports[`VotesFilter should render with default options 1`] = `
 <DocumentFragment>
   <div
-    class="relative"
-    data-testid="dropdown__toggle"
+    data-testid="VotesFilter"
   >
     <div
-      class="cursor-pointer"
+      class="relative"
+      data-testid="dropdown__toggle"
     >
       <div
-        class="sc-AxirZ eEbZjj"
-        height="20"
-        width="20"
+        class="cursor-pointer"
       >
-        <svg>
-          filters.svg
-        </svg>
+        <div
+          class="sc-AxirZ eEbZjj"
+          height="20"
+          width="20"
+        >
+          <svg>
+            filters.svg
+          </svg>
+        </div>
       </div>
     </div>
   </div>
