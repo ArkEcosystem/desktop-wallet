@@ -203,6 +203,34 @@ describe("SelectNetwork", () => {
 		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 	});
 
+	it("should toggle selection by clicking on network icon", async () => {
+		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+		});
+
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
+		});
+
+		expect(getByTestId("SelectNetworkInput__network")).not.toHaveAttribute("aria-label");
+	});
+
 	it("should return empty if the item has not defined", () => {
 		expect(itemToString(null)).toBe("");
 	});
