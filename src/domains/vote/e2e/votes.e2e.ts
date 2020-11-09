@@ -95,7 +95,7 @@ test("should successfully send a vote transaction with a multisig wallet", async
 
 	// Select delegate
 	await t.expect(Selector("h2").withText(translations.VOTE.DELEGATE_TABLE.TITLE).exists).ok();
-	await t.click(Selector('[data-testid="DelegateRow__toggle-1"]').withText(translations.COMMON.NOT_SELECTED));
+	await t.click(Selector('[data-testid="DelegateRow__toggle-1"]').withText(translations.COMMON.SELECT));
 	await t.expect(Selector("[data-testid=DelegateTable__footer]").exists).ok();
 	await t.click(Selector('[data-testid="DelegateTable__continue-button"]').withText(translations.COMMON.CONTINUE));
 
@@ -133,7 +133,7 @@ test("should successfully send a vote transaction", async (t) => {
 
 	// Select delegate
 	await t.expect(Selector("h2").withText(translations.VOTE.DELEGATE_TABLE.TITLE).exists).ok();
-	await t.click(Selector('[data-testid="DelegateRow__toggle-1"]').withText(translations.COMMON.NOT_SELECTED));
+	await t.click(Selector('[data-testid="DelegateRow__toggle-1"]').withText(translations.COMMON.SELECT));
 	await t.expect(Selector("[data-testid=DelegateTable__footer]").exists).ok();
 	await t.click(Selector('[data-testid="DelegateTable__continue-button"]').withText(translations.COMMON.CONTINUE));
 
