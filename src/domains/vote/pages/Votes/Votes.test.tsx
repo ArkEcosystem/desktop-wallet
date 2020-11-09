@@ -3,7 +3,16 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	waitFor,
+	within,
+} from "testing-library";
 
 import { Votes } from "./Votes";
 
@@ -54,6 +63,28 @@ describe("Votes", () => {
 		expect(container).toBeTruthy();
 		expect(getByTestId("DelegateTable")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should filter current delegates", async () => {
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, container, getByTestId, getAllByTestId } = renderPage(route);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(within(getByTestId("VotesFilter")).getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("VotesFilter")).getByTestId("dropdown__content")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("VotesFilter__option--1"));
+		});
+
+		await waitFor(() => expect(getAllByTestId("DelegateRow__toggle-0")).toHaveLength(1));
 		expect(asFragment()).toMatchSnapshot();
 	});
 

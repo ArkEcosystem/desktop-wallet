@@ -19,33 +19,35 @@ export const VotesFilter = ({ onChange, defaultOptions }: FilterProps) => {
 	if (!options.length) return <></>;
 
 	return (
-		<Dropdown
-			position="right"
-			toggleContent={
-				<div className="cursor-pointer">
-					<Icon name="Filters" width={20} height={20} />
+		<div data-testid="VotesFilter">
+			<Dropdown
+				position="right"
+				toggleContent={
+					<div className="cursor-pointer">
+						<Icon name="Filters" width={20} height={20} />
+					</div>
+				}
+			>
+				<div className="w-64 px-6 py-4">
+					{options.map(({ label, value, isChecked }, index) => (
+						<label
+							key={index}
+							className="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+							data-testid={`VotesFilter__option--${index}`}
+						>
+							<span>
+								<Checkbox
+									name={value}
+									className="rounded-lg"
+									checked={isChecked}
+									onChange={() => handleChange(index)}
+								/>
+							</span>
+							<span>{label}</span>
+						</label>
+					))}
 				</div>
-			}
-		>
-			<div className="w-64 px-6 py-4">
-				{options.map(({ label, value, isChecked }, index) => (
-					<label
-						key={index}
-						className="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-						data-testid={`VotesFilter__option--${index}`}
-					>
-						<span>
-							<Checkbox
-								name={value}
-								className="rounded-lg"
-								checked={isChecked}
-								onChange={() => handleChange(index)}
-							/>
-						</span>
-						<span>{label}</span>
-					</label>
-				))}
-			</div>
-		</Dropdown>
+			</Dropdown>
+		</div>
 	);
 };
