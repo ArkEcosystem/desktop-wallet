@@ -11,9 +11,8 @@ import {
 } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
 
+import { FormStep, ReviewStep } from "./";
 import { Participant } from "./components/AddParticipant/AddParticipant";
-import { FormStep } from "./Step1";
-import { ReviewStep } from "./Step2";
 
 const StepsComponent = ({ activeTab, fees, wallet, profile }: SendEntityRegistrationComponent) => (
 	<Tabs activeId={activeTab}>

@@ -44,7 +44,7 @@ export const FormStep = ({
 	};
 
 	return (
-		<section data-testid="SendTransfer__step--first" className="space-y-8">
+		<section data-testid="SendTransfer__form-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.DESCRIPTION")}

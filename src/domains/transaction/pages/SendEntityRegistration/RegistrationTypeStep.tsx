@@ -16,7 +16,7 @@ import { useHistory } from "react-router-dom";
 
 import { SendEntityRegistrationType } from "./SendEntityRegistration.models";
 
-type FirstStepProps = {
+type RegistrationTypeStepProps = {
 	networks: Coins.Network[];
 	profile: Profile;
 	wallet: ReadWriteWallet;
@@ -42,7 +42,13 @@ const RegistrationTypeDropdown = ({ className, defaultValue, registrationTypes, 
 	);
 };
 
-export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees }: FirstStepProps) => {
+export const RegistrationTypeStep = ({
+	networks,
+	profile,
+	wallet,
+	setRegistrationForm,
+	fees,
+}: RegistrationTypeStepProps) => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
@@ -131,7 +137,7 @@ export const FirstStep = ({ networks, profile, wallet, setRegistrationForm, fees
 	};
 
 	return (
-		<section data-testid="Registration__first-step" className="space-y-8">
+		<section data-testid="Registration__selection-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.DESCRIPTION")}

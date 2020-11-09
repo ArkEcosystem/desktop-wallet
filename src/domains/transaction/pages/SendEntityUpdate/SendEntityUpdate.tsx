@@ -10,12 +10,8 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { toasts } from "app/services";
-import { AuthenticationStep as ThirdStep } from "domains/transaction/components/AuthenticationStep";
-import {
-	FormStep as FirstStep,
-	ReviewStep as SecondStep,
-	SummaryStep as FourthStep,
-} from "domains/transaction/components/EntityRegistrationForm";
+import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/EntityRegistrationForm";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -160,7 +156,7 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 
 							<div className="mt-8">
 								<TabPanel tabId={1}>
-									<FirstStep
+									<FormStep
 										wallet={activeWallet}
 										showEntityNameField={false}
 										title={t("TRANSACTION.PAGE_UPDATE_REGISTRATION.FIRST_STEP.BUSINESS.TITLE")}
@@ -170,15 +166,15 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 									/>
 								</TabPanel>
 								<TabPanel tabId={2}>
-									<SecondStep senderWallet={activeWallet} />
+									<ReviewStep senderWallet={activeWallet} />
 								</TabPanel>
 								<TabPanel tabId={3}>
-									<ThirdStep wallet={activeWallet} />
+									<AuthenticationStep wallet={activeWallet} />
 								</TabPanel>
 								<TabPanel tabId={4}>
 									{savedTransaction && (
 										<TransactionSuccessful senderWallet={activeWallet}>
-											<FourthStep transaction={savedTransaction} wallet={activeWallet} />
+											<SummaryStep transaction={savedTransaction} wallet={activeWallet} />
 										</TransactionSuccessful>
 									)}
 								</TabPanel>

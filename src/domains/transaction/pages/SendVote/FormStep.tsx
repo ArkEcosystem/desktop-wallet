@@ -14,7 +14,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({
+export const FormStep = ({
 	profile,
 	unvotes,
 	votes,
@@ -57,7 +57,7 @@ export const FirstStep = ({
 	}, [setValue, fees]);
 
 	return (
-		<section data-testid="SendVote__step--first" className="space-y-8">
+		<section data-testid="SendVote__form-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}

@@ -10,7 +10,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
-import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationForm";
+import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationSteps";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";

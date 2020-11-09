@@ -1,4 +1,6 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -10,23 +12,23 @@ import { useTranslation } from "react-i18next";
 import { DelegateRow } from "./DelegateRow";
 
 type DelegateTableProps = {
-	title?: string;
 	delegates: ReadOnlyWallet[];
 	maxVotes: number;
 	votes?: ReadOnlyWallet[];
 	selectedUnvoteAddresses?: string[];
 	selectedVoteAddresses?: string[];
+	selectedWallet: string;
 	itemsPerPage?: number;
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
 export const DelegateTable = ({
-	title,
 	delegates,
 	maxVotes,
 	votes,
 	selectedUnvoteAddresses,
 	selectedVoteAddresses,
+	selectedWallet,
 	itemsPerPage,
 	onContinue,
 }: DelegateTableProps) => {
@@ -160,7 +162,7 @@ export const DelegateTable = ({
 
 	return (
 		<div data-testid="DelegateTable">
-			<h2 className="py-5 text-2xl font-bold">{title ? title : t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
+			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
 				{(delegate: ReadOnlyWallet, index: number) => {
 					let isVoted = false;
@@ -206,6 +208,23 @@ export const DelegateTable = ({
 					<div className="flex-1">
 						<div className="flex justify-between">
 							<div className="flex font-semibold">
+								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+									<div className="inline-flex">
+										<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
+										<div className="flex flex-col">
+											<div className="text-theme-neutral">
+												{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}
+											</div>
+											<div
+												className="text-theme-text"
+												data-testid="DelegateTable__footer--address"
+											>
+												<Address address={selectedWallet} maxChars={24} />
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 									<div className="inline-flex">
 										<Circle

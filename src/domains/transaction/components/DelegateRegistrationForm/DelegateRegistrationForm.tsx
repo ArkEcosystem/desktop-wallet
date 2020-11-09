@@ -7,7 +7,7 @@ import { TransactionDetail, TransactionFee } from "domains/transaction/component
 import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
 import React from "react";
 
-import { FormStep, ReviewStep } from "./steps";
+import { FormStep, ReviewStep } from "./";
 
 const component = ({ activeTab, fees, wallet }: { activeTab: number; fees: any; wallet: ReadWriteWallet }) => (
 	<Tabs activeId={activeTab}>
