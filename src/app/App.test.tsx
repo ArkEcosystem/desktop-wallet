@@ -8,8 +8,10 @@ import nock from "nock";
 import React from "react";
 import {
 	act,
+	env,
 	fireEvent,
 	getDefaultProfileId,
+	RenderResult,
 	renderWithRouter,
 	useDefaultNetMocks,
 	waitFor,
@@ -169,6 +171,35 @@ describe("App", () => {
 
 			expect(asFragment()).toMatchSnapshot();
 		});
+	});
+
+	it("should render application error if the app fails to boot", async () => {
+		const envSpy = jest.spyOn(env, "boot").mockImplementation(() => {
+			throw new Error();
+		});
+
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(<App />, { withProviders: false });
+		});
+
+		expect(envSpy).toHaveBeenCalled();
+
+		const { container, asFragment, getByTestId } = rendered;
+
+		await waitFor(() => {
+			expect(container).toBeTruthy();
+
+			expect(getByTestId("ApplicationError__text")).toHaveTextContent(errorTranslations.APPLICATION.TITLE);
+			expect(getByTestId("ApplicationError__text")).toHaveTextContent(errorTranslations.APPLICATION.DESCRIPTION);
+
+			expect(asFragment()).toMatchSnapshot();
+		});
+
+		envSpy.mockRestore();
 	});
 
 	it("should render mock", async () => {
