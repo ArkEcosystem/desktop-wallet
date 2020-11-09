@@ -69,6 +69,7 @@ export const Votes = () => {
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
+	const [isLoadingDelegates, setIsLoadingDelegates] = useState<boolean>(false);
 
 	const crumbs = [
 		{
@@ -127,16 +128,16 @@ export const Votes = () => {
 	);
 
 	useEffect(() => {
-		if (address) {
-			loadVotes(address);
-		}
+		if (address) loadVotes(address);
 	}, [address, loadVotes]);
 
 	const loadDelegates = useCallback(
 		(wallet) => {
+			setIsLoadingDelegates(true);
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
 			setDelegates(delegates);
+			setIsLoadingDelegates(false);
 		},
 		[env],
 	);
@@ -196,7 +197,7 @@ export const Votes = () => {
 		if (checkedFilter?.value === "all") return delegates;
 
 		return votes.filter((v) => delegates.some((d) => v.address() === d.address()));
-	}, [votes, votesFilterOptions]);
+	}, [votes, votesFilterOptions, delegates]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -239,6 +240,7 @@ export const Votes = () => {
 			<Section className="flex-1">
 				{network?.allowsVoting() && address ? (
 					<DelegateTable
+						isLoading={isLoadingDelegates}
 						delegates={filteredDelegates}
 						maxVotes={network.maximumVotesPerWallet()}
 						votes={votes}
