@@ -8,7 +8,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
     >
       <section
         class="space-y-8"
-        data-testid="DelegateRegistrationForm__step--second"
+        data-testid="DelegateRegistrationForm__form-step"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -255,7 +255,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
     >
       <section
         class="space-y-8"
-        data-testid="DelegateRegistrationForm__step--second"
+        data-testid="DelegateRegistrationForm__form-step"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -502,7 +502,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
     >
       <section
         class="space-y-8"
-        data-testid="DelegateRegistrationForm__step--second"
+        data-testid="DelegateRegistrationForm__form-step"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -741,7 +741,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
 </DocumentFragment>
 `;
 
-exports[`DelegateRegistrationForm should render step 2 1`] = `
+exports[`DelegateRegistrationForm should render form step 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -749,7 +749,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
     >
       <section
         class="space-y-8"
-        data-testid="DelegateRegistrationForm__step--second"
+        data-testid="DelegateRegistrationForm__form-step"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -982,7 +982,7 @@ exports[`DelegateRegistrationForm should render step 2 1`] = `
 </DocumentFragment>
 `;
 
-exports[`DelegateRegistrationForm should render step 3 1`] = `
+exports[`DelegateRegistrationForm should render review step 1`] = `
 <DocumentFragment>
   <div>
     <div
@@ -990,7 +990,7 @@ exports[`DelegateRegistrationForm should render step 3 1`] = `
     >
       <section
         class="space-y-8"
-        data-testid="DelegateRegistrationForm__step--third"
+        data-testid="DelegateRegistrationForm__review-step"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -1208,7 +1208,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
     >
       <section
         class="space-y-8"
-        data-testid="DelegateRegistrationForm__step--second"
+        data-testid="DelegateRegistrationForm__form-step"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -1449,7 +1449,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
     >
       <section
         class="space-y-8"
-        data-testid="DelegateRegistrationForm__step--second"
+        data-testid="DelegateRegistrationForm__form-step"
       >
         <div
           class="flex items-end justify-between bg-theme-background"

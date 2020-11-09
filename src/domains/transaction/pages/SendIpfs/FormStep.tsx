@@ -8,13 +8,13 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ networks, profile }: { networks: Coins.Network[]; profile: Profile }) => {
+export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; profile: Profile }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 	const { hash } = getValues();
 
 	return (
-		<section data-testid="SendIpfs__step--first" className="space-y-8">
+		<section data-testid="SendIpfs__form-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_IPFS.FIRST_STEP.DESCRIPTION")}

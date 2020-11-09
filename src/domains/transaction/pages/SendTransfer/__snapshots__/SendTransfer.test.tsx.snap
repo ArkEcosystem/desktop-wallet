@@ -311,7 +311,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                 >
                   <section
                     class="space-y-8"
-                    data-testid="SendTransfer__step--first"
+                    data-testid="SendTransfer__form-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -1248,7 +1248,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="SendTransfer__step--first"
+    data-testid="SendTransfer__form-step"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -1685,7 +1685,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
 <DocumentFragment>
   <section
     class="space-y-8"
-    data-testid="SendTransfer__step--first"
+    data-testid="SendTransfer__form-step"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -2132,7 +2132,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
 exports[`SendTransfer should render 2nd step (review) 1`] = `
 <DocumentFragment>
   <section
-    data-testid="SendTransfer__step--second"
+    data-testid="SendTransfer__review-step"
   >
     <div
       class="flex items-end justify-between bg-theme-background"
@@ -2990,7 +2990,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                 >
                   <section
                     class="space-y-8"
-                    data-testid="SendTransfer__step--first"
+                    data-testid="SendTransfer__form-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -3799,7 +3799,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                 >
                   <section
                     class="space-y-8"
-                    data-testid="SendTransfer__step--first"
+                    data-testid="SendTransfer__form-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -4573,7 +4573,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                 >
                   <section
                     class="space-y-8"
-                    data-testid="SendTransfer__step--first"
+                    data-testid="SendTransfer__form-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"
@@ -5409,7 +5409,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                 >
                   <section
                     class="space-y-8"
-                    data-testid="SendTransfer__step--first"
+                    data-testid="SendTransfer__form-step"
                   >
                     <div
                       class="flex items-end justify-between bg-theme-background"

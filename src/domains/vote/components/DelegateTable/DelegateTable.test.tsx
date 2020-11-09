@@ -6,6 +6,8 @@ import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";
 
 import { DelegateTable } from "./DelegateTable";
 
+const selectedWallet = "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P";
+
 let delegates: ReadOnlyWallet[];
 let votes: ReadOnlyWallet[];
 
@@ -34,21 +36,27 @@ describe("DelegateTable", () => {
 	});
 
 	it("should render", () => {
-		const { container, asFragment } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
+		const { container, asFragment } = render(
+			<DelegateTable delegates={delegates} maxVotes={1} selectedWallet={selectedWallet} />,
+		);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with empty list", () => {
-		const { container, asFragment } = render(<DelegateTable delegates={[]} maxVotes={1} />);
+		const { container, asFragment } = render(
+			<DelegateTable delegates={[]} maxVotes={1} selectedWallet={selectedWallet} />,
+		);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select a delegate to vote", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} maxVotes={1} />);
+		const { asFragment, getByTestId } = render(
+			<DelegateTable delegates={delegates} maxVotes={1} selectedWallet={selectedWallet} />,
+		);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
@@ -62,12 +70,14 @@ describe("DelegateTable", () => {
 			fireEvent.click(selectButton);
 		});
 
-		expect(selectButton).toHaveTextContent(translations.SELECTED);
+		expect(selectButton).toHaveTextContent(translations.SELECT);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should unselect a delegate to vote", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const { asFragment, getByTestId } = render(
+			<DelegateTable delegates={delegates} votes={votes} maxVotes={1} selectedWallet={selectedWallet} />,
+		);
 		const selectButton = getByTestId("DelegateRow__toggle-1");
 
 		act(() => {
@@ -86,7 +96,9 @@ describe("DelegateTable", () => {
 	});
 
 	it("should select a delegate to unvote", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const { asFragment, getByTestId } = render(
+			<DelegateTable delegates={delegates} votes={votes} maxVotes={1} selectedWallet={selectedWallet} />,
+		);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
 		act(() => {
@@ -105,7 +117,9 @@ describe("DelegateTable", () => {
 	});
 
 	it("should unselect a delegate to unvote", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const { asFragment, getByTestId } = render(
+			<DelegateTable delegates={delegates} votes={votes} maxVotes={1} selectedWallet={selectedWallet} />,
+		);
 		const selectUnvoteButton = getByTestId("DelegateRow__toggle-0");
 		const selectVoteButton = getByTestId("DelegateRow__toggle-1");
 
@@ -131,7 +145,9 @@ describe("DelegateTable", () => {
 	});
 
 	it("should select a delegate to unvote/vote", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={1} />);
+		const { asFragment, getByTestId } = render(
+			<DelegateTable delegates={delegates} votes={votes} maxVotes={1} selectedWallet={selectedWallet} />,
+		);
 		const selectUnvoteButton = getByTestId("DelegateRow__toggle-0");
 		const selectVoteButton = getByTestId("DelegateRow__toggle-1");
 
@@ -153,7 +169,9 @@ describe("DelegateTable", () => {
 	});
 
 	it("should select multiple delegates to unvote/vote", () => {
-		const { asFragment, getByTestId } = render(<DelegateTable delegates={delegates} votes={votes} maxVotes={10} />);
+		const { asFragment, getByTestId } = render(
+			<DelegateTable delegates={delegates} votes={votes} maxVotes={10} selectedWallet={selectedWallet} />,
+		);
 		const selectButtons = [0, 1, 2].map((index) => getByTestId(`DelegateRow__toggle-${index}`));
 
 		act(() => {
@@ -179,7 +197,12 @@ describe("DelegateTable", () => {
 
 		const onContinue = jest.fn();
 		const { container, asFragment, getByTestId } = render(
-			<DelegateTable delegates={delegates} maxVotes={1} onContinue={onContinue} />,
+			<DelegateTable
+				delegates={delegates}
+				maxVotes={1}
+				selectedWallet={selectedWallet}
+				onContinue={onContinue}
+			/>,
 		);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
@@ -207,6 +230,7 @@ describe("DelegateTable", () => {
 				delegates={delegates}
 				maxVotes={1}
 				selectedVoteAddresses={[delegateAddress]}
+				selectedWallet={selectedWallet}
 				onContinue={onContinue}
 			/>,
 		);
@@ -231,6 +255,7 @@ describe("DelegateTable", () => {
 				delegates={delegates}
 				maxVotes={1}
 				selectedUnvoteAddresses={[delegateAddress]}
+				selectedWallet={selectedWallet}
 				onContinue={onContinue}
 			/>,
 		);
@@ -258,6 +283,7 @@ describe("DelegateTable", () => {
 				votes={votes}
 				selectedUnvoteAddresses={[unvoteAddress]}
 				selectedVoteAddresses={[voteAddress]}
+				selectedWallet={selectedWallet}
 				onContinue={onContinue}
 			/>,
 		);
@@ -280,7 +306,13 @@ describe("DelegateTable", () => {
 
 		const onContinue = jest.fn();
 		const { container, asFragment, getByTestId } = render(
-			<DelegateTable delegates={delegates} maxVotes={1} votes={votes} onContinue={onContinue} />,
+			<DelegateTable
+				delegates={delegates}
+				maxVotes={1}
+				votes={votes}
+				selectedWallet={selectedWallet}
+				onContinue={onContinue}
+			/>,
 		);
 		const selectButton = getByTestId("DelegateRow__toggle-0");
 
@@ -301,7 +333,13 @@ describe("DelegateTable", () => {
 
 	it("should navigate on next and previous pages", () => {
 		const { getByTestId } = render(
-			<DelegateTable delegates={delegates} votes={votes} maxVotes={1} itemsPerPage={2} />,
+			<DelegateTable
+				delegates={delegates}
+				votes={votes}
+				maxVotes={1}
+				selectedWallet={selectedWallet}
+				itemsPerPage={2}
+			/>,
 		);
 
 		expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
