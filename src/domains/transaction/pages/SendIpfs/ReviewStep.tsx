@@ -1,18 +1,19 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { Address } from "app/components/Address";
-import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import {
+	TransactionDetail,
+	TransactionNetwork,
+	TransactionSender,
+} from "domains/transaction/components/TransactionDetail";
 import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister, watch } = useFormContext();
 
@@ -26,30 +27,20 @@ export const SecondStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="SendIpfs__step--second" className="space-y-8">
+		<section data-testid="SendIpfs__review-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}
 			/>
 
 			<div>
-				<TransactionDetail
-					label={t("TRANSACTION.CRYPTOASSET")}
-					extra={<NetworkIcon size="lg" coin={wallet.network().coin()} network={wallet.network().id()} />}
-					border={false}
-					paddingPosition="bottom"
-				>
-					{wallet.network().name()}
-				</TransactionDetail>
+				<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" />
 
-				<TransactionDetail extra={<Avatar size="lg" address={wallet.address()} />}>
-					<div className="flex-1 space-y-2">
-						<div className="text-theme-neutral">
-							<span className="mr-1 text-sm">{t("TRANSACTION.SENDER")}</span>
-						</div>
-						<Address address={wallet.address()} walletName={wallet.alias()} />
-					</div>
-				</TransactionDetail>
+				<TransactionSender
+					address={wallet.address()}
+					alias={wallet.alias()}
+					isDelegate={wallet.isDelegate() && !wallet.isResignedDelegate()}
+				/>
 
 				<TransactionDetail
 					label={t("TRANSACTION.IPFS_HASH")}

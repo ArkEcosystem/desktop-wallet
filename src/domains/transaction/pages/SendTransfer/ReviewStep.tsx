@@ -33,7 +33,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	}, [unregister]);
 
 	return (
-		<section data-testid="SendTransfer__step--second">
+		<section data-testid="SendTransfer__review-step">
 			<Header
 				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.DESCRIPTION")}

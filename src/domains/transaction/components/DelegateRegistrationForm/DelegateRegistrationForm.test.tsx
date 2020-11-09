@@ -38,7 +38,7 @@ const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) =>
 			</FormProvider>,
 		);
 
-		await waitFor(() => expect(renderer.getByTestId("DelegateRegistrationForm__step--second")));
+		await waitFor(() => expect(renderer.getByTestId("DelegateRegistrationForm__form-step")));
 	});
 
 	return {
@@ -72,13 +72,13 @@ describe("DelegateRegistrationForm", () => {
 		};
 	});
 
-	it("should render step 2", async () => {
+	it("should render form step", async () => {
 		const { asFragment } = await renderComponent();
 
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
-	it("should render step 3", async () => {
+	it("should render review step", async () => {
 		const { asFragment, form, getByTestId, rerender } = await renderComponent();
 
 		rerender(
@@ -87,7 +87,7 @@ describe("DelegateRegistrationForm", () => {
 			</FormProvider>,
 		);
 
-		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--third")));
+		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
@@ -106,7 +106,7 @@ describe("DelegateRegistrationForm", () => {
 				</FormProvider>,
 			);
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")));
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
 		});
 
 		await waitFor(() => expect(input).toHaveValue("test_delegate"));
@@ -128,7 +128,7 @@ describe("DelegateRegistrationForm", () => {
 				</FormProvider>,
 			);
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")));
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
 		});
 
 		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("invalid delegate"));
@@ -152,7 +152,7 @@ describe("DelegateRegistrationForm", () => {
 				</FormProvider>,
 			);
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")));
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
 		});
 
 		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("thisisaveryveryverylongdelegatename"));
@@ -174,7 +174,7 @@ describe("DelegateRegistrationForm", () => {
 				</FormProvider>,
 			);
 
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__step--second")));
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
 		});
 
 		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("arkx"));

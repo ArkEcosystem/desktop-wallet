@@ -45,7 +45,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	}, [delegateRegistration, delegates, register, username, t]);
 
 	return (
-		<section data-testid="DelegateRegistrationForm__step--second" className="space-y-8">
+		<section data-testid="DelegateRegistrationForm__form-step" className="space-y-8">
 			<Header
 				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
