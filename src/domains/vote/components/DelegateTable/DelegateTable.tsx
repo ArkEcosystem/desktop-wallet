@@ -197,11 +197,7 @@ export const DelegateTable = ({
 				}}
 			</Table>
 
-			<div
-				className={`flex justify-center w-full mt-10 ${
-					selectedUnvotes.length > 0 || selectedVotes.length > 0 ? "mb-24" : ""
-				}`}
-			>
+			<div className="flex justify-center w-full mt-10 mb-24">
 				<Pagination
 					totalCount={totalDelegates}
 					itemsPerPage={itemsPerPage}
