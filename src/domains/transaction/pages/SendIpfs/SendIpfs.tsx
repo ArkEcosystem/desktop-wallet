@@ -15,9 +15,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { FourthStep } from "./Step4";
+import { FormStep, ReviewStep, SummaryStep } from "./";
 
 export const SendIpfs = () => {
 	const { t } = useTranslation();
@@ -138,16 +136,16 @@ export const SendIpfs = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep networks={networks} profile={activeProfile} />
+								<FormStep networks={networks} profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep wallet={activeWallet} />
+								<ReviewStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep transaction={transaction} senderWallet={activeWallet} />
+								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-2">

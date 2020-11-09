@@ -16,9 +16,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 
-import { FormStep } from "./Step1";
-import { ReviewStep } from "./Step2";
-import { SummaryStep } from "./Step4";
+import { FormStep, ReviewStep, SummaryStep } from "./";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();

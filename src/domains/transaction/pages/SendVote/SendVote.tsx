@@ -16,9 +16,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep } from "./Step1";
-import { SecondStep } from "./Step2";
-import { FourthStep } from "./Step4";
+import { FormStep, ReviewStep, SummaryStep } from "./";
 
 export const SendVote = () => {
 	const { t } = useTranslation();
@@ -248,7 +246,7 @@ export const SendVote = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep
+								<FormStep
 									profile={activeProfile}
 									unvotes={unvotes}
 									votes={votes}
@@ -256,7 +254,7 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep
+								<ReviewStep
 									profile={activeProfile}
 									unvotes={unvotes}
 									votes={votes}
@@ -267,7 +265,7 @@ export const SendVote = () => {
 								<AuthenticationStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep
+								<SummaryStep
 									senderWallet={activeWallet}
 									transaction={transaction}
 									unvotes={unvotes}
