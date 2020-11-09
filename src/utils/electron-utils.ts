@@ -1,4 +1,4 @@
-import electron, { FileFilter } from "electron";
+import electron, { FileFilter, ipcRenderer } from "electron";
 import { readFileSync, writeFileSync } from "fs";
 import os from "os";
 import path from "path";
@@ -75,4 +75,8 @@ const openExternal = (url: string) => electron.shell.openExternal(url);
 
 const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleTime() >= idleTreshold;
 
-export { isIdle, openExternal, openFile, saveFile, setScreenshotProtection };
+const exitApp = () => {
+	ipcRenderer.send("exit-app");
+};
+
+export { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection };

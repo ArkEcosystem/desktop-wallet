@@ -7,7 +7,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -29,14 +29,14 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -47,7 +47,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -58,7 +58,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -69,7 +69,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -89,7 +89,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -104,7 +104,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -121,7 +121,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -144,7 +144,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2872,7 +2872,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2894,14 +2894,14 @@ exports[`Dashboard should fetch more transactions 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -2912,7 +2912,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -2923,7 +2923,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -2934,7 +2934,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -2954,7 +2954,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -2969,7 +2969,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2986,7 +2986,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -3009,7 +3009,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -5122,7 +5122,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5144,14 +5144,14 @@ exports[`Dashboard should hide portfolio view 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -5162,7 +5162,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -5173,7 +5173,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -5184,7 +5184,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -5204,7 +5204,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -5219,7 +5219,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5236,7 +5236,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -5259,7 +5259,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -7088,7 +7088,7 @@ exports[`Dashboard should hide transaction view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7110,14 +7110,14 @@ exports[`Dashboard should hide transaction view 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -7128,7 +7128,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -7139,7 +7139,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -7150,7 +7150,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -7170,7 +7170,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -7185,7 +7185,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -7202,7 +7202,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -7225,7 +7225,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -8106,7 +8106,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8128,14 +8128,14 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -8146,7 +8146,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -8157,7 +8157,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -8168,7 +8168,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -8188,7 +8188,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -8203,7 +8203,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -8220,7 +8220,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -8243,7 +8243,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -9736,7 +9736,7 @@ exports[`Dashboard should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9758,14 +9758,14 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -9776,7 +9776,7 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -9787,7 +9787,7 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -9798,7 +9798,7 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -9818,7 +9818,7 @@ exports[`Dashboard should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -9833,7 +9833,7 @@ exports[`Dashboard should render 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -9850,7 +9850,7 @@ exports[`Dashboard should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -9873,7 +9873,7 @@ exports[`Dashboard should render 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -11360,7 +11360,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11382,14 +11382,14 @@ exports[`Dashboard should render portfolio chart 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -11400,7 +11400,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -11411,7 +11411,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -11422,7 +11422,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -11442,7 +11442,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -11457,7 +11457,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -11474,7 +11474,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -11497,7 +11497,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -12984,7 +12984,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -13006,14 +13006,14 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -13024,7 +13024,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -13035,7 +13035,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -13046,7 +13046,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -13066,7 +13066,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -13081,7 +13081,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -13098,7 +13098,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -13121,7 +13121,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -14608,7 +14608,7 @@ exports[`Dashboard should render wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -14630,14 +14630,14 @@ exports[`Dashboard should render wallets 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -14648,7 +14648,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -14659,7 +14659,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -14670,7 +14670,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -14690,7 +14690,7 @@ exports[`Dashboard should render wallets 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -14705,7 +14705,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -14722,7 +14722,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -14745,7 +14745,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -16232,7 +16232,7 @@ exports[`Dashboard should render with no wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -16254,14 +16254,14 @@ exports[`Dashboard should render with no wallets 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
                 title="Portfolio"
               >
@@ -16272,7 +16272,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
                 title="Plugins"
               >
@@ -16283,7 +16283,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
                 title="Exchange"
               >
@@ -16294,7 +16294,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
                 title="News"
               >
@@ -16314,7 +16314,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -16339,7 +16339,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -16362,7 +16362,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -18793,7 +18793,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -18815,14 +18815,14 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -18833,7 +18833,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -18844,7 +18844,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -18855,7 +18855,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -18875,7 +18875,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -18890,7 +18890,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -18907,7 +18907,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -18930,7 +18930,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -20608,7 +20608,7 @@ exports[`Dashboard should show transaction view 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ juliij"
+      class="sc-fzqARJ dTIFVD"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -20630,14 +20630,14 @@ exports[`Dashboard should show transaction view 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 mr-auto md:h-24"
+            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text active"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
@@ -20648,7 +20648,7 @@ exports[`Dashboard should show transaction view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
@@ -20659,7 +20659,7 @@ exports[`Dashboard should show transaction view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
@@ -20670,7 +20670,7 @@ exports[`Dashboard should show transaction view 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center mx-4 font-semibold transition-colors duration-200 text-md text-theme-secondary-text hover:text-theme-text"
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
@@ -20690,7 +20690,7 @@ exports[`Dashboard should show transaction view 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50"
+                    class="sc-AxhCb eFOAhf group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
@@ -20705,7 +20705,7 @@ exports[`Dashboard should show transaction view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 rounded-full bg-theme-background border-theme-background"
+                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -20722,7 +20722,7 @@ exports[`Dashboard should show transaction view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
@@ -20745,7 +20745,7 @@ exports[`Dashboard should show transaction view 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50"
+                class="sc-AxhCb eFOAhf text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"

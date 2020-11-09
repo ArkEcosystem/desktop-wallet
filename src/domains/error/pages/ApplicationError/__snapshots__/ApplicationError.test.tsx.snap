@@ -7,7 +7,7 @@ exports[`ApplicationError should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ jWSUwf"
+      class="sc-fzqARJ dpTzjj"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -65,6 +65,7 @@ exports[`ApplicationError should render 1`] = `
           <button
             class="sc-AxjAm colAFb mt-8"
             color="primary"
+            data-testid="ApplicationError__button--reload"
             type="button"
           >
             Reload
