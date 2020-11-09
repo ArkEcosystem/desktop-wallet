@@ -1,4 +1,6 @@
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -15,6 +17,7 @@ type DelegateTableProps = {
 	votes?: ReadOnlyWallet[];
 	selectedUnvoteAddresses?: string[];
 	selectedVoteAddresses?: string[];
+	selectedWallet: string;
 	itemsPerPage?: number;
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
@@ -25,6 +28,7 @@ export const DelegateTable = ({
 	votes,
 	selectedUnvoteAddresses,
 	selectedVoteAddresses,
+	selectedWallet,
 	itemsPerPage,
 	onContinue,
 }: DelegateTableProps) => {
@@ -206,6 +210,23 @@ export const DelegateTable = ({
 					<div className="flex-1">
 						<div className="flex justify-between">
 							<div className="flex font-semibold">
+								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+									<div className="inline-flex">
+										<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
+										<div className="flex flex-col">
+											<div className="text-theme-neutral">
+												{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}
+											</div>
+											<div
+												className="text-theme-text"
+												data-testid="DelegateTable__footer--address"
+											>
+												<Address address={selectedWallet} maxChars={24} />
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 									<div className="inline-flex">
 										<Circle

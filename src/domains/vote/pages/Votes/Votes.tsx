@@ -132,6 +132,7 @@ export const Votes = () => {
 						votes={votes}
 						selectedUnvoteAddresses={unvoteAddresses}
 						selectedVoteAddresses={voteAddresses}
+						selectedWallet={address}
 						onContinue={handleContinue}
 					/>
 				</Section>

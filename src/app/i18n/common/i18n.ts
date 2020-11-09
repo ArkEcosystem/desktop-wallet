@@ -108,7 +108,6 @@ export const translations: { [key: string]: any } = {
 	NEXT: "Next",
 	NOT: "not",
 	NOT_AVAILABLE: "N/A",
-	NOT_SELECTED: "Not Selected",
 	OF: "of",
 	OFFICIAL: "Official",
 	OPEN: "Open",

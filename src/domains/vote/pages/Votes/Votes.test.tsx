@@ -242,25 +242,4 @@ describe("Votes", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
-
-	it("should navigate between delegate and vote table", async () => {
-		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
-		const { asFragment, getByTestId } = renderPage(route);
-
-		expect(getByTestId("Tabs")).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(getByTestId("Tab__item--vote"));
-		});
-
-		expect(getByTestId("MyVoteTable")).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(getByTestId("Tab__item--delegate"));
-		});
-
-		expect(getByTestId("DelegateTable")).toBeTruthy();
-
-		expect(asFragment()).toMatchSnapshot();
-	});
 });
