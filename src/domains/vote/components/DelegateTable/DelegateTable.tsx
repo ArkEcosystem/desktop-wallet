@@ -100,7 +100,14 @@ export const DelegateTable = ({
 
 	const totalDelegates = delegates.length;
 	const hasVotes = votes!.length > 0;
-	const getTotalVotes = () => selectedVotes.length + selectedUnvotes.length;
+
+	const getTotalVotes = () => {
+		if (maxVotes === 1) {
+			return selectedVotes.length || selectedUnvotes.length;
+		}
+
+		return selectedVotes.length + selectedUnvotes.length;
+	};
 
 	useEffect(() => {
 		if (hasVotes && selectedVotes.length === maxVotes) {
@@ -202,96 +209,86 @@ export const DelegateTable = ({
 				/>
 			</div>
 
-			{(selectedUnvotes.length > 0 || selectedVotes.length > 0) && (
-				<div
-					className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
-					data-testid="DelegateTable__footer"
-				>
-					<div className="flex-1">
-						<div className="flex justify-between">
-							<div className="flex font-semibold">
-								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
-									<div className="inline-flex">
-										<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
-										<div className="flex flex-col">
-											<div className="text-theme-neutral">
-												{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}
-											</div>
-											<div
-												className="text-theme-text"
-												data-testid="DelegateTable__footer--address"
-											>
-												<Address address={selectedWallet} maxChars={24} />
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
-									<div className="inline-flex">
-										<Circle
-											className="mr-2 bg-theme-background border-theme-text text-theme-text"
-											size="lg"
-										>
-											<Icon name="Vote" className="text-xl" />
-										</Circle>
-										<div className="flex flex-col">
-											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
-											<div className="text-theme-text" data-testid="DelegateTable__footer--votes">
-												{selectedVotes.length}
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
-									<div className="inline-flex">
-										<Circle
-											className="mr-2 bg-theme-background border-theme-text text-theme-text"
-											size="lg"
-										>
-											<Icon name="Unvote" className="text-xl" />
-										</Circle>
-										<div className="flex flex-col">
-											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
-											<div
-												className="text-theme-text"
-												data-testid="DelegateTable__footer--unvotes"
-											>
-												{selectedUnvotes.length}
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div className="px-8">
-									<div className="inline-flex">
-										<Circle
-											className="mr-2 bg-theme-background border-theme-text text-theme-text"
-											size="lg"
-										>
-											<Icon name="VoteCombination" className="text-xl" />
-										</Circle>
-										<div className="flex flex-col">
-											<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
-											<div className="text-theme-text" data-testid="DelegateTable__footer--total">
-												{maxVotes === 1 ? "1/1" : getTotalVotes()}
-											</div>
+			<div
+				className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+				data-testid="DelegateTable__footer"
+			>
+				<div className="flex-1">
+					<div className="flex justify-between">
+						<div className="flex font-semibold">
+							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+								<div className="inline-flex">
+									<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
+									<div className="flex flex-col">
+										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}</div>
+										<div className="text-theme-text" data-testid="DelegateTable__footer--address">
+											<Address address={selectedWallet} maxChars={24} />
 										</div>
 									</div>
 								</div>
 							</div>
 
-							<Button
-								onClick={() => onContinue?.(selectedUnvotes, selectedVotes)}
-								data-testid="DelegateTable__continue-button"
-							>
-								{t("COMMON.CONTINUE")}
-							</Button>
+							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+								<div className="inline-flex">
+									<Circle
+										className="mr-2 bg-theme-background border-theme-text text-theme-text"
+										size="lg"
+									>
+										<Icon name="Vote" className="text-xl" />
+									</Circle>
+									<div className="flex flex-col">
+										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
+										<div className="text-theme-text" data-testid="DelegateTable__footer--votes">
+											{selectedVotes.length}
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+								<div className="inline-flex">
+									<Circle
+										className="mr-2 bg-theme-background border-theme-text text-theme-text"
+										size="lg"
+									>
+										<Icon name="Unvote" className="text-xl" />
+									</Circle>
+									<div className="flex flex-col">
+										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
+										<div className="text-theme-text" data-testid="DelegateTable__footer--unvotes">
+											{selectedUnvotes.length}
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div className="px-8">
+								<div className="inline-flex">
+									<Circle
+										className="mr-2 bg-theme-background border-theme-text text-theme-text"
+										size="lg"
+									>
+										<Icon name="VoteCombination" className="text-xl" />
+									</Circle>
+									<div className="flex flex-col">
+										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
+										<div className="text-theme-text" data-testid="DelegateTable__footer--total">
+											{getTotalVotes()}/{maxVotes}
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
+
+						<Button
+							onClick={() => onContinue?.(selectedUnvotes, selectedVotes)}
+							data-testid="DelegateTable__continue-button"
+						>
+							{t("COMMON.CONTINUE")}
+						</Button>
 					</div>
 				</div>
-			)}
+			</div>
 		</div>
 	);
 };
