@@ -12,8 +12,12 @@
 							"slip44": 111
 						},
 						"networking": {
-							"hosts": ["https://wallets.ark.io"],
-							"hostsMultiSignature": ["https://musig1.ark.io"]
+							"hosts": [
+								"https://wallets.ark.io"
+							],
+							"hostsMultiSignature": [
+								"https://musig1.ark.io"
+							]
 						}
 					},
 					"address": "AHZLH1CwMEGPBxMjuohAgdR79DpezntksA",
@@ -45,6 +49,7 @@
 					"action": "Read Changelog"
 				}
 			},
+			"peers": {},
 			"plugins": {
 				"data": {},
 				"blacklist": []
