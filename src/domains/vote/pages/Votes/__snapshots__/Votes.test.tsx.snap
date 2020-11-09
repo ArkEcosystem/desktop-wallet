@@ -1288,14 +1288,17 @@ exports[`Votes should render 1`] = `
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxirZ hNClQs"
-                    color="primary"
-                    data-testid="DelegateTable__continue-button"
-                    type="button"
-                  >
-                    Continue
-                  </button>
+                  <span>
+                    <button
+                      class="sc-AxirZ hNClQs"
+                      color="primary"
+                      data-testid="DelegateTable__continue-button"
+                      disabled=""
+                      type="button"
+                    >
+                      Continue
+                    </button>
+                  </span>
                 </div>
               </div>
             </div>
@@ -2591,14 +2594,16 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </div>
                   </div>
-                  <button
-                    class="sc-AxirZ hNClQs"
-                    color="primary"
-                    data-testid="DelegateTable__continue-button"
-                    type="button"
-                  >
-                    Continue
-                  </button>
+                  <span>
+                    <button
+                      class="sc-AxirZ hNClQs"
+                      color="primary"
+                      data-testid="DelegateTable__continue-button"
+                      type="button"
+                    >
+                      Continue
+                    </button>
+                  </span>
                 </div>
               </div>
             </div>
@@ -2609,6 +2614,8 @@ exports[`Votes should select a delegate 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Votes should select an address and delegate 1`] = `<DocumentFragment />`;
 
 exports[`Votes should select an address without vote 1`] = `
 <DocumentFragment>
@@ -2698,13 +2705,13 @@ exports[`Votes should select an address without vote 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fznKkj icynsb group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ jFqSPL group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxiKw fFXzuz p-1"
+                      class="sc-AxjAm jmgDQY p-1"
                       height="22"
                       width="22"
                     >
@@ -2730,13 +2737,13 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-fznKkj icynsb text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxirZ jFqSPL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="sc-AxjAm jmgDQY p-1"
                   height="22"
                   width="22"
                 >
@@ -2753,13 +2760,13 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-fznKkj icynsb text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxirZ jFqSPL text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
                 <div
-                  class="sc-AxiKw fFXzuz p-1"
+                  class="sc-AxjAm jmgDQY p-1"
                   height="22"
                   width="22"
                 >
@@ -2803,13 +2810,13 @@ exports[`Votes should select an address without vote 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxirZ dxHwgH border-theme-primary-contrast dark:border-theme-neutral-800"
+                  class="sc-fznyAO kAGxhi border-theme-primary-contrast dark:border-theme-neutral-800"
                 >
                   <span
                     class="text-theme-secondary-text dark:text-theme-neutral-800"
                   >
                     <div
-                      class="sc-AxiKw dzBdqj"
+                      class="sc-AxjAm cpczEI"
                       height="1em"
                       width="1em"
                     >
@@ -2837,10 +2844,10 @@ exports[`Votes should select an address without vote 1`] = `
                     </span>
                   </div>
                   <span
-                    class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                   >
                     <div
-                      class="sc-AxiKw ksjdLL"
+                      class="sc-AxjAm iepfoc"
                       height="10"
                       width="10"
                     >
@@ -2862,7 +2869,7 @@ exports[`Votes should select an address without vote 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxiKw eKFBFH"
+        class="sc-AxjAm djuHuo"
         height="24"
         width="13"
       >
@@ -2924,7 +2931,7 @@ exports[`Votes should select an address without vote 1`] = `
                       Search
                     </span>
                     <div
-                      class="sc-AxiKw dklFyP"
+                      class="sc-AxjAm buCJuk"
                       height="20"
                       width="20"
                     >
@@ -2934,145 +2941,6 @@ exports[`Votes should select an address without vote 1`] = `
                     </div>
                   </div>
                 </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="container pt-10 mx-auto px-14"
-      >
-        <div
-          class="grid grid-flow-col grid-cols-2 gap-6 mb-10"
-        >
-          <div
-            class="flex flex-col space-y-2 group"
-          >
-            <div
-              class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-neutral"
-            >
-              Cryptoasset
-            </div>
-            <div>
-              <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-owns="Votes__network-menu"
-                data-testid="SelectNetwork"
-                role="combobox"
-              >
-                <label
-                  for="Votes__network-input"
-                  id="Votes__network-label"
-                />
-                <div
-                  class="sc-Axmtr jzhOwR"
-                  data-testid="SelectNetworkInput"
-                >
-                  <div
-                    class="sc-AxhUy sc-AxgMl kAPRWA px-4"
-                  >
-                    <div
-                      aria-label="ARK Devnet"
-                      class="sc-AxirZ fuoUNN border-theme-primary-100 text-theme-primary-400"
-                      data-testid="SelectNetworkInput__network"
-                    >
-                      <div
-                        class="sc-AxiKw dklFyP"
-                        data-testid="NetworkIcon__icon"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <span
-                    class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-                    data-testid="SelectNetworkInput__typeahead"
-                  >
-                    ARK Devnet
-                  </span>
-                  <input
-                    aria-autocomplete="list"
-                    aria-controls="Votes__network-menu"
-                    aria-labelledby="Votes__network-label"
-                    autocomplete="off"
-                    class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
-                    data-testid="SelectNetworkInput__input"
-                    id="Votes__network-input"
-                    placeholder="Select Cryptoasset"
-                    value="ARK Devnet"
-                  />
-                </div>
-              </div>
-              <ul
-                aria-labelledby="Votes__network-label"
-                class="hidden"
-                id="Votes__network-menu"
-                role="listbox"
-              />
-            </div>
-          </div>
-          <div
-            class="flex flex-col space-y-2"
-          >
-            <div
-              class="text-sm font-semibold text-theme-neutral"
-            >
-              Address
-            </div>
-            <div
-              class="relative flex items-center"
-            >
-              <input
-                class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-                data-testid="Input"
-                disabled=""
-                type="text"
-              />
-              <div
-                class="absolute flex items-center justify-between w-full ml-3"
-              >
-                <div
-                  class="flex items-center"
-                >
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO mr-3"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full"
-                    >
-                      <img
-                        alt="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                        title="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    class="inline-flex items-center"
-                  >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      DTLomV … JnG23z
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="sc-AxiKw dklFyP mr-6"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    user.svg
-                  </svg>
-                </div>
               </div>
             </div>
           </div>
@@ -3093,7 +2961,7 @@ exports[`Votes should select an address without vote 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt eMqCsE -mt-3"
+              class="sc-fznZeY cQvFiH -mt-3"
               role="table"
             >
               <table
@@ -3124,7 +2992,7 @@ exports[`Votes should select an address without vote 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxjAm hdgaLj"
                             height="12"
                             width="15"
                           >
@@ -3168,7 +3036,7 @@ exports[`Votes should select an address without vote 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxjAm hdgaLj"
                             height="12"
                             width="15"
                           >
@@ -3184,28 +3052,12 @@ exports[`Votes should select an address without vote 1`] = `
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Votes
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -3228,28 +3080,12 @@ exports[`Votes should select an address without vote 1`] = `
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Comm.
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -3258,28 +3094,12 @@ exports[`Votes should select an address without vote 1`] = `
                       colspan="1"
                       data-testid="table__th--6"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Payout
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -3288,28 +3108,12 @@ exports[`Votes should select an address without vote 1`] = `
                       colspan="1"
                       data-testid="table__th--7"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Min.
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -3318,28 +3122,12 @@ exports[`Votes should select an address without vote 1`] = `
                       colspan="1"
                       data-testid="table__th--8"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top justify-end"
                       >
                         <div>
                           Commission (Daily)
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -3362,7 +3150,7 @@ exports[`Votes should select an address without vote 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-AxjAm hdgaLj"
                             height="12"
                             width="15"
                           >
@@ -3379,12 +3167,12 @@ exports[`Votes should select an address without vote 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-fzqNJr iAFGSc group"
+                    class="sc-fzqBZW eDztqB group"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="sc-fzqBZW docBDi space-x-4 font-bold "
+                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3409,14 +3197,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center "
+                        class="sc-fzokOt gzIgEd justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -3427,7 +3215,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -3438,10 +3226,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center "
+                        class="sc-fzokOt gzIgEd justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxjAm cpczEI text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -3455,7 +3243,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3466,7 +3254,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3477,7 +3265,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3488,7 +3276,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3499,10 +3287,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW glQJwu justify-end "
+                        class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fznKkj bGYjTf"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -3513,12 +3301,12 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr iAFGSc group"
+                    class="sc-fzqBZW eDztqB group"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="sc-fzqBZW docBDi space-x-4 font-bold "
+                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3543,14 +3331,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center "
+                        class="sc-fzokOt gzIgEd justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -3561,7 +3349,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -3572,10 +3360,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center "
+                        class="sc-fzokOt gzIgEd justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxjAm cpczEI text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -3589,7 +3377,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3600,7 +3388,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3611,7 +3399,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3622,7 +3410,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3633,10 +3421,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW glQJwu justify-end "
+                        class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fznKkj bGYjTf"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -3647,12 +3435,12 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr iAFGSc group"
+                    class="sc-fzqBZW eDztqB group"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="sc-fzqBZW docBDi space-x-4 font-bold "
+                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3677,14 +3465,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center "
+                        class="sc-fzokOt gzIgEd justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -3695,7 +3483,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -3706,10 +3494,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center "
+                        class="sc-fzokOt gzIgEd justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxjAm cpczEI text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -3723,7 +3511,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3734,7 +3522,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3745,7 +3533,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3756,7 +3544,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3767,10 +3555,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW glQJwu justify-end "
+                        class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fznKkj bGYjTf"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -3781,12 +3569,12 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="sc-fzqNJr iAFGSc group"
+                    class="sc-fzqBZW eDztqB group"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="sc-fzqBZW docBDi space-x-4 font-bold "
+                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3811,14 +3599,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center "
+                        class="sc-fzokOt gzIgEd justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -3829,7 +3617,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -3840,10 +3628,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center "
+                        class="sc-fzokOt gzIgEd justify-center "
                       >
                         <div
-                          class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                          class="sc-AxjAm cpczEI text-xl text-theme-primary"
                           height="1em"
                           width="1em"
                         >
@@ -3857,7 +3645,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3868,7 +3656,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3879,7 +3667,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3890,7 +3678,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW jbtVcI justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3901,10 +3689,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzqBZW glQJwu justify-end "
+                        class="sc-fzokOt femqhX justify-end "
                       >
                         <button
-                          class="sc-fznKkj bGYjTf"
+                          class="sc-AxirZ hTzPEr"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -3935,6 +3723,188 @@ exports[`Votes should select an address without vote 1`] = `
                 </div>
               </div>
             </div>
+            <div
+              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+              data-testid="DelegateTable__footer"
+            >
+              <div
+                class="flex-1"
+              >
+                <div
+                  class="flex justify-between"
+                >
+                  <div
+                    class="flex font-semibold"
+                  >
+                    <div
+                      class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK mr-2"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            My Address
+                          </div>
+                          <div
+                            class="text-theme-text"
+                            data-testid="DelegateTable__footer--address"
+                          >
+                            <div
+                              class="inline-flex items-center"
+                            >
+                              <span
+                                class="sc-fzoyAV lgNqAT text-theme-text truncate font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                DTLomV8hpJ … CfDZJnG23z
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-fznyAO kAGxhi mr-2 bg-theme-background border-theme-text text-theme-text"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              vote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Votes
+                          </div>
+                          <div
+                            class="text-theme-text"
+                            data-testid="DelegateTable__footer--votes"
+                          >
+                            0
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-fznyAO kAGxhi mr-2 bg-theme-background border-theme-text text-theme-text"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              unvote.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Unvotes
+                          </div>
+                          <div
+                            class="text-theme-text"
+                            data-testid="DelegateTable__footer--unvotes"
+                          >
+                            0
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="px-8"
+                    >
+                      <div
+                        class="inline-flex"
+                      >
+                        <div
+                          class="sc-fznyAO kAGxhi mr-2 bg-theme-background border-theme-text text-theme-text"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI text-xl"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              vote-combination.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col"
+                        >
+                          <div
+                            class="text-theme-neutral"
+                          >
+                            Total
+                          </div>
+                          <div
+                            class="text-theme-text"
+                            data-testid="DelegateTable__footer--total"
+                          >
+                            0/1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <span>
+                    <button
+                      class="sc-AxirZ hNClQs"
+                      color="primary"
+                      data-testid="DelegateTable__continue-button"
+                      disabled=""
+                      type="button"
+                    >
+                      Continue
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -3942,5 +3912,3 @@ exports[`Votes should select an address without vote 1`] = `
   </div>
 </DocumentFragment>
 `;
-
-exports[`Votes should select network, address and delegate 1`] = `<DocumentFragment />`;

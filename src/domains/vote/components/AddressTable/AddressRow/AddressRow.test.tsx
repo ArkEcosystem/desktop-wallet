@@ -60,7 +60,7 @@ describe("AddressRow", () => {
 		const { asFragment, container, getByTestId } = render(
 			<table>
 				<tbody>
-					<AddressRow index={0} wallet={wallet} />
+					<AddressRow index={0} maxVotes={1} wallet={wallet} />
 				</tbody>
 			</table>,
 		);
@@ -75,7 +75,7 @@ describe("AddressRow", () => {
 		const { asFragment, container, getByTestId } = render(
 			<table>
 				<tbody>
-					<AddressRow index={0} wallet={wallet} />
+					<AddressRow index={0} maxVotes={1} wallet={wallet} />
 				</tbody>
 			</table>,
 		);
@@ -90,8 +90,8 @@ describe("AddressRow", () => {
 		const { asFragment, getByTestId } = render(
 			<table>
 				<tbody>
-					<AddressRow index={0} wallet={wallet} />
-					<AddressRow index={1} wallet={blankWallet} />
+					<AddressRow index={0} maxVotes={1} wallet={wallet} />
+					<AddressRow index={1} maxVotes={1} wallet={blankWallet} />
 				</tbody>
 			</table>,
 		);
@@ -106,8 +106,8 @@ describe("AddressRow", () => {
 		const { asFragment, getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<AddressRow index={0} wallet={wallet} />
-					<AddressRow index={1} wallet={unvotedWallet} />
+					<AddressRow index={0} maxVotes={1} wallet={wallet} />
+					<AddressRow index={1} maxVotes={1} wallet={unvotedWallet} />
 				</tbody>
 			</table>,
 		);
@@ -123,7 +123,7 @@ describe("AddressRow", () => {
 		const { asFragment, container, getByTestId } = render(
 			<table>
 				<tbody>
-					<AddressRow index={0} wallet={wallet} onSelect={onSelect} />
+					<AddressRow index={0} maxVotes={1} wallet={wallet} onSelect={onSelect} />
 				</tbody>
 			</table>,
 		);

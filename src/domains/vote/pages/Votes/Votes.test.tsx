@@ -57,25 +57,10 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network, address and delegate", async () => {
+	it("should select an address and delegate", async () => {
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
-
-		expect(getAllByTestId("votes__message")).toBeTruthy();
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-		expect(selectNetworkInput).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		});
-
-		await act(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		const { asFragment, getByTestId } = renderPage(route, routePath);
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
@@ -110,22 +95,7 @@ describe("Votes", () => {
 	it("should select an address without vote", async () => {
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
-
-		expect(getAllByTestId("votes__message")).toBeTruthy();
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-		expect(selectNetworkInput).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		});
-
-		await act(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		const { asFragment, getByTestId } = renderPage(route, routePath);
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
@@ -188,22 +158,7 @@ describe("Votes", () => {
 	it("should emit action on continue button to unvote/vote", async () => {
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
-
-		expect(getAllByTestId("votes__message")).toBeTruthy();
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-		expect(selectNetworkInput).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		});
-
-		await act(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		const { asFragment, getByTestId } = renderPage(route, routePath);
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 

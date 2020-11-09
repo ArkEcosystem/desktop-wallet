@@ -32,11 +32,4 @@ describe("AddressTable", () => {
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
-
-	it("should render with empty list", () => {
-		const { asFragment, container } = render(<AddressTable wallets={[]} />);
-
-		expect(container).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
 });
