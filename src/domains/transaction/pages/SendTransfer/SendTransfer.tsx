@@ -10,7 +10,8 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
-import React, { useEffect, useMemo, useState } from "react";
+import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useLocation, useParams } from "react-router-dom";
@@ -52,6 +53,9 @@ export const SendTransfer = () => {
 	const { senderAddress, fees, remainingBalance, amount } = watch();
 	const { sendTransfer, common } = useValidation();
 
+	const abortRef = useRef(new AbortController());
+	const transactionBuilder = useTransactionBuilder(activeProfile);
+
 	useEffect(() => {
 		register("remainingBalance");
 		register("network", sendTransfer.network());
@@ -90,55 +94,45 @@ export const SendTransfer = () => {
 		clearErrors("mnemonic");
 
 		const { fee, mnemonic, secondMnemonic, recipients, senderAddress, smartbridge } = getValues();
-		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
 		const isMultiPayment = recipients.length > 1;
-		const transferInput: Contracts.TransactionInput = {
+
+		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
+		const transactionInput: Contracts.TransactionInputs = {
 			fee,
 			from: senderAddress,
 			sign: {
 				mnemonic,
 				secondMnemonic,
 			},
+			data: {},
 		};
 
-		if (senderWallet?.isMultiSignature()) {
-			transferInput.nonce = senderWallet.nonce().plus(1).toFixed();
-			transferInput.sign = {
-				multiSignature: senderWallet?.multiSignature(),
-			};
-		}
-
 		try {
-			let transactionId: string;
-
 			if (isMultiPayment) {
-				transactionId = await senderWallet!.transaction().signMultiPayment({
-					...transferInput,
-					data: {
-						payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
-							to: address,
-							amount,
-						})),
-					},
-				});
+				transactionInput.data = {
+					payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
+						to: address,
+						amount,
+					})),
+				};
 			} else {
-				transactionId = await senderWallet!.transaction().signTransfer({
-					...transferInput,
-					data: {
-						to: recipients[0].address,
-						amount: recipients[0].amount,
-						memo: smartbridge,
-					},
-				});
+				transactionInput.data = {
+					to: recipients[0].address,
+					amount: recipients[0].amount,
+					memo: smartbridge,
+				};
 			}
 
-			await senderWallet!.transaction().broadcast(transactionId);
+			const abortSignal = abortRef.current?.signal;
+			const transaction = await transactionBuilder.build(transactionType, transactionInput, {
+				abortSignal,
+			});
+			await transactionBuilder.broadcast(transaction.id(), transactionInput);
 
 			await env.persist();
 
-			setTransaction(senderWallet!.transaction().transaction(transactionId));
-
+			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
@@ -149,10 +143,15 @@ export const SendTransfer = () => {
 	};
 
 	const handleBack = () => {
+		// Abort any existing listener
+		abortRef.current.abort();
+
 		setActiveTab(activeTab - 1);
 	};
 
 	const handleNext = async () => {
+		abortRef.current = new AbortController();
+
 		const newIndex = activeTab + 1;
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
@@ -160,6 +159,10 @@ export const SendTransfer = () => {
 		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
 			await handleSubmit(submitForm)();
 			return;
+		}
+
+		if (newIndex === 3 && senderWallet?.isLedger()) {
+			handleSubmit(submitForm)();
 		}
 
 		setActiveTab(newIndex);
@@ -235,7 +238,11 @@ export const SendTransfer = () => {
 												className="space-x-2"
 											>
 												<Icon name="Send" width={20} height={20} />
-												{isSubmitting ? <Spinner size="sm" /> : <span>{t("COMMON.SEND")}</span>}
+												{isSubmitting && !wallet?.isLedger() ? (
+													<Spinner size="sm" />
+												) : (
+													<span>{t("COMMON.SEND")}</span>
+												)}
 											</Button>
 										)}
 									</>

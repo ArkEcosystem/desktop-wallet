@@ -9,7 +9,8 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
-import React, { useEffect, useMemo, useState } from "react";
+import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -36,6 +37,9 @@ export const SendIpfs = () => {
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit } = form;
 	const { fees } = form.watch();
 
+	const abortRef = useRef(new AbortController());
+	const transactionBuilder = useTransactionBuilder(activeProfile);
+
 	useEffect(() => {
 		register("network", sendIpfs.network());
 		register("senderAddress", sendIpfs.senderAddress());
@@ -58,38 +62,26 @@ export const SendIpfs = () => {
 		clearErrors("mnemonic");
 
 		const { fee, mnemonic, secondMnemonic, senderAddress, hash } = getValues();
-		const senderWallet = activeProfile.wallets().findByAddress(senderAddress);
 
-		const transactionInput: Contracts.TransactionInput = {
+		const transactionInput: Contracts.IpfsInput = {
 			fee,
 			from: senderAddress,
 			sign: {
 				mnemonic,
 				secondMnemonic,
 			},
+			data: { hash },
 		};
 
-		if (senderWallet?.isMultiSignature()) {
-			transactionInput.nonce = senderWallet.nonce().plus(1).toFixed();
-			transactionInput.sign = {
-				multiSignature: senderWallet.multiSignature(),
-			};
-		}
-
 		try {
-			const transactionId = await senderWallet!.transaction().signIpfs({
-				...transactionInput,
-				data: {
-					hash,
-				},
-			});
+			const abortSignal = abortRef.current?.signal;
 
-			await senderWallet!.transaction().broadcast(transactionId);
+			const transaction = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
+			await transactionBuilder.broadcast(transaction.id(), transactionInput);
 
 			await env.persist();
 
-			setTransaction(senderWallet!.transaction().transaction(transactionId));
-
+			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
 			console.error("Could not create transaction: ", error);
@@ -100,10 +92,14 @@ export const SendIpfs = () => {
 	};
 
 	const handleBack = () => {
+		// Abort any existing listener
+		abortRef.current.abort();
 		setActiveTab(activeTab - 1);
 	};
 
 	const handleNext = async () => {
+		abortRef.current = new AbortController();
+
 		const newIndex = activeTab + 1;
 		const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
@@ -111,6 +107,10 @@ export const SendIpfs = () => {
 		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
 			await handleSubmit(submitForm)();
 			return;
+		}
+
+		if (newIndex === 3 && senderWallet?.isLedger()) {
+			handleSubmit(submitForm)();
 		}
 
 		setActiveTab(newIndex);
