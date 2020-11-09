@@ -5,9 +5,21 @@ import { EmptyBlock } from "./EmptyBlock";
 
 describe("EmptyBlock", () => {
 	it("should render", () => {
-		const { container, asFragment } = render(<EmptyBlock message="Empty Message" />);
+		const { asFragment, container } = render(<EmptyBlock />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with message", () => {
+		const { getByTestId } = render(<EmptyBlock message="Empty Message" />);
+
+		expect(getByTestId("EmptyBlock")).toHaveTextContent("Empty Message");
+	});
+
+	it("should render with children", () => {
+		const { getByText } = render(<EmptyBlock>I am a children</EmptyBlock>);
+
+		expect(getByText("I am a children")).toBeTruthy();
 	});
 });

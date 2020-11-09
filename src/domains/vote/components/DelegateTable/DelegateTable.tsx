@@ -42,7 +42,7 @@ export const DelegateTable = ({
 	const columns = [
 		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
-			accessor: (delegate: ReadOnlyWallet) => delegate.username() || delegate.address(),
+			accessor: (delegate: ReadOnlyWallet) => delegate.username(),
 			className: "ml-15",
 		},
 		{

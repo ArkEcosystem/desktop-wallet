@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadOnlyWallet, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
+import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";
 import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 
 import { AddressRow } from "./AddressRow";
@@ -68,6 +69,62 @@ describe("AddressRow", () => {
 		expect(container).toBeTruthy();
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render when the maximum votes is greater than 1", () => {
+		const votesMock = jest.spyOn(wallet, "votes").mockReturnValue(
+			[0, 1, 2, 3].map(
+				(index) =>
+					new ReadOnlyWallet({
+						address: data[index].address,
+						explorerLink: "",
+						publicKey: data[index].publicKey,
+						username: data[index].username,
+						rank: data[index].rank,
+					}),
+			),
+		);
+
+		const { asFragment, container } = render(
+			<table>
+				<tbody>
+					<AddressRow index={0} maxVotes={10} wallet={wallet} />
+				</tbody>
+			</table>,
+		);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		votesMock.mockRestore();
+	});
+
+	it("should render when the wallet has a lot of votes", () => {
+		const votesMock = jest.spyOn(wallet, "votes").mockReturnValue(
+			[0, 1, 2, 3, 4].map(
+				(index) =>
+					new ReadOnlyWallet({
+						address: data[index].address,
+						explorerLink: "",
+						publicKey: data[index].publicKey,
+						username: data[index].username,
+						rank: data[index].rank,
+					}),
+			),
+		);
+
+		const { asFragment, container } = render(
+			<table>
+				<tbody>
+					<AddressRow index={0} maxVotes={10} wallet={wallet} />
+				</tbody>
+			</table>,
+		);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		votesMock.mockRestore();
 	});
 
 	it("should render for a multisignature wallet", async () => {
