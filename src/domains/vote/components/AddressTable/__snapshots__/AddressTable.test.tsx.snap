@@ -89,10 +89,10 @@ exports[`AddressTable should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                   
+                  Wallet Type
                 </div>
               </div>
             </th>
@@ -105,7 +105,7 @@ exports[`AddressTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Balance
@@ -205,9 +205,7 @@ exports[`AddressTable should render 1`] = `
             class="sc-AxhCb jCOJxD group"
             data-testid="TableRow"
           >
-            <td
-              class="w-20"
-            >
+            <td>
               <div
                 class="sc-AxiKw gbXPtg space-x-4"
               >
@@ -243,9 +241,7 @@ exports[`AddressTable should render 1`] = `
                 </div>
               </div>
             </td>
-            <td
-              class="w-20"
-            >
+            <td>
               <div
                 class="sc-AxiKw cPwKhO justify-center text-sm font-bold text-center align-middle"
               >
@@ -256,7 +252,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw cPwKhO font-bold text-theme-secondary-text"
+                class="sc-AxiKw cPwKhO justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
               >
                 <span
                   data-testid="Amount"
@@ -440,10 +436,10 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
-                   
+                  Wallet Type
                 </div>
               </div>
             </th>
@@ -456,7 +452,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top "
+                class="flex flex-inline align-top justify-end"
               >
                 <div>
                   Balance
@@ -528,9 +524,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             class="sc-AxhCb jCOJxD group"
             data-testid="TableRow"
           >
-            <td
-              class="w-20"
-            >
+            <td>
               <div
                 class="sc-AxiKw gbXPtg space-x-4"
               >
@@ -566,9 +560,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                 </div>
               </div>
             </td>
-            <td
-              class="w-20"
-            >
+            <td>
               <div
                 class="sc-AxiKw cPwKhO justify-center text-sm font-bold text-center align-middle"
               >
@@ -579,7 +571,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="sc-AxiKw cPwKhO font-bold text-theme-secondary-text"
+                class="sc-AxiKw cPwKhO justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
               >
                 <span
                   data-testid="Amount"

@@ -68,12 +68,12 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 	return (
 		<TableRow>
-			<TableCell variant="start" className="w-20" innerClassName="space-x-4">
+			<TableCell variant="start" innerClassName="space-x-4">
 				<Avatar size="lg" address={wallet.address()} noShadow />
 				<Address address={wallet.address()} walletName={wallet.alias()} />
 			</TableCell>
 
-			<TableCell className="w-20" innerClassName="justify-center text-sm font-bold text-center align-middle">
+			<TableCell innerClassName="justify-center text-sm font-bold text-center align-middle">
 				<div className="inline-flex items-center space-x-2">
 					{wallet.hasSyncedWithNetwork() &&
 						walletTypes.map((type: string) =>
@@ -89,7 +89,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 				</div>
 			</TableCell>
 
-			<TableCell innerClassName="font-bold text-theme-secondary-text">
+			<TableCell innerClassName="justify-end font-bold text-theme-secondary-text whitespace-no-wrap">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 

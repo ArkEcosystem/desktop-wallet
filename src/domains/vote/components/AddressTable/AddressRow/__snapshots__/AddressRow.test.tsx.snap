@@ -8,9 +8,7 @@ exports[`AddressRow should emit action on select button 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -46,9 +44,7 @@ exports[`AddressRow should emit action on select button 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -86,7 +82,7 @@ exports[`AddressRow should emit action on select button 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -187,9 +183,7 @@ exports[`AddressRow should render 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -225,9 +219,7 @@ exports[`AddressRow should render 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -265,7 +257,7 @@ exports[`AddressRow should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -366,9 +358,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -404,9 +394,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -457,7 +445,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -558,9 +546,7 @@ exports[`AddressRow should render when the maximum votes is greater than 1 1`] =
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -596,9 +582,7 @@ exports[`AddressRow should render when the maximum votes is greater than 1 1`] =
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -636,7 +620,7 @@ exports[`AddressRow should render when the maximum votes is greater than 1 1`] =
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -777,9 +761,7 @@ exports[`AddressRow should render when the wallet has many votes 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -815,9 +797,7 @@ exports[`AddressRow should render when the wallet has many votes 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -855,7 +835,7 @@ exports[`AddressRow should render when the wallet has many votes 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -987,9 +967,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -1025,9 +1003,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -1065,7 +1041,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -1157,9 +1133,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -1189,9 +1163,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -1202,7 +1174,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -1268,9 +1240,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -1306,9 +1276,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -1346,7 +1314,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -1438,9 +1406,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -1470,9 +1436,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -1483,7 +1447,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"

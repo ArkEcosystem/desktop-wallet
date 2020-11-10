@@ -48,8 +48,8 @@ export const DelegateTable = ({
 		{
 			Header: t("COMMON.STATUS"),
 			accessor: "status",
-			disableSortBy: true,
 			className: "justify-center",
+			disableSortBy: true,
 		},
 		{
 			Header: t("COMMON.RANK"),
@@ -59,38 +59,38 @@ export const DelegateTable = ({
 		{
 			Header: t("VOTE.DELEGATE_TABLE.VOTES"),
 			accessor: "votes",
-			disableSortBy: true,
 			className: "justify-center",
+			disableSortBy: true,
 		},
 		{
 			Header: t("COMMON.PROFILE"),
 			accessor: "profile",
-			disableSortBy: true,
 			className: "justify-center",
+			disableSortBy: true,
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.COMMISSION"),
 			accessor: "commissionPercentage",
-			disableSortBy: true,
 			className: "justify-center",
+			disableSortBy: true,
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.PAYOUT_INTERVAL"),
 			accessor: "payout",
-			disableSortBy: true,
 			className: "justify-center",
+			disableSortBy: true,
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.MIN"),
 			accessor: "min",
-			disableSortBy: true,
 			className: "justify-center",
+			disableSortBy: true,
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
 			accessor: "commissionDaily",
-			disableSortBy: true,
 			className: "justify-end",
+			disableSortBy: true,
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.VOTE"),

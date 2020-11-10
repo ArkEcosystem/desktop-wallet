@@ -26,18 +26,21 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 			className: "ml-15",
 		},
 		{
-			accessor: "type",
+			Header: t("COMMON.WALLET_TYPE"),
+			accessor: "wallet-type",
+			className: "justify-center",
 			disableSortBy: true,
 		},
 		{
 			Header: t("COMMON.BALANCE"),
 			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
+			className: "justify-end",
 		},
 		{
 			Header: maxVotes === 1 ? t("COMMON.DELEGATE") : t("COMMON.DELEGATES"),
 			accessor: "delegate",
-			disableSortBy: true,
 			className: maxVotes === 1 ? "ml-15" : "",
+			disableSortBy: true,
 		},
 	];
 
@@ -48,20 +51,20 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 				{
 					Header: t("COMMON.RANK"),
 					accessor: "rank",
-					disableSortBy: true,
 					className: "justify-center",
+					disableSortBy: true,
 				},
 				{
 					Header: t("COMMON.PROFILE"),
 					accessor: "profile",
-					disableSortBy: true,
 					className: "justify-center",
+					disableSortBy: true,
 				},
 				{
 					Header: t("COMMON.STATUS"),
 					accessor: "status",
-					disableSortBy: true,
 					className: "justify-center no-border",
+					disableSortBy: true,
 				},
 				{
 					accessor: "onSelect",
