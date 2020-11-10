@@ -1,5 +1,5 @@
 import { FormField, FormLabel } from "app/components/Form";
-import { InputCounter,InputCurrency } from "app/components/Input";
+import { InputCounter, InputCurrency } from "app/components/Input";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";

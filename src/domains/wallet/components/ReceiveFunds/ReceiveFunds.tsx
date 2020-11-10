@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputAddonEnd,InputAddonStart, InputGroup } from "app/components/Input";
+import { Input, InputAddonEnd, InputAddonStart, InputGroup } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
