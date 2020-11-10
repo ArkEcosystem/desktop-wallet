@@ -5,9 +5,7 @@ import { Avatar } from "app/components/Avatar";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { getNetworkExtendedData } from "domains/network/helpers";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail, TransactionNetwork } from "domains/transaction/components/TransactionDetail";
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -22,8 +20,6 @@ export const FourthStep = ({ nameMaxLength, profile }: { nameMaxLength: number; 
 	const [defaultWallet] = useState(() => watch("wallet"));
 	const wallet: ReadWriteWallet = getValues("wallet") || defaultWallet;
 
-	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
-
 	const { t } = useTranslation();
 
 	return (
@@ -34,13 +30,7 @@ export const FourthStep = ({ nameMaxLength, profile }: { nameMaxLength: number; 
 			/>
 
 			<div>
-				<TransactionDetail
-					label={t("COMMON.CRYPTOASSET")}
-					borderPosition="bottom"
-					extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
-				>
-					{networkConfig?.displayName}
-				</TransactionDetail>
+				<TransactionNetwork network={network} borderPosition="bottom" paddingPosition="bottom" />
 
 				<TransactionDetail
 					label={t("COMMON.ADDRESS")}
