@@ -17,7 +17,7 @@ import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import electron from "electron";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
-import { ErrorBoundary } from "react-error-boundary";
+import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { matchPath, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -75,20 +75,27 @@ const Main = () => {
 		setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+	const handleError = useErrorHandler();
+
 	useLayoutEffect(() => {
 		const boot = async () => {
 			/* istanbul ignore next */
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
-			await env.verify(shouldUseFixture ? fixtureData : undefined);
-			await env.boot();
-			await runAll();
-			await persist();
+
+			try {
+				await env.verify(shouldUseFixture ? fixtureData : undefined);
+				await env.boot();
+				await runAll();
+				await persist();
+			} catch (error) {
+				handleError(error);
+			}
 
 			setShowSplash(false);
 		};
 
 		boot();
-	}, [env, persist, runAll]);
+	}, [env, handleError, persist, runAll]);
 
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
@@ -147,13 +154,13 @@ export const App = () => {
 	return (
 		<I18nextProvider i18n={i18n}>
 			<EnvironmentProvider env={env}>
-				<ErrorBoundary FallbackComponent={ApplicationError}>
-					<ThemeProvider>
+				<ThemeProvider>
+					<ErrorBoundary FallbackComponent={ApplicationError}>
 						<LedgerProvider transport={LedgerTransportNodeHID}>
 							<Main />
 						</LedgerProvider>
-					</ThemeProvider>
-				</ErrorBoundary>
+					</ErrorBoundary>
+				</ThemeProvider>
 			</EnvironmentProvider>
 		</I18nextProvider>
 	);
