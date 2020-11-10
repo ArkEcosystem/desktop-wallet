@@ -1,58 +1,54 @@
 import React from "react";
 import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
-import { FilterOption, VotesFilter } from "./";
+import { VotesFilter } from "./";
 
 describe("VotesFilter", () => {
-	it("should render empty", () => {
-		const defaultOptions: FilterOption[] = [];
-		const { asFragment, getByTestId } = render(<VotesFilter defaultOptions={defaultOptions} />);
+	it("should render", () => {
+		const { asFragment } = render(<VotesFilter totalCurrentVotes={1} />);
 
-		expect(() => getByTestId("dropdown__toggle")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render empty with undefined defaultOptions", () => {
-		const { asFragment, getByTestId } = render(<VotesFilter />);
+	it("should render default", async () => {
+		const { asFragment, getByTestId } = render(<VotesFilter totalCurrentVotes={1} />);
 
-		expect(() => getByTestId("dropdown__toggle")).toThrow(/Unable to find an element by/);
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__content")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with default options", () => {
-		const defaultOptions = [
-			{
-				label: "All",
-				value: "all",
-				isChecked: false,
-			},
-			{
-				label: "Current Votes",
-				value: "current",
-				isChecked: true,
-			},
-		];
-		const { asFragment } = render(<VotesFilter defaultOptions={defaultOptions} />);
+	it("should render with current option selected", async () => {
+		const { asFragment, getByTestId } = render(<VotesFilter totalCurrentVotes={1} selectedOption="current" />);
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__content")).toBeTruthy());
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with disabled current option", async () => {
+		const { asFragment, getByTestId } = render(<VotesFilter totalCurrentVotes={0} />);
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__content")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should emit onChange", async () => {
 		const onChange = jest.fn();
-		const defaultOptions = [
-			{
-				label: "All",
-				value: "all",
-				isChecked: false,
-			},
-			{
-				label: "Current Votes",
-				value: "current",
-				isChecked: true,
-			},
-		];
-
-		const { getByTestId } = render(<VotesFilter defaultOptions={defaultOptions} onChange={onChange} />);
+		const { getByTestId } = render(<VotesFilter totalCurrentVotes={2} onChange={onChange} />);
 
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
@@ -61,14 +57,15 @@ describe("VotesFilter", () => {
 		await waitFor(() => expect(getByTestId("dropdown__content")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("VotesFilter__option--0"));
+			fireEvent.click(getByTestId("VotesFilter__option--current"));
 		});
 
-		await waitFor(() =>
-			expect(onChange).toHaveBeenCalledWith([
-				{ isChecked: true, label: "All", value: "all" },
-				{ isChecked: false, label: "Current Votes", value: "current" },
-			]),
-		);
+		await waitFor(() => expect(onChange).toHaveBeenCalledWith("current"));
+
+		act(() => {
+			fireEvent.click(getByTestId("VotesFilter__option--all"));
+		});
+
+		await waitFor(() => expect(onChange).toHaveBeenCalledWith("all"));
 	});
 });
