@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 // import electron from "electron";
 
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -10,6 +11,7 @@ import {
 	act,
 	fireEvent,
 	getDefaultProfileId,
+	RenderResult,
 	renderWithRouter,
 	useDefaultNetMocks,
 	waitFor,
@@ -169,6 +171,38 @@ describe("App", () => {
 
 			expect(asFragment()).toMatchSnapshot();
 		});
+	});
+
+	it("should render application error if the app fails to boot", async () => {
+		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => null);
+
+		const envSpy = jest.spyOn(Environment.prototype, "boot").mockImplementation(() => {
+			throw new Error("failed to boot env");
+		});
+
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(<App />, { withProviders: false });
+		});
+
+		expect(envSpy).toHaveBeenCalled();
+
+		const { container, asFragment, getByTestId } = rendered;
+
+		await waitFor(() => {
+			expect(container).toBeTruthy();
+
+			expect(getByTestId("ApplicationError__text")).toHaveTextContent(errorTranslations.APPLICATION.TITLE);
+			expect(getByTestId("ApplicationError__text")).toHaveTextContent(errorTranslations.APPLICATION.DESCRIPTION);
+
+			expect(asFragment()).toMatchSnapshot();
+		});
+
+		consoleSpy.mockRestore();
+		envSpy.mockRestore();
 	});
 
 	it("should render mock", async () => {

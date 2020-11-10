@@ -1,4 +1,3 @@
-import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -35,6 +34,7 @@ export const CreateWallet = () => {
 
 	const form = useForm({ mode: "onChange" });
 	const { getValues, formState, register, setValue } = form;
+	const { isSubmitting, isValid } = formState;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -43,8 +43,8 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		const formattedName = name.substring(0, nameMaxLength);
-		activeProfile.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, formattedName);
+		const formattedName = name.trim().substring(0, nameMaxLength);
+		activeProfile.wallets().update(getValues("wallet").id(), { alias: formattedName });
 
 		await persist();
 
@@ -90,7 +90,7 @@ export const CreateWallet = () => {
 								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
-								<FourthStep nameMaxLength={nameMaxLength} />
+								<FourthStep nameMaxLength={nameMaxLength} profile={activeProfile} />
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-3">
@@ -106,7 +106,7 @@ export const CreateWallet = () => {
 								{activeTab < 4 && (
 									<Button
 										data-testid="CreateWallet__continue-button"
-										disabled={!formState.isValid}
+										disabled={!isValid}
 										onClick={handleNext}
 									>
 										{t("COMMON.CONTINUE")}
@@ -115,7 +115,7 @@ export const CreateWallet = () => {
 
 								{activeTab === 4 && (
 									<Button
-										disabled={formState.isSubmitting}
+										disabled={!isValid || isSubmitting}
 										type="submit"
 										data-testid="CreateWallet__save-button"
 									>
