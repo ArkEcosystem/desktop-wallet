@@ -131,7 +131,7 @@ exports[`WalletsControls should render 1`] = `
         type="button"
       >
         <div
-          class="flex items-center justify-center mr-2 align-middle"
+          class="flex items-center space-x-2"
         >
           <div
             class="sc-AxjAm cpczEI"
@@ -142,9 +142,7 @@ exports[`WalletsControls should render 1`] = `
               ledger.svg
             </svg>
           </div>
-          <span
-            class="ml-2"
-          >
+          <span>
             Import Ledger
           </span>
         </div>
@@ -285,7 +283,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
         type="button"
       >
         <div
-          class="flex items-center justify-center mr-2 align-middle"
+          class="flex items-center space-x-2"
         >
           <div
             class="sc-AxjAm cpczEI"
@@ -296,9 +294,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
               ledger.svg
             </svg>
           </div>
-          <span
-            class="ml-2"
-          >
+          <span>
             Import Ledger
           </span>
         </div>
