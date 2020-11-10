@@ -86,9 +86,9 @@ export const WalletsControls = ({
 				</Button>
 
 				<Button onClick={onImportLedgerWallet} variant="plain">
-					<div className="flex items-center justify-center mr-2 align-middle">
+					<div className="flex items-center space-x-2">
 						<Icon name="Ledger" />
-						<span className="ml-2">{t("DASHBOARD.WALLET_CONTROLS.IMPORT_LEDGER")}</span>
+						<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT_LEDGER")}</span>
 					</div>
 				</Button>
 			</div>
