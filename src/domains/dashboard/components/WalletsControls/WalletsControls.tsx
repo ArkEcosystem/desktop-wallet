@@ -55,7 +55,7 @@ export const WalletsControls = ({
 
 			<div className="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800">
 				<Dropdown
-					dropdownClass="transform -translate-y-4 z-20"
+					dropdownClass="transform -translate-y-4"
 					toggleContent={
 						<div className="group">
 							<ControlButton>

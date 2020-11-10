@@ -42,7 +42,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 				</div>
 
 				{showPagination && paginationPosition === "bottom-center" && (
-					<div className="flex items-center justify-center h-6 swiper-pagination important:bottom-8" />
+					<div className="flex items-center justify-center h-6 swiper-pagination important:bottom-8 important:z-0" />
 				)}
 			</div>
 		</div>
