@@ -1,4 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -11,7 +12,15 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMaxLength: number }) => {
+export const ThirdStep = ({
+	address,
+	nameMaxLength,
+	profile,
+}: {
+	address: string;
+	nameMaxLength: number;
+	profile: Profile;
+}) => {
 	const { getValues, register, watch } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
@@ -57,6 +66,14 @@ export const ThirdStep = ({ address, nameMaxLength }: { address: string; nameMax
 							message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
 								maxLength: nameMaxLength,
 							}),
+						},
+						validate: {
+							duplicateAlias: (alias) =>
+								!alias ||
+								!profile.wallets().findByAlias(alias) ||
+								t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
+									alias,
+								}).toString(),
 						},
 					})}
 					data-testid="ImportWallet__name-input"
