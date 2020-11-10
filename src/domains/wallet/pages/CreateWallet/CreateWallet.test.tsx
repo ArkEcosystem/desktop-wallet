@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { toasts } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
@@ -442,7 +442,7 @@ describe("CreateWallet", () => {
 		});
 
 		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile?.id()}/dashboard`));
-		expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet");
+		expect(profile.wallets().first().alias()).toEqual("Test Wallet");
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -519,5 +519,94 @@ describe("CreateWallet", () => {
 		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show an error message for duplicate name", async () => {
+		const wallet = await profile
+			.wallets()
+			.importByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", "ARK", "ark.devnet");
+		profile.wallets().update(wallet.id(), { alias: "Test" });
+
+		const history = createMemoryHistory();
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
+		history.push(createURL);
+
+		const { queryAllByText, getByTestId, getByText, asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/create">
+				<CreateWallet />
+			</Route>,
+			{
+				routes: [createURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		const continueButton = getByTestId("CreateWallet__continue-button");
+
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "" } });
+		});
+		await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+
+		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+
+		const walletMnemonic = passphrase.split(" ");
+		for (let i = 0; i < 3; i++) {
+			const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+
+			await actAsync(async () => {
+				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
+				if (i < 2) {
+					await waitFor(() => expect(queryAllByText(/The #([0-9]+) word/).length === 2 - i));
+				}
+			});
+		}
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+
+		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+
+		const walletNameInput = getByTestId("CreateWallet__wallet-name");
+		expect(walletNameInput).toBeTruthy();
+
+		act(() => {
+			fireEvent.input(walletNameInput, { target: { value: "Test" } });
+		});
+
+		const submitButton = getByTestId("CreateWallet__save-button");
+
+		expect(submitButton).toBeTruthy();
+		await waitFor(() => {
+			expect(submitButton).toBeDisabled();
+		});
 	});
 });

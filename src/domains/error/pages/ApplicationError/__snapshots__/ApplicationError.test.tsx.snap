@@ -2,77 +2,82 @@
 
 exports[`ApplicationError should render 1`] = `
 <DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+  <main
+    class="theme-light"
+    data-testid="Main"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqARJ dpTzjj"
+    <div
+      class="relative flex flex-col min-h-screen bg-theme-secondary-background"
     >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
+      <nav
+        aria-labelledby="main menu"
+        class="sc-fzqARJ dpTzjj"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex items-center my-auto"
+            class="relative flex justify-between h-20 md:h-24"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="flex items-center my-auto"
             >
-              <svg
-                width="48"
+              <div
+                class="sc-fzqNqU gmvYjD"
               >
-                ark-logo.svg
-              </svg>
+                <svg
+                  width="48"
+                >
+                  ark-logo.svg
+                </svg>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
-    <div
-      class="flex flex-col flex-1 "
-    >
+      </nav>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
+        class="flex flex-col flex-1 "
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
         >
           <div
-            class="w-64 mx-auto lg:w-128"
+            class="container py-16 mx-auto px-14"
           >
-            <svg>
-              error-banner.svg
-            </svg>
-          </div>
-          <div
-            class="mt-8"
-            data-testid="ApplicationError__text"
-          >
-            <h2
-              class="text-2xl font-bold"
+            <div
+              class="w-64 mx-auto lg:w-128"
             >
-              Something went wrong
-            </h2>
-            <p
-              class="text-theme-secondary-text"
+              <svg>
+                error-banner.svg
+              </svg>
+            </div>
+            <div
+              class="mt-8"
+              data-testid="ApplicationError__text"
             >
-              It looks like something went wrong. Try visiting another page or reloading.
-            </p>
+              <h2
+                class="text-2xl font-bold"
+              >
+                Something went wrong
+              </h2>
+              <p
+                class="text-theme-secondary-text"
+              >
+                It looks like something went wrong. Try visiting another page or reloading.
+              </p>
+            </div>
+            <button
+              class="sc-AxjAm colAFb mt-8"
+              color="primary"
+              data-testid="ApplicationError__button--reload"
+              type="button"
+            >
+              Reload
+            </button>
           </div>
-          <button
-            class="sc-AxjAm colAFb mt-8"
-            color="primary"
-            data-testid="ApplicationError__button--reload"
-            type="button"
-          >
-            Reload
-          </button>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </DocumentFragment>
 `;
