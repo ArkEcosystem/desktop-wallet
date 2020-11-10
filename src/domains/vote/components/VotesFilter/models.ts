@@ -1,10 +1,7 @@
-export type FilterOption = {
-	label: string;
-	value: string;
-	isChecked: boolean;
-};
+export type FilterOption = "all" | "current";
 
 export type FilterProps = {
-	onChange?: (options: FilterOption[]) => void;
-	defaultOptions?: FilterOption[];
+	onChange?: (selected: FilterOption) => void;
+	selectedOption?: FilterOption;
+	totalCurrentVotes: number;
 };

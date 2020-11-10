@@ -81,7 +81,7 @@ describe("Votes", () => {
 		await waitFor(() => expect(within(getByTestId("VotesFilter")).getByTestId("dropdown__content")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("VotesFilter__option--1"));
+			fireEvent.click(getByTestId("VotesFilter__option--current"));
 		});
 
 		await waitFor(() => expect(getAllByTestId("DelegateRow__toggle-0")).toHaveLength(1));

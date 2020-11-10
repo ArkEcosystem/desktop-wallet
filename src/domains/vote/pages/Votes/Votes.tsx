@@ -13,7 +13,7 @@ import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import { VotesFilter } from "domains/vote/components/VotesFilter";
+import { FilterOption,VotesFilter } from "domains/vote/components/VotesFilter";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -70,6 +70,7 @@ export const Votes = () => {
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState<boolean>(false);
+	const [selectedFilter, setSelectedFilter] = useState<FilterOption>("all");
 
 	const crumbs = [
 		{
@@ -77,19 +78,6 @@ export const Votes = () => {
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
-
-	const [votesFilterOptions, setVotesFilterOptions] = useState([
-		{
-			label: t("VOTE.FILTERS.ALL"),
-			value: "all",
-			isChecked: true,
-		},
-		{
-			label: t("VOTE.FILTERS.CURRENT_VOTES"),
-			value: "current",
-			isChecked: false,
-		},
-	]);
 
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -192,12 +180,20 @@ export const Votes = () => {
 		});
 	};
 
-	const filteredDelegates = useMemo(() => {
-		const checkedFilter = votesFilterOptions.find((o) => o.isChecked);
-		if (checkedFilter?.value === "all") return delegates;
+	const currentVotes = useMemo(() => votes.filter((v) => delegates.some((d) => v.address() === d.address())), [
+		votes,
+		delegates,
+	]);
 
-		return votes.filter((v) => delegates.some((d) => v.address() === d.address()));
-	}, [votes, votesFilterOptions, delegates]);
+	const filteredDelegates = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
+		delegates,
+		currentVotes,
+		selectedFilter,
+	]);
+
+	useEffect(() => {
+		if (votes.length === 0) setSelectedFilter("all");
+	}, [votes]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
@@ -209,7 +205,11 @@ export const Votes = () => {
 						<div className="flex items-center space-x-8 text-theme-primary-light">
 							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
-							<VotesFilter defaultOptions={votesFilterOptions} onChange={setVotesFilterOptions} />
+							<VotesFilter
+								totalCurrentVotes={currentVotes.length}
+								selectedOption={selectedFilter}
+								onChange={setSelectedFilter}
+							/>
 						</div>
 					}
 				/>

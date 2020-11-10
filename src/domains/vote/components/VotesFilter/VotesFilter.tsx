@@ -1,22 +1,14 @@
 import { Checkbox } from "app/components/Checkbox";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import React, { useState } from "react";
+import { Tooltip } from "app/components/Tooltip";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { FilterProps } from "./";
 
-export const VotesFilter = ({ onChange, defaultOptions }: FilterProps) => {
-	const [options, setOptions] = useState(defaultOptions || []);
-
-	const handleChange = (index: number) => {
-		const updated = options.map((o) => ({ ...o, isChecked: false }));
-		updated.splice(index, 1, { ...updated[index], isChecked: true });
-
-		setOptions(updated);
-		onChange?.(updated);
-	};
-
-	if (!options.length) return <></>;
+export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVotes }: FilterProps) => {
+	const { t } = useTranslation();
 
 	return (
 		<div data-testid="VotesFilter">
@@ -29,23 +21,45 @@ export const VotesFilter = ({ onChange, defaultOptions }: FilterProps) => {
 				}
 			>
 				<div className="w-64 px-6 py-4">
-					{options.map(({ label, value, isChecked }, index) => (
+					<label
+						className="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+						data-testid="VotesFilter__option--all"
+					>
+						<span>
+							<Checkbox
+								name="all"
+								className="rounded-lg"
+								checked={selectedOption === "all"}
+								onChange={() => onChange?.("all")}
+							/>
+						</span>
+						<span>{t("VOTE.FILTERS.ALL")}</span>
+					</label>
+
+					<Tooltip
+						placement="bottom-start"
+						content={totalCurrentVotes === 0 && "You have not yet voted for delegates"}
+					>
 						<label
-							key={index}
-							className="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-							data-testid={`VotesFilter__option--${index}`}
+							className={`flex items-center block px-2 pb-1 space-x-3 rounded-md ${
+								totalCurrentVotes > 0
+									? "cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+									: "text-theme-neutral-400"
+							}`}
+							data-testid="VotesFilter__option--current"
 						>
 							<span>
 								<Checkbox
-									name={value}
+									disabled={totalCurrentVotes === 0}
+									name="current"
 									className="rounded-lg"
-									checked={isChecked}
-									onChange={() => handleChange(index)}
+									checked={selectedOption === "current"}
+									onChange={() => onChange?.("current")}
 								/>
 							</span>
-							<span>{label}</span>
+							<span className="pt-px">{t("VOTE.FILTERS.CURRENT_VOTES")}</span>
 						</label>
-					))}
+					</Tooltip>
 				</div>
 			</Dropdown>
 		</div>
