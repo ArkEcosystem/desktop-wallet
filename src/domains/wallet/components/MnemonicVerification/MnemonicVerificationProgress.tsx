@@ -11,6 +11,7 @@ const TabStyled = styled(OptionButton)<{ isActive: boolean; isComplete: boolean;
 	${({ isActive }) => isActive && tw`font-medium bg-theme-success-contrast border-theme-success`};
 	${({ isComplete }) => isComplete && tw`border-transparent bg-theme-success-200`};
 	${({ isPending }) => isPending && tw`border-theme-primary-contrast text-theme-primary`};
+	min-height: 56px;
 `;
 
 type TabProps = {
