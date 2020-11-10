@@ -405,7 +405,7 @@ describe("CreateWallet", () => {
 
 		const walletMnemonic = passphrase.split(" ");
 		for (let i = 0; i < 3; i++) {
-			const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+			const wordNumber = parseInt(getByText(/Select the/).innerHTML.replace(/Select the/, ""));
 
 			await actAsync(async () => {
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
@@ -578,7 +578,7 @@ describe("CreateWallet", () => {
 
 		const walletMnemonic = passphrase.split(" ");
 		for (let i = 0; i < 3; i++) {
-			const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+			const wordNumber = parseInt(getByText(/Select the/).innerHTML.replace(/Select the/, ""));
 
 			await actAsync(async () => {
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
