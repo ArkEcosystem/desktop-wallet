@@ -89,6 +89,7 @@ export const translations: { [key: string]: any } = {
 		WALLET_NAME: "Wallet name",
 
 		VALIDATION: {
+			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
 		},
 	},

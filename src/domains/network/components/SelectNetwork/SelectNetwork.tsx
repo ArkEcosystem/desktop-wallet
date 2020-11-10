@@ -84,6 +84,11 @@ export const SelectNetwork = ({
 		selectItem(selected || null);
 	}, [selectItem, selected]);
 
+	const toggleSelection = (item: Network) => {
+		if (item.id() === selectedItem?.id()) return reset();
+		return selectItem(item);
+	};
+
 	const inputTypeAhead = React.useMemo(() => {
 		if (inputValue && items.length) {
 			return [inputValue, items[0].extra?.displayName?.slice(inputValue.length)].join("");
@@ -160,7 +165,7 @@ export const SelectNetwork = ({
 									index,
 									disabled,
 									onMouseDown: () => {
-										selectItem(item);
+										toggleSelection(item);
 										closeMenu();
 									},
 								})}
