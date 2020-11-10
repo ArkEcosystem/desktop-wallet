@@ -41,7 +41,7 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 		>
 			{isComplete ? (
 				<span className="text-lg text-theme-success">
-					<Icon name="StatusOk" />
+					<Icon name="StatusOk" width={28} height={28} />
 				</span>
 			) : (
 				<span>
