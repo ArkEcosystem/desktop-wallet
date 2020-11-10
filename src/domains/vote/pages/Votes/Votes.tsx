@@ -13,7 +13,7 @@ import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import { FilterOption,VotesFilter } from "domains/vote/components/VotesFilter";
+import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
