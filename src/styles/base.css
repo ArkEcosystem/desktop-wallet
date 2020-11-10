@@ -1,5 +1,5 @@
 body {
-	@apply antialiased text-base font-sans;
+	@apply font-sans text-base antialiased;
 }
 
 main {
@@ -16,4 +16,8 @@ main {
 
 .important\:bottom-8 {
 	bottom: 2rem !important;
+}
+
+.important\:z-0 {
+	z-index: 0 !important;
 }
