@@ -216,7 +216,7 @@ describe("SelectNetwork", () => {
 			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK"));
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
@@ -228,7 +228,7 @@ describe("SelectNetwork", () => {
 			fireEvent.mouseDown(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).not.toHaveAttribute("aria-label");
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).not.toHaveAttribute("aria-label"));
 	});
 
 	it("should return empty if the item has not defined", () => {
