@@ -242,7 +242,7 @@ export const translations: { [key: string]: any } = {
 		PASSPHRASE_STEP: {
 			TITLE: "Your Second Signature",
 			WARNING:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.",
+				"Registering a second signature will require you to sign all transactions with an additional mnemonic shown below. Ensure to backup the displayed mnemonic before continuing.",
 			DOWNLOAD: {
 				TITLE: "Download Your Passphrase",
 				DESCRIPTION: "You can also download and safely store your passphrase.",
