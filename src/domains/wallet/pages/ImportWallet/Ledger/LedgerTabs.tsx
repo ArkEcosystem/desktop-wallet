@@ -112,10 +112,13 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	);
 
 	const saveNames = async ({ names }: { names: Record<string, string> }) => {
+		const nameMaxLength = 42;
+
 		for (const [address, name] of Object.entries(names)) {
 			if (name) {
+				const formattedName = name.trim().substring(0, nameMaxLength);
 				const wallet = activeProfile.wallets().findByAddress(address);
-				wallet?.setAlias(name);
+				wallet?.setAlias(formattedName);
 			}
 		}
 		await persist();
@@ -160,7 +163,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 					<LedgerScanStep profile={activeProfile} setRetryFn={handleRetry} />
 				</TabPanel>
 				<TabPanel tabId={4}>
-					<LedgerImportStep wallets={importedWallets} />
+					<LedgerImportStep wallets={importedWallets} profile={activeProfile} />
 				</TabPanel>
 			</div>
 

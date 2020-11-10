@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -11,7 +12,7 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const LedgerImportStep = ({ wallets }: { wallets: LedgerData[] }) => {
+export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; profile: Profile }) => {
 	const { t } = useTranslation();
 	const { watch, register } = useFormContext();
 
@@ -47,6 +48,22 @@ export const LedgerImportStep = ({ wallets }: { wallets: LedgerData[] }) => {
 										message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
 											maxLength: 42,
 										}),
+									},
+									validate: {
+										duplicateAlias: (alias) =>
+											!alias ||
+											!profile.wallets().findByAlias(alias) ||
+											t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
+												alias,
+											}).toString(),
+										duplicateFormAlias: (alias) =>
+											!alias ||
+											!Object.values(watch("names")).find(
+												(name: any) => !!name && alias.toLowerCase().includes(name),
+											) ||
+											t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_ASSIGNED", {
+												alias,
+											}).toString(),
 									},
 								})}
 								data-testid="ImportWallet__name-input"
