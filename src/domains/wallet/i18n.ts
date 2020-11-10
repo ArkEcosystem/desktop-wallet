@@ -171,7 +171,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	MNEMONIC_VERIFICATION: {
-		SELECT_WORD: "Select word #{{position}}",
-		WORD_NUMBER: "The #{{position}} word",
+		SELECT_WORD: "Select the {{position}}{{ordinalIndicator}} word",
+		WORD_NUMBER: "The {{position}}{{ordinalIndicator}} word",
 	},
 };
