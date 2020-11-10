@@ -5,9 +5,7 @@ import { Avatar } from "app/components/Avatar";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
-import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { getNetworkExtendedData } from "domains/network/helpers";
-import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail, TransactionNetwork } from "domains/transaction/components/TransactionDetail";
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -27,8 +25,6 @@ export const ThirdStep = ({
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Coins.Network = getValues("network") || defaultNetwork;
 
-	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
-
 	const { t } = useTranslation();
 
 	return (
@@ -39,14 +35,7 @@ export const ThirdStep = ({
 			/>
 
 			<div>
-				<TransactionDetail
-					label={t("COMMON.CRYPTOASSET")}
-					extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
-					borderPosition="bottom"
-					paddingPosition="bottom"
-				>
-					{networkConfig?.displayName}
-				</TransactionDetail>
+				<TransactionNetwork network={network} borderPosition="bottom" paddingPosition="bottom" />
 
 				<TransactionDetail
 					label={t("COMMON.ADDRESS")}
