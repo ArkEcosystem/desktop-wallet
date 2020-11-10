@@ -103,17 +103,17 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 			{isFormOpen && (
 				<>
-					<div className="text-theme-neutral-600 mt-6 max-w-sm text-center mx-auto">
+					<div className="max-w-sm mx-auto mt-6 text-center text-theme-neutral-600">
 						{t("COMMON.QR_CODE_HELP_TEXT")}
 					</div>
 
 					<div className="mt-8">
 						<InputGroup>
-							<InputAddonStart className="border-r border-theme-neutral-500 px-4 bg-theme-neutral-200 m-px">
+							<InputAddonStart className="px-4 m-px border-r border-theme-neutral-500 bg-theme-neutral-200">
 								{t("COMMON.QR_SHORT")}
 							</InputAddonStart>
-							<Input className="pl-18 pr-13 truncate" disabled value={qrCode} />
-							<InputAddonEnd className="border-r border-theme-neutral-500 px-4 m-px">
+							<Input className="truncate pl-18 pr-13" disabled value={qrCode} />
+							<InputAddonEnd className="px-4 m-px border-r border-theme-neutral-500">
 								<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
 									<Clipboard data={qrCode}>
 										<Icon name="Copy" />

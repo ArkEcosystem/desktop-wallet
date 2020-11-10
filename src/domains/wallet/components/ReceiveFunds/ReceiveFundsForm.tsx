@@ -16,7 +16,7 @@ export const ReceiveFundsForm = () => {
 
 	return (
 		<div data-testid="ReceiveFundsForm">
-			<div className="space-y-8 mt-8">
+			<div className="mt-8 space-y-8">
 				<FormField name="amount">
 					<FormLabel label={t("COMMON.AMOUNT")} required={false} />
 					<InputCurrency
