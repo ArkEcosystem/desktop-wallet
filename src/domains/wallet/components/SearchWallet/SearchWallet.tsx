@@ -4,7 +4,7 @@ import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Icon } from "app/components/Icon";
+import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Modal } from "app/components/Modal";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
@@ -92,6 +92,7 @@ type SearchWalletProps = {
 	title: string;
 	description?: string;
 	wallets: ReadWriteWallet[];
+	searchPlaceholder?: string;
 	size?: Size;
 	showFiatValue?: boolean;
 	showNetwork?: boolean;
@@ -105,6 +106,7 @@ export const SearchWallet = ({
 	title,
 	description,
 	wallets,
+	searchPlaceholder,
 	size,
 	showFiatValue,
 	showNetwork,
@@ -137,12 +139,7 @@ export const SearchWallet = ({
 					className: "justify-end",
 				},
 				{
-					Header: (
-						<div className="flex space-x-4 text-theme-primary-300">
-							<span>{t("COMMON.SEARCH")}</span>
-							<Icon name="Search" width={17} height={17} />
-						</div>
-					),
+					Header: <HeaderSearchBar placeholder={searchPlaceholder} />,
 					accessor: "search",
 					className: "justify-end no-border",
 					disableSortBy: true,
@@ -153,18 +150,13 @@ export const SearchWallet = ({
 		return [
 			...commonColumns,
 			{
-				Header: (
-					<div className="flex space-x-4 text-theme-primary-300">
-						<span>{t("COMMON.SEARCH")}</span>
-						<Icon name="Search" width={17} height={17} />
-					</div>
-				),
+				Header: <HeaderSearchBar placeholder={searchPlaceholder} />,
 				accessor: "search",
 				className: "justify-end no-border",
 				disableSortBy: true,
 			},
 		];
-	}, [commonColumns, showFiatValue, t]);
+	}, [commonColumns, searchPlaceholder, showFiatValue, t]);
 
 	return (
 		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose} size={size}>
@@ -194,6 +186,7 @@ export const SearchWallet = ({
 
 SearchWallet.defaultProps = {
 	isOpen: false,
+	searchPlaceholder: "Enter the name or address for your wallet",
 	size: "5xl",
 	showFiatValue: true,
 	showNetwork: true,

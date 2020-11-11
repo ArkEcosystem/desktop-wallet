@@ -258,6 +258,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 						isOpen={searchWalletIsOpen}
 						title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
 						description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
+						searchPlaceholder={t("WALLETS.MODAL_SELECT_ACCOUNT.SEARCH_PLACEHOLDER")}
 						wallets={profile.wallets().values()}
 						onSelectWallet={handleSelectWallet}
 						onClose={() => setSearchWalletIsOpen(false)}

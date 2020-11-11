@@ -25,7 +25,7 @@ export const SearchBar = ({ placeholder, className, children, onSearch }: Search
 					<Input
 						className="border-none shadow-none"
 						placeholder={placeholder || t("COMMON.SEARCH_BAR.PLACEHOLDER")}
-						onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
+						onChange={(event) => setQuery((event.target as HTMLInputElement).value)}
 					/>
 				</div>
 

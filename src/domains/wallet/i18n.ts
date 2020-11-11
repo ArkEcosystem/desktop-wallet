@@ -36,6 +36,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_SELECT_ACCOUNT: {
 		TITLE: "Select Account",
 		DESCRIPTION: "Find and select the account you want to receive funds to",
+		SEARCH_PLACEHOLDER: "Enter the name or address for your wallet",
 	},
 
 	MODAL_SIGN_MESSAGE: {
