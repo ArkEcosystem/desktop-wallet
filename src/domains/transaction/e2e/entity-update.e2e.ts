@@ -30,7 +30,7 @@ createFixture(`Send Entity Update`, [
 			url: "https://dwallets.ark.io/api/transactions",
 			method: "POST",
 		},
-		require("../../../tests/fixtures/coins/ark/transactions/entity-update.json"),
+		require("../../../tests/fixtures/coins/ark/devnet/transactions/entity-update.json"),
 	),
 ]);
 
