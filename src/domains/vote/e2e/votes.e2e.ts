@@ -85,13 +85,8 @@ test("should successfully send a vote transaction with a multisig wallet", async
 	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 
-	// Select cryptoasset
-	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#Votes__network-item-0"));
-
 	// Select address
-	await t.expect(Selector("h2").withText(translations.VOTE.ADDRESS_TABLE.TITLE).exists).ok();
-	await t.click(Selector('[data-testid="AddressRow__select-2"]').withText(translations.COMMON.SELECT));
+	await t.click(Selector('[data-testid="AddressRow__select-2"]').withText(translations.COMMON.VOTE));
 
 	// Select delegate
 	await t.expect(Selector("h2").withText(translations.VOTE.DELEGATE_TABLE.TITLE).exists).ok();
@@ -123,13 +118,8 @@ test("should successfully send a vote transaction", async (t) => {
 	await t.click(Selector('[data-testid="dropdown__option--1"]').withText(translations.COMMON.VOTES));
 	await t.expect(Selector("h1").withText(translations.VOTE.VOTES_PAGE.TITLE).exists).ok();
 
-	// Select cryptoasset
-	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector("#Votes__network-item-0"));
-
 	// Select address
-	await t.expect(Selector("h2").withText(translations.VOTE.ADDRESS_TABLE.TITLE).exists).ok();
-	await t.click(Selector('[data-testid="AddressRow__select-2"]').withText(translations.COMMON.SELECT));
+	await t.click(Selector('[data-testid="AddressRow__select-2"]').withText(translations.COMMON.VOTE));
 
 	// Select delegate
 	await t.expect(Selector("h2").withText(translations.VOTE.DELEGATE_TABLE.TITLE).exists).ok();

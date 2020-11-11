@@ -1,0 +1,65 @@
+/* eslint-disable @typescript-eslint/require-await */
+import { act, renderHook } from "@testing-library/react-hooks";
+import { waitFor } from "utils/testing-library";
+
+import { useQRCode } from "./";
+
+describe("useQRCode hook", () => {
+	it("should generate qr code", async () => {
+		let hook: any;
+		await act(async () => {
+			hook = renderHook(() =>
+				useQRCode({
+					amount: "10",
+					smartbridge: "test",
+					network: "ark",
+					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+				}),
+			);
+		});
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(hook.result.current.qrCodeDataUri).toBe(
+					"ark:D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD?amount=10&vendorField=test",
+				),
+			);
+
+			const expectedImageData =
+				"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAAAklEQVR4AewaftIAAAkqSURBVO3BUa7k2pEEwfCDu/8tux6gD2EAZkOkONXV2WFGEvMHU/MmIBM1nwLkLjUTIBM1EyBvUjMBckXN24BcUTMB8qc6qar1TqpqvZOqWu+kqtY7qar1TqpqvZ/8gppvAORNQCZqPgXIE2quAJmomQCZqLkC5G1qrgD5dmq+AZArJ1W13klVrXdSVeudVNV6J1W13klVrfeTh4C8Sc3bgFxR8wSQu9RM1DwB5IqaCZAngNyl5gkgV9Q8AeQbAHmTmrtOqmq9k6pa76Sq1jupqvVOqmq9k6pa7yd/ISATNU+oeROQiZq71EyA3KVmAmSiZqLmCpD635xU1XonVbXeSVWtd1JV651U1XonVbXeT/5Car4BkImab6DmTUA+RU3920lVrXdSVeudVNV6J1W13klVrfeTh9T8bdRMgFxR8w2ATNRMgFxR84SaCZAraiZAJkAmaj5Fze92UlXrnVTVeidVtd5JVa13UlXrnVTVej/5BSB/GyATNd8AyBU19R9qJkCuqHkCyDc7qar1TqpqvZOqWu+kqtY7qar1TqpqvR81fxsgEzUTIBM1V4BM1HyKmgmQiZq71EyAvEnNBMib1PypTqpqvZOqWu+kqtY7qar1TqpqvZOqWo8kZqBmAuQbqLkLyETNBMhdaiZAJmreBGSiZgLkT6XmTUC+gZq7TqpqvZOqWu+kqtY7qar1TqpqvZ/8ApCJmgmQiZr6NzUTIG9S84SaK0Amar4dkCtqJmomQCZqfreTqlrvpKrWO6mq9U6qar2TqlrvpKrW+1HzBJA3AXlCzV1q3qbmLiATNW8CMlEzAXJFzRNA7lLzBJC7gHwKkImaCZC7TqpqvZOqWu+kqtY7qar1TqpqvZOqWu8n/w/U3KXmCSB3qfkUIG8DckXNRM0Taq4AeZuaT1FzBchEzQTIp6i566Sq1jupqvVOqmq9k6pa76Sq1jupqvV+8gtAJmomQCZqrgB5Qs1dQN4G5IqaCZAn1HwKkN8NyBNq3gTkCSBX1EyATNRMgFw5qar1TqpqvZOqWu+kqtY7qar1fvILaiZAJmrepGYCZKLmipo/GZC71EyAvEnNBMhdap4AcpeaCZCJmruAPAFkoubKSVWtd1JV651U1XonVbXeSVWtd1JV65HEDNQ8AeQuNRMgG6mZAHmTmieA3KXmU4A8oeYKkImaJ4BcUTMB8qaTqlrvpKrWO6mq9U6qar2TqlrvpKrWI4kZqJkAmaiZALmi5gkg30zNBMg3UDMB8iY1nwLkLjWfAmSi5k0nVbXeSVWtd1JV651U1XonVbXeSVWth//IlwPyJjUTIJ+i5gkgV9Q8AWSi5gqQiZoJkDepmQCZqLkC5Ak1EyBX1EyAPKHmyklVrXdSVeudVNV6J1W13klVrfeTXwDyNjVXgEzUTIBM1NylZgJkouYKkCeATNTcBWSiZgLkipoJkImaCZAraiZAJmomQK6oeQLIRM3vdlJV651U1XonVbXeSVWtd1JV651U1XokMQM1TwCZqLkC5Ak1EyBvUjMBckXNE0DuUvMEkImaTwHyKWruAjJRMwFyRc0TQO46qar1TqpqvZOqWu+kqtY7qar1TqpqvR81EyATNRM1EyBX1HyKmieAvAnIE2o+Bcib1EzUfAqQK2omaiZAJmquAJmoedNJVa13UlXrnVTVeidVtd5JVa13UlXr/eQX1DwB5E1AJmomaq4AmaiZqLkLyETNBMg3UHMXkCeA3KVmAuRNQJ4AckXNBMhEzQTIlZOqWu+kqtY7qar1TqpqvZOqWo8kZqDmCSATNb8bkLepuQvIRM0EyBU1bwNyRc0EyETNXUC+gZoJkImaK0CeUHPXSVWtd1JV651U1XonVbXeSVWtd1JV65HEvEzNBMjvpuYJIHepeQLIXWomQCZq3gRkouZNQJ5QcwXIE2omQH63k6pa76Sq1jupqvVOqmq9k6pa76Sq1sN/ZADkG6iZAJmouQJkouZNQN6m5k1AJmreBGSi5i4gEzUTIFfUTIBM1HwKkLtOqmq9k6pa76Sq1jupqvVOqmq9k6pajyRmoOYJIHepmQB5Qs1dQJ5QcxeQJ9TcBWSiZgLkTWruAvI2NVeAfAM1EyB3nVTVeidVtd5JVa13UlXrnVTVeiQxD6iZAJmoeROQiZq7gEzUvAnIp6h5E5CJmgmQiZq7gLxJzRNAJmquAJmoedNJVa13UlXrnVTVeidVtd5JVa13UlXrkcQM1LwNyJvUTIDcpeZNQCZqPgXIRM0EyF1qvgGQiZq7gEzUTIBcUfMEkLtOqmq9k6pa76Sq1jupqvVOqmq9k6pa7ycPAXlCzRUgEzXfAMhEzacAuaJmouYJNVeAPAHkLjUTIBM1dwF5AshEzRUgEzVvOqmq9U6qar2TqlrvpKrWO6mq9U6qaj2SmIGaJ4BM1NwFZKLmLiATNU8AuUtN/QeQu9RMgHwzNRMgEzUTIFdOqmq9k6pa76Sq1jupqvVOqmo9/EeWAnJFzQTIRM0EyBU1EyATNRMgb1IzAfIpau4CMlEzAXJFzduAXFHzBJCJmisnVbXeSVWtd1JV651U1XonVbXeSVWt9wPkT6ZmouYuNW8CMlEzAfImNU+ouQJkouYJIFfUfAMgEzV3AZmoeQLIlZOqWu+kqtY7qar1TqpqvZOqWu+kqtYjiRmo+QZAJmomQO5S8yYgT6iZAPlTqfkUIHepeRuQu9RMgEzUXDmpqvVOqmq9k6pa76Sq1jupqvVOqmq9nzwE5E1qPkXNp6j5FDWfAmSiZgJkouYKkE8B8ilqJkDedFJV651U1XonVbXeSVWtd1JV6/2k/g8gn6JmAmSi5i4gEzUTIHcBeZOaJ4BM1FwB8ilAJmqeAHLlpKrWO6mq9U6qar2TqlrvpKrWO6mq9X5S/zU1EyCfAuSKmomaCZCJmitAJmo+BchEzV1qngAyUXMFyBNA7jqpqvVOqmq9k6pa76Sq1jupqvVOqmo9kpiBmm8AZKLmLiATNd8AyETNXUC+gZpvAOQuNW8CMlHzBJArJ1W13klVrXdSVeudVNV6J1W13klVrUcS8wdTMwHyJjUTIFfUPAFkIzUTIFfUTIBM1NwFZKLmCSC/20lVrXdSVeudVNV6J1W13klVrfcvwQnS7BrFTVkAAAAASUVORK5CYII=";
+
+			await waitFor(() => expect(hook.result.current.qrCodeDataImage).toBe(expectedImageData));
+		});
+	});
+
+	it("should generate without amount and smartbridge", async () => {
+		let hook: any;
+		await act(async () => {
+			hook = renderHook(() =>
+				useQRCode({
+					network: "ark",
+					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+				}),
+			);
+		});
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(hook.result.current.qrCodeDataUri).toBe("ark:D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"),
+			);
+
+			const expectedImageData =
+				"data:image/png;base64,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";
+
+			await waitFor(() => expect(hook.result.current.qrCodeDataImage).toBe(expectedImageData));
+		});
+	});
+
+	it("should return undefined if address is not provided", async () => {
+		await act(async () => {
+			const { result } = renderHook(() => useQRCode({ network: "ark" }));
+			await waitFor(() => expect(result.current.qrCodeDataUri).toBe(undefined));
+			await waitFor(() => expect(result.current.qrCodeDataImage).toBe(undefined));
+		});
+	});
+});
