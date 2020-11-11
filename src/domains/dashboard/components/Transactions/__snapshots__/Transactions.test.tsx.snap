@@ -22,8 +22,11 @@ exports[`Transactions should render with 1`] = `
   </div>
   <div
     class="border border-solid border-theme-neutral-300 dark:border-theme-neutral-800 p-6 rounded-lg text-theme-secondary-text -mt-5"
+    data-testid="EmptyBlock"
   >
-    This will display the history of your transactions. But you don't have more than one transaction at the moment.
+    <div>
+      This will display the history of your transactions. But you don't have more than one transaction at the moment.
+    </div>
   </div>
 </div>
 `;
@@ -55,8 +58,11 @@ exports[`Transactions should render with custom title 1`] = `
   </div>
   <div
     class="border border-solid border-theme-neutral-300 dark:border-theme-neutral-800 p-6 rounded-lg text-theme-secondary-text -mt-5"
+    data-testid="EmptyBlock"
   >
-    This will display the history of your transactions. But you don't have more than one transaction at the moment.
+    <div>
+      This will display the history of your transactions. But you don't have more than one transaction at the moment.
+    </div>
   </div>
 </div>
 `;

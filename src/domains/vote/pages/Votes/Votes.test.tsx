@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -16,24 +17,40 @@ import {
 
 import { Votes } from "./Votes";
 
+const history = createMemoryHistory();
+
+let emptyProfile: Profile;
 let profile: Profile;
 let wallet: ReadWriteWallet;
 let blankWallet: ReadWriteWallet;
 
 const blankWalletPassphrase = "power return attend drink piece found tragic fire liar page disease combine";
 
-const renderPage = (route: string, routePath = "/profiles/:profileId/wallets/:walletId/votes") =>
-	renderWithRouter(
+const renderPage = (route: string, routePath = "/profiles/:profileId/wallets/:walletId/votes", hasHistory = false) => {
+	let routeOptions: any = {
+		routes: [route],
+	};
+
+	if (hasHistory) {
+		history.push(route);
+
+		routeOptions = {
+			...routeOptions,
+			history,
+		};
+	}
+
+	return renderWithRouter(
 		<Route path={routePath}>
 			<Votes />
 		</Route>,
-		{
-			routes: [route],
-		},
+		routeOptions,
 	);
+};
 
 describe("Votes", () => {
 	beforeAll(async () => {
+		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "ark.devnet");
@@ -66,6 +83,16 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render with no wallets", () => {
+		const route = `/profiles/${emptyProfile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, container, getByTestId } = renderPage(route, routePath);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("EmptyBlock")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should filter current delegates", async () => {
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 		const { asFragment, container, getByTestId, getAllByTestId } = renderPage(route);
@@ -88,25 +115,40 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select network, address and delegate", async () => {
+	it("should navigate to create page", () => {
+		const route = `/profiles/${emptyProfile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, getByTestId, getByText } = renderPage(route, routePath, true);
+
+		expect(getByTestId("EmptyBlock")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByText("Create"));
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/${emptyProfile.id()}/wallets/create`);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should navigate to import page", () => {
+		const route = `/profiles/${emptyProfile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, getByTestId, getByText } = renderPage(route, routePath, true);
+
+		expect(getByTestId("EmptyBlock")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(getByText("Import"));
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/${emptyProfile.id()}/wallets/import`);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select an address and delegate", async () => {
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
-
-		expect(getAllByTestId("votes__message")).toBeTruthy();
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-		expect(selectNetworkInput).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		});
-
-		await act(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		const { asFragment, getByTestId } = renderPage(route, routePath);
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
@@ -141,22 +183,7 @@ describe("Votes", () => {
 	it("should select an address without vote", async () => {
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
-
-		expect(getAllByTestId("votes__message")).toBeTruthy();
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-		expect(selectNetworkInput).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		});
-
-		await act(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		const { asFragment, getByTestId } = renderPage(route, routePath);
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
@@ -219,22 +246,7 @@ describe("Votes", () => {
 	it("should emit action on continue button to unvote/vote", async () => {
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, getAllByTestId, getByTestId } = renderPage(route, routePath);
-
-		expect(getAllByTestId("votes__message")).toBeTruthy();
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-		expect(selectNetworkInput).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		});
-
-		await act(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		const { asFragment, getByTestId } = renderPage(route, routePath);
 
 		expect(getByTestId("AddressTable")).toBeTruthy();
 
