@@ -20877,7 +20877,7 @@ exports[`Dashboard should show transaction view 1`] = `
                       type="button"
                     >
                       <div
-                        class="flex items-center justify-center mr-2 align-middle"
+                        class="flex items-center space-x-2"
                       >
                         <div
                           class="sc-AxirZ iQaTP"
@@ -20888,9 +20888,7 @@ exports[`Dashboard should show transaction view 1`] = `
                             ledger.svg
                           </svg>
                         </div>
-                        <span
-                          class="ml-2"
-                        >
+                        <span>
                           Import Ledger
                         </span>
                       </div>
