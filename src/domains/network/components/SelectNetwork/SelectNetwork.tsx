@@ -85,8 +85,15 @@ export const SelectNetwork = ({
 	}, [selectItem, selected]);
 
 	const toggleSelection = (item: Network) => {
-		if (item.id() === selectedItem?.id()) return reset();
-		return selectItem(item);
+		if (item.id() === selectedItem?.id()) {
+			setTimeout(() => {
+				reset();
+				openMenu();
+			}, 0);
+			return;
+		}
+		selectItem(item);
+		closeMenu();
 	};
 
 	const inputTypeAhead = React.useMemo(() => {
@@ -128,12 +135,8 @@ export const SelectNetwork = ({
 						placeholder,
 						onFocus: openMenu,
 						onBlur: () => {
-							if (inputValue && items.length > 0) {
-								selectItem(items[0]);
-								closeMenu();
-							} else {
-								reset();
-							}
+							if (inputValue && items.length > 0) selectItem(items[0]);
+							else reset();
 						},
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
@@ -166,7 +169,6 @@ export const SelectNetwork = ({
 									disabled,
 									onMouseDown: () => {
 										toggleSelection(item);
-										closeMenu();
 									},
 								})}
 							>

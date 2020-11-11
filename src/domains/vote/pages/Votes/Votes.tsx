@@ -13,6 +13,7 @@ import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
+import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -68,6 +69,8 @@ export const Votes = () => {
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
+	const [isLoadingDelegates, setIsLoadingDelegates] = useState<boolean>(false);
+	const [selectedFilter, setSelectedFilter] = useState<FilterOption>("all");
 
 	const crumbs = [
 		{
@@ -113,16 +116,16 @@ export const Votes = () => {
 	);
 
 	useEffect(() => {
-		if (address) {
-			loadVotes(address);
-		}
+		if (address) loadVotes(address);
 	}, [address, loadVotes]);
 
 	const loadDelegates = useCallback(
 		(wallet) => {
+			setIsLoadingDelegates(true);
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
 			setDelegates(delegates);
+			setIsLoadingDelegates(false);
 		},
 		[env],
 	);
@@ -177,13 +180,38 @@ export const Votes = () => {
 		});
 	};
 
+	const currentVotes = useMemo(() => votes.filter((v) => delegates.some((d) => v.address() === d.address())), [
+		votes,
+		delegates,
+	]);
+
+	const filteredDelegates = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
+		delegates,
+		currentVotes,
+		selectedFilter,
+	]);
+
+	useEffect(() => {
+		if (votes.length === 0) setSelectedFilter("all");
+	}, [votes]);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("VOTE.VOTES_PAGE.TITLE")}
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
-					extra={<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />}
+					extra={
+						<div className="flex items-center space-x-8 text-theme-primary-light">
+							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
+							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+							<VotesFilter
+								totalCurrentVotes={currentVotes.length}
+								selectedOption={selectedFilter}
+								onChange={setSelectedFilter}
+							/>
+						</div>
+					}
 				/>
 			</Section>
 
@@ -212,7 +240,8 @@ export const Votes = () => {
 			<Section className="flex-1">
 				{network?.allowsVoting() && address ? (
 					<DelegateTable
-						delegates={delegates}
+						isLoading={isLoadingDelegates}
+						delegates={filteredDelegates}
 						maxVotes={network.maximumVotesPerWallet()}
 						votes={votes}
 						selectedUnvoteAddresses={unvoteAddresses}
