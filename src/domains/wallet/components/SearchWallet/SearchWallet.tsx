@@ -4,13 +4,14 @@ import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { SearchResource } from "app/components/SearchResource";
+import { Modal } from "app/components/Modal";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
 import { useDarkMode } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { Size } from "types";
 
 type SearchWalletListItemProps = {
 	address: string;
@@ -89,8 +90,8 @@ type SearchWalletProps = {
 	isOpen: boolean;
 	title: string;
 	description?: string;
-	searchBarExtra?: React.ReactNode;
 	wallets: ReadWriteWallet[];
+	size?: Size;
 	showFiatValue?: boolean;
 	showNetwork?: boolean;
 	onClose?: any;
@@ -102,8 +103,8 @@ export const SearchWallet = ({
 	isOpen,
 	title,
 	description,
-	searchBarExtra,
 	wallets,
+	size,
 	showFiatValue,
 	showNetwork,
 	onClose,
@@ -151,15 +152,8 @@ export const SearchWallet = ({
 	}, [commonColumns, showFiatValue, t]);
 
 	return (
-		<SearchResource
-			isOpen={isOpen}
-			title={title}
-			description={description}
-			searchBarExtra={searchBarExtra}
-			onClose={onClose}
-			onSearch={onSearch}
-		>
-			<div>
+		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose} size={size}>
+			<div className="mt-8">
 				<Table columns={columns} data={wallets}>
 					{(wallet: ReadWriteWallet, index: number) => (
 						<SearchWalletListItem
@@ -179,7 +173,7 @@ export const SearchWallet = ({
 					)}
 				</Table>
 			</div>
-		</SearchResource>
+		</Modal>
 	);
 };
 
@@ -187,4 +181,5 @@ SearchWallet.defaultProps = {
 	isOpen: false,
 	showFiatValue: true,
 	showNetwork: true,
+	size: "5xl",
 };

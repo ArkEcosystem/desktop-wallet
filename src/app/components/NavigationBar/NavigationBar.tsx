@@ -10,7 +10,6 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
 import { Action } from "app/components/Notifications/models";
-import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
 import { useEnvironmentContext } from "app/contexts";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
@@ -259,7 +258,6 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 						isOpen={searchWalletIsOpen}
 						title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
 						description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
-						searchBarExtra={<SearchBarFilters networks={env.availableNetworks()} />}
 						wallets={profile.wallets().values()}
 						onSelectWallet={handleSelectWallet}
 						onClose={() => setSearchWalletIsOpen(false)}
