@@ -59,7 +59,7 @@ export const LedgerImportStep = ({ wallets }: { wallets: LedgerData[] }) => {
 							<FormHelperText />
 						</FormField>
 
-						{index !== wallets.length - 1 && <Divider dashed />}
+						{index !== wallets.length - 1 && <Divider />}
 					</li>
 				))}
 			</ul>

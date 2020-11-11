@@ -82,7 +82,7 @@ export const LedgerTable = ({
 		{
 			Header: "Wallet",
 			accessor: "address",
-			className: "ml-12",
+			className: "ml-13",
 		},
 		{
 			Header: "Balance",
