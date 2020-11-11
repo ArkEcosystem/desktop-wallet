@@ -89,6 +89,7 @@ export const translations: { [key: string]: any } = {
 		WALLET_NAME: "Wallet name",
 
 		VALIDATION: {
+			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
 		},
 	},
@@ -147,7 +148,7 @@ export const translations: { [key: string]: any } = {
 
 		TRANSACTION_HISTORY: {
 			TITLE: "Transactions History",
-			EMPTY_TEXT:
+			EMPTY_MESSAGE:
 				"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
 		},
 
