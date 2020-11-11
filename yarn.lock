@@ -15,12 +15,12 @@
     got "^9.6.0"
     is-url-superb "^3.0.0"
 
-"@arkecosystem/core-kernel@^3.0.0-next.2":
-  version "3.0.0-next.2"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/core-kernel/-/core-kernel-3.0.0-next.2.tgz#11045d53fdf3ff23720243b3483ac66225d3f454"
-  integrity sha512-fMvL16LKQrYYll0vBewojIKRVLS11t9Z2mljzL5PR9gK62vRBqf7Hjk8VcZyQOQxht2JCnIn0PVXgI/dN3Rmvg==
+"@arkecosystem/core-kernel@^3.0.0-next.9":
+  version "3.0.0-next.9"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/core-kernel/-/core-kernel-3.0.0-next.9.tgz#02c040ed8a2c0ffdb1fba94af651bd5eccbf3099"
+  integrity sha512-Ze8TMPv1mwOSNUwYO9RvImskFzoK1jouZFXv4d2nVEQdku65CYRilfCbwqKjQcCmTx+eQos2QLPEujDVyRML+Q==
   dependencies:
-    "@arkecosystem/crypto" "^3.0.0-next.2"
+    "@arkecosystem/crypto" "^3.0.0-next.9"
     "@arkecosystem/utils" "^1.2.0"
     "@hapi/joi" "^17.1.0"
     "@pm2/io" "^4.3.5"
@@ -39,14 +39,29 @@
     semver "^6.3.0"
     type-fest "^0.16.0"
 
-"@arkecosystem/core-magistrate-crypto@^3.0.0-next.2":
-  version "3.0.0-next.2"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/core-magistrate-crypto/-/core-magistrate-crypto-3.0.0-next.2.tgz#7fda0b9d9a9115f13c1677ee446cd1dafd0f7ebe"
-  integrity sha512-E7KRItD/PB2A1/0Qglo4ucroag/PatQdbYWWWnEHPhtUo0yFlsz2jAgc3cgmhxGvhMb6Wa8C42bHExKJ/Mi1hw==
+"@arkecosystem/core-magistrate-crypto@^3.0.0-next.9":
+  version "3.0.0-next.9"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/core-magistrate-crypto/-/core-magistrate-crypto-3.0.0-next.9.tgz#a5f161583e50f04addd32a6ea0115b8af262960b"
+  integrity sha512-+vHMKaO9DqavALTrhrYzQkT+42Ol43rO/asTJowhAckzG3BiQddONQf7dv6N4jBbXplxO/ek1JaEE6QoizyIDA==
   dependencies:
-    "@arkecosystem/core-kernel" "^3.0.0-next.2"
-    "@arkecosystem/crypto" "^3.0.0-next.2"
+    "@arkecosystem/core-kernel" "^3.0.0-next.9"
+    "@arkecosystem/crypto" "^3.0.0-next.9"
     bytebuffer "^5.0.1"
+
+"@arkecosystem/crypto-identities@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto-identities/-/crypto-identities-1.1.1.tgz#544efe6fab785abb4a64c7a912bc43c7fb6b9837"
+  integrity sha512-P6mEYIUzXWCRvrGPkGkAoMEROYL6GwSopG2vFVfnkl8A11qrdDjdJNu80OzxIsRDQg/iBJIyhCmuuWSpA1zWIg==
+  dependencies:
+    bcrypto "^5.3.0"
+    bstring "^0.3.9"
+    fast-memoize "^2.5.1"
+    wif "^2.0.6"
+
+"@arkecosystem/crypto-networks@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto-networks/-/crypto-networks-1.0.0.tgz#e262e20b7806413935882476cd49de18abef6209"
+  integrity sha512-DCdjquY3IKWYqRD3d1gLZI4wK3AqhFcJuhcnGiPOhxjRXNJ8S8mOxfgvbwYQI5LysnP0P4nrrVE4VvIRFl40iA==
 
 "@arkecosystem/crypto@^2.6.24":
   version "2.6.24"
@@ -74,11 +89,13 @@
     tiny-glob "^0.2.6"
     wif "^2.0.6"
 
-"@arkecosystem/crypto@^3.0.0-next.2":
-  version "3.0.0-next.2"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-3.0.0-next.2.tgz#fd44d655c66417c6504ab2e9a4524b924f69b11d"
-  integrity sha512-dwci9n2w5sbS7OOf5s9THhmlyQbXf05p3cFBKyIewiE+B57VIfav5Ee4qnaWdQCOlP6jZiDzsal2+FoL565aAw==
+"@arkecosystem/crypto@^3.0.0-next.9":
+  version "3.0.0-next.9"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/crypto/-/crypto-3.0.0-next.9.tgz#2675e21927a1fd039818a3554c52de515745f5b0"
+  integrity sha512-NhT2uuZHYf8sIuVhgV4JN+AdVQpSW2PZ5b8mZ2NS0+68k15rAA8GNAHLDatw57ZvvDl6xcfywpTuQ6NFhSDGbw==
   dependencies:
+    "@arkecosystem/crypto-identities" "^1.1.1"
+    "@arkecosystem/crypto-networks" "^1.0.0"
     "@arkecosystem/utils" "^1.2.0"
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
@@ -14070,10 +14087,10 @@ ts-jest@^25.0.0:
     semver "^5.5"
     yargs-parser "^16.1.0"
 
-ts-loader@^8.0.5:
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-8.0.5.tgz#fa42b9305247eb964843df1ecb0e589b1bff0f77"
-  integrity sha512-MvLXmjDxl2Mhv17nvkrB6BrpC8FTwSb7K38oIgdUI6BMx4XgVbljmcoOzlrYn4wyjNTFQ3utd7s2TyigJyR3YA==
+ts-loader@^8.0.11:
+  version "8.0.11"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-8.0.11.tgz#35d58a65932caacb120426eea59eca841786c899"
+  integrity sha512-06X+mWA2JXoXJHYAesUUL4mHFYhnmyoCdQVMXofXF552Lzd4wNwSGg7unJpttqUP7ziaruM8d7u8LUB6I1sgzA==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
@@ -14209,10 +14226,10 @@ typeforce@^1.11.3, typeforce@^1.11.5:
   resolved "https://registry.yarnpkg.com/typeforce/-/typeforce-1.18.0.tgz#d7416a2c5845e085034d70fcc5b6cc4a90edbfdc"
   integrity sha512-7uc1O8h1M1g0rArakJdf0uLRSSgFcYexrVoKo+bzJd32gd4gDy2L/Z+8/FjPnU9ydY3pEnVPtr9FyscYY60K1g==
 
-typescript@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.0.3.tgz#153bbd468ef07725c1df9c77e8b453f8d36abba5"
-  integrity sha512-tEu6DGxGgRJPb/mVPIZ48e69xCn2yRmCgYmDugAVwmJ6o+0u1RI18eO7E7WBTLYLaEVVOhwQmcdhQHweux/WPg==
+typescript@^3.9.7:
+  version "3.9.7"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
+  integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
 
 uglify-js@2.6.x:
   version "2.6.4"

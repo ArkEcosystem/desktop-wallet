@@ -12,6 +12,7 @@ require('babel-plugin-require-context-hook/register')()
 // implementation to use it instead when that lack of accuracy is an issue
 global.__Intl__ = global.Intl
 global.Intl = require('intl')
+global.Intl.Collator = global.__Intl__.Collator
 
 HTMLCanvasElement.prototype.getContext = jest.fn()
 
