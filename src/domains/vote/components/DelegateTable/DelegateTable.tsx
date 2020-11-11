@@ -3,34 +3,39 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { DelegateRow } from "./DelegateRow";
 
 type DelegateTableProps = {
 	delegates: ReadOnlyWallet[];
+	emptyText?: string;
+	isLoading?: boolean;
+	itemsPerPage?: number;
 	maxVotes: number;
-	votes?: ReadOnlyWallet[];
 	selectedUnvoteAddresses?: string[];
 	selectedVoteAddresses?: string[];
 	selectedWallet: string;
-	itemsPerPage?: number;
+	votes?: ReadOnlyWallet[];
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
 export const DelegateTable = ({
 	delegates,
+	emptyText,
+	isLoading,
+	itemsPerPage,
 	maxVotes,
-	votes,
 	selectedUnvoteAddresses,
 	selectedVoteAddresses,
 	selectedWallet,
-	itemsPerPage,
+	votes,
 	onContinue,
 }: DelegateTableProps) => {
 	const { t } = useTranslation();
@@ -42,7 +47,7 @@ export const DelegateTable = ({
 	const columns = [
 		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
-			accessor: (delegate: ReadOnlyWallet) => delegate.username(),
+			accessor: (delegate: ReadOnlyWallet) => isLoading || delegate.username(),
 			className: "ml-15",
 		},
 		{
@@ -53,7 +58,7 @@ export const DelegateTable = ({
 		},
 		{
 			Header: t("COMMON.RANK"),
-			accessor: (delegate: ReadOnlyWallet) => delegate.rank(),
+			accessor: (delegate: ReadOnlyWallet) => isLoading || delegate.rank(),
 			className: "justify-center",
 		},
 		{
@@ -169,7 +174,11 @@ export const DelegateTable = ({
 		return paginatedItems;
 	};
 
-	const data = paginator(delegates, currentPage, itemsPerPage!);
+	const showSkeleton = useMemo(() => totalDelegates === 0 && isLoading, [totalDelegates, isLoading]);
+	const skeletonList = new Array(8).fill({});
+	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
+
+	if (!isLoading && totalDelegates === 0) return <EmptyBlock className="-mt-5">{emptyText}</EmptyBlock>;
 
 	return (
 		<div data-testid="DelegateTable">
@@ -190,6 +199,7 @@ export const DelegateTable = ({
 							selectedVotes={selectedVotes}
 							isVoted={isVoted}
 							isVoteDisabled={isVoteDisabled}
+							isLoading={showSkeleton}
 							onUnvoteSelect={toggleUnvotesSelected}
 							onVoteSelect={toggleVotesSelected}
 						/>
@@ -198,12 +208,14 @@ export const DelegateTable = ({
 			</Table>
 
 			<div className="flex justify-center w-full mt-10 mb-24">
-				<Pagination
-					totalCount={totalDelegates}
-					itemsPerPage={itemsPerPage}
-					currentPage={currentPage}
-					onSelectPage={handleSelectPage}
-				/>
+				{totalDelegates > itemsPerPage! && (
+					<Pagination
+						totalCount={totalDelegates}
+						itemsPerPage={itemsPerPage}
+						currentPage={currentPage}
+						onSelectPage={handleSelectPage}
+					/>
+				)}
 			</div>
 
 			<div
@@ -301,5 +313,7 @@ export const DelegateTable = ({
 DelegateTable.defaultProps = {
 	delegates: [],
 	votes: [],
+	isLoading: false,
 	itemsPerPage: 51,
+	emptyText: "Delegates not found",
 };

@@ -7,6 +7,8 @@ import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
+import { DelegateRowSkeleton } from "./DelegateRowSkeleton";
+
 type DelegateRowProps = {
 	index: number;
 	delegate: ReadOnlyWallet;
@@ -14,6 +16,7 @@ type DelegateRowProps = {
 	selectedVotes?: string[];
 	isVoted?: boolean;
 	isVoteDisabled?: boolean;
+	isLoading?: boolean;
 	onUnvoteSelect?: (address: string) => void;
 	onVoteSelect?: (address: string) => void;
 };
@@ -25,6 +28,7 @@ export const DelegateRow = ({
 	selectedVotes,
 	isVoted,
 	isVoteDisabled,
+	isLoading,
 	onUnvoteSelect,
 	onVoteSelect,
 }: DelegateRowProps) => {
@@ -55,6 +59,10 @@ export const DelegateRow = ({
 			}
 		}
 	};
+
+	if (isLoading) {
+		return <DelegateRowSkeleton />;
+	}
 
 	return (
 		<TableRow>
@@ -168,4 +176,5 @@ DelegateRow.defaultProps = {
 	selectedVotes: [],
 	isVoted: false,
 	isVoteDisabled: false,
+	isLoading: false,
 };

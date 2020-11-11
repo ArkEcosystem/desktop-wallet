@@ -12,6 +12,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Select a Delegate",
 		COMMISSION: "Comm.",
 		COMMISSION_BY_PERIOD: "Commission ({{period}})",
+		DELEGATES_NOT_FOUND: "Delegates not found",
 		MIN: "Min.",
 		MY_ADDRESS: "My Address",
 		NAME: "Delegate Name",
@@ -24,5 +25,10 @@ export const translations: { [key: string]: any } = {
 		TOTAL: "Total",
 		VOTE: "Vote",
 		VOTES: "Votes",
+	},
+
+	FILTERS: {
+		ALL: "All",
+		CURRENT_VOTES: "Current Votes",
 	},
 };

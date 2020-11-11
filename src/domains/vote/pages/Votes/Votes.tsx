@@ -10,6 +10,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
+import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -33,6 +34,8 @@ export const Votes = () => {
 	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
+	const [isLoadingDelegates, setIsLoadingDelegates] = useState(false);
+	const [selectedFilter, setSelectedFilter] = useState<FilterOption>("all");
 
 	const crumbs = [
 		{
@@ -70,16 +73,16 @@ export const Votes = () => {
 	);
 
 	useEffect(() => {
-		if (address) {
-			loadVotes(address);
-		}
+		if (address) loadVotes(address);
 	}, [address, loadVotes]);
 
 	const loadDelegates = useCallback(
 		(wallet) => {
+			setIsLoadingDelegates(true);
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
 			setDelegates(delegates);
+			setIsLoadingDelegates(false);
 		},
 		[env],
 	);
@@ -89,6 +92,17 @@ export const Votes = () => {
 			loadDelegates(activeWallet);
 		}
 	}, [activeWallet, loadDelegates, hasWalletId]);
+
+	const currentVotes = useMemo(
+		() => votes.filter((vote) => delegates.some((delegate) => vote.address() === delegate.address())),
+		[votes, delegates],
+	);
+
+	const filteredDelegates = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
+		delegates,
+		currentVotes,
+		selectedFilter,
+	]);
 
 	const handleSelectAddress = (address: string) => {
 		const wallet = activeProfile.wallets().findByAddress(address);
@@ -118,20 +132,36 @@ export const Votes = () => {
 		});
 	};
 
+	useEffect(() => {
+		if (votes.length === 0) setSelectedFilter("all");
+	}, [votes]);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("VOTE.VOTES_PAGE.TITLE")}
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
-					extra={<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />}
+					extra={
+						<div className="flex items-center space-x-8 text-theme-primary-light">
+							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
+							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+							<VotesFilter
+								totalCurrentVotes={currentVotes.length}
+								selectedOption={selectedFilter}
+								onChange={setSelectedFilter}
+							/>
+						</div>
+					}
 				/>
 			</Section>
 
 			{address ? (
 				<Section className="flex-1">
 					<DelegateTable
-						delegates={delegates}
+						delegates={filteredDelegates}
+						emptyText={t("VOTE.DELEGATE_TABLE.DELEGATES_NOT_FOUND")}
+						isLoading={isLoadingDelegates}
 						maxVotes={maxVotes!}
 						votes={votes}
 						selectedUnvoteAddresses={unvoteAddresses}
