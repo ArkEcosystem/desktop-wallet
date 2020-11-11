@@ -84,6 +84,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 
 				<SearchWallet
 					isOpen={searchWalletIsOpen}
+					showFiatValue={false}
 					showNetwork={false}
 					title={t("PROFILE.MODAL_SELECT_SENDER.TITLE")}
 					description={t("PROFILE.MODAL_SELECT_SENDER.DESCRIPTION")}

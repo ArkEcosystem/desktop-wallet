@@ -9,7 +9,7 @@ import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
 import { useDarkMode } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 type SearchWalletListItemProps = {
@@ -22,7 +22,8 @@ type SearchWalletListItemProps = {
 	exchangeCurrency: string;
 	index: number;
 	name?: string;
-	showNetwork: boolean;
+	showFiatValue?: boolean;
+	showNetwork?: boolean;
 	onAction: any;
 };
 
@@ -36,6 +37,7 @@ const SearchWalletListItem = ({
 	exchangeCurrency,
 	index,
 	name,
+	showFiatValue,
 	showNetwork,
 	onAction,
 }: SearchWalletListItemProps) => {
@@ -64,9 +66,11 @@ const SearchWalletListItem = ({
 				<Amount value={balance} ticker={currency} />
 			</TableCell>
 
-			<TableCell innerClassName="text-theme-neutral-light justify-end">
-				<Amount value={convertedBalance} ticker={exchangeCurrency} />
-			</TableCell>
+			{showFiatValue && (
+				<TableCell innerClassName="text-theme-neutral-light justify-end">
+					<Amount value={convertedBalance} ticker={exchangeCurrency} />
+				</TableCell>
+			)}
 
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
@@ -87,7 +91,8 @@ type SearchWalletProps = {
 	description?: string;
 	searchBarExtra?: React.ReactNode;
 	wallets: ReadWriteWallet[];
-	showNetwork: boolean;
+	showFiatValue?: boolean;
+	showNetwork?: boolean;
 	onClose?: any;
 	onSearch?: any;
 	onSelectWallet?: any;
@@ -99,6 +104,7 @@ export const SearchWallet = ({
 	description,
 	searchBarExtra,
 	wallets,
+	showFiatValue,
 	showNetwork,
 	onClose,
 	onSearch,
@@ -106,7 +112,7 @@ export const SearchWallet = ({
 }: SearchWalletProps) => {
 	const { t } = useTranslation();
 
-	const columns = [
+	const commonColumns = [
 		{
 			Header: t("COMMON.WALLET_ADDRESS"),
 			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
@@ -117,16 +123,32 @@ export const SearchWallet = ({
 			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
 			className: "justify-end",
 		},
-		{
-			Header: t("COMMON.FIAT_VALUE"),
-			accessor: (wallet: ReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
-			className: "justify-end",
-		},
-		{
-			Header: t("COMMON.ACTION"),
-			className: "hidden no-border",
-		},
 	];
+
+	const columns = useMemo(() => {
+		if (showFiatValue) {
+			return [
+				...commonColumns,
+				{
+					Header: t("COMMON.FIAT_VALUE"),
+					accessor: (wallet: ReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
+					className: "justify-end",
+				},
+				{
+					Header: t("COMMON.ACTION"),
+					className: "hidden no-border",
+				},
+			];
+		}
+
+		return [
+			...commonColumns,
+			{
+				Header: t("COMMON.ACTION"),
+				className: "hidden no-border",
+			},
+		];
+	}, [commonColumns, showFiatValue, t]);
 
 	return (
 		<SearchResource
@@ -150,6 +172,7 @@ export const SearchWallet = ({
 							currency={wallet.currency()}
 							exchangeCurrency={wallet.exchangeCurrency() || "BTC"} // @TODO get default from SDK
 							name={wallet.alias()}
+							showFiatValue={showFiatValue}
 							showNetwork={showNetwork}
 							onAction={onSelectWallet}
 						/>
@@ -162,5 +185,6 @@ export const SearchWallet = ({
 
 SearchWallet.defaultProps = {
 	isOpen: false,
+	showFiatValue: true,
 	showNetwork: true,
 };
