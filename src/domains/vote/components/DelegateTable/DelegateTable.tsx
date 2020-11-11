@@ -3,6 +3,7 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
@@ -19,6 +20,8 @@ type DelegateTableProps = {
 	selectedVoteAddresses?: string[];
 	selectedWallet: string;
 	itemsPerPage?: number;
+	isLoading?: boolean;
+	emptyText?: string;
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
@@ -31,6 +34,8 @@ export const DelegateTable = ({
 	selectedWallet,
 	itemsPerPage,
 	onContinue,
+	isLoading = false,
+	emptyText,
 }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
@@ -156,9 +161,11 @@ export const DelegateTable = ({
 		return paginatedItems;
 	};
 
-	const showSkeleton = useMemo(() => totalDelegates === 0, [totalDelegates]);
+	const showSkeleton = useMemo(() => totalDelegates === 0 && isLoading, [totalDelegates, isLoading]);
 	const skeletonList = new Array(8).fill({});
 	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
+
+	if (!isLoading && totalDelegates === 0) return <EmptyBlock className="-mt-5" message={emptyText!} />;
 
 	return (
 		<div data-testid="DelegateTable">
@@ -192,12 +199,14 @@ export const DelegateTable = ({
 					selectedUnvotes.length > 0 || selectedVotes.length > 0 ? "mb-24" : ""
 				}`}
 			>
-				<Pagination
-					totalCount={totalDelegates}
-					itemsPerPage={itemsPerPage}
-					currentPage={currentPage}
-					onSelectPage={handleSelectPage}
-				/>
+				{totalDelegates > itemsPerPage! && (
+					<Pagination
+						totalCount={totalDelegates}
+						itemsPerPage={itemsPerPage}
+						currentPage={currentPage}
+						onSelectPage={handleSelectPage}
+					/>
+				)}
 			</div>
 
 			{(selectedUnvotes.length > 0 || selectedVotes.length > 0) && (
@@ -298,4 +307,5 @@ DelegateTable.defaultProps = {
 	delegates: [],
 	votes: [],
 	itemsPerPage: 51,
+	emptyText: "Delegates not found",
 };

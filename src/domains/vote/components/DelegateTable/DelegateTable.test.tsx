@@ -44,6 +44,30 @@ describe("DelegateTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render loading state", () => {
+		const { container, asFragment } = render(
+			<DelegateTable delegates={[]} maxVotes={1} selectedWallet={selectedWallet} isLoading={true} />,
+		);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render pagination", () => {
+		const { container, asFragment } = render(
+			<DelegateTable
+				itemsPerPage={1}
+				delegates={delegates}
+				maxVotes={1}
+				selectedWallet={selectedWallet}
+				isLoading={false}
+			/>,
+		);
+
+		expect(container).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render with empty list", () => {
 		const { container, asFragment } = render(
 			<DelegateTable delegates={[]} maxVotes={1} selectedWallet={selectedWallet} />,
