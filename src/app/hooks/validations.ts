@@ -9,6 +9,7 @@ import {
 	sendTransfer,
 	sendVote,
 } from "domains/transaction/validations";
+import { receiveFunds } from "domains/wallet/validations";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -26,6 +27,7 @@ export const useValidation = () => {
 			sendIpfs: sendIpfs(t),
 			sendVote: sendVote(t),
 			multiSignatureRegistration: multiSignatureRegistration(t),
+			receiveFunds: receiveFunds(t),
 		}),
 		[t, env],
 	);
