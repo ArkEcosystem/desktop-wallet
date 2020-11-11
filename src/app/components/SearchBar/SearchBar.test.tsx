@@ -9,7 +9,7 @@ describe("SearchBar", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = render(<SearchBar />);
 
-		expect(getByTestId("SearchBar")).toHaveTextContent(translations.SEARCH.FIND_IT);
+		expect(getByTestId("SearchBar")).toHaveTextContent(translations.SEARCH_BAR.FIND_IT);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

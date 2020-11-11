@@ -24,13 +24,13 @@ export const SearchBar = ({ placeholder, className, children, onSearch }: Search
 				<div className="flex-1 pl-4 mr-4 border-l border-theme-neutral-300 dark:border-theme-neutral-800">
 					<Input
 						className="border-none shadow-none"
-						placeholder={placeholder || t("COMMON.SEARCH.PLACEHOLDER")}
+						placeholder={placeholder || t("COMMON.SEARCH_BAR.PLACEHOLDER")}
 						onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
 					/>
 				</div>
 
 				<Button data-testid="SearchBar__button" onClick={() => onSearch(query)} className="my-1">
-					<span className="px-2 text-md">{t("COMMON.SEARCH.FIND_IT")}</span>
+					<span className="px-2 text-md">{t("COMMON.SEARCH_BAR.FIND_IT")}</span>
 				</Button>
 			</div>
 		</div>

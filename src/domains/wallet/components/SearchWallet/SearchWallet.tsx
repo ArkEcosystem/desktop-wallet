@@ -4,6 +4,7 @@ import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
+import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
@@ -136,8 +137,15 @@ export const SearchWallet = ({
 					className: "justify-end",
 				},
 				{
-					Header: t("COMMON.ACTION"),
-					className: "hidden no-border",
+					Header: (
+						<div className="flex space-x-4">
+							<span>{t("COMMON.SEARCH")}</span>
+							<Icon className="text-theme-neutral" name="Search" width={17} height={17} />
+						</div>
+					),
+					accessor: "search",
+					className: "justify-end no-border",
+					disableSortBy: true,
 				},
 			];
 		}
@@ -145,8 +153,15 @@ export const SearchWallet = ({
 		return [
 			...commonColumns,
 			{
-				Header: t("COMMON.ACTION"),
-				className: "hidden no-border",
+				Header: (
+					<div className="flex space-x-4">
+						<span>{t("COMMON.SEARCH")}</span>
+						<Icon className="text-theme-neutral" name="Search" width={17} height={17} />
+					</div>
+				),
+				accessor: "search",
+				className: "justify-end no-border",
+				disableSortBy: true,
 			},
 		];
 	}, [commonColumns, showFiatValue, t]);
@@ -179,7 +194,7 @@ export const SearchWallet = ({
 
 SearchWallet.defaultProps = {
 	isOpen: false,
+	size: "5xl",
 	showFiatValue: true,
 	showNetwork: true,
-	size: "5xl",
 };
