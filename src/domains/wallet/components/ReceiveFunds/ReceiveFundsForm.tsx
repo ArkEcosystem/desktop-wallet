@@ -11,7 +11,7 @@ export const ReceiveFundsForm = () => {
 	const { getValues, setValue, register } = form;
 
 	useEffect(() => {
-		register("displayAmount");
+		register("amount");
 	}, [register]);
 
 	return (
@@ -20,22 +20,22 @@ export const ReceiveFundsForm = () => {
 				<FormField name="amount">
 					<FormLabel label={t("COMMON.AMOUNT")} required={false} />
 					<InputCurrency
-						data-testid="ReceiveFunds__amount"
+						data-testid="ReceiveFundsForm__amount"
 						placeholder={t("COMMON.AMOUNT")}
 						className="pr-20"
-						value={getValues("displayAmount")}
-						onChange={(currency) => setValue("displayAmount", currency.display)}
+						value={getValues("amount")}
+						onChange={(currency) => setValue("amount", currency.display)}
 					/>
 				</FormField>
 				<FormField name="smartbridge" className="relative">
 					<FormLabel label={t("COMMON.SMARTBRIDGE")} required={false} optional={true} />
 					<InputCounter
 						ref={register}
-						data-testid="ReceiveFunds__smartbridge"
+						data-testid="ReceiveFundsForm__smartbridge"
 						type="text"
 						placeholder=" "
 						className="pr-24"
-						maxLengthLabel="255 Max"
+						maxLengthLabel="255"
 					/>
 				</FormField>
 			</div>

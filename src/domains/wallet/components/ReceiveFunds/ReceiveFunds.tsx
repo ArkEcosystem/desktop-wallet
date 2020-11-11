@@ -27,8 +27,8 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
-	const { displayAmount, smartbridge } = form.watch();
-	const { qrCode, qrCodeDataUri } = useQRCode({ amount: displayAmount, smartbridge, network, address });
+	const { amount, smartbridge } = form.watch();
+	const { qrCodeDataUri, qrCodeDataImage } = useQRCode({ amount, smartbridge, network, address });
 
 	return (
 		<Modal
@@ -91,9 +91,9 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 			</div>
 
 			<div className="mt-8">
-				{qrCodeDataUri && (
+				{qrCodeDataImage && (
 					<img
-						src={qrCodeDataUri}
+						src={qrCodeDataImage}
 						className="w-64 h-64 mx-auto"
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
@@ -107,15 +107,15 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 						{t("COMMON.QR_CODE_HELP_TEXT")}
 					</div>
 
-					<div className="mt-8">
+					<div className="mt-8" data-testid="ReceiveFundsForm__uri">
 						<InputGroup>
 							<InputAddonStart className="px-4 m-px border-r border-theme-neutral-500 bg-theme-neutral-200">
 								{t("COMMON.QR_SHORT")}
 							</InputAddonStart>
-							<Input className="truncate pl-18 pr-13" disabled value={qrCode} />
+							<Input className="truncate pl-18 pr-13" disabled value={qrCodeDataUri} />
 							<InputAddonEnd className="px-4 m-px border-r border-theme-neutral-500">
 								<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
-									<Clipboard data={qrCode}>
+									<Clipboard data={qrCodeDataUri}>
 										<Icon name="Copy" />
 									</Clipboard>
 								</span>

@@ -10,13 +10,13 @@ type QRCodeProps = {
 };
 
 export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps) => {
-	const [qrCode, setQrCode] = useState<string | undefined>();
 	const [qrCodeDataUri, setQrCodeDataUri] = useState<string | undefined>();
+	const [qrCodeDataImage, setQrCodeDataImage] = useState<string | undefined>();
 
 	const formatQR = useCallback(({ network, amount, address, smartbridge }: QRCodeProps) => {
 		const uriParams = {
 			...(amount && { amount }),
-			...(smartbridge && { smartbridge }),
+			...(smartbridge && { vendorField: smartbridge }),
 		};
 
 		const networkPrefix = network?.split(".")[0];
@@ -26,17 +26,17 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 
 	useEffect(() => {
 		const generateQrCode = async () => {
-			const qrCode = formatQR({ network, amount, address, smartbridge });
-			const qrCodeDataUri = address
-				? await QRCode.fromString(qrCode).toDataURL({ width: 250, margin: 0 })
+			const qrCodeDataUri = address ? formatQR({ network, amount, address, smartbridge }) : undefined;
+			const qrCodeDataImage = qrCodeDataUri
+				? await QRCode.fromString(qrCodeDataUri).toDataURL({ width: 250, margin: 0 })
 				: undefined;
 
-			setQrCode(qrCode);
 			setQrCodeDataUri(qrCodeDataUri);
+			setQrCodeDataImage(qrCodeDataImage);
 		};
 
 		generateQrCode();
 	}, [amount, smartbridge, network, address, formatQR]);
 
-	return { qrCode, qrCodeDataUri };
+	return { qrCodeDataUri, qrCodeDataImage };
 };
