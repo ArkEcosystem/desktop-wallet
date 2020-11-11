@@ -138,9 +138,9 @@ export const SearchWallet = ({
 				},
 				{
 					Header: (
-						<div className="flex space-x-4">
+						<div className="flex space-x-4 text-theme-primary-300">
 							<span>{t("COMMON.SEARCH")}</span>
-							<Icon className="text-theme-neutral" name="Search" width={17} height={17} />
+							<Icon name="Search" width={17} height={17} />
 						</div>
 					),
 					accessor: "search",
@@ -154,9 +154,9 @@ export const SearchWallet = ({
 			...commonColumns,
 			{
 				Header: (
-					<div className="flex space-x-4">
+					<div className="flex space-x-4 text-theme-primary-300">
 						<span>{t("COMMON.SEARCH")}</span>
-						<Icon className="text-theme-neutral" name="Search" width={17} height={17} />
+						<Icon name="Search" width={17} height={17} />
 					</div>
 				),
 				accessor: "search",
