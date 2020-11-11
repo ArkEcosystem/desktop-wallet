@@ -10,7 +10,7 @@ exports[`SearchWallet should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy cowKBD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxhCb kNSjES absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -23,7 +23,7 @@ exports[`SearchWallet should render 1`] = `
           type="button"
         >
           <div
-            class="sc-AxhCb ipiIgT"
+            class="sc-AxiKw kgmJgX"
             height="14"
             width="14"
           >
@@ -60,7 +60,7 @@ exports[`SearchWallet should render 1`] = `
                 class="flex items-center px-10 py-6 rounded shadow-xl bg-theme-background"
               >
                 <div
-                  class="sc-AxhCb fxrKLH w-4 mr-8 text-theme-neutral-300"
+                  class="sc-AxiKw dzBdqj w-4 mr-8 text-theme-neutral-300"
                   height="1em"
                   width="1em"
                 >
@@ -72,7 +72,7 @@ exports[`SearchWallet should render 1`] = `
                   class="flex-1 pl-4 mr-4 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 >
                   <input
-                    class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                    class="sc-AxhUy cfVsXn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none"
                     data-testid="Input"
                     placeholder="What would you like to search for?"
                   />
@@ -97,7 +97,7 @@ exports[`SearchWallet should render 1`] = `
           >
             <div>
               <div
-                class="sc-fznyAO jJDQKq -mt-3"
+                class="sc-fzplWN jUcJYe -mt-3"
                 role="table"
               >
                 <table
@@ -114,12 +114,28 @@ exports[`SearchWallet should render 1`] = `
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top "
+                          class="flex flex-inline align-top ml-24"
                         >
                           <div>
-                            Asset Type
+                            Wallet Address
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-AxiKw GMmVY"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </th>
@@ -132,17 +148,17 @@ exports[`SearchWallet should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top "
+                          class="flex flex-inline align-top justify-end"
                         >
                           <div>
-                            Address
+                            Balance
                           </div>
                           <div
                             class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
                             data-testid="table__Sort"
                           >
                             <div
-                              class="sc-AxhCb AoNtw"
+                              class="sc-AxiKw GMmVY"
                               height="12"
                               width="15"
                             >
@@ -165,36 +181,6 @@ exports[`SearchWallet should render 1`] = `
                           class="flex flex-inline align-top justify-end"
                         >
                           <div>
-                            Balance
-                          </div>
-                          <div
-                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                            data-testid="table__Sort"
-                          >
-                            <div
-                              class="sc-AxhCb AoNtw"
-                              height="12"
-                              width="15"
-                            >
-                              <svg>
-                                sort.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </th>
-                      <th
-                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                        colspan="1"
-                        data-testid="table__th--3"
-                        role="columnheader"
-                        style="cursor: pointer;"
-                        title="Toggle SortBy"
-                      >
-                        <div
-                          class="flex flex-inline align-top justify-end"
-                        >
-                          <div>
                             Fiat Value
                           </div>
                           <div
@@ -202,7 +188,7 @@ exports[`SearchWallet should render 1`] = `
                             data-testid="table__Sort"
                           >
                             <div
-                              class="sc-AxhCb AoNtw"
+                              class="sc-AxiKw GMmVY"
                               height="12"
                               width="15"
                             >
@@ -216,7 +202,7 @@ exports[`SearchWallet should render 1`] = `
                       <th
                         class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                         colspan="1"
-                        data-testid="table__th--4"
+                        data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
@@ -233,46 +219,47 @@ exports[`SearchWallet should render 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="sc-fznZeY gQCGHj group"
+                      class="sc-fznKkj bDcUsj group"
                       data-testid="TableRow"
                     >
                       <td>
                         <div
-                          class="sc-fznKkj kKWDIo"
+                          class="sc-fznyAO cYcQVp space-x-4"
                         >
                           <div
-                            class="sc-AxiKw hpQrmn -mr-2"
+                            class="-space-x-2"
                           >
                             <div
-                              class="sc-AxhCb VoPpj"
-                              height="20"
-                              width="20"
+                              aria-label="ARK Devnet"
+                              class="sc-fznZeY cNubsD border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
                             >
-                              <svg>
-                                ark.svg
-                              </svg>
+                              <div
+                                class="sc-AxiKw dklFyP"
+                                data-testid="NetworkIcon__icon"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
-                            data-testid="Avatar"
-                          >
                             <div
-                              class="w-full h-full"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                              data-testid="Avatar"
                             >
-                              <img
-                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              />
+                              <div
+                                class="w-full h-full"
+                              >
+                                <img
+                                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                />
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div
-                          class="sc-fznKkj hWxblu"
-                        >
                           <div
                             class="inline-flex items-center"
                           >
@@ -293,7 +280,7 @@ exports[`SearchWallet should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznKkj hWxblu font-semibold justify-end"
+                          class="sc-fznyAO lnUbdr font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -304,7 +291,7 @@ exports[`SearchWallet should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznKkj hWxblu text-theme-neutral-light justify-end"
+                          class="sc-fznyAO lnUbdr text-theme-neutral-light justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -315,7 +302,7 @@ exports[`SearchWallet should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="sc-fznKkj ilBsNA justify-end"
+                          class="sc-fznyAO cviRtp justify-end"
                         >
                           <button
                             class="sc-AxirZ hTzPEr"
