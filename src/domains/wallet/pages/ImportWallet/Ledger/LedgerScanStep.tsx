@@ -82,10 +82,12 @@ export const LedgerTable = ({
 		{
 			Header: "Wallet",
 			accessor: "address",
+			className: "ml-13",
 		},
 		{
 			Header: "Balance",
 			accessor: "balance",
+			className: "justify-end",
 		},
 		{
 			Header: (
@@ -110,6 +112,7 @@ export const LedgerTable = ({
 						<Avatar address={wallet.address} noShadow />
 						<Address address={wallet.address} />
 					</TableCell>
+
 					<TableCell
 						innerClassName="justify-end font-semibold"
 						isSelected={isSelected(wallet.index)}
@@ -119,6 +122,7 @@ export const LedgerTable = ({
 							<Amount value={wallet.balance!} ticker={network.ticker()} />
 						</AmountWrapper>
 					</TableCell>
+
 					<TableCell isSelected={isSelected(wallet.index)} innerClassName="justify-center">
 						<Checkbox
 							disabled={isLoading(wallet.index) || isFailed(wallet.index)}
