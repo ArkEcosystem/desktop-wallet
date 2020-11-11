@@ -40,7 +40,7 @@ const SearchWalletListItem = ({
 	showNetwork,
 	onAction,
 }: SearchWalletListItemProps) => {
-	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
+	const [shadowColor, setShadowColor] = React.useState("--theme-background-color");
 
 	const isDark = useDarkMode();
 
@@ -110,23 +110,23 @@ export const SearchWallet = ({
 }: SearchWalletProps) => {
 	const { t } = useTranslation();
 
-	const listColumns = [
+	const columns = [
 		{
 			Header: t("COMMON.ASSET_TYPE"),
 			className: !showNetwork ? "hidden no-border" : "",
 		},
 		{
-			Header: t("COMMON.ADDRESS"),
-			accessor: "address",
+			Header: t("COMMON.WALLET_ADDRESS"),
+			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
 		},
 		{
 			Header: t("COMMON.BALANCE"),
-			accessor: "balance",
+			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
 			className: "justify-end",
 		},
 		{
 			Header: t("COMMON.FIAT_VALUE"),
-			accessor: "fiat",
+			accessor: (wallet: ReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
 			className: "justify-end",
 		},
 		{
@@ -145,7 +145,7 @@ export const SearchWallet = ({
 			onSearch={onSearch}
 		>
 			<div>
-				<Table columns={listColumns} data={wallets}>
+				<Table columns={columns} data={wallets}>
 					{(wallet: ReadWriteWallet, index: number) => (
 						<SearchWalletListItem
 							index={index}
