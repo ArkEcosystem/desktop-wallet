@@ -32,6 +32,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 	return (
 		<Modal
+			size="lg"
 			title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")}
 			description={t("COMMON.RECEIVE_FUNDS_SUBTITLE")}
 			isOpen={isOpen}
