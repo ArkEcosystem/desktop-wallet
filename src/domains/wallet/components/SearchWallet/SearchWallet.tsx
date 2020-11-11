@@ -4,38 +4,37 @@ import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
 import { SearchResource } from "app/components/SearchResource";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
 import { useDarkMode } from "app/hooks";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type SearchWalletListItemProps = {
-	index: number;
 	address: string;
 	balance: BigNumber;
-	convertedBalance: BigNumber;
 	coinId: string;
 	coinName: string;
+	convertedBalance: BigNumber;
 	currency: string;
 	exchangeCurrency: string;
+	index: number;
 	name?: string;
 	showNetwork: boolean;
 	onAction: any;
 };
 
 const SearchWalletListItem = ({
-	index,
 	address,
 	balance,
-	convertedBalance,
 	coinId,
 	coinName,
+	convertedBalance,
 	currency,
 	exchangeCurrency,
+	index,
 	name,
 	showNetwork,
 	onAction,
@@ -51,16 +50,13 @@ const SearchWalletListItem = ({
 			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
-			<TableCell variant="start">
-				{showNetwork && (
-					<Circle className="-mr-2" size="lg" shadowColor={shadowColor}>
-						<Icon name={coinName} width={20} height={20} />
-					</Circle>
-				)}
-				<Avatar size="lg" address={address} shadowColor={shadowColor} />
-			</TableCell>
-
-			<TableCell>
+			<TableCell variant="start" innerClassName="space-x-4">
+				<div className="-space-x-2">
+					{showNetwork && (
+						<NetworkIcon size="lg" coin={coinName} network={coinId} shadowColor={shadowColor} />
+					)}
+					<Avatar size="lg" address={address} shadowColor={shadowColor} />
+				</div>
 				<Address walletName={name} address={address} maxChars={22} />
 			</TableCell>
 
@@ -112,12 +108,9 @@ export const SearchWallet = ({
 
 	const columns = [
 		{
-			Header: t("COMMON.ASSET_TYPE"),
-			className: !showNetwork ? "hidden no-border" : "",
-		},
-		{
 			Header: t("COMMON.WALLET_ADDRESS"),
 			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
+			className: showNetwork ? "ml-24" : "ml-15",
 		},
 		{
 			Header: t("COMMON.BALANCE"),

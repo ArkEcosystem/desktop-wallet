@@ -257,7 +257,6 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 				<>
 					<SearchWallet
 						isOpen={searchWalletIsOpen}
-						showNetwork={false}
 						title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
 						description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
 						searchBarExtra={<SearchBarFilters networks={env.availableNetworks()} />}
