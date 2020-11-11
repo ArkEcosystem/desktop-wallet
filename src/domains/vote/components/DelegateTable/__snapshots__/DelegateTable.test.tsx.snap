@@ -713,22 +713,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 mb-24"
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
     <div
       class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
       data-testid="DelegateTable__footer"
@@ -1615,22 +1600,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 mb-24"
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
     <div
       class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
       data-testid="DelegateTable__footer"
@@ -2517,6 +2487,1776 @@ exports[`DelegateTable should render 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 "
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DelegateTable should render loading state 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="DelegateTable"
+  >
+    <h2
+      class="py-5 text-2xl font-bold"
+    >
+      Select a Delegate
+    </h2>
+    <div
+      class="sc-AxmLO iwBmdw -mt-3"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+            role="row"
+          >
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top ml-15"
+              >
+                <div>
+                  Delegate Name
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Rank
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--3"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Votes
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--4"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Profile
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--5"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Comm.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--6"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Payout
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--7"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
+              >
+                <div>
+                  Commission (Daily)
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--9"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
+              >
+                <div>
+                  Vote
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="DelegateRowSkeleton"
+          >
+            <td
+              class="py-5"
+            >
+              <div
+                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 80%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 30%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="flex justify-center h-full"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 24px; height: 24px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="text-right"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="DelegateRowSkeleton"
+          >
+            <td
+              class="py-5"
+            >
+              <div
+                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 80%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 30%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="flex justify-center h-full"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 24px; height: 24px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="text-right"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="DelegateRowSkeleton"
+          >
+            <td
+              class="py-5"
+            >
+              <div
+                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 80%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 30%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="flex justify-center h-full"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 24px; height: 24px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="text-right"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="DelegateRowSkeleton"
+          >
+            <td
+              class="py-5"
+            >
+              <div
+                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 80%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 30%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="flex justify-center h-full"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 24px; height: 24px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="text-right"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="DelegateRowSkeleton"
+          >
+            <td
+              class="py-5"
+            >
+              <div
+                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 80%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 30%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="flex justify-center h-full"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 24px; height: 24px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="text-right"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="DelegateRowSkeleton"
+          >
+            <td
+              class="py-5"
+            >
+              <div
+                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 80%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 30%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="flex justify-center h-full"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 24px; height: 24px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="text-right"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="DelegateRowSkeleton"
+          >
+            <td
+              class="py-5"
+            >
+              <div
+                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 80%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 30%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="flex justify-center h-full"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 24px; height: 24px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="text-right"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            data-testid="DelegateRowSkeleton"
+          >
+            <td
+              class="py-5"
+            >
+              <div
+                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 80%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 30%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="flex justify-center h-full"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 24px; height: 24px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 40%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <span>
+                <span
+                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                  style="width: 60%; height: 6px;"
+                >
+                  ‌
+                </span>
+              </span>
+            </td>
+            <td
+              class="py-5"
+            >
+              <div
+                class="text-right"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="flex justify-center w-full mt-10 "
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DelegateTable should render pagination 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="DelegateTable"
+  >
+    <h2
+      class="py-5 text-2xl font-bold"
+    >
+      Select a Delegate
+    </h2>
+    <div
+      class="sc-AxmLO iwBmdw -mt-3"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+            role="row"
+          >
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top ml-15"
+              >
+                <div>
+                  Delegate Name
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Rank
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--3"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Votes
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--4"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Profile
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--5"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Comm.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--6"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Payout
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--7"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Min.
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--8"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
+              >
+                <div>
+                  Commission (Daily)
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              colspan="1"
+              data-testid="table__th--9"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end"
+              >
+                <div>
+                  Vote
+                </div>
+                <div
+                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  data-testid="table__Sort"
+                >
+                  <div
+                    class="sc-AxhCb AoNtw"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="sc-fzoLsD isKehv group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="sc-fzozJi cPyShO space-x-4 font-bold "
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                    />
+                  </div>
+                </div>
+                <span>
+                  arkx
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-fzozJi hSkxDE justify-center "
+              />
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-fzozJi hSkxDE justify-center font-bold text-theme-secondary-text "
+              >
+                <span>
+                  #
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-fzozJi hSkxDE justify-center font-bold text-theme-secondary-text "
+              >
+                <span>
+                  %
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-fzozJi hSkxDE justify-center "
+              >
+                <div
+                  class="sc-AxhCb fxrKLH text-xl text-theme-primary"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    msq.svg
+                  </svg>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-fzozJi hSkxDE justify-center font-bold text-theme-secondary-text "
+              >
+                <span>
+                  ...
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-fzozJi hSkxDE justify-center font-bold text-theme-secondary-text "
+              >
+                <span>
+                  ...
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-20"
+            >
+              <div
+                class="sc-fzozJi hSkxDE justify-center font-bold text-theme-secondary-text "
+              >
+                <span>
+                  ...
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-40"
+            >
+              <div
+                class="sc-fzozJi hSkxDE justify-end font-bold text-theme-secondary-text "
+              >
+                <span>
+                  ...
+                </span>
+              </div>
+            </td>
+            <td
+              class="w-40"
+            >
+              <div
+                class="sc-fzozJi eOevVy justify-end "
+              >
+                <button
+                  class="sc-AxirZ hTzPEr"
+                  color="primary"
+                  data-testid="DelegateRow__toggle-0"
+                  type="button"
+                >
+                  Select
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="flex justify-center w-full mt-10 "
     >
       <div
         class="sc-AxgMl jyGyFo"
@@ -2530,7 +4270,34 @@ exports[`DelegateTable should render 1`] = `
           >
             1
           </div>
+          <div
+            class="sc-AxheI hWBgFH"
+          >
+            2
+          </div>
+          <div
+            class="sc-AxheI hWBgFH"
+          >
+            3
+          </div>
         </div>
+        <button
+          class="sc-AxirZ hTzPEr"
+          color="primary"
+          data-testid="Pagination__next"
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxhCb koOqYD ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>
@@ -3240,22 +5007,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 mb-24"
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
     <div
       class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
       data-testid="DelegateTable__footer"
@@ -4155,22 +5907,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 mb-24"
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
     <div
       class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
       data-testid="DelegateTable__footer"
@@ -5057,22 +6794,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 mb-24"
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
     <div
       class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
       data-testid="DelegateTable__footer"
@@ -5259,1385 +6981,9 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
 exports[`DelegateTable should render with empty list 1`] = `
 <DocumentFragment>
   <div
-    data-testid="DelegateTable"
+    class="border border-solid border-theme-neutral-300 dark:border-theme-neutral-800 p-6 rounded-lg text-theme-secondary-text -mt-5"
   >
-    <h2
-      class="py-5 text-2xl font-bold"
-    >
-      Select a Delegate
-    </h2>
-    <div
-      class="sc-AxmLO iwBmdw -mt-3"
-      role="table"
-    >
-      <table
-        cellpadding="0"
-        class="table-auto"
-      >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top ml-15"
-              >
-                <div>
-                  Delegate Name
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxhCb AoNtw"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Rank
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxhCb AoNtw"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxhCb AoNtw"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Profile
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--5"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Comm.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxhCb AoNtw"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--6"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Payout
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxhCb AoNtw"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--7"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Min.
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxhCb AoNtw"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--8"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end"
-              >
-                <div>
-                  Commission (Daily)
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxhCb AoNtw"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--9"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-AxhCb AoNtw"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
-        >
-          <tr
-            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="DelegateRowSkeleton"
-          >
-            <td
-              class="py-5"
-            >
-              <div
-                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="text-right"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="DelegateRowSkeleton"
-          >
-            <td
-              class="py-5"
-            >
-              <div
-                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="text-right"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="DelegateRowSkeleton"
-          >
-            <td
-              class="py-5"
-            >
-              <div
-                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="text-right"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="DelegateRowSkeleton"
-          >
-            <td
-              class="py-5"
-            >
-              <div
-                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="text-right"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="DelegateRowSkeleton"
-          >
-            <td
-              class="py-5"
-            >
-              <div
-                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="text-right"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="DelegateRowSkeleton"
-          >
-            <td
-              class="py-5"
-            >
-              <div
-                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="text-right"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="DelegateRowSkeleton"
-          >
-            <td
-              class="py-5"
-            >
-              <div
-                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="text-right"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="DelegateRowSkeleton"
-          >
-            <td
-              class="py-5"
-            >
-              <div
-                class="sc-AxiKw gbooGn bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="text-right"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      class="flex justify-center w-full mt-10 "
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <button
-          class="sc-AxirZ hTzPEr"
-          color="primary"
-          data-testid="Pagination__first"
-          type="button"
-        >
-          <div
-            class="sc-AxhCb koOqYD"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-first.svg
-            </svg>
-          </div>
-        </button>
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-Axmtr fiTwYj"
-          >
-            <span>
-              ...
-            </span>
-          </div>
-          <div
-            class="sc-Axmtr fiTwYj"
-          >
-            <span>
-              ...
-            </span>
-          </div>
-        </div>
-        <button
-          class="sc-AxirZ hTzPEr"
-          color="primary"
-          data-testid="Pagination__last"
-          type="button"
-        >
-          <div
-            class="sc-AxhCb koOqYD"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-last.svg
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
+    Delegates not found
   </div>
 </DocumentFragment>
 `;
@@ -7355,22 +7701,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 "
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
   </div>
 </DocumentFragment>
 `;
@@ -8091,22 +8422,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 mb-24"
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
     <div
       class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
       data-testid="DelegateTable__footer"
@@ -8993,22 +9309,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 "
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
   </div>
 </DocumentFragment>
 `;
@@ -9726,22 +10027,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 mb-24"
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
     <div
       class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
       data-testid="DelegateTable__footer"
@@ -10638,22 +10924,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 "
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
   </div>
 </DocumentFragment>
 `;
@@ -11371,22 +11642,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
     </div>
     <div
       class="flex justify-center w-full mt-10 "
-    >
-      <div
-        class="sc-AxgMl jyGyFo"
-        data-testid="Pagination"
-      >
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxheI hWBgFH current-page"
-          >
-            1
-          </div>
-        </div>
-      </div>
-    </div>
+    />
   </div>
 </DocumentFragment>
 `;

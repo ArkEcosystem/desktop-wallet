@@ -24,4 +24,9 @@ export const translations: { [key: string]: any } = {
 		VOTE: "Vote",
 		VOTES: "Votes",
 	},
+
+	FILTERS: {
+		ALL: "All",
+		CURRENT_VOTES: "Current Votes",
+	},
 };
