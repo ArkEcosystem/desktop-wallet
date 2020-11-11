@@ -10,7 +10,6 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
 import { Action } from "app/components/Notifications/models";
-import { useEnvironmentContext } from "app/contexts";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
@@ -122,8 +121,6 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
 	const [selectedWallet, setSelectedWallet] = useState<SelectedWallet | undefined>();
-
-	const { env } = useEnvironmentContext();
 
 	useEffect(() => {
 		if (selectedWallet) {
