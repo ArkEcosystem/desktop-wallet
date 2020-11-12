@@ -525,7 +525,7 @@ describe("CreateWallet", () => {
 		const wallet = await profile
 			.wallets()
 			.importByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", "ARK", "ark.devnet");
-		profile.wallets().update(wallet.id(), { alias: "Test" });
+		wallet.setAlias("Test");
 
 		const history = createMemoryHistory();
 		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
