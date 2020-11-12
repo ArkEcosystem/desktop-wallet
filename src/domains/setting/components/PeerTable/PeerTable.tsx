@@ -69,12 +69,7 @@ export const PeerTable = ({ networks, profile }: PeerTableProps) => {
 
 			<CustomPeers networks={networks} isOpen={isCustomPeers} onClose={() => setIsCustomPeers(false)} />
 
-			<DeletePeer
-				isOpen={peerAction === "delete"}
-				profile={profile}
-				onCancel={resetPeerAction}
-				onClose={resetPeerAction}
-			/>
+			<DeletePeer isOpen={peerAction === "delete"} onCancel={resetPeerAction} onClose={resetPeerAction} />
 		</div>
 	);
 };

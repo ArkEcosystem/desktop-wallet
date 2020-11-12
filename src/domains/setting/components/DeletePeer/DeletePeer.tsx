@@ -1,30 +1,16 @@
-import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { DeleteResource } from "app/components/DeleteResource";
-import { useEnvironmentContext } from "app/contexts";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type DeletePeerProps = {
 	isOpen: boolean;
-	network?: Coins.Network;
-	profile: Profile;
 	onCancel?: () => void;
 	onClose?: () => void;
 	onDelete?: any;
 };
 
-export const DeletePeer = ({ isOpen, network, profile, onCancel, onClose, onDelete }: DeletePeerProps) => {
+export const DeletePeer = ({ isOpen, onCancel, onClose, onDelete }: DeletePeerProps) => {
 	const { t } = useTranslation();
-
-	const { persist } = useEnvironmentContext();
-
-	const handleDelete = async () => {
-		profile.peers().forget(network!.coin(), network!.id());
-		await persist();
-
-		onDelete?.();
-	};
 
 	return (
 		<DeleteResource
@@ -33,7 +19,7 @@ export const DeletePeer = ({ isOpen, network, profile, onCancel, onClose, onDele
 			isOpen={isOpen}
 			onClose={onClose}
 			onCancel={onCancel}
-			onDelete={handleDelete}
+			onDelete={onDelete}
 		/>
 	);
 };
