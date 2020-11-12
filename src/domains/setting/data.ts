@@ -1,14 +1,3 @@
-const actions = [
-	{
-		label: "Edit",
-		value: "edit",
-	},
-	{
-		label: "Delete",
-		value: "delete",
-	},
-];
-
 export const peers = [
 	{
 		coin: "ARK",
@@ -16,7 +5,6 @@ export const peers = [
 		name: "ROBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",
-		actions,
 	},
 	{
 		coin: "Ethereum",
@@ -24,7 +12,6 @@ export const peers = [
 		name: "MATBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",
-		actions,
 	},
 	{
 		coin: "Bitcoin",
@@ -32,7 +19,6 @@ export const peers = [
 		name: "OLEBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",
-		actions,
 	},
 ];
 

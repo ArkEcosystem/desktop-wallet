@@ -1,5 +1,6 @@
+import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { Dropdown } from "app/components/Dropdown";
+import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
@@ -10,11 +11,11 @@ type PeerRowProps = {
 	name?: string;
 	peerIp?: string;
 	type?: string;
-	actions?: any[];
+	options?: DropdownOption[];
 	onAction?: any;
 };
 
-export const PeerRow = ({ coin, coinClass, name, peerIp, type, actions, onAction }: PeerRowProps) => (
+export const PeerRow = ({ coin, coinClass, name, peerIp, type, options, onAction }: PeerRowProps) => (
 	<TableRow>
 		<TableCell variant="start" innerClassName="space-x-2">
 			<Circle className={coinClass} noShadow>
@@ -31,16 +32,28 @@ export const PeerRow = ({ coin, coinClass, name, peerIp, type, actions, onAction
 			<span>{peerIp}</span>
 		</TableCell>
 
-		<TableCell innerClassName="text-theme-neutral justify-center">
+		<TableCell innerClassName="justify-center">
 			<Icon name={type!} width={20} height={20} />
 		</TableCell>
 
 		<TableCell variant="end" innerClassName="text-theme-neutral-300">
-			{actions?.length && (() => <Dropdown options={actions} onSelect={onAction} />)()}
+			{options!.length > 0 && (
+				<Dropdown
+					toggleContent={
+						<div className="float-right">
+							<Button variant="plain" size="icon">
+								<Icon name="Settings" width={20} height={20} />
+							</Button>
+						</div>
+					}
+					options={options}
+					onSelect={(action: DropdownOption) => onAction?.(action)}
+				/>
+			)}
 		</TableCell>
 	</TableRow>
 );
 
 PeerRow.defaultProps = {
-	actions: [],
+	options: [],
 };

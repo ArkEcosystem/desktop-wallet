@@ -15,19 +15,26 @@ export const PeerTable = ({ peers, networks }: PeerTableProps) => {
 
 	const [isCustomPeers, setIsCustomPeers] = useState(false);
 
+	const options = [
+		{ label: t("COMMON.EDIT"), value: "edit" },
+		{ label: t("COMMON.DELETE"), value: "delete" },
+	];
+
 	const columns = [
 		{
 			Header: t("SETTINGS.PEERS.CRYPTOASSET"),
+			accessor: "cryptoasset",
 		},
 		{
 			Header: t("SETTINGS.PEERS.NAME"),
+			accessor: "name",
 		},
 		{
 			Header: t("SETTINGS.PEERS.IP"),
 		},
 		{
 			Header: t("SETTINGS.PEERS.TYPE"),
-			className: "flex justify-center",
+			className: "flex justify-center no-border",
 		},
 		{
 			accessor: "onSelect",
@@ -38,7 +45,7 @@ export const PeerTable = ({ peers, networks }: PeerTableProps) => {
 	return (
 		<div>
 			<Table columns={columns} data={peers}>
-				{(rowData: any) => <PeerRow {...rowData} />}
+				{(rowData: any) => <PeerRow {...rowData} options={options} />}
 			</Table>
 
 			<Button
