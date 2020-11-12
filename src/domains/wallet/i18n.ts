@@ -69,7 +69,7 @@ export const translations: { [key: string]: any } = {
 		PASSPHRASE_STEP: {
 			TITLE: "Your Passphrase",
 			WARNING:
-				"Registering a second signature will require you to sign all transactions with an additional mnemonic shown below. Ensure to backup the displayed mnemonic before continuing.",
+				"This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.",
 			DOWNLOAD: {
 				TITLE: "Download Your Passphrase",
 				DESCRIPTION: "You can also download and safely store your passphrase.",
