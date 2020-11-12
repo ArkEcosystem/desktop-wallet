@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -110,8 +110,8 @@ export const ImportWallet = () => {
 			setActiveTab(activeTab + 1);
 		} else {
 			if (name) {
-				const formattedName = name.substring(0, nameMaxLength);
-				activeProfile.wallets().findById(walletData?.id()).settings().set(WalletSetting.Alias, formattedName);
+				const formattedName = name.trim().substring(0, nameMaxLength);
+				activeProfile.wallets().update(walletData?.id(), { alias: formattedName });
 				await persist();
 			}
 
@@ -145,6 +145,7 @@ export const ImportWallet = () => {
 									<ThirdStep
 										address={walletData?.address() as string}
 										nameMaxLength={nameMaxLength}
+										profile={activeProfile}
 									/>
 								</TabPanel>
 
@@ -188,7 +189,7 @@ export const ImportWallet = () => {
 
 									{activeTab === 3 && (
 										<Button
-											disabled={isSubmitting}
+											disabled={!isValid || isSubmitting}
 											type="submit"
 											data-testid="ImportWallet__gotowallet-button"
 										>
