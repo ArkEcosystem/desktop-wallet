@@ -134,7 +134,7 @@ describe("LedgerScanStep", () => {
 
 		render(<Component />);
 
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(5));
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(5), { timeout: 5000 });
 
 		act(() => {
 			fireEvent.click(screen.getByTestId("LedgerScanStep__select-all"));
