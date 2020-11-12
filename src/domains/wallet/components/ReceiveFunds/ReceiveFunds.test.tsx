@@ -1,16 +1,10 @@
+/* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { fireEvent, render, waitFor } from "testing-library";
+import { act, fireEvent, render, waitFor, within } from "testing-library";
 
 import { ReceiveFunds } from "./ReceiveFunds";
 
 describe("ReceiveFunds", () => {
-	it("should not render if not open", async () => {
-		const { asFragment, queryAllByTestId } = render(<ReceiveFunds address="abc" icon="ARK" network="ark.devnet" />);
-
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(0));
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should render without a wallet name", async () => {
 		const { asFragment, queryAllByTestId } = render(
 			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network="ark.devnet" />,
@@ -55,5 +49,24 @@ describe("ReceiveFunds", () => {
 
 		fireEvent.click(getByTestId("modal__close-btn"));
 		expect(onClose).toHaveBeenCalled();
+	});
+
+	it("should open qr code form", async () => {
+		const { getByTestId, queryAllByTestId } = render(
+			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network="ark.devnet" />,
+		);
+
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("ReceiveFunds__toggle"));
+		});
+
+		await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
+		await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
+		await waitFor(() =>
+			expect(within(getByTestId("ReceiveFundsForm__uri")).getByTestId("Input")).toHaveValue("ark:abc"),
+		);
 	});
 });

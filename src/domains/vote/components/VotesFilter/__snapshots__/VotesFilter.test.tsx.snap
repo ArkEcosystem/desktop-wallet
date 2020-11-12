@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VotesFilter should render 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="VotesFilter"
+  >
+    <div
+      class="relative"
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="cursor-pointer"
+      >
+        <div
+          class="sc-AxirZ eEbZjj"
+          height="20"
+          width="20"
+        >
+          <svg>
+            filters.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`VotesFilter should render default 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="VotesFilter"
+  >
+    <div
+      class="relative"
+    >
+      <span>
+        <div
+          class="cursor-pointer"
+        >
+          <div
+            class="sc-AxirZ eEbZjj"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="sc-AxiKw hdSMzb mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <ul
+            data-testid="dropdown__options"
+          />
+          <div>
+            <div
+              class="w-64 px-6 py-4"
+            >
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--all"
+              >
+                <span>
+                  <input
+                    checked=""
+                    class="sc-AxjAm fwkVBO rounded-lg"
+                    color="success"
+                    name="all"
+                    type="checkbox"
+                  />
+                </span>
+                <span>
+                  All
+                </span>
+              </label>
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--current"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm fwkVBO rounded-lg"
+                    color="success"
+                    name="current"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="pt-px"
+                >
+                  Current Votes
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`VotesFilter should render with current option selected 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="VotesFilter"
+  >
+    <div
+      class="relative"
+    >
+      <span>
+        <div
+          class="cursor-pointer"
+        >
+          <div
+            class="sc-AxirZ eEbZjj"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="sc-AxiKw hdSMzb mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <ul
+            data-testid="dropdown__options"
+          />
+          <div>
+            <div
+              class="w-64 px-6 py-4"
+            >
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--all"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm fwkVBO rounded-lg"
+                    color="success"
+                    name="all"
+                    type="checkbox"
+                  />
+                </span>
+                <span>
+                  All
+                </span>
+              </label>
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--current"
+              >
+                <span>
+                  <input
+                    checked=""
+                    class="sc-AxjAm fwkVBO rounded-lg"
+                    color="success"
+                    name="current"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="pt-px"
+                >
+                  Current Votes
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`VotesFilter should render with disabled current option 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="VotesFilter"
+  >
+    <div
+      class="relative"
+    >
+      <span>
+        <div
+          class="cursor-pointer"
+        >
+          <div
+            class="sc-AxirZ eEbZjj"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="sc-AxiKw hdSMzb mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <ul
+            data-testid="dropdown__options"
+          />
+          <div>
+            <div
+              class="w-64 px-6 py-4"
+            >
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--all"
+              >
+                <span>
+                  <input
+                    checked=""
+                    class="sc-AxjAm fwkVBO rounded-lg"
+                    color="success"
+                    name="all"
+                    type="checkbox"
+                  />
+                </span>
+                <span>
+                  All
+                </span>
+              </label>
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md text-theme-neutral-400"
+                data-testid="VotesFilter__option--current"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm fwkVBO rounded-lg"
+                    color="success"
+                    disabled=""
+                    name="current"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="pt-px"
+                >
+                  Current Votes
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

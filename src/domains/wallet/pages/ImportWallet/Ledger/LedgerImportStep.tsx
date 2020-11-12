@@ -1,6 +1,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import { Address } from "app/components/Address";
+import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Divider } from "app/components/Divider";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -28,15 +29,19 @@ export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; 
 			<TransactionNetwork network={network} borderPosition="bottom" paddingPosition="bottom" />
 
 			<ul>
-				{wallets.map((wallet) => (
+				{wallets.map((wallet, index) => (
 					<li key={wallet.address}>
 						<TransactionDetail
 							label={t("COMMON.ADDRESS")}
 							extra={<Avatar size="lg" address={wallet.address} />}
+							borderPosition="bottom"
 							paddingPosition="bottom"
-							border={false}
 						>
 							<Address address={wallet.address} maxChars={0} />
+						</TransactionDetail>
+
+						<TransactionDetail label={t("COMMON.BALANCE")} paddingPosition="both" border={false}>
+							<Amount value={wallet.balance!} ticker={network.ticker()} />
 						</TransactionDetail>
 
 						<FormField name={`names.${wallet.address}`}>
@@ -80,7 +85,7 @@ export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; 
 							<FormHelperText />
 						</FormField>
 
-						<Divider dashed />
+						{index !== wallets.length - 1 && <Divider />}
 					</li>
 				))}
 			</ul>
