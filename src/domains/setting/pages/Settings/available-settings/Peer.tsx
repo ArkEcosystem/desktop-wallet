@@ -7,7 +7,6 @@ import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks";
 import { PeerTable } from "domains/setting/components/PeerTable";
-import { peers } from "domains/setting/data";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -75,7 +74,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 				{isCustomPeers && (
 					<div className="pt-8">
-						<PeerTable networks={availableNetworks} peers={peers} />
+						<PeerTable networks={availableNetworks} profile={activeProfile} />
 					</div>
 				)}
 

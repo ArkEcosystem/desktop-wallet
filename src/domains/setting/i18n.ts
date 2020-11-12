@@ -118,4 +118,9 @@ export const translations: { [key: string]: any } = {
 	MODAL_CUSTOM_PEER: {
 		TITLE: "Custom Peer",
 	},
+
+	MODAL_DELETE_PEER: {
+		TITLE: "Delete Peer",
+		DESCRIPTION: "Do you really want to delete this peer? Once deleted, you will not be able to restore it.",
+	},
 };
