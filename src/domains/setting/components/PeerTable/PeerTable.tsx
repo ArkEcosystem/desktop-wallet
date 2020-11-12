@@ -1,19 +1,25 @@
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Table } from "app/components/Table";
 import { CustomPeers } from "domains/setting/components/CustomPeers";
+import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerRow } from "domains/setting/components/PeerTable/PeerRow";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type PeerTableProps = {
-	peers?: any;
-	networks?: any;
+	networks: Coins.Network[];
+	profile: Profile;
 };
 
-export const PeerTable = ({ peers, networks }: PeerTableProps) => {
+export const PeerTable = ({ networks, profile }: PeerTableProps) => {
 	const { t } = useTranslation();
 
+	const [peerAction, setPeerAction] = useState<string | null>(null);
 	const [isCustomPeers, setIsCustomPeers] = useState(false);
+
+	const peers = useMemo(() => profile.peers().values(), [profile]);
 
 	const options = [
 		{ label: t("COMMON.EDIT"), value: "edit" },
@@ -42,6 +48,10 @@ export const PeerTable = ({ peers, networks }: PeerTableProps) => {
 		},
 	];
 
+	const resetPeerAction = () => {
+		setPeerAction(null);
+	};
+
 	return (
 		<div>
 			<Table columns={columns} data={peers}>
@@ -58,10 +68,13 @@ export const PeerTable = ({ peers, networks }: PeerTableProps) => {
 			</Button>
 
 			<CustomPeers networks={networks} isOpen={isCustomPeers} onClose={() => setIsCustomPeers(false)} />
+
+			<DeletePeer
+				isOpen={peerAction === "delete"}
+				profile={profile}
+				onCancel={resetPeerAction}
+				onClose={resetPeerAction}
+			/>
 		</div>
 	);
-};
-
-PeerTable.defaultProps = {
-	peers: [],
 };
