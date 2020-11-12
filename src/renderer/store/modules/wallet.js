@@ -5,9 +5,28 @@ import Vue from 'vue'
 const includes = (objects, find) => objects.map(a => a.id).includes(find.id)
 const includesMessage = (objects, find) => objects.map(a => a.timestamp).includes(find.timestamp)
 const sanitizeWallet = (wallet) => {
-  if (wallet.attributes && wallet.attributes.business && wallet.attributes.business.businessAsset) {
-    wallet.business = wallet.attributes.business.businessAsset
-    wallet.business.resigned = !!wallet.attributes.business.resigned
+  if (wallet.attributes) {
+    if (wallet.attributes.business && wallet.attributes.business.businessAsset) {
+      wallet.business = wallet.attributes.business.businessAsset
+      wallet.business.resigned = !!wallet.attributes.business.resigned
+    }
+
+    if (wallet.attributes.delegate) {
+      wallet.isDelegate = true
+      wallet.isResigned = wallet.attributes.delegate.resigned
+    }
+
+    if (wallet.attributes.secondPublicKey) {
+      wallet.secondPublicKey = wallet.attributes.secondPublicKey
+    }
+
+    if (wallet.attributes.vote) {
+      wallet.vote = wallet.attributes.vote
+    }
+
+    if (wallet.attributes.multiSignature) {
+      wallet.multiSignature = wallet.attributes.multiSignature
+    }
   }
 
   return wallet

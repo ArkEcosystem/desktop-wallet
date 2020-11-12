@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { camelCase } from 'lodash'
+import { camelCase, castArray } from 'lodash'
 import { upperFirst } from '@/utils'
 import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
 import MultiSignature from '@/services/client-multisig'
@@ -256,13 +256,13 @@ export default {
           const { errors } = response.body
 
           const anyLowFee = Object.keys(errors).some(transactionId => {
-            return errors[transactionId].some(error => error.type === 'ERR_LOW_FEE')
+            return castArray(errors[transactionId]).some(error => error.type === 'ERR_LOW_FEE')
           })
           const anyNotDuplicate = Object.keys(errors).some(transactionId => {
-            return errors[transactionId].some(error => !['ERR_DUPLICATE', 'ERR_FORGED', 'ERR_ALREADY_IN_POOL', 'ERR_LOW_FEE'].includes(error.type))
+            return castArray(errors[transactionId]).some(error => !['ERR_DUPLICATE', 'ERR_FORGED', 'ERR_ALREADY_IN_POOL', 'ERR_LOW_FEE'].includes(error.type))
           })
           const wrongNonce = Object.keys(errors).some(transactionId => {
-            return errors[transactionId].some(error => {
+            return castArray(errors[transactionId]).some(error => {
               return error.type === 'ERR_APPLY' && error.message.includes('Cannot apply a transaction with nonce')
             })
           })

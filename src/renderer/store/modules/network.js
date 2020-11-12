@@ -86,7 +86,11 @@ export default new BaseModule(NetworkModel, {
 
       try {
         const crypto = await Client.fetchNetworkCrypto(network.server)
-        const { constants } = await Client.fetchNetworkConfig(network.server)
+        const { constants, core } = await Client.fetchNetworkConfig(network.server)
+
+        if (core.version) {
+          network.apiVersion = core.version
+        }
 
         // TODO: remove in future major version
         // this is a "hack" to make sure the known wallets url is set on the default networks
