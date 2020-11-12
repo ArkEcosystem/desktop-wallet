@@ -1,3 +1,4 @@
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
@@ -7,23 +8,24 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type UpdateWalletNameProps = {
-	name?: string;
+	wallet: ReadWriteWallet;
+	profile: Profile;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	onSave: any;
 };
 
-export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: UpdateWalletNameProps) => {
-	const methods = useForm<Record<string, any>>({ mode: "onChange", defaultValues: { name } });
+export const UpdateWalletName = ({ wallet, profile, isOpen, onClose, onCancel, onSave }: UpdateWalletNameProps) => {
+	const methods = useForm<Record<string, any>>({ mode: "onChange", defaultValues: { name: wallet.alias() } });
 	const { formState, register, setValue } = methods;
 
 	const { t } = useTranslation();
 	const nameMaxLength = 42;
 
 	useEffect(() => {
-		if (isOpen) setValue("name", name as string);
-	}, [name, isOpen, setValue]);
+		if (isOpen) setValue("name", wallet.alias() as string);
+	}, [wallet, isOpen, setValue]);
 
 	const handleSubmit = ({ name }: any) => {
 		onSave(name.trim().substring(0, nameMaxLength));
@@ -44,10 +46,10 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 						data-testid="UpdateWalletName__input"
 						ref={register({
 							validate: {
-								whitespaceOnly: (name) => {
-									if (name.length) {
+								whitespaceOnly: (alias) => {
+									if (alias.length) {
 										return (
-											!!name.trim().length ||
+											!!alias.trim().length ||
 											t("COMMON.VALIDATION.FIELD_INVALID", {
 												field: t("COMMON.NAME"),
 											}).toString()
@@ -56,6 +58,20 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 
 									return true;
 								},
+								duplicateAlias: (alias) =>
+									!alias ||
+									!profile
+										.wallets()
+										.values()
+										.filter(
+											(item: ReadWriteWallet) =>
+												item.id() !== wallet.id() &&
+												item.alias() &&
+												item.alias()!.trim().toLowerCase() === alias.trim().toLowerCase(),
+										).length ||
+									t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
+										alias: alias.trim(),
+									}).toString(),
 							},
 							maxLength: {
 								value: nameMaxLength,

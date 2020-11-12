@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
@@ -7,23 +7,28 @@ import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testi
 import { translations } from "../../i18n";
 import { UpdateWalletName } from "./UpdateWalletName";
 
+let profile: Profile;
 let wallet: ReadWriteWallet;
 
 describe("UpdateWalletName", () => {
 	beforeAll(() => {
-		const profile = env.profiles().findById(getDefaultProfileId());
+		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={false} onSave={() => void 0} />);
+		const { asFragment, getByTestId } = render(
+			<UpdateWalletName wallet={wallet} profile={profile} isOpen={false} onSave={() => void 0} />,
+		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={() => void 0} />);
+		const { asFragment, getByTestId } = render(
+			<UpdateWalletName wallet={wallet} profile={profile} isOpen={true} onSave={() => void 0} />,
+		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
@@ -34,7 +39,9 @@ describe("UpdateWalletName", () => {
 	it("should rename wallet", () => {
 		const onSave = jest.fn();
 
-		const { getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
+		const { getByTestId } = render(
+			<UpdateWalletName wallet={wallet} profile={profile} isOpen={true} onSave={onSave} />,
+		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
@@ -62,10 +69,33 @@ describe("UpdateWalletName", () => {
 		});
 	});
 
+	it("should show an error message for duplicate name", async () => {
+		const onSave = jest.fn();
+
+		const { asFragment, findByTestId, getByTestId, getByText } = render(
+			<UpdateWalletName wallet={wallet} profile={profile} isOpen={true} onSave={onSave} />,
+		);
+
+		const nameVariations = ["ARK Wallet 2", "ark wallet 2", " ARK Wallet 2", "ARK Wallet 2 "];
+
+		for (const name of nameVariations) {
+			await act(async () => {
+				fireEvent.input(getByTestId("UpdateWalletName__input"), { target: { value: name } });
+			});
+
+			expect(getByText(`A Wallet named '${name.trim()}' already exists on this profile`)).toBeTruthy();
+			expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
+
+			expect(asFragment()).toMatchSnapshot();
+		}
+	});
+
 	it("should show error message when name consists only of whitespace", async () => {
 		const onSave = jest.fn();
 
-		const { asFragment, findByTestId, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
+		const { asFragment, findByTestId, getByTestId } = render(
+			<UpdateWalletName wallet={wallet} profile={profile} isOpen={true} onSave={onSave} />,
+		);
 
 		await act(async () => {
 			fireEvent.input(getByTestId("UpdateWalletName__input"), { target: { value: "      " } });
@@ -81,7 +111,9 @@ describe("UpdateWalletName", () => {
 	it("should show error message when name exceeds 42 characters", async () => {
 		const onSave = jest.fn();
 
-		const { asFragment, findByTestId, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} />);
+		const { asFragment, findByTestId, getByTestId } = render(
+			<UpdateWalletName wallet={wallet} profile={profile} isOpen={true} onSave={onSave} />,
+		);
 
 		await act(async () => {
 			fireEvent.input(getByTestId("UpdateWalletName__input"), {
@@ -93,17 +125,6 @@ describe("UpdateWalletName", () => {
 		await findByTestId("UpdateWalletName__submit");
 
 		expect(getByTestId("UpdateWalletName__submit")).toBeDisabled();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render form input with existing name", async () => {
-		const onSave = jest.fn();
-
-		const { asFragment, getByTestId } = render(<UpdateWalletName isOpen={true} onSave={onSave} name="test" />);
-
-		const input = getByTestId("UpdateWalletName__input");
-		expect(input).toHaveValue("test");
-
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
