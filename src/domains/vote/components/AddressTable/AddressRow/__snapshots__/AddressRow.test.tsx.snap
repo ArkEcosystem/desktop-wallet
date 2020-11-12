@@ -8,9 +8,7 @@ exports[`AddressRow should emit action on select button 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -46,9 +44,7 @@ exports[`AddressRow should emit action on select button 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -86,7 +82,7 @@ exports[`AddressRow should emit action on select button 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -169,7 +165,7 @@ exports[`AddressRow should emit action on select button 1`] = `
               data-testid="AddressRow__select-0"
               type="button"
             >
-              Select
+              Vote
             </button>
           </div>
         </td>
@@ -187,9 +183,7 @@ exports[`AddressRow should render 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -225,9 +219,7 @@ exports[`AddressRow should render 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -265,7 +257,7 @@ exports[`AddressRow should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -348,7 +340,7 @@ exports[`AddressRow should render 1`] = `
               data-testid="AddressRow__select-0"
               type="button"
             >
-              Select
+              Vote
             </button>
           </div>
         </td>
@@ -366,9 +358,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -404,9 +394,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -457,7 +445,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -540,7 +528,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
               data-testid="AddressRow__select-0"
               type="button"
             >
-              Select
+              Vote
             </button>
           </div>
         </td>
@@ -550,7 +538,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
 </DocumentFragment>
 `;
 
-exports[`AddressRow should render when wallet hasn't voted 1`] = `
+exports[`AddressRow should render when the maximum votes is greater than 1 1`] = `
 <DocumentFragment>
   <table>
     <tbody>
@@ -558,9 +546,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -596,9 +582,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -636,7 +620,428 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
+          >
+            <span
+              data-testid="Amount"
+            >
+              33.75089801 DARK
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl blBnFR space-x-4 font-bold"
+          >
+            <div
+              class="flex items-center h-11"
+            >
+              <div
+                class="flex -space-x-3"
+              >
+                <span
+                  class="inline-block"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <span
+                  class="inline-block"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <span
+                  class="inline-block"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <span
+                  class="inline-block"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                        title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                      />
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl blBnFR"
+          >
+            <div
+              class="font-bold text-theme-neutral-light"
+            >
+              <span
+                class="text-theme-secondary-text"
+              >
+                4
+              </span>
+              <span>
+                /10
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl hSxjar justify-end"
+          >
+            <button
+              class="sc-AxirZ hTzPEr"
+              color="primary"
+              data-testid="AddressRow__select-0"
+              type="button"
+            >
+              Vote
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`AddressRow should render when the wallet has many votes 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="sc-AxheI jLykHa group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="sc-AxgMl erCQKr space-x-4"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-flex items-center"
+            >
+              <span
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                data-testid="address__wallet-name"
+              >
+                ARK Wallet 1
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B … s6YUYD
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <span
+                class="text-theme-neutral-600"
+              >
+                <div
+                  class="sc-AxhCb jsVWof"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    ledger.svg
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="text-theme-warning-400"
+              >
+                <div
+                  class="sc-AxhCb jsVWof"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
+          >
+            <span
+              data-testid="Amount"
+            >
+              33.75089801 DARK
+            </span>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl blBnFR space-x-4 font-bold"
+          >
+            <div
+              class="flex items-center h-11"
+            >
+              <div
+                class="flex -space-x-3"
+              >
+                <span
+                  class="inline-block"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                        title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <span
+                  class="inline-block"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                        title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <span
+                  class="inline-block"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full"
+                    >
+                      <img
+                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      />
+                    </div>
+                  </div>
+                </span>
+                <div
+                  class="sc-AxiKw hpQrmn relative border-theme-text text-theme-text"
+                >
+                  <span
+                    class="font-semibold"
+                  >
+                    +2
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl blBnFR"
+          >
+            <div
+              class="font-bold text-theme-neutral-light"
+            >
+              <span
+                class="text-theme-secondary-text"
+              >
+                5
+              </span>
+              <span>
+                /10
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl hSxjar justify-end"
+          >
+            <button
+              class="sc-AxirZ hTzPEr"
+              color="primary"
+              data-testid="AddressRow__select-0"
+              type="button"
+            >
+              Vote
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`AddressRow should render when wallet hasn't voted 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr
+        class="sc-AxheI jLykHa group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="sc-AxgMl erCQKr space-x-4"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-flex items-center"
+            >
+              <span
+                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                data-testid="address__wallet-name"
+              >
+                ARK Wallet 1
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D8rr7B … s6YUYD
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <span
+                class="text-theme-neutral-600"
+              >
+                <div
+                  class="sc-AxhCb jsVWof"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    ledger.svg
+                  </svg>
+                </div>
+              </span>
+              <span
+                class="text-theme-warning-400"
+              >
+                <div
+                  class="sc-AxhCb jsVWof"
+                  height="1em"
+                  width="18"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -719,7 +1124,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
               data-testid="AddressRow__select-0"
               type="button"
             >
-              Select
+              Vote
             </button>
           </div>
         </td>
@@ -728,9 +1133,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -760,9 +1163,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -773,7 +1174,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -821,7 +1222,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
               data-testid="AddressRow__select-1"
               type="button"
             >
-              Select
+              Vote
             </button>
           </div>
         </td>
@@ -839,9 +1240,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -877,9 +1276,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -917,7 +1314,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -1000,7 +1397,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
               data-testid="AddressRow__select-0"
               type="button"
             >
-              Select
+              Vote
             </button>
           </div>
         </td>
@@ -1009,9 +1406,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
         class="sc-AxheI jLykHa group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl erCQKr space-x-4"
           >
@@ -1041,9 +1436,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             </div>
           </div>
         </td>
-        <td
-          class="w-20"
-        >
+        <td>
           <div
             class="sc-AxgMl blBnFR justify-center text-sm font-bold text-center align-middle"
           >
@@ -1054,7 +1447,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text"
+            class="sc-AxgMl blBnFR justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
           >
             <span
               data-testid="Amount"
@@ -1102,7 +1495,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
               data-testid="AddressRow__select-1"
               type="button"
             >
-              Select
+              Vote
             </button>
           </div>
         </td>

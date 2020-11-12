@@ -54,7 +54,7 @@ export const Transactions = ({
 				</Button>
 			)}
 
-			{!isLoading && transactions.length === 0 && <EmptyBlock className="-mt-5" message={emptyText!} />}
+			{!isLoading && transactions.length === 0 && <EmptyBlock className="-mt-5">{emptyText}</EmptyBlock>}
 		</>
 	);
 };

@@ -44,10 +44,6 @@ export const DelegateRow = ({
 		[delegate, isVoted, selectedVotes],
 	);
 
-	if (isLoading) {
-		return <DelegateRowSkeleton />;
-	}
-
 	const getColorSelected = (): string => {
 		if (isVoted) {
 			if (!isSelectedUnvote) {
@@ -63,6 +59,10 @@ export const DelegateRow = ({
 			}
 		}
 	};
+
+	if (isLoading) {
+		return <DelegateRowSkeleton />;
+	}
 
 	return (
 		<TableRow>
@@ -139,10 +139,8 @@ export const DelegateRow = ({
 						{!isSelectedUnvote ? t("COMMON.CURRENT") : t("COMMON.UNSELECTED")}
 					</Button>
 				) : (
-					// Add `<span>` wrapper to show the tooltip when the button is disabled.
-					// https://github.com/atomiks/Tooltipjs-react/issues/123#issuecomment-535148835
 					<Tooltip
-						content={t("VOTE.DELEGATE_TABLE.TOOLTIP_TEXT")}
+						content={t("VOTE.DELEGATE_TABLE.TOOLTIP.VOTE_ONE_DELEGATE")}
 						disabled={isSelectedVote || !isVoteDisabled}
 					>
 						{!isSelectedVote && isVoteDisabled ? (

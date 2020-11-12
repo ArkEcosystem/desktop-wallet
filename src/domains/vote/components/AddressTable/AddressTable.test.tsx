@@ -33,10 +33,13 @@ describe("AddressTable", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with empty list", () => {
-		const { asFragment, container } = render(<AddressTable wallets={[]} />);
+	it("should render when the maximum votes is greater than 1", () => {
+		const maxVotesMock = jest.spyOn(wallet.network(), "maximumVotesPerWallet").mockReturnValue(10);
+		const { asFragment, container } = render(<AddressTable wallets={[wallet]} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+
+		maxVotesMock.mockRestore();
 	});
 });
