@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -12,9 +13,9 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const LedgerImportStep = ({ wallets }: { wallets: LedgerData[] }) => {
+export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; profile: Profile }) => {
 	const { t } = useTranslation();
-	const { watch, register } = useFormContext();
+	const { register, trigger, watch } = useFormContext();
 
 	const [network] = useState<Network>(() => watch("network"));
 
@@ -46,12 +47,37 @@ export const LedgerImportStep = ({ wallets }: { wallets: LedgerData[] }) => {
 						<FormField name={`names.${wallet.address}`}>
 							<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} optional />
 							<Input
+								onChange={() => {
+									for (const address of Object.keys(watch("names"))) {
+										trigger(`names.${address}`);
+									}
+								}}
 								ref={register({
 									maxLength: {
 										value: 42,
 										message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
 											maxLength: 42,
 										}),
+									},
+									validate: {
+										duplicateAlias: (alias) =>
+											!alias ||
+											!profile.wallets().findByAlias(alias.trim()) ||
+											t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
+												alias: alias.trim(),
+											}).toString(),
+										duplicateFormAlias: (alias) =>
+											!alias ||
+											!(
+												Object.values(watch("names")).filter(
+													(name: any) =>
+														!!name &&
+														alias.trim().toLowerCase() === name.trim().toLowerCase(),
+												).length > 1
+											) ||
+											t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_ASSIGNED", {
+												alias: alias.trim(),
+											}).toString(),
 									},
 								})}
 								data-testid="ImportWallet__name-input"

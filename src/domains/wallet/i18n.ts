@@ -36,6 +36,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_SELECT_ACCOUNT: {
 		TITLE: "Select Account",
 		DESCRIPTION: "Find and select the account you want to receive funds to",
+		SEARCH_PLACEHOLDER: "Enter the name or address for your wallet",
 	},
 
 	MODAL_SIGN_MESSAGE: {
@@ -133,6 +134,8 @@ export const translations: { [key: string]: any } = {
 		WALLET_NAME: "Wallet name",
 
 		VALIDATION: {
+			ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
+			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
 		},
 	},
