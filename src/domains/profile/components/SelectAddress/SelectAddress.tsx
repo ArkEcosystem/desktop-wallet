@@ -84,10 +84,13 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 
 				<SearchWallet
 					isOpen={searchWalletIsOpen}
-					showNetwork={false}
 					title={t("PROFILE.MODAL_SELECT_SENDER.TITLE")}
 					description={t("PROFILE.MODAL_SELECT_SENDER.DESCRIPTION")}
+					searchPlaceholder={t("PROFILE.MODAL_SELECT_SENDER.SEARCH_PLACEHOLDER")}
 					wallets={wallets}
+					size="4xl"
+					showFiatValue={false}
+					showNetwork={false}
 					onSelectWallet={handleSelectWallet}
 					onClose={() => setSearchWalletIsOpen(false)}
 				/>
