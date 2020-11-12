@@ -144,6 +144,43 @@
 			"isResigned": true,
 			"username": "testwallet2",
 			"secondPublicKey": "03c05c3520f4a459143779b97e8081798f550fcc20c1e02600845cea92bb15947b"
+		},
+		{
+			"address": "DBk4cPYpqp7EBcvkstVDpyX7RQJNHxpMg8",
+			"publicKey": "0236d5232cdbd1e7ab87fad10ebe689c4557bc9d0c408b6773be964c837231d5f0",
+			"balance": "46992652396499",
+			"nonce": "3464",
+			"username": "itsanametoo",
+			"attributes": {
+				"secondPublicKey": "03e7cfaa3ae06e89c217df2057e92cae2bc40164aeaa5ab955645690141b1b7be6",
+				"delegate": {
+					"username": "itsanametoo",
+					"voteBalance": "52126943777673",
+					"forgedFees": "91416779455",
+					"forgedRewards": "23741000000000",
+					"producedBlocks": 118911,
+					"rank": 12,
+					"lastBlock": {
+						"version": 0,
+						"timestamp": 114844624,
+						"height": 5862568,
+						"previousBlockHex": "e5f9036dd8d2176dad130e7f0f2b50d21ec0ce16d3ec1fc9154ff0642e2cece5",
+						"previousBlock": "e5f9036dd8d2176dad130e7f0f2b50d21ec0ce16d3ec1fc9154ff0642e2cece5",
+						"numberOfTransactions": 0,
+						"totalAmount": "0",
+						"totalFee": "0",
+						"reward": "200000000",
+						"payloadLength": 0,
+						"payloadHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+						"generatorPublicKey": "0236d5232cdbd1e7ab87fad10ebe689c4557bc9d0c408b6773be964c837231d5f0",
+						"blockSignature": "30440220726ec82fbd9ded4cc025e6fa8ff7e22f9d7f1de0b0dfa02445d550e15a74fcee022049e258138c33c4029d8785e5214ecfbab69d4e87f857cf94efbd5912f07ba492",
+						"idHex": "815c59d8ba35c38fdbfaaab221879c50b5ac5ee1fc23703f65172d95d5b3d5a9",
+						"id": "815c59d8ba35c38fdbfaaab221879c50b5ac5ee1fc23703f65172d95d5b3d5a9"
+					},
+					"round": 114954
+				},
+				"vote": "0236d5232cdbd1e7ab87fad10ebe689c4557bc9d0c408b6773be964c837231d5f0"
+			}
 		}
 	]
 }
