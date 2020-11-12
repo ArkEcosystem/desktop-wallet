@@ -59,9 +59,9 @@ export const ThirdStep = ({
 						validate: {
 							duplicateAlias: (alias) =>
 								!alias ||
-								!profile.wallets().findByAlias(alias) ||
+								!profile.wallets().findByAlias(alias.trim()) ||
 								t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
-									alias,
+									alias: alias.trim(),
 								}).toString(),
 						},
 					})}

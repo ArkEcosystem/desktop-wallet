@@ -55,9 +55,9 @@ export const FourthStep = ({ nameMaxLength, profile }: { nameMaxLength: number; 
 						validate: {
 							duplicateAlias: (alias) =>
 								!alias ||
-								!profile.wallets().findByAlias(alias) ||
+								!profile.wallets().findByAlias(alias.trim()) ||
 								t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
-									alias,
+									alias: alias.trim(),
 								}).toString(),
 						},
 					})}
