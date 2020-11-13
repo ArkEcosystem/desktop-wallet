@@ -2,6 +2,7 @@ import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-prof
 import { isEmptyObject } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
+import { DropdownOption } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
@@ -31,6 +32,7 @@ export const Votes = () => {
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
+	const [walletsDisplayType, setWalletsDisplayType] = useState("all");
 	const [selectedAddress, setSelectedAddress] = useState(walletAddress);
 	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
@@ -45,17 +47,34 @@ export const Votes = () => {
 		},
 	];
 
+	const filterProperties = {
+		walletsDisplayType,
+		onWalletsDisplayType: ({ value }: DropdownOption) => {
+			setWalletsDisplayType(value as string);
+		},
+	};
+
 	const walletsByCoin = useMemo(() => {
 		const wallets = activeProfile.wallets().allByCoin();
 
 		return Object.keys(wallets).reduce(
 			(coins, coin) => ({
 				...coins,
-				[coin]: Object.values(wallets[coin]),
+				[coin]: Object.values(wallets[coin]).filter((wallet: ReadWriteWallet) => {
+					if (walletsDisplayType === "favorites") {
+						return wallet.isStarred();
+					}
+
+					if (walletsDisplayType === "ledger") {
+						return wallet.isLedger();
+					}
+
+					return wallet;
+				}),
 			}),
 			{} as Record<string, ReadWriteWallet[]>,
 		);
-	}, [activeProfile]);
+	}, [activeProfile, walletsDisplayType]);
 
 	const loadVotes = useCallback(
 		(address) => {
@@ -150,7 +169,7 @@ export const Votes = () => {
 							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 							{!selectedAddress ? (
-								<FilterWallets />
+								<FilterWallets {...filterProperties} />
 							) : (
 								<VotesFilter
 									totalCurrentVotes={currentVotes.length}
@@ -202,11 +221,14 @@ export const Votes = () => {
 					</EmptyBlock>
 				</Section>
 			) : !selectedAddress ? (
-				Object.keys(walletsByCoin).map((coin, index) => (
-					<Section className="flex-1" key={index}>
-						<AddressTable wallets={walletsByCoin[coin]} onSelect={handleSelectAddress} />
-					</Section>
-				))
+				Object.keys(walletsByCoin).map(
+					(coin, index) =>
+						walletsByCoin[coin].length > 0 && (
+							<Section className="flex-1" key={index}>
+								<AddressTable wallets={walletsByCoin[coin]} onSelect={handleSelectAddress} />
+							</Section>
+						),
+				)
 			) : (
 				<Section className="flex-1">
 					<DelegateTable
