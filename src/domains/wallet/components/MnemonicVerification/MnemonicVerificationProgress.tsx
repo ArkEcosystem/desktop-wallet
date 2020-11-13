@@ -4,12 +4,14 @@ import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
 import { OptionButton } from "./MnemonicVerificationOptions";
+import { getOrdinalIndicator } from "./utils/evaluateOrdinalIndicator";
 
 const TabStyled = styled(OptionButton)<{ isActive: boolean; isComplete: boolean; isPending: boolean }>`
 	${tw`flex-1 flex items-center justify-center pointer-events-none transition-colors duration-200`};
 	${({ isActive }) => isActive && tw`font-medium bg-theme-success-contrast border-theme-success`};
 	${({ isComplete }) => isComplete && tw`border-transparent bg-theme-success-200`};
 	${({ isPending }) => isPending && tw`border-theme-primary-contrast text-theme-primary`};
+	min-height: 56px;
 `;
 
 type TabProps = {
@@ -40,10 +42,15 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 		>
 			{isComplete ? (
 				<span className="text-lg text-theme-success">
-					<Icon name="StatusOk" />
+					<Icon name="StatusOk" width={28} height={28} />
 				</span>
 			) : (
-				<span>{t("WALLETS.MNEMONIC_VERIFICATION.WORD_NUMBER", { position: wordPosition })}</span>
+				<span>
+					{t("WALLETS.MNEMONIC_VERIFICATION.WORD_NUMBER", {
+						position: wordPosition,
+						ordinalIndicator: getOrdinalIndicator(wordPosition),
+					})}
+				</span>
 			)}
 		</TabStyled>
 	);
