@@ -1,7 +1,8 @@
+import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { render } from "testing-library";
 
-import { Slider } from "./Slider";
+import { Slider, useSlider } from "./";
 
 const data = [
 	{
@@ -71,5 +72,20 @@ describe("Slider", () => {
 	it("should render pagination", () => {
 		const { container } = render(<Slider data={multiple} />);
 		expect(container).toMatchSnapshot();
+	});
+});
+
+describe("useSlider hook", () => {
+	it("should return expected result", () => {
+		const { result } = renderHook(() =>
+			useSlider({
+				container: ".slide-container",
+				paginationPosition: "bottom-center",
+				data: multiple,
+			}),
+		);
+		expect(result.current.containerHeight).toBe(288);
+		expect(result.current.showPagination).toBe(true);
+		expect(result.current.slideStyles).toStrictEqual({ height: "192px", marginTop: "0" });
 	});
 });
