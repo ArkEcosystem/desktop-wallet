@@ -2,7 +2,7 @@ import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import nock from "nock";
-import React from "react";
+import React, { useEffect } from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { LedgerProvider } from "../Ledger";
@@ -59,6 +59,7 @@ describe("Use Ledger Scanner", () => {
 			["44'/1'/7'/0/0", "0242555e90957de10e3912ce8831bcc985a40a645447dbfe8a0913ee6d89914707"],
 			["44'/1'/8'/0/0", "02677f73453da6073f5cf76db8f65fabc1a3b7aadc7b06027e0df709f14e097790"],
 			["44'/1'/9'/0/0", "03f3512aa9717b2ca83d371ed3bb2d3ff922969f3ceef92f65c060afa2bc2244fb"],
+			["44'/1'/10'/0/0", "0349e7e2afb470994a8323e9623a6dab227c69d5f09f1a59991fd92880123ffe75"],
 		]);
 	});
 
@@ -114,5 +115,50 @@ describe("Use Ledger Scanner", () => {
 
 		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(4));
 		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
+	});
+
+	it("should scan until new", async () => {
+		nock.cleanAll();
+
+		nock("https://dwallets.ark.io/api")
+			.get("/wallets")
+			.query((params) => !!params.address)
+			.reply(200, {
+				meta: {},
+				data: [],
+			});
+
+		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockImplementation((path) =>
+			Promise.resolve(publicKeyPaths.get(path)!),
+		);
+
+		await profile.wallets().importByAddress("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", "ARK", "ark.devnet");
+		await profile.wallets().importByAddress("DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", "ARK", "ark.devnet");
+		await profile.wallets().importByAddress("DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve", "ARK", "ark.devnet");
+		await profile.wallets().importByAddress("DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T", "ARK", "ark.devnet");
+
+		const Component = () => {
+			const { scanUntilNewOrFail, wallets } = useLedgerScanner(wallet.coinId(), wallet.networkId(), profile);
+
+			useEffect(() => {
+				scanUntilNewOrFail();
+			}, [scanUntilNewOrFail]);
+
+			return (
+				<div>
+					{wallets.map((wallet) => (
+						<span key={wallet.index}>{wallet.address}</span>
+					))}
+				</div>
+			);
+		};
+
+		render(
+			<LedgerProvider transport={transport}>
+				<Component />
+			</LedgerProvider>,
+		);
+
+		await waitFor(() => expect(screen.queryByText("DDU4aLrxw9VYJzrMTYtRAyDM9fKsqciiYd")).toBeInTheDocument());
 	});
 });
