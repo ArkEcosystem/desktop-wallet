@@ -3,6 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
+import { getOrdinalIndicator } from "./utils/evaluateOrdinalIndicator";
 import { shuffleOptions } from "./utils/shuffleOptions";
 
 export const OptionButton = styled(motion.button)`
@@ -45,7 +46,10 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 				data-testid="MnemonicVerificationOptions__title"
 				className="mb-2 font-semibold text-theme-secondary-text"
 			>
-				{t("WALLETS.MNEMONIC_VERIFICATION.SELECT_WORD", { position })}
+				{t(`WALLETS.MNEMONIC_VERIFICATION.SELECT_WORD`, {
+					position,
+					ordinalIndicator: getOrdinalIndicator(position),
+				})}
 			</p>
 			<div className="grid grid-cols-3 gap-2">
 				{shuffled.map((item, index) => (
