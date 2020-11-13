@@ -67,7 +67,7 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 						<Amount
 							className="font-semibold text-theme-text"
 							data-testid="profile-card__user--balance"
-							value={profile.balance()}
+							value={profile.convertedBalance()}
 							ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!}
 						/>
 					)}
