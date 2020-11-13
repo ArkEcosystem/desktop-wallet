@@ -13,6 +13,7 @@ type State = {
 
 type Action =
 	| { type: "load"; payload: LedgerData[] }
+	| { type: "next" }
 	| { type: "success"; payload: LedgerData[] }
 	| { type: "failed" }
 	| { type: "selectAll" }
@@ -28,6 +29,12 @@ export const scannerReducer = (state: State, action: Action): State => {
 				...state,
 				loading: action.payload.map(indexMapper),
 				wallets: uniqBy([...state.wallets, ...action.payload], indexMapper),
+			};
+		case "next":
+			return {
+				...state,
+				page: state.page + 1,
+				loading: [],
 			};
 		case "success": {
 			const { wallets, loading } = state;
