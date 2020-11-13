@@ -270,7 +270,8 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 			{wallets && wallets.length > 1 && <WalletBottomSheetMenu wallets={wallets} />}
 
 			<UpdateWalletName
-				name={activeWallet?.alias()}
+				wallet={activeWallet}
+				profile={activeProfile}
 				isOpen={isUpdateWalletName}
 				onClose={() => setIsUpdateWalletName(false)}
 				onCancel={() => setIsUpdateWalletName(false)}
