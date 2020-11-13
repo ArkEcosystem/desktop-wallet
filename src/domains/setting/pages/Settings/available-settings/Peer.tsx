@@ -4,9 +4,10 @@ import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
+import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks";
-import { PeerTable } from "domains/setting/components/PeerTable";
+import { PeerRow } from "domains/setting/components/PeerTable/PeerRow";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,14 +15,44 @@ import { SettingsProps } from "../Settings.models";
 
 export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
-
 	const activeProfile = useActiveProfile();
+
+	const [isCustomPeer, setIsCustomPeer] = useState(
+		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
+	);
+
+	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
+
+	const peers = useMemo(() => activeProfile.peers().values(), [activeProfile]);
 
 	const { context, register } = formConfig;
 
-	const [isCustomPeer, setIsCustomPeer] = useState(activeProfile.settings().get(ProfileSetting.UseCustomPeer));
+	const options = [
+		{ label: t("COMMON.EDIT"), value: "edit" },
+		{ label: t("COMMON.DELETE"), value: "delete" },
+	];
 
-	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
+	const columns = [
+		{
+			Header: t("SETTINGS.PEERS.CRYPTOASSET"),
+			accessor: "cryptoasset",
+		},
+		{
+			Header: t("SETTINGS.PEERS.NAME"),
+			accessor: "name",
+		},
+		{
+			Header: t("SETTINGS.PEERS.IP"),
+		},
+		{
+			Header: t("SETTINGS.PEERS.TYPE"),
+			className: "flex justify-center no-border",
+		},
+		{
+			accessor: "onSelect",
+			disableSortBy: true,
+		},
+	];
 
 	const peerItems = [
 		{
@@ -75,7 +106,9 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 				{isCustomPeer && (
 					<div className="pt-8">
-						<PeerTable networks={availableNetworks} profile={activeProfile} />
+						<Table columns={columns} data={peers}>
+							{(rowData: any) => <PeerRow {...rowData} options={options} />}
+						</Table>
 					</div>
 				)}
 
