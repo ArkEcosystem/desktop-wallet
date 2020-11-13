@@ -19,7 +19,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 	const { context, register } = formConfig;
 
-	const [isCustomPeers, setIsCustomPeers] = useState(false);
+	const [isCustomPeer, setIsCustomPeer] = useState(activeProfile.settings().get(ProfileSetting.UseCustomPeer));
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -33,7 +33,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="isMultiPeerBroadcast"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.MultiPeerBroadcast)}
+					defaultChecked={activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast)}
 					data-testid="General-peers__toggle--isMultiPeerBroadcast"
 				/>
 			),
@@ -47,18 +47,19 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 			labelAddon: (
 				<Toggle
 					ref={register()}
-					name="isCustomPeers"
-					checked={isCustomPeers}
-					onChange={(event) => setIsCustomPeers(event.target.checked)}
-					data-testid="General-peers__toggle--isCustomPeers"
+					name="isCustomPeer"
+					checked={isCustomPeer}
+					onChange={(event) => setIsCustomPeer(event.target.checked)}
+					data-testid="General-peers__toggle--isCustomPeer"
 				/>
 			),
 			wrapperClass: "pt-6",
 		},
 	];
 
-	const handleSubmit = async ({ isMultiPeerBroadcast, isCustomPeers }: any) => {
-		activeProfile.settings().set(ProfileSetting.MultiPeerBroadcast, isMultiPeerBroadcast);
+	const handleSubmit = async ({ isMultiPeerBroadcast, isCustomPeer }: any) => {
+		activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
+		activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
 
 		await env.persist();
 
@@ -72,7 +73,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 			<Form id="peer-settings__form" context={context} onSubmit={handleSubmit} className="mt-8">
 				<ListDivided items={peerItems} />
 
-				{isCustomPeers && (
+				{isCustomPeer && (
 					<div className="pt-8">
 						<PeerTable networks={availableNetworks} profile={activeProfile} />
 					</div>
