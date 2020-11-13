@@ -405,7 +405,7 @@ describe("CreateWallet", () => {
 
 		const walletMnemonic = passphrase.split(" ");
 		for (let i = 0; i < 3; i++) {
-			const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+			const wordNumber = parseInt(getByText(/Select the/).innerHTML.replace(/Select the/, ""));
 
 			await actAsync(async () => {
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
@@ -525,7 +525,7 @@ describe("CreateWallet", () => {
 		const wallet = await profile
 			.wallets()
 			.importByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", "ARK", "ark.devnet");
-		profile.wallets().update(wallet.id(), { alias: "Test" });
+		wallet.setAlias("Test");
 
 		const history = createMemoryHistory();
 		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
@@ -578,7 +578,7 @@ describe("CreateWallet", () => {
 
 		const walletMnemonic = passphrase.split(" ");
 		for (let i = 0; i < 3; i++) {
-			const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+			const wordNumber = parseInt(getByText(/Select the/).innerHTML.replace(/Select the/, ""));
 
 			await actAsync(async () => {
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));

@@ -619,6 +619,83 @@ describe("ImportWallet", () => {
 		});
 	});
 
+	it("should show an error message for duplicate name", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		history.push(route);
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, asFragment, getByText } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			let continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+			expect(passphraseInput).toBeTruthy();
+
+			await fireEvent.input(passphraseInput, { target: { value: "this is a top secret passphrase" } });
+
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			await waitFor(() => {
+				expect(continueButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const walletNameInput = getByTestId("ImportWallet__name-input");
+			expect(walletNameInput).toBeTruthy();
+
+			await fireEvent.input(walletNameInput, { target: { value: profile.wallets().first().alias() } });
+
+			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).toBeDisabled();
+			});
+		});
+	});
+
 	it("should empty all wallets and import by address", async () => {
 		profile.wallets().flush();
 

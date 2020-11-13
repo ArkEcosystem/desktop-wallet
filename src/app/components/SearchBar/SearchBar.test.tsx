@@ -9,8 +9,14 @@ describe("SearchBar", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = render(<SearchBar />);
 
-		expect(getByTestId("SearchBar")).toHaveTextContent(translations.SEARCH.FIND_IT);
+		expect(getByTestId("SearchBar")).toHaveTextContent(translations.SEARCH_BAR.FIND_IT);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with children", () => {
+		const { getByText } = render(<SearchBar>I am a children</SearchBar>);
+
+		expect(getByText("I am a children")).toBeTruthy();
 	});
 
 	it("should call onSearch callback on button click", async () => {
