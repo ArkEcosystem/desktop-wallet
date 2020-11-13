@@ -70,7 +70,7 @@ export const translations: { [key: string]: any } = {
 		PASSPHRASE_STEP: {
 			TITLE: "Your Passphrase",
 			WARNING:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.",
+				"This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.",
 			DOWNLOAD: {
 				TITLE: "Download Your Passphrase",
 				DESCRIPTION: "You can also download and safely store your passphrase.",
@@ -175,7 +175,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	MNEMONIC_VERIFICATION: {
-		SELECT_WORD: "Select word #{{position}}",
-		WORD_NUMBER: "The #{{position}} word",
+		SELECT_WORD: "Select the {{position}}{{ordinalIndicator}} word",
+		WORD_NUMBER: "The {{position}}{{ordinalIndicator}} word",
 	},
 };
