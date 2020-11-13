@@ -2758,24 +2758,20 @@ exports[`Votes should render with no wallets 1`] = `
                   class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
-                  data-testid="VotesFilter"
+                  class="relative"
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
+                    class="cursor-pointer"
                   >
                     <div
-                      class="cursor-pointer"
+                      class="sc-AxjAm buCJuk"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxjAm buCJuk"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          filters.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        filters.svg
+                      </svg>
                     </div>
                   </div>
                 </div>

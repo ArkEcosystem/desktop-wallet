@@ -10,6 +10,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
+import { FilterWallets } from "domains/vote/components/FilterWallets";
 import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
@@ -30,7 +31,7 @@ export const Votes = () => {
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
-	const [address, setAddress] = useState(walletAddress);
+	const [selectedAddress, setSelectedAddress] = useState(walletAddress);
 	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
@@ -73,8 +74,10 @@ export const Votes = () => {
 	);
 
 	useEffect(() => {
-		if (address) loadVotes(address);
-	}, [address, loadVotes]);
+		if (selectedAddress) {
+			loadVotes(selectedAddress);
+		}
+	}, [loadVotes, selectedAddress]);
 
 	const loadDelegates = useCallback(
 		(wallet) => {
@@ -107,14 +110,14 @@ export const Votes = () => {
 	const handleSelectAddress = (address: string) => {
 		const wallet = activeProfile.wallets().findByAddress(address);
 
-		setAddress(address);
+		setSelectedAddress(address);
 		setMaxVotes(wallet?.network().maximumVotesPerWallet());
 
 		loadDelegates(wallet);
 	};
 
 	const handleContinue = (unvotes: string[], votes: string[]) => {
-		const walletId = hasWalletId ? activeWallet.id() : activeProfile.wallets().findByAddress(address)?.id();
+		const walletId = hasWalletId ? activeWallet.id() : activeProfile.wallets().findByAddress(selectedAddress)?.id();
 
 		const params = new URLSearchParams();
 
@@ -146,31 +149,21 @@ export const Votes = () => {
 						<div className="flex items-center space-x-8 text-theme-primary-light">
 							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
-							<VotesFilter
-								totalCurrentVotes={currentVotes.length}
-								selectedOption={selectedFilter}
-								onChange={setSelectedFilter}
-							/>
+							{!selectedAddress ? (
+								<FilterWallets />
+							) : (
+								<VotesFilter
+									totalCurrentVotes={currentVotes.length}
+									selectedOption={selectedFilter}
+									onChange={setSelectedFilter}
+								/>
+							)}
 						</div>
 					}
 				/>
 			</Section>
 
-			{address ? (
-				<Section className="flex-1">
-					<DelegateTable
-						delegates={filteredDelegates}
-						emptyText={t("VOTE.DELEGATE_TABLE.DELEGATES_NOT_FOUND")}
-						isLoading={isLoadingDelegates}
-						maxVotes={maxVotes!}
-						votes={votes}
-						selectedUnvoteAddresses={unvoteAddresses}
-						selectedVoteAddresses={voteAddresses}
-						selectedWallet={address}
-						onContinue={handleContinue}
-					/>
-				</Section>
-			) : isEmptyObject(walletsByCoin) ? (
+			{isEmptyObject(walletsByCoin) ? (
 				<Section className="flex-1">
 					<EmptyBlock>
 						<div className="flex items-center justify-between">
@@ -208,12 +201,26 @@ export const Votes = () => {
 						</div>
 					</EmptyBlock>
 				</Section>
-			) : (
+			) : !selectedAddress ? (
 				Object.keys(walletsByCoin).map((coin, index) => (
 					<Section className="flex-1" key={index}>
 						<AddressTable wallets={walletsByCoin[coin]} onSelect={handleSelectAddress} />
 					</Section>
 				))
+			) : (
+				<Section className="flex-1">
+					<DelegateTable
+						delegates={filteredDelegates}
+						emptyText={t("VOTE.DELEGATE_TABLE.DELEGATES_NOT_FOUND")}
+						isLoading={isLoadingDelegates}
+						maxVotes={maxVotes!}
+						votes={votes}
+						selectedUnvoteAddresses={unvoteAddresses}
+						selectedVoteAddresses={voteAddresses}
+						selectedWallet={selectedAddress}
+						onContinue={handleContinue}
+					/>
+				</Section>
 			)}
 		</Page>
 	);
