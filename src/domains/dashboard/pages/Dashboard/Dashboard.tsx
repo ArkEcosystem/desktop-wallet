@@ -1,6 +1,5 @@
 import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { isEqual } from "@arkecosystem/utils";
-import { sortByDesc } from "@arkecosystem/utils";
+import { isEqual, sortByDesc, uniq, uniqBy } from "@arkecosystem/utils";
 import { DropdownOption } from "app/components/Dropdown";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
@@ -16,20 +15,9 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { balances } from "../../data";
+import { DashboardConfiguration, DashboardProps } from "./";
 
-type DashboardProps = {
-	balances?: any;
-	networks?: any;
-};
-
-type DashboardConfiguration = {
-	showPortfolio: boolean;
-	showTransactions: boolean;
-	viewType: "list" | "grid";
-	walletsDisplayType: "all" | "favorites" | "ledger";
-};
-
-export const Dashboard = ({ networks, balances }: DashboardProps) => {
+export const Dashboard = ({ balances }: DashboardProps) => {
 	const history = useHistory();
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -41,12 +29,24 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 			showTransactions: true,
 			viewType: "grid",
 			walletsDisplayType: "all",
+			selectedNetworkIds: uniq(
+				activeProfile
+					.wallets()
+					.values()
+					.map((wallet) => wallet.network().id()),
+			),
 		},
 	);
 
 	const previousConfiguration = usePrevious(dashboardConfiguration);
 
-	const { showPortfolio, showTransactions, viewType, walletsDisplayType } = dashboardConfiguration;
+	const {
+		showPortfolio,
+		showTransactions,
+		viewType,
+		walletsDisplayType,
+		selectedNetworkIds,
+	} = dashboardConfiguration;
 
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
@@ -127,9 +127,24 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		setDashboardConfiguration({ viewType });
 	};
 
+	const networks = useMemo(() => {
+		const networks = activeProfile
+			.wallets()
+			.values()
+			.map((wallet) => ({
+				id: wallet.network().id(),
+				name: wallet.network().name(),
+				coin: wallet.network().coin(),
+				isSelected: selectedNetworkIds.includes(wallet.network().id()),
+			}));
+
+		return uniqBy(networks, (n) => n.coin);
+	}, [activeProfile, selectedNetworkIds]);
+
 	const filterProperties = {
 		networks,
 		walletsDisplayType,
+		selectedNetworkIds,
 		visiblePortfolioView: showPortfolio,
 		visibleTransactionsView: showTransactions,
 		togglePortfolioView: (showPortfolio: boolean) => {
@@ -140,6 +155,11 @@ export const Dashboard = ({ networks, balances }: DashboardProps) => {
 		},
 		onWalletsDisplayType: ({ value }: DropdownOption) => {
 			setDashboardConfiguration({ walletsDisplayType: value });
+		},
+		onNetworkChange: (_: any, networks: any[]) => {
+			setDashboardConfiguration({
+				selectedNetworkIds: networks.filter((n) => n.isSelected).map((n) => n.id),
+			});
 		},
 	};
 
