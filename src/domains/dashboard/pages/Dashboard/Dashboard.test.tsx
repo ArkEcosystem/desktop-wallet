@@ -284,6 +284,55 @@ describe("Dashboard", () => {
 		});
 	});
 
+	it("should toggle network selection from network filters", async () => {
+		const { getByTestId, asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard balances={balances} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await act(async () => {
+			await waitFor(
+				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+				{ timeout: 5000 },
+			);
+
+			const gridViewType = getByTestId("LayoutControls__grid--icon");
+			fireEvent.click(gridViewType);
+			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+
+			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
+
+			await waitFor(() =>
+				expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy(),
+			);
+
+			const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
+			fireEvent.click(toggle);
+
+			await waitFor(() => expect(getByTestId("network__option--0")).toBeTruthy());
+			fireEvent.click(getByTestId("network__option--0"));
+
+			await waitFor(() => expect(asFragment()).toMatchSnapshot());
+
+			const listViewToggle = getByTestId("LayoutControls__list--icon");
+			fireEvent.click(listViewToggle);
+			await waitFor(() => expect(getAllByTestId("TableRow").length).toBeGreaterThan(0));
+
+			fireEvent.click(gridViewType);
+			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
+
+			fireEvent.click(toggle);
+
+			await waitFor(() => expect(getByTestId("network__option--0")).toBeTruthy());
+			fireEvent.click(getByTestId("network__option--0"));
+		});
+	});
+
 	it("should select an option in the wallets display type", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
