@@ -119,6 +119,20 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 	const otherItems = [
 		{
+			label: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.TITLE"),
+			labelClass: "text-lg font-semibold text-theme-secondary-text",
+			labelDescription: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.DESCRIPTION"),
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="useTestNetworks"
+					defaultChecked={activeProfile.settings().get(ProfileSetting.UseTestNetworks)}
+					data-testid="General-settings__toggle--useTestNetworks"
+				/>
+			),
+			wrapperClass: "pb-6",
+		},
+		{
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
@@ -160,6 +174,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		isAdvancedMode,
 		isDarkMode,
 		isUpdateLedger,
+		useTestNetworks,
 	}: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 
@@ -186,6 +201,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
+		activeProfile.settings().set(ProfileSetting.UseTestNetworks, useTestNetworks);
 
 		if (!avatarImage || isSvg) {
 			activeProfile.settings().forget(ProfileSetting.Avatar);
