@@ -3,14 +3,17 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const networks = [
 	{
+		id: "ark.devnet",
 		name: "ARK",
 		isSelected: true,
 	},
 	{
+		id: "eth.mainnet",
 		name: "Ethereum",
 		isSelected: true,
 	},
 	{
+		id: "btc.mainnet",
 		name: "Bitcoin",
 		isSelected: false,
 	},
