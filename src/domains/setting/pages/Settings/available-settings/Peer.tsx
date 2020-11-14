@@ -7,7 +7,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks";
-import { PeerRow } from "domains/setting/components/PeerTable/PeerRow";
+import { PeerListItem } from "domains/setting/components/PeerListItem";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -107,7 +107,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				{isCustomPeer && (
 					<div className="pt-8">
 						<Table columns={columns} data={peers}>
-							{(rowData: any) => <PeerRow {...rowData} options={options} />}
+							{(rowData: any) => <PeerListItem {...rowData} options={options} />}
 						</Table>
 					</div>
 				)}
