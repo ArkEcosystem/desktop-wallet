@@ -1797,7 +1797,6 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    checked=""
                                     class="Toggle__Input-qyyifx-0 bXkHfF"
                                     data-testid="General-settings__toggle--useTestNetworks"
                                     name="useTestNetworks"
@@ -1823,7 +1822,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col w-full py-6"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -3841,6 +3840,7 @@ exports[`Settings should render 1`] = `
                                   class="flex"
                                 >
                                   <input
+                                    checked=""
                                     class="Toggle__Input-qyyifx-0 bXkHfF"
                                     data-testid="General-settings__toggle--useTestNetworks"
                                     name="useTestNetworks"
@@ -3866,7 +3866,7 @@ exports[`Settings should render 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col w-full py-6"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
@@ -8503,7 +8503,6 @@ exports[`Settings should update profile 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    checked=""
                                     class="Toggle__Input-qyyifx-0 bXkHfF"
                                     data-testid="General-settings__toggle--useTestNetworks"
                                     name="useTestNetworks"
@@ -8529,7 +8528,7 @@ exports[`Settings should update profile 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full pb-6"
+                        class="flex flex-col w-full py-6"
                         data-testid="list-divided-item__wrapper"
                       >
                         <div
