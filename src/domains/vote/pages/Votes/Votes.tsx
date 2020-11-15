@@ -1,5 +1,5 @@
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { isEmptyObject } from "@arkecosystem/utils";
+import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
 import { Dropdown, DropdownOption } from "app/components/Dropdown";
@@ -33,6 +33,14 @@ export const Votes = () => {
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
 	const [walletsDisplayType, setWalletsDisplayType] = useState("all");
+	const [selectedNetworkIds, setSelectedNetworkIds] = useState(
+		uniq(
+			activeProfile
+				.wallets()
+				.values()
+				.map((wallet) => wallet.network().id()),
+		),
+	);
 	const [selectedAddress, setSelectedAddress] = useState(walletAddress);
 	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
 	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
@@ -47,13 +55,6 @@ export const Votes = () => {
 		},
 	];
 
-	const filterProperties = {
-		walletsDisplayType,
-		onWalletsDisplayType: ({ value }: DropdownOption) => {
-			setWalletsDisplayType(value as string);
-		},
-	};
-
 	const walletsByCoin = useMemo(() => {
 		const wallets = activeProfile.wallets().allByCoin();
 
@@ -61,6 +62,10 @@ export const Votes = () => {
 			(coins, coin) => ({
 				...coins,
 				[coin]: Object.values(wallets[coin]).filter((wallet: ReadWriteWallet) => {
+					if (!selectedNetworkIds.includes(wallet.network().id())) {
+						return false;
+					}
+
 					if (walletsDisplayType === "favorites") {
 						return wallet.isStarred();
 					}
@@ -74,7 +79,44 @@ export const Votes = () => {
 			}),
 			{} as Record<string, ReadWriteWallet[]>,
 		);
-	}, [activeProfile, walletsDisplayType]);
+	}, [activeProfile, selectedNetworkIds, walletsDisplayType]);
+
+	const networks = useMemo(() => {
+		const networks = activeProfile
+			.wallets()
+			.values()
+			.map((wallet) => ({
+				id: wallet.network().id(),
+				name: wallet.network().name(),
+				coin: wallet.network().coin(),
+				isSelected: selectedNetworkIds.includes(wallet.network().id()),
+			}));
+
+		return uniqBy(networks, (network) => network.coin);
+	}, [activeProfile, selectedNetworkIds]);
+
+	const currentVotes = useMemo(
+		() => votes.filter((vote) => delegates.some((delegate) => vote.address() === delegate.address())),
+		[votes, delegates],
+	);
+
+	const filteredDelegates = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
+		delegates,
+		currentVotes,
+		selectedFilter,
+	]);
+
+	const filterProperties = {
+		networks,
+		selectedNetworkIds,
+		walletsDisplayType,
+		onNetworkChange: (_: any, networks: any[]) => {
+			setSelectedNetworkIds(networks.filter((network) => network.isSelected).map((network) => network.id));
+		},
+		onWalletsDisplayType: ({ value }: DropdownOption) => {
+			setWalletsDisplayType(value as string);
+		},
+	};
 
 	const loadVotes = useCallback(
 		(address) => {
@@ -114,17 +156,6 @@ export const Votes = () => {
 			loadDelegates(activeWallet);
 		}
 	}, [activeWallet, loadDelegates, hasWalletId]);
-
-	const currentVotes = useMemo(
-		() => votes.filter((vote) => delegates.some((delegate) => vote.address() === delegate.address())),
-		[votes, delegates],
-	);
-
-	const filteredDelegates = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
-		delegates,
-		currentVotes,
-		selectedFilter,
-	]);
 
 	const handleSelectAddress = (address: string) => {
 		const wallet = activeProfile.wallets().findByAddress(address);
