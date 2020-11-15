@@ -2,16 +2,16 @@ import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-prof
 import { isEmptyObject } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
-import { DropdownOption } from "app/components/Dropdown";
+import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
+import { FilterWallets } from "domains/dashboard/components/FilterWallets";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import { FilterWallets } from "domains/vote/components/FilterWallets";
 import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
@@ -169,7 +169,18 @@ export const Votes = () => {
 							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 							{!selectedAddress ? (
-								<FilterWallets {...filterProperties} />
+								<Dropdown
+									position="right"
+									toggleContent={
+										<div className="cursor-pointer">
+											<Icon name="Filters" width={20} height={20} />
+										</div>
+									}
+								>
+									<div className="px-10 py-7 w-128">
+										<FilterWallets {...filterProperties} showToggleViews={false} />
+									</div>
+								</Dropdown>
 							) : (
 								<VotesFilter
 									totalCurrentVotes={currentVotes.length}
