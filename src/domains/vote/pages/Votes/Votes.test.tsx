@@ -93,6 +93,111 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should toggle network selection from network filters", async () => {
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, container, getByTestId } = renderPage(route, routePath);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("AddressTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(within(getByTestId("Votes__FilterWallets")).getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy());
+
+		const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
+		fireEvent.click(toggle);
+
+		await waitFor(() => expect(getByTestId("network__option--0")).toBeTruthy());
+		fireEvent.click(getByTestId("network__option--0"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select all option in the wallets display type", async () => {
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, container, getByTestId } = renderPage(route, routePath);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("AddressTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(within(getByTestId("Votes__FilterWallets")).getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy());
+
+		const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
+		fireEvent.click(toggle);
+
+		await waitFor(() => expect(getByTestId("filter-wallets__wallets")).toBeTruthy());
+
+		await waitFor(() => expect(getByTestId("dropdown__option--0")).toBeTruthy());
+
+		fireEvent.click(getByTestId("dropdown__option--0"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select favorites option in the wallets display type", async () => {
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, container, getByTestId } = renderPage(route, routePath);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("AddressTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(within(getByTestId("Votes__FilterWallets")).getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy());
+
+		const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
+		fireEvent.click(toggle);
+
+		await waitFor(() => expect(getByTestId("filter-wallets__wallets")).toBeTruthy());
+
+		await waitFor(() => expect(getByTestId("dropdown__option--1")).toBeTruthy());
+
+		fireEvent.click(getByTestId("dropdown__option--1"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should select ledger option in the wallets display type", async () => {
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { asFragment, container, getByTestId } = renderPage(route, routePath);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("AddressTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(within(getByTestId("Votes__FilterWallets")).getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy());
+
+		const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
+		fireEvent.click(toggle);
+
+		await waitFor(() => expect(getByTestId("filter-wallets__wallets")).toBeTruthy());
+
+		await waitFor(() => expect(getByTestId("dropdown__option--2")).toBeTruthy());
+
+		fireEvent.click(getByTestId("dropdown__option--2"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should filter current delegates", async () => {
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 		const { asFragment, container, getByTestId, getAllByTestId } = renderPage(route);

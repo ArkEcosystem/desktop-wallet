@@ -200,18 +200,20 @@ export const Votes = () => {
 							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 							{!selectedAddress ? (
-								<Dropdown
-									position="right"
-									toggleContent={
-										<div className="cursor-pointer">
-											<Icon name="Filters" width={20} height={20} />
+								<div data-testid="Votes__FilterWallets">
+									<Dropdown
+										position="right"
+										toggleContent={
+											<div className="cursor-pointer">
+												<Icon name="Filters" width={20} height={20} />
+											</div>
+										}
+									>
+										<div className="px-10 py-7 w-128">
+											<FilterWallets {...filterProperties} showToggleViews={false} />
 										</div>
-									}
-								>
-									<div className="px-10 py-7 w-128">
-										<FilterWallets {...filterProperties} showToggleViews={false} />
-									</div>
-								</Dropdown>
+									</Dropdown>
+								</div>
 							) : (
 								<VotesFilter
 									totalCurrentVotes={currentVotes.length}
