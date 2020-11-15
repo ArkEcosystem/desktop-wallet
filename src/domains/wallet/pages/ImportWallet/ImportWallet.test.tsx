@@ -62,7 +62,7 @@ describe("ImportWallet", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
-				<FirstStep />
+				<FirstStep profile={profile} />
 			</FormProvider>,
 		);
 
@@ -81,6 +81,33 @@ describe("ImportWallet", () => {
 		});
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+	});
+
+	it("should render 1st step without test networks", async () => {
+		profile.settings().set(ProfileSetting.UseTestNetworks, false);
+
+		const { result: form } = renderHook(() => useForm());
+		const { getByTestId, asFragment, queryByTestId } = render(
+			<FormProvider {...form.current}>
+				<FirstStep profile={profile} />
+			</FormProvider>,
+		);
+
+		expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
+
+		act(() => {
+			fireEvent.focus(selectNetworkInput);
+		});
+
+		expect(queryByTestId("NetworkIcon-ARK-ark.mainnet")).toBeInTheDocument();
+		expect(queryByTestId("NetworkIcon-ARK-ark.devnet")).toBeNull();
+
+		expect(asFragment()).toMatchSnapshot();
+
+		profile.settings().set(ProfileSetting.UseTestNetworks, true);
 	});
 
 	it("should render 2st step", async () => {

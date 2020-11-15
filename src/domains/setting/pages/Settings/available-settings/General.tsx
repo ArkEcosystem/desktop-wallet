@@ -144,7 +144,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 					data-testid="General-settings__toggle--isDarkMode"
 				/>
 			),
-			wrapperClass: "pb-6",
+			wrapperClass: "py-6",
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.TITLE"),
