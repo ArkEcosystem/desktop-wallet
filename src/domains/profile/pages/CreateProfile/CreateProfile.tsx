@@ -11,6 +11,7 @@ import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { Tooltip } from "app/components/Tooltip";
 import { useEnvironmentContext } from "app/contexts";
+import { useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -27,10 +28,10 @@ export const CreateProfile = () => {
 	const name = watch("name");
 
 	const nameMaxLength = 42;
-	const passwordMinLength = 6;
 
 	const [avatarImage, setAvatarImage] = useState("");
 
+	const { createProfile } = useValidation();
 	const profiles = useMemo(() => env.profiles().values(), [env]);
 	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
 
@@ -115,20 +116,7 @@ export const CreateProfile = () => {
 								<div className="flex justify-between -mt-6">
 									<FormField name="name" className="w-full mr-6">
 										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-										<Input
-											ref={register({
-												required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-													field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-												}).toString(),
-												maxLength: {
-													value: nameMaxLength,
-													message: t("COMMON.VALIDATION.MAX_LENGTH", {
-														field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-														maxLength: nameMaxLength,
-													}),
-												},
-											})}
-										/>
+										<Input ref={register(createProfile.name())} />
 										<FormHelperText />
 									</FormField>
 
@@ -147,17 +135,17 @@ export const CreateProfile = () => {
 										required={false}
 										optional
 									/>
-									<InputPassword
-										ref={register({
-											minLength: {
-												value: passwordMinLength,
-												message: t("COMMON.VALIDATION.MIN_LENGTH", {
-													field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-													minLength: passwordMinLength,
-												}),
-											},
-										})}
+									<InputPassword ref={register(createProfile.password())} />
+									<FormHelperText />
+								</FormField>
+
+								<FormField name="confirmPassword">
+									<FormLabel
+										label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
+										required={!!watch("password")}
+										optional={!watch("password")}
 									/>
+									<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
 									<FormHelperText />
 								</FormField>
 
@@ -167,11 +155,7 @@ export const CreateProfile = () => {
 										placeholder={t("COMMON.SELECT_OPTION", {
 											option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
 										})}
-										ref={register({
-											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-												field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
-											}).toString(),
-										})}
+										ref={register(createProfile.currency())}
 										options={PlatformSdkChoices.currencies}
 										onChange={() => {
 											if (form.errors.currency) {
