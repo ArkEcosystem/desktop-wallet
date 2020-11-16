@@ -45,29 +45,33 @@ exports[`LedgerWaitingDevice should emit false when closed by button 1`] = `
           class="flex-1"
         >
           <div
-            class="mt-8 text-center text-theme-neutral-dark"
-            data-testid="LedgerWaitingDevice-description"
-          >
-            Connect your Ledger to PC and confirm the input.
-          </div>
-          <svg
-            class="mx-auto my-8"
-          >
-            waiting-ledger-device.svg
-          </svg>
-          <div
-            class="inline-flex items-center justify-center w-full mt-8 space-x-3"
+            class="mt-8 space-y-8"
           >
             <div
-              class="sc-AxhCb irNmep"
-              color="primary"
-            />
-            <span
-              class="text-theme-text"
-              data-testid="LedgerWaitingDevice-loading_message"
+              class="text-center text-theme-neutral-dark"
+              data-testid="LedgerWaitingDevice-description"
             >
-              Waiting for Ledger device...
-            </span>
+              Connect your Ledger to PC and confirm the input.
+            </div>
+            <svg
+              class="mx-auto"
+            >
+              waiting-ledger-device.svg
+            </svg>
+            <div
+              class="inline-flex items-center justify-center w-full space-x-3"
+            >
+              <div
+                class="sc-AxhCb irNmep"
+                color="primary"
+              />
+              <span
+                class="font-semibold text-theme-text animate-pulse"
+                data-testid="LedgerWaitingDevice-loading_message"
+              >
+                Waiting for Ledger device...
+              </span>
+            </div>
           </div>
         </div>
       </div>
