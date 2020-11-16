@@ -6,7 +6,7 @@ import { httpClient } from "app/services";
 import electron from "electron";
 import os from "os";
 import React from "react";
-import { act, fireEvent, renderWithRouter } from "testing-library";
+import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
@@ -183,6 +183,7 @@ describe("CreateProfile", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
 		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "test password" } });
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
@@ -197,6 +198,30 @@ describe("CreateProfile", () => {
 		});
 
 		expect(env.profiles().values()[2].usesPassword()).toBe(true);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should fail password confirmation", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
+		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "wrong" } });
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		});
+
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+
+		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveAttribute("aria-invalid"));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
