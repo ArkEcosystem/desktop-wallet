@@ -706,10 +706,10 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(signMock).toHaveBeenCalled());
 		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
-		await waitFor(() => expect(getByTestId("SendEntityUpdate__wallet-button")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.click(getByTestId("SendEntityUpdate__wallet-button"));
+			fireEvent.click(getByTestId("ErrorStep__wallet-button"));
 		});
 
 		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;

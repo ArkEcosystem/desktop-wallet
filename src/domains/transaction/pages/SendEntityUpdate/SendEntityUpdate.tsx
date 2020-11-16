@@ -17,7 +17,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory,useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { fetchTxIpfsData, sendEntityUpdateTransaction } from "./utils";
 
@@ -181,29 +181,13 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 									)}
 								</TabPanel>
 								<TabPanel tabId={5}>
-									<ErrorStep />
-									<div className="flex justify-end space-x-3">
-										<Button
-											data-testid="SendEntityUpdate__wallet-button"
-											variant="plain"
-											onClick={() =>
-												history.push(
-													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-												)
-											}
-										>
-											{t("COMMON.BACK_TO_WALLET")}
-										</Button>
-
-										<Button
-											data-testid="SendEntityUpdate__send-button"
-											disabled={formState.isSubmitting}
-											type="submit"
-											className="space-x-2"
-										>
-											{t("COMMON.REPEAT")}
-										</Button>
-									</div>
+									<ErrorStep
+										onBack={() =>
+											history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+										}
+										isRepeatDisabled={formState.isSubmitting}
+										onRepeat={form.handleSubmit(handleSubmit)}
+									/>
 								</TabPanel>
 
 								<div className="flex justify-end mt-8 space-x-3">
