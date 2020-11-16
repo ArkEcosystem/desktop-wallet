@@ -19,7 +19,7 @@ import {
 	within,
 } from "testing-library";
 import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
-import { getDefaultWalletMnemonic } from "utils/testing-library";
+import { getDefaultWalletId,getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
@@ -271,14 +271,11 @@ describe("SendIpfs", () => {
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
-				throw new Error();
+				throw new Error("Signatory should be");
 			});
-
-			const consoleSpy = jest.spyOn(console, "error").mockImplementation();
 
 			fireEvent.click(getByTestId("SendIpfs__button--submit"));
 
-			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() =>
 				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
@@ -287,6 +284,85 @@ describe("SendIpfs", () => {
 			signMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should show error step and go back", async () => {
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
+
+		history.push(ipfsURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
+					<SendIpfs />
+				</Route>,
+				{
+					routes: [ipfsURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__form-step`)).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Hash
+			fireEvent.input(getByTestId("Input__hash"), {
+				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
+			});
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("SendIpfs__button--back"));
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+			// Step 5 (skip step 4 for now - ledger confirmation)
+			const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
+				throw new Error();
+			});
+
+			const historyMock = jest.spyOn(history, "push").mockReturnValue();
+
+			fireEvent.click(getByTestId("SendIpfs__button--submit"));
+
+			await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
+			await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+			act(() => {
+				fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+			});
+
+			const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
+			await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+			signMock.mockRestore();
 		});
 	});
 
