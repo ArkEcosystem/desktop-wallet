@@ -225,6 +225,7 @@ export const translations: { [key: string]: any } = {
 		MIN_LENGTH: "'{{field}}' should have at least {{minLength}} characters",
 		SUBJECT_INVALID: "The {{subject}} is invalid",
 		SUBJECT_MISMATCH: "The {{subject}} do not match",
+		PASSWORD_MISMATCH: "Passwords do not match",
 		MIN_RECIPIENTS: "At least one recipient is required",
 		RECIPIENT_INVALID: "Recipient address is invalid",
 	},
