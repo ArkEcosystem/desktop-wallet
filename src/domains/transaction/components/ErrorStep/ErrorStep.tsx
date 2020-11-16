@@ -16,7 +16,7 @@ export const ErrorStep = ({ title, subtitle }: ErroStepProps) => {
 			<div className="mx-auto my-4 w-128">
 				<MistakeBanner />
 			</div>
-			<div className="mt-8 text-md text-theme-secondary-text">{subtitle || t("TRANSACTION.ERROR.SUBTITLE")}</div>
+			<div className="my-8 text-md text-theme-secondary-text">{subtitle || t("TRANSACTION.ERROR.SUBTITLE")}</div>
 		</div>
 	);
 };
