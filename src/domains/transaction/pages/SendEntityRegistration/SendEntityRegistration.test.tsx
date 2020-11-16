@@ -1102,7 +1102,6 @@ describe("Registration", () => {
 
 		// Step 5 - sent screen
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should show mnemonic error", async () => {
