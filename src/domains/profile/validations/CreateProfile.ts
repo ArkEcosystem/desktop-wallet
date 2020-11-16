@@ -21,7 +21,8 @@ export const createProfile = (t: any) => ({
 		},
 	}),
 	confirmPassword: (password: string) => ({
-		validate: (confirmPassword: string) => !!password && password !== confirmPassword ? t("COMMON.VALIDATION.PASSWORD_MISMATCH") : true,
+		validate: (confirmPassword: string) =>
+			!!password && password !== confirmPassword ? t("COMMON.VALIDATION.PASSWORD_MISMATCH") : true,
 	}),
 	currency: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
