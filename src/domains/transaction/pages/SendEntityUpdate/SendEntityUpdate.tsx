@@ -12,11 +12,12 @@ import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { toasts } from "app/services";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/EntityRegistrationForm";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
+import { useHistory,useParams } from "react-router-dom";
 
 import { fetchTxIpfsData, sendEntityUpdateTransaction } from "./utils";
 
@@ -35,6 +36,7 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 	const { entityRegistration } = useValidation();
 
 	const { env } = useEnvironmentContext();
+	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
@@ -140,7 +142,7 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 			setActiveTab(activeTab + 1);
 		} catch (e) {
 			toasts.dismiss(loadingToastId);
-			toasts.error(String(e), { autoClose: 20000 });
+			setActiveTab(5);
 		}
 	};
 
@@ -177,6 +179,31 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 											<SummaryStep transaction={savedTransaction} wallet={activeWallet} />
 										</TransactionSuccessful>
 									)}
+								</TabPanel>
+								<TabPanel tabId={5}>
+									<ErrorStep />
+									<div className="flex justify-end space-x-3">
+										<Button
+											data-testid="SendEntityUpdate__wallet-button"
+											variant="plain"
+											onClick={() =>
+												history.push(
+													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+												)
+											}
+										>
+											{t("COMMON.BACK_TO_WALLET")}
+										</Button>
+
+										<Button
+											data-testid="SendEntityUpdate__send-button"
+											disabled={formState.isSubmitting}
+											type="submit"
+											className="space-x-2"
+										>
+											{t("COMMON.REPEAT")}
+										</Button>
+									</div>
 								</TabPanel>
 
 								<div className="flex justify-end mt-8 space-x-3">
