@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -10,7 +10,17 @@ import { useTranslation } from "react-i18next";
 export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
 	const { getValues, setValue } = useFormContext();
 	const [isGeneratingWallet, setIsGeneratingWallet] = React.useState(false);
-	const networks = useMemo(() => env.availableNetworks(), [env]);
+
+	const networks = useMemo(() => {
+		const usesTestNetworks = profile.settings().get(ProfileSetting.UseTestNetworks);
+		const availableNetworks = env.availableNetworks();
+
+		if (!usesTestNetworks) {
+			return availableNetworks.filter((item) => item.isLive());
+		}
+
+		return availableNetworks;
+	}, [env, profile]);
 
 	const selectedNetwork: Coins.Network = getValues("network");
 
