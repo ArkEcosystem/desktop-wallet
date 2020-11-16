@@ -2,14 +2,12 @@ import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
-import { Tooltip } from "app/components/Tooltip";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
@@ -91,17 +89,6 @@ export const CreateProfile = () => {
 				<div className="max-w-lg mx-auto -mt-10">
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
 					<div className="text-theme-secondary-text">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
-
-					<div className="mt-8">
-						<Tooltip content={t("COMMON.COMING_SOON")}>
-							<div>
-								<Button className="w-full" disabled>
-									<Icon name="Msq" width={20} height={20} />
-									<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
-								</Button>
-							</div>
-						</Tooltip>
-					</div>
 
 					<Form
 						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
