@@ -501,8 +501,6 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(loadingToastMock).toHaveBeenCalled());
 
-		expect(getByTestId("ErrorStep")).toBeTruthy();
-
 		loadingToastMock.mockRestore();
 	});
 
@@ -623,7 +621,6 @@ describe("SendEntityUpdate", () => {
 
 	it("should show broadcast error", async () => {
 		const { getByTestId } = renderPage();
-		// const errorToastMock = jest.spyOn(toast, "error");
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -668,7 +665,7 @@ describe("SendEntityUpdate", () => {
 
 	it("should show broadcast error and go back", async () => {
 		const { getByTestId, history: pageHistory } = renderPage();
-		// const errorToastMock = jest.spyOn(toast, "error");
+		const historyMock = jest.spyOn(pageHistory, "push").mockReturnValue();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -713,8 +710,9 @@ describe("SendEntityUpdate", () => {
 		});
 
 		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
-		await waitFor(() => expect(pageHistory.location.pathname).toEqual(walletDetailPage));
+		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
 
+		historyMock.mockRestore();
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 	});
