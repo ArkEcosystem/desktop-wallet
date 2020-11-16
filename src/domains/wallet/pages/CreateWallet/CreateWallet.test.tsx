@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { toasts } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
@@ -99,6 +99,33 @@ describe("CreateWallet", () => {
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
 		await waitFor(() => expect(selectNetworkInput).not.toHaveAttribute("disabled"));
+	});
+
+	it("should render 1st step without test networks", async () => {
+		profile.settings().set(ProfileSetting.UseTestNetworks, false);
+
+		const { result: form } = renderHook(() => useForm());
+		const { getByTestId, asFragment, queryByTestId } = render(
+			<FormProvider {...form.current}>
+				<FirstStep env={env} profile={profile} />
+			</FormProvider>,
+		);
+
+		expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
+
+		act(() => {
+			fireEvent.focus(selectNetworkInput);
+		});
+
+		expect(queryByTestId("NetworkIcon-ARK-ark.mainnet")).toBeInTheDocument();
+		expect(queryByTestId("NetworkIcon-ARK-ark.devnet")).toBeNull();
+
+		expect(asFragment()).toMatchSnapshot();
+
+		profile.settings().set(ProfileSetting.UseTestNetworks, true);
 	});
 
 	describe("2nd step", () => {

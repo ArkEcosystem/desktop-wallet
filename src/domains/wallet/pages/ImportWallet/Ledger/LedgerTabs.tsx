@@ -155,7 +155,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 
 			<div data-testid="LedgerTabs" className="mt-8">
 				<TabPanel tabId={1}>
-					<FirstStep />
+					<FirstStep profile={activeProfile} />
 				</TabPanel>
 				<TabPanel tabId={2}>
 					<LedgerConnectionStep onConnect={() => setActiveTab(3)} />
