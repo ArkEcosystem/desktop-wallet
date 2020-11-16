@@ -1,9 +1,9 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Contact } from "@arkecosystem/platform-sdk-profiles";
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
@@ -12,8 +12,6 @@ import { CreateContact, DeleteContact, UpdateContact } from "domains/contact/com
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-
-const { ContactsBanner } = images.contacts.pages.contacts;
 
 type ContactsHeaderExtraProps = {
 	showSearchBar: boolean;
@@ -138,7 +136,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 				<Section className="flex-1">
 					{!contacts.length && (
 						<div data-testid="contacts__banner" className="text-center">
-							<ContactsBanner height={175} className="mx-auto" />
+							<Image name="ContactsBanner" domain="contact" height={175} className="mx-auto" />
 
 							<div className="mt-8 text-theme-secondary-text">
 								{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
