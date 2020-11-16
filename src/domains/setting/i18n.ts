@@ -40,6 +40,11 @@ export const translations: { [key: string]: any } = {
 				TITLE: "Dark Theme",
 				DESCRIPTION: "Enables a dark, high contrast color scheme.",
 			},
+			DEVELOPMENT_NETWORKS: {
+				TITLE: "Development Network",
+				DESCRIPTION:
+					"To create or import wallets from development and/or test networks, you must first enable this feature.",
+			},
 			UPDATE_LEDGER: {
 				TITLE: "Update Ledger in Background",
 				DESCRIPTION:

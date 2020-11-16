@@ -136,7 +136,7 @@ export const ImportWallet = () => {
 
 							<div className="mt-8">
 								<TabPanel tabId={1}>
-									<FirstStep />
+									<FirstStep profile={activeProfile} />
 								</TabPanel>
 								<TabPanel tabId={2}>
 									<SecondStep profile={activeProfile} />
