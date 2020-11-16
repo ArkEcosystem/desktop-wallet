@@ -44,7 +44,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 			accessor: "name",
 		},
 		{
-			Header: t("SETTINGS.PEERS.IP"),
+			Header: t("SETTINGS.PEERS.PEER_IP"),
 		},
 		{
 			Header: t("SETTINGS.PEERS.TYPE"),
@@ -134,7 +134,12 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				</div>
 			</Form>
 
-			<CustomPeers networks={availableNetworks} isOpen={isAddPeer} onClose={() => setIsAddPeer(false)} />
+			<CustomPeers
+				isOpen={isAddPeer}
+				networks={availableNetworks}
+				profile={activeProfile}
+				onClose={() => setIsAddPeer(false)}
+			/>
 		</>
 	);
 };
