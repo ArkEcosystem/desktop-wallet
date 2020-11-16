@@ -11,6 +11,7 @@ import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -158,7 +159,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			setTransaction(transaction);
 			handleNext();
 		} catch (error) {
-			if (String(error).includes("Signatory should be")) {
+			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 			}

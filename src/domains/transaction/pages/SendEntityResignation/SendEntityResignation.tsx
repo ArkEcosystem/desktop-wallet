@@ -12,6 +12,7 @@ import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationSteps";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -142,7 +143,7 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 
 			handleNext();
 		} catch (error) {
-			if (String(error).includes("Signatory should be")) {
+			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 			}

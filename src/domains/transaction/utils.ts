@@ -5,3 +5,5 @@ export const evaluateFee = (fee: any) => {
 
 	return BigNumber.make(fee);
 };
+
+export const isMnemonicError = (error: any) => String(error).includes("Signatory should be");
