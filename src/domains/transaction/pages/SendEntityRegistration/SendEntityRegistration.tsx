@@ -10,6 +10,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -40,7 +41,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { formState, getValues, register, setValue, unregister, setError } = form;
+	const { formState, getValues, register, setValue, setError, unregister } = form;
 	const { registrationType } = getValues();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
@@ -157,9 +158,12 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			setTransaction(transaction);
 			handleNext();
 		} catch (error) {
-			console.error("Could not create transaction: ", error);
-			setValue("mnemonic", "");
-			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			if (String(error).includes("Signatory should be")) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
+
+			setActiveTab(6);
 		}
 	};
 
@@ -208,6 +212,15 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}
 									fees={getValues("fees")}
+								/>
+							</TabPanel>
+							<TabPanel tabId={6}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={formState.isSubmitting}
+									onRepeat={form.handleSubmit(submitForm)}
 								/>
 							</TabPanel>
 

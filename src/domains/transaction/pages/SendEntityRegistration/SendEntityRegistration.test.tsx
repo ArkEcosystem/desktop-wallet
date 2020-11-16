@@ -1104,4 +1104,256 @@ describe("Registration", () => {
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
+
+	it("should show mnemonic error", async () => {
+		const { getByTestId, queryAllByTestId } = await renderPage(secondWallet);
+
+		const secondPublicKeyMock = jest
+			.spyOn(secondWallet, "secondPublicKey")
+			.mockReturnValue(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+
+		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("ReviewStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		// Step 4 - signing
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		const mnemonic = getByTestId("AuthenticationStep__mnemonic");
+		const secondMnemonic = getByTestId("AuthenticationStep__second-mnemonic");
+
+		act(() => {
+			fireEvent.input(mnemonic, { target: { value: "v3wallet2" } });
+		});
+
+		act(() => {
+			fireEvent.input(secondMnemonic, { target: { value: "second mnemonic" } });
+		});
+
+		await waitFor(() => expect(mnemonic).toHaveValue("v3wallet2"));
+		await waitFor(() => expect(secondMnemonic).toHaveValue("second mnemonic"));
+
+		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
+
+		const signMock = jest.spyOn(secondWallet.transaction(), "signEntityRegistration").mockImplementation(() => {
+			throw new Error("Signatory should be");
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__send-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
+
+		signMock.mockRestore();
+		secondPublicKeyMock.mockRestore();
+	});
+
+	it("should show error step and go back", async () => {
+		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
+
+		const secondPublicKeyMock = jest
+			.spyOn(secondWallet, "secondPublicKey")
+			.mockReturnValue(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+
+		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
+
+		act(() => {
+			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+
+		act(() => {
+			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: {
+					value: "Test-Entity-Name",
+				},
+			});
+		});
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveValue("Test-Entity-Name"));
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__display-name"), {
+				target: {
+					value: "Test Entity Display Name",
+				},
+			});
+		});
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue("Test Entity Display Name"),
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__description"), {
+				target: {
+					value: "Test Entity Description",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__description")).toHaveValue("Test Entity Description"),
+		);
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__website"), {
+				target: {
+					value: "https://test-step.entity.com",
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__website")).toHaveValue("https://test-step.entity.com"),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("ReviewStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		// Step 4 - signing
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		const mnemonic = getByTestId("AuthenticationStep__mnemonic");
+		const secondMnemonic = getByTestId("AuthenticationStep__second-mnemonic");
+
+		act(() => {
+			fireEvent.input(mnemonic, { target: { value: "v3wallet2" } });
+		});
+
+		act(() => {
+			fireEvent.input(secondMnemonic, { target: { value: "second mnemonic" } });
+		});
+
+		await waitFor(() => expect(mnemonic).toHaveValue("v3wallet2"));
+		await waitFor(() => expect(secondMnemonic).toHaveValue("second mnemonic"));
+
+		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
+
+		const signMock = jest.spyOn(secondWallet.transaction(), "signEntityRegistration").mockImplementation(() => {
+			throw new Error();
+		});
+
+		const historyMock = jest.spyOn(history, "push").mockReturnValue();
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__send-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+
+		act(() => {
+			fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+		});
+
+		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${secondWallet.id()}`;
+		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+
+		historyMock.mockRestore();
+		signMock.mockRestore();
+		secondPublicKeyMock.mockRestore();
+	});
 });

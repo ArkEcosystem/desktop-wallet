@@ -29,7 +29,7 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 
-	const { formState, getValues, setError } = form;
+	const { formState, getValues, setError, setValue } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -142,8 +142,10 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 
 			handleNext();
 		} catch (error) {
-			if (String(error).includes("Signatory should be"))
+			if (String(error).includes("Signatory should be")) {
+				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
 
 			setActiveTab(5);
 		}

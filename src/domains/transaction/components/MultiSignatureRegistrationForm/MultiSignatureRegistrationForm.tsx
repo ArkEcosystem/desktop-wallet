@@ -52,7 +52,7 @@ StepsComponent.displayName = "MultiSignatureRegistrationForm";
 transactionDetails.displayName = "MultiSignatureRegistrationFormTransactionDetails";
 
 const signTransaction = async ({ env, form, profile }: SendEntityRegistrationSignOptions) => {
-	const { clearErrors, getValues, setError, setValue } = form;
+	const { clearErrors, getValues } = form;
 
 	clearErrors("mnemonic");
 	const { fee, minParticipants, participants, mnemonic, senderAddress } = getValues();
