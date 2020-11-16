@@ -106,40 +106,17 @@ describe("Votes", () => {
 			fireEvent.click(within(getByTestId("Votes__FilterWallets")).getByTestId("dropdown__toggle"));
 		});
 
-		await waitFor(() => expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy());
+		const toggle = getByTestId("network__option--0");
 
-		const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
+		await waitFor(() => expect(toggle).toBeTruthy());
 		fireEvent.click(toggle);
 
-		await waitFor(() => expect(getByTestId("network__option--0")).toBeTruthy());
-		fireEvent.click(getByTestId("network__option--0"));
+		expect(() => getByTestId("AddressTable")).toThrow(/Unable to find an element by/);
 
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should select all option in the wallets display type", async () => {
-		const route = `/profiles/${profile.id()}/votes`;
-		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, container, getByTestId } = renderPage(route, routePath);
-
-		expect(container).toBeTruthy();
-		expect(getByTestId("AddressTable")).toBeTruthy();
-		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(within(getByTestId("Votes__FilterWallets")).getByTestId("dropdown__toggle"));
-		});
-
-		await waitFor(() => expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy());
-
-		const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
+		await waitFor(() => expect(toggle).toBeTruthy());
 		fireEvent.click(toggle);
 
-		await waitFor(() => expect(getByTestId("filter-wallets__wallets")).toBeTruthy());
-
-		await waitFor(() => expect(getByTestId("dropdown__option--0")).toBeTruthy());
-
-		fireEvent.click(getByTestId("dropdown__option--0"));
+		await waitFor(() => expect(getByTestId("AddressTable")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -168,6 +145,8 @@ describe("Votes", () => {
 
 		fireEvent.click(getByTestId("dropdown__option--1"));
 
+		expect(() => getByTestId("AddressTable")).toThrow(/Unable to find an element by/);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -194,6 +173,8 @@ describe("Votes", () => {
 		await waitFor(() => expect(getByTestId("dropdown__option--2")).toBeTruthy());
 
 		fireEvent.click(getByTestId("dropdown__option--2"));
+
+		expect(() => getByTestId("AddressTable")).toThrow(/Unable to find an element by/);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
