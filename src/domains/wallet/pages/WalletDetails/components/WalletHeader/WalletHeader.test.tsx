@@ -149,7 +149,7 @@ describe("WalletHeader", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const signOption = getByTestId("dropdown__option--1");
+		const signOption = getByTestId("dropdown__option--additional-0");
 		expect(signOption).toBeTruthy();
 
 		act(() => {
@@ -189,7 +189,7 @@ describe("WalletHeader", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const verifyMessageOption = getByTestId("dropdown__option--2");
+		const verifyMessageOption = getByTestId("dropdown__option--additional-1");
 		expect(verifyMessageOption).toBeTruthy();
 
 		act(() => {
@@ -229,7 +229,7 @@ describe("WalletHeader", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const deleteWalletOption = getByTestId("dropdown__option--4");
+		const deleteWalletOption = getByTestId("dropdown__option--secondary-0");
 		expect(deleteWalletOption).toBeTruthy();
 
 		act(() => {
@@ -269,7 +269,7 @@ describe("WalletHeader", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const updateWalletNameOption = getByTestId("dropdown__option--0");
+		const updateWalletNameOption = getByTestId("dropdown__option--primary-0");
 		expect(updateWalletNameOption).toBeTruthy();
 
 		act(() => {
@@ -339,7 +339,7 @@ describe("WalletHeader", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const storeHashOption = getByTestId("dropdown__option--3");
+		const storeHashOption = getByTestId("dropdown__option--additional-2");
 		expect(storeHashOption).toBeTruthy();
 
 		act(() => {

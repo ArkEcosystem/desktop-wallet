@@ -146,6 +146,9 @@ export const translations: { [key: string]: any } = {
 		PENDING_TRANSACTIONS: "Pending Transactions",
 		YOUR_WALLETS: "Your Wallets",
 
+		PRIMARY_OPTIONS: "Manage Address",
+		ADDITIONAL_OPTIONS: "Additional Options",
+
 		STAR_WALLET: "Add to favorites",
 		UNSTAR_WALLET: "Remove from favorites",
 

@@ -3,7 +3,7 @@ import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
-import { Dropdown } from "app/components/Dropdown";
+import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
@@ -63,33 +63,78 @@ export const WalletHeader = ({
 }: Props) => {
 	const { t } = useTranslation();
 
-	const moreOptionsMenu = [
-		{
-			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
-			value: "wallet-name",
-		},
-	];
+	const primaryOptions: DropdownOptionGroup = {
+		key: "primary",
+		title: t("WALLETS.PAGE_WALLET_DETAILS.PRIMARY_OPTIONS"),
+		options: [],
+	};
+
+	primaryOptions.options.push({
+		label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
+		value: "wallet-name",
+	});
+
+	const additionalOptions: DropdownOptionGroup = {
+		key: "additional",
+		title: t("WALLETS.PAGE_WALLET_DETAILS.ADDITIONAL_OPTIONS"),
+		options: [],
+	};
 
 	if (showSignMessageOption) {
-		moreOptionsMenu.push({
+		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
 	if (showVerifyMessageOption) {
-		moreOptionsMenu.push({
+		additionalOptions.options.push({
 			label: t("WALLETS.MODAL_VERIFY_MESSAGE.TITLE"),
 			value: "verify-message",
 		});
 	}
 
 	if (showStoreHashOption) {
-		moreOptionsMenu.push({
+		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH"),
 			value: "store-hash",
 		});
 	}
+
+	const secondaryOptions = {
+		key: "secondary",
+		hasDivider: true,
+		options: [
+			{
+				icon: "Trash",
+				iconPosition: "start",
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.DELETE"),
+				value: "delete-wallet",
+			},
+		],
+	};
+
+	const handleSelect = (option: DropdownOption) => {
+		if (option.value === "sign-message") {
+			onSignMessage();
+		}
+
+		if (option.value === "verify-message") {
+			onVerifyMessage();
+		}
+
+		if (option.value === "delete-wallet") {
+			onDeleteWallet();
+		}
+
+		if (option.value === "wallet-name") {
+			onUpdateWalletName();
+		}
+
+		if (option.value === "store-hash") {
+			onStoreHash();
+		}
+	};
 
 	return (
 		<header data-testid="WalletHeader">
@@ -244,31 +289,8 @@ export const WalletHeader = ({
 										<Icon name="Settings" width={20} height={20} />
 									</Button>
 								}
-								options={[
-									...moreOptionsMenu,
-									{ label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.DELETE"), value: "delete-wallet" },
-								]}
-								onSelect={(option: Record<string, string>) => {
-									if (option.value === "sign-message") {
-										onSignMessage();
-									}
-
-									if (option.value === "verify-message") {
-										onVerifyMessage();
-									}
-
-									if (option.value === "delete-wallet") {
-										onDeleteWallet();
-									}
-
-									if (option.value === "wallet-name") {
-										onUpdateWalletName();
-									}
-
-									if (option.value === "store-hash") {
-										onStoreHash();
-									}
-								}}
+								onSelect={handleSelect}
+								options={[primaryOptions, additionalOptions, secondaryOptions]}
 								dropdownClass="top-5 right-3 text-left"
 							/>
 						</div>
