@@ -7,7 +7,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks";
-import { CustomPeers } from "domains/setting/components/CustomPeers";
+import { AddPeer } from "domains/setting/components/AddPeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -134,7 +134,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				</div>
 			</Form>
 
-			<CustomPeers
+			<AddPeer
 				isOpen={isAddPeer}
 				networks={availableNetworks}
 				profile={activeProfile}
