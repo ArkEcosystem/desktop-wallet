@@ -19,7 +19,7 @@ import {
 	within,
 } from "testing-library";
 import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
-import { getDefaultWalletId,getDefaultWalletMnemonic } from "utils/testing-library";
+import { getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
