@@ -191,9 +191,9 @@ export const ImportWallet = () => {
 										<Button
 											disabled={!isValid || isSubmitting}
 											type="submit"
-											data-testid="ImportWallet__gotowallet-button"
+											data-testid="ImportWallet__save-button"
 										>
-											{t("COMMON.GO_TO_WALLET")}
+											{t("COMMON.SAVE_FINISH")}
 										</Button>
 									)}
 								</div>

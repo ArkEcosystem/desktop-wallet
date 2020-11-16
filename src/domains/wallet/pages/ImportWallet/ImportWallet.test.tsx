@@ -297,7 +297,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -381,7 +381,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -483,7 +483,7 @@ describe("ImportWallet", () => {
 
 			await fireEvent.input(walletNameInput, { target: { value: "Test" } });
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -714,7 +714,7 @@ describe("ImportWallet", () => {
 
 			await fireEvent.input(walletNameInput, { target: { value: profile.wallets().first().alias() } });
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
@@ -793,7 +793,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
