@@ -389,4 +389,10 @@ export const translations: { [key: string]: any } = {
 		FEE_BELOW_MINIMUM: "The selected fee is below the minimum  ({{min}} {{ coinId }}) and may not be forged",
 		FEE_ABOVE_MAXIMUM: "The selected fee is above the maximum ({{max}} {{ coinId }})",
 	},
+
+	ERROR: {
+		TITLE: "Transaction Error",
+		SUBTITLE:
+			"During the confirmation of the transaction, an error has occured. We recommend that you repeat the transaction or return to your wallet",
+	},
 };
