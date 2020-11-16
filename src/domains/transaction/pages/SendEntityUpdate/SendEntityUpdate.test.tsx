@@ -32,8 +32,8 @@ const defaultFormValues = {
 	onDownload: jest.fn(),
 };
 
+const history = createMemoryHistory();
 const renderPage = (url?: string | undefined) => {
-	const history = createMemoryHistory();
 	const transactionId = "df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da";
 	const updateRegistrationURL =
 		url ||
@@ -666,6 +666,7 @@ describe("SendEntityUpdate", () => {
 	it("should show broadcast error and go back", async () => {
 		const { getByTestId, history: pageHistory } = renderPage();
 		const historyMock = jest.spyOn(pageHistory, "push").mockReturnValue();
+		const memoryHistoryMock = jest.spyOn(history, "push").mockReturnValue();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -711,8 +712,10 @@ describe("SendEntityUpdate", () => {
 
 		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+		await waitFor(() => expect(memoryHistoryMock).toHaveBeenCalledWith(walletDetailPage));
 
 		historyMock.mockRestore();
+		memoryHistoryMock.mockRestore();
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 	});
