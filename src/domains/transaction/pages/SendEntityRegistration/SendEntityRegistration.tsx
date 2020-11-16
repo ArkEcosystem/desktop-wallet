@@ -40,7 +40,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { formState, getValues, register, setValue, unregister } = form;
+	const { formState, getValues, register, setValue, unregister, setError } = form;
 	const { registrationType } = getValues();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
@@ -145,16 +145,23 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
 	}, [activeProfile, networks]);
 
-	const submitForm = () =>
-		registrationForm!.signTransaction({
-			env,
-			form,
-			handleNext,
-			profile: activeProfile,
-			setTransaction,
-			translations: t,
-			type: registrationType.type,
-		});
+	const submitForm = async () => {
+		try {
+			const transaction = await registrationForm!.signTransaction({
+				env,
+				form,
+				profile: activeProfile,
+				type: registrationType.type,
+			});
+
+			setTransaction(transaction);
+			handleNext();
+		} catch (error) {
+			console.error("Could not create transaction: ", error);
+			setValue("mnemonic", "");
+			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+		}
+	};
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);

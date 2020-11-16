@@ -51,14 +51,7 @@ const transactionDetails = ({ transaction, translations, wallet }: SendEntityReg
 StepsComponent.displayName = "MultiSignatureRegistrationForm";
 transactionDetails.displayName = "MultiSignatureRegistrationFormTransactionDetails";
 
-const signTransaction = async ({
-	env,
-	form,
-	handleNext,
-	profile,
-	setTransaction,
-	translations,
-}: SendEntityRegistrationSignOptions) => {
+const signTransaction = async ({ env, form, profile }: SendEntityRegistrationSignOptions) => {
 	const { clearErrors, getValues, setError, setValue } = form;
 
 	clearErrors("mnemonic");
@@ -67,47 +60,37 @@ const signTransaction = async ({
 
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
 
-	try {
-		const transactionId = await senderWallet!.transaction().signMultiSignature({
-			nonce: senderWallet!.nonce().plus(1).toString(),
-			fee,
-			from: senderAddress,
-			sign: {
-				multiSignature: {
-					publicKeys: [...publicKeys],
-					min: +minParticipants,
-				},
-			},
-			data: {
+	const transactionId = await senderWallet!.transaction().signMultiSignature({
+		nonce: senderWallet!.nonce().plus(1).toString(),
+		fee,
+		from: senderAddress,
+		sign: {
+			multiSignature: {
 				publicKeys: [...publicKeys],
 				min: +minParticipants,
-				senderPublicKey: senderWallet!.publicKey(),
 			},
-		});
+		},
+		data: {
+			publicKeys: [...publicKeys],
+			min: +minParticipants,
+			senderPublicKey: senderWallet!.publicKey(),
+		},
+	});
 
-		await senderWallet!.transaction().broadcast(transactionId);
+	await senderWallet!.transaction().broadcast(transactionId);
 
-		await senderWallet!.transaction().sync();
-		await senderWallet!.transaction().addSignature(transactionId, mnemonic);
+	await senderWallet!.transaction().sync();
+	await senderWallet!.transaction().addSignature(transactionId, mnemonic);
 
-		await env.persist();
+	await env.persist();
 
-		const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
-		transaction.generatedAddress = await senderWallet!
-			.coin()
-			.identity()
-			.address()
-			.fromMultiSignature(minParticipants, publicKeys);
-
-		setTransaction(transaction);
-
-		handleNext();
-	} catch (error) {
-		console.error("Could not create transaction: ", error);
-
-		setValue("mnemonic", "");
-		setError("mnemonic", { type: "manual", message: translations("TRANSACTION.INVALID_MNEMONIC") });
-	}
+	const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
+	transaction.generatedAddress = await senderWallet!
+		.coin()
+		.identity()
+		.address()
+		.fromMultiSignature(minParticipants, publicKeys);
+	return transaction;
 };
 
 export const MultiSignatureRegistrationForm: SendEntityRegistrationForm = {
