@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
@@ -161,13 +162,19 @@ describe("ImportWallet", () => {
 					network: {
 						id: () => "ark.devnet",
 						coin: () => "ARK",
+						ticker: () => "DARK",
 					},
 				},
 			}),
 		);
 		const { getByTestId, getByText, asFragment } = render(
 			<FormProvider {...form.current}>
-				<ThirdStep address={identityAddress} nameMaxLength={42} />
+				<ThirdStep
+					address={identityAddress}
+					balance={BigNumber.make(80)}
+					nameMaxLength={42}
+					profile={profile}
+				/>
 			</FormProvider>,
 		);
 

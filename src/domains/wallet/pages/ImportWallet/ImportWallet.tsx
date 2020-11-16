@@ -1,5 +1,6 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -144,6 +145,7 @@ export const ImportWallet = () => {
 								<TabPanel tabId={3}>
 									<ThirdStep
 										address={walletData?.address() as string}
+										balance={walletData?.balance() as BigNumber}
 										nameMaxLength={nameMaxLength}
 										profile={activeProfile}
 									/>
