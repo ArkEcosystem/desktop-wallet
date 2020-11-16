@@ -708,14 +708,11 @@ describe("SendTransfer", () => {
 
 			// Step 5 (skip step 4 for now - ledger confirmation)
 			const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
-				throw new Error();
+				throw new Error("Signatory should be");
 			});
-
-			const consoleSpy = jest.spyOn(console, "error").mockImplementation();
 
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 
-			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() =>
 				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
@@ -724,6 +721,95 @@ describe("SendTransfer", () => {
 			signMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should show error step and go back", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
+
+		history.push(transferURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+					<SendTransfer />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
+		});
+
+		const { getAllByTestId, getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Select recipient
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
+			expect(getByTestId("SelectRecipient__input")).toHaveValue(
+				profile.contacts().values()[0].addresses().values()[0].address(),
+			);
+
+			// Amount
+			fireEvent.click(getByTestId("add-recipient__send-all"));
+			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
+
+			// Smartbridge
+			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+			fireEvent.click(getByTestId("SendTransfer__button--continue"));
+			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
+
+			// Step 3
+			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+			fireEvent.click(getByTestId("SendTransfer__button--continue"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+			// Step 5 (skip step 4 for now - ledger confirmation)
+			const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
+				throw new Error();
+			});
+			const historyMock = jest.spyOn(history, "push").mockReturnValue();
+
+			fireEvent.click(getByTestId("SendTransfer__button--submit"));
+
+			await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
+			await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+			act(() => {
+				fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+			});
+
+			const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
+			await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+
+			signMock.mockRestore();
 		});
 	});
 
