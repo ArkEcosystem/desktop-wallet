@@ -43,7 +43,7 @@ type NavigationBarProps = {
 const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 	${defaultStyle}
 	${tw`sticky inset-x-0 top-0 bg-theme-background`}
-	${({ noShadow }) => !noShadow && tw`shadow-md`};
+	${({ noShadow }) => !noShadow && tw`shadow-header-smooth dark:shadow-header-smooth-dark`};
 `;
 
 type UserInfoProps = {
