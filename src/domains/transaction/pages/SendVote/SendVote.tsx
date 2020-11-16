@@ -10,6 +10,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -230,10 +231,12 @@ export const SendVote = () => {
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
 		} catch (error) {
-			console.error("Could not vote: ", error);
+			if (String(error).includes("Signatory should be")) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
 
-			setValue("mnemonic", "");
-			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			setActiveTab(5);
 		}
 	};
 
@@ -270,6 +273,16 @@ export const SendVote = () => {
 									transaction={transaction}
 									unvotes={unvotes}
 									votes={votes}
+								/>
+							</TabPanel>
+
+							<TabPanel tabId={5}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={formState.isSubmitting}
+									onRepeat={form.handleSubmit(submitForm)}
 								/>
 							</TabPanel>
 
