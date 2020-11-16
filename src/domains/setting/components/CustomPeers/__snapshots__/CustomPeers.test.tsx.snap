@@ -135,9 +135,9 @@ exports[`CustomPeers should render a modal 1`] = `
               <label
                 class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
-                for="peer-ip"
+                for="host"
               >
-                IP
+                Peer IP
                 <div
                   class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
                   data-testid="FormLabel__required"
@@ -146,7 +146,7 @@ exports[`CustomPeers should render a modal 1`] = `
               <input
                 class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
-                name="peer-ip"
+                name="host"
               />
             </fieldset>
             <fieldset
@@ -155,7 +155,7 @@ exports[`CustomPeers should render a modal 1`] = `
               <label
                 class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
-                for="peer-type"
+                for="type"
               >
                 Type
                 <span
@@ -166,16 +166,17 @@ exports[`CustomPeers should render a modal 1`] = `
                 </span>
               </label>
               <label
-                class="inline-flex items-center"
-                for="multisig"
+                class="flex items-center space-x-2"
+                for="isMultiSignature"
               >
                 <input
                   class="sc-AxirZ dMNlTF"
                   color="success"
+                  name="isMultiSignature"
                   type="checkbox"
                 />
                 <span
-                  class="ml-2 text-sm font-semibold text-theme-secondary-text"
+                  class="text-sm font-semibold text-theme-secondary-text"
                 >
                   Multisignature
                 </span>
