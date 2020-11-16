@@ -37,6 +37,7 @@ export const Paginator = ({
 	isNextLoading?: boolean;
 }) => {
 	const { t } = useTranslation();
+
 	return (
 		<div className="flex justify-between mt-10">
 			<div>
@@ -91,7 +92,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 
 	const history = useHistory();
 	const { env, persist } = useEnvironmentContext();
-	const { importLedgerWallets } = useLedgerContext();
+	const { importLedgerWallets, isBusy } = useLedgerContext();
 
 	const { formState, handleSubmit } = useFormContext();
 	const { isValid, isSubmitting } = formState;
@@ -170,7 +171,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 			<Paginator
 				size={4}
 				activeIndex={activeTab}
-				isNextDisabled={!isValid}
+				isNextDisabled={isBusy || !isValid}
 				isNextLoading={isSubmitting}
 				showRetry={showRetry}
 				onRetry={retryFnRef.current}
