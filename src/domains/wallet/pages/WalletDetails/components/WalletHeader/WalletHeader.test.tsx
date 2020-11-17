@@ -5,20 +5,26 @@ import { act, fireEvent, render, within } from "testing-library";
 import { WalletHeader } from "./WalletHeader";
 
 describe("WalletHeader", () => {
-	const onSignMessage = jest.fn();
-	const onVerifyMessage = jest.fn();
 	const onDeleteWallet = jest.fn();
-	const onUpdateWalletName = jest.fn();
+	const onMultiSignature = jest.fn();
+	const onReceiveFunds = jest.fn();
+	const onSecondSignature = jest.fn();
+	const onSignMessage = jest.fn();
 	const onStar = jest.fn();
 	const onStoreHash = jest.fn();
+	const onUpdateWalletName = jest.fn();
+	const onVerifyMessage = jest.fn();
 
 	afterEach(() => {
-		onSignMessage.mockReset();
-		onVerifyMessage.mockReset();
 		onDeleteWallet.mockReset();
-		onUpdateWalletName.mockReset();
+		onMultiSignature.mockReset();
+		onReceiveFunds.mockReset();
+		onSecondSignature.mockReset();
+		onSignMessage.mockReset();
 		onStar.mockReset();
 		onStoreHash.mockReset();
+		onUpdateWalletName.mockReset();
+		onVerifyMessage.mockReset();
 	});
 
 	it("should render", () => {
@@ -30,6 +36,9 @@ describe("WalletHeader", () => {
 				network="mainnet"
 				ticker="ARK"
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -52,7 +61,9 @@ describe("WalletHeader", () => {
 				network="mainnet"
 				ticker="ARK"
 				onDeleteWallet={onDeleteWallet}
-				onSend={onSend}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -80,6 +91,9 @@ describe("WalletHeader", () => {
 				network="mainnet"
 				ticker="ARK"
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -105,6 +119,9 @@ describe("WalletHeader", () => {
 				network="mainnet"
 				ticker="ARK"
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -134,6 +151,9 @@ describe("WalletHeader", () => {
 				showStoreHashOption={true}
 				showVerifyMessageOption={true}
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -174,6 +194,9 @@ describe("WalletHeader", () => {
 				showStoreHashOption={true}
 				showVerifyMessageOption={true}
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -214,6 +237,9 @@ describe("WalletHeader", () => {
 				showStoreHashOption={true}
 				showVerifyMessageOption={true}
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -254,6 +280,9 @@ describe("WalletHeader", () => {
 				showStoreHashOption={true}
 				showVerifyMessageOption={true}
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -279,6 +308,128 @@ describe("WalletHeader", () => {
 		expect(onUpdateWalletName).toHaveBeenCalled();
 	});
 
+	it("should handle receive funds", () => {
+		const { getByTestId } = render(
+			<WalletHeader
+				address="abc"
+				balance={BigNumber.make(0)}
+				coin="ARK"
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
+				network="mainnet"
+				publicKey="publicKey"
+				ticker="ARK"
+				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
+				onSignMessage={onSignMessage}
+				onStar={onStar}
+				onStoreHash={onStoreHash}
+				onUpdateWalletName={onUpdateWalletName}
+				onVerifyMessage={onVerifyMessage}
+			/>,
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const receiveFundsOptions = getByTestId("dropdown__option--primary-1");
+		expect(receiveFundsOptions).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(receiveFundsOptions);
+		});
+
+		expect(onReceiveFunds).toHaveBeenCalled();
+	});
+
+	it("should handle multisignature registration", () => {
+		const { getByTestId } = render(
+			<WalletHeader
+				address="abc"
+				balance={BigNumber.make(0)}
+				coin="ARK"
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
+				network="mainnet"
+				publicKey="publicKey"
+				ticker="ARK"
+				showMultiSignatureOption={true}
+				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
+				onSignMessage={onSignMessage}
+				onStar={onStar}
+				onStoreHash={onStoreHash}
+				onUpdateWalletName={onUpdateWalletName}
+				onVerifyMessage={onVerifyMessage}
+			/>,
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const multiSignatureOption = getByTestId("dropdown__option--primary-1");
+		expect(multiSignatureOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(multiSignatureOption);
+		});
+
+		expect(onMultiSignature).toHaveBeenCalled();
+	});
+
+	it("should handle second signature registration", () => {
+		const { getByTestId } = render(
+			<WalletHeader
+				address="abc"
+				balance={BigNumber.make(0)}
+				coin="ARK"
+				currencyBalance={BigNumber.make(10)}
+				exchangeCurrency="USD"
+				network="mainnet"
+				publicKey="publicKey"
+				ticker="ARK"
+				showSecondSignatureOption={true}
+				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
+				onSignMessage={onSignMessage}
+				onStar={onStar}
+				onStoreHash={onStoreHash}
+				onUpdateWalletName={onUpdateWalletName}
+				onVerifyMessage={onVerifyMessage}
+			/>,
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const secondSignatureOption = getByTestId("dropdown__option--primary-1");
+		expect(secondSignatureOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(secondSignatureOption);
+		});
+
+		expect(onSecondSignature).toHaveBeenCalled();
+	});
+
 	it("should handle star", () => {
 		const { getByTestId } = render(
 			<WalletHeader
@@ -291,6 +442,9 @@ describe("WalletHeader", () => {
 				publicKey="publicKey"
 				ticker="ARK"
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -324,6 +478,9 @@ describe("WalletHeader", () => {
 				showStoreHashOption={true}
 				showVerifyMessageOption={true}
 				onDeleteWallet={onDeleteWallet}
+				onMultiSignature={onMultiSignature}
+				onReceiveFunds={onReceiveFunds}
+				onSecondSignature={onSecondSignature}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
