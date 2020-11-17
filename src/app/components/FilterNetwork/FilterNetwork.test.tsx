@@ -1,8 +1,8 @@
 import { act } from "@testing-library/react-hooks";
 import React from "react";
-import { fireEvent, render, waitFor,within } from "utils/testing-library";
+import { fireEvent, render, waitFor, within } from "utils/testing-library";
 
-import { FilterNetwork,FilterNetworks, NetworkOptions, ToggleAllOption } from "./";
+import { FilterNetwork, FilterNetworks, NetworkOptions, ToggleAllOption } from "./";
 
 const networks = () => [
 	{
