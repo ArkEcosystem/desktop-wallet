@@ -91,7 +91,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 	const { t } = useTranslation();
 
-	const fetchTransactions = async ({ flush = false, mode = "all" }: { flush?: boolean; mode?: string }) => {
+	const fetchTransactions = async ({ flush, mode }: { flush: boolean; mode: string }) => {
 		let currentTransactions = allTransactions || [];
 
 		if (flush) {
