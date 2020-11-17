@@ -49,6 +49,7 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 							field: t("SETTINGS.PEERS.NAME"),
 						}).toString(),
 					})}
+					data-testid="PeerForm__name-input"
 				/>
 				<FormHelperText />
 			</FormField>
@@ -61,6 +62,7 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 							field: t("SETTINGS.PEERS.PEER_IP"),
 						}).toString(),
 					})}
+					data-testid="PeerForm__host-input"
 				/>
 				<FormHelperText />
 			</FormField>
@@ -68,7 +70,7 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 			<FormField name="type">
 				<FormLabel label={t("SETTINGS.PEERS.TYPE")} required={false} optional />
 				<label htmlFor="isMultiSignature" className="flex items-center space-x-2">
-					<Checkbox name="isMultiSignature" ref={register()} />
+					<Checkbox name="isMultiSignature" ref={register()} data-testid="PeerForm__multisignature-toggle" />
 					<span className="text-sm font-semibold text-theme-secondary-text">
 						{t("COMMON.MULTISIGNATURE")}
 					</span>
@@ -76,7 +78,7 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 			</FormField>
 
 			<div className="flex justify-end mt-4">
-				<Button type="submit" disabled={!isValid} data-testid="peer-list__add-button">
+				<Button type="submit" disabled={!isValid} data-testid="PeerForm__add-button">
 					{t("SETTINGS.PEERS.ADD_PEER")}
 				</Button>
 			</div>
