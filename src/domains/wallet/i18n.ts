@@ -171,7 +171,7 @@ export const translations: { [key: string]: any } = {
 
 		OPTIONS: {
 			DELETE: "Delete",
-			MULTISIGNATURE: "Multisig. Registation",
+			MULTISIGNATURE: "Multisignature",
 			RECEIVE_FUNDS: "Receive Funds",
 			RECEIVE_FUNDS_QR: "QR",
 			SECOND_SIGNATURE: "Second Signature",

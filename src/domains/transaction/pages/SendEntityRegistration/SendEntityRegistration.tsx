@@ -10,6 +10,8 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
+import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
+import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -49,6 +51,13 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		(type: string) => env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), type),
 		[env, activeWallet],
 	);
+
+	const setFeesByRegistrationType = (type: string) => {
+		const fees = getFeesByRegistrationType("entityRegistration");
+
+		setValue("fees", fees);
+		setValue("fee", fees?.avg);
+	};
 
 	useEffect(() => {
 		register("fee");
@@ -95,34 +104,63 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	// This effect sets the appropriate data (fees, entityName, form title) and redirects to step 2
 	// to internally perform entity registration while the user experiences update action.
 	useEffect(() => {
-		if (selectedRegistrationType !== "delegate") return;
+		if (selectedRegistrationType === "delegate") {
+			setRegistrationForm(EntityRegistrationForm);
+			setValue(
+				"registrationType",
+				{
+					value: "entityRegistration",
+					type: Enums.EntityType.Business,
+					label: "Business",
+				},
+				{ shouldValidate: true, shouldDirty: true },
+			);
 
-		setRegistrationForm(EntityRegistrationForm);
-		setValue(
-			"registrationType",
-			{
-				value: "entityRegistration",
-				type: Enums.EntityType.Business,
-				label: "Business",
-			},
-			{ shouldValidate: true, shouldDirty: true },
-		);
+			setFeesByRegistrationType("entityRegistration");
 
-		const fees = getFeesByRegistrationType("entityRegistration");
+			const delegate = env
+				.delegates()
+				.findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address());
 
-		setValue("fees", fees);
-		setValue("fee", fees?.avg);
+			register("entityName");
+			setValue("entityName", delegate.username());
 
-		const delegate = env
-			.delegates()
-			.findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address());
+			setEntityRegistrationTitle(t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"));
 
-		register("entityName");
-		setValue("entityName", delegate.username());
+			return setActiveTab(2);
+		}
 
-		setEntityRegistrationTitle(t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"));
+		if (selectedRegistrationType === "secondSignature") {
+			setRegistrationForm(SecondSignatureRegistrationForm);
+			setValue(
+				"registrationType",
+				{
+					value: "secondSignature",
+					label: "Second Signature",
+				},
+				{ shouldValidate: true, shouldDirty: true },
+			);
 
-		setActiveTab(2);
+			setFeesByRegistrationType("secondSignature");
+
+			return setActiveTab(2);
+		}
+
+		if (selectedRegistrationType === "multiSignature") {
+			setRegistrationForm(MultiSignatureRegistrationForm);
+			setValue(
+				"registrationType",
+				{
+					value: "multiSignature",
+					label: "Multisignature",
+				},
+				{ shouldValidate: true, shouldDirty: true },
+			);
+
+			setFeesByRegistrationType("multiSignature");
+
+			return setActiveTab(2);
+		}
 	}, [
 		getValues,
 		setValue,
