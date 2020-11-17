@@ -170,10 +170,14 @@ export const translations: { [key: string]: any } = {
 		},
 
 		OPTIONS: {
-			WALLET_NAME: "Wallet Name",
+			DELETE: "Delete",
+			MULTISIGNATURE: "Multisig. Registation",
+			RECEIVE_FUNDS: "Receive Funds",
+			RECEIVE_FUNDS_QR: "QR",
+			SECOND_SIGNATURE: "Second Signature",
 			SIGN_MESSAGE: "Sign Message",
 			STORE_HASH: "Store Hash",
-			DELETE: "Delete",
+			WALLET_NAME: "Wallet Name",
 		},
 	},
 

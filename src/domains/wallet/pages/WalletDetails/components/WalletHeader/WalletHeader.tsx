@@ -24,10 +24,15 @@ type Props = {
 	network: string;
 	publicKey?: string;
 	ticker: string;
+	showMultiSignatureOption?: boolean;
+	showSecondSignatureOption?: boolean;
 	showSignMessageOption?: boolean;
 	showStoreHashOption?: boolean;
 	showVerifyMessageOption?: boolean;
 	onDeleteWallet: () => void;
+	onMultiSignature: () => void;
+	onReceiveFunds: () => void;
+	onSecondSignature: () => void;
 	onSend?: () => void;
 	onSignMessage: () => void;
 	onStar: () => void;
@@ -54,6 +59,9 @@ export const WalletHeader = ({
 	showStoreHashOption,
 	showVerifyMessageOption,
 	onDeleteWallet,
+	onMultiSignature,
+	onReceiveFunds,
+	onSecondSignature,
 	onSend,
 	onSignMessage,
 	onStar,
@@ -69,10 +77,31 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	primaryOptions.options.push({
-		label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
-		value: "wallet-name",
-	});
+	primaryOptions.options.push(
+		{
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
+			value: "wallet-name",
+		},
+		{
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RECEIVE_FUNDS"),
+			secondaryLabel: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RECEIVE_FUNDS_QR"),
+			value: "receive-funds",
+		},
+	);
+
+	if (showMultiSignatureOption) {
+		primaryOptions.options.push({
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
+			value: "multi-signature",
+		});
+	};
+
+	if (showSecondSignatureOption) {
+		primaryOptions.options.push({
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
+			value: "second-signature",
+		});
+	};
 
 	const additionalOptions: DropdownOptionGroup = {
 		key: "additional",
@@ -115,24 +144,36 @@ export const WalletHeader = ({
 	};
 
 	const handleSelect = (option: DropdownOption) => {
+		if (option.value === "wallet-name") {
+			return onUpdateWalletName();
+		}
+
+		if (option.value === "receive-funds") {
+			return onReceiveFunds();
+		}
+
+		if (option.value === "multi-signature") {
+			return onMultiSignature();
+		}
+
+		if (option.value === "second-signature") {
+			return onSecondSignature();
+		}
+
 		if (option.value === "sign-message") {
-			onSignMessage();
+			return onSignMessage();
 		}
 
 		if (option.value === "verify-message") {
-			onVerifyMessage();
-		}
-
-		if (option.value === "delete-wallet") {
-			onDeleteWallet();
-		}
-
-		if (option.value === "wallet-name") {
-			onUpdateWalletName();
+			return onVerifyMessage();
 		}
 
 		if (option.value === "store-hash") {
-			onStoreHash();
+			return onStoreHash();
+		}
+
+		if (option.value === "delete-wallet") {
+			return onDeleteWallet();
 		}
 	};
 
