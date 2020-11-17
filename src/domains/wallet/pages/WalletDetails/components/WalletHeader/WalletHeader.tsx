@@ -94,14 +94,14 @@ export const WalletHeader = ({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
 			value: "multi-signature",
 		});
-	};
+	}
 
 	if (showSecondSignatureOption) {
 		primaryOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
 			value: "second-signature",
 		});
-	};
+	}
 
 	const additionalOptions: DropdownOptionGroup = {
 		key: "additional",

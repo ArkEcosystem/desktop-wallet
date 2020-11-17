@@ -86,7 +86,12 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 				>
 					<div className={`${option?.icon ? "inline-flex space-x-2 items-center" : ""}`}>
 						{option?.icon && option?.iconPosition === "start" && <Icon name={option.icon} />}
-						<span>{option.label}{option.secondaryLabel && <span className="text-theme-secondary ml-1">{option.secondaryLabel}</span>}</span>
+						<span>
+							{option.label}
+							{option.secondaryLabel && (
+								<span className="text-theme-secondary ml-1">{option.secondaryLabel}</span>
+							)}
+						</span>
 						{option?.icon && option?.iconPosition !== "start" && <Icon name={option.icon} />}
 					</div>
 				</li>
