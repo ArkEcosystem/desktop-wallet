@@ -136,7 +136,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 				<Section className="flex-1">
 					{!contacts.length && (
 						<div data-testid="contacts__banner" className="text-center">
-							<Image name="ContactsBanner" domain="contact" height={175} className="mx-auto" />
+							<Image name="ContactsBanner" domain="contacts" height={175} className="mx-auto" />
 
 							<div className="mt-8 text-theme-secondary-text">
 								{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
