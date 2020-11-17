@@ -68,37 +68,27 @@ export const SecondSignatureRegistrationForm: SendEntityRegistrationForm = {
 	transactionDetails,
 	formFields: ["secondMnemonic", "verification"],
 
-	signTransaction: async ({ env, form, handleNext, profile, setTransaction, translations }: any) => {
-		const { clearErrors, getValues, setError, setValue } = form;
+	signTransaction: async ({ env, form, profile }: any) => {
+		const { clearErrors, getValues } = form;
 
 		clearErrors("mnemonic");
 		const { fee, mnemonic, senderAddress, secondMnemonic } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-		try {
-			const transactionId = await senderWallet.transaction().signSecondSignature({
-				fee,
-				from: senderAddress,
-				sign: {
-					mnemonic,
-				},
-				data: {
-					mnemonic: secondMnemonic,
-				},
-			});
+		const transactionId = await senderWallet.transaction().signSecondSignature({
+			fee,
+			from: senderAddress,
+			sign: {
+				mnemonic,
+			},
+			data: {
+				mnemonic: secondMnemonic,
+			},
+		});
 
-			await senderWallet.transaction().broadcast(transactionId);
+		await senderWallet.transaction().broadcast(transactionId);
+		await env.persist();
 
-			await env.persist();
-
-			setTransaction(senderWallet.transaction().transaction(transactionId));
-
-			handleNext();
-		} catch (error) {
-			console.error("Could not create transaction: ", error);
-
-			setValue("mnemonic", "");
-			setError("mnemonic", { type: "manual", message: translations("TRANSACTION.INVALID_MNEMONIC") });
-		}
+		return senderWallet.transaction().transaction(transactionId);
 	},
 };
