@@ -1,6 +1,6 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useUpdater } from "app/hooks/use-updater";
@@ -18,8 +18,6 @@ type WalletUpdateProps = {
 	onClose?: any;
 	onCancel?: any;
 };
-
-const { WalletUpdateBanner, WalletUpdateReadyBanner } = images.wallet.components.walletUpdate;
 
 export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdateProps) => {
 	const [activeStep, setActiveStep] = useState(1);
@@ -55,7 +53,11 @@ export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdat
 		<Modal
 			title={t("WALLETS.MODAL_WALLET_UPDATE.TITLE", { version })}
 			image={
-				activeStep < 3 ? <WalletUpdateBanner className="my-8" /> : <WalletUpdateReadyBanner className="my-8" />
+				activeStep < 3 ? (
+					<Image name="WalletUpdateBanner" domain="wallet" className="my-8" />
+				) : (
+					<Image name="WalletUpdateReadyBanner" domain="wallet" className="my-8" />
+				)
 			}
 			isOpen={isOpen}
 			onClose={handleClose}

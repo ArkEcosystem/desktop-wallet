@@ -1,9 +1,9 @@
 import { ReactComponent as ConfirmTransactionLedgerBanner } from "./confirm-transaction-ledger-banner.svg";
-import { ReactComponent as TransactionSuccessfulBanner } from "./transaction_successful.svg";
+import { ImagesDark } from "./dark";
+import { ReactComponent as TransactionSuccessfulBanner } from "./transaction-successful.svg";
 
 export const transaction = {
-	common: {
-		ConfirmTransactionLedgerBanner,
-		TransactionSuccessfulBanner,
-	},
+	ConfirmTransactionLedgerBanner,
+	TransactionSuccessfulBanner,
+	...ImagesDark,
 };
