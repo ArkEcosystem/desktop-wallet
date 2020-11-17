@@ -172,6 +172,7 @@ export const WalletHeader = ({
 			return onStoreHash();
 		}
 
+		/* istanbul ignore else */
 		if (option.value === "delete-wallet") {
 			return onDeleteWallet();
 		}

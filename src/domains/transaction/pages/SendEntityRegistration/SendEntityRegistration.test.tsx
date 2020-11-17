@@ -205,6 +205,30 @@ describe("Registration", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it.each([
+		["delegate", "Delegate Update"],
+		["secondSignature", "Register Second Signature"],
+		["multiSignature", "Multisignature Registration"],
+	])("should handle registrationType param (%s)", async (type, label) => {
+		const registrationPath = `/profiles/${getDefaultProfileId()}/wallets/${secondWallet.id()}/${type}/send-entity-registration`;
+		history.push(registrationPath);
+
+		await act(async () => {
+			const renderedPage = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/:registrationType/send-entity-registration">
+					<SendEntityRegistration />
+				</Route>,
+				{
+					routes: [registrationPath],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(renderedPage.getByTestId("Registration__form")).toBeTruthy());
+			await waitFor(() => expect(renderedPage.getByTestId("header__title")).toHaveTextContent(label));
+		});
+	});
+
 	it("should render 1st step", async () => {
 		const setRegistrationForm = jest.fn();
 		const network = {
