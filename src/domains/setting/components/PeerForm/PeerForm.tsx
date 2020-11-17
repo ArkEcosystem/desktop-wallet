@@ -4,7 +4,7 @@ import { Checkbox } from "app/components/Checkbox";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -20,6 +20,10 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 	const { formState, register, setValue, watch } = form;
 	const { isValid } = formState;
 	const { network, name, host, isMultiSignature } = watch();
+
+	useEffect(() => {
+		register("network", { required: true });
+	}, [register]);
 
 	const handleSelectNetwork = (network?: Coins.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });

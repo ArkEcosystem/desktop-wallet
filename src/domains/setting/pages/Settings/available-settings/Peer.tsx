@@ -6,26 +6,50 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { AddPeer } from "domains/setting/components/AddPeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
 
 export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
+	const { state } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
 	const [isCustomPeer, setIsCustomPeer] = useState(
 		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
 	);
+	const [peers, setPeers] = useState([]);
 	const [isAddPeer, setIsAddPeer] = useState(false);
 
-	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
+	const loadPeers = useCallback(() => activeProfile
+			.peers()
+			.values()
+			.reduce((peers: any, data: any) => {
+				for (const coin of Object.keys(data)) {
+					for (const network of Object.keys(data[coin])) {
+						for (const peer of data[coin][network]) {
+							peers.push({
+								...peer,
+								coin,
+								network,
+							});
+						}
+					}
+				}
 
-	const peers = useMemo(() => activeProfile.peers().values(), [activeProfile]);
+				return peers;
+			}, []), [activeProfile]);
+
+	useEffect(() => {
+		setPeers(loadPeers());
+	}, [state]);
+
+	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
 	const { context, register } = formConfig;
 

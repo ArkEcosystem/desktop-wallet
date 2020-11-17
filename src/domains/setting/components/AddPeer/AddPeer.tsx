@@ -29,10 +29,7 @@ export const AddPeer = ({ isOpen, networks, profile, onClose }: AddPeerProps) =>
 		host: string;
 		isMultiSignature: boolean;
 	}) => {
-		const [, networkId] = network.id().split(".");
-		const coin = network.coin();
-
-		profile.peers().create(coin, networkId, {
+		profile.peers().create(network.coin(), network.id(), {
 			name,
 			host,
 			isMultiSignature,
