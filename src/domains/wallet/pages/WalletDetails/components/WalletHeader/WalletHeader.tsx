@@ -55,6 +55,8 @@ export const WalletHeader = ({
 	network,
 	publicKey,
 	ticker,
+	showMultiSignatureOption,
+	showSecondSignatureOption,
 	showSignMessageOption,
 	showStoreHashOption,
 	showVerifyMessageOption,
