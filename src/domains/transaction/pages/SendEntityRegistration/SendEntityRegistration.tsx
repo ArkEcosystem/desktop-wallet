@@ -52,12 +52,15 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		[env, activeWallet],
 	);
 
-	const setFeesByRegistrationType = (type: string) => {
-		const fees = getFeesByRegistrationType("entityRegistration");
+	const setFeesByRegistrationType = useCallback(
+		(type: string) => {
+			const fees = getFeesByRegistrationType("entityRegistration");
 
-		setValue("fees", fees);
-		setValue("fee", fees?.avg);
-	};
+			setValue("fees", fees);
+			setValue("fee", fees?.avg);
+		},
+		[getFeesByRegistrationType, setValue],
+	);
 
 	useEffect(() => {
 		register("fee");
