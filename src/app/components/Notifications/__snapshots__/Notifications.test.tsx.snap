@@ -485,100 +485,73 @@ exports[`Notifications should render with plugins 1`] = `
               </td>
             </tr>
             <tr
-              class="sc-AxhCb jCOJxD group"
+              class="sc-AxhCb ivWAPv group"
               data-testid="TableRow"
             >
               <td>
                 <div
-                  class="sc-AxiKw hWtRbB space-x-3"
+                  class="sc-AxiKw ezKnmZ space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
+                    data-testid="TransactionRowMode"
                   >
                     <div
-                      class="sc-AxgMl jjHZYc leading-none border-transparent"
+                      class="sc-AxgMl jjHZYc border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
-                        >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 32px; height: 32px; border-radius: 50%;"
-                          >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
-                      </span>
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        data-testid="TransactionRowMode__Received"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          received.svg
+                        </svg>
+                      </div>
                     </div>
                     <div
-                      class="sc-AxgMl jjHZYc leading-none border-transparent"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                      data-testid="Avatar"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
-                        >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 32px; height: 32px; border-radius: 50%;"
-                          >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
-                      </span>
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                          title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <span>
+                  <div
+                    class="inline-flex items-center"
+                  >
                     <span
-                      class="flex items-center leading-none"
+                      class="sc-AxheI fniENP text-theme-text truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
                     >
-                      <span
-                        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                        style="width: 133px; height: 16px;"
-                      >
-                        ‌
-                      </span>
-                      ‌
+                      D8rr7B … s6YUYD
                     </span>
-                  </span>
+                  </div>
                 </div>
               </td>
               <td>
                 <div
-                  class="sc-AxiKw eIwGCV justify-end"
+                  class="sc-AxiKw fVLXTF justify-end"
                 >
-                  <span
-                    class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                  <div
+                    class="sc-AxhUy dVEcwV whitespace-no-wrap"
+                    color="success"
+                    data-testid="TransactionRowAmount"
                   >
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 102px; height: 16px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
+                    <span
+                      data-testid="Amount"
+                    >
+                      + 0.0000001 DARK
                     </span>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 35px; height: 16px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </span>
+                  </div>
                 </div>
               </td>
             </tr>
