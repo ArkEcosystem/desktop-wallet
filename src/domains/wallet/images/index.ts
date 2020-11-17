@@ -5,11 +5,7 @@ import { ReactComponent as WalletUpdateBanner } from "./wallet-update.svg";
 
 export const wallet = {
 	WaitingLedgerDevice,
+	WalletUpdateBanner,
+	WalletUpdateReadyBanner,
 	...ImagesDark,
-	components: {
-		walletUpdate: {
-			WalletUpdateBanner,
-			WalletUpdateReadyBanner,
-		},
-	},
 };

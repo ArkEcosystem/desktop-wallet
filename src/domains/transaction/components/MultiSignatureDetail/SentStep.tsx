@@ -1,13 +1,11 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { images } from "app/assets/images";
 import { Header } from "app/components/Header";
+import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { Signatures } from "./Signatures";
-
-const { TransactionSuccessfulBanner } = images.transaction.common;
 
 export const SentStep = ({
 	transaction,
@@ -25,7 +23,7 @@ export const SentStep = ({
 		<section>
 			<Header title={t("TRANSACTION.SUCCESS.TITLE")} />
 
-			<TransactionSuccessfulBanner className="w-full my-4" />
+			<Image name="TransactionSuccessfulBanner" domain="transaction" className="w-full my-4" />
 
 			<p className="text-theme-neutral-dark">{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_3.DESCRIPTION")}</p>
 

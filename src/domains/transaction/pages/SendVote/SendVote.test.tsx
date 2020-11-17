@@ -11,6 +11,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getDefaultWalletId,
 	RenderResult,
 	renderWithRouter,
 	syncDelegates,
@@ -547,14 +548,11 @@ describe("SendVote", () => {
 			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			const signMock = jest.spyOn(wallet.transaction(), "signVote").mockImplementation(() => {
-				throw new Error();
+				throw new Error("Signatory should be");
 			});
-
-			const consoleSpy = jest.spyOn(console, "error").mockImplementation();
 
 			fireEvent.click(getByTestId("SendVote__button--submit"));
 
-			await waitFor(() => expect(consoleSpy).toHaveBeenCalledTimes(1));
 			await waitFor(() => expect(passwordInput).toHaveValue(""));
 			await waitFor(() =>
 				expect(getByTestId("AuthenticationStep")).toHaveTextContent(transactionTranslations.INVALID_MNEMONIC),
@@ -563,6 +561,89 @@ describe("SendVote", () => {
 			signMock.mockRestore();
 
 			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+		});
+	});
+
+	it("should show error step and go back", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+					<SendVote />
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SendVote__form-step")).toBeTruthy());
+			await waitFor(() =>
+				expect(rendered.getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username),
+			);
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			// Fee
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
+			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
+			// Step 2
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+			// Back to Step 2
+			fireEvent.click(getByTestId("SendVote__button--back"));
+			await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendVote__button--continue"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+			// Step 5 (skip step 4 for now - ledger confirmation)
+			const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
+				throw new Error();
+			});
+
+			const historyMock = jest.spyOn(history, "push").mockReturnValue();
+
+			fireEvent.click(getByTestId("SendVote__button--submit"));
+
+			await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
+			await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
+			await waitFor(() => expect(rendered.container).toMatchSnapshot());
+
+			act(() => {
+				fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+			});
+
+			const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
+			await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+			signMock.mockRestore();
 		});
 	});
 

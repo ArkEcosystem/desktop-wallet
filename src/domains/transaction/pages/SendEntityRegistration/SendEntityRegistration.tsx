@@ -10,8 +10,10 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -42,7 +44,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { formState, getValues, register, setValue, unregister } = form;
+	const { formState, getValues, register, setValue, setError, unregister } = form;
 	const { registrationType } = getValues();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
@@ -186,16 +188,26 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
 	}, [activeProfile, networks]);
 
-	const submitForm = () =>
-		registrationForm!.signTransaction({
-			env,
-			form,
-			handleNext,
-			profile: activeProfile,
-			setTransaction,
-			translations: t,
-			type: registrationType.type,
-		});
+	const submitForm = async () => {
+		try {
+			const transaction = await registrationForm!.signTransaction({
+				env,
+				form,
+				profile: activeProfile,
+				type: registrationType.type,
+			});
+
+			setTransaction(transaction);
+			handleNext();
+		} catch (error) {
+			if (isMnemonicError(error)) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
+
+			setActiveTab(10);
+		}
+	};
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -242,6 +254,15 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}
 									fees={getValues("fees")}
+								/>
+							</TabPanel>
+							<TabPanel tabId={10}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={formState.isSubmitting}
+									onRepeat={form.handleSubmit(submitForm)}
 								/>
 							</TabPanel>
 
