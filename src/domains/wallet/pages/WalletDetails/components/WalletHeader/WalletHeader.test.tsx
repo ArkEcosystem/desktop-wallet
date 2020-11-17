@@ -39,6 +39,7 @@ describe("WalletHeader", () => {
 				onMultiSignature={onMultiSignature}
 				onReceiveFunds={onReceiveFunds}
 				onSecondSignature={onSecondSignature}
+				onSend={onSend}
 				onSignMessage={onSignMessage}
 				onStar={onStar}
 				onStoreHash={onStoreHash}
@@ -379,7 +380,7 @@ describe("WalletHeader", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const multiSignatureOption = getByTestId("dropdown__option--primary-1");
+		const multiSignatureOption = getByTestId("dropdown__option--primary-2");
 		expect(multiSignatureOption).toBeTruthy();
 
 		act(() => {
@@ -420,7 +421,7 @@ describe("WalletHeader", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const secondSignatureOption = getByTestId("dropdown__option--primary-1");
+		const secondSignatureOption = getByTestId("dropdown__option--primary-2");
 		expect(secondSignatureOption).toBeTruthy();
 
 		act(() => {
