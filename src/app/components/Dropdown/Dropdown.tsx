@@ -89,7 +89,7 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 						<span>
 							{option.label}
 							{option.secondaryLabel && (
-								<span className="ml-1 text-theme-secondary">{option.secondaryLabel}</span>
+								<span className="ml-1 text-theme-secondary-text">{option.secondaryLabel}</span>
 							)}
 						</span>
 						{option?.icon && option?.iconPosition !== "start" && <Icon name={option.icon} />}
