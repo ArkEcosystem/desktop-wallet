@@ -393,6 +393,6 @@ export const translations: { [key: string]: any } = {
 	ERROR: {
 		TITLE: "Transaction Error",
 		SUBTITLE:
-			"During the confirmation of the transaction, an error has occured. We recommend that you repeat the transaction or return to your wallet",
+			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
 	},
 };

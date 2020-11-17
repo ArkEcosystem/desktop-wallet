@@ -37,7 +37,7 @@ export const ErrorStep = ({ title, subtitle, onBack, onRepeat, isRepeatDisabled 
 					className="space-x-2"
 					onClick={() => onRepeat?.()}
 				>
-					{t("COMMON.REPEAT")}
+					{t("COMMON.RETRY")}
 				</Button>
 			</div>
 		</div>
