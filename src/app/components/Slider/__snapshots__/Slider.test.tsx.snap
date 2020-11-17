@@ -10,7 +10,7 @@ exports[`Slider should render 1`] = `
       style="height: 224px;"
     >
       <div
-        class="h-full swiper-wrapper "
+        class="h-full swiper-wrapper important:z-0 "
         style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition: 0ms;"
       >
         <div
@@ -37,7 +37,7 @@ exports[`Slider should render empty rows if template not provided 1`] = `
       style="height: 224px;"
     >
       <div
-        class="h-full swiper-wrapper "
+        class="h-full swiper-wrapper important:z-0 "
         style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition: 0ms;"
       >
         <div
@@ -62,7 +62,7 @@ exports[`Slider should render pagination 1`] = `
       style="height: 288px;"
     >
       <div
-        class="h-full swiper-wrapper "
+        class="h-full swiper-wrapper important:z-0 "
         style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition: 0ms;"
       >
         <div
@@ -133,7 +133,7 @@ exports[`Slider should render pagination 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center justify-center h-6 swiper-pagination important:bottom-8 swiper-pagination-clickable swiper-pagination-bullets"
+        class="flex items-center justify-center h-6 swiper-pagination important:bottom-8 important:z-0 swiper-pagination-clickable swiper-pagination-bullets"
       />
     </div>
   </div>
