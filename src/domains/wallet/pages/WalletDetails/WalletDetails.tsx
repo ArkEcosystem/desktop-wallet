@@ -174,11 +174,15 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					showVerifyMessageOption={activeWallet.network().can("Message.verify")}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onMultiSignature={() =>
-						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/multiSignature/send-entity-registration`)
+						history.push(
+							`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/multiSignature/send-entity-registration`,
+						)
 					}
 					onReceiveFunds={() => setIsReceiveFunds(true)}
 					onSecondSignature={() =>
-						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/secondSignature/send-entity-registration`)
+						history.push(
+							`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/secondSignature/send-entity-registration`,
+						)
 					}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
