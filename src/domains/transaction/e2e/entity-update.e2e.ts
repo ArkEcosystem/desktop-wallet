@@ -183,43 +183,13 @@ test("should pass validation on submit and go to 2nd step", async (t: any) => {
 	await t.expect(Selector("[data-testid=ReviewStep]").exists).ok();
 });
 
-test("should fail authentication and see error message in toast", async (t: any) => {
-	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
-
-	await goToProfile(t);
-
-	// Import wallet
-	await importWallet(t, "passphrase");
-
-	await goToMyRegistrations(t);
-	await goToSendEntityUpdate(t);
-
-	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
-	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
-	await t.expect(Selector("[data-testid=ReviewStep]").exists).ok();
-
-	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
-	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
-	await t.expect(Selector("[data-testid=AuthenticationStep").exists).ok();
-
-	// mnemonic
-	await t.hover(Selector("[data-testid=AuthenticationStep__mnemonic]"));
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong passphrase", { replace: true });
-
-	await t.hover(Selector("[data-testid=SendEntityUpdate__send-button]"));
-	await t.click(Selector("[data-testid=SendEntityUpdate__send-button]"));
-
-	await t.expect(Selector("[data-testid=AuthenticationStep").exists).ok();
-	await t.expect(Selector(".Toastify__toast--error").exists).ok();
-});
-
 test("should successfully update entity", async (t: any) => {
 	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, passphrase);
 
 	await goToMyRegistrations(t);
 

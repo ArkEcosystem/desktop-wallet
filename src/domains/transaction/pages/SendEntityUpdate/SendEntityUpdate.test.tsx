@@ -474,7 +474,7 @@ describe("SendEntityUpdate", () => {
 	});
 
 	it("should show loading toast when submitting send transaction", async () => {
-		const { asFragment, getByTestId } = renderPage();
+		const { asFragment, getByTestId, queryByTestId } = renderPage();
 		const loadingToastMock = jest.spyOn(toast, "info");
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
@@ -487,12 +487,19 @@ describe("SendEntityUpdate", () => {
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+
 		act(() => {
 			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		});
+
+		waitFor(() => {
+			expect(queryByTestId("SendEntityUpdate__send-button")).not.toBeDisabled();
 		});
 
 		act(() => {
@@ -500,8 +507,6 @@ describe("SendEntityUpdate", () => {
 		});
 
 		await waitFor(() => expect(loadingToastMock).toHaveBeenCalled());
-
-		expect(getByTestId("AuthenticationStep")).toBeTruthy();
 
 		loadingToastMock.mockRestore();
 	});
