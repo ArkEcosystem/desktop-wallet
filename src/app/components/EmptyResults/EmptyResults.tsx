@@ -1,6 +1,5 @@
-import { images } from "app/assets/images";
+import { Image } from "app/components/Image";
 import React from "react";
-const { NoResultsBanner } = images.common;
 
 type EmptyResultsProps = {
 	className?: string;
@@ -17,7 +16,7 @@ export const EmptyResults = ({ className, title, subtitle }: EmptyResultsProps) 
 			{title && <div className="mb-4 text-lg font-bold">{title}</div>}
 			{subtitle && <div className="mb-8 text-md">{subtitle}</div>}
 			<div className="mx-auto my-4 w-128">
-				<NoResultsBanner />
+				<Image name="NoResultsBanner" />
 			</div>
 		</div>
 	</div>

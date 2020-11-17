@@ -1,14 +1,12 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import { toasts } from "app/services";
 import React from "react";
 import { useTranslation } from "react-i18next";
-
-const DeleteBanner = images.common.DeleteBanner;
 
 type ResetProfileProps = {
 	isOpen: boolean;
@@ -36,7 +34,7 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 	return (
 		<Modal
 			title={t("PROFILE.MODAL_RESET_PROFILE.TITLE")}
-			image={<DeleteBanner className="w-3/5 m-auto my-8" />}
+			image={<Image name="DeleteBanner" className="w-3/5 m-auto my-8" />}
 			description={t("PROFILE.MODAL_RESET_PROFILE.DESCRIPTION")}
 			size="lg"
 			isOpen={isOpen}
