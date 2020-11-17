@@ -4,43 +4,46 @@ import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
-import { SearchResource } from "app/components/SearchResource";
+import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { Modal } from "app/components/Modal";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
 import { useDarkMode } from "app/hooks";
-import React from "react";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { Size } from "types";
 
 type SearchWalletListItemProps = {
-	index: number;
 	address: string;
 	balance: BigNumber;
-	convertedBalance: BigNumber;
 	coinId: string;
 	coinName: string;
+	convertedBalance: BigNumber;
 	currency: string;
 	exchangeCurrency: string;
+	index: number;
 	name?: string;
-	showNetwork: boolean;
+	showFiatValue?: boolean;
+	showNetwork?: boolean;
 	onAction: any;
 };
 
 const SearchWalletListItem = ({
-	index,
 	address,
 	balance,
-	convertedBalance,
 	coinId,
 	coinName,
+	convertedBalance,
 	currency,
 	exchangeCurrency,
+	index,
 	name,
+	showFiatValue,
 	showNetwork,
 	onAction,
 }: SearchWalletListItemProps) => {
-	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
+	const [shadowColor, setShadowColor] = React.useState("--theme-background-color");
 
 	const isDark = useDarkMode();
 
@@ -51,16 +54,13 @@ const SearchWalletListItem = ({
 			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
 			onMouseLeave={() => setShadowColor("")}
 		>
-			<TableCell variant="start">
-				{showNetwork && (
-					<Circle className="-mr-2" size="lg" shadowColor={shadowColor}>
-						<Icon name={coinName} width={20} height={20} />
-					</Circle>
-				)}
-				<Avatar size="lg" address={address} shadowColor={shadowColor} />
-			</TableCell>
-
-			<TableCell>
+			<TableCell variant="start" innerClassName="space-x-4">
+				<div className="-space-x-2">
+					{showNetwork && (
+						<NetworkIcon size="lg" coin={coinName} network={coinId} shadowColor={shadowColor} />
+					)}
+					<Avatar size="lg" address={address} shadowColor={shadowColor} />
+				</div>
 				<Address walletName={name} address={address} maxChars={22} />
 			</TableCell>
 
@@ -68,9 +68,11 @@ const SearchWalletListItem = ({
 				<Amount value={balance} ticker={currency} />
 			</TableCell>
 
-			<TableCell innerClassName="text-theme-neutral-light justify-end">
-				<Amount value={convertedBalance} ticker={exchangeCurrency} />
-			</TableCell>
+			{showFiatValue && (
+				<TableCell innerClassName="text-theme-neutral-light justify-end">
+					<Amount value={convertedBalance} ticker={exchangeCurrency} />
+				</TableCell>
+			)}
 
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
@@ -89,9 +91,11 @@ type SearchWalletProps = {
 	isOpen: boolean;
 	title: string;
 	description?: string;
-	searchBarExtra?: React.ReactNode;
 	wallets: ReadWriteWallet[];
-	showNetwork: boolean;
+	searchPlaceholder?: string;
+	size?: Size;
+	showFiatValue?: boolean;
+	showNetwork?: boolean;
 	onClose?: any;
 	onSearch?: any;
 	onSelectWallet?: any;
@@ -101,8 +105,10 @@ export const SearchWallet = ({
 	isOpen,
 	title,
 	description,
-	searchBarExtra,
 	wallets,
+	searchPlaceholder,
+	size,
+	showFiatValue,
 	showNetwork,
 	onClose,
 	onSearch,
@@ -110,42 +116,52 @@ export const SearchWallet = ({
 }: SearchWalletProps) => {
 	const { t } = useTranslation();
 
-	const listColumns = [
+	const commonColumns = [
 		{
-			Header: t("COMMON.ASSET_TYPE"),
-			className: !showNetwork ? "hidden no-border" : "",
-		},
-		{
-			Header: t("COMMON.ADDRESS"),
-			accessor: "address",
+			Header: t("COMMON.WALLET_ADDRESS"),
+			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
+			className: showNetwork ? "ml-24" : "ml-15",
 		},
 		{
 			Header: t("COMMON.BALANCE"),
-			accessor: "balance",
+			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
 			className: "justify-end",
-		},
-		{
-			Header: t("COMMON.FIAT_VALUE"),
-			accessor: "fiat",
-			className: "justify-end",
-		},
-		{
-			Header: t("COMMON.ACTION"),
-			className: "hidden no-border",
 		},
 	];
 
+	const columns = useMemo(() => {
+		if (showFiatValue) {
+			return [
+				...commonColumns,
+				{
+					Header: t("COMMON.FIAT_VALUE"),
+					accessor: (wallet: ReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
+					className: "justify-end",
+				},
+				{
+					Header: <HeaderSearchBar placeholder={searchPlaceholder} />,
+					accessor: "search",
+					className: "justify-end no-border",
+					disableSortBy: true,
+				},
+			];
+		}
+
+		return [
+			...commonColumns,
+			{
+				Header: <HeaderSearchBar placeholder={searchPlaceholder} />,
+				accessor: "search",
+				className: "justify-end no-border",
+				disableSortBy: true,
+			},
+		];
+	}, [commonColumns, searchPlaceholder, showFiatValue, t]);
+
 	return (
-		<SearchResource
-			isOpen={isOpen}
-			title={title}
-			description={description}
-			searchBarExtra={searchBarExtra}
-			onClose={onClose}
-			onSearch={onSearch}
-		>
-			<div>
-				<Table columns={listColumns} data={wallets}>
+		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose} size={size}>
+			<div className="mt-8">
+				<Table columns={columns} data={wallets}>
 					{(wallet: ReadWriteWallet, index: number) => (
 						<SearchWalletListItem
 							index={index}
@@ -157,17 +173,21 @@ export const SearchWallet = ({
 							currency={wallet.currency()}
 							exchangeCurrency={wallet.exchangeCurrency() || "BTC"} // @TODO get default from SDK
 							name={wallet.alias()}
+							showFiatValue={showFiatValue}
 							showNetwork={showNetwork}
 							onAction={onSelectWallet}
 						/>
 					)}
 				</Table>
 			</div>
-		</SearchResource>
+		</Modal>
 	);
 };
 
 SearchWallet.defaultProps = {
 	isOpen: false,
+	searchPlaceholder: "Enter the name or address for your wallet",
+	size: "5xl",
+	showFiatValue: true,
 	showNetwork: true,
 };

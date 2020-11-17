@@ -127,6 +127,9 @@ describe("Settings", () => {
 		// Toggle Advanced Mode
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+
+		// Toggle Test Development networks
+		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
 		// Open Advanced Mode Modal
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);

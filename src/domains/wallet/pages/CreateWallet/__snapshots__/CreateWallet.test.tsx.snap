@@ -19,7 +19,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-fzoXWK hgutBP flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="sc-fzpmMD jiyWyQ flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
         class="flex items-center justify-center text-theme-warning-600"
@@ -43,7 +43,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
         <p
           class="leading-relaxed break-words"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.
+          This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.
         </p>
       </div>
     </div>
@@ -180,7 +180,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU iIRSpE"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -192,7 +192,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -461,19 +461,19 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoNJl fLBodk"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzoyTs gSSopp"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -606,7 +606,7 @@ exports[`CreateWallet should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU iIRSpE"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -618,7 +618,7 @@ exports[`CreateWallet should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -887,19 +887,19 @@ exports[`CreateWallet should render 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoNJl fLBodk"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzoyTs gSSopp"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div
@@ -1110,6 +1110,142 @@ exports[`CreateWallet should render 1st step 1`] = `
 </DocumentFragment>
 `;
 
+exports[`CreateWallet should render 1st step without test networks 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="CreateWallet__first-step"
+  >
+    <div
+      class="flex items-end justify-between bg-theme-background"
+    >
+      <div>
+        <h1
+          class="mb-0 md:text-4xl"
+          data-testid="header__title"
+        >
+          Select a Cryptoasset
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          Select a cryptoasset to create your new wallet address
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="sc-AxirZ izhStr flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="true"
+          aria-haspopup="listbox"
+          aria-owns="CreateWallet__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="CreateWallet__network-input"
+            id="CreateWallet__network-label"
+          />
+          <div
+            class="sc-fznxsB hhZPAY"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="sc-fzoLag sc-fzoXzr jnLryM px-4"
+            >
+              <div
+                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="CreateWallet__network-menu"
+              aria-labelledby="CreateWallet__network-label"
+              autocomplete="off"
+              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="CreateWallet__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="CreateWallet__network-label"
+          class="grid grid-cols-6 gap-6 mt-6"
+          id="CreateWallet__network-menu"
+          role="listbox"
+        >
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="CreateWallet__network-item-0"
+            role="option"
+          >
+            <div
+              aria-label="ARK"
+              class="sc-AxgMl hLfYuP border-theme-danger-light text-theme-danger-400"
+              data-testid="NetworkIcon-ARK-ark.mainnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block cursor-pointer"
+            data-testid="SelectNetwork__NetworkIcon--container"
+            id="CreateWallet__network-item-1"
+            role="option"
+          >
+            <div
+              aria-label="Compendia"
+              class="sc-AxgMl hLfYuP border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-compendia.mainnet"
+            >
+              <div
+                class="sc-AxhCb dCXdPH"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  bind.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </fieldset>
+  </section>
+</DocumentFragment>
+`;
+
 exports[`CreateWallet should render 2`] = `<DocumentFragment />`;
 
 exports[`CreateWallet should render 4th step 1`] = `
@@ -1248,7 +1384,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU iIRSpE"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1260,7 +1396,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -1529,19 +1665,19 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoNJl fLBodk"
+                class="sc-fzoXWK fKqATg"
               >
                 <li
-                  class="sc-fzoyTs gSSopp"
+                  class="sc-fzoNJl lleTTz"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="sc-fzoNJl gpaoSa"
                 />
               </ul>
               <div

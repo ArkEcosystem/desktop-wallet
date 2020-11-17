@@ -1,16 +1,14 @@
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { images } from "app/assets/images";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
+import { Image } from "app/components/Image";
 import { Spinner } from "app/components/Spinner";
 import { useLedgerContext } from "app/contexts/Ledger";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-
-const { WaitingLedgerDevice } = images.wallet.components.Ledger;
 
 const ConnectionContent = ({
 	error,
@@ -33,10 +31,11 @@ const ConnectionContent = ({
 
 	return (
 		<div className="space-y-8">
-			<WaitingLedgerDevice className="mx-auto" />
-			<div className="inline-flex items-center justify-center w-full mt-8 space-x-3">
+			<Image name="WaitingLedgerDevice" domain="wallet" className="mx-auto" />
+
+			<div className="inline-flex items-center justify-center w-full space-x-3">
 				<Spinner color="primary" />
-				<span className="text-theme-secondary-text animate-pulse">
+				<span className="font-semibold text-theme-secondary-text animate-pulse">
 					{t("WALLETS.MODAL_LEDGER_WALLET.OPEN_APP", { coin: coinName })}
 				</span>
 			</div>

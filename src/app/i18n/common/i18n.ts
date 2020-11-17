@@ -145,6 +145,7 @@ export const translations: { [key: string]: any } = {
 	RETRY: "Retry",
 	SAVE: "Save",
 	SAVE_FINISH: "Save & Finish",
+	SEARCH: "Search",
 	SECOND_SIGNATURE: "Second Signature",
 	SECURITY: "Security",
 	SELECT: "Select",
@@ -208,7 +209,7 @@ export const translations: { [key: string]: any } = {
 		TOOLTIP_TEXT: "Copy to clipboard",
 	},
 
-	SEARCH: {
+	SEARCH_BAR: {
 		FIND_IT: "Find it",
 		PLACEHOLDER: "What would you like to search for?",
 	},

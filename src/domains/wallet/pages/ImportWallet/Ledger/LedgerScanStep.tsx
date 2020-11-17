@@ -27,19 +27,16 @@ const AmountWrapper = ({
 	isLoading,
 	children,
 }: {
-	isFailed: boolean;
+	isFailed?: boolean;
 	isLoading: boolean;
-	children: React.ReactNode;
+	children?: React.ReactNode;
 }) => {
 	const { t } = useTranslation();
 	const amountWidth = useRandomNumber(100, 130);
 
 	if (isLoading) {
 		return (
-			<span
-				data-testid="LedgerScanStep__amount-skeleton"
-				className="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
-			>
+			<span data-testid="LedgerScanStep__amount-skeleton" className="flex items-center space-x-1">
 				<Skeleton height={16} width={amountWidth} />
 				<Skeleton height={16} width={35} />
 			</span>
@@ -80,12 +77,12 @@ export const LedgerTable = ({
 
 	const columns = [
 		{
-			Header: "Wallet",
+			Header: t("COMMON.WALLET"),
 			accessor: "address",
-			className: "ml-13",
+			className: "ml-15",
 		},
 		{
-			Header: "Balance",
+			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
 			className: "justify-end",
 		},
@@ -99,39 +96,70 @@ export const LedgerTable = ({
 					/>
 				</Tippy>
 			),
-			className: "justify-center pr-3",
+			className: "justify-center",
+			minimumWidth: true,
 			id: "select",
 		},
 	];
 
+	const { isBusy } = useLedgerContext();
+
+	const showSkeleton = isBusy && wallets.length === 0;
+
+	const skeletonRows = new Array(5).fill({});
+	const data = showSkeleton ? skeletonRows : wallets;
+
 	return (
-		<Table columns={columns} data={wallets}>
-			{(wallet: LedgerData) => (
-				<TableRow>
-					<TableCell isSelected={isSelected(wallet.index)} variant="start" innerClassName="space-x-3">
-						<Avatar address={wallet.address} noShadow />
-						<Address address={wallet.address} />
-					</TableCell>
+		<Table columns={columns} data={data}>
+			{(wallet: LedgerData) => {
+				if (showSkeleton) {
+					return (
+						<TableRow>
+							<TableCell variant="start" innerClassName="space-x-4" noHover>
+								<Circle className="border-transparent" size="lg">
+									<Skeleton circle height={44} width={44} />
+								</Circle>
+								<Skeleton height={16} width={120} />
+							</TableCell>
 
-					<TableCell
-						innerClassName="justify-end font-semibold"
-						isSelected={isSelected(wallet.index)}
-						className="w-64"
-					>
-						<AmountWrapper isLoading={isLoading(wallet.index)} isFailed={isFailed(wallet.index)}>
-							<Amount value={wallet.balance!} ticker={network.ticker()} />
-						</AmountWrapper>
-					</TableCell>
+							<TableCell innerClassName="justify-end" noHover>
+								<AmountWrapper isLoading={true} />
+							</TableCell>
 
-					<TableCell isSelected={isSelected(wallet.index)} innerClassName="justify-center">
-						<Checkbox
-							disabled={isLoading(wallet.index) || isFailed(wallet.index)}
-							checked={isSelected(wallet.index)}
-							onChange={() => toggleSelect(wallet.index)}
-						/>
-					</TableCell>
-				</TableRow>
-			)}
+							<TableCell variant="end" noHover>
+								<Skeleton height={16} width={16} />
+							</TableCell>
+						</TableRow>
+					);
+				}
+
+				return (
+					<TableRow>
+						<TableCell isSelected={isSelected(wallet.index)} variant="start" innerClassName="space-x-4">
+							<Avatar address={wallet.address} size="lg" noShadow />
+							<Address address={wallet.address} />
+						</TableCell>
+
+						<TableCell
+							innerClassName="justify-end font-semibold"
+							isSelected={isSelected(wallet.index)}
+							className="w-64"
+						>
+							<AmountWrapper isLoading={isLoading(wallet.index)} isFailed={isFailed(wallet.index)}>
+								<Amount value={wallet.balance!} ticker={network.ticker()} />
+							</AmountWrapper>
+						</TableCell>
+
+						<TableCell isSelected={isSelected(wallet.index)} variant="end" innerClassName="justify-center">
+							<Checkbox
+								disabled={isLoading(wallet.index) || isFailed(wallet.index)}
+								checked={isSelected(wallet.index)}
+								onChange={() => toggleSelect(wallet.index)}
+							/>
+						</TableCell>
+					</TableRow>
+				);
+			}}
 		</Table>
 	);
 };

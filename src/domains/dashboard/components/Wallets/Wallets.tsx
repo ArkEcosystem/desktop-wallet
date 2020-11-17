@@ -54,7 +54,7 @@ export const Wallets = ({
 
 	const { t } = useTranslation();
 
-	const { walletsDisplayType } = filterProperties;
+	const { walletsDisplayType, selectedNetworkIds } = filterProperties;
 
 	// const walletCardActions: DropdownOption[] = [{ label: t("COMMON.SHOW"), value: "show" }];
 	const walletCardActions: DropdownOption[] = [];
@@ -98,6 +98,8 @@ export const Wallets = ({
 	const loadGridWallets = () => {
 		const walletObjects = wallets
 			.filter((wallet: ReadWriteWallet) => {
+				if (!selectedNetworkIds.includes(wallet.network().id())) return false;
+
 				if (walletsDisplayType === "favorites") {
 					return wallet.isStarred();
 				}
@@ -139,6 +141,8 @@ export const Wallets = ({
 	const getWalletsForList = () =>
 		wallets
 			.filter((wallet: any) => {
+				if (!selectedNetworkIds.includes(wallet.network().id())) return false;
+
 				if (walletsDisplayType === "favorites") {
 					return wallet.isStarred();
 				}
