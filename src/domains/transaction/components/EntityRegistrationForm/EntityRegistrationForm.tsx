@@ -57,9 +57,8 @@ export const EntityRegistrationForm: SendEntityRegistrationForm = {
 	component: FormStepsComponent,
 	transactionDetails,
 	formFields: ["ipfsData", "entityName"],
-
-	signTransaction: async ({ handleNext, form, setTransaction, profile, env, translations, type }) => {
-		const { getValues, setValue, setError } = form;
+	signTransaction: async ({ form, profile, env, type }) => {
+		const { getValues } = form;
 		const { fee, entityName, ipfsData, mnemonic, senderAddress } = getValues();
 		const senderWallet: ReadWriteWallet | undefined = profile.wallets().findByAddress(senderAddress);
 
@@ -79,30 +78,20 @@ export const EntityRegistrationForm: SendEntityRegistrationForm = {
 			};
 		}
 
-		try {
-			const transactionId = await senderWallet!.transaction().signEntityRegistration({
-				...transactionInput,
-				data: {
-					type: entityType,
-					// @TODO: let the user choose what sub-type they wish to use.
-					subType: Enums.EntitySubType.None,
-					name: entityName,
-					ipfs: await new File(httpClient).upload(sanitizedData),
-				},
-			});
+		const transactionId = await senderWallet!.transaction().signEntityRegistration({
+			...transactionInput,
+			data: {
+				type: entityType,
+				// @TODO: let the user choose what sub-type they wish to use.
+				subType: Enums.EntitySubType.None,
+				name: entityName,
+				ipfs: await new File(httpClient).upload(sanitizedData),
+			},
+		});
 
-			await senderWallet!.transaction().broadcast(transactionId);
+		await senderWallet!.transaction().broadcast(transactionId);
+		await env.persist();
 
-			await env.persist();
-
-			setTransaction(senderWallet!.transaction().transaction(transactionId));
-
-			handleNext();
-		} catch (error) {
-			console.error("Could not create transaction: ", error);
-
-			setValue("mnemonic", "");
-			setError("mnemonic", { type: "manual", message: translations("TRANSACTION.INVALID_MNEMONIC") });
-		}
+		return senderWallet!.transaction().transaction(transactionId);
 	},
 };
