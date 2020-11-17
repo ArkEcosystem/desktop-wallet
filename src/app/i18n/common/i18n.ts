@@ -19,6 +19,7 @@ export const translations: { [key: string]: any } = {
 	BACK: "Back",
 	BACK_TO_WALLET: "Back to Wallet",
 	BACKGROUND: "Background",
+	REPEAT: "Repeat",
 	BALANCE: "Balance",
 	BEST: "Best",
 	BIP39_LANGUAGE: "Passphrase Language (BIP39)",
