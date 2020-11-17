@@ -164,7 +164,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 			}
 
-			setActiveTab(6);
+			setActiveTab(10);
 		}
 	};
 
@@ -215,7 +215,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									fees={getValues("fees")}
 								/>
 							</TabPanel>
-							<TabPanel tabId={6}>
+							<TabPanel tabId={10}>
 								<ErrorStep
 									onBack={() =>
 										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
