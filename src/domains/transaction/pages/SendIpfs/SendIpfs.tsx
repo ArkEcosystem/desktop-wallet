@@ -9,7 +9,9 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -84,10 +86,12 @@ export const SendIpfs = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			console.error("Could not create transaction: ", error);
+			if (isMnemonicError(error)) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
 
-			setValue("mnemonic", "");
-			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			setActiveTab(5);
 		}
 	};
 
@@ -146,6 +150,16 @@ export const SendIpfs = () => {
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
+							</TabPanel>
+
+							<TabPanel tabId={5}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={formState.isSubmitting}
+									onRepeat={form.handleSubmit(submitForm)}
+								/>
 							</TabPanel>
 
 							<div className="flex justify-end mt-10 space-x-2">

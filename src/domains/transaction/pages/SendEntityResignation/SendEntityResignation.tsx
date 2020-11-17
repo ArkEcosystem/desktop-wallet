@@ -11,6 +11,8 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { FormStep, ReviewStep, SummaryStep } from "domains/transaction/components/DelegateResignationSteps";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -28,8 +30,8 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 
-	const { formState, getValues, setError } = form;
-	const { isValid } = formState;
+	const { formState, getValues, setError, setValue } = form;
+	const { isValid, isSubmitting } = formState;
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [isLoading, setIsLoading] = useState(true);
@@ -141,9 +143,12 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 
 			handleNext();
 		} catch (error) {
-			// TODO: Handle/Map various error messages
-			console.log({ error });
-			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			if (isMnemonicError(error)) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
+
+			setActiveTab(5);
 		}
 	};
 
@@ -206,6 +211,17 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 											<AuthenticationStep wallet={activeWallet} />
 										</TabPanel>
 										<TabPanel tabId={4}>{getStepComponent()}</TabPanel>
+										<TabPanel tabId={5}>
+											<ErrorStep
+												onBack={() =>
+													history.push(
+														`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+													)
+												}
+												isRepeatDisabled={isSubmitting || !isValid}
+												onRepeat={form.handleSubmit(handleSubmit)}
+											/>
+										</TabPanel>
 
 										<div className="flex justify-end mt-10 space-x-3">
 											{activeTab < 4 && (
