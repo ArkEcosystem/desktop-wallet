@@ -38,11 +38,12 @@ export const ImportWallet = () => {
 	const { formState } = form;
 	const { isSubmitting, isValid } = formState;
 
+	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const nameMaxLength = 42;
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
+			route: dashboardRoute,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
@@ -116,7 +117,7 @@ export const ImportWallet = () => {
 				await persist();
 			}
 
-			history.push(`/profiles/${activeProfile.id()}/wallets/${walletData?.id()}`);
+			history.push(dashboardRoute);
 		}
 	};
 
