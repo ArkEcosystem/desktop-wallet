@@ -6872,7 +6872,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                       <div
                         class="my-8 text-md text-theme-secondary-text"
                       >
-                        During the confirmation of the transaction, an error has occured. We recommend that you repeat the transaction or return to your wallet
+                        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
                       </div>
                     </div>
                     <div
@@ -6892,7 +6892,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
-                        Repeat
+                        Retry
                       </button>
                     </div>
                   </div>
