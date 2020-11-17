@@ -1,55 +1,21 @@
-import { Badge } from "app/components/Badge";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
-import { Tooltip } from "app/components/Tooltip";
-import React, { useEffect, useState } from "react";
+import { Checkbox } from "app/components/Checkbox";
+import React, { useEffect, useMemo,useState } from "react";
+import { useTranslation } from "react-i18next";
 
-type Network = {
-	id?: string;
-	name: string;
-	isSelected: boolean;
-	coin: string;
-};
+import { FilterNetworkProps,Network, NetworkOptions, ToggleAllOption } from "./";
 
-type NetworkProps = {
-	networks: Network[];
-	onChange?: (network: Network, networks: Network[]) => void;
-	onViewAll?: any;
-	hideViewAll?: boolean;
-};
-
-const renderNetworks = (networks: Network[], onClick: any) => (
-	<ul data-testid="network__option" className="inline-block">
-		{networks.map((network: Network, key: number) => (
-			<li
-				className="inline-block mr-5 cursor-pointer"
-				key={key}
-				data-testid={`network__option--${key}`}
-				onClick={() => onClick(network, key)}
-			>
-				<Tooltip content={network.name}>
-					{network.isSelected ? (
-						<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">
-							<Icon name={network.coin} width={20} height={20} />
-							<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
-						</Circle>
-					) : (
-						<Circle
-							size="lg"
-							className="relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
-						>
-							<Icon name={network.coin} width={20} height={20} />
-							<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
-						</Circle>
-					)}
-				</Tooltip>
-			</li>
-		))}
-	</ul>
-);
-
-export const FilterNetwork = ({ networks, onChange, onViewAll, hideViewAll }: NetworkProps) => {
-	const [networkList, setNetworkList] = useState(networks);
+export const FilterNetwork = ({ networks, onChange, onViewAll, hideViewAll, title, className }: FilterNetworkProps) => {
+	const [networkList, setNetworkList] = useState([
+		...networks,
+		...networks,
+		...networks,
+		...networks,
+		...networks,
+		...networks,
+		...networks,
+	]);
+	const [showAll, setShowAll] = useState(false);
+	const { t } = useTranslation();
 
 	useEffect(() => setNetworkList(networks), [networks]);
 
@@ -63,25 +29,64 @@ export const FilterNetwork = ({ networks, onChange, onViewAll, hideViewAll }: Ne
 		onChange?.(network, list);
 	};
 
+	const handleAllToggle = () => {
+		const shouldViewAll = !showAll;
+		setShowAll(shouldViewAll);
+		if (shouldViewAll) onViewAll?.();
+	};
+
+	const handleSelectAll = (checked: any) => {
+		const shouldSelectAll = checked && !networkList.every((n) => n.isSelected);
+		const allSelected = networkList.concat().map((n) => ({ ...n, isSelected: shouldSelectAll }));
+		onChange?.(allSelected[0], allSelected);
+	};
+
+	return (
+		<div className={className}>
+			<div className="mb-2 font-bold text-sm text-theme-neutral-400">{title}</div>
+			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleAllToggle} />
+			<NetworkOptions networks={networkList} onClick={handleClick} />
+
+			{showAll && networkList.length > 1 && (
+				<div className="mt-4 text-theme-secondary-text cursor-pointer">
+					<label>
+						<Checkbox
+							className="mr-2"
+							checked={networkList.every((n) => n.isSelected)}
+							onChange={handleSelectAll}
+						/>
+						{t("COMMON.SELECT_ALL")}
+					</label>
+				</div>
+			)}
+		</div>
+	);
+};
+
+export const FilterNetworks = (props: FilterNetworkProps) => {
+	const { t } = useTranslation();
+
+	const { liveNetworks, testNetworks } = useMemo(() => ({
+			liveNetworks: props.networks.filter((n) => n.isLive),
+			testNetworks: props.networks.filter((n) => !n.isLive),
+		}), [props.networks]);
+
 	return (
 		<div>
-			{renderNetworks(networkList, handleClick)}
-
-			{!hideViewAll && (
-				<Circle
-					size="lg"
-					data-testid="network__viewall"
-					className="relative cursor-pointer border-theme-primary-contrast"
-					onClick={onViewAll}
-				>
-					<div className="text-sm font-semibold text-theme-primary-500">All</div>
-					<Badge
-						className="border-theme-primary-contrast text-theme-primary-500"
-						icon="ChevronDown"
-						iconWidth={10}
-						iconHeight={10}
-					/>
-				</Circle>
+			<FilterNetwork
+				{...props}
+				title={t("COMMON.PUBLIC_NETWORK")}
+				networks={liveNetworks}
+				onChange={(_, updated) => props.onChange?.(_, [...updated, ...testNetworks])}
+			/>
+			{props.useTestNetworks && (
+				<FilterNetwork
+					{...props}
+					title={t("COMMON.DEVELOPMENT_NETWORK")}
+					className="mt-6"
+					networks={testNetworks}
+					onChange={(_, updated) => props.onChange?.(_, [...updated, ...liveNetworks])}
+				/>
 			)}
 		</div>
 	);
