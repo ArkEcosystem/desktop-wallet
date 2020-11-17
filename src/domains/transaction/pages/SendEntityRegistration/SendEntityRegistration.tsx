@@ -110,8 +110,8 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 				"registrationType",
 				{
 					value: "entityRegistration",
-					type: Enums.EntityType.Business,
-					label: "Business",
+					type: Enums.EntityType.Delegate,
+					label: "Delegate",
 				},
 				{ shouldValidate: true, shouldDirty: true },
 			);
@@ -162,15 +162,15 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			return setActiveTab(2);
 		}
 	}, [
-		getValues,
-		setValue,
-		getValues,
 		activeWallet,
 		env,
+		getFeesByRegistrationType,
+		getValues,
 		register,
 		selectedRegistrationType,
+		setFeesByRegistrationType,
+		setValue,
 		t,
-		getFeesByRegistrationType,
 	]);
 
 	useEffect(() => {
