@@ -9,6 +9,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { AddPeer } from "domains/setting/components/AddPeer";
+import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -26,34 +27,47 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const [peers, setPeers] = useState([]);
 	const [isAddPeer, setIsAddPeer] = useState(false);
 
-	const loadPeers = useCallback(() => activeProfile
-			.peers()
-			.values()
-			.reduce((peers: any, data: any) => {
-				for (const coin of Object.keys(data)) {
-					for (const network of Object.keys(data[coin])) {
-						for (const peer of data[coin][network]) {
-							peers.push({
-								...peer,
-								coin,
-								network,
-							});
+	const [peerAction, setPeerAction] = useState<string | null>(null);
+	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
+
+	const loadPeers = useCallback(
+		() =>
+			activeProfile
+				.peers()
+				.values()
+				.reduce((peers: any, data: any) => {
+					for (const coin of Object.keys(data)) {
+						for (const network of Object.keys(data[coin])) {
+							for (const peer of data[coin][network]) {
+								peers.push({
+									...peer,
+									coin,
+									network,
+								});
+							}
 						}
 					}
-				}
 
-				return peers;
-			}, []), [activeProfile]);
+					return peers;
+				}, []),
+		[activeProfile],
+	);
+
+	useEffect(() => {
+		if (!peerAction) {
+			setSelectedPeer(null);
+		}
+	}, [peerAction]);
 
 	useEffect(() => {
 		setPeers(loadPeers());
-	}, [state]);
+	}, [loadPeers, state]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
 	const { context, register } = formConfig;
 
-	const options = [
+	const peerOptions = [
 		{ label: t("COMMON.EDIT"), value: "edit" },
 		{ label: t("COMMON.DELETE"), value: "delete" },
 	];
@@ -114,6 +128,15 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		},
 	];
 
+	const handlePeerAction = (action: string, peer: any) => {
+		setPeerAction(action);
+		setSelectedPeer(peer);
+	};
+
+	const resetPeerAction = () => {
+		setPeerAction(null);
+	};
+
 	const handleSubmit = async ({ isMultiPeerBroadcast, isCustomPeer }: any) => {
 		activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
 		activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
@@ -133,7 +156,9 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				{isCustomPeer && (
 					<div className="pt-8">
 						<Table columns={columns} data={peers}>
-							{(rowData: any) => <PeerListItem {...rowData} options={options} />}
+							{(rowData: any) => (
+								<PeerListItem {...rowData} options={peerOptions} onAction={handlePeerAction} />
+							)}
 						</Table>
 
 						<Button
@@ -164,6 +189,17 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				profile={activeProfile}
 				onClose={() => setIsAddPeer(false)}
 			/>
+
+			{selectedPeer && (
+				<DeletePeer
+					isOpen={peerAction === "delete"}
+					peer={selectedPeer}
+					profile={activeProfile}
+					onCancel={resetPeerAction}
+					onClose={resetPeerAction}
+					onDelete={resetPeerAction}
+				/>
+			)}
 		</>
 	);
 };
