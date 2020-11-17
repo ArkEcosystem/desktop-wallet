@@ -278,10 +278,10 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 
 			<ReceiveFunds
 				isOpen={isReceiveFunds}
-				address={activeWallet.address}
-				name={activeWallet.alias}
-				icon={activeWallet.coinName}
-				network={activeWallet.coinId}
+				address={activeWallet.address()}
+				icon={activeWallet.coinId()}
+				name={activeWallet.alias()}
+				network={activeWallet.networkId()}
 				onClose={() => setIsReceiveFunds(false)}
 			/>
 

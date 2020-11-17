@@ -76,20 +76,18 @@ export const WalletHeader = ({
 	const primaryOptions: DropdownOptionGroup = {
 		key: "primary",
 		title: t("WALLETS.PAGE_WALLET_DETAILS.PRIMARY_OPTIONS"),
-		options: [],
+		options: [
+			{
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
+				value: "wallet-name",
+			},
+			{
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RECEIVE_FUNDS"),
+				secondaryLabel: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RECEIVE_FUNDS_QR"),
+				value: "receive-funds",
+			},
+		],
 	};
-
-	primaryOptions.options.push(
-		{
-			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
-			value: "wallet-name",
-		},
-		{
-			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RECEIVE_FUNDS"),
-			secondaryLabel: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RECEIVE_FUNDS_QR"),
-			value: "receive-funds",
-		},
-	);
 
 	if (showMultiSignatureOption) {
 		primaryOptions.options.push({
