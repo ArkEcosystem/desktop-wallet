@@ -105,6 +105,8 @@ export const translations: { [key: string]: any } = {
 	WEBSITE: "Website",
 	NETWORK_NAME: "This name is provided by the network",
 	NETWORK: "Network",
+	PUBLIC_NETWORK: "Public Network",
+	DEVELOPMENT_NETWORK: "Development Network",
 	NEXT: "Next",
 	NOT: "not",
 	NOT_AVAILABLE: "N/A",
