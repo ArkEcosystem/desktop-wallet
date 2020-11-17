@@ -2,7 +2,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
-import { act, env, getDefaultProfileId, render, RenderResult } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { AddPeer } from "./AddPeer";
@@ -43,5 +43,39 @@ describe("AddPeer", () => {
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CUSTOM_PEER.TITLE);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should add peer", async () => {
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = render(
+				<AddPeer isOpen={true} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
+			);
+		});
+
+		const { getByTestId } = rendered;
+
+		await act(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("Bitcoin");
+
+			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+			await fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+
+			const submitButton = getByTestId("PeerForm__add-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(submitButton);
+
+			await waitFor(() => expect(onClose).toHaveBeenCalled());
+		});
 	});
 });
