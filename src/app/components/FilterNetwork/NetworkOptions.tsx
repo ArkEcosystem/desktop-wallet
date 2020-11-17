@@ -14,7 +14,7 @@ export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) 
 	const { iconName } = networkExtendedData;
 
 	return (
-		<li className="inline-block ml-5 cursor-pointer" onClick={onClick}>
+		<li className="inline-block ml-5 cursor-pointer" data-testid={`network__option--${id}`} onClick={onClick}>
 			<Tooltip content={name}>
 				{isSelected ? (
 					<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">
@@ -35,15 +35,16 @@ export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) 
 	);
 };
 
-export const NetworkOptions = ({ networks, onClick }: { networks: Network[]; onClick: any }) => (
+export const NetworkOptions = ({
+	networks = [],
+	onClick,
+}: {
+	networks?: Network[];
+	onClick?: (network: Network, key: number) => void;
+}) => (
 	<ul data-testid="network__option" className="inline-block">
 		{networks.map((network: Network, key: number) => (
-			<NetworkOption
-				{...network}
-				key={key}
-				onClick={() => onClick(network, key)}
-				data-testid={`network__option--${key}`}
-			 />
+			<NetworkOption {...network} key={key} onClick={() => onClick?.(network, key)} />
 		))}
 	</ul>
 );

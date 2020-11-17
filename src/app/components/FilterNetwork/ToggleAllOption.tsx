@@ -2,15 +2,9 @@ import { Badge } from "app/components/Badge";
 import { Circle } from "app/components/Circle";
 import React from "react";
 
-export const ToggleAllOption = ({
-	onClick,
-	isHidden = false,
-	isSelected = false,
-}: {
-	onClick?: any;
-	isHidden?: boolean;
-	isSelected?: boolean;
-}) => {
+import { ToggleAllOptionProps } from "./";
+
+export const ToggleAllOption = ({ onClick, isHidden = false, isSelected = false }: ToggleAllOptionProps) => {
 	if (isHidden) return <></>;
 
 	return (

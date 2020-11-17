@@ -1,3 +1,9 @@
+export type ToggleAllOptionProps = {
+	onClick?: any;
+	isHidden?: boolean;
+	isSelected?: boolean;
+};
+
 export type Network = {
 	id?: string;
 	name: string;
@@ -9,7 +15,7 @@ export type Network = {
 
 export type FilterNetworkProps = {
 	title?: string;
-	networks: Network[];
+	networks?: Network[];
 	onChange?: (network: Network, networks: Network[]) => void;
 	onViewAll?: any;
 	hideViewAll?: boolean;
