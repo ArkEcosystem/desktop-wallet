@@ -43,6 +43,7 @@ export const translations: { [key: string]: any } = {
 	TRANSACTION_AMOUNT: "Transaction Amount",
 	TRANSACTION_FEE: "Transaction Fee",
 	TRANSACTION_TYPE: "Transaction Type",
+	TRANSACTION_DETAILS: "Transaction Details",
 	TYPE: "Type",
 	UNVOTES: "Unvotes",
 	UNVOTES_COUNT: "Unvotes ({{count}})",
