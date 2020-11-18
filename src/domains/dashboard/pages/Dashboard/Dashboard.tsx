@@ -23,7 +23,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
-	const defaultConfiguration = {
+	const defaultDashboardConfiguration = {
 		showPortfolio: true,
 		showTransactions: true,
 		viewType: "grid",
@@ -38,7 +38,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 	const [dashboardConfiguration, setDashboardConfiguration] = useReducer(
 		(state: DashboardConfiguration, newState: Record<string, any>) => ({ ...state, ...newState }),
-		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || defaultConfiguration,
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || defaultDashboardConfiguration,
 	);
 
 	const previousConfiguration = usePrevious(dashboardConfiguration);
@@ -140,8 +140,8 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	});
 
 	useEffect(() => {
-		setActiveFilter(!isEqual(defaultConfiguration, dashboardConfiguration));
-	}, [defaultConfiguration, dashboardConfiguration]);
+		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfiguration));
+	}, [defaultDashboardConfiguration, dashboardConfiguration]);
 
 	// Wallet controls data
 	const handleSelectViewType = (viewType: string) => {
