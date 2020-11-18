@@ -42,7 +42,8 @@ export const FilterNetwork = ({
 
 	return (
 		<div className={className} data-testid="FilterNetwork">
-			<div className="mb-2 font-bold text-sm text-theme-neutral-400">{title}</div>
+			{title && <div className="mb-2 font-bold text-sm text-theme-neutral-400">{title}</div>}
+
 			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
 			<NetworkOptions networks={networkList} onClick={handleClick} />
 

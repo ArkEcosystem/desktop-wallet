@@ -57,7 +57,7 @@ describe("NetworkOptions", () => {
 		const onClick = jest.fn();
 		const { getByTestId } = render(<NetworkOptions networks={networks()} onClick={onClick} />);
 		act(() => {
-			fireEvent.click(getByTestId("network__option--eth.mainnet"));
+			fireEvent.click(getByTestId("NetworkOption__ETH"));
 		});
 
 		expect(onClick).toHaveBeenCalledWith(
@@ -147,7 +147,7 @@ describe("FilterNetwork", () => {
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(1);
 
 		act(() => {
-			fireEvent.click(getByTestId("network__option--eth.mainnet"));
+			fireEvent.click(getByTestId("NetworkOption__ETH"));
 		});
 
 		expect(onChange).toHaveBeenCalledWith(
@@ -235,7 +235,7 @@ describe("FilterNetworks", () => {
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(1);
 
 		act(() => {
-			fireEvent.click(getByTestId("network__option--eth.mainnet"));
+			fireEvent.click(getByTestId("NetworkOption__ETH"));
 		});
 
 		expect(onChange).toHaveBeenCalledWith(
@@ -260,7 +260,7 @@ describe("FilterNetworks", () => {
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(2);
 
 		act(() => {
-			fireEvent.click(getByTestId("network__option--lsk.testnet"));
+			fireEvent.click(getByTestId("NetworkOption__LSK"));
 		});
 
 		expect(onChange).toHaveBeenCalledWith(
