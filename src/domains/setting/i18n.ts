@@ -77,15 +77,15 @@ export const translations: { [key: string]: any } = {
 	PEERS: {
 		MENU_ITEM: "Peer",
 		TITLE: "Peer Settings",
-		SUBTITLE: "Customize your wallet to suit your needs.",
+		SUBTITLE: "Customize your network peer settings.",
 		BROADCAST_TRANSACTIONS: {
 			TITLE: "Broadcast to Multiple Peers",
-			DESCRIPTION: "This protection will protect your money from unwanted Screenshot your PC.",
+			DESCRIPTION: "Toggle to send transactions to multiple network peers. (Recommended)",
 		},
 		CUSTOM_PEERS: {
 			TITLE: "Use Custom Peers",
 			DESCRIPTION:
-				"You hereby assume the risk associated with downloading files and installing said files from a direct URL link.",
+				"Customize your individual peers by network. Note: Only use trusted peers. Using an unknown peer may put your funds at risk.",
 		},
 		CRYPTOASSET: "Cryptoasset",
 		ADD_PEER: "Add Peer",
