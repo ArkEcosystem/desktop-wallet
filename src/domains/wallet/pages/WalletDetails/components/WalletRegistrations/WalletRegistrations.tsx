@@ -72,7 +72,7 @@ export const WalletRegistrations = ({
 								{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY_DESCRIPTION")}
 							</span>
 
-							<div className="mr-auto mt-1">
+							<div className="mt-1 mr-auto">
 								<Link to="@TODO" isExternal>
 									{t("COMMON.LEARN_MORE")}
 								</Link>

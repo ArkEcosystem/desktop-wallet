@@ -54,7 +54,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 						<div className="flex flex-col mr-4 font-semibold leading-snug text-theme-text">
 							<span className="mr-2">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
 
-							<div className="mr-auto mt-1">
+							<div className="mt-1 mr-auto">
 								<Link to="https://guides.ark.dev/usage-guides/desktop-wallet-voting" isExternal>
 									{t("COMMON.LEARN_MORE")}
 								</Link>
