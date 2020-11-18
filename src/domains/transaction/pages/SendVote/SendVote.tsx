@@ -270,7 +270,12 @@ export const SendVote = () => {
 								<AuthenticationStep
 									wallet={activeWallet}
 									ledgerDetails={
-										<VoteLedgerReview wallet={activeWallet} votes={votes} unvotes={unvotes} />
+										<VoteLedgerReview
+											wallet={activeWallet}
+											votes={votes}
+											unvotes={unvotes}
+											fee={getValues("fee")}
+										/>
 									}
 								/>
 							</TabPanel>
