@@ -154,7 +154,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				<ListDivided items={peerItems} />
 
 				{isCustomPeer && (
-					<div className="pt-8">
+					<div className="pt-8" data-testid="Peer-settings__table">
 						<Table columns={columns} data={peers}>
 							{(rowData: any) => (
 								<PeerListItem {...rowData} options={peerOptions} onAction={handlePeerAction} />
@@ -165,7 +165,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 							variant="plain"
 							className="w-full mt-8 mb-2"
 							onClick={() => setIsAddPeer(true)}
-							data-testid="peer-list__add-button"
+							data-testid="Peer-list__add-button"
 						>
 							{t("SETTINGS.PEERS.ADD_PEER")}
 						</Button>
