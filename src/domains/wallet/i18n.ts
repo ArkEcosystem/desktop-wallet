@@ -146,6 +146,9 @@ export const translations: { [key: string]: any } = {
 		PENDING_TRANSACTIONS: "Pending Transactions",
 		YOUR_WALLETS: "Your Wallets",
 
+		PRIMARY_OPTIONS: "Manage Address",
+		ADDITIONAL_OPTIONS: "Additional Options",
+
 		STAR_WALLET: "Add to favorites",
 		UNSTAR_WALLET: "Remove from favorites",
 
@@ -167,10 +170,14 @@ export const translations: { [key: string]: any } = {
 		},
 
 		OPTIONS: {
-			WALLET_NAME: "Wallet Name",
+			DELETE: "Delete",
+			MULTISIGNATURE: "Multisignature",
+			RECEIVE_FUNDS: "Receive Funds",
+			RECEIVE_FUNDS_QR: "QR",
+			SECOND_SIGNATURE: "Second Signature",
 			SIGN_MESSAGE: "Sign Message",
 			STORE_HASH: "Store Hash",
-			DELETE: "Delete",
+			WALLET_NAME: "Wallet Name",
 		},
 	},
 
