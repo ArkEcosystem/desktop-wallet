@@ -10,6 +10,7 @@ export const translations: { [key: string]: any } = {
 			UPLOAD_AVATAR: "Upload Avatar",
 			NAME: "Name",
 			PASSWORD: "Password",
+			CONFIRM_PASSWORD: "Confirm Password",
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
 			CURRENCY: "Currency",
 			LANGUAGE: "Language",
@@ -39,6 +40,11 @@ export const translations: { [key: string]: any } = {
 			DARK_THEME: {
 				TITLE: "Dark Theme",
 				DESCRIPTION: "Enables a dark, high contrast color scheme.",
+			},
+			DEVELOPMENT_NETWORKS: {
+				TITLE: "Development Network",
+				DESCRIPTION:
+					"To create or import wallets from development and/or test networks, you must first enable this feature.",
 			},
 			UPDATE_LEDGER: {
 				TITLE: "Update Ledger in Background",

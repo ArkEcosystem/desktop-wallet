@@ -37,6 +37,7 @@ export const Paginator = ({
 	isNextLoading?: boolean;
 }) => {
 	const { t } = useTranslation();
+
 	return (
 		<div className="flex justify-between mt-10">
 			<div>
@@ -91,7 +92,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 
 	const history = useHistory();
 	const { env, persist } = useEnvironmentContext();
-	const { importLedgerWallets } = useLedgerContext();
+	const { importLedgerWallets, isBusy } = useLedgerContext();
 
 	const { formState, handleSubmit } = useFormContext();
 	const { isValid, isSubmitting } = formState;
@@ -112,10 +113,13 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	);
 
 	const saveNames = async ({ names }: { names: Record<string, string> }) => {
+		const nameMaxLength = 42;
+
 		for (const [address, name] of Object.entries(names)) {
 			if (name) {
+				const formattedName = name.trim().substring(0, nameMaxLength);
 				const wallet = activeProfile.wallets().findByAddress(address);
-				wallet?.setAlias(name);
+				wallet?.setAlias(formattedName);
 			}
 		}
 		await persist();
@@ -151,7 +155,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 
 			<div data-testid="LedgerTabs" className="mt-8">
 				<TabPanel tabId={1}>
-					<FirstStep />
+					<FirstStep profile={activeProfile} />
 				</TabPanel>
 				<TabPanel tabId={2}>
 					<LedgerConnectionStep onConnect={() => setActiveTab(3)} />
@@ -160,14 +164,14 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 					<LedgerScanStep profile={activeProfile} setRetryFn={handleRetry} />
 				</TabPanel>
 				<TabPanel tabId={4}>
-					<LedgerImportStep wallets={importedWallets} />
+					<LedgerImportStep wallets={importedWallets} profile={activeProfile} />
 				</TabPanel>
 			</div>
 
 			<Paginator
 				size={4}
 				activeIndex={activeTab}
-				isNextDisabled={!isValid}
+				isNextDisabled={isBusy || !isValid}
 				isNextLoading={isSubmitting}
 				showRetry={showRetry}
 				onRetry={retryFnRef.current}

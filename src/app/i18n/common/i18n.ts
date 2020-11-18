@@ -19,6 +19,7 @@ export const translations: { [key: string]: any } = {
 	BACK: "Back",
 	BACK_TO_WALLET: "Back to Wallet",
 	BACKGROUND: "Background",
+	REPEAT: "Repeat",
 	BALANCE: "Balance",
 	BEST: "Best",
 	BIP39_LANGUAGE: "Passphrase Language (BIP39)",
@@ -67,7 +68,6 @@ export const translations: { [key: string]: any } = {
 	FINISH: "Finish",
 	FORGED_ARK: "Forged ARK",
 	GO_BACK_TO_PORTFOLIO: "Go back to Portfolio",
-	GO_TO_WALLET: "Go to Wallet",
 	GRANT: "Grant",
 	HIDE: "Hide",
 	HIDE_WALLET_BUTTON_TEXT: "Hide text from wallet buttons",
@@ -145,6 +145,7 @@ export const translations: { [key: string]: any } = {
 	RETRY: "Retry",
 	SAVE: "Save",
 	SAVE_FINISH: "Save & Finish",
+	SEARCH: "Search",
 	SECOND_SIGNATURE: "Second Signature",
 	SECURITY: "Security",
 	SELECT: "Select",
@@ -208,7 +209,7 @@ export const translations: { [key: string]: any } = {
 		TOOLTIP_TEXT: "Copy to clipboard",
 	},
 
-	SEARCH: {
+	SEARCH_BAR: {
 		FIND_IT: "Find it",
 		PLACEHOLDER: "What would you like to search for?",
 	},
@@ -224,6 +225,7 @@ export const translations: { [key: string]: any } = {
 		MIN_LENGTH: "'{{field}}' should have at least {{minLength}} characters",
 		SUBJECT_INVALID: "The {{subject}} is invalid",
 		SUBJECT_MISMATCH: "The {{subject}} do not match",
+		PASSWORD_MISMATCH: "Passwords do not match",
 		MIN_RECIPIENTS: "At least one recipient is required",
 		RECIPIENT_INVALID: "Recipient address is invalid",
 	},

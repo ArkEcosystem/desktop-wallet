@@ -6,7 +6,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
-	title?: string;
 	transactions: ExtendedTransactionData[];
 	exchangeCurrency?: string;
 	fetchMoreAction?: Function;
@@ -20,7 +19,6 @@ type TransactionsProps = {
 export const Transactions = ({
 	transactions,
 	exchangeCurrency,
-	title,
 	emptyText,
 	fetchMoreAction,
 	isLoading,
@@ -31,13 +29,12 @@ export const Transactions = ({
 
 	return (
 		<>
-			{title && <div className="mb-8 text-4xl font-bold">{title}</div>}
-
 			<TransactionTable
 				transactions={transactions}
 				exchangeCurrency={exchangeCurrency}
 				hideHeader={!isLoading && transactions.length === 0}
 				isLoading={isLoading}
+				skeletonRowsLimit={8}
 				onRowClick={onRowClick}
 				isCompact={isCompact}
 			/>

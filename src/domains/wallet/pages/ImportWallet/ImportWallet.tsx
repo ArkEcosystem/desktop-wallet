@@ -1,5 +1,6 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -37,11 +38,12 @@ export const ImportWallet = () => {
 	const { formState } = form;
 	const { isSubmitting, isValid } = formState;
 
+	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const nameMaxLength = 42;
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
+			route: dashboardRoute,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
@@ -110,12 +112,12 @@ export const ImportWallet = () => {
 			setActiveTab(activeTab + 1);
 		} else {
 			if (name) {
-				const formattedName = name.substring(0, nameMaxLength);
-				activeProfile.wallets().findById(walletData?.id()).settings().set(WalletSetting.Alias, formattedName);
+				const formattedName = name.trim().substring(0, nameMaxLength);
+				activeProfile.wallets().update(walletData?.id(), { alias: formattedName });
 				await persist();
 			}
 
-			history.push(`/profiles/${activeProfile.id()}/wallets/${walletData?.id()}`);
+			history.push(dashboardRoute);
 		}
 	};
 
@@ -136,7 +138,7 @@ export const ImportWallet = () => {
 
 							<div className="mt-8">
 								<TabPanel tabId={1}>
-									<FirstStep />
+									<FirstStep profile={activeProfile} />
 								</TabPanel>
 								<TabPanel tabId={2}>
 									<SecondStep profile={activeProfile} />
@@ -144,7 +146,9 @@ export const ImportWallet = () => {
 								<TabPanel tabId={3}>
 									<ThirdStep
 										address={walletData?.address() as string}
+										balance={walletData?.balance() as BigNumber}
 										nameMaxLength={nameMaxLength}
+										profile={activeProfile}
 									/>
 								</TabPanel>
 
@@ -188,11 +192,11 @@ export const ImportWallet = () => {
 
 									{activeTab === 3 && (
 										<Button
-											disabled={isSubmitting}
+											disabled={!isValid || isSubmitting}
 											type="submit"
-											data-testid="ImportWallet__gotowallet-button"
+											data-testid="ImportWallet__save-button"
 										>
-											{t("COMMON.GO_TO_WALLET")}
+											{t("COMMON.SAVE_FINISH")}
 										</Button>
 									)}
 								</div>

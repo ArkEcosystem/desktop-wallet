@@ -245,14 +245,14 @@ describe("SecondSignatureRegistrationForm", () => {
 		const walletMnemonic = passphrase.split(" ");
 
 		for (let i = 0; i < 3; i++) {
-			const wordNumber = parseInt(screen.getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+			const wordNumber = parseInt(screen.getByText(/Select the/).innerHTML.replace(/Select the/, ""));
 
 			act(() => {
 				fireEvent.click(screen.getByText(walletMnemonic[wordNumber - 1]));
 			});
 
 			if (i < 2) {
-				await waitFor(() => expect(screen.queryAllByText(/The #([0-9]+) word/).length === 2 - i));
+				await waitFor(() => expect(screen.queryAllByText(/The ([0-9]+)/).length === 2 - i));
 			}
 		}
 
@@ -315,9 +315,6 @@ describe("SecondSignatureRegistrationForm", () => {
 			setError: jest.fn(),
 			setValue: jest.fn(),
 		};
-		const handleNext = jest.fn();
-		const setTransaction = jest.fn();
-
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signSecondSignature")
 			.mockReturnValue(Promise.resolve(secondSignatureFixture.data.id));
@@ -327,16 +324,12 @@ describe("SecondSignatureRegistrationForm", () => {
 		await SecondSignatureRegistrationForm.signTransaction({
 			env,
 			form,
-			handleNext,
 			profile,
-			setTransaction,
 		});
 
 		expect(signMock).toHaveBeenCalled();
 		expect(broadcastMock).toHaveBeenCalled();
 		expect(transactionMock).toHaveBeenCalled();
-		expect(setTransaction).toHaveBeenCalled();
-		expect(handleNext).toHaveBeenCalled();
 
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
@@ -355,9 +348,6 @@ describe("SecondSignatureRegistrationForm", () => {
 			setError: jest.fn(),
 			setValue: jest.fn(),
 		};
-		const handleNext = jest.fn();
-		const setTransaction = jest.fn();
-		const translations = jest.fn((translation) => translation);
 
 		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => void 0);
 		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
@@ -366,30 +356,22 @@ describe("SecondSignatureRegistrationForm", () => {
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
-		await SecondSignatureRegistrationForm.signTransaction({
-			env,
-			form,
-			handleNext,
-			profile,
-			setTransaction,
-			translations,
-		});
+		try {
+			await SecondSignatureRegistrationForm.signTransaction({
+				env,
+				form,
+				profile,
+			});
+			// eslint-disable-next-line
+		} catch (error) {}
 
-		expect(consoleSpy).toHaveBeenCalledTimes(1);
-		expect(form.setValue).toHaveBeenCalledWith("mnemonic", "");
-		expect(form.setError).toHaveBeenCalledWith("mnemonic", {
-			type: "manual",
-			message: "TRANSACTION.INVALID_MNEMONIC",
-		});
+		await waitFor(() => expect(signMock).toThrow());
 
 		expect(broadcastMock).not.toHaveBeenCalled();
 		expect(transactionMock).not.toHaveBeenCalled();
-		expect(setTransaction).not.toHaveBeenCalled();
-		expect(handleNext).not.toHaveBeenCalled();
 
 		consoleSpy.mockRestore();
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
-		transactionMock.mockRestore();
 	});
 });

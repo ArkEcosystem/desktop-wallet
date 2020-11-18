@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
@@ -62,7 +63,7 @@ describe("ImportWallet", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
-				<FirstStep />
+				<FirstStep profile={profile} />
 			</FormProvider>,
 		);
 
@@ -81,6 +82,33 @@ describe("ImportWallet", () => {
 		});
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+	});
+
+	it("should render 1st step without test networks", async () => {
+		profile.settings().set(ProfileSetting.UseTestNetworks, false);
+
+		const { result: form } = renderHook(() => useForm());
+		const { getByTestId, asFragment, queryByTestId } = render(
+			<FormProvider {...form.current}>
+				<FirstStep profile={profile} />
+			</FormProvider>,
+		);
+
+		expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		expect(selectNetworkInput).toBeTruthy();
+
+		act(() => {
+			fireEvent.focus(selectNetworkInput);
+		});
+
+		expect(queryByTestId("NetworkIcon-ARK-ark.mainnet")).toBeInTheDocument();
+		expect(queryByTestId("NetworkIcon-ARK-ark.devnet")).toBeNull();
+
+		expect(asFragment()).toMatchSnapshot();
+
+		profile.settings().set(ProfileSetting.UseTestNetworks, true);
 	});
 
 	it("should render 2st step", async () => {
@@ -134,13 +162,19 @@ describe("ImportWallet", () => {
 					network: {
 						id: () => "ark.devnet",
 						coin: () => "ARK",
+						ticker: () => "DARK",
 					},
 				},
 			}),
 		);
 		const { getByTestId, getByText, asFragment } = render(
 			<FormProvider {...form.current}>
-				<ThirdStep address={identityAddress} nameMaxLength={42} />
+				<ThirdStep
+					address={identityAddress}
+					balance={BigNumber.make(80)}
+					nameMaxLength={42}
+					profile={profile}
+				/>
 			</FormProvider>,
 		);
 
@@ -270,7 +304,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -354,7 +388,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -456,7 +490,7 @@ describe("ImportWallet", () => {
 
 			await fireEvent.input(walletNameInput, { target: { value: "Test" } });
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -619,6 +653,83 @@ describe("ImportWallet", () => {
 		});
 	});
 
+	it("should show an error message for duplicate name", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		let rendered: RenderResult;
+
+		history.push(route);
+
+		await actAsync(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet />
+				</Route>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, asFragment, getByText } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await actAsync(async () => {
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			let continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			expect(continueButton).not.toHaveAttribute("disabled");
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+			});
+
+			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+			expect(passphraseInput).toBeTruthy();
+
+			await fireEvent.input(passphraseInput, { target: { value: "this is a top secret passphrase" } });
+
+			continueButton = getByTestId("ImportWallet__continue-button");
+
+			expect(continueButton).toBeTruthy();
+			await waitFor(() => {
+				expect(continueButton).not.toHaveAttribute("disabled");
+			});
+
+			await fireEvent.click(continueButton);
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			});
+
+			const walletNameInput = getByTestId("ImportWallet__name-input");
+			expect(walletNameInput).toBeTruthy();
+
+			await fireEvent.input(walletNameInput, { target: { value: profile.wallets().first().alias() } });
+
+			const submitButton = getByTestId("ImportWallet__save-button");
+
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).toBeDisabled();
+			});
+		});
+	});
+
 	it("should empty all wallets and import by address", async () => {
 		profile.wallets().flush();
 
@@ -689,7 +800,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");

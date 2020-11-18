@@ -36,6 +36,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_SELECT_ACCOUNT: {
 		TITLE: "Select Account",
 		DESCRIPTION: "Find and select the account you want to receive funds to",
+		SEARCH_PLACEHOLDER: "Enter the name or address for your wallet",
 	},
 
 	MODAL_SIGN_MESSAGE: {
@@ -69,7 +70,7 @@ export const translations: { [key: string]: any } = {
 		PASSPHRASE_STEP: {
 			TITLE: "Your Passphrase",
 			WARNING:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.",
+				"This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.",
 			DOWNLOAD: {
 				TITLE: "Download Your Passphrase",
 				DESCRIPTION: "You can also download and safely store your passphrase.",
@@ -133,6 +134,8 @@ export const translations: { [key: string]: any } = {
 		WALLET_NAME: "Wallet name",
 
 		VALIDATION: {
+			ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
+			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
 		},
 	},
@@ -142,6 +145,9 @@ export const translations: { [key: string]: any } = {
 		COPY_PUBLIC_KEY: "Copy Public Key",
 		PENDING_TRANSACTIONS: "Pending Transactions",
 		YOUR_WALLETS: "Your Wallets",
+
+		PRIMARY_OPTIONS: "Manage Address",
+		ADDITIONAL_OPTIONS: "Additional Options",
 
 		STAR_WALLET: "Add to favorites",
 		UNSTAR_WALLET: "Remove from favorites",
@@ -164,15 +170,19 @@ export const translations: { [key: string]: any } = {
 		},
 
 		OPTIONS: {
-			WALLET_NAME: "Wallet Name",
+			DELETE: "Delete",
+			MULTISIGNATURE: "Multisignature",
+			RECEIVE_FUNDS: "Receive Funds",
+			RECEIVE_FUNDS_QR: "QR",
+			SECOND_SIGNATURE: "Second Signature",
 			SIGN_MESSAGE: "Sign Message",
 			STORE_HASH: "Store Hash",
-			DELETE: "Delete",
+			WALLET_NAME: "Wallet Name",
 		},
 	},
 
 	MNEMONIC_VERIFICATION: {
-		SELECT_WORD: "Select word #{{position}}",
-		WORD_NUMBER: "The #{{position}} word",
+		SELECT_WORD: "Select the {{position}}{{ordinalIndicator}} word",
+		WORD_NUMBER: "The {{position}}{{ordinalIndicator}} word",
 	},
 };

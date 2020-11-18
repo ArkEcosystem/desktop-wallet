@@ -7,7 +7,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -655,6 +655,35 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -1013,7 +1042,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               Show
             </span>
             <span
-              class="sc-fzoNJl izYPmy"
+              class="sc-fzoXWK hwbxye"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -1530,7 +1559,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1542,7 +1571,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -2171,6 +2200,35 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -2504,7 +2562,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2516,7 +2574,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -3166,6 +3224,35 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -3524,7 +3611,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoNJl izYPmy"
+              class="sc-fzoXWK hwbxye"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -4041,7 +4128,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4053,7 +4140,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -4703,6 +4790,35 @@ exports[`WalletDetails should remove wallet name 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -5061,7 +5177,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoNJl izYPmy"
+              class="sc-fzoXWK hwbxye"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -5578,7 +5694,7 @@ exports[`WalletDetails should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5590,7 +5706,7 @@ exports[`WalletDetails should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -6246,6 +6362,35 @@ exports[`WalletDetails should render 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -6604,7 +6749,7 @@ exports[`WalletDetails should render 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoNJl izYPmy"
+              class="sc-fzoXWK hwbxye"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -7127,7 +7272,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7139,7 +7284,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -7775,6 +7920,35 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -8133,7 +8307,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoNJl izYPmy"
+              class="sc-fzoXWK hwbxye"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -8656,7 +8830,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8668,7 +8842,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -9304,6 +9478,35 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -9662,7 +9865,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoNJl izYPmy"
+              class="sc-fzoXWK hwbxye"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -10185,7 +10388,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -10197,7 +10400,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -10847,6 +11050,35 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -11205,7 +11437,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoNJl izYPmy"
+              class="sc-fzoXWK hwbxye"
             >
               <div
                 class="sc-AxiKw ksjdLL"
@@ -11722,7 +11954,7 @@ exports[`WalletDetails should update wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqARJ dTIFVD"
+      class="sc-fzqNqU idcjef"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11734,7 +11966,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzqNqU gmvYjD"
+              class="sc-fzoyTs kDQbbx"
             >
               <svg
                 width="48"
@@ -12390,6 +12622,35 @@ exports[`WalletDetails should update wallet name 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -12748,7 +13009,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               Show
             </span>
             <span
-              class="sc-fzoNJl izYPmy"
+              class="sc-fzoXWK hwbxye"
             >
               <div
                 class="sc-AxiKw ksjdLL"

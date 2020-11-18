@@ -10,8 +10,6 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
 import { Action } from "app/components/Notifications/models";
-import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
-import { useEnvironmentContext } from "app/contexts";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
@@ -45,7 +43,7 @@ type NavigationBarProps = {
 const NavWrapper = styled.nav<{ noShadow?: boolean }>`
 	${defaultStyle}
 	${tw`sticky inset-x-0 top-0 bg-theme-background`}
-	${({ noShadow }) => !noShadow && tw`shadow-md`};
+	${({ noShadow }) => !noShadow && tw`shadow-header-smooth dark:shadow-header-smooth-dark`};
 `;
 
 type UserInfoProps = {
@@ -123,8 +121,6 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
 	const [selectedWallet, setSelectedWallet] = useState<SelectedWallet | undefined>();
-
-	const { env } = useEnvironmentContext();
 
 	useEffect(() => {
 		if (selectedWallet) {
@@ -257,10 +253,9 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 				<>
 					<SearchWallet
 						isOpen={searchWalletIsOpen}
-						showNetwork={false}
 						title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
 						description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
-						searchBarExtra={<SearchBarFilters networks={env.availableNetworks()} />}
+						searchPlaceholder={t("WALLETS.MODAL_SELECT_ACCOUNT.SEARCH_PLACEHOLDER")}
 						wallets={profile.wallets().values()}
 						onSelectWallet={handleSelectWallet}
 						onClose={() => setSearchWalletIsOpen(false)}

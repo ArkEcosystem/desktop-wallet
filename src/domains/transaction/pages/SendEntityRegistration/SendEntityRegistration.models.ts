@@ -30,17 +30,14 @@ export type SendEntityRegistrationComponent = {
 export type SendEntityRegistrationSignOptions = {
 	env: Environment;
 	form: ReturnType<typeof useForm>;
-	handleNext: () => void;
 	profile: Profile;
-	setTransaction: (transaction: ExtendedSignedTransactionData) => void;
-	translations: TFunction;
 	type?: Enums.EntityType;
 };
 
 export type SendEntityRegistrationForm = {
 	transactionDetails: ({ transaction, translations, wallet }: SendEntityRegistrationDetailsOptions) => JSX.Element;
 
-	signTransaction: (options: SendEntityRegistrationSignOptions) => Promise<void>;
+	signTransaction: (options: SendEntityRegistrationSignOptions) => Promise<Contracts.SignedTransactionData>;
 
 	tabSteps: number;
 

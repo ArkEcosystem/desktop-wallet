@@ -283,7 +283,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top ml-13"
+                      class="flex flex-inline align-top ml-15"
                     >
                       <div>
                         Wallet
@@ -335,13 +335,13 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     </div>
                   </th>
                   <th
-                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top justify-center pr-3"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         <input
@@ -364,10 +364,10 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-fznJRM iNaKIr space-x-3"
+                      class="sc-fznJRM iNaKIr space-x-4"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
                         data-testid="Avatar"
                       >
                         <div
@@ -423,7 +423,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-fznJRM dYacoh justify-center"
+                      class="sc-fznJRM jONcbf justify-center"
                     >
                       <input
                         class="sc-fzqARJ cLbUbR"
@@ -440,10 +440,10 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                 >
                   <td>
                     <div
-                      class="sc-fznJRM iNaKIr space-x-3"
+                      class="sc-fznJRM iNaKIr space-x-4"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bSHwDC"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
                         data-testid="Avatar"
                       >
                         <div
@@ -499,7 +499,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-fznJRM dYacoh justify-center"
+                      class="sc-fznJRM jONcbf justify-center"
                     >
                       <input
                         class="sc-fzqARJ cLbUbR"

@@ -31,7 +31,7 @@ export const importWallet = async (
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
 	if (navigateToWallet) {
-		await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
+		await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 	}
 };
 
@@ -55,6 +55,6 @@ export const importWalletByAddress = async (
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
 	if (navigateToWallet) {
-		await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
+		await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 	}
 };

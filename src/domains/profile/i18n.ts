@@ -35,6 +35,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_SELECT_SENDER: {
 		TITLE: "Select Sender",
 		DESCRIPTION: "Find and select the sender from your wallets",
+		SEARCH_PLACEHOLDER: "Enter the name or address for your wallet",
 	},
 	MODAL_SIGN_IN: {
 		TITLE: "Sign In",
@@ -44,7 +45,7 @@ export const translations: { [key: string]: any } = {
 	},
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
-		DESCRIPTION: "Sign in via MarketSquare or create a new Profile below.",
+		DESCRIPTION: "Create a new Profile below.",
 		NEW_PROFILE: "New Profile",
 		VALIDATION: {
 			NAME_EXISTS: "Profile name already exists",

@@ -10,6 +10,10 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
+import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
+import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -40,7 +44,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { formState, getValues, register, setValue, unregister } = form;
+	const { formState, getValues, register, setValue, setError, unregister } = form;
 	const { registrationType } = getValues();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 3 : 1;
@@ -48,6 +52,16 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const getFeesByRegistrationType = useCallback(
 		(type: string) => env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), type),
 		[env, activeWallet],
+	);
+
+	const setFeesByRegistrationType = useCallback(
+		(type: string) => {
+			const fees = getFeesByRegistrationType("entityRegistration");
+
+			setValue("fees", fees);
+			setValue("fee", fees?.avg);
+		},
+		[getFeesByRegistrationType, setValue],
 	);
 
 	useEffect(() => {
@@ -95,44 +109,73 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	// This effect sets the appropriate data (fees, entityName, form title) and redirects to step 2
 	// to internally perform entity registration while the user experiences update action.
 	useEffect(() => {
-		if (selectedRegistrationType !== "delegate") return;
+		if (selectedRegistrationType === "delegate") {
+			setRegistrationForm(EntityRegistrationForm);
+			setValue(
+				"registrationType",
+				{
+					value: "entityRegistration",
+					type: Enums.EntityType.Delegate,
+					label: "Delegate",
+				},
+				{ shouldValidate: true, shouldDirty: true },
+			);
 
-		setRegistrationForm(EntityRegistrationForm);
-		setValue(
-			"registrationType",
-			{
-				value: "entityRegistration",
-				type: Enums.EntityType.Business,
-				label: "Business",
-			},
-			{ shouldValidate: true, shouldDirty: true },
-		);
+			setFeesByRegistrationType("entityRegistration");
 
-		const fees = getFeesByRegistrationType("entityRegistration");
+			const delegate = env
+				.delegates()
+				.findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address());
 
-		setValue("fees", fees);
-		setValue("fee", fees?.avg);
+			register("entityName");
+			setValue("entityName", delegate.username());
 
-		const delegate = env
-			.delegates()
-			.findByAddress(activeWallet.coinId(), activeWallet.networkId(), activeWallet.address());
+			setEntityRegistrationTitle(t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"));
 
-		register("entityName");
-		setValue("entityName", delegate.username());
+			return setActiveTab(2);
+		}
 
-		setEntityRegistrationTitle(t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"));
+		if (selectedRegistrationType === "secondSignature") {
+			setRegistrationForm(SecondSignatureRegistrationForm);
+			setValue(
+				"registrationType",
+				{
+					value: "secondSignature",
+					label: "Second Signature",
+				},
+				{ shouldValidate: true, shouldDirty: true },
+			);
 
-		setActiveTab(2);
+			setFeesByRegistrationType("secondSignature");
+
+			return setActiveTab(2);
+		}
+
+		if (selectedRegistrationType === "multiSignature") {
+			setRegistrationForm(MultiSignatureRegistrationForm);
+			setValue(
+				"registrationType",
+				{
+					value: "multiSignature",
+					label: "Multisignature",
+				},
+				{ shouldValidate: true, shouldDirty: true },
+			);
+
+			setFeesByRegistrationType("multiSignature");
+
+			return setActiveTab(2);
+		}
 	}, [
-		getValues,
-		setValue,
-		getValues,
 		activeWallet,
 		env,
+		getFeesByRegistrationType,
+		getValues,
 		register,
 		selectedRegistrationType,
+		setFeesByRegistrationType,
+		setValue,
 		t,
-		getFeesByRegistrationType,
 	]);
 
 	useEffect(() => {
@@ -145,16 +188,26 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
 	}, [activeProfile, networks]);
 
-	const submitForm = () =>
-		registrationForm!.signTransaction({
-			env,
-			form,
-			handleNext,
-			profile: activeProfile,
-			setTransaction,
-			translations: t,
-			type: registrationType.type,
-		});
+	const submitForm = async () => {
+		try {
+			const transaction = await registrationForm!.signTransaction({
+				env,
+				form,
+				profile: activeProfile,
+				type: registrationType.type,
+			});
+
+			setTransaction(transaction);
+			handleNext();
+		} catch (error) {
+			if (isMnemonicError(error)) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
+
+			setActiveTab(10);
+		}
+	};
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -201,6 +254,15 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									wallet={activeWallet}
 									setRegistrationForm={setRegistrationForm}
 									fees={getValues("fees")}
+								/>
+							</TabPanel>
+							<TabPanel tabId={10}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={formState.isSubmitting}
+									onRepeat={form.handleSubmit(submitForm)}
 								/>
 							</TabPanel>
 

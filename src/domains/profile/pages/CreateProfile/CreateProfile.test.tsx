@@ -6,7 +6,7 @@ import { httpClient } from "app/services";
 import electron from "electron";
 import os from "os";
 import React from "react";
-import { act, fireEvent, renderWithRouter } from "testing-library";
+import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
@@ -51,16 +51,22 @@ const baseSettings = {
 	SCREENSHOT_PROTECTION: true,
 	THEME: "light",
 	TIME_FORMAT: "h:mm A",
+	USE_CUSTOM_PEER: false,
+	USE_MULTI_PEER_BROADCAST: false,
+	USE_TEST_NETWORKS: false,
 };
 
-const renderComponent = () =>
-	renderWithRouter(
+const renderComponent = async () => {
+	const result = renderWithRouter(
 		<EnvironmentProvider env={env}>
 			<ThemeProvider>
 				<CreateProfile />
 			</ThemeProvider>
 		</EnvironmentProvider>,
 	);
+	await waitFor(() => expect(result.getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
+	return result;
+};
 
 describe("CreateProfile", () => {
 	beforeAll(() => {
@@ -73,8 +79,8 @@ describe("CreateProfile", () => {
 		}));
 	});
 
-	it("should render", () => {
-		const { container, getByText, asFragment } = renderComponent();
+	it("should render", async () => {
+		const { container, getByText, asFragment } = await renderComponent();
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Back"));
@@ -83,7 +89,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should store profile", async () => {
-		const { asFragment, container, getAllByTestId, getByTestId } = renderComponent();
+		const { asFragment, container, getAllByTestId, getByTestId } = await renderComponent();
 
 		// Upload avatar image
 		await act(async () => {
@@ -107,6 +113,7 @@ describe("CreateProfile", () => {
 
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
@@ -144,7 +151,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should not create new profile if profile name exists", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 
@@ -168,6 +175,7 @@ describe("CreateProfile", () => {
 
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
@@ -176,10 +184,11 @@ describe("CreateProfile", () => {
 	});
 
 	it("should store profile with password", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
 		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "test password" } });
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
@@ -189,6 +198,7 @@ describe("CreateProfile", () => {
 
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
@@ -198,8 +208,43 @@ describe("CreateProfile", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should fail password confirmation", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
+		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "wrong" } });
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		await act(async () => {
+			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		});
+
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveAttribute("aria-invalid"));
+
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "" } });
+		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "password" } });
+
+		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveValue(""));
+		await waitFor(() => expect(getAllByTestId("Input")[1]).toHaveValue("password"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("CreateProfile__submit-button"));
+		});
+		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveAttribute("aria-invalid"));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should upload and remove avatar image", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		// Upload avatar image
 		await act(async () => {
@@ -222,6 +267,8 @@ describe("CreateProfile", () => {
 
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
+
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
@@ -230,7 +277,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should not upload avatar image", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderComponent();
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		// Not upload avatar image
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({

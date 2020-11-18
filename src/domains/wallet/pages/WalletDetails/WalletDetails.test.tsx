@@ -261,7 +261,7 @@ describe("WalletDetails", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--0"));
+			fireEvent.click(getByTestId("dropdown__option--primary-0"));
 		});
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
@@ -290,7 +290,7 @@ describe("WalletDetails", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--0"));
+			fireEvent.click(getByTestId("dropdown__option--primary-0"));
 		});
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
@@ -374,7 +374,7 @@ describe("WalletDetails", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const deleteWalletOption = getByTestId("dropdown__option--4");
+		const deleteWalletOption = getByTestId("dropdown__option--secondary-0");
 		expect(deleteWalletOption).toBeTruthy();
 
 		act(() => {

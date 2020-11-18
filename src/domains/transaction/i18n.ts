@@ -4,6 +4,7 @@ export const translations: { [key: string]: any } = {
 	ADD_LINK: "Add Link",
 	ADD_RECIPIENT: "Add Recipient",
 	ADDRESS: "Address",
+	ALL_HISTORY: "All History",
 	AMOUNT: "Amount",
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
@@ -14,6 +15,7 @@ export const translations: { [key: string]: any } = {
 	DESCRIPTION: "Description",
 	ENCRYPTION_PASSWORD: "Encryption Password",
 	ID: "ID",
+	INCOMING: "Incoming",
 	INVALID_MNEMONIC: "Invalid Mnemonic",
 	INVALID_URL: "Invalid URL",
 	IPFS_HASH: "IPFS Hash",
@@ -22,6 +24,7 @@ export const translations: { [key: string]: any } = {
 	NAME: "Name",
 	NETWORK: "Network",
 	NOT_CONFIRMED: "Not confirmed",
+	OUTGOING: "Outgoing",
 	RECEIVED: "Received",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
@@ -242,7 +245,7 @@ export const translations: { [key: string]: any } = {
 		PASSPHRASE_STEP: {
 			TITLE: "Your Second Signature",
 			WARNING:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam facere nostrum.",
+				"This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.",
 			DOWNLOAD: {
 				TITLE: "Download Your Passphrase",
 				DESCRIPTION: "You can also download and safely store your passphrase.",
@@ -388,5 +391,11 @@ export const translations: { [key: string]: any } = {
 		LOW_BALANCE: "The balance is too low ({{balance}} {{ coinId }})",
 		FEE_BELOW_MINIMUM: "The selected fee is below the minimum  ({{min}} {{ coinId }}) and may not be forged",
 		FEE_ABOVE_MAXIMUM: "The selected fee is above the maximum ({{max}} {{ coinId }})",
+	},
+
+	ERROR: {
+		TITLE: "Transaction Error",
+		SUBTITLE:
+			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
 	},
 };
