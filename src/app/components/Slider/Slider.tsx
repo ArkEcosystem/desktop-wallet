@@ -33,7 +33,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 				className="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container"
 				style={{ height: `${containerHeight}px` }}
 			>
-				<div className={`h-full swiper-wrapper ${className || ""}`} ref={wrapperRef}>
+				<div className={`h-full swiper-wrapper important:z-0 ${className || ""}`} ref={wrapperRef}>
 					{data.map((item: any, index: number) => (
 						<div className="swiper-slide" key={index} style={slideStyles}>
 							{{ ...renderChildNode(item, index) }}

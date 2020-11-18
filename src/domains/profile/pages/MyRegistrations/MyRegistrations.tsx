@@ -1,9 +1,9 @@
 import { Enums, ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { Loader } from "app/components/Loader";
 import { useEnvironmentContext } from "app/contexts";
@@ -16,15 +16,13 @@ import { DelegateTable } from "./components/DelegateTable";
 import { EntityTable } from "./components/EntityTable";
 import { filterDelegates, filterEntities } from "./utils";
 
-const { RegisterBanner } = images.common;
-
 const EmptyRegistrations = () => {
 	const { t } = useTranslation();
 
 	return (
 		<Section className="flex-1">
 			<div data-testid="MyRegistrations__empty-state" className="text-center">
-				<RegisterBanner className="mx-auto" />
+				<Image name="RegisterBanner" className="mx-auto" />
 
 				<div className="mt-8 text-theme-secondary-text">
 					{t("PROFILE.PAGE_MY_REGISTRATIONS.NO_REGISTRATIONS_MESSAGE")}

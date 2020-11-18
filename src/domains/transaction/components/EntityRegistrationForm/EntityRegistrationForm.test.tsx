@@ -219,8 +219,6 @@ describe("EntityRegistrationForm", () => {
 			setError: jest.fn(),
 			setValue: jest.fn(),
 		};
-		const handleNext = jest.fn();
-		const setTransaction = jest.fn();
 
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signEntityRegistration")
@@ -231,16 +229,12 @@ describe("EntityRegistrationForm", () => {
 		await EntityRegistrationForm.signTransaction({
 			env,
 			form,
-			handleNext,
 			profile,
-			setTransaction,
 		});
 
 		expect(signMock).toHaveBeenCalled();
 		expect(broadcastMock).toHaveBeenCalled();
 		expect(transactionMock).toHaveBeenCalled();
-		expect(setTransaction).toHaveBeenCalled();
-		expect(handleNext).toHaveBeenCalled();
 
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
@@ -264,8 +258,6 @@ describe("EntityRegistrationForm", () => {
 			setError: jest.fn(),
 			setValue: jest.fn(),
 		};
-		const handleNext = jest.fn();
-		const setTransaction = jest.fn();
 
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signEntityRegistration")
@@ -273,13 +265,14 @@ describe("EntityRegistrationForm", () => {
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
-		await EntityRegistrationForm.signTransaction({
-			env,
-			form,
-			handleNext,
-			profile,
-			setTransaction,
-		});
+		try {
+			await EntityRegistrationForm.signTransaction({
+				env,
+				form,
+				profile,
+			});
+			// eslint-disable-next-line
+		} catch (err) {}
 
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
@@ -300,8 +293,6 @@ describe("EntityRegistrationForm", () => {
 		);
 		expect(broadcastMock).toHaveBeenCalled();
 		expect(transactionMock).toHaveBeenCalled();
-		expect(setTransaction).toHaveBeenCalled();
-		expect(handleNext).toHaveBeenCalled();
 
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
@@ -323,23 +314,21 @@ describe("EntityRegistrationForm", () => {
 			setError: jest.fn(),
 			setValue: jest.fn(),
 		};
-		const handleNext = jest.fn();
-		const setTransaction = jest.fn();
-
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signEntityRegistration")
 			.mockReturnValue(Promise.resolve(entityRegistrationFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
-		await EntityRegistrationForm.signTransaction({
-			env,
-			form,
-			handleNext,
-			profile,
-			setTransaction,
-			type: Enums.EntityType.Plugin,
-		});
+		try {
+			await EntityRegistrationForm.signTransaction({
+				env,
+				form,
+				profile,
+				type: Enums.EntityType.Plugin,
+			});
+			// eslint-disable-next-line
+		} catch (err) {}
 
 		expect(signMock).toHaveBeenCalledWith({
 			fee: "1",
@@ -356,8 +345,6 @@ describe("EntityRegistrationForm", () => {
 		});
 		expect(broadcastMock).toHaveBeenCalled();
 		expect(transactionMock).toHaveBeenCalled();
-		expect(setTransaction).toHaveBeenCalled();
-		expect(handleNext).toHaveBeenCalled();
 
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
@@ -384,8 +371,6 @@ describe("EntityRegistrationForm", () => {
 			setError: jest.fn(),
 			setValue: jest.fn(),
 		};
-		const handleNext = jest.fn();
-		const setTransaction = jest.fn();
 
 		const fileUploadSpy = jest.spyOn(File.prototype, "upload");
 
@@ -395,13 +380,14 @@ describe("EntityRegistrationForm", () => {
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
-		await EntityRegistrationForm.signTransaction({
-			env,
-			form,
-			handleNext,
-			profile,
-			setTransaction,
-		});
+		try {
+			await EntityRegistrationForm.signTransaction({
+				env,
+				form,
+				profile,
+			});
+			// eslint-disable-next-line
+		} catch (err) {}
 
 		expect(fileUploadSpy).toHaveBeenCalledWith({
 			meta: {
@@ -423,8 +409,6 @@ describe("EntityRegistrationForm", () => {
 		});
 		expect(broadcastMock).toHaveBeenCalled();
 		expect(transactionMock).toHaveBeenCalled();
-		expect(setTransaction).toHaveBeenCalled();
-		expect(handleNext).toHaveBeenCalled();
 
 		fileUploadSpy.mockRestore();
 		signMock.mockRestore();
@@ -445,9 +429,6 @@ describe("EntityRegistrationForm", () => {
 			setError: jest.fn(),
 			setValue: jest.fn(),
 		};
-		const handleNext = jest.fn();
-		const setTransaction = jest.fn();
-		const translations = jest.fn((translation) => translation);
 
 		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => void 0);
 		const signMock = jest.spyOn(wallet.transaction(), "signEntityRegistration").mockImplementation(() => {
@@ -456,26 +437,19 @@ describe("EntityRegistrationForm", () => {
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
 
-		await EntityRegistrationForm.signTransaction({
-			env,
-			form,
-			handleNext,
-			profile,
-			setTransaction,
-			translations,
-		});
+		try {
+			await EntityRegistrationForm.signTransaction({
+				env,
+				form,
+				profile,
+			});
+			// eslint-disable-next-line
+		} catch (error) {}
 
-		expect(consoleSpy).toHaveBeenCalledTimes(1);
-		expect(form.setValue).toHaveBeenCalledWith("mnemonic", "");
-		expect(form.setError).toHaveBeenCalledWith("mnemonic", {
-			type: "manual",
-			message: "TRANSACTION.INVALID_MNEMONIC",
-		});
+		await waitFor(() => expect(signMock).toThrow());
 
 		expect(broadcastMock).not.toHaveBeenCalled();
 		expect(transactionMock).not.toHaveBeenCalled();
-		expect(setTransaction).not.toHaveBeenCalled();
-		expect(handleNext).not.toHaveBeenCalled();
 
 		consoleSpy.mockRestore();
 		signMock.mockRestore();

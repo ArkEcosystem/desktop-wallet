@@ -1,5 +1,5 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -11,15 +11,13 @@ type ProfileCreatedProps = {
 	onStart: any;
 };
 
-const { ProfileCreatedBanner } = images.profile.components.profileCreated;
-
 export const ProfileCreated = ({ isOpen, onClose, onSkip, onStart }: ProfileCreatedProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<Modal
 			title={t("PROFILE.MODAL_PROFILE_CREATED.TITLE")}
-			image={<ProfileCreatedBanner className="my-8" />}
+			image={<Image name="ProfileCreatedBanner" domain="profile" className="my-8" />}
 			isOpen={isOpen}
 			onClose={onClose}
 		>

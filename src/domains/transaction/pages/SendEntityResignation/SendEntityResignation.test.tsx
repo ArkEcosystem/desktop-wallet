@@ -266,9 +266,9 @@ describe("SendEntityResignation", () => {
 			expect(asFragment()).toMatchSnapshot();
 		});
 
-		it("should show authentication error", async () => {
+		it("should show mnemonic authentication error", async () => {
 			const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
-				throw new Error();
+				throw new Error("Signatory should be");
 			});
 			const consoleMock = jest.spyOn(console, "log").mockImplementation();
 			const secondPublicKeyMock = jest
@@ -317,6 +317,121 @@ describe("SendEntityResignation", () => {
 
 			expect(getByTestId("AuthenticationStep")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
+
+			secondPublicKeyMock.mockRestore();
+			signMock.mockRestore();
+			consoleMock.mockRestore();
+		});
+
+		it("should show error step", async () => {
+			const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
+				throw new Error();
+			});
+			const consoleMock = jest.spyOn(console, "log").mockImplementation();
+			const secondPublicKeyMock = jest
+				.spyOn(wallet, "secondPublicKey")
+				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+
+			const { asFragment, getByTestId } = renderPage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+					target: {
+						value: passphrase,
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+					target: {
+						value: "second mnemonic",
+					},
+				});
+			});
+
+			await waitFor(() =>
+				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("second mnemonic"),
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+			expect(asFragment()).toMatchSnapshot();
+
+			secondPublicKeyMock.mockRestore();
+			signMock.mockRestore();
+			consoleMock.mockRestore();
+		});
+
+		it("should show error step and go back", async () => {
+			const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
+				throw new Error();
+			});
+			const consoleMock = jest.spyOn(console, "log").mockImplementation();
+			const secondPublicKeyMock = jest
+				.spyOn(wallet, "secondPublicKey")
+				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+
+			const { asFragment, getByTestId } = renderPage();
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+			await act(async () => {
+				fireEvent.click(getByTestId("SendEntityResignation__continue-button"));
+			});
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+					target: {
+						value: passphrase,
+					},
+				});
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+					target: {
+						value: "second mnemonic",
+					},
+				});
+			});
+
+			await waitFor(() =>
+				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue("second mnemonic"),
+			);
+
+			act(() => {
+				fireEvent.click(getByTestId("SendEntityResignation__send-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+			expect(asFragment()).toMatchSnapshot();
+
+			act(() => {
+				fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+			});
+
+			const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}`;
+			await waitFor(() => expect(history.location.pathname).toEqual(walletDetailPage));
 
 			secondPublicKeyMock.mockRestore();
 			signMock.mockRestore();
