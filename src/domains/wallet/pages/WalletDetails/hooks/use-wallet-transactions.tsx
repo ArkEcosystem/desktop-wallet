@@ -4,7 +4,10 @@ import { uniqBy } from "@arkecosystem/utils";
 import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limit: number }) => {
+export const useWalletTransactions = (
+	wallet: ReadWriteWallet,
+	{ limit, mode = "all" }: { limit: number; mode?: string },
+) => {
 	const pendingMultiSignatureTransactions: SignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
 		...wallet.transaction().waitingForOurSignature(),
@@ -30,14 +33,22 @@ export const useWalletTransactions = (wallet: ReadWriteWallet, { limit }: { limi
 		async (cursor: string | number | undefined) => {
 			setIsLoading(true);
 
-			const response = await wallet.transactions({ limit, cursor });
+			const methodMap = {
+				all: "transactions",
+				sent: "sentTransactions",
+				received: "receivedTransactions",
+			};
+			const method = methodMap[mode as keyof typeof methodMap];
+
+			// @ts-ignore
+			const response = await wallet[method]({ limit, cursor });
 
 			setItemCount(response.items().length);
 			setNextPage(response.nextPage());
 			setTransactions((prev) => [...prev, ...response.items()]);
 			setIsLoading(false);
 		},
-		[wallet, limit],
+		[wallet, limit, mode],
 	);
 
 	const fetchMore = useCallback(() => sync(nextPage), [nextPage, sync]);

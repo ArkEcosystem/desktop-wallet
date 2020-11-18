@@ -68,7 +68,6 @@ export const translations: { [key: string]: any } = {
 	FINISH: "Finish",
 	FORGED_ARK: "Forged ARK",
 	GO_BACK_TO_PORTFOLIO: "Go back to Portfolio",
-	GO_TO_WALLET: "Go to Wallet",
 	GRANT: "Grant",
 	HIDE: "Hide",
 	HIDE_WALLET_BUTTON_TEXT: "Hide text from wallet buttons",
