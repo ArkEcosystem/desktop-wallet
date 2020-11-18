@@ -9,6 +9,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useQueryParams } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
+import { enableNetworkInDashboardFilters } from "domains/dashboard/utils";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -102,6 +103,7 @@ export const ImportWallet = () => {
 				wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
 			}
 
+			enableNetworkInDashboardFilters(activeProfile, wallet.network().id());
 			setWalletData(wallet);
 			await persist();
 

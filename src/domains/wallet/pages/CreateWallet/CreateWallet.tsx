@@ -5,6 +5,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
+import { enableNetworkInDashboardFilters } from "domains/dashboard/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -46,6 +47,7 @@ export const CreateWallet = () => {
 		const formattedName = name.trim().substring(0, nameMaxLength);
 		activeProfile.wallets().update(getValues("wallet").id(), { alias: formattedName });
 
+		enableNetworkInDashboardFilters(activeProfile, getValues("wallet").network().id());
 		await persist();
 
 		setValue("wallet", null);
