@@ -14,7 +14,7 @@ export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) 
 	const { iconName } = networkExtendedData;
 
 	return (
-		<li className="inline-block ml-5 cursor-pointer" data-testid={`network__option--${id}`} onClick={onClick}>
+		<li className="inline-block mr-5 cursor-pointer" data-testid={`network__option--${id}`} onClick={onClick}>
 			<Tooltip content={name}>
 				{isSelected ? (
 					<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">

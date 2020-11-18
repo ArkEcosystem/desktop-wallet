@@ -62,7 +62,7 @@ describe("NewsOptions", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
-			fireEvent.click(getByTestId("network__option--0"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 			fireEvent.change(getByTestId("NewsOptions__search"), {
 				target: {
 					value: "test query",
@@ -108,7 +108,7 @@ describe("NewsOptions", () => {
 	it("should select asset", () => {
 		const { getByTestId } = render(<NewsOptions selectedCategories={categories} selectedCoins={coins} />);
 
-		const arkOption = getByTestId("network__option--0");
+		const arkOption = getByTestId("NetworkOption__ARK");
 		act(() => {
 			fireEvent.click(arkOption);
 		});
@@ -123,7 +123,7 @@ describe("NewsOptions", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
-			fireEvent.click(getByTestId("network__option--0"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 			fireEvent.change(getByTestId("NewsOptions__search"), {
 				target: {
 					value: "test query",

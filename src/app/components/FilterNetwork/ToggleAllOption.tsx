@@ -11,7 +11,7 @@ export const ToggleAllOption = ({ onClick, isHidden = false, isSelected = false 
 		<Circle
 			size="lg"
 			data-testid="network__viewall"
-			className="relative cursor-pointer border-theme-primary-contrast"
+			className="relative cursor-pointer border-theme-primary-contrast mr-5"
 			onClick={onClick}
 		>
 			<div className="text-sm font-semibold text-theme-primary-500">All</div>
