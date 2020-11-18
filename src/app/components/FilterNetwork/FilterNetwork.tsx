@@ -4,14 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { FilterNetworkProps, Network, NetworkOptions, ToggleAllOption } from "./";
 
-export const FilterNetwork = ({
-	networks = [],
-	onChange,
-	onViewAll,
-	hideViewAll,
-	title,
-	className,
-}: FilterNetworkProps) => {
+export const FilterNetwork = ({ networks = [], onChange, onViewAll, hideViewAll, title }: FilterNetworkProps) => {
 	const [networkList, setNetworkList] = useState(networks);
 	const [showAll, setShowAll] = useState(false);
 	const { t } = useTranslation();
@@ -41,10 +34,13 @@ export const FilterNetwork = ({
 	};
 
 	return (
-		<div className={className} data-testid="FilterNetwork">
+		<div data-testid="FilterNetwork">
 			{title && <div className="mb-2 font-bold text-sm text-theme-neutral-400">{title}</div>}
 
-			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
+			{networks.length > 1 && (
+				<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
+			)}
+
 			<NetworkOptions networks={networkList} onClick={handleClick} />
 
 			{showAll && networkList.length > 1 && (
@@ -76,14 +72,16 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 	);
 
 	return (
-		<div>
-			<FilterNetwork
-				{...props}
-				title={t("COMMON.PUBLIC_NETWORK")}
-				networks={liveNetworks}
-				onChange={(_, updated) => props.onChange?.(_, [...updated, ...testNetworks])}
-			/>
-			{props.useTestNetworks && (
+		<div className="space-y-6">
+			{liveNetworks.length > 0 && (
+				<FilterNetwork
+					{...props}
+					title={t("COMMON.PUBLIC_NETWORK")}
+					networks={liveNetworks}
+					onChange={(_, updated) => props.onChange?.(_, [...updated, ...testNetworks])}
+				/>
+			)}
+			{props.useTestNetworks && testNetworks.length > 0 && (
 				<FilterNetwork
 					{...props}
 					title={t("COMMON.DEVELOPMENT_NETWORK")}
