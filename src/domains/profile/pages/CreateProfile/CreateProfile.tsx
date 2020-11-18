@@ -122,7 +122,12 @@ export const CreateProfile = () => {
 										required={false}
 										optional
 									/>
-									<InputPassword ref={register(createProfile.password())} />
+									<InputPassword
+										ref={register(createProfile.password())}
+										onChange={() => {
+											if (confirmPassword) trigger("confirmPassword");
+										}}
+									/>
 									<FormHelperText />
 								</FormField>
 
@@ -144,11 +149,12 @@ export const CreateProfile = () => {
 										})}
 										ref={register(createProfile.currency())}
 										options={PlatformSdkChoices.currencies}
-										onChange={() => {
-											if (form.errors.currency) {
-												form.clearErrors("currency");
-											}
-										}}
+										onChange={(currency: any) =>
+											setValue("currency", currency.value, {
+												shouldDirty: true,
+												shouldValidate: true,
+											})
+										}
 									/>
 									<FormHelperText />
 								</FormField>
