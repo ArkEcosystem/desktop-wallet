@@ -12,6 +12,7 @@ import { TransactionDetailModal } from "domains/transaction/components/Transacti
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
+import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
@@ -29,6 +30,7 @@ type WalletDetailsProps = {
 };
 
 export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletDetailsProps) => {
+	const [isReceiveFunds, setIsReceiveFunds] = useState(false);
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
@@ -165,10 +167,23 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					network={networkId}
 					publicKey={activeWallet.publicKey()}
 					ticker={ticker}
+					showMultiSignatureOption={activeWallet.network().can("Transaction.multiSignature")}
+					showSecondSignatureOption={activeWallet.network().can("Transaction.secondSignature")}
 					showSignMessageOption={activeWallet.network().can("Message.sign")}
 					showStoreHashOption={activeWallet.network().can("Transaction.ipfs")}
 					showVerifyMessageOption={activeWallet.network().can("Message.verify")}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
+					onMultiSignature={() =>
+						history.push(
+							`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/multiSignature/send-entity-registration`,
+						)
+					}
+					onReceiveFunds={() => setIsReceiveFunds(true)}
+					onSecondSignature={() =>
+						history.push(
+							`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/secondSignature/send-entity-registration`,
+						)
+					}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
 					}
@@ -268,6 +283,15 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 			</Page>
 
 			{wallets && wallets.length > 1 && <WalletBottomSheetMenu wallets={wallets} />}
+
+			<ReceiveFunds
+				isOpen={isReceiveFunds}
+				address={activeWallet.address()}
+				icon={activeWallet.coinId()}
+				name={activeWallet.alias()}
+				network={activeWallet.networkId()}
+				onClose={() => setIsReceiveFunds(false)}
+			/>
 
 			<UpdateWalletName
 				wallet={activeWallet}

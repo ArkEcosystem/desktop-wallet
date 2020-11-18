@@ -19,6 +19,9 @@ export const Default = () => (
 		publicKey="028fe98e42e159f2450a52371dfb23ae69a39fc5fee6545690b7f51bfcee933357"
 		ticker="ARK"
 		onDeleteWallet={console.log}
+		onMultiSignature={console.log}
+		onReceiveFunds={console.log}
+		onSecondSignature={console.log}
 		onSignMessage={console.log}
 		onStar={console.log}
 		onStoreHash={console.log}

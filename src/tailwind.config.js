@@ -224,6 +224,7 @@ module.exports = {
 	variants: {
 		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
 		borderWidth: [...defaultConfig.variants.borderWidth, "first", "last", "even"],
+		margin: [...defaultConfig.variants.margin, "first"],
 		opacity: [...defaultConfig.variants.opacity, "group-hover"],
 		padding: [...defaultConfig.variants.padding, "first", "last"],
 	},

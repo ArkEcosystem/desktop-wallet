@@ -5423,9 +5423,6 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         <div
                           data-testid="dropdown__content"
                         >
-                          <ul
-                            data-testid="dropdown__options"
-                          />
                           <div>
                             <div
                               class="px-10 py-7 w-128"
@@ -7420,9 +7417,6 @@ exports[`Dashboard should hide transaction view 1`] = `
                         <div
                           data-testid="dropdown__content"
                         >
-                          <ul
-                            data-testid="dropdown__options"
-                          />
                           <div>
                             <div
                               class="px-10 py-7 w-128"
@@ -18804,9 +18798,6 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                         <div
                           data-testid="dropdown__content"
                         >
-                          <ul
-                            data-testid="dropdown__options"
-                          />
                           <div>
                             <div
                               class="px-10 py-7 w-128"
@@ -20612,9 +20603,6 @@ exports[`Dashboard should show transaction view 1`] = `
                         <div
                           data-testid="dropdown__content"
                         >
-                          <ul
-                            data-testid="dropdown__options"
-                          />
                           <div>
                             <div
                               class="px-10 py-7 w-128"
@@ -22451,9 +22439,6 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                         <div
                           data-testid="dropdown__content"
                         >
-                          <ul
-                            data-testid="dropdown__options"
-                          />
                           <div>
                             <div
                               class="px-10 py-7 w-128"
@@ -22578,7 +22563,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                             data-testid="dropdown__options"
                                           >
                                             <li
-                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary"
+                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                                               data-testid="dropdown__option--0"
                                             >
                                               <div
@@ -22587,11 +22572,10 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                                 <span>
                                                   All
                                                 </span>
-                                                 
                                               </div>
                                             </li>
                                             <li
-                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary"
+                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                                               data-testid="dropdown__option--1"
                                             >
                                               <div
@@ -22600,11 +22584,10 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                                 <span>
                                                   Favorites
                                                 </span>
-                                                 
                                               </div>
                                             </li>
                                             <li
-                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 hover:bg-theme-neutral-200 hover:text-theme-primary"
+                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                                               data-testid="dropdown__option--2"
                                             >
                                               <div
@@ -22613,7 +22596,6 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                                 <span>
                                                   Ledger
                                                 </span>
-                                                 
                                               </div>
                                             </li>
                                           </ul>
