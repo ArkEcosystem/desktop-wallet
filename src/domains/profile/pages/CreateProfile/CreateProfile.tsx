@@ -22,8 +22,8 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const { watch, register, setError } = form;
-	const name = watch("name");
+	const { watch, register, setError, formState, setValue, trigger } = form;
+	const { name, confirmPassword } = watch();
 
 	const nameMaxLength = 42;
 
@@ -166,7 +166,11 @@ export const CreateProfile = () => {
 								{t("COMMON.BACK")}
 							</Button>
 
-							<Button type="submit" data-testid="CreateProfile__submit-button">
+							<Button
+								disabled={!formState.isValid}
+								type="submit"
+								data-testid="CreateProfile__submit-button"
+							>
 								{t("COMMON.CREATE")}
 							</Button>
 						</div>
