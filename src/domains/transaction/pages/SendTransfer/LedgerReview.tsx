@@ -4,18 +4,16 @@ import { Divider } from "app/components/Divider";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionRecipients } from "domains/transaction/components/TransactionDetail";
 import { evaluateFee } from "domains/transaction/utils";
-import React, { useState } from "react";
+import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const TransferLedgerReview = ({ wallet }: { wallet: ReadWriteWallet }) => {
-	const { getValues, watch } = useFormContext();
+	const { getValues } = useFormContext();
 	const { t } = useTranslation();
 
-	// getValues does not get the value of `defaultValues` on first render
-	const [watched] = useState(() => watch());
-	const fee = getValues("fee") || watched.fee;
-	const recipients = getValues("recipients") || watched.recipients;
+	const fee = getValues("fee");
+	const recipients = getValues("recipients");
 
 	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {
@@ -35,9 +33,7 @@ export const TransferLedgerReview = ({ wallet }: { wallet: ReadWriteWallet }) =>
 					paddingPosition="bottom"
 				/>
 
-				<div>
-					<TotalAmountBox amount={amount} fee={evaluateFee(fee)} ticker={wallet.currency()} />
-				</div>
+				<TotalAmountBox amount={amount} fee={evaluateFee(fee)} ticker={wallet.currency()} />
 			</div>
 		</>
 	);

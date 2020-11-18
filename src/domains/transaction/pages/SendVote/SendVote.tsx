@@ -19,6 +19,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
+import { VoteLedgerReview } from "./LedgerReview";
 
 export const SendVote = () => {
 	const { t } = useTranslation();
@@ -266,7 +267,12 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={activeWallet} />
+								<AuthenticationStep
+									wallet={activeWallet}
+									ledgerDetails={
+										<VoteLedgerReview wallet={activeWallet} votes={votes} unvotes={unvotes} />
+									}
+								/>
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<SummaryStep
