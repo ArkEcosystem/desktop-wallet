@@ -70,6 +70,7 @@ test("should send multiple transfer successfully", async (t) => {
 	await importWallet(t, "passphrase");
 
 	// Navigate to wallet details page
+	await t.click(Selector("[data-testid=WalletCard__DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Navigate to transfer page
