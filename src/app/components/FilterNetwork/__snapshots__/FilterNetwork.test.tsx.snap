@@ -19,7 +19,7 @@ exports[`FilterNetwork should render public networks 1`] = `
     data-testid="FilterNetwork"
   >
     <div
-      class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+      class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
       data-testid="network__viewall"
     >
       <div
@@ -155,12 +155,12 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Public Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -248,12 +248,12 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Development Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -327,12 +327,12 @@ exports[`FilterNetworks should render public networks 1`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Public Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -429,12 +429,12 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Public Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -522,12 +522,12 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Development Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -601,12 +601,12 @@ exports[`FilterNetworks should toggle view all 1`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Public Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -690,7 +690,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
         </li>
       </ul>
       <div
-        class="mt-4 text-theme-secondary-text cursor-pointer"
+        class="mt-4 cursor-pointer text-theme-secondary-text"
       >
         <label>
           <input
@@ -707,12 +707,12 @@ exports[`FilterNetworks should toggle view all 1`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Development Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -786,12 +786,12 @@ exports[`FilterNetworks should toggle view all 2`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Public Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -879,12 +879,12 @@ exports[`FilterNetworks should toggle view all 2`] = `
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 font-bold text-sm text-theme-neutral-400"
+        class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Development Network
       </div>
       <div
-        class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
         data-testid="network__viewall"
       >
         <div
@@ -1252,7 +1252,7 @@ exports[`NetworkOptions should render networks that have coin and id defined 1`]
 exports[`ToggleAllOption should render 1`] = `
 <div>
   <div
-    class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+    class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
     data-testid="network__viewall"
   >
     <div
@@ -1283,7 +1283,7 @@ exports[`ToggleAllOption should render hidden 1`] = `<div />`;
 exports[`ToggleAllOption should render selected 1`] = `
 <div>
   <div
-    class="sc-AxhCb gaiYPD relative cursor-pointer border-theme-primary-contrast mr-5"
+    class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
     data-testid="network__viewall"
   >
     <div
