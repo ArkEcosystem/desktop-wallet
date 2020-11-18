@@ -53,18 +53,28 @@ export default new BaseModule(NetworkModel, {
     load ({ commit, getters, rootGetters }) {
       const all = cloneDeep(getters.all)
       if (!isEmpty(all)) {
+        // Update API server on existing networks
+        const servers = {
+          'ark.devnet': 'https://dwallets.ark.io',
+          'ark.mainnet': 'http://wallets.ark.io'
+        }
+        const sanitizedAll = all.map(network => {
+          const server = servers[network.id] || network.server
+          return {
+            ...network,
+            server
+          }
+        })
+
         // TODO: remove in future major version
         // This is a "hack" to make sure all custom networks are in state.all
-        let missingCustom = false
         for (const custom of Object.values(getters.customNetworks)) {
-          if (!all.find(network => network.name === custom.name)) {
-            all.push(custom)
-            missingCustom = true
+          if (!sanitizedAll.find(network => network.name === custom.name)) {
+            sanitizedAll.push(custom)
           }
         }
-        if (missingCustom) {
-          commit('SET_ALL', all)
-        }
+
+        commit('SET_ALL', sanitizedAll)
       } else {
         commit('SET_ALL', NETWORKS)
       }
