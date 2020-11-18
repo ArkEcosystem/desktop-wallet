@@ -97,7 +97,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       </div>
     </fieldset>
     <div
-      class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="sc-AxirZ laMNgs flex flex-col sm:flex-row sm:space-y-0 sm:space-x-5 space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 "
     >
       <div
         class="flex items-center justify-center text-theme-success-600"
@@ -226,10 +226,10 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       </div>
     </fieldset>
     <div
-      class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="sc-AxirZ laMNgs flex flex-col sm:flex-row sm:space-y-0 sm:space-x-5 space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 "
     >
       <div
-        class="flex items-center justify-center text-theme-danger-600"
+        class="flex items-center justify-center text-theme-danger-400"
       >
         <div
           class="sc-AxjAm fYfzg"
@@ -242,7 +242,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
         </div>
       </div>
       <span
-        class="pointer-events-none border rounded-md border-theme-danger-600"
+        class="pointer-events-none border rounded-md border-theme-danger-400"
       />
       <div
         class="flex flex-col space-y-2"

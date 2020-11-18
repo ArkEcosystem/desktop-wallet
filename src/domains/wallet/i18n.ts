@@ -16,6 +16,7 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_RECEIVE_FUNDS: {
 		TITLE: "Receive Funds",
+		ERROR: "You have exceeded the maximum supported length.",
 	},
 
 	MODAL_LEDGER_WALLET: {

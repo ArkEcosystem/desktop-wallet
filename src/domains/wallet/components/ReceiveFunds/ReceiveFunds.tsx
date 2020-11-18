@@ -1,3 +1,5 @@
+import { Address } from "app/components/Address";
+import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
@@ -25,9 +27,12 @@ type ReceiveFundsProps = {
 export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
 	const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
+	const maxLength = 255;
+
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { amount, smartbridge } = form.watch();
+	// const { qrCodeDataUri, qrCodeDataImage } = useQRCode({ amount, smartbridge: smartbridge?.slice(0, maxLength), network, address });
 	const { qrCodeDataUri, qrCodeDataImage } = useQRCode({ amount, smartbridge, network, address });
 
 	return (
@@ -55,14 +60,14 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					label={t("COMMON.ADDRESS")}
 					borderPosition="bottom"
 					extra={
-						<div className="-space-x-2">
+						<div className="-space-x-2 whitespace-no-wrap">
 							{!name && <NetworkIcon size="lg" coin={icon} network={network} />}
 							<Avatar address={address} size="lg" />
 						</div>
 					}
 				>
-					<div className="flex items-center space-x-3">
-						<span>{address}</span>
+					<div className="flex items-center space-x-2">
+						<Address address={address} maxChars={25} />
 						<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
 							<Clipboard data={address}>
 								<Icon name="Copy" />
@@ -76,7 +81,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				{!isFormOpen && (
 					<Button
 						variant="plain"
-						className="w-full mt-8 mb-2"
+						className="w-full mt-8"
 						onClick={() => setIsFormOpen(true)}
 						data-testid="ReceiveFunds__toggle"
 					>
@@ -86,19 +91,25 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 				{isFormOpen && (
 					<Form context={form} onSubmit={console.log}>
-						<ReceiveFundsForm />
+						<ReceiveFundsForm maxLength={maxLength} />
 					</Form>
 				)}
 			</div>
 
-			<div className="mt-8">
+			<div className="w-64 h-64 mx-auto mt-8">
 				{qrCodeDataImage && (
 					<img
 						src={qrCodeDataImage}
-						className="w-64 h-64 mx-auto"
+						className="w-64 h-64 p-3 border border-theme-neutral-300 dark:border-theme-neutral-800 rounded-lg"
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
 					/>
+				)}
+
+				{qrCodeDataImage === null && (
+					<Alert className="h-full" type="vertical" variant="danger">
+						{t("WALLETS.MODAL_RECEIVE_FUNDS.ERROR")}
+					</Alert>
 				)}
 			</div>
 
