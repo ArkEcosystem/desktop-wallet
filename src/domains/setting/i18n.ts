@@ -85,7 +85,7 @@ export const translations: { [key: string]: any } = {
 		CUSTOM_PEERS: {
 			TITLE: "Use Custom Peers",
 			DESCRIPTION:
-				"Customize your individual peers by network. Note: Only use trusted peers. Using an unknown peer may put your funds at risk.",
+				"Customize your individual peers by network. <1/> Note: Only use trusted peers. Using an unknown peer may put your funds at risk.",
 		},
 		CRYPTOASSET: "Cryptoasset",
 		ADD_PEER: "Add Peer",

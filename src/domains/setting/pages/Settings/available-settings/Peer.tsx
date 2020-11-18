@@ -12,7 +12,7 @@ import { AddPeer } from "domains/setting/components/AddPeer";
 import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
 
@@ -114,7 +114,12 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 			isFloatingLabel: true,
 			label: t("SETTINGS.PEERS.CUSTOM_PEERS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-secondary-text",
-			labelDescription: t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION"),
+			labelDescription: (
+				<Trans i18nKey="SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION">
+					Customize your individual peers by network. <br /> Note: Only use trusted peers. Using an unknown
+					peer may put your funds at risk.
+				</Trans>
+			),
 			labelAddon: (
 				<Toggle
 					ref={register()}

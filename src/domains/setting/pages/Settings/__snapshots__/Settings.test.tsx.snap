@@ -5088,7 +5088,9 @@ exports[`Settings should render peer settings 1`] = `
                             class="text-sm font-medium text-theme-neutral"
                             data-testid="list-divided-item__label--description"
                           >
-                            Customize your individual peers by network. Note: Only use trusted peers. Using an unknown peer may put your funds at risk.
+                            Customize your individual peers by network. 
+                            <br />
+                             Note: Only use trusted peers. Using an unknown peer may put your funds at risk.
                           </span>
                         </div>
                       </div>
