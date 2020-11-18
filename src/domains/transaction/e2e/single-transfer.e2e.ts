@@ -41,6 +41,10 @@ test("should send transfer successfully with a multisig wallet", async (t) => {
 	// Import wallet
 	await importWalletByAddress(t, "DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq");
 
+	// Navigate to wallet details page
+	await t.click(Selector("[data-testid=WalletCard__DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq]"));
+	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+
 	// Navigate to transfer page
 	await goToTransferPage(t);
 
@@ -100,6 +104,7 @@ test("should send transfer successfully", async (t) => {
 	await importWallet(t, "passphrase");
 
 	// Navigate to wallet details page
+	await t.click(Selector("[data-testid=WalletCard__DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Navigate to transfer page
