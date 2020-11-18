@@ -30,4 +30,21 @@ describe("LedgerReviewStep", () => {
 		expect(screen.getByText(`-${wallet.publicKey()}`)).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render for vote transaction", () => {
+		const votes = [
+			new ReadOnlyWallet({
+				address: wallet.address(),
+				publicKey: wallet.publicKey(),
+				explorerLink: "",
+			}),
+		];
+
+		const { container } = render(
+			<VoteLedgerReview wallet={wallet} unvotes={[]} votes={votes} fee={BigNumber.ZERO} />,
+		);
+
+		expect(screen.getByText(`+${wallet.publicKey()}`)).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
+	});
 });
