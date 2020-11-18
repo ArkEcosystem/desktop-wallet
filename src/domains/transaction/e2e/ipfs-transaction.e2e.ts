@@ -104,6 +104,7 @@ test("should send IPFS successfully with a multisig wallet", async (t) => {
 	await importWalletByAddress(t, "DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq");
 
 	// Navigate to wallet details page
+	await t.click(Selector("[data-testid=WalletCard__DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click store hash option in dropdown menu
@@ -136,6 +137,7 @@ test("should send IPFS successfully", async (t) => {
 	await importWallet(t, "passphrase");
 
 	// Navigate to wallet details page
+	await t.click(Selector("[data-testid=WalletCard__DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS]"));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click store hash option in dropdown menu

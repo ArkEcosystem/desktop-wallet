@@ -74,14 +74,26 @@ const searchAddressesMocks = () => {
 			{ page: 2, limit: 15 },
 			{ page: 1, limit: 30 },
 		],
-		DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS: [{ page: 1, limit: 15 }],
-		DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P: [{ page: 1, limit: 15 }],
+		DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS: [
+			{ page: 1, limit: 10 },
+			{ page: 1, limit: 15 },
+			{ page: 1, limit: 30 },
+		],
+		DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P: [
+			{ page: 1, limit: 10 },
+			{ page: 1, limit: 15 },
+			{ page: 1, limit: 30 },
+		],
 		D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb: [
 			{ page: 1, limit: 10 },
 			{ page: 1, limit: 15 },
 			{ page: 1, limit: 30 },
 		],
-		DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq: [{ page: 1, limit: 15 }],
+		DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq: [
+			{ page: 1, limit: 10 },
+			{ page: 1, limit: 15 },
+			{ page: 1, limit: 30 },
+		],
 	};
 
 	const mocks: any = [];
