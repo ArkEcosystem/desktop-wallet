@@ -2,15 +2,14 @@ import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
-import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
-import { Tooltip } from "app/components/Tooltip";
 import { useEnvironmentContext } from "app/contexts";
+import { useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -23,14 +22,14 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const { watch, register, setError } = form;
-	const name = watch("name");
+	const { watch, register, setError, formState, setValue, trigger } = form;
+	const { name, confirmPassword } = watch();
 
 	const nameMaxLength = 42;
-	const passwordMinLength = 6;
 
 	const [avatarImage, setAvatarImage] = useState("");
 
+	const { createProfile } = useValidation();
 	const profiles = useMemo(() => env.profiles().values(), [env]);
 	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
 
@@ -91,17 +90,6 @@ export const CreateProfile = () => {
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
 					<div className="text-theme-secondary-text">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
-					<div className="mt-8">
-						<Tooltip content={t("COMMON.COMING_SOON")}>
-							<div>
-								<Button className="w-full" disabled>
-									<Icon name="Msq" width={20} height={20} />
-									<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
-								</Button>
-							</div>
-						</Tooltip>
-					</div>
-
 					<Form
 						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
 						context={form}
@@ -115,20 +103,7 @@ export const CreateProfile = () => {
 								<div className="flex justify-between -mt-6">
 									<FormField name="name" className="w-full mr-6">
 										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-										<Input
-											ref={register({
-												required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-													field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-												}).toString(),
-												maxLength: {
-													value: nameMaxLength,
-													message: t("COMMON.VALIDATION.MAX_LENGTH", {
-														field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-														maxLength: nameMaxLength,
-													}),
-												},
-											})}
-										/>
+										<Input ref={register(createProfile.name())} />
 										<FormHelperText />
 									</FormField>
 
@@ -148,16 +123,21 @@ export const CreateProfile = () => {
 										optional
 									/>
 									<InputPassword
-										ref={register({
-											minLength: {
-												value: passwordMinLength,
-												message: t("COMMON.VALIDATION.MIN_LENGTH", {
-													field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-													minLength: passwordMinLength,
-												}),
-											},
-										})}
+										ref={register(createProfile.password())}
+										onChange={() => {
+											if (confirmPassword) trigger("confirmPassword");
+										}}
 									/>
+									<FormHelperText />
+								</FormField>
+
+								<FormField name="confirmPassword">
+									<FormLabel
+										label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
+										required={!!watch("password")}
+										optional={!watch("password")}
+									/>
+									<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
 									<FormHelperText />
 								</FormField>
 
@@ -167,17 +147,14 @@ export const CreateProfile = () => {
 										placeholder={t("COMMON.SELECT_OPTION", {
 											option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
 										})}
-										ref={register({
-											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-												field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
-											}).toString(),
-										})}
+										ref={register(createProfile.currency())}
 										options={PlatformSdkChoices.currencies}
-										onChange={() => {
-											if (form.errors.currency) {
-												form.clearErrors("currency");
-											}
-										}}
+										onChange={(currency: any) =>
+											setValue("currency", currency.value, {
+												shouldDirty: true,
+												shouldValidate: true,
+											})
+										}
 									/>
 									<FormHelperText />
 								</FormField>
@@ -195,7 +172,11 @@ export const CreateProfile = () => {
 								{t("COMMON.BACK")}
 							</Button>
 
-							<Button type="submit" data-testid="CreateProfile__submit-button">
+							<Button
+								disabled={!formState.isValid}
+								type="submit"
+								data-testid="CreateProfile__submit-button"
+							>
 								{t("COMMON.CREATE")}
 							</Button>
 						</div>

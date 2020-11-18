@@ -10,6 +10,7 @@ export const translations: { [key: string]: any } = {
 			UPLOAD_AVATAR: "Upload Avatar",
 			NAME: "Name",
 			PASSWORD: "Password",
+			CONFIRM_PASSWORD: "Confirm Password",
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
 			CURRENCY: "Currency",
 			LANGUAGE: "Language",
