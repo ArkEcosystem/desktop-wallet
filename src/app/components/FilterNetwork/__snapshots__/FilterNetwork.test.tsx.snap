@@ -5,6 +5,30 @@ exports[`FilterNetwork should render empty 1`] = `
   <div
     data-testid="FilterNetwork"
   >
+    <div
+      class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
+      data-testid="network__viewall"
+    >
+      <div
+        class="text-sm font-semibold text-theme-primary-500"
+      >
+        All
+      </div>
+      <span
+        class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
+      >
+        <div
+          class="sc-AxirZ fttODj"
+          height="10"
+          width="10"
+        >
+          <svg>
+            chevron-down.svg
+          </svg>
+        </div>
+        <span />
+      </span>
+    </div>
     <ul
       class="inline-block"
       data-testid="NetworkOptions"
@@ -159,30 +183,6 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
       >
         Public Network
       </div>
-      <div
-        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
-        data-testid="network__viewall"
-      >
-        <div
-          class="text-sm font-semibold text-theme-primary-500"
-        >
-          All
-        </div>
-        <span
-          class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-        >
-          <div
-            class="sc-AxirZ fttODj"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-          <span />
-        </span>
-      </div>
       <ul
         class="inline-block"
         data-testid="NetworkOptions"
@@ -252,30 +252,6 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
       >
         Development Network
       </div>
-      <div
-        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
-        data-testid="network__viewall"
-      >
-        <div
-          class="text-sm font-semibold text-theme-primary-500"
-        >
-          All
-        </div>
-        <span
-          class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-        >
-          <div
-            class="sc-AxirZ fttODj"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-          <span />
-        </span>
-      </div>
       <ul
         class="inline-block"
         data-testid="NetworkOptions"
@@ -330,30 +306,6 @@ exports[`FilterNetworks should render public networks 1`] = `
         class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Public Network
-      </div>
-      <div
-        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
-        data-testid="network__viewall"
-      >
-        <div
-          class="text-sm font-semibold text-theme-primary-500"
-        >
-          All
-        </div>
-        <span
-          class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-        >
-          <div
-            class="sc-AxirZ fttODj"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-          <span />
-        </span>
       </div>
       <ul
         class="inline-block"
@@ -433,30 +385,6 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
       >
         Public Network
       </div>
-      <div
-        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
-        data-testid="network__viewall"
-      >
-        <div
-          class="text-sm font-semibold text-theme-primary-500"
-        >
-          All
-        </div>
-        <span
-          class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-        >
-          <div
-            class="sc-AxirZ fttODj"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-          <span />
-        </span>
-      </div>
       <ul
         class="inline-block"
         data-testid="NetworkOptions"
@@ -525,30 +453,6 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
         class="mb-2 text-sm font-bold text-theme-neutral-400"
       >
         Development Network
-      </div>
-      <div
-        class="sc-AxhCb gaiYPD relative mr-5 cursor-pointer border-theme-primary-contrast"
-        data-testid="network__viewall"
-      >
-        <div
-          class="text-sm font-semibold text-theme-primary-500"
-        >
-          All
-        </div>
-        <span
-          class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-        >
-          <div
-            class="sc-AxirZ fttODj"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-          <span />
-        </span>
       </div>
       <ul
         class="inline-block"

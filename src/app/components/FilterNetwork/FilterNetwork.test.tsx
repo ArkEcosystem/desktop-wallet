@@ -183,7 +183,7 @@ describe("FilterNetworks", () => {
 
 	it("should toggle view all", async () => {
 		const { container, getAllByTestId, getByTestId } = render(
-			<FilterNetworks useTestNetworks={true} networks={networks()} />,
+			<FilterNetworks useTestNetworks={true} networks={networks()} hideViewAll={false} />,
 		);
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(2);
 
@@ -205,7 +205,7 @@ describe("FilterNetworks", () => {
 	it("should select all public networks", async () => {
 		const onChange = jest.fn();
 		const { getAllByTestId, getByTestId } = render(
-			<FilterNetworks useTestNetworks={true} networks={networks()} onChange={onChange} />,
+			<FilterNetworks useTestNetworks={true} networks={networks()} onChange={onChange} hideViewAll={false} />,
 		);
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(2);
 
