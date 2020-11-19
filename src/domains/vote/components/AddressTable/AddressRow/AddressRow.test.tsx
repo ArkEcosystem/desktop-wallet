@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadOnlyWallet, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
@@ -69,6 +70,30 @@ describe("AddressRow", () => {
 		expect(container).toBeTruthy();
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+
+		const setState = jest.fn();
+		const useStateSpy = jest.spyOn(React, "useState");
+
+		useStateSpy.mockImplementation((state) => [state, setState]);
+
+		const { asFragment, getByText } = render(
+			<table>
+				<tbody>
+					<AddressRow index={0} maxVotes={1} wallet={wallet} />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+
+		fireEvent.mouseEnter(getByText(wallet.alias()));
+		fireEvent.mouseLeave(getByText(wallet.alias()));
+
+		expect(setState).toHaveBeenCalled();
 	});
 
 	it("should render when the maximum votes is greater than 1", () => {

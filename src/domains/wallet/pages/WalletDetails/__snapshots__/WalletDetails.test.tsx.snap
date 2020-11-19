@@ -535,15 +535,25 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         You have not yet voted for a Delegate
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                          to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -615,15 +625,25 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -844,7 +864,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -2080,15 +2100,25 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         You have not yet voted for a Delegate
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                          to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -2160,15 +2190,25 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -2389,7 +2429,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -3184,15 +3224,25 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -3413,7 +3463,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -4750,15 +4800,25 @@ exports[`WalletDetails should remove wallet name 1`] = `
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -4979,7 +5039,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -6322,15 +6382,25 @@ exports[`WalletDetails should render 1`] = `
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -6551,7 +6621,7 @@ exports[`WalletDetails should render 1`] = `
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -7800,15 +7870,25 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         You have not yet voted for a Delegate
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                          to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -7880,15 +7960,25 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -8109,7 +8199,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -9358,15 +9448,25 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         You have not yet voted for a Delegate
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
-                          to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+                          to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -9438,15 +9538,25 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -9667,7 +9777,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -11010,15 +11120,25 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -11239,7 +11359,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
@@ -12582,15 +12702,25 @@ exports[`WalletDetails should update wallet name 1`] = `
                         You have no active registrations
                       </span>
                       <div
-                        class="mr-auto"
+                        class="mt-1 mr-auto"
                       >
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="@TODO"
                         >
                           Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -12811,7 +12941,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                           class="sc-Axmtr gaELvy"
                         >
                           <a
-                            class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                             data-testid="TransactionRow__ID"
                             rel="noopener noreferrer"
                             to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"

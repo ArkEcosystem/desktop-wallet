@@ -22,6 +22,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 	const { t } = useTranslation();
 
 	const hasNoVotes = votes.length === 0;
+	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
 
 	const renderVotes = () => {
 		if (hasNoVotes) {
@@ -54,12 +55,8 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 						<div className="flex flex-col mr-4 font-semibold leading-snug text-theme-text">
 							<span className="mr-2">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.EMPTY_DESCRIPTION")}</span>
 
-							<div className="mr-auto">
-								<Link
-									to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
-									isExternal
-									showExternalIcon={false}
-								>
+							<div className="mt-1 mr-auto">
+								<Link to={votesHelpLink} isExternal>
 									{t("COMMON.LEARN_MORE")}
 								</Link>
 							</div>
