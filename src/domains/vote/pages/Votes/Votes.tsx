@@ -1,4 +1,4 @@
-import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
@@ -89,10 +89,11 @@ export const Votes = () => {
 				id: wallet.network().id(),
 				name: wallet.network().name(),
 				coin: wallet.network().coin(),
+				isLive: wallet.network().isLive(),
 				isSelected: selectedNetworkIds.includes(wallet.network().id()),
 			}));
 
-		return uniqBy(networks, (network) => network.coin);
+		return uniqBy(networks, (network) => network.id);
 	}, [activeProfile, selectedNetworkIds]);
 
 	const currentVotes = useMemo(
@@ -108,6 +109,7 @@ export const Votes = () => {
 
 	const filterProperties = {
 		networks,
+		useTestNetworks: activeProfile.settings().get(ProfileSetting.UseTestNetworks) as boolean,
 		selectedNetworkIds,
 		walletsDisplayType,
 		onNetworkChange: (_: any, networks: any[]) => {
