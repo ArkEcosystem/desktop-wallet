@@ -111,7 +111,6 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 		setIsLoadingTransactions(true);
 
-		console.log("fetching transactions", selectedTransactionType);
 		// @ts-ignore
 		const response = await activeProfile.transactionAggregate()[method]({ limit: 30 });
 		const transactions = response.items();
@@ -126,9 +125,13 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		// eslint-disable-next-line
 	}, [activeTransactionModeTab]);
 
-	const filteredTransaction = useMemo(() => selectedTransactionType === "all"
-			? allTransactions
-			: allTransactions?.filter((t: any) => t.type() === selectedTransactionType), [allTransactions, selectedTransactionType]);
+	const filteredTransaction = useMemo(
+		() =>
+			selectedTransactionType === "all"
+				? allTransactions
+				: allTransactions?.filter((t: any) => t.type() === selectedTransactionType),
+		[allTransactions, selectedTransactionType],
+	);
 
 	useEffect(() => {
 		if (isEqual(previousConfiguration, dashboardConfiguration)) {
