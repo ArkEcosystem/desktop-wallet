@@ -58,6 +58,7 @@ export const translations: { [key: string]: any } = {
 	BROADCASTING: "Broadcasting transaction to the network",
 	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
 	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
+	CORE: "CORE",
 
 	MULTISIGNATURE: {
 		GENERATED_ADDRESS: "Generated Address",
