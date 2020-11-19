@@ -584,15 +584,25 @@ exports[`WalletVote should render the maximum votes 1`] = `
             You have not yet voted for a Delegate
           </span>
           <div
-            class="mr-auto"
+            class="mt-1 mr-auto"
           >
             <a
-              class="sc-AxhUy fEOaBg inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+              class="sc-AxhUy fwmZLa inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
               data-testid="Link"
               rel="noopener noreferrer"
-              to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+              to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
             >
               Learn more
+              <div
+                class="sc-AxhCb fxrKLH flex-shrink-0 ml-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
             </a>
           </div>
         </div>
@@ -673,15 +683,25 @@ exports[`WalletVote should render without votes 1`] = `
             You have not yet voted for a Delegate
           </span>
           <div
-            class="mr-auto"
+            class="mt-1 mr-auto"
           >
             <a
-              class="sc-AxhUy fEOaBg inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+              class="sc-AxhUy fwmZLa inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
               data-testid="Link"
               rel="noopener noreferrer"
-              to="https://guides.ark.dev/usage-guides/desktop-wallet-voting"
+              to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
             >
               Learn more
+              <div
+                class="sc-AxhCb fxrKLH flex-shrink-0 ml-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
             </a>
           </div>
         </div>
