@@ -36,6 +36,10 @@ export const VoteLedgerReview = ({
 					<span className="break-all">{`${sign}${delegate.publicKey()}`}</span>
 				</TransactionDetail>
 
+				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")} borderPosition="bottom">
+					<span>{delegate.username()}</span>
+				</TransactionDetail>
+
 				<TransactionFee currency={wallet.currency()} value={BigNumber.make(fee)} border={false} />
 			</div>
 		</>

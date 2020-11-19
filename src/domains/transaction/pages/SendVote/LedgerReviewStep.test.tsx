@@ -18,6 +18,7 @@ describe("LedgerReviewStep", () => {
 		const unvotes = [
 			new ReadOnlyWallet({
 				address: wallet.address(),
+				username: "Test Username",
 				publicKey: wallet.publicKey(),
 				explorerLink: "",
 			}),
@@ -35,6 +36,7 @@ describe("LedgerReviewStep", () => {
 		const votes = [
 			new ReadOnlyWallet({
 				address: wallet.address(),
+				username: "Test Username",
 				publicKey: wallet.publicKey(),
 				explorerLink: "",
 			}),
