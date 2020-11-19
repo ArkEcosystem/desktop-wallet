@@ -10,6 +10,7 @@ import { useActiveProfile, usePrevious } from "app/hooks";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { getNetworkExtendedData } from "domains/network/helpers";
+import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import React, { useEffect, useMemo, useReducer, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,6 +24,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
+	const [selectedTransactionType, setSelectedTransactionType] = useState("all");
 
 	const [dashboardConfiguration, setDashboardConfiguration] = useReducer(
 		(state: DashboardConfiguration, newState: Record<string, any>) => ({ ...state, ...newState }),
@@ -109,6 +111,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 		setIsLoadingTransactions(true);
 
+		console.log("fetching transactions", selectedTransactionType);
 		// @ts-ignore
 		const response = await activeProfile.transactionAggregate()[method]({ limit: 30 });
 		const transactions = response.items();
@@ -122,6 +125,10 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 		// eslint-disable-next-line
 	}, [activeTransactionModeTab]);
+
+	const filteredTransaction = useMemo(() => selectedTransactionType === "all"
+			? allTransactions
+			: allTransactions?.filter((t: any) => t.type() === selectedTransactionType), [allTransactions, selectedTransactionType]);
 
 	useEffect(() => {
 		if (isEqual(previousConfiguration, dashboardConfiguration)) {
@@ -229,6 +236,10 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 				{showTransactions && (
 					<Section className="flex-1" data-testid="dashboard__transactions-view">
 						<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+						<FilterTransactions
+							onSelect={(type) => setSelectedTransactionType(String(type.value))}
+							className="float-right mb-8"
+						/>
 						<Tabs
 							className="mb-8"
 							activeId={activeTransactionModeTab}
@@ -241,7 +252,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 							</TabList>
 						</Tabs>
 						<Transactions
-							transactions={allTransactions}
+							transactions={filteredTransaction}
 							exchangeCurrency={exchangeCurrency}
 							fetchMoreAction={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
 							onRowClick={(row) => setTransactionModalItem(row)}
