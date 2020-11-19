@@ -1,5 +1,6 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -37,11 +38,12 @@ export const ImportWallet = () => {
 	const { formState } = form;
 	const { isSubmitting, isValid } = formState;
 
+	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const nameMaxLength = 42;
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
+			route: dashboardRoute,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
@@ -115,7 +117,7 @@ export const ImportWallet = () => {
 				await persist();
 			}
 
-			history.push(`/profiles/${activeProfile.id()}/wallets/${walletData?.id()}`);
+			history.push(dashboardRoute);
 		}
 	};
 
@@ -144,6 +146,7 @@ export const ImportWallet = () => {
 								<TabPanel tabId={3}>
 									<ThirdStep
 										address={walletData?.address() as string}
+										balance={walletData?.balance() as BigNumber}
 										nameMaxLength={nameMaxLength}
 										profile={activeProfile}
 									/>
@@ -191,9 +194,9 @@ export const ImportWallet = () => {
 										<Button
 											disabled={!isValid || isSubmitting}
 											type="submit"
-											data-testid="ImportWallet__gotowallet-button"
+											data-testid="ImportWallet__save-button"
 										>
-											{t("COMMON.GO_TO_WALLET")}
+											{t("COMMON.SAVE_FINISH")}
 										</Button>
 									)}
 								</div>

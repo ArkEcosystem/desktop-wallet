@@ -675,6 +675,35 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -2211,6 +2240,35 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -3215,6 +3273,35 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             >
               Transactions History
             </h2>
+            <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
             <div
               class="relative"
               data-testid="TransactionTable"
@@ -4762,6 +4849,35 @@ exports[`WalletDetails should remove wallet name 1`] = `
             >
               Transactions History
             </h2>
+            <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
             <div
               class="relative"
               data-testid="TransactionTable"
@@ -6316,6 +6432,35 @@ exports[`WalletDetails should render 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -7865,6 +8010,35 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -9413,6 +9587,35 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             >
               Transactions History
             </h2>
+            <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
             <div
               class="relative"
               data-testid="TransactionTable"
@@ -10967,6 +11170,35 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               Transactions History
             </h2>
             <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
+            <div
               class="relative"
               data-testid="TransactionTable"
             >
@@ -12519,6 +12751,35 @@ exports[`WalletDetails should update wallet name 1`] = `
             >
               Transactions History
             </h2>
+            <div
+              class="mb-6"
+            >
+              <div
+                class="sc-fzqNJr ccJDok w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="sc-fzqBZW kvyVsY"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
+              </div>
+            </div>
             <div
               class="relative"
               data-testid="TransactionTable"
