@@ -147,16 +147,18 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 			.values()
 			.map((wallet) => ({
 				id: wallet.network().id(),
+				isLive: wallet.network().isLive(),
 				name: wallet.network().name(),
 				coin: wallet.network().coin(),
 				isSelected: selectedNetworkIds.includes(wallet.network().id()),
 			}));
 
-		return uniqBy(networks, (n) => n.coin);
+		return uniqBy(networks, (n) => n.id);
 	}, [activeProfile, selectedNetworkIds]);
 
 	const filterProperties = {
 		networks,
+		useTestNetworks: activeProfile.settings().get(ProfileSetting.UseTestNetworks),
 		walletsDisplayType,
 		selectedNetworkIds,
 		visiblePortfolioView: showPortfolio,

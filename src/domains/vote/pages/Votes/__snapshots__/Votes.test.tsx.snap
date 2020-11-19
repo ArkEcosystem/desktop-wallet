@@ -373,7 +373,7 @@ exports[`Votes should filter current delegates 1`] = `
                               <span>
                                 <input
                                   checked=""
-                                  class="sc-fznMAR cyhJKN rounded-lg"
+                                  class="sc-fzoNJl jCOgFe rounded-lg"
                                   color="success"
                                   name="all"
                                   type="checkbox"
@@ -389,7 +389,7 @@ exports[`Votes should filter current delegates 1`] = `
                             >
                               <span>
                                 <input
-                                  class="sc-fznMAR cyhJKN rounded-lg"
+                                  class="sc-fzoNJl jCOgFe rounded-lg"
                                   color="success"
                                   name="current"
                                   type="checkbox"
@@ -6133,67 +6133,54 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                                   Select the types of cryptoassets
                                 </div>
                               </div>
-                              <div>
-                                <ul
-                                  class="inline-block"
-                                  data-testid="network__option"
-                                >
-                                  <li
-                                    class="inline-block mr-5 cursor-pointer"
-                                    data-testid="network__option--0"
-                                  >
-                                    <div
-                                      class="sc-fznKkj ktQdmz relative border-theme-success-500 text-theme-success-500"
-                                    >
-                                      <div
-                                        class="sc-AxjAm buCJuk"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          ark.svg
-                                        </svg>
-                                      </div>
-                                      <span
-                                        class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-                                      >
-                                        <div
-                                          class="sc-AxjAm HWmvM"
-                                          height="12"
-                                          width="12"
-                                        >
-                                          <svg>
-                                            checkmark.svg
-                                          </svg>
-                                        </div>
-                                        <span />
-                                      </span>
-                                    </div>
-                                  </li>
-                                </ul>
+                              <div
+                                class="space-y-6"
+                              >
                                 <div
-                                  class="sc-fznKkj ktQdmz relative cursor-pointer border-theme-primary-contrast"
-                                  data-testid="network__viewall"
+                                  data-testid="FilterNetwork"
                                 >
                                   <div
-                                    class="text-sm font-semibold text-theme-primary-500"
+                                    class="mb-2 text-sm font-bold text-theme-neutral-400"
                                   >
-                                    All
+                                    Development Network
                                   </div>
-                                  <span
-                                    class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
+                                  <ul
+                                    class="inline-block"
+                                    data-testid="NetworkOptions"
                                   >
-                                    <div
-                                      class="sc-AxjAm iepfoc"
-                                      height="10"
-                                      width="10"
+                                    <li
+                                      class="inline-block mr-5 cursor-pointer"
+                                      data-testid="NetworkOption__ARK"
                                     >
-                                      <svg>
-                                        chevron-down.svg
-                                      </svg>
-                                    </div>
-                                    <span />
-                                  </span>
+                                      <div
+                                        class="sc-fznKkj ktQdmz relative border-theme-success-500 text-theme-success-500"
+                                      >
+                                        <div
+                                          class="sc-AxjAm buCJuk"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            ark.svg
+                                          </svg>
+                                        </div>
+                                        <span
+                                          class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                                        >
+                                          <div
+                                            class="sc-AxjAm HWmvM"
+                                            height="12"
+                                            width="12"
+                                          >
+                                            <svg>
+                                              checkmark.svg
+                                            </svg>
+                                          </div>
+                                          <span />
+                                        </span>
+                                      </div>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                               <div
@@ -6638,67 +6625,54 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                   Select the types of cryptoassets
                                 </div>
                               </div>
-                              <div>
-                                <ul
-                                  class="inline-block"
-                                  data-testid="network__option"
-                                >
-                                  <li
-                                    class="inline-block mr-5 cursor-pointer"
-                                    data-testid="network__option--0"
-                                  >
-                                    <div
-                                      class="sc-fznKkj ktQdmz relative border-theme-success-500 text-theme-success-500"
-                                    >
-                                      <div
-                                        class="sc-AxjAm buCJuk"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          ark.svg
-                                        </svg>
-                                      </div>
-                                      <span
-                                        class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-                                      >
-                                        <div
-                                          class="sc-AxjAm HWmvM"
-                                          height="12"
-                                          width="12"
-                                        >
-                                          <svg>
-                                            checkmark.svg
-                                          </svg>
-                                        </div>
-                                        <span />
-                                      </span>
-                                    </div>
-                                  </li>
-                                </ul>
+                              <div
+                                class="space-y-6"
+                              >
                                 <div
-                                  class="sc-fznKkj ktQdmz relative cursor-pointer border-theme-primary-contrast"
-                                  data-testid="network__viewall"
+                                  data-testid="FilterNetwork"
                                 >
                                   <div
-                                    class="text-sm font-semibold text-theme-primary-500"
+                                    class="mb-2 text-sm font-bold text-theme-neutral-400"
                                   >
-                                    All
+                                    Development Network
                                   </div>
-                                  <span
-                                    class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
+                                  <ul
+                                    class="inline-block"
+                                    data-testid="NetworkOptions"
                                   >
-                                    <div
-                                      class="sc-AxjAm iepfoc"
-                                      height="10"
-                                      width="10"
+                                    <li
+                                      class="inline-block mr-5 cursor-pointer"
+                                      data-testid="NetworkOption__ARK"
                                     >
-                                      <svg>
-                                        chevron-down.svg
-                                      </svg>
-                                    </div>
-                                    <span />
-                                  </span>
+                                      <div
+                                        class="sc-fznKkj ktQdmz relative border-theme-success-500 text-theme-success-500"
+                                      >
+                                        <div
+                                          class="sc-AxjAm buCJuk"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            ark.svg
+                                          </svg>
+                                        </div>
+                                        <span
+                                          class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                                        >
+                                          <div
+                                            class="sc-AxjAm HWmvM"
+                                            height="12"
+                                            width="12"
+                                          >
+                                            <svg>
+                                              checkmark.svg
+                                            </svg>
+                                          </div>
+                                          <span />
+                                        </span>
+                                      </div>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                               <div
@@ -7143,67 +7117,54 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                   Select the types of cryptoassets
                                 </div>
                               </div>
-                              <div>
-                                <ul
-                                  class="inline-block"
-                                  data-testid="network__option"
-                                >
-                                  <li
-                                    class="inline-block mr-5 cursor-pointer"
-                                    data-testid="network__option--0"
-                                  >
-                                    <div
-                                      class="sc-fznKkj ktQdmz relative border-theme-success-500 text-theme-success-500"
-                                    >
-                                      <div
-                                        class="sc-AxjAm buCJuk"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          ark.svg
-                                        </svg>
-                                      </div>
-                                      <span
-                                        class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-                                      >
-                                        <div
-                                          class="sc-AxjAm HWmvM"
-                                          height="12"
-                                          width="12"
-                                        >
-                                          <svg>
-                                            checkmark.svg
-                                          </svg>
-                                        </div>
-                                        <span />
-                                      </span>
-                                    </div>
-                                  </li>
-                                </ul>
+                              <div
+                                class="space-y-6"
+                              >
                                 <div
-                                  class="sc-fznKkj ktQdmz relative cursor-pointer border-theme-primary-contrast"
-                                  data-testid="network__viewall"
+                                  data-testid="FilterNetwork"
                                 >
                                   <div
-                                    class="text-sm font-semibold text-theme-primary-500"
+                                    class="mb-2 text-sm font-bold text-theme-neutral-400"
                                   >
-                                    All
+                                    Development Network
                                   </div>
-                                  <span
-                                    class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
+                                  <ul
+                                    class="inline-block"
+                                    data-testid="NetworkOptions"
                                   >
-                                    <div
-                                      class="sc-AxjAm iepfoc"
-                                      height="10"
-                                      width="10"
+                                    <li
+                                      class="inline-block mr-5 cursor-pointer"
+                                      data-testid="NetworkOption__ARK"
                                     >
-                                      <svg>
-                                        chevron-down.svg
-                                      </svg>
-                                    </div>
-                                    <span />
-                                  </span>
+                                      <div
+                                        class="sc-fznKkj ktQdmz relative border-theme-success-500 text-theme-success-500"
+                                      >
+                                        <div
+                                          class="sc-AxjAm buCJuk"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            ark.svg
+                                          </svg>
+                                        </div>
+                                        <span
+                                          class="sc-fznyAO ganBYH flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                                        >
+                                          <div
+                                            class="sc-AxjAm HWmvM"
+                                            height="12"
+                                            width="12"
+                                          >
+                                            <svg>
+                                              checkmark.svg
+                                            </svg>
+                                          </div>
+                                          <span />
+                                        </span>
+                                      </div>
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
                               <div

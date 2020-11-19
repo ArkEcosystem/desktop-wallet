@@ -20,36 +20,9 @@ exports[`FilterWallets should render 1`] = `
         Select the types of cryptoassets
       </div>
     </div>
-    <div>
-      <ul
-        class="inline-block"
-        data-testid="network__option"
-      />
-      <div
-        class="sc-AxhUy iDenJW relative cursor-pointer border-theme-primary-contrast"
-        data-testid="network__viewall"
-      >
-        <div
-          class="text-sm font-semibold text-theme-primary-500"
-        >
-          All
-        </div>
-        <span
-          class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-        >
-          <div
-            class="sc-AxirZ fttODj"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-          <span />
-        </span>
-      </div>
-    </div>
+    <div
+      class="space-y-6"
+    />
     <div
       class="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800"
     />
@@ -190,112 +163,9 @@ exports[`FilterWallets should render with networks selection 1`] = `
         Select the types of cryptoassets
       </div>
     </div>
-    <div>
-      <ul
-        class="inline-block"
-        data-testid="network__option"
-      >
-        <li
-          class="inline-block mr-5 cursor-pointer"
-          data-testid="network__option--0"
-        >
-          <div
-            class="sc-AxhUy iDenJW relative border-theme-success-500 text-theme-success-500"
-          >
-            <div
-              class="sc-AxirZ eEbZjj"
-              height="20"
-              width="20"
-            />
-            <span
-              class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  checkmark.svg
-                </svg>
-              </div>
-              <span />
-            </span>
-          </div>
-        </li>
-        <li
-          class="inline-block mr-5 cursor-pointer"
-          data-testid="network__option--1"
-        >
-          <div
-            class="sc-AxhUy iDenJW relative border-theme-success-500 text-theme-success-500"
-          >
-            <div
-              class="sc-AxirZ eEbZjj"
-              height="20"
-              width="20"
-            />
-            <span
-              class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-            >
-              <div
-                class="sc-AxirZ hDwaov"
-                height="12"
-                width="12"
-              >
-                <svg>
-                  checkmark.svg
-                </svg>
-              </div>
-              <span />
-            </span>
-          </div>
-        </li>
-        <li
-          class="inline-block mr-5 cursor-pointer"
-          data-testid="network__option--2"
-        >
-          <div
-            class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
-          >
-            <div
-              class="sc-AxirZ eEbZjj"
-              height="20"
-              width="20"
-            />
-            <span
-              class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
-            >
-              <span />
-            </span>
-          </div>
-        </li>
-      </ul>
-      <div
-        class="sc-AxhUy iDenJW relative cursor-pointer border-theme-primary-contrast"
-        data-testid="network__viewall"
-      >
-        <div
-          class="text-sm font-semibold text-theme-primary-500"
-        >
-          All
-        </div>
-        <span
-          class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
-        >
-          <div
-            class="sc-AxirZ fttODj"
-            height="10"
-            width="10"
-          >
-            <svg>
-              chevron-down.svg
-            </svg>
-          </div>
-          <span />
-        </span>
-      </div>
-    </div>
+    <div
+      class="space-y-6"
+    />
     <div
       class="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800"
     />
