@@ -26,7 +26,6 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	const defaultDashboardConfiguration = {
 		showPortfolio: true,
 		showTransactions: true,
-		viewType: "grid",
 		walletsDisplayType: "all",
 		selectedNetworkIds: uniq(
 			activeProfile
@@ -38,7 +37,10 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 	const [dashboardConfiguration, setDashboardConfiguration] = useReducer(
 		(state: DashboardConfiguration, newState: Record<string, any>) => ({ ...state, ...newState }),
-		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || defaultDashboardConfiguration,
+		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || {
+			...defaultDashboardConfiguration,
+			viewType: "grid",
+		},
 	);
 
 	const previousConfiguration = usePrevious(dashboardConfiguration);
@@ -140,7 +142,12 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	});
 
 	useEffect(() => {
-		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfiguration));
+		const dashboardConfigurationClone = (({ viewType, ...rest }) => rest)(dashboardConfiguration);
+
+		defaultDashboardConfiguration.selectedNetworkIds = defaultDashboardConfiguration.selectedNetworkIds.sort();
+		dashboardConfigurationClone.selectedNetworkIds = dashboardConfigurationClone.selectedNetworkIds.sort();
+
+		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfigurationClone));
 	}, [defaultDashboardConfiguration, dashboardConfiguration]);
 
 	// Wallet controls data
