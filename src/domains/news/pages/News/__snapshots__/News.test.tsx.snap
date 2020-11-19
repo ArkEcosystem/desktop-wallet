@@ -683,14 +683,16 @@ exports[`News should filter results based on category query and asset 1`] = `
                     <div
                       class="pb-4"
                     >
-                      <div>
+                      <div
+                        data-testid="FilterNetwork"
+                      >
                         <ul
                           class="inline-block"
-                          data-testid="network__option"
+                          data-testid="NetworkOptions"
                         >
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--0"
+                            data-testid="NetworkOption__ARK"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-success-500 text-theme-success-500"
@@ -722,7 +724,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--1"
+                            data-testid="NetworkOption__ETH"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -745,7 +747,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--2"
+                            data-testid="NetworkOption__BTC"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -768,7 +770,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--3"
+                            data-testid="NetworkOption__LSK"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -1559,14 +1561,16 @@ exports[`News should filter results based on category query and asset 2`] = `
                     <div
                       class="pb-4"
                     >
-                      <div>
+                      <div
+                        data-testid="FilterNetwork"
+                      >
                         <ul
                           class="inline-block"
-                          data-testid="network__option"
+                          data-testid="NetworkOptions"
                         >
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--0"
+                            data-testid="NetworkOption__ARK"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-success-500 text-theme-success-500"
@@ -1598,7 +1602,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--1"
+                            data-testid="NetworkOption__ETH"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -1621,7 +1625,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--2"
+                            data-testid="NetworkOption__BTC"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -1644,7 +1648,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--3"
+                            data-testid="NetworkOption__LSK"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"

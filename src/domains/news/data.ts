@@ -2,21 +2,25 @@ export const AVAILABLE_CATEGORIES = ["Technical", "Marketing", "Community", "Eme
 
 export const assets = [
 	{
+		id: "ark.mainnet",
 		name: "ARK",
 		isSelected: true,
 		coin: "ARK",
 	},
 	{
+		id: "eth.mainnet",
 		name: "Ethereum",
 		isSelected: false,
 		coin: "ETH",
 	},
 	{
+		id: "btc.livenet",
 		name: "Bitcoin",
 		isSelected: false,
 		coin: "BTC",
 	},
 	{
+		id: "lsk.mainnet",
 		name: "Lisk",
 		isSelected: false,
 		coin: "LSK",

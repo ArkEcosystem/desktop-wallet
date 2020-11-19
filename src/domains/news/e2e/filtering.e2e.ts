@@ -17,7 +17,7 @@ test("should display news feed", async (t) => {
 
 test("should filter news results", async (t) => {
 	// Filter technical category
-	const eth = "network__option--1";
+	const eth = "NetworkOption__ETH";
 	const query = "the block";
 
 	const queryInput = Selector('[data-testid="NewsOptions__search"]');
