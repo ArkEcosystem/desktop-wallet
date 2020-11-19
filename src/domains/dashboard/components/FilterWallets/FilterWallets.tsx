@@ -1,5 +1,5 @@
 import { Dropdown, DropdownOption } from "app/components/Dropdown";
-import { FilterNetwork } from "app/components/FilterNetwork";
+import { FilterNetworks } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
 import { Toggle } from "app/components/Toggle";
 import React, { useState } from "react";
@@ -16,6 +16,7 @@ export type FilterWalletsProps = {
 	onNetworkChange?: any;
 	onViewAllNetworks?: any;
 	onWalletsDisplayType?: any;
+	useTestNetworks?: boolean;
 };
 
 export const FilterWallets = ({
@@ -29,6 +30,7 @@ export const FilterWallets = ({
 	onNetworkChange,
 	onViewAllNetworks,
 	onWalletsDisplayType,
+	useTestNetworks,
 }: FilterWalletsProps) => {
 	const { t } = useTranslation();
 
@@ -62,7 +64,12 @@ export const FilterWallets = ({
 				</div>
 			</div>
 
-			<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
+			<FilterNetworks
+				useTestNetworks={useTestNetworks}
+				networks={networks}
+				onChange={onNetworkChange}
+				onViewAll={onViewAllNetworks}
+			/>
 
 			<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
 

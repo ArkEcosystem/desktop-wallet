@@ -12,7 +12,7 @@ exports[`AddAssets should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxgMl hWgHJq absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxheI CdptY absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
       data-testid="modal__inner"
     >
       <div
@@ -56,7 +56,7 @@ exports[`AddAssets should render a modal 1`] = `
             data-testid="Form"
           >
             <fieldset
-              class="sc-AxhUy dJlYTe my-8"
+              class="sc-AxgMl cwpxCQ my-8"
             >
               <label
                 class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -82,11 +82,11 @@ exports[`AddAssets should render a modal 1`] = `
                     id="AddAssets__network-label"
                   />
                   <div
-                    class="sc-fzoLsD rzdyj"
+                    class="sc-fzpans diytpf"
                     data-testid="SelectNetworkInput"
                   >
                     <div
-                      class="sc-Axmtr sc-AxmLO VVqBg px-4"
+                      class="sc-AxmLO sc-fzozJi flvnfR px-4"
                     >
                       <div
                         class="sc-AxhCb esLhBV border-theme-neutral-light text-theme-neutral"
@@ -98,7 +98,7 @@ exports[`AddAssets should render a modal 1`] = `
                       aria-controls="AddAssets__network-menu"
                       aria-labelledby="AddAssets__network-label"
                       autocomplete="off"
-                      class="sc-AxheI fa-DppL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-Axmtr ifvITQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       id="AddAssets__network-input"
                       placeholder="Enter the asset name"
@@ -126,14 +126,16 @@ exports[`AddAssets should render a modal 1`] = `
                 <div
                   class="mt-3"
                 >
-                  <div>
+                  <div
+                    data-testid="FilterNetwork"
+                  >
                     <ul
                       class="inline-block"
-                      data-testid="network__option"
+                      data-testid="NetworkOptions"
                     >
                       <li
                         class="inline-block mr-5 cursor-pointer"
-                        data-testid="network__option--0"
+                        data-testid="NetworkOption__ARK"
                       >
                         <div
                           class="sc-AxhCb gaiYPD relative border-theme-success-500 text-theme-success-500"
@@ -165,7 +167,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </li>
                       <li
                         class="inline-block mr-5 cursor-pointer"
-                        data-testid="network__option--1"
+                        data-testid="NetworkOption__ETH"
                       >
                         <div
                           class="sc-AxhCb gaiYPD relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -188,7 +190,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </li>
                       <li
                         class="inline-block mr-5 cursor-pointer"
-                        data-testid="network__option--2"
+                        data-testid="NetworkOption__BTC"
                       >
                         <div
                           class="sc-AxhCb gaiYPD relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -211,7 +213,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </li>
                       <li
                         class="inline-block mr-5 cursor-pointer"
-                        data-testid="network__option--3"
+                        data-testid="NetworkOption__LSK"
                       >
                         <div
                           class="sc-AxhCb gaiYPD relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
