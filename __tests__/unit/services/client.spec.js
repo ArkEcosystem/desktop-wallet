@@ -16,7 +16,8 @@ const sessionNetwork = Object.freeze({
   },
   vendorField: {
     maxLength: 64
-  }
+  },
+  version: 23
 })
 
 jest.mock('@/store', () => ({
