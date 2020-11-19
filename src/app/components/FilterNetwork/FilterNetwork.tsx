@@ -37,9 +37,7 @@ export const FilterNetwork = ({ networks = [], onChange, onViewAll, hideViewAll,
 		<div data-testid="FilterNetwork">
 			{title && <div className="mb-2 text-sm font-bold text-theme-neutral-400">{title}</div>}
 
-			{networks.length > 1 && (
-				<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
-			)}
+			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
 
 			<NetworkOptions networks={networkList} onClick={handleClick} />
 
@@ -95,5 +93,5 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 };
 
 FilterNetworks.defaultProps = {
-	hideViewAll: false,
+	hideViewAll: true,
 };
