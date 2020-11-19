@@ -46,7 +46,7 @@ test("should import a wallet by mnemonic", async (t) => {
 	const walletNameInput = Selector("input[name=name]");
 
 	await t.typeText(walletNameInput, "Test Mnemonic");
-	await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
+	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 });
 
 test("should import a wallet by address", async (t) => {
@@ -81,7 +81,7 @@ test("should import a wallet by address", async (t) => {
 	const walletNameInput = Selector("input[name=name]");
 
 	await t.typeText(walletNameInput, "Test Address");
-	await t.click(Selector("button").withExactText(translations.COMMON.GO_TO_WALLET));
+	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 });
 
 test("should show an error message for invalid address", async (t) => {

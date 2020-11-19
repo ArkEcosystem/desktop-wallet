@@ -45,7 +45,7 @@ export const translations: { [key: string]: any } = {
 	},
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
-		DESCRIPTION: "Sign in via MarketSquare or create a new Profile below.",
+		DESCRIPTION: "Create a new Profile below.",
 		NEW_PROFILE: "New Profile",
 		VALIDATION: {
 			NAME_EXISTS: "Profile name already exists",

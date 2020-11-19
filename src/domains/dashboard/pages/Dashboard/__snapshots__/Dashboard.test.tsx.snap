@@ -989,6 +989,35 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
             Transactions History
           </div>
           <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
+          </div>
+          <div
             class="relative"
             data-testid="TransactionTable"
           >
@@ -3542,6 +3571,35 @@ exports[`Dashboard should fetch more transactions 1`] = `
             class="mb-8 text-4xl font-bold"
           >
             Transactions History
+          </div>
+          <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
           </div>
           <div
             class="relative"
@@ -6191,6 +6249,35 @@ exports[`Dashboard should hide portfolio view 1`] = `
             Transactions History
           </div>
           <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
+          </div>
+          <div
             class="relative"
             data-testid="TransactionTable"
           >
@@ -8741,6 +8828,35 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             Transactions History
           </div>
           <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
+          </div>
+          <div
             class="relative"
             data-testid="TransactionTable"
           >
@@ -10361,6 +10477,35 @@ exports[`Dashboard should render 1`] = `
             class="mb-8 text-4xl font-bold"
           >
             Transactions History
+          </div>
+          <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
           </div>
           <div
             class="relative"
@@ -11985,6 +12130,35 @@ exports[`Dashboard should render portfolio chart 1`] = `
             Transactions History
           </div>
           <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
+          </div>
+          <div
             class="relative"
             data-testid="TransactionTable"
           >
@@ -13605,6 +13779,35 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             class="mb-8 text-4xl font-bold"
           >
             Transactions History
+          </div>
+          <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
           </div>
           <div
             class="relative"
@@ -15229,6 +15432,35 @@ exports[`Dashboard should render wallets 1`] = `
             Transactions History
           </div>
           <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
+          </div>
+          <div
             class="relative"
             data-testid="TransactionTable"
           >
@@ -16702,6 +16934,35 @@ exports[`Dashboard should render with no wallets 1`] = `
             class="mb-8 text-4xl font-bold"
           >
             Transactions History
+          </div>
+          <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
           </div>
           <div
             class="relative"
@@ -19507,6 +19768,35 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
             Transactions History
           </div>
           <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
+          </div>
+          <div
             class="relative"
             data-testid="TransactionTable"
           >
@@ -21374,6 +21664,35 @@ exports[`Dashboard should show transaction view 1`] = `
             class="mb-8 text-4xl font-bold"
           >
             Transactions History
+          </div>
+          <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
           </div>
           <div
             class="relative"
@@ -23252,6 +23571,35 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
             class="mb-8 text-4xl font-bold"
           >
             Transactions History
+          </div>
+          <div
+            class="mb-8"
+          >
+            <div
+              class="sc-fzqNJr ccJDok w-full"
+            >
+              <button
+                aria-selected="true"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-all"
+              >
+                All History
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-received"
+              >
+                Incoming
+              </button>
+              <button
+                aria-selected="false"
+                class="sc-fzqBZW kvyVsY"
+                data-testid="tabs__tab-button-sent"
+              >
+                Outgoing
+              </button>
+            </div>
           </div>
           <div
             class="relative"
