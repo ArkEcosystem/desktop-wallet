@@ -7,7 +7,7 @@ export default {
 };
 
 export const Default = () => (
-		<div className="w-128">
-			<FilterTransactions />
-		</div>
-	);
+	<div className="w-128">
+		<FilterTransactions />
+	</div>
+);
