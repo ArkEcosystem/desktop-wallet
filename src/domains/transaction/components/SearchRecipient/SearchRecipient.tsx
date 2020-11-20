@@ -71,7 +71,7 @@ type SearchRecipientProps = {
 	description?: string;
 	isOpen: boolean;
 	profile: Profile;
-	onClose?: any;
+	onClose?: () => void;
 	onAction: (address: string) => void;
 };
 
