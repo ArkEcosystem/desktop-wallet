@@ -62,7 +62,6 @@ describe("NewsOptions", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
-			fireEvent.click(getByTestId("NetworkOption__ARK"));
 			fireEvent.change(getByTestId("NewsOptions__search"), {
 				target: {
 					value: "test query",
@@ -123,7 +122,6 @@ describe("NewsOptions", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
-			fireEvent.click(getByTestId("NetworkOption__ARK"));
 			fireEvent.change(getByTestId("NewsOptions__search"), {
 				target: {
 					value: "test query",
@@ -139,6 +137,29 @@ describe("NewsOptions", () => {
 			categories: expect.arrayContaining(["Technical"]),
 			coins: expect.arrayContaining(["ark"]),
 			searchQuery: expect.stringMatching("test query"),
+		});
+	});
+
+	it("should handle multiple selections", () => {
+		const onSubmit = jest.fn();
+
+		const { getByTestId } = render(
+			<NewsOptions selectedCategories={categories} selectedCoins={coins} onSubmit={onSubmit} />,
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkOption__ETH"));
+			fireEvent.click(getByTestId("NetworkOption__BTC"));
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("NewsOptions__submit"));
+		});
+
+		expect(onSubmit).toBeCalledWith({
+			categories: ["Technical"],
+			coins: ["ark", "eth", "btc"],
+			searchQuery: "",
 		});
 	});
 });

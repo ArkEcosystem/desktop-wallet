@@ -42,6 +42,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		})),
 	);
 
+	const hasCoinsSelected = Object.values(coins).some((coin) => coin.isSelected);
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const showSelectAllCategories = useMemo(() => categories.some((option: Option) => !option.isSelected), [
@@ -74,14 +75,6 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		);
 	};
 
-	const handleSelectCoin = (selectedCoin: CoinOption) => {
-		const updatedCoins = coins.map((coin: CoinOption) => ({
-			...coin,
-			isSelected: coin.name === selectedCoin.name,
-		}));
-		setCoins(updatedCoins);
-	};
-
 	const handleSearchInput = (searchQuery: string) => {
 		const query = searchQuery.substr(0, 32);
 		setSearchQuery(query);
@@ -89,16 +82,10 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 	};
 
 	const handleSubmit = () => {
-		const categoryNames = categories.reduce(
-			(acc: string[], category: Option) =>
-				category.name !== "All" && category.isSelected ? acc.concat(category.name) : acc,
-			[],
-		);
-
-		const coinNames = coins.reduce(
-			(acc: string[], coin: CoinOption) => (coin.isSelected ? acc.concat(coin.coin.toLowerCase()) : acc),
-			[],
-		);
+		const coinNames = coins.filter((coin) => coin.isSelected).map((coin) => coin.coin.toLowerCase());
+		const categoryNames = categories
+			.filter((category) => category.name !== "All" && category.isSelected)
+			.map((item) => item.name);
 
 		onSubmit({
 			categories: categoryNames,
@@ -168,10 +155,16 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
-						<FilterNetwork networks={coins} hideViewAll onChange={handleSelectCoin} />
+						<FilterNetwork networks={coins} hideViewAll onChange={(_, networks) => setCoins(networks)} />
 					</div>
 
-					<Button className="w-full" variant="plain" onClick={handleSubmit} data-testid="NewsOptions__submit">
+					<Button
+						disabled={!hasCoinsSelected}
+						className="w-full"
+						variant="plain"
+						onClick={handleSubmit}
+						data-testid="NewsOptions__submit"
+					>
 						{t("NEWS.NEWS_OPTIONS.UPDATE_FILTER")}
 					</Button>
 				</div>
