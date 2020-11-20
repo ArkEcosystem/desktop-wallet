@@ -77,9 +77,10 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	useLayoutEffect(() => {
 		setShowWalletVote(activeWallet.network().can("Transaction.vote"));
 		setShowWalletRegistrations(
-			activeWallet.network().can("Transaction.secondSignature") ||
-				activeWallet.network().can("Transaction.delegateRegistration") ||
-				activeWallet.network().can("Transaction.entityRegistration"),
+			!activeWallet.isLedger() &&
+				(activeWallet.network().can("Transaction.secondSignature") ||
+					activeWallet.network().can("Transaction.delegateRegistration") ||
+					activeWallet.network().can("Transaction.entityRegistration")),
 		);
 	}, [activeWallet]);
 
@@ -169,8 +170,12 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					network={networkId}
 					publicKey={activeWallet.publicKey()}
 					ticker={ticker}
-					showMultiSignatureOption={activeWallet.network().can("Transaction.multiSignature")}
-					showSecondSignatureOption={activeWallet.network().can("Transaction.secondSignature")}
+					showMultiSignatureOption={
+						!activeWallet.isLedger() && activeWallet.network().can("Transaction.multiSignature")
+					}
+					showSecondSignatureOption={
+						!activeWallet.isLedger() && activeWallet.network().can("Transaction.secondSignature")
+					}
 					showSignMessageOption={activeWallet.network().can("Message.sign")}
 					showStoreHashOption={activeWallet.network().can("Transaction.ipfs")}
 					showVerifyMessageOption={activeWallet.network().can("Message.verify")}
