@@ -15,6 +15,7 @@ import { useHistory } from "react-router-dom";
 
 type WalletsProps = {
 	title?: string;
+	activeFilter?: boolean;
 	filterProperties: any;
 	viewType?: "grid" | "list";
 	wallets: ReadWriteWallet[];
@@ -33,6 +34,7 @@ type GridWallet = {
 
 export const Wallets = ({
 	title,
+	activeFilter,
 	filterProperties,
 	viewType,
 	wallets,
@@ -179,6 +181,7 @@ export const Wallets = ({
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
+						activeFilter={activeFilter}
 						filterProperties={filterProperties}
 						viewType={walletsViewType}
 						onCreateWallet={onCreateWallet}
@@ -230,6 +233,7 @@ export const Wallets = ({
 };
 
 Wallets.defaultProps = {
+	activeFilter: false,
 	networks: [],
 	viewType: "grid",
 	wallets: [],
