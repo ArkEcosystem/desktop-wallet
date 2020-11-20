@@ -75,9 +75,9 @@ export const News = ({ itemsPerPage }: Props) => {
 			};
 
 			const response = await Promise.allSettled(coins.map((coin) => fetchNewsWithCoin(coin, query)));
-			// @ts-ignore
 			const results: BlockfolioResponse[] = response
 				.filter((promise) => promise.status === "fulfilled")
+				// @ts-ignore
 				.map((item) => item.value);
 
 			const data = sortByDesc(merge.all<any[]>(results.map((item) => item.data)), "created_at");
