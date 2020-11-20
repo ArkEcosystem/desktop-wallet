@@ -2,7 +2,8 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { SearchResource } from "app/components/SearchResource";
+import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { Modal } from "app/components/Modal";
 import { Table } from "app/components/Table";
 import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
@@ -68,19 +69,10 @@ type SearchRecipientProps = {
 	isOpen: boolean;
 	profile: Profile;
 	onClose?: any;
-	onSearch?: any;
 	onAction: (address: string) => void;
 };
 
-export const SearchRecipient = ({
-	title,
-	description,
-	profile,
-	isOpen,
-	onClose,
-	onSearch,
-	onAction,
-}: SearchRecipientProps) => {
+export const SearchRecipient = ({ title, description, profile, isOpen, onClose, onAction }: SearchRecipientProps) => {
 	const { t } = useTranslation();
 
 	const contacts = profile.contacts().values();
@@ -126,28 +118,30 @@ export const SearchRecipient = ({
 		{
 			Header: t("COMMON.TYPE"),
 			accessor: "type",
-			className: "no-border",
 		},
 		{
-			Header: "Actions",
-			className: "hidden no-border",
+			Header: <HeaderSearchBar placeholder={t("TRANSACTION.MODAL_SEARCH_RECIPIENT.SEARCH_PLACEHOLDER")} />,
+			accessor: "search",
+			className: "justify-end no-border",
+			disableSortBy: true,
 		},
 	];
 
 	return (
-		<SearchResource
+		<Modal
 			isOpen={isOpen}
 			title={title || t("TRANSACTION.MODAL_SEARCH_RECIPIENT.TITLE")}
 			description={description || t("TRANSACTION.MODAL_SEARCH_RECIPIENT.DESCRIPTION")}
-			placeholder={t("TRANSACTION.MODAL_SEARCH_RECIPIENT.PLACEHOLDER")}
+			size="5xl"
 			onClose={onClose}
-			onSearch={onSearch}
 		>
-			<Table columns={columns} data={availableData}>
-				{(recipient: Recipient) => (
-					<RecipientListItem recipient={recipient} translations={t} onAction={onAction} />
-				)}
-			</Table>
-		</SearchResource>
+			<div className="mt-8">
+				<Table columns={columns} data={availableData}>
+					{(recipient: Recipient) => (
+						<RecipientListItem recipient={recipient} translations={t} onAction={onAction} />
+					)}
+				</Table>
+			</div>
+		</Modal>
 	);
 };
