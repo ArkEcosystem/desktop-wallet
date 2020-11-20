@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PeerForm should render 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="PeerForm"
+  >
+    <fieldset
+      class="sc-AxiKw iQzisX my-8"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="CustomPeers__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="CustomPeers__network-input"
+            id="CustomPeers__network-label"
+          />
+          <div
+            class="sc-AxmLO kuiknc"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="sc-AxgMl sc-AxheI hUEXQW px-4"
+            >
+              <div
+                class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="CustomPeers__network-menu"
+              aria-labelledby="CustomPeers__network-label"
+              autocomplete="off"
+              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="CustomPeers__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="CustomPeers__network-label"
+          class="hidden"
+          id="CustomPeers__network-menu"
+          role="listbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="name"
+      >
+        Name
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <input
+        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+        data-testid="PeerForm__name-input"
+        name="name"
+      />
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="host"
+      >
+        Peer IP
+        <div
+          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <input
+        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+        data-testid="PeerForm__host-input"
+        name="host"
+      />
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="type"
+      >
+        Type
+        <span
+          class="ml-1 text-theme-neutral-light"
+          data-testid="FormLabel__optional"
+        >
+          (optional)
+        </span>
+      </label>
+      <label
+        class="flex items-center space-x-2"
+        for="isMultiSignature"
+      >
+        <input
+          class="sc-AxirZ dMNlTF"
+          color="success"
+          data-testid="PeerForm__multisignature-toggle"
+          name="isMultiSignature"
+          type="checkbox"
+        />
+        <span
+          class="text-sm font-semibold text-theme-secondary-text"
+        >
+          Multisignature
+        </span>
+      </label>
+    </fieldset>
+    <div
+      class="flex justify-end mt-4"
+    >
+      <button
+        class="sc-AxjAm colAFb"
+        color="primary"
+        data-testid="PeerForm__add-button"
+        disabled=""
+        type="submit"
+      >
+        Add Peer
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;

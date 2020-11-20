@@ -13,16 +13,23 @@ exports[`PeerListItem should render 1`] = `
             class="sc-AxgMl erCQKr space-x-2"
           >
             <div
-              class="sc-AxjAm fRZVZe"
+              aria-label="ARK Devnet"
+              class="sc-Axmtr WBwgf border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
-                class="sc-AxiKw dzBdqj"
-                height="1em"
-                width="1em"
-              />
+                class="sc-AxiKw dklFyP"
+                data-testid="NetworkIcon__icon"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
             </div>
             <span>
-              BITCOIN
+              ARK Devnet
             </span>
           </div>
         </td>
@@ -30,32 +37,63 @@ exports[`PeerListItem should render 1`] = `
           <div
             class="sc-AxgMl blBnFR"
           >
-            <span />
+            <span>
+              ROBank
+            </span>
           </div>
         </td>
         <td>
           <div
             class="sc-AxgMl blBnFR"
           >
-            <span />
+            <span>
+              194.168.4.67
+            </span>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR text-theme-neutral justify-center"
+            class="sc-AxgMl blBnFR justify-center"
           >
             <div
-              class="sc-AxiKw dzBdqj"
-              height="1em"
-              width="1em"
-            />
+              class="sc-AxiKw dklFyP"
+              height="20"
+              width="20"
+            >
+              <svg>
+                multisig.svg
+              </svg>
+            </div>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxgMl hSxjar text-theme-neutral-300"
+            class="sc-AxgMl hSxjar justify-end"
           >
-            0
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="float-right"
+              >
+                <button
+                  class="sc-AxjAm eRbxBA"
+                  color="primary"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
           </div>
         </td>
       </tr>
