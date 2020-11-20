@@ -19,6 +19,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
+import { TransferLedgerReview } from "./LedgerReview";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -205,7 +206,10 @@ export const SendTransfer = () => {
 							</TabPanel>
 
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={wallet!} />
+								<AuthenticationStep
+									wallet={wallet!}
+									ledgerDetails={<TransferLedgerReview wallet={wallet!} />}
+								/>
 							</TabPanel>
 
 							<TabPanel tabId={4}>

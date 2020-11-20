@@ -18,6 +18,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
+import { IpfsLedgerReview } from "./LedgerReview";
 
 export const SendIpfs = () => {
 	const { t } = useTranslation();
@@ -146,7 +147,16 @@ export const SendIpfs = () => {
 								<ReviewStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={activeWallet} />
+								<AuthenticationStep
+									wallet={activeWallet}
+									ledgerDetails={
+										<IpfsLedgerReview
+											wallet={activeWallet}
+											fee={getValues("fee")}
+											hash={getValues("hash")}
+										/>
+									}
+								/>
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<SummaryStep transaction={transaction} senderWallet={activeWallet} />

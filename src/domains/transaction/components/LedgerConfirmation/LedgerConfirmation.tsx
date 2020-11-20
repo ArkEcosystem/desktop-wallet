@@ -3,7 +3,7 @@ import { Spinner } from "app/components/Spinner";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export const LedgerConfirmation = () => {
+export const LedgerConfirmation = ({ children }: { children?: React.ReactNode }) => {
 	const { t } = useTranslation();
 
 	return (
@@ -18,6 +18,7 @@ export const LedgerConfirmation = () => {
 					{t("TRANSACTION.LEDGER_CONFIRMATION.LOADING_MESSAGE")}
 				</span>
 			</div>
+			{children}
 		</>
 	);
 };
