@@ -27,7 +27,7 @@ export class TransactionSigner {
       network = store.getters['session/network']
     }
 
-    transaction = transaction.network(network.version)
+    transaction = transaction.network(+network.version)
 
     // TODO replace with dayjs
     const epochTime = dayjs(network.constants.epoch)
