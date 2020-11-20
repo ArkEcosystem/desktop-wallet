@@ -229,39 +229,46 @@ export const SendTransfer = () => {
 							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 4 && (
 									<>
-										<Button
-											disabled={activeTab === 1}
-											data-testid="SendTransfer__button--back"
-											variant="plain"
-											onClick={handleBack}
-										>
-											{t("COMMON.BACK")}
-										</Button>
-
 										{activeTab < 3 && (
-											<Button
-												data-testid="SendTransfer__button--continue"
-												disabled={!isValid || isSubmitting}
-												onClick={handleNext}
-											>
-												{isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
-											</Button>
+											<>
+												<Button
+													disabled={activeTab === 1}
+													data-testid="SendTransfer__button--back"
+													variant="plain"
+													onClick={handleBack}
+												>
+													{t("COMMON.BACK")}
+												</Button>
+												<Button
+													data-testid="SendTransfer__button--continue"
+													disabled={!isValid || isSubmitting}
+													onClick={handleNext}
+												>
+													{isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
+												</Button>
+											</>
 										)}
 
-										{activeTab === 3 && (
-											<Button
-												type="submit"
-												data-testid="SendTransfer__button--submit"
-												disabled={!isValid || isSubmitting}
-												className="space-x-2"
-											>
-												<Icon name="Send" width={20} height={20} />
-												{isSubmitting && !wallet?.isLedger() ? (
-													<Spinner size="sm" />
-												) : (
-													<span>{t("COMMON.SEND")}</span>
-												)}
-											</Button>
+										{activeTab === 3 && !wallet?.isLedger() && (
+											<>
+												<Button
+													data-testid="SendTransfer__button--back"
+													variant="plain"
+													onClick={handleBack}
+												>
+													{t("COMMON.BACK")}
+												</Button>
+
+												<Button
+													type="submit"
+													data-testid="SendTransfer__button--submit"
+													disabled={!isValid || isSubmitting}
+													className="space-x-2"
+												>
+													<Icon name="Send" width={20} height={20} />
+													{isSubmitting ? <Spinner size="sm" /> : t("COMMON.SEND")}
+												</Button>
+											</>
 										)}
 									</>
 								)}

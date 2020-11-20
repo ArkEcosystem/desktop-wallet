@@ -175,37 +175,52 @@ export const SendIpfs = () => {
 							<div className="flex justify-end mt-10 space-x-2">
 								{activeTab < 4 && (
 									<>
-										<Button
-											disabled={activeTab === 1}
-											data-testid="SendIpfs__button--back"
-											variant="plain"
-											onClick={handleBack}
-										>
-											{t("COMMON.BACK")}
-										</Button>
-
 										{activeTab < 3 && (
-											<Button
-												data-testid="SendIpfs__button--continue"
-												disabled={!formState.isValid || formState.isSubmitting}
-												onClick={handleNext}
-											>
-												{formState.isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
-											</Button>
+											<>
+												<Button
+													disabled={activeTab === 1}
+													data-testid="SendIpfs__button--back"
+													variant="plain"
+													onClick={handleBack}
+												>
+													{t("COMMON.BACK")}
+												</Button>
+												<Button
+													data-testid="SendIpfs__button--continue"
+													disabled={!formState.isValid || formState.isSubmitting}
+													onClick={handleNext}
+												>
+													{formState.isSubmitting ? (
+														<Spinner size="sm" />
+													) : (
+														t("COMMON.CONTINUE")
+													)}
+												</Button>
+											</>
 										)}
 
-										{activeTab === 3 && (
-											<Button
-												type="submit"
-												data-testid="SendIpfs__button--submit"
-												disabled={!formState.isValid || formState.isSubmitting}
-											>
-												{formState.isSubmitting ? (
-													<Spinner size="sm" />
-												) : (
-													t("TRANSACTION.SIGN_CONTINUE")
-												)}
-											</Button>
+										{activeTab === 3 && !activeWallet.isLedger() && (
+											<>
+												<Button
+													data-testid="SendIpfs__button--back"
+													variant="plain"
+													onClick={handleBack}
+												>
+													{t("COMMON.BACK")}
+												</Button>
+
+												<Button
+													type="submit"
+													data-testid="SendIpfs__button--submit"
+													disabled={!formState.isValid || formState.isSubmitting}
+												>
+													{formState.isSubmitting ? (
+														<Spinner size="sm" />
+													) : (
+														t("TRANSACTION.SIGN_CONTINUE")
+													)}
+												</Button>
+											</>
 										)}
 									</>
 								)}
