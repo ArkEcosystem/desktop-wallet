@@ -6,7 +6,7 @@ import electron from "electron";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "testing-library";
 
 import { Settings } from "./Settings";
 
@@ -255,11 +255,95 @@ describe("Settings", () => {
 
 		fireEvent.click(await findByTestId("side-menu__item--Peer"));
 
+		expect(getByTestId("Peer-settings__submit-button")).toBeTruthy();
+
+		fireEvent.click(getByTestId("General-peers__toggle--isMultiPeerBroadcast"));
+		fireEvent.click(getByTestId("General-peers__toggle--isCustomPeer"));
+
+		expect(getByTestId("Peer-list__add-button")).toBeTruthy();
+
 		await act(async () => {
 			fireEvent.click(getByTestId("Peer-settings__submit-button"));
 		});
 
 		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
+	});
+
+	it("should add & delete custom peer", async () => {
+		const { findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		fireEvent.click(await findByTestId("side-menu__item--Peer"));
+
+		expect(getByTestId("Peer-list__add-button")).toBeTruthy();
+
+		const addPeerButton = getByTestId("Peer-list__add-button");
+		expect(addPeerButton).toBeTruthy();
+		await act(async () => {
+			fireEvent.click(addPeerButton);
+		});
+
+		expect(getByTestId("modal__inner")).toBeTruthy();
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+		});
+
+		const submitButton = getByTestId("PeerForm__add-button");
+		expect(submitButton).toBeTruthy();
+		await waitFor(() => {
+			expect(submitButton).not.toHaveAttribute("disabled");
+		});
+
+		fireEvent.click(submitButton);
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+
+		const toggle = within(getByTestId("Peer-settings__table")).getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(getByTestId("dropdown__content")).toBeTruthy();
+
+		const deleteOption = getByTestId("dropdown__option--1");
+		expect(deleteOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(deleteOption);
+		});
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DELETE_PEER.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DELETE_PEER.DESCRIPTION);
+
+		const deleteBtn = getByTestId("DeleteResource__submit-button");
+
+		act(() => {
+			fireEvent.click(deleteBtn);
+		});
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 	});
 
 	it("should render plugin settings", async () => {
@@ -340,7 +424,7 @@ describe("Settings", () => {
 	});
 
 	it("should add a plugin to the blacklist", async () => {
-		const { container, asFragment, getByTestId, getAllByTestId, getAllByText } = renderWithRouter(
+		const { container, getByTestId, getAllByTestId, getAllByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,

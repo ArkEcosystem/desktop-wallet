@@ -1,18 +1,98 @@
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
+import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
-import { PeerList } from "domains/setting/components/PeerList";
-import { networks, peers } from "domains/setting/data";
-import React from "react";
-import { useTranslation } from "react-i18next";
+import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile } from "app/hooks";
+import { AddPeer } from "domains/setting/components/AddPeer";
+import { DeletePeer } from "domains/setting/components/DeletePeer";
+import { PeerListItem } from "domains/setting/components/PeerListItem";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
 
-export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
+export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
+	const { state } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
+
+	const [isCustomPeer, setIsCustomPeer] = useState(
+		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
+	);
+	const [peers, setPeers] = useState([]);
+	const [isAddPeer, setIsAddPeer] = useState(false);
+
+	const [peerAction, setPeerAction] = useState<string | null>(null);
+	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
+
+	const loadPeers = useCallback(
+		() =>
+			activeProfile
+				.peers()
+				.values()
+				.reduce((peers: any, data: any) => {
+					for (const coin of Object.keys(data)) {
+						for (const network of Object.keys(data[coin])) {
+							for (const peer of data[coin][network]) {
+								peers.push({
+									...peer,
+									coin,
+									network,
+								});
+							}
+						}
+					}
+
+					return peers;
+				}, []),
+		[activeProfile],
+	);
+
+	useEffect(() => {
+		if (!peerAction) {
+			setSelectedPeer(null);
+		}
+	}, [peerAction]);
+
+	useEffect(() => {
+		setPeers(loadPeers());
+	}, [loadPeers, state]);
+
+	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
+
+	const { context, register } = formConfig;
+
+	const peerOptions = [
+		{ label: t("COMMON.EDIT"), value: "edit" },
+		{ label: t("COMMON.DELETE"), value: "delete" },
+	];
+
+	const columns = [
+		{
+			Header: t("SETTINGS.PEERS.CRYPTOASSET"),
+			accessor: "cryptoasset",
+		},
+		{
+			Header: t("SETTINGS.PEERS.NAME"),
+			accessor: "name",
+		},
+		{
+			Header: t("SETTINGS.PEERS.PEER_IP"),
+		},
+		{
+			Header: t("SETTINGS.PEERS.TYPE"),
+			className: "flex justify-center no-border",
+		},
+		{
+			accessor: "onSelect",
+			disableSortBy: true,
+		},
+	];
 
 	const peerItems = [
 		{
@@ -20,20 +100,54 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 			label: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-secondary-text",
 			labelDescription: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION"),
-			labelAddon: <Toggle />,
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="isMultiPeerBroadcast"
+					defaultChecked={activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast)}
+					data-testid="General-peers__toggle--isMultiPeerBroadcast"
+				/>
+			),
 			wrapperClass: "pb-6",
 		},
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.PEERS.CUSTOM_PEERS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-secondary-text",
-			labelDescription: t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION"),
-			labelAddon: <Toggle />,
+			labelDescription: (
+				<Trans i18nKey="SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION">
+					Customize your individual peers by network. <br /> Note: Only use trusted peers. Using an unknown
+					peer may put your funds at risk.
+				</Trans>
+			),
+			labelAddon: (
+				<Toggle
+					ref={register()}
+					name="isCustomPeer"
+					checked={isCustomPeer}
+					onChange={(event) => setIsCustomPeer(event.target.checked)}
+					data-testid="General-peers__toggle--isCustomPeer"
+				/>
+			),
 			wrapperClass: "pt-6",
 		},
 	];
 
-	const handleSubmit = () => {
+	const handlePeerAction = (action: string, peer: any) => {
+		setPeerAction(action);
+		setSelectedPeer(peer);
+	};
+
+	const resetPeerAction = () => {
+		setPeerAction(null);
+	};
+
+	const handleSubmit = async ({ isMultiPeerBroadcast, isCustomPeer }: any) => {
+		activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
+		activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
+
+		await env.persist();
+
 		onSuccess(t("SETTINGS.PEERS.SUCCESS"));
 	};
 
@@ -41,12 +155,27 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		<>
 			<Header title={t("SETTINGS.PEERS.TITLE")} subtitle={t("SETTINGS.PEERS.SUBTITLE")} />
 
-			<Form id="peer-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
+			<Form id="peer-settings__form" context={context} onSubmit={handleSubmit} className="mt-8">
 				<ListDivided items={peerItems} />
 
-				<div className="pt-8">
-					<PeerList networks={networks} peers={peers} />
-				</div>
+				{isCustomPeer && (
+					<div className="pt-8" data-testid="Peer-settings__table">
+						<Table columns={columns} data={peers}>
+							{(rowData: any) => (
+								<PeerListItem {...rowData} options={peerOptions} onAction={handlePeerAction} />
+							)}
+						</Table>
+
+						<Button
+							variant="plain"
+							className="w-full mt-8 mb-2"
+							onClick={() => setIsAddPeer(true)}
+							data-testid="Peer-list__add-button"
+						>
+							{t("SETTINGS.PEERS.ADD_PEER")}
+						</Button>
+					</div>
+				)}
 
 				<div className="pt-2 pb-4">
 					<Divider dashed />
@@ -58,6 +187,24 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 					</Button>
 				</div>
 			</Form>
+
+			<AddPeer
+				isOpen={isAddPeer}
+				networks={availableNetworks}
+				profile={activeProfile}
+				onClose={() => setIsAddPeer(false)}
+			/>
+
+			{selectedPeer && (
+				<DeletePeer
+					isOpen={peerAction === "delete"}
+					peer={selectedPeer}
+					profile={activeProfile}
+					onCancel={resetPeerAction}
+					onClose={resetPeerAction}
+					onDelete={resetPeerAction}
+				/>
+			)}
 		</>
 	);
 };

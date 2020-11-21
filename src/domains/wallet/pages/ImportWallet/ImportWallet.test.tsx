@@ -49,8 +49,6 @@ describe("ImportWallet", () => {
 
 	beforeEach(() => {
 		profile = env.profiles().findById(fixtureProfileId);
-		profile.data().set(ProfileSetting.ExchangeCurrency, "BTC");
-		profile.data().set(ProfileSetting.MarketProvider, "cryptocompare");
 
 		const walletId = profile.wallets().findByAddress(randomAddress)?.id();
 
@@ -316,8 +314,6 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy();
 			});
 		});
-
-		await waitFor(() => expect(profile.wallets().last()?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should import by address", async () => {
@@ -400,8 +396,6 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 			});
 		});
-
-		await waitFor(() => expect(profile.wallets().findByAddress(randomAddress)?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should import by address and fill a wallet name", async () => {
@@ -504,8 +498,6 @@ describe("ImportWallet", () => {
 
 			networkMock.mockRestore();
 		});
-
-		await waitFor(() => expect(profile.wallets().findByAddress(randomAddress)?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should show an error message for invalid address", async () => {
@@ -812,8 +804,6 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 			});
 		});
-
-		await waitFor(() => expect(profile.wallets().first().exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should render as ledger import", async () => {
