@@ -222,9 +222,9 @@ export const DelegateTable = ({
 				className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
 				data-testid="DelegateTable__footer"
 			>
-				<div className="flex-1">
+				<div className="container flex-1 px-8 mx-auto">
 					<div className="flex justify-between">
-						<div className="flex font-semibold">
+						<div className="flex ml-3 font-semibold">
 							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 								<div className="inline-flex">
 									<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
