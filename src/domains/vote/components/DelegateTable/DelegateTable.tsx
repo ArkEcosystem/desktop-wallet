@@ -240,14 +240,23 @@ export const DelegateTable = ({
 							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 								<div className="inline-flex">
 									<Circle
-										className="mr-2 bg-theme-background border-theme-text text-theme-text"
+										className={`mr-2 bg-theme-background ${
+											selectedVotes.length === 0
+												? "border-theme-neutral text-theme-neutral"
+												: "border-theme-text text-theme-text"
+										}`}
 										size="lg"
 									>
 										<Icon name="Vote" className="text-xl" />
 									</Circle>
 									<div className="flex flex-col">
 										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
-										<div className="text-theme-text" data-testid="DelegateTable__footer--votes">
+										<div
+											className={
+												selectedVotes.length === 0 ? "text-theme-neutral" : "text-theme-text"
+											}
+											data-testid="DelegateTable__footer--votes"
+										>
 											{selectedVotes.length}
 										</div>
 									</div>
@@ -257,14 +266,23 @@ export const DelegateTable = ({
 							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 								<div className="inline-flex">
 									<Circle
-										className="mr-2 bg-theme-background border-theme-text text-theme-text"
+										className={`mr-2 bg-theme-background ${
+											selectedUnvotes.length === 0
+												? "border-theme-neutral text-theme-neutral"
+												: "border-theme-text text-theme-text"
+										}`}
 										size="lg"
 									>
 										<Icon name="Unvote" className="text-xl" />
 									</Circle>
 									<div className="flex flex-col">
 										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
-										<div className="text-theme-text" data-testid="DelegateTable__footer--unvotes">
+										<div
+											className={
+												selectedUnvotes.length === 0 ? "text-theme-neutral" : "text-theme-text"
+											}
+											data-testid="DelegateTable__footer--unvotes"
+										>
 											{selectedUnvotes.length}
 										</div>
 									</div>
