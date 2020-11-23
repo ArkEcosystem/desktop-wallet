@@ -23,22 +23,24 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	const history = useHistory();
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
-	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
-	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
+
+	const defaultDashboardConfiguration = {
+		showPortfolio: true,
+		showTransactions: true,
+		walletsDisplayType: "all",
+		selectedNetworkIds: uniq(
+			activeProfile
+				.wallets()
+				.values()
+				.map((wallet) => wallet.network().id()),
+		),
+	};
 
 	const [dashboardConfiguration, setDashboardConfiguration] = useReducer(
 		(state: DashboardConfiguration, newState: Record<string, any>) => ({ ...state, ...newState }),
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || {
-			showPortfolio: true,
-			showTransactions: true,
+			...defaultDashboardConfiguration,
 			viewType: "grid",
-			walletsDisplayType: "all",
-			selectedNetworkIds: uniq(
-				activeProfile
-					.wallets()
-					.values()
-					.map((wallet) => wallet.network().id()),
-			),
 		},
 	);
 
@@ -52,6 +54,9 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		selectedNetworkIds,
 	} = dashboardConfiguration;
 
+	const [activeFilter, setActiveFilter] = useState(false);
+	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
+	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
@@ -140,6 +145,15 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		updateDashboardSettings();
 	});
 
+	useEffect(() => {
+		const dashboardConfigurationClone = (({ viewType, ...rest }) => rest)(dashboardConfiguration);
+
+		defaultDashboardConfiguration.selectedNetworkIds = defaultDashboardConfiguration.selectedNetworkIds.sort();
+		dashboardConfigurationClone.selectedNetworkIds = dashboardConfigurationClone.selectedNetworkIds.sort();
+
+		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfigurationClone));
+	}, [defaultDashboardConfiguration, dashboardConfiguration]);
+
 	// Wallet controls data
 	const handleSelectViewType = (viewType: string) => {
 		setDashboardConfiguration({ viewType });
@@ -220,6 +234,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 				<Section className={!showTransactions ? "flex-1" : undefined}>
 					<Wallets
 						title={t("COMMON.WALLETS")}
+						activeFilter={activeFilter}
 						filterProperties={filterProperties}
 						viewType={viewType}
 						wallets={wallets}

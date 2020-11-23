@@ -3,12 +3,20 @@ import { act, fireEvent, render } from "testing-library";
 
 import { PeerListItem } from "./PeerListItem";
 
+const peer = {
+	coin: "ark",
+	network: "devnet",
+	name: "ROBank",
+	host: "194.168.4.67",
+	isMultiSignature: false,
+};
+
 describe("PeerListItem", () => {
 	it("should render", () => {
 		const { container } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Bitcoin" />
+					<PeerListItem {...peer} isMultiSignature={true} />
 				</tbody>
 			</table>,
 		);
@@ -26,7 +34,7 @@ describe("PeerListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Bitcoin" actions={options} onAction={onAction} />
+					<PeerListItem {...peer} options={options} onAction={onAction} />
 				</tbody>
 			</table>,
 		);
@@ -58,7 +66,7 @@ describe("PeerListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<PeerListItem coin="Bitcoin" actions={options} />
+					<PeerListItem {...peer} options={options} />
 				</tbody>
 			</table>,
 		);
