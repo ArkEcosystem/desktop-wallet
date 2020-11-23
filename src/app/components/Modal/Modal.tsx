@@ -1,5 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { usePrevious } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
@@ -57,16 +58,21 @@ const ModalContent = (props: ModalContentProps) => {
 	const [topOffsetClass, setTopOffsetClass] = useState<string>();
 	const modalRef = useRef<any>();
 
+	const previousHeight = usePrevious(modalRef?.current?.clientHeight);
+
 	useEffect(() => {
-		const topClass = modalTopOffsetClass(modalRef?.current?.clientHeight, window.innerHeight);
-		setTopOffsetClass(topClass);
-	}, [modalRef, setTopOffsetClass]);
+		const currentHeight = modalRef?.current?.clientHeight;
+
+		if (previousHeight !== currentHeight) {
+			setTopOffsetClass(modalTopOffsetClass(currentHeight, window.innerHeight));
+		}
+	});
 
 	return (
 		<ModalContainer
 			ref={modalRef}
 			size={props.size}
-			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background ${topOffsetClass}`}
+			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background shadow-2xl ${topOffsetClass}`}
 			data-testid="modal__inner"
 		>
 			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900">

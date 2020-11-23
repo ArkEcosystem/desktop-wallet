@@ -45,14 +45,12 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 		const generateQrCode = async () => {
 			const qrCodeDataUri = address ? formatQR({ network, amount, address, smartbridge }) : undefined;
 
-			let qrCodeDataImage: string;
+			let qrCodeDataImage: string | undefined;
 
 			try {
-				qrCodeDataImage = qrCodeDataUri
-					? await QRCode.fromString(qrCodeDataUri).toDataURL({ width: 250, margin: 0, color })
-					: undefined;
+				qrCodeDataImage = await QRCode.fromString(qrCodeDataUri!).toDataURL({ width: 250, margin: 0, color });
 			} catch {
-				qrCodeDataImage = null;
+				qrCodeDataImage = undefined;
 			}
 
 			setQrCodeDataUri(qrCodeDataUri);

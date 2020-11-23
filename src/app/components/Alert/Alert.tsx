@@ -9,7 +9,6 @@ type AlertProps = {
 	className?: string;
 	title?: string;
 	variant: "info" | "success" | "warning" | "danger" | "hint";
-	type?: "horizontal" | "vertical";
 	size?: Size;
 };
 
@@ -50,14 +49,10 @@ const getColorVariant = (variant: string) => {
 	return colorVariant[variant];
 };
 
-export const Alert = ({ className, variant, title, type, size, children }: AlertProps) => (
+export const Alert = ({ variant, title, size, children }: AlertProps) => (
 	<AlertWrapper
 		size={size}
-		className={`flex flex-col ${
-			type === "horizontal" ? "sm:flex-row sm:space-y-0 sm:space-x-5" : "justify-center"
-		} space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 ${
-			className ? className : ""
-		}`}
+		className="flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
 	>
 		<div className={`flex items-center justify-center text-theme-${getColorVariant(variant)}`}>
 			<AlertIcon variant={variant} />
@@ -76,5 +71,4 @@ export const Alert = ({ className, variant, title, type, size, children }: Alert
 
 Alert.defaultProps = {
 	variant: "warning",
-	type: "horizontal",
 };

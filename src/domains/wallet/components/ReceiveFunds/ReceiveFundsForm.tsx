@@ -39,7 +39,7 @@ export const ReceiveFundsForm = ({ maxLength }: { maxLength: number }) => {
 						type="text"
 						placeholder=" "
 						className="pr-24"
-						maxLengthLabel={maxLength}
+						maxLengthLabel={maxLength.toString()}
 					/>
 					<FormHelperText />
 				</FormField>

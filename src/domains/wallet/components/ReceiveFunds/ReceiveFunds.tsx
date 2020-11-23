@@ -32,8 +32,12 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { amount, smartbridge } = form.watch();
-	// const { qrCodeDataUri, qrCodeDataImage } = useQRCode({ amount, smartbridge: smartbridge?.slice(0, maxLength), network, address });
-	const { qrCodeDataUri, qrCodeDataImage } = useQRCode({ amount, smartbridge, network, address });
+	const { qrCodeDataUri, qrCodeDataImage } = useQRCode({
+		amount,
+		smartbridge: smartbridge?.slice(0, maxLength),
+		network,
+		address,
+	});
 
 	return (
 		<Modal
@@ -96,6 +100,12 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				)}
 			</div>
 
+			{smartbridge?.length > maxLength && (
+				<div className="mt-8">
+					<Alert variant="warning">{t("WALLETS.MODAL_RECEIVE_FUNDS.WARNING", { maxLength })}</Alert>
+				</div>
+			)}
+
 			<div className="w-64 h-64 mx-auto mt-8">
 				{qrCodeDataImage && (
 					<img
@@ -104,12 +114,6 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
 					/>
-				)}
-
-				{qrCodeDataImage === null && (
-					<Alert className="h-full" type="vertical" variant="danger">
-						{t("WALLETS.MODAL_RECEIVE_FUNDS.ERROR")}
-					</Alert>
 				)}
 			</div>
 

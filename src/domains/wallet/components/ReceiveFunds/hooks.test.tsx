@@ -68,6 +68,8 @@ describe("useQRCode hook", () => {
 	});
 
 	it("should return undefined if address is not provided", async () => {
+		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => true);
+
 		await act(async () => {
 			const { result } = renderHook(() => useQRCode({ network: "ark" }));
 			await waitFor(() => expect(result.current.qrCodeDataUri).toBe(undefined));
