@@ -110,7 +110,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				{qrCodeDataImage && (
 					<img
 						src={qrCodeDataImage}
-						className="w-64 h-64 p-3 border border-theme-neutral-300 dark:border-theme-neutral-800 rounded-lg"
+						className="w-64 h-64 p-3 border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
 					/>
