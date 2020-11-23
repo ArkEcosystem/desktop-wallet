@@ -24,7 +24,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
-	const [selectedTransactionType, setSelectedTransactionType] = useState("all");
+	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
 
 	const [dashboardConfiguration, setDashboardConfiguration] = useReducer(
 		(state: DashboardConfiguration, newState: Record<string, any>) => ({ ...state, ...newState }),
@@ -111,8 +111,10 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 		setIsLoadingTransactions(true);
 
+		const limit = { limit: 30 };
+		const queryParams = selectedTransactionType ? { ...limit, ...selectedTransactionType } : limit;
 		// @ts-ignore
-		const response = await activeProfile.transactionAggregate()[method]({ limit: 30 });
+		const response = await activeProfile.transactionAggregate()[method](queryParams);
 		const transactions = response.items();
 
 		setIsLoadingTransactions(false);
@@ -123,15 +125,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	useEffect(() => {
 		fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 		// eslint-disable-next-line
-	}, [activeTransactionModeTab]);
-
-	const filteredTransaction = useMemo(
-		() =>
-			selectedTransactionType === "all"
-				? allTransactions
-				: allTransactions?.filter((t: any) => t.type() === selectedTransactionType),
-		[allTransactions, selectedTransactionType],
-	);
+	}, [activeTransactionModeTab, selectedTransactionType]);
 
 	useEffect(() => {
 		if (isEqual(previousConfiguration, dashboardConfiguration)) {
@@ -242,7 +236,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 					<Section className="flex-1" data-testid="dashboard__transactions-view">
 						<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 						<FilterTransactions
-							onSelect={(type) => setSelectedTransactionType(String(type.value))}
+							onSelect={(_, type) => setSelectedTransactionType(type)}
 							className="float-right mb-8"
 						/>
 						<Tabs
@@ -257,7 +251,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 							</TabList>
 						</Tabs>
 						<Transactions
-							transactions={filteredTransaction}
+							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
 							fetchMoreAction={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
 							onRowClick={(row) => setTransactionModalItem(row)}
