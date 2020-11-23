@@ -984,44 +984,48 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3606,44 +3610,48 @@ exports[`Dashboard should fetch more transactions 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -6320,44 +6328,48 @@ exports[`Dashboard should hide portfolio view 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -8937,44 +8949,48 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -10626,44 +10642,48 @@ exports[`Dashboard should render 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -12315,44 +12335,48 @@ exports[`Dashboard should render portfolio chart 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -14004,44 +14028,48 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -15693,44 +15721,48 @@ exports[`Dashboard should render wallets 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -17235,44 +17267,48 @@ exports[`Dashboard should render with no wallets 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -20105,44 +20141,48 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -22041,44 +22081,48 @@ exports[`Dashboard should show transaction view 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -23986,44 +24030,48 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
-          >
-            Transactions History
-          </div>
-          <div
-            class="float-right mb-8"
-            data-testid="FilterTransactions"
+            class="relative flex justify-between"
           >
             <div
-              class="relative"
-              data-testid="dropdown__toggle"
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
             >
               <div
-                class="flex items-center space-x-2 cursor-pointer"
-                data-testid="FilterTransactionsToggle"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="font-semibold"
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
                 >
-                  <span
-                    class="text-theme-neutral-500"
+                  <div
+                    class="font-semibold"
                   >
-                    Type: 
-                  </span>
-                  <span
-                    class="text-theme-neutral-600"
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
+                    height="9"
+                    width="9"
                   >
-                    All
-                  </span>
-                </div>
-                <div
-                  class="sc-AxirZ bkWcEv p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-                  height="9"
-                  width="9"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
