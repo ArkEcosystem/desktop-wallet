@@ -268,6 +268,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 							</TabList>
 						</Tabs>
 						<Transactions
+							isUsingFilters={!!selectedTransactionType}
 							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
 							fetchMoreAction={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}

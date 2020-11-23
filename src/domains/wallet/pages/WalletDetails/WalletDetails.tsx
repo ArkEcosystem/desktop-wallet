@@ -3,6 +3,7 @@ import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecos
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
@@ -300,10 +301,18 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 								</Button>
 							)}
 
-							{!isLoading && transactions.length === 0 && (
+							{!isLoading && transactions.length === 0 && !selectedTransactionType && (
 								<EmptyBlock className="-mt-2">
 									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
 								</EmptyBlock>
+							)}
+
+							{!isLoading && transactions.length === 0 && !!selectedTransactionType && (
+								<EmptyResults
+									className="flex-1"
+									title={t("COMMON.EMPTY_RESULTS.TITLE")}
+									subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+								/>
 							)}
 						</>
 					</div>
