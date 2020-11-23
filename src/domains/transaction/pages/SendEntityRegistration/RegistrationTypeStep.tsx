@@ -47,8 +47,6 @@ export const RegistrationTypeStep = ({
 	const { setValue } = form;
 	const { network, senderAddress, registrationType } = form.watch();
 
-	console.log("watch registrationType >> ", registrationType);
-
 	useEffect(() => {
 		if (network) {
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
@@ -118,14 +116,15 @@ export const RegistrationTypeStep = ({
 	};
 
 	const onSelectType = (selectedItem: SendEntityRegistrationType | null | undefined) => {
-		console.log("selectedItem", selectedItem);
-
 		setValue("registrationType", selectedItem, { shouldValidate: true, shouldDirty: true });
-		setRegistrationForm(registrationComponents[selectedItem!.value]);
 
-		if (selectedItem && fees[selectedItem.value]) {
-			setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
-			setValue("fees", fees[selectedItem.value]);
+		if (selectedItem) {
+			setRegistrationForm(registrationComponents[selectedItem.value]);
+
+			if (fees[selectedItem.value]) {
+				setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
+				setValue("fees", fees[selectedItem.value]);
+			}
 		}
 	};
 

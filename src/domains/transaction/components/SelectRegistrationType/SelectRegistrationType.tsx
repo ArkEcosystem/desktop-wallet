@@ -36,8 +36,10 @@ export const SelectRegistrationType = ({
 	const [items, setItems] = useState<Option[]>([]);
 
 	useEffect(() => {
-		setItems(options);
-	}, [options]);
+		if (items.length === 0) {
+			setItems(options);
+		}
+	}, [items, options]);
 
 	const isMatch = (inputValue: string, option: Option) =>
 		inputValue && option.label.toLowerCase().startsWith(inputValue.toLowerCase());
@@ -74,6 +76,18 @@ export const SelectRegistrationType = ({
 	useEffect(() => {
 		selectItem(selected || null);
 	}, [selectItem, selected]);
+
+	const toggleSelection = (item: Option) => {
+		if (item.label === selectedItem?.label) {
+			setTimeout(() => {
+				reset();
+				openMenu();
+			}, 0);
+			return;
+		}
+		selectItem(item);
+		closeMenu();
+	};
 
 	const inputTypeAhead = useMemo(() => {
 		if (inputValue && items.length) {
@@ -125,10 +139,7 @@ export const SelectRegistrationType = ({
 								index,
 								disabled,
 								onMouseDown: () => {
-									console.log("item selected >> ", item);
-
-									selectItem(item);
-									closeMenu();
+									toggleSelection(item);
 								},
 							})}
 						>
