@@ -258,12 +258,16 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					)}
 
 					<div>
-						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}</h2>
-						<FilterTransactions
-							onSelect={(_, type) => setSelectedTransactionType(type)}
-							className="float-right mb-8"
-						/>
 						<>
+							<div className="relative flex justify-between">
+								<h2 className="mb-8 font-bold">
+									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
+								</h2>
+								<FilterTransactions
+									onSelect={(_, type) => setSelectedTransactionType(type)}
+									className="mt-2"
+								/>
+							</div>
 							<Tabs
 								className="mb-6"
 								activeId={activeTransactionModeTab}

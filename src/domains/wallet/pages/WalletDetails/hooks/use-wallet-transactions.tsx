@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (
 	wallet: ReadWriteWallet,
-	{ limit, mode = "all", transactionType }: { limit: number; mode?: string; transactionType?: any },
+	{ limit = 30, mode = "all", transactionType }: { limit: number; mode?: string; transactionType?: any },
 ) => {
 	const pendingMultiSignatureTransactions: SignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
@@ -41,7 +41,7 @@ export const useWalletTransactions = (
 
 			const method = methodMap[mode as keyof typeof methodMap];
 
-			const defaultQueryParams = { limit: 30, cursor };
+			const defaultQueryParams = { limit, cursor };
 			const queryParams = transactionType ? { ...defaultQueryParams, ...transactionType } : defaultQueryParams;
 			// @ts-ignore
 			const response = await wallet[method](queryParams);
