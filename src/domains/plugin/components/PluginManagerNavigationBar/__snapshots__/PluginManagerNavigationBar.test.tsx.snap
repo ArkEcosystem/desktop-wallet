@@ -3,7 +3,7 @@
 exports[`PluginManagerNavigationBar should render 1`] = `
 <DocumentFragment>
   <nav
-    class="sc-AxirZ hYzgoZ sticky md:top-24 top-20 bg-theme-neutral-contrast"
+    class="sc-AxirZ gJMdXQ sticky md:top-24 top-20 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
     data-testid="PluginManagerNavigationBar"
   >
     <div
@@ -17,7 +17,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
               data-testid="PluginManagerNavigationBar__home"
               title="Home"
             >
@@ -33,7 +33,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
               data-testid="PluginManagerNavigationBar__game"
               title="Game"
             >
@@ -41,7 +41,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 Game
               </span>
               <span
-                class="ml-1 text-theme-neutral"
+                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
               >
                 48
               </span>
@@ -54,7 +54,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
               data-testid="PluginManagerNavigationBar__utility"
               title="Utility"
             >
@@ -62,7 +62,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 Utility
               </span>
               <span
-                class="ml-1 text-theme-neutral"
+                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
               >
                 264
               </span>
@@ -75,7 +75,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
               data-testid="PluginManagerNavigationBar__themes"
               title="Themes"
             >
@@ -83,7 +83,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 Themes
               </span>
               <span
-                class="ml-1 text-theme-neutral"
+                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
               >
                 96
               </span>
@@ -96,7 +96,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
               data-testid="PluginManagerNavigationBar__other"
               title="Other"
             >
@@ -104,7 +104,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 Other
               </span>
               <span
-                class="ml-1 text-theme-neutral"
+                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
               >
                 27
               </span>
@@ -116,15 +116,15 @@ exports[`PluginManagerNavigationBar should render 1`] = `
         class="flex h-24"
       >
         <button
-          class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+          class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
           data-testid="PluginManagerNavigationBar__my-plugins"
           title="My Plugins"
         >
           <span>
-            MyPlugin
+            My Plugins
           </span>
           <span
-            class="ml-1 text-theme-neutral"
+            class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
           >
             8
           </span>
@@ -183,7 +183,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
 exports[`PluginManagerNavigationBar should update selected 1`] = `
 <DocumentFragment>
   <nav
-    class="sc-AxirZ hYzgoZ sticky md:top-24 top-20 bg-theme-neutral-contrast"
+    class="sc-AxirZ gJMdXQ sticky md:top-24 top-20 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
     data-testid="PluginManagerNavigationBar"
   >
     <div
@@ -197,7 +197,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
               data-testid="PluginManagerNavigationBar__home"
               title="Home"
             >
@@ -213,7 +213,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
               data-testid="PluginManagerNavigationBar__game"
               title="Game"
             >
@@ -221,7 +221,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 Game
               </span>
               <span
-                class="ml-1 text-theme-neutral"
+                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
               >
                 48
               </span>
@@ -234,7 +234,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
               data-testid="PluginManagerNavigationBar__utility"
               title="Utility"
             >
@@ -242,7 +242,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 Utility
               </span>
               <span
-                class="ml-1 text-theme-neutral"
+                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
               >
                 264
               </span>
@@ -255,7 +255,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
               data-testid="PluginManagerNavigationBar__themes"
               title="Themes"
             >
@@ -263,7 +263,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 Themes
               </span>
               <span
-                class="ml-1 text-theme-neutral"
+                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
               >
                 96
               </span>
@@ -276,7 +276,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
               data-testid="PluginManagerNavigationBar__other"
               title="Other"
             >
@@ -284,7 +284,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 Other
               </span>
               <span
-                class="ml-1 text-theme-neutral"
+                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
               >
                 27
               </span>
@@ -296,15 +296,15 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
         class="flex h-24"
       >
         <button
-          class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+          class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
           data-testid="PluginManagerNavigationBar__my-plugins"
           title="My Plugins"
         >
           <span>
-            MyPlugin
+            My Plugins
           </span>
           <span
-            class="ml-1 text-theme-neutral"
+            class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
           >
             8
           </span>
