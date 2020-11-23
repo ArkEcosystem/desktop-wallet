@@ -195,7 +195,7 @@ describe("Registration", () => {
 		const { container } = render(<Component />);
 
 		act(() => {
-			fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			fireEvent.focus(screen.getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
 		await waitFor(() => expect(screen.queryByText("MultiSignature")).not.toBeInTheDocument());
@@ -271,11 +271,11 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = rendered!;
 
 		await renderHookAct(async () => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-3")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Delegate")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-3"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Delegate"));
 
 			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
 			await waitFor(() =>
@@ -335,11 +335,11 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = rendered!;
 
 		await renderHookAct(async () => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-3")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Delegate")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-3"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Delegate"));
 
 			await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
 			await waitFor(() =>
@@ -359,24 +359,24 @@ describe("Registration", () => {
 	it("should select registration type & show form", async () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
-		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
-		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
+		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId(
+			"SelectRegistrationTypeInput__input",
+		);
+		expect(typeSelectInput).not.toHaveValue("Delegate");
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
+			await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Delegate")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
-			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Delegate"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(getByTestId("Registration__continue-button"));
 
 			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
-			await waitFor(() => expect(typeSelectInput).toHaveValue("delegateRegistration"));
+			await waitFor(() => expect(typeSelectInput).toHaveValue("Delegate"));
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
 	});
@@ -406,30 +406,32 @@ describe("Registration", () => {
 	});
 
 	it("should not have delegate option if wallet is a delegate", async () => {
-		const { asFragment, getByTestId, queryByText } = await renderPage(secondWallet);
+		const { asFragment, getByTestId } = await renderPage(secondWallet);
 
 		await act(async () => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
-		await waitFor(() => expect(queryByText("Business")).toBeInTheDocument());
-		await waitFor(() => expect(queryByText("Delegate")).not.toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Product")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Plugin")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Multisig")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should should go back and forth & correctly register fields", async () => {
+	it("should go back and forth & correctly register fields", async () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
-		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
-		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
+		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId(
+			"SelectRegistrationTypeInput__input",
+		);
+		expect(typeSelectInput).not.toHaveValue("Delegate");
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
+			await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Delegate")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
-			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Delegate"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
@@ -464,17 +466,17 @@ describe("Registration", () => {
 	it("should not unregister fields when going back to step 2 onwards", async () => {
 		const { asFragment, container, getByTestId } = await renderPage(wallet);
 
-		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
-		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
+		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId(
+			"SelectRegistrationTypeInput__input",
+		);
+		expect(typeSelectInput).not.toHaveValue("Delegate");
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
+			await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Delegate")).toBeTruthy());
 
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
-			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Delegate"));
 
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
@@ -513,17 +515,16 @@ describe("Registration", () => {
 	it("should register delegate", async () => {
 		const { asFragment, getByTestId, history } = await renderPage(wallet);
 
-		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId("select-list__input");
-		expect(typeSelectInput).not.toHaveValue("delegateRegistration");
+		const typeSelectInput = within(getByTestId("Registration__type")).getByTestId(
+			"SelectRegistrationTypeInput__input",
+		);
+		expect(typeSelectInput).not.toHaveValue("Delegate");
 
 		await act(async () => {
 			// Step 1
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Delegate" } });
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Delegate"));
-
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
-			await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("delegateRegistration"));
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
+			await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Delegate")).toBeTruthy());
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Delegate"));
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 			// Step 2
@@ -612,17 +613,15 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -644,17 +643,15 @@ describe("Registration", () => {
 		const { getByTestId, getAllByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -675,17 +672,15 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -707,17 +702,15 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -741,17 +734,15 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -773,17 +764,15 @@ describe("Registration", () => {
 		const { asFragment, getByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -848,17 +837,15 @@ describe("Registration", () => {
 		const { asFragment, getByTestId, getAllByTestId } = await renderPage(wallet);
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -1000,7 +987,7 @@ describe("Registration", () => {
 	}, 10000);
 
 	it("should successfully register entity", async () => {
-		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
+		const { getByTestId, queryAllByTestId } = await renderPage(secondWallet);
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
@@ -1009,17 +996,15 @@ describe("Registration", () => {
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -1138,17 +1123,15 @@ describe("Registration", () => {
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {
@@ -1259,17 +1242,15 @@ describe("Registration", () => {
 		await waitFor(() => expect(queryAllByTestId("Registration__type")).toHaveLength(1));
 
 		act(() => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), { target: { value: "Business" } });
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toHaveTextContent("Business"));
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
 
 		act(() => {
-			fireEvent.click(getByTestId("select-list__toggle-option-0"));
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__input")).toHaveValue("entityRegistration"));
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 		act(() => {

@@ -20,7 +20,7 @@ export const RegistrationTypeIcon = ({ displayName, iconName, iconSize, classNam
 	<Tooltip content={displayName} disabled={!showTooltip || !displayName}>
 		<Circle
 			aria-label={displayName}
-			data-testid={`NetworkIcon-${iconName}`}
+			data-testid={`RegistrationTypeIcon-${iconName}`}
 			className={
 				className
 					? className
