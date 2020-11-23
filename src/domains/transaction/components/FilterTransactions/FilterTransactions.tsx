@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 type FilterTransactionsProps = {
 	className?: string;
 	defaultSelected?: DropdownOption;
-	onSelect?: (selectedOption: DropdownOption) => void;
+	onSelect?: (selectedOption: DropdownOption, types: any) => void;
 };
 
 type FilterTransactionsToggleProps = {
@@ -32,7 +32,7 @@ const FilterTransactionsToggle = ({ selectedOption, isOpen }: FilterTransactions
 
 export const FilterTransactions = ({ className, onSelect, defaultSelected }: FilterTransactionsProps) => {
 	const { t } = useTranslation();
-	const { types, getLabel } = useTransactionTypes();
+	const { types, getLabel, getQueryParamsByType } = useTransactionTypes();
 
 	const allOptions: DropdownOptionGroup[] = [
 		{
@@ -43,7 +43,13 @@ export const FilterTransactions = ({ className, onSelect, defaultSelected }: Fil
 			key: "core",
 			title: t("TRANSACTION.CORE"),
 			hasDivider: true,
-			options: types.map((type) => ({ label: getLabel(type), value: type })),
+			options: types.core.map((type) => ({ label: getLabel(type), value: type })),
+		},
+		{
+			key: "magistrate",
+			title: t("TRANSACTION.MAGISTRATE"),
+			hasDivider: true,
+			options: types.magistrate.map((type) => ({ label: getLabel(type), value: type })),
 		},
 	];
 
@@ -51,7 +57,7 @@ export const FilterTransactions = ({ className, onSelect, defaultSelected }: Fil
 
 	const handleSelect = (selectedOption: DropdownOption) => {
 		setSelectedOption(selectedOption);
-		onSelect?.(selectedOption);
+		onSelect?.(selectedOption, getQueryParamsByType(String(selectedOption.value)));
 	};
 	return (
 		<div className={className} data-testid="FilterTransactions">
