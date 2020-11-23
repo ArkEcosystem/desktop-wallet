@@ -173,7 +173,7 @@ describe("News", () => {
 		}
 
 		act(() => {
-			fireEvent.click(getByTestId("network__option--0"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 		});
 
 		act(() => {

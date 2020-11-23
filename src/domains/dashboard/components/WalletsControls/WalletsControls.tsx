@@ -7,23 +7,25 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type WalletsControlsProps = {
+	activeFilter?: boolean;
 	filterProperties?: FilterWalletsProps;
+	viewType: "grid" | "list";
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onImportLedgerWallet?: () => void;
 	onSelectGridView?: any;
 	onSelectListView?: any;
-	viewType: "grid" | "list";
 };
 
 export const WalletsControls = ({
+	activeFilter,
 	filterProperties,
+	viewType,
 	onCreateWallet,
 	onImportWallet,
 	onImportLedgerWallet,
 	onSelectGridView,
 	onSelectListView,
-	viewType,
 }: WalletsControlsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 
@@ -58,7 +60,7 @@ export const WalletsControls = ({
 					dropdownClass="transform -translate-y-4"
 					toggleContent={
 						<div className="group">
-							<ControlButton>
+							<ControlButton isActive={activeFilter}>
 								<Icon name="Filters" width={20} height={20} />
 							</ControlButton>
 						</div>
@@ -97,5 +99,6 @@ export const WalletsControls = ({
 };
 
 WalletsControls.defaultProps = {
+	activeFilter: false,
 	viewType: "grid",
 };

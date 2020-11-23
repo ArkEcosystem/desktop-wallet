@@ -314,8 +314,10 @@ describe("Dashboard", () => {
 			const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
 			fireEvent.click(toggle);
 
-			await waitFor(() => expect(getByTestId("network__option--0")).toBeTruthy());
-			fireEvent.click(getByTestId("network__option--0"));
+			await waitFor(() =>
+				expect(within(getAllByTestId("FilterNetwork")[0]).getByTestId("NetworkOption__ARK")).toBeTruthy(),
+			);
+			fireEvent.click(within(getAllByTestId("FilterNetwork")[0]).getByTestId("NetworkOption__ARK"));
 
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 
@@ -328,8 +330,10 @@ describe("Dashboard", () => {
 
 			fireEvent.click(toggle);
 
-			await waitFor(() => expect(getByTestId("network__option--0")).toBeTruthy());
-			fireEvent.click(getByTestId("network__option--0"));
+			await waitFor(() =>
+				expect(within(getAllByTestId("FilterNetwork")[0]).getByTestId("NetworkOption__ARK")).toBeTruthy(),
+			);
+			fireEvent.click(within(getAllByTestId("FilterNetwork")[0]).getByTestId("NetworkOption__ARK"));
 		});
 	});
 

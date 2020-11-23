@@ -10,8 +10,6 @@ const AnchorStyled = styled.a<{ isExternal: boolean }>`
 	${({ isExternal }) =>
 		isExternal &&
 		`
-		text-decoration: underline;
-		text-decoration-style: dotted;
 		&:active {
 			text-decoration-style: dotted;
 		}

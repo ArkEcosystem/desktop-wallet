@@ -9,13 +9,10 @@ createFixture(`Create Profile action`);
 
 const nameInput = Selector("input[name=name]");
 
-test("should return an error when submit without required fields", async (t) => {
+test("should show button disabled if required fields are not filled", async (t) => {
 	await t.click(Selector("button").withExactText(translations.PROFILE.CREATE_PROFILE));
 
-	await t.click(Selector("button").withExactText(translations.COMMON.CREATE));
-	await t.click(Selector("fieldset p").withText("'Name' is required"));
-	await t.click(Selector("fieldset p").withText("'Currency' is required"));
-	await t.click(Selector("h1").withExactText(translations.PROFILE.PAGE_CREATE_PROFILE.TITLE));
+	t.expect(Selector('[data-testid="CreateProfile__submit-button"]').hasAttribute("disabled"));
 });
 
 test("should create a profile and navigate to welcome screen", async (t) => {
@@ -44,6 +41,7 @@ test("should create a profile with password and navigate to welcome screen", asy
 
 	await t.typeText(nameInput, "Joe Bloggs");
 	await t.typeText(Selector("input[name=password]"), "password");
+	await t.typeText(Selector("input[name=confirmPassword]"), "password");
 	await t.click('[data-testid="SelectDropdownInput__input"]');
 	await t.click('[data-testid="select-list__toggle-option-0"]');
 	await t.click(Selector("input[name=isDarkMode]").parent());

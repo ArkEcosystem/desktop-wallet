@@ -219,7 +219,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
@@ -424,7 +424,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
 
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io"
@@ -466,7 +466,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex flex-col space-y-5 text-theme-background"
                     >
                       <a
-                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://blockfolio.com/"
@@ -489,7 +489,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex mt-12 space-x-2"
                     >
                       <a
-                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
@@ -501,7 +501,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         </svg>
                       </a>
                       <a
-                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
@@ -683,14 +683,16 @@ exports[`News should filter results based on category query and asset 1`] = `
                     <div
                       class="pb-4"
                     >
-                      <div>
+                      <div
+                        data-testid="FilterNetwork"
+                      >
                         <ul
                           class="inline-block"
-                          data-testid="network__option"
+                          data-testid="NetworkOptions"
                         >
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--0"
+                            data-testid="NetworkOption__ARK"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-success-500 text-theme-success-500"
@@ -722,7 +724,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--1"
+                            data-testid="NetworkOption__ETH"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -745,7 +747,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--2"
+                            data-testid="NetworkOption__BTC"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -768,7 +770,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--3"
+                            data-testid="NetworkOption__LSK"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -1031,7 +1033,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
@@ -1235,7 +1237,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       >
                         Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
                         <a
-                          class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461"
@@ -1277,7 +1279,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex flex-col space-y-5 text-theme-background"
                     >
                       <a
-                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://blockfolio.com/"
@@ -1300,7 +1302,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex mt-12 space-x-2"
                     >
                       <a
-                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
@@ -1312,7 +1314,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         </svg>
                       </a>
                       <a
-                        class="sc-fznyAO oXcxU inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
@@ -1559,14 +1561,16 @@ exports[`News should filter results based on category query and asset 2`] = `
                     <div
                       class="pb-4"
                     >
-                      <div>
+                      <div
+                        data-testid="FilterNetwork"
+                      >
                         <ul
                           class="inline-block"
-                          data-testid="network__option"
+                          data-testid="NetworkOptions"
                         >
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--0"
+                            data-testid="NetworkOption__ARK"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-success-500 text-theme-success-500"
@@ -1598,7 +1602,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--1"
+                            data-testid="NetworkOption__ETH"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -1621,7 +1625,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--2"
+                            data-testid="NetworkOption__BTC"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
@@ -1644,7 +1648,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </li>
                           <li
                             class="inline-block mr-5 cursor-pointer"
-                            data-testid="network__option--3"
+                            data-testid="NetworkOption__LSK"
                           >
                             <div
                               class="sc-AxhUy iDenJW relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"

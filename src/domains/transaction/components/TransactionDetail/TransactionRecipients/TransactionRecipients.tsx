@@ -5,14 +5,14 @@ import { RecipientList } from "domains/transaction/components/RecipientList";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
 
 type TransactionRecipientsProps = {
 	currency: string;
 	recipients: { address: string; alias?: string; amount?: BigNumber }[];
-};
+} & TransactionDetailProps;
 
-export const TransactionRecipients = ({ currency, recipients }: TransactionRecipientsProps) => {
+export const TransactionRecipients = ({ currency, recipients, ...props }: TransactionRecipientsProps) => {
 	const { t } = useTranslation();
 
 	if (!recipients.length) {
@@ -20,7 +20,7 @@ export const TransactionRecipients = ({ currency, recipients }: TransactionRecip
 	}
 
 	return recipients.length > 1 ? (
-		<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })}>
+		<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })} {...props}>
 			<div className="-my-2">
 				<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
 			</div>
@@ -29,6 +29,7 @@ export const TransactionRecipients = ({ currency, recipients }: TransactionRecip
 		<TransactionDetail
 			label={t("TRANSACTION.RECIPIENT")}
 			extra={<Avatar size="lg" address={recipients[0].address} />}
+			{...props}
 		>
 			<Address
 				address={recipients[0].address}

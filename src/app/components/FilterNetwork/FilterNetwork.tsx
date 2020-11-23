@@ -1,60 +1,18 @@
-import { Badge } from "app/components/Badge";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
-import { Tooltip } from "app/components/Tooltip";
-import React, { useEffect, useState } from "react";
+import { Checkbox } from "app/components/Checkbox";
+import React, { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-type Network = {
-	id?: string;
-	name: string;
-	isSelected: boolean;
-	coin: string;
-};
+import { FilterNetworkProps, Network, NetworkOptions, ToggleAllOption } from "./";
 
-type NetworkProps = {
-	networks: Network[];
-	onChange?: (network: Network, networks: Network[]) => void;
-	onViewAll?: any;
-	hideViewAll?: boolean;
-};
-
-const renderNetworks = (networks: Network[], onClick: any) => (
-	<ul data-testid="network__option" className="inline-block">
-		{networks.map((network: Network, key: number) => (
-			<li
-				className="inline-block mr-5 cursor-pointer"
-				key={key}
-				data-testid={`network__option--${key}`}
-				onClick={() => onClick(network, key)}
-			>
-				<Tooltip content={network.name}>
-					{network.isSelected ? (
-						<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">
-							<Icon name={network.coin} width={20} height={20} />
-							<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
-						</Circle>
-					) : (
-						<Circle
-							size="lg"
-							className="relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
-						>
-							<Icon name={network.coin} width={20} height={20} />
-							<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
-						</Circle>
-					)}
-				</Tooltip>
-			</li>
-		))}
-	</ul>
-);
-
-export const FilterNetwork = ({ networks, onChange, onViewAll, hideViewAll }: NetworkProps) => {
+export const FilterNetwork = ({ networks = [], onChange, onViewAll, hideViewAll, title }: FilterNetworkProps) => {
 	const [networkList, setNetworkList] = useState(networks);
+	const [showAll, setShowAll] = useState(false);
+	const { t } = useTranslation();
 
 	useEffect(() => setNetworkList(networks), [networks]);
 
 	const handleClick = (network: Network, index: number) => {
-		const list = networkList.concat();
+		const list = networkList?.concat();
 
 		network.isSelected = !network.isSelected;
 		list.splice(index, 1, network);
@@ -63,32 +21,77 @@ export const FilterNetwork = ({ networks, onChange, onViewAll, hideViewAll }: Ne
 		onChange?.(network, list);
 	};
 
-	return (
-		<div>
-			{renderNetworks(networkList, handleClick)}
+	const handleToggleAll = () => {
+		const shouldViewAll = !showAll;
+		setShowAll(shouldViewAll);
+		if (shouldViewAll) onViewAll?.();
+	};
 
-			{!hideViewAll && (
-				<Circle
-					size="lg"
-					data-testid="network__viewall"
-					className="relative cursor-pointer border-theme-primary-contrast"
-					onClick={onViewAll}
-				>
-					<div className="text-sm font-semibold text-theme-primary-500">All</div>
-					<Badge
-						className="border-theme-primary-contrast text-theme-primary-500"
-						icon="ChevronDown"
-						iconWidth={10}
-						iconHeight={10}
-					/>
-				</Circle>
+	const handleSelectAll = (checked: any) => {
+		const shouldSelectAll = checked && !networkList.every((n) => n.isSelected);
+		const allSelected = networkList.concat().map((n) => ({ ...n, isSelected: shouldSelectAll }));
+		onChange?.(allSelected[0], allSelected);
+	};
+
+	return (
+		<div data-testid="FilterNetwork">
+			{title && <div className="mb-2 text-sm font-bold text-theme-neutral-400">{title}</div>}
+
+			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
+
+			<NetworkOptions networks={networkList} onClick={handleClick} />
+
+			{showAll && networkList.length > 1 && (
+				<div className="mt-4 cursor-pointer text-theme-secondary-text">
+					<label>
+						<Checkbox
+							data-testid="FilterNetwork__select-all-checkbox"
+							className="mr-2"
+							checked={networkList.every((n) => n.isSelected)}
+							onChange={handleSelectAll}
+						/>
+						{t("COMMON.SELECT_ALL")}
+					</label>
+				</div>
 			)}
 		</div>
 	);
 };
 
-FilterNetwork.defaultProps = {
-	isSelected: false,
-	networks: [],
-	hideViewAll: false,
+export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) => {
+	const { t } = useTranslation();
+
+	const { liveNetworks, testNetworks } = useMemo(
+		() => ({
+			liveNetworks: networks.filter((n) => n.isLive),
+			testNetworks: networks.filter((n) => !n.isLive),
+		}),
+		[networks],
+	);
+
+	return (
+		<div className="space-y-6">
+			{liveNetworks.length > 0 && (
+				<FilterNetwork
+					{...props}
+					title={t("COMMON.PUBLIC_NETWORK")}
+					networks={liveNetworks}
+					onChange={(_, updated) => props.onChange?.(_, [...updated, ...testNetworks])}
+				/>
+			)}
+			{props.useTestNetworks && testNetworks.length > 0 && (
+				<FilterNetwork
+					{...props}
+					title={t("COMMON.DEVELOPMENT_NETWORK")}
+					className="mt-6"
+					networks={testNetworks}
+					onChange={(_, updated) => props.onChange?.(_, [...updated, ...liveNetworks])}
+				/>
+			)}
+		</div>
+	);
+};
+
+FilterNetworks.defaultProps = {
+	hideViewAll: true,
 };
