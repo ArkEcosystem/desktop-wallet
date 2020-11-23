@@ -5,6 +5,7 @@ import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
+import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
@@ -12,6 +13,7 @@ import { TransactionDetailModal } from "domains/transaction/components/Transacti
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
+import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
@@ -29,6 +31,7 @@ type WalletDetailsProps = {
 };
 
 export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletDetailsProps) => {
+	const [isReceiveFunds, setIsReceiveFunds] = useState(false);
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
@@ -46,6 +49,8 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
+
 	const {
 		pendingMultiSignatureTransactions,
 		transactions,
@@ -53,7 +58,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		fetchMore,
 		isLoading: isLoadingTransactions,
 		hasMore,
-	} = useWalletTransactions(activeWallet, { limit: transactionLimit! });
+	} = useWalletTransactions(activeWallet, { limit: transactionLimit!, mode: activeTransactionModeTab });
 
 	const walletVotes = () => {
 		// Being synced in background and will be updated after persisting
@@ -94,7 +99,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 
 	useEffect(() => {
 		const fetchAllData = async () => {
-			setIsLoading(true);
 			await fetchInit();
 			setIsLoading(false);
 		};
@@ -165,10 +169,23 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					network={networkId}
 					publicKey={activeWallet.publicKey()}
 					ticker={ticker}
+					showMultiSignatureOption={activeWallet.network().can("Transaction.multiSignature")}
+					showSecondSignatureOption={activeWallet.network().can("Transaction.secondSignature")}
 					showSignMessageOption={activeWallet.network().can("Message.sign")}
 					showStoreHashOption={activeWallet.network().can("Transaction.ipfs")}
 					showVerifyMessageOption={activeWallet.network().can("Message.verify")}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
+					onMultiSignature={() =>
+						history.push(
+							`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/multiSignature/send-entity-registration`,
+						)
+					}
+					onReceiveFunds={() => setIsReceiveFunds(true)}
+					onSecondSignature={() =>
+						history.push(
+							`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/secondSignature/send-entity-registration`,
+						)
+					}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
 					}
@@ -237,11 +254,23 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}</h2>
 						<>
+							<Tabs
+								className="mb-6"
+								activeId={activeTransactionModeTab}
+								onChange={(id) => setActiveTransactionModeTab(id as string)}
+							>
+								<TabList className="w-full">
+									<Tab tabId="all">{t("TRANSACTION.ALL_HISTORY")}</Tab>
+									<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
+									<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
+								</TabList>
+							</Tabs>
+
 							<TransactionTable
 								transactions={transactions}
 								exchangeCurrency={exchangeCurrency}
-								hideHeader={!isLoading && transactions.length === 0}
-								isLoading={isLoading}
+								hideHeader={!isLoadingTransactions && transactions.length === 0}
+								isLoading={isLoadingTransactions}
 								skeletonRowsLimit={txSkeletonRowsLimit}
 								onRowClick={(row) => setTransactionModalItem(row)}
 							/>
@@ -268,6 +297,15 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 			</Page>
 
 			{wallets && wallets.length > 1 && <WalletBottomSheetMenu wallets={wallets} />}
+
+			<ReceiveFunds
+				isOpen={isReceiveFunds}
+				address={activeWallet.address()}
+				icon={activeWallet.coinId()}
+				name={activeWallet.alias()}
+				network={activeWallet.networkId()}
+				onClose={() => setIsReceiveFunds(false)}
+			/>
 
 			<UpdateWalletName
 				wallet={activeWallet}

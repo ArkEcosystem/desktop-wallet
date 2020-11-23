@@ -10,13 +10,16 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
+import { TransferLedgerReview } from "./LedgerReview";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -135,10 +138,12 @@ export const SendTransfer = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			console.error("Could not create transaction: ", error);
+			if (isMnemonicError(error)) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
 
-			setValue("mnemonic", "");
-			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			setActiveTab(5);
 		}
 	};
 
@@ -201,49 +206,69 @@ export const SendTransfer = () => {
 							</TabPanel>
 
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={wallet!} />
+								<AuthenticationStep
+									wallet={wallet!}
+									ledgerDetails={<TransferLedgerReview wallet={wallet!} />}
+								/>
 							</TabPanel>
 
 							<TabPanel tabId={4}>
 								<SummaryStep transaction={transaction} senderWallet={wallet!} />
 							</TabPanel>
 
+							<TabPanel tabId={5}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={formState.isSubmitting}
+									onRepeat={form.handleSubmit(submitForm)}
+								/>
+							</TabPanel>
+
 							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 4 && (
 									<>
-										<Button
-											disabled={activeTab === 1}
-											data-testid="SendTransfer__button--back"
-											variant="plain"
-											onClick={handleBack}
-										>
-											{t("COMMON.BACK")}
-										</Button>
-
 										{activeTab < 3 && (
-											<Button
-												data-testid="SendTransfer__button--continue"
-												disabled={!isValid || isSubmitting}
-												onClick={handleNext}
-											>
-												{isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
-											</Button>
+											<>
+												<Button
+													disabled={activeTab === 1}
+													data-testid="SendTransfer__button--back"
+													variant="plain"
+													onClick={handleBack}
+												>
+													{t("COMMON.BACK")}
+												</Button>
+												<Button
+													data-testid="SendTransfer__button--continue"
+													disabled={!isValid || isSubmitting}
+													onClick={handleNext}
+												>
+													{isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
+												</Button>
+											</>
 										)}
 
-										{activeTab === 3 && (
-											<Button
-												type="submit"
-												data-testid="SendTransfer__button--submit"
-												disabled={!isValid || isSubmitting}
-												className="space-x-2"
-											>
-												<Icon name="Send" width={20} height={20} />
-												{isSubmitting && !wallet?.isLedger() ? (
-													<Spinner size="sm" />
-												) : (
-													<span>{t("COMMON.SEND")}</span>
-												)}
-											</Button>
+										{activeTab === 3 && !wallet?.isLedger() && (
+											<>
+												<Button
+													data-testid="SendTransfer__button--back"
+													variant="plain"
+													onClick={handleBack}
+												>
+													{t("COMMON.BACK")}
+												</Button>
+
+												<Button
+													type="submit"
+													data-testid="SendTransfer__button--submit"
+													disabled={!isValid || isSubmitting}
+													className="space-x-2"
+												>
+													<Icon name="Send" width={20} height={20} />
+													{isSubmitting ? <Spinner size="sm" /> : t("COMMON.SEND")}
+												</Button>
+											</>
 										)}
 									</>
 								)}

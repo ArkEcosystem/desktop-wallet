@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
@@ -48,8 +49,6 @@ describe("ImportWallet", () => {
 
 	beforeEach(() => {
 		profile = env.profiles().findById(fixtureProfileId);
-		profile.data().set(ProfileSetting.ExchangeCurrency, "BTC");
-		profile.data().set(ProfileSetting.MarketProvider, "cryptocompare");
 
 		const walletId = profile.wallets().findByAddress(randomAddress)?.id();
 
@@ -161,13 +160,19 @@ describe("ImportWallet", () => {
 					network: {
 						id: () => "ark.devnet",
 						coin: () => "ARK",
+						ticker: () => "DARK",
 					},
 				},
 			}),
 		);
 		const { getByTestId, getByText, asFragment } = render(
 			<FormProvider {...form.current}>
-				<ThirdStep address={identityAddress} nameMaxLength={42} />
+				<ThirdStep
+					address={identityAddress}
+					balance={BigNumber.make(80)}
+					nameMaxLength={42}
+					profile={profile}
+				/>
 			</FormProvider>,
 		);
 
@@ -297,7 +302,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -309,8 +314,6 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy();
 			});
 		});
-
-		await waitFor(() => expect(profile.wallets().last()?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should import by address", async () => {
@@ -381,7 +384,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -393,8 +396,6 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 			});
 		});
-
-		await waitFor(() => expect(profile.wallets().findByAddress(randomAddress)?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should import by address and fill a wallet name", async () => {
@@ -483,7 +484,7 @@ describe("ImportWallet", () => {
 
 			await fireEvent.input(walletNameInput, { target: { value: "Test" } });
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -497,8 +498,6 @@ describe("ImportWallet", () => {
 
 			networkMock.mockRestore();
 		});
-
-		await waitFor(() => expect(profile.wallets().findByAddress(randomAddress)?.exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should show an error message for invalid address", async () => {
@@ -714,7 +713,7 @@ describe("ImportWallet", () => {
 
 			await fireEvent.input(walletNameInput, { target: { value: profile.wallets().first().alias() } });
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
@@ -793,7 +792,7 @@ describe("ImportWallet", () => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			});
 
-			const submitButton = getByTestId("ImportWallet__gotowallet-button");
+			const submitButton = getByTestId("ImportWallet__save-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -805,8 +804,6 @@ describe("ImportWallet", () => {
 				expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 			});
 		});
-
-		await waitFor(() => expect(profile.wallets().first().exchangeCurrency()).toBe("BTC"));
 	});
 
 	it("should render as ledger import", async () => {

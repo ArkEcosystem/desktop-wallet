@@ -1,9 +1,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
-import { Tooltip } from "app/components/Tooltip";
 import { useEnvironmentContext } from "app/contexts";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
@@ -123,15 +121,6 @@ export const Welcome = () => {
 						)}
 
 						<div className="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row">
-							<Tooltip content={t("COMMON.COMING_SOON")}>
-								<div>
-									<Button disabled>
-										<Icon name="Msq" width={20} height={20} />
-										<span className="ml-2">{t("PROFILE.SIGN_IN")}</span>
-									</Button>
-								</div>
-							</Tooltip>
-
 							<Button
 								variant="plain"
 								className="mt-2 md:mt-0"

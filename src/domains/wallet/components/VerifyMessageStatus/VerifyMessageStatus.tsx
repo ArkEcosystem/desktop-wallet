@@ -1,4 +1,4 @@
-import { images } from "app/assets/images";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import React from "react";
 
@@ -11,12 +11,11 @@ type Props = {
 };
 
 export const VerifyMessageStatus = ({ title, description, type, isOpen, onClose }: Props) => {
-	const { ConfirmedBanner, MistakeBanner } = images.common;
-	const StatusInfo = type === "success" ? ConfirmedBanner : MistakeBanner;
+	const image = type === "success" ? "ConfirmedBanner" : "MistakeBanner";
 
 	return (
 		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose}>
-			<StatusInfo className="w-full mt-8" />
+			<Image name={image} className="w-full mt-8" />
 		</Modal>
 	);
 };

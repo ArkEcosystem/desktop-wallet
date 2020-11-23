@@ -1,16 +1,14 @@
-import { images } from "app/assets/images";
+import { Image } from "app/components/Image";
 import { Spinner } from "app/components/Spinner";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const { ConfirmTransactionLedgerBanner } = images.transaction.common;
-
-export const LedgerConfirmation = () => {
+export const LedgerConfirmation = ({ children }: { children?: React.ReactNode }) => {
 	const { t } = useTranslation();
 
 	return (
 		<>
-			<ConfirmTransactionLedgerBanner className="my-8" />
+			<Image name="ConfirmTransactionLedgerBanner" domain="transaction" className="my-8" />
 			<div className="mt-8 text-center text-theme-secondary-text" data-testid="LedgerConfirmation-description">
 				{t("TRANSACTION.LEDGER_CONFIRMATION.DESCRIPTION")}
 			</div>
@@ -20,6 +18,7 @@ export const LedgerConfirmation = () => {
 					{t("TRANSACTION.LEDGER_CONFIRMATION.LOADING_MESSAGE")}
 				</span>
 			</div>
+			{children}
 		</>
 	);
 };

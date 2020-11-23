@@ -32,8 +32,8 @@ const defaultFormValues = {
 	onDownload: jest.fn(),
 };
 
+const history = createMemoryHistory();
 const renderPage = (url?: string | undefined) => {
-	const history = createMemoryHistory();
 	const transactionId = "df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da";
 	const updateRegistrationURL =
 		url ||
@@ -474,7 +474,7 @@ describe("SendEntityUpdate", () => {
 	});
 
 	it("should show loading toast when submitting send transaction", async () => {
-		const { asFragment, getByTestId, queryByTestId } = renderPage();
+		const { getByTestId, queryByTestId } = renderPage();
 		const loadingToastMock = jest.spyOn(toast, "info");
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
@@ -628,7 +628,6 @@ describe("SendEntityUpdate", () => {
 
 	it("should show broadcast error", async () => {
 		const { getByTestId } = renderPage();
-		const errorToastMock = jest.spyOn(toast, "error");
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -665,10 +664,66 @@ describe("SendEntityUpdate", () => {
 
 		await waitFor(() => expect(signMock).toHaveBeenCalled());
 		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
-		await waitFor(() => expect(errorToastMock).toHaveBeenCalled());
+		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
 
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
-		errorToastMock.mockRestore();
+	});
+
+	it("should show broadcast error and go back", async () => {
+		const { getByTestId, history: pageHistory } = renderPage();
+		const historyMock = jest.spyOn(pageHistory, "push").mockReturnValue();
+		const memoryHistoryMock = jest.spyOn(history, "push").mockReturnValue();
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__display-name")).toHaveValue(
+				BusinessTransactionsFixture.asset.data.name,
+			),
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+		await act(async () => {
+			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
+		});
+
+		act(() => {
+			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		});
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
+			Promise.resolve({
+				errors: { [EntityUpdateTransactionFixture.data.id]: ["broadcast error"] },
+				rejected: [EntityUpdateTransactionFixture.data.id],
+				accepted: [],
+			}),
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
+		});
+
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+		});
+
+		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
+		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+		await waitFor(() => expect(memoryHistoryMock).toHaveBeenCalledWith(walletDetailPage));
+
+		historyMock.mockRestore();
+		memoryHistoryMock.mockRestore();
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
 	});
 });

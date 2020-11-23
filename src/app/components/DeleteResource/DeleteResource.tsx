@@ -1,6 +1,6 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -14,8 +14,6 @@ type DeleteResourceProps = {
 	onCancel?: any;
 	onDelete: any;
 };
-
-const DeleteBanner = images.common.DeleteBanner;
 
 export const DeleteResource = ({
 	isOpen,
@@ -31,7 +29,7 @@ export const DeleteResource = ({
 	return (
 		<Modal
 			title={title}
-			image={<DeleteBanner className="w-64 mx-auto my-8" />}
+			image={<Image name="DeleteBanner" className="w-64 mx-auto my-8" />}
 			description={description}
 			size="lg"
 			isOpen={isOpen}

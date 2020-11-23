@@ -10,13 +10,16 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
+import { VoteLedgerReview } from "./LedgerReview";
 
 export const SendVote = () => {
 	const { t } = useTranslation();
@@ -230,10 +233,12 @@ export const SendVote = () => {
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
 		} catch (error) {
-			console.error("Could not vote: ", error);
+			if (isMnemonicError(error)) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
 
-			setValue("mnemonic", "");
-			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			setActiveTab(5);
 		}
 	};
 
@@ -262,7 +267,17 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={activeWallet} />
+								<AuthenticationStep
+									wallet={activeWallet}
+									ledgerDetails={
+										<VoteLedgerReview
+											wallet={activeWallet}
+											votes={votes}
+											unvotes={unvotes}
+											fee={getValues("fee")}
+										/>
+									}
+								/>
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<SummaryStep
@@ -273,42 +288,67 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 
+							<TabPanel tabId={5}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={formState.isSubmitting}
+									onRepeat={form.handleSubmit(submitForm)}
+								/>
+							</TabPanel>
+
 							<div className="flex justify-end mt-10 space-x-3">
 								{activeTab < 4 && (
 									<>
-										<Button
-											disabled={activeTab === 3 ? formState.isSubmitting : false}
-											variant="plain"
-											onClick={handleBack}
-											data-testid="SendVote__button--back"
-										>
-											{t("COMMON.BACK")}
-										</Button>
-
 										{activeTab < 3 && (
-											<Button
-												disabled={!formState.isValid || formState.isSubmitting}
-												onClick={handleNext}
-												data-testid="SendVote__button--continue"
-											>
-												{formState.isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
-											</Button>
+											<>
+												<Button
+													disabled={formState.isSubmitting}
+													variant="plain"
+													onClick={handleBack}
+													data-testid="SendVote__button--back"
+												>
+													{t("COMMON.BACK")}
+												</Button>
+												<Button
+													disabled={!formState.isValid || formState.isSubmitting}
+													onClick={handleNext}
+													data-testid="SendVote__button--continue"
+												>
+													{formState.isSubmitting ? (
+														<Spinner size="sm" />
+													) : (
+														t("COMMON.CONTINUE")
+													)}
+												</Button>
+											</>
 										)}
 
-										{activeTab === 3 && (
-											<Button
-												type="submit"
-												data-testid="SendVote__button--submit"
-												disabled={!formState.isValid || formState.isSubmitting}
-												className="space-x-2"
-											>
-												<Icon name="Send" width={20} height={20} />
-												{formState.isSubmitting ? (
-													<Spinner size="sm" />
-												) : (
-													<span>{t("COMMON.SEND")}</span>
-												)}
-											</Button>
+										{activeTab === 3 && !activeWallet.isLedger() && (
+											<>
+												<Button
+													disabled={formState.isSubmitting}
+													variant="plain"
+													onClick={handleBack}
+													data-testid="SendVote__button--back"
+												>
+													{t("COMMON.BACK")}
+												</Button>
+												<Button
+													type="submit"
+													data-testid="SendVote__button--submit"
+													disabled={!formState.isValid || formState.isSubmitting}
+													className="space-x-2"
+												>
+													<Icon name="Send" width={20} height={20} />
+													{formState.isSubmitting ? (
+														<Spinner size="sm" />
+													) : (
+														<span>{t("COMMON.SEND")}</span>
+													)}
+												</Button>
+											</>
 										)}
 									</>
 								)}

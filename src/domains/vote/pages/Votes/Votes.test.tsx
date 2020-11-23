@@ -106,7 +106,7 @@ describe("Votes", () => {
 			fireEvent.click(within(getByTestId("Votes__FilterWallets")).getByTestId("dropdown__toggle"));
 		});
 
-		const toggle = getByTestId("network__option--0");
+		const toggle = getByTestId("NetworkOption__ARK");
 
 		await waitFor(() => expect(toggle).toBeTruthy());
 		fireEvent.click(toggle);

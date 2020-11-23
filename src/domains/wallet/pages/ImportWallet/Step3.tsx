@@ -1,6 +1,8 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
+import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -12,10 +14,12 @@ import { useTranslation } from "react-i18next";
 
 export const ThirdStep = ({
 	address,
+	balance,
 	nameMaxLength,
 	profile,
 }: {
 	address: string;
+	balance: BigNumber;
 	nameMaxLength: number;
 	profile: Profile;
 }) => {
@@ -45,6 +49,10 @@ export const ThirdStep = ({
 					<Address address={address} maxChars={0} />
 				</TransactionDetail>
 			</div>
+
+			<TransactionDetail label={t("COMMON.BALANCE")} borderPosition="bottom" paddingPosition="bottom">
+				<Amount value={balance} ticker={network.ticker()} />
+			</TransactionDetail>
 
 			<FormField name="name">
 				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} optional />

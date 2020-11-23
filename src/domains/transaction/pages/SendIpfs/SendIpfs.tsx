@@ -9,13 +9,16 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useClipboard, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
+import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { useTransactionBuilder } from "domains/transaction/hooks/use-transaction-builder";
+import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
+import { IpfsLedgerReview } from "./LedgerReview";
 
 export const SendIpfs = () => {
 	const { t } = useTranslation();
@@ -84,10 +87,12 @@ export const SendIpfs = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			console.error("Could not create transaction: ", error);
+			if (isMnemonicError(error)) {
+				setValue("mnemonic", "");
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
 
-			setValue("mnemonic", "");
-			setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			setActiveTab(5);
 		}
 	};
 
@@ -142,46 +147,80 @@ export const SendIpfs = () => {
 								<ReviewStep wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<AuthenticationStep wallet={activeWallet} />
+								<AuthenticationStep
+									wallet={activeWallet}
+									ledgerDetails={
+										<IpfsLedgerReview
+											wallet={activeWallet}
+											fee={getValues("fee")}
+											hash={getValues("hash")}
+										/>
+									}
+								/>
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
 
+							<TabPanel tabId={5}>
+								<ErrorStep
+									onBack={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									isRepeatDisabled={formState.isSubmitting}
+									onRepeat={form.handleSubmit(submitForm)}
+								/>
+							</TabPanel>
+
 							<div className="flex justify-end mt-10 space-x-2">
 								{activeTab < 4 && (
 									<>
-										<Button
-											disabled={activeTab === 1}
-											data-testid="SendIpfs__button--back"
-											variant="plain"
-											onClick={handleBack}
-										>
-											{t("COMMON.BACK")}
-										</Button>
-
 										{activeTab < 3 && (
-											<Button
-												data-testid="SendIpfs__button--continue"
-												disabled={!formState.isValid || formState.isSubmitting}
-												onClick={handleNext}
-											>
-												{formState.isSubmitting ? <Spinner size="sm" /> : t("COMMON.CONTINUE")}
-											</Button>
+											<>
+												<Button
+													disabled={activeTab === 1}
+													data-testid="SendIpfs__button--back"
+													variant="plain"
+													onClick={handleBack}
+												>
+													{t("COMMON.BACK")}
+												</Button>
+												<Button
+													data-testid="SendIpfs__button--continue"
+													disabled={!formState.isValid || formState.isSubmitting}
+													onClick={handleNext}
+												>
+													{formState.isSubmitting ? (
+														<Spinner size="sm" />
+													) : (
+														t("COMMON.CONTINUE")
+													)}
+												</Button>
+											</>
 										)}
 
-										{activeTab === 3 && (
-											<Button
-												type="submit"
-												data-testid="SendIpfs__button--submit"
-												disabled={!formState.isValid || formState.isSubmitting}
-											>
-												{formState.isSubmitting ? (
-													<Spinner size="sm" />
-												) : (
-													t("TRANSACTION.SIGN_CONTINUE")
-												)}
-											</Button>
+										{activeTab === 3 && !activeWallet.isLedger() && (
+											<>
+												<Button
+													data-testid="SendIpfs__button--back"
+													variant="plain"
+													onClick={handleBack}
+												>
+													{t("COMMON.BACK")}
+												</Button>
+
+												<Button
+													type="submit"
+													data-testid="SendIpfs__button--submit"
+													disabled={!formState.isValid || formState.isSubmitting}
+												>
+													{formState.isSubmitting ? (
+														<Spinner size="sm" />
+													) : (
+														t("TRANSACTION.SIGN_CONTINUE")
+													)}
+												</Button>
+											</>
 										)}
 									</>
 								)}

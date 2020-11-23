@@ -4,6 +4,7 @@ export const translations: { [key: string]: any } = {
 	ADD_LINK: "Add Link",
 	ADD_RECIPIENT: "Add Recipient",
 	ADDRESS: "Address",
+	ALL_HISTORY: "All History",
 	AMOUNT: "Amount",
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
@@ -11,9 +12,11 @@ export const translations: { [key: string]: any } = {
 	CRYPTOASSET: "Cryptoasset",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
+	DELEGATE_PUBLICKEY: "Delegate PublicKey",
 	DESCRIPTION: "Description",
 	ENCRYPTION_PASSWORD: "Encryption Password",
 	ID: "ID",
+	INCOMING: "Incoming",
 	INVALID_MNEMONIC: "Invalid Mnemonic",
 	INVALID_URL: "Invalid URL",
 	IPFS_HASH: "IPFS Hash",
@@ -22,6 +25,7 @@ export const translations: { [key: string]: any } = {
 	NAME: "Name",
 	NETWORK: "Network",
 	NOT_CONFIRMED: "Not confirmed",
+	OUTGOING: "Outgoing",
 	RECEIVED: "Received",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
@@ -43,6 +47,7 @@ export const translations: { [key: string]: any } = {
 	TRANSACTION_AMOUNT: "Transaction Amount",
 	TRANSACTION_FEE: "Transaction Fee",
 	TRANSACTION_TYPE: "Transaction Type",
+	TRANSACTION_DETAILS: "Transaction Details",
 	TYPE: "Type",
 	UNVOTES: "Unvotes",
 	UNVOTES_COUNT: "Unvotes ({{count}})",
@@ -388,5 +393,11 @@ export const translations: { [key: string]: any } = {
 		LOW_BALANCE: "The balance is too low ({{balance}} {{ coinId }})",
 		FEE_BELOW_MINIMUM: "The selected fee is below the minimum  ({{min}} {{ coinId }}) and may not be forged",
 		FEE_ABOVE_MAXIMUM: "The selected fee is above the maximum ({{max}} {{ coinId }})",
+	},
+
+	ERROR: {
+		TITLE: "Transaction Error",
+		SUBTITLE:
+			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
 	},
 };

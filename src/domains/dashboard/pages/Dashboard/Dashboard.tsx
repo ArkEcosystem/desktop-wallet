@@ -4,6 +4,7 @@ import { DropdownOption } from "app/components/Dropdown";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { BarItem, PercentageBar } from "app/components/PercentageBar";
+import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, usePrevious } from "app/hooks";
 import { Transactions } from "domains/dashboard/components/Transactions";
@@ -22,19 +23,23 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
+	const defaultDashboardConfiguration = {
+		showPortfolio: true,
+		showTransactions: true,
+		walletsDisplayType: "all",
+		selectedNetworkIds: uniq(
+			activeProfile
+				.wallets()
+				.values()
+				.map((wallet) => wallet.network().id()),
+		),
+	};
+
 	const [dashboardConfiguration, setDashboardConfiguration] = useReducer(
 		(state: DashboardConfiguration, newState: Record<string, any>) => ({ ...state, ...newState }),
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || {
-			showPortfolio: true,
-			showTransactions: true,
+			...defaultDashboardConfiguration,
 			viewType: "grid",
-			walletsDisplayType: "all",
-			selectedNetworkIds: uniq(
-				activeProfile
-					.wallets()
-					.values()
-					.map((wallet) => wallet.network().id()),
-			),
 		},
 	);
 
@@ -48,6 +53,8 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		selectedNetworkIds,
 	} = dashboardConfiguration;
 
+	const [activeFilter, setActiveFilter] = useState(false);
+	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
@@ -89,25 +96,37 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 	const { t } = useTranslation();
 
-	const fetchTransactions = async (flush = false) => {
+	const fetchTransactions = async ({ flush, mode }: { flush: boolean; mode: string }) => {
+		let currentTransactions = allTransactions || [];
+
 		if (flush) {
 			activeProfile.transactionAggregate().flush();
+			currentTransactions = [];
+			setAllTransactions([]);
 		}
+
+		const methodMap = {
+			all: "transactions",
+			sent: "sentTransactions",
+			received: "receivedTransactions",
+		};
+		const method = methodMap[mode as keyof typeof methodMap];
 
 		setIsLoadingTransactions(true);
 
-		const response = await activeProfile.transactionAggregate().transactions({ limit: 30 });
+		// @ts-ignore
+		const response = await activeProfile.transactionAggregate()[method]({ limit: 30 });
 		const transactions = response.items();
 
 		setIsLoadingTransactions(false);
 
-		return transactions && setAllTransactions((allTransactions || []).concat(transactions));
+		return transactions && setAllTransactions(currentTransactions.concat(transactions));
 	};
 
 	useEffect(() => {
-		fetchTransactions(true);
+		fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 		// eslint-disable-next-line
-	}, []);
+	}, [activeTransactionModeTab]);
 
 	useEffect(() => {
 		if (isEqual(previousConfiguration, dashboardConfiguration)) {
@@ -122,6 +141,15 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		updateDashboardSettings();
 	});
 
+	useEffect(() => {
+		const dashboardConfigurationClone = (({ viewType, ...rest }) => rest)(dashboardConfiguration);
+
+		defaultDashboardConfiguration.selectedNetworkIds = defaultDashboardConfiguration.selectedNetworkIds.sort();
+		dashboardConfigurationClone.selectedNetworkIds = dashboardConfigurationClone.selectedNetworkIds.sort();
+
+		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfigurationClone));
+	}, [defaultDashboardConfiguration, dashboardConfiguration]);
+
 	// Wallet controls data
 	const handleSelectViewType = (viewType: string) => {
 		setDashboardConfiguration({ viewType });
@@ -133,16 +161,18 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 			.values()
 			.map((wallet) => ({
 				id: wallet.network().id(),
+				isLive: wallet.network().isLive(),
 				name: wallet.network().name(),
 				coin: wallet.network().coin(),
 				isSelected: selectedNetworkIds.includes(wallet.network().id()),
 			}));
 
-		return uniqBy(networks, (n) => n.coin);
+		return uniqBy(networks, (n) => n.id);
 	}, [activeProfile, selectedNetworkIds]);
 
 	const filterProperties = {
 		networks,
+		useTestNetworks: activeProfile.settings().get(ProfileSetting.UseTestNetworks),
 		walletsDisplayType,
 		selectedNetworkIds,
 		visiblePortfolioView: showPortfolio,
@@ -200,6 +230,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 				<Section className={!showTransactions ? "flex-1" : undefined}>
 					<Wallets
 						title={t("COMMON.WALLETS")}
+						activeFilter={activeFilter}
 						filterProperties={filterProperties}
 						viewType={viewType}
 						wallets={wallets}
@@ -214,11 +245,22 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 				{showTransactions && (
 					<Section className="flex-1" data-testid="dashboard__transactions-view">
+						<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+						<Tabs
+							className="mb-8"
+							activeId={activeTransactionModeTab}
+							onChange={(id) => setActiveTransactionModeTab(id as string)}
+						>
+							<TabList className="w-full">
+								<Tab tabId="all">{t("TRANSACTION.ALL_HISTORY")}</Tab>
+								<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
+								<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
+							</TabList>
+						</Tabs>
 						<Transactions
-							title={t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}
 							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
-							fetchMoreAction={fetchTransactions}
+							fetchMoreAction={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
 							onRowClick={(row) => setTransactionModalItem(row)}
 							isLoading={isLoadingTransactions}
 						/>

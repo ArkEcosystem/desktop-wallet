@@ -11,15 +11,16 @@ import { useTranslation } from "react-i18next";
 export const AuthenticationStep = ({
 	wallet,
 	skipSecondSignature,
+	ledgerDetails,
 }: {
 	wallet: ReadWriteWallet;
 	skipSecondSignature?: boolean;
+	ledgerDetails?: React.ReactNode;
 }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
 	const isLedger = wallet.isLedger();
-
 	const { authentication } = useValidation();
 
 	if (isLedger) {
@@ -30,7 +31,7 @@ export const AuthenticationStep = ({
 					subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}
 				/>
 
-				<LedgerConfirmation />
+				<LedgerConfirmation>{ledgerDetails}</LedgerConfirmation>
 			</div>
 		);
 	}
