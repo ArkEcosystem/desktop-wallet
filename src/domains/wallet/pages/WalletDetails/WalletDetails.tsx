@@ -78,9 +78,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		setShowWalletVote(activeWallet.network().can("Transaction.vote"));
 		setShowWalletRegistrations(
 			!activeWallet.isLedger() &&
-				(activeWallet.network().can("Transaction.secondSignature") ||
-					activeWallet.network().can("Transaction.delegateRegistration") ||
-					activeWallet.network().can("Transaction.entityRegistration")),
+				activeWallet.canAny([
+					"Transaction.secondSignature",
+					"Transaction.delegateRegistration",
+					"Transaction.entityRegistration",
+				]),
 		);
 	}, [activeWallet]);
 
