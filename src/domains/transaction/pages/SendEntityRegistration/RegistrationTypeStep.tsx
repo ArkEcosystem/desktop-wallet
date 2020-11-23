@@ -2,7 +2,6 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Enums, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Select } from "app/components/SelectDropdown";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
@@ -32,17 +31,6 @@ const registrationComponents: any = {
 	multiSignature: MultiSignatureRegistrationForm,
 };
 
-const RegistrationTypeDropdown = ({ className, defaultValue, registrationTypes, onChange }: any) => {
-	const { t } = useTranslation();
-
-	return (
-		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-			<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
-			<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
-		</FormField>
-	);
-};
-
 export const RegistrationTypeStep = ({
 	networks,
 	profile,
@@ -58,6 +46,8 @@ export const RegistrationTypeStep = ({
 	const form = useFormContext();
 	const { setValue } = form;
 	const { network, senderAddress, registrationType } = form.watch();
+
+	console.log("watch registrationType >> ", registrationType);
 
 	useEffect(() => {
 		if (network) {
@@ -128,6 +118,8 @@ export const RegistrationTypeStep = ({
 	};
 
 	const onSelectType = (selectedItem: SendEntityRegistrationType | null | undefined) => {
+		console.log("selectedItem", selectedItem);
+
 		setValue("registrationType", selectedItem, { shouldValidate: true, shouldDirty: true });
 		setRegistrationForm(registrationComponents[selectedItem!.value]);
 
@@ -171,22 +163,12 @@ export const RegistrationTypeStep = ({
 				</div>
 			</FormField>
 
-			{/* 			<RegistrationTypeDropdown
-				selectedType={registrationTypes.find(
-					(type: SendEntityRegistrationType) => type.value === registrationType?.value,
-				)}
-				registrationTypes={registrationTypes}
-				onChange={onSelectType}
-			/> */}
-
 			<FormField data-testid="Registration__type" name="registrationType" className="relative h-20">
 				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
 				<SelectRegistrationType
 					id="SendTransactionForm__registrationType"
 					options={registrationTypes}
-					selected={registrationTypes.find(
-						(type: SendEntityRegistrationType) => type.value === registrationType?.value,
-					)}
+					selected={registrationType}
 					onSelect={onSelectType}
 				/>
 			</FormField>

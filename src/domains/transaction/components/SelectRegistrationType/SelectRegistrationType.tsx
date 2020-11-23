@@ -5,7 +5,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { RegistrationTypeIcon } from "./RegistrationTypeIcon";
 import { SelectRegistrationTypeInput } from "./SelectRegistrationTypeInput";
 
-type Option = {
+export type Option = {
 	label: string;
 	type?: Enums.EntityType;
 	value: string;
@@ -52,6 +52,7 @@ export const SelectRegistrationType = ({
 		getItemProps,
 		getMenuProps,
 		selectItem,
+		selectedItem,
 		inputValue,
 		reset,
 	} = useCombobox<Option | null>({
@@ -86,6 +87,7 @@ export const SelectRegistrationType = ({
 				<label {...getLabelProps()} />
 				<SelectRegistrationTypeInput
 					suggestion={inputTypeAhead}
+					type={selectedItem}
 					disabled={disabled}
 					{...getInputProps({
 						name,
@@ -122,6 +124,10 @@ export const SelectRegistrationType = ({
 								item,
 								index,
 								disabled,
+								onMouseDown: () => {
+									selectItem(item);
+									closeMenu();
+								},
 							})}
 						>
 							<RegistrationTypeIcon
