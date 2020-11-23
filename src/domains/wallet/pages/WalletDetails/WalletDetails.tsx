@@ -8,6 +8,7 @@ import { Spinner } from "app/components/Spinner";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
@@ -50,6 +51,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
+	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
 
 	const {
 		pendingMultiSignatureTransactions,
@@ -58,7 +60,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		fetchMore,
 		isLoading: isLoadingTransactions,
 		hasMore,
-	} = useWalletTransactions(activeWallet, { limit: transactionLimit!, mode: activeTransactionModeTab });
+	} = useWalletTransactions(activeWallet, {
+		limit: transactionLimit!,
+		mode: activeTransactionModeTab,
+		transactionType: selectedTransactionType,
+	});
 
 	const walletVotes = () => {
 		// Being synced in background and will be updated after persisting
@@ -253,6 +259,10 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 
 					<div>
 						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}</h2>
+						<FilterTransactions
+							onSelect={(_, type) => setSelectedTransactionType(type)}
+							className="float-right mb-8"
+						/>
 						<>
 							<Tabs
 								className="mb-6"

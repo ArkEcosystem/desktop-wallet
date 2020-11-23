@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (
 	wallet: ReadWriteWallet,
-	{ limit, mode = "all" }: { limit: number; mode?: string },
+	{ limit, mode = "all", transactionType }: { limit: number; mode?: string; transactionType?: any },
 ) => {
 	const pendingMultiSignatureTransactions: SignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
@@ -38,17 +38,20 @@ export const useWalletTransactions = (
 				sent: "sentTransactions",
 				received: "receivedTransactions",
 			};
+
 			const method = methodMap[mode as keyof typeof methodMap];
 
+			const defaultQueryParams = { limit: 30, cursor };
+			const queryParams = transactionType ? { ...defaultQueryParams, ...transactionType } : defaultQueryParams;
 			// @ts-ignore
-			const response = await wallet[method]({ limit, cursor });
+			const response = await wallet[method](queryParams);
 
 			setItemCount(response.items().length);
 			setNextPage(response.nextPage());
 			setTransactions((prev) => [...prev, ...response.items()]);
 			setIsLoading(false);
 		},
-		[wallet, limit, mode],
+		[wallet, limit, mode, transactionType],
 	);
 
 	const fetchMore = useCallback(() => sync(nextPage), [nextPage, sync]);
