@@ -1,3 +1,4 @@
+import { Enums } from "@arkecosystem/platform-sdk-profiles";
 import { useCombobox } from "downshift";
 import React, { useEffect, useMemo, useState } from "react";
 
@@ -6,6 +7,7 @@ import { SelectRegistrationTypeInput } from "./SelectRegistrationTypeInput";
 
 type Option = {
 	label: string;
+	type?: Enums.EntityType;
 	value: string;
 };
 
@@ -17,7 +19,7 @@ type SelectRegistrationTypeProps = {
 	value?: string;
 	id?: string;
 	disabled?: boolean;
-	onSelect?: (type?: string | null) => void;
+	onSelect?: (type?: Option | null) => void;
 };
 
 const itemToString = (item: Option | null) => item?.label || "";
@@ -46,14 +48,13 @@ export const SelectRegistrationType = ({
 		getItemProps,
 		getMenuProps,
 		selectItem,
-		selectedItem,
 		inputValue,
 		reset,
 	} = useCombobox<Option | null>({
 		id,
 		items,
 		itemToString,
-		onSelectedItemChange: ({ selectedItem }) => onSelect?.(selectedItem?.value),
+		onSelectedItemChange: ({ selectedItem }) => onSelect?.(selectedItem),
 		onInputValueChange: ({ inputValue, selectedItem }) => {
 			setItems(inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options);
 
@@ -119,7 +120,19 @@ export const SelectRegistrationType = ({
 								disabled,
 							})}
 						>
-							<RegistrationTypeIcon iconName="Product" size="xl" iconSize={26} noShadow />
+							<RegistrationTypeIcon
+								displayName={item.label}
+								iconName={
+									item.value === "multiSignature"
+										? "Multisig"
+										: item.value === "secondSignature"
+										? "Key"
+										: item.label
+								}
+								size="xl"
+								iconSize={26}
+								noShadow
+							/>
 						</li>
 					))}
 			</ul>

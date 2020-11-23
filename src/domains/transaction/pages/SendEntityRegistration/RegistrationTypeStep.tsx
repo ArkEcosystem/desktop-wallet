@@ -9,6 +9,7 @@ import { DelegateRegistrationForm } from "domains/transaction/components/Delegat
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
+import { SelectRegistrationType } from "domains/transaction/components/SelectRegistrationType";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -126,11 +127,11 @@ export const RegistrationTypeStep = ({
 		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-entity-registration`);
 	};
 
-	const onSelectType = (selectedItem: SendEntityRegistrationType) => {
+	const onSelectType = (selectedItem: SendEntityRegistrationType | null | undefined) => {
 		setValue("registrationType", selectedItem, { shouldValidate: true, shouldDirty: true });
-		setRegistrationForm(registrationComponents[selectedItem.value]);
+		setRegistrationForm(registrationComponents[selectedItem!.value]);
 
-		if (fees[selectedItem.value]) {
+		if (selectedItem && fees[selectedItem.value]) {
 			setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
 			setValue("fees", fees[selectedItem.value]);
 		}
@@ -170,13 +171,25 @@ export const RegistrationTypeStep = ({
 				</div>
 			</FormField>
 
-			<RegistrationTypeDropdown
+			{/* 			<RegistrationTypeDropdown
 				selectedType={registrationTypes.find(
 					(type: SendEntityRegistrationType) => type.value === registrationType?.value,
 				)}
 				registrationTypes={registrationTypes}
 				onChange={onSelectType}
-			/>
+			/> */}
+
+			<FormField data-testid="Registration__type" name="registrationType" className="relative h-20">
+				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
+				<SelectRegistrationType
+					id="SendTransactionForm__registrationType"
+					options={registrationTypes}
+					selected={registrationTypes.find(
+						(type: SendEntityRegistrationType) => type.value === registrationType?.value,
+					)}
+					onSelect={onSelectType}
+				/>
+			</FormField>
 		</section>
 	);
 };
