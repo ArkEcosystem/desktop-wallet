@@ -163,7 +163,7 @@ export const RegistrationTypeStep = ({
 				</div>
 			</FormField>
 
-			<FormField data-testid="Registration__type" name="registrationType" className="relative h-20">
+			<FormField data-testid="Registration__type" name="registrationType">
 				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
 				<SelectRegistrationType
 					id="SendTransactionForm__registrationType"

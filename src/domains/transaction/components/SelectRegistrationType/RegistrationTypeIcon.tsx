@@ -21,7 +21,11 @@ export const RegistrationTypeIcon = ({ displayName, iconName, iconSize, classNam
 		<Circle
 			aria-label={displayName}
 			data-testid={`NetworkIcon-${iconName}`}
-			className={className ? className : "text-theme-primary-300 border-theme-primary-100"}
+			className={
+				className
+					? className
+					: "text-theme-primary-300 hover:text-theme-primary border-theme-primary-100 hover:bg-theme-primary-100"
+			}
 			{...props}
 		>
 			<Icon data-testid="RegistrationTypeIcon__icon" name={iconName} width={iconSize} height={iconSize} />

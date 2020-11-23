@@ -125,6 +125,8 @@ export const SelectRegistrationType = ({
 								index,
 								disabled,
 								onMouseDown: () => {
+									console.log("item selected >> ", item);
+
 									selectItem(item);
 									closeMenu();
 								},
