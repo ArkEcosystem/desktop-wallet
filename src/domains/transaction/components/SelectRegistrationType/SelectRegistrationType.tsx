@@ -77,7 +77,7 @@ export const SelectRegistrationType = ({
 
 	return (
 		<div>
-			<div data-testid="SelectNetwork" {...getComboboxProps()}>
+			<div data-testid="SelectRegistrationType" {...getComboboxProps()}>
 				<label {...getLabelProps()} />
 				<SelectRegistrationTypeInput
 					suggestion={inputTypeAhead}
