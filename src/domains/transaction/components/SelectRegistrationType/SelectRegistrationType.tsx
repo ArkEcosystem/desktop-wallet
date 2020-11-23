@@ -33,7 +33,11 @@ export const SelectRegistrationType = ({
 	disabled,
 	selected,
 }: SelectRegistrationTypeProps) => {
-	const [items, setItems] = useState([...options]);
+	const [items, setItems] = useState<Option[]>([]);
+
+	useEffect(() => {
+		setItems(options);
+	}, [options]);
 
 	const isMatch = (inputValue: string, option: Option) =>
 		inputValue && option.label.toLowerCase().startsWith(inputValue.toLowerCase());
