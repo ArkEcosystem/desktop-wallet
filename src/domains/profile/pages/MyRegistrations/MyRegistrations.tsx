@@ -1,4 +1,4 @@
-import { Enums, ExtendedTransactionData, ProfileSetting,ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ExtendedTransactionData, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
@@ -8,7 +8,7 @@ import { Page, Section } from "app/components/Layout";
 import { Loader } from "app/components/Loader";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import React, { useCallback,useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
