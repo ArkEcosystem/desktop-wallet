@@ -37,7 +37,7 @@ export const News = ({ itemsPerPage }: Props) => {
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const [{ categories, coins, searchQuery }, setFilters] = useState<NewsFilters>(
-		activeProfile.settings().get(ProfileSetting.NewsFilters) || { categories: [], coins: ["ark"] },
+		activeProfile.settings().get(ProfileSetting.NewsFilters) || { categories: [], coins: ["ARK"] },
 	);
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);

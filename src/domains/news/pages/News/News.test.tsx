@@ -80,7 +80,7 @@ describe("News", () => {
 	});
 
 	it("should retrieve blockfolio data using findByCoin", async () => {
-		const result: BlockfolioResponse = await subject.findByCoin({ coins: ["ark"] });
+		const result: BlockfolioResponse = await subject.findByCoin({ coins: ["ARK"] });
 
 		expect(result.meta).toMatchObject(page1Fixture.meta);
 		expect(result.data).toMatchObject(page1Fixture.data.slice(0, 1));
