@@ -210,5 +210,5 @@ test("should successfully update entity", async (t: any) => {
 	await t.hover(Selector("[data-testid=SendEntityUpdate__send-button]"));
 	await t.click(Selector("[data-testid=SendEntityUpdate__send-button]"));
 
-	await t.expect(Selector("[data-testid=TransactionSuccessful").exists).ok();
+	await t.expect(Selector("[data-testid=TransactionSuccessful").exists).ok({ timeout: 5000 });
 });
