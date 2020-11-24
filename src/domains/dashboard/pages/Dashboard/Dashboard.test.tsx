@@ -26,6 +26,7 @@ import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
 let emptyProfile: Profile;
+let profile: Profile;
 
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
@@ -51,7 +52,7 @@ beforeAll(async () => {
 		})
 		.persist();
 
-	const profile = env.profiles().findById(fixtureProfileId);
+	profile = env.profiles().findById(fixtureProfileId);
 	const wallet = await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
 
 	jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
@@ -110,6 +111,31 @@ describe("Dashboard", () => {
 		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
 
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should both live and testnet wallets", async () => {
+		Promise.resolve().then(() => jest.useFakeTimers());
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
+
+		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
+
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		useNetworksMock.mockRestore();
 	});
 
 	it("should render with no wallets", async () => {
