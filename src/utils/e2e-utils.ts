@@ -37,14 +37,32 @@ const walletMocks = () => {
 	);
 };
 
-const entityRegistrationMocks = () => {
-	const publicKeys = [
-		"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
-		"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
-		"02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
-		"029511e2507b6c70d617492308a4b34bb1bdaabb1c260a8c15c5805df8b6a64f11",
-	];
+const publicKeys = [
+	"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
+	"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+	"02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
+	"029511e2507b6c70d617492308a4b34bb1bdaabb1c260a8c15c5805df8b6a64f11",
+	"03c4d1788718e39c5de7cb718ce380c66bbe2ac5a0645a6ff90f0569178ab7cd6d",
+];
 
+const multisignatureMocks = () => {
+	const mocks: any = [];
+
+	for (const state of ["ready", "pending"]) {
+		mocks.push(
+			...publicKeys.map((identifier: string) =>
+				mockRequest(
+					`https://dmusig1.ark.io/transactions?publicKey=${identifier}&state=${state}`,
+					[],
+				),
+			),
+		);
+	}
+
+	return mocks;
+};
+
+const entityRegistrationMocks = () => {
 	const types = {
 		0: "business",
 		2: "plugin",
@@ -172,6 +190,9 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/delegates?page=4", "coins/ark/devnet/delegates"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/devnet/delegates"),
 	],
+	multisignature: [
+		...multisignatureMocks(),
+	],
 	transactions: [
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/devnet/transactions"),
@@ -201,11 +222,12 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 			...preHooks,
 			...requestMocks.configuration,
 			...requestMocks.delegates,
+			...requestMocks.multisignature,
 			...requestMocks.transactions,
 			...requestMocks.wallets,
 			...postHooks,
 			mockRequest(
-				(request: any) => request.url.startsWith(BASEURL),
+				/^https?:\/\//,
 				(request: any) => {
 					const mock: { url: string; method: string; body?: string } = {
 						url: request.url,
