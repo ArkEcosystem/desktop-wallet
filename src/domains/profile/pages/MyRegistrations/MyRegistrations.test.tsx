@@ -1,4 +1,4 @@
-import { Enums } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -23,6 +23,7 @@ const fixtureProfileId = getDefaultProfileId();
 const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
 const emptyRegistrationsURL = `/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/registrations`;
 const delegateWalletId = "d044a552-7a49-411c-ae16-8ff407acc430";
+let profile: Profile;
 
 describe("MyRegistrations", () => {
 	beforeAll(async () => {
@@ -41,6 +42,7 @@ describe("MyRegistrations", () => {
 			.reply(200, { meta: {}, data: [] })
 			.persist();
 
+		profile = env.profiles().findById(fixtureProfileId);
 		await syncDelegates();
 	});
 
@@ -99,6 +101,37 @@ describe("MyRegistrations", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should filter registrations based on profile setting", async () => {
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+		const businessRegistrations = await profile.entityAggregate().registrations(Enums.EntityType.Business);
+		const delegateRegistrations = profile.registrationAggregate().delegates();
+
+		const registrationMock = jest
+			.spyOn(businessRegistrations.items()[0].wallet().network(), "isLive")
+			.mockReturnValue(true);
+
+		const delegateRegistrationMock = jest.spyOn(delegateRegistrations[0].network(), "isLive").mockReturnValue(true);
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		await waitFor(() =>
+			expect(within(getByTestId("BusinessRegistrations")).getAllByTestId("TableRow")).toHaveLength(2),
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+		useNetworksMock.mockRestore();
+		registrationMock.mockRestore();
+		delegateRegistrationMock.mockRestore();
 	});
 
 	it("should render plugin registrations", async () => {
