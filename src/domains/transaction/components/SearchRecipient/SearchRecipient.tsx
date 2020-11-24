@@ -2,7 +2,8 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { SearchResource } from "app/components/SearchResource";
+import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { Modal } from "app/components/Modal";
 import { Table } from "app/components/Table";
 import { TableCell, TableRow } from "app/components/Table";
 import React from "react";
@@ -18,69 +19,63 @@ type Recipient = {
 
 type RecipientListItemProps = {
 	recipient: Recipient;
-	translations: any;
 	onAction: (address: string) => void;
 };
 
-const RecipientListItem = ({ recipient, translations, onAction }: RecipientListItemProps) => (
-	<TableRow key={recipient.id} border>
-		<TableCell variant="start" innerClassName="space-x-4">
-			<AvatarWrapper size="lg" noShadow>
-				<img
-					src={`data:image/svg+xml;utf8,${recipient.avatar}`}
-					title={recipient.alias}
-					alt={recipient.alias}
-				/>
-				{recipient.alias && (
-					<span className="absolute text-sm font-semibold text-theme-background">
-						{recipient.alias.slice(0, 2)?.toUpperCase()}
-					</span>
-				)}
-			</AvatarWrapper>
-			<Address address={recipient.address} maxChars={24} />
-		</TableCell>
+const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
+	const { t } = useTranslation();
 
-		<TableCell>
-			<span data-testid="RecipientListItem__name">{recipient.alias}</span>
-		</TableCell>
+	return (
+		<TableRow key={recipient.id} border>
+			<TableCell variant="start" innerClassName="space-x-4">
+				<AvatarWrapper size="lg" noShadow>
+					<img
+						src={`data:image/svg+xml;utf8,${recipient.avatar}`}
+						title={recipient.alias}
+						alt={recipient.alias}
+					/>
+					{recipient.alias && (
+						<span className="absolute text-sm font-semibold text-theme-background">
+							{recipient.alias.slice(0, 2)?.toUpperCase()}
+						</span>
+					)}
+				</AvatarWrapper>
+				<Address address={recipient.address} maxChars={24} />
+			</TableCell>
 
-		<TableCell>
-			<span data-testid="RecipientListItem__type">
-				{recipient.type === "wallet" ? translations("COMMON.MY_WALLET") : translations("COMMON.CONTACT")}
-			</span>
-		</TableCell>
+			<TableCell>
+				<span data-testid="RecipientListItem__name">{recipient.alias}</span>
+			</TableCell>
 
-		<TableCell variant="end" innerClassName="justify-end">
-			<Button
-				data-testid="RecipientListItem__select-button"
-				variant="plain"
-				onClick={() => onAction(recipient.address)}
-			>
-				{translations("COMMON.SELECT")}
-			</Button>
-		</TableCell>
-	</TableRow>
-);
+			<TableCell>
+				<span data-testid="RecipientListItem__type">
+					{recipient.type === "wallet" ? t("COMMON.MY_WALLET") : t("COMMON.CONTACT")}
+				</span>
+			</TableCell>
+
+			<TableCell variant="end" innerClassName="justify-end">
+				<Button
+					data-testid="RecipientListItem__select-button"
+					variant="plain"
+					onClick={() => onAction(recipient.address)}
+				>
+					{t("COMMON.SELECT")}
+				</Button>
+			</TableCell>
+		</TableRow>
+	);
+};
 
 type SearchRecipientProps = {
 	title?: string;
 	description?: string;
 	isOpen: boolean;
 	profile: Profile;
-	onClose?: any;
-	onSearch?: any;
+	onClose?: () => void;
 	onAction: (address: string) => void;
 };
 
-export const SearchRecipient = ({
-	title,
-	description,
-	profile,
-	isOpen,
-	onClose,
-	onSearch,
-	onAction,
-}: SearchRecipientProps) => {
+export const SearchRecipient = ({ title, description, profile, isOpen, onClose, onAction }: SearchRecipientProps) => {
 	const { t } = useTranslation();
 
 	const contacts = profile.contacts().values();
@@ -126,28 +121,28 @@ export const SearchRecipient = ({
 		{
 			Header: t("COMMON.TYPE"),
 			accessor: "type",
-			className: "no-border",
 		},
 		{
-			Header: "Actions",
-			className: "hidden no-border",
+			Header: <HeaderSearchBar placeholder={t("TRANSACTION.MODAL_SEARCH_RECIPIENT.SEARCH_PLACEHOLDER")} />,
+			accessor: "search",
+			className: "justify-end no-border",
+			disableSortBy: true,
 		},
 	];
 
 	return (
-		<SearchResource
+		<Modal
 			isOpen={isOpen}
 			title={title || t("TRANSACTION.MODAL_SEARCH_RECIPIENT.TITLE")}
 			description={description || t("TRANSACTION.MODAL_SEARCH_RECIPIENT.DESCRIPTION")}
-			placeholder={t("TRANSACTION.MODAL_SEARCH_RECIPIENT.PLACEHOLDER")}
+			size="5xl"
 			onClose={onClose}
-			onSearch={onSearch}
 		>
-			<Table columns={columns} data={availableData}>
-				{(recipient: Recipient) => (
-					<RecipientListItem recipient={recipient} translations={t} onAction={onAction} />
-				)}
-			</Table>
-		</SearchResource>
+			<div className="mt-8">
+				<Table columns={columns} data={availableData}>
+					{(recipient: Recipient) => <RecipientListItem recipient={recipient} onAction={onAction} />}
+				</Table>
+			</div>
+		</Modal>
 	);
 };
