@@ -44,12 +44,12 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 	<div key={key} className="mt-4 first:mt-0">
 		{hasDivider && (
 			<div className="mx-8 -my-2">
-				<Divider />
+				<Divider dashed />
 			</div>
 		)}
 		<ul>
 			{title && (
-				<li className="block px-8 text-xs font-bold text-left uppercase whitespace-no-wrap cursor-pointer text-theme-neutral-500">
+				<li className="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-no-wrap cursor-pointer text-theme-neutral-500">
 					{title}
 				</li>
 			)}
