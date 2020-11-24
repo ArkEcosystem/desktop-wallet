@@ -1,11 +1,13 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, getLocation } from "../../../utils/e2e-utils";
+import { createFixture, getLocation, mockRequest } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
-createFixture(`NavBar routing`);
+createFixture(`NavBar routing`, [
+	mockRequest("https://platform.ark.io/api/coins/signals?coins=ARK&page=1", { data: [], meta: {} }),
+]);
 
 test("should navigate to profile dashboard", async (t) => {
 	await t.click(Selector("p").withExactText("John Doe"));
