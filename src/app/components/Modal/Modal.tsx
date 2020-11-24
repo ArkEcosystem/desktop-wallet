@@ -60,15 +60,14 @@ const ModalContent = (props: ModalContentProps) => {
 
 	const previousHeight = usePrevious(modalRef?.current?.clientHeight);
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		const currentHeight = modalRef?.current?.clientHeight;
 
-		if (previousHeight === currentHeight) {
-			return;
+		if (previousHeight !== currentHeight) {
+			setOffsetClass(modalOffsetClass(currentHeight, window.innerHeight));
 		}
-
-		setOffsetClass(modalOffsetClass(currentHeight, window.innerHeight));
-	}); // eslint-disable-line react-hooks/exhaustive-deps
+	});
 
 	return (
 		<ModalContainer
