@@ -19,18 +19,11 @@ export const Default = () => (
 				title="Select Account"
 				wallets={wallets}
 				onClose={action("onClose")}
-				onSearch={action("onSearch")}
 			/>
 		)}
 	</WalletsDecorator>
 );
 
 export const Empty = () => (
-	<SearchWallet
-		isOpen={boolean("isOpen", true)}
-		title="Select Account"
-		wallets={[]}
-		onClose={action("onClose")}
-		onSearch={action("onSearch")}
-	/>
+	<SearchWallet isOpen={boolean("isOpen", true)} title="Select Account" wallets={[]} onClose={action("onClose")} />
 );
