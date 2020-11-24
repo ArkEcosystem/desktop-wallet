@@ -34,12 +34,13 @@ export const SelectRegistrationType = ({
 	selected,
 }: SelectRegistrationTypeProps) => {
 	const [items, setItems] = useState<Option[]>([]);
+	const [isTyping, setIsTyping] = useState(false);
 
 	useEffect(() => {
-		if (items.length === 0) {
+		if (!isTyping && items.length === 0) {
 			setItems(options);
 		}
-	}, [items, options]);
+	}, [items, isTyping, options]);
 
 	const isMatch = (inputValue: string, option: Option) =>
 		inputValue && option.label.toLowerCase().startsWith(inputValue.toLowerCase());
@@ -62,8 +63,14 @@ export const SelectRegistrationType = ({
 		items,
 		itemToString,
 		onSelectedItemChange: ({ selectedItem }) => onSelect?.(selectedItem),
-		onInputValueChange: ({ inputValue, selectedItem }) => {
+		onInputValueChange: ({ inputValue, selectedItem, type }) => {
 			setItems(inputValue ? options.filter((option: Option) => isMatch(inputValue, option)) : options);
+
+			if (type === "__input_change__") {
+				setIsTyping(true);
+			} else {
+				setIsTyping(false);
+			}
 
 			// Clear selection when user is changing input,
 			// and input does not match previously selected item
@@ -83,8 +90,10 @@ export const SelectRegistrationType = ({
 				reset();
 				openMenu();
 			}, 0);
+
 			return;
 		}
+
 		selectItem(item);
 		closeMenu();
 	};
@@ -108,10 +117,13 @@ export const SelectRegistrationType = ({
 						placeholder,
 						onFocus: openMenu,
 						onBlur: () => {
-							if (inputValue && items.length > 0) selectItem(items[0]);
-							else reset();
+							if (inputValue && items.length > 0) {
+								selectItem(items[0]);
+							} else {
+								reset();
+							}
 						},
-						onKeyDown: (event: any) => {
+						onKeyDown: (event) => {
 							if (event.key === "Tab" || event.key === "Enter") {
 								// Select first match
 								if (inputValue && items.length > 0) {

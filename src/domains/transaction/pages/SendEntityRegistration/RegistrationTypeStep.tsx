@@ -118,6 +118,7 @@ export const RegistrationTypeStep = ({
 	const onSelectType = (selectedItem: SendEntityRegistrationType | null | undefined) => {
 		setValue("registrationType", selectedItem, { shouldValidate: true, shouldDirty: true });
 
+		/* istanbul ignore else */
 		if (selectedItem) {
 			setRegistrationForm(registrationComponents[selectedItem.value]);
 
