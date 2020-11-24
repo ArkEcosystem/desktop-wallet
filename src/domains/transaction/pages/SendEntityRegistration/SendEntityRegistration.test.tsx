@@ -414,7 +414,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Product")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Plugin")).toBeInTheDocument());
-		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Multisig")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Module")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 

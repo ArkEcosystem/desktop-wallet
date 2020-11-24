@@ -2602,9 +2602,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             role="option"
                           >
                             <div
-                              aria-label="Product"
+                              aria-label="Module"
                               class="sc-AxgMl hLfYuP text-theme-primary-300 hover:text-theme-primary border-theme-primary-100 hover:bg-theme-primary-100"
-                              data-testid="RegistrationTypeIcon-Product"
+                              data-testid="RegistrationTypeIcon-Module"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -2613,7 +2613,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 width="26"
                               >
                                 <svg>
-                                  product.svg
+                                  module.svg
                                 </svg>
                               </div>
                             </div>
@@ -2650,9 +2650,9 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             role="option"
                           >
                             <div
-                              aria-label="MultiSignature"
+                              aria-label="Product"
                               class="sc-AxgMl hLfYuP text-theme-primary-300 hover:text-theme-primary border-theme-primary-100 hover:bg-theme-primary-100"
-                              data-testid="RegistrationTypeIcon-Multisig"
+                              data-testid="RegistrationTypeIcon-Product"
                             >
                               <div
                                 class="sc-AxiKw fubePL"
@@ -2661,7 +2661,7 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                                 width="26"
                               >
                                 <svg>
-                                  multisig.svg
+                                  product.svg
                                 </svg>
                               </div>
                             </div>
@@ -2888,7 +2888,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
               Delegate
             </span>
             <input
-              aria-activedescendant="SendTransactionForm__registrationType-item-3"
+              aria-activedescendant="SendTransactionForm__registrationType-item-0"
               aria-autocomplete="list"
               aria-controls="SendTransactionForm__registrationType-menu"
               aria-labelledby="SendTransactionForm__registrationType-label"
@@ -2908,7 +2908,7 @@ exports[`Registration should not set fee if no fee options 1`] = `
           role="listbox"
         >
           <li
-            aria-selected="false"
+            aria-selected="true"
             class="inline-block cursor-pointer"
             data-testid="SelectRegistrationType__RegistrationTypeIcon--container"
             id="SendTransactionForm__registrationType-item-0"
@@ -3698,7 +3698,7 @@ exports[`Registration should render 1st step 1`] = `
               Delegate
             </span>
             <input
-              aria-activedescendant="SendTransactionForm__registrationType-item-3"
+              aria-activedescendant="SendTransactionForm__registrationType-item-0"
               aria-autocomplete="list"
               aria-controls="SendTransactionForm__registrationType-menu"
               aria-labelledby="SendTransactionForm__registrationType-label"
@@ -3718,7 +3718,7 @@ exports[`Registration should render 1st step 1`] = `
           role="listbox"
         >
           <li
-            aria-selected="false"
+            aria-selected="true"
             class="inline-block cursor-pointer"
             data-testid="SelectRegistrationType__RegistrationTypeIcon--container"
             id="SendTransactionForm__registrationType-item-0"

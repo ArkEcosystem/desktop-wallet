@@ -57,26 +57,6 @@ export const RegistrationTypeStep = ({
 
 	const registrationTypes = [];
 
-	if (network?.can("Transaction.entityRegistration")) {
-		registrationTypes.push({
-			value: "entityRegistration",
-			type: Enums.EntityType.Business,
-			label: "Business",
-		});
-
-		registrationTypes.push({
-			value: "entityRegistration",
-			type: Enums.EntityType.Product,
-			label: "Product",
-		});
-
-		registrationTypes.push({
-			value: "entityRegistration",
-			type: Enums.EntityType.Plugin,
-			label: "Plugin",
-		});
-	}
-
 	if (wallet.hasSyncedWithNetwork?.()) {
 		if (
 			!wallet.isDelegate?.() &&
@@ -88,24 +68,32 @@ export const RegistrationTypeStep = ({
 				label: "Delegate",
 			});
 		}
+	}
 
-		if (!wallet.isMultiSignature?.() && network?.can("Transaction.multiSignature")) {
-			registrationTypes.push({
-				value: "multiSignature",
-				label: "MultiSignature",
-			});
-		}
+	if (network?.can("Transaction.entityRegistration")) {
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Business,
+			label: "Business",
+		});
 
-		if (
-			!wallet.isSecondSignature?.() &&
-			!wallet.isMultiSignature?.() &&
-			network?.can("Transaction.secondSignature")
-		) {
-			registrationTypes.push({
-				value: "secondSignature",
-				label: "Second Signature",
-			});
-		}
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Module,
+			label: "Module",
+		});
+
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Plugin,
+			label: "Plugin",
+		});
+
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Product,
+			label: "Product",
+		});
 	}
 
 	const onSelectSender = (address: any) => {
