@@ -20,9 +20,17 @@ createFixture(`Send Entity Update`, [
 	mockRequest("https://platform.ark.io/api/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV", IpfsFixture),
 	mockRequest(
 		{
-			url: "https://dwallets.ark.io/api/transactions",
-			method: "GET",
+			url: "https://platform.ark.io/api/ipfs",
+			method: "POST",
 		},
+		{
+			data: {
+				hash: "QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV",
+			},
+		},
+	),
+	mockRequest(
+		"https://dwallets.ark.io/api/transactions",
 		require("../../../tests/fixtures/registrations/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P-businesses.json"),
 	),
 	mockRequest(
@@ -30,7 +38,7 @@ createFixture(`Send Entity Update`, [
 			url: "https://dwallets.ark.io/api/transactions",
 			method: "POST",
 		},
-		require("../../../tests/fixtures/coins/ark/transactions/entity-update.json"),
+		require("../../../tests/fixtures/coins/ark/devnet/transactions/entity-update.json"),
 	),
 ]);
 
@@ -183,43 +191,13 @@ test("should pass validation on submit and go to 2nd step", async (t: any) => {
 	await t.expect(Selector("[data-testid=ReviewStep]").exists).ok();
 });
 
-test("should fail authentication and see error message in toast", async (t: any) => {
-	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
-
-	await goToProfile(t);
-
-	// Import wallet
-	await importWallet(t, "passphrase");
-
-	await goToMyRegistrations(t);
-	await goToSendEntityUpdate(t);
-
-	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
-	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
-	await t.expect(Selector("[data-testid=ReviewStep]").exists).ok();
-
-	await t.hover(Selector("[data-testid=SendEntityUpdate__continue-button]"));
-	await t.click(Selector("[data-testid=SendEntityUpdate__continue-button]"));
-	await t.expect(Selector("[data-testid=AuthenticationStep").exists).ok();
-
-	// mnemonic
-	await t.hover(Selector("[data-testid=AuthenticationStep__mnemonic]"));
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong passphrase", { replace: true });
-
-	await t.hover(Selector("[data-testid=SendEntityUpdate__send-button]"));
-	await t.click(Selector("[data-testid=SendEntityUpdate__send-button]"));
-
-	await t.expect(Selector("[data-testid=AuthenticationStep").exists).ok();
-	await t.expect(Selector(".Toastify__toast--error").exists).ok();
-});
-
 test("should successfully update entity", async (t: any) => {
 	const passphrase = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, passphrase);
 
 	await goToMyRegistrations(t);
 
@@ -238,7 +216,8 @@ test("should successfully update entity", async (t: any) => {
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), passphrase, { replace: true });
 
 	await t.hover(Selector("[data-testid=SendEntityUpdate__send-button]"));
+	await t.expect(Selector("[data-testid=SendEntityUpdate__send-button]").hasAttribute("disabled")).notOk();
 	await t.click(Selector("[data-testid=SendEntityUpdate__send-button]"));
 
-	await t.expect(Selector("[data-testid=TransactionSuccessful").exists).ok();
+	await t.expect(Selector("[data-testid=TransactionSuccessful").exists).ok({ timeout: 5000 });
 });

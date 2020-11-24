@@ -1,14 +1,24 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
+import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToNews } from "./common";
 
 const itemsPerPage = 15;
 
 const translations = buildTranslations();
 
-createFixture(`News filtering`).beforeEach(async (t) => await goToNews(t));
+createFixture(`News filtering`, [
+	mockRequest("https://platform.ark.io/api/coins/signals?coins=ARK&page=1", "news/page-1"),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ETH&page=1&categories=Technical&query=major+league+hacking",
+		"news/filtered",
+	),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ARK&page=1&query=fjdskfjdfsdjfkdsfjdsfsd",
+		"news/empty-response",
+	),
+]).beforeEach(async (t) => await goToNews(t));
 
 test("should display news feed", async (t) => {
 	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();
@@ -18,7 +28,7 @@ test("should display news feed", async (t) => {
 test("should filter news results", async (t) => {
 	// Filter technical category
 	const eth = "NetworkOption__ETH";
-	const query = "the block";
+	const query = "major league hacking";
 
 	const queryInput = Selector('[data-testid="NewsOptions__search"]');
 	await t.typeText(queryInput, query, { replace: true });
@@ -34,7 +44,7 @@ test("should filter news results", async (t) => {
 	await t
 		.expect(Selector('[data-testid="NewsCard__category"]').withText(translations.NEWS.CATEGORIES.TECHNICAL).exists)
 		.ok();
-	await t.expect(Selector('[data-testid="NewsCard__content"]').withText(query).exists).ok();
+	await t.expect(Selector('[data-testid="NewsCard__content"]').withText(/major league hacking/i).exists).ok();
 });
 
 test("should show no results screen", async (t) => {
