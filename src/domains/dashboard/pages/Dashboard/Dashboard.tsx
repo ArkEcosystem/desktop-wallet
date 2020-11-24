@@ -77,7 +77,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		return activeProfile
 			.wallets()
 			.values()
-			.filter((w) => w.network().isLive());
+			.filter((wallet) => wallet.network().isLive());
 	}, [activeProfile]);
 
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
