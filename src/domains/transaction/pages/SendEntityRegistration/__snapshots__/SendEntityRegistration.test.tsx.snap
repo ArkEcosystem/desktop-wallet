@@ -2602,30 +2602,6 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                             role="option"
                           >
                             <div
-                              aria-label="Module"
-                              class="sc-AxgMl hLfYuP text-theme-primary-300 hover:text-theme-primary border-theme-primary-100 hover:bg-theme-primary-100"
-                              data-testid="RegistrationTypeIcon-Module"
-                            >
-                              <div
-                                class="sc-AxiKw fubePL"
-                                data-testid="RegistrationTypeIcon__icon"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  module.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            aria-selected="false"
-                            class="inline-block cursor-pointer"
-                            data-testid="SelectRegistrationType__RegistrationTypeIcon--container"
-                            id="SendTransactionForm__registrationType-item-2"
-                            role="option"
-                          >
-                            <div
                               aria-label="Plugin"
                               class="sc-AxgMl hLfYuP text-theme-primary-300 hover:text-theme-primary border-theme-primary-100 hover:bg-theme-primary-100"
                               data-testid="RegistrationTypeIcon-Plugin"
@@ -2638,6 +2614,30 @@ exports[`Registration should not have delegate option if wallet is a delegate 1`
                               >
                                 <svg>
                                   plugin.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block cursor-pointer"
+                            data-testid="SelectRegistrationType__RegistrationTypeIcon--container"
+                            id="SendTransactionForm__registrationType-item-2"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Module"
+                              class="sc-AxgMl hLfYuP text-theme-primary-300 hover:text-theme-primary border-theme-primary-100 hover:bg-theme-primary-100"
+                              data-testid="RegistrationTypeIcon-Module"
+                            >
+                              <div
+                                class="sc-AxiKw fubePL"
+                                data-testid="RegistrationTypeIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  module.svg
                                 </svg>
                               </div>
                             </div>

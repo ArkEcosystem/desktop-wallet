@@ -79,14 +79,14 @@ export const RegistrationTypeStep = ({
 
 		registrationTypes.push({
 			value: "entityRegistration",
-			type: Enums.EntityType.Module,
-			label: "Module",
+			type: Enums.EntityType.Plugin,
+			label: "Plugin",
 		});
 
 		registrationTypes.push({
 			value: "entityRegistration",
-			type: Enums.EntityType.Plugin,
-			label: "Plugin",
+			type: Enums.EntityType.Module,
+			label: "Module",
 		});
 
 		registrationTypes.push({
