@@ -1,4 +1,4 @@
-import { Enums, ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ExtendedTransactionData, ProfileSetting,ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
@@ -8,7 +8,7 @@ import { Page, Section } from "app/components/Layout";
 import { Loader } from "app/components/Loader";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback,useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -52,6 +52,22 @@ export const MyRegistrations = () => {
 		},
 	];
 
+	const filterTestnetRegistrations = useCallback(
+		(registrations: ExtendedTransactionData[]) => {
+			if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) return registrations;
+			return registrations.filter((registration) => registration.wallet().network().isLive());
+		},
+		[activeProfile],
+	);
+
+	const filterTestnetDelegates = useCallback(
+		(delegateRegistrations: ReadWriteWallet[]) => {
+			if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) return delegateRegistrations;
+			return delegateRegistrations.filter((delegate) => delegate.network().isLive());
+		},
+		[activeProfile],
+	);
+
 	useEffect(() => {
 		const fetchRegistrations = async () => {
 			setIsLoading(true);
@@ -59,29 +75,27 @@ export const MyRegistrations = () => {
 			activeProfile.entityAggregate().flush();
 
 			const pluginRegistrations = await activeProfile.entityAggregate().registrations(Enums.EntityType.Plugin);
-			setPlugins(pluginRegistrations.items());
+			setPlugins(filterTestnetRegistrations(pluginRegistrations.items()));
 
 			const businessRegistrations = await activeProfile
 				.entityAggregate()
 				.registrations(Enums.EntityType.Business);
-			setBusinesses(businessRegistrations.items());
+			setBusinesses(filterTestnetRegistrations(businessRegistrations.items()));
 
 			const delegateRegistrations = activeProfile.registrationAggregate().delegates();
-			setDelegates(delegateRegistrations);
+			setDelegates(filterTestnetDelegates(delegateRegistrations));
 
 			const entityDelegateRegistrations = await activeProfile
 				.entityAggregate()
 				.registrations(Enums.EntityType.Delegate);
 
-			setEntityDelegates(entityDelegateRegistrations.items());
-
-			setPlugins(pluginRegistrations.items());
+			setEntityDelegates(filterTestnetRegistrations(entityDelegateRegistrations.items()));
 
 			setIsLoading(false);
 		};
 
 		fetchRegistrations();
-	}, [activeProfile]);
+	}, [activeProfile, filterTestnetRegistrations, filterTestnetDelegates]);
 
 	const { pluginEntities, businessEntities, delegateWallets } = useMemo(
 		() => ({
