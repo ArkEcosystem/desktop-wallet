@@ -16,6 +16,8 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import electron from "electron";
+import { usePluginManagerContext } from "plugins";
+import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
@@ -29,6 +31,7 @@ import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, LedgerProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
 import { useDarkMode, useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
+import { PluginProviders } from "./PluginProviders";
 import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
@@ -38,6 +41,8 @@ const Main = () => {
 	const location = useLocation();
 	const { theme, setTheme } = useThemeContext();
 	const { env, persist } = useEnvironmentContext();
+	const { loadPlugins } = usePluginManagerContext();
+
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
 
@@ -86,6 +91,7 @@ const Main = () => {
 				await env.verify(shouldUseFixture ? fixtureData : undefined);
 				await env.boot();
 				await runAll();
+				await loadPlugins();
 				await persist();
 			} catch (error) {
 				handleError(error);
@@ -95,7 +101,7 @@ const Main = () => {
 		};
 
 		boot();
-	}, [env, handleError, persist, runAll]);
+	}, [env, handleError, persist, runAll, loadPlugins]);
 
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
@@ -109,7 +115,7 @@ const Main = () => {
 			return <Offline />;
 		}
 
-		return <RouterView routes={routes} middlewares={middlewares} />;
+		return <RouterView routes={routes} middlewares={middlewares} wrapper={PluginRouterWrapper} />;
 	};
 
 	return (
@@ -157,7 +163,9 @@ export const App = () => {
 				<ThemeProvider>
 					<ErrorBoundary FallbackComponent={ApplicationError}>
 						<LedgerProvider transport={LedgerTransportNodeHID}>
-							<Main />
+							<PluginProviders>
+								<Main />
+							</PluginProviders>
 						</LedgerProvider>
 					</ErrorBoundary>
 				</ThemeProvider>

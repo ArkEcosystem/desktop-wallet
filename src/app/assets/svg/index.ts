@@ -93,6 +93,7 @@ import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StarsOutline } from "./stars-outline.svg";
+import { ReactComponent as StatusFailed } from "./status-failed.svg";
 import { ReactComponent as StatusOk } from "./status-ok.svg";
 import { ReactComponent as StatusPending } from "./status-pending.svg";
 import { ReactComponent as Timelock } from "./timelock.svg";
@@ -201,6 +202,7 @@ export const SvgCollection: any = {
 	StarOutline,
 	StarsOutline,
 	StatusOk,
+	StatusFailed,
 	StatusPending,
 	Timelock,
 	Trash,

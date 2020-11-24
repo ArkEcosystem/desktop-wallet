@@ -44,7 +44,7 @@ export const Default = () => (
 			...plugins,
 		]}
 		onInstall={(plugin: any) => alert(`selected ${plugin.name} plugin`)}
-		onDelete={(plugin: any) => alert(`delete ${plugin.name} plugin`)}
+		onDisable={(plugin: any) => alert(`delete ${plugin.name} plugin`)}
 		itemsPerPage={8}
 	/>
 );

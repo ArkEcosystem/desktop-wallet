@@ -30,8 +30,8 @@ const copyFiles = () =>
 		new CopyWebpackPlugin({
 			patterns: [
 				{
-					from: path.join(__dirname, "src/electron"),
-					to: path.join(__dirname, "build/electron"),
+					from: path.join(__dirname, "dist/main/main.js"),
+					to: path.join(__dirname, "build/electron/index.js"),
 				},
 			],
 		}),

@@ -10,10 +10,12 @@ type Props = {
 	noShadow?: boolean;
 	className?: string;
 	shadowColor?: string;
+	rounded?: boolean;
 };
 
-export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; noShadow?: boolean }>`
-	${tw`transition-all duration-100 relative inline-flex items-center justify-center overflow-hidden align-middle rounded-full`}
+export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; noShadow?: boolean; rounded?: boolean }>`
+	${tw`transition-all duration-100 relative inline-flex items-center justify-center overflow-hidden align-middle`}
+	${({ rounded }) => rounded && tw`rounded-full`}
 	${({ size }) => {
 		switch (size) {
 			case "sm":
@@ -35,11 +37,16 @@ export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; n
 		`};
 `;
 
-export const Avatar = ({ address, size, noShadow, className, shadowColor, children }: Props) => {
+AvatarWrapper.defaultProps = {
+	rounded: true,
+};
+
+export const Avatar = ({ address, size, noShadow, className, shadowColor, children, rounded }: Props) => {
 	const svg = React.useMemo(() => AvatarSDK.make(address), [address]);
 
 	return (
 		<AvatarWrapper
+			rounded={rounded}
 			data-testid="Avatar"
 			size={size}
 			noShadow={!!noShadow}
@@ -56,4 +63,5 @@ export const Avatar = ({ address, size, noShadow, className, shadowColor, childr
 
 Avatar.defaultProps = {
 	address: "",
+	rounded: true,
 };

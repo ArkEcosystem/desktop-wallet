@@ -34,7 +34,11 @@ export const HeaderSearchBar = ({
 	useEffect(() => clickOutsideHandler(ref, () => setSearchbarVisible(false)), [ref]);
 
 	const debouncedQuery = useDebounce(query, debounceTimeout);
-	useEffect(() => onSearch?.(debouncedQuery), [onSearch, debouncedQuery]);
+	useEffect(() => {
+		if (query) {
+			onSearch?.(debouncedQuery);
+		}
+	}, [query, onSearch, debouncedQuery]);
 
 	const handleQueryReset = () => {
 		setQuery("");

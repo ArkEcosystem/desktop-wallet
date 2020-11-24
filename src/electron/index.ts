@@ -1,17 +1,16 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const electron = require("electron");
-const isDev = require("electron-is-dev");
-const winState = require("electron-window-state");
-const path = require("path");
-const assignMenu = require("./menu");
-const { setupUpdater } = require("./updater");
+import { app, BrowserWindow, ipcMain, screen } from "electron";
+import isDev from "electron-is-dev";
+import winState from "electron-window-state";
+import path from "path";
 
-const { BrowserWindow, app, screen, ipcMain } = electron;
+import assignMenu from "./menu";
+import { setupPlugins } from "./plugins";
+import { setupUpdater } from "./updater";
 
 const windows = {};
-let mainWindow;
+let mainWindow: BrowserWindow | null;
 let windowState = null;
-let deeplinkingUrl = null;
+let deeplinkingUrl: string | null;
 
 const winURL = isDev
 	? "http://localhost:3000"
@@ -31,7 +30,7 @@ const installExtensions = async () => {
 	}
 };
 
-function broadcastURL(url) {
+function broadcastURL(url: string | null) {
 	if (!url || typeof url !== "string") {
 		return;
 	}
@@ -44,6 +43,7 @@ function broadcastURL(url) {
 
 ipcMain.on("disable-iframe-protection", function (_event, urls) {
 	const filter = { urls };
+	// @ts-ignore
 	windows.main.webContents.session.webRequest.onHeadersReceived(filter, (details, done) => {
 		const headers = details.responseHeaders;
 
@@ -87,8 +87,6 @@ function createWindow() {
 		},
 	});
 
-	mainWindow.isMain = true;
-
 	windowState.manage(mainWindow);
 	mainWindow.loadURL(winURL);
 	mainWindow.setBackgroundColor("#f7fafb");
@@ -100,19 +98,19 @@ function createWindow() {
 	mainWindow.webContents.on("did-finish-load", () => {
 		const version = app.getVersion();
 		const windowTitle = `ARK Desktop Wallet ${version}`;
-		mainWindow.setTitle(windowTitle);
+		mainWindow && mainWindow.setTitle(windowTitle);
 
 		broadcastURL(deeplinkingUrl);
 	});
 
 	if (isDev) {
 		installExtensions()
-			.then(() => mainWindow.webContents.openDevTools())
+			.then(() => mainWindow && mainWindow.webContents.openDevTools())
 			.catch((error) => console.error(error));
 	}
 }
 
-assignMenu({ createWindow });
+assignMenu();
 
 app.on("ready", () => {
 	createWindow();
@@ -140,3 +138,5 @@ app.on("open-url", (event, url) => {
 
 app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
 app.allowRendererProcessReuse = false;
+
+setupPlugins();

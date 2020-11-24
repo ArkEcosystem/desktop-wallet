@@ -7,5 +7,5 @@ export default { title: "Domains / Plugin / Components / PluginManagerNavigation
 export const Default = () => {
 	const [currentView, setCurrentView] = React.useState("home");
 
-	return <PluginManagerNavigationBar selected={currentView} onChange={setCurrentView} />;
+	return <PluginManagerNavigationBar installedPluginsCount={0} selected={currentView} onChange={setCurrentView} />;
 };

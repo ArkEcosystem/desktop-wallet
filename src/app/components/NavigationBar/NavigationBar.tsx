@@ -78,7 +78,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 						className="relative inline-flex items-center justify-center align-middle rounded-full"
 						data-testid="navbar__user--avatar"
 					>
-						<AvatarWrapper size="lg">
+						<AvatarWrapper size="lg" rounded>
 							{avatarImage?.endsWith("</svg>") ? (
 								<>
 									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />

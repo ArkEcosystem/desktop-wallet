@@ -75,7 +75,7 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
+					<PluginList plugins={pluginList} onInstall={onInstall} onDisable={onDelete} withPagination={true} />
 				)}
 			</div>
 		</div>

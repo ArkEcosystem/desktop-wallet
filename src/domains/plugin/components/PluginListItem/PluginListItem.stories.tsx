@@ -36,8 +36,8 @@ export const Default = () => {
 	return (
 		<table className="w-full table-auto">
 			<tbody>
-				<PluginListItem plugin={plugins[0]} onInstall={onInstall} onDelete={onDelete} />
-				<PluginListItem plugin={plugins[1]} onInstall={onInstall} onDelete={onDelete} />
+				<PluginListItem plugin={plugins[0]} onInstall={onInstall} onDisable={onDelete} />
+				<PluginListItem plugin={plugins[1]} onInstall={onInstall} onDisable={onDelete} />
 			</tbody>
 		</table>
 	);

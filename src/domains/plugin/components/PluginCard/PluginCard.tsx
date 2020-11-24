@@ -1,6 +1,6 @@
+import { Avatar } from "app/components/Avatar";
 import { Card } from "app/components/Card";
 import { Icon } from "app/components/Icon";
-import { Image } from "app/components/Image";
 import { ReviewRating } from "app/components/ReviewRating";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -34,7 +34,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 	return (
 		<div data-testid={`PluginCard--${plugin.id}`}>
 			<Card
-				className="border-theme-primary-contrast hover:border-theme-background"
+				className="h-full border-theme-primary-contrast hover:border-theme-background"
 				onClick={onClick}
 				actions={plugin.isInstalled ? actions : undefined}
 				onSelect={(action: any) => {
@@ -46,12 +46,16 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 					}
 				}}
 			>
-				<div className="my-auto font-semibold">
+				<div className="h-full flex flex-col justify-between my-auto font-semibold">
 					<PluginImageContainer>
-						<Image name="ChangeNowLogo" domain="exchange" />
+						{plugin.logo ? (
+							<img src={plugin.logo} alt={plugin.name} />
+						) : (
+							<Avatar address={`${plugin.id}`} rounded={false} size="xl" className="rounded" noShadow />
+						)}
 					</PluginImageContainer>
 
-					<div className="flex items-center mb-2 space-x-2 text-lg text-theme-primary">
+					<div className="flex-1 flex items-center mb-2 space-x-2 text-lg text-theme-primary">
 						<div>{plugin.name}</div>
 
 						<div>
@@ -60,14 +64,14 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 						</div>
 					</div>
 
-					<div className="flex space-x-4 text-sm text-theme-neutral-light">
-						<div className="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
-							{plugin.author}
-						</div>
+					<div className="flex space-x-4 divide-x-1 divide-theme-neutral-300 dark:divide-theme-neutral-800 text-sm text-theme-neutral-light">
+						<div>{plugin.author}</div>
 
-						<div>
-							<ReviewRating rating={plugin.rating} />
-						</div>
+						{plugin.rating && (
+							<div>
+								<ReviewRating rating={plugin.rating} />
+							</div>
+						)}
 					</div>
 				</div>
 			</Card>

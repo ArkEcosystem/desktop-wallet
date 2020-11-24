@@ -33,6 +33,9 @@ jest.mock(`electron`, () => {
 					isUpdateCalled = true;
 					return response;
 				}
+				if (event === "plugin:loader-fs") {
+					return [];
+				}
 				return true;
 			},
 			on: (evt: any, callback: (evt: any, progress: any) => void) => {

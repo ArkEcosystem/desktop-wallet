@@ -250,7 +250,7 @@ describe("PluginManager", () => {
 			fireEvent.click(within(getByTestId("PluginManager__container--game")).getByTestId("dropdown__option--1"));
 		});
 
-		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
+		expect(consoleSpy).toHaveBeenCalledWith("delete");
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -260,8 +260,7 @@ describe("PluginManager", () => {
 			fireEvent.click(within(getByTestId("PluginManager__container--game")).getByTestId("dropdown__option--1"));
 		});
 
-		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
-		expect(consoleSpy).toHaveBeenCalledTimes(4);
+		expect(consoleSpy).toHaveBeenCalledWith("delete");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

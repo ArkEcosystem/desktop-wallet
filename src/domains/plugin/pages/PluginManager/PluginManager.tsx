@@ -6,11 +6,13 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
+import { usePluginManager } from "plugins";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -100,7 +102,12 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList
+						plugins={pluginList}
+						onInstall={onInstall}
+						onDisable={onDelete}
+						withPagination={false}
+					/>
 				)}
 			</div>
 
@@ -125,7 +132,12 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList
+						plugins={pluginList}
+						onInstall={onInstall}
+						onDisable={onDelete}
+						withPagination={false}
+					/>
 				)}
 			</div>
 
@@ -150,7 +162,12 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={pluginList} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList
+						plugins={pluginList}
+						onInstall={onInstall}
+						onDisable={onDelete}
+						withPagination={false}
+					/>
 				)}
 			</div>
 		</div>
@@ -165,6 +182,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [installPlugin, setInstallPlugin] = useState(false);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+
+	const pluginManager = usePluginManager();
+	const { persist } = useEnvironmentContext();
 
 	const [blacklist, setBlacklist] = useState<any>([]);
 
@@ -205,6 +225,21 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	}
 
 	const pluginList = plugins.filter((plugin: any) => !blacklist.find((id: any) => plugin.id === id));
+	const installedPlugins = pluginManager
+		.plugins()
+		.all()
+		.map((item) => ({
+			id: item.config().id(),
+			name: item.config().title(),
+			author: item.config().author(),
+			isOfficial: item.config().isOfficial(),
+			version: item.config().version(),
+			category: item.config().categories()?.[0],
+			isInstalled: true,
+			isEnabled: item.isEnabled(activeProfile),
+			hasLaunch: item.hooks().hasCommand("service:launch.render"),
+			size: item.config().size(),
+		}));
 
 	return (
 		<>
@@ -243,6 +278,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							selectedViewType={viewType}
 							onSelectGridView={() => setViewType("grid")}
 							onSelectListView={() => setViewType("list")}
+							installedPluginsCount={installedPlugins.length}
 						/>
 					</div>
 				</div>
@@ -263,7 +299,39 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							</div>
 						)}
 
-						{currentView !== "home" && viewType === "grid" && (
+						{currentView === "my-plugins" && viewType === "grid" && (
+							<PluginGrid
+								plugins={installedPlugins}
+								onSelect={handleSelectPlugin}
+								onDelete={() => console.log("delete")}
+								className="mt-6"
+							/>
+						)}
+
+						{currentView === "my-plugins" && viewType === "list" && (
+							<PluginList
+								showRating={false}
+								plugins={installedPlugins}
+								onInstall={void 0}
+								onEnable={(plugin: any) => {
+									pluginManager
+										.plugins()
+										.findById(plugin.id)
+										?.enable(activeProfile, { autoRun: true });
+									persist();
+								}}
+								onDisable={(plugin: any) => {
+									pluginManager.plugins().findById(plugin.id)?.disable(activeProfile);
+									persist();
+								}}
+								onLaunch={(plugin) =>
+									history.push(`/profiles/${activeProfile.id()}/plugins/${plugin.id}/view`)
+								}
+								className="mt-6"
+							/>
+						)}
+
+						{!["home", "my-plugins"].includes(currentView) && viewType === "grid" && (
 							<div>
 								<h2 className="font-bold">
 									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
@@ -277,11 +345,11 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							</div>
 						)}
 
-						{currentView !== "home" && viewType === "list" && (
+						{!["home", "my-plugins"].includes(currentView) && viewType === "list" && (
 							<PluginList
 								plugins={pluginList}
 								onInstall={() => setInstallPlugin(true)}
-								onDelete={() => console.log("delete")}
+								onDisable={() => console.log("delete")}
 								className="mt-6"
 							/>
 						)}

@@ -34,6 +34,12 @@ export const translations: { [key: string]: any } = {
 			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
 	},
 
+	MODAL_UNINSTALL: {
+		TITLE: "Plugin Uninstall",
+		DESCRIPTION:
+			"Are you sure you want to remove '{{ name }}'? Uninstalling this plugin will remove it from all profiles on this system.",
+	},
+
 	PAGE_PLUGINS_CATEGORY: {
 		LAYOUT_TITLE: "Plugin list",
 	},
@@ -72,5 +78,6 @@ export const translations: { [key: string]: any } = {
 		OTHER: "Other",
 		THEMES: "Themes",
 		UTILITY: "Utility",
+		EXCHANGE: "Exchange",
 	},
 };

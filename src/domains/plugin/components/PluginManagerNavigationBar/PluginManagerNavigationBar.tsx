@@ -11,6 +11,7 @@ type PluginManagerNavigationBar = {
 	menu: any[];
 	selected: any;
 	onChange?: any;
+	installedPluginsCount: number;
 };
 
 const NavWrapper = styled.nav`
@@ -24,6 +25,7 @@ export const PluginManagerNavigationBar = ({
 	onSelectGridView,
 	onSelectListView,
 	selectedViewType,
+	installedPluginsCount,
 }: PluginManagerNavigationBar) => (
 	<NavWrapper data-testid="PluginManagerNavigationBar" className="sticky md:top-24 top-20 bg-theme-neutral-contrast">
 		<div className="container flex items-center justify-between mx-auto px-14">
@@ -63,8 +65,8 @@ export const PluginManagerNavigationBar = ({
 						selected === "my-plugins" ? "active" : ""
 					}`}
 				>
-					<span>MyPlugin</span>
-					<span className="ml-1 text-theme-neutral">8</span>
+					<span>My Plugins</span>
+					<span className="ml-1 text-theme-neutral">{installedPluginsCount}</span>
 				</button>
 
 				<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
@@ -90,22 +92,18 @@ PluginManagerNavigationBar.defaultProps = {
 		{
 			title: "Game",
 			name: "game",
-			count: 48,
 		},
 		{
 			title: "Utility",
 			name: "utility",
-			count: 264,
 		},
 		{
 			title: "Themes",
 			name: "themes",
-			count: 96,
 		},
 		{
 			title: "Other",
 			name: "other",
-			count: 27,
 		},
 	],
 	selectedViewType: "grid",

@@ -1,25 +1,42 @@
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import { Image } from "app/components/Image";
 import { ReviewRating } from "app/components/ReviewRating";
 import { TableCell, TableRow } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type PluginListItemProps = {
-	onDelete: any;
+	onDisable?: (plugin: any) => void;
+	onEnable?: (plugin: any) => void;
+	onLaunch?: (plugin: any) => void;
+	showRating?: boolean;
 	onInstall: any;
 	plugin: any;
 };
 
-export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemProps) => {
+export const PluginListItem = ({
+	onDisable,
+	onInstall,
+	onEnable,
+	showRating,
+	onLaunch,
+	plugin,
+}: PluginListItemProps) => {
 	const { t } = useTranslation();
 
 	return (
 		<TableRow>
 			<TableCell variant="start" className="w-20">
-				<Image name="ChangeNowLogo" domain="exchange" className="w-15 h-15" />
+				<div className="w-15 h-15 flex items-center justify-center">
+					{plugin.logo ? (
+						<img src={plugin.logo} alt={plugin.name} />
+					) : (
+						<Avatar address={`${plugin.id}`} rounded={false} className="rounded" noShadow />
+					)}
+				</div>
 			</TableCell>
 
 			<TableCell innerClassName="space-x-2">
@@ -39,12 +56,14 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 				<span>{t(`PLUGINS.CATEGORIES.${plugin.category.toUpperCase()}`)}</span>
 			</TableCell>
 
-			<TableCell>
-				<ReviewRating width={3} rating={plugin.rating} />
-			</TableCell>
+			{showRating && (
+				<TableCell>
+					<ReviewRating width={3} rating={plugin.rating} />
+				</TableCell>
+			)}
 
 			<TableCell>
-				<span>v {plugin.version}</span>
+				<span>v{plugin.version}</span>
 			</TableCell>
 
 			<TableCell>
@@ -53,17 +72,27 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 			<TableCell>
 				{plugin.isInstalled ? (
-					<div className="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500">
-						<div className="m-auto">
-							<Icon name="Checkmark" width={15} height={15} />
-						</div>
-					</div>
+					<>
+						{plugin.isEnabled ? (
+							<Tooltip content="Enabled">
+								<div className="mx-auto text-2xl text-theme-success-500">
+									<Icon name="StatusOk" />
+								</div>
+							</Tooltip>
+						) : (
+							<Tooltip content="Disabled">
+								<div className="mx-auto text-2xl text-theme-danger-400">
+									<Icon name="StatusFailed" />
+								</div>
+							</Tooltip>
+						)}
+					</>
 				) : (
-					<div className="flex w-6 h-6 mx-auto">
-						<div className="m-auto text-theme-neutral">
-							<Icon name="Dash" width={15} height={15} />
+					<Tooltip content="Not installed">
+						<div className="mx-auto flex items-center justify-center w-6 h-6 text-theme-neutral">
+							<Icon name="Dash" />
 						</div>
-					</div>
+					</Tooltip>
 				)}
 			</TableCell>
 
@@ -75,23 +104,41 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 				)}
 
 				{plugin.isInstalled && (
-					<Dropdown
-						toggleContent={
-							<Button variant="plain" size="icon" className="text-left">
-								<Icon name="Settings" width={20} height={20} />
+					<div className="flex items-center space-x-2">
+						{plugin.hasLaunch && (
+							<Button
+								variant="plain"
+								onClick={() => onLaunch?.(plugin)}
+								data-testid="PluginListItem__launch"
+							>
+								{t("COMMON.LAUNCH")}
 							</Button>
-						}
-						options={[
-							{ label: t("COMMON.VIEW"), value: "view" },
-							{ label: t("COMMON.DELETE"), value: "delete" },
-						]}
-						onSelect={(option: any) => {
-							if (option.value === "delete") {
-								onDelete(plugin);
+						)}
+						<Dropdown
+							toggleContent={
+								<Button variant="plain" size="icon" className="text-left">
+									<Icon name="Settings" width={20} height={20} />
+								</Button>
 							}
-						}}
-						dropdownClass="top-3 text-left"
-					/>
+							options={[
+								{ label: t("COMMON.VIEW"), value: "view" },
+								{
+									label: plugin.isEnabled ? t("COMMON.DISABLE") : t("COMMON.ENABLE"),
+									value: plugin.isEnabled ? "disable" : "enable",
+								},
+							]}
+							onSelect={(option: any) => {
+								if (option.value === "disable") {
+									return onDisable?.(plugin);
+								}
+
+								if (option.value === "enable") {
+									return onEnable?.(plugin);
+								}
+							}}
+							dropdownClass="top-3 text-left"
+						/>
+					</div>
 				)}
 			</TableCell>
 		</TableRow>
