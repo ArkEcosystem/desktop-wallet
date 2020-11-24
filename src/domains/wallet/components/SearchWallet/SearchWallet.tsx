@@ -97,7 +97,6 @@ type SearchWalletProps = {
 	showFiatValue?: boolean;
 	showNetwork?: boolean;
 	onClose?: any;
-	onSearch?: any;
 	onSelectWallet?: any;
 };
 
@@ -111,7 +110,6 @@ export const SearchWallet = ({
 	showFiatValue,
 	showNetwork,
 	onClose,
-	onSearch,
 	onSelectWallet,
 }: SearchWalletProps) => {
 	const { t } = useTranslation();
@@ -159,7 +157,7 @@ export const SearchWallet = ({
 	}, [commonColumns, searchPlaceholder, showFiatValue, t]);
 
 	return (
-		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose} size={size}>
+		<Modal title={title} description={description} isOpen={isOpen} size={size} onClose={onClose}>
 			<div className="mt-8">
 				<Table columns={columns} data={wallets}>
 					{(wallet: ReadWriteWallet, index: number) => (
