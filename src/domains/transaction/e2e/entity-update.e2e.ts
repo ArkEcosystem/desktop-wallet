@@ -20,9 +20,13 @@ createFixture(`Send Entity Update`, [
 	mockRequest("https://platform.ark.io/api/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV", IpfsFixture),
 	mockRequest(
 		{
-			url: "https://dwallets.ark.io/api/transactions",
-			method: "GET",
+			url: "https://platform.ark.io/api/ipfs",
+			method: "POST",
 		},
+		"QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV",
+	),
+	mockRequest(
+		"https://dwallets.ark.io/api/transactions",
 		require("../../../tests/fixtures/registrations/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P-businesses.json"),
 	),
 	mockRequest(
