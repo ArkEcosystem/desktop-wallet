@@ -61,12 +61,13 @@ export const News = ({ itemsPerPage }: Props) => {
 			setNews([]);
 
 			const query = {
+				coins,
+				page: currentPage,
 				...(categories.length && categories.length !== AVAILABLE_CATEGORIES.length && { categories }),
 				...(searchQuery && { query: searchQuery }),
-				page: currentPage,
 			};
 
-			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(coins[0], query);
+			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(query);
 
 			setNews(data);
 			setIsLoading(false);
