@@ -474,8 +474,21 @@ describe("SendEntityUpdate", () => {
 	});
 
 	it("should show loading toast when submitting send transaction", async () => {
-		const { getByTestId } = renderPage();
 		const loadingToastMock = jest.spyOn(toast, "info");
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			errors: undefined,
+			rejected: [],
+			accepted: [EntityUpdateTransactionFixture.data.id],
+		});
+
+		const transactionMock = createTransactionMock(wallet);
+
+		const { getByTestId, findByTestId } = renderPage();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -487,12 +500,17 @@ describe("SendEntityUpdate", () => {
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+
+		await waitFor(async () => {
+			expect(await findByTestId("SendEntityUpdate__send-button")).not.toBeDisabled();
 		});
 
 		act(() => {
@@ -500,12 +518,33 @@ describe("SendEntityUpdate", () => {
 		});
 
 		await waitFor(() => expect(loadingToastMock).toHaveBeenCalled());
+		await waitFor(() => expect(signMock).toBeCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SummaryStep__ipfs-data")).toBeTruthy());
 
 		loadingToastMock.mockRestore();
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
 	});
 
 	it("should successfully submit entity update transaction", async () => {
-		const { asFragment, getByTestId } = renderPage();
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			errors: undefined,
+			rejected: [],
+			accepted: [EntityUpdateTransactionFixture.data.id],
+		});
+
+		const transactionMock = createTransactionMock(wallet);
+
+		const { asFragment, findByTestId, getByTestId } = renderPage();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -517,28 +556,16 @@ describe("SendEntityUpdate", () => {
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
-		});
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
 
-		await waitFor(() => {
-			expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase);
+		await waitFor(async () => {
+			expect(await findByTestId("SendEntityUpdate__send-button")).not.toBeDisabled();
 		});
-		expect(asFragment()).toMatchSnapshot();
-
-		const signMock = jest
-			.spyOn(wallet.transaction(), "signEntityUpdate")
-			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
-			errors: undefined,
-			rejected: [],
-			accepted: [EntityUpdateTransactionFixture.data.id],
-		});
-		const transactionMock = createTransactionMock(wallet);
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
@@ -620,7 +647,19 @@ describe("SendEntityUpdate", () => {
 	// });
 
 	it("should show broadcast error", async () => {
-		const { getByTestId } = renderPage();
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
+			Promise.resolve({
+				errors: { [EntityUpdateTransactionFixture.data.id]: ["broadcast error"] },
+				rejected: [EntityUpdateTransactionFixture.data.id],
+				accepted: [],
+			}),
+		);
+
+		const { getByTestId, findByTestId } = renderPage();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -632,24 +671,16 @@ describe("SendEntityUpdate", () => {
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
-		});
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
 
-		const signMock = jest
-			.spyOn(wallet.transaction(), "signEntityUpdate")
-			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
-			Promise.resolve({
-				errors: { [EntityUpdateTransactionFixture.data.id]: ["broadcast error"] },
-				rejected: [EntityUpdateTransactionFixture.data.id],
-				accepted: [],
-			}),
-		);
+		await waitFor(async () => {
+			expect(await findByTestId("SendEntityUpdate__send-button")).not.toBeDisabled();
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
@@ -664,7 +695,19 @@ describe("SendEntityUpdate", () => {
 	});
 
 	it("should show broadcast error and go back", async () => {
-		const { getByTestId, history: pageHistory } = renderPage();
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
+			Promise.resolve({
+				errors: { [EntityUpdateTransactionFixture.data.id]: ["broadcast error"] },
+				rejected: [EntityUpdateTransactionFixture.data.id],
+				accepted: [],
+			}),
+		);
+
+		const { getByTestId, findByTestId, history: pageHistory } = renderPage();
 		const historyMock = jest.spyOn(pageHistory, "push").mockReturnValue();
 		const memoryHistoryMock = jest.spyOn(history, "push").mockReturnValue();
 
@@ -678,24 +721,16 @@ describe("SendEntityUpdate", () => {
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendEntityUpdate__continue-button"));
 		});
 
-		act(() => {
-			fireEvent.change(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
-		});
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
 
-		const signMock = jest
-			.spyOn(wallet.transaction(), "signEntityUpdate")
-			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockReturnValue(
-			Promise.resolve({
-				errors: { [EntityUpdateTransactionFixture.data.id]: ["broadcast error"] },
-				rejected: [EntityUpdateTransactionFixture.data.id],
-				accepted: [],
-			}),
-		);
+		await waitFor(async () => {
+			expect(await findByTestId("SendEntityUpdate__send-button")).not.toBeDisabled();
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("SendEntityUpdate__send-button"));
