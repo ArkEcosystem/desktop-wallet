@@ -10,8 +10,14 @@ const translations = buildTranslations();
 
 createFixture(`News filtering`, [
 	mockRequest("https://platform.ark.io/api/coins/signals?coins=ark&page=1", "news/page-1"),
-	mockRequest("https://platform.ark.io/api/coins/signals?coins=eth&page=1&categories=Technical&query=major+league+hacking", "news/filtered"),
-	mockRequest("https://platform.ark.io/api/coins/signals?coins=ark&page=1&query=fjdskfjdfsdjfkdsfjdsfsd", "news/empty-response"),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=eth&page=1&categories=Technical&query=major+league+hacking",
+		"news/filtered",
+	),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ark&page=1&query=fjdskfjdfsdjfkdsfjdsfsd",
+		"news/empty-response",
+	),
 ]).beforeEach(async (t) => await goToNews(t));
 
 test("should display news feed", async (t) => {

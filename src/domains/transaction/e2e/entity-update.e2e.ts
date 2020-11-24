@@ -24,8 +24,8 @@ createFixture(`Send Entity Update`, [
 			method: "POST",
 		},
 		{
-			"data": {
-				"hash": "QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV",
+			data: {
+				hash: "QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV",
 			},
 		},
 	),

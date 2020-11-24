@@ -51,10 +51,7 @@ const multisignatureMocks = () => {
 	for (const state of ["ready", "pending"]) {
 		mocks.push(
 			...publicKeys.map((identifier: string) =>
-				mockRequest(
-					`https://dmusig1.ark.io/transactions?publicKey=${identifier}&state=${state}`,
-					[],
-				),
+				mockRequest(`https://dmusig1.ark.io/transactions?publicKey=${identifier}&state=${state}`, []),
 			),
 		);
 	}
@@ -190,9 +187,7 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/delegates?page=4", "coins/ark/devnet/delegates"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/devnet/delegates"),
 	],
-	multisignature: [
-		...multisignatureMocks(),
-	],
+	multisignature: [...multisignatureMocks()],
 	transactions: [
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/devnet/transactions"),
@@ -226,19 +221,16 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 			...requestMocks.transactions,
 			...requestMocks.wallets,
 			...postHooks,
-			mockRequest(
-				/^https?:\/\//,
-				(request: any) => {
-					const mock: { url: string; method: string; body?: string } = {
-						url: request.url,
-						method: request.method,
-					};
+			mockRequest(/^https?:\/\//, (request: any) => {
+				const mock: { url: string; method: string; body?: string } = {
+					url: request.url,
+					method: request.method,
+				};
 
-					if (request.method === "POST") {
-						mock.body = request.body.toString();
-					}
+				if (request.method === "POST") {
+					mock.body = request.body.toString();
+				}
 
-					throw new Error(`\n-- Missing mock:\n${JSON.stringify(mock, undefined, 4)}`);
-				},
-			),
+				throw new Error(`\n-- Missing mock:\n${JSON.stringify(mock, undefined, 4)}`);
+			}),
 		);
