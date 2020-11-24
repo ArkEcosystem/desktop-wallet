@@ -15,20 +15,26 @@ type FilterTransactionsToggleProps = {
 	selectedOption?: DropdownOption;
 };
 
-const FilterTransactionsToggle = ({ selectedOption, isOpen }: FilterTransactionsToggleProps) => (
-	<div className="flex items-center space-x-2 cursor-pointer" data-testid="FilterTransactionsToggle">
-		<div className="font-semibold">
-			<span className="text-theme-neutral-500">Type: </span>
-			<span className="text-theme-neutral-600">{selectedOption?.label}</span>
+const FilterTransactionsToggle = ({ selectedOption, isOpen }: FilterTransactionsToggleProps) => {
+	const iconColorClass = isOpen
+		? "bg-theme-primary-600 text-theme-primary-contrast"
+		: "bg-theme-primary-100 text-theme-primary-600";
+
+	return (
+		<div className="flex items-center space-x-2 cursor-pointer" data-testid="FilterTransactionsToggle">
+			<div className="font-semibold">
+				<span className="text-theme-neutral-500">Type: </span>
+				<span className="text-theme-neutral-600">{selectedOption?.label}</span>
+			</div>
+			<Icon
+				className={`${iconColorClass} p-1 rounded-xl`}
+				name={isOpen ? "ChevronUp" : "ChevronDown"}
+				width={9}
+				height={9}
+			/>
 		</div>
-		<Icon
-			className="p-1 bg-theme-primary-600 border-theme-primary-600 text-theme-primary-contrast rounded-xl"
-			name={isOpen ? "ChevronUp" : "ChevronDown"}
-			width={9}
-			height={9}
-		/>
-	</div>
-);
+	);
+};
 
 export const FilterTransactions = ({ className, onSelect, defaultSelected }: FilterTransactionsProps) => {
 	const { t } = useTranslation();
