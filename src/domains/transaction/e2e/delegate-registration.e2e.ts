@@ -45,7 +45,7 @@ test("should successfully submit delegate registration", async (t) => {
 
 	// Choose registration type & go to step 2
 	await t.click('[data-testid="SelectRegistrationTypeInput__input"]');
-	await t.click(Selector("#SendTransactionForm__registrationType-item-3"));
+	await t.click(Selector("#SendTransactionForm__registrationType-item-0"));
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Choose username
