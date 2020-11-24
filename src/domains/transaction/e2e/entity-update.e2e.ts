@@ -23,7 +23,7 @@ createFixture(`Send Entity Update`, [
 			url: "https://platform.ark.io/api/ipfs",
 			method: "POST",
 		},
-		"QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV",
+		() => "QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV",
 	),
 	mockRequest(
 		"https://dwallets.ark.io/api/transactions",
