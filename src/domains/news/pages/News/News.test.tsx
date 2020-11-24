@@ -26,7 +26,7 @@ describe("News", () => {
 		nock.disableNetConnect();
 
 		nock("https://platform.ark.io/api")
-			.get("/coins/signals?coins=ark")
+			.get("/coins/signals?coins=ARK")
 			.reply(200, () => {
 				const { meta, data } = page1Fixture;
 				return {
@@ -34,7 +34,7 @@ describe("News", () => {
 					data: data.slice(0, 1),
 				};
 			})
-			.get("/coins/signals?coins=ark&page=1")
+			.get("/coins/signals?coins=ARK&page=1")
 			.reply(200, () => {
 				const { meta, data } = page1Fixture;
 				return {
@@ -42,7 +42,7 @@ describe("News", () => {
 					data: data.slice(0, 1),
 				};
 			})
-			.get("/coins/signals?coins=ark&page=2")
+			.get("/coins/signals?coins=ARK&page=2")
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/news/page-2.json");
 				return {
@@ -50,9 +50,9 @@ describe("News", () => {
 					data: data.slice(0, 1),
 				};
 			})
-			.get("/coins/signals?coins=ark&query=NoResult&page=1")
+			.get("/coins/signals?coins=ARK&query=NoResult&page=1")
 			.reply(200, require("tests/fixtures/news/empty-response.json"))
-			.get("/coins/signals?coins=ark&categories=Technical&query=Hacking&page=1")
+			.get("/coins/signals?coins=ARK&categories=Technical&query=Hacking&page=1")
 			.reply(200, require("tests/fixtures/news/filtered.json"))
 			.persist();
 

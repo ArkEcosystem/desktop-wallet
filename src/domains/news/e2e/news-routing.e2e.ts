@@ -6,8 +6,8 @@ import { goToNews } from "./common";
 const itemsPerPage = 15;
 
 createFixture(`News routing`, [
-	mockRequest("https://platform.ark.io/api/coins/signals?coins=ark&page=1", "news/page-1"),
-	mockRequest("https://platform.ark.io/api/coins/signals?coins=ark&page=2", "news/page-2"),
+	mockRequest("https://platform.ark.io/api/coins/signals?coins=ARK&page=1", "news/page-1"),
+	mockRequest("https://platform.ark.io/api/coins/signals?coins=ARK&page=2", "news/page-2"),
 ]);
 
 test("should navigate to news page", async (t) => await goToNews(t));

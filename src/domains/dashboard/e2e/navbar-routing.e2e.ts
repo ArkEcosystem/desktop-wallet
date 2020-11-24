@@ -6,7 +6,7 @@ import { createFixture, getLocation, mockRequest } from "../../../utils/e2e-util
 const translations = buildTranslations();
 
 createFixture(`NavBar routing`, [
-	mockRequest("https://platform.ark.io/api/coins/signals?coins=ark&page=1", { data: [], meta: {} }),
+	mockRequest("https://platform.ark.io/api/coins/signals?coins=ARK&page=1", { data: [], meta: {} }),
 ]);
 
 test("should navigate to profile dashboard", async (t) => {

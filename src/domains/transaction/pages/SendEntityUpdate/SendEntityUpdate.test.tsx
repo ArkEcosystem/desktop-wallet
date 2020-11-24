@@ -474,8 +474,21 @@ describe("SendEntityUpdate", () => {
 	});
 
 	it("should show loading toast when submitting send transaction", async () => {
-		const { getByTestId, findByTestId } = renderPage();
 		const loadingToastMock = jest.spyOn(toast, "info");
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signEntityUpdate")
+			.mockReturnValue(Promise.resolve(EntityUpdateTransactionFixture.data.id));
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			errors: undefined,
+			rejected: [],
+			accepted: [EntityUpdateTransactionFixture.data.id],
+		});
+
+		const transactionMock = createTransactionMock(wallet);
+
+		const { getByTestId, findByTestId } = renderPage();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -505,8 +518,17 @@ describe("SendEntityUpdate", () => {
 		});
 
 		await waitFor(() => expect(loadingToastMock).toHaveBeenCalled());
+		await waitFor(() => expect(signMock).toBeCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SummaryStep__ipfs-data")).toBeTruthy());
 
 		loadingToastMock.mockRestore();
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
 	});
 
 	it("should successfully submit entity update transaction", async () => {
