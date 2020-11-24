@@ -1,12 +1,16 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
+import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToMyRegistrations, goToProfile } from "./common";
+
+const IpfsFixture = require("../../../tests/fixtures/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV.json");
 
 const translations = buildTranslations();
 
-createFixture(`My Registrations`);
+createFixture(`My Registrations`, [
+	mockRequest("https://platform.ark.io/api/ipfs/QmRwgWaaEyYgGqp55196TsFDQLW4NZkyTnPwiSVhJ7NPRV", IpfsFixture),
+]);
 
 const selectRegistrationOption = async (rowSelector: string, optionLabel: string, t: any) => {
 	const dropdownToggle = `${rowSelector} [data-testid=dropdown__toggle]`;
