@@ -37,7 +37,7 @@ export const News = ({ itemsPerPage }: Props) => {
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const [{ categories, coins, searchQuery }, setFilters] = useState<NewsFilters>(
-		activeProfile.settings().get(ProfileSetting.NewsFilters) || { categories: [], coins: ["ark"] },
+		activeProfile.settings().get(ProfileSetting.NewsFilters) || { categories: [], coins: ["ARK"] },
 	);
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);
@@ -61,12 +61,13 @@ export const News = ({ itemsPerPage }: Props) => {
 			setNews([]);
 
 			const query = {
+				coins,
+				page: currentPage,
 				...(categories.length && categories.length !== AVAILABLE_CATEGORIES.length && { categories }),
 				...(searchQuery && { query: searchQuery }),
-				page: currentPage,
 			};
 
-			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(coins[0], query);
+			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(query);
 
 			setNews(data);
 			setIsLoading(false);
