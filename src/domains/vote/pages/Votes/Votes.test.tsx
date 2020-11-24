@@ -50,6 +50,10 @@ const renderPage = (route: string, routePath = "/profiles/:profileId/wallets/:wa
 
 describe("Votes", () => {
 	beforeAll(async () => {
+		nock("https://neoscan.io/api/main_net/v1/")
+			.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
+			.reply(200, []);
+
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
@@ -370,5 +374,20 @@ describe("Votes", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should hide testnet wallet if disabled from profile setting", async () => {
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+		await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, container, getByTestId } = renderPage(route);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
+
+		expect(asFragment()).toMatchSnapshot();
+		useNetworksMock.mockRestore();
 	});
 });

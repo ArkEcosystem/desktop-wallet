@@ -62,6 +62,10 @@ export const Votes = () => {
 			(coins, coin) => ({
 				...coins,
 				[coin]: Object.values(wallets[coin]).filter((wallet: ReadWriteWallet) => {
+					if (!activeProfile.settings().get(ProfileSetting.UseTestNetworks) && wallet.network().isTest()) {
+						return false;
+					}
+
 					if (!selectedNetworkIds.includes(wallet.network().id())) {
 						return false;
 					}
