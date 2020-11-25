@@ -5,6 +5,7 @@ import { BusinessResignationBuilder } from './business-resignation.builder'
 import { BusinessUpdateBuilder } from './business-update.builder'
 import { BusinessRegistrationBuilder } from './business-registration.builder'
 import { DelegateResignationBuilder } from './delegate-resignation.builder'
+import { EntityBuilder } from './entity.builder'
 import { MultiPaymentBuilder } from './multi-payment.builder'
 import { IpfsBuilder } from './ipfs.builder'
 import { MultiSignatureBuilder } from './multi-signature.builder'
@@ -62,6 +63,14 @@ export class TransactionBuilderService {
     returnObject = false
   ) {
     return DelegateResignationBuilder.build(data, isAdvancedFee, returnObject)
+  }
+
+  static async buildEntity (
+    data,
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    return EntityBuilder.build(data, isAdvancedFee, returnObject)
   }
 
   static async buildBusinessRegistration (

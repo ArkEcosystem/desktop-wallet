@@ -64,12 +64,9 @@ jest.mock('@/store', () => ({
           25 * 1e8 // Delegate resignation
         ],
         2: [
-          50 * 1e8, // Business Registration
-          50 * 1e8, // Business Resignation
-          50 * 1e8, // Business Update
-          50 * 1e8, // Bridgechain Registration
-          50 * 1e8, // Bridgechain Resignation
-          50 * 1e8 // Bridgechain Update
+          50 * 1e8, // Entity Registration
+          5 * 1e8, // Entity Resignation
+          5 * 1e8 // Entity Update
         ]
       }
 
@@ -1566,480 +1563,80 @@ describe('Services > Client', () => {
     })
   })
 
-  describe('buildBusinessRegistration', () => {
+  describe('buildEntity', () => {
     const address = Identities.Address.fromPassphrase('passphrase', 23)
     const publicKey = Identities.PublicKey.fromPassphrase('passphrase')
-    const rawTransaction = {
-      address,
-      fee: new BigNumber(fees[2][0]),
-      asset: {
-        name: 'google',
-        website: 'https://www.google.com',
-        vat: 'GB123456',
-        repository: 'https://github.com/arkecosystem/desktop-wallet.git'
-      },
-      passphrase: 'passphrase',
-      secondPassphrase: 'second passphrase',
-      networkWif: 170
-    }
 
-    describe('standard transaction', () => {
-      it('should not build a v1 transaction', async () => {
-        setAip11AndSpy(false, false)
-
-        await expect(client.buildBusinessRegistration(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
-      })
-
-      it('should build a valid v2 transaction', async () => {
-        const spy = setAip11AndSpy(true)
-
-        const transaction = await client.buildBusinessRegistration(rawTransaction, true)
-
-        spy.mockRestore()
-
-        expect(transaction.asset.businessRegistration).toEqual(rawTransaction.asset)
-        expect(transaction.fee).toEqual(rawTransaction.fee.toString())
-        expect(transaction.senderPublicKey).toEqual(publicKey)
-        expect(transaction.typeGroup).toEqual(2)
-        expect(transaction.type).toEqual(0)
-        expect(transaction.version).toEqual(2)
-      })
-
-      it('should build a valid v2 transaction without optional data', async () => {
-        const spy = setAip11AndSpy(true)
-
-        const newRawTransaction = {
-          ...rawTransaction,
-          asset: {
+    describe('Entity registration', () => {
+      const rawTransaction = {
+        address,
+        fee: new BigNumber(fees[2][0]),
+        asset: {
+          type: 0,
+          subType: 0,
+          action: 0,
+          data: {
             name: 'google',
-            website: 'https://www.google.com'
+            ipfsData: 'QmXCuXaBuWZGqES7tDW6AHFCGj8zEzFG48P1BHWSU1fqq3'
           }
-        }
-        const transaction = await client.buildBusinessRegistration(newRawTransaction, true)
-
-        spy.mockRestore()
-
-        expect(transaction.asset.businessRegistration).toEqual(newRawTransaction.asset)
-        expect(transaction.fee).toEqual(rawTransaction.fee.toString())
-        expect(transaction.senderPublicKey).toEqual(publicKey)
-        expect(transaction.typeGroup).toEqual(2)
-        expect(transaction.type).toEqual(0)
-        expect(transaction.version).toEqual(2)
-      })
-    })
-
-    describe('when the fee is bigger than the static fee', () => {
-      it('should throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-        const fee = new BigNumber(fees[2][0] + 1)
-        await expect(client.buildBusinessRegistration({ fee })).rejects.toThrow(/fee/)
-        spy.mockRestore()
-      })
-    })
-
-    describe('when the fee is smaller or equal to the static fee (5)', () => {
-      it('should not throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-
-        await expect(
-          client.buildBusinessRegistration({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][0]) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        await expect(
-          client.buildBusinessRegistration({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][0] - 1) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        spy.mockRestore()
-      })
-    })
-  })
-
-  describe('buildBusinessUpdate', () => {
-    const address = Identities.Address.fromPassphrase('passphrase', 23)
-    const publicKey = Identities.PublicKey.fromPassphrase('passphrase')
-    const rawTransaction = {
-      address,
-      fee: new BigNumber(fees[2][2]),
-      asset: {
-        name: 'google',
-        website: 'https://www.google.com',
-        vat: 'GB123456',
-        repository: 'https://github.com/arkecosystem/desktop-wallet.git'
-      },
-      passphrase: 'passphrase',
-      secondPassphrase: 'second passphrase',
-      networkWif: 170
-    }
-
-    describe('standard transaction', () => {
-      it('should not build a v1 transaction', async () => {
-        setAip11AndSpy(false, false)
-
-        await expect(client.buildBusinessUpdate(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
-      })
-
-      it('should build a valid v2 transaction', async () => {
-        const spy = setAip11AndSpy(true)
-
-        const transaction = await client.buildBusinessUpdate(rawTransaction, true)
-
-        spy.mockRestore()
-
-        expect(transaction.asset.businessUpdate).toEqual(rawTransaction.asset)
-        expect(transaction.fee).toEqual(rawTransaction.fee.toString())
-        expect(transaction.senderPublicKey).toEqual(publicKey)
-        expect(transaction.typeGroup).toEqual(2)
-        expect(transaction.type).toEqual(2)
-        expect(transaction.version).toEqual(2)
-      })
-
-      it('should build a valid v2 transaction without optional data', async () => {
-        const spy = setAip11AndSpy(true)
-
-        const newRawTransaction = {
-          ...rawTransaction,
-          asset: {
-            name: 'google',
-            website: 'https://www.google.com'
-          }
-        }
-        const transaction = await client.buildBusinessUpdate(newRawTransaction, true)
-
-        spy.mockRestore()
-
-        expect(transaction.asset.businessUpdate).toEqual(newRawTransaction.asset)
-        expect(transaction.fee).toEqual(rawTransaction.fee.toString())
-        expect(transaction.senderPublicKey).toEqual(publicKey)
-        expect(transaction.typeGroup).toEqual(2)
-        expect(transaction.type).toEqual(2)
-        expect(transaction.version).toEqual(2)
-      })
-    })
-
-    describe('when the fee is bigger than the static fee', () => {
-      it('should throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-        const fee = new BigNumber(fees[2][2] + 1)
-        await expect(client.buildBusinessUpdate({ fee })).rejects.toThrow(/fee/)
-        spy.mockRestore()
-      })
-    })
-
-    describe('when the fee is smaller or equal to the static fee (5)', () => {
-      it('should not throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-
-        await expect(
-          client.buildBusinessUpdate({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][2]) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        await expect(
-          client.buildBusinessUpdate({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][2] - 1) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        spy.mockRestore()
-      })
-    })
-  })
-
-  describe('buildBusinessResignation', () => {
-    const address = Identities.Address.fromPassphrase('passphrase', 23)
-    const publicKey = Identities.PublicKey.fromPassphrase('passphrase')
-    const rawTransaction = {
-      address,
-      fee: new BigNumber(fees[2][1]),
-      passphrase: 'passphrase',
-      secondPassphrase: 'second passphrase',
-      networkWif: 170
-    }
-
-    describe('standard transaction', () => {
-      it('should not build a v1 transaction', async () => {
-        setAip11AndSpy(false, false)
-
-        await expect(client.buildBusinessResignation(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
-      })
-
-      it('should build a valid v2 transaction', async () => {
-        const spy = setAip11AndSpy(true)
-
-        const transaction = await client.buildBusinessResignation(rawTransaction, true)
-
-        spy.mockRestore()
-
-        expect(transaction.fee).toEqual(rawTransaction.fee.toString())
-        expect(transaction.senderPublicKey).toEqual(publicKey)
-        expect(transaction.typeGroup).toEqual(2)
-        expect(transaction.type).toEqual(1)
-        expect(transaction.version).toEqual(2)
-      })
-    })
-
-    describe('when the fee is bigger than the static fee', () => {
-      it('should throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-        const fee = new BigNumber(fees[2][1] + 1)
-        await expect(client.buildBusinessResignation({ fee })).rejects.toThrow(/fee/)
-        spy.mockRestore()
-      })
-    })
-
-    describe('when the fee is smaller or equal to the static fee (5)', () => {
-      it('should not throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-
-        await expect(
-          client.buildBusinessResignation({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][1]) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        await expect(
-          client.buildBusinessResignation({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][1] - 1) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        spy.mockRestore()
-      })
-    })
-  })
-
-  describe('buildBridgechainRegistration', () => {
-    const address = Identities.Address.fromPassphrase('passphrase', 23)
-    const publicKey = Identities.PublicKey.fromPassphrase('passphrase')
-    const rawTransaction = {
-      address,
-      fee: new BigNumber(fees[2][3]),
-      asset: {
-        name: 'test_bridgechain',
-        seedNodes: [
-          '1.1.1.1',
-          '2.2.2.2',
-          '3.3.3.3',
-          '4.4.4.4'
-        ],
-        ports: {
-          '@arkecosystem/core-api': 4003
         },
-        genesisHash: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-        bridgechainRepository: 'https://github.com/arkecosystem/core.git'
-      },
-      passphrase: 'passphrase',
-      secondPassphrase: 'second passphrase',
-      networkWif: 170
-    }
+        passphrase: 'passphrase',
+        secondPassphrase: 'second passphrase',
+        networkWif: 170
+      }
 
-    describe('standard transaction', () => {
-      it('should not build a v1 transaction', async () => {
-        setAip11AndSpy(false, false)
+      describe('standard transaction', () => {
+        it('should not build a v1 transaction', async () => {
+          setAip11AndSpy(false, false)
 
-        await expect(client.buildBridgechainRegistration(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
+          await expect(client.buildEntity(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
+        })
+
+        it('should build a valid v2 transaction', async () => {
+          const spy = setAip11AndSpy(true)
+
+          const transaction = await client.buildEntity(rawTransaction, true)
+
+          spy.mockRestore()
+
+          expect(transaction.asset).toEqual(rawTransaction.asset)
+          expect(transaction.fee).toEqual(rawTransaction.fee.toString())
+          expect(transaction.senderPublicKey).toEqual(publicKey)
+          expect(transaction.typeGroup).toEqual(2)
+          expect(transaction.type).toEqual(6)
+          expect(transaction.version).toEqual(2)
+        })
       })
 
-      it('should build a valid v2 transaction', async () => {
-        const spy = setAip11AndSpy(true)
-
-        const transaction = await client.buildBridgechainRegistration(rawTransaction, true)
-
-        spy.mockRestore()
-
-        expect(transaction.asset.bridgechainRegistration).toEqual(rawTransaction.asset)
-        expect(transaction.fee).toEqual(rawTransaction.fee.toString())
-        expect(transaction.senderPublicKey).toEqual(publicKey)
-        expect(transaction.typeGroup).toEqual(2)
-        expect(transaction.type).toEqual(3)
-        expect(transaction.version).toEqual(2)
-      })
-    })
-
-    describe('when the fee is bigger than the static fee', () => {
-      it('should throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-        const fee = new BigNumber(fees[2][3] + 1)
-        await expect(client.buildBridgechainRegistration({ fee })).rejects.toThrow(/fee/)
-        spy.mockRestore()
-      })
-    })
-
-    describe('when the fee is smaller or equal to the static fee (5)', () => {
-      it('should not throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-
-        await expect(
-          client.buildBridgechainRegistration({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][3]) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        await expect(
-          client.buildBridgechainRegistration({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][3] - 1) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        spy.mockRestore()
-      })
-    })
-  })
-
-  describe('buildBridgechainUpdate', () => {
-    const address = Identities.Address.fromPassphrase('passphrase', 23)
-    const publicKey = Identities.PublicKey.fromPassphrase('passphrase')
-    const rawTransaction = {
-      address,
-      fee: new BigNumber(fees[2][5]),
-      asset: {
-        bridgechainId: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-        seedNodes: [
-          '1.1.1.1',
-          '2.2.2.2',
-          '3.3.3.3',
-          '4.4.4.4'
-        ],
-        ports: {
-          '@arkecosystem/core-api': 4003
-        }
-      },
-      passphrase: 'passphrase',
-      secondPassphrase: 'second passphrase',
-      networkWif: 170
-    }
-
-    describe('standard transaction', () => {
-      it('should not build a v1 transaction', async () => {
-        setAip11AndSpy(false, false)
-
-        await expect(client.buildBridgechainUpdate(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
+      describe('when the fee is bigger than the static fee', () => {
+        it('should throw an Error', async () => {
+          const spy = setAip11AndSpy(true)
+          const fee = new BigNumber(fees[2][0] + 1)
+          await expect(client.buildEntity({ asset: { action: 0 }, fee })).rejects.toThrow(/fee/)
+          spy.mockRestore()
+        })
       })
 
-      it('should build a valid v2 transaction', async () => {
-        const spy = setAip11AndSpy(true)
+      describe('when the fee is smaller or equal to the static fee (5)', () => {
+        it('should not throw an Error', async () => {
+          const spy = setAip11AndSpy(true)
 
-        const transaction = await client.buildBridgechainUpdate(rawTransaction, true)
+          await expect(
+            client.buildEntity({
+              ...rawTransaction,
+              ...{ fee: new BigNumber(fees[2][0]) }
+            })
+          ).resolves.not.toThrow(/fee/)
 
-        spy.mockRestore()
+          await expect(
+            client.buildEntity({
+              ...rawTransaction,
+              ...{ fee: new BigNumber(fees[2][0] - 1) }
+            })
+          ).resolves.not.toThrow(/fee/)
 
-        expect(transaction.asset.bridgechainUpdate).toEqual(rawTransaction.asset)
-        expect(transaction.fee).toEqual(rawTransaction.fee.toString())
-        expect(transaction.senderPublicKey).toEqual(publicKey)
-        expect(transaction.typeGroup).toEqual(2)
-        expect(transaction.type).toEqual(5)
-        expect(transaction.version).toEqual(2)
-      })
-    })
-
-    describe('when the fee is bigger than the static fee', () => {
-      it('should throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-        const fee = new BigNumber(fees[2][5] + 1)
-        await expect(client.buildBridgechainUpdate({ fee })).rejects.toThrow(/fee/)
-        spy.mockRestore()
-      })
-    })
-
-    describe('when the fee is smaller or equal to the static fee (5)', () => {
-      it('should not throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-
-        await expect(
-          client.buildBridgechainUpdate({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][5]) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        await expect(
-          client.buildBridgechainUpdate({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][5] - 1) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        spy.mockRestore()
-      })
-    })
-  })
-
-  describe('buildBridgechainResignation', () => {
-    const address = Identities.Address.fromPassphrase('passphrase', 23)
-    const publicKey = Identities.PublicKey.fromPassphrase('passphrase')
-    const rawTransaction = {
-      address,
-      fee: new BigNumber(fees[2][4]),
-      bridgechainId: '2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867',
-      passphrase: 'passphrase',
-      secondPassphrase: 'second passphrase',
-      networkWif: 170
-    }
-
-    describe('standard transaction', () => {
-      it('should not build a v1 transaction', async () => {
-        setAip11AndSpy(false, false)
-
-        await expect(client.buildBridgechainResignation(rawTransaction, true)).rejects.toThrow('AIP-11 transaction not supported on network')
-      })
-
-      it('should build a valid v2 transaction', async () => {
-        const spy = setAip11AndSpy(true)
-
-        const transaction = await client.buildBridgechainResignation(rawTransaction, true)
-
-        spy.mockRestore()
-
-        expect(transaction.asset.bridgechainResignation.bridgechainId).toEqual(rawTransaction.bridgechainId)
-        expect(transaction.fee).toEqual(rawTransaction.fee.toString())
-        expect(transaction.senderPublicKey).toEqual(publicKey)
-        expect(transaction.typeGroup).toEqual(2)
-        expect(transaction.type).toEqual(4)
-        expect(transaction.version).toEqual(2)
-      })
-    })
-
-    describe('when the fee is bigger than the static fee', () => {
-      it('should throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-        const fee = new BigNumber(fees[2][4] + 1)
-        await expect(client.buildBridgechainResignation({ fee })).rejects.toThrow(/fee/)
-        spy.mockRestore()
-      })
-    })
-
-    describe('when the fee is smaller or equal to the static fee (5)', () => {
-      it('should not throw an Error', async () => {
-        const spy = setAip11AndSpy(true)
-
-        await expect(
-          client.buildBridgechainResignation({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][4]) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        await expect(
-          client.buildBridgechainResignation({
-            ...rawTransaction,
-            ...{ fee: new BigNumber(fees[2][4] - 1) }
-          })
-        ).resolves.not.toThrow(/fee/)
-
-        spy.mockRestore()
+          spy.mockRestore()
+        })
       })
     })
   })

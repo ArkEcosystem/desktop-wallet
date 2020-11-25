@@ -624,6 +624,15 @@ export default class ClientService {
   }
 
   // todo: move this out
+  async buildEntity (
+    data,
+    isAdvancedFee = false,
+    returnObject = false
+  ) {
+    return this.__buildTransaction('buildEntity', data, isAdvancedFee, returnObject)
+  }
+
+  // todo: move this out
   async buildBusinessRegistration (
     data,
     isAdvancedFee = false,

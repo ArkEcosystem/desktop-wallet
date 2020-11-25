@@ -19,3 +19,6 @@ Transactions.TransactionRegistry.registerTransactionType(
 Transactions.TransactionRegistry.registerTransactionType(
   MagistrateCrypto.Transactions.BridgechainUpdateTransaction
 )
+Transactions.TransactionRegistry.registerTransactionType(
+  MagistrateCrypto.Transactions.EntityTransaction
+)
