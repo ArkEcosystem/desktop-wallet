@@ -26,6 +26,16 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 		register("network", { required: true });
 	}, [register]);
 
+	useEffect(() => {
+		if (peer) {
+			const network = networks.find(
+				(network) =>
+					network.coin() === peer.coin.toUpperCase() && network.id() === `${peer.coin}.${peer.network}`,
+			);
+			setValue("network", network, { shouldValidate: true, shouldDirty: true });
+		}
+	}, [networks, peer, setValue]);
+
 	const handleSelectNetwork = (network?: Coins.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
@@ -64,6 +74,7 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 							field: t("SETTINGS.PEERS.PEER_IP"),
 						}).toString(),
 					})}
+					defaultValue={peer?.host}
 					data-testid="PeerForm__host-input"
 				/>
 				<FormHelperText />
@@ -72,7 +83,12 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 			<FormField name="type">
 				<FormLabel label={t("SETTINGS.PEERS.TYPE")} required={false} optional />
 				<label htmlFor="isMultiSignature" className="flex items-center space-x-2">
-					<Checkbox name="isMultiSignature" ref={register()} data-testid="PeerForm__multisignature-toggle" />
+					<Checkbox
+						ref={register()}
+						name="isMultiSignature"
+						defaultChecked={peer?.isMultiSignature}
+						data-testid="PeerForm__multisignature-toggle"
+					/>
 					<span className="text-sm font-semibold text-theme-secondary-text">
 						{t("COMMON.MULTISIGNATURE")}
 					</span>

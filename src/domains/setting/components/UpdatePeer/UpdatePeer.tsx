@@ -30,11 +30,23 @@ export const UpdatePeer = ({ isOpen, networks, peer, profile, onClose }: UpdateP
 		host: string;
 		isMultiSignature: boolean;
 	}) => {
-		profile.peers().update(network.coin(), network.id(), host, {
-			name,
-			host,
-			isMultiSignature,
-		});
+		const coin = peer.coin.toUpperCase();
+		const networkId = `${peer.coin}.${peer.network}`;
+
+		if (network.coin() === coin && network.id() === networkId) {
+			profile.peers().update(network.coin(), network.id(), peer.host, {
+				name,
+				host,
+				isMultiSignature,
+			});
+		} else {
+			profile.peers().forget(coin, networkId, peer);
+			profile.peers().create(network.coin(), network.id(), {
+				name,
+				host,
+				isMultiSignature,
+			});
+		}
 
 		await persist();
 

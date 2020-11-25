@@ -11,6 +11,7 @@ import { useActiveProfile } from "app/hooks";
 import { CreatePeer } from "domains/setting/components/CreatePeer";
 import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
+import { UpdatePeer } from "domains/setting/components/UpdatePeer";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -196,14 +197,24 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 			/>
 
 			{selectedPeer && (
-				<DeletePeer
-					isOpen={peerAction === "delete"}
-					peer={selectedPeer}
-					profile={activeProfile}
-					onCancel={resetPeerAction}
-					onClose={resetPeerAction}
-					onDelete={resetPeerAction}
-				/>
+				<>
+					<UpdatePeer
+						isOpen={peerAction === "edit"}
+						networks={availableNetworks}
+						peer={selectedPeer}
+						profile={activeProfile}
+						onClose={resetPeerAction}
+					/>
+
+					<DeletePeer
+						isOpen={peerAction === "delete"}
+						peer={selectedPeer}
+						profile={activeProfile}
+						onCancel={resetPeerAction}
+						onClose={resetPeerAction}
+						onDelete={resetPeerAction}
+					/>
+				</>
 			)}
 		</>
 	);
