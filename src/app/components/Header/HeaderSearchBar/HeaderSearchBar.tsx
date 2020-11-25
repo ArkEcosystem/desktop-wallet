@@ -36,10 +36,7 @@ export const HeaderSearchBar = ({
 	const debouncedQuery = useDebounce(query, debounceTimeout);
 	useEffect(() => onSearch?.(debouncedQuery), [onSearch, debouncedQuery]);
 
-	const handleQueryReset = (event: React.MouseEvent<HTMLButtonElement>) => {
-		event.preventDefault();
-		event.stopPropagation();
-
+	const handleQueryReset = () => {
 		setQuery("");
 		onReset?.();
 	};
@@ -76,7 +73,7 @@ export const HeaderSearchBar = ({
 						</div>
 					)}
 
-					<button data-testid="header-search-bar__reset" onClick={handleQueryReset}>
+					<button data-testid="header-search-bar__reset" onClick={handleQueryReset} type="button">
 						<Icon className="text-theme-neutral" name="CrossSlim" width={12} height={12} />
 					</button>
 
