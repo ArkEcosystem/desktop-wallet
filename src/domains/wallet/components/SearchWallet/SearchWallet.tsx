@@ -10,7 +10,7 @@ import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
 import { useDarkMode } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
 
@@ -112,6 +112,8 @@ export const SearchWallet = ({
 	onClose,
 	onSelectWallet,
 }: SearchWalletProps) => {
+	const [query, setQuery] = useState("");
+
 	const { t } = useTranslation();
 
 	const commonColumns = [
@@ -137,7 +139,14 @@ export const SearchWallet = ({
 					className: "justify-end",
 				},
 				{
-					Header: <HeaderSearchBar placeholder={searchPlaceholder} />,
+					Header: (
+						<HeaderSearchBar
+							placeholder={searchPlaceholder}
+							onSearch={setQuery}
+							onReset={() => setQuery("")}
+							debounceTimeout={100}
+						/>
+					),
 					accessor: "search",
 					className: "justify-end no-border",
 					disableSortBy: true,
@@ -148,13 +157,30 @@ export const SearchWallet = ({
 		return [
 			...commonColumns,
 			{
-				Header: <HeaderSearchBar placeholder={searchPlaceholder} />,
+				Header: (
+					<HeaderSearchBar
+						placeholder={searchPlaceholder}
+						onSearch={setQuery}
+						onReset={() => setQuery("")}
+						debounceTimeout={100}
+					/>
+				),
 				accessor: "search",
 				className: "justify-end no-border",
 				disableSortBy: true,
 			},
 		];
 	}, [commonColumns, searchPlaceholder, showFiatValue, t]);
+
+	const filteredWallets = useMemo(() => {
+		if (!query.length) return wallets;
+
+		return wallets.filter(
+			(wallet) =>
+				wallet.address().toLowerCase().includes(query.toLowerCase()) ||
+				wallet.alias()?.toLowerCase()?.includes(query.toLowerCase()),
+		);
+	}, [wallets, query]);
 
 	return (
 		<Modal title={title} description={description} isOpen={isOpen} size={size} onClose={onClose}>
