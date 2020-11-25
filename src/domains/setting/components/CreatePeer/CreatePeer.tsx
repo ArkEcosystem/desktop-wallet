@@ -18,7 +18,7 @@ export const CreatePeer = ({ isOpen, networks, profile, onClose }: CreatePeerPro
 
 	const { persist } = useEnvironmentContext();
 
-	const handleAddPeer = async ({
+	const handleCreatePeer = async ({
 		network,
 		name,
 		host,
@@ -42,7 +42,7 @@ export const CreatePeer = ({ isOpen, networks, profile, onClose }: CreatePeerPro
 
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
-			<PeerForm networks={networks} onSave={handleAddPeer} />
+			<PeerForm networks={networks} onSave={handleCreatePeer} />
 		</Modal>
 	);
 };

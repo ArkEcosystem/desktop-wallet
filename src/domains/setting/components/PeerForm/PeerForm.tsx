@@ -10,10 +10,11 @@ import { useTranslation } from "react-i18next";
 
 type PeerFormProps = {
 	networks: Coins.Network[];
+	peer?: any;
 	onSave: any;
 };
 
-export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
+export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -49,6 +50,7 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 							field: t("SETTINGS.PEERS.NAME"),
 						}).toString(),
 					})}
+					defaultValue={peer?.name}
 					data-testid="PeerForm__name-input"
 				/>
 				<FormHelperText />

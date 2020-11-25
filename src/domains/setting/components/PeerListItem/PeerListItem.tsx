@@ -50,7 +50,9 @@ export const PeerListItem = ({ coin, network, name, host, isMultiSignature, opti
 							</div>
 						}
 						options={options}
-						onSelect={(action: DropdownOption) => onAction?.(action.value, { coin, network, host })}
+						onSelect={(action: DropdownOption) =>
+							onAction?.(action.value, { coin, network, name, host, isMultiSignature })
+						}
 					/>
 				)}
 			</TableCell>
