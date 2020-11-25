@@ -106,10 +106,12 @@ describe("WalletDetails", () => {
 	beforeEach(() => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(walletUrl);
+		jest.useFakeTimers();
+		jest.advanceTimersByTime(30000);
 	});
 
 	it("should render", async () => {
-		const { getByTestId, queryAllByTestId, asFragment } = await renderPage();
+		const { asFragment } = await renderPage();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
