@@ -160,16 +160,16 @@
 		}
 	],
 	"links": {
-		"first": "https://platform.ark.io/api/coins/ark/signals?page=1",
-		"last": "https://platform.ark.io/api/coins/ark/signals?page=27",
-		"next": "https://platform.ark.io/api/coins/ark/signals?page=2",
+		"first": "https://platform.ark.io/api/coins//signals?coins=ARK&page=1",
+		"last": "https://platform.ark.io/api/coins/signals?coins=ARK&page=27",
+		"next": "https://platform.ark.io/api/coins/signals?coins=ARK&page=2",
 		"prev": null
 	},
 	"meta": {
 		"current_page": 1,
 		"from": 1,
 		"last_page": 27,
-		"path": "https://platform.ark.io/api/coins/ark/signals",
+		"path": "https://platform.ark.io/api/coins/signals?coins=ARK",
 		"per_page": 15,
 		"to": 15,
 		"total": 399

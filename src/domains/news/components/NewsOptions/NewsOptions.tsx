@@ -38,7 +38,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 	const [coins, setCoins] = useState(
 		availableCoins.map((coin: CoinOption) => ({
 			...coin,
-			isSelected: selectedCoins.includes(coin.coin.toLowerCase()),
+			isSelected: selectedCoins.includes(coin.coin),
 		})),
 	);
 
@@ -96,7 +96,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		);
 
 		const coinNames = coins.reduce(
-			(acc: string[], coin: CoinOption) => (coin.isSelected ? acc.concat(coin.coin.toLowerCase()) : acc),
+			(acc: string[], coin: CoinOption) => (coin.isSelected ? acc.concat(coin.coin) : acc),
 			[],
 		);
 

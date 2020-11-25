@@ -83,7 +83,7 @@ describe("NewsOptions", () => {
 		expect(onSearch).toBeCalledWith("test query");
 		expect(onSubmit).toBeCalledWith({
 			categories: expect.arrayContaining(["Technical"]),
-			coins: expect.arrayContaining(["ark"]),
+			coins: expect.arrayContaining(["ARK"]),
 			searchQuery: expect.stringMatching("test query"),
 		});
 	});
@@ -137,7 +137,7 @@ describe("NewsOptions", () => {
 
 		expect(onSubmit).toBeCalledWith({
 			categories: expect.arrayContaining(["Technical"]),
-			coins: expect.arrayContaining(["ark"]),
+			coins: expect.arrayContaining(["ARK"]),
 			searchQuery: expect.stringMatching("test query"),
 		});
 	});
