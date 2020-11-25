@@ -2,13 +2,13 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Enums, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Select } from "app/components/SelectDropdown";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { DelegateRegistrationForm } from "domains/transaction/components/DelegateRegistrationForm/DelegateRegistrationForm";
 import { EntityRegistrationForm } from "domains/transaction/components/EntityRegistrationForm/EntityRegistrationForm";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
+import { SelectRegistrationType } from "domains/transaction/components/SelectRegistrationType";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -29,17 +29,6 @@ const registrationComponents: any = {
 	entityRegistration: EntityRegistrationForm,
 	secondSignature: SecondSignatureRegistrationForm,
 	multiSignature: MultiSignatureRegistrationForm,
-};
-
-const RegistrationTypeDropdown = ({ className, defaultValue, registrationTypes, onChange }: any) => {
-	const { t } = useTranslation();
-
-	return (
-		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-			<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
-			<Select options={registrationTypes} defaultValue={defaultValue} onChange={onChange} />
-		</FormField>
-	);
 };
 
 export const RegistrationTypeStep = ({
@@ -68,26 +57,6 @@ export const RegistrationTypeStep = ({
 
 	const registrationTypes = [];
 
-	if (network?.can("Transaction.entityRegistration")) {
-		registrationTypes.push({
-			value: "entityRegistration",
-			type: Enums.EntityType.Business,
-			label: "Business",
-		});
-
-		registrationTypes.push({
-			value: "entityRegistration",
-			type: Enums.EntityType.Product,
-			label: "Product",
-		});
-
-		registrationTypes.push({
-			value: "entityRegistration",
-			type: Enums.EntityType.Plugin,
-			label: "Plugin",
-		});
-	}
-
 	if (wallet.hasSyncedWithNetwork?.()) {
 		if (
 			!wallet.isDelegate?.() &&
@@ -99,24 +68,32 @@ export const RegistrationTypeStep = ({
 				label: "Delegate",
 			});
 		}
+	}
 
-		if (!wallet.isMultiSignature?.() && network?.can("Transaction.multiSignature")) {
-			registrationTypes.push({
-				value: "multiSignature",
-				label: "MultiSignature",
-			});
-		}
+	if (network?.can("Transaction.entityRegistration")) {
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Business,
+			label: "Business",
+		});
 
-		if (
-			!wallet.isSecondSignature?.() &&
-			!wallet.isMultiSignature?.() &&
-			network?.can("Transaction.secondSignature")
-		) {
-			registrationTypes.push({
-				value: "secondSignature",
-				label: "Second Signature",
-			});
-		}
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Plugin,
+			label: "Plugin",
+		});
+
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Module,
+			label: "Module",
+		});
+
+		registrationTypes.push({
+			value: "entityRegistration",
+			type: Enums.EntityType.Product,
+			label: "Product",
+		});
 	}
 
 	const onSelectSender = (address: any) => {
@@ -126,13 +103,17 @@ export const RegistrationTypeStep = ({
 		history.push(`/profiles/${profile.id()}/wallets/${wallet!.id()}/send-entity-registration`);
 	};
 
-	const onSelectType = (selectedItem: SendEntityRegistrationType) => {
+	const onSelectType = (selectedItem: SendEntityRegistrationType | null | undefined) => {
 		setValue("registrationType", selectedItem, { shouldValidate: true, shouldDirty: true });
-		setRegistrationForm(registrationComponents[selectedItem.value]);
 
-		if (fees[selectedItem.value]) {
-			setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
-			setValue("fees", fees[selectedItem.value]);
+		/* istanbul ignore else */
+		if (selectedItem) {
+			setRegistrationForm(registrationComponents[selectedItem.value]);
+
+			if (fees[selectedItem.value]) {
+				setValue("fee", fees[selectedItem.value].avg, { shouldValidate: true, shouldDirty: true });
+				setValue("fees", fees[selectedItem.value]);
+			}
 		}
 	};
 
@@ -170,13 +151,15 @@ export const RegistrationTypeStep = ({
 				</div>
 			</FormField>
 
-			<RegistrationTypeDropdown
-				selectedType={registrationTypes.find(
-					(type: SendEntityRegistrationType) => type.value === registrationType?.value,
-				)}
-				registrationTypes={registrationTypes}
-				onChange={onSelectType}
-			/>
+			<FormField data-testid="Registration__type" name="registrationType">
+				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
+				<SelectRegistrationType
+					id="SendTransactionForm__registrationType"
+					options={registrationTypes}
+					selected={registrationType}
+					onSelect={onSelectType}
+				/>
+			</FormField>
 		</section>
 	);
 };
