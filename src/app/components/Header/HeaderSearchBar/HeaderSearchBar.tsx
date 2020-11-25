@@ -8,7 +8,7 @@ type HeaderSearchBarProps = {
 	placeholder?: string;
 	label?: string;
 	children?: React.ReactNode;
-	onSearch?: any;
+	onSearch?: (query: string) => void;
 	onReset?: () => void;
 	extra?: React.ReactNode;
 	debounceTimeout?: number;
@@ -36,7 +36,10 @@ export const HeaderSearchBar = ({
 	const debouncedQuery = useDebounce(query, debounceTimeout);
 	useEffect(() => onSearch?.(debouncedQuery), [onSearch, debouncedQuery]);
 
-	const handleQueryReset = () => {
+	const handleQueryReset = (event: React.MouseEvent<HTMLButtonElement>) => {
+		event.preventDefault();
+		event.stopPropagation();
+
 		setQuery("");
 		onReset?.();
 	};
