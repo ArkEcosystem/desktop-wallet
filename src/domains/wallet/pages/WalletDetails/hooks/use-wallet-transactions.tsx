@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (
 	wallet: ReadWriteWallet,
-	{ limit = 30, mode = "all", transactionType }: { limit: number; mode?: string; transactionType?: any },
+	{ limit, mode = "all", transactionType }: { limit: number; mode?: string; transactionType?: any },
 ) => {
 	const pendingMultiSignatureTransactions: SignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
