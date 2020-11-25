@@ -152,14 +152,17 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfigurationClone));
 	}, [defaultDashboardConfiguration, dashboardConfiguration]);
 
-	useEffect(() => () => {
+	useEffect(
+		() => () => {
 			if (!usePortfolioChartAnimation) return;
 
 			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, {
 				...dashboardConfiguration,
 				usePortfolioChartAnimation: false,
 			});
-		}, [activeProfile, usePortfolioChartAnimation, dashboardConfiguration]);
+		},
+		[activeProfile, usePortfolioChartAnimation, dashboardConfiguration],
+	);
 
 	// Wallet controls data
 	const handleSelectViewType = (viewType: string) => {
