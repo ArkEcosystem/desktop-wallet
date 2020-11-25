@@ -4,7 +4,7 @@ import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act,env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "testing-library";
 
 import { translations } from "../../i18n";
 import { SearchWallet } from "./SearchWallet";
