@@ -4,6 +4,7 @@ import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
+import { EmptyResults } from "app/components/EmptyResults";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Modal } from "app/components/Modal";
 import { TableCell, TableRow } from "app/components/Table";
@@ -182,10 +183,12 @@ export const SearchWallet = ({
 		);
 	}, [wallets, query]);
 
+	const isEmptyResults = query.length > 0 && !filteredWallets.length;
+
 	return (
 		<Modal title={title} description={description} isOpen={isOpen} size={size} onClose={onClose}>
 			<div className="mt-8">
-				<Table columns={columns} data={wallets}>
+				<Table columns={columns} data={filteredWallets}>
 					{(wallet: ReadWriteWallet, index: number) => (
 						<SearchWalletListItem
 							index={index}
@@ -203,6 +206,14 @@ export const SearchWallet = ({
 						/>
 					)}
 				</Table>
+
+				{isEmptyResults && (
+					<EmptyResults
+						className="mt-16"
+						title={t("COMMON.EMPTY_RESULTS.TITLE")}
+						subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+					/>
+				)}
 			</div>
 		</Modal>
 	);
