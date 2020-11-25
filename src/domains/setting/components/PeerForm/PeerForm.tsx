@@ -96,8 +96,8 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 			</FormField>
 
 			<div className="flex justify-end mt-4">
-				<Button type="submit" disabled={!isValid} data-testid="PeerForm__add-button">
-					{t("SETTINGS.PEERS.ADD_PEER")}
+				<Button type="submit" disabled={!isValid} data-testid="PeerForm__submit-button">
+					{t(`SETTINGS.PEERS.${!peer ? "ADD_PEER" : "EDIT_PEER"}`)}
 				</Button>
 			</div>
 		</Form>

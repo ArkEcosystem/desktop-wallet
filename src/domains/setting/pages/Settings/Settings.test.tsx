@@ -309,7 +309,7 @@ describe("Settings", () => {
 			fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
 		});
 
-		const submitButton = getByTestId("PeerForm__add-button");
+		const submitButton = getByTestId("PeerForm__submit-button");
 		expect(submitButton).toBeTruthy();
 		await waitFor(() => {
 			expect(submitButton).not.toHaveAttribute("disabled");

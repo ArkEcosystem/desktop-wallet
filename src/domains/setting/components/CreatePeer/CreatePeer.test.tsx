@@ -7,8 +7,8 @@ import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor
 import { translations } from "../../i18n";
 import { CreatePeer } from "./CreatePeer";
 
-const onClose = jest.fn();
 let profile: Profile;
+const onClose = jest.fn();
 
 describe("CreatePeer", () => {
 	beforeAll(() => {
@@ -30,7 +30,7 @@ describe("CreatePeer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render add peer modal", async () => {
+	it("should render create peer modal", async () => {
 		let rendered: RenderResult;
 
 		await act(async () => {
@@ -45,7 +45,7 @@ describe("CreatePeer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should add peer", async () => {
+	it("should create a peer", async () => {
 		let rendered: RenderResult;
 
 		await act(async () => {
@@ -67,7 +67,7 @@ describe("CreatePeer", () => {
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
 			await fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
 
-			const submitButton = getByTestId("PeerForm__add-button");
+			const submitButton = getByTestId("PeerForm__submit-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");

@@ -18,7 +18,7 @@ describe("DeletePeer", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		profile.peers().create("ARK", "ark.devnet", {
-			name: "Private",
+			name: "ROBank",
 			host: "194.168.4.67",
 			isMultiSignature: false,
 		});
