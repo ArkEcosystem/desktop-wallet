@@ -47,12 +47,16 @@ export const RegistrationTypeStep = ({
 	const { setValue } = form;
 	const { network, senderAddress, registrationType } = form.watch();
 
+	const filterWallets = (wallets: ReadWriteWallet[]) => {
+		setWallets(wallets.filter((wallet) => !wallet.isLedger()));
+	};
+
 	useEffect(() => {
 		if (network) {
-			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
+			return filterWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
 
-		setWallets(profile.wallets().values());
+		filterWallets(profile.wallets().values());
 	}, [network, profile]);
 
 	const registrationTypes = [];
