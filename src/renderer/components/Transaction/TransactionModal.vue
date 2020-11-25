@@ -1,6 +1,6 @@
 <template>
   <ModalWindow
-    :title="title || typeName"
+    :title="title === undefined ? typeName : title"
     :container-classes="`TransactionModal ${typeClass}`"
     :confirm-close="true"
     @close="emitCancel"

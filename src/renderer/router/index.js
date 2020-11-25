@@ -26,6 +26,11 @@ const router = new Router({
       name: 'announcements',
       component: require('@/pages/Announcements').default
     },
+    {
+      path: '/registrations',
+      name: 'registrations',
+      component: require('@/pages/Registrations').default
+    },
     // {
     //   path: '/search',
     //   name: 'search',

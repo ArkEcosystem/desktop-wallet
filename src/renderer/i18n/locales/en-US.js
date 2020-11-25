@@ -274,6 +274,7 @@ export default {
     NETWORK: 'Network',
     NETWORKS: 'Manage networks',
     PLUGIN_MANAGER: 'Plugin Manager',
+    REGISTRATIONS: 'Registrations',
     PLUGINS_PAGES: 'Plugin Pages',
     SETTINGS: {
       CURRENCY: 'Currency',

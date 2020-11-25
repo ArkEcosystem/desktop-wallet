@@ -82,6 +82,16 @@
             :is-horizontal="isHorizontal"
             @close="closeShowPlugins"
           />
+
+          <!-- Registration pages -->
+          <MenuNavigationItem
+            id="registrations"
+            :title="$t('APP_SIDEMENU.REGISTRATIONS')"
+            :is-horizontal="isHorizontal"
+            class="AppSidemenu__item"
+            icon="msq"
+            @click="redirect($event)"
+          />
         </div>
 
         <div class="flexify">

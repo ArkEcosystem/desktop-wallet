@@ -12,6 +12,7 @@
 import { TRANSACTION_GROUPS } from '@config'
 import TransactionFormDelegateRegistration from './TransactionFormDelegateRegistration'
 import TransactionFormDelegateResignation from './TransactionFormDelegateResignation'
+import TransactionFormEntity from './TransactionFormEntity'
 import TransactionFormIpfs from './TransactionFormIpfs'
 import TransactionFormMultiSign from './TransactionFormMultiSign'
 import TransactionFormMultiSignature from './TransactionFormMultiSignature'
@@ -26,6 +27,7 @@ export default {
     TransactionFormDelegateRegistration,
     TransactionFormDelegateResignation,
     TransactionFormIpfs,
+    TransactionFormEntity,
     TransactionFormMultiSign,
     TransactionFormMultiSignature,
     TransactionFormTransfer,
