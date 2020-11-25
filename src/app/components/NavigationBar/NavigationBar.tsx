@@ -13,7 +13,7 @@ import { Action } from "app/components/Notifications/models";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo,useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
@@ -161,6 +161,17 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 	const getExchangeCurrency = () => profile?.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
+	const wallets = useMemo(() => {
+		if (!profile) return [];
+
+		if (profile?.settings().get(ProfileSetting.UseTestNetworks)) return profile?.wallets().values();
+
+		return profile
+			?.wallets()
+			.values()
+			.filter((wallet) => wallet.network().isLive());
+	}, [profile]);
+
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
 			<div className="px-4 sm:px-6 lg:px-10">
@@ -184,6 +195,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 								<div className="flex items-center overflow-hidden rounded-lg">
 									<Button
+										disabled={!wallets.length}
 										variant="transparent"
 										size="icon"
 										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -256,7 +268,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 						title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
 						description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
 						searchPlaceholder={t("WALLETS.MODAL_SELECT_ACCOUNT.SEARCH_PLACEHOLDER")}
-						wallets={profile.wallets().values()}
+						wallets={wallets}
 						onSelectWallet={handleSelectWallet}
 						onClose={() => setSearchWalletIsOpen(false)}
 					/>
