@@ -52,8 +52,6 @@ export const WalletListItem = ({
 		if (typeof onAction === "function") onAction(action);
 	};
 
-	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
-
 	const getIconName = (type: string) => {
 		switch (type) {
 			case "Starred":

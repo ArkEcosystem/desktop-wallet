@@ -55,8 +55,6 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 		);
 	}
 
-	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
-
 	const getIconName = (type: string) => {
 		switch (type) {
 			case "Starred":
