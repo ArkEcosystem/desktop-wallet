@@ -8,7 +8,7 @@ import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import { AddPeer } from "domains/setting/components/AddPeer";
+import { CreatePeer } from "domains/setting/components/CreatePeer";
 import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -25,7 +25,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
 	);
 	const [peers, setPeers] = useState([]);
-	const [isAddPeer, setIsAddPeer] = useState(false);
+	const [isCreatePeer, setIsCreatePeer] = useState(false);
 
 	const [peerAction, setPeerAction] = useState<string | null>(null);
 	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
@@ -169,7 +169,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 						<Button
 							variant="plain"
 							className="w-full mt-8 mb-2"
-							onClick={() => setIsAddPeer(true)}
+							onClick={() => setIsCreatePeer(true)}
 							data-testid="Peer-list__add-button"
 						>
 							{t("SETTINGS.PEERS.ADD_PEER")}
@@ -188,11 +188,11 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				</div>
 			</Form>
 
-			<AddPeer
-				isOpen={isAddPeer}
+			<CreatePeer
+				isOpen={isCreatePeer}
 				networks={availableNetworks}
 				profile={activeProfile}
-				onClose={() => setIsAddPeer(false)}
+				onClose={() => setIsCreatePeer(false)}
 			/>
 
 			{selectedPeer && (

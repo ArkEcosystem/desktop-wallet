@@ -5,12 +5,12 @@ import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
-import { AddPeer } from "./AddPeer";
+import { CreatePeer } from "./CreatePeer";
 
 const onClose = jest.fn();
 let profile: Profile;
 
-describe("AddPeer", () => {
+describe("CreatePeer", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
@@ -20,7 +20,7 @@ describe("AddPeer", () => {
 
 		await act(async () => {
 			rendered = render(
-				<AddPeer isOpen={false} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
+				<CreatePeer isOpen={false} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
 			);
 		});
 
@@ -35,7 +35,7 @@ describe("AddPeer", () => {
 
 		await act(async () => {
 			rendered = render(
-				<AddPeer isOpen={true} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
+				<CreatePeer isOpen={true} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
 			);
 		});
 
@@ -50,7 +50,7 @@ describe("AddPeer", () => {
 
 		await act(async () => {
 			rendered = render(
-				<AddPeer isOpen={true} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
+				<CreatePeer isOpen={true} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
 			);
 		});
 
