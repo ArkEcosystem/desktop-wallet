@@ -131,15 +131,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should not render wallet registrations when the network does not support second signatures, delegate registrations and entity registrations", async () => {
-		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
-
-		when(networkFeatureSpy)
-			.calledWith("Transaction.secondSignature")
-			.mockReturnValue(false)
-			.calledWith("Transaction.delegateRegistration")
-			.mockReturnValue(false)
-			.calledWith("Transaction.entityRegistration")
-			.mockReturnValue(false);
+		const networkFeatureSpy = jest.spyOn(wallet, "canAny").mockReturnValue(false);
 
 		const { getByTestId } = await renderPage(false);
 
