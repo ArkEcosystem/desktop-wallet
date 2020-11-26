@@ -69,8 +69,17 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	useEffect(() => {
 		if (!isCustomPeer || peers.length < 2) {
 			setIsMultiPeerBroadcast(false);
+
+			const savePeerSettings = async () => {
+				activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
+				activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
+
+				await env.persist();
+			};
+
+			savePeerSettings();
 		}
-	}, [isCustomPeer, isMultiPeerBroadcast, peers]);
+	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peers]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
