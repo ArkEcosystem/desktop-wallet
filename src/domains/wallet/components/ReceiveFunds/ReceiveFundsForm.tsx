@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const ReceiveFundsForm = () => {
+export const ReceiveFundsForm = ({ maxLength }: { maxLength: number }) => {
 	const { t } = useTranslation();
 
 	const form = useFormContext();
@@ -30,7 +30,8 @@ export const ReceiveFundsForm = () => {
 					/>
 					<FormHelperText />
 				</FormField>
-				<FormField name="smartbridge" className="relative">
+
+				<FormField name="smartbridge">
 					<FormLabel label={t("COMMON.SMARTBRIDGE")} required={false} optional={true} />
 					<InputCounter
 						ref={register(receiveFunds.smartbridge())}
@@ -38,7 +39,7 @@ export const ReceiveFundsForm = () => {
 						type="text"
 						placeholder=" "
 						className="pr-24"
-						maxLengthLabel="255"
+						maxLengthLabel={maxLength.toString()}
 					/>
 					<FormHelperText />
 				</FormField>

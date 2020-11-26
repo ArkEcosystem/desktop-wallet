@@ -16,6 +16,8 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_RECEIVE_FUNDS: {
 		TITLE: "Receive Funds",
+		WARNING:
+			"Please note that you have exceeded the number of characters allowed, anything over {{maxLength}} characters will not appear in smartbridges.",
 	},
 
 	MODAL_LEDGER_WALLET: {
