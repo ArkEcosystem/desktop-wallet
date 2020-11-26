@@ -73,7 +73,6 @@ beforeAll(async () => {
 describe("SendTransfer", () => {
 	it("should render 1st step (form)", async () => {
 		const { result: form } = renderHook(() => useForm());
-
 		await act(async () => {
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
@@ -88,12 +87,13 @@ describe("SendTransfer", () => {
 
 	it("should render 1st step (form) without test networks", async () => {
 		const { result: form } = renderHook(() => useForm());
+
 		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
 
 		await act(async () => {
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
-					<FormStep networks={[]} profile={profile} />
+					<FormStep networks={env.availableNetworks()} profile={profile} />
 				</FormProvider>,
 			);
 
