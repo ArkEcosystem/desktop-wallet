@@ -67,12 +67,10 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	}, [loadPeers, state]);
 
 	useEffect(() => {
-		if (isCustomPeer && peers.length > 1) {
-			setIsMultiPeerBroadcast(true);
+		if (!isCustomPeer || peers.length < 2) {
+			setIsMultiPeerBroadcast(false);
 		}
-
-		setIsMultiPeerBroadcast(false);
-	}, [isCustomPeer, peers]);
+	}, [isCustomPeer, isMultiPeerBroadcast, peers]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
