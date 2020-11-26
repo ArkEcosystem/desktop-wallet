@@ -27,11 +27,6 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const [isCustomPeer, setIsCustomPeer] = useState(
 		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
 	);
-	const [peers, setPeers] = useState([]);
-	const [isAddPeer, setIsAddPeer] = useState(false);
-
-	const [peerAction, setPeerAction] = useState<string | null>(null);
-	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
 
 	const loadPeers = useCallback(
 		() =>
@@ -56,6 +51,12 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		[activeProfile],
 	);
 
+	const [peers, setPeers] = useState(loadPeers());
+	const [isAddPeer, setIsAddPeer] = useState(false);
+
+	const [peerAction, setPeerAction] = useState<string | null>(null);
+	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
+
 	useEffect(() => {
 		if (!peerAction) {
 			setSelectedPeer(null);
@@ -67,7 +68,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	}, [loadPeers, state]);
 
 	useEffect(() => {
-		if (!isCustomPeer || peers.length < 2) {
+		if (isMultiPeerBroadcast && (!isCustomPeer || peers.length < 2)) {
 			setIsMultiPeerBroadcast(false);
 
 			const savePeerSettings = async () => {
