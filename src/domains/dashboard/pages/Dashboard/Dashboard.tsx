@@ -148,12 +148,13 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	});
 
 	useEffect(() => {
-		const dashboardConfigurationClone = (({ viewType, ...rest }) => rest)(dashboardConfiguration);
-
-		defaultDashboardConfiguration.selectedNetworkIds = defaultDashboardConfiguration.selectedNetworkIds.sort();
-		dashboardConfigurationClone.selectedNetworkIds = dashboardConfigurationClone.selectedNetworkIds.sort();
-
-		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfigurationClone));
+		setActiveFilter(
+			defaultDashboardConfiguration.walletsDisplayType !== dashboardConfiguration.walletsDisplayType ||
+				!isEqual(
+					[...defaultDashboardConfiguration.selectedNetworkIds].sort(),
+					[...dashboardConfiguration.selectedNetworkIds].sort(),
+				),
+		);
 	}, [defaultDashboardConfiguration, dashboardConfiguration]);
 
 	useEffect(
