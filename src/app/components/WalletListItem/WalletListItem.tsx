@@ -98,10 +98,10 @@ export const WalletListItem = ({
 			>
 				<div className="inline-flex items-center space-x-2">
 					{[
-						wallet.isLedger() && <WalletIcon type="Ledger" />,
-						wallet.isStarred() && <WalletIcon type="Starred" />,
+						wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
+						wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
 						wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
-							<WalletIcon type="MultiSignature" />
+							<WalletIcon key="MultiSignature" type="MultiSignature" />
 						),
 					]}
 				</div>
