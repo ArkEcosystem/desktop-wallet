@@ -21,6 +21,9 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const { state } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
+	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
+		activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast) || false,
+	);
 	const [isCustomPeer, setIsCustomPeer] = useState(
 		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
 	);
@@ -63,6 +66,14 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		setPeers(loadPeers());
 	}, [loadPeers, state]);
 
+	useEffect(() => {
+		if (isCustomPeer && peers.length > 1) {
+			setIsMultiPeerBroadcast(true);
+		}
+
+		setIsMultiPeerBroadcast(false);
+	}, [isCustomPeer, peers]);
+
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
 	const { context, register } = formConfig;
@@ -104,7 +115,12 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="isMultiPeerBroadcast"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast)}
+					checked={isMultiPeerBroadcast}
+					onChange={(event) => {
+						if (isCustomPeer && peers.length > 1) {
+							setIsMultiPeerBroadcast(event.target.checked);
+						}
+					}}
 					data-testid="General-peers__toggle--isMultiPeerBroadcast"
 				/>
 			),
