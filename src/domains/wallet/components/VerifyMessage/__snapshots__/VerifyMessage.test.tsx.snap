@@ -10,7 +10,7 @@ exports[`VerifyMessage should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN jxRzUr absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzplWN jxRzUr absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -100,7 +100,7 @@ exports[`VerifyMessage should render 1`] = `
                 class="mt-8"
               >
                 <div
-                  class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+                  class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
                 >
                   <div
                     class="flex items-center justify-center text-theme-warning-600"
@@ -196,7 +196,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN jxRzUr absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzplWN jxRzUr absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div

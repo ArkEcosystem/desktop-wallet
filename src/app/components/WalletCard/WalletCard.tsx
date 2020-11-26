@@ -55,8 +55,6 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 		);
 	}
 
-	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
-
 	const getIconName = (type: string) => {
 		switch (type) {
 			case "Starred":
@@ -70,23 +68,22 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
+	const WalletIcon = ({ type }: { type: string }) => (
+		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+			<div className={`inline-block p-1 ${getIconColor(type)}`}>
+				<Icon name={getIconName(type)} width={20} />
+			</div>
+		</Tooltip>
+	);
+
 	return (
 		<div className={`w-64 inline-block ${className}`} data-testid={`WalletCard__${wallet.address()}`}>
 			<Card
-				addonIcons={
-					!!wallet &&
-					wallet.hasSyncedWithNetwork() &&
-					walletTypes.map((type: string) =>
-						// @ts-ignore
-						wallet[`is${type}`]() ? (
-							<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-								<div className={`inline-block p-1 ${getIconColor(type)}`}>
-									<Icon name={getIconName(type)} width={20} />
-								</div>
-							</Tooltip>
-						) : null,
-					)
-				}
+				addonIcons={[
+					wallet.isLedger() && <WalletIcon type="Ledger" />,
+					wallet.isStarred() && <WalletIcon type="Starred" />,
+					wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && <WalletIcon type="MultiSignature" />,
+				]}
 				className="h-48"
 				actions={actions}
 				onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
