@@ -143,9 +143,20 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	};
 
 	const handleSubmit = async ({ isMultiPeerBroadcast, isCustomPeer }: any) => {
+		const syncWallets = async () => {
+			const promises: Promise<void>[] = [];
+
+			for (const wallet of activeProfile.wallets().values()) {
+				promises.push(wallet.sync());
+			}
+
+			await Promise.allSettled(promises);
+		};
+
 		activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
 		activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
 
+		await syncWallets();
 		await env.persist();
 
 		onSuccess(t("SETTINGS.PEERS.SUCCESS"));
