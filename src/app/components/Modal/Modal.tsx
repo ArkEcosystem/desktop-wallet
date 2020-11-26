@@ -128,7 +128,7 @@ export const Modal = ({
 	if (!isOpen) return <></>;
 
 	return (
-		<div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto">
+		<div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay">
 			<div
 				className="fixed z-50 w-full h-full bg-black opacity-50"
 				data-testid="modal__overlay"
