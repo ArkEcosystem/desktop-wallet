@@ -28,10 +28,7 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 
 	useEffect(() => {
 		if (peer) {
-			const network = networks.find(
-				(network) =>
-					network.coin() === peer.coin.toUpperCase() && network.id() === `${peer.coin}.${peer.network}`,
-			);
+			const network = networks.find((network) => network.coin() === peer.coin && network.id() === peer.network);
 			setValue("network", network, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [networks, peer, setValue]);

@@ -8,8 +8,8 @@ import { translations } from "../../i18n";
 import { UpdatePeer } from "./UpdatePeer";
 
 const peer = {
-	coin: "ark",
-	network: "mainnet",
+	coin: "ARK",
+	network: "ark.mainnet",
 	name: "ROBank",
 	host: "194.168.4.67",
 	isMultiSignature: false,

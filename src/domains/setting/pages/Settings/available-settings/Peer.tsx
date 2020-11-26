@@ -31,28 +31,25 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const [peerAction, setPeerAction] = useState<string | null>(null);
 	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
 
-	const loadPeers = useCallback(
-		() =>
-			activeProfile
-				.peers()
-				.values()
-				.reduce((peers: any, data: any) => {
-					for (const coin of Object.keys(data)) {
-						for (const network of Object.keys(data[coin])) {
-							for (const peer of data[coin][network]) {
-								peers.push({
-									...peer,
-									coin,
-									network,
-								});
-							}
-						}
-					}
+	const loadPeers = useCallback(() => {
+		const allPeers: any = activeProfile.peers().all();
 
-					return peers;
-				}, []),
-		[activeProfile],
-	);
+		return Object.keys(allPeers).reduce((peers: any, coinKey: string) => {
+			for (const coin of Object.keys(allPeers[coinKey])) {
+				for (const network of Object.keys(allPeers[coinKey][coin])) {
+					for (const peer of allPeers[coinKey][coin][network]) {
+						peers.push({
+							...peer,
+							coin: coinKey,
+							network: `${coin}.${network}`,
+						});
+					}
+				}
+			}
+
+			return peers;
+		}, []);
+	}, [activeProfile]);
 
 	useEffect(() => {
 		if (!peerAction) {

@@ -17,13 +17,12 @@ type PeerListItemProps = {
 };
 
 export const PeerListItem = ({ coin, network, name, host, isMultiSignature, options, onAction }: PeerListItemProps) => {
-	const networkId = `${coin}.${network}`;
-	const networkExtendedData = getNetworkExtendedData({ coin: coin.toUpperCase(), network: networkId });
+	const networkExtendedData = getNetworkExtendedData({ coin, network });
 
 	return (
 		<TableRow>
 			<TableCell variant="start" innerClassName="space-x-2">
-				<NetworkIcon size="lg" coin={coin.toUpperCase()} network={networkId} noShadow />
+				<NetworkIcon size="lg" coin={coin.toUpperCase()} network={network} noShadow />
 				<span>{networkExtendedData?.displayName}</span>
 			</TableCell>
 

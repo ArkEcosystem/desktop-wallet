@@ -6,8 +6,8 @@ import { act, fireEvent, render, RenderResult, waitFor } from "testing-library";
 import { PeerForm } from "./PeerForm";
 
 const peer = {
-	coin: "ark",
-	network: "devnet",
+	coin: "ARK",
+	network: "ark.devnet",
 	name: "ROBank",
 	host: "194.168.4.67",
 	isMultiSignature: false,
