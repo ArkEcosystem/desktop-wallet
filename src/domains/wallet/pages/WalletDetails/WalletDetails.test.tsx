@@ -193,7 +193,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should navigate to vote page when clicking on WalletVote button (unvote)", async () => {
-		const historySpy = jest.spyOn(history, "push");
+		const historySpy = jest.spyOn(history, "push").mockReturnValue();
 
 		const { getByTestId, queryAllByTestId } = await renderPage();
 
@@ -205,6 +205,7 @@ describe("WalletDetails", () => {
 			pathname: `/profiles/${profile.id()}/wallets/${wallet.id()}/send-vote`,
 			search: "?unvotes=D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 		});
+		historySpy.mockRestore();
 	});
 
 	it("should navigate to new registration page when clicking on WalletRegistrations button (register)", async () => {
@@ -227,7 +228,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should navigate to registrations page when clicking on WalletRegistrations button (show all)", async () => {
-		const historySpy = jest.spyOn(history, "push");
+		const historySpy = jest.spyOn(history, "push").mockReturnValue();
 		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
 		const { getByTestId, queryAllByTestId } = await renderPage();
 
@@ -239,6 +240,7 @@ describe("WalletDetails", () => {
 
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/registrations`);
 		isMultiSignatureSpy.mockRestore();
+		historySpy.mockRestore();
 	});
 
 	it("should render when wallet hasn't voted", async () => {
