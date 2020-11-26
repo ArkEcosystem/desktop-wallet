@@ -69,6 +69,14 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 		</Tooltip>
 	);
 
+	const WalletIcon = ({ type }: { type: string }) => (
+		<Tooltip content={t(`COMMON.${type.toUpperCase()}`)}>
+			<div className={`inline-block p-1 ${getIconColor(type)}`}>
+				<Icon name={getIconName(type)} width={20} />
+			</div>
+		</Tooltip>
+	);
+
 	return (
 		<TableRow
 			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
@@ -81,17 +89,13 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 			<TableCell innerClassName="justify-center text-sm font-bold text-center align-middle">
 				<div className="inline-flex items-center space-x-2">
-					{wallet.hasSyncedWithNetwork() &&
-						walletTypes.map((type: string) =>
-							// @ts-ignore
-							wallet[`is${type}`]() ? (
-								<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-									<span className={getIconColor(type)}>
-										<Icon name={getIconName(type)} width={18} />
-									</span>
-								</Tooltip>
-							) : null,
-						)}
+					{[
+						wallet.isLedger() && <WalletIcon key="ledger" type="Ledger" />,
+						wallet.isStarred() && <WalletIcon key="star" type="Starred" />,
+						wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
+							<WalletIcon key="multisig" type="MultiSignature" />
+						),
+					]}
 				</div>
 			</TableCell>
 
