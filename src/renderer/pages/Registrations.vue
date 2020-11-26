@@ -1,9 +1,9 @@
 <template>
   <section class="Registrations flex flex-col">
     <div class="bg-theme-feature rounded-lg w-full px-10 py-6 flex items-center justify-between">
-      <h2>My registrations</h2>
+      <h2>My Registrations</h2>
       <ButtonModal
-        label="Register"
+        label="New Registration"
         class="m-0 ButtonGeneric blue-button"
       >
         <template slot-scope="{ toggle, isOpen }">

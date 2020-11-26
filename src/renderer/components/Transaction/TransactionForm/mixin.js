@@ -137,12 +137,11 @@ export default {
         this.$set(this.form, 'fee', this.$refs.fee.fee)
       }
 
-      const transactionData = this.getTransactionData()
-
       let success = true
       let transaction
       if (!this.currentWallet.isLedger) {
         try {
+          const transactionData = await this.getTransactionData()
           transaction = await this.buildTransaction(transactionData, this.$refs.fee && this.$refs.fee.isAdvancedFee)
         } catch (error) {
           this.$logger.error('Could not build transaction: ', error)
@@ -154,6 +153,7 @@ export default {
         success = false
         this.showLedgerLoader = true
         try {
+          const transactionData = await this.getTransactionData()
           const transactionObject = await this.buildTransaction(
             transactionData,
             this.$refs.fee && this.$refs.fee.isAdvancedFee,

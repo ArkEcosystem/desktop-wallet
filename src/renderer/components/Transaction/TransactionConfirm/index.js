@@ -1,6 +1,7 @@
 import TransactionConfirm from './TransactionConfirm'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
 import TransactionConfirmDelegateResignation from './TransactionConfirmDelegateResignation'
+import TransactionConfirmEntity from './TransactionConfirmEntity'
 import TransactionConfirmIpfs from './TransactionConfirmIpfs'
 import TransactionConfirmMultiPayment from './TransactionConfirmMultiPayment'
 import TransactionConfirmMultiSignature from './TransactionConfirmMultiSignature'
@@ -13,6 +14,7 @@ export {
   TransactionConfirm,
   TransactionConfirmDelegateRegistration,
   TransactionConfirmDelegateResignation,
+  TransactionConfirmEntity,
   TransactionConfirmIpfs,
   TransactionConfirmMultiPayment,
   TransactionConfirmMultiSignature,

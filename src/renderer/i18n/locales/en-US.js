@@ -1033,7 +1033,8 @@ export default {
         MULTI_SIGNATURE: 'Multisignature transaction could not be created',
         MULTI_PAYMENT: 'Multipayment transaction could not be created',
         IPFS: 'IPFS transaction could not be created',
-        DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created'
+        DELEGATE_RESIGNATION: 'Delegate Resignation transaction could not be created',
+        ENTITY_REGISTRATION: 'Entity Registration transaction could not be createdd'
       },
       TRANSFER: 'Your transaction could not be sent',
       SECOND_SIGNATURE: 'Second signature could not be registered',
@@ -1041,6 +1042,7 @@ export default {
       VOTE: 'Vote could not be registered',
       UNVOTE: 'Unvote could not be registered',
       IPFS: 'IPFS could not be created',
+      ENTITY_REGISTRATION: 'Entity Registration could not be created',
       MULTI_SIGN: 'Could not sign transaction',
       MULTI_SIGNATURE: 'Multisignature could not be created',
       HTLC_LOCK: 'Timelock could not be created',

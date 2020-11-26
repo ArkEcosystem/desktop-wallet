@@ -56,6 +56,7 @@
 import { TRANSACTION_GROUPS } from '@config'
 import TransactionConfirmDelegateRegistration from './TransactionConfirmDelegateRegistration'
 import TransactionConfirmDelegateResignation from './TransactionConfirmDelegateResignation'
+import TransactionConfirmEntity from './TransactionConfirmEntity'
 import TransactionConfirmIpfs from './TransactionConfirmIpfs'
 import TransactionConfirmMultiPayment from './TransactionConfirmMultiPayment'
 import TransactionConfirmMultiSignature from './TransactionConfirmMultiSignature'
@@ -79,6 +80,7 @@ export default {
   components: {
     TransactionConfirmDelegateRegistration,
     TransactionConfirmDelegateResignation,
+    TransactionConfirmEntity,
     TransactionConfirmIpfs,
     TransactionConfirmMultiPayment,
     TransactionConfirmMultiSignature,

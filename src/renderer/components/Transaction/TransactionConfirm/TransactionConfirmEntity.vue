@@ -2,44 +2,37 @@
   <Component
     :is="activeComponent"
     v-bind="$attrs"
-    v-on="$listeners"
   />
 </template>
 
 <script>
 import { TRANSACTION_TYPES, TRANSACTION_GROUPS } from '@config'
-import { TransactionFormEntityRegistration, TransactionFormEntityResignation, TransactionFormEntityUpdate } from './TransactionFormEntity/index'
+import { TransactionConfirmEntityRegistration } from './TransactionConfirmEntity/index'
 
 export default {
-  name: 'TransactionFormEntity',
+  name: 'TransactionConfirmEntity',
 
   transactionGroup: TRANSACTION_GROUPS.MAGISTRATE,
   transactionType: TRANSACTION_TYPES.GROUP_2.ENTITY,
 
   components: {
-    TransactionFormEntityRegistration,
-    TransactionFormEntityResignation,
-    TransactionFormEntityUpdate
+    TransactionConfirmEntityRegistration
   },
 
-  props: {
-    entityAction: {
-      type: Number,
-      required: true
-    }
-  },
+  inject: ['currentWallet', 'transaction'],
 
   data: () => ({
     activeComponent: null
   }),
 
   mounted () {
+    const entityAction = this.transaction.asset.action
     const component = Object.values(this.$options.components).find(component => {
-      return component.entityAction === this.entityAction
+      return component.entityAction === entityAction
     })
 
     if (!component) {
-      throw new Error(`[TransactionFormEntity] - Form for action ${this.entityAction} not found.`)
+      throw new Error(`[TransactionConfirmEntity] - Confirmation for action ${entityAction} not found.`)
     }
 
     this.activeComponent = component.name

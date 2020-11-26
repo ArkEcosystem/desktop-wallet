@@ -256,6 +256,9 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { Collapse } from '@/components/Collapse'
 import { EntityLinkEditableList } from '@/components/Entity'
 import { PassphraseInput } from '@/components/Passphrase'
+import { File } from '@arkecosystem/platform-sdk-ipfs'
+import { Request } from '@arkecosystem/platform-sdk-http-got'
+import { filter, isEmpty } from 'lodash'
 import SvgIcon from '@/components/SvgIcon'
 import mixin from '../mixin'
 
@@ -323,11 +326,18 @@ export default {
     },
 
     isStepValid () {
-      return !this.$v[`step${this.step}`].$invalid
+      if (this.step === 1) {
+        return !this.$v.step1.$invalid
+      }
+      return !this.$v.step2.$invalid && !this.$v.form.$invalid
     },
 
     senderWallet () {
       return this.step1.sender && this.$store.getters['wallet/byAddress'](this.step1.sender)
+    },
+
+    currentWallet () {
+      return this.senderWallet
     }
   },
 
@@ -355,7 +365,7 @@ export default {
         this.step = 2
       } else {
         this.form.fee = this.$refs.fee.fee
-        this.uploadIpfs()
+        this.onSubmit()
       }
     },
 
@@ -363,61 +373,61 @@ export default {
       this.$set(this.form, 'fee', fee)
     },
 
-    uploadIpfs () {
-      // TODO
+    async getTransactionData () {
+      const transactionData = {
+        address: this.currentWallet.address,
+        passphrase: this.form.passphrase,
+        fee: this.getFee(),
+        wif: this.form.wif,
+        networkWif: this.walletNetwork.wif,
+        multiSignature: this.currentWallet.multiSignature
+      }
+
+      const { entityName, ipfsData } = this.step2
+      const entityType = +this.step1.registrationType
+
+      const sanitizedIpfsData = filter(ipfsData, (item) => !isEmpty(item))
+
+      return {
+        ...transactionData,
+        asset: {
+          type: entityType,
+          // @TODO: let the user choose what sub-type they wish to use.
+          subType: 0,
+          action: +this.$options.entityAction,
+          data: {
+            name: entityName,
+            ipfsData: await new File(new Request()).upload(sanitizedIpfsData)
+          }
+        }
+      }
+    },
+
+    async buildTransaction (transactionData, isAdvancedFee = false, returnObject = false) {
+      return this.$client.buildEntity(transactionData, isAdvancedFee, returnObject)
+    },
+
+    transactionError () {
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.ENTITY_REGISTRATION'))
+    },
+
+    emitNext (transaction) {
+      this.$emit('next', {
+        transaction: {
+          ...transaction,
+          entityData: this.step2
+        },
+        wallet: this.senderWallet
+      })
     }
   },
 
   validations: {
     form: {
-      fee: {
-        required,
-        isValid () {
-          if (this.$refs.fee) {
-            return !this.$refs.fee.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      passphrase: {
-        isValid () {
-          if (this.$refs.passphrase) {
-            return !this.$refs.passphrase.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      walletPassword: {
-        isValid () {
-          if (this.senderWallet && !this.senderWallet.passphrase) {
-            return true
-          }
-
-          if (!this.form.walletPassword || !this.form.walletPassword.length) {
-            return false
-          }
-
-          if (this.$refs.password) {
-            return !this.$refs.password.$v.$invalid
-          }
-
-          return false
-        }
-      },
-      secondPassphrase: {
-        isValid () {
-          if (!this.senderWallet.secondPublicKey) {
-            return true
-          }
-
-          if (this.$refs.secondPassphrase) {
-            return !this.$refs.secondPassphrase.$v.$invalid
-          }
-          return false
-        }
-      }
+      fee: mixin.validators.fee,
+      passphrase: mixin.validators.passphrase,
+      secondPassphrase: mixin.validators.secondPassphrase,
+      walletPassword: mixin.validators.walletPassword
     },
     step1: {
       sender: {
