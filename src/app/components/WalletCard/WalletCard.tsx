@@ -80,9 +80,11 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 		<div className={`w-64 inline-block ${className}`} data-testid={`WalletCard__${wallet.address()}`}>
 			<Card
 				addonIcons={[
-					wallet.isLedger() && <WalletIcon type="Ledger" />,
-					wallet.isStarred() && <WalletIcon type="Starred" />,
-					wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && <WalletIcon type="MultiSignature" />,
+					wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
+					wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
+					wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
+						<WalletIcon key="MultiSignature" type="MultiSignature" />
+					),
 				]}
 				className="h-48"
 				actions={actions}
