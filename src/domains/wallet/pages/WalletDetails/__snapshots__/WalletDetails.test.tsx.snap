@@ -669,11 +669,53 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
@@ -2234,11 +2276,53 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
@@ -3268,11 +3352,53 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
@@ -4844,11 +4970,53 @@ exports[`WalletDetails should remove wallet name 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
@@ -6426,11 +6594,53 @@ exports[`WalletDetails should render 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
@@ -8004,11 +8214,53 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
@@ -9582,11 +9834,53 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
@@ -11164,11 +11458,53 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
@@ -12746,11 +13082,53 @@ exports[`WalletDetails should update wallet name 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div>
-            <h2
-              class="mb-6 font-bold"
+            <div
+              class="relative flex justify-between"
             >
-              Transactions History
-            </h2>
+              <h2
+                class="mb-8 font-bold"
+              >
+                Transactions History
+              </h2>
+              <div
+                class="mt-2"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex items-center space-x-2 cursor-pointer"
+                    data-testid="FilterTransactionsToggle"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <span
+                        class="text-theme-neutral-500"
+                      >
+                        Type: 
+                      </span>
+                      <span
+                        class="text-theme-neutral-600"
+                      >
+                        All
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dxSZmz bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                      height="9"
+                      width="9"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="mb-6"
             >
