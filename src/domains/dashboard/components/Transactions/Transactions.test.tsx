@@ -1,6 +1,6 @@
 import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { renderWithRouter } from "utils/testing-library";
+import { renderWithRouter, waitFor } from "utils/testing-library";
 
 import { transactions } from "../../data";
 import { Transactions } from "./Transactions";
@@ -36,5 +36,15 @@ describe("Transactions", () => {
 		);
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should render empty results screen", async () => {
+		const { container, getByTestId } = renderWithRouter(
+			<Transactions fetchMoreAction={() => console.log("fetchMoreAction")} isUsingFilters={true} />,
+		);
+
+		await waitFor(() => {
+			expect(getByTestId("EmptyResults")).toBeInTheDocument();
+		});
 	});
 });

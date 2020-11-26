@@ -59,14 +59,35 @@ describe("ReceiveFunds", () => {
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
 
-		await act(async () => {
-			fireEvent.click(getByTestId("ReceiveFunds__toggle"));
-		});
+		fireEvent.click(getByTestId("ReceiveFunds__toggle"));
 
 		await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
 		await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
 		await waitFor(() =>
 			expect(within(getByTestId("ReceiveFundsForm__uri")).getByTestId("Input")).toHaveValue("ark:abc"),
 		);
+	});
+
+	it("should show alert if smartbridge value is too long", async () => {
+		const { getByTestId, findByText, queryAllByTestId } = render(
+			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network="ark.devnet" />,
+		);
+
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
+
+		fireEvent.click(getByTestId("ReceiveFunds__toggle"));
+
+		await act(async () => {
+			fireEvent.input(getByTestId("ReceiveFundsForm__smartbridge"), {
+				target: {
+					value: Array(300).fill("x").join(""),
+				},
+			});
+		});
+
+		expect(
+			await findByText(/Please note that you have exceeded the number of characters allowed/),
+		).toBeInTheDocument();
 	});
 });

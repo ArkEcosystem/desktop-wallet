@@ -551,4 +551,38 @@ describe("Dashboard", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should filter by type", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
+
+		expect(getByTestId("FilterTransactionsToggle")).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(getByTestId("FilterTransactionsToggle"));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--core-0"));
+		});
+
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
+	});
 });
