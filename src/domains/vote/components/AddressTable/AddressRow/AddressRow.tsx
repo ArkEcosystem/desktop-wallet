@@ -27,8 +27,6 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 	const [shadowColor, setShadowColor] = useState("--theme-background-color");
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
-	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
-
 	const getIconName = (type: string) => {
 		switch (type) {
 			case "Starred":
