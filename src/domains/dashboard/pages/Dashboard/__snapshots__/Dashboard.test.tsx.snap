@@ -7,7 +7,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="sc-fzoyTs eYLloN"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="sc-fzoNJl hlUna-D"
             >
               <svg
                 width="48"
@@ -256,7 +256,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
             style="width: 100%; height: 260px;"
           >
             <div
-              class="sc-fzoNJl chhTmQ text-theme-neutral-300 dark:text-theme-neutral-800 pb"
+              class="sc-fzoXWK hCbUwo text-theme-neutral-300 dark:text-theme-neutral-800 pb"
               data-testid="line-chart-wrapper"
             >
               <div>
@@ -583,7 +583,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                           data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                         >
                           <div
-                            class="sc-fzoXWK gTzQlw h-48"
+                            class="sc-fzpmMD fKkTYv h-48"
                             data-testid="Card"
                           >
                             <div
@@ -657,7 +657,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoXWK eZNiXp h-48"
+                            class="sc-fzpmMD itnXim h-48"
                             data-testid="Card"
                           >
                             <div
@@ -699,7 +699,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                           data-testid="WalletCard__blank"
                         >
                           <div
-                            class="sc-fzoXWK eZNiXp h-48"
+                            class="sc-fzpmMD itnXim h-48"
                             data-testid="Card"
                           >
                             <div
@@ -747,9 +747,51 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="mb-8 text-4xl font-bold"
+            class="relative flex justify-between"
           >
-            Transactions History
+            <div
+              class="mb-8 text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="mt-6"
+              data-testid="FilterTransactions"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="flex items-center space-x-2 cursor-pointer"
+                  data-testid="FilterTransactionsToggle"
+                >
+                  <div
+                    class="font-semibold"
+                  >
+                    <span
+                      class="text-theme-neutral-500"
+                    >
+                      Type: 
+                    </span>
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      All
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ bkWcEv bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+                    height="9"
+                    width="9"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div
             class="mb-8"
