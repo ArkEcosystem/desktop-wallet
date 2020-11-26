@@ -3,7 +3,7 @@ import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
 import { Modal } from "./Modal";
-import { modalTopOffsetClass } from "./utils";
+import { modalOffsetClass } from "./utils";
 
 describe("Modal", () => {
 	it("should not render if not open", () => {
@@ -110,17 +110,17 @@ describe("Modal", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should not add top offset class if modal content fits in window height", () => {
+	it("should not add top offset class if padded modal content fits in window height", () => {
 		const modalHeightMock = 400;
 		const windowHeightMock = 1000;
-		const topOffsetClass = modalTopOffsetClass(modalHeightMock, windowHeightMock);
+		const topOffsetClass = modalOffsetClass(modalHeightMock, windowHeightMock);
 		expect(topOffsetClass).toBe("");
 	});
 
-	it("should add top offset class if modal content is higher than window height", () => {
-		const modalHeightMock = 1000;
+	it("should add top offset class if padded modal content is higher than window height", () => {
+		const modalHeightMock = 975;
 		const windowHeightMock = 1000;
-		const topOffsetClass = modalTopOffsetClass(modalHeightMock, windowHeightMock);
-		expect(topOffsetClass).not.toBe("");
+		const topOffsetClass = modalOffsetClass(modalHeightMock, windowHeightMock);
+		expect(topOffsetClass).toBe("top-0 my-20");
 	});
 });

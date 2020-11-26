@@ -3,11 +3,13 @@ import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecos
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
@@ -50,6 +52,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
+	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
 
 	const {
 		pendingMultiSignatureTransactions,
@@ -58,7 +61,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		fetchMore,
 		isLoading: isLoadingTransactions,
 		hasMore,
-	} = useWalletTransactions(activeWallet, { limit: transactionLimit!, mode: activeTransactionModeTab });
+	} = useWalletTransactions(activeWallet, {
+		limit: transactionLimit!,
+		mode: activeTransactionModeTab,
+		transactionType: selectedTransactionType,
+	});
 
 	const walletVotes = () => {
 		// Being synced in background and will be updated after persisting
@@ -259,8 +266,16 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					)}
 
 					<div>
-						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}</h2>
 						<>
+							<div className="relative flex justify-between">
+								<h2 className="mb-8 font-bold">
+									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
+								</h2>
+								<FilterTransactions
+									onSelect={(_, type) => setSelectedTransactionType(type)}
+									className="mt-2"
+								/>
+							</div>
 							<Tabs
 								className="mb-6"
 								activeId={activeTransactionModeTab}
@@ -293,10 +308,18 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 								</Button>
 							)}
 
-							{!isLoading && transactions.length === 0 && (
+							{!isLoading && transactions.length === 0 && !selectedTransactionType && (
 								<EmptyBlock className="-mt-2">
 									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
 								</EmptyBlock>
+							)}
+
+							{!isLoading && transactions.length === 0 && !!selectedTransactionType && (
+								<EmptyResults
+									className="flex-1"
+									title={t("COMMON.EMPTY_RESULTS.TITLE")}
+									subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+								/>
 							)}
 						</>
 					</div>

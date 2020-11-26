@@ -8,7 +8,7 @@ type HeaderSearchBarProps = {
 	placeholder?: string;
 	label?: string;
 	children?: React.ReactNode;
-	onSearch?: any;
+	onSearch?: (query: string) => void;
 	onReset?: () => void;
 	extra?: React.ReactNode;
 	debounceTimeout?: number;
@@ -73,7 +73,7 @@ export const HeaderSearchBar = ({
 						</div>
 					)}
 
-					<button data-testid="header-search-bar__reset" onClick={handleQueryReset}>
+					<button data-testid="header-search-bar__reset" onClick={handleQueryReset} type="button">
 						<Icon className="text-theme-neutral" name="CrossSlim" width={12} height={12} />
 					</button>
 

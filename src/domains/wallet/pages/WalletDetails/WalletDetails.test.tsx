@@ -93,8 +93,12 @@ describe("WalletDetails", () => {
 			})
 			.get("/api/transactions")
 			.query((params) => !!params.address)
-			.reply(200, () => {
+			.reply(200, (url, params) => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
+				const filteredUrl =
+					"/api/transactions?page=1&limit=1&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&type=0&typeGroup=1";
+				if (url === filteredUrl) return { meta, data: [] };
+
 				return {
 					meta,
 					data: data.slice(0, 1),
@@ -353,6 +357,25 @@ describe("WalletDetails", () => {
 		await waitFor(() => {
 			expect(within(getAllByTestId("TransactionTable")[0]).queryAllByTestId("TableRow")).toHaveLength(2);
 		});
+	});
+
+	it("should filter by type", async () => {
+		const { getByTestId } = await renderPage();
+
+		act(() => {
+			fireEvent.click(getByTestId("FilterTransactionsToggle"));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--core-0"));
+		});
+
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(0),
+			{ timeout: 4000 },
+		);
 	});
 
 	it("should delete wallet", async () => {
