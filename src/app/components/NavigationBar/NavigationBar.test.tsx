@@ -257,4 +257,14 @@ describe("NavigationBar", () => {
 		const { asFragment } = renderWithRouter(<NavigationBar profile={profile} menu={menu} />);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should disable send transfer button when no wallets", () => {
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+		const { container, getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("navbar__buttons--send")).toHaveAttribute("disabled");
+
+		useNetworksMock.mockRestore();
+	});
 });

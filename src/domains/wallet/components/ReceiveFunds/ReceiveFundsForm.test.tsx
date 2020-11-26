@@ -7,6 +7,8 @@ import { fireEvent, render, waitFor } from "utils/testing-library";
 
 import { ReceiveFundsForm } from "./";
 
+const maxLength = 255;
+
 describe("ReceiveFundsForm", () => {
 	it("should render", async () => {
 		const { result: form } = renderHook(() => useForm());
@@ -14,7 +16,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm />
+					<ReceiveFundsForm maxLength={maxLength} />
 				</Form>,
 			);
 
@@ -30,7 +32,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm />
+					<ReceiveFundsForm maxLength={maxLength} />
 				</Form>,
 			);
 
@@ -50,7 +52,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm />
+					<ReceiveFundsForm maxLength={maxLength} />
 				</Form>,
 			);
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));

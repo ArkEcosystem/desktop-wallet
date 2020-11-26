@@ -10,6 +10,7 @@ import { useActiveProfile, usePrevious } from "app/hooks";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { getNetworkExtendedData } from "domains/network/helpers";
+import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import React, { useEffect, useMemo, useReducer, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -27,6 +28,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		showPortfolio: true,
 		showTransactions: true,
 		walletsDisplayType: "all",
+		usePortfolioChartAnimation: true,
 		selectedNetworkIds: uniq(
 			activeProfile
 				.wallets()
@@ -51,10 +53,12 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		viewType,
 		walletsDisplayType,
 		selectedNetworkIds,
+		usePortfolioChartAnimation,
 	} = dashboardConfiguration;
 
 	const [activeFilter, setActiveFilter] = useState(false);
 	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
+	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [allTransactions, setAllTransactions] = useState<ExtendedTransactionData[] | undefined>(undefined);
 	const [isLoadingTransactions, setIsLoadingTransactions] = useState(true);
@@ -114,8 +118,10 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 		setIsLoadingTransactions(true);
 
+		const limit = { limit: 30 };
+		const queryParams = selectedTransactionType ? { ...limit, ...selectedTransactionType } : limit;
 		// @ts-ignore
-		const response = await activeProfile.transactionAggregate()[method]({ limit: 30 });
+		const response = await activeProfile.transactionAggregate()[method](queryParams);
 		const transactions = response.items();
 
 		setIsLoadingTransactions(false);
@@ -126,7 +132,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	useEffect(() => {
 		fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 		// eslint-disable-next-line
-	}, [activeTransactionModeTab]);
+	}, [activeTransactionModeTab, selectedTransactionType]);
 
 	useEffect(() => {
 		if (isEqual(previousConfiguration, dashboardConfiguration)) {
@@ -149,6 +155,18 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfigurationClone));
 	}, [defaultDashboardConfiguration, dashboardConfiguration]);
+
+	useEffect(
+		() => () => {
+			if (!usePortfolioChartAnimation) return;
+
+			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, {
+				...dashboardConfiguration,
+				usePortfolioChartAnimation: false,
+			});
+		},
+		[activeProfile, usePortfolioChartAnimation, dashboardConfiguration],
+	);
 
 	// Wallet controls data
 	const handleSelectViewType = (viewType: string) => {
@@ -212,7 +230,13 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 				{showPortfolio && balances && (
 					<Section>
 						<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
-						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
+						<LineChart
+							useAnimation={usePortfolioChartAnimation}
+							height={260}
+							period="22 Jun - 28 Jun"
+							data={balances}
+							lines={chartLines}
+						/>
 
 						{!activeProfile.balance().isZero() && (
 							<>
@@ -245,7 +269,13 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 				{showTransactions && (
 					<Section className="flex-1" data-testid="dashboard__transactions-view">
-						<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+						<div className="relative flex justify-between">
+							<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+							<FilterTransactions
+								onSelect={(_, type) => setSelectedTransactionType(type)}
+								className="mt-6"
+							/>
+						</div>
 						<Tabs
 							className="mb-8"
 							activeId={activeTransactionModeTab}
@@ -258,6 +288,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 							</TabList>
 						</Tabs>
 						<Transactions
+							isUsingFilters={!!selectedTransactionType}
 							transactions={allTransactions}
 							exchangeCurrency={exchangeCurrency}
 							fetchMoreAction={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}

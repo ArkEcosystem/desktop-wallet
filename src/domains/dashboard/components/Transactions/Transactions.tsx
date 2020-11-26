@@ -1,6 +1,7 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
+import { EmptyResults } from "app/components/EmptyResults";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,7 @@ type TransactionsProps = {
 	isLoading?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
+	isUsingFilters?: boolean;
 };
 
 export const Transactions = ({
@@ -24,6 +26,7 @@ export const Transactions = ({
 	isLoading,
 	isCompact,
 	onRowClick,
+	isUsingFilters = false,
 }: TransactionsProps) => {
 	const { t } = useTranslation();
 
@@ -51,7 +54,17 @@ export const Transactions = ({
 				</Button>
 			)}
 
-			{!isLoading && transactions.length === 0 && <EmptyBlock className="-mt-5">{emptyText}</EmptyBlock>}
+			{!isLoading && transactions.length === 0 && !isUsingFilters && (
+				<EmptyBlock className="-mt-5">{emptyText}</EmptyBlock>
+			)}
+
+			{!isLoading && transactions.length === 0 && isUsingFilters && (
+				<EmptyResults
+					className="flex-1"
+					title={t("COMMON.EMPTY_RESULTS.TITLE")}
+					subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+				/>
+			)}
 		</>
 	);
 };
