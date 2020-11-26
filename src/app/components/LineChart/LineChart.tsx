@@ -14,6 +14,7 @@ type LineChartProps = {
 	onPeriodClick?: () => void;
 	width?: number;
 	height?: number;
+	useAnimation?: boolean;
 };
 
 const ActiveDotSvg = SvgCollection["ChartActiveDot"];
@@ -91,7 +92,15 @@ const Wrapper = styled.div`
 	${chartStyles}
 `;
 
-export const ChartContent = ({ period, onPeriodClick, data, lines, width, height }: LineChartProps) => {
+export const ChartContent = ({
+	period,
+	onPeriodClick,
+	data,
+	lines,
+	width,
+	height,
+	useAnimation = true,
+}: LineChartProps) => {
 	const defaultValue = data.concat().pop();
 	const [legend, setLegend] = useState(defaultValue);
 
@@ -115,6 +124,7 @@ export const ChartContent = ({ period, onPeriodClick, data, lines, width, height
 				{lines &&
 					lines.map((line: any, index: number) => (
 						<Line
+							isAnimationActive={useAnimation}
 							type="monotone"
 							key={index}
 							dataKey={line.dataKey}

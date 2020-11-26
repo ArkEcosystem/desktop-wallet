@@ -1,6 +1,5 @@
 import { Blockfolio, BlockfolioResponse, BlockfolioSignal } from "@arkecosystem/platform-sdk-news";
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { merge, sortByDesc } from "@arkecosystem/utils";
 import { SvgCollection } from "app/assets/svg";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
@@ -27,8 +26,6 @@ type Props = {
 	itemsPerPage?: number;
 };
 
-type BlockfolioSignalWithCoin = BlockfolioSignal & { coin: string };
-
 export const News = ({ itemsPerPage }: Props) => {
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
@@ -40,10 +37,10 @@ export const News = ({ itemsPerPage }: Props) => {
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const [{ categories, coins, searchQuery }, setFilters] = useState<NewsFilters>(
-		activeProfile.settings().get(ProfileSetting.NewsFilters) || { categories: [], coins: ["ark"] },
+		activeProfile.settings().get(ProfileSetting.NewsFilters) || { categories: [], coins: ["ARK"] },
 	);
 
-	const [news, setNews] = useState<BlockfolioSignalWithCoin[]>([]);
+	const [news, setNews] = useState<BlockfolioSignal[]>([]);
 
 	const skeletonCards = new Array(8).fill({});
 
@@ -59,36 +56,25 @@ export const News = ({ itemsPerPage }: Props) => {
 	useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [currentPage, coins]);
 
 	useEffect(() => {
-		const fetchNewsWithCoin = async (coin: string, query: any) => {
-			const response = await blockfolio.findByCoin(coin, query);
-			return { ...response, data: response.data.map((item) => ({ ...item, coin })) };
-		};
-
-		const fetchAllNews = async () => {
+		const fetchNews = async () => {
 			setIsLoading(true);
 			setNews([]);
 
 			const query = {
+				coins,
+				page: currentPage,
 				...(categories.length && categories.length !== AVAILABLE_CATEGORIES.length && { categories }),
 				...(searchQuery && { query: searchQuery }),
-				page: currentPage,
 			};
 
-			const response = await Promise.allSettled(coins.map((coin) => fetchNewsWithCoin(coin, query)));
-			const results: BlockfolioResponse[] = response
-				.filter((promise) => promise.status === "fulfilled")
-				// @ts-ignore
-				.map((item) => item.value);
-
-			const data = sortByDesc(merge.all<any[]>(results.map((item) => item.data)), "created_at");
-			const total = results.reduce((acc, item) => acc + item.meta.total, 0);
+			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(query);
 
 			setNews(data);
 			setIsLoading(false);
-			setTotalCount(total);
+			setTotalCount(meta.total);
 		};
 
-		fetchAllNews();
+		fetchNews();
 	}, [blockfolio, currentPage, categories, coins, searchQuery]);
 
 	useEffect(() => {
@@ -147,7 +133,7 @@ export const News = ({ itemsPerPage }: Props) => {
 						{!isLoading && (
 							<div className="space-y-6">
 								{news?.map((data, index) => (
-									<NewsCard key={index} {...data} />
+									<NewsCard key={index} coin={coins[0]} {...data} />
 								))}
 							</div>
 						)}

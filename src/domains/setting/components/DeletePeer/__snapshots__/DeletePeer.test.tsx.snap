@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeletePeer should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`DeletePeer should render a modal 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="sc-AxiKw jnoDfx absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+      >
+        <button
+          class="sc-AxjAm cGlMcw w-11 h-11"
+          color="primary"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fFqjhX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Delete Peer
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <svg
+            class="w-64 mx-auto my-8"
+          >
+            delete-banner.svg
+          </svg>
+          <div
+            class="mt-1 text-theme-secondary-text"
+          >
+            Do you really want to delete this peer? Once deleted, you will not be able to restore it.
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="sc-AxjAm fCKjFI"
+              color="primary"
+              data-testid="DeleteResource__cancel-button"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              class="sc-AxjAm colAFb"
+              color="primary"
+              data-testid="DeleteResource__submit-button"
+              type="submit"
+            >
+              <div
+                class="sc-AxirZ iQaTP"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  trash.svg
+                </svg>
+              </div>
+              <span>
+                Delete
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

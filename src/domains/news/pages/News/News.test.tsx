@@ -26,7 +26,7 @@ describe("News", () => {
 		nock.disableNetConnect();
 
 		nock("https://platform.ark.io/api")
-			.get("/coins/ark/signals")
+			.get("/coins/signals?coins=ARK")
 			.reply(200, () => {
 				const { meta, data } = page1Fixture;
 				return {
@@ -34,7 +34,7 @@ describe("News", () => {
 					data: data.slice(0, 1),
 				};
 			})
-			.get("/coins/ark/signals?page=1")
+			.get("/coins/signals?coins=ARK&page=1")
 			.reply(200, () => {
 				const { meta, data } = page1Fixture;
 				return {
@@ -42,7 +42,7 @@ describe("News", () => {
 					data: data.slice(0, 1),
 				};
 			})
-			.get("/coins/ark/signals?page=2")
+			.get("/coins/signals?coins=ARK&page=2")
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/news/page-2.json");
 				return {
@@ -50,9 +50,9 @@ describe("News", () => {
 					data: data.slice(0, 1),
 				};
 			})
-			.get("/coins/ark/signals?query=NoResult&page=1")
+			.get("/coins/signals?coins=ARK&query=NoResult&page=1")
 			.reply(200, require("tests/fixtures/news/empty-response.json"))
-			.get("/coins/ark/signals?categories=Technical&query=Hacking&page=1")
+			.get("/coins/signals?coins=ARK&categories=Technical&query=Hacking&page=1")
 			.reply(200, require("tests/fixtures/news/filtered.json"))
 			.persist();
 
@@ -80,7 +80,7 @@ describe("News", () => {
 	});
 
 	it("should retrieve blockfolio data using findByCoin", async () => {
-		const result: BlockfolioResponse = await subject.findByCoin("ark");
+		const result: BlockfolioResponse = await subject.findByCoin({ coins: ["ARK"] });
 
 		expect(result.meta).toMatchObject(page1Fixture.meta);
 		expect(result.data).toMatchObject(page1Fixture.data.slice(0, 1));

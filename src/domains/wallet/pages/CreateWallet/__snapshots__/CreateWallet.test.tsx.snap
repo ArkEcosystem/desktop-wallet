@@ -19,7 +19,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-fzpmMD jiyWyQ flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="sc-fzqARJ obTtk flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
         class="flex items-center justify-center text-theme-warning-600"
@@ -180,7 +180,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="sc-fzoyTs eYLloN"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -192,7 +192,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="sc-fzoNJl hlUna-D"
             >
               <svg
                 width="48"
@@ -296,6 +296,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                 class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
+                disabled=""
                 type="button"
               >
                 <div
@@ -391,7 +392,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
@@ -461,19 +462,19 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -606,7 +607,7 @@ exports[`CreateWallet should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="sc-fzoyTs eYLloN"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -618,7 +619,7 @@ exports[`CreateWallet should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="sc-fzoNJl hlUna-D"
             >
               <svg
                 width="48"
@@ -722,6 +723,7 @@ exports[`CreateWallet should render 1`] = `
                 class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
+                disabled=""
                 type="button"
               >
                 <div
@@ -817,7 +819,7 @@ exports[`CreateWallet should render 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
@@ -887,19 +889,19 @@ exports[`CreateWallet should render 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -1344,7 +1346,7 @@ exports[`CreateWallet should render 4th step 1`] = `
           >
             <img
               alt="TEST-WALLET-ADDRESS"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
               title="TEST-WALLET-ADDRESS"
             />
           </div>
@@ -1384,7 +1386,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="sc-fzoyTs eYLloN"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1396,7 +1398,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="sc-fzoNJl hlUna-D"
             >
               <svg
                 width="48"
@@ -1595,7 +1597,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
@@ -1665,19 +1667,19 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div

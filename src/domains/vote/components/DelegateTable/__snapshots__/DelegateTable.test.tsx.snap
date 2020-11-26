@@ -233,7 +233,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -377,7 +377,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -511,7 +511,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -639,13 +639,13 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -662,7 +662,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -700,7 +700,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -721,7 +721,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -1052,7 +1052,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -1186,7 +1186,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -1320,7 +1320,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -1448,13 +1448,13 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1471,7 +1471,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -1545,7 +1545,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -1566,7 +1566,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
@@ -1861,7 +1861,7 @@ exports[`DelegateTable should render 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -1995,7 +1995,7 @@ exports[`DelegateTable should render 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -2129,7 +2129,7 @@ exports[`DelegateTable should render 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -2257,13 +2257,13 @@ exports[`DelegateTable should render 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2280,7 +2280,7 @@ exports[`DelegateTable should render 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -2318,7 +2318,7 @@ exports[`DelegateTable should render 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -2339,7 +2339,7 @@ exports[`DelegateTable should render 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -2354,7 +2354,7 @@ exports[`DelegateTable should render 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -2375,7 +2375,7 @@ exports[`DelegateTable should render 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
@@ -3689,13 +3689,13 @@ exports[`DelegateTable should render loading state 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3712,7 +3712,7 @@ exports[`DelegateTable should render loading state 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -3750,7 +3750,7 @@ exports[`DelegateTable should render loading state 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -3771,7 +3771,7 @@ exports[`DelegateTable should render loading state 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -3786,7 +3786,7 @@ exports[`DelegateTable should render loading state 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -3807,7 +3807,7 @@ exports[`DelegateTable should render loading state 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
@@ -4103,7 +4103,7 @@ exports[`DelegateTable should render pagination 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -4273,13 +4273,13 @@ exports[`DelegateTable should render pagination 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4296,7 +4296,7 @@ exports[`DelegateTable should render pagination 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -4334,7 +4334,7 @@ exports[`DelegateTable should render pagination 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -4355,7 +4355,7 @@ exports[`DelegateTable should render pagination 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -4370,7 +4370,7 @@ exports[`DelegateTable should render pagination 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -4391,7 +4391,7 @@ exports[`DelegateTable should render pagination 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
@@ -4687,7 +4687,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -4821,7 +4821,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -4955,7 +4955,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -5083,13 +5083,13 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5106,7 +5106,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -5144,7 +5144,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -5165,7 +5165,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -5496,7 +5496,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -5640,7 +5640,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -5774,7 +5774,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -5905,13 +5905,13 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5928,7 +5928,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -6318,7 +6318,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -6452,7 +6452,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -6586,7 +6586,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -6714,13 +6714,13 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6737,7 +6737,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -6811,7 +6811,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -6832,7 +6832,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
@@ -7140,7 +7140,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -7284,7 +7284,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -7418,7 +7418,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -7546,13 +7546,13 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -7569,7 +7569,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -7607,7 +7607,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -7628,7 +7628,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -7643,7 +7643,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -7664,7 +7664,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
@@ -7960,7 +7960,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -8104,7 +8104,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -8238,7 +8238,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -8369,13 +8369,13 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -8392,7 +8392,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -8782,7 +8782,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -8916,7 +8916,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -9050,7 +9050,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -9178,13 +9178,13 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -9201,7 +9201,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -9239,7 +9239,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -9260,7 +9260,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -9275,7 +9275,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -9296,7 +9296,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
@@ -9592,7 +9592,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -9736,7 +9736,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -9870,7 +9870,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -9998,13 +9998,13 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -10021,7 +10021,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -10411,7 +10411,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -10555,7 +10555,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -10689,7 +10689,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -10817,13 +10817,13 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -10840,7 +10840,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -10878,7 +10878,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -10899,7 +10899,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -10914,7 +10914,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -10935,7 +10935,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
@@ -11231,7 +11231,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
                       title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                     />
                   </div>
@@ -11375,7 +11375,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                   >
                     <img
                       alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
                       title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
                     />
                   </div>
@@ -11509,7 +11509,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                   >
                     <img
                       alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
                     />
                   </div>
@@ -11637,13 +11637,13 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
       data-testid="DelegateTable__footer"
     >
       <div
-        class="flex-1"
+        class="container flex-1 px-8 mx-auto"
       >
         <div
           class="flex justify-between"
         >
           <div
-            class="flex font-semibold"
+            class="flex ml-3 font-semibold"
           >
             <div
               class="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -11660,7 +11660,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                   >
                     <img
                       alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
                       title="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                     />
                   </div>
@@ -11698,7 +11698,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -11719,7 +11719,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                     Votes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--votes"
                   >
                     0
@@ -11734,7 +11734,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-text text-theme-text"
+                  class="sc-AxiKw hpQrmn mr-2 bg-theme-background border-theme-neutral text-theme-neutral"
                 >
                   <div
                     class="sc-AxhCb fxrKLH text-xl"
@@ -11755,7 +11755,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                     Unvotes
                   </div>
                   <div
-                    class="text-theme-text"
+                    class="text-theme-neutral"
                     data-testid="DelegateTable__footer--unvotes"
                   >
                     0
