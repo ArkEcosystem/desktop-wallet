@@ -62,6 +62,7 @@ describe("NewsOptions", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 			fireEvent.change(getByTestId("NewsOptions__search"), {
 				target: {
 					value: "test query",
@@ -122,6 +123,7 @@ describe("NewsOptions", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 			fireEvent.change(getByTestId("NewsOptions__search"), {
 				target: {
 					value: "test query",
@@ -158,7 +160,7 @@ describe("NewsOptions", () => {
 
 		expect(onSubmit).toBeCalledWith({
 			categories: ["Technical"],
-			coins: ["ark", "eth", "btc"],
+			coins: ["ETH", "BTC"],
 			searchQuery: "",
 		});
 	});

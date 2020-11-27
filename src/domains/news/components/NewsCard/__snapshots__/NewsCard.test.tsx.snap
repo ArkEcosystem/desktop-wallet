@@ -19,14 +19,28 @@ exports[`NewsCard should render 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="sc-AxheI kNFwgA border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="ARK"
+              class="sc-AxheI kNFwgA border-theme-danger-light text-theme-danger-400"
+              data-testid="NetworkIcon-ARK-ark.mainnet"
+            >
+              <div
+                class="sc-AxirZ eEbZjj"
+                data-testid="NetworkIcon__icon"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
             <div>
               <h4
                 class="text-lg font-semibold"
-                data-testid="NewsCard__asset-undefined"
-              />
+                data-testid="NewsCard__asset-ARK Ecosystem"
+              >
+                ARK Ecosystem
+              </h4>
               <div
                 class="flex items-center space-x-4"
               >
@@ -115,14 +129,28 @@ exports[`NewsCard should render with cover image 1`] = `
             class="flex items-center space-x-4"
           >
             <div
-              class="sc-AxheI kNFwgA border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="ARK"
+              class="sc-AxheI kNFwgA border-theme-danger-light text-theme-danger-400"
+              data-testid="NetworkIcon-ARK-ark.mainnet"
+            >
+              <div
+                class="sc-AxirZ eEbZjj"
+                data-testid="NetworkIcon__icon"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
             <div>
               <h4
                 class="text-lg font-semibold"
-                data-testid="NewsCard__asset-undefined"
-              />
+                data-testid="NewsCard__asset-ARK Ecosystem"
+              >
+                ARK Ecosystem
+              </h4>
               <div
                 class="flex items-center space-x-4"
               >

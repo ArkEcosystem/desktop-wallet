@@ -82,10 +82,16 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 	};
 
 	const handleSubmit = () => {
-		const coinNames = coins.filter((coin) => coin.isSelected).map((coin) => coin.coin);
-		const categoryNames = categories
-			.filter((category) => category.name !== "All" && category.isSelected)
-			.map((category) => category.name);
+		const categoryNames = categories.reduce(
+			(acc: string[], category: Option) =>
+				category.name !== "All" && category.isSelected ? acc.concat(category.name) : acc,
+			[],
+		);
+
+		const coinNames = coins.reduce(
+			(acc: string[], coin: CoinOption) => (coin.isSelected ? acc.concat(coin.coin) : acc),
+			[],
+		);
 
 		onSubmit({
 			categories: categoryNames,
