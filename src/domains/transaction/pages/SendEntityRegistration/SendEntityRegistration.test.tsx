@@ -130,6 +130,15 @@ describe("Registration", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render registration form without testnet wallets", async () => {
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+		const { getByTestId, asFragment } = await renderPage();
+
+		await waitFor(() => expect(getByTestId("Registration__selection-step")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+		useNetworksMock.mockRestore();
+	});
+
 	it("should select cryptoasset first and see select address input clickable", async () => {
 		const { getByTestId, asFragment } = await renderPage();
 

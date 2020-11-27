@@ -75,7 +75,15 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		[env],
 	);
 
-	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+	const wallets = useMemo(() => {
+		if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) return activeProfile.wallets().values();
+
+		return activeProfile
+			.wallets()
+			.values()
+			.filter((wallet) => wallet.network().isLive());
+	}, [activeProfile]);
+
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
 
 	const portfolioPercentages = useMemo(() => {
@@ -148,12 +156,13 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	});
 
 	useEffect(() => {
-		const dashboardConfigurationClone = (({ viewType, ...rest }) => rest)(dashboardConfiguration);
-
-		defaultDashboardConfiguration.selectedNetworkIds = defaultDashboardConfiguration.selectedNetworkIds.sort();
-		dashboardConfigurationClone.selectedNetworkIds = dashboardConfigurationClone.selectedNetworkIds.sort();
-
-		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfigurationClone));
+		setActiveFilter(
+			defaultDashboardConfiguration.walletsDisplayType !== dashboardConfiguration.walletsDisplayType ||
+				!isEqual(
+					[...defaultDashboardConfiguration.selectedNetworkIds].sort(),
+					[...dashboardConfiguration.selectedNetworkIds].sort(),
+				),
+		);
 	}, [defaultDashboardConfiguration, dashboardConfiguration]);
 
 	useEffect(() => {
