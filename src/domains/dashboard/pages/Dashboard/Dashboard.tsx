@@ -25,10 +25,10 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	const activeProfile = useActiveProfile();
 
 	const defaultDashboardConfiguration = {
+		showChartAnimation: true,
 		showPortfolio: true,
 		showTransactions: true,
 		walletsDisplayType: "all",
-		usePortfolioChartAnimation: true,
 		selectedNetworkIds: uniq(
 			activeProfile
 				.wallets()
@@ -48,12 +48,12 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	const previousConfiguration = usePrevious(dashboardConfiguration);
 
 	const {
+		showChartAnimation,
 		showPortfolio,
 		showTransactions,
 		viewType,
 		walletsDisplayType,
 		selectedNetworkIds,
-		usePortfolioChartAnimation,
 	} = dashboardConfiguration;
 
 	const [activeFilter, setActiveFilter] = useState(false);
@@ -156,17 +156,11 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		setActiveFilter(!isEqual(defaultDashboardConfiguration, dashboardConfigurationClone));
 	}, [defaultDashboardConfiguration, dashboardConfiguration]);
 
-	useEffect(
-		() => () => {
-			if (!usePortfolioChartAnimation) return;
+	useEffect(() => {
+		if (!showChartAnimation) return;
 
-			activeProfile.settings().set(ProfileSetting.DashboardConfiguration, {
-				...dashboardConfiguration,
-				usePortfolioChartAnimation: false,
-			});
-		},
-		[activeProfile, usePortfolioChartAnimation, dashboardConfiguration],
-	);
+		setDashboardConfiguration({ showChartAnimation: false });
+	}, [showChartAnimation]);
 
 	// Wallet controls data
 	const handleSelectViewType = (viewType: string) => {
@@ -231,7 +225,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 					<Section>
 						<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 						<LineChart
-							useAnimation={usePortfolioChartAnimation}
+							showAnimation={showChartAnimation}
 							height={260}
 							period="22 Jun - 28 Jun"
 							data={balances}
