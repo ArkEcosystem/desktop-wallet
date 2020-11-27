@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Enums } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -41,7 +41,12 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	const networks = useMemo(() => env.availableNetworks(), [env]);
+	const networks = useMemo(() => {
+		const usesTestNetworks = activeProfile.settings().get(ProfileSetting.UseTestNetworks);
+		return usesTestNetworks
+			? env.availableNetworks()
+			: env.availableNetworks().filter((network) => network.isLive());
+	}, [env, activeProfile]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
 	const { formState, getValues, register, setValue, setError, unregister } = form;

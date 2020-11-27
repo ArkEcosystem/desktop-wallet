@@ -1,4 +1,5 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { groupBy } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
@@ -22,14 +23,12 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const { state } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
+	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
+		activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast) || false,
+	);
 	const [isCustomPeer, setIsCustomPeer] = useState(
 		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
 	);
-	const [peers, setPeers] = useState([]);
-	const [isCreatePeer, setIsCreatePeer] = useState(false);
-
-	const [peerAction, setPeerAction] = useState<string | null>(null);
-	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
 
 	const loadPeers = useCallback(() => {
 		const allPeers: any = activeProfile.peers().all();
@@ -51,6 +50,12 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		}, []);
 	}, [activeProfile]);
 
+	const [peers, setPeers] = useState(loadPeers());
+	const [isCreatePeer, setIsCreatePeer] = useState(false);
+
+	const [peerAction, setPeerAction] = useState<string | null>(null);
+	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
+
 	useEffect(() => {
 		if (!peerAction) {
 			setSelectedPeer(null);
@@ -60,6 +65,27 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	useEffect(() => {
 		setPeers(loadPeers());
 	}, [loadPeers, state]);
+
+	const peerGroupByNetwork: any = useMemo(() => groupBy(peers, (peer) => peer.network), [peers]);
+
+	useEffect(() => {
+		if (
+			isMultiPeerBroadcast &&
+			(!isCustomPeer ||
+				Object.keys(peerGroupByNetwork).every((network) => peerGroupByNetwork[network].length < 2))
+		) {
+			setIsMultiPeerBroadcast(false);
+
+			const savePeerSettings = async () => {
+				activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
+				activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
+
+				await env.persist();
+			};
+
+			savePeerSettings();
+		}
+	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -102,7 +128,15 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="isMultiPeerBroadcast"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast)}
+					checked={isMultiPeerBroadcast}
+					onChange={(event) => {
+						if (
+							isCustomPeer &&
+							Object.keys(peerGroupByNetwork).some((network) => peerGroupByNetwork[network].length > 1)
+						) {
+							setIsMultiPeerBroadcast(event.target.checked);
+						}
+					}}
 					data-testid="General-peers__toggle--isMultiPeerBroadcast"
 				/>
 			),
