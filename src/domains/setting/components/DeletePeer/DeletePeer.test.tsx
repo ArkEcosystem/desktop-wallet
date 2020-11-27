@@ -6,8 +6,8 @@ import { translations } from "../../i18n";
 import { DeletePeer } from "./DeletePeer";
 
 const peer = {
-	coin: "ark",
-	network: "devnet",
+	coin: "ARK",
+	network: "ark.devnet",
 	host: "194.168.4.67",
 };
 let profile: Profile;
@@ -18,7 +18,7 @@ describe("DeletePeer", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		profile.peers().create("ARK", "ark.devnet", {
-			name: "Private",
+			name: "ROBank",
 			host: "194.168.4.67",
 			isMultiSignature: false,
 		});

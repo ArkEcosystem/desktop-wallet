@@ -1,4 +1,5 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { groupBy } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
@@ -8,9 +9,10 @@ import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import { AddPeer } from "domains/setting/components/AddPeer";
+import { CreatePeer } from "domains/setting/components/CreatePeer";
 import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
+import { UpdatePeer } from "domains/setting/components/UpdatePeer";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -21,37 +23,38 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const { state } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
+	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
+		activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast) || false,
+	);
 	const [isCustomPeer, setIsCustomPeer] = useState(
 		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
 	);
-	const [peers, setPeers] = useState([]);
-	const [isAddPeer, setIsAddPeer] = useState(false);
+
+	const loadPeers = useCallback(() => {
+		const allPeers: any = activeProfile.peers().all();
+
+		return Object.keys(allPeers).reduce((peers: any, coinKey: string) => {
+			for (const coin of Object.keys(allPeers[coinKey])) {
+				for (const network of Object.keys(allPeers[coinKey][coin])) {
+					for (const peer of allPeers[coinKey][coin][network]) {
+						peers.push({
+							...peer,
+							coin: coinKey,
+							network: `${coin}.${network}`,
+						});
+					}
+				}
+			}
+
+			return peers;
+		}, []);
+	}, [activeProfile]);
+
+	const [peers, setPeers] = useState(loadPeers());
+	const [isCreatePeer, setIsCreatePeer] = useState(false);
 
 	const [peerAction, setPeerAction] = useState<string | null>(null);
 	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
-
-	const loadPeers = useCallback(
-		() =>
-			activeProfile
-				.peers()
-				.values()
-				.reduce((peers: any, data: any) => {
-					for (const coin of Object.keys(data)) {
-						for (const network of Object.keys(data[coin])) {
-							for (const peer of data[coin][network]) {
-								peers.push({
-									...peer,
-									coin,
-									network,
-								});
-							}
-						}
-					}
-
-					return peers;
-				}, []),
-		[activeProfile],
-	);
 
 	useEffect(() => {
 		if (!peerAction) {
@@ -62,6 +65,27 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	useEffect(() => {
 		setPeers(loadPeers());
 	}, [loadPeers, state]);
+
+	const peerGroupByNetwork: any = useMemo(() => groupBy(peers, (peer) => peer.network), [peers]);
+
+	useEffect(() => {
+		if (
+			isMultiPeerBroadcast &&
+			(!isCustomPeer ||
+				Object.keys(peerGroupByNetwork).every((network) => peerGroupByNetwork[network].length < 2))
+		) {
+			setIsMultiPeerBroadcast(false);
+
+			const savePeerSettings = async () => {
+				activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
+				activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
+
+				await env.persist();
+			};
+
+			savePeerSettings();
+		}
+	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -104,7 +128,15 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="isMultiPeerBroadcast"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast)}
+					checked={isMultiPeerBroadcast}
+					onChange={(event) => {
+						if (
+							isCustomPeer &&
+							Object.keys(peerGroupByNetwork).some((network) => peerGroupByNetwork[network].length > 1)
+						) {
+							setIsMultiPeerBroadcast(event.target.checked);
+						}
+					}}
 					data-testid="General-peers__toggle--isMultiPeerBroadcast"
 				/>
 			),
@@ -169,7 +201,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 						<Button
 							variant="plain"
 							className="w-full mt-8 mb-2"
-							onClick={() => setIsAddPeer(true)}
+							onClick={() => setIsCreatePeer(true)}
 							data-testid="Peer-list__add-button"
 						>
 							{t("SETTINGS.PEERS.ADD_PEER")}
@@ -188,22 +220,32 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				</div>
 			</Form>
 
-			<AddPeer
-				isOpen={isAddPeer}
+			<CreatePeer
+				isOpen={isCreatePeer}
 				networks={availableNetworks}
 				profile={activeProfile}
-				onClose={() => setIsAddPeer(false)}
+				onClose={() => setIsCreatePeer(false)}
 			/>
 
 			{selectedPeer && (
-				<DeletePeer
-					isOpen={peerAction === "delete"}
-					peer={selectedPeer}
-					profile={activeProfile}
-					onCancel={resetPeerAction}
-					onClose={resetPeerAction}
-					onDelete={resetPeerAction}
-				/>
+				<>
+					<UpdatePeer
+						isOpen={peerAction === "edit"}
+						networks={availableNetworks}
+						peer={selectedPeer}
+						profile={activeProfile}
+						onClose={resetPeerAction}
+					/>
+
+					<DeletePeer
+						isOpen={peerAction === "delete"}
+						peer={selectedPeer}
+						profile={activeProfile}
+						onCancel={resetPeerAction}
+						onClose={resetPeerAction}
+						onDelete={resetPeerAction}
+					/>
+				</>
 			)}
 		</>
 	);

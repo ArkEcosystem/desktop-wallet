@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddPeer should not render if not open 1`] = `<DocumentFragment />`;
+exports[`CreatePeer should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`AddPeer should render add peer modal 1`] = `
+exports[`CreatePeer should render create peer modal 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
@@ -127,6 +127,7 @@ exports[`AddPeer should render add peer modal 1`] = `
                 class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="PeerForm__name-input"
                 name="name"
+                value=""
               />
             </fieldset>
             <fieldset
@@ -147,6 +148,7 @@ exports[`AddPeer should render add peer modal 1`] = `
                 class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="PeerForm__host-input"
                 name="host"
+                value=""
               />
             </fieldset>
             <fieldset
@@ -189,7 +191,7 @@ exports[`AddPeer should render add peer modal 1`] = `
               <button
                 class="sc-AxjAm colAFb"
                 color="primary"
-                data-testid="PeerForm__add-button"
+                data-testid="PeerForm__submit-button"
                 disabled=""
                 type="submit"
               >

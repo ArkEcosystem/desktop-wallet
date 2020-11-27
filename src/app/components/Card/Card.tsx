@@ -1,7 +1,8 @@
 import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import React from "react";
-import tw, { styled } from "twin.macro";
+
+import { Wrapper } from "./Card.styles";
 
 type CardProps = {
 	as?: React.ElementType;
@@ -13,15 +14,6 @@ type CardProps = {
 	isSelected?: boolean;
 	className?: string;
 };
-
-const Wrapper = styled.div<{ isSelected?: boolean; onClick?: any }>`
-	${tw`bg-theme-background relative transition-all duration-200 p-6 border-2 rounded-lg`}
-	${({ onClick }) => typeof onClick === "function" && tw`cursor-pointer hover:border-theme-background hover:shadow-xl`}
-	${({ isSelected }) =>
-		isSelected
-			? tw`bg-theme-success-contrast border-theme-success-600 hover:border-theme-success-contrast`
-			: tw`bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800`}
-`;
 
 export const Card = ({ children, addonIcons, actions, onClick, onSelect, isSelected, className }: CardProps) => (
 	<Wrapper isSelected={isSelected} className={className} onClick={onClick} data-testid="Card">

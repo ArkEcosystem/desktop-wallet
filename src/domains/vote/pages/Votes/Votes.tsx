@@ -58,7 +58,17 @@ export const Votes = () => {
 	const walletsByCoin = useMemo(() => {
 		const wallets = activeProfile.wallets().allByCoin();
 
-		return Object.keys(wallets).reduce(
+		const usesTestNetworks = activeProfile.settings().get(ProfileSetting.UseTestNetworks);
+		const usedWallets = usesTestNetworks
+			? activeProfile.wallets().values()
+			: activeProfile
+					.wallets()
+					.values()
+					.filter((wallet) => wallet.network().isLive());
+
+		const usedCoins = uniq(usedWallets.map((wallet) => wallet.currency()));
+
+		return usedCoins.reduce(
 			(coins, coin) => ({
 				...coins,
 				[coin]: Object.values(wallets[coin]).filter((wallet: ReadWriteWallet) => {
