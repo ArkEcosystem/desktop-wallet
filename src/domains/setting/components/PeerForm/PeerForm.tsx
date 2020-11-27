@@ -11,10 +11,11 @@ import { useTranslation } from "react-i18next";
 type PeerFormProps = {
 	networks: Coins.Network[];
 	peer?: any;
+	onError?: any;
 	onSave: any;
 };
 
-export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
+export const PeerForm = ({ networks, peer, onError, onSave }: PeerFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -36,6 +37,13 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 	}, [networks, peer, setValue]);
 
 	const handleSelectNetwork = (network?: Coins.Network | null) => {
+		if (form.errors.host?.message.includes("already exists")) {
+			form.clearErrors("host");
+			if (host) {
+				setValue("host", host, { shouldValidate: true, shouldDirty: true });
+			}
+		}
+
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 
@@ -79,6 +87,16 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("SETTINGS.PEERS.PEER_IP"),
 						}).toString(),
+						validate: (host) => {
+							if (peer?.host === host) {
+								return true;
+							}
+
+							return (
+								!onError?.(network?.id(), host) ||
+								t("SETTINGS.PEERS.VALIDATION.HOST_EXISTS", { host }).toString()
+							);
+						},
 					})}
 					defaultValue={peer?.host}
 					data-testid="PeerForm__host-input"

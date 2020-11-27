@@ -11,9 +11,10 @@ type CreatePeerProps = {
 	networks: Coins.Network[];
 	profile: Profile;
 	onClose?: () => void;
+	onError?: any;
 };
 
-export const CreatePeer = ({ isOpen, networks, profile, onClose }: CreatePeerProps) => {
+export const CreatePeer = ({ isOpen, networks, profile, onClose, onError }: CreatePeerProps) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
@@ -42,7 +43,7 @@ export const CreatePeer = ({ isOpen, networks, profile, onClose }: CreatePeerPro
 
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
-			<PeerForm networks={networks} onSave={handleCreatePeer} />
+			<PeerForm networks={networks} onError={onError} onSave={handleCreatePeer} />
 		</Modal>
 	);
 };

@@ -95,6 +95,9 @@ export const translations: { [key: string]: any } = {
 		PEER_IP: "Peer IP",
 		TYPE: "Type",
 		SUCCESS: "Your peer settings have been updated",
+		VALIDATION: {
+			HOST_EXISTS: "The host {{host}} already exists for this network",
+		},
 	},
 
 	PLUGINS: {

@@ -165,6 +165,9 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		},
 	];
 
+	const validateHost = (network: string, host: string) =>
+		peerGroupByNetwork?.[network]?.some((peer: any) => peer.host === host);
+
 	const handlePeerAction = (action: string, peer: any) => {
 		setPeerAction(action);
 		setSelectedPeer(peer);
@@ -225,6 +228,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				networks={availableNetworks}
 				profile={activeProfile}
 				onClose={() => setIsCreatePeer(false)}
+				onError={validateHost}
 			/>
 
 			{selectedPeer && (
@@ -235,6 +239,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 						peer={selectedPeer}
 						profile={activeProfile}
 						onClose={resetPeerAction}
+						onError={validateHost}
 					/>
 
 					<DeletePeer
