@@ -20,9 +20,8 @@ export const DeletePeer = ({ isOpen, peer, profile, onCancel, onClose, onDelete 
 
 	const handleDelete = async () => {
 		const { coin, network } = peer;
-		const networkId = `${coin}.${network}`;
 
-		profile.peers().forget(coin.toUpperCase(), networkId, peer);
+		profile.peers().forget(coin, network, peer);
 
 		await persist();
 
