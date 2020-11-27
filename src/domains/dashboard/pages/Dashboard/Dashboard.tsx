@@ -75,7 +75,15 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		[env],
 	);
 
-	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
+	const wallets = useMemo(() => {
+		if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) return activeProfile.wallets().values();
+
+		return activeProfile
+			.wallets()
+			.values()
+			.filter((wallet) => wallet.network().isLive());
+	}, [activeProfile]);
+
 	const balancePerCoin = useMemo(() => activeProfile.walletAggregate().balancePerCoin(), [activeProfile]);
 
 	const portfolioPercentages = useMemo(() => {

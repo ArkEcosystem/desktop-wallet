@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -7,7 +7,7 @@ import { InputCounter } from "app/components/Input";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -43,6 +43,11 @@ export const FormStep = ({
 		return recipients;
 	};
 
+	const availableNetworks = useMemo(() => {
+		const usesTestNetworks = profile.settings().get(ProfileSetting.UseTestNetworks);
+		return usesTestNetworks ? networks : networks.filter((network) => network.isLive());
+	}, [profile, networks]);
+
 	return (
 		<section data-testid="SendTransfer__form-step" className="space-y-8">
 			<Header
@@ -50,7 +55,7 @@ export const FormStep = ({
 				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.DESCRIPTION")}
 			/>
 
-			<SendTransactionForm networks={networks} profile={profile} hasWalletId={hasWalletId}>
+			<SendTransactionForm networks={availableNetworks} profile={profile} hasWalletId={hasWalletId}>
 				<>
 					<div data-testid="recipient-address">
 						<AddRecipient
