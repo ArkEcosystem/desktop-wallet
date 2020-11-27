@@ -1,4 +1,5 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { groupBy } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
@@ -65,8 +66,14 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		setPeers(loadPeers());
 	}, [loadPeers, state]);
 
+	const peerGroupByNetwork: any = useMemo(() => groupBy(peers, (peer) => peer.network), [peers]);
+
 	useEffect(() => {
-		if (isMultiPeerBroadcast && (!isCustomPeer || peers.length < 2)) {
+		if (
+			isMultiPeerBroadcast &&
+			(!isCustomPeer ||
+				Object.keys(peerGroupByNetwork).every((network) => peerGroupByNetwork[network].length < 2))
+		) {
 			setIsMultiPeerBroadcast(false);
 
 			const savePeerSettings = async () => {
@@ -78,7 +85,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 			savePeerSettings();
 		}
-	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peers]);
+	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -123,7 +130,10 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 					name="isMultiPeerBroadcast"
 					checked={isMultiPeerBroadcast}
 					onChange={(event) => {
-						if (isCustomPeer && peers.length > 1) {
+						if (
+							isCustomPeer &&
+							Object.keys(peerGroupByNetwork).some((network) => peerGroupByNetwork[network].length > 1)
+						) {
 							setIsMultiPeerBroadcast(event.target.checked);
 						}
 					}}
