@@ -90,6 +90,7 @@ export const translations: { [key: string]: any } = {
 		},
 		CRYPTOASSET: "Cryptoasset",
 		ADD_PEER: "Add Peer",
+		EDIT_PEER: "Edit Peer",
 		NAME: "Name",
 		PEER_IP: "Peer IP",
 		TYPE: "Type",
