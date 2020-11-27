@@ -22,6 +22,8 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 	const { isValid } = formState;
 	const { network, name, host, isMultiSignature } = watch();
 
+	const nameMaxLength = 20;
+
 	useEffect(() => {
 		register("network", { required: true });
 	}, [register]);
@@ -56,6 +58,13 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("SETTINGS.PEERS.NAME"),
 						}).toString(),
+						maxLength: {
+							message: t("COMMON.VALIDATION.MAX_LENGTH", {
+								field: t("SETTINGS.PEERS.NAME"),
+								maxLength: nameMaxLength,
+							}),
+							value: nameMaxLength,
+						},
 					})}
 					defaultValue={peer?.name}
 					data-testid="PeerForm__name-input"
