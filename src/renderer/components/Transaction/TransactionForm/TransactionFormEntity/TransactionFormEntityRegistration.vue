@@ -2,16 +2,16 @@
   <form @submit.prevent>
     <div v-if="step === 1">
       <header class="mb-5">
-        <h2>Registration</h2>
+        <h2>{{ $t('ENTITY.REGISTRATION') }}</h2>
         <p class="mt-1 text-theme-page-text-light">
-          Select the address and the registration type.
+          {{ $t('ENTITY.REGISTRATION_STEP1_DESCRIPTION') }}
         </p>
       </header>
 
       <InputAddress
         ref="sender"
         v-model="$v.step1.sender.$model"
-        label="Sender"
+        :label="$t('TRANSACTION.SENDER')"
         :is-required="true"
         :pub-key-hash="walletNetwork.version"
         :show-suggestions="true"
@@ -23,16 +23,16 @@
         v-model="$v.step1.registrationType.$model"
         :items="registrationTypesOptions"
         name="registrationType"
-        label="Registration Type"
+        :label="$t('ENTITY.REGISTRATION_TYPE')"
         class="mb-5"
       />
     </div>
 
     <div v-else-if="step === 2">
       <header class="mb-2">
-        <h2>Register {{ registrationTypesOptions[+step1.registrationType] }}</h2>
+        <h2>{{ $t(`TRANSACTION.TYPE.${registrationTypesOptions[+step1.registrationType].toUpperCase()}_ENTITY_REGISTRATION`) }}</h2>
         <p class="mt-1 text-theme-page-text-light">
-          Enter registration details below.
+          {{ $t('ENTITY.REGISTRATION_STEP2_DESCRIPTION' ) }}
         </p>
       </header>
 
@@ -44,14 +44,14 @@
           <InputText
             v-model="$v.step2.entityName.$model"
             :is-invalid="$v.step2.entityName.$dirty && $v.step2.entityName.$invalid"
-            label="Name"
+            :label="$t('ENTITY.NAME')"
             name="name"
           />
 
           <InputText
             v-model="$v.step2.ipfsData.meta.displayName.$model"
             :is-invalid="$v.step2.ipfsData.meta.displayName.$dirty && $v.step2.ipfsData.meta.displayName.$invalid"
-            label="Display Name"
+            :label="$t('ENTITY.DISPLAY_NAME')"
             name="display-name"
             class="mt-4"
           />
@@ -59,7 +59,7 @@
           <InputText
             v-model="$v.step2.ipfsData.meta.description.$model"
             :is-invalid="$v.step2.ipfsData.meta.description.$dirty && $v.step2.ipfsData.meta.description.$invalid"
-            label="Description"
+            :label="$t('ENTITY.DESCRIPTION')"
             name="description"
             class="mt-4"
           />
@@ -67,7 +67,7 @@
           <InputText
             v-model="$v.step2.ipfsData.meta.website.$model"
             :is-invalid="$v.step2.ipfsData.meta.website.$dirty && $v.step2.ipfsData.meta.website.$invalid"
-            label="Website"
+            :label="$t('ENTITY.WEBSITE')"
             name="website"
             class="mt-4"
           />
@@ -79,13 +79,13 @@
         >
           <div class="flex">
             <div class="flex-1">
-              <h3>Repository</h3>
+              <h3>{{ $t('ENTITY.REPOSITORY') }}</h3>
               <p class="mt-1 text-theme-page-text-light">
-                Promote your project's code repository.
+                {{ $t('ENTITY.REPOSITORY_DESCRIPTION') }}
               </p>
             </div>
             <button
-              class="blue-button rounded-full w-5 h-5 m-0 p-0"
+              class="blue-button rounded-full w-5 h-5 m-0 p-0 flex items-center justify-center"
               :class="{
                 'bg-blue text-white': isSourceControlOpen
               }"
@@ -115,13 +115,13 @@
         >
           <div class="flex">
             <div class="flex-1">
-              <h3>Social Media</h3>
+              <h3>{{ $t('ENTITY.SOCIAL_MEDIA') }}</h3>
               <p class="mt-1 text-theme-page-text-light">
-                Build your social media following.
+                {{ $t('ENTITY.SOCIAL_MEDIA_DESCRIPTION') }}
               </p>
             </div>
             <button
-              class="blue-button rounded-full w-5 h-5 m-0 p-0"
+              class="blue-button rounded-full w-5 h-5 m-0 p-0 flex items-center justify-center"
               :class="{
                 'bg-blue text-white': isSocialMediaOpen
               }"
@@ -151,13 +151,13 @@
         >
           <div class="flex">
             <div class="flex-1">
-              <h3>Photo & Video</h3>
+              <h3>{{ $t('ENTITY.PHOTO_VIDEO') }}</h3>
               <p class="mt-1 text-theme-page-text-light">
-                Tell your story through photos and videos.
+                {{ $t('ENTITY.PHOTO_VIDEO_DESCRIPTION') }}
               </p>
             </div>
             <button
-              class="blue-button rounded-full w-5 h-5 m-0 p-0"
+              class="blue-button rounded-full w-5 h-5 m-0 p-0 flex items-center justify-center"
               :class="{
                 'bg-blue text-white': isMediaOpen
               }"
@@ -256,8 +256,8 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { Collapse } from '@/components/Collapse'
 import { EntityLinkEditableList } from '@/components/Entity'
 import { PassphraseInput } from '@/components/Passphrase'
-import { File } from '@arkecosystem/platform-sdk-ipfs'
-import { Request } from '@arkecosystem/platform-sdk-http-got'
+// import { File } from '@arkecosystem/platform-sdk-ipfs'
+// import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { filter, isEmpty } from 'lodash'
 import SvgIcon from '@/components/SvgIcon'
 import mixin from '../mixin'
@@ -292,6 +292,7 @@ export default {
     form: {
       fee: 0,
       passphrase: '',
+      secondPassphrase: '',
       walletPassword: ''
     },
     step1: {
@@ -357,6 +358,9 @@ export default {
     previousStep () {
       if (this.step === 2) {
         this.step = 1
+        this.$set(this.form, 'passphrase', '')
+        this.$set(this.form, 'secondPassphrase', '')
+        this.$set(this.form, 'walletPassword', '')
       }
     },
 
@@ -386,6 +390,7 @@ export default {
       const { entityName, ipfsData } = this.step2
       const entityType = +this.step1.registrationType
 
+      // eslint-disable-next-line
       const sanitizedIpfsData = filter(ipfsData, (item) => !isEmpty(item))
 
       return {
@@ -397,7 +402,8 @@ export default {
           action: +this.$options.entityAction,
           data: {
             name: entityName,
-            ipfsData: await new File(new Request()).upload(sanitizedIpfsData)
+            ipfsData: 'QmaG7m2meve4mtcEyRxfhSezomtQoZBqGZ4dhxaVrHF3Mt'
+            // ipfsData: await new File(new Request()).upload(sanitizedIpfsData)
           }
         }
       }
@@ -453,16 +459,16 @@ export default {
       ipfsData: {
         meta: {
           displayName: {
-            required,
+            // required,
             minLength: minLength(3)
           },
           description: {
-            required,
+            // required,
             minLength: minLength(3),
             maxLength: maxLength(512)
           },
           website: {
-            required,
+            // required,
             url
           }
         }

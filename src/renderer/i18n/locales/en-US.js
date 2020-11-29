@@ -56,6 +56,7 @@ export default {
       DARK: 'Default: Dark'
     },
     TIME_FORMAT: 'Time format',
+    TYPE: 'Type',
     URL: 'URL',
     VERIFIED_ADDRESS: 'This is a verified address',
     VERSION: 'Version',
@@ -1405,5 +1406,36 @@ export default {
     DELETE: 'Delete',
     NO_DELETE: 'Ledger wallets cannot be deleted',
     RENAME: 'Rename'
+  },
+
+  ENTITY: {
+    REGISTER: 'Register',
+    NEW_REGISTRATION: 'New Registration',
+    MY_REGISTRATIONS: 'My Registrations',
+    REGISTRATION: 'Registration',
+    REGISTRATION_TYPE: 'Registration Type',
+
+    REGISTRATION_STEP1_DESCRIPTION: 'Select the address and the registration type.',
+    REGISTRATION_STEP2_DESCRIPTION: 'Enter registration details below.',
+
+    NAME: 'Name',
+    TYPE: 'Type',
+    DISPLAY_NAME: 'Display Name',
+    DESCRIPTION: 'Descrition',
+    WEBSITE: 'Website',
+    PROVIDER: 'Provider',
+
+    REPOSITORY: 'Repository',
+    REPOSITORY_DESCRIPTION: 'Promote your project\'s code repository.',
+    SOCIAL_MEDIA: 'Social Media',
+    SOCIAL_MEDIA_DESCRIPTION: 'Build your social media following.',
+    PHOTO_VIDEO: 'Photo & Video',
+    PHOTO_VIDEO_DESCRIPTION: 'Tell your story through photos and videos.',
+
+    ADD_LINK: 'Add Link',
+    LINK: 'Link',
+    AVATAR: 'Avatar',
+    IMAGE: 'Image',
+    VIDEO: 'Video'
   }
 }

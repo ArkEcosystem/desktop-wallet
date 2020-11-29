@@ -8,7 +8,7 @@
         <InputSelect
           v-model="$v.form.type.$model"
           :items="selectOptions"
-          label="Provider"
+          :label="$t('ENTITY.PROVIDER')"
           name="provider"
           class="w-2/5 mr-4"
         />
@@ -17,13 +17,13 @@
           v-model="$v.form.value.$model"
           :is-invalid="$v.form.value.$dirty && $v.form.value.$invalid"
           name="link"
-          label="Link"
+          :label="$t('ENTITY.LINK')"
           class="flex-1"
         />
       </div>
       <ButtonGeneric
         :disabled="$v.form.$invalid"
-        label="Add Link"
+        :label="$t('ENTITY.ADD_LINK')"
         class="py-2 w-full"
         @click="addLink"
       />
@@ -125,11 +125,11 @@ export default {
     },
 
     tableColumns () {
-      const columns = [{ label: 'Name', field: 'type', formatFn: this.formatType }, { label: 'Link', field: 'value' }, { label: '', field: 'action' }]
+      const columns = [{ label: this.$t('ENTITY.NAME'), field: 'type', formatFn: this.formatType }, { label: this.$t('ENTITY.LINK'), field: 'value', thClass: 'break-all' }, { label: '', field: 'action' }]
 
       if (this.withAvatar) {
         columns.unshift({
-          label: 'Avatar',
+          label: this.$t('ENTITY.AVATAR'),
           field: 'avatar',
           formatFn: this.formatAvatar,
           sortable: false,

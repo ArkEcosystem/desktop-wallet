@@ -1,7 +1,10 @@
 <template>
   <Component
     :is="activeComponent"
+    :current-wallet="currentWallet"
+    :transaction="transaction"
     v-bind="$attrs"
+    v-on="$listeners"
   />
 </template>
 

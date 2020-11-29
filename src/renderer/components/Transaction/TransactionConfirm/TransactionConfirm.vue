@@ -5,6 +5,7 @@
       :recipient-address="transaction.recipientId"
       :sender-address="address"
       :type="transaction.type"
+      :asset="transaction.asset"
       class="mb-3"
     />
     <Component

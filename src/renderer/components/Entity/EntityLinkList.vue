@@ -14,7 +14,35 @@
         >
           {{ item.value }}
         </a>
-        <span class="ml-5">
+
+        <span
+          v-if="item.type === 'logo'"
+          v-tooltip="{
+            content: $t('ENTITY.AVATAR'),
+            placement: 'top'
+          }"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            class="ml-5 w-5 h-5"
+          >
+            <circle
+              cx="10"
+              cy="10"
+              r="10"
+              fill="#41b263"
+            />
+            <path
+              fill="#fff"
+              d="M13.442 6.798l-4.171 4.153-1.947-1.939-1.39 1.386 3.337 3.323 5.562-5.536z"
+            />
+          </svg>
+        </span>
+        <span
+          v-else
+          class="ml-5"
+        >
           <SvgIcon
             :name="item.type"
             view-box="0 0 25 25"
@@ -48,11 +76,26 @@ export default {
 
   computed: {
     options () {
-      return this.items.map(item => {
+      const videos = this.items.filter(item => item.type === 'video')
+      const images = this.items.filter(item => item.type === 'image')
+
+      return this.items.map((item) => {
         const provider = entityProvider.findByDomain(item.value)
+        let label = item.type
+
         if (provider) {
-          return { label: provider.displayName, ...item }
+          label = provider.displayName
         }
+
+        if (item.type === 'logo') {
+          label = this.$t('ENTITY.AVATAR')
+        } else if (item.type === 'image') {
+          label = `${this.$t('ENTITY.IMAGE')} #${images.findIndex(({ value }) => value === item.value) + 1}`
+        } else if (item.type === 'video') {
+          label = `${this.$t('ENTITY.VIDEO')} #${videos.findIndex(({ value }) => value === item.value) + 1}`
+        }
+
+        return { label, ...item }
       })
     }
   }

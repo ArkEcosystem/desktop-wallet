@@ -49,6 +49,7 @@
 <script>
 import Identicon from '@/components/utils/Identicon'
 import SvgIcon from '@/components/SvgIcon'
+import { TRANSACTION_TYPES_ENTITY } from '@config'
 
 export default {
   name: 'TransactionDetail',
@@ -76,6 +77,11 @@ export default {
       type: Number,
       required: false,
       default: 0
+    },
+    asset: {
+      type: Object,
+      required: false,
+      default: () => ({})
     }
   },
 
@@ -84,6 +90,15 @@ export default {
       return this.$store.getters['session/network'].token
     },
     iconName () {
+      const entityType = this.asset.type
+      const entityIcons = {
+        [TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS]: 'business',
+        [TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT]: 'product',
+        [TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN]: 'plugin',
+        [TRANSACTION_TYPES_ENTITY.TYPE.MODULE]: 'module',
+        [TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE]: 'delegate'
+      }
+
       switch (this.type) {
         case 1:
           return '2nd-passphrase'
@@ -91,6 +106,8 @@ export default {
           return 'register-delegate'
         case 3:
           return 'vote'
+        case 6:
+          return entityIcons[entityType]
         default:
           return 'wallet'
       }
@@ -103,6 +120,8 @@ export default {
           return 'bg-theme-send-circle-register-delegate'
         case 3:
           return 'bg-theme-send-circle-vote'
+        case 6:
+          return 'bg-theme-send-circle-vote'
         default:
           return 'bg-theme-heading-background'
       }
@@ -114,6 +133,8 @@ export default {
         case 2:
           return 'text-theme-send-circle-register-delegate-text'
         case 3:
+          return 'text-theme-send-circle-vote-text'
+        case 6:
           return 'text-theme-send-circle-vote-text'
         default:
           return 'text-white'
