@@ -75,6 +75,11 @@ const Main = () => {
 		setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+	useLayoutEffect(() => {
+		document.body.classList.remove(`theme-${isDark ? "light" : "dark"}`);
+		document.body.classList.add(`theme-${isDark ? "dark" : "light"}`);
+	}, [isDark]);
+
 	const handleError = useErrorHandler();
 
 	useLayoutEffect(() => {
@@ -113,7 +118,7 @@ const Main = () => {
 	};
 
 	return (
-		<main className={`theme-${isDark ? "dark" : "light"} ${className}`} data-testid="Main">
+		<main className={className} data-testid="Main">
 			<ToastContainer newestOnTop />
 
 			{renderContent()}

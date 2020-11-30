@@ -16,7 +16,7 @@ export const Collapse = ({ isOpen, children, minHeight, maxHeight, duration, ...
 			maxHeight: maxHeight,
 			height: "auto",
 			opacity: 1,
-			overflow: "auto",
+			overflow: props.className?.includes("custom-scroll") ? "overlay" : "auto",
 			transition: {
 				duration,
 			},
