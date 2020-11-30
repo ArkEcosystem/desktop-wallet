@@ -37,8 +37,16 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 		),
 	};
 
+	// @ts-ignore
 	const [dashboardConfiguration, setDashboardConfiguration] = useReducer(
-		(state: DashboardConfiguration, newState: Record<string, any>) => ({ ...state, ...newState }),
+		(state: DashboardConfiguration, newState: Record<string, any>) => {
+			for(const [key, value] of Object.entries(newState)) {
+				// @ts-ignore
+				state[key] = value;
+			}
+
+			return state;
+		},
 		activeProfile.settings().get(ProfileSetting.DashboardConfiguration) || {
 			...defaultDashboardConfiguration,
 			viewType: "grid",
