@@ -8035,95 +8035,86 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   >
                     My Vote
                   </h2>
+                  <span
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+                  >
+                    (0/1)
+                  </span>
                 </div>
                 <div
-                  class="flex items-center"
-                  data-testid="WalletVote__skeleton"
+                  class="flex items-center space-x-4"
+                  data-testid="WalletVote__empty"
                 >
                   <div
-                    class="flex items-center mr-4 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW border-transparent"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
-                        >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 44px; height: 44px; border-radius: 50%;"
-                          >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
-                      </span>
+                      <div
+                        class="sc-AxiKw jcWfEX"
+                        height="21"
+                        width="21"
+                      >
+                        <svg>
+                          vote.svg
+                        </svg>
+                      </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW border-transparent"
+                      class="flex -space-x-3"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
-                        >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 44px; height: 44px; border-radius: 50%;"
-                          >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
+                      <span
+                        class="inline-block"
+                      >
+                        <div
+                          class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
+                        />
                       </span>
                     </div>
                   </div>
                   <div
-                    class="flex flex-col justify-between h-10"
+                    class="flex justify-between flex-1"
                   >
-                    <span>
+                    <div
+                      class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
+                    >
                       <span
-                        class="flex items-center leading-none"
+                        class="mr-2"
                       >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 150px; height: 14px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
+                        You have not yet voted for a Delegate
                       </span>
-                    </span>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
+                      <div
+                        class="mt-1 mr-auto"
                       >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 100px; height: 16px;"
+                        <a
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
                         >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ml-auto"
-                  >
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 100px; height: 44px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                          Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <button
+                      class="sc-AxjAm fCKjFI"
+                      color="primary"
+                      data-testid="WalletVote__button"
+                      type="button"
+                    >
+                      Vote
+                    </button>
                   </div>
                 </div>
               </section>
@@ -8142,95 +8133,78 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   >
                     Registrations
                   </h2>
+                  <span
+                    class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+                  >
+                    (0)
+                  </span>
                 </div>
                 <div
-                  class="flex items-center"
-                  data-testid="WalletRegistrations__skeleton"
+                  class="flex items-center space-x-4"
+                  data-testid="WalletRegistrations__empty"
                 >
                   <div
-                    class="flex items-center mr-4 -space-x-2"
+                    class="flex items-center -space-x-2"
                   >
                     <div
-                      class="sc-AxhUy iDenJW border-transparent"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
-                        >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 44px; height: 44px; border-radius: 50%;"
-                          >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
-                      </span>
+                      <div
+                        class="sc-AxiKw dzBdqj text-xl"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          delegate.svg
+                        </svg>
+                      </div>
                     </div>
                     <div
-                      class="sc-AxhUy iDenJW border-transparent"
+                      class="sc-AxhUy iDenJW border-theme-neutral-500 dark:border-theme-neutral-700"
+                    />
+                  </div>
+                  <div
+                    class="flex justify-between flex-1"
+                  >
+                    <div
+                      class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
                     >
-                      <span>
-                        <span
-                          class="flex items-center leading-none"
+                      <span
+                        class="mr-2"
+                      >
+                        You have no active registrations
+                      </span>
+                      <div
+                        class="mt-1 mr-auto"
+                      >
+                        <a
+                          class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          data-testid="Link"
+                          rel="noopener noreferrer"
+                          to="@TODO"
                         >
-                          <span
-                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                            style="width: 44px; height: 44px; border-radius: 50%;"
+                          Learn more
+                          <div
+                            class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                            data-testid="Link__external"
+                            height="1em"
+                            width="1em"
                           >
-                            ‌
-                          </span>
-                          ‌
-                        </span>
-                      </span>
+                            <svg>
+                              redirect.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    class="flex flex-col justify-between h-10"
-                  >
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 150px; height: 14px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 100px; height: 16px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="ml-auto"
-                  >
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                          style="width: 100px; height: 44px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                    <button
+                      class="sc-AxjAm fCKjFI"
+                      color="primary"
+                      data-testid="WalletRegistrations__button"
+                      type="button"
+                    >
+                      Register
+                    </button>
                   </div>
                 </div>
               </section>
@@ -8474,227 +8448,155 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="sc-AxmLO iVatWU group"
+                      class="sc-AxmLO kbgHZc group"
                       data-testid="TableRow"
                     >
                       <td>
                         <div
-                          class="sc-Axmtr bMGOQy"
+                          class="sc-Axmtr gaELvy"
                         >
-                          <span>
-                            <span
-                              class="flex items-center leading-none"
+                          <a
+                            class="sc-fznyAO fvIzri inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            rel="noopener noreferrer"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                          >
+                            <div
+                              class="sc-AxiKw dzBdqj"
+                              height="1em"
+                              width="1em"
                             >
-                              <span
-                                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                style="width: 16px; height: 16px;"
-                              >
-                                ‌
-                              </span>
-                              ‌
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="sc-Axmtr eisuEY text-theme-secondary-text"
+                        >
+                          <span
+                            class="whitespace-no-wrap"
+                            data-testid="TransactionRow__timestamp"
+                          >
+                            23 Jul 2020 08:03:20
                           </span>
                         </div>
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ccwJsU"
-                        >
-                          <span>
-                            <span
-                              class="flex items-center leading-none"
-                            >
-                              <span
-                                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                style="width: 150px; height: 16px;"
-                              >
-                                ‌
-                              </span>
-                              ‌
-                            </span>
-                          </span>
-                        </div>
-                      </td>
-                      <td>
-                        <div
-                          class="sc-Axmtr ccwJsU"
+                          class="sc-Axmtr eisuEY space-x-4"
                         >
                           <div
-                            class="flex items-center mr-4 -space-x-1"
+                            class="flex items-center -space-x-1"
+                            data-testid="TransactionRowMode"
                           >
                             <div
-                              class="sc-AxhUy iDenJW border-transparent"
+                              class="sc-AxhUy iDenJW border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                             >
-                              <span>
-                                <span
-                                  class="flex items-center leading-none"
-                                >
-                                  <span
-                                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                    style="width: 44px; height: 44px; border-radius: 50%;"
-                                  >
-                                    ‌
-                                  </span>
-                                  ‌
-                                </span>
-                              </span>
+                              <div
+                                class="sc-AxiKw dzBdqj"
+                                data-testid="TransactionRowMode__Received"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  received.svg
+                                </svg>
+                              </div>
                             </div>
                             <div
-                              class="sc-AxhUy iDenJW border-transparent"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                              data-testid="Avatar"
                             >
-                              <span>
-                                <span
-                                  class="flex items-center leading-none"
-                                >
-                                  <span
-                                    class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                    style="width: 44px; height: 44px; border-radius: 50%;"
-                                  >
-                                    ‌
-                                  </span>
-                                  ‌
-                                </span>
-                              </span>
+                              <div
+                                class="w-full h-full"
+                              >
+                                <img
+                                  alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                                  title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                                />
+                              </div>
                             </div>
                           </div>
-                          <span>
+                          <div
+                            class="inline-flex items-center"
+                          >
                             <span
-                              class="flex items-center leading-none"
+                              class="sc-fzoLsD fqEnxe text-theme-text truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
                             >
-                              <span
-                                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                style="width: 130px; height: 16px;"
-                              >
-                                ‌
-                              </span>
-                              ‌
+                              D5pVkh … xfKwSv
                             </span>
-                          </span>
+                          </div>
                         </div>
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ccwJsU justify-center"
+                          class="sc-Axmtr eisuEY justify-center"
                         >
-                          <span
-                            class="flex items-center space-x-2"
+                          <div
+                            class="inline-flex space-x-1 align-middle"
+                            data-testid="TransactionRowInfo"
+                          />
+                        </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="sc-Axmtr eisuEY justify-center"
+                        >
+                          <div
+                            class="inline-flex p-1 align-middle"
+                            data-testid="TransactionRowConfirmation"
                           >
-                            <span>
-                              <span
-                                class="flex items-center leading-none"
-                              >
-                                <span
-                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                  style="width: 16px; height: 16px;"
-                                >
-                                  ‌
-                                </span>
-                                ‌
-                              </span>
-                            </span>
-                            <span>
-                              <span
-                                class="flex items-center leading-none"
-                              >
-                                <span
-                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                  style="width: 16px; height: 16px;"
-                                >
-                                  ‌
-                                </span>
-                                ‌
-                              </span>
-                            </span>
-                          </span>
+                            <div
+                              class="sc-AxiKw fFXzuz text-theme-success"
+                              data-testid="TransactionRowConfirmation__confirmed"
+                              height="22"
+                              width="22"
+                            >
+                              <svg>
+                                status-ok.svg
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ccwJsU justify-center"
+                          class="sc-Axmtr eisuEY justify-end"
                         >
-                          <span>
+                          <div
+                            class="sc-fzozJi bXfNeq whitespace-no-wrap"
+                            color="success"
+                            data-testid="TransactionRowAmount"
+                          >
                             <span
-                              class="flex items-center leading-none"
+                              data-testid="Amount"
                             >
-                              <span
-                                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                style="width: 22px; height: 22px; border-radius: 50%;"
-                              >
-                                ‌
-                              </span>
-                              ‌
+                              + 400,000 DARK
                             </span>
-                          </span>
+                          </div>
                         </div>
                       </td>
                       <td>
                         <div
-                          class="sc-Axmtr ccwJsU justify-end"
+                          class="sc-Axmtr exQntG justify-end"
                         >
                           <span
-                            class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                            class="whitespace-no-wrap"
+                            data-testid="TransactionRow__currency"
                           >
-                            <span>
-                              <span
-                                class="flex items-center leading-none"
-                              >
-                                <span
-                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                  style="width: 114px; height: 16px;"
-                                >
-                                  ‌
-                                </span>
-                                ‌
-                              </span>
-                            </span>
-                            <span>
-                              <span
-                                class="flex items-center leading-none"
-                              >
-                                <span
-                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                  style="width: 35px; height: 16px;"
-                                >
-                                  ‌
-                                </span>
-                                ‌
-                              </span>
-                            </span>
-                          </span>
-                        </div>
-                      </td>
-                      <td>
-                        <div
-                          class="sc-Axmtr ijPrma justify-end"
-                        >
-                          <span
-                            class="flex items-center space-x-1"
-                          >
-                            <span>
-                              <span
-                                class="flex items-center leading-none"
-                              >
-                                <span
-                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                  style="width: 85px; height: 16px;"
-                                >
-                                  ‌
-                                </span>
-                                ‌
-                              </span>
-                            </span>
-                            <span>
-                              <span
-                                class="flex items-center leading-none"
-                              >
-                                <span
-                                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                                  style="width: 35px; height: 16px;"
-                                >
-                                  ‌
-                                </span>
-                                ‌
-                              </span>
+                            <span
+                              class="text-theme-secondary-text"
+                              data-testid="TransactionRowAmount"
+                            >
+                              0 BTC
                             </span>
                           </span>
                         </div>
@@ -8704,6 +8606,14 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 </table>
               </div>
             </div>
+            <button
+              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              color="primary"
+              data-testid="transactions__fetch-more-button"
+              type="button"
+            >
+              View More
+            </button>
           </div>
         </div>
       </div>
