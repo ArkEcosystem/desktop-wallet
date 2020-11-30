@@ -40,7 +40,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 	// @ts-ignore
 	const [dashboardConfiguration, setDashboardConfiguration] = useReducer(
 		(state: DashboardConfiguration, newState: Record<string, any>) => {
-			for(const [key, value] of Object.entries(newState)) {
+			for (const [key, value] of Object.entries(newState)) {
 				// @ts-ignore
 				state[key] = value;
 			}
