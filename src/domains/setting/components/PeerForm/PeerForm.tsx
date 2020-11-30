@@ -40,6 +40,7 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 		if (form.errors.host?.message.includes("already exists")) {
 			form.clearErrors("host");
 
+			/* istanbul ignore else */
 			if (host) {
 				setValue("host", host, { shouldValidate: true, shouldDirty: true });
 			}

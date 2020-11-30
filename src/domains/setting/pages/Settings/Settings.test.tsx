@@ -272,8 +272,8 @@ describe("Settings", () => {
 		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
 	});
 
-	it("should add & delete custom peer", async () => {
-		const { findByTestId, getByTestId } = renderWithRouter(
+	it("should show an error message for invalid peer (host)", async () => {
+		const { findByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,
@@ -310,6 +310,22 @@ describe("Settings", () => {
 
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "167.114.29.48:4003/api" },
+			});
+		});
+
+		await waitFor(() => expect(getByText("The 'Peer IP' is not valid")).toBeVisible());
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "//167.114.29.48:4003/api" },
+			});
+		});
+
+		await waitFor(() => expect(getByText("The 'Peer IP' does not have 'http://' or 'https://'")).toBeVisible());
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
 				target: { value: "http://167.114.29.48:4003/api" },
 			});
 		});
@@ -323,8 +339,97 @@ describe("Settings", () => {
 		fireEvent.click(submitButton);
 
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+	});
 
-		const toggle = within(getByTestId("Peer-settings__table")).getByTestId("dropdown__toggle");
+	it("should add & delete custom peer", async () => {
+		const { findByTestId, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		fireEvent.click(await findByTestId("side-menu__item--Peer"));
+
+		expect(getByTestId("Peer-list__add-button")).toBeTruthy();
+
+		const addPeerButton = getByTestId("Peer-list__add-button");
+		expect(addPeerButton).toBeTruthy();
+		await act(async () => {
+			fireEvent.click(addPeerButton);
+		});
+
+		expect(getByTestId("modal__inner")).toBeTruthy();
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() =>
+			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
+		});
+
+		await waitFor(() => expect(getByText(translations.SETTINGS.PEERS.VALIDATION.HOST_EXISTS)).toBeVisible());
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() =>
+			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(""));
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() =>
+			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://89.45.251.233:4003/api" },
+			});
+		});
+
+		const submitButton = getByTestId("PeerForm__submit-button");
+		expect(submitButton).toBeTruthy();
+		await waitFor(() => {
+			expect(submitButton).not.toHaveAttribute("disabled");
+		});
+
+		fireEvent.click(submitButton);
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+
+		const toggle = within(getByTestId("Peer-settings__table")).getAllByTestId("dropdown__toggle")[0];
 
 		act(() => {
 			fireEvent.click(toggle);
@@ -373,7 +478,6 @@ describe("Settings", () => {
 			fireEvent.click(addPeerButton);
 		});
 
-		// Add peer one
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -395,45 +499,6 @@ describe("Settings", () => {
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__host-input"), {
 				target: { value: "http://167.114.29.48:4003/api" },
-			});
-		});
-
-		expect(getByTestId("PeerForm__submit-button")).toBeTruthy();
-		await waitFor(() => {
-			expect(getByTestId("PeerForm__submit-button")).not.toHaveAttribute("disabled");
-		});
-
-		fireEvent.click(getByTestId("PeerForm__submit-button"));
-
-		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
-
-		expect(addPeerButton).toBeTruthy();
-		await act(async () => {
-			fireEvent.click(addPeerButton);
-		});
-
-		// Add peer two
-		expect(getByTestId("modal__inner")).toBeTruthy();
-
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
-
-		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
-		});
-
-		act(() => {
-			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank 2" } });
-		});
-
-		act(() => {
-			fireEvent.input(getByTestId("PeerForm__host-input"), {
-				target: { value: "http://89.45.251.233:4003/api" },
 			});
 		});
 
