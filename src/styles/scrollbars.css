@@ -1,0 +1,37 @@
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: none !important;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-track-piece {
+	-webkit-box-shadow: none !important;
+}
+
+::-webkit-scrollbar {
+	background-color: transparent;
+	width: 6px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece:start {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--theme-scrollbar-color);
+	border: 1px solid transparent;
+	border-radius: 6px;
+	background-clip: content-box;
+	transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+	background-color: var(--theme-scrollbar-hover-color);
+	border: none;
+}
+
+.custom-scroll::-webkit-scrollbar {
+	background-color: var(--theme-background-color);
+}
