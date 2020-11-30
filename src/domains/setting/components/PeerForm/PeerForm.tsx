@@ -11,11 +11,11 @@ import { useTranslation } from "react-i18next";
 type PeerFormProps = {
 	networks: Coins.Network[];
 	peer?: any;
-	onError?: any;
 	onSave: any;
+	onValidateHost?: any;
 };
 
-export const PeerForm = ({ networks, peer, onError, onSave }: PeerFormProps) => {
+export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -39,6 +39,7 @@ export const PeerForm = ({ networks, peer, onError, onSave }: PeerFormProps) => 
 	const handleSelectNetwork = (network?: Coins.Network | null) => {
 		if (form.errors.host?.message.includes("already exists")) {
 			form.clearErrors("host");
+
 			if (host) {
 				setValue("host", host, { shouldValidate: true, shouldDirty: true });
 			}
@@ -92,10 +93,7 @@ export const PeerForm = ({ networks, peer, onError, onSave }: PeerFormProps) => 
 								return true;
 							}
 
-							return (
-								!onError?.(network?.id(), host) ||
-								t("SETTINGS.PEERS.VALIDATION.HOST_EXISTS", { host }).toString()
-							);
+							return onValidateHost?.(network?.id(), host);
 						},
 					})}
 					defaultValue={peer?.host}

@@ -12,10 +12,10 @@ type UpdatePeerProps = {
 	peer: any;
 	profile: Profile;
 	onClose?: () => void;
-	onError?: any;
+	onValidateHost?: any;
 };
 
-export const UpdatePeer = ({ isOpen, networks, peer, profile, onClose, onError }: UpdatePeerProps) => {
+export const UpdatePeer = ({ isOpen, networks, peer, profile, onClose, onValidateHost }: UpdatePeerProps) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
@@ -53,7 +53,7 @@ export const UpdatePeer = ({ isOpen, networks, peer, profile, onClose, onError }
 
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
-			<PeerForm networks={networks} peer={peer} onError={onError} onSave={handleUpdatePeer} />
+			<PeerForm networks={networks} peer={peer} onValidateHost={onValidateHost} onSave={handleUpdatePeer} />
 		</Modal>
 	);
 };
