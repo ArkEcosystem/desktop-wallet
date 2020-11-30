@@ -185,12 +185,12 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		}
 
 		if (!hostHasProtocol(host)) {
-			return t("SETTINGS.PEERS.VALIDATION.NO_SCHEME", { field: t("SETTINGS.PEERS.PEER_IP") });
+			return t("SETTINGS.PEERS.VALIDATION.NO_PROTOCOL", { field: t("SETTINGS.PEERS.PEER_IP") });
 		}
 
 		return (
 			!peerGroupByNetwork?.[network]?.some((peer: any) => peer.host === host) ||
-			t("SETTINGS.PEERS.VALIDATION.HOST_EXISTS", { host })
+			t("SETTINGS.PEERS.VALIDATION.HOST_EXISTS")
 		);
 	};
 

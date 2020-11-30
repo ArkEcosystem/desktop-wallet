@@ -309,7 +309,9 @@ describe("Settings", () => {
 		});
 
 		act(() => {
-			fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
 		});
 
 		const submitButton = getByTestId("PeerForm__submit-button");
@@ -391,7 +393,9 @@ describe("Settings", () => {
 		});
 
 		act(() => {
-			fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
 		});
 
 		expect(getByTestId("PeerForm__submit-button")).toBeTruthy();
@@ -428,7 +432,9 @@ describe("Settings", () => {
 		});
 
 		act(() => {
-			fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "89.45.251.233" } });
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://89.45.251.233:4003/api" },
+			});
 		});
 
 		expect(getByTestId("PeerForm__submit-button")).toBeTruthy();
