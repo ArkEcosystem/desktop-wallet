@@ -42,6 +42,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		})),
 	);
 
+	const hasCoinsSelected = Object.values(coins).some((coin) => coin.isSelected);
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const showSelectAllCategories = useMemo(() => categories.some((option: Option) => !option.isSelected), [
@@ -72,14 +73,6 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 				isSelected: true,
 			})),
 		);
-	};
-
-	const handleSelectCoin = (selectedCoin: CoinOption) => {
-		const updatedCoins = coins.map((coin: CoinOption) => ({
-			...coin,
-			isSelected: coin.name === selectedCoin.name,
-		}));
-		setCoins(updatedCoins);
 	};
 
 	const handleSearchInput = (searchQuery: string) => {
@@ -168,10 +161,16 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
-						<FilterNetwork networks={coins} hideViewAll onChange={handleSelectCoin} />
+						<FilterNetwork networks={coins} hideViewAll onChange={(_, networks) => setCoins(networks)} />
 					</div>
 
-					<Button className="w-full" variant="plain" onClick={handleSubmit} data-testid="NewsOptions__submit">
+					<Button
+						disabled={!hasCoinsSelected}
+						className="w-full"
+						variant="plain"
+						onClick={handleSubmit}
+						data-testid="NewsOptions__submit"
+					>
 						{t("NEWS.NEWS_OPTIONS.UPDATE_FILTER")}
 					</Button>
 				</div>

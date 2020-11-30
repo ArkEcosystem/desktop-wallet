@@ -133,7 +133,7 @@ export const News = ({ itemsPerPage }: Props) => {
 						{!isLoading && (
 							<div className="space-y-6">
 								{news?.map((data, index) => (
-									<NewsCard key={index} coin={coins[0]} {...data} />
+									<NewsCard key={index} {...data} />
 								))}
 							</div>
 						)}
