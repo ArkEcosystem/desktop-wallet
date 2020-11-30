@@ -3,7 +3,7 @@
 exports[`SideBar should render empty 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxiKw eZuVXn"
+    class="sc-AxirZ gPihbH"
   >
     <ul />
   </div>
@@ -13,21 +13,21 @@ exports[`SideBar should render empty 1`] = `
 exports[`SideBar should render with items 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxiKw eZuVXn"
+    class="sc-AxirZ gPihbH"
   >
     <ul>
       <div
         class="relative cursor-pointer"
         data-testid="side-menu__item--undefined"
       >
-        <div
-          class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-        />
         <li
-          class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+          class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
         >
           <div
-            class="text-theme-primary"
+            class="absolute top-0 left-0 bottom-0 w-2 rounded bg-theme-primary"
+          />
+          <div
+            class="mr-3 text-theme-primary"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -40,7 +40,7 @@ exports[`SideBar should render with items 1`] = `
             </div>
           </div>
           <span
-            class="ml-3 text-lg font-semibold"
+            class="text-lg font-semibold"
           >
             General
           </span>
@@ -50,14 +50,14 @@ exports[`SideBar should render with items 1`] = `
         class="relative cursor-pointer"
         data-testid="side-menu__item--undefined"
       >
-        <div
-          class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-        />
         <li
-          class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+          class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
         >
           <div
-            class="text-theme-primary"
+            class="absolute top-0 left-0 bottom-0 w-2 rounded bg-theme-primary"
+          />
+          <div
+            class="mr-3 text-theme-primary"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -70,7 +70,7 @@ exports[`SideBar should render with items 1`] = `
             </div>
           </div>
           <span
-            class="ml-3 text-lg font-semibold"
+            class="text-lg font-semibold"
           >
             Peer
           </span>
@@ -80,14 +80,14 @@ exports[`SideBar should render with items 1`] = `
         class="relative cursor-pointer"
         data-testid="side-menu__item--undefined"
       >
-        <div
-          class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-        />
         <li
-          class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+          class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
         >
           <div
-            class="text-theme-primary"
+            class="absolute top-0 left-0 bottom-0 w-2 rounded bg-theme-primary"
+          />
+          <div
+            class="mr-3 text-theme-primary"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -100,7 +100,7 @@ exports[`SideBar should render with items 1`] = `
             </div>
           </div>
           <span
-            class="ml-3 text-lg font-semibold"
+            class="text-lg font-semibold"
           >
             Plugins
           </span>

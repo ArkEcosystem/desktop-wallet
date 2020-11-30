@@ -3,20 +3,12 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { withRouter } from "react-router";
 import { RouteComponentProps } from "react-router";
-import styled from "styled-components";
 
 // Types
 import { ItemProps } from "../SideBar";
 
-const ActiveIndicator = styled.div({
-	minWidth: "8px",
-	minHeight: "100%",
-});
-
 export const SideBarItem = withRouter(
 	({ label, icon, itemKey, route, isActive, history, handleActiveItem }: ItemProps & RouteComponentProps) => {
-		const getActiveClass = () => (isActive ? "text-theme-primary bg-theme-primary-contrast" : "text-theme-medium");
-
 		const handleClick = () => {
 			handleActiveItem(itemKey);
 		};
@@ -27,14 +19,24 @@ export const SideBarItem = withRouter(
 				onClick={() => handleClick()}
 				data-testid={`side-menu__item--${itemKey}`}
 			>
-				{isActive && <ActiveIndicator className="absolute top-0 left-0 rounded-lg bg-theme-primary" />}
-				<li className={`rounded-lg py-5 pl-10 pr-8 h-15 ${getActiveClass()} flex items-center`}>
+				<li
+					className={`rounded-lg py-5 pl-10 pr-8 h-15 flex items-center ${
+						isActive ? "text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800" : ""
+					}`}
+				>
+					{isActive && <div className="absolute top-0 left-0 bottom-0 w-2 rounded bg-theme-primary" />}
+
 					{icon && (
-						<div className={`text-theme-${isActive ? "primary" : "primary-light"}`}>
+						<div
+							className={`mr-3 ${
+								isActive ? "text-theme-primary" : "text-theme-primary-300 dark:text-theme-neutral-600"
+							}`}
+						>
 							<Icon name={icon} width={20} height={20} />
 						</div>
 					)}
-					<span className={`ml-3 text-lg ${isActive ? "font-semibold" : "font-medium"}`}>{label}</span>
+
+					<span className="text-lg font-semibold">{label}</span>
 				</li>
 			</div>
 		);
