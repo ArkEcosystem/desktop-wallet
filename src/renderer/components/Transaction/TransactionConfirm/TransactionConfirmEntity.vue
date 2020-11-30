@@ -10,7 +10,7 @@
 
 <script>
 import { TRANSACTION_TYPES, TRANSACTION_GROUPS } from '@config'
-import { TransactionConfirmEntityRegistration } from './TransactionConfirmEntity/index'
+import { TransactionConfirmEntityRegistration, TransactionConfirmEntityResignation } from './ConfirmEntity'
 
 export default {
   name: 'TransactionConfirmEntity',
@@ -19,7 +19,8 @@ export default {
   transactionType: TRANSACTION_TYPES.GROUP_2.ENTITY,
 
   components: {
-    TransactionConfirmEntityRegistration
+    TransactionConfirmEntityRegistration,
+    TransactionConfirmEntityResignation
   },
 
   inject: ['currentWallet', 'transaction'],

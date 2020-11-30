@@ -5,7 +5,9 @@ import App from '@/App'
 
 jest.mock('electron', () => ({
   remote: {
-    Menu: jest.fn()
+    Menu: {
+      buildFromTemplate: jest.fn()
+    }
   },
   ipcRenderer: {
     on: jest.fn()
@@ -30,7 +32,10 @@ beforeEach(() => {
             id: 'test-profile'
           }
         },
-        watch: jest.fn()
+        watch: jest.fn(),
+        _vm: {
+          $on: jest.fn()
+        }
       }
     }
   })

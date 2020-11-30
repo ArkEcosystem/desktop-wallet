@@ -7,13 +7,15 @@
   resolved "https://registry.yarnpkg.com/7zip-bin/-/7zip-bin-5.0.3.tgz#bc5b5532ecafd923a61f2fb097e3b108c0106a3f"
   integrity sha512-GLyWIFBbGvpKPGo55JyRZAo4lVbnBiD52cKlw/0Vt+wnmKvWJkpZvsjVoaIolyBXDeAQKSicRtqFNPem9w0WYA==
 
-"@arkecosystem/client@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-1.0.5.tgz#757426afdb9ab7b13464fd0acebf5f17abbdddaf"
-  integrity sha512-14d91Kjx/0n++lyhm3bRhpT0EPFWhXdCb7OQG1ozZm2tRuCUPLMc+R26kgLLWGqOAkpUoGKziGd1hn/Cq/nZvA==
+"@arkecosystem/client@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/client/-/client-2.0.0.tgz#38829ef998c5143122a85fbcd47fcf9b1eb0c8f0"
+  integrity sha512-KKGYY38Uk9R0KccGywdutoiNz7dBRBL4Pu38nMCzsc+2sZukszAKFqxY5BscBUtLUpuNKc/cvZquYveH4gaPjQ==
   dependencies:
-    got "^9.6.0"
-    is-url-superb "^3.0.0"
+    is-url-superb "^4.0.0"
+    ky "^0.23.0"
+    ky-universal "^0.8.2"
+    node-dotify "^1.0.2"
 
 "@arkecosystem/core-kernel@^3.0.0-next.9":
   version "3.0.0-next.9"
@@ -3381,6 +3383,11 @@ bsert@~0.0.10:
   resolved "https://registry.yarnpkg.com/bsert/-/bsert-0.0.10.tgz#231ac82873a1418c6ade301ab5cd9ae385895597"
   integrity sha512-NHNwlac+WPy4t2LoNh8pXk8uaIGH3NSaIUbTTRXGpE2WEbq0te/tDykYHkFK57YKLPjv/aGHmbqvnGeVWDz57Q==
 
+bson-objectid@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/bson-objectid/-/bson-objectid-1.3.1.tgz#11e4ce4c3419161fd388113781bb62c1dfbce34b"
+  integrity sha512-eQBNQXsisEAXlwiSy8zRNZdW2xDBJaEVkTPbodYR9hGxxtE548Qq7ilYOd8WAQ86xF7NRUdiWSQ1pa/TkKiE2A==
+
 bstring@^0.3.9:
   version "0.3.9"
   resolved "https://registry.yarnpkg.com/bstring/-/bstring-0.3.9.tgz#dc50294b54e9e767c07ca5592795dcc59ef1bf2e"
@@ -4753,6 +4760,11 @@ data-uri-to-buffer@1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-1.2.0.tgz#77163ea9c20d8641b4707e8f18abdf9a78f34835"
   integrity sha512-vKQ9DTQPN1FLYiiEEOQ6IBGFqvjCa5rSK3cWMy/Nespm5d/x3dGFT9UBZnkLxCwua/IXBi2TYnwTEpsOvhC4UQ==
+
+data-uri-to-buffer@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-3.0.1.tgz#594b8973938c5bc2c33046535785341abc4f3636"
+  integrity sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==
 
 data-urls@^1.0.0:
   version "1.1.0"
@@ -6553,6 +6565,11 @@ fd-slicer@~1.1.0:
   integrity sha1-JcfInLH5B3+IkbvmHY85Dq4lbx4=
   dependencies:
     pend "~1.2.0"
+
+fetch-blob@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/fetch-blob/-/fetch-blob-2.1.1.tgz#a54ab0d5ed7ccdb0691db77b6674308b23fb2237"
+  integrity sha512-Uf+gxPCe1hTOFXwkxYyckn8iUSk6CFXGy5VENZKifovUTZC9eUODWSBhOBS7zICGrAetKzdwLMr85KhIcePMAQ==
 
 figgy-pudding@^3.5.1:
   version "3.5.1"
@@ -8381,6 +8398,11 @@ is-url-superb@^3.0.0:
   dependencies:
     url-regex "^5.0.0"
 
+is-url-superb@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/is-url-superb/-/is-url-superb-4.0.0.tgz#b54d1d2499bb16792748ac967aa3ecb41a33a8c2"
+  integrity sha512-GI+WjezhPPcbM+tqE9LnmsY5qqjwHzTvjJ36wxYX5ujNXefSUJ/T17r5bqDV8yLhcgB59KTPNOc9O9cmHTPWsA==
+
 is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
@@ -9260,10 +9282,23 @@ ky-universal@^0.5.0:
     abort-controller "^3.0.0"
     node-fetch "^2.6.0"
 
+ky-universal@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/ky-universal/-/ky-universal-0.8.2.tgz#edc398d54cf495d7d6830aa1ab69559a3cc7f824"
+  integrity sha512-xe0JaOH9QeYxdyGLnzUOVGK4Z6FGvDVzcXFTdrYA1f33MZdEa45sUDaMBy98xQMcsd2XIBrTXRrRYnegcSdgVQ==
+  dependencies:
+    abort-controller "^3.0.0"
+    node-fetch "3.0.0-beta.9"
+
 ky@^0.19.0:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/ky/-/ky-0.19.1.tgz#c533884028c83f78167d12905dfecaf6dd760bec"
   integrity sha512-ZwciYrfaWpDI72U2HAruuGYGFW3PCfGNdWWSANGGssg9BGm4rRJ9s/sApiiRpj+8Y245/hlZW9c60zudLr6iwA==
+
+ky@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/ky/-/ky-0.23.0.tgz#54c2f3fa9003d591cb2f368384e6c84795a92e64"
+  integrity sha512-+t2CbQsLmpN3HeYPBxN+VbZqBOd86njF3cvnueC77pJKVHRjiMI0Ac+pfkB8e17Bw1dGHbMk9hrHst9Bw7ndgw==
 
 latest-version@^5.0.0:
   version "5.1.0"
@@ -10559,12 +10594,27 @@ node-cache@^4.1.1:
     clone "2.x"
     lodash "^4.17.15"
 
+node-dotify@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/node-dotify/-/node-dotify-1.0.2.tgz#f9eb6d9ad822feede283339b7b053319285197e7"
+  integrity sha512-XS0V/Rc8imyKeT5B0HEARTtDKaxq0QsgtY/EsvWr3RacDQhaR3WJ8D+zeNTAohj836Ia5C2vpW5hGoe2RY8P9A==
+  dependencies:
+    bson-objectid "^1.3.1"
+
 node-emoji@^1.10.0, node-emoji@^1.8.1:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/node-emoji/-/node-emoji-1.10.0.tgz#8886abd25d9c7bb61802a658523d1f8d2a89b2da"
   integrity sha512-Yt3384If5H6BYGVHiHwTL+99OzJKHhgp82S8/dktEK73T26BazdgZ4JZh92xSVtGNJvz9UbXdNAc5hcrXV42vw==
   dependencies:
     lodash.toarray "^4.4.0"
+
+node-fetch@3.0.0-beta.9:
+  version "3.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.0.0-beta.9.tgz#0a7554cfb824380dd6812864389923c783c80d9b"
+  integrity sha512-RdbZCEynH2tH46+tj0ua9caUHVWrd/RHnRfvly2EVdqGmI3ndS1Vn/xjm5KuGejDt2RNDQsVRLPNd2QPwcewVg==
+  dependencies:
+    data-uri-to-buffer "^3.0.1"
+    fetch-blob "^2.1.1"
 
 node-fetch@^2.2.0, node-fetch@^2.6.0:
   version "2.6.0"

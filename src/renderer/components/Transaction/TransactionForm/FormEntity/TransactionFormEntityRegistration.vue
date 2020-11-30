@@ -256,8 +256,8 @@ import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { Collapse } from '@/components/Collapse'
 import { EntityLinkEditableList } from '@/components/Entity'
 import { PassphraseInput } from '@/components/Passphrase'
-// import { File } from '@arkecosystem/platform-sdk-ipfs'
-// import { Request } from '@arkecosystem/platform-sdk-http-got'
+import { File } from '@arkecosystem/platform-sdk-ipfs'
+import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { filter, isEmpty } from 'lodash'
 import SvgIcon from '@/components/SvgIcon'
 import mixin from '../mixin'
@@ -402,8 +402,7 @@ export default {
           action: +this.$options.entityAction,
           data: {
             name: entityName,
-            ipfsData: 'QmaG7m2meve4mtcEyRxfhSezomtQoZBqGZ4dhxaVrHF3Mt'
-            // ipfsData: await new File(new Request()).upload(sanitizedIpfsData)
+            ipfsData: await new File(new Request()).upload(sanitizedIpfsData)
           }
         }
       }
@@ -459,16 +458,16 @@ export default {
       ipfsData: {
         meta: {
           displayName: {
-            // required,
+            required,
             minLength: minLength(3)
           },
           description: {
-            // required,
+            required,
             minLength: minLength(3),
             maxLength: maxLength(512)
           },
           website: {
-            // required,
+            required,
             url
           }
         }

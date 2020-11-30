@@ -1080,6 +1080,7 @@ export default {
       MULTI_SIGN: 'Transaction has been signed successfully',
       MULTI_SIGNATURE: 'Multisignature created successfully',
       IPFS: 'IPFS created successfully',
+      ENTITY: 'Entity created successfully',
       HTLC_LOCK: 'Timelock created successfully',
       HTLC_CLAIM: 'Timelock Claim created successfully',
       HTLC_REFUND: 'Timelock Refund created successfully',
@@ -1418,12 +1419,20 @@ export default {
     REGISTRATION_STEP1_DESCRIPTION: 'Select the address and the registration type.',
     REGISTRATION_STEP2_DESCRIPTION: 'Enter registration details below.',
 
+    RESIGNATION_DESCRIPTION: 'Resign your {entity} forever.',
+    RESIGNATION_WARNING: 'WARNING: Keep in mind that you cannot restore your {entity} after the resignation has been registered on the blockchain.',
+    RESIGNED: 'Resigned',
+
     NAME: 'Name',
     TYPE: 'Type',
     DISPLAY_NAME: 'Display Name',
     DESCRIPTION: 'Descrition',
     WEBSITE: 'Website',
     PROVIDER: 'Provider',
+    HISTORY: 'History',
+    UPDATE: 'Update',
+    RESIGN: 'Resign',
+    VIEW: 'View',
 
     REPOSITORY: 'Repository',
     REPOSITORY_DESCRIPTION: 'Promote your project\'s code repository.',
@@ -1436,6 +1445,14 @@ export default {
     LINK: 'Link',
     AVATAR: 'Avatar',
     IMAGE: 'Image',
-    VIDEO: 'Video'
+    VIDEO: 'Video',
+
+    TYPES: {
+      BUSINESS: 'Business | Businesses',
+      PRODUCT: 'Product | Products',
+      PLUGIN: 'Plugin | Plugins',
+      MODULE: 'Module | Modules',
+      DELEGATE: 'Delegate | Delegates'
+    }
   }
 }

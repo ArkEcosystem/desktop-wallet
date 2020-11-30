@@ -571,6 +571,16 @@ export default class ClientService {
     return undefined
   }
 
+  async fetchEntities (addresses) {
+    const { body } = await this.client.get('entities', {
+      searchParams: {
+        address: addresses.join(',')
+      }
+    })
+
+    return body.data
+  }
+
   // todo: move this out
   async buildTransfer (data, isAdvancedFee = false, returnObject = false) {
     return this.__buildTransaction('buildTransfer', data, isAdvancedFee, returnObject)

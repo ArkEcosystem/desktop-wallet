@@ -8,6 +8,7 @@
     <SvgIcon
       :name="icon"
       :view-box="viewBox"
+      :class="svgClass"
     />
   </button>
 </template>
@@ -40,6 +41,11 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    svgClass: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
 

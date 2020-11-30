@@ -6,7 +6,7 @@
 import { TRANSACTION_TYPES_ENTITY } from '@config'
 
 export default {
-  name: 'TransactionFormEntityResignation',
+  name: 'TransactionFormEntityUpdate',
 
   entityAction: TRANSACTION_TYPES_ENTITY.ACTION.UPDATE
 }

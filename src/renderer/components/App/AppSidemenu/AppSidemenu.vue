@@ -89,7 +89,7 @@
             :title="$t('APP_SIDEMENU.REGISTRATIONS')"
             :is-horizontal="isHorizontal"
             class="AppSidemenu__item"
-            icon="msq"
+            icon="msq-slim"
             @click="redirect($event)"
           />
         </div>
