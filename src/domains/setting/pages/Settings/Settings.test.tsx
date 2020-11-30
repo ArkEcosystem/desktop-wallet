@@ -78,7 +78,7 @@ describe("Settings", () => {
 	it("should update profile", async () => {
 		const profilesCount = env.profiles().count();
 
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,
@@ -225,6 +225,9 @@ describe("Settings", () => {
 	});
 
 	it("should render peer settings", async () => {
+		// Import a wallet after the profile reset test
+		await profile.wallets().importByAddress("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax", "ARK", "ark.devnet");
+
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
@@ -368,7 +371,7 @@ describe("Settings", () => {
 			fireEvent.click(addPeerButton);
 		});
 
-		// Add Peer one
+		// Add peer one
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -405,7 +408,7 @@ describe("Settings", () => {
 			fireEvent.click(addPeerButton);
 		});
 
-		// Add Peer two
+		// Add peer two
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {

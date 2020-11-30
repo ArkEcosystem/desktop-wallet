@@ -5,7 +5,7 @@ import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
 import { useActiveProfile, useActiveWallet } from "app/hooks";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -80,6 +80,19 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 
 	const { t } = useTranslation();
 
+	useEffect(() => {
+		document.body.style.overflow = "overlay";
+
+		if (isOpen) {
+			document.body.style.overflow = "hidden";
+		}
+
+		return () => {
+			document.body.style.overflow = "overlay";
+			return;
+		};
+	}, [isOpen]);
+
 	const handleRowClick = (walletId: string) => {
 		if (walletId !== activeWallet.id()) {
 			history.push(`/profiles/${activeProfile.id()}/wallets/${walletId}`);
@@ -130,7 +143,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 					</div>
 				</div>
 
-				<Collapse isOpen={isOpen} maxHeight="20rem">
+				<Collapse isOpen={isOpen} maxHeight="20rem" className="custom-scroll">
 					<div className="py-8 bg-theme-background">
 						<div data-testid="WalletTable" className="container mx-auto px-14">
 							<WalletTable

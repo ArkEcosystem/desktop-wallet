@@ -68,6 +68,16 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 	const peerGroupByNetwork: any = useMemo(() => groupBy(peers, (peer) => peer.network), [peers]);
 
+	const syncWallets = useCallback(async () => {
+		const promises: Promise<void>[] = [];
+
+		for (const wallet of activeProfile.wallets().values()) {
+			promises.push(wallet.sync());
+		}
+
+		await Promise.allSettled(promises);
+	}, [activeProfile]);
+
 	useEffect(() => {
 		if (
 			isMultiPeerBroadcast &&
@@ -80,12 +90,13 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
 				activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
 
+				await syncWallets();
 				await env.persist();
 			};
 
 			savePeerSettings();
 		}
-	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers]);
+	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, syncWallets]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -181,6 +192,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
 		activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
 
+		await syncWallets();
 		await env.persist();
 
 		onSuccess(t("SETTINGS.PEERS.SUCCESS"));

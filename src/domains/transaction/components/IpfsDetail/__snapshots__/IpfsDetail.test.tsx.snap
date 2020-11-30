@@ -5,7 +5,7 @@ exports[`IpfsDetail should not render if not open 1`] = `<DocumentFragment />`;
 exports[`IpfsDetail should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -335,7 +335,7 @@ exports[`IpfsDetail should render a modal 1`] = `
 exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -659,7 +659,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
 exports[`IpfsDetail should render as confirmed 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
