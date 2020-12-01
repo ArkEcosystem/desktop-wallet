@@ -85,6 +85,7 @@
 
           <!-- Registration pages -->
           <MenuNavigationItem
+            v-if="$client.satisfiesCoreVersion('>=3')"
             id="registrations"
             :title="$t('APP_SIDEMENU.REGISTRATIONS')"
             :is-horizontal="isHorizontal"
