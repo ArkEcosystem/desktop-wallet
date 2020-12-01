@@ -32,6 +32,7 @@ export const Votes = () => {
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
+	const [searchQuery, setSearchQuery] = useState("");
 	const [walletsDisplayType, setWalletsDisplayType] = useState("all");
 	const [selectedNetworkIds, setSelectedNetworkIds] = useState(
 		uniq(
@@ -172,6 +173,7 @@ export const Votes = () => {
 	const handleSelectAddress = (address: string) => {
 		const wallet = activeProfile.wallets().findByAddress(address);
 
+		setSearchQuery("");
 		setSelectedAddress(address);
 		setMaxVotes(wallet?.network().maximumVotesPerWallet());
 
@@ -209,7 +211,12 @@ export const Votes = () => {
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 					extra={
 						<div className="flex items-center space-x-8 text-theme-primary-light">
-							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
+							<HeaderSearchBar
+								placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
+								onSearch={setSearchQuery}
+								onReset={() => setSearchQuery("")}
+								debounceTimeout={100}
+							/>
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
