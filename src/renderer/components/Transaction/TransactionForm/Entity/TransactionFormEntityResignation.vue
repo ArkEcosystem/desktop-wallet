@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent>
     <header class="mb-5">
-      <h2>{{ $t(`TRANSACTION.TYPE.${entityTypeLabel.toUpperCase()}_ENTITY_RESIGNATION`) }}</h2>
+      <h2>{{ title }}</h2>
       <p class="mt-1 text-theme-page-text-light">
         {{ $t(`ENTITY.RESIGNATION_DESCRIPTION`, { entity: entityTypeLabel.toLowerCase() }) }}
       </p>
@@ -15,7 +15,7 @@
       name="entity-name"
       :label="$t('ENTITY.NAME')"
       :is-read-only="true"
-      :value="entityData.data.name"
+      :value="entityTransaction.data.name"
       class="mb-4"
     />
 
@@ -89,7 +89,7 @@ export default {
   mixins: [mixin],
 
   props: {
-    entityData: {
+    entityTransaction: {
       type: Object,
       required: true
     }
@@ -105,6 +105,12 @@ export default {
   }),
 
   computed: {
+    isUndefined () {
+      return this.transaction_isUndefinedResignation(this.entityTransaction.type, this.entityTransaction.typeGroup, this.entityTransaction.asset)
+    },
+    title () {
+      return this.isUndefined ? this.$t('TRANSACTION.TYPE.UNDEFINED_RESIGNATION') : this.$t(`TRANSACTION.TYPE.${this.entityTypeLabel.toUpperCase()}_ENTITY_RESIGNATION`)
+    },
     entityTypeLabel () {
       const types = {
         [TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS.toString()]: this.$tc('ENTITY.TYPES.BUSINESS', 1),
@@ -113,11 +119,11 @@ export default {
         [TRANSACTION_TYPES_ENTITY.TYPE.MODULE.toString()]: this.$tc('ENTITY.TYPES.MODULE', 1),
         [TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE.toString()]: this.$tc('ENTITY.TYPES.DELEGATE', 1)
       }
-      return types[this.entityData.type]
+      return types[this.entityTransaction.type] || this.$t('TRANSACTION.TYPE.UNDEFINED')
     },
 
     senderWallet () {
-      return this.$store.getters['wallet/byAddress'](this.entityData.address)
+      return this.$store.getters['wallet/byAddress'](this.entityTransaction.address)
     },
 
     currentWallet () {
@@ -140,7 +146,7 @@ export default {
         multiSignature: this.currentWallet.multiSignature
       }
 
-      const { type, subType, id: registrationId } = this.entityData
+      const { type, subType, id: registrationId } = this.entityTransaction
 
       return {
         ...transactionData,
@@ -159,14 +165,14 @@ export default {
     },
 
     transactionError () {
-      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.ENTITY_RESIGNATION'))
+      this.$error(this.$t('TRANSACTION.ERROR.VALIDATION.ENTITY_RESIGNATION', { entity: this.entityTypeLabel }))
     },
 
     emitNext (transaction) {
       this.$emit('next', {
         transaction: {
           ...transaction,
-          entityData: this.entityData
+          entityTransaction: this.entityTransaction
         },
         wallet: this.senderWallet
       })

@@ -22,14 +22,14 @@
       :label="$t('ENTITY.TYPE')"
       item-value-class="w-full"
     >
-      <span>{{ $t(`TRANSACTION.TYPE.${entityTypeLabel}_ENTITY_REGISTRATION`) }}</span>
+      <span>{{ $t(`TRANSACTION.TYPE.${entityTypeLabel}_ENTITY_${mode}`) }}</span>
     </ListDividedItem>
 
     <ListDividedItem
       :label="$t('ENTITY.NAME')"
       item-value-class="w-full"
     >
-      <span>{{ transaction.entityData.entityName }}</span>
+      <span>{{ transaction.entityForm.entityName }}</span>
     </ListDividedItem>
 
     <ListDividedItem
@@ -71,7 +71,7 @@
         <div class="flex-1">
           <h3>{{ $t('ENTITY.REPOSITORY') }}</h3>
           <p class="mt-1 text-theme-page-text-light">
-            Promote your project's code repository.
+            {{ $t('ENTITY.REPOSITORY_DESCRIPTION') }}
           </p>
         </div>
         <button
@@ -105,7 +105,7 @@
         <div class="flex-1">
           <h3>{{ $t('ENTITY.SOCIAL_MEDIA') }}</h3>
           <p class="mt-1 text-theme-page-text-light">
-            Build your social media following.
+            {{ $t('ENTITY.SOCIAL_MEDIA_DESCRIPTION') }}
           </p>
         </div>
         <button
@@ -139,7 +139,7 @@
         <div class="flex-1">
           <h3>{{ $t('ENTITY.PHOTO_VIDEO') }}</h3>
           <p class="mt-1 text-theme-page-text-light">
-            Tell your story through photos and videos.
+            {{ $t('ENTITY.PHOTO_VIDEO_DESCRIPTION') }}
           </p>
         </div>
         <button
@@ -201,6 +201,11 @@ export default {
     transaction: {
       type: Object,
       required: true
+    },
+    mode: {
+      type: String,
+      required: false,
+      default: 'REGISTRATION'
     }
   },
 
@@ -237,7 +242,7 @@ export default {
 
   methods: {
     getEntityProperty (path) {
-      return get(this.transaction.entityData, `ipfsData.${path}`)
+      return get(this.transaction.entityForm, `ipfsData.${path}`)
     }
   }
 }

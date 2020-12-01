@@ -110,13 +110,13 @@ export default {
     }
   },
 
-  data: (vm) => ({
+  data: () => ({
     avatar: undefined,
     form: {
       type: '',
       value: ''
     },
-    items: vm.links
+    items: []
   }),
 
   computed: {
@@ -148,6 +148,19 @@ export default {
   watch: {
     avatar () {
       this.emitChange()
+    }
+  },
+
+  mounted () {
+    if (this.links) {
+      const result = this.links.map(({ type, value }) => {
+        if (type === 'logo') {
+          this.avatar = value
+        }
+        const provider = entityProvider.findByDomain(value)
+        return { type: provider.id, value: value }
+      })
+      this.items = result
     }
   },
 

@@ -8,7 +8,7 @@
 
 <script>
 import { TRANSACTION_TYPES, TRANSACTION_GROUPS } from '@config'
-import { TransactionFormEntityRegistration, TransactionFormEntityResignation, TransactionFormEntityUpdate } from './FormEntity'
+import { TransactionFormEntityRegistration, TransactionFormEntityResignation, TransactionFormEntityUpdate } from './Entity'
 
 export default {
   name: 'TransactionFormEntity',

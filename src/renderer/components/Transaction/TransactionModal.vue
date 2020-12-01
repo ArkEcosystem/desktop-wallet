@@ -43,7 +43,7 @@
 <script>
 import { camelCase, castArray } from 'lodash'
 import { upperFirst } from '@/utils'
-import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES, TRANSACTION_TYPES_ENTITY } from '@config'
 import MultiSignature from '@/services/client-multisig'
 import { ModalLoader, ModalWindow } from '@/components/Modal'
 import TransactionForm from './TransactionForm'
@@ -111,6 +111,20 @@ export default {
       if (key === 'VOTE' && this.transaction.asset.votes.length) {
         if (this.transaction.asset.votes[0].substring(0, 1) === '-') {
           return 'UNVOTE'
+        }
+      }
+
+      if (key === 'ENTITY') {
+        const type = Object.keys(TRANSACTION_TYPES_ENTITY.TYPE)[this.transaction.asset.type] || 'UNDEFINED'
+        const action = Object.keys(TRANSACTION_TYPES_ENTITY.ACTION)[this.transaction.asset.action]
+        const entity = type === 'UNDEFINED' ? '' : '_ENTITY'
+
+        if (action === 'REGISTER') {
+          return `${type}${entity}_REGISTRATION`
+        } else if (action === 'UPDATE') {
+          return `${type}${entity}_UPDATE`
+        } else if (action === 'RESIGN') {
+          return `${type}${entity}_RESIGNATION`
         }
       }
 

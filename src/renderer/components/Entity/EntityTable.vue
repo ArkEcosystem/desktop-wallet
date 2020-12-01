@@ -2,8 +2,8 @@
 <template>
   <div class="EntityTable w-full">
     <TableWrapper
-      v-bind="$attrs"
       class="EntityTable__table"
+      :rows="rows"
       :columns="columns"
     >
       <template
@@ -33,8 +33,11 @@
           class="flex items-center justify-center"
         >
           <a
+            v-tooltip="{
+              content: getIpfsDataProperty(data.row.id, 'meta.website')
+            }"
             href="#"
-            @click.stop
+            @click.stop="electron_openExternal(getIpfsDataProperty(data.row.id, 'meta.website'))"
           >
             <SvgIcon
               name="link"
@@ -60,11 +63,18 @@
           v-if="data.column.field === 'msq'"
           class="flex items-center justify-center"
         >
-          <SvgIcon
-            name="msq"
-            view-box="0 0 23 23"
-            class="text-blue"
-          />
+          <a
+            v-tooltip="{
+              content: $t('ENTITY.OPEN_MSQ')
+            }"
+            href="#"
+            @click.stop="electron_openExternal('https://marketsquare.io')"
+          >
+            <SvgIcon
+              name="msq"
+              view-box="0 0 20 20"
+            />
+          </a>
         </div>
 
         <div
@@ -108,6 +118,9 @@ import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import { MenuDropdown } from '@/components/Menu'
 import TableWrapper from '@/components/utils/TableWrapper'
 import SvgIcon from '@/components/SvgIcon'
+import { File } from '@arkecosystem/platform-sdk-ipfs'
+import { Request } from '@arkecosystem/platform-sdk-http-got'
+import { get } from '@arkecosystem/utils'
 
 export default {
   name: 'EntityTable',
@@ -119,6 +132,19 @@ export default {
     TableWrapper,
     WalletIdenticon
   },
+
+  props: {
+    rows: {
+      type: Array,
+      required: true
+    }
+  },
+
+  data: () => ({
+    ipfsDataObject: {},
+    loading: {},
+    failed: {}
+  }),
 
   computed: {
     columns () {
@@ -137,35 +163,65 @@ export default {
         {
           label: this.$t('ENTITY.HISTORY'),
           field: 'history',
-          thClass: 'text-center'
+          thClass: 'text-center no-sort',
+          sortable: false
         },
         {
           label: this.$t('ENTITY.WEBSITE'),
           field: 'website',
-          thClass: 'text-center'
+          thClass: 'text-center no-sort',
+          sortable: false
         },
         {
           label: 'MSQ',
           field: 'msq',
-          thClass: 'text-center'
+          thClass: 'text-center no-sort',
+          sortable: false
         },
         {
           label: '',
           field: 'action',
-          thClass: 'flex items-end justify-end'
+          thClass: 'flex items-end justify-end no-sort',
+          sortable: false
         }
       ]
     },
 
     actionOptions () {
       return {
-        update: 'Update',
-        resign: 'Resign'
+        update: this.$t('ENTITY.UPDATE'),
+        resign: this.$t('ENTITY.RESIGN')
       }
     }
   },
 
+  mounted () {
+    this.fetchAllIpfsData()
+  },
+
   methods: {
+    async fetchIpfsData (row) {
+      const request = new Request()
+      this.$set(this.loading, row.id, true)
+      try {
+        const result = await new File(request).get(row.data.ipfsData)
+        this.$set(this.ipfsDataObject, row.id, result)
+        this.$set(this.failed, row.id, false)
+      } catch {
+        this.$set(this.failed, row.id, true)
+      }
+      this.$set(this.loading, row.id, false)
+    },
+
+    async fetchAllIpfsData () {
+      const promises = this.rows.map(this.fetchIpfsData)
+      await Promise.allSettled(promises)
+    },
+
+    getIpfsDataProperty (id, path) {
+      return get(this.ipfsDataObject, `${id}.${path}`)
+    },
+
     formatAddress (address) {
       return this.wallet_formatAddress(address, 16)
     },
@@ -175,7 +231,7 @@ export default {
     },
 
     emitSelect (key, row) {
-      this.$emit(key, row)
+      this.$emit(key, { transaction: row, ipfsDataObject: this.ipfsDataObject[row.id] })
     },
 
     closeDropdowns () {

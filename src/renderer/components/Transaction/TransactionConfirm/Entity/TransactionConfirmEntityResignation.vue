@@ -29,7 +29,7 @@
       :label="$t('ENTITY.TYPE')"
       item-value-class="w-full"
     >
-      <span>{{ transaction.entityData.data.name }}</span>
+      <span>{{ transaction.entityTransaction.data.name }}</span>
     </ListDividedItem>
 
     <ListDividedItem
