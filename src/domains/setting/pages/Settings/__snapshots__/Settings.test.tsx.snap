@@ -280,7 +280,7 @@ exports[`Settings should change a password 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
@@ -288,10 +288,10 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -299,12 +299,12 @@ exports[`Settings should change a password 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -315,10 +315,10 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -331,7 +331,7 @@ exports[`Settings should change a password 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -342,10 +342,10 @@ exports[`Settings should change a password 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -358,7 +358,7 @@ exports[`Settings should change a password 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -368,14 +368,14 @@ exports[`Settings should change a password 1`] = `
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--Password"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -388,7 +388,7 @@ exports[`Settings should change a password 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -879,21 +879,21 @@ exports[`Settings should not update profile if profile name exists 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--General"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -901,12 +901,12 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -917,10 +917,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -933,7 +933,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -944,10 +944,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -960,7 +960,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -971,10 +971,10 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -987,7 +987,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -1048,7 +1048,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzqBkg ewxMoK"
+                            class="sc-fzolEj bUpNWF"
                           >
                             <img
                               alt="Profile avatar"
@@ -1179,7 +1179,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-333-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-333-menu"
                                   role="listbox"
                                 />
@@ -1263,7 +1263,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-335-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-335-menu"
                                   role="listbox"
                                 />
@@ -1351,7 +1351,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-337-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-337-menu"
                                   role="listbox"
                                 />
@@ -1435,7 +1435,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-339-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-339-menu"
                                   role="listbox"
                                 />
@@ -1519,7 +1519,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-341-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-341-menu"
                                   role="listbox"
                                 />
@@ -1550,7 +1550,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       Security
                     </h2>
                     <ul
-                      class="sc-fznxKY iCvanX"
+                      class="sc-fzpmMD jBhThj"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -1739,7 +1739,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-343-label"
-                                    class="sc-fznWOq dBAsMk"
+                                    class="sc-fznMAR hmfZwn"
                                     id="downshift-343-menu"
                                     role="listbox"
                                   />
@@ -1771,7 +1771,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       Other
                     </h2>
                     <ul
-                      class="sc-fznxKY iCvanX"
+                      class="sc-fzpmMD jBhThj"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -2257,7 +2257,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
@@ -2265,10 +2265,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -2276,12 +2276,12 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -2292,10 +2292,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -2308,7 +2308,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -2318,14 +2318,14 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--Plugins"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -2338,7 +2338,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -2349,10 +2349,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -2365,7 +2365,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -2407,7 +2407,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   id="plugin-settings__form"
                 >
                   <ul
-                    class="sc-fznxKY iCvanX"
+                    class="sc-fzpmMD jBhThj"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -2592,7 +2592,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-1139-label"
-                                    class="sc-fznWOq dBAsMk"
+                                    class="sc-fznMAR hmfZwn"
                                     id="downshift-1139-menu"
                                     role="listbox"
                                   />
@@ -2930,21 +2930,21 @@ exports[`Settings should render 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--General"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -2952,12 +2952,12 @@ exports[`Settings should render 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -2968,10 +2968,10 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -2984,7 +2984,7 @@ exports[`Settings should render 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -2995,10 +2995,10 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -3011,7 +3011,7 @@ exports[`Settings should render 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -3022,10 +3022,10 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -3038,7 +3038,7 @@ exports[`Settings should render 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -3099,7 +3099,7 @@ exports[`Settings should render 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzqBkg ewxMoK"
+                            class="sc-fzolEj bUpNWF"
                           >
                             <img
                               alt="Profile avatar"
@@ -3224,7 +3224,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-1-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-1-menu"
                                   role="listbox"
                                 />
@@ -3308,7 +3308,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-3-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-3-menu"
                                   role="listbox"
                                 />
@@ -3396,7 +3396,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-5-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-5-menu"
                                   role="listbox"
                                 />
@@ -3480,7 +3480,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-7-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-7-menu"
                                   role="listbox"
                                 />
@@ -3564,7 +3564,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-9-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-9-menu"
                                   role="listbox"
                                 />
@@ -3595,7 +3595,7 @@ exports[`Settings should render 1`] = `
                       Security
                     </h2>
                     <ul
-                      class="sc-fznxKY iCvanX"
+                      class="sc-fzpmMD jBhThj"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -3783,7 +3783,7 @@ exports[`Settings should render 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-11-label"
-                                    class="sc-fznWOq dBAsMk"
+                                    class="sc-fznMAR hmfZwn"
                                     id="downshift-11-menu"
                                     role="listbox"
                                   />
@@ -3815,7 +3815,7 @@ exports[`Settings should render 1`] = `
                       Other
                     </h2>
                     <ul
-                      class="sc-fznxKY iCvanX"
+                      class="sc-fzpmMD jBhThj"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -4300,7 +4300,7 @@ exports[`Settings should render password settings 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
@@ -4308,10 +4308,10 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -4319,12 +4319,12 @@ exports[`Settings should render password settings 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -4335,10 +4335,10 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -4351,7 +4351,7 @@ exports[`Settings should render password settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -4362,10 +4362,10 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -4378,7 +4378,7 @@ exports[`Settings should render password settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -4388,14 +4388,14 @@ exports[`Settings should render password settings 1`] = `
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--Password"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -4408,7 +4408,7 @@ exports[`Settings should render password settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -4847,7 +4847,7 @@ exports[`Settings should render peer settings 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
@@ -4855,10 +4855,10 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -4866,12 +4866,12 @@ exports[`Settings should render peer settings 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -4881,14 +4881,14 @@ exports[`Settings should render peer settings 1`] = `
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--Peer"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -4901,7 +4901,7 @@ exports[`Settings should render peer settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -4912,10 +4912,10 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -4928,7 +4928,7 @@ exports[`Settings should render peer settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -4939,10 +4939,10 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -4955,7 +4955,7 @@ exports[`Settings should render peer settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -4997,7 +4997,7 @@ exports[`Settings should render peer settings 1`] = `
                   id="peer-settings__form"
                 >
                   <ul
-                    class="sc-fznxKY iCvanX"
+                    class="sc-fzpmMD jBhThj"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -5412,7 +5412,7 @@ exports[`Settings should render plugin settings 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
@@ -5420,10 +5420,10 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -5431,12 +5431,12 @@ exports[`Settings should render plugin settings 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -5447,10 +5447,10 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -5463,7 +5463,7 @@ exports[`Settings should render plugin settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -5473,14 +5473,14 @@ exports[`Settings should render plugin settings 1`] = `
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--Plugins"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -5493,7 +5493,7 @@ exports[`Settings should render plugin settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -5504,10 +5504,10 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -5520,7 +5520,7 @@ exports[`Settings should render plugin settings 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -5562,7 +5562,7 @@ exports[`Settings should render plugin settings 1`] = `
                   id="plugin-settings__form"
                 >
                   <ul
-                    class="sc-fznxKY iCvanX"
+                    class="sc-fzpmMD jBhThj"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -5747,7 +5747,7 @@ exports[`Settings should render plugin settings 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-1027-label"
-                                    class="sc-fznWOq dBAsMk"
+                                    class="sc-fznMAR hmfZwn"
                                     id="downshift-1027-menu"
                                     role="listbox"
                                   />
@@ -6079,7 +6079,7 @@ exports[`Settings should set a password 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
@@ -6087,10 +6087,10 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -6098,12 +6098,12 @@ exports[`Settings should set a password 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -6114,10 +6114,10 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -6130,7 +6130,7 @@ exports[`Settings should set a password 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -6141,10 +6141,10 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -6157,7 +6157,7 @@ exports[`Settings should set a password 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -6167,14 +6167,14 @@ exports[`Settings should set a password 1`] = `
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--Password"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -6187,7 +6187,7 @@ exports[`Settings should set a password 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -6671,7 +6671,7 @@ exports[`Settings should show an error toast if the current password does not ma
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
@@ -6679,10 +6679,10 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -6690,12 +6690,12 @@ exports[`Settings should show an error toast if the current password does not ma
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -6706,10 +6706,10 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -6722,7 +6722,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -6733,10 +6733,10 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -6749,7 +6749,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -6759,14 +6759,14 @@ exports[`Settings should show an error toast if the current password does not ma
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--Password"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -6779,7 +6779,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -7268,21 +7268,21 @@ exports[`Settings should update profile 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzpmMD jPLofr"
+              class="sc-fzoXWK bjfOxE"
             >
               <ul>
                 <div
                   class="relative cursor-pointer"
                   data-testid="side-menu__item--General"
                 >
-                  <div
-                    class="sc-fzoXWK fmwfol absolute top-0 left-0 rounded-lg bg-theme-primary"
-                  />
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="text-theme-primary"
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+                    />
+                    <div
+                      class="mr-3 text-theme-primary"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -7290,12 +7290,12 @@ exports[`Settings should update profile 1`] = `
                         width="20"
                       >
                         <svg>
-                          general.svg
+                          settings-horizontal.svg
                         </svg>
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-semibold"
+                      class="text-lg font-semibold"
                     >
                       General
                     </span>
@@ -7306,10 +7306,10 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -7322,7 +7322,7 @@ exports[`Settings should update profile 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Peer
                     </span>
@@ -7333,10 +7333,10 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -7349,7 +7349,7 @@ exports[`Settings should update profile 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Plugins
                     </span>
@@ -7360,10 +7360,10 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
                   >
                     <div
-                      class="text-theme-primary-light"
+                      class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -7376,7 +7376,7 @@ exports[`Settings should update profile 1`] = `
                       </div>
                     </div>
                     <span
-                      class="ml-3 text-lg font-medium"
+                      class="text-lg font-semibold"
                     >
                       Password
                     </span>
@@ -7437,7 +7437,7 @@ exports[`Settings should update profile 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzqBkg ewxMoK"
+                            class="sc-fzolEj bUpNWF"
                           >
                             <img
                               alt="Profile avatar"
@@ -7562,7 +7562,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-39-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-39-menu"
                                   role="listbox"
                                 />
@@ -7646,7 +7646,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-41-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-41-menu"
                                   role="listbox"
                                 />
@@ -7734,7 +7734,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-43-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-43-menu"
                                   role="listbox"
                                 />
@@ -7818,7 +7818,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-45-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-45-menu"
                                   role="listbox"
                                 />
@@ -7902,7 +7902,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-47-label"
-                                  class="sc-fznWOq dBAsMk"
+                                  class="sc-fznMAR hmfZwn"
                                   id="downshift-47-menu"
                                   role="listbox"
                                 />
@@ -7933,7 +7933,7 @@ exports[`Settings should update profile 1`] = `
                       Security
                     </h2>
                     <ul
-                      class="sc-fznxKY iCvanX"
+                      class="sc-fzpmMD jBhThj"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -8122,7 +8122,7 @@ exports[`Settings should update profile 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-49-label"
-                                    class="sc-fznWOq dBAsMk"
+                                    class="sc-fznMAR hmfZwn"
                                     id="downshift-49-menu"
                                     role="listbox"
                                   />
@@ -8154,7 +8154,7 @@ exports[`Settings should update profile 1`] = `
                       Other
                     </h2>
                     <ul
-                      class="sc-fznxKY iCvanX"
+                      class="sc-fzpmMD jBhThj"
                       data-testid="list-divided__items"
                     >
                       <li

@@ -7,10 +7,10 @@ exports[`SideBarItem should render 1`] = `
     data-testid="side-menu__item--plugin"
   >
     <li
-      class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-medium flex items-center"
+      class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
     >
       <div
-        class="text-theme-primary-light"
+        class="mr-3 text-theme-primary-300 dark:text-theme-neutral-600"
       >
         <div
           class="sc-AxjAm buCJuk"
@@ -23,7 +23,7 @@ exports[`SideBarItem should render 1`] = `
         </div>
       </div>
       <span
-        class="ml-3 text-lg font-medium"
+        class="text-lg font-semibold"
       >
         General
       </span>
@@ -38,14 +38,14 @@ exports[`SideBarItem should render as active 1`] = `
     class="relative cursor-pointer"
     data-testid="side-menu__item--plugin"
   >
-    <div
-      class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-    />
     <li
-      class="rounded-lg py-5 pl-10 pr-8 h-15 text-theme-primary bg-theme-primary-contrast flex items-center"
+      class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
     >
       <div
-        class="text-theme-primary"
+        class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+      />
+      <div
+        class="mr-3 text-theme-primary"
       >
         <div
           class="sc-AxjAm buCJuk"
@@ -58,7 +58,7 @@ exports[`SideBarItem should render as active 1`] = `
         </div>
       </div>
       <span
-        class="ml-3 text-lg font-semibold"
+        class="text-lg font-semibold"
       >
         General
       </span>

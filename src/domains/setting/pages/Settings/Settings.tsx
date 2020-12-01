@@ -27,7 +27,7 @@ export const Settings = () => {
 		{
 			itemKey: "General",
 			label: t("SETTINGS.GENERAL.MENU_ITEM"),
-			icon: "General",
+			icon: "SettingsHorizontal",
 		},
 		{
 			itemKey: "Peer",
