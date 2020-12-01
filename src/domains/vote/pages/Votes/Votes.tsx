@@ -203,6 +203,22 @@ export const Votes = () => {
 		if (votes.length === 0) setSelectedFilter("all");
 	}, [votes]);
 
+	const filteredWalletsByCoin = useMemo(() => {
+		if (!searchQuery.length) return walletsByCoin;
+
+		return Object.keys(walletsByCoin).reduce(
+			(coins, coin) => ({
+				...coins,
+				[coin]: Object.values(walletsByCoin[coin]).filter(
+					(wallet: ReadWriteWallet) =>
+						wallet.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
+						wallet.alias()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
+				),
+			}),
+			{} as Record<string, ReadWriteWallet[]>,
+		);
+	}, [searchQuery, walletsByCoin]);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -284,11 +300,11 @@ export const Votes = () => {
 					</EmptyBlock>
 				</Section>
 			) : !selectedAddress ? (
-				Object.keys(walletsByCoin).map(
+				Object.keys(filteredWalletsByCoin).map(
 					(coin, index) =>
-						walletsByCoin[coin].length > 0 && (
+						filteredWalletsByCoin[coin].length > 0 && (
 							<Section className="flex-1" key={index}>
-								<AddressTable wallets={walletsByCoin[coin]} onSelect={handleSelectAddress} />
+								<AddressTable wallets={filteredWalletsByCoin[coin]} onSelect={handleSelectAddress} />
 							</Section>
 						),
 				)
