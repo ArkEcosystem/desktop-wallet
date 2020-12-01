@@ -90,6 +90,7 @@ import { InputFee, InputPassword } from '@/components/Input'
 import { ListDividedItem } from '@/components/ListDivided'
 import { PassphraseInput } from '@/components/Passphrase'
 import { ModalLoader } from '@/components/Modal'
+import Loader from '@/components/utils/Loader'
 
 import { File } from '@arkecosystem/platform-sdk-ipfs'
 import { Request } from '@arkecosystem/platform-sdk-http-got'
@@ -108,6 +109,7 @@ export default {
     InputFee,
     InputPassword,
     ListDividedItem,
+    Loader,
     ModalLoader,
     PassphraseInput
   },

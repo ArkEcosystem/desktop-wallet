@@ -179,9 +179,7 @@ export default class ClientService {
     options.orderBy || (options.orderBy = 'rank:asc')
 
     const { body } = await this.client.api('delegates').all({
-      page: options.page,
-      limit: options.limit,
-      orderBy: options.orderBy
+      ...options
     })
 
     return {

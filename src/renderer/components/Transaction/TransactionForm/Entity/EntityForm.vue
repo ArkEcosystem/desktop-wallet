@@ -186,13 +186,13 @@ export default {
     }
   },
 
-  data: (vm) => ({
+  data: () => ({
     isSourceControlOpen: false,
     isSocialMediaOpen: false,
     isMediaOpen: false,
 
     form: {
-      entityName: vm.entityName,
+      entityName: '',
       ipfsData: {
         meta: {
           displayName: '',
@@ -214,6 +214,13 @@ export default {
   },
 
   watch: {
+    entityName: {
+      immediate: true,
+      handler (value) {
+        this.$set(this.form, 'entityName', value)
+        this.$v.form.entityName.$touch()
+      }
+    },
     form: {
       deep: true,
       handler (value) {
@@ -271,16 +278,16 @@ export default {
       ipfsData: {
         meta: {
           displayName: {
-            // required,
+            required,
             minLength: minLength(3)
           },
           description: {
-            // required,
+            required,
             minLength: minLength(3),
             maxLength: maxLength(512)
           },
           website: {
-            // required,
+            required,
             url
           }
         }

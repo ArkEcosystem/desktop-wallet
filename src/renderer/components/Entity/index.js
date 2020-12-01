@@ -1,9 +1,11 @@
 import EntityLinkEditableList from './EntityLinkEditableList'
 import EntityLinkList from './EntityLinkList'
-import EntityTable from './EntityTable'
+import EntityTableCommon from './EntityTableCommon'
+import EntityTableDelegate from './EntityTableDelegate'
 
 export {
   EntityLinkEditableList,
   EntityLinkList,
-  EntityTable
+  EntityTableCommon,
+  EntityTableDelegate
 }

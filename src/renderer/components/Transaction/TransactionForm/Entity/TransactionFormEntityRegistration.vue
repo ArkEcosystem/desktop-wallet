@@ -25,8 +25,9 @@
       <InputSelect
         v-model="$v.step1.registrationType.$model"
         :items="registrationTypesOptions"
-        name="registrationType"
+        :is-disabled="!step1.sender"
         :label="$t('ENTITY.REGISTRATION_TYPE')"
+        name="registrationType"
         class="mb-5"
       />
     </div>
@@ -41,6 +42,7 @@
 
       <EntityForm
         ref="entity"
+        :entity-name="delegateUsername"
         @change="onEntityForm"
       >
         <ListDividedItem
@@ -200,6 +202,16 @@ export default {
     },
 
     registrationTypesOptions () {
+      const options = { ...this.allRegistrationTypesOptions }
+
+      if (this.senderWallet && !this.senderWallet.isDelegate) {
+        delete options[TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE.toString()]
+      }
+
+      return options
+    },
+
+    allRegistrationTypesOptions () {
       return {
         [TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS.toString()]: this.$tc('ENTITY.TYPES.BUSINESS', 1),
         [TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT.toString()]: this.$tc('ENTITY.TYPES.PRODUCT', 1),
@@ -210,7 +222,7 @@ export default {
     },
 
     entityTypeLabel () {
-      return this.registrationTypesOptions[+this.step1.registrationType]
+      return this.allRegistrationTypesOptions[+this.step1.registrationType]
     },
 
     isStepValid () {
@@ -219,6 +231,16 @@ export default {
       }
 
       return !this.$refs.entity.$v.$invalid && !this.$v.$invalid
+    },
+
+    delegateUsername () {
+      if (this.senderWallet && +this.step1.registrationType === TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE) {
+        const delegate = this.$store.getters['delegate/byAddress'](this.senderWallet.address)
+        if (delegate) {
+          return delegate.username
+        }
+      }
+      return undefined
     },
 
     senderWallet () {

@@ -9,6 +9,8 @@
       <template
         slot-scope="data"
       >
+        <slot :data="data" />
+
         <div
           v-if="data.column.field === 'address'"
           class="flex items-center"
@@ -79,7 +81,7 @@
 
         <div
           v-if="data.column.field === 'action'"
-          class="flex items-center justify-center"
+          class="flex items-end justify-end"
         >
           <div
             v-tooltip="{
@@ -92,6 +94,7 @@
               :items="actionOptions"
               :is-highlighting="false"
               :is-disabled="data.row.isResigned"
+              :pin-above="pinAbove"
               @select="emitSelect($event, data.row)"
             >
               <ButtonIconGeneric
@@ -134,9 +137,18 @@ export default {
   },
 
   props: {
+    columns: {
+      type: Array,
+      required: true
+    },
     rows: {
       type: Array,
       required: true
+    },
+    pinAbove: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -147,46 +159,6 @@ export default {
   }),
 
   computed: {
-    columns () {
-      return [
-        {
-          label: this.$t('COMMON.ADDRESS'),
-          field: 'address',
-          formatFn: this.formatAddress,
-          thClass: ''
-        },
-        {
-          label: this.$t('ENTITY.NAME'),
-          field: 'data.name',
-          tdClass: 'md:w-2/5'
-        },
-        {
-          label: this.$t('ENTITY.HISTORY'),
-          field: 'history',
-          thClass: 'text-center no-sort',
-          sortable: false
-        },
-        {
-          label: this.$t('ENTITY.WEBSITE'),
-          field: 'website',
-          thClass: 'text-center no-sort',
-          sortable: false
-        },
-        {
-          label: 'MSQ',
-          field: 'msq',
-          thClass: 'text-center no-sort',
-          sortable: false
-        },
-        {
-          label: '',
-          field: 'action',
-          thClass: 'flex items-end justify-end no-sort',
-          sortable: false
-        }
-      ]
-    },
-
     actionOptions () {
       return {
         update: this.$t('ENTITY.UPDATE'),

@@ -23,11 +23,11 @@
     <div
       class="mt-6 bg-theme-feature rounded-lg w-full p-10 flex flex-col overflow-y-auto"
     >
-      <div v-if="loading">
+      <div v-if="isLoading">
         <Loader />
       </div>
 
-      <div v-if="!loading && !registrations.length">
+      <div v-if="!isLoading && !registrations.length">
         <p class="font-semibold text-theme-page-text-light text-center w-full">
           {{ $t('ENTITY.NO_ENTITIES_FOUND') }}
         </p>
@@ -46,8 +46,9 @@
             />
             <span class="ml-2">{{ item.label }}</span>
           </h2>
-          <EntityTable
-            ref="table"
+          <Component
+            :is="item.component"
+            ref="tableWrapper"
             :rows="getRegistrationsByType(item.type)"
             class="mt-5 border-b"
             @resign="openModal($event, 'resign')"
@@ -87,7 +88,7 @@
 import { TRANSACTION_TYPES_ENTITY } from '@config'
 import { ButtonModal } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
-import { EntityTable } from '@/components/Entity'
+import { EntityTableCommon, EntityTableDelegate } from '@/components/Entity'
 import SvgIcon from '@/components/SvgIcon'
 import Loader from '@/components/utils/Loader'
 
@@ -96,14 +97,15 @@ export default {
 
   components: {
     ButtonModal,
-    EntityTable,
+    EntityTableCommon,
+    EntityTableDelegate,
     Loader,
     TransactionModal,
     SvgIcon
   },
 
   data: () => ({
-    loading: true,
+    isLoading: true,
     registrations: [],
     modalAction: undefined,
     selectedEntity: undefined
@@ -117,11 +119,11 @@ export default {
     registrationOptions () {
       const types = this.registrations.map(item => item.type)
       const options = [
-        { label: this.$tc('ENTITY.TYPES.BUSINESS', 2), icon: 'business', type: TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS },
-        { label: this.$tc('ENTITY.TYPES.PRODUCT', 2), icon: 'product', type: TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT },
-        { label: this.$tc('ENTITY.TYPES.PLUGIN', 2), icon: 'plugin', type: TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN },
-        { label: this.$tc('ENTITY.TYPES.MODULE', 2), icon: 'module', type: TRANSACTION_TYPES_ENTITY.TYPE.MODULE },
-        { label: this.$tc('ENTITY.TYPES.DELEGATE', 2), icon: 'delegate', type: TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE }
+        { label: this.$tc('ENTITY.TYPES.BUSINESS', 2), icon: 'business', type: TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS, component: 'EntityTableCommon' },
+        { label: this.$tc('ENTITY.TYPES.PRODUCT', 2), icon: 'product', type: TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT, component: 'EntityTableCommon' },
+        { label: this.$tc('ENTITY.TYPES.PLUGIN', 2), icon: 'plugin', type: TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN, component: 'EntityTableCommon' },
+        { label: this.$tc('ENTITY.TYPES.MODULE', 2), icon: 'module', type: TRANSACTION_TYPES_ENTITY.TYPE.MODULE, component: 'EntityTableCommon' },
+        { label: this.$tc('ENTITY.TYPES.DELEGATE', 2), icon: 'delegate', type: TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE, component: 'EntityTableDelegate' }
       ]
       return options.filter(item => types.includes(item.type))
     },
@@ -141,16 +143,20 @@ export default {
 
   methods: {
     async searchRegistrations () {
-      this.loading = true
+      this.isLoading = true
       const addresses = this.wallets.map(wallet => wallet.address)
 
       try {
         const result = await this.$client.fetchEntities(addresses)
         this.registrations = result
-      } catch (e) {
-        this.$error('Failed to fetch entities registrations.')
+      } catch (error) {
+        this.registrations = []
+        this.$error(this.$t('COMMON.FAILED_FETCH', {
+          name: 'entities',
+          msg: error.message
+        }))
       }
-      this.loading = false
+      this.isLoading = false
     },
 
     getRegistrationsByType (type) {
@@ -158,8 +164,8 @@ export default {
     },
 
     onDropdownClick () {
-      for (const table of this.$refs.table) {
-        table.closeDropdowns()
+      for (const wrapper of this.$refs.tableWrapper) {
+        wrapper.$refs.table.closeDropdowns()
       }
     },
 
