@@ -1,44 +1,96 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
+import { Tab, TabList, Tabs } from "app/components/Tabs";
+import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
+import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
-import React from "react";
+import React, { useCallback, useEffect, useMemo,useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
 	transactions: ExtendedTransactionData[];
-	exchangeCurrency?: string;
 	fetchMoreAction?: Function;
 	onRowClick?: (row: ExtendedTransactionData) => void;
 	emptyText?: string;
-	isLoading?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
-	isUsingFilters?: boolean;
+	profile: Profile;
 };
 
-export const Transactions = ({
-	transactions,
-	exchangeCurrency,
-	emptyText,
-	fetchMoreAction,
-	isLoading,
-	isCompact,
-	onRowClick,
-	isUsingFilters = false,
-}: TransactionsProps) => {
+export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProps) => {
 	const { t } = useTranslation();
+
+	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
+	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
+	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
+	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
+	const [isLoading, setIsLoading] = useState(true);
+	const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [profile]);
+
+	const fetchTransactions = useCallback(
+		async ({ flush, mode }: { flush: boolean; mode: string }) => {
+			let currentTransactions = transactions || [];
+
+			if (flush) {
+				profile.transactionAggregate().flush();
+				currentTransactions = [];
+				setTransactions([]);
+			}
+
+			const methodMap = {
+				all: "transactions",
+				sent: "sentTransactions",
+				received: "receivedTransactions",
+			};
+			const method = methodMap[mode as keyof typeof methodMap];
+
+			setIsLoading(true);
+
+			const limit = { limit: 30 };
+			const queryParams = selectedTransactionType ? { ...limit, ...selectedTransactionType } : limit;
+			// @ts-ignore
+			const response = await profile.transactionAggregate()[method](queryParams);
+			const transactionsAggregate = response.items();
+
+			setIsLoading(false);
+
+			setTransactions(currentTransactions.concat(transactionsAggregate));
+		},
+		[transactions, profile, selectedTransactionType, setIsLoading, setTransactions],
+	);
+
+	useEffect(() => {
+		fetchTransactions({ flush: true, mode: activeTransactionModeTab });
+		// eslint-disable-next-line
+	}, [activeTransactionModeTab, selectedTransactionType]);
 
 	return (
 		<>
+			<div className="relative flex justify-between">
+				<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+				<FilterTransactions onSelect={(_, type) => setSelectedTransactionType(type)} className="mt-6" />
+			</div>
+			<Tabs
+				className="mb-8"
+				activeId={activeTransactionModeTab}
+				onChange={(id) => setActiveTransactionModeTab(id as string)}
+			>
+				<TabList className="w-full">
+					<Tab tabId="all">{t("TRANSACTION.ALL_HISTORY")}</Tab>
+					<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
+					<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
+				</TabList>
+			</Tabs>
+
 			<TransactionTable
 				transactions={transactions}
 				exchangeCurrency={exchangeCurrency}
 				hideHeader={!isLoading && transactions.length === 0}
 				isLoading={isLoading}
 				skeletonRowsLimit={8}
-				onRowClick={onRowClick}
+				onRowClick={setTransactionModalItem}
 				isCompact={isCompact}
 			/>
 
@@ -48,21 +100,29 @@ export const Transactions = ({
 					variant="plain"
 					className="w-full mt-10 mb-5"
 					disabled={isLoading}
-					onClick={() => fetchMoreAction && fetchMoreAction()}
+					onClick={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
 				>
 					{isLoading ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
 				</Button>
 			)}
 
-			{!isLoading && transactions.length === 0 && !isUsingFilters && (
+			{!isLoading && transactions.length === 0 && !selectedTransactionType && (
 				<EmptyBlock className="-mt-5">{emptyText}</EmptyBlock>
 			)}
 
-			{!isLoading && transactions.length === 0 && isUsingFilters && (
+			{!isLoading && transactions.length === 0 && !!selectedTransactionType && (
 				<EmptyResults
 					className="flex-1"
 					title={t("COMMON.EMPTY_RESULTS.TITLE")}
 					subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+				/>
+			)}
+
+			{transactionModalItem && (
+				<TransactionDetailModal
+					isOpen={!!transactionModalItem}
+					transactionItem={transactionModalItem}
+					onClose={() => setTransactionModalItem(undefined)}
 				/>
 			)}
 		</>
