@@ -170,12 +170,9 @@ describe('Services > Client', () => {
       25 * 1e8 // Delegate resignation
     ],
     2: [
-      50 * 1e8, // Business Registration
-      50 * 1e8, // Business Resignation
-      50 * 1e8, // Business Update
-      50 * 1e8, // Bridgechain Registration
-      50 * 1e8, // Bridgechain Resignation
-      50 * 1e8 // Bridgechain Update
+      50 * 1e8, // Entity Registration
+      50 * 1e8, // Entity Update
+      50 * 1e8 // Entity Resignation
     ]
   }
 
@@ -443,6 +440,7 @@ describe('Services > Client', () => {
 
       nock('http://127.0.0.1:4003')
         .get('/api/delegates/USERNAME/voters')
+        .query(true)
         .reply(200, {
           meta,
           data: {}
@@ -539,31 +537,6 @@ describe('Services > Client', () => {
         expect(transaction).not.toHaveProperty('isSender')
         expect(transaction).not.toHaveProperty('isRecipient')
       })
-    })
-  })
-
-  describe('fetchBusinessBridgechains', () => {
-    it('should fetch data from bridgechains endpoint', async () => {
-      const response = {
-        meta: {
-          totalCount: 137
-        },
-        data: [
-          {
-            address: 'address-1',
-            publicKey: 'publicKey-1',
-            name: 'Business Name',
-            website: 'http://t-explorer.ark.io',
-            isResigned: false
-          }
-        ]
-      }
-
-      nock('http://127.0.0.1:4003')
-        .get('/api/businesses/BUSINESS_ID/bridgechains?page=1&limit=50&orderBy=name%3Aasc')
-        .reply(200, response)
-
-      expect(await client.fetchBusinessBridgechains('BUSINESS_ID')).toEqual(response)
     })
   })
 

@@ -254,23 +254,6 @@ export default class ClientService {
   }
 
   /**
-   * Fetch bridgechains for a business.
-   * @param  {String} address
-   * @return {Object}
-   */
-  async fetchBusinessBridgechains (address, options = {}) {
-    options.page || (options.page = 1)
-    options.limit || (options.limit = 50)
-    options.orderBy || (options.orderBy = 'name:asc')
-
-    return (await this.client.api('businesses').bridgechains(address, {
-      page: options.page,
-      limit: options.limit,
-      orderBy: options.orderBy
-    })).body
-  }
-
-  /**
    * Request the transactions according to the current network version
    *
    * V1:
@@ -640,56 +623,6 @@ export default class ClientService {
     returnObject = false
   ) {
     return this.__buildTransaction('buildEntity', data, isAdvancedFee, returnObject)
-  }
-
-  // todo: move this out
-  async buildBusinessRegistration (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return this.__buildTransaction('buildBusinessRegistration', data, isAdvancedFee, returnObject)
-  }
-
-  // todo: move this out
-  async buildBusinessUpdate (data, isAdvancedFee = false, returnObject = false) {
-    return this.__buildTransaction('buildBusinessUpdate', data, isAdvancedFee, returnObject)
-  }
-
-  // todo: move this out
-  async buildBusinessResignation (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return this.__buildTransaction('buildBusinessResignation', data, isAdvancedFee, returnObject)
-  }
-
-  // todo: move this out
-  async buildBridgechainRegistration (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return this.__buildTransaction('buildBridgechainRegistration', data, isAdvancedFee, returnObject)
-  }
-
-  // todo: move this out
-  async buildBridgechainUpdate (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return this.__buildTransaction('buildBridgechainUpdate', data, isAdvancedFee, returnObject)
-  }
-
-  // todo: move this out
-  async buildBridgechainResignation (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return this.__buildTransaction('buildBridgechainResignation', data, isAdvancedFee, returnObject)
   }
 
   // todo: move this out

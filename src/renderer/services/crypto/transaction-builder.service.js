@@ -1,9 +1,3 @@
-import { BridgechainResignationBuilder } from './bridgechain-resignation.builder'
-import { BridgechainUpdateBuilder } from './bridgechain-update.builder'
-import { BridgechainRegistrationBuilder } from './bridgechain-registration.builder'
-import { BusinessResignationBuilder } from './business-resignation.builder'
-import { BusinessUpdateBuilder } from './business-update.builder'
-import { BusinessRegistrationBuilder } from './business-registration.builder'
 import { DelegateResignationBuilder } from './delegate-resignation.builder'
 import { EntityBuilder } from './entity.builder'
 import { MultiPaymentBuilder } from './multi-payment.builder'
@@ -71,57 +65,5 @@ export class TransactionBuilderService {
     returnObject = false
   ) {
     return EntityBuilder.build(data, isAdvancedFee, returnObject)
-  }
-
-  static async buildBusinessRegistration (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return BusinessRegistrationBuilder.build(data, isAdvancedFee, returnObject)
-  }
-
-  static async buildBusinessUpdate (data, isAdvancedFee = false, returnObject = false) {
-    return BusinessUpdateBuilder.build(data, isAdvancedFee, returnObject)
-  }
-
-  static async buildBusinessResignation (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return BusinessResignationBuilder.build(data, isAdvancedFee, returnObject)
-  }
-
-  static async buildBridgechainRegistration (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return BridgechainRegistrationBuilder.build(
-      data,
-      isAdvancedFee,
-      returnObject
-    )
-  }
-
-  static async buildBridgechainUpdate (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return BridgechainUpdateBuilder.build(data, isAdvancedFee, returnObject)
-  }
-
-  static async buildBridgechainResignation (
-    data,
-    isAdvancedFee = false,
-    returnObject = false
-  ) {
-    return BridgechainResignationBuilder.build(
-      data,
-      isAdvancedFee,
-      returnObject
-    )
   }
 }
