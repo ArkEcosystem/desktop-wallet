@@ -24,7 +24,7 @@ export const SideBarItem = withRouter(
 						isActive ? "text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800" : ""
 					}`}
 				>
-					{isActive && <div className="absolute top-0 left-0 bottom-0 w-2 rounded bg-theme-primary" />}
+					{isActive && <div className="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary" />}
 
 					{icon && (
 						<div
