@@ -1,5 +1,8 @@
 <template>
-  <form @submit.prevent>
+  <form
+    class="TransactionFormEntityResignation--container"
+    @submit.prevent
+  >
     <header class="mb-5">
       <h2>{{ title }}</h2>
       <p class="mt-1 text-theme-page-text-light">
@@ -189,3 +192,10 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss">
+.TransactionFormEntityResignation--container {
+  @apply overflow-y-auto p-16;
+  max-height: 48rem;
+}
+</style>

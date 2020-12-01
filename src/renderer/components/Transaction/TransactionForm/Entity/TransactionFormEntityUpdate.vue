@@ -1,5 +1,8 @@
 <template>
-  <form @submit.prevent>
+  <form
+    class="TransactionFormEntityUpdate--container"
+    @submit.prevent
+  >
     <header class="mb-2">
       <h2>{{ title }}</h2>
       <p class="mt-1 text-theme-page-text-light">
@@ -230,5 +233,9 @@ export default {
   min-width: 38rem;
   max-width: 38rem!important;
   max-height: 80vh;
+}
+.TransactionFormEntityUpdate--container {
+  @apply overflow-y-auto p-16;
+  max-height: 48rem;
 }
 </style>

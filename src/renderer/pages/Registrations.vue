@@ -21,7 +21,7 @@
     </div>
 
     <div
-      class="mt-6 bg-theme-feature rounded-lg w-full p-10 flex flex-col"
+      class="mt-6 bg-theme-feature rounded-lg w-full p-10 flex flex-col overflow-y-auto"
     >
       <div v-if="loading">
         <Loader />

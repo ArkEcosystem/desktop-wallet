@@ -1,5 +1,11 @@
 <template>
-  <form @submit.prevent>
+  <form
+    class="p-16"
+    :class="{
+      'TransactionFormEntityRegistration--container': step === 2
+    }"
+    @submit.prevent
+  >
     <div v-show="step === 1">
       <header class="mb-5">
         <h2>{{ $t('ENTITY.REGISTRATION') }}</h2>
@@ -8,13 +14,10 @@
         </p>
       </header>
 
-      <InputAddress
-        ref="sender"
+      <InputSelect
         v-model="$v.step1.sender.$model"
         :label="$t('TRANSACTION.SENDER')"
-        :is-required="true"
-        :pub-key-hash="walletNetwork.version"
-        :show-suggestions="true"
+        :items="walletList"
         name="sender"
         class="TransactionFormEntityRegistration__sender mb-5"
       />
@@ -109,7 +112,7 @@
 
 <script>
 import { TRANSACTION_TYPES_ENTITY, TRANSACTION_GROUPS } from '@config'
-import { InputAddress, InputSelect, InputFee, InputPassword } from '@/components/Input'
+import { InputSelect, InputFee, InputPassword } from '@/components/Input'
 import { required } from 'vuelidate/lib/validators'
 import { ListDividedItem } from '@/components/ListDivided'
 import { PassphraseInput } from '@/components/Passphrase'
@@ -118,6 +121,8 @@ import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { filter, isEmpty } from '@arkecosystem/utils'
 import EntityForm from './EntityForm'
 import mixin from '../mixin'
+import truncate from '@/filters/truncate'
+import { orderBy } from 'lodash'
 
 export default {
   name: 'TransactionFormEntityRegistration',
@@ -127,7 +132,6 @@ export default {
 
   components: {
     EntityForm,
-    InputAddress,
     InputSelect,
     InputFee,
     InputPassword,
@@ -156,6 +160,38 @@ export default {
   }),
 
   computed: {
+    wallets () {
+      const result = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+      return result.filter(wallet => !wallet.isLedger)
+    },
+
+    walletList () {
+      const addresses = this.wallets.map(wallet => {
+        const address = {
+          name: null,
+          address: wallet.address
+        }
+
+        const walletName = this.wallet_name(wallet.address)
+        if (walletName && walletName !== wallet.address) {
+          address.name = `${truncate(walletName, 25)} (${this.wallet_truncate(wallet.address)})`
+        }
+
+        return address
+      })
+
+      const results = orderBy(addresses, (object) => {
+        return object.name || object.address.toLowerCase()
+      })
+
+      return results.reduce((wallets, wallet) => {
+        const value = wallet.name || wallet.address
+        wallets[wallet.address] = value
+
+        return wallets
+      }, {})
+    },
+
     formTitle () {
       return this.$t(`TRANSACTION.TYPE.${this.entityTypeLabel.toUpperCase()}_ENTITY_REGISTRATION`)
     },
@@ -205,6 +241,10 @@ export default {
     },
 
     nextStep () {
+      if (!this.isStepValid) {
+        return
+      }
+
       if (this.step === 1) {
         this.step = 2
       } else {
@@ -280,13 +320,7 @@ export default {
     },
     step1: {
       sender: {
-        isValid () {
-          if (this.$refs.sender) {
-            return !this.$refs.sender.$v.$invalid
-          }
-
-          return false
-        }
+        required
       },
       registrationType: {
         required
@@ -301,5 +335,13 @@ export default {
   min-width: 38rem;
   max-width: 38rem!important;
   max-height: 80vh;
+}
+.TransactionModalEntity .ModalWindow__container__content {
+  overflow-y: unset;
+  @apply p-0;
+}
+.TransactionFormEntityRegistration--container {
+  @apply overflow-y-auto;
+  max-height: 48rem;
 }
 </style>

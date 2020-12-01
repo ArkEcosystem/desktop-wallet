@@ -49,6 +49,7 @@
           </p>
         </div>
         <button
+          type="button"
           class="blue-button rounded-full w-5 h-5 m-0 p-0 flex items-center justify-center"
           :class="{
             'bg-blue text-white': isSourceControlOpen
@@ -86,6 +87,7 @@
           </p>
         </div>
         <button
+          type="button"
           class="blue-button rounded-full w-5 h-5 m-0 p-0 flex items-center justify-center"
           :class="{
             'bg-blue text-white': isSocialMediaOpen
