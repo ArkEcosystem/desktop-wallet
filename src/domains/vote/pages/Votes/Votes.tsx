@@ -112,7 +112,7 @@ export const Votes = () => {
 		[votes, delegates],
 	);
 
-	const filteredDelegates = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
+	const filteredDelegatesVotes = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
 		delegates,
 		currentVotes,
 		selectedFilter,
@@ -218,6 +218,16 @@ export const Votes = () => {
 			{} as Record<string, ReadWriteWallet[]>,
 		);
 	}, [searchQuery, walletsByCoin]);
+
+	const filteredDelegates = useMemo(() => {
+		if (!searchQuery.length) return filteredDelegatesVotes;
+
+		return filteredDelegatesVotes.filter(
+			(delegate) =>
+				delegate.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
+				delegate.username()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
+		);
+	}, [filteredDelegatesVotes, searchQuery]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
