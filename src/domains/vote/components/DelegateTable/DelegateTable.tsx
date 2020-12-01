@@ -178,7 +178,7 @@ export const DelegateTable = ({
 	const skeletonList = new Array(8).fill({});
 	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
 
-	if (!isLoading && totalDelegates === 0)
+	if (!isLoading && totalDelegates === 0) {
 		return (
 			<EmptyResults
 				className="mt-16"
@@ -186,6 +186,7 @@ export const DelegateTable = ({
 				subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
 			/>
 		);
+	}
 
 	return (
 		<div data-testid="DelegateTable">

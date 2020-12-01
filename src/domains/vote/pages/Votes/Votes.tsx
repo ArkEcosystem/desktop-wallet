@@ -223,6 +223,7 @@ export const Votes = () => {
 	const filteredDelegates = useMemo(() => {
 		if (!searchQuery.length) return filteredDelegatesVotes;
 
+		/* istanbul ignore next */
 		return filteredDelegatesVotes.filter(
 			(delegate) =>
 				delegate.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
