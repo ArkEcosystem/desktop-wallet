@@ -186,8 +186,17 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .Registrations__item:first-child {
   @apply mt-0;
 }
+.TransactionModalEntity.TransactionModal--form  .ModalWindow__container__content {
+  overflow-y: unset;
+  @apply p-0;
+}
+.TransactionEntity__container {
+  @apply p-16 overflow-y-auto;
+  max-height: 48rem;
+}
+
 </style>

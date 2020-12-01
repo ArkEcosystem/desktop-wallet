@@ -2,7 +2,7 @@
   <form
     class="p-16"
     :class="{
-      'TransactionFormEntityRegistration--container': step === 2
+      'TransactionEntity__container': step === 2
     }"
     @submit.prevent
   >
@@ -99,11 +99,15 @@
         </button>
 
         <button
-          :disabled="!isStepValid"
+          :disabled="isSubmitting || !isStepValid"
           class="TransactionFormEntityRegistration__next blue-button"
           @click="nextStep"
         >
-          {{ $t('COMMON.NEXT') }}
+          <Loader
+            v-if="isSubmitting"
+            size="10px"
+          />
+          <span v-else>{{ $t('COMMON.NEXT') }}</span>
         </button>
       </div>
     </footer>
@@ -116,6 +120,7 @@ import { InputSelect, InputFee, InputPassword } from '@/components/Input'
 import { required } from 'vuelidate/lib/validators'
 import { ListDividedItem } from '@/components/ListDivided'
 import { PassphraseInput } from '@/components/Passphrase'
+import Loader from '@/components/utils/Loader'
 import { File } from '@arkecosystem/platform-sdk-ipfs'
 import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { filter, isEmpty } from '@arkecosystem/utils'
@@ -136,15 +141,13 @@ export default {
     InputFee,
     InputPassword,
     ListDividedItem,
+    Loader,
     PassphraseInput
   },
 
   mixins: [mixin],
 
   data: () => ({
-    isSourceControlOpen: false,
-    isSocialMediaOpen: false,
-    isMediaOpen: false,
     step: 1,
     form: {
       fee: 0,
@@ -335,13 +338,5 @@ export default {
   min-width: 38rem;
   max-width: 38rem!important;
   max-height: 80vh;
-}
-.TransactionModalEntity .ModalWindow__container__content {
-  overflow-y: unset;
-  @apply p-0;
-}
-.TransactionFormEntityRegistration--container {
-  @apply overflow-y-auto;
-  max-height: 48rem;
 }
 </style>

@@ -67,6 +67,7 @@ export default {
 
   data () {
     return {
+      isSubmitting: false,
       showEncryptLoader: false,
       showLedgerLoader: false
     }
@@ -136,6 +137,7 @@ export default {
       if (!this.form.fee && this.$refs.fee) {
         this.$set(this.form, 'fee', this.$refs.fee.fee)
       }
+      this.isSubmitting = true
 
       let success = true
       let transaction
@@ -167,6 +169,8 @@ export default {
         }
         this.showLedgerLoader = false
       }
+
+      this.isSubmitting = false
 
       if (success) {
         this.emitNext(transaction)

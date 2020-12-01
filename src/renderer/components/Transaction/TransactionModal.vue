@@ -138,7 +138,7 @@ export default {
       const transactionTypes = TRANSACTION_TYPES[`GROUP_${this.group}`]
       const type = Object.keys(transactionTypes).find(type => transactionTypes[type] === this.type)
 
-      return `TransactionModal${upperFirst(camelCase(type))}`
+      return `TransactionModal${upperFirst(camelCase(type))} ${this.transaction ? 'TransactionModal--confirm' : 'TransactionModal--form'}`
     },
     typeName () {
       return this.$t(`TRANSACTION.TYPE.${this.transactionKey}`)

@@ -1,6 +1,6 @@
 <template>
   <form
-    class="TransactionFormEntityResignation--container"
+    class="TransactionEntity__container"
     @submit.prevent
   >
     <header class="mb-5">
@@ -192,10 +192,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss">
-.TransactionFormEntityResignation--container {
-  @apply overflow-y-auto p-16;
-  max-height: 48rem;
-}
-</style>

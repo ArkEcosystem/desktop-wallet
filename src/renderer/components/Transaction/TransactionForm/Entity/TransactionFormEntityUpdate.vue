@@ -1,6 +1,6 @@
 <template>
   <form
-    class="TransactionFormEntityUpdate--container"
+    class="TransactionEntity__container"
     @submit.prevent
   >
     <header class="mb-2">
@@ -63,14 +63,24 @@
     <footer class="mt-10 flex justify-between items-center">
       <div class="self-start">
         <button
-          :disabled="!isStepValid"
-          class="TransactionFormEntityUpdate__next blue-button"
-          @click="onSubmit"
+          :disabled="isSubmitting || !isStepValid"
+          class="TransactionFormEntityRegistration__next blue-button"
+          @click="nextStep"
         >
-          {{ $t('COMMON.NEXT') }}
+          <Loader
+            v-if="isSubmitting"
+            size="10px"
+          />
+          <span v-else>{{ $t('COMMON.NEXT') }}</span>
         </button>
       </div>
     </footer>
+
+    <ModalLoader
+      ref="modalLoader"
+      :message="$t('ENCRYPTION.DECRYPTING')"
+      :visible="showEncryptLoader"
+    />
   </form>
 </template>
 
@@ -79,6 +89,8 @@ import { TRANSACTION_TYPES_ENTITY, TRANSACTION_GROUPS } from '@config'
 import { InputFee, InputPassword } from '@/components/Input'
 import { ListDividedItem } from '@/components/ListDivided'
 import { PassphraseInput } from '@/components/Passphrase'
+import { ModalLoader } from '@/components/Modal'
+
 import { File } from '@arkecosystem/platform-sdk-ipfs'
 import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { filter, isEmpty } from '@arkecosystem/utils'
@@ -96,6 +108,7 @@ export default {
     InputFee,
     InputPassword,
     ListDividedItem,
+    ModalLoader,
     PassphraseInput
   },
 
@@ -113,10 +126,6 @@ export default {
   },
 
   data: () => ({
-    isSourceControlOpen: false,
-    isSocialMediaOpen: false,
-    isMediaOpen: false,
-    step: 1,
     form: {
       fee: 0,
       passphrase: '',
@@ -233,9 +242,5 @@ export default {
   min-width: 38rem;
   max-width: 38rem!important;
   max-height: 80vh;
-}
-.TransactionFormEntityUpdate--container {
-  @apply overflow-y-auto p-16;
-  max-height: 48rem;
 }
 </style>
