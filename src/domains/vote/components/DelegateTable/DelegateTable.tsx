@@ -3,7 +3,7 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { EmptyBlock } from "app/components/EmptyBlock";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
@@ -178,7 +178,14 @@ export const DelegateTable = ({
 	const skeletonList = new Array(8).fill({});
 	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
 
-	if (!isLoading && totalDelegates === 0) return <EmptyBlock className="-mt-5">{emptyText}</EmptyBlock>;
+	if (!isLoading && totalDelegates === 0)
+		return (
+			<EmptyResults
+				className="mt-16"
+				title={t("COMMON.EMPTY_RESULTS.TITLE")}
+				subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+			/>
+		);
 
 	return (
 		<div data-testid="DelegateTable">

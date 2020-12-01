@@ -390,4 +390,6 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 		useNetworksMock.mockRestore();
 	});
+
+	// it("should filter wallets by address", async () => {});
 });

@@ -4,6 +4,7 @@ import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
 import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
@@ -229,6 +230,10 @@ export const Votes = () => {
 		);
 	}, [filteredDelegatesVotes, searchQuery]);
 
+	const isEmptyWalletsByCoin =
+		searchQuery.length > 0 &&
+		Object.keys(filteredWalletsByCoin).every((coin: string) => !filteredWalletsByCoin[coin].length);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -310,13 +315,26 @@ export const Votes = () => {
 					</EmptyBlock>
 				</Section>
 			) : !selectedAddress ? (
-				Object.keys(filteredWalletsByCoin).map(
-					(coin, index) =>
-						filteredWalletsByCoin[coin].length > 0 && (
-							<Section className="flex-1" key={index}>
-								<AddressTable wallets={filteredWalletsByCoin[coin]} onSelect={handleSelectAddress} />
-							</Section>
-						),
+				isEmptyWalletsByCoin ? (
+					<Section className="flex-1">
+						<EmptyResults
+							className="mt-16"
+							title={t("COMMON.EMPTY_RESULTS.TITLE")}
+							subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+						/>
+					</Section>
+				) : (
+					Object.keys(filteredWalletsByCoin).map(
+						(coin, index) =>
+							filteredWalletsByCoin[coin].length > 0 && (
+								<Section className="flex-1" key={index}>
+									<AddressTable
+										wallets={filteredWalletsByCoin[coin]}
+										onSelect={handleSelectAddress}
+									/>
+								</Section>
+							),
+					)
 				)
 			) : (
 				<Section className="flex-1">
