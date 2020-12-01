@@ -65,7 +65,7 @@
         <button
           :disabled="isSubmitting || !isStepValid"
           class="TransactionFormEntityRegistration__next blue-button"
-          @click="nextStep"
+          @click="onSubmit"
         >
           <Loader
             v-if="isSubmitting"

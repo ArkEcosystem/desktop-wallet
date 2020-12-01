@@ -165,7 +165,7 @@ export default {
   computed: {
     wallets () {
       const result = this.$store.getters['wallet/byProfileId'](this.session_profile.id)
-      return result.filter(wallet => !wallet.isLedger)
+      return result.filter(wallet => !wallet.isLedger && !wallet.multiSignature)
     },
 
     walletList () {
