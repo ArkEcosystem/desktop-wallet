@@ -126,14 +126,14 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					</div>
 
 					<div
-						className="flex mt-8 rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800 font-medium overflow-hidden"
+						className="flex mt-8 overflow-hidden font-medium border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
 						data-testid="ReceiveFundsForm__uri"
 					>
 						<div className="p-6 bg-theme-neutral-200 dark:bg-theme-neutral-800">
 							<span className="text-theme-secondary-text">{t("COMMON.QR_SHORT")}</span>
 						</div>
 
-						<div className="w-full flex items-center justify-between bg-theme-neutral-100 dark:bg-theme-background pl-6 pr-5 space-x-4 overflow-hidden">
+						<div className="flex items-center justify-between w-full pl-6 pr-5 space-x-4 overflow-hidden bg-theme-neutral-100 dark:bg-theme-background">
 							<span className="truncate">{uri}</span>
 							<span className="flex text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700">
 								<Clipboard data={uri}>
