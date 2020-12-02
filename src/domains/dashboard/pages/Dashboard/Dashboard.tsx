@@ -1,4 +1,4 @@
-import {  ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
@@ -6,7 +6,7 @@ import { PortfolioChart } from "domains/dashboard/components/PortfolioChart";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { useWalletFilters } from "domains/dashboard/components/Wallets/hooks";
-import React, {  useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 

@@ -1,7 +1,7 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
-import { useCallback,useState } from "react";
+import { useCallback, useState } from "react";
 
 export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 	const [configuration, setConfiguration] = useState<DashboardConfiguration>({
@@ -18,7 +18,10 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 		),
 	});
 
-	const getConfiguration = useCallback(() => profile.settings().get(ProfileSetting.DashboardConfiguration, configuration) as DashboardConfiguration, [configuration]);
+	const getConfiguration = useCallback(
+		() => profile.settings().get(ProfileSetting.DashboardConfiguration, configuration) as DashboardConfiguration,
+		[configuration],
+	);
 
 	const setValue = (values: Record<string, any>) => {
 		const updatedConfiguration = {
