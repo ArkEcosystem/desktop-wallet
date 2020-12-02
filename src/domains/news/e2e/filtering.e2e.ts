@@ -11,7 +11,7 @@ const translations = buildTranslations();
 createFixture(`News filtering`, [
 	mockRequest("https://platform.ark.io/api/coins/signals?coins=ARK&page=1", "news/page-1"),
 	mockRequest(
-		"https://platform.ark.io/api/coins/signals?coins=ETH&page=1&categories=Technical&query=major+league+hacking",
+		"https://platform.ark.io/api/coins/signals?coins=ARK%2CETH&page=1&categories=Technical&query=major+league+hacking",
 		"news/filtered",
 	),
 	mockRequest(

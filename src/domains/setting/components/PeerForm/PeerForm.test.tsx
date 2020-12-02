@@ -9,7 +9,7 @@ const peer = {
 	coin: "ARK",
 	network: "ark.devnet",
 	name: "ROBank",
-	host: "194.168.4.67",
+	host: "http://167.114.29.48:4003/api",
 	isMultiSignature: false,
 };
 
@@ -65,7 +65,9 @@ describe("PeerForm", () => {
 			expect(selectNetworkInput).toHaveValue("Bitcoin");
 
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
-			await fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+			await fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
 
 			const submitButton = getByTestId("PeerForm__submit-button");
 			expect(submitButton).toBeTruthy();
