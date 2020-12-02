@@ -167,7 +167,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 					<Button
 						disabled={!hasCoinsSelected}
 						className="w-full"
-						variant="plain"
+						variant="secondary"
 						onClick={handleSubmit}
 						data-testid="NewsOptions__submit"
 					>

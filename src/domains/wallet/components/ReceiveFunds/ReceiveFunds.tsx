@@ -84,7 +84,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 			<div>
 				{!isFormOpen && (
 					<Button
-						variant="plain"
+						variant="secondary"
 						className="w-full mt-8"
 						onClick={() => setIsFormOpen(true)}
 						data-testid="ReceiveFunds__toggle"

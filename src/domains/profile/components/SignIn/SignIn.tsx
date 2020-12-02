@@ -111,7 +111,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 				</FormField>
 
 				<div className="flex justify-end mt-8 space-x-3">
-					<Button data-testid="SignIn__cancel-button" variant="plain" onClick={onCancel}>
+					<Button data-testid="SignIn__cancel-button" variant="secondary" onClick={onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
 

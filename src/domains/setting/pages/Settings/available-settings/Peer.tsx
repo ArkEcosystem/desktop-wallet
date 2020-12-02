@@ -211,7 +211,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 						</Table>
 
 						<Button
-							variant="plain"
+							variant="secondary"
 							className="w-full mt-8 mb-2"
 							onClick={() => setIsCreatePeer(true)}
 							data-testid="Peer-list__add-button"

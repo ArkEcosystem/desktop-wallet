@@ -35,7 +35,7 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 
 			<div className="flex items-stretch select-buttons">
 				<Button
-					variant={isSingle ? "solid" : "plain"}
+					variant={isSingle ? "primary" : "secondary"}
 					className="flex-1"
 					data-testid="add-recipient-is-single-toggle"
 					onClick={() => onChange?.(true)}
@@ -43,7 +43,7 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 					{t("TRANSACTION.SINGLE")}
 				</Button>
 				<Button
-					variant={!isSingle ? "solid" : "plain"}
+					variant={!isSingle ? "primary" : "secondary"}
 					className="flex-1 border-l-0"
 					data-testid="add-recipient-is-multiple-toggle"
 					onClick={() => onChange?.(false)}
@@ -260,7 +260,7 @@ export const AddRecipient = ({
 							!!errors.amount || !!errors.recipientAddress || BigNumber.make(getValues("amount")).isZero()
 						}
 						data-testid="add-recipient__add-btn"
-						variant="plain"
+						variant="secondary"
 						className="w-full mt-4"
 						onClick={() =>
 							handleAddRecipient(

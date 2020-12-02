@@ -73,21 +73,21 @@ export const WalletsControls = ({
 			</div>
 
 			<div className="flex space-x-3">
-				<Button onClick={onCreateWallet} variant="plain">
+				<Button onClick={onCreateWallet} variant="secondary">
 					<div className="flex items-center space-x-2">
 						<Icon name="Plus" width={12} height={12} />
 						<span>{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
 					</div>
 				</Button>
 
-				<Button onClick={onImportWallet} variant="plain">
+				<Button onClick={onImportWallet} variant="secondary">
 					<div className="flex items-center space-x-2">
 						<Icon name="Import" width={15} height={15} />
 						<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
 					</div>
 				</Button>
 
-				<Button onClick={onImportLedgerWallet} variant="plain">
+				<Button onClick={onImportLedgerWallet} variant="secondary">
 					<div className="flex items-center space-x-2">
 						<Icon name="Ledger" />
 						<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT_LEDGER")}</span>

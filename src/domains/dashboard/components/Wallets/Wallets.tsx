@@ -212,7 +212,7 @@ export const Wallets = ({
 
 								{hasMoreWallets && (
 									<Button
-										variant="plain"
+										variant="secondary"
 										className="w-full mt-10 mb-5"
 										data-testid="WalletsList__ViewMore"
 										onClick={() => loadAllListWallets()}

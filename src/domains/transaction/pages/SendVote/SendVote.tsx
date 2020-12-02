@@ -305,7 +305,7 @@ export const SendVote = () => {
 											<>
 												<Button
 													disabled={formState.isSubmitting}
-													variant="plain"
+													variant="secondary"
 													onClick={handleBack}
 													data-testid="SendVote__button--back"
 												>
@@ -329,7 +329,7 @@ export const SendVote = () => {
 											<>
 												<Button
 													disabled={formState.isSubmitting}
-													variant="plain"
+													variant="secondary"
 													onClick={handleBack}
 													data-testid="SendVote__button--back"
 												>
@@ -357,7 +357,7 @@ export const SendVote = () => {
 									<>
 										<Button
 											data-testid="SendVote__button--back-to-wallet"
-											variant="plain"
+											variant="secondary"
 											onClick={() =>
 												history.push(
 													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
@@ -367,7 +367,7 @@ export const SendVote = () => {
 											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
-											variant="plain"
+											variant="secondary"
 											className="space-x-2"
 											data-testid="SendVote__button--download"
 										>

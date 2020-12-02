@@ -102,7 +102,7 @@ export const AddBlacklistPlugin = ({
 							</TableCell>
 
 							<TableCell className="w-16">
-								<Button variant="plain" onClick={() => handleBlacklist(rowData.id)}>
+								<Button variant="secondary" onClick={() => handleBlacklist(rowData.id)}>
 									{t("COMMON.ADD")}
 								</Button>
 							</TableCell>

@@ -80,7 +80,7 @@ export const WalletRegistrations = ({
 						</div>
 
 						<Button
-							variant="plain"
+							variant="secondary"
 							onClick={() => onButtonClick(true)}
 							data-testid="WalletRegistrations__button"
 						>
@@ -168,7 +168,7 @@ export const WalletRegistrations = ({
 				)}
 
 				<Button
-					variant="plain"
+					variant="secondary"
 					className="ml-auto"
 					onClick={() => onButtonClick()}
 					data-testid="WalletRegistrations__button"

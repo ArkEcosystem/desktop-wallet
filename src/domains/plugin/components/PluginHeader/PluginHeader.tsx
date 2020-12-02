@@ -27,10 +27,10 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 					<Button className="ml-3" data-testid="PluginHeader__button--update">
 						<Icon name="Update" />
 					</Button>
-					<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="plain">
+					<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="secondary">
 						<Icon name="Report" width={20} height={20} />
 					</Button>
-					<Button className="ml-3" data-testid="PluginHeader__button--uninstall" variant="plain">
+					<Button className="ml-3" data-testid="PluginHeader__button--uninstall" variant="secondary">
 						<Icon name="Trash" />
 					</Button>
 				</>
@@ -40,7 +40,7 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 		return (
 			<>
 				<Button data-testid="PluginHeader__button--install">{t("COMMON.INSTALL")}</Button>
-				<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="plain">
+				<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="secondary">
 					<Icon name="Report" width={20} height={20} />
 				</Button>
 			</>

@@ -22,11 +22,11 @@ export const AdvancedMode = ({ isOpen, onClose, onDecline, onAccept }: AdvancedM
 			onClose={onClose}
 		>
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="plain" onClick={onDecline} data-testid="AdvancedMode__decline-button">
+				<Button variant="secondary" onClick={onDecline} data-testid="AdvancedMode__decline-button">
 					{t("COMMON.I_DECLINE")}
 				</Button>
 
-				<Button variant="solid" onClick={onAccept} data-testid="AdvancedMode__accept-button">
+				<Button variant="primary" onClick={onAccept} data-testid="AdvancedMode__accept-button">
 					{t("COMMON.I_ACCEPT")}
 				</Button>
 			</div>

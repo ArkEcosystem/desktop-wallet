@@ -181,7 +181,7 @@ export const LinkCollection = ({
 							<Button
 								data-testid="LinkCollection__add-link"
 								className="col-span-2"
-								variant="plain"
+								variant="secondary"
 								type="button"
 								disabled={!value || !formState.isValid} // @TODO disable on duplicate entry
 								onClick={handleSubmit(({ type, value }) => addLink({ type, value }))}
@@ -244,7 +244,7 @@ export const LinkCollection = ({
 										<Button
 											data-testid="LinkCollection__remove-link"
 											size="icon"
-											variant="plain"
+											variant="secondary"
 											onClick={() => removeLink(rowIndex)}
 										>
 											<Icon name="Trash" />

@@ -27,7 +27,7 @@ export const ErrorStep = ({ title, subtitle, onBack, onRepeat, isRepeatDisabled 
 			</div>
 
 			<div className="flex justify-end space-x-3">
-				<Button onClick={() => onBack?.()} data-testid="ErrorStep__wallet-button" variant="plain">
+				<Button onClick={() => onBack?.()} data-testid="ErrorStep__wallet-button" variant="secondary">
 					{t("COMMON.BACK_TO_WALLET")}
 				</Button>
 

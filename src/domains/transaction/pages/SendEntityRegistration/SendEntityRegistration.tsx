@@ -301,7 +301,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									<Button
 										disabled={activeTab === 1}
 										data-testid="Registration__back-button"
-										variant="plain"
+										variant="secondary"
 										onClick={handleBack}
 									>
 										{t("COMMON.BACK")}
@@ -334,7 +334,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									<div className="flex justify-end space-x-3">
 										<Button
 											data-testid="Registration__button--back-to-wallet"
-											variant="plain"
+											variant="secondary"
 											onClick={() =>
 												history.push(
 													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
@@ -346,7 +346,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 
 										<Button
 											data-testid="Registration__download-button"
-											variant="plain"
+											variant="secondary"
 											className="space-x-2"
 										>
 											<Icon name="Download" />

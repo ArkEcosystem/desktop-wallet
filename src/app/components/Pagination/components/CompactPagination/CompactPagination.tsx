@@ -45,7 +45,7 @@ export const CompactPagination = ({
 			{showFirst && (
 				<Button
 					data-testid="CompactPagination__first"
-					variant="plain"
+					variant="secondary"
 					className="w-8"
 					onClick={() => onSelectPage((currentPage = 1))}
 				>
@@ -56,7 +56,7 @@ export const CompactPagination = ({
 			{showPrevious && (
 				<Button
 					data-testid="CompactPagination__previous"
-					variant="plain"
+					variant="secondary"
 					className="w-8"
 					onClick={() => onSelectPage((currentPage -= 1))}
 				>
@@ -71,7 +71,7 @@ export const CompactPagination = ({
 			{showNext && (
 				<Button
 					data-testid="CompactPagination__next"
-					variant="plain"
+					variant="secondary"
 					className="w-8"
 					onClick={() => onSelectPage((currentPage += 1))}
 				>
@@ -82,7 +82,7 @@ export const CompactPagination = ({
 			{showLast && (
 				<Button
 					data-testid="CompactPagination__last"
-					variant="plain"
+					variant="secondary"
 					className="w-8"
 					onClick={() => onSelectPage((currentPage = totalPages))}
 				>

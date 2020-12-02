@@ -102,7 +102,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 				<FormHelperText />
 			</FormField>
 			<div className="flex justify-end space-x-3">
-				<Button variant="plain" onClick={onCancel} data-testid="SignMessage__cancel">
+				<Button variant="secondary" onClick={onCancel} data-testid="SignMessage__cancel">
 					{t("COMMON.CANCEL")}
 				</Button>
 				<Button type="submit" data-testid="SignMessage__submit-button">
@@ -143,7 +143,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 
 			<div className="flex justify-end pb-5 mt-3">
 				<Clipboard data={JSON.stringify(signedMessage)}>
-					<Button variant="plain" data-testid="SignMessage__copy-button">
+					<Button variant="secondary" data-testid="SignMessage__copy-button">
 						<Icon name="Copy" />
 						<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
 					</Button>

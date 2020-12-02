@@ -122,7 +122,7 @@ export const Welcome = () => {
 
 						<div className="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row">
 							<Button
-								variant="plain"
+								variant="secondary"
 								className="mt-2 md:mt-0"
 								onClick={() => history.push("/profiles/create")}
 							>

@@ -104,7 +104,11 @@ export const Pagination = ({
 	return (
 		<Wrapper data-testid="Pagination" className={className}>
 			{showFirst && (
-				<Button data-testid="Pagination__first" variant="plain" onClick={() => onSelectPage((currentPage = 1))}>
+				<Button
+					data-testid="Pagination__first"
+					variant="secondary"
+					onClick={() => onSelectPage((currentPage = 1))}
+				>
 					<Icon name="PaginationFirst" height={12} width={12} />
 				</Button>
 			)}
@@ -112,7 +116,7 @@ export const Pagination = ({
 			{showPrevious && (
 				<Button
 					data-testid="Pagination__previous"
-					variant="plain"
+					variant="secondary"
 					onClick={() => onSelectPage((currentPage -= 1))}
 				>
 					<Icon name="Back" className="mr-2" height={10} width={10} />
@@ -145,7 +149,11 @@ export const Pagination = ({
 			</div>
 
 			{showNext && (
-				<Button data-testid="Pagination__next" variant="plain" onClick={() => onSelectPage((currentPage += 1))}>
+				<Button
+					data-testid="Pagination__next"
+					variant="secondary"
+					onClick={() => onSelectPage((currentPage += 1))}
+				>
 					{t("COMMON.NEXT")}
 					<Icon name="Forward" className="ml-2" height={12} width={12} />
 				</Button>
@@ -154,7 +162,7 @@ export const Pagination = ({
 			{showLast && (
 				<Button
 					data-testid="Pagination__last"
-					variant="plain"
+					variant="secondary"
 					onClick={() => onSelectPage((currentPage = totalPages))}
 				>
 					<Icon name="PaginationLast" height={12} width={12} />

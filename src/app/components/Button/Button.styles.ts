@@ -1,5 +1,5 @@
 import tw, { css } from "twin.macro";
-import { Size } from "types";
+import { ButtonVariant, Size } from "types";
 
 // @TODO add focus-visible:shadow-outline
 const baseStyle = [
@@ -12,51 +12,18 @@ const baseStyle = [
 	`,
 ];
 
-const getColorsVariable = (name: string): any => ({
-	base: `var(--theme-color-${name})`,
-	contrast: `var(--theme-color-${name}-contrast)`,
-	rgb: `var(--theme-color-${name}-rgb)`,
-	dark: `var(--theme-color-${name}-dark)`,
-	light: `var(--theme-color-${name}-light)`,
-});
+const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
+	if (disabled) return;
 
-const getVariant = (name: string, colorName: string, color: ReturnType<typeof getColorsVariable>): any => {
-	switch (name) {
-		case "solid":
-			return css`
-				color: ${colorName === "primary" ? "var(--theme-white)" : color.contrast};
-				background-color: ${color.base};
-				&:not(:focus):hover:enabled {
-					background-color: ${color.dark};
-					box-shadow: 2px 3px 10px 2px rgba(${color.rgb}, 0.2);
-				}
-			`;
-		case "plain":
-			return css`
-				color: ${color.base};
-				background-color: ${color.contrast};
-				&:not(:focus):hover:enabled {
-					color: ${["danger", "primary"].includes(colorName) ? "var(--theme-white)" : color.base};
-					background-color: ${colorName === "danger"
-						? "var(--theme-color-danger-400)"
-						: colorName === "primary"
-						? color.dark
-						: color.light};
-				}
-			`;
-		case "outline":
-			return css`
-				color: ${color.base};
-				border: 2px solid ${color.contrast};
-				&:not(:focus):hover:enabled {
-					border-color: ${color.light};
-				}
-			`;
-		case "transparent":
-			return css`
-				background-color: transparent;
-				border: 0px none;
-			`;
+	switch (variant) {
+		case "primary":
+			return tw`bg-theme-primary hover:bg-theme-primary-700 dark:bg-theme-neutral-800 text-white dark:text-theme-neutral-200 hover:dark:text-white`;
+		case "secondary":
+			return tw`bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-neutral-800 text-theme-primary-600 dark:text-theme-neutral-200 hover:text-white`;
+		case "danger":
+			return tw`bg-theme-danger-100 dark:bg-theme-danger-400 hover:bg-theme-danger-400 hover:dark:bg-theme-danger-500 text-theme-danger-400 dark:text-white hover:text-white`;
+		default:
+			return tw`bg-transparent border-none`;
 	}
 };
 
@@ -73,8 +40,12 @@ const getSize = (size?: Size): any => {
 	}
 };
 
-export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: Size }) => [
-	getSize(size),
-	...baseStyle,
-	...getVariant(variant!, color!, getColorsVariable(color!)),
-];
+export const getStyles = ({
+	variant,
+	size,
+	disabled,
+}: {
+	variant?: ButtonVariant;
+	size?: Size;
+	disabled?: boolean;
+}) => [getSize(size), ...baseStyle, getVariant(variant!, disabled!)];

@@ -99,7 +99,7 @@ export const CreateWallet = () => {
 								<Button
 									disabled={activeTab === 1}
 									data-testid="CreateWallet__back-button"
-									variant="plain"
+									variant="secondary"
 									onClick={handleBack}
 								>
 									{t("COMMON.BACK")}

@@ -196,7 +196,7 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 										<Button
 											disabled={activeTab === 1 || isSubmitting}
 											data-testid="SendEntityUpdate__back-button"
-											variant="plain"
+											variant="secondary"
 											onClick={handleBack}
 										>
 											{t("COMMON.BACK")}
@@ -223,14 +223,14 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 
 									{activeTab === 4 && (
 										<div className="flex justify-end space-x-3">
-											<Button data-testid="SendEntityUpdate__wallet-button" variant="plain">
+											<Button data-testid="SendEntityUpdate__wallet-button" variant="secondary">
 												{t("COMMON.BACK_TO_WALLET")}
 											</Button>
 
 											<Button
 												type="submit"
 												data-testid="SendEntityUpdate__download-button"
-												variant="plain"
+												variant="secondary"
 												className="space-x-2"
 											>
 												<Icon name="Download" />

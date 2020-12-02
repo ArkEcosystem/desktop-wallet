@@ -81,14 +81,14 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 			content: (
 				<div className="flex justify-end w-full pt-6 space-x-3">
 					<Button
-						variant="plain"
+						variant="secondary"
 						onClick={() => setModalOpenListIsOpen(true)}
 						data-testid="plugins__open-list"
 					>
 						{t("SETTINGS.PLUGINS.OPEN_BLACKLIST")}
 					</Button>
 					<Button
-						variant="plain"
+						variant="secondary"
 						onClick={() => setModalAddPluginIsOpen(true)}
 						data-testid="plugins__add-plugin"
 					>

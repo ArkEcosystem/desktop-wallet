@@ -59,7 +59,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 					<div className="flex flex-col">
 						<div className="flex items-center justify-between">
 							<h2 className="mb-0">Reviews ARK Explorer</h2>
-							<Button data-testid="ReviewBox__button--comment" variant="plain">
+							<Button data-testid="ReviewBox__button--comment" variant="secondary">
 								Leave a comment
 							</Button>
 						</div>

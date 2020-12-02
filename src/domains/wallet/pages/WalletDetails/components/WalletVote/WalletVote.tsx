@@ -62,7 +62,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 							</div>
 						</div>
 
-						<Button variant="plain" onClick={() => onButtonClick()} data-testid="WalletVote__button">
+						<Button variant="secondary" onClick={() => onButtonClick()} data-testid="WalletVote__button">
 							{t("COMMON.VOTE")}
 						</Button>
 					</div>
@@ -104,7 +104,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 					</div>
 
 					<Button
-						variant="plain"
+						variant="secondary"
 						className="ml-auto"
 						onClick={() => onButtonClick(delegate.address())}
 						data-testid="WalletVote__button"
@@ -148,7 +148,7 @@ export const WalletVote = ({ votes, maxVotes, isLoading, onButtonClick }: Wallet
 				</div>
 
 				<Button
-					variant="plain"
+					variant="secondary"
 					className="ml-auto"
 					onClick={() => onButtonClick()}
 					data-testid="WalletVote__button"
