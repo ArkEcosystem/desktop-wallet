@@ -14,7 +14,7 @@ import { version } from "../../../../../package.json";
 const { ARKLogo } = images.common;
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center mr-2 text-theme-background bg-theme-neutral-500 dark:bg-theme-neutral-700 rounded-sm`};
+	${tw`flex items-center justify-center mr-2 rounded-sm text-theme-background bg-theme-neutral-500 dark:bg-theme-neutral-700`};
 	width: 18px;
 	height: 18px;
 `;
@@ -28,7 +28,7 @@ export const Splash = ({ year }: any) => {
 
 	return (
 		<Page navbarVariant="logo-only">
-			<Section className="flex flex-col justify-center flex-1 text-center">
+			<Section className="flex flex-col justify-center flex-1 text-center select-none">
 				<div className="w-64 mx-auto lg:w-96">
 					<Image name="WelcomeBanner" />
 				</div>
