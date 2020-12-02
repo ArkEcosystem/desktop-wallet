@@ -428,11 +428,15 @@ describe("WalletDetails", () => {
 
 		await newWallet.syncIdentity();
 
+		const syncVotesSpy = jest.spyOn(newWallet, "syncVotes").mockReturnValue();
+
 		walletUrl = `/profiles/${profile.id()}/wallets/${newWallet.id()}`;
 		history.push(walletUrl);
 
 		const { asFragment } = await renderPage();
 
 		expect(asFragment()).toMatchSnapshot();
+
+		syncVotesSpy.mockRestore();
 	});
 });
