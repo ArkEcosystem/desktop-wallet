@@ -12,15 +12,18 @@ type PeerFormProps = {
 	networks: Coins.Network[];
 	peer?: any;
 	onSave: any;
+	onValidateHost?: any;
 };
 
-export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
+export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
 	const { formState, register, setValue, watch } = form;
 	const { isValid } = formState;
 	const { network, name, host, isMultiSignature } = watch();
+
+	const nameMaxLength = 20;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -34,6 +37,15 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 	}, [networks, peer, setValue]);
 
 	const handleSelectNetwork = (network?: Coins.Network | null) => {
+		if (form.errors.host?.message.includes("already exists")) {
+			form.clearErrors("host");
+
+			/* istanbul ignore else */
+			if (host) {
+				setValue("host", host, { shouldValidate: true, shouldDirty: true });
+			}
+		}
+
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 
@@ -56,6 +68,13 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("SETTINGS.PEERS.NAME"),
 						}).toString(),
+						maxLength: {
+							message: t("COMMON.VALIDATION.MAX_LENGTH", {
+								field: t("SETTINGS.PEERS.NAME"),
+								maxLength: nameMaxLength,
+							}),
+							value: nameMaxLength,
+						},
 					})}
 					defaultValue={peer?.name}
 					data-testid="PeerForm__name-input"
@@ -70,6 +89,13 @@ export const PeerForm = ({ networks, peer, onSave }: PeerFormProps) => {
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("SETTINGS.PEERS.PEER_IP"),
 						}).toString(),
+						validate: (host) => {
+							if (peer?.host === host) {
+								return true;
+							}
+
+							return onValidateHost?.(network?.id(), host);
+						},
 					})}
 					defaultValue={peer?.host}
 					data-testid="PeerForm__host-input"
