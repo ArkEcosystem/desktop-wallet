@@ -1,3 +1,4 @@
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -8,17 +9,18 @@ import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
+import { useDashboardConfig } from "domains/dashboard/pages";
 import { LedgerWaitingDevice } from "domains/wallet/components/Ledger/LedgerWaitingDevice";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+import { useWalletFilters } from "../FilterWallets";
+
 type WalletsProps = {
 	title?: string;
-	activeFilter?: boolean;
-	filterProperties: any;
 	viewType?: "grid" | "list";
-	wallets: ReadWriteWallet[];
+	wallets?: ReadWriteWallet[];
 	walletsEmptyText?: string;
 	onCreateWallet?: any;
 	onImportWallet?: any;
@@ -34,32 +36,39 @@ type GridWallet = {
 
 export const Wallets = ({
 	title,
-	activeFilter,
-	filterProperties,
-	viewType,
-	wallets,
 	walletsEmptyText,
 	onCreateWallet,
 	onImportWallet,
 	onImportLedgerWallet,
-	onSelectViewType,
 	onWalletAction,
 }: WalletsProps) => {
-	const [walletsViewType, setWalletsViewType] = useState(viewType);
-	const [allWallets, setAllWallets] = useState<any>(undefined);
-	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
-	const [isWaitingLedger, setIsWaitingLedger] = useState(false);
+	console.log("Wallets");
 
-	const activeProfile = useActiveProfile();
+	const [allWallets, setAllWallets] = useState<any>(undefined);
+	const [isWaitingLedger, setIsWaitingLedger] = useState(false);
 
 	const history = useHistory();
 
 	const { t } = useTranslation();
 
-	const { walletsDisplayType, selectedNetworkIds } = filterProperties;
+	const activeProfile = useActiveProfile();
+	const { setValue } = useDashboardConfig({ profile: activeProfile });
+	const { viewType, walletsDisplayType, selectedNetworkIds, isFilterChanged } = useWalletFilters({
+		profile: activeProfile,
+	});
 
-	// const walletCardActions: DropdownOption[] = [{ label: t("COMMON.SHOW"), value: "show" }];
 	const walletCardActions: DropdownOption[] = [];
+
+	const wallets = useMemo(() => {
+		if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) return activeProfile.wallets().values();
+
+		return activeProfile
+			.wallets()
+			.values()
+			.filter((wallet) => wallet.network().isLive());
+	}, [activeProfile]);
+
+	const [hasMoreWallets, setHasMoreWallets] = useState<any>(wallets.length > 10);
 
 	const listColumns = [
 		{
@@ -91,16 +100,11 @@ export const Wallets = ({
 		spaceBetween: 20,
 	};
 
-	const toggleViewType = (viewType: "grid" | "list") => {
-		setWalletsViewType(viewType);
-		onSelectViewType?.(viewType);
-	};
-
 	// Grid
 	const loadGridWallets = () => {
 		const walletObjects = wallets
 			.filter((wallet: ReadWriteWallet) => {
-				if (!selectedNetworkIds.includes(wallet.network().id())) return false;
+				if (!selectedNetworkIds?.includes(wallet.network().id())) return false;
 
 				if (walletsDisplayType === "favorites") {
 					return wallet.isStarred();
@@ -143,7 +147,7 @@ export const Wallets = ({
 	const getWalletsForList = () =>
 		wallets
 			.filter((wallet: any) => {
-				if (!selectedNetworkIds.includes(wallet.network().id())) return false;
+				if (!selectedNetworkIds?.includes(wallet.network().id())) return false;
 
 				if (walletsDisplayType === "favorites") {
 					return wallet.isStarred();
@@ -181,19 +185,19 @@ export const Wallets = ({
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
-						activeFilter={activeFilter}
-						filterProperties={filterProperties}
-						viewType={walletsViewType}
+						viewType={viewType}
+						isFilterChanged={isFilterChanged}
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
 						onImportLedgerWallet={() => setIsWaitingLedger(true)}
-						onSelectGridView={() => toggleViewType("grid")}
-						onSelectListView={() => toggleViewType("list")}
+						onSelectGridView={() => setValue({ viewType: "grid" })}
+						onSelectListView={() => setValue({ viewType: "list" })}
+						onFilterChange={setValue}
 					/>
 				</div>
 			</div>
 			<div className="mt-1">
-				{walletsViewType === "grid" && (
+				{viewType === "grid" && (
 					<div className="w-full">
 						<Slider data={loadGridWallets()} options={walletSliderOptions}>
 							{(walletData: any) => (
@@ -202,7 +206,7 @@ export const Wallets = ({
 						</Slider>
 					</div>
 				)}
-				{walletsViewType === "list" && (
+				{viewType === "list" && (
 					<div>
 						{wallets.length > 0 && (
 							<div data-testid="WalletTable">
