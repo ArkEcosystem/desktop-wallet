@@ -2414,9 +2414,9 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
 </DocumentFragment>
 `;
 
-exports[`Votes should navigate to create page 1`] = `<DocumentFragment />`;
+exports[`Votes should navigate to create create page 1`] = `<DocumentFragment />`;
 
-exports[`Votes should navigate to import page 1`] = `<DocumentFragment />`;
+exports[`Votes should navigate to import wallet page 1`] = `<DocumentFragment />`;
 
 exports[`Votes should render 1`] = `
 <DocumentFragment>
@@ -8901,7 +8901,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
                             data-testid="address__wallet-name"
                           >
-                            ARK Wallet 1
+                            Sample Wallet
                           </span>
                           <span
                             class="sc-fzoyAV lgNqAT text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
