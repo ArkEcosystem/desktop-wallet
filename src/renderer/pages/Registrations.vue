@@ -21,7 +21,7 @@
     </div>
 
     <div
-      class="mt-6 bg-theme-feature rounded-lg w-full p-10 flex flex-col overflow-y-auto"
+      class="mt-6 bg-theme-feature rounded-lg w-full h-full p-10 flex flex-col overflow-y-auto"
     >
       <div v-if="isLoading">
         <Loader />
@@ -143,8 +143,13 @@ export default {
 
   methods: {
     async searchRegistrations () {
-      this.isLoading = true
       const addresses = this.wallets.map(wallet => wallet.address)
+
+      if (!addresses.length) {
+        return
+      }
+
+      this.isLoading = true
 
       try {
         const result = await this.$client.fetchEntities(addresses)

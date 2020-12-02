@@ -218,7 +218,6 @@ export default {
       immediate: true,
       handler (value) {
         this.$set(this.form, 'entityName', value)
-        this.$v.form.entityName.$touch()
       }
     },
     form: {
