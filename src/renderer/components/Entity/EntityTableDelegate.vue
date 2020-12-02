@@ -40,7 +40,7 @@
       </div>
 
       <div v-if="data.column.field === 'votes'">
-        <span class="font-semibold">{{ formatCurrency(getDelegateProperty(data.row.address, 'forged.total')) }}</span>
+        <span class="font-semibold">{{ formatCurrency(getDelegateProperty(data.row.address, 'votes')) }}</span>
       </div>
     </template>
   </EntityTable>
