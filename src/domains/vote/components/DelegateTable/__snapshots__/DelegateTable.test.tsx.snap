@@ -6897,11 +6897,27 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
 exports[`DelegateTable should render with empty list 1`] = `
 <DocumentFragment>
   <div
-    class="border border-solid border-theme-neutral-300 dark:border-theme-neutral-800 p-6 rounded-lg text-theme-secondary-text -mt-5"
-    data-testid="EmptyBlock"
+    class="flex flex-col justify-center h-full text-center bg-theme-background mt-16"
+    data-testid="EmptyResults"
   >
     <div>
-      Delegates not found
+      <div
+        class="mb-4 text-lg font-bold"
+      >
+        No results
+      </div>
+      <div
+        class="mb-8 text-md"
+      >
+        No results found. Refine your search and try again
+      </div>
+      <div
+        class="mx-auto my-4 w-128"
+      >
+        <svg>
+          no-results.svg
+        </svg>
+      </div>
     </div>
   </div>
 </DocumentFragment>
