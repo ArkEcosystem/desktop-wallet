@@ -6,8 +6,7 @@ import { useActiveProfile } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { FilterWalletsProps } from "./";
-import { useWalletFilters } from "./";
+import { FilterWalletsProps,useWalletFilters } from "./";
 
 export const FilterWallets = ({ showToggleViews, onChange }: FilterWalletsProps) => {
 	const { t } = useTranslation();

@@ -2,7 +2,9 @@ import { ExtendedTransactionData, Profile, ProfileSetting } from "@arkecosystem/
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
+import { Section } from "app/components/Layout";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
+import { useDashboardConfig } from "domains/dashboard/pages";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
@@ -28,6 +30,9 @@ export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProp
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [isLoading, setIsLoading] = useState(true);
 	const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [profile]);
+
+	const { getConfiguration } = useDashboardConfig({ profile });
+	const { showTransactions } = getConfiguration();
 
 	const fetchTransactions = useCallback(
 		async ({ flush, mode }: { flush: boolean; mode: string }) => {
@@ -66,8 +71,10 @@ export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProp
 		// eslint-disable-next-line
 	}, [activeTransactionModeTab, selectedTransactionType]);
 
+	if (!showTransactions) return <></>;
+
 	return (
-		<>
+		<Section className="flex-1" data-testid="dashboard__transactions-view">
 			<div className="relative flex justify-between">
 				<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 				<FilterTransactions onSelect={(_, type) => setSelectedTransactionType(type)} className="mt-6" />
@@ -125,7 +132,7 @@ export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProp
 					onClose={() => setTransactionModalItem(undefined)}
 				/>
 			)}
-		</>
+		</Section>
 	);
 };
 

@@ -1,7 +1,9 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
+import { Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { BarItem, PercentageBar } from "app/components/PercentageBar";
+import { useEnvironmentContext } from "app/contexts";
 import { useDashboardConfig } from "domains/dashboard/pages";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React, { useMemo } from "react";
@@ -9,7 +11,8 @@ import { useTranslation } from "react-i18next";
 
 import { balances } from "../../data";
 
-export const PortfolioChart = ({ profile, env }: { profile: Profile; env: Environment }) => {
+export const PortfolioChart = ({ profile }: { profile: Profile }) => {
+	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 
 	const { getConfiguration } = useDashboardConfig({ profile });
@@ -29,24 +32,17 @@ export const PortfolioChart = ({ profile, env }: { profile: Profile; env: Enviro
 		},
 	];
 
-	const availableNetworks = useMemo(() => {
-		console.log("useMemo 1");
-		return env
+	const availableNetworks = useMemo(() => env
 			.availableNetworks()
 			.filter((network) => network.isLive())
 			.map((network) => {
 				const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 				return Object.assign(network, { extra: extended });
-			});
-	}, [env]);
+			}), [env]);
 
-	const balancePerCoin = useMemo(() => {
-		console.log(" useMemo 3");
-		return profile.walletAggregate().balancePerCoin();
-	}, [profile]);
+	const balancePerCoin = useMemo(() => profile.walletAggregate().balancePerCoin(), [profile]);
 
 	const portfolioPercentages = useMemo(() => {
-		console.log(" useMemo 4");
 		const data: BarItem[] = [];
 
 		for (const coin of Object.keys(balancePerCoin)) {
@@ -66,8 +62,15 @@ export const PortfolioChart = ({ profile, env }: { profile: Profile; env: Enviro
 
 	if (!showPortfolio || !balances.length) return <></>;
 
+	// TODO: adjust
+	// useEffect(() => {
+	// 	if (!showChartAnimation) return;
+	//
+	// 	setDashboardConfiguration({ showChartAnimation: false });
+	// }, [showChartAnimation]);
+
 	return (
-		<div>
+		<Section>
 			<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 			<LineChart
 				showAnimation={showChartAnimation}
@@ -87,7 +90,7 @@ export const PortfolioChart = ({ profile, env }: { profile: Profile; env: Enviro
 					/>
 				</>
 			)}
-		</div>
+		</Section>
 	);
 };
 

@@ -3,6 +3,7 @@ import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { DropdownOption } from "app/components/Dropdown";
+import { Section } from "app/components/Layout";
 import { Slider } from "app/components/Slider";
 import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
@@ -42,18 +43,15 @@ export const Wallets = ({
 	onImportLedgerWallet,
 	onWalletAction,
 }: WalletsProps) => {
-	console.log("Wallets");
-
 	const [allWallets, setAllWallets] = useState<any>(undefined);
 	const [isWaitingLedger, setIsWaitingLedger] = useState(false);
-
 	const history = useHistory();
 
 	const { t } = useTranslation();
 
 	const activeProfile = useActiveProfile();
 	const { setValue } = useDashboardConfig({ profile: activeProfile });
-	const { viewType, walletsDisplayType, selectedNetworkIds, isFilterChanged } = useWalletFilters({
+	const { viewType, walletsDisplayType, selectedNetworkIds, isFilterChanged, showTransactions } = useWalletFilters({
 		profile: activeProfile,
 	});
 
@@ -180,7 +178,7 @@ export const Wallets = ({
 	};
 
 	return (
-		<div>
+		<Section className={!showTransactions ? "flex-1" : undefined}>
 			<div className="flex items-center justify-between mb-8">
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
@@ -232,7 +230,7 @@ export const Wallets = ({
 			</div>
 
 			{isWaitingLedger && <LedgerWaitingDevice isOpen={true} onClose={onLedgerModalClose} />}
-		</div>
+		</Section>
 	);
 };
 
