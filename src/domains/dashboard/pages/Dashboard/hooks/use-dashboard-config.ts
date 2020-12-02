@@ -4,7 +4,7 @@ import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
 import { useCallback, useState } from "react";
 
 export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
-	const [configuration, setConfiguration] = useState<DashboardConfiguration>({
+	const defaultConfiguration: DashboardConfiguration = {
 		showChartAnimation: true,
 		showPortfolio: true,
 		showTransactions: true,
@@ -16,7 +16,9 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 				.values()
 				.map((wallet) => wallet.network().id()),
 		),
-	});
+	};
+
+	const [configuration, setConfiguration] = useState(defaultConfiguration);
 
 	const getConfiguration = useCallback(
 		() => profile.settings().get(ProfileSetting.DashboardConfiguration, configuration) as DashboardConfiguration,
@@ -41,5 +43,6 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 		setValue,
 		getValue,
 		getConfiguration,
+		defaultConfiguration,
 	};
 };
