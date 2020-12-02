@@ -3,8 +3,7 @@
 exports[`Button should render 1`] = `
 <div>
   <button
-    class="sc-AxjAm colAFb"
-    color="primary"
+    class="sc-AxjAm bhctej"
     type="button"
   />
 </div>
@@ -13,8 +12,7 @@ exports[`Button should render 1`] = `
 exports[`Button should render a large one 1`] = `
 <div>
   <button
-    class="sc-AxjAm fleWmf"
-    color="primary"
+    class="sc-AxjAm dyyAEz"
     type="button"
   />
 </div>
@@ -23,8 +21,7 @@ exports[`Button should render a large one 1`] = `
 exports[`Button should render a small one 1`] = `
 <div>
   <button
-    class="sc-AxjAm lfNRqO"
-    color="primary"
+    class="sc-AxjAm dxxaeS"
     type="button"
   />
 </div>
@@ -33,48 +30,43 @@ exports[`Button should render a small one 1`] = `
 exports[`Button should render an icon 1`] = `
 <div>
   <button
-    class="sc-AxjAm hafMuf"
-    color="primary"
+    class="sc-AxjAm dzmEoz"
     type="button"
   />
 </div>
 `;
 
-exports[`Button should render as outline 1`] = `
+exports[`Button should render as danger button 1`] = `
 <div>
   <button
-    class="sc-AxjAm ijlsne"
-    color="primary"
+    class="sc-AxjAm kvbrEG"
     type="button"
   />
 </div>
 `;
 
-exports[`Button should render as plain 1`] = `
+exports[`Button should render as primary button 1`] = `
 <div>
   <button
-    class="sc-AxjAm fCKjFI"
-    color="primary"
+    class="sc-AxjAm bhctej"
     type="button"
   />
 </div>
 `;
 
-exports[`Button should render as transparent 1`] = `
+exports[`Button should render as secondary button 1`] = `
 <div>
   <button
-    class="sc-AxjAm kcdgyM"
-    color="primary"
+    class="sc-AxjAm dBbvQh"
     type="button"
   />
 </div>
 `;
 
-exports[`Button should render contrast text if not primary 1`] = `
+exports[`Button should render as transparent button 1`] = `
 <div>
   <button
-    class="sc-AxjAm bMrDTL"
-    color="danger"
+    class="sc-AxjAm jSfCbW"
     type="button"
   />
 </div>
@@ -83,22 +75,11 @@ exports[`Button should render contrast text if not primary 1`] = `
 exports[`Button should render if disabled 1`] = `
 <DocumentFragment>
   <button
-    class="sc-AxjAm colAFb"
-    color="primary"
+    class="sc-AxjAm iWHhrC"
     disabled=""
     type="button"
   >
     Click
   </button>
 </DocumentFragment>
-`;
-
-exports[`Button should render white text if primary 1`] = `
-<div>
-  <button
-    class="sc-AxjAm colAFb"
-    color="primary"
-    type="button"
-  />
-</div>
 `;
