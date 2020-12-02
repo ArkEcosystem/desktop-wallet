@@ -140,15 +140,14 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 					ref={register()}
 					name="isMultiPeerBroadcast"
 					checked={isMultiPeerBroadcast}
-					onChange={(event) => {
-						if (
+					onChange={(event) => setIsMultiPeerBroadcast(event.target.checked)}
+					data-testid="General-peers__toggle--isMultiPeerBroadcast"
+					disabled={
+						!(
 							isCustomPeer &&
 							Object.keys(peerGroupByNetwork).some((network) => peerGroupByNetwork[network].length > 1)
-						) {
-							setIsMultiPeerBroadcast(event.target.checked);
-						}
-					}}
-					data-testid="General-peers__toggle--isMultiPeerBroadcast"
+						)
+					}
 				/>
 			),
 			wrapperClass: "pb-6",
