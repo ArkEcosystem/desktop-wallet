@@ -22,7 +22,7 @@
           }"
           name="status-active"
           view-box="0 0 20 20"
-          class="text-green-dark"
+          class="text-green-dark focus:outline-none"
         />
         <SvgIcon
           v-else
@@ -31,7 +31,7 @@
           }"
           name="status-standby"
           view-box="0 0 20 20"
-          class="text-theme-page-text-light"
+          class="text-theme-page-text-light focus:outline-none"
         />
       </div>
 

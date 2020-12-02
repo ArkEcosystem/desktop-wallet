@@ -1,6 +1,6 @@
 <template>
   <ModalWindow
-    :title="title === null ? typeName : title"
+    :title="titleLabel"
     :container-classes="`TransactionModal ${typeClass}`"
     :confirm-close="true"
     @close="emitCancel"
@@ -89,6 +89,12 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+
+    confirmationTitle: {
+      type: String,
+      required: false,
+      default: undefined
     }
   },
 
@@ -100,6 +106,18 @@ export default {
   }),
 
   computed: {
+    titleLabel () {
+      if (this.transaction && this.confirmationTitle) {
+        return this.confirmationTitle
+      }
+
+      if (this.title !== null) {
+        return this.title
+      }
+
+      return this.typeName
+    },
+
     transactionKey () {
       if (this.type === TRANSACTION_TYPES.MULTI_SIGN) {
         return 'MULTI_SIGN'

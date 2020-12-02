@@ -5,9 +5,6 @@
   >
     <header class="mb-5">
       <h2>{{ title }}</h2>
-      <p class="mt-1 text-theme-page-text-light">
-        {{ $t(`ENTITY.RESIGNATION_DESCRIPTION`, { entity: entityTypeLabel.toLowerCase() }) }}
-      </p>
     </header>
 
     <div class="my-5 px-8 py-6 leading-normal rounded bg-yellow-lighter font-medium">

@@ -1,10 +1,10 @@
 <template>
   <section class="Registrations flex flex-col">
-    <div class="bg-theme-feature rounded-lg w-full px-10 py-6 flex items-center justify-between">
+    <div class="bg-theme-feature rounded-lg w-full px-10 py-5 mb-3 flex items-center justify-between">
       <h2>{{ $t('ENTITY.MY_REGISTRATIONS') }}</h2>
       <ButtonModal
         :label="$t('ENTITY.NEW_REGISTRATION')"
-        class="m-0 ButtonGeneric blue-button"
+        class="Registrations__new-button m-0 ButtonGeneric blue-button"
       >
         <template slot-scope="{ toggle, isOpen }">
           <TransactionModal
@@ -12,6 +12,7 @@
             :type="6"
             :group="2"
             :entity-action="0"
+            :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
             title=""
             @cancel="toggle"
             @sent="onSentRegistration(toggle)"
@@ -21,7 +22,7 @@
     </div>
 
     <div
-      class="mt-6 bg-theme-feature rounded-lg w-full h-full p-10 flex flex-col overflow-y-auto"
+      class="bg-theme-feature rounded-lg w-full h-full p-10 flex flex-col overflow-y-auto"
     >
       <div v-if="isLoading">
         <Loader />
@@ -65,6 +66,7 @@
       :group="2"
       :entity-action="2"
       :entity-transaction="selectedEntity.transaction"
+      :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
       title=""
       @cancel="closeModal"
       @sent="onSent"
@@ -77,6 +79,7 @@
       :entity-action="1"
       :entity-transaction="selectedEntity.transaction"
       :ipfs-data-object="selectedEntity.ipfsDataObject"
+      :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
       title=""
       @cancel="closeModal"
       @sent="onSent"
@@ -200,6 +203,10 @@ export default {
 <style lang="postcss">
 .Registrations__item:first-child {
   @apply mt-0;
+}
+.Registrations__new-button {
+  padding-top: .95rem;
+  padding-bottom: .95rem;
 }
 .TransactionModalEntity.TransactionModal--form  .ModalWindow__container__content {
   overflow-y: unset;

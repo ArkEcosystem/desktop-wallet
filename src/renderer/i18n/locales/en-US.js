@@ -1458,14 +1458,15 @@ export default {
     REGISTRATION_STEP1_DESCRIPTION: 'Select the address and the registration type.',
     REGISTRATION_STEP2_DESCRIPTION: 'Enter registration details below.',
 
-    RESIGNATION_DESCRIPTION: 'Resign your {entity} forever.',
     RESIGNATION_WARNING: 'WARNING: Keep in mind that you cannot restore your {entity} after the resignation has been registered on the blockchain.',
     RESIGNED: 'Resigned',
+
+    TRANSACTION_REVIEW: 'Transaction Review',
 
     NAME: 'Name',
     TYPE: 'Type',
     DISPLAY_NAME: 'Display Name',
-    DESCRIPTION: 'Descrition',
+    DESCRIPTION: 'Description',
     WEBSITE: 'Website',
     PROVIDER: 'Provider',
     HISTORY: 'History',

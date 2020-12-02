@@ -18,13 +18,13 @@
           :is-invalid="$v.form.value.$dirty && $v.form.value.$invalid"
           name="link"
           :label="$t('ENTITY.LINK')"
-          class="flex-1"
+          class="EntityLinkEditableList__input flex-1"
         />
       </div>
       <ButtonGeneric
         :disabled="$v.form.$invalid"
         :label="$t('ENTITY.ADD_LINK')"
-        class="py-2 w-full"
+        class="EntityLinkEditableList__add-link py-2 w-full"
         @click="addLink"
       />
     </form>
@@ -152,7 +152,7 @@ export default {
   },
 
   mounted () {
-    if (this.links) {
+    if (this.links.length) {
       const result = this.links.map(({ type, value }) => {
         if (type === 'logo') {
           this.avatar = value
