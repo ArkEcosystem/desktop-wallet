@@ -193,7 +193,7 @@ export default class ClientService {
    *
    * @return {Number}
    */
-  async fetchDelegateVoters (delegate, { page, limit } = {}) {
+  async fetchDelegateVoters (delegate, { page = 1, limit = 1 } = {}) {
     const { body } = await this.client
       .api('delegates')
       .voters(delegate.username, { page, limit })
