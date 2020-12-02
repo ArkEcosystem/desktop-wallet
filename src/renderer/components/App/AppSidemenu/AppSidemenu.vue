@@ -210,7 +210,7 @@ export default {
       return null
     },
     showRegistrations () {
-      return this.$client && this.$client.satisfiesCoreVersion('>=3')
+      return this.$client.satisfiesCoreVersion('>=3')
     }
   },
 

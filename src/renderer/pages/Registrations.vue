@@ -155,7 +155,7 @@ export default {
       this.isLoading = true
 
       try {
-        const result = await this.$client.fetchEntities(addresses)
+        const result = await this.$client.fetchEntities({ address: addresses })
         this.registrations = result
       } catch (error) {
         this.registrations = []

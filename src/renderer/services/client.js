@@ -227,16 +227,15 @@ export default class ClientService {
    * @param {Number} [query.limit=100]
    * @return {Array}
    */
-  async fetchTransactions ({ page, limit } = {}) {
-    page || (page = 1)
-    limit || (limit = 100)
+  async fetchTransactions (options = {}) {
+    options.page || (options.page = 1)
+    options.limit || (options.limit = 100)
 
     let totalCount = 0
     let transactions = []
 
     const { body } = await this.client.api('transactions').all({
-      limit,
-      page
+      ...options
     })
 
     transactions = body.data.map(transaction => {
@@ -552,11 +551,9 @@ export default class ClientService {
     return undefined
   }
 
-  async fetchEntities (addresses) {
+  async fetchEntities (searchParams = {}) {
     const { body } = await this.client.get('entities', {
-      searchParams: {
-        address: addresses.join(',')
-      }
+      searchParams
     })
 
     return body.data

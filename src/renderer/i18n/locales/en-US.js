@@ -1462,6 +1462,8 @@ export default {
     RESIGNED: 'Resigned',
 
     TRANSACTION_REVIEW: 'Transaction Review',
+    NAME_AVAILABLE: 'Name Available',
+    NAME_DUPLICATE_VALIDATION: 'Name already registered',
 
     NAME: 'Name',
     TYPE: 'Type',

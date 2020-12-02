@@ -34,6 +34,9 @@ const mockData = {
     settings: {
       showSettings: jest.fn()
     }
+  },
+  $client: {
+    satisfiesCoreVersion: () => true
   }
 }
 
