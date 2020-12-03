@@ -7,7 +7,7 @@ import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
-import React, { memo,useCallback, useEffect, useMemo, useState } from "react";
+import React, { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {

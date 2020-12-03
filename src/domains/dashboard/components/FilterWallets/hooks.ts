@@ -53,7 +53,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 		[walletsDisplayType, selectedNetworkIds, showPortfolio, showTransactions, defaultWalletFilters],
 	);
 
-	const props = useMemo<FilterWalletsHookProps & { update: any }>(
+	return useMemo<FilterWalletsHookProps & { update: any }>(
 		() => ({
 			networks,
 			useTestNetworks: profile.settings().get(ProfileSetting.UseTestNetworks),
@@ -76,5 +76,4 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			profile,
 		],
 	);
-	return props;
 };

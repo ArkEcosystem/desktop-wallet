@@ -1,7 +1,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
-import {  PercentageBar } from "app/components/PercentageBar";
+import { PercentageBar } from "app/components/PercentageBar";
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
