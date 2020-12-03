@@ -4,24 +4,23 @@ import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Section } from "app/components/Layout";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
-import { useDashboardConfig } from "domains/dashboard/pages";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { memo,useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
-	transactions: ExtendedTransactionData[];
 	fetchMoreAction?: Function;
 	onRowClick?: (row: ExtendedTransactionData) => void;
 	emptyText?: string;
 	hideHeader?: boolean;
 	isCompact?: boolean;
 	profile: Profile;
+	isVisible?: boolean;
 };
 
-export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProps) => {
+export const Transactions = memo(({ emptyText, isCompact, profile, isVisible }: TransactionsProps) => {
 	const { t } = useTranslation();
 
 	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
@@ -30,9 +29,6 @@ export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProp
 	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 	const [isLoading, setIsLoading] = useState(true);
 	const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [profile]);
-
-	const { getConfiguration } = useDashboardConfig({ profile });
-	const { showTransactions } = getConfiguration();
 
 	const fetchTransactions = useCallback(
 		async ({ flush, mode }: { flush: boolean; mode: string }) => {
@@ -71,7 +67,7 @@ export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProp
 		// eslint-disable-next-line
 	}, [activeTransactionModeTab, selectedTransactionType]);
 
-	if (!showTransactions) return <></>;
+	if (!isVisible) return <></>;
 
 	return (
 		<Section className="flex-1" data-testid="dashboard__transactions-view">
@@ -114,7 +110,9 @@ export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProp
 			)}
 
 			{!isLoading && transactions.length === 0 && !selectedTransactionType && (
-				<EmptyBlock className="-mt-5">{emptyText}</EmptyBlock>
+				<EmptyBlock className="-mt-5">
+					{emptyText || t("DASHBOARD.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
+				</EmptyBlock>
 			)}
 
 			{!isLoading && transactions.length === 0 && !!selectedTransactionType && (
@@ -134,10 +132,6 @@ export const Transactions = ({ emptyText, isCompact, profile }: TransactionsProp
 			)}
 		</Section>
 	);
-};
+});
 
-Transactions.defaultProps = {
-	emptyText:
-		"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
-	transactions: [],
-};
+Transactions.displayName = "Transactions";
