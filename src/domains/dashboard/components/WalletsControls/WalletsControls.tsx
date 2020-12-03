@@ -33,14 +33,14 @@ export const WalletsControls = ({
 		if (walletsViewType === "grid") return;
 
 		setWalletsViewType("grid");
-		if (typeof onSelectGridView === "function") onSelectGridView();
+		onSelectGridView?.();
 	};
 
 	const onClickListview = () => {
 		if (walletsViewType === "list") return;
 
 		setWalletsViewType("list");
-		if (typeof onSelectListView === "function") onSelectListView();
+		onSelectListView?.();
 	};
 
 	return (
