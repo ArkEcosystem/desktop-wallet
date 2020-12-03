@@ -1,7 +1,7 @@
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
-import React, { memo,useState } from "react";
+import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type FilterTransactionsProps = {
