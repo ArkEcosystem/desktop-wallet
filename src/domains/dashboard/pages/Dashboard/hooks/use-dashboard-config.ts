@@ -24,7 +24,7 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 			profile
 				.settings()
 				.get(ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration,
-		[profile],
+		[profile, defaultConfiguration],
 	);
 
 	const {

@@ -74,6 +74,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			isFilterChanged,
 			networks,
 			profile,
+			setValue,
 		],
 	);
 };
