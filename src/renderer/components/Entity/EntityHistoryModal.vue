@@ -7,8 +7,8 @@
     <TableWrapper
       :rows="transactions"
       :columns="columns"
-      :is-remote="true"
       :is-loading="isLoading"
+      :is-remote="true"
       :has-pagination="totalCount > transactions.length"
       :current-page="page"
       :per-page="limit"
