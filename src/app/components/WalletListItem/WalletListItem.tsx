@@ -52,6 +52,7 @@ export const WalletListItem = ({
 		if (typeof onAction === "function") onAction(action);
 	};
 
+	/* istanbul ignore next */
 	const getIconName = (type: string) => {
 		switch (type) {
 			case "Starred":
@@ -100,6 +101,7 @@ export const WalletListItem = ({
 					{[
 						wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
 						wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
+						/* istanbul ignore next */
 						wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
 							<WalletIcon key="MultiSignature" type="MultiSignature" />
 						),

@@ -19,8 +19,7 @@ import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
-import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
-import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -75,8 +74,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 			return [];
 		}
 	};
-
-	const wallets = useMemo(() => activeProfile.wallets().values(), [activeProfile]);
 
 	const [showWalletVote, setShowWalletVote] = useState(false);
 	const [showWalletRegistrations, setShowWalletRegistrations] = useState(false);
@@ -325,8 +322,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					</div>
 				</Section>
 			</Page>
-
-			{wallets && wallets.length > 1 && <WalletBottomSheetMenu wallets={wallets} />}
 
 			<ReceiveFunds
 				isOpen={isReceiveFunds}

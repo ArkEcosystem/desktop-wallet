@@ -88,15 +88,15 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -120,15 +120,15 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -143,7 +143,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -295,19 +295,21 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
                       class="flex items-center space-x-3"
                     >
-                      <span>
+                      <span
+                        class="text-theme-primary-300 dark:text-theme-neutral-700"
+                      >
                         Search
                       </span>
                       <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
+                        class="sc-AxirZ iOZZCn text-theme-primary-300 dark:text-theme-neutral-600"
+                        height="18"
+                        width="18"
                       >
                         <svg>
                           search.svg
@@ -1857,15 +1859,15 @@ exports[`MyRegistrations should render business registrations 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -1889,15 +1891,15 @@ exports[`MyRegistrations should render business registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -1912,7 +1914,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -2076,19 +2078,21 @@ exports[`MyRegistrations should render business registrations 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
                       class="flex items-center space-x-3"
                     >
-                      <span>
+                      <span
+                        class="text-theme-primary-300 dark:text-theme-neutral-700"
+                      >
                         Search
                       </span>
                       <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
+                        class="sc-AxirZ iOZZCn text-theme-primary-300 dark:text-theme-neutral-600"
+                        height="18"
+                        width="18"
                       >
                         <svg>
                           search.svg
@@ -3630,15 +3634,15 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -3662,15 +3666,15 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -3685,7 +3689,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -3849,19 +3853,21 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
                       class="flex items-center space-x-3"
                     >
-                      <span>
+                      <span
+                        class="text-theme-primary-300 dark:text-theme-neutral-700"
+                      >
                         Search
                       </span>
                       <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
+                        class="sc-AxirZ iOZZCn text-theme-primary-300 dark:text-theme-neutral-600"
+                        height="18"
+                        width="18"
                       >
                         <svg>
                           search.svg
@@ -5403,15 +5409,15 @@ exports[`MyRegistrations should render empty state 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -5428,16 +5434,16 @@ exports[`MyRegistrations should render empty state 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 disabled=""
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -5452,7 +5458,7 @@ exports[`MyRegistrations should render empty state 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -5616,19 +5622,21 @@ exports[`MyRegistrations should render empty state 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
                       class="flex items-center space-x-3"
                     >
-                      <span>
+                      <span
+                        class="text-theme-primary-300 dark:text-theme-neutral-700"
+                      >
                         Search
                       </span>
                       <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
+                        class="sc-AxirZ iOZZCn text-theme-primary-300 dark:text-theme-neutral-600"
+                        height="18"
+                        width="18"
                       >
                         <svg>
                           search.svg
@@ -5770,15 +5778,15 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -5802,15 +5810,15 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -5825,7 +5833,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -5989,19 +5997,21 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
                       class="flex items-center space-x-3"
                     >
-                      <span>
+                      <span
+                        class="text-theme-primary-300 dark:text-theme-neutral-700"
+                      >
                         Search
                       </span>
                       <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
+                        class="sc-AxirZ iOZZCn text-theme-primary-300 dark:text-theme-neutral-600"
+                        height="18"
+                        width="18"
                       >
                         <svg>
                           search.svg
@@ -6399,15 +6409,15 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -6431,15 +6441,15 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -6454,7 +6464,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -6618,19 +6628,21 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
                       class="flex items-center space-x-3"
                     >
-                      <span>
+                      <span
+                        class="text-theme-primary-300 dark:text-theme-neutral-700"
+                      >
                         Search
                       </span>
                       <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
+                        class="sc-AxirZ iOZZCn text-theme-primary-300 dark:text-theme-neutral-600"
+                        height="18"
+                        width="18"
                       >
                         <svg>
                           search.svg
@@ -8172,15 +8184,15 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -8204,15 +8216,15 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -8227,7 +8239,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -8391,19 +8403,21 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
                       class="flex items-center space-x-3"
                     >
-                      <span>
+                      <span
+                        class="text-theme-primary-300 dark:text-theme-neutral-700"
+                      >
                         Search
                       </span>
                       <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
+                        class="sc-AxirZ iOZZCn text-theme-primary-300 dark:text-theme-neutral-600"
+                        height="18"
+                        width="18"
                       >
                         <svg>
                           search.svg
@@ -9516,15 +9530,15 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -9548,15 +9562,15 @@ exports[`MyRegistrations should reset search results when clicking search reset 
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -9571,7 +9585,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -9735,15 +9749,16 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
+                    class="sc-fzoLsD bpbbkb absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
                     data-testid="header-search-bar__input"
                   >
                     <button
+                      class="focus:outline-none"
                       data-testid="header-search-bar__reset"
                       type="button"
                     >
                       <div
-                        class="sc-AxirZ hDwaov text-theme-neutral"
+                        class="sc-AxirZ hDwaov p-1 -ml-1 text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary"
                         height="12"
                         width="12"
                       >
@@ -9753,19 +9768,19 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                       </div>
                     </button>
                     <div
-                      class="flex-1 mx-4"
+                      class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value=""
                       />
                     </div>
                     <div
-                      class="sc-AxirZ eEbZjj text-theme-neutral"
-                      height="20"
-                      width="20"
+                      class="sc-AxirZ iOZZCn text-color-primary-300 dark:text-theme-neutral-600 "
+                      height="18"
+                      width="18"
                     >
                       <svg>
                         search.svg
@@ -11306,15 +11321,15 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -11338,15 +11353,15 @@ exports[`MyRegistrations should search and find business entity 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -11361,7 +11376,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -11525,15 +11540,16 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
+                    class="sc-fzoLsD bpbbkb absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
                     data-testid="header-search-bar__input"
                   >
                     <button
+                      class="focus:outline-none"
                       data-testid="header-search-bar__reset"
                       type="button"
                     >
                       <div
-                        class="sc-AxirZ hDwaov text-theme-neutral"
+                        class="sc-AxirZ hDwaov p-1 -ml-1 text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary"
                         height="12"
                         width="12"
                       >
@@ -11543,19 +11559,19 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                       </div>
                     </button>
                     <div
-                      class="flex-1 mx-4"
+                      class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="ark wallet 2"
                       />
                     </div>
                     <div
-                      class="sc-AxirZ eEbZjj text-theme-neutral"
-                      height="20"
-                      width="20"
+                      class="sc-AxirZ iOZZCn text-color-primary-300 dark:text-theme-neutral-600 "
+                      height="18"
+                      width="18"
                     >
                       <svg>
                         search.svg
@@ -12374,15 +12390,15 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -12406,15 +12422,15 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -12429,7 +12445,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -12593,15 +12609,16 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
+                    class="sc-fzoLsD bpbbkb absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
                     data-testid="header-search-bar__input"
                   >
                     <button
+                      class="focus:outline-none"
                       data-testid="header-search-bar__reset"
                       type="button"
                     >
                       <div
-                        class="sc-AxirZ hDwaov text-theme-neutral"
+                        class="sc-AxirZ hDwaov p-1 -ml-1 text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary"
                         height="12"
                         width="12"
                       >
@@ -12611,19 +12628,19 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                       </div>
                     </button>
                     <div
-                      class="flex-1 mx-4"
+                      class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="testwallet"
                       />
                     </div>
                     <div
-                      class="sc-AxirZ eEbZjj text-theme-neutral"
-                      height="20"
-                      width="20"
+                      class="sc-AxirZ iOZZCn text-color-primary-300 dark:text-theme-neutral-600 "
+                      height="18"
+                      width="18"
                     >
                       <svg>
                         search.svg
@@ -14164,15 +14181,15 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -14196,15 +14213,15 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -14219,7 +14236,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -14383,15 +14400,16 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
+                    class="sc-fzoLsD bpbbkb absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
                     data-testid="header-search-bar__input"
                   >
                     <button
+                      class="focus:outline-none"
                       data-testid="header-search-bar__reset"
                       type="button"
                     >
                       <div
-                        class="sc-AxirZ hDwaov text-theme-neutral"
+                        class="sc-AxirZ hDwaov p-1 -ml-1 text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary"
                         height="12"
                         width="12"
                       >
@@ -14401,19 +14419,19 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                       </div>
                     </button>
                     <div
-                      class="flex-1 mx-4"
+                      class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="ark wallet 2"
                       />
                     </div>
                     <div
-                      class="sc-AxirZ eEbZjj text-theme-neutral"
-                      height="20"
-                      width="20"
+                      class="sc-AxirZ iOZZCn text-color-primary-300 dark:text-theme-neutral-600 "
+                      height="18"
+                      width="18"
                     >
                       <svg>
                         search.svg
@@ -15232,15 +15250,15 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm cGlMcw w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     color="primary"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ hmuEJr p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxirZ gNHFnS p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
@@ -15264,15 +15282,15 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
                 <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                  class="sc-AxirZ iOZZCn p-1"
+                  height="18"
+                  width="18"
                 >
                   <svg>
                     sent.svg
@@ -15287,7 +15305,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
               class="flex items-center overflow-hidden rounded-lg"
             >
               <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--receive"
                 type="button"
@@ -15451,15 +15469,16 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                   class="relative"
                 >
                   <div
-                    class="sc-fzoLsD gNnXoT absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
+                    class="sc-fzoLsD bpbbkb absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 top-1/2 transform -translate-y-1/2"
                     data-testid="header-search-bar__input"
                   >
                     <button
+                      class="focus:outline-none"
                       data-testid="header-search-bar__reset"
                       type="button"
                     >
                       <div
-                        class="sc-AxirZ hDwaov text-theme-neutral"
+                        class="sc-AxirZ hDwaov p-1 -ml-1 text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary"
                         height="12"
                         width="12"
                       >
@@ -15469,19 +15488,19 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                       </div>
                     </button>
                     <div
-                      class="flex-1 mx-4"
+                      class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pt-2 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="1234567890"
                       />
                     </div>
                     <div
-                      class="sc-AxirZ eEbZjj text-theme-neutral"
-                      height="20"
-                      width="20"
+                      class="sc-AxirZ iOZZCn text-color-primary-300 dark:text-theme-neutral-600 "
+                      height="18"
+                      width="18"
                     >
                       <svg>
                         search.svg
