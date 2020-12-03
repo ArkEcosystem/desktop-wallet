@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render, waitFor, within } from "testing-library";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { ReceiveFunds } from "./ReceiveFunds";
 
@@ -63,9 +63,7 @@ describe("ReceiveFunds", () => {
 
 		await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
 		await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
-		await waitFor(() =>
-			expect(within(getByTestId("ReceiveFundsForm__uri")).getByTestId("Input")).toHaveValue("ark:abc"),
-		);
+		await waitFor(() => expect(getByTestId("ReceiveFundsForm__uri")).toHaveTextContent("ark:abc"));
 	});
 
 	it("should show alert if smartbridge value is too long", async () => {

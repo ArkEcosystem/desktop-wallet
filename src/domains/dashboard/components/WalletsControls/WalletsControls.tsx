@@ -61,7 +61,7 @@ export const WalletsControls = ({
 					toggleContent={
 						<div className="group">
 							<ControlButton isActive={activeFilter}>
-								<Icon name="Filters" width={20} height={20} />
+								<Icon name="Filters" width={17} height={19} />
 							</ControlButton>
 						</div>
 					}
@@ -75,14 +75,14 @@ export const WalletsControls = ({
 			<div className="flex space-x-3">
 				<Button onClick={onCreateWallet} variant="secondary">
 					<div className="flex items-center space-x-2">
-						<Icon name="Plus" width={12} height={12} />
+						<Icon name="Plus" width={14} height={14} />
 						<span>{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
 					</div>
 				</Button>
 
 				<Button onClick={onImportWallet} variant="secondary">
 					<div className="flex items-center space-x-2">
-						<Icon name="Import" width={15} height={15} />
+						<Icon name="Import" width={16} height={16} />
 						<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
 					</div>
 				</Button>

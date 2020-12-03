@@ -11,8 +11,7 @@ type QRCodeProps = {
 };
 
 export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps) => {
-	const [qrCodeDataUri, setQrCodeDataUri] = useState<string | undefined>();
-	const [qrCodeDataImage, setQrCodeDataImage] = useState<string | undefined>();
+	const [qrCodeData, setQrCodeData] = useState<{ uri?: string; image?: string } | undefined>();
 
 	const isDark = useDarkMode();
 
@@ -53,12 +52,14 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 				qrCodeDataImage = undefined;
 			}
 
-			setQrCodeDataUri(qrCodeDataUri);
-			setQrCodeDataImage(qrCodeDataImage);
+			setQrCodeData({
+				uri: qrCodeDataUri,
+				image: qrCodeDataImage,
+			});
 		};
 
 		generateQrCode();
 	}, [amount, color, smartbridge, network, address, formatQR]);
 
-	return { qrCodeDataUri, qrCodeDataImage };
+	return { qrCodeData };
 };

@@ -4,6 +4,7 @@ import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
 import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
@@ -32,6 +33,7 @@ export const Votes = () => {
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
+	const [searchQuery, setSearchQuery] = useState("");
 	const [walletsDisplayType, setWalletsDisplayType] = useState("all");
 	const [selectedNetworkIds, setSelectedNetworkIds] = useState(
 		uniq(
@@ -111,7 +113,7 @@ export const Votes = () => {
 		[votes, delegates],
 	);
 
-	const filteredDelegates = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
+	const filteredDelegatesVotes = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
 		delegates,
 		currentVotes,
 		selectedFilter,
@@ -172,6 +174,7 @@ export const Votes = () => {
 	const handleSelectAddress = (address: string) => {
 		const wallet = activeProfile.wallets().findByAddress(address);
 
+		setSearchQuery("");
 		setSelectedAddress(address);
 		setMaxVotes(wallet?.network().maximumVotesPerWallet());
 
@@ -201,6 +204,37 @@ export const Votes = () => {
 		if (votes.length === 0) setSelectedFilter("all");
 	}, [votes]);
 
+	const filteredWalletsByCoin = useMemo(() => {
+		if (!searchQuery.length) return walletsByCoin;
+
+		return Object.keys(walletsByCoin).reduce(
+			(coins, coin) => ({
+				...coins,
+				[coin]: Object.values(walletsByCoin[coin]).filter(
+					(wallet: ReadWriteWallet) =>
+						wallet.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
+						wallet.alias()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
+				),
+			}),
+			{} as Record<string, ReadWriteWallet[]>,
+		);
+	}, [searchQuery, walletsByCoin]);
+
+	const filteredDelegates = useMemo(() => {
+		if (!searchQuery.length) return filteredDelegatesVotes;
+
+		/* istanbul ignore next */
+		return filteredDelegatesVotes.filter(
+			(delegate) =>
+				delegate.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
+				delegate.username()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
+		);
+	}, [filteredDelegatesVotes, searchQuery]);
+
+	const isEmptyWalletsByCoin =
+		searchQuery.length > 0 &&
+		Object.keys(filteredWalletsByCoin).every((coin: string) => !filteredWalletsByCoin[coin].length);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -209,7 +243,12 @@ export const Votes = () => {
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 					extra={
 						<div className="flex items-center space-x-8 text-theme-primary-light">
-							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
+							<HeaderSearchBar
+								placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
+								onSearch={setSearchQuery}
+								onReset={() => setSearchQuery("")}
+								debounceTimeout={100}
+							/>
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
@@ -277,13 +316,26 @@ export const Votes = () => {
 					</EmptyBlock>
 				</Section>
 			) : !selectedAddress ? (
-				Object.keys(walletsByCoin).map(
-					(coin, index) =>
-						walletsByCoin[coin].length > 0 && (
-							<Section className="flex-1" key={index}>
-								<AddressTable wallets={walletsByCoin[coin]} onSelect={handleSelectAddress} />
-							</Section>
-						),
+				isEmptyWalletsByCoin ? (
+					<Section className="flex-1">
+						<EmptyResults
+							className="mt-16"
+							title={t("COMMON.EMPTY_RESULTS.TITLE")}
+							subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+						/>
+					</Section>
+				) : (
+					Object.keys(filteredWalletsByCoin).map(
+						(coin, index) =>
+							filteredWalletsByCoin[coin].length > 0 && (
+								<Section className="flex-1" key={index}>
+									<AddressTable
+										wallets={filteredWalletsByCoin[coin]}
+										onSelect={handleSelectAddress}
+									/>
+								</Section>
+							),
+					)
 				)
 			) : (
 				<Section className="flex-1">

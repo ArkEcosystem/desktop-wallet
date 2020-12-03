@@ -249,6 +249,8 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
+		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -410,21 +412,13 @@ describe("WalletDetails", () => {
 		await waitFor(() => expect(profile.wallets().count()).toEqual(3));
 	});
 
-	it("should not render the bottom sheet menu when there is only one wallet", async () => {
-		walletUrl = `/profiles/${emptyProfile.id()}/wallets/${wallet2.id()}`;
-		history.push(walletUrl);
-
-		const { asFragment, getByTestId, queryAllByTestId } = await renderPage();
-
-		expect(queryAllByTestId("WalletBottomSheetMenu")).toHaveLength(0);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should not fail if the votes have not yet been synchronized", async () => {
 		const newWallet = await profile.wallets().importByMnemonic("test mnemonic", "ARK", "ark.devnet");
 		nock("https://dwallets.ark.io").get(`/api/wallets/${newWallet.address()}`).reply(200, walletMock);
 
 		await newWallet.syncIdentity();
+
+		const syncVotesSpy = jest.spyOn(newWallet, "syncVotes").mockReturnValue();
 
 		walletUrl = `/profiles/${profile.id()}/wallets/${newWallet.id()}`;
 		history.push(walletUrl);
@@ -432,5 +426,7 @@ describe("WalletDetails", () => {
 		const { asFragment } = await renderPage();
 
 		expect(asFragment()).toMatchSnapshot();
+
+		syncVotesSpy.mockRestore();
 	});
 });

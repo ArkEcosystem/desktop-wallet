@@ -9,7 +9,7 @@ type LayoutControlsProps = {
 };
 
 export const ControlButton = styled.div<{ isActive?: boolean }>`
-	${tw`transition-colors duration-200 relative py-2 px-3 h-full cursor-pointer`}
+	${tw`flex items-center justify-center transition-colors duration-200 relative w-11 h-9 cursor-pointer`}
 
 	&:after {
 		${tw`transition-opacity duration-200 absolute inset-x-0 bg-theme-danger-contrast dark:bg-theme-danger-700 rounded opacity-0 group-hover:opacity-100`}

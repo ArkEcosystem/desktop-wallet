@@ -11,7 +11,7 @@ const peer = {
 	coin: "ARK",
 	network: "ark.mainnet",
 	name: "ROBank",
-	host: "194.168.4.67",
+	host: "http://167.114.29.48:4003/api",
 	isMultiSignature: false,
 };
 
@@ -23,7 +23,7 @@ describe("UpdatePeer", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		profile.peers().create("ARK", "ark.mainnet", {
 			name: "ROBank",
-			host: "194.168.4.67",
+			host: "http://167.114.29.48:4003/api",
 			isMultiSignature: false,
 		});
 	});
@@ -89,7 +89,9 @@ describe("UpdatePeer", () => {
 
 		await act(async () => {
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "Private" } });
-			await fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+			await fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
 
 			const submitButton = getByTestId("PeerForm__submit-button");
 			expect(submitButton).toBeTruthy();
@@ -144,7 +146,9 @@ describe("UpdatePeer", () => {
 			);
 
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "Private" } });
-			await fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+			await fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
 
 			const submitButton = getByTestId("PeerForm__submit-button");
 			expect(submitButton).toBeTruthy();
