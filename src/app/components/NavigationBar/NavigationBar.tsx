@@ -18,7 +18,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 import { NavbarVariant } from "types";
-import { exitApp, openExternal } from "utils/electron-utils";
+import { openExternal } from "utils/electron-utils";
 
 import { Amount } from "../Amount";
 import { defaultStyle } from "./NavigationBar.styles";
@@ -198,11 +198,11 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 										disabled={!wallets.length}
 										variant="transparent"
 										size="icon"
-										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+										className="w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
 										onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
 										data-testid="navbar__buttons--send"
 									>
-										<Icon name="Sent" width={22} height={22} className="p-1" />
+										<Icon name="Sent" width={18} height={18} className="p-1" />
 									</Button>
 								</div>
 
@@ -212,7 +212,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									<Button
 										size="icon"
 										variant="transparent"
-										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+										className="w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
 										onClick={() => setSearchWalletIsOpen(true)}
 										data-testid="navbar__buttons--receive"
 									>
@@ -246,10 +246,6 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									onUserAction={(action: any) => {
 										if (action?.isExternal) {
 											return openExternal(action.mountPath());
-										}
-
-										if (action?.isExecutable) {
-											return action.execute();
 										}
 
 										return history.push(action.mountPath(profile?.id()));
@@ -341,12 +337,6 @@ NavigationBar.defaultProps = {
 			label: "Sign Out",
 			value: "sign-out",
 			mountPath: () => `/`,
-		},
-		{
-			label: "Exit",
-			value: "exit",
-			isExecutable: true,
-			execute: () => exitApp(),
 		},
 	],
 };
