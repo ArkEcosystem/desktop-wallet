@@ -715,7 +715,6 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 color="primary"
                 data-testid="navbar__buttons--send"
-                disabled=""
                 type="button"
               >
                 <div
@@ -811,13 +810,9 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   >
                     <img
                       alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+                      src="data:image/png;base64,avatarImage"
                     />
-                    <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                    >
-                      J
-                    </span>
                   </div>
                   <span
                     class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
@@ -1053,13 +1048,8 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                             <img
                               alt="Profile avatar"
                               class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                              src="data:image/png;base64,avatarImage"
                             />
-                            <span
-                              class="absolute text-2xl font-semibold text-theme-background"
-                            >
-                              JA
-                            </span>
                             <div
                               class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
@@ -1079,6 +1069,22 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               </div>
                             </div>
                           </div>
+                          <button
+                            class="sc-AxhCb eaQGkU absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
+                            color="danger"
+                            data-testid="SelectProfileImage__remove-button"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxirZ hDwaov"
+                              height="12"
+                              width="12"
+                            >
+                              <svg>
+                                close.svg
+                              </svg>
+                            </div>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -1147,12 +1153,12 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-333-menu"
+                                aria-owns="downshift-269-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-332-input"
-                                  id="downshift-333-label"
+                                  for="downshift-268-input"
+                                  id="downshift-269-label"
                                 />
                                 <div
                                   class="sc-fznxsB hhZPAY"
@@ -1166,21 +1172,21 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   </span>
                                   <input
                                     aria-autocomplete="list"
-                                    aria-controls="downshift-333-menu"
-                                    aria-labelledby="downshift-333-label"
+                                    aria-controls="downshift-269-menu"
+                                    aria-labelledby="downshift-269-label"
                                     autocomplete="off"
                                     class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                     data-testid="SelectDropdownInput__input"
-                                    id="downshift-332-input"
+                                    id="downshift-268-input"
                                     name="passphraseLanguage"
                                     placeholder="Select Passphrase Language"
                                     value="English"
                                   />
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-333-label"
+                                  aria-labelledby="downshift-269-label"
                                   class="sc-fznMAR hmfZwn"
-                                  id="downshift-333-menu"
+                                  id="downshift-269-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1231,12 +1237,12 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-335-menu"
+                                aria-owns="downshift-271-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-334-input"
-                                  id="downshift-335-label"
+                                  for="downshift-270-input"
+                                  id="downshift-271-label"
                                 />
                                 <div
                                   class="sc-fznxsB hhZPAY"
@@ -1250,21 +1256,21 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   </span>
                                   <input
                                     aria-autocomplete="list"
-                                    aria-controls="downshift-335-menu"
-                                    aria-labelledby="downshift-335-label"
+                                    aria-controls="downshift-271-menu"
+                                    aria-labelledby="downshift-271-label"
                                     autocomplete="off"
                                     class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                     data-testid="SelectDropdownInput__input"
-                                    id="downshift-334-input"
+                                    id="downshift-270-input"
                                     name="currency"
                                     placeholder="Select Currency"
                                     value="BTC (Ƀ)"
                                   />
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-335-label"
+                                  aria-labelledby="downshift-271-label"
                                   class="sc-fznMAR hmfZwn"
-                                  id="downshift-335-menu"
+                                  id="downshift-271-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1319,12 +1325,12 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-337-menu"
+                                aria-owns="downshift-273-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-336-input"
-                                  id="downshift-337-label"
+                                  for="downshift-272-input"
+                                  id="downshift-273-label"
                                 />
                                 <div
                                   class="sc-fznxsB hhZPAY"
@@ -1338,21 +1344,21 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   </span>
                                   <input
                                     aria-autocomplete="list"
-                                    aria-controls="downshift-337-menu"
-                                    aria-labelledby="downshift-337-label"
+                                    aria-controls="downshift-273-menu"
+                                    aria-labelledby="downshift-273-label"
                                     autocomplete="off"
                                     class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                     data-testid="SelectDropdownInput__input"
-                                    id="downshift-336-input"
+                                    id="downshift-272-input"
                                     name="language"
                                     placeholder="Select Language"
                                     value="English"
                                   />
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-337-label"
+                                  aria-labelledby="downshift-273-label"
                                   class="sc-fznMAR hmfZwn"
-                                  id="downshift-337-menu"
+                                  id="downshift-273-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1403,12 +1409,12 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-339-menu"
+                                aria-owns="downshift-275-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-338-input"
-                                  id="downshift-339-label"
+                                  for="downshift-274-input"
+                                  id="downshift-275-label"
                                 />
                                 <div
                                   class="sc-fznxsB hhZPAY"
@@ -1422,21 +1428,21 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   </span>
                                   <input
                                     aria-autocomplete="list"
-                                    aria-controls="downshift-339-menu"
-                                    aria-labelledby="downshift-339-label"
+                                    aria-controls="downshift-275-menu"
+                                    aria-labelledby="downshift-275-label"
                                     autocomplete="off"
                                     class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                     data-testid="SelectDropdownInput__input"
-                                    id="downshift-338-input"
+                                    id="downshift-274-input"
                                     name="marketProvider"
                                     placeholder="Select Market Provider"
                                     value="CryptoCompare"
                                   />
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-339-label"
+                                  aria-labelledby="downshift-275-label"
                                   class="sc-fznMAR hmfZwn"
-                                  id="downshift-339-menu"
+                                  id="downshift-275-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1487,12 +1493,12 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-341-menu"
+                                aria-owns="downshift-277-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-340-input"
-                                  id="downshift-341-label"
+                                  for="downshift-276-input"
+                                  id="downshift-277-label"
                                 />
                                 <div
                                   class="sc-fznxsB hhZPAY"
@@ -1506,21 +1512,21 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   </span>
                                   <input
                                     aria-autocomplete="list"
-                                    aria-controls="downshift-341-menu"
-                                    aria-labelledby="downshift-341-label"
+                                    aria-controls="downshift-277-menu"
+                                    aria-labelledby="downshift-277-label"
                                     autocomplete="off"
                                     class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                     data-testid="SelectDropdownInput__input"
-                                    id="downshift-340-input"
+                                    id="downshift-276-input"
                                     name="timeFormat"
                                     placeholder="Select Time Format"
                                     value="12h"
                                   />
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-341-label"
+                                  aria-labelledby="downshift-277-label"
                                   class="sc-fznMAR hmfZwn"
-                                  id="downshift-341-menu"
+                                  id="downshift-277-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1628,6 +1634,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   class="flex"
                                 >
                                   <input
+                                    checked=""
                                     class="Toggle__Input-qyyifx-0 bXkHfF"
                                     data-testid="General-settings__toggle--isAdvancedMode"
                                     name="isAdvancedMode"
@@ -1707,12 +1714,12 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-343-menu"
+                                  aria-owns="downshift-279-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-342-input"
-                                    id="downshift-343-label"
+                                    for="downshift-278-input"
+                                    id="downshift-279-label"
                                   />
                                   <div
                                     class="sc-fznxsB hhZPAY"
@@ -1726,21 +1733,21 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                     </span>
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-343-menu"
-                                      aria-labelledby="downshift-343-label"
+                                      aria-controls="downshift-279-menu"
+                                      aria-labelledby="downshift-279-label"
                                       autocomplete="off"
                                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-342-input"
+                                      id="downshift-278-input"
                                       name="automaticSignOutPeriod"
                                       placeholder="Select Automatic Sign Out Period"
                                       value="1 minute"
                                     />
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-343-label"
+                                    aria-labelledby="downshift-279-label"
                                     class="sc-fznMAR hmfZwn"
-                                    id="downshift-343-menu"
+                                    id="downshift-279-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -1799,6 +1806,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   class="flex"
                                 >
                                   <input
+                                    checked=""
                                     class="Toggle__Input-qyyifx-0 bXkHfF"
                                     data-testid="General-settings__toggle--useTestNetworks"
                                     name="useTestNetworks"
@@ -1848,7 +1856,6 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   class="flex"
                                 >
                                   <input
-                                    checked=""
                                     class="Toggle__Input-qyyifx-0 bXkHfF"
                                     data-testid="General-settings__toggle--isDarkMode"
                                     name="isDarkMode"
@@ -2566,12 +2573,12 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-1139-menu"
+                                  aria-owns="downshift-1031-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-1138-input"
-                                    id="downshift-1139-label"
+                                    for="downshift-1030-input"
+                                    id="downshift-1031-label"
                                   />
                                   <div
                                     class="sc-fznxsB hhZPAY"
@@ -2579,21 +2586,21 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-1139-menu"
-                                      aria-labelledby="downshift-1139-label"
+                                      aria-controls="downshift-1031-menu"
+                                      aria-labelledby="downshift-1031-label"
                                       autocomplete="off"
                                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-1138-input"
+                                      id="downshift-1030-input"
                                       name="load-plugins"
                                       placeholder="Select Plugin Source"
                                       value=""
                                     />
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-1139-label"
+                                    aria-labelledby="downshift-1031-label"
                                     class="sc-fznMAR hmfZwn"
-                                    id="downshift-1139-menu"
+                                    id="downshift-1031-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -5723,12 +5730,12 @@ exports[`Settings should render plugin settings 1`] = `
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-1027-menu"
+                                  aria-owns="downshift-919-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-1026-input"
-                                    id="downshift-1027-label"
+                                    for="downshift-918-input"
+                                    id="downshift-919-label"
                                   />
                                   <div
                                     class="sc-fznxsB hhZPAY"
@@ -5736,21 +5743,21 @@ exports[`Settings should render plugin settings 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-1027-menu"
-                                      aria-labelledby="downshift-1027-label"
+                                      aria-controls="downshift-919-menu"
+                                      aria-labelledby="downshift-919-label"
                                       autocomplete="off"
                                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-1026-input"
+                                      id="downshift-918-input"
                                       name="load-plugins"
                                       placeholder="Select Plugin Source"
                                       value=""
                                     />
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-1027-label"
+                                    aria-labelledby="downshift-919-label"
                                     class="sc-fznMAR hmfZwn"
-                                    id="downshift-1027-menu"
+                                    id="downshift-919-menu"
                                     role="listbox"
                                   />
                                 </div>
