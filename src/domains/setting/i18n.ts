@@ -129,7 +129,7 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_DEVELOPMENT_NETWORK: {
 		TITLE: "Development Network",
-		MESSAGE:
+		DESCRIPTION:
 			"Disabling this setting will hide your wallets associated with development networks. Are you sure you want to continue?",
 	},
 

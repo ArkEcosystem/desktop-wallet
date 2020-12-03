@@ -16,7 +16,7 @@ export const DevelopmentNetwork = ({ isOpen, onClose, onCancel, onContinue }: De
 	return (
 		<Modal
 			title={t("SETTINGS.MODAL_DEVELOPMENT_NETWORK.TITLE")}
-			description={t("SETTINGS.MODAL_DEVELOPMENT_NETWORK.MESSAGE")}
+			description={t("SETTINGS.MODAL_DEVELOPMENT_NETWORK.DESCRIPTION")}
 			size="xl"
 			isOpen={isOpen}
 			onClose={onClose}
