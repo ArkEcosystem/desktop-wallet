@@ -12,6 +12,7 @@ import { useActiveProfile } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
+import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { setScreenshotProtection } from "utils/electron-utils";
@@ -73,9 +74,9 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		const { checked } = event.target;
 
 		if (checked) {
-			setIsOpenDevelopmentNetworkModal(checked);
+			setIsDevelopmentNetwork(checked);
 		} else {
-			setIsDevelopmentNetwork(false);
+			setIsOpenDevelopmentNetworkModal(!checked);
 		}
 	};
 
@@ -145,7 +146,8 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="useTestNetworks"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.UseTestNetworks)}
+					checked={isDevelopmentNetwork}
+					onChange={handleOpenDevelopmentNetworkModal}
 					data-testid="General-settings__toggle--useTestNetworks"
 				/>
 			),
@@ -388,6 +390,13 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				onClose={() => handleAdvancedMode(false)}
 				onDecline={() => handleAdvancedMode(false)}
 				onAccept={() => handleAdvancedMode(true)}
+			/>
+
+			<DevelopmentNetwork
+				isOpen={isOpenDevelopmentNetworkModal}
+				onClose={() => setIsOpenDevelopmentNetworkModal(false)}
+				onCancel={() => handleDevelopmentNetwork(true)}
+				onContinue={() => handleDevelopmentNetwork(false)}
 			/>
 
 			<ResetProfile
