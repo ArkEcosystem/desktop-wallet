@@ -45,9 +45,6 @@ export const FilterWallets = ({
 							.map((network) => network.id),
 					});
 				}}
-				onViewAll={(_: any, networks: any[]) => {
-					onChange?.({ selectedNetworkIds: networks.map((network) => network.id) });
-				}}
 			/>
 
 			<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />

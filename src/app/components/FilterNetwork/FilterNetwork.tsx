@@ -24,7 +24,11 @@ export const FilterNetwork = ({ networks = [], onChange, onViewAll, hideViewAll,
 	const handleToggleAll = () => {
 		const shouldViewAll = !showAll;
 		setShowAll(shouldViewAll);
-		if (shouldViewAll) onViewAll?.();
+		const allNetworksSelected = networks.map((network) => ({ ...network, isSelected: true }));
+		if (shouldViewAll) {
+			onViewAll?.();
+			onChange?.(allNetworksSelected[0], allNetworksSelected);
+		}
 	};
 
 	const handleSelectAll = (checked: any) => {
