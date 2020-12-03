@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import { when } from "jest-when";
@@ -123,7 +124,7 @@ describe("WalletDetails", () => {
 	it("should not render wallet vote when the network does not support votes", async () => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
 
-		when(networkFeatureSpy).calledWith("Transaction.vote").mockReturnValue(false);
+		when(networkFeatureSpy).calledWith(Coins.FeatureFlag.TransactionVote).mockReturnValue(false);
 
 		const { getByTestId } = await renderPage(false);
 
@@ -145,20 +146,20 @@ describe("WalletDetails", () => {
 	});
 
 	it.each([
-		["second signatures", "secondSignature"],
-		["delegate registrations", "delegateRegistration"],
-		["entity registrations", "entityRegistration"],
-	])("should render wallet registrations when the network does support %s", async (name, type) => {
+		["second signatures", "TransactionSecondSignature"],
+		["delegate registrations", "TransactionDelegateRegistration"],
+		["entity registrations", "TransactionEntityRegistration"],
+	])("should render wallet registrations when the network does support %s", async (name, feature) => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
 
 		when(networkFeatureSpy)
-			.calledWith("Transaction.secondSignature")
+			.calledWith(Coins.FeatureFlag.TransactionSecondSignature)
 			.mockReturnValue(false)
-			.calledWith("Transaction.delegateRegistration")
+			.calledWith(Coins.FeatureFlag.TransactionDelegateRegistration)
 			.mockReturnValue(false)
-			.calledWith("Transaction.entityRegistration")
+			.calledWith(Coins.FeatureFlag.TransactionEntityRegistration)
 			.mockReturnValue(false)
-			.calledWith(`Transaction.${type}`)
+			.calledWith(Coins.FeatureFlag[feature])
 			.mockReturnValue(true);
 
 		const { getAllByTestId } = await renderPage(false);
