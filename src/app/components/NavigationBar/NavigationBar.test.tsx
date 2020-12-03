@@ -132,7 +132,7 @@ describe("NavigationBar", () => {
 		profile.settings().set(ProfileSetting.ExchangeCurrency, "BTC");
 	});
 
-	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support", "Exit"])(
+	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(
 		"should handle '%s' click on user actions dropdown",
 		async (label) => {
 			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
@@ -150,9 +150,6 @@ describe("NavigationBar", () => {
 				const externalLink = "https://ark.io/contact";
 				const openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
 				expect(openExternalMock).toHaveBeenCalledWith(externalLink);
-			} else if (label === "Exit") {
-				const sendEventMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
-				expect(sendEventMock).toHaveBeenCalledWith("exit-app");
 			} else {
 				expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
 			}
