@@ -89,7 +89,7 @@ export const HeaderSearchBar = ({
 						type="button"
 					>
 						<Icon
-							className="text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary p-1 -ml-1"
+							className="p-1 -ml-1 text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary"
 							name="CrossSlim"
 							width={12}
 							height={12}
