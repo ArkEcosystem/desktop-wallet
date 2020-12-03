@@ -54,13 +54,18 @@
           v-if="data.column.field === 'history'"
           class="flex items-center justify-center"
         >
-          <a
-            href="#"
-            class="font-medium"
-            @click.prevent
+          <ButtonModal
+            :label="$t('ENTITY.VIEW')"
+            class="text-blue hover:text-blue-dark"
           >
-            {{ $t('ENTITY.VIEW') }}
-          </a>
+            <template slot-scope="{ toggle, isOpen }">
+              <EntityHistoryModal
+                v-if="isOpen"
+                :registration-id="data.row.id"
+                @close="toggle"
+              />
+            </template>
+          </ButtonModal>
         </div>
 
         <div
@@ -118,7 +123,7 @@
 </template>
 
 <script>
-import { ButtonIconGeneric } from '@/components/Button'
+import { ButtonIconGeneric, ButtonModal } from '@/components/Button'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import { MenuDropdown } from '@/components/Menu'
 import TableWrapper from '@/components/utils/TableWrapper'
@@ -126,12 +131,15 @@ import SvgIcon from '@/components/SvgIcon'
 import { File } from '@arkecosystem/platform-sdk-ipfs'
 import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { get } from '@arkecosystem/utils'
+import EntityHistoryModal from './EntityHistoryModal'
 
 export default {
   name: 'EntityTable',
 
   components: {
     ButtonIconGeneric,
+    ButtonModal,
+    EntityHistoryModal,
     MenuDropdown,
     SvgIcon,
     TableWrapper,

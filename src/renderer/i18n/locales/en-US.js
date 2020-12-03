@@ -1489,6 +1489,12 @@ export default {
     IMAGE: 'Image',
     VIDEO: 'Video',
 
+    ACTIONS: {
+      REGISTER: 'Registration',
+      UPDATE: 'Update',
+      RESIGN: 'Resignation'
+    },
+
     TYPES: {
       BUSINESS: 'Business | Businesses',
       PRODUCT: 'Product | Products',
