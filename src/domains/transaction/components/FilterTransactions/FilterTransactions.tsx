@@ -1,7 +1,7 @@
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
-import React, { useState } from "react";
+import React, { memo,useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type FilterTransactionsProps = {
@@ -36,7 +36,7 @@ const FilterTransactionsToggle = ({ selectedOption, isOpen }: FilterTransactions
 	);
 };
 
-export const FilterTransactions = ({ className, onSelect, defaultSelected }: FilterTransactionsProps) => {
+export const FilterTransactions = memo(({ className, onSelect, defaultSelected }: FilterTransactionsProps) => {
 	const { t } = useTranslation();
 	const { types, getLabel, getQueryParamsByType } = useTransactionTypes();
 
@@ -77,6 +77,4 @@ export const FilterTransactions = ({ className, onSelect, defaultSelected }: Fil
 			/>
 		</div>
 	);
-};
-
-FilterTransactions.defaultProps = {};
+});
