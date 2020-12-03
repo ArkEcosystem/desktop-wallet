@@ -7,9 +7,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type WalletsControlsProps = {
-	isFilterChanged?: boolean;
-	filterProperties?: FilterWalletsProps;
-	viewType: "grid" | "list";
+	filterProperties: FilterWalletsProps;
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onImportLedgerWallet?: () => void;
@@ -19,9 +17,7 @@ type WalletsControlsProps = {
 };
 
 export const WalletsControls = ({
-	isFilterChanged,
 	filterProperties,
-	viewType,
 	onCreateWallet,
 	onImportWallet,
 	onImportLedgerWallet,
@@ -29,7 +25,7 @@ export const WalletsControls = ({
 	onSelectListView,
 	onFilterChange,
 }: WalletsControlsProps) => {
-	const [walletsViewType, setWalletsViewType] = useState(viewType);
+	const [walletsViewType, setWalletsViewType] = useState(filterProperties.viewType);
 
 	const { t } = useTranslation();
 
@@ -62,7 +58,7 @@ export const WalletsControls = ({
 					dropdownClass="transform -translate-y-4"
 					toggleContent={
 						<div className="group">
-							<ControlButton isActive={isFilterChanged}>
+							<ControlButton isActive={filterProperties?.isFilterChanged}>
 								<Icon name="Filters" width={20} height={20} />
 							</ControlButton>
 						</div>
@@ -102,5 +98,4 @@ export const WalletsControls = ({
 
 WalletsControls.defaultProps = {
 	activeFilter: false,
-	viewType: "grid",
 };

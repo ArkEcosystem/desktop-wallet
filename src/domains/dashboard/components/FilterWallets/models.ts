@@ -1,6 +1,6 @@
 export type FilterWalletsHookProps = {
 	networks?: any;
-	viewType: "list" | "grid";
+	viewType?: "list" | "grid";
 	useTestNetworks?: boolean;
 	showPortfolio?: boolean;
 	showTransactions?: boolean;
@@ -12,4 +12,4 @@ export type FilterWalletsHookProps = {
 export type FilterWalletsProps = {
 	showToggleViews?: boolean;
 	onChange?: (property: Record<string, any>) => void;
-};
+} & FilterWalletsHookProps;

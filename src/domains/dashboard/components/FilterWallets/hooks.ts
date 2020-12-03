@@ -6,8 +6,15 @@ import { useMemo } from "react";
 import { FilterWalletsHookProps } from "./";
 
 export const useWalletFilters = ({ profile }: { profile: Profile }) => {
-	const { getConfiguration, defaultConfiguration } = useDashboardConfig({ profile });
-	const { walletsDisplayType, selectedNetworkIds, showPortfolio, showTransactions, viewType } = getConfiguration();
+	const {
+		defaultConfiguration,
+		setValue,
+		walletsDisplayType,
+		selectedNetworkIds,
+		showPortfolio,
+		showTransactions,
+		viewType,
+	} = useDashboardConfig({ profile });
 
 	const networks = useMemo(() => {
 		const networks = profile
@@ -46,7 +53,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 		[walletsDisplayType, selectedNetworkIds, showPortfolio, showTransactions, defaultWalletFilters],
 	);
 
-	return useMemo<FilterWalletsHookProps>(
+	const props = useMemo<FilterWalletsHookProps & { update: any }>(
 		() => ({
 			networks,
 			useTestNetworks: profile.settings().get(ProfileSetting.UseTestNetworks),
@@ -56,6 +63,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			showTransactions,
 			isFilterChanged,
 			viewType,
+			update: setValue,
 		}),
 		[
 			walletsDisplayType,
@@ -68,4 +76,5 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			profile,
 		],
 	);
+	return props;
 };

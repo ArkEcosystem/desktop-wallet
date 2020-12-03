@@ -10,7 +10,6 @@ import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
-import { useDashboardConfig } from "domains/dashboard/pages";
 import { LedgerWaitingDevice } from "domains/wallet/components/Ledger/LedgerWaitingDevice";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -50,10 +49,8 @@ export const Wallets = ({
 	const { t } = useTranslation();
 
 	const activeProfile = useActiveProfile();
-	const { setValue } = useDashboardConfig({ profile: activeProfile });
-	const { viewType, walletsDisplayType, selectedNetworkIds, isFilterChanged, showTransactions } = useWalletFilters({
-		profile: activeProfile,
-	});
+	const filterProperties = useWalletFilters({ profile: activeProfile });
+	const { viewType, walletsDisplayType, selectedNetworkIds, showTransactions, update } = filterProperties;
 
 	const walletCardActions: DropdownOption[] = [];
 
@@ -183,14 +180,13 @@ export const Wallets = ({
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
-						viewType={viewType}
-						isFilterChanged={isFilterChanged}
+						filterProperties={filterProperties}
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
 						onImportLedgerWallet={() => setIsWaitingLedger(true)}
-						onSelectGridView={() => setValue({ viewType: "grid" })}
-						onSelectListView={() => setValue({ viewType: "list" })}
-						onFilterChange={setValue}
+						onSelectGridView={() => update({ viewType: "grid" })}
+						onSelectListView={() => update({ viewType: "list" })}
+						onFilterChange={update}
 					/>
 				</div>
 			</div>

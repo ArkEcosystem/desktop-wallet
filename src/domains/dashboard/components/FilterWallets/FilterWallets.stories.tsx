@@ -6,8 +6,19 @@ export default {
 	title: "Domains / Dashboard / Components / FilterWallets",
 };
 
+const filterProperties = {
+	networks: [],
+	viewType: "list",
+	walletsDisplayType: "all",
+	selectedNetworkIds: [],
+	showTransactions: true,
+	showPortfolio: true,
+	useTestNetworks: true,
+	showToggleViews: true,
+	isFilterChanged: false,
+};
 export const Default = () => (
 	<div className="w-128">
-		<FilterWallets onChange={console.log} />
+		<FilterWallets {...(filterProperties as any)} onChange={console.log} />
 	</div>
 );

@@ -2,21 +2,21 @@ import { Dropdown } from "app/components/Dropdown";
 import { FilterNetworks } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
 import { Toggle } from "app/components/Toggle";
-import { useActiveProfile } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { FilterWalletsProps,useWalletFilters } from "./";
+import { FilterWalletsProps } from "./";
 
-export const FilterWallets = ({ showToggleViews, onChange }: FilterWalletsProps) => {
+export const FilterWallets = ({
+	networks,
+	walletsDisplayType,
+	showPortfolio,
+	showTransactions,
+	useTestNetworks,
+	showToggleViews,
+	onChange,
+}: FilterWalletsProps) => {
 	const { t } = useTranslation();
-	const profile = useActiveProfile();
-
-	const { networks, walletsDisplayType, showPortfolio, showTransactions, useTestNetworks } = useWalletFilters({
-		profile,
-	});
-
-	console.log("FilterWallets", { showPortfolio, showTransactions, networks });
 
 	const walletDisplayOptions = [
 		{ label: t("COMMON.ALL"), value: "all" },
