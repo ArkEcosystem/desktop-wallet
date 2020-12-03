@@ -64,7 +64,7 @@ export const FormStep = ({
 							profile={profile}
 							recipients={getRecipients()}
 							showMultiPaymentOption={
-								network?.can("Transaction.multiPayment") && !senderWallet?.isLedger()
+								!senderWallet?.isLedger() && network?.can(Coins.Enums.FeatureFlag.TransactionMultiPayment)
 							}
 							withDeeplink={!!deeplinkProps?.recipient}
 							onChange={(recipients: RecipientListItem[]) =>
