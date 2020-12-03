@@ -80,13 +80,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	const [showWalletRegistrations, setShowWalletRegistrations] = useState(false);
 
 	useLayoutEffect(() => {
-		setShowWalletVote(activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionVote));
+		setShowWalletVote(activeWallet.network().can(Coins.FeatureFlag.TransactionVote));
 		setShowWalletRegistrations(
 			!activeWallet.isLedger() &&
 				activeWallet.canAny([
-					Coins.Enums.FeatureFlag.TransactionSecondSignature,
-					Coins.Enums.FeatureFlag.TransactionDelegateRegistration,
-					Coins.Enums.FeatureFlag.TransactionEntityRegistration,
+					Coins.FeatureFlag.TransactionSecondSignature,
+					Coins.FeatureFlag.TransactionDelegateRegistration,
+					Coins.FeatureFlag.TransactionEntityRegistration,
 				]),
 		);
 	}, [activeWallet]);
@@ -179,15 +179,15 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					ticker={ticker}
 					showMultiSignatureOption={
 						!activeWallet.isLedger() &&
-						activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionMultiSignature)
+						activeWallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)
 					}
 					showSecondSignatureOption={
 						!activeWallet.isLedger() &&
-						activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionSecondSignature)
+						activeWallet.network().can(Coins.FeatureFlag.TransactionSecondSignature)
 					}
-					showSignMessageOption={activeWallet.network().can(Coins.Enums.FeatureFlag.MessageSign)}
-					showStoreHashOption={activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionIpfs)}
-					showVerifyMessageOption={activeWallet.network().can(Coins.Enums.FeatureFlag.MessageVerify)}
+					showSignMessageOption={activeWallet.network().can(Coins.FeatureFlag.MessageSign)}
+					showStoreHashOption={activeWallet.network().can(Coins.FeatureFlag.TransactionIpfs)}
+					showVerifyMessageOption={activeWallet.network().can(Coins.FeatureFlag.MessageVerify)}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onMultiSignature={() =>
 						history.push(

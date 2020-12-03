@@ -124,7 +124,7 @@ describe("WalletDetails", () => {
 	it("should not render wallet vote when the network does not support votes", async () => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
 
-		when(networkFeatureSpy).calledWith(Coins.Enums.FeatureFlag.TransactionVote).mockReturnValue(false);
+		when(networkFeatureSpy).calledWith(Coins.FeatureFlag.TransactionVote).mockReturnValue(false);
 
 		const { getByTestId } = await renderPage(false);
 
@@ -153,13 +153,13 @@ describe("WalletDetails", () => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
 
 		when(networkFeatureSpy)
-			.calledWith(Coins.Enums.FeatureFlag.TransactionSecondSignature)
+			.calledWith(Coins.FeatureFlag.TransactionSecondSignature)
 			.mockReturnValue(false)
-			.calledWith(Coins.Enums.FeatureFlag.TransactionDelegateRegistration)
+			.calledWith(Coins.FeatureFlag.TransactionDelegateRegistration)
 			.mockReturnValue(false)
-			.calledWith(Coins.Enums.FeatureFlag.TransactionEntityRegistration)
+			.calledWith(Coins.FeatureFlag.TransactionEntityRegistration)
 			.mockReturnValue(false)
-			.calledWith(Coins.Enums.FeatureFlag[feature])
+			.calledWith(Coins.FeatureFlag[feature])
 			.mockReturnValue(true);
 
 		const { getAllByTestId } = await renderPage(false);
