@@ -7,15 +7,19 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+import { useDashboardConfig } from "./hooks";
+
 export const Dashboard = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
+	const { showTransactions, showPortfolio } = useDashboardConfig({ profile: activeProfile });
+
 	return (
 		<>
 			<Page profile={activeProfile}>
-				<PortfolioChart profile={activeProfile} />
+				<PortfolioChart profile={activeProfile} isVisible={showPortfolio} />
 
 				<Wallets
 					title={t("COMMON.WALLETS")}
@@ -26,7 +30,7 @@ export const Dashboard = () => {
 					}
 				/>
 
-				<Transactions profile={activeProfile} />
+				<Transactions profile={activeProfile} isVisible={showTransactions} />
 			</Page>
 		</>
 	);
