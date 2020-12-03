@@ -151,36 +151,26 @@ describe("CreateProfile", () => {
 	});
 
 	it("should not create new profile if profile name exists", async () => {
+		const name = "test profile";
+		const profile = env.profiles().create(name);
+
 		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
-
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "" } });
-
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
-
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
-
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
-
-		await act(async () => {
-			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
-		});
-
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: name } });
+
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
 		expect(asFragment()).toMatchSnapshot();
+
+		env.profiles().forget(profile.id());
 	});
 
 	it("should store profile with password", async () => {
@@ -211,34 +201,26 @@ describe("CreateProfile", () => {
 	it("should fail password confirmation", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
-		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
-		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "wrong" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "asdasdas" } });
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
-
-		await act(async () => {
-			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
-		});
-
+		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
+		fireEvent.change(getAllByTestId("Input")[1], { target: { value: "test password" } });
+		fireEvent.change(getAllByTestId("Input")[2], { target: { value: "wrong" } });
+
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
-		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveAttribute("aria-invalid"));
 
-		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "" } });
 		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "password" } });
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "password" } });
 
-		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveValue(""));
-		await waitFor(() => expect(getAllByTestId("Input")[1]).toHaveValue("password"));
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
-		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveAttribute("aria-invalid"));
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "test password" } });
+		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "wrong" } });
+
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
 		expect(asFragment()).toMatchSnapshot();
 	});

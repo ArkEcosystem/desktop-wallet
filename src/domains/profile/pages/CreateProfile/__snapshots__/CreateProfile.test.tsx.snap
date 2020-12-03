@@ -74,26 +74,30 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                   <div
                     class="flex justify-between -mt-6"
                   >
-                    <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                    <div
+                      class="w-full mr-6"
                     >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                        data-testid="FormLabel"
-                        for="name"
+                      <fieldset
+                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
-                        Name
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Name
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <input
+                          class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          data-testid="Input"
+                          name="name"
                         />
-                      </label>
-                      <input
-                        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-                        data-testid="Input"
-                        name="name"
-                      />
-                    </fieldset>
+                      </fieldset>
+                    </div>
                     <div
                       class="group -mt-6"
                     >
@@ -109,12 +113,12 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             <img
                               alt="Profile avatar"
                               class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
                             />
                             <span
                               class="absolute text-2xl font-semibold text-theme-background"
                             >
-                              TE
+                              AS
                             </span>
                             <div
                               class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
@@ -140,7 +144,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                    class="sc-AxiKw HGhoX flex flex-col space-y-2"
                   >
                     <label
                       class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -160,6 +164,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       data-testid="InputPassword"
                     >
                       <input
+                        aria-invalid="true"
                         class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
@@ -185,6 +190,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         </button>
                       </div>
                     </div>
+                    <p
+                      class="text-sm text-theme-danger"
+                    >
+                      'Password' should have at least 6 characters
+                    </p>
                   </fieldset>
                   <fieldset
                     class="sc-AxiKw HGhoX flex flex-col space-y-2"
@@ -266,14 +276,14 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         class="relative w-full"
                       >
                         <div
-                          aria-expanded="false"
+                          aria-expanded="true"
                           aria-haspopup="listbox"
-                          aria-owns="downshift-117-menu"
+                          aria-owns="downshift-109-menu"
                           role="combobox"
                         >
                           <label
-                            for="downshift-116-input"
-                            id="downshift-117-label"
+                            for="downshift-108-input"
+                            id="downshift-109-label"
                           />
                           <div
                             class="sc-AxmLO kuiknc"
@@ -286,30 +296,266 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                               BTC (Ƀ)
                             </span>
                             <input
+                              aria-activedescendant="downshift-109-item-0"
                               aria-autocomplete="list"
-                              aria-controls="downshift-117-menu"
-                              aria-labelledby="downshift-117-label"
+                              aria-controls="downshift-109-menu"
+                              aria-labelledby="downshift-109-label"
                               autocomplete="off"
                               class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
-                              id="downshift-116-input"
+                              id="downshift-108-input"
                               name="currency"
                               placeholder="Select Currency"
                               value="BTC (Ƀ)"
                             />
                           </div>
                           <ul
-                            aria-labelledby="downshift-117-label"
-                            class="sc-fznxKY bipIur"
-                            id="downshift-117-menu"
+                            aria-labelledby="downshift-109-label"
+                            class="sc-fznxKY bipIur is-open"
+                            id="downshift-109-menu"
                             role="listbox"
-                          />
+                          >
+                            <li
+                              aria-selected="true"
+                              class="select-list-option cursor-default is-highlighted"
+                              data-testid="select-list__toggle-option-0"
+                              id="downshift-109-item-0"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BTC (Ƀ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-1"
+                              id="downshift-109-item-1"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                ETH (Ξ)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-2"
+                              id="downshift-109-item-2"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                LTC (Ł)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-3"
+                              id="downshift-109-item-3"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                AUD (A$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-4"
+                              id="downshift-109-item-4"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                BRL (R$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-5"
+                              id="downshift-109-item-5"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CAD (C$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-6"
+                              id="downshift-109-item-6"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CHF (CHF)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-7"
+                              id="downshift-109-item-7"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                CNY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-8"
+                              id="downshift-109-item-8"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                EUR (€)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-9"
+                              id="downshift-109-item-9"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                GBP (£)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-10"
+                              id="downshift-109-item-10"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                HKD (HK$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-11"
+                              id="downshift-109-item-11"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                IDR (IDR)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-12"
+                              id="downshift-109-item-12"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                INR (₹)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-13"
+                              id="downshift-109-item-13"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                JPY (¥)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-14"
+                              id="downshift-109-item-14"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                KRW (₩)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-15"
+                              id="downshift-109-item-15"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                MXN (MX$)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-16"
+                              id="downshift-109-item-16"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                RUB (₽)
+                              </div>
+                            </li>
+                            <li
+                              aria-selected="false"
+                              class="select-list-option cursor-default "
+                              data-testid="select-list__toggle-option-17"
+                              id="downshift-109-item-17"
+                              role="option"
+                            >
+                              <div
+                                class="select-list-option__label"
+                              >
+                                USD ($)
+                              </div>
+                            </li>
+                          </ul>
                         </div>
                         <div
                           class="sc-AxgMl sc-Axmtr hWILTO w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-AxhUy eoQLuQ"
+                            class="sc-AxhUy eoQLuQ transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -487,32 +733,36 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                   <div
                     class="flex justify-between -mt-6"
                   >
-                    <fieldset
-                      class="sc-AxiKw HGhoX w-full mr-6"
+                    <div
+                      class="w-full mr-6"
                     >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                        data-testid="FormLabel"
-                        for="name"
+                      <fieldset
+                        class="sc-AxiKw HGhoX flex flex-col space-y-2"
                       >
-                        Name
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Name
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <input
+                          aria-invalid="true"
+                          class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          data-testid="Input"
+                          name="name"
                         />
-                      </label>
-                      <input
-                        aria-invalid="true"
-                        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-                        data-testid="Input"
-                        name="name"
-                      />
-                      <p
-                        class="text-sm text-theme-danger"
-                      >
-                        Profile name already exists
-                      </p>
-                    </fieldset>
+                        <p
+                          class="text-sm text-theme-danger"
+                        >
+                          A profile with this name already exists
+                        </p>
+                      </fieldset>
+                    </div>
                     <div
                       class="group -mt-6"
                     >
@@ -528,7 +778,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                             <img
                               alt="Profile avatar"
                               class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
                             />
                             <span
                               class="absolute text-2xl font-semibold text-theme-background"
@@ -683,12 +933,12 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                         <div
                           aria-expanded="true"
                           aria-haspopup="listbox"
-                          aria-owns="downshift-49-menu"
+                          aria-owns="downshift-51-menu"
                           role="combobox"
                         >
                           <label
-                            for="downshift-48-input"
-                            id="downshift-49-label"
+                            for="downshift-50-input"
+                            id="downshift-51-label"
                           />
                           <div
                             class="sc-AxmLO kuiknc"
@@ -701,30 +951,30 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               BTC (Ƀ)
                             </span>
                             <input
-                              aria-activedescendant="downshift-49-item-0"
+                              aria-activedescendant="downshift-51-item-0"
                               aria-autocomplete="list"
-                              aria-controls="downshift-49-menu"
-                              aria-labelledby="downshift-49-label"
+                              aria-controls="downshift-51-menu"
+                              aria-labelledby="downshift-51-label"
                               autocomplete="off"
                               class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
-                              id="downshift-48-input"
+                              id="downshift-50-input"
                               name="currency"
                               placeholder="Select Currency"
                               value="BTC (Ƀ)"
                             />
                           </div>
                           <ul
-                            aria-labelledby="downshift-49-label"
+                            aria-labelledby="downshift-51-label"
                             class="sc-fznxKY bipIur is-open"
-                            id="downshift-49-menu"
+                            id="downshift-51-menu"
                             role="listbox"
                           >
                             <li
                               aria-selected="true"
                               class="select-list-option cursor-default is-highlighted"
                               data-testid="select-list__toggle-option-0"
-                              id="downshift-49-item-0"
+                              id="downshift-51-item-0"
                               role="option"
                             >
                               <div
@@ -737,7 +987,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-1"
-                              id="downshift-49-item-1"
+                              id="downshift-51-item-1"
                               role="option"
                             >
                               <div
@@ -750,7 +1000,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-2"
-                              id="downshift-49-item-2"
+                              id="downshift-51-item-2"
                               role="option"
                             >
                               <div
@@ -763,7 +1013,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-3"
-                              id="downshift-49-item-3"
+                              id="downshift-51-item-3"
                               role="option"
                             >
                               <div
@@ -776,7 +1026,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-4"
-                              id="downshift-49-item-4"
+                              id="downshift-51-item-4"
                               role="option"
                             >
                               <div
@@ -789,7 +1039,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-5"
-                              id="downshift-49-item-5"
+                              id="downshift-51-item-5"
                               role="option"
                             >
                               <div
@@ -802,7 +1052,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-6"
-                              id="downshift-49-item-6"
+                              id="downshift-51-item-6"
                               role="option"
                             >
                               <div
@@ -815,7 +1065,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-7"
-                              id="downshift-49-item-7"
+                              id="downshift-51-item-7"
                               role="option"
                             >
                               <div
@@ -828,7 +1078,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-8"
-                              id="downshift-49-item-8"
+                              id="downshift-51-item-8"
                               role="option"
                             >
                               <div
@@ -841,7 +1091,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-9"
-                              id="downshift-49-item-9"
+                              id="downshift-51-item-9"
                               role="option"
                             >
                               <div
@@ -854,7 +1104,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-10"
-                              id="downshift-49-item-10"
+                              id="downshift-51-item-10"
                               role="option"
                             >
                               <div
@@ -867,7 +1117,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-11"
-                              id="downshift-49-item-11"
+                              id="downshift-51-item-11"
                               role="option"
                             >
                               <div
@@ -880,7 +1130,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-12"
-                              id="downshift-49-item-12"
+                              id="downshift-51-item-12"
                               role="option"
                             >
                               <div
@@ -893,7 +1143,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-13"
-                              id="downshift-49-item-13"
+                              id="downshift-51-item-13"
                               role="option"
                             >
                               <div
@@ -906,7 +1156,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-14"
-                              id="downshift-49-item-14"
+                              id="downshift-51-item-14"
                               role="option"
                             >
                               <div
@@ -919,7 +1169,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-15"
-                              id="downshift-49-item-15"
+                              id="downshift-51-item-15"
                               role="option"
                             >
                               <div
@@ -932,7 +1182,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-16"
-                              id="downshift-49-item-16"
+                              id="downshift-51-item-16"
                               role="option"
                             >
                               <div
@@ -945,7 +1195,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-17"
-                              id="downshift-49-item-17"
+                              id="downshift-51-item-17"
                               role="option"
                             >
                               <div
@@ -1138,26 +1388,30 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                   <div
                     class="flex justify-between -mt-6"
                   >
-                    <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                    <div
+                      class="w-full mr-6"
                     >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                        data-testid="FormLabel"
-                        for="name"
+                      <fieldset
+                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
-                        Name
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Name
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <input
+                          class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          data-testid="Input"
+                          name="name"
                         />
-                      </label>
-                      <input
-                        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-                        data-testid="Input"
-                        name="name"
-                      />
-                    </fieldset>
+                      </fieldset>
+                    </div>
                     <div
                       class="group -mt-6"
                     >
@@ -1328,12 +1582,12 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         <div
                           aria-expanded="true"
                           aria-haspopup="listbox"
-                          aria-owns="downshift-183-menu"
+                          aria-owns="downshift-177-menu"
                           role="combobox"
                         >
                           <label
-                            for="downshift-182-input"
-                            id="downshift-183-label"
+                            for="downshift-176-input"
+                            id="downshift-177-label"
                           />
                           <div
                             class="sc-AxmLO kuiknc"
@@ -1346,30 +1600,30 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               BTC (Ƀ)
                             </span>
                             <input
-                              aria-activedescendant="downshift-183-item-0"
+                              aria-activedescendant="downshift-177-item-0"
                               aria-autocomplete="list"
-                              aria-controls="downshift-183-menu"
-                              aria-labelledby="downshift-183-label"
+                              aria-controls="downshift-177-menu"
+                              aria-labelledby="downshift-177-label"
                               autocomplete="off"
                               class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
-                              id="downshift-182-input"
+                              id="downshift-176-input"
                               name="currency"
                               placeholder="Select Currency"
                               value="BTC (Ƀ)"
                             />
                           </div>
                           <ul
-                            aria-labelledby="downshift-183-label"
+                            aria-labelledby="downshift-177-label"
                             class="sc-fznxKY bipIur is-open"
-                            id="downshift-183-menu"
+                            id="downshift-177-menu"
                             role="listbox"
                           >
                             <li
                               aria-selected="true"
                               class="select-list-option cursor-default is-highlighted"
                               data-testid="select-list__toggle-option-0"
-                              id="downshift-183-item-0"
+                              id="downshift-177-item-0"
                               role="option"
                             >
                               <div
@@ -1382,7 +1636,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-1"
-                              id="downshift-183-item-1"
+                              id="downshift-177-item-1"
                               role="option"
                             >
                               <div
@@ -1395,7 +1649,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-2"
-                              id="downshift-183-item-2"
+                              id="downshift-177-item-2"
                               role="option"
                             >
                               <div
@@ -1408,7 +1662,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-3"
-                              id="downshift-183-item-3"
+                              id="downshift-177-item-3"
                               role="option"
                             >
                               <div
@@ -1421,7 +1675,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-4"
-                              id="downshift-183-item-4"
+                              id="downshift-177-item-4"
                               role="option"
                             >
                               <div
@@ -1434,7 +1688,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-5"
-                              id="downshift-183-item-5"
+                              id="downshift-177-item-5"
                               role="option"
                             >
                               <div
@@ -1447,7 +1701,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-6"
-                              id="downshift-183-item-6"
+                              id="downshift-177-item-6"
                               role="option"
                             >
                               <div
@@ -1460,7 +1714,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-7"
-                              id="downshift-183-item-7"
+                              id="downshift-177-item-7"
                               role="option"
                             >
                               <div
@@ -1473,7 +1727,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-8"
-                              id="downshift-183-item-8"
+                              id="downshift-177-item-8"
                               role="option"
                             >
                               <div
@@ -1486,7 +1740,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-9"
-                              id="downshift-183-item-9"
+                              id="downshift-177-item-9"
                               role="option"
                             >
                               <div
@@ -1499,7 +1753,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-10"
-                              id="downshift-183-item-10"
+                              id="downshift-177-item-10"
                               role="option"
                             >
                               <div
@@ -1512,7 +1766,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-11"
-                              id="downshift-183-item-11"
+                              id="downshift-177-item-11"
                               role="option"
                             >
                               <div
@@ -1525,7 +1779,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-12"
-                              id="downshift-183-item-12"
+                              id="downshift-177-item-12"
                               role="option"
                             >
                               <div
@@ -1538,7 +1792,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-13"
-                              id="downshift-183-item-13"
+                              id="downshift-177-item-13"
                               role="option"
                             >
                               <div
@@ -1551,7 +1805,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-14"
-                              id="downshift-183-item-14"
+                              id="downshift-177-item-14"
                               role="option"
                             >
                               <div
@@ -1564,7 +1818,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-15"
-                              id="downshift-183-item-15"
+                              id="downshift-177-item-15"
                               role="option"
                             >
                               <div
@@ -1577,7 +1831,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-16"
-                              id="downshift-183-item-16"
+                              id="downshift-177-item-16"
                               role="option"
                             >
                               <div
@@ -1590,7 +1844,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-17"
-                              id="downshift-183-item-17"
+                              id="downshift-177-item-17"
                               role="option"
                             >
                               <div
@@ -1782,26 +2036,30 @@ exports[`CreateProfile should render 1`] = `
                   <div
                     class="flex justify-between -mt-6"
                   >
-                    <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                    <div
+                      class="w-full mr-6"
                     >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                        data-testid="FormLabel"
-                        for="name"
+                      <fieldset
+                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
-                        Name
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Name
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <input
+                          class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          data-testid="Input"
+                          name="name"
                         />
-                      </label>
-                      <input
-                        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-                        data-testid="Input"
-                        name="name"
-                      />
-                    </fieldset>
+                      </fieldset>
+                    </div>
                     <div
                       class="group -mt-6"
                     >
@@ -2177,26 +2435,30 @@ exports[`CreateProfile should store profile 1`] = `
                   <div
                     class="flex justify-between -mt-6"
                   >
-                    <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                    <div
+                      class="w-full mr-6"
                     >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                        data-testid="FormLabel"
-                        for="name"
+                      <fieldset
+                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
-                        Name
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Name
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <input
+                          class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          data-testid="Input"
+                          name="name"
                         />
-                      </label>
-                      <input
-                        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-                        data-testid="Input"
-                        name="name"
-                      />
-                    </fieldset>
+                      </fieldset>
+                    </div>
                     <div
                       class="group -mt-6"
                     >
@@ -2832,26 +3094,30 @@ exports[`CreateProfile should store profile with password 1`] = `
                   <div
                     class="flex justify-between -mt-6"
                   >
-                    <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                    <div
+                      class="w-full mr-6"
                     >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                        data-testid="FormLabel"
-                        for="name"
+                      <fieldset
+                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
-                        Name
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Name
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <input
+                          class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          data-testid="Input"
+                          name="name"
                         />
-                      </label>
-                      <input
-                        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-                        data-testid="Input"
-                        name="name"
-                      />
-                    </fieldset>
+                      </fieldset>
+                    </div>
                     <div
                       class="group -mt-6"
                     >
@@ -3020,12 +3286,12 @@ exports[`CreateProfile should store profile with password 1`] = `
                         <div
                           aria-expanded="true"
                           aria-haspopup="listbox"
-                          aria-owns="downshift-85-menu"
+                          aria-owns="downshift-77-menu"
                           role="combobox"
                         >
                           <label
-                            for="downshift-84-input"
-                            id="downshift-85-label"
+                            for="downshift-76-input"
+                            id="downshift-77-label"
                           />
                           <div
                             class="sc-AxmLO kuiknc"
@@ -3038,30 +3304,30 @@ exports[`CreateProfile should store profile with password 1`] = `
                               BTC (Ƀ)
                             </span>
                             <input
-                              aria-activedescendant="downshift-85-item-0"
+                              aria-activedescendant="downshift-77-item-0"
                               aria-autocomplete="list"
-                              aria-controls="downshift-85-menu"
-                              aria-labelledby="downshift-85-label"
+                              aria-controls="downshift-77-menu"
+                              aria-labelledby="downshift-77-label"
                               autocomplete="off"
                               class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
-                              id="downshift-84-input"
+                              id="downshift-76-input"
                               name="currency"
                               placeholder="Select Currency"
                               value="BTC (Ƀ)"
                             />
                           </div>
                           <ul
-                            aria-labelledby="downshift-85-label"
+                            aria-labelledby="downshift-77-label"
                             class="sc-fznxKY bipIur is-open"
-                            id="downshift-85-menu"
+                            id="downshift-77-menu"
                             role="listbox"
                           >
                             <li
                               aria-selected="true"
                               class="select-list-option cursor-default is-highlighted"
                               data-testid="select-list__toggle-option-0"
-                              id="downshift-85-item-0"
+                              id="downshift-77-item-0"
                               role="option"
                             >
                               <div
@@ -3074,7 +3340,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-1"
-                              id="downshift-85-item-1"
+                              id="downshift-77-item-1"
                               role="option"
                             >
                               <div
@@ -3087,7 +3353,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-2"
-                              id="downshift-85-item-2"
+                              id="downshift-77-item-2"
                               role="option"
                             >
                               <div
@@ -3100,7 +3366,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-3"
-                              id="downshift-85-item-3"
+                              id="downshift-77-item-3"
                               role="option"
                             >
                               <div
@@ -3113,7 +3379,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-4"
-                              id="downshift-85-item-4"
+                              id="downshift-77-item-4"
                               role="option"
                             >
                               <div
@@ -3126,7 +3392,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-5"
-                              id="downshift-85-item-5"
+                              id="downshift-77-item-5"
                               role="option"
                             >
                               <div
@@ -3139,7 +3405,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-6"
-                              id="downshift-85-item-6"
+                              id="downshift-77-item-6"
                               role="option"
                             >
                               <div
@@ -3152,7 +3418,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-7"
-                              id="downshift-85-item-7"
+                              id="downshift-77-item-7"
                               role="option"
                             >
                               <div
@@ -3165,7 +3431,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-8"
-                              id="downshift-85-item-8"
+                              id="downshift-77-item-8"
                               role="option"
                             >
                               <div
@@ -3178,7 +3444,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-9"
-                              id="downshift-85-item-9"
+                              id="downshift-77-item-9"
                               role="option"
                             >
                               <div
@@ -3191,7 +3457,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-10"
-                              id="downshift-85-item-10"
+                              id="downshift-77-item-10"
                               role="option"
                             >
                               <div
@@ -3204,7 +3470,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-11"
-                              id="downshift-85-item-11"
+                              id="downshift-77-item-11"
                               role="option"
                             >
                               <div
@@ -3217,7 +3483,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-12"
-                              id="downshift-85-item-12"
+                              id="downshift-77-item-12"
                               role="option"
                             >
                               <div
@@ -3230,7 +3496,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-13"
-                              id="downshift-85-item-13"
+                              id="downshift-77-item-13"
                               role="option"
                             >
                               <div
@@ -3243,7 +3509,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-14"
-                              id="downshift-85-item-14"
+                              id="downshift-77-item-14"
                               role="option"
                             >
                               <div
@@ -3256,7 +3522,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-15"
-                              id="downshift-85-item-15"
+                              id="downshift-77-item-15"
                               role="option"
                             >
                               <div
@@ -3269,7 +3535,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-16"
-                              id="downshift-85-item-16"
+                              id="downshift-77-item-16"
                               role="option"
                             >
                               <div
@@ -3282,7 +3548,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-17"
-                              id="downshift-85-item-17"
+                              id="downshift-77-item-17"
                               role="option"
                             >
                               <div
@@ -3474,26 +3740,30 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   <div
                     class="flex justify-between -mt-6"
                   >
-                    <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                    <div
+                      class="w-full mr-6"
                     >
-                      <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                        data-testid="FormLabel"
-                        for="name"
+                      <fieldset
+                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
-                        Name
-                        <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
+                        <label
+                          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Name
+                          <div
+                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <input
+                          class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          data-testid="Input"
+                          name="name"
                         />
-                      </label>
-                      <input
-                        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
-                        data-testid="Input"
-                        name="name"
-                      />
-                    </fieldset>
+                      </fieldset>
+                    </div>
                     <div
                       class="group -mt-6"
                     >
@@ -3664,12 +3934,12 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         <div
                           aria-expanded="true"
                           aria-haspopup="listbox"
-                          aria-owns="downshift-151-menu"
+                          aria-owns="downshift-143-menu"
                           role="combobox"
                         >
                           <label
-                            for="downshift-150-input"
-                            id="downshift-151-label"
+                            for="downshift-142-input"
+                            id="downshift-143-label"
                           />
                           <div
                             class="sc-AxmLO kuiknc"
@@ -3682,30 +3952,30 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               BTC (Ƀ)
                             </span>
                             <input
-                              aria-activedescendant="downshift-151-item-0"
+                              aria-activedescendant="downshift-143-item-0"
                               aria-autocomplete="list"
-                              aria-controls="downshift-151-menu"
-                              aria-labelledby="downshift-151-label"
+                              aria-controls="downshift-143-menu"
+                              aria-labelledby="downshift-143-label"
                               autocomplete="off"
                               class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
-                              id="downshift-150-input"
+                              id="downshift-142-input"
                               name="currency"
                               placeholder="Select Currency"
                               value="BTC (Ƀ)"
                             />
                           </div>
                           <ul
-                            aria-labelledby="downshift-151-label"
+                            aria-labelledby="downshift-143-label"
                             class="sc-fznxKY bipIur is-open"
-                            id="downshift-151-menu"
+                            id="downshift-143-menu"
                             role="listbox"
                           >
                             <li
                               aria-selected="true"
                               class="select-list-option cursor-default is-highlighted"
                               data-testid="select-list__toggle-option-0"
-                              id="downshift-151-item-0"
+                              id="downshift-143-item-0"
                               role="option"
                             >
                               <div
@@ -3718,7 +3988,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-1"
-                              id="downshift-151-item-1"
+                              id="downshift-143-item-1"
                               role="option"
                             >
                               <div
@@ -3731,7 +4001,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-2"
-                              id="downshift-151-item-2"
+                              id="downshift-143-item-2"
                               role="option"
                             >
                               <div
@@ -3744,7 +4014,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-3"
-                              id="downshift-151-item-3"
+                              id="downshift-143-item-3"
                               role="option"
                             >
                               <div
@@ -3757,7 +4027,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-4"
-                              id="downshift-151-item-4"
+                              id="downshift-143-item-4"
                               role="option"
                             >
                               <div
@@ -3770,7 +4040,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-5"
-                              id="downshift-151-item-5"
+                              id="downshift-143-item-5"
                               role="option"
                             >
                               <div
@@ -3783,7 +4053,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-6"
-                              id="downshift-151-item-6"
+                              id="downshift-143-item-6"
                               role="option"
                             >
                               <div
@@ -3796,7 +4066,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-7"
-                              id="downshift-151-item-7"
+                              id="downshift-143-item-7"
                               role="option"
                             >
                               <div
@@ -3809,7 +4079,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-8"
-                              id="downshift-151-item-8"
+                              id="downshift-143-item-8"
                               role="option"
                             >
                               <div
@@ -3822,7 +4092,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-9"
-                              id="downshift-151-item-9"
+                              id="downshift-143-item-9"
                               role="option"
                             >
                               <div
@@ -3835,7 +4105,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-10"
-                              id="downshift-151-item-10"
+                              id="downshift-143-item-10"
                               role="option"
                             >
                               <div
@@ -3848,7 +4118,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-11"
-                              id="downshift-151-item-11"
+                              id="downshift-143-item-11"
                               role="option"
                             >
                               <div
@@ -3861,7 +4131,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-12"
-                              id="downshift-151-item-12"
+                              id="downshift-143-item-12"
                               role="option"
                             >
                               <div
@@ -3874,7 +4144,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-13"
-                              id="downshift-151-item-13"
+                              id="downshift-143-item-13"
                               role="option"
                             >
                               <div
@@ -3887,7 +4157,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-14"
-                              id="downshift-151-item-14"
+                              id="downshift-143-item-14"
                               role="option"
                             >
                               <div
@@ -3900,7 +4170,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-15"
-                              id="downshift-151-item-15"
+                              id="downshift-143-item-15"
                               role="option"
                             >
                               <div
@@ -3913,7 +4183,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-16"
-                              id="downshift-151-item-16"
+                              id="downshift-143-item-16"
                               role="option"
                             >
                               <div
@@ -3926,7 +4196,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-selected="false"
                               class="select-list-option cursor-default "
                               data-testid="select-list__toggle-option-17"
-                              id="downshift-151-item-17"
+                              id="downshift-143-item-17"
                               role="option"
                             >
                               <div
