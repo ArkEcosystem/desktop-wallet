@@ -1,7 +1,8 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
+import { useConfiguration } from "app/contexts";
 import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
-import { useCallback, useState } from "react";
+import { useMemo } from "react";
 
 export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 	const defaultConfiguration: DashboardConfiguration = {
@@ -18,31 +19,28 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 		),
 	};
 
-	const [configuration, setConfiguration] = useState(defaultConfiguration);
+	const profileDefaults = useMemo(() => profile
+			.settings()
+			.get(ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration, [profile]);
 
-	const getConfiguration = useCallback(
-		() => profile.settings().get(ProfileSetting.DashboardConfiguration, configuration) as DashboardConfiguration,
-		[configuration],
-	);
+	const {
+		configuration: { dashboard },
+		setConfiguration,
+	} = useConfiguration();
 
 	const setValue = (values: Record<string, any>) => {
 		const updatedConfiguration = {
-			...getConfiguration(),
+			...(dashboard || profileDefaults),
 			...values,
 		};
-		profile.settings().set(ProfileSetting.DashboardConfiguration, updatedConfiguration);
-		setConfiguration(updatedConfiguration);
-	};
 
-	const getValue = (property: string) => {
-		const config = <Record<string, any>>getConfiguration();
-		return config[property];
+		setConfiguration({ dashboard: updatedConfiguration });
+		profile.settings().set(ProfileSetting.DashboardConfiguration, updatedConfiguration);
 	};
 
 	return {
 		setValue,
-		getValue,
-		getConfiguration,
+		...(dashboard || profileDefaults),
 		defaultConfiguration,
 	};
 };
