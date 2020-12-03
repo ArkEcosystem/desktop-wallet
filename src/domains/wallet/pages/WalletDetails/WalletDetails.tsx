@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Coins } from "@arkecosystem/platform-sdk";
 import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
@@ -79,13 +80,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 	const [showWalletRegistrations, setShowWalletRegistrations] = useState(false);
 
 	useLayoutEffect(() => {
-		setShowWalletVote(activeWallet.network().can("Transaction.vote"));
+		setShowWalletVote(activeWallet.network().can(Coins.FeatureFlag.TransactionVote));
 		setShowWalletRegistrations(
 			!activeWallet.isLedger() &&
 				activeWallet.canAny([
-					"Transaction.secondSignature",
-					"Transaction.delegateRegistration",
-					"Transaction.entityRegistration",
+					Coins.FeatureFlag.TransactionSecondSignature,
+					Coins.FeatureFlag.TransactionDelegateRegistration,
+					Coins.FeatureFlag.TransactionEntityRegistration,
 				]),
 		);
 	}, [activeWallet]);
@@ -177,14 +178,16 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					publicKey={activeWallet.publicKey()}
 					ticker={ticker}
 					showMultiSignatureOption={
-						!activeWallet.isLedger() && activeWallet.network().can("Transaction.multiSignature")
+						!activeWallet.isLedger() &&
+						activeWallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)
 					}
 					showSecondSignatureOption={
-						!activeWallet.isLedger() && activeWallet.network().can("Transaction.secondSignature")
+						!activeWallet.isLedger() &&
+						activeWallet.network().can(Coins.FeatureFlag.TransactionSecondSignature)
 					}
-					showSignMessageOption={activeWallet.network().can("Message.sign")}
-					showStoreHashOption={activeWallet.network().can("Transaction.ipfs")}
-					showVerifyMessageOption={activeWallet.network().can("Message.verify")}
+					showSignMessageOption={activeWallet.network().can(Coins.FeatureFlag.MessageSign)}
+					showStoreHashOption={activeWallet.network().can(Coins.FeatureFlag.TransactionIpfs)}
+					showVerifyMessageOption={activeWallet.network().can(Coins.FeatureFlag.MessageVerify)}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 					onMultiSignature={() =>
 						history.push(
