@@ -142,6 +142,7 @@ export const SearchWallet = ({
 				{
 					Header: (
 						<HeaderSearchBar
+							offsetClassName="-bottom-4"
 							placeholder={searchPlaceholder}
 							onSearch={setQuery}
 							onReset={() => setQuery("")}
