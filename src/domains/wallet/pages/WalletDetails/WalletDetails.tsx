@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk-profiles";
 import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk";
+import { Coins } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
@@ -178,10 +178,12 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					publicKey={activeWallet.publicKey()}
 					ticker={ticker}
 					showMultiSignatureOption={
-						!activeWallet.isLedger() && activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionMultiSignature)
+						!activeWallet.isLedger() &&
+						activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionMultiSignature)
 					}
 					showSecondSignatureOption={
-						!activeWallet.isLedger() && activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionSecondSignature)
+						!activeWallet.isLedger() &&
+						activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionSecondSignature)
 					}
 					showSignMessageOption={activeWallet.network().can(Coins.Enums.FeatureFlag.MessageSign)}
 					showStoreHashOption={activeWallet.network().can(Coins.Enums.FeatureFlag.TransactionIpfs)}
