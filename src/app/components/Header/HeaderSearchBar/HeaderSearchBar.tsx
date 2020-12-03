@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
 
 type HeaderSearchBarProps = {
+	offsetClassName?: string;
 	placeholder?: string;
 	label?: string;
 	children?: React.ReactNode;
@@ -15,10 +16,11 @@ type HeaderSearchBarProps = {
 };
 
 const SearchBarInputWrapper = styled.div`
-	min-width: 24rem;
+	min-width: 28rem;
 `;
 
 export const HeaderSearchBar = ({
+	offsetClassName,
 	placeholder,
 	children,
 	label,
@@ -46,15 +48,20 @@ export const HeaderSearchBar = ({
 			{!searchbarVisible && (
 				<button
 					data-testid="header-search-bar__button"
-					className="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+					className="h-full my-auto font-semibold cursor-pointer focus:outline-none"
 					onClick={() => setSearchbarVisible(true)}
 				>
 					{children ? (
 						children
 					) : (
 						<div className="flex items-center space-x-3">
-							<span>{label}</span>
-							<Icon name="Search" width={20} height={20} />
+							<span className="text-theme-primary-300 dark:text-theme-neutral-700">{label}</span>
+							<Icon
+								className="text-theme-primary-300 dark:text-theme-neutral-600"
+								name="Search"
+								width={18}
+								height={18}
+							/>
 						</div>
 					)}
 				</button>
@@ -64,29 +71,46 @@ export const HeaderSearchBar = ({
 				<SearchBarInputWrapper
 					data-testid="header-search-bar__input"
 					ref={ref}
-					className="absolute flex items-center px-6 py-4 rounded-md shadow-xl bg-theme-background -bottom-4 -right-6"
+					className={`absolute flex items-center text-base px-10 py-6 rounded-md shadow-xl bg-theme-background -right-4 ${
+						offsetClassName || "top-1/2 transform -translate-y-1/2"
+					}`}
 				>
 					{extra && (
 						<div className="flex items-center">
-							<div className="ml-2">{extra}</div>
+							<div>{extra}</div>
 							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 						</div>
 					)}
 
-					<button data-testid="header-search-bar__reset" onClick={handleQueryReset} type="button">
-						<Icon className="text-theme-neutral" name="CrossSlim" width={12} height={12} />
+					<button
+						data-testid="header-search-bar__reset"
+						className="focus:outline-none"
+						onClick={handleQueryReset}
+						type="button"
+					>
+						<Icon
+							className="p-1 -ml-1 text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary"
+							name="CrossSlim"
+							width={12}
+							height={12}
+						/>
 					</button>
 
-					<div className="flex-1 mx-4">
+					<div className="flex-1">
 						<Input
-							className="pt-2 border-none shadow-none HeaderSearchBar__input"
+							className="pl-3 border-none shadow-none HeaderSearchBar__input"
 							placeholder={placeholder}
 							value={query}
 							onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
 						/>
 					</div>
 
-					<Icon className="text-theme-neutral" name="Search" width={20} height={20} />
+					<Icon
+						className="text-color-primary-300 dark:text-theme-neutral-600 "
+						name="Search"
+						width={18}
+						height={18}
+					/>
 				</SearchBarInputWrapper>
 			)}
 		</div>

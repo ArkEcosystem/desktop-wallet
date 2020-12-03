@@ -171,19 +171,21 @@ exports[`SearchRecipient should render a modal 1`] = `
                             class="relative"
                           >
                             <button
-                              class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                              class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                               data-testid="header-search-bar__button"
                             >
                               <div
                                 class="flex items-center space-x-3"
                               >
-                                <span>
+                                <span
+                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                >
                                   Search
                                 </span>
                                 <div
-                                  class="sc-AxiKw dklFyP"
-                                  height="20"
-                                  width="20"
+                                  class="sc-AxiKw cytFlT text-theme-primary-300 dark:text-theme-neutral-600"
+                                  height="18"
+                                  width="18"
                                 >
                                   <svg>
                                     search.svg
@@ -806,19 +808,21 @@ exports[`SearchRecipient should render a modal with custom title and description
                             class="relative"
                           >
                             <button
-                              class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                              class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
                               data-testid="header-search-bar__button"
                             >
                               <div
                                 class="flex items-center space-x-3"
                               >
-                                <span>
+                                <span
+                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                >
                                   Search
                                 </span>
                                 <div
-                                  class="sc-AxiKw dklFyP"
-                                  height="20"
-                                  width="20"
+                                  class="sc-AxiKw cytFlT text-theme-primary-300 dark:text-theme-neutral-600"
+                                  height="18"
+                                  width="18"
                                 >
                                   <svg>
                                     search.svg
