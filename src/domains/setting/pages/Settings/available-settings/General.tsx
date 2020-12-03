@@ -31,10 +31,14 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
 
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
+	const [isOpenDevelopmentNetworkModal, setIsOpenDevelopmentNetworkModal] = useState(false);
 	const [isResetProfileOpen, setIsResetProfileOpen] = useState(false);
 
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
+	);
+	const [isDevelopmentNetwork, setIsDevelopmentNetwork] = useState(
+		activeProfile.settings().get(ProfileSetting.UseTestNetworks) || false,
 	);
 
 	const profiles = useMemo(() => env.profiles().values(), [env]);
@@ -63,6 +67,21 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const handleAdvancedMode = (isAccepted: boolean) => {
 		setIsOpenAdvancedModeModal(false);
 		setIsAdvancedMode(isAccepted);
+	};
+
+	const handleOpenDevelopmentNetworkModal = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { checked } = event.target;
+
+		if (checked) {
+			setIsOpenDevelopmentNetworkModal(checked);
+		} else {
+			setIsDevelopmentNetwork(false);
+		}
+	};
+
+	const handleDevelopmentNetwork = (isAccepted: boolean) => {
+		setIsOpenDevelopmentNetworkModal(false);
+		setIsDevelopmentNetwork(isAccepted);
 	};
 
 	const securityItems = [
