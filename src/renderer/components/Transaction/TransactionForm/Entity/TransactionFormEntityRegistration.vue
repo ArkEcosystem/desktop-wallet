@@ -202,27 +202,16 @@ export default {
     },
 
     registrationTypesOptions () {
-      const options = { ...this.allRegistrationTypesOptions }
-
-      if (this.senderWallet && !this.senderWallet.isDelegate) {
-        delete options[TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE.toString()]
-      }
-
-      return options
-    },
-
-    allRegistrationTypesOptions () {
       return {
         [TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS.toString()]: this.$tc('ENTITY.TYPES.BUSINESS', 1),
         [TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT.toString()]: this.$tc('ENTITY.TYPES.PRODUCT', 1),
         [TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN.toString()]: this.$tc('ENTITY.TYPES.PLUGIN', 1),
-        [TRANSACTION_TYPES_ENTITY.TYPE.MODULE.toString()]: this.$tc('ENTITY.TYPES.MODULE', 1),
-        [TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE.toString()]: this.$tc('ENTITY.TYPES.DELEGATE', 1)
+        [TRANSACTION_TYPES_ENTITY.TYPE.MODULE.toString()]: this.$tc('ENTITY.TYPES.MODULE', 1)
       }
     },
 
     entityTypeLabel () {
-      return this.allRegistrationTypesOptions[+this.step1.registrationType]
+      return this.registrationTypesOptions[+this.step1.registrationType]
     },
 
     isStepValid () {

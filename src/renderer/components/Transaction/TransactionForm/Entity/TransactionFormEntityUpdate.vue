@@ -12,7 +12,7 @@
 
     <EntityForm
       ref="entity"
-      :entity-name="entityTransaction.data.name"
+      :entity-name="entityName"
       :ipfs-data-object="ipfsDataObject"
       @change="onEntityForm"
     >
@@ -26,7 +26,7 @@
           :wallet="senderWallet"
           :wallet-network="walletNetwork"
           :transaction-group="$options.transactionGroup"
-          :transaction-type="$options.entityAction"
+          :transaction-type="entityActionType"
           @input="onFee"
         />
       </ListDividedItem>
@@ -117,13 +117,20 @@ export default {
   mixins: [mixin],
 
   props: {
+    delegate: {
+      type: Object,
+      required: false,
+      default: undefined
+    },
     entityTransaction: {
       type: Object,
-      required: true
+      required: false,
+      default: undefined
     },
     ipfsDataObject: {
       type: Object,
-      required: true
+      required: false,
+      default: () => {}
     }
   },
 
@@ -138,8 +145,40 @@ export default {
   }),
 
   computed: {
+    entityName () {
+      if (this.entityTransaction) {
+        return this.entityTransaction.data.name
+      }
+
+      if (this.delegate) {
+        return this.delegate.username
+      }
+
+      return undefined
+    },
+
+    entityType () {
+      return this.entityTransaction ? this.entityTransaction.type : TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE
+    },
+
+    entitySubType () {
+      return this.entityTransaction ? this.entityTransaction.subType : TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
+    },
+
+    entityActionType () {
+      return !this.entityTransaction ? TRANSACTION_TYPES_ENTITY.ACTION.REGISTER : TRANSACTION_TYPES_ENTITY.ACTION.UPDATE
+    },
+
+    senderAddress () {
+      return this.delegate ? this.delegate.address : this.entityTransaction.address
+    },
+
     isUndefined () {
-      return this.transaction_isUndefinedUpdate(this.entityTransaction.type, this.entityTransaction.typeGroup, this.entityTransaction.asset)
+      if (this.entityTransaction) {
+        return this.transaction_isUndefinedUpdate(this.entityTransaction.type, this.entityTransaction.typeGroup, this.entityTransaction.asset)
+      }
+
+      return false
     },
 
     title () {
@@ -154,7 +193,7 @@ export default {
         [TRANSACTION_TYPES_ENTITY.TYPE.MODULE.toString()]: this.$tc('ENTITY.TYPES.MODULE', 1),
         [TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE.toString()]: this.$tc('ENTITY.TYPES.DELEGATE', 1)
       }
-      return types[this.entityTransaction.type]
+      return types[this.entityType]
     },
 
     isStepValid () {
@@ -162,7 +201,7 @@ export default {
     },
 
     senderWallet () {
-      return this.$store.getters['wallet/byAddress'](this.entityTransaction.address)
+      return this.$store.getters['wallet/byAddress'](this.senderAddress)
     },
 
     currentWallet () {
@@ -189,23 +228,28 @@ export default {
         multiSignature: this.currentWallet.multiSignature
       }
 
-      const { type, subType, id: registrationId } = this.entityTransaction
-      const { ipfsData } = this.entityForm
-
-      // eslint-disable-next-line
+      const { ipfsData, entityName } = this.entityForm
       const sanitizedIpfsData = filter(ipfsData, (item) => !isEmpty(item))
+      const hash = await new File(new Request()).upload(sanitizedIpfsData)
+
+      const asset = {
+        type: this.entityType,
+        subType: this.entitySubType,
+        action: this.entityActionType,
+        data: {
+          ipfsData: hash
+        }
+      }
+
+      if (this.entityTransaction) {
+        asset.registrationId = this.entityTransaction.id
+      } else {
+        asset.data.name = entityName
+      }
 
       return {
         ...transactionData,
-        asset: {
-          type,
-          subType,
-          action: +this.$options.entityAction,
-          registrationId,
-          data: {
-            ipfsData: await new File(new Request()).upload(sanitizedIpfsData)
-          }
-        }
+        asset
       }
     },
 

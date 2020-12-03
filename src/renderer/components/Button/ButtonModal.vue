@@ -1,6 +1,7 @@
 <template>
   <button
     :class="[classes, 'flex items-center justify-center']"
+    :disabled="disabled"
     @click.stop="toggle"
   >
     <SvgIcon

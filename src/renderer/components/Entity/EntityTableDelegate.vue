@@ -2,8 +2,11 @@
   <EntityTable
     ref="table"
     :columns="columns"
-    :rows="rows"
+    :rows="delegatesRows"
+    :transactions="rows"
     :pin-above="true"
+    :is-remote="true"
+    :is-loading="isLoading"
     v-on="$listeners"
   >
     <template slot-scope="{ data }">
@@ -63,11 +66,17 @@ export default {
     rows: {
       type: Array,
       required: true
+    },
+    addresses: {
+      type: Array,
+      required: true,
+      default: () => []
     }
   },
 
   data: () => ({
-    delegates: []
+    isLoading: true,
+    delegates: {}
   }),
 
   computed: {
@@ -120,6 +129,10 @@ export default {
 
     numberOfActiveDelegates () {
       return get(this, 'session_network.constants.activeDelegates') || 51
+    },
+
+    delegatesRows () {
+      return Object.values(this.delegates)
     }
   },
 
@@ -137,12 +150,14 @@ export default {
     },
 
     async fetchDelegates () {
-      if (!this.rows.length) {
+      if (!this.addresses.length) {
         return
       }
 
+      this.isLoading = true
+
       try {
-        const addresses = this.rows.map(item => item.address).join(',')
+        const addresses = this.addresses.join(',')
         const { delegates } = await this.$client.fetchDelegates({ address: addresses })
         this.delegates = delegates.reduce((acc, item) => ({ ...acc, [item.address]: item }), {})
       } catch (error) {
@@ -150,8 +165,10 @@ export default {
           name: 'delegates',
           msg: error.message
         }))
-        this.delegates = []
+        this.delegates = {}
       }
+
+      this.isLoading = false
     },
 
     isDelegateActive (address) {

@@ -5,6 +5,8 @@
       class="EntityTable__table"
       :rows="rows"
       :columns="columns"
+      :is-remote="isRemote"
+      :is-loading="isLoading"
     >
       <template
         slot-scope="data"
@@ -86,20 +88,20 @@
           <div
             v-tooltip="{
               content: $t('ENTITY.RESIGNED'),
-              trigger: data.row.isResigned ? 'hover' : 'manual'
+              trigger: isEntityResigned(data.row) ? 'hover' : 'manual'
             }"
           >
             <MenuDropdown
-              :ref="`dropdown.${data.row.id}`"
-              :items="actionOptions"
+              :ref="`dropdown.${data.row.id || data.row.address}`"
+              :items="getActionOptions(data.row.address)"
               :is-highlighting="false"
-              :is-disabled="data.row.isResigned"
+              :is-disabled="isEntityResigned(data.row)"
               :pin-above="pinAbove"
               @select="emitSelect($event, data.row)"
             >
               <ButtonIconGeneric
                 slot="handler"
-                :disabled="data.row.isResigned"
+                :disabled="isEntityResigned(data.row)"
                 :is-small="true"
                 svg-class="rotate-90"
                 icon="more"
@@ -145,7 +147,22 @@ export default {
       type: Array,
       required: true
     },
+    transactions: {
+      type: Array,
+      required: false,
+      default: undefined
+    },
     pinAbove: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    isRemote: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    isLoading: {
       type: Boolean,
       required: false,
       default: false
@@ -157,15 +174,6 @@ export default {
     loading: {},
     failed: {}
   }),
-
-  computed: {
-    actionOptions () {
-      return {
-        update: this.$t('ENTITY.UPDATE'),
-        resign: this.$t('ENTITY.RESIGN')
-      }
-    }
-  },
 
   mounted () {
     this.fetchAllIpfsData()
@@ -186,12 +194,41 @@ export default {
     },
 
     async fetchAllIpfsData () {
-      const promises = this.rows.map(this.fetchIpfsData)
-      await Promise.allSettled(promises)
+      const transactions = this.transactions || this.rows
+      await Promise.allSettled(transactions.map(this.fetchIpfsData))
     },
 
     getIpfsDataProperty (id, path) {
       return get(this.ipfsDataObject, `${id}.${path}`)
+    },
+
+    getDelegateEntity (address) {
+      return this.transactions.find(transaction => transaction.type === 4 && transaction.address === address)
+    },
+
+    isEntityResigned (row) {
+      if (!this.transactions) {
+        return row.isResigned
+      }
+
+      const entity = this.getDelegateEntity(row.address)
+      if (entity) {
+        return entity.isResigned
+      }
+
+      return false
+    },
+
+    getActionOptions (address) {
+      const options = {
+        update: this.$t('ENTITY.UPDATE')
+      }
+
+      if (this.transactions && this.getDelegateEntity(address)) {
+        options.resign = this.$t('ENTITY.RESIGN')
+      }
+
+      return options
     },
 
     formatAddress (address) {
@@ -203,7 +240,18 @@ export default {
     },
 
     emitSelect (key, row) {
-      this.$emit(key, { transaction: row, ipfsDataObject: this.ipfsDataObject[row.id] })
+      let transaction = row
+      let ipfsDataObject
+
+      if (this.transactions) {
+        transaction = this.getDelegateEntity(row.address)
+      }
+
+      if (transaction) {
+        ipfsDataObject = this.ipfsDataObject[transaction.id]
+      }
+
+      this.$emit(key, { transaction, row, ipfsDataObject })
     },
 
     closeDropdowns () {

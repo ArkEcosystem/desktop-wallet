@@ -3,6 +3,7 @@
     <div class="bg-theme-feature rounded-lg w-full px-10 py-5 mb-3 flex items-center justify-between">
       <h2>{{ $t('ENTITY.MY_REGISTRATIONS') }}</h2>
       <ButtonModal
+        :disabled="!wallets.length"
         :label="$t('ENTITY.NEW_REGISTRATION')"
         class="Registrations__new-button m-0 ButtonGeneric blue-button"
       >
@@ -28,7 +29,7 @@
         <Loader />
       </div>
 
-      <div v-if="!isLoading && !registrations.length">
+      <div v-else-if="!isLoading && !registrations.length && !delegatesAddresses.length">
         <p class="font-semibold text-theme-page-text-light text-center w-full">
           {{ $t('ENTITY.NO_ENTITIES_FOUND') }}
         </p>
@@ -51,6 +52,7 @@
             :is="item.component"
             ref="tableWrapper"
             :rows="getRegistrationsByType(item.type)"
+            :addresses="delegatesAddresses"
             class="mt-5 border-b"
             @resign="openModal($event, 'resign')"
             @update="openModal($event, 'update')"
@@ -77,6 +79,7 @@
       :type="6"
       :group="2"
       :entity-action="1"
+      :delegate="selectedEntity.delegate"
       :entity-transaction="selectedEntity.transaction"
       :ipfs-data-object="selectedEntity.ipfsDataObject"
       :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
@@ -119,8 +122,17 @@ export default {
       return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     },
 
+    delegatesAddresses () {
+      return this.wallets.filter(wallet => wallet.isDelegate).map(wallet => wallet.address)
+    },
+
     registrationOptions () {
       const types = this.registrations.map(item => item.type)
+
+      if (this.delegatesAddresses.length) {
+        types.push(TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE)
+      }
+
       const options = [
         { label: this.$tc('ENTITY.TYPES.BUSINESS', 2), icon: 'business', type: TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS, component: 'EntityTableCommon' },
         { label: this.$tc('ENTITY.TYPES.PRODUCT', 2), icon: 'product', type: TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT, component: 'EntityTableCommon' },
@@ -128,6 +140,7 @@ export default {
         { label: this.$tc('ENTITY.TYPES.MODULE', 2), icon: 'module', type: TRANSACTION_TYPES_ENTITY.TYPE.MODULE, component: 'EntityTableCommon' },
         { label: this.$tc('ENTITY.TYPES.DELEGATE', 2), icon: 'delegate', type: TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE, component: 'EntityTableDelegate' }
       ]
+
       return options.filter(item => types.includes(item.type))
     },
 
@@ -149,10 +162,9 @@ export default {
       const addresses = this.wallets.map(wallet => wallet.address)
 
       if (!addresses.length) {
+        this.isLoading = false
         return
       }
-
-      this.isLoading = true
 
       try {
         const result = await this.$client.fetchEntities({ address: addresses })
@@ -177,9 +189,9 @@ export default {
       }
     },
 
-    openModal ({ transaction, ipfsDataObject }, action) {
+    openModal ({ transaction, row: delegate, ipfsDataObject }, action) {
       this.modalAction = action
-      this.selectedEntity = { transaction, ipfsDataObject }
+      this.selectedEntity = { transaction, delegate, ipfsDataObject }
     },
 
     closeModal () {

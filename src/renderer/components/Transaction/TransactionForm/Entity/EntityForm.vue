@@ -309,7 +309,7 @@ export default {
       const model = this.$v.form.entityName
 
       if (!model.minLength || !model.maxLength || !model.pattern) {
-        this.$set(this.nameValidation, 'verified', false)
+        this.nameValidation.verified = false
         return
       }
 
@@ -323,13 +323,13 @@ export default {
 
       try {
         const { transactions } = await this.$client.fetchTransactions({ 'asset.data.name': value })
-        this.$set(this.nameValidation, 'valid', !transactions.length)
-        this.$set(this.nameValidation, 'verified', true)
+        this.nameValidation.valid = !transactions.length
+        this.nameValidation.verified = true
       } catch {
         //
       }
 
-      this.$set(this.nameValidation, 'loading', false)
+      this.nameValidation.loading = false
       model.$touch()
     }, 2000, { leading: false })
   },
