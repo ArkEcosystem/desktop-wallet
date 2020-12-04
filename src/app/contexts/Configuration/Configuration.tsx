@@ -18,10 +18,16 @@ export const ConfigurationProvider = ({ children }: Props) => {
 	});
 
 	return (
-		<ConfigurationContext.Provider value={{ configuration, setConfiguration } as ConfigurationContextType}>
+		<ConfigurationContext.Provider value={{ ...configuration, setConfiguration } as ConfigurationContextType}>
 			{children}
 		</ConfigurationContext.Provider>
 	);
 };
 
-export const useConfiguration = () => React.useContext(ConfigurationContext);
+export const useConfiguration = () => {
+	const value = React.useContext(ConfigurationContext);
+	if (value === undefined) {
+		throw new Error("[useConfiguration] Component not wrapped within a Provider");
+	}
+	return value;
+};

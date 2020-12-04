@@ -27,10 +27,7 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 		[profile, defaultConfiguration],
 	);
 
-	const {
-		configuration: { dashboard },
-		setConfiguration,
-	} = useConfiguration();
+	const { dashboard, setConfiguration } = useConfiguration();
 
 	const setValue = (values: Record<string, any>) => {
 		const updatedConfiguration = {

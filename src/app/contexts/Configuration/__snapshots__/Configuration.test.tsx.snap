@@ -1,11 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Environment Context should render the wrapper properly 1`] = `
+exports[`Configuration Context should render the wrapper properly 1`] = `
 <DocumentFragment>
   <span
     data-testid="ConfigurationProvider__content"
   >
     Configuration Provider content
   </span>
+</DocumentFragment>
+`;
+
+exports[`Configuration Context should update configuration 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="Configuration__consumer"
+  >
+    Configuration content
+    <div
+      data-testid="Configuration__portfolio"
+    />
+  </div>
 </DocumentFragment>
 `;
