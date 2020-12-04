@@ -20,7 +20,7 @@ type TransactionsProps = {
 	isVisible?: boolean;
 };
 
-export const Transactions = memo(({ emptyText, isCompact, profile, isVisible }: TransactionsProps) => {
+export const Transactions = memo(({ emptyText, isCompact, profile, isVisible = true }: TransactionsProps) => {
 	const { t } = useTranslation();
 
 	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
@@ -32,7 +32,7 @@ export const Transactions = memo(({ emptyText, isCompact, profile, isVisible }: 
 
 	const fetchTransactions = useCallback(
 		async ({ flush, mode }: { flush: boolean; mode: string }) => {
-			let currentTransactions = transactions || [];
+			let currentTransactions = [...transactions];
 
 			if (flush) {
 				profile.transactionAggregate().flush();
@@ -63,7 +63,7 @@ export const Transactions = memo(({ emptyText, isCompact, profile, isVisible }: 
 	);
 
 	useEffect(() => {
-		fetchTransactions({ flush: true, mode: activeTransactionModeTab });
+		if (isVisible) fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 		// eslint-disable-next-line
 	}, [activeTransactionModeTab, selectedTransactionType]);
 
