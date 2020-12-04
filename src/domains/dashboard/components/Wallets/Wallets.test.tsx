@@ -38,11 +38,12 @@ describe("Wallets", () => {
 
 		emptyProfile = env.profiles().create("Empty");
 		profile = env.profiles().findById(getDefaultProfileId());
-		wallets = profile.wallets().values();
 
 		const wallet = await profile
 			.wallets()
 			.importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+
+		wallets = profile.wallets().values();
 
 		await syncDelegates();
 		await wallet.syncVotes();
@@ -105,6 +106,51 @@ describe("Wallets", () => {
 		});
 
 		expect(getByTestId("WalletsGrid")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render without testnet wallets", () => {
+		profile.settings().set(ProfileSetting.UseTestNetworks, false);
+
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+		profile.settings().set(ProfileSetting.UseTestNetworks, true);
+	});
+
+	it("should load more wallets", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets listPagerLimit={1} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const toggle = getByTestId("LayoutControls__list--icon");
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		await waitFor(() => expect(getByTestId("WalletsList")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("WalletsList__ViewMore")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletsList__ViewMore"));
+		});
+
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(3));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -231,22 +277,6 @@ describe("Wallets", () => {
 		});
 
 		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);
-	});
-
-	it("should render without testnet wallets", () => {
-		profile.settings().set(ProfileSetting.UseTestNetworks, false);
-
-		const { asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render empty profile wallets", async () => {

@@ -19,6 +19,7 @@ type WalletsProps = {
 	onImportLedgerWallet?: () => void;
 	onSelectViewType?: any;
 	onWalletAction?: any;
+	listPagerLimit?: number;
 };
 
 export const Wallets = ({
@@ -27,6 +28,7 @@ export const Wallets = ({
 	onImportWallet,
 	onImportLedgerWallet,
 	onWalletAction,
+	listPagerLimit = 10,
 }: WalletsProps) => {
 	const [viewMore, setViewMore] = useState(false);
 	const [isWaitingLedger, setIsWaitingLedger] = useState(false);
@@ -51,6 +53,7 @@ export const Wallets = ({
 		selectedNetworkIds,
 		displayType: walletsDisplayType,
 		viewMore,
+		listPagerLimit,
 	});
 
 	const handleClick = (walletId: string) => {

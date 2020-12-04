@@ -9,7 +9,8 @@ export const useWalletDisplay = ({
 	wallets = [],
 	selectedNetworkIds,
 	displayType = "all",
-	viewMore,
+	viewMore = false,
+	listPagerLimit = 10,
 }: UseWalletDisplayProps) => {
 	const sliderOptions = {
 		slideHeight: 192,
@@ -21,7 +22,6 @@ export const useWalletDisplay = ({
 
 	const { listWallets, gridWallets, listHasMore } = useMemo(() => {
 		const walletCardActions: DropdownOption[] = [];
-		const listPagerLimit = 10;
 
 		const listWallets = wallets
 			.filter((wallet: any, index: number) => {
@@ -88,7 +88,7 @@ export const useWalletDisplay = ({
 			gridWallets: loadGridWallets(),
 			listHasMore: wallets.length > 0 && wallets.length > listWallets.length,
 		};
-	}, [wallets, selectedNetworkIds, displayType, viewMore, sliderOptions.slidesPerView]);
+	}, [wallets, selectedNetworkIds, displayType, viewMore, sliderOptions.slidesPerView, listPagerLimit]);
 
 	return { listWallets, gridWallets, sliderOptions, listHasMore };
 };

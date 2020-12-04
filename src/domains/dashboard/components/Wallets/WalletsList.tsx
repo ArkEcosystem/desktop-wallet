@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 import { WalletListProps } from "./";
 
-export const WalletsList = memo(({ isVisible, wallets = [], hasMore, onRowClick, onViewMore }: WalletListProps) => {
+export const WalletsList = memo(({ isVisible = true, wallets, hasMore, onRowClick, onViewMore }: WalletListProps) => {
 	const { t } = useTranslation();
 
 	const columns = [

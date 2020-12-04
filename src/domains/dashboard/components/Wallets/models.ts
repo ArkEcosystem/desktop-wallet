@@ -25,4 +25,5 @@ export type UseWalletDisplayProps = {
 	selectedNetworkIds?: string[];
 	displayType?: string;
 	viewMore?: boolean;
+	listPagerLimit?: number;
 };

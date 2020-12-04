@@ -4,7 +4,7 @@ import React, { memo } from "react";
 
 import { WalletGridProps } from "./";
 
-export const WalletsGrid = memo(({ isVisible, wallets = [], sliderOptions, onWalletAction }: WalletGridProps) => {
+export const WalletsGrid = memo(({ isVisible, wallets, sliderOptions, onWalletAction }: WalletGridProps) => {
 	if (!isVisible) return <></>;
 
 	return (
