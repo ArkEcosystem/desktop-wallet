@@ -13,7 +13,7 @@ type PortfolioChartProps = {
 	showChartAnimation?: boolean;
 };
 
-export const PortfolioChart = memo(({ profile, isVisible, showChartAnimation }: PortfolioChartProps) => {
+export const PortfolioChart = memo(({ profile, isVisible = true, showChartAnimation }: PortfolioChartProps) => {
 	const { t } = useTranslation();
 	const { percentages, balances, chartLines } = usePortfolioData({ profile });
 
