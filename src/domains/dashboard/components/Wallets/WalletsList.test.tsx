@@ -2,7 +2,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { env, getDefaultProfileId, render } from "utils/testing-library";
 
-import { GridWallet,WalletsList } from "./";
+import { GridWallet, WalletsList } from "./";
 
 let profile: Profile;
 let wallets: GridWallet[];

@@ -22,10 +22,9 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 	const { dashboard, setConfiguration } = useConfiguration();
 	const profileDefaults = useMemo(
 		() =>
-			dashboard ||
-			(profile
+			profile
 				.settings()
-				.get(ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration),
+				.get(ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration,
 		[profile, defaultConfiguration],
 	);
 
