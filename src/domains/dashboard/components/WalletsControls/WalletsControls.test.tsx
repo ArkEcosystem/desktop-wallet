@@ -101,7 +101,7 @@ describe("WalletsControls", () => {
 
 	it("should ignore list event if already on grid view", () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(<WalletsControls filterProperties={filterProperties as any} />);
+		const { getByTestId } = render(<WalletsControls viewType="list" filterProperties={filterProperties as any} />);
 		const toggle = getByTestId("LayoutControls__list--icon");
 
 		act(() => {
