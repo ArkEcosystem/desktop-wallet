@@ -65,7 +65,7 @@ export const RegistrationTypeStep = ({
 		if (
 			!wallet.isDelegate?.() &&
 			!wallet.isMultiSignature?.() &&
-			network?.can("Transaction.delegateRegistration")
+			network?.can(Coins.FeatureFlag.TransactionDelegateRegistration)
 		) {
 			registrationTypes.push({
 				value: "delegateRegistration",
@@ -74,7 +74,7 @@ export const RegistrationTypeStep = ({
 		}
 	}
 
-	if (network?.can("Transaction.entityRegistration")) {
+	if (network?.can(Coins.FeatureFlag.TransactionEntityRegistration)) {
 		registrationTypes.push({
 			value: "entityRegistration",
 			type: Enums.EntityType.Business,
