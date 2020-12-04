@@ -33,6 +33,8 @@ export const SummaryStep = ({ transaction, wallet }: SummaryStepProps) => {
 		fetchIpfs();
 	}, [transaction]);
 
+	const showMetaProperties = !!Object.keys(ipfsData?.meta || {}).length;
+
 	return (
 		<>
 			{/* @TODO add TransactionType / TransactionEntityType component */}
@@ -58,21 +60,27 @@ export const SummaryStep = ({ transaction, wallet }: SummaryStepProps) => {
 				{transaction.data()?.asset?.data?.ipfsData}
 			</TransactionDetail>
 
-			{ipfsData && (
+			{showMetaProperties && (
 				<div data-testid="SummaryStep__ipfs-data">
-					<TransactionDetail label={t("TRANSACTION.DISPLAY_NAME")}>
-						{ipfsData.meta?.displayName}
-					</TransactionDetail>
+					{ipfsData.meta.displayName && (
+						<TransactionDetail label={t("TRANSACTION.DISPLAY_NAME")}>
+							{ipfsData.meta.displayName}
+						</TransactionDetail>
+					)}
 
-					<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>
-						{ipfsData.meta?.description}
-					</TransactionDetail>
+					{ipfsData.meta.description && (
+						<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>
+							{ipfsData.meta.description}
+						</TransactionDetail>
+					)}
 
-					<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-						<Link to={ipfsData.meta?.website} isExternal>
-							{ipfsData.meta?.website}
-						</Link>
-					</TransactionDetail>
+					{ipfsData.meta.website && (
+						<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
+							<Link to={ipfsData.meta.website} isExternal>
+								{ipfsData.meta.website}
+							</Link>
+						</TransactionDetail>
+					)}
 				</div>
 			)}
 
