@@ -33,8 +33,6 @@ export const SummaryStep = ({ transaction, wallet }: SummaryStepProps) => {
 		fetchIpfs();
 	}, [transaction]);
 
-	const showMetaProperties = !!Object.keys(ipfsData?.meta || {}).length;
-
 	return (
 		<>
 			{/* @TODO add TransactionType / TransactionEntityType component */}
@@ -52,7 +50,7 @@ export const SummaryStep = ({ transaction, wallet }: SummaryStepProps) => {
 
 			{transaction.data()?.asset?.data?.name && (
 				<TransactionDetail label={t("TRANSACTION.ENTITY.NAME")}>
-					{transaction.data()?.asset?.data?.name}
+					{transaction.data().asset.data.name}
 				</TransactionDetail>
 			)}
 
@@ -60,28 +58,20 @@ export const SummaryStep = ({ transaction, wallet }: SummaryStepProps) => {
 				{transaction.data()?.asset?.data?.ipfsData}
 			</TransactionDetail>
 
-			{showMetaProperties && (
-				<div data-testid="SummaryStep__ipfs-data">
-					{ipfsData.meta.displayName && (
-						<TransactionDetail label={t("TRANSACTION.DISPLAY_NAME")}>
-							{ipfsData.meta.displayName}
-						</TransactionDetail>
-					)}
+			{ipfsData?.meta?.displayName && (
+				<TransactionDetail label={t("TRANSACTION.DISPLAY_NAME")}>{ipfsData.meta.displayName}</TransactionDetail>
+			)}
 
-					{ipfsData.meta.description && (
-						<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>
-							{ipfsData.meta.description}
-						</TransactionDetail>
-					)}
+			{ipfsData?.meta?.description && (
+				<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>{ipfsData.meta.description}</TransactionDetail>
+			)}
 
-					{ipfsData.meta.website && (
-						<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-							<Link to={ipfsData.meta.website} isExternal>
-								{ipfsData.meta.website}
-							</Link>
-						</TransactionDetail>
-					)}
-				</div>
+			{ipfsData?.meta?.website && (
+				<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
+					<Link to={ipfsData.meta.website} isExternal>
+						{ipfsData.meta.website}
+					</Link>
+				</TransactionDetail>
 			)}
 
 			<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
