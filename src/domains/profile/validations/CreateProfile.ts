@@ -13,8 +13,6 @@ export const createProfile = (t: any, env: Environment) => ({
 							maxLength: 42,
 					  })
 					: true,
-			// unique: (name: string) =>
-			// 	env.profiles().findByName(name.trim()) ? t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS") : true,
 			unique: (name: string) => {
 				if (
 					env
