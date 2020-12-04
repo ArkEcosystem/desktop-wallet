@@ -11,5 +11,5 @@ export type FilterWalletsHookProps = {
 
 export type FilterWalletsProps = {
 	showToggleViews?: boolean;
-	onChange?: (property: Record<string, any>) => void;
+	onChange?: (key: string, value: any) => void;
 } & FilterWalletsHookProps;

@@ -19,29 +19,28 @@ export const useDashboardConfig = ({ profile }: { profile: Profile }) => {
 		),
 	};
 
+	const { dashboard, setConfiguration } = useConfiguration();
 	const profileDefaults = useMemo(
 		() =>
-			profile
+			dashboard ||
+			(profile
 				.settings()
-				.get(ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration,
+				.get(ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration),
 		[profile, defaultConfiguration],
 	);
 
-	const { dashboard, setConfiguration } = useConfiguration();
+	const dashboardConfiguration = dashboard || profileDefaults;
 
-	const setValue = (values: Record<string, any>) => {
-		const updatedConfiguration = {
-			...(dashboard || profileDefaults),
-			...values,
-		};
+	const setValue = (key: string, value: any) => {
+		dashboardConfiguration[key] = value;
 
-		setConfiguration({ dashboard: updatedConfiguration });
-		profile.settings().set(ProfileSetting.DashboardConfiguration, updatedConfiguration);
+		setConfiguration({ dashboard: dashboardConfiguration });
+		profile.settings().set(ProfileSetting.DashboardConfiguration, dashboardConfiguration);
 	};
 
 	return {
 		setValue,
-		...(dashboard || profileDefaults),
+		...dashboardConfiguration,
 		defaultConfiguration,
 	};
 };

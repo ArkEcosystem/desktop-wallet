@@ -77,8 +77,8 @@ export const Wallets = ({
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
 						onImportLedgerWallet={() => setIsWaitingLedger(true)}
-						onSelectGridView={() => update({ viewType: "grid" })}
-						onSelectListView={() => update({ viewType: "list" })}
+						onSelectGridView={() => update("viewType", "grid")}
+						onSelectListView={() => update("viewType", "list")}
 						onFilterChange={update}
 					/>
 				</div>

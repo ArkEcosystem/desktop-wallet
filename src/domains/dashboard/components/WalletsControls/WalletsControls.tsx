@@ -13,7 +13,7 @@ type WalletsControlsProps = {
 	onImportLedgerWallet?: () => void;
 	onSelectGridView?: any;
 	onSelectListView?: any;
-	onFilterChange?: (property: Record<string, any>) => void;
+	onFilterChange?: (key: string, value: any) => void;
 };
 
 export const WalletsControls = memo(

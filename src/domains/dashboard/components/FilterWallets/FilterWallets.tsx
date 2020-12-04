@@ -39,11 +39,10 @@ export const FilterWallets = ({
 				useTestNetworks={useTestNetworks}
 				networks={networks}
 				onChange={(_: any, networks: any[]) => {
-					onChange?.({
-						selectedNetworkIds: networks
-							.filter((network) => network.isSelected)
-							.map((network) => network.id),
-					});
+					onChange?.(
+						"selectedNetworkIds",
+						networks.filter((network) => network.isSelected).map((network) => network.id),
+					);
 				}}
 			/>
 
@@ -58,7 +57,7 @@ export const FilterWallets = ({
 					<Dropdown
 						toggleIcon="ChevronDown"
 						options={walletDisplayOptions}
-						onSelect={({ value }: { value: string }) => onChange?.({ walletsDisplayType: value })}
+						onSelect={({ value }: { value: string }) => onChange?.("walletsDisplayType", value)}
 						toggleContent={
 							<div
 								data-testid="filter-wallets__wallets"
@@ -91,7 +90,7 @@ export const FilterWallets = ({
 							<Toggle
 								checked={showPortfolio}
 								data-testid="filter-wallets_toggle--portfolio"
-								onChange={(event) => onChange?.({ showPortfolio: event.target.checked })}
+								onChange={(event) => onChange?.("showPortfolio", event.target.checked)}
 							/>
 						</div>
 
@@ -109,7 +108,7 @@ export const FilterWallets = ({
 							<Toggle
 								checked={showTransactions}
 								data-testid="filter-wallets_toggle--transactions"
-								onChange={(event) => onChange?.({ showTransactions: event.target.checked })}
+								onChange={(event) => onChange?.("showTransactions", event.target.checked)}
 							/>
 						</div>
 

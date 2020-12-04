@@ -2,7 +2,7 @@ import { ProfileSetting, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/p
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
-import { Dropdown, DropdownOption } from "app/components/Dropdown";
+import { Dropdown } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
@@ -124,11 +124,9 @@ export const Votes = () => {
 		useTestNetworks: activeProfile.settings().get(ProfileSetting.UseTestNetworks) as boolean,
 		selectedNetworkIds,
 		walletsDisplayType,
-		onNetworkChange: (_: any, networks: any[]) => {
-			setSelectedNetworkIds(networks.filter((network) => network.isSelected).map((network) => network.id));
-		},
-		onWalletsDisplayType: ({ value }: DropdownOption) => {
-			setWalletsDisplayType(value as string);
+		onChange: (key: string, value: any) => {
+			if (key === "walletsDisplayType") setWalletsDisplayType(value);
+			if (key === "selectedNetworkIds") setSelectedNetworkIds(value);
 		},
 	};
 
