@@ -22,7 +22,7 @@ export const SummaryStep = ({ transaction, wallet }: SummaryStepProps) => {
 	useEffect(() => {
 		const fetchIpfs = async () => {
 			try {
-				const hash = transaction?.data().asset.data.ipfsData;
+				const hash = transaction.data().asset.data.ipfsData;
 				const ipfsData = await new File(httpClient).get(hash);
 				setIpfsData(ipfsData);
 			} catch (e) {
@@ -55,22 +55,22 @@ export const SummaryStep = ({ transaction, wallet }: SummaryStepProps) => {
 			)}
 
 			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>
-				{transaction?.data()?.asset?.data?.ipfsData}
+				{transaction.data()?.asset?.data?.ipfsData}
 			</TransactionDetail>
 
 			{ipfsData && (
 				<div data-testid="SummaryStep__ipfs-data">
-					<TransactionDetail label={t("TRANSACTION.NAME")}>
-						{ipfsData?.data?.meta?.displayName}
+					<TransactionDetail label={t("TRANSACTION.DISPLAY_NAME")}>
+						{ipfsData.meta?.displayName}
 					</TransactionDetail>
 
 					<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>
-						{ipfsData?.data?.meta?.description}
+						{ipfsData.meta?.description}
 					</TransactionDetail>
 
 					<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
-						<Link to={ipfsData?.meta?.website} isExternal>
-							{ipfsData?.data?.meta?.website}
+						<Link to={ipfsData.meta?.website} isExternal>
+							{ipfsData.meta?.website}
 						</Link>
 					</TransactionDetail>
 				</div>
