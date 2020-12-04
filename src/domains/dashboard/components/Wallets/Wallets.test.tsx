@@ -1,8 +1,9 @@
-import { Profile, ProfileSetting,ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import {
@@ -11,6 +12,7 @@ import {
 	fireEvent,
 	getDefaultProfileId,
 	renderWithRouter,
+	syncDelegates,
 	waitFor,
 	within,
 } from "utils/testing-library";
@@ -21,22 +23,35 @@ const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 let profile: Profile;
+let emptyProfile: Profile;
 let wallets: ReadWriteWallet[];
 
 const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
 
 describe("Wallets", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
+		nock("https://neoscan.io/api/main_net/v1/")
+			.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
+			.reply(200, []);
+
 		history.push(dashboardURL);
 
+		emptyProfile = env.profiles().create("Empty");
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallets = profile.wallets().values();
+
+		const wallet = await profile
+			.wallets()
+			.importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+
+		await syncDelegates();
+		await wallet.syncVotes();
 	});
 
 	it("should render grid", () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={wallets} />
+				<Wallets />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -51,7 +66,7 @@ describe("Wallets", () => {
 	it("should render list", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={wallets} />
+				<Wallets />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -71,7 +86,7 @@ describe("Wallets", () => {
 	it("should toggle between grid and list view", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={wallets} />
+				<Wallets />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -95,7 +110,7 @@ describe("Wallets", () => {
 
 	it("should handle wallet creation", () => {
 		const onCreateWallet = jest.fn();
-		const { getByTestId, getByText } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets onCreateWallet={onCreateWallet} />
 			</Route>,
@@ -112,7 +127,7 @@ describe("Wallets", () => {
 
 	it("should handle wallet import", () => {
 		const onImportWallet = jest.fn();
-		const { getByTestId, getByText } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets onImportWallet={onImportWallet} />
 			</Route>,
@@ -128,8 +143,7 @@ describe("Wallets", () => {
 	});
 
 	it("should handle filter change", async () => {
-		const fn = jest.fn();
-		const { getByTestId, getByText, findByTestId } = renderWithRouter(
+		const { getByTestId, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets />
 			</Route>,
@@ -222,7 +236,7 @@ describe("Wallets", () => {
 	it("should render without testnet wallets", () => {
 		profile.settings().set(ProfileSetting.UseTestNetworks, false);
 
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets />
 			</Route>,
@@ -232,6 +246,28 @@ describe("Wallets", () => {
 			},
 		);
 
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render empty profile wallets", async () => {
+		history.push(`/profiles/${emptyProfile.id()}/dashboard`);
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets />
+			</Route>,
+			{
+				routes: [`/profiles/${emptyProfile.id()}/dashboard`],
+				history,
+			},
+		);
+
+		const toggle = getByTestId("LayoutControls__list--icon");
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		await waitFor(() => expect(getByTestId("WalletsList")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

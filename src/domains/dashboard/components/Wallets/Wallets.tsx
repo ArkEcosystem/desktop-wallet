@@ -95,7 +95,7 @@ export const Wallets = ({
 					hasMore={listHasMore}
 					onRowClick={handleClick}
 					onViewMore={() => setViewMore(true)}
-				 />
+				/>
 			</div>
 
 			{isWaitingLedger && <LedgerWaitingDevice isOpen={true} onClose={onLedgerModalClose} />}

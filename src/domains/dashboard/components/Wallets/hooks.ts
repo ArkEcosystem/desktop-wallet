@@ -21,7 +21,7 @@ export const useWalletDisplay = ({
 
 	const { listWallets, gridWallets, listHasMore } = useMemo(() => {
 		const walletCardActions: DropdownOption[] = [];
-		const listPagerLimit = 0;
+		const listPagerLimit = 10;
 
 		const listWallets = wallets
 			.filter((wallet: any, index: number) => {
