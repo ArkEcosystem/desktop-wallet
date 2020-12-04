@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import {  renderHook } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import React from "react";
 import { env, getDefaultProfileId } from "utils/testing-library";
@@ -29,7 +29,9 @@ describe("usePortfolioData hook", () => {
 
 	it("should return percentages", async () => {
 		//@ts-ignore
-		const balancePerCoinMock = jest.spyOn(profile.walletAggregate(), "balancePerCoin").mockImplementation(() => ({ ARK: { total: 10, percentage: 3 } }));
+		const balancePerCoinMock = jest
+			.spyOn(profile.walletAggregate(), "balancePerCoin")
+			.mockImplementation(() => ({ ARK: { total: 10, percentage: 3 } }));
 
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => usePortfolioData({ profile }), { wrapper });

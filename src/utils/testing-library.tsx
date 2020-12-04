@@ -1,7 +1,7 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { render } from "@testing-library/react";
-import { ConfigurationProvider,EnvironmentProvider, ThemeProvider } from "app/contexts";
+import { ConfigurationProvider, EnvironmentProvider, ThemeProvider } from "app/contexts";
 import { i18n } from "app/i18n";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";

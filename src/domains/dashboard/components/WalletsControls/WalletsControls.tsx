@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { ControlButton, LayoutControls } from "app/components/LayoutControls";
 import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
-import React, { memo,useState } from "react";
+import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type WalletsControlsProps = {
