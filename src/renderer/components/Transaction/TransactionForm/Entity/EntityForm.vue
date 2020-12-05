@@ -39,7 +39,7 @@
       <InputText
         v-model="$v.form.ipfsData.meta.displayName.$model"
         :is-invalid="$v.form.ipfsData.meta.displayName.$dirty && $v.form.ipfsData.meta.displayName.$invalid"
-        :label="$t('ENTITY.DISPLAY_NAME')"
+        :label="`${$t('ENTITY.DISPLAY_NAME')} (${$t('COMMON.OPTIONAL')})`"
         name="display-name"
         class="mt-4"
       />
@@ -47,7 +47,7 @@
       <InputText
         v-model="$v.form.ipfsData.meta.description.$model"
         :is-invalid="$v.form.ipfsData.meta.description.$dirty && $v.form.ipfsData.meta.description.$invalid"
-        :label="$t('ENTITY.DESCRIPTION')"
+        :label="`${$t('ENTITY.DESCRIPTION')} (${$t('COMMON.OPTIONAL')})`"
         name="description"
         class="mt-4"
       />
@@ -55,7 +55,7 @@
       <InputText
         v-model="$v.form.ipfsData.meta.website.$model"
         :is-invalid="$v.form.ipfsData.meta.website.$dirty && $v.form.ipfsData.meta.website.$invalid"
-        :label="$t('ENTITY.WEBSITE')"
+        :label="`${$t('ENTITY.WEBSITE')} (${$t('COMMON.OPTIONAL')})`"
         name="website"
         class="mt-4"
       />
@@ -348,16 +348,13 @@ export default {
       ipfsData: {
         meta: {
           displayName: {
-            required,
             minLength: minLength(3)
           },
           description: {
-            required,
             minLength: minLength(3),
             maxLength: maxLength(512)
           },
           website: {
-            required,
             url
           }
         }

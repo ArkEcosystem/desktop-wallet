@@ -42,6 +42,7 @@ export default {
     NOT: 'not',
     OF: 'of',
     OTHER: 'Other',
+    OPTIONAL: 'Optional',
     PREV: 'Prev',
     PROFILE_NAME: 'Profile name',
     PRICE_PROVIDER: 'Price Provider',
@@ -1477,11 +1478,11 @@ export default {
     VIEW: 'View',
 
     REPOSITORY: 'Repository',
-    REPOSITORY_DESCRIPTION: 'Promote your project\'s code repository.',
+    REPOSITORY_DESCRIPTION: 'Promote your project\'s code repository (Optional)',
     SOCIAL_MEDIA: 'Social Media',
-    SOCIAL_MEDIA_DESCRIPTION: 'Build your social media following.',
+    SOCIAL_MEDIA_DESCRIPTION: 'Build your social media following (Optional)',
     PHOTO_VIDEO: 'Photo & Video',
-    PHOTO_VIDEO_DESCRIPTION: 'Tell your story through photos and videos.',
+    PHOTO_VIDEO_DESCRIPTION: 'Tell your story through photos and videos (Optional)',
 
     ADD_LINK: 'Add Link',
     LINK: 'Link',

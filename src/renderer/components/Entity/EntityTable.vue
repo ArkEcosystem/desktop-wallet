@@ -36,7 +36,12 @@
           v-if="data.column.field === 'website'"
           class="flex items-center justify-center"
         >
+          <Loader
+            v-if="isIpfsLoading(data.row.id)"
+            size="8px"
+          />
           <a
+            v-else-if="getIpfsDataProperty(data.row.id, 'meta.website')"
             v-tooltip="{
               content: getIpfsDataProperty(data.row.id, 'meta.website')
             }"
@@ -48,6 +53,7 @@
               view-box="0 0 18 18"
             />
           </a>
+          <span v-else>N/A</span>
         </div>
 
         <div
@@ -128,6 +134,7 @@ import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import { MenuDropdown } from '@/components/Menu'
 import TableWrapper from '@/components/utils/TableWrapper'
 import SvgIcon from '@/components/SvgIcon'
+import Loader from '@/components/utils/Loader'
 import { File } from '@arkecosystem/platform-sdk-ipfs'
 import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { get } from '@arkecosystem/utils'
@@ -140,6 +147,7 @@ export default {
     ButtonIconGeneric,
     ButtonModal,
     EntityHistoryModal,
+    Loader,
     MenuDropdown,
     SvgIcon,
     TableWrapper,
@@ -189,7 +197,7 @@ export default {
 
   methods: {
     async fetchIpfsData (row) {
-      const request = new Request()
+      const request = new Request().timeout(5000)
       this.$set(this.loading, row.id, true)
       try {
         const result = await new File(request).get(row.data.ipfsData)
@@ -214,6 +222,10 @@ export default {
       return this.transactions.find(transaction => transaction.type === 4 && transaction.address === address)
     },
 
+    isIpfsLoading (id) {
+      return !!this.loading[id]
+    },
+
     isEntityResigned (row) {
       if (!this.transactions) {
         return row.isResigned
@@ -229,11 +241,12 @@ export default {
 
     getActionOptions (address) {
       const options = {
-        update: this.$t('ENTITY.UPDATE')
+        update: this.$t('ENTITY.UPDATE'),
+        resign: this.$t('ENTITY.RESIGN')
       }
 
-      if (this.transactions && this.getDelegateEntity(address)) {
-        options.resign = this.$t('ENTITY.RESIGN')
+      if (this.transactions && !this.getDelegateEntity(address)) {
+        delete options.resign
       }
 
       return options
