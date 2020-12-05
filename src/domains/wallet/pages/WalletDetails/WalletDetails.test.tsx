@@ -115,12 +115,6 @@ describe("WalletDetails", () => {
 		jest.advanceTimersByTime(30000);
 	});
 
-	it("should render", async () => {
-		const { asFragment } = await renderPage();
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should not render wallet vote when the network does not support votes", async () => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
 
@@ -136,11 +130,21 @@ describe("WalletDetails", () => {
 	});
 
 	it("should not render wallet registrations when the network does not support second signatures, delegate registrations and entity registrations", async () => {
-		const networkFeatureSpy = jest.spyOn(wallet, "canAny").mockReturnValue(false);
+		const networkFeatureSpy = jest.spyOn(wallet, "canAny");
+
+		when(networkFeatureSpy)
+			.calledWith([
+				Coins.FeatureFlag.TransactionSecondSignature,
+				Coins.FeatureFlag.TransactionDelegateRegistration,
+				Coins.FeatureFlag.TransactionEntityRegistration,
+			])
+			.mockReturnValue(false);
 
 		const { getByTestId } = await renderPage(false);
 
-		expect(() => getByTestId("WalletRegistrations")).toThrow(/Unable to find an element by/);
+		await waitFor(() => {
+			expect(() => getByTestId("WalletRegistrations")).toThrow(/Unable to find an element by/);
+		});
 
 		networkFeatureSpy.mockRestore();
 	});
