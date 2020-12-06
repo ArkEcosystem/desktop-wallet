@@ -10,7 +10,8 @@ describe("ReceiveFunds", () => {
 			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network="ark.devnet" />,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(0));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__address")).toHaveLength(1));
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
 
 		expect(asFragment()).toMatchSnapshot();
@@ -20,7 +21,8 @@ describe("ReceiveFunds", () => {
 		// @ts-ignore
 		const { asFragment, queryAllByTestId } = render(<ReceiveFunds isOpen={true} icon="ARK" network="ark.devnet" />);
 
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(0));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__address")).toHaveLength(1));
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(0));
 
 		expect(asFragment()).toMatchSnapshot();
@@ -31,7 +33,8 @@ describe("ReceiveFunds", () => {
 			<ReceiveFunds isOpen={true} address="abc" icon="ARK" name="My Wallet" network="ark.devnet" />,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(2));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__address")).toHaveLength(1));
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
 
 		expect(asFragment()).toMatchSnapshot();
@@ -41,51 +44,41 @@ describe("ReceiveFunds", () => {
 		const onClose = jest.fn();
 
 		const { getByTestId, queryAllByTestId } = render(
-			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network="ark.devnet" onClose={onClose} />,
+			<ReceiveFunds
+				isOpen={true}
+				address="abc"
+				icon="ARK"
+				name="My Wallet"
+				network="ark.devnet"
+				onClose={onClose}
+			/>,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__address")).toHaveLength(1));
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
 
-		fireEvent.click(getByTestId("modal__close-btn"));
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
 		expect(onClose).toHaveBeenCalled();
 	});
 
 	it("should open qr code form", async () => {
 		const { getByTestId, queryAllByTestId } = render(
-			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network="ark.devnet" />,
+			<ReceiveFunds isOpen={true} address="abc" icon="ARK" name="My Wallet" network="ark.devnet" />,
 		);
 
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__name")).toHaveLength(1));
+		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__address")).toHaveLength(1));
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
 
-		fireEvent.click(getByTestId("ReceiveFunds__toggle"));
+		act(() => {
+			fireEvent.click(getByTestId("ReceiveFunds__toggle"));
+		});
 
 		await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
 		await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
 		await waitFor(() => expect(getByTestId("ReceiveFundsForm__uri")).toHaveTextContent("ark:abc"));
-	});
-
-	it("should show alert if smartbridge value is too long", async () => {
-		const { getByTestId, findByText, queryAllByTestId } = render(
-			<ReceiveFunds isOpen={true} address="abc" icon="ARK" network="ark.devnet" />,
-		);
-
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(1));
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
-
-		fireEvent.click(getByTestId("ReceiveFunds__toggle"));
-
-		await act(async () => {
-			fireEvent.input(getByTestId("ReceiveFundsForm__smartbridge"), {
-				target: {
-					value: Array(300).fill("x").join(""),
-				},
-			});
-		});
-
-		expect(
-			await findByText(/Please note that you have exceeded the number of characters allowed/),
-		).toBeInTheDocument();
 	});
 });

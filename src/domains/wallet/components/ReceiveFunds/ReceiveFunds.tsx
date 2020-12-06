@@ -1,5 +1,4 @@
 import { Address } from "app/components/Address";
-import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
@@ -26,20 +25,16 @@ type ReceiveFundsProps = {
 export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
 	const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
-	const maxLength = 255;
-
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { amount, smartbridge } = form.watch();
 
-	const { qrCodeData } = useQRCode({
+	const { uri, image } = useQRCode({
 		amount,
-		smartbridge: smartbridge?.slice(0, maxLength),
+		smartbridge,
 		network,
 		address,
 	});
-
-	const { uri, image } = qrCodeData || {};
 
 	return (
 		<Modal
@@ -50,7 +45,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 			onClose={onClose}
 		>
 			{name && (
-				<div data-testid="ReceiveFunds__info">
+				<div data-testid="ReceiveFunds__name">
 					<TransactionDetail
 						borderPosition="bottom"
 						label={t("COMMON.NAME")}
@@ -61,7 +56,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				</div>
 			)}
 
-			<div data-testid="ReceiveFunds__info">
+			<div data-testid="ReceiveFunds__address">
 				<TransactionDetail
 					label={t("COMMON.ADDRESS")}
 					borderPosition="bottom"
@@ -97,16 +92,10 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 				{isFormOpen && (
 					<Form context={form} onSubmit={console.log}>
-						<ReceiveFundsForm maxLength={maxLength} />
+						<ReceiveFundsForm />
 					</Form>
 				)}
 			</div>
-
-			{smartbridge?.length > maxLength && (
-				<div className="mt-8">
-					<Alert variant="warning">{t("WALLETS.MODAL_RECEIVE_FUNDS.WARNING", { maxLength })}</Alert>
-				</div>
-			)}
 
 			<div className="w-64 h-64 mx-auto mt-8">
 				{image && (
