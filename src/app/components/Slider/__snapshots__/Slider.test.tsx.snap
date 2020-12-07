@@ -139,3 +139,91 @@ exports[`Slider should render pagination 1`] = `
   </div>
 </div>
 `;
+
+exports[`Slider should render pagination on top right 1`] = `
+<div>
+  <div
+    class="relative"
+  >
+    <div
+      class="absolute right-0 flex items-center w-auto h-6 space-x-2 -top-12 swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+    />
+    <div
+      class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+      style="height: 244px;"
+    >
+      <div
+        class="h-full swiper-wrapper important:z-0 "
+        style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition: 0ms;"
+      >
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+        <div
+          class="swiper-slide"
+          style="height: 192px; margin-top: 0px;"
+        >
+          <div />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
