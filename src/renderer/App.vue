@@ -331,12 +331,14 @@ export default {
       if (this.session_network) {
         this.$store.dispatch('ledger/init', this.session_network.slip44)
         this.$store.dispatch('delegate/load')
+        this.$store.dispatch('entity/loadAll')
       }
 
       this.$eventBus.on('client:changed', async () => {
         this.$store.dispatch('peer/connectToBest', {})
         this.$store.dispatch('network/updateData')
         this.$store.dispatch('delegate/load')
+        this.$store.dispatch('entity/loadAll')
         await this.$store.dispatch('ledger/init', this.session_network.slip44)
         if (this.$store.getters['ledger/isConnected']) {
           this.$store.dispatch('ledger/reloadWallets', { clearFirst: true, forceLoad: true })

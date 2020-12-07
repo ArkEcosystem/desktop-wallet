@@ -1463,8 +1463,8 @@ export default {
     RESIGNED: 'Resigned',
 
     TRANSACTION_REVIEW: 'Transaction Review',
-    NAME_AVAILABLE: 'Name Available',
     NAME_DUPLICATE_VALIDATION: 'Name already registered',
+    FAILED_FETCH_IPFS: 'Failed to fetch IPFS content. Press to retry.',
 
     NAME: 'Name',
     TYPE: 'Type',

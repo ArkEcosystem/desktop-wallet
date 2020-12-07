@@ -294,13 +294,16 @@ class Action {
         if (checkedAt > 0) {
           this.displayNewTransaction(latestTransaction, wallet)
 
-          const types = [
+          const delegateTypes = [
             TRANSACTION_TYPES.GROUP_1.DELEGATE_REGISTRATION,
             TRANSACTION_TYPES.GROUP_1.DELEGATE_RESIGNATION
           ]
 
-          if (types.includes(latestTransaction.type)) {
+          if (delegateTypes.includes(latestTransaction.type)) {
             this.$dispatch('delegate/load')
+          }
+          if (latestTransaction.type === TRANSACTION_TYPES.GROUP_2.ENTITY) {
+            this.$dispatch('entity/loadRecent')
           }
         }
 

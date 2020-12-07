@@ -11,6 +11,7 @@ import VuexPersistMigrations from '@/store/plugins/vuex-persist-migrations'
 import AnnouncementsModule from '@/store/modules/announcements'
 import AppModule from '@/store/modules/app'
 import DelegateModule from '@/store/modules/delegate'
+import EntityModule from '@/store/modules/entity'
 import LedgerModule from '@/store/modules/ledger'
 import MarketModule from '@/store/modules/market'
 import NetworkModule from '@/store/modules/network'
@@ -28,6 +29,7 @@ const modules = {
   announcements: AnnouncementsModule,
   app: AppModule,
   delegate: DelegateModule,
+  entity: EntityModule,
   ledger: LedgerModule,
   market: MarketModule,
   network: NetworkModule,
@@ -48,7 +50,7 @@ const vuexMigrations = new VuexPersistMigrations({
   }
 })
 
-const modulesWithoutPersistence = pullAll(Object.keys(modules), ['delegate', 'market', 'updater'])
+const modulesWithoutPersistence = pullAll(Object.keys(modules), ['delegate', 'entity', 'market', 'updater'])
 
 const vuexPersist = new VuexPersistence({
   key: 'ark-desktop',

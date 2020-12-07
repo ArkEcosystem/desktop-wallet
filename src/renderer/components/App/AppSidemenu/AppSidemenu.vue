@@ -85,7 +85,6 @@
 
           <!-- Registration pages -->
           <MenuNavigationItem
-            v-if="showRegistrations"
             id="registrations"
             :title="$t('APP_SIDEMENU.REGISTRATIONS')"
             :is-horizontal="isHorizontal"
@@ -208,9 +207,6 @@ export default {
       }
 
       return null
-    },
-    showRegistrations () {
-      return this.$client.satisfiesCoreVersion('>=3')
     }
   },
 

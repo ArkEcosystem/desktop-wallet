@@ -227,16 +227,25 @@ export default class ClientService {
    * @param {Number} [query.limit=100]
    * @return {Array}
    */
-  async fetchTransactions (options = {}) {
-    options.page || (options.page = 1)
-    options.limit || (options.limit = 100)
-
+  async fetchTransactions ({ page = 1, limit = 100, ...searchParams } = {}) {
     let totalCount = 0
     let transactions = []
 
-    const { body } = await this.client.api('transactions').all({
-      ...options
-    })
+    const search = () => {
+      if (this.satisfiesCoreVersion('>=3') || !Object.keys(searchParams).length) {
+        return this.client.api('transactions').all({
+          page,
+          limit,
+          ...searchParams
+        })
+      }
+
+      return this.client.api('transactions').search({
+        ...searchParams
+      }, { page, limit })
+    }
+
+    const { body } = await search()
 
     transactions = body.data.map(transaction => {
       transaction.timestamp = transaction.timestamp.unix * 1000 // to milliseconds
@@ -556,7 +565,10 @@ export default class ClientService {
       searchParams
     })
 
-    return body.data
+    return {
+      entities: body.data,
+      meta: body.meta
+    }
   }
 
   // todo: move this out

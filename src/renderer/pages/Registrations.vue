@@ -112,7 +112,6 @@ export default {
 
   data: () => ({
     isLoading: true,
-    registrations: [],
     modalAction: undefined,
     selectedEntity: undefined
   }),
@@ -120,6 +119,10 @@ export default {
   computed: {
     wallets () {
       return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
+    },
+
+    registrations () {
+      return Object.values(this.$store.getters['entity/bySessionProfile'])
     },
 
     delegatesAddresses () {
@@ -154,23 +157,18 @@ export default {
   },
 
   mounted () {
-    this.searchRegistrations()
+    if (!this.wallets.length) {
+      this.isLoading = false
+    } else {
+      this.loadRegistrations()
+    }
   },
 
   methods: {
-    async searchRegistrations () {
-      const addresses = this.wallets.map(wallet => wallet.address)
-
-      if (!addresses.length) {
-        this.isLoading = false
-        return
-      }
-
+    async loadRegistrations () {
       try {
-        const result = await this.$client.fetchEntities({ address: addresses })
-        this.registrations = result
+        await this.$store.dispatch('entity/loadRecent')
       } catch (error) {
-        this.registrations = []
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'entities',
           msg: error.message
@@ -206,7 +204,6 @@ export default {
 
     onSent () {
       this.closeModal()
-      this.searchRegistrations()
     }
   }
 }

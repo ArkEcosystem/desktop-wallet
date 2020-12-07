@@ -9,11 +9,6 @@
       :columns="columns"
       :is-loading="isLoading"
       :is-remote="true"
-      :has-pagination="totalCount > transactions.length"
-      :current-page="page"
-      :per-page="limit"
-      :total-rows="totalCount"
-      @on-page-change="onPageChange"
     >
       <template
         slot-scope="data"
@@ -58,9 +53,6 @@ export default {
 
   data: () => ({
     isLoading: true,
-    page: 1,
-    limit: 100,
-    totalCount: 0,
     transactions: []
   }),
 
@@ -98,10 +90,7 @@ export default {
   methods: {
     async fetchHistory () {
       try {
-        const { transactions: registrationTransactions } = await this.$client.fetchTransactions({ id: this.registrationId })
-        const { transactions, totalCount } = await this.$client.fetchTransactions({ 'asset.registrationId': this.registrationId, page: this.page, limit: this.limit })
-        this.transactions = [...transactions, registrationTransactions[0]]
-        this.totalCount = transactions.length ? totalCount + 1 : 0
+        this.transactions = await this.$store.dispatch('entity/fetchTransactionsHistory', this.registrationId)
       } catch (error) {
         this.$error(this.$t('COMMON.FAILED_FETCH', {
           name: 'transactions',
@@ -126,13 +115,6 @@ export default {
         [TRANSACTION_TYPES_ENTITY.ACTION.UPDATE]: this.$t('ENTITY.ACTIONS.UPDATE'),
         [TRANSACTION_TYPES_ENTITY.ACTION.RESIGN]: this.$t('ENTITY.ACTIONS.RESIGN')
       }[+value]
-    },
-
-    onPageChange ({ currentPage }) {
-      if (currentPage && currentPage !== this.page) {
-        this.page = currentPage
-        this.fetchHistory()
-      }
     }
   }
 }
@@ -143,6 +125,7 @@ export default {
   min-width: 30rem;
   max-width: 38rem;
   min-height: 30rem;
+  max-height: 60vh;
 }
 
 .EntityHistoryModal .vgt-wrap__footer {

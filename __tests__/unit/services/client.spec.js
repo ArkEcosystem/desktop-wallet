@@ -511,7 +511,8 @@ describe('Services > Client', () => {
       const resource = resource => {
         if (resource === 'transactions') {
           return {
-            all: () => ({ body: { data: transactions, meta: { totalCount: meta.count } } })
+            all: () => ({ body: { data: transactions, meta: { totalCount: meta.count } } }),
+            search: () => ({ body: { data: transactions, meta: { totalCount: meta.count } } })
           }
         }
       }

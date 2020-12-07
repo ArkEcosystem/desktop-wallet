@@ -53,6 +53,14 @@
               view-box="0 0 18 18"
             />
           </a>
+          <span v-else-if="hasIpfsFailed(data.row.id)">
+            <ButtonReload
+              :title="$t('ENTITY.FAILED_FETCH_IPFS')"
+              :is-refresh="isIpfsLoading(data.row.id)"
+              view-box="0 0 18 17"
+              @click="onReloadIpfs(data.row)"
+            />
+          </span>
           <span v-else>N/A</span>
         </div>
 
@@ -129,14 +137,12 @@
 </template>
 
 <script>
-import { ButtonIconGeneric, ButtonModal } from '@/components/Button'
+import { ButtonIconGeneric, ButtonModal, ButtonReload } from '@/components/Button'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import { MenuDropdown } from '@/components/Menu'
 import TableWrapper from '@/components/utils/TableWrapper'
 import SvgIcon from '@/components/SvgIcon'
 import Loader from '@/components/utils/Loader'
-import { File } from '@arkecosystem/platform-sdk-ipfs'
-import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { get } from '@arkecosystem/utils'
 import EntityHistoryModal from './EntityHistoryModal'
 
@@ -146,6 +152,7 @@ export default {
   components: {
     ButtonIconGeneric,
     ButtonModal,
+    ButtonReload,
     EntityHistoryModal,
     Loader,
     MenuDropdown,
@@ -191,31 +198,9 @@ export default {
     failed: {}
   }),
 
-  mounted () {
-    this.fetchAllIpfsData()
-  },
-
   methods: {
-    async fetchIpfsData (row) {
-      const request = new Request().timeout(5000)
-      this.$set(this.loading, row.id, true)
-      try {
-        const result = await new File(request).get(row.data.ipfsData)
-        this.$set(this.ipfsDataObject, row.id, result)
-        this.$set(this.failed, row.id, false)
-      } catch {
-        this.$set(this.failed, row.id, true)
-      }
-      this.$set(this.loading, row.id, false)
-    },
-
-    async fetchAllIpfsData () {
-      const transactions = this.transactions || this.rows
-      await Promise.allSettled(transactions.map(this.fetchIpfsData))
-    },
-
     getIpfsDataProperty (id, path) {
-      return get(this.ipfsDataObject, `${id}.${path}`)
+      return get(this.$store.getters['entity/ipfsContentByRegistrationId'](id), path)
     },
 
     getDelegateEntity (address) {
@@ -223,7 +208,11 @@ export default {
     },
 
     isIpfsLoading (id) {
-      return !!this.loading[id]
+      return this.$store.getters['entity/isIpfsContentLoading'](id)
+    },
+
+    hasIpfsFailed (id) {
+      return !!this.$store.getters['entity/ipfsContentFailedMessage'](id)
     },
 
     isEntityResigned (row) {
@@ -237,6 +226,10 @@ export default {
       }
 
       return false
+    },
+
+    onReloadIpfs (row) {
+      this.$store.dispatch('entity/fetchIpfsContent', { registrationId: row.id, ipfsHash: row.data.ipfsData })
     },
 
     getActionOptions (address) {

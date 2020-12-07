@@ -11,30 +11,7 @@
         :label="$t('ENTITY.NAME')"
         :helper-text="duplicateNameWarning"
         name="name"
-        @input="validateEntityName"
-      >
-        <template #right>
-          <div class="absolute pin-r">
-            <Loader
-              v-if="nameValidation.loading"
-              size="6px"
-            />
-            <span
-              v-else-if="nameValidation.verified && !$v.form.entityName.$invalid"
-              v-tooltip="{
-                content: $t('ENTITY.NAME_AVAILABLE'),
-                placement: 'top'
-              }"
-            >
-              <SvgIcon
-                name="status-active"
-                view-box="0 0 19 19"
-                class="text-theme-page-text-light"
-              />
-            </span>
-          </div>
-        </template>
-      </InputText>
+      />
 
       <InputText
         v-model="$v.form.ipfsData.meta.displayName.$model"
@@ -184,10 +161,8 @@ import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { EntityLinkEditableList } from '@/components/Entity'
 import SvgIcon from '@/components/SvgIcon'
-import Loader from '@/components/utils/Loader'
 import { required, url, minLength, maxLength, helpers } from 'vuelidate/lib/validators'
 import { isObject } from '@arkecosystem/utils'
-import { throttle } from 'lodash'
 
 export default {
   components: {
@@ -196,7 +171,6 @@ export default {
     InputText,
     ListDivided,
     ListDividedItem,
-    Loader,
     SvgIcon
   },
 
@@ -217,12 +191,6 @@ export default {
     isSourceControlOpen: false,
     isSocialMediaOpen: false,
     isMediaOpen: false,
-
-    nameValidation: {
-      verified: false,
-      loading: false,
-      valid: true
-    },
 
     form: {
       entityName: '',
@@ -245,8 +213,12 @@ export default {
       return [...this.form.ipfsData.images, ...this.form.ipfsData.videos]
     },
 
+    isNameDuplicated () {
+      return this.$store.getters['entity/hasEntityName'](this.form.entityName)
+    },
+
     duplicateNameWarning () {
-      if (this.$v.form.entityName.$dirty && this.nameValidation.verified && !this.nameValidation.valid) {
+      if (this.isNameDuplicated) {
         return this.$t('ENTITY.NAME_DUPLICATE_VALIDATION')
       }
       return undefined
@@ -303,35 +275,7 @@ export default {
       }
 
       this.$set(this.form.ipfsData, type, links)
-    },
-
-    validateEntityName: throttle(async function (value) {
-      const model = this.$v.form.entityName
-
-      if (!model.minLength || !model.maxLength || !model.pattern) {
-        this.nameValidation.verified = false
-        return
-      }
-
-      model.$reset()
-
-      this.nameValidation = {
-        verified: false,
-        loading: true,
-        valid: true
-      }
-
-      try {
-        const { transactions } = await this.$client.fetchTransactions({ 'asset.data.name': value })
-        this.nameValidation.valid = !transactions.length
-        this.nameValidation.verified = true
-      } catch {
-        //
-      }
-
-      this.nameValidation.loading = false
-      model.$touch()
-    }, 2000, { leading: false })
+    }
   },
 
   validations: {
@@ -341,8 +285,8 @@ export default {
         minLength: minLength(3),
         maxLength: maxLength(128),
         pattern: helpers.regex('pattern', /^[a-zA-Z0-9_-]+$/),
-        isNotDuplicate () {
-          return !!this.nameValidation.valid
+        isValid () {
+          return !this.isNameDuplicated
         }
       },
       ipfsData: {
