@@ -11,7 +11,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -23,24 +23,19 @@ export const CreateProfile = () => {
 	const { t } = useTranslation();
 
 	const { watch, register, formState, setValue, trigger } = form;
-	const { name, confirmPassword } = watch();
+	const { name, confirmPassword } = watch(["name", "confirmPassword"], { name: "" });
 
 	const [avatarImage, setAvatarImage] = useState("");
 
 	const { createProfile } = useValidation();
-	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
 
-	const formattedName = (name || "").trim();
+	const formattedName = name.trim();
 
 	useEffect(() => {
-		if ((!avatarImage || isSvg) && formattedName) {
-			setAvatarImage(AvatarSDK.make(formattedName));
-		} else {
-			if (isSvg && !formattedName) {
-				setAvatarImage("");
-			}
+		if (!avatarImage || avatarImage.endsWith("</svg>")) {
+			setAvatarImage(formattedName ? AvatarSDK.make(formattedName) : "");
 		}
-	}, [formattedName, avatarImage, isSvg, setAvatarImage]);
+	}, [formattedName, avatarImage, setAvatarImage]);
 
 	const otherItems = [
 		{
@@ -58,9 +53,7 @@ export const CreateProfile = () => {
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
-		if (avatarImage && !isSvg) {
-			profile.settings().set(ProfileSetting.Avatar, avatarImage);
-		}
+		profile.settings().set(ProfileSetting.Avatar, avatarImage);
 
 		if (password) {
 			profile.auth().setPassword(password);
