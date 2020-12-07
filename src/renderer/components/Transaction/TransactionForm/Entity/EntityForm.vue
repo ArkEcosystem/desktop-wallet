@@ -156,6 +156,7 @@
 </template>
 
 <script>
+import { TRANSACTION_TYPES_ENTITY } from '@config'
 import { Collapse } from '@/components/Collapse'
 import { InputText } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
@@ -175,6 +176,10 @@ export default {
   },
 
   props: {
+    entityType: {
+      type: Number,
+      required: true
+    },
     entityName: {
       type: String,
       required: false,
@@ -209,6 +214,10 @@ export default {
   }),
 
   computed: {
+    isDelegateType () {
+      return TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE === this.entityType
+    },
+
     mediaLinks () {
       return [...this.form.ipfsData.images, ...this.form.ipfsData.videos]
     },

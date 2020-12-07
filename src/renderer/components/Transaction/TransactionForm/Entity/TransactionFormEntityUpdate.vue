@@ -13,6 +13,7 @@
     <EntityForm
       ref="entity"
       :entity-name="entityName"
+      :entity-type="entityType"
       :ipfs-data-object="ipfsDataObject"
       @change="onEntityForm"
     >
