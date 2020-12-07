@@ -12,7 +12,7 @@ const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStora
 const profile = env.profiles().create("Test profile");
 
 export const Default = () => (
-	<div className="max-w-lg space-y-8">
+	<div className="space-y-8 max-w-lg">
 		<div>
 			<SelectRecipient profile={profile} />
 		</div>

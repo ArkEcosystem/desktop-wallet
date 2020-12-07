@@ -6,7 +6,7 @@ exports[`PortfolioChart should render 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
         class="-mb-2 text-4xl font-bold"
@@ -55,7 +55,7 @@ exports[`PortfolioChart should render 1`] = `
                 </div>
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
                   class="my-auto text-sm text-base text-theme-secondary-text"
@@ -63,7 +63,7 @@ exports[`PortfolioChart should render 1`] = `
                   28 Jun, 2020
                 </div>
                 <div
-                  class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                  class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                 >
                   <div
                     class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -79,7 +79,7 @@ exports[`PortfolioChart should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                  class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                 >
                   <div
                     class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -128,7 +128,7 @@ exports[`PortfolioChart should render with balance 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
         class="-mb-2 text-4xl font-bold"
@@ -177,7 +177,7 @@ exports[`PortfolioChart should render with balance 1`] = `
                 </div>
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
                   class="my-auto text-sm text-base text-theme-secondary-text"
@@ -185,7 +185,7 @@ exports[`PortfolioChart should render with balance 1`] = `
                   28 Jun, 2020
                 </div>
                 <div
-                  class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                  class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                 >
                   <div
                     class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -201,7 +201,7 @@ exports[`PortfolioChart should render with balance 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                  class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                 >
                   <div
                     class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -250,10 +250,10 @@ exports[`PortfolioChart should render with balance 1`] = `
             Total Portfolio
           </div>
           <div
-            class="flex justify-end flex-1 space-x-3"
+            class="flex flex-1 justify-end space-x-3"
           >
             <div
-              class="flex items-center justify-end py-4 pl-6 pr-0"
+              class="flex justify-end items-center py-4 pr-0 pl-6"
               data-testid="item-percentage"
             >
               <div

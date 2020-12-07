@@ -46,7 +46,7 @@ export const WalletsList = memo(({ isVisible = true, wallets, hasMore, onRowClic
 					{hasMore && (
 						<Button
 							variant="plain"
-							className="w-full mt-10 mb-5"
+							className="mt-10 mb-5 w-full"
 							data-testid="WalletsList__ViewMore"
 							onClick={onViewMore}
 						>

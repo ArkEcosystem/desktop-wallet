@@ -247,7 +247,7 @@ export const Votes = () => {
 								onReset={() => setSearchQuery("")}
 								debounceTimeout={100}
 							/>
-							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+							<div className="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
 									<Dropdown
@@ -258,7 +258,7 @@ export const Votes = () => {
 											</div>
 										}
 									>
-										<div className="px-10 py-7 w-128">
+										<div className="py-7 px-10 w-128">
 											<FilterWallets {...filterProperties} showToggleViews={false} />
 										</div>
 									</Dropdown>
@@ -278,7 +278,7 @@ export const Votes = () => {
 			{isEmptyObject(walletsByCoin) ? (
 				<Section className="flex-1">
 					<EmptyBlock>
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<Trans
 								i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
 								defaults="Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status"

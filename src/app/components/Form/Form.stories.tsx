@@ -13,7 +13,7 @@ export const Default = () => {
 	const methods = useForm({ mode: "onChange" });
 
 	return (
-		<div className="max-w-md mx-auto">
+		<div className="mx-auto max-w-md">
 			<h1>Form</h1>
 			<Form context={methods} onSubmit={() => void 0}>
 				<FormField name="name">

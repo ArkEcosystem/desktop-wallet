@@ -26,7 +26,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -50,7 +50,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                  class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
                 >
                   Plugins
                 </div>
@@ -72,7 +72,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -106,7 +106,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -140,7 +140,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                   class="mt-4"
                 >
                   <div
-                    class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                    class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
                   >
                     Transactions
                   </div>
@@ -308,7 +308,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
       </div>
     </div>
     <div
-      class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
         class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -319,7 +319,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
           <button
             class="sc-Axmtr jqXAAR w-11 h-11"
@@ -427,7 +427,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -451,7 +451,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                  class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
                 >
                   Plugins
                 </div>
@@ -473,7 +473,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -507,7 +507,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -541,7 +541,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                   class="mt-4"
                 >
                   <div
-                    class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                    class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
                   >
                     Transactions
                   </div>
@@ -738,7 +738,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -762,7 +762,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                  class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
                 >
                   Plugins
                 </div>
@@ -784,7 +784,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -818,7 +818,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -852,7 +852,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   class="mt-4"
                 >
                   <div
-                    class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                    class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
                   >
                     Transactions
                   </div>
@@ -1020,7 +1020,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
       </div>
     </div>
     <div
-      class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
         class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -1031,7 +1031,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
           <button
             class="sc-Axmtr jqXAAR w-11 h-11"
@@ -1420,7 +1420,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1444,7 +1444,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                  class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
                 >
                   Plugins
                 </div>
@@ -1466,7 +1466,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -1500,7 +1500,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -1534,7 +1534,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                   class="mt-4"
                 >
                   <div
-                    class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                    class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
                   >
                     Transactions
                   </div>
@@ -1731,7 +1731,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1755,7 +1755,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                  class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
                 >
                   Plugins
                 </div>
@@ -1777,7 +1777,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -1811,7 +1811,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -1845,7 +1845,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                   class="mt-4"
                 >
                   <div
-                    class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                    class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
                   >
                     Transactions
                   </div>
@@ -2013,7 +2013,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
       </div>
     </div>
     <div
-      class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
         class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -2024,7 +2024,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
           <button
             class="sc-Axmtr jqXAAR w-11 h-11"
@@ -2132,7 +2132,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2156,7 +2156,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                  class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
                 >
                   Plugins
                 </div>
@@ -2178,7 +2178,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -2212,7 +2212,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -2246,7 +2246,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                   class="mt-4"
                 >
                   <div
-                    class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                    class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
                   >
                     Transactions
                   </div>
@@ -2443,7 +2443,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               </svg>
             </div>
             <div
-              class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+              class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
             >
               <div
                 class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2467,7 +2467,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                 data-testid="NotificationsWrapper"
               >
                 <div
-                  class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                  class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
                 >
                   Plugins
                 </div>
@@ -2489,7 +2489,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -2523,7 +2523,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                           class="w-8 h-8"
                         >
                           <div
-                            class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
                           />
                         </td>
                         <td>
@@ -2557,7 +2557,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                   class="mt-4"
                 >
                   <div
-                    class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+                    class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
                   >
                     Transactions
                   </div>

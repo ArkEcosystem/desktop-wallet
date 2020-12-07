@@ -25,10 +25,10 @@ exports[`ListDivided should render an list divided with items 1`] = `
         data-testid="list-divided-item__inner-wrapper"
       >
         <div
-          class="flex flex-col w-full space-y-2"
+          class="flex flex-col space-y-2 w-full"
         >
           <div
-            class="flex items-center justify-between space-x-5"
+            class="flex justify-between items-center space-x-5"
           >
             <span
               class=""
@@ -53,7 +53,7 @@ exports[`ListDivided should render an list divided with items 1`] = `
           class="flex flex-row mt-2"
         >
           <div
-            class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral"
+            class="flex justify-center items-center mr-6 w-24 h-24 rounded border-2 border-dashed border-theme-neutral"
           />
           <div
             class="relative w-24 h-24 rounded bg-theme-neutral"

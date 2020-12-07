@@ -27,7 +27,7 @@ export const NotificationTransactionItemSkeleton = () => {
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end" noHover isCompact>
-				<span className="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800">
+				<span className="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800">
 					<Skeleton height={16} width={amountWidth} />
 					<Skeleton height={16} width={35} />
 				</span>

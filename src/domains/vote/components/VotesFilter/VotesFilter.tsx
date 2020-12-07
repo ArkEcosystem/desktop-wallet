@@ -20,9 +20,9 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 					</div>
 				}
 			>
-				<div className="w-64 px-6 py-4">
+				<div className="py-4 px-6 w-64">
 					<label
-						className="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+						className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
 						data-testid="VotesFilter__option--all"
 					>
 						<span>

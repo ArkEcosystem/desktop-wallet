@@ -31,7 +31,7 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => {
 			<div className="relative mt-8">
 				<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.SCREENSHOTS")}</p>
 				<div
-					className="absolute top-0 right-0 flex pr-4 space-x-3 screenshots-pagination"
+					className="flex absolute top-0 right-0 pr-4 space-x-3 screenshots-pagination"
 					data-testid="plugin-info__screenshots--pagination"
 				/>
 				<div className="pb-8">

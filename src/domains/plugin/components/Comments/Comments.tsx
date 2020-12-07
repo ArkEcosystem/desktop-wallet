@@ -73,8 +73,8 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 			<div>
 				{comments.map(({ author, score, date, comment, votes, replies }, index: number) => (
 					<div className="flex flex-col mt-5" key={index}>
-						<div className="flex items-center justify-between">
-							<div className="relative flex items-center divide-x divide-theme-neutral-light">
+						<div className="flex justify-between items-center">
+							<div className="flex relative items-center divide-x divide-theme-neutral-light">
 								<span className="pr-3 text-lg font-semibold">{author}</span>
 
 								<div className="flex items-center px-3 text-sm font-semibold text-theme-warning-400">

@@ -7,7 +7,7 @@ export const DelegateRowItemSkeleton = () => (
 		data-testid="DelegateRowItemSkeleton"
 		className="border-b border-dashed last:border-b-0 border-theme-neutral-light"
 	>
-		<td className="w-24 py-6 pr-4">
+		<td className="py-6 pr-4 w-24">
 			<div className="flex items-center">
 				<Circle className="border-theme-neutral-300 dark:border-theme-neutral-800" size="lg" />
 				<Circle className="border-theme-neutral-300 dark:border-theme-neutral-800" size="lg" />
@@ -30,12 +30,12 @@ export const DelegateRowItemSkeleton = () => (
 			</span>
 		</td>
 		<td className="font-semibold text-theme-secondary-text">
-			<div className="flex items-center justify-end">
+			<div className="flex justify-end items-center">
 				<Skeleton height={6} width={100} className="mt-4" />
 			</div>
 		</td>
 		<td className="font-semibold text-theme-secondary-text">
-			<div className="flex items-center justify-end">
+			<div className="flex justify-end items-center">
 				<Skeleton height={6} width={40} className="mt-4" />
 				<Skeleton height={6} width={80} className="mt-4 ml-4" />
 			</div>
