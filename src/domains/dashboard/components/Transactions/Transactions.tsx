@@ -46,7 +46,7 @@ export const Transactions = ({
 				<Button
 					data-testid="transactions__fetch-more-button"
 					variant="plain"
-					className="w-full mt-10 mb-5"
+					className="mt-10 mb-5 w-full"
 					disabled={isLoading}
 					onClick={() => fetchMoreAction && fetchMoreAction()}
 				>

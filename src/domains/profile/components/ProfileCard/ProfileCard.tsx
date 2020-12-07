@@ -39,12 +39,12 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 					</AvatarWrapper>
 				) : (
 					<div
-						className="rounded-full bg-theme-neutral-contrast w-11 h-11"
+						className="w-11 h-11 rounded-full bg-theme-neutral-contrast"
 						data-testid="profile-card__user--avatarImage"
 					>
 						<img
 							src={profile.avatar()}
-							className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+							className="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
 							title={profile.name()}
 							alt={profile.name()}
 						/>

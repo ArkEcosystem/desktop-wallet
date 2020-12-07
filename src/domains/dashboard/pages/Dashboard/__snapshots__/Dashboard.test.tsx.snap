@@ -3,7 +3,7 @@
 exports[`Dashboard should both live and testnet wallets 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -13,7 +13,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -29,7 +29,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -104,7 +104,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -118,7 +118,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -141,7 +141,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -165,7 +165,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -201,7 +201,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                   />
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -243,7 +243,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -290,7 +290,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -298,7 +298,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -313,7 +313,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -361,10 +361,10 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -394,11 +394,11 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -459,7 +459,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -567,7 +567,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -587,7 +587,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -643,7 +643,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -661,7 +661,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="flex flex-col justify-between h-full p-4"
+                              class="flex flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex -space-x-2"
@@ -685,7 +685,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -703,7 +703,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="flex flex-col justify-between h-full p-4"
+                              class="flex flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex -space-x-2"
@@ -727,7 +727,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -744,10 +744,10 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -1537,7 +1537,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -1554,7 +1554,7 @@ exports[`Dashboard should both live and testnet wallets 1`] = `
 exports[`Dashboard should change wallet view type from grid to list 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1564,7 +1564,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -1580,7 +1580,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -1655,7 +1655,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1669,7 +1669,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -1692,7 +1692,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -1716,7 +1716,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1762,7 +1762,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -1806,7 +1806,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -1853,7 +1853,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -1861,7 +1861,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -1876,7 +1876,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -1924,10 +1924,10 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -1957,11 +1957,11 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -2022,7 +2022,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -2532,10 +2532,10 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -2908,7 +2908,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -3122,7 +3122,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -3336,7 +3336,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -3550,7 +3550,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -3764,7 +3764,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -3978,7 +3978,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -4192,7 +4192,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -4406,7 +4406,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -4488,7 +4488,7 @@ exports[`Dashboard should change wallet view type from grid to list 1`] = `
 exports[`Dashboard should fetch more transactions 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -4498,7 +4498,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -4514,7 +4514,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -4589,7 +4589,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4603,7 +4603,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -4626,7 +4626,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -4650,7 +4650,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -4696,7 +4696,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -4740,11 +4740,11 @@ exports[`Dashboard should fetch more transactions 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -4805,7 +4805,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -4913,7 +4913,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -4933,7 +4933,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -4991,7 +4991,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -5009,7 +5009,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -5067,7 +5067,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -5085,7 +5085,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -5141,7 +5141,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -5158,10 +5158,10 @@ exports[`Dashboard should fetch more transactions 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -6633,7 +6633,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -6650,7 +6650,7 @@ exports[`Dashboard should fetch more transactions 1`] = `
 exports[`Dashboard should hide portfolio view 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -6660,7 +6660,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -6676,7 +6676,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -6751,7 +6751,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6765,7 +6765,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -6788,7 +6788,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -6812,7 +6812,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -6858,7 +6858,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -6902,7 +6902,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -6949,7 +6949,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -6957,7 +6957,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -6972,7 +6972,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -7020,10 +7020,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -7053,11 +7053,11 @@ exports[`Dashboard should hide portfolio view 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -7118,7 +7118,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -7150,7 +7150,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         >
                           <div>
                             <div
-                              class="px-10 py-7 w-128"
+                              class="py-7 px-10 w-128"
                             >
                               <div
                                 class="flex flex-col text-left"
@@ -7273,7 +7273,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -7285,7 +7285,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                       data-testid="dropdown__toggle"
                                     >
                                       <div
-                                        class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+                                        class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
                                         data-testid="filter-wallets__wallets"
                                       >
                                         <span
@@ -7318,7 +7318,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   class="flex flex-col mb-6"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -7353,7 +7353,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -7876,10 +7876,10 @@ exports[`Dashboard should hide portfolio view 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -8731,7 +8731,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -8748,7 +8748,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
 exports[`Dashboard should hide transaction view 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -8758,7 +8758,7 @@ exports[`Dashboard should hide transaction view 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -8774,7 +8774,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -8849,7 +8849,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -8863,7 +8863,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -8886,7 +8886,7 @@ exports[`Dashboard should hide transaction view 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -8910,7 +8910,7 @@ exports[`Dashboard should hide transaction view 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -8956,7 +8956,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -9000,7 +9000,7 @@ exports[`Dashboard should hide transaction view 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -9047,7 +9047,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -9055,7 +9055,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -9070,7 +9070,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -9118,10 +9118,10 @@ exports[`Dashboard should hide transaction view 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -9151,11 +9151,11 @@ exports[`Dashboard should hide transaction view 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -9216,7 +9216,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -9248,7 +9248,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                         >
                           <div>
                             <div
-                              class="px-10 py-7 w-128"
+                              class="py-7 px-10 w-128"
                             >
                               <div
                                 class="flex flex-col text-left"
@@ -9371,7 +9371,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -9383,7 +9383,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                       data-testid="dropdown__toggle"
                                     >
                                       <div
-                                        class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+                                        class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
                                         data-testid="filter-wallets__wallets"
                                       >
                                         <span
@@ -9416,7 +9416,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   class="flex flex-col mb-6"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -9451,7 +9451,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -9572,7 +9572,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -9592,7 +9592,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -9650,7 +9650,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -9668,7 +9668,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -9726,7 +9726,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -9744,7 +9744,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -9800,7 +9800,7 @@ exports[`Dashboard should hide transaction view 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -9827,7 +9827,7 @@ exports[`Dashboard should navigate to import page 1`] = `<DocumentFragment />`;
 exports[`Dashboard should open detail modal on transaction row click 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -9837,7 +9837,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -9853,7 +9853,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -9928,7 +9928,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -9942,7 +9942,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -9965,7 +9965,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -9989,7 +9989,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -10035,7 +10035,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -10079,11 +10079,11 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -10144,7 +10144,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -10252,7 +10252,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -10272,7 +10272,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -10330,7 +10330,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -10348,7 +10348,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -10406,7 +10406,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -10424,7 +10424,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -10480,7 +10480,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -10497,10 +10497,10 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -11352,7 +11352,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -11369,7 +11369,7 @@ exports[`Dashboard should open detail modal on transaction row click 1`] = `
 exports[`Dashboard should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -11379,7 +11379,7 @@ exports[`Dashboard should render 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -11395,7 +11395,7 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -11470,7 +11470,7 @@ exports[`Dashboard should render 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -11484,7 +11484,7 @@ exports[`Dashboard should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -11507,7 +11507,7 @@ exports[`Dashboard should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -11531,7 +11531,7 @@ exports[`Dashboard should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -11577,7 +11577,7 @@ exports[`Dashboard should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -11621,7 +11621,7 @@ exports[`Dashboard should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -11668,7 +11668,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -11676,7 +11676,7 @@ exports[`Dashboard should render 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -11691,7 +11691,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -11739,10 +11739,10 @@ exports[`Dashboard should render 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -11772,11 +11772,11 @@ exports[`Dashboard should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -11837,7 +11837,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -11945,7 +11945,7 @@ exports[`Dashboard should render 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -11965,7 +11965,7 @@ exports[`Dashboard should render 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -12023,7 +12023,7 @@ exports[`Dashboard should render 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -12041,7 +12041,7 @@ exports[`Dashboard should render 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -12099,7 +12099,7 @@ exports[`Dashboard should render 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -12117,7 +12117,7 @@ exports[`Dashboard should render 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -12173,7 +12173,7 @@ exports[`Dashboard should render 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -12190,10 +12190,10 @@ exports[`Dashboard should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -13045,7 +13045,7 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -13062,7 +13062,7 @@ exports[`Dashboard should render 1`] = `
 exports[`Dashboard should render portfolio chart 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -13072,7 +13072,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -13088,7 +13088,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -13163,7 +13163,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -13177,7 +13177,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -13200,7 +13200,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -13224,7 +13224,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -13270,7 +13270,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -13314,7 +13314,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -13361,7 +13361,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -13369,7 +13369,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -13384,7 +13384,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -13432,10 +13432,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -13465,11 +13465,11 @@ exports[`Dashboard should render portfolio chart 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -13530,7 +13530,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -13638,7 +13638,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -13658,7 +13658,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -13716,7 +13716,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -13734,7 +13734,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -13792,7 +13792,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -13810,7 +13810,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -13866,7 +13866,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -13883,10 +13883,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -14738,7 +14738,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -14755,7 +14755,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
 exports[`Dashboard should render portfolio percentage bar 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -14765,7 +14765,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -14781,7 +14781,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -14856,7 +14856,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -14870,7 +14870,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -14893,7 +14893,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -14917,7 +14917,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -14963,7 +14963,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -15007,7 +15007,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -15054,7 +15054,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -15062,7 +15062,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -15077,7 +15077,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -15125,10 +15125,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -15158,11 +15158,11 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -15223,7 +15223,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -15331,7 +15331,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -15351,7 +15351,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -15409,7 +15409,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -15427,7 +15427,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -15485,7 +15485,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -15503,7 +15503,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -15559,7 +15559,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -15576,10 +15576,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -16431,7 +16431,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -16448,7 +16448,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
 exports[`Dashboard should render wallets 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -16458,7 +16458,7 @@ exports[`Dashboard should render wallets 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -16474,7 +16474,7 @@ exports[`Dashboard should render wallets 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -16549,7 +16549,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -16563,7 +16563,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -16586,7 +16586,7 @@ exports[`Dashboard should render wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -16610,7 +16610,7 @@ exports[`Dashboard should render wallets 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -16656,7 +16656,7 @@ exports[`Dashboard should render wallets 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -16700,7 +16700,7 @@ exports[`Dashboard should render wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -16747,7 +16747,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -16755,7 +16755,7 @@ exports[`Dashboard should render wallets 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -16770,7 +16770,7 @@ exports[`Dashboard should render wallets 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -16818,10 +16818,10 @@ exports[`Dashboard should render wallets 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -16851,11 +16851,11 @@ exports[`Dashboard should render wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -16916,7 +16916,7 @@ exports[`Dashboard should render wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -17024,7 +17024,7 @@ exports[`Dashboard should render wallets 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -17044,7 +17044,7 @@ exports[`Dashboard should render wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -17102,7 +17102,7 @@ exports[`Dashboard should render wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -17120,7 +17120,7 @@ exports[`Dashboard should render wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -17178,7 +17178,7 @@ exports[`Dashboard should render wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -17196,7 +17196,7 @@ exports[`Dashboard should render wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -17252,7 +17252,7 @@ exports[`Dashboard should render wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -17269,10 +17269,10 @@ exports[`Dashboard should render wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -18124,7 +18124,7 @@ exports[`Dashboard should render wallets 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -18141,7 +18141,7 @@ exports[`Dashboard should render wallets 1`] = `
 exports[`Dashboard should render with no wallets 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -18151,7 +18151,7 @@ exports[`Dashboard should render with no wallets 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -18167,7 +18167,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -18249,7 +18249,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -18273,7 +18273,7 @@ exports[`Dashboard should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -18297,7 +18297,7 @@ exports[`Dashboard should render with no wallets 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -18343,7 +18343,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -18387,7 +18387,7 @@ exports[`Dashboard should render with no wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -18434,7 +18434,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -18442,7 +18442,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -18457,7 +18457,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -18498,11 +18498,11 @@ exports[`Dashboard should render with no wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -18563,7 +18563,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -18671,7 +18671,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -18691,7 +18691,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="flex flex-col justify-between h-full p-4"
+                              class="flex flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex -space-x-2"
@@ -18715,7 +18715,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -18733,7 +18733,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="flex flex-col justify-between h-full p-4"
+                              class="flex flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex -space-x-2"
@@ -18757,7 +18757,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -18775,7 +18775,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="flex flex-col justify-between h-full p-4"
+                              class="flex flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex -space-x-2"
@@ -18799,7 +18799,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -18816,10 +18816,10 @@ exports[`Dashboard should render with no wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -19192,7 +19192,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -19406,7 +19406,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -19620,7 +19620,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -19834,7 +19834,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -20048,7 +20048,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -20262,7 +20262,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -20476,7 +20476,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -20690,7 +20690,7 @@ exports[`Dashboard should render with no wallets 1`] = `
                         class="sc-Axmtr ccwJsU justify-end"
                       >
                         <span
-                          class="flex items-center px-2 space-x-1 border rounded h-7 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                         >
                           <span>
                             <span
@@ -20772,7 +20772,7 @@ exports[`Dashboard should render with no wallets 1`] = `
 exports[`Dashboard should select an option in the wallets display type 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -20782,7 +20782,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -20798,7 +20798,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -20873,7 +20873,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -20887,7 +20887,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -20910,7 +20910,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -20934,7 +20934,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -20980,7 +20980,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -21024,11 +21024,11 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -21089,7 +21089,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -21121,7 +21121,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                         >
                           <div>
                             <div
-                              class="px-10 py-7 w-128"
+                              class="py-7 px-10 w-128"
                             >
                               <div
                                 class="flex flex-col text-left"
@@ -21244,7 +21244,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -21256,7 +21256,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                                       data-testid="dropdown__toggle"
                                     >
                                       <div
-                                        class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+                                        class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
                                         data-testid="filter-wallets__wallets"
                                       >
                                         <span
@@ -21289,7 +21289,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                                   class="flex flex-col mb-6"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -21324,7 +21324,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -21445,7 +21445,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -21465,7 +21465,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -21523,7 +21523,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -21541,7 +21541,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -21599,7 +21599,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -21617,7 +21617,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -21673,7 +21673,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -21690,10 +21690,10 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -22545,7 +22545,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -22562,7 +22562,7 @@ exports[`Dashboard should select an option in the wallets display type 1`] = `
 exports[`Dashboard should show transaction view 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -22572,7 +22572,7 @@ exports[`Dashboard should show transaction view 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -22588,7 +22588,7 @@ exports[`Dashboard should show transaction view 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -22663,7 +22663,7 @@ exports[`Dashboard should show transaction view 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -22677,7 +22677,7 @@ exports[`Dashboard should show transaction view 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -22700,7 +22700,7 @@ exports[`Dashboard should show transaction view 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -22724,7 +22724,7 @@ exports[`Dashboard should show transaction view 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -22770,7 +22770,7 @@ exports[`Dashboard should show transaction view 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -22814,7 +22814,7 @@ exports[`Dashboard should show transaction view 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -22861,7 +22861,7 @@ exports[`Dashboard should show transaction view 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -22869,7 +22869,7 @@ exports[`Dashboard should show transaction view 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -22884,7 +22884,7 @@ exports[`Dashboard should show transaction view 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -22932,10 +22932,10 @@ exports[`Dashboard should show transaction view 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -22965,11 +22965,11 @@ exports[`Dashboard should show transaction view 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -23030,7 +23030,7 @@ exports[`Dashboard should show transaction view 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -23062,7 +23062,7 @@ exports[`Dashboard should show transaction view 1`] = `
                         >
                           <div>
                             <div
-                              class="px-10 py-7 w-128"
+                              class="py-7 px-10 w-128"
                             >
                               <div
                                 class="flex flex-col text-left"
@@ -23185,7 +23185,7 @@ exports[`Dashboard should show transaction view 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -23197,7 +23197,7 @@ exports[`Dashboard should show transaction view 1`] = `
                                       data-testid="dropdown__toggle"
                                     >
                                       <div
-                                        class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+                                        class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
                                         data-testid="filter-wallets__wallets"
                                       >
                                         <span
@@ -23230,7 +23230,7 @@ exports[`Dashboard should show transaction view 1`] = `
                                   class="flex flex-col mb-6"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -23265,7 +23265,7 @@ exports[`Dashboard should show transaction view 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -23385,7 +23385,7 @@ exports[`Dashboard should show transaction view 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -23405,7 +23405,7 @@ exports[`Dashboard should show transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -23463,7 +23463,7 @@ exports[`Dashboard should show transaction view 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -23481,7 +23481,7 @@ exports[`Dashboard should show transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -23539,7 +23539,7 @@ exports[`Dashboard should show transaction view 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -23557,7 +23557,7 @@ exports[`Dashboard should show transaction view 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -23613,7 +23613,7 @@ exports[`Dashboard should show transaction view 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -23630,10 +23630,10 @@ exports[`Dashboard should show transaction view 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -24485,7 +24485,7 @@ exports[`Dashboard should show transaction view 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"
@@ -24502,7 +24502,7 @@ exports[`Dashboard should show transaction view 1`] = `
 exports[`Dashboard should toggle network selection from network filters 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -24512,7 +24512,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -24528,7 +24528,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -24603,7 +24603,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -24617,7 +24617,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -24640,7 +24640,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -24664,7 +24664,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -24710,7 +24710,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -24754,7 +24754,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="-mb-2 text-4xl font-bold"
@@ -24801,7 +24801,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1 space-x-3"
+                    class="flex flex-1 justify-end space-x-3"
                   >
                     <div
                       class="my-auto text-sm text-base text-theme-secondary-text"
@@ -24809,7 +24809,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                       28 Jun, 2020
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
@@ -24824,7 +24824,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
                     >
                       <div
                         class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
@@ -24872,10 +24872,10 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                 Total Portfolio
               </div>
               <div
-                class="flex justify-end flex-1 space-x-3"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="flex items-center justify-end py-4 pl-6 pr-0"
+                  class="flex justify-end items-center py-4 pr-0 pl-6"
                   data-testid="item-percentage"
                 >
                   <div
@@ -24905,11 +24905,11 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="flex items-center justify-between mb-8"
+              class="flex justify-between items-center mb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -24970,7 +24970,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <div
                       class="relative"
@@ -25002,7 +25002,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                         >
                           <div>
                             <div
-                              class="px-10 py-7 w-128"
+                              class="py-7 px-10 w-128"
                             >
                               <div
                                 class="flex flex-col text-left"
@@ -25116,7 +25116,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -25128,7 +25128,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                     >
                                       <span>
                                         <div
-                                          class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+                                          class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
                                           data-testid="filter-wallets__wallets"
                                         >
                                           <span
@@ -25157,7 +25157,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                             data-testid="dropdown__options"
                                           >
                                             <li
-                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                                              class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                                               data-testid="dropdown__option--0"
                                             >
                                               <div
@@ -25169,7 +25169,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                               </div>
                                             </li>
                                             <li
-                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                                              class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                                               data-testid="dropdown__option--1"
                                             >
                                               <div
@@ -25181,7 +25181,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                               </div>
                                             </li>
                                             <li
-                                              class="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                                              class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                                               data-testid="dropdown__option--2"
                                             >
                                               <div
@@ -25210,7 +25210,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                   class="flex flex-col mb-6"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -25245,7 +25245,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                                   class="flex flex-col"
                                 >
                                   <div
-                                    class="flex items-center justify-between"
+                                    class="flex justify-between items-center"
                                   >
                                     <div
                                       class="font-semibold text-theme-secondary-text"
@@ -25366,7 +25366,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                   class="relative"
                 >
                   <div
-                    class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
                     style="height: 224px;"
                   >
                     <div
@@ -25386,7 +25386,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -25444,7 +25444,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -25462,7 +25462,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="relative flex flex-col justify-between h-full p-4"
+                              class="flex relative flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex items-center space-x-4"
@@ -25520,7 +25520,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -25538,7 +25538,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                             data-testid="Card"
                           >
                             <div
-                              class="flex flex-col justify-between h-full p-4"
+                              class="flex flex-col justify-between p-4 h-full"
                             >
                               <div
                                 class="flex -space-x-2"
@@ -25562,7 +25562,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
                               </span>
                             </div>
                             <div
-                              class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                             />
                           </div>
                         </div>
@@ -25579,10 +25579,10 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="relative flex justify-between"
+            class="flex relative justify-between"
           >
             <div
               class="mb-8 text-4xl font-bold"
@@ -26434,7 +26434,7 @@ exports[`Dashboard should toggle network selection from network filters 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bEccyr w-full mt-10 mb-5"
+            class="sc-AxhCb bEccyr mt-10 mb-5 w-full"
             color="primary"
             data-testid="transactions__fetch-more-button"
             type="button"

@@ -16,7 +16,7 @@ export default {
 };
 
 export const Default = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
-	<div className="max-w-lg space-y-8">
+	<div className="space-y-8 max-w-lg">
 		<div>
 			<SelectAddress wallets={wallets} />
 		</div>

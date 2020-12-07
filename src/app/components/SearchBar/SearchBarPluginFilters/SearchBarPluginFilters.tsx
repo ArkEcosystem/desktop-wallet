@@ -38,7 +38,7 @@ const RatingsCheckboxes = ({ ratings, suffixLabel, value, onChange }: any) => (
 		{ratings &&
 			ratings.map((rating: number) => (
 				<label
-					className="flex items-center block px-2 pb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+					className="block flex items-center px-2 pb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
 					key={rating}
 				>
 					<span>
@@ -80,7 +80,7 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 			{categories &&
 				categories.map((category: Category, index: number) => (
 					<label
-						className="flex items-center block px-2 pb-1 mb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+						className="block flex items-center px-2 pb-1 mb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
 						key={index}
 					>
 						<span>
@@ -147,7 +147,7 @@ export const SearchBarPluginFilters = ({
 	};
 
 	return (
-		<div data-testid="SearchBarPluginFilters" className="relative z-20 flex items-center text-theme-primary-400">
+		<div data-testid="SearchBarPluginFilters" className="flex relative z-20 items-center text-theme-primary-400">
 			<Dropdown
 				position="right"
 				toggleContent={
@@ -156,8 +156,8 @@ export const SearchBarPluginFilters = ({
 					</div>
 				}
 			>
-				<div className="w-64 px-6 py-4">
-					<label className="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast">
+				<div className="py-4 px-6 w-64">
+					<label className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast">
 						<span>
 							<Checkbox
 								name="claim"

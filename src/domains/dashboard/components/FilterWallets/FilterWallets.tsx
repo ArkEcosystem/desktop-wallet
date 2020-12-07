@@ -74,7 +74,7 @@ export const FilterWallets = ({
 			<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 			<div className="flex flex-col">
-				<div className="flex items-center justify-between">
+				<div className="flex justify-between items-center">
 					<div className="font-semibold text-theme-secondary-text">
 						{t("DASHBOARD.FILTER_WALLETS.WALLETS.TITLE")}
 					</div>
@@ -86,7 +86,7 @@ export const FilterWallets = ({
 						toggleContent={
 							<div
 								data-testid="filter-wallets__wallets"
-								className="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+								className="flex justify-end items-center cursor-pointer text-theme-secondary-text"
 							>
 								<span className="inline-block mr-2 font-semibold">
 									{walletDisplayOptions.find((option) => option.value === walletsDisplayType)?.label}
@@ -107,7 +107,7 @@ export const FilterWallets = ({
 					<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 					<div className="flex flex-col mb-6">
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<div className="font-semibold text-theme-secondary-text">
 								{t("DASHBOARD.FILTER_WALLETS.CHART.TITLE")}
 							</div>
@@ -125,7 +125,7 @@ export const FilterWallets = ({
 					</div>
 
 					<div className="flex flex-col">
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<div className="font-semibold text-theme-secondary-text">
 								{t("DASHBOARD.FILTER_WALLETS.TRANSACTION_HISTORY.TITLE")}
 							</div>

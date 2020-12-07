@@ -8,7 +8,7 @@ export const Offline = () => {
 
 	return (
 		<Page navbarVariant="logo-only">
-			<Section className="flex flex-col justify-center flex-1 text-center">
+			<Section className="flex flex-col flex-1 justify-center text-center">
 				<div className="sm:mx-auto sm:w-full sm:max-w-md">
 					<Image name="CannotConnectBanner" domain="error" />
 				</div>

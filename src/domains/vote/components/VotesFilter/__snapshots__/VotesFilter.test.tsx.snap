@@ -58,10 +58,10 @@ exports[`VotesFilter should render default 1`] = `
         >
           <div>
             <div
-              class="w-64 px-6 py-4"
+              class="py-4 px-6 w-64"
             >
               <label
-                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
                 data-testid="VotesFilter__option--all"
               >
                 <span>
@@ -135,10 +135,10 @@ exports[`VotesFilter should render with current option selected 1`] = `
         >
           <div>
             <div
-              class="w-64 px-6 py-4"
+              class="py-4 px-6 w-64"
             >
               <label
-                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
                 data-testid="VotesFilter__option--all"
               >
                 <span>
@@ -212,10 +212,10 @@ exports[`VotesFilter should render with disabled current option 1`] = `
         >
           <div>
             <div
-              class="w-64 px-6 py-4"
+              class="py-4 px-6 w-64"
             >
               <label
-                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
                 data-testid="VotesFilter__option--all"
               >
                 <span>

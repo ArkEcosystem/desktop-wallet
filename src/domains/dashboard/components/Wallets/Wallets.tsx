@@ -177,7 +177,7 @@ export const Wallets = ({
 
 	return (
 		<div>
-			<div className="flex items-center justify-between mb-8">
+			<div className="flex justify-between items-center mb-8">
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
@@ -213,7 +213,7 @@ export const Wallets = ({
 								{hasMoreWallets && (
 									<Button
 										variant="plain"
-										className="w-full mt-10 mb-5"
+										className="mt-10 mb-5 w-full"
 										data-testid="WalletsList__ViewMore"
 										onClick={() => loadAllListWallets()}
 									>

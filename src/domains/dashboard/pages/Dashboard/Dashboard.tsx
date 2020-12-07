@@ -272,7 +272,7 @@ export const Dashboard = ({ balances }: DashboardProps) => {
 
 				{showTransactions && (
 					<Section className="flex-1" data-testid="dashboard__transactions-view">
-						<div className="relative flex justify-between">
+						<div className="flex relative justify-between">
 							<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 							<FilterTransactions
 								onSelect={(_, type) => setSelectedTransactionType(type)}

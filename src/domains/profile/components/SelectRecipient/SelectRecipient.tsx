@@ -58,12 +58,12 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 
 		return (
 			<div>
-				<div data-testid="SelectRecipient__wrapper" className="relative flex items-center w-full text-left">
+				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
 					<div className="absolute left-1">
 						<ProfileAvatar address={selectedAddress} />
 					</div>
 					<Input
-						className="pl-14 pr-11"
+						className="pr-11 pl-14"
 						data-testid="SelectRecipient__input"
 						type="text"
 						ref={ref}
@@ -75,7 +75,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 
 					<div
 						data-testid="SelectRecipient__select-recipient"
-						className="absolute flex items-center space-x-3 cursor-pointer right-4"
+						className="flex absolute right-4 items-center space-x-3 cursor-pointer"
 						onClick={openRecipients}
 					>
 						<Icon name="User" width={20} height={20} />

@@ -73,7 +73,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 			<div className="flex flex-row mt-2">
 				{!value ? (
 					<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
-						<div className="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded border-theme-primary-contrast">
+						<div className="flex justify-center items-center w-24 h-24 rounded border-2 border-dashed border-theme-primary-contrast">
 							<div className="overflow-hidden rounded-full w-22 h-22">
 								<UploadButtonWrapper>
 									<Button
@@ -109,11 +109,11 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								)}
 
 								<div
-									className="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+									className="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
 									onClick={handleUploadImage}
 									data-testid="SelectProfileImage__upload-button"
 								>
-									<div className="flex items-center justify-center w-22 h-22">
+									<div className="flex justify-center items-center w-22 h-22">
 										<Icon name="Upload" className="text-white" width={24} height={18} />
 									</div>
 								</div>
@@ -125,7 +125,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 									size="icon"
 									color="danger"
 									variant="plain"
-									className="absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
+									className="flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
 									onClick={() => onSelect("")}
 									data-testid="SelectProfileImage__remove-button"
 								>

@@ -11,7 +11,7 @@ export const Default = () => {
 	return (
 		<div>
 			<CollapseToggleButton isOpen={show} onClick={() => setShow(!show)} />
-			<Collapse isOpen={show} className="mt-2 overflow-y-auto">
+			<Collapse isOpen={show} className="overflow-y-auto mt-2">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio non aliquid, tempore, voluptatum
 				inventore, tempora odit commodi temporibus exercitationem hic omnis porro atque suscipit officiis
 				voluptate debitis aspernatur minima odio.

@@ -16,7 +16,7 @@ exports[`LineChart should render 1`] = `
           class="flex space-x-3"
         >
           <div
-            class="flex justify-end flex-1 space-x-3"
+            class="flex flex-1 justify-end space-x-3"
           >
             <div
               class="my-auto text-sm text-base text-theme-secondary-text"
@@ -89,7 +89,7 @@ exports[`LineChart should render with data 1`] = `
             </div>
           </div>
           <div
-            class="flex justify-end flex-1 space-x-3"
+            class="flex flex-1 justify-end space-x-3"
           >
             <div
               class="my-auto text-sm text-base text-theme-secondary-text"
@@ -97,7 +97,7 @@ exports[`LineChart should render with data 1`] = `
               22 Jun, 2020
             </div>
             <div
-              class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
+              class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
             >
               <div
                 class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"

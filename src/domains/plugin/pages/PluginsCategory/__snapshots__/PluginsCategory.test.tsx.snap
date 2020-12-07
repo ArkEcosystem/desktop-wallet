@@ -3,7 +3,7 @@
 exports[`PluginsCategory should cancel install plugin 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -13,7 +13,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -29,7 +29,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -104,7 +104,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -118,7 +118,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -141,7 +141,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -165,7 +165,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -211,7 +211,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -249,7 +249,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -282,10 +282,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -309,7 +309,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -333,7 +333,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -367,10 +367,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -422,7 +422,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -739,7 +739,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -785,7 +785,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -888,7 +888,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -934,7 +934,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -1037,7 +1037,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -1083,7 +1083,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -1186,7 +1186,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -1232,7 +1232,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -1335,7 +1335,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -1381,7 +1381,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -1496,7 +1496,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -1542,7 +1542,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -1657,7 +1657,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -1703,7 +1703,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -1784,7 +1784,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
 exports[`PluginsCategory should close install plugin modal 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1794,7 +1794,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -1810,7 +1810,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -1885,7 +1885,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1899,7 +1899,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -1922,7 +1922,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -1946,7 +1946,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1992,7 +1992,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -2030,7 +2030,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2063,10 +2063,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -2090,7 +2090,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -2114,7 +2114,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -2148,10 +2148,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -2203,7 +2203,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -2520,7 +2520,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -2566,7 +2566,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -2669,7 +2669,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -2715,7 +2715,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -2818,7 +2818,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -2864,7 +2864,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -2967,7 +2967,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -3013,7 +3013,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -3116,7 +3116,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -3162,7 +3162,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -3277,7 +3277,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -3323,7 +3323,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -3438,7 +3438,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -3484,7 +3484,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -3565,7 +3565,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
 exports[`PluginsCategory should delete plugin 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3575,7 +3575,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -3591,7 +3591,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -3666,7 +3666,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -3680,7 +3680,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -3703,7 +3703,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -3727,7 +3727,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -3773,7 +3773,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -3811,7 +3811,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3844,10 +3844,10 @@ exports[`PluginsCategory should delete plugin 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -3871,7 +3871,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -3895,7 +3895,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -3929,10 +3929,10 @@ exports[`PluginsCategory should delete plugin 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -3984,7 +3984,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -4048,7 +4048,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -4073,7 +4073,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -4129,7 +4129,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -4154,7 +4154,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -4210,7 +4210,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -4235,7 +4235,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -4291,7 +4291,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -4316,7 +4316,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -4372,7 +4372,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -4397,14 +4397,14 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -4472,7 +4472,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -4497,14 +4497,14 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -4572,7 +4572,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -4597,14 +4597,14 @@ exports[`PluginsCategory should delete plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -4637,7 +4637,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
 exports[`PluginsCategory should download & install plugin 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -4647,7 +4647,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -4663,7 +4663,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -4738,7 +4738,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4752,7 +4752,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -4775,7 +4775,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -4799,7 +4799,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -4845,7 +4845,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -4883,7 +4883,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4916,10 +4916,10 @@ exports[`PluginsCategory should download & install plugin 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -4943,7 +4943,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -4967,7 +4967,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -5001,10 +5001,10 @@ exports[`PluginsCategory should download & install plugin 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -5056,7 +5056,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -5373,7 +5373,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -5419,7 +5419,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -5522,7 +5522,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -5568,7 +5568,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -5671,7 +5671,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -5717,7 +5717,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -5820,7 +5820,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -5866,7 +5866,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -5969,7 +5969,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -6015,7 +6015,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -6130,7 +6130,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -6176,7 +6176,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -6291,7 +6291,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -6337,7 +6337,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -6413,7 +6413,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
     </div>
   </div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -6424,7 +6424,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cGlMcw w-11 h-11"
@@ -6573,7 +6573,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
 exports[`PluginsCategory should install plugin from header install button 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -6583,7 +6583,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -6599,7 +6599,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -6674,7 +6674,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6688,7 +6688,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -6711,7 +6711,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -6735,7 +6735,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -6781,7 +6781,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -6819,7 +6819,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -6852,10 +6852,10 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -6879,7 +6879,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -6903,7 +6903,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   </button>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -6937,10 +6937,10 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -6992,7 +6992,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -7056,7 +7056,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -7081,7 +7081,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -7137,7 +7137,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -7162,7 +7162,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -7218,7 +7218,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -7243,7 +7243,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -7299,7 +7299,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -7324,7 +7324,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -7380,7 +7380,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -7405,14 +7405,14 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -7480,7 +7480,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -7505,14 +7505,14 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -7580,7 +7580,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -7605,14 +7605,14 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -7640,7 +7640,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
     </div>
   </div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -7651,7 +7651,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cGlMcw w-11 h-11"
@@ -7800,7 +7800,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
 exports[`PluginsCategory should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -7810,7 +7810,7 @@ exports[`PluginsCategory should render 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -7826,7 +7826,7 @@ exports[`PluginsCategory should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -7901,7 +7901,7 @@ exports[`PluginsCategory should render 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -7915,7 +7915,7 @@ exports[`PluginsCategory should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -7938,7 +7938,7 @@ exports[`PluginsCategory should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -7962,7 +7962,7 @@ exports[`PluginsCategory should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -8008,7 +8008,7 @@ exports[`PluginsCategory should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -8046,7 +8046,7 @@ exports[`PluginsCategory should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -8079,10 +8079,10 @@ exports[`PluginsCategory should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -8106,7 +8106,7 @@ exports[`PluginsCategory should render 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -8130,7 +8130,7 @@ exports[`PluginsCategory should render 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -8164,10 +8164,10 @@ exports[`PluginsCategory should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -8219,7 +8219,7 @@ exports[`PluginsCategory should render 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -8283,7 +8283,7 @@ exports[`PluginsCategory should render 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -8308,7 +8308,7 @@ exports[`PluginsCategory should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -8364,7 +8364,7 @@ exports[`PluginsCategory should render 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -8389,7 +8389,7 @@ exports[`PluginsCategory should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -8445,7 +8445,7 @@ exports[`PluginsCategory should render 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -8470,7 +8470,7 @@ exports[`PluginsCategory should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -8526,7 +8526,7 @@ exports[`PluginsCategory should render 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -8551,7 +8551,7 @@ exports[`PluginsCategory should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -8607,7 +8607,7 @@ exports[`PluginsCategory should render 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -8632,14 +8632,14 @@ exports[`PluginsCategory should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -8707,7 +8707,7 @@ exports[`PluginsCategory should render 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -8732,14 +8732,14 @@ exports[`PluginsCategory should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -8807,7 +8807,7 @@ exports[`PluginsCategory should render 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -8832,14 +8832,14 @@ exports[`PluginsCategory should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -8872,7 +8872,7 @@ exports[`PluginsCategory should render 1`] = `
 exports[`PluginsCategory should search for plugin 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -8882,7 +8882,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -8898,7 +8898,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -8973,7 +8973,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -8987,7 +8987,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -9010,7 +9010,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -9034,7 +9034,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -9080,7 +9080,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -9118,7 +9118,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -9151,10 +9151,10 @@ exports[`PluginsCategory should search for plugin 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -9186,7 +9186,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     >
                       <div>
                         <div
-                          class="relative z-20 flex items-center text-theme-primary-400"
+                          class="flex relative z-20 items-center text-theme-primary-400"
                           data-testid="SearchBarPluginFilters"
                         >
                           <div
@@ -9210,7 +9210,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                        class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                       />
                     </div>
                     <button
@@ -9250,7 +9250,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -9284,10 +9284,10 @@ exports[`PluginsCategory should search for plugin 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -9339,7 +9339,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -9403,7 +9403,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -9428,7 +9428,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -9484,7 +9484,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -9509,7 +9509,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -9565,7 +9565,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -9590,7 +9590,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -9646,7 +9646,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -9671,7 +9671,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -9727,7 +9727,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -9752,14 +9752,14 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -9827,7 +9827,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -9852,14 +9852,14 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -9927,7 +9927,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -9952,14 +9952,14 @@ exports[`PluginsCategory should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -9992,7 +9992,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
 exports[`PluginsCategory should select plugin on grid 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -10002,7 +10002,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -10018,7 +10018,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -10093,7 +10093,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -10107,7 +10107,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -10130,7 +10130,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -10154,7 +10154,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -10200,7 +10200,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -10238,7 +10238,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -10271,10 +10271,10 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -10298,7 +10298,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -10322,7 +10322,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -10356,10 +10356,10 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -10411,7 +10411,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -10475,7 +10475,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -10500,7 +10500,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -10556,7 +10556,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -10581,7 +10581,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -10637,7 +10637,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -10662,7 +10662,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -10718,7 +10718,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -10743,7 +10743,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -10799,7 +10799,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -10824,14 +10824,14 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -10899,7 +10899,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -10924,14 +10924,14 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -10999,7 +10999,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -11024,14 +11024,14 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                         </div>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
                         >
                           <div
-                            class="flex justify-center w-4 overflow-hidden"
+                            class="flex overflow-hidden justify-center w-4"
                           >
                             <div
                               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -11064,7 +11064,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
 exports[`PluginsCategory should toggle between grid and list 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -11074,7 +11074,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -11090,7 +11090,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -11165,7 +11165,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -11179,7 +11179,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -11202,7 +11202,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -11226,7 +11226,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -11272,7 +11272,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -11310,7 +11310,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -11343,10 +11343,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -11370,7 +11370,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -11394,7 +11394,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
                   class="sc-AxjAm colAFb"
@@ -11428,10 +11428,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-center justify-between mb-6"
+            class="flex justify-between items-center mb-6"
             data-testid="PluginsCategoryHome__container"
           >
             <h2
@@ -11483,7 +11483,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             </div>
           </div>
           <div
-            class="flex items-center justify-between"
+            class="flex justify-between items-center"
           />
           <div>
             <div
@@ -11800,7 +11800,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -11846,7 +11846,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -11949,7 +11949,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -11995,7 +11995,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -12098,7 +12098,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -12144,7 +12144,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -12247,7 +12247,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 80%;"
                                 >
                                   <svg
@@ -12293,7 +12293,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto"
+                              class="flex mx-auto w-6 h-6"
                             >
                               <div
                                 class="m-auto text-theme-neutral"
@@ -12396,7 +12396,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -12442,7 +12442,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -12557,7 +12557,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -12603,7 +12603,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
@@ -12718,7 +12718,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 class="relative my-auto"
                               >
                                 <div
-                                  class="absolute overflow-hidden"
+                                  class="overflow-hidden absolute"
                                   style="width: 70%;"
                                 >
                                   <svg
@@ -12764,7 +12764,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="sc-fzokOt gzIgEd"
                           >
                             <div
-                              class="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500"
+                              class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="m-auto"
