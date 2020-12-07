@@ -15,7 +15,7 @@ export const VerifyMessageStatus = ({ title, description, type, isOpen, onClose 
 
 	return (
 		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose}>
-			<Image name={image} className="w-full mt-8" />
+			<Image name={image} className="mt-8 w-full" />
 		</Modal>
 	);
 };

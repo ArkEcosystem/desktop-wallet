@@ -69,7 +69,7 @@ export const Wallets = ({
 
 	return (
 		<Section className={!showTransactions ? "flex-1" : undefined}>
-			<div className="flex items-center justify-between mb-8">
+			<div className="flex justify-between items-center mb-8">
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls

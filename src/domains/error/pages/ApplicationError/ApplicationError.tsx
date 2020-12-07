@@ -12,8 +12,8 @@ export const ApplicationError = ({ resetErrorBoundary }: FallbackProps) => {
 	return (
 		<main className={`theme-${useDarkMode() ? "dark" : "light"}`} data-testid="Main">
 			<Page navbarVariant="logo-only">
-				<Section className="flex flex-col justify-center flex-1 text-center">
-					<div className="w-64 mx-auto lg:w-128">
+				<Section className="flex flex-col flex-1 justify-center text-center">
+					<div className="mx-auto w-64 lg:w-128">
 						<Image name="ErrorBanner" domain="error" />
 					</div>
 

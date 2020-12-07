@@ -14,7 +14,7 @@ export default {
 };
 
 export const Default = () => (
-	<div className="max-w-xs space-y-4">
+	<div className="space-y-4 max-w-xs">
 		<Input type="text" placeholder="Enabled" />
 		<Input type="text" placeholder="Invalid" aria-invalid={true} />
 		<Input type="text" placeholder="Disabled" disabled />

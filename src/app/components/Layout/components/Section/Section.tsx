@@ -21,7 +21,7 @@ const SectionWrapper = styled.div(({ hasBackground, marginTop }: SectionProps) =
 
 export const Section = ({ children, hasBackground, marginTop, className }: SectionProps) => (
 	<SectionWrapper hasBackground={hasBackground} marginTop={marginTop} className={className}>
-		<div className="container py-16 mx-auto px-14">{children}</div>
+		<div className="container py-16 px-14 mx-auto">{children}</div>
 	</SectionWrapper>
 );
 

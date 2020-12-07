@@ -22,7 +22,7 @@ export const Default = () => {
 			{Object.keys(SvgCollection).map((icon) => (
 				<div className="m-4" key={icon}>
 					<Clipboard data={icon}>
-						<div className="flex flex-col items-center justify-center w-24 h-24 space-y-6">
+						<div className="flex flex-col justify-center items-center space-y-6 w-24 h-24">
 							<span className="text-sm">{icon}</span>
 							<Icon className={iconColor} name={icon} width={width} height={height} />
 						</div>

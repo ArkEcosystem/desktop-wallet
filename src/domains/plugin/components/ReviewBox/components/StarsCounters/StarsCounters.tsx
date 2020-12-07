@@ -33,7 +33,7 @@ export const StarsCounters = ({ ratings, totalAvaliations }: Props) => (
 						<div className="flex items-center space-x-1 text-theme-warning-400">{stars}</div>
 						<span className="font-bold">{votes}</span>
 					</div>
-					<div className="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200">
+					<div className="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200">
 						<RatingCount
 							className="h-2 rounded-lg bg-theme-warning-400"
 							width={calculatedRating}

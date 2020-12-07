@@ -6,10 +6,10 @@ exports[`Wallets should load more wallets 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="flex items-center justify-between mb-8"
+        class="flex justify-between items-center mb-8"
       >
         <div
           class="-mt-1 text-4xl font-bold"
@@ -68,7 +68,7 @@ exports[`Wallets should load more wallets 1`] = `
               </div>
             </div>
             <div
-              class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+              class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
             >
               <div
                 class="relative"
@@ -587,10 +587,10 @@ exports[`Wallets should open and close ledger import modal 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="flex items-center justify-between mb-8"
+        class="flex justify-between items-center mb-8"
       >
         <div
           class="-mt-1 text-4xl font-bold"
@@ -649,7 +649,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
               </div>
             </div>
             <div
-              class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+              class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
             >
               <div
                 class="relative"
@@ -1158,7 +1158,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
         </div>
       </div>
       <div
-        class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+        class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
       >
         <div
           class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -1169,7 +1169,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
           data-testid="modal__inner"
         >
           <div
-            class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+            class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
           >
             <button
               class="sc-AxhCb eFOAhf w-11 h-11"
@@ -1214,14 +1214,14 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                   waiting-ledger-device.svg
                 </svg>
                 <div
-                  class="inline-flex items-center justify-center w-full space-x-3"
+                  class="inline-flex justify-center items-center space-x-3 w-full"
                 >
                   <div
                     class="sc-fzokOt gYqKim"
                     color="primary"
                   />
                   <span
-                    class="font-semibold text-theme-text animate-pulse"
+                    class="font-semibold animate-pulse text-theme-text"
                     data-testid="LedgerWaitingDevice-loading_message"
                   >
                     Waiting for Ledger device...
@@ -1243,10 +1243,10 @@ exports[`Wallets should render empty profile wallets 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="flex items-center justify-between mb-8"
+        class="flex justify-between items-center mb-8"
       >
         <div
           class="-mt-1 text-4xl font-bold"
@@ -1305,7 +1305,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
               </div>
             </div>
             <div
-              class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+              class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
             >
               <div
                 class="relative"
@@ -1433,10 +1433,10 @@ exports[`Wallets should render grid 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="flex items-center justify-between mb-8"
+        class="flex justify-between items-center mb-8"
       >
         <div
           class="-mt-1 text-4xl font-bold"
@@ -1495,7 +1495,7 @@ exports[`Wallets should render grid 1`] = `
               </div>
             </div>
             <div
-              class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+              class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
             >
               <div
                 class="relative"
@@ -1607,7 +1607,7 @@ exports[`Wallets should render grid 1`] = `
             class="relative"
           >
             <div
-              class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+              class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
               style="height: 224px;"
             >
               <div
@@ -1627,7 +1627,7 @@ exports[`Wallets should render grid 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="relative flex flex-col justify-between h-full p-4"
+                        class="flex relative flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex items-center space-x-4"
@@ -1685,7 +1685,7 @@ exports[`Wallets should render grid 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -1703,7 +1703,7 @@ exports[`Wallets should render grid 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="relative flex flex-col justify-between h-full p-4"
+                        class="flex relative flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex items-center space-x-4"
@@ -1761,7 +1761,7 @@ exports[`Wallets should render grid 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -1779,7 +1779,7 @@ exports[`Wallets should render grid 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="relative flex flex-col justify-between h-full p-4"
+                        class="flex relative flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex items-center space-x-4"
@@ -1835,7 +1835,7 @@ exports[`Wallets should render grid 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -1856,10 +1856,10 @@ exports[`Wallets should render list 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="flex items-center justify-between mb-8"
+        class="flex justify-between items-center mb-8"
       >
         <div
           class="-mt-1 text-4xl font-bold"
@@ -1918,7 +1918,7 @@ exports[`Wallets should render list 1`] = `
               </div>
             </div>
             <div
-              class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+              class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
             >
               <div
                 class="relative"
@@ -2437,10 +2437,10 @@ exports[`Wallets should render without testnet wallets 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="flex items-center justify-between mb-8"
+        class="flex justify-between items-center mb-8"
       >
         <div
           class="-mt-1 text-4xl font-bold"
@@ -2499,7 +2499,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
               </div>
             </div>
             <div
-              class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+              class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
             >
               <div
                 class="relative"
@@ -2611,7 +2611,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
             class="relative"
           >
             <div
-              class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+              class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
               style="height: 224px;"
             >
               <div
@@ -2631,7 +2631,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="relative flex flex-col justify-between h-full p-4"
+                        class="flex relative flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex items-center space-x-4"
@@ -2687,7 +2687,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -2705,7 +2705,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col justify-between h-full p-4"
+                        class="flex flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex -space-x-2"
@@ -2729,7 +2729,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -2747,7 +2747,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="flex flex-col justify-between h-full p-4"
+                        class="flex flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex -space-x-2"
@@ -2771,7 +2771,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -2792,10 +2792,10 @@ exports[`Wallets should toggle between grid and list view 1`] = `
     class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
   >
     <div
-      class="container py-16 mx-auto px-14"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="flex items-center justify-between mb-8"
+        class="flex justify-between items-center mb-8"
       >
         <div
           class="-mt-1 text-4xl font-bold"
@@ -2854,7 +2854,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
               </div>
             </div>
             <div
-              class="relative flex items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+              class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
             >
               <div
                 class="relative"
@@ -2966,7 +2966,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
             class="relative"
           >
             <div
-              class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+              class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
               style="height: 224px;"
             >
               <div
@@ -2986,7 +2986,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="relative flex flex-col justify-between h-full p-4"
+                        class="flex relative flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex items-center space-x-4"
@@ -3044,7 +3044,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -3062,7 +3062,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="relative flex flex-col justify-between h-full p-4"
+                        class="flex relative flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex items-center space-x-4"
@@ -3120,7 +3120,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>
@@ -3138,7 +3138,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                       data-testid="Card"
                     >
                       <div
-                        class="relative flex flex-col justify-between h-full p-4"
+                        class="flex relative flex-col justify-between p-4 h-full"
                       >
                         <div
                           class="flex items-center space-x-4"
@@ -3194,7 +3194,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                         </span>
                       </div>
                       <div
-                        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                       />
                     </div>
                   </div>

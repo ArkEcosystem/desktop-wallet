@@ -78,7 +78,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 	return (
 		<div>
 			<div data-testid="PluginManager__home__featured">
-				<div className="flex items-center justify-between mt-8 mb-6">
+				<div className="flex justify-between items-center mt-8 mb-6">
 					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED_PLUGINS")}</h2>
 
 					<a
@@ -105,7 +105,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 			</div>
 
 			<div data-testid="PluginManager__home__top-rated">
-				<div className="flex items-center justify-between mt-8 mb-6">
+				<div className="flex justify-between items-center mt-8 mb-6">
 					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}</h2>
 					<a
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}
@@ -130,7 +130,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 			</div>
 
 			<div data-testid="PluginManager__home__top-utilities">
-				<div className="flex items-center justify-between mt-8 mb-6">
+				<div className="flex justify-between items-center mt-8 mb-6">
 					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
 					<a
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}
@@ -220,7 +220,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									onSearch={() => console.log("search")}
 									extra={<SearchBarPluginFilters />}
 								/>
-								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+								<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 								<Button
 									data-testid="PluginManager_header--install"
 									onClick={() => setInstallPlugin(true)}
@@ -249,11 +249,11 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 				<Section>
 					<div data-testid={`PluginManager__container--${currentView}`}>
-						<div className="flex items-center justify-between" />
+						<div className="flex justify-between items-center" />
 
 						{currentView === "home" && (
 							<div>
-								<PluginManagerHomeBanner className="w-full mb-8" height="auto" />
+								<PluginManagerHomeBanner className="mb-8 w-full" height="auto" />
 								<PluginManagerHome
 									paths={paths}
 									viewType={viewType}

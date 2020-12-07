@@ -30,7 +30,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 		return (
 			<div data-testid="WalletCard__blank" className={`w-64 inline-block ${className}`}>
 				<Card className="h-48">
-					<div className="flex flex-col justify-between h-full p-4">
+					<div className="flex flex-col justify-between p-4 h-full">
 						<div className="flex -space-x-2">
 							<Circle
 								size="lg"
@@ -91,7 +91,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 				onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
 				onSelect={onSelect}
 			>
-				<div className="relative flex flex-col justify-between h-full p-4">
+				<div className="flex relative flex-col justify-between p-4 h-full">
 					<div className="flex items-center space-x-4">
 						<div className="-space-x-2 whitespace-no-wrap">
 							<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} />

@@ -7,7 +7,7 @@ export default {
 };
 
 export const Native = () => (
-	<div className="max-w-xs space-y-4">
+	<div className="space-y-4 max-w-xs">
 		<Select placeholder="Select option">
 			<option value="option1">Option 1</option>
 			<option value="option2">Option 2</option>

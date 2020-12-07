@@ -15,7 +15,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
           data-testid="MultiSignatureRegistrationForm--form-step"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -43,19 +43,19 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   class="sc-AxjAm fmGClo flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                     data-testid="FormLabel"
                     for="address"
                   >
                     Multisignature Participant
                     <div
-                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                       data-testid="FormLabel__required"
                     />
                   </label>
                   <div>
                     <div
-                      class="relative flex items-center w-full text-left"
+                      class="flex relative items-center w-full text-left"
                       data-testid="SelectRecipient__wrapper"
                     >
                       <div
@@ -66,14 +66,14 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                         />
                       </div>
                       <input
-                        class="sc-fznKkj heLFsS overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                        class="sc-fznKkj heLFsS overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                         data-testid="SelectRecipient__input"
                         name="address"
                         type="text"
                         value=""
                       />
                       <div
-                        class="absolute flex items-center space-x-3 cursor-pointer right-4"
+                        class="flex absolute right-4 items-center space-x-3 cursor-pointer"
                         data-testid="SelectRecipient__select-recipient"
                       >
                         <div
@@ -90,7 +90,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   </div>
                 </fieldset>
                 <button
-                  class="sc-fzozJi grqtXh w-full my-4"
+                  class="sc-fzozJi grqtXh my-4 w-full"
                   color="primary"
                   disabled=""
                   type="button"
@@ -212,7 +212,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             </div>
                           </td>
                           <td
-                            class="w-20 py-6 text-right"
+                            class="py-6 w-20 text-right"
                           >
                             <button
                               class="sc-fzozJi grqtXh"
@@ -246,13 +246,13 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               class="sc-AxjAm fmGClo flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="minParticipants"
               >
                 Minimum Required Signatures
                 <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                   data-testid="FormLabel__required"
                 />
               </label>
@@ -277,13 +277,13 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               class="sc-AxjAm fmGClo flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="fee"
               >
                 Transaction Fee
                 <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                   data-testid="FormLabel__required"
                 />
               </label>
@@ -305,7 +305,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                       value="0"
                     />
                     <div
-                      class="absolute bottom-0 w-full px-1"
+                      class="absolute bottom-0 px-1 w-full"
                     >
                       <div
                         class="flex flex-wrap justify-center"
@@ -339,13 +339,13 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 </div>
                 <div>
                   <div
-                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                     data-testid="SelectionBar"
                     role="radiogroup"
                   >
                     <button
                       aria-checked="true"
-                      class="sc-fzpjYC gMsesJ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -354,7 +354,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fzpjYC gMsesJ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -363,7 +363,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     </button>
                     <button
                       aria-checked="false"
-                      class="sc-fzpjYC gMsesJ relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                       data-testid="SelectionBarOption"
                       role="radio"
                       type="button"
@@ -397,7 +397,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
           data-testid="MultiSignature__review-step"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -571,7 +571,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                             data-testid="recipient-list__recipient-list-item"
                           >
                             <td
-                              class="w-12 py-4"
+                              class="py-4 w-12"
                             >
                               <div
                                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
@@ -612,7 +612,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                             data-testid="recipient-list__recipient-list-item"
                           >
                             <td
-                              class="w-12 py-4"
+                              class="py-4 w-12"
                             >
                               <div
                                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
@@ -723,7 +723,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
               class="mt-2"
             >
               <div
-                class="border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 <div
                   class="relative p-4"
@@ -781,7 +781,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
+                  class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                 >
                   <span
                     class="sc-fzoiQi klRelP"
