@@ -3,6 +3,7 @@
     ref="table"
     :columns="columns"
     :rows="rows"
+    :entity-type="entityType"
     v-on="$listeners"
   />
 </template>
@@ -18,13 +19,16 @@ export default {
   },
 
   props: {
-    rows: {
-      type: Array,
+    entityType: {
+      type: Number,
       required: true
     }
   },
 
   computed: {
+    rows () {
+      return Object.values(this.$store.getters['entity/byEntityType'](this.entityType))
+    },
     columns () {
       return [
         {

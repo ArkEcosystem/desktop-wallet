@@ -5,8 +5,6 @@
       class="EntityTable__table"
       :rows="rows"
       :columns="columns"
-      :is-remote="isRemote"
-      :is-loading="isLoading"
     >
       <template
         slot-scope="data"
@@ -111,7 +109,7 @@
             }"
           >
             <MenuDropdown
-              :ref="`dropdown.${data.row.id || data.row.address}`"
+              :ref="`dropdown.${data.row.id || data.row.username}`"
               :items="getActionOptions(data.row.address)"
               :is-highlighting="false"
               :is-disabled="isEntityResigned(data.row)"
@@ -137,6 +135,7 @@
 </template>
 
 <script>
+import { TRANSACTION_TYPES_ENTITY } from '@config'
 import { ButtonIconGeneric, ButtonModal, ButtonReload } from '@/components/Button'
 import WalletIdenticon from '@/components/Wallet/WalletIdenticon'
 import { MenuDropdown } from '@/components/Menu'
@@ -162,6 +161,10 @@ export default {
   },
 
   props: {
+    entityType: {
+      type: Number,
+      required: true
+    },
     columns: {
       type: Array,
       required: true
@@ -170,22 +173,7 @@ export default {
       type: Array,
       required: true
     },
-    transactions: {
-      type: Array,
-      required: false,
-      default: undefined
-    },
     pinAbove: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    isRemote: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
-    isLoading: {
       type: Boolean,
       required: false,
       default: false
@@ -193,10 +181,15 @@ export default {
   },
 
   data: () => ({
-    ipfsDataObject: {},
     loading: {},
     failed: {}
   }),
+
+  computed: {
+    isDelegateEntityType () {
+      return TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE === this.entityType
+    }
+  },
 
   methods: {
     getIpfsDataProperty (id, path) {
@@ -204,7 +197,8 @@ export default {
     },
 
     getDelegateEntity (address) {
-      return this.transactions.find(transaction => transaction.type === 4 && transaction.address === address)
+      const entities = Object.values(this.$store.getters['entity/bySessionProfile'])
+      return entities.find(transaction => transaction.type === TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE && transaction.address === address)
     },
 
     isIpfsLoading (id) {
@@ -216,7 +210,7 @@ export default {
     },
 
     isEntityResigned (row) {
-      if (!this.transactions) {
+      if (!this.isDelegateEntityType) {
         return row.isResigned
       }
 
@@ -238,7 +232,7 @@ export default {
         resign: this.$t('ENTITY.RESIGN')
       }
 
-      if (this.transactions && !this.getDelegateEntity(address)) {
+      if (this.isDelegateEntityType && !this.getDelegateEntity(address)) {
         delete options.resign
       }
 
@@ -257,12 +251,12 @@ export default {
       let transaction = row
       let ipfsDataObject
 
-      if (this.transactions) {
+      if (this.isDelegateEntityType) {
         transaction = this.getDelegateEntity(row.address)
       }
 
       if (transaction) {
-        ipfsDataObject = this.ipfsDataObject[transaction.id]
+        ipfsDataObject = this.$store.getters['entity/ipfsContentByRegistrationId'](transaction.id)
       }
 
       this.$emit(key, { transaction, row, ipfsDataObject })

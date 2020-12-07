@@ -5,8 +5,8 @@
       item-value-class="w-full mb-4"
     >
       <InputText
-        v-if="!entityName"
         v-model="$v.form.entityName.$model"
+        :is-disabled="!!entityName"
         :is-invalid="$v.form.entityName.$dirty && $v.form.entityName.$invalid"
         :label="$t('ENTITY.NAME')"
         :helper-text="duplicateNameWarning"
@@ -214,6 +214,9 @@ export default {
     },
 
     isNameDuplicated () {
+      if (this.entityName) {
+        return false
+      }
       return this.$store.getters['entity/hasEntityName'](this.form.entityName)
     },
 

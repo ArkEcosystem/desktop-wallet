@@ -29,7 +29,7 @@
         <Loader />
       </div>
 
-      <div v-else-if="!isLoading && !registrations.length && !delegatesAddresses.length">
+      <div v-else-if="!isLoading && !registrations.length && !hasDelegatesWallets">
         <p class="font-semibold text-theme-page-text-light text-center w-full">
           {{ $t('ENTITY.NO_ENTITIES_FOUND') }}
         </p>
@@ -48,11 +48,18 @@
             />
             <span class="ml-2">{{ item.label }}</span>
           </h2>
-          <Component
-            :is="item.component"
+          <EntityTableDelegate
+            v-if="item.icon === 'delegate'"
             ref="tableWrapper"
-            :rows="getRegistrationsByType(item.type)"
-            :addresses="delegatesAddresses"
+            class="mt-5 border-b"
+            @resign="openModal($event, 'resign')"
+            @update="openModal($event, 'update')"
+            @dropdown-click="onDropdownClick"
+          />
+          <EntityTableCommon
+            v-else
+            ref="tableWrapper"
+            :entity-type="item.type"
             class="mt-5 border-b"
             @resign="openModal($event, 'resign')"
             @update="openModal($event, 'update')"
@@ -121,27 +128,27 @@ export default {
       return this.$store.getters['wallet/byProfileId'](this.session_profile.id)
     },
 
-    registrations () {
-      return Object.values(this.$store.getters['entity/bySessionProfile'])
+    hasDelegatesWallets () {
+      return this.wallets.some(wallet => wallet.isDelegate)
     },
 
-    delegatesAddresses () {
-      return this.wallets.filter(wallet => wallet.isDelegate).map(wallet => wallet.address)
+    registrations () {
+      return Object.values(this.$store.getters['entity/bySessionProfile'])
     },
 
     registrationOptions () {
       const types = this.registrations.map(item => item.type)
 
-      if (this.delegatesAddresses.length) {
+      if (this.hasDelegatesWallets) {
         types.push(TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE)
       }
 
       const options = [
-        { label: this.$tc('ENTITY.TYPES.BUSINESS', 2), icon: 'business', type: TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS, component: 'EntityTableCommon' },
-        { label: this.$tc('ENTITY.TYPES.PRODUCT', 2), icon: 'product', type: TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT, component: 'EntityTableCommon' },
-        { label: this.$tc('ENTITY.TYPES.PLUGIN', 2), icon: 'plugin', type: TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN, component: 'EntityTableCommon' },
-        { label: this.$tc('ENTITY.TYPES.MODULE', 2), icon: 'module', type: TRANSACTION_TYPES_ENTITY.TYPE.MODULE, component: 'EntityTableCommon' },
-        { label: this.$tc('ENTITY.TYPES.DELEGATE', 2), icon: 'delegate', type: TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE, component: 'EntityTableDelegate' }
+        { label: this.$tc('ENTITY.TYPES.BUSINESS', 2), icon: 'business', type: TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS },
+        { label: this.$tc('ENTITY.TYPES.PRODUCT', 2), icon: 'product', type: TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT },
+        { label: this.$tc('ENTITY.TYPES.PLUGIN', 2), icon: 'plugin', type: TRANSACTION_TYPES_ENTITY.TYPE.PLUGIN },
+        { label: this.$tc('ENTITY.TYPES.MODULE', 2), icon: 'module', type: TRANSACTION_TYPES_ENTITY.TYPE.MODULE },
+        { label: this.$tc('ENTITY.TYPES.DELEGATE', 2), icon: 'delegate', type: TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE }
       ]
 
       return options.filter(item => types.includes(item.type))
@@ -175,10 +182,6 @@ export default {
         }))
       }
       this.isLoading = false
-    },
-
-    getRegistrationsByType (type) {
-      return this.registrations.filter(item => item.type === type)
     },
 
     onDropdownClick () {

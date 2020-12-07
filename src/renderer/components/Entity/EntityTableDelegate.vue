@@ -2,16 +2,14 @@
   <EntityTable
     ref="table"
     :columns="columns"
-    :rows="delegatesRows"
-    :transactions="rows"
+    :rows="rows"
+    :entity-type="$options.delegateType"
     :pin-above="true"
-    :is-remote="true"
-    :is-loading="isLoading"
     v-on="$listeners"
   >
     <template slot-scope="{ data }">
       <div v-if="data.column.field === 'rank'">
-        <span>#{{ getDelegateProperty(data.row.address, 'rank') }}</span>
+        <span>#{{ data.row.rank }}</span>
       </div>
 
       <div
@@ -19,7 +17,7 @@
         class="text-center"
       >
         <SvgIcon
-          v-if="isDelegateActive(data.row.address)"
+          v-if="isDelegateActive(data.row.rank)"
           v-tooltip="{
             content: $t('WALLET_DELEGATES.STATUS.ACTIVE')
           }"
@@ -38,18 +36,19 @@
         />
       </div>
 
-      <div v-if="data.column.field === 'forged'">
-        <span class="font-semibold">{{ formatCurrency(getDelegateProperty(data.row.address, 'forged.total')) }}</span>
+      <div v-if="data.column.field === 'forged.total'">
+        <span class="font-semibold">{{ data.formattedRow['forged.total'] }}</span>
       </div>
 
       <div v-if="data.column.field === 'votes'">
-        <span class="font-semibold">{{ formatCurrency(getDelegateProperty(data.row.address, 'votes')) }}</span>
+        <span class="font-semibold">{{ data.formattedRow['votes'] }}</span>
       </div>
     </template>
   </EntityTable>
 </template>
 
 <script>
+import { TRANSACTION_TYPES_ENTITY } from '@config'
 import SvgIcon from '@/components/SvgIcon'
 import EntityTable from './EntityTable'
 import { get } from '@arkecosystem/utils'
@@ -57,25 +56,14 @@ import { get } from '@arkecosystem/utils'
 export default {
   name: 'EntityTableDelegate',
 
+  delegateType: TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE,
+
   components: {
     EntityTable,
     SvgIcon
   },
 
-  props: {
-    rows: {
-      type: Array,
-      required: true
-    },
-    addresses: {
-      type: Array,
-      required: true,
-      default: () => []
-    }
-  },
-
   data: () => ({
-    isLoading: true,
     delegates: {}
   }),
 
@@ -106,8 +94,9 @@ export default {
         },
         {
           label: this.$t('WALLET_DELEGATES.FORGED'),
-          field: 'forged',
+          field: 'forged.total',
           thClass: 'no-sort',
+          formatFn: this.formatCurrency,
           type: 'number',
           sortable: false
         },
@@ -115,6 +104,7 @@ export default {
           label: this.$t('WALLET_DELEGATES.VOTES'),
           field: 'votes',
           thClass: 'no-sort',
+          formatFn: this.formatCurrency,
           type: 'number',
           sortable: false
         },
@@ -131,53 +121,22 @@ export default {
       return get(this, 'session_network.constants.activeDelegates') || 51
     },
 
-    delegatesRows () {
-      return Object.values(this.delegates)
+    rows () {
+      return Object.values(this.$store.getters['delegate/bySessionProfile'])
     }
-  },
-
-  mounted () {
-    this.fetchDelegates()
   },
 
   methods: {
     formatAddress (address) {
-      return this.getDelegateProperty(address, 'username') || this.wallet_formatAddress(address, 16)
+      return this.rows.find(item => item.address === address).username
     },
 
     formatCurrency (value) {
       return this.formatter_networkCurrency(value)
     },
 
-    async fetchDelegates () {
-      if (!this.addresses.length) {
-        return
-      }
-
-      this.isLoading = true
-
-      try {
-        const addresses = this.addresses.join(',')
-        const { delegates } = await this.$client.fetchDelegates({ address: addresses })
-        this.delegates = delegates.reduce((acc, item) => ({ ...acc, [item.address]: item }), {})
-      } catch (error) {
-        this.$error(this.$t('COMMON.FAILED_FETCH', {
-          name: 'delegates',
-          msg: error.message
-        }))
-        this.delegates = {}
-      }
-
-      this.isLoading = false
-    },
-
-    isDelegateActive (address) {
-      const rank = this.getDelegateProperty(address, 'rank')
+    isDelegateActive (rank) {
       return rank <= this.numberOfActiveDelegates
-    },
-
-    getDelegateProperty (address, path) {
-      return get(this.delegates, `${address}.${path}`)
     }
   }
 }

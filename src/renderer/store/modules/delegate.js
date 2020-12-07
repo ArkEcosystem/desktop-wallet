@@ -27,6 +27,27 @@ export default {
       return state.delegates[network.id]
     },
 
+    bySessionProfile: (state, _, __, rootGetters) => {
+      const network = rootGetters['session/network']
+
+      if (!state.delegates[network.id]) {
+        return {}
+      }
+
+      const profileId = rootGetters['session/profileId']
+      const wallets = rootGetters['wallet/byProfileId'](profileId)
+      const result = {}
+
+      for (const { address } of wallets) {
+        const delegate = state.delegates[network.id][address]
+        if (delegate) {
+          result[address] = delegate
+        }
+      }
+
+      return result
+    },
+
     byAddress: (state, _, __, rootGetters) => address => {
       const network = rootGetters['session/network']
 

@@ -27,7 +27,7 @@ export default {
       return entities
     },
 
-    bySessionProfile (state, getters, __, rootGetters) {
+    bySessionProfile (_, getters, __, rootGetters) {
       const entities = getters.bySessionNetwork
       const profileId = rootGetters['session/profileId']
       const wallets = rootGetters['wallet/byProfileId'](profileId)
@@ -36,7 +36,12 @@ export default {
       return filter(entities, entity => addresses.includes(entity.address))
     },
 
-    byRegistrationId: (state, getters) => (registrationId) => {
+    byEntityType: (_, getters) => (type) => {
+      const entities = getters.bySessionProfile
+      return filter(entities, entity => entity.type === type)
+    },
+
+    byRegistrationId: (_, getters) => (registrationId) => {
       return getters.bySessionNetwork[registrationId]
     },
 
