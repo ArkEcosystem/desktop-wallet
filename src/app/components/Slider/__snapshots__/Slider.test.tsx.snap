@@ -146,10 +146,10 @@ exports[`Slider should render pagination on top right 1`] = `
     class="relative"
   >
     <div
-      class="absolute right-0 flex items-center w-auto h-6 space-x-2 -top-12 swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+      class="flex absolute right-0 -top-12 items-center space-x-2 w-auto h-6 swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
     />
     <div
-      class="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container swiper-container-initialized swiper-container-horizontal"
+      class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
       style="height: 244px;"
     >
       <div
