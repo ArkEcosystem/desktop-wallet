@@ -63,6 +63,40 @@
     </ListDividedItem>
 
     <ListDividedItem
+      v-if="getEntityProperty('delegate.type')"
+      :label="$t('ENTITY.DELEGATE_TYPE')"
+      item-value-class="w-full"
+    >
+      <span>
+        {{ delegateTypes[getEntityProperty('delegate.type')] }}
+      </span>
+    </ListDividedItem>
+
+    <ListDividedItem
+      v-if="getEntityProperty('delegate.payout.frequency.type')"
+      :label="$t('ENTITY.PAYOUT_COMISSION')"
+      item-value-class="w-full"
+    >
+      <div class="flex">
+        <span>{{ getEntityProperty('delegate.payout.percentage.min') }}%</span>
+        <span class="mx-1">-</span>
+        <span>{{ getEntityProperty('delegate.payout.percentage.max') }}%</span>
+      </div>
+    </ListDividedItem>
+
+    <ListDividedItem
+      v-if="getEntityProperty('delegate.payout.frequency.type')"
+      :label="$t('ENTITY.PAYOUT_FREQUENCY')"
+      item-value-class="w-full"
+    >
+      <div class="flex">
+        <span>{{ delegateFrequencyTypes[getEntityProperty('delegate.payout.frequency.type')] }}</span>
+        <span class="mx-1">/</span>
+        <span>{{ getEntityProperty('delegate.payout.frequency.value') }}</span>
+      </div>
+    </ListDividedItem>
+
+    <ListDividedItem
       v-if="getEntityProperty('sourceControl.length')"
       label=""
       item-value-class="w-full"
@@ -230,6 +264,23 @@ export default {
       }
 
       return labels[this.transaction.asset.type]
+    },
+
+    delegateTypes () {
+      return {
+        public: this.$t('COMMON.PUBLIC'),
+        private: this.$t('COMMON.PRIVATE')
+      }
+    },
+
+    delegateFrequencyTypes () {
+      return {
+        day: this.$t('MARKET.DAY'),
+        week: this.$t('MARKET.WEEK'),
+        month: this.$t('MARKET.MONTH'),
+        quarter: this.$t('MARKET.QUARTER'),
+        year: this.$t('MARKET.YEAR')
+      }
     },
 
     mediaLinks () {

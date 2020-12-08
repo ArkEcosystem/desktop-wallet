@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { filter, uniqBy } from '@arkecosystem/utils'
+import { filter, uniqBy, set } from '@arkecosystem/utils'
 import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { File } from '@arkecosystem/platform-sdk-ipfs'
 
@@ -78,11 +78,11 @@ export default {
     },
 
     UPDATE_ENTITIES (state, { entities, networkId }) {
+      const current = { ...state.entities }
       for (const entity of entities) {
-        if (state.entities[networkId]) {
-          state.entities[networkId][entity.id] = entity
-        }
+        set(current, `${networkId}.${entity.id}`, entity)
       }
+      Vue.set(state, 'entities', current)
     },
 
     SET_IPFS_CONTENT (state, { registrationId, ipfsContent }) {

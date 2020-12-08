@@ -43,6 +43,7 @@
       <EntityForm
         ref="entity"
         :entity-name="delegateUsername"
+        :entity-type="+step1.registrationType"
         @change="onEntityForm"
       >
         <ListDividedItem

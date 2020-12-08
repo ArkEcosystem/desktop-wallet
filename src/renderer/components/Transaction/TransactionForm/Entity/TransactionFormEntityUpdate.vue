@@ -16,6 +16,7 @@
       :entity-type="entityType"
       :ipfs-data-object="ipfsDataObject"
       @change="onEntityForm"
+      @invalid="isEntityFormInvalid = $event"
     >
       <ListDividedItem
         label=""
@@ -136,6 +137,8 @@ export default {
   },
 
   data: () => ({
+    isEntityFormInvalid: false,
+
     form: {
       fee: 0,
       passphrase: '',
@@ -198,7 +201,7 @@ export default {
     },
 
     isStepValid () {
-      return !this.$v.$invalid
+      return !this.isEntityFormInvalid && !this.$v.$invalid
     },
 
     senderWallet () {

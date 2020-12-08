@@ -14,7 +14,7 @@
     <InputText
       name="entity-name"
       :label="$t('ENTITY.NAME')"
-      :is-read-only="true"
+      :is-disabled="true"
       :value="entityTransaction.data.name"
       class="mb-4"
     />

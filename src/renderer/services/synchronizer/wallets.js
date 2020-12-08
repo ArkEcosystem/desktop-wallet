@@ -1,5 +1,5 @@
 import { groupBy, keyBy, maxBy, partition, uniqBy } from 'lodash'
-import { TRANSACTION_GROUPS, TRANSACTION_TYPES } from '@config'
+import { TRANSACTION_GROUPS, TRANSACTION_TYPES, TRANSACTION_TYPES_ENTITY } from '@config'
 import eventBus from '@/plugins/event-bus'
 import truncateMiddle from '@/filters/truncate-middle'
 import TransactionService from '@/services/transaction'
@@ -304,6 +304,9 @@ class Action {
           }
           if (latestTransaction.type === TRANSACTION_TYPES.GROUP_2.ENTITY) {
             this.$dispatch('entity/loadRecent')
+            if (latestTransaction.asset.action !== TRANSACTION_TYPES_ENTITY.ACTION.RESIGN) {
+              this.$dispatch('entity/fetchIpfsContent', { registrationId: latestTransaction.id, ipfsHash: latestTransaction.asset.data.ipfsData })
+            }
           }
         }
 

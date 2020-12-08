@@ -24,6 +24,7 @@ export default {
     FETCH: 'Fetch',
     FILTER_BLACKLISTED_PLUGINS: 'Apply blacklist',
     FINISH: 'Finish',
+    FROM: 'From',
     HIDE_WALLET_BUTTON_TEXT: 'Hide text from wallet buttons',
     IS_MARKET_CHART_ENABLED: 'Price chart on the dashboard',
     INITIALIZING: 'Initializing...',
@@ -46,6 +47,8 @@ export default {
     PREV: 'Prev',
     PROFILE_NAME: 'Profile name',
     PRICE_PROVIDER: 'Price Provider',
+    PUBLIC: 'Public',
+    PRIVATE: 'Private',
     REMOVE: 'Remove',
     SAVE: 'Save',
     SIZE: 'Size',
@@ -58,7 +61,9 @@ export default {
     },
     TIME_FORMAT: 'Time format',
     TYPE: 'Type',
+    TO: 'To',
     URL: 'URL',
+    VALUE: 'Value',
     VERIFIED_ADDRESS: 'This is a verified address',
     VERSION: 'Version',
     WARNING: 'Warning',
@@ -246,7 +251,9 @@ export default {
     CHECK_TRADEABLE: 'Check Tradeable',
     DAY: 'Day',
     WEEK: 'Week',
-    MONTH: 'Month'
+    MONTH: 'Month',
+    QUARTER: 'Quarter',
+    YEAR: 'Year'
   },
 
   TABLE: {
@@ -1483,6 +1490,10 @@ export default {
     SOCIAL_MEDIA_DESCRIPTION: 'Build your social media following (Optional)',
     PHOTO_VIDEO: 'Photo & Video',
     PHOTO_VIDEO_DESCRIPTION: 'Tell your story through photos and videos (Optional)',
+
+    DELEGATE_TYPE: 'Delegate Type',
+    PAYOUT_COMISSION: 'Comission %',
+    PAYOUT_FREQUENCY: 'Payout Frequency',
 
     ADD_LINK: 'Add Link',
     LINK: 'Link',

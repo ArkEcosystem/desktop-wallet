@@ -39,6 +39,19 @@
     </ListDividedItem>
 
     <ListDividedItem
+      v-if="isDelegateType"
+      label=""
+      item-value-class="w-full mb-4"
+    >
+      <EntityFormDelegate
+        ref="delegateForm"
+        :ipfs-content="ipfsDataObject"
+        @change="onChangeDelegateForm"
+        @invalid="isDelegateFormInvalid = $event"
+      />
+    </ListDividedItem>
+
+    <ListDividedItem
       label=""
       item-value-class="w-full"
     >
@@ -165,10 +178,13 @@ import SvgIcon from '@/components/SvgIcon'
 import { required, url, minLength, maxLength, helpers } from 'vuelidate/lib/validators'
 import { isObject } from '@arkecosystem/utils'
 
+import EntityFormDelegate from './EntityFormDelegate'
+
 export default {
   components: {
     Collapse,
     EntityLinkEditableList,
+    EntityFormDelegate,
     InputText,
     ListDivided,
     ListDividedItem,
@@ -196,6 +212,8 @@ export default {
     isSourceControlOpen: false,
     isSocialMediaOpen: false,
     isMediaOpen: false,
+
+    isDelegateFormInvalid: false,
 
     form: {
       entityName: '',
@@ -234,6 +252,10 @@ export default {
         return this.$t('ENTITY.NAME_DUPLICATE_VALIDATION')
       }
       return undefined
+    },
+
+    isInvalid () {
+      return this.$v.$invalid
     }
   },
 
@@ -246,8 +268,15 @@ export default {
     },
     form: {
       deep: true,
+      immediate: true,
       handler (value) {
         this.$emit('change', value)
+      }
+    },
+    isInvalid: {
+      immediate: true,
+      handler (value) {
+        this.$emit('invalid', value)
       }
     }
   },
@@ -287,6 +316,10 @@ export default {
       }
 
       this.$set(this.form.ipfsData, type, links)
+    },
+
+    onChangeDelegateForm (delegate) {
+      this.$set(this.form.ipfsData, 'delegate', delegate)
     }
   },
 
@@ -312,6 +345,11 @@ export default {
           },
           website: {
             url
+          }
+        },
+        delegate: {
+          isValid () {
+            return !this.isDelegateFormInvalid
           }
         }
       }
