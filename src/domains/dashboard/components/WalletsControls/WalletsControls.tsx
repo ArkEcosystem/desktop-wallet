@@ -86,7 +86,11 @@ export const WalletsControls = memo(
 						</div>
 					</Button>
 
-					<Button onClick={onImportLedgerWallet} variant="secondary" data-testid="WalletControls__import-ledger">
+					<Button
+						onClick={onImportLedgerWallet}
+						variant="secondary"
+						data-testid="WalletControls__import-ledger"
+					>
 						<div className="flex items-center space-x-2">
 							<Icon name="Ledger" />
 							<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT_LEDGER")}</span>
