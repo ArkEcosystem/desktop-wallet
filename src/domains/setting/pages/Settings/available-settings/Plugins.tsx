@@ -79,16 +79,16 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 			labelAddon: <Toggle />,
 			wrapperClass: "pb-6",
 			content: (
-				<div className="flex justify-end w-full pt-6 space-x-3">
+				<div className="flex justify-end pt-6 space-x-3 w-full">
 					<Button
-						variant="plain"
+						variant="secondary"
 						onClick={() => setModalOpenListIsOpen(true)}
 						data-testid="plugins__open-list"
 					>
 						{t("SETTINGS.PLUGINS.OPEN_BLACKLIST")}
 					</Button>
 					<Button
-						variant="plain"
+						variant="secondary"
 						onClick={() => setModalAddPluginIsOpen(true)}
 						data-testid="plugins__add-plugin"
 					>
@@ -133,7 +133,7 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 
 				<Divider dashed />
 
-				<div className="flex justify-end w-full pt-2">
+				<div className="flex justify-end pt-2 w-full">
 					<Button data-testid="Plugins-settings__submit-button" type="submit">
 						{t("COMMON.SAVE")}
 					</Button>

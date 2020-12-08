@@ -5,7 +5,7 @@ exports[`SignIn should not render if not open 1`] = `<DocumentFragment />`;
 exports[`SignIn should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -16,11 +16,10 @@ exports[`SignIn should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm cshtse w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -127,13 +126,13 @@ exports[`SignIn should render a modal 1`] = `
               class="sc-AxiKw iQzisX flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="password"
               >
                 Password
                 <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                   data-testid="FormLabel__required"
                 />
               </label>
@@ -151,7 +150,7 @@ exports[`SignIn should render a modal 1`] = `
                   class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                 >
                   <button
-                    class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                    class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                     data-testid="InputPassword__toggle"
                     type="button"
                   >
@@ -172,16 +171,14 @@ exports[`SignIn should render a modal 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fCKjFI"
-                color="primary"
+                class="sc-AxjAm dBbvQh"
                 data-testid="SignIn__cancel-button"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
+                class="sc-AxjAm iWHhrC"
                 data-testid="SignIn__submit-button"
                 disabled=""
                 type="submit"

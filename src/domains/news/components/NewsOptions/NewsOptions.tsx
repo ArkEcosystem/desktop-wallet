@@ -102,11 +102,11 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 	return (
 		<div
-			className="p-8 border-2 rounded-lg bg-theme-background border-theme-primary-contrast"
+			className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-contrast"
 			data-testid="NewsOptions"
 		>
 			<div className="flex flex-col space-y-8">
-				<div className="flex items-center justify-between px-2 py-4 rounded-md shadow-xl">
+				<div className="flex justify-between items-center py-4 px-2 rounded-md shadow-xl">
 					<Input
 						data-testid="NewsOptions__search"
 						className="border-none shadow-none NewsOptions__search"
@@ -125,7 +125,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 				<Divider dashed />
 
 				<div className="flex flex-col space-y-3">
-					<div className="flex items-center justify-between">
+					<div className="flex justify-between items-center">
 						<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
 						{showSelectAllCategories && (
 							<button
@@ -167,7 +167,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 					<Button
 						disabled={!hasCoinsSelected}
 						className="w-full"
-						variant="plain"
+						variant="secondary"
 						onClick={handleSubmit}
 						data-testid="NewsOptions__submit"
 					>

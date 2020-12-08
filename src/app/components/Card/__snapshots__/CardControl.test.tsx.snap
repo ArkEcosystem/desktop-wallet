@@ -16,7 +16,7 @@ exports[`Card Control should render 1`] = `
       data-testid="Card"
     >
       <div
-        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       />
     </div>
   </label>
@@ -39,7 +39,7 @@ exports[`Card Control should render with a control state 1`] = `
       data-testid="Card"
     >
       <div
-        class="flex flex-col items-center justify-between h-full"
+        class="flex flex-col justify-between items-center h-full"
       >
         <span>
           Bitcoin
@@ -60,7 +60,7 @@ exports[`Card Control should render with a control state 1`] = `
         </div>
       </div>
       <div
-        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       />
     </div>
   </label>

@@ -11,7 +11,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
       data-testid="AuthenticationStep"
     >
       <div
-        class="flex items-end justify-between bg-theme-background"
+        class="flex justify-between items-end bg-theme-background"
       >
         <div>
           <h1
@@ -32,13 +32,13 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
         class="sc-AxjAm fmGClo flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="mnemonic"
         >
           Mnemonic
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -56,7 +56,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
             class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
               data-testid="InputPassword__toggle"
               type="button"
             >
@@ -89,7 +89,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
       data-testid="AuthenticationStep"
     >
       <div
-        class="flex items-end justify-between bg-theme-background"
+        class="flex justify-between items-end bg-theme-background"
       >
         <div>
           <h1
@@ -110,13 +110,13 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
         class="sc-AxjAm fmGClo flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="mnemonic"
         >
           Mnemonic
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -134,7 +134,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
             class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
               data-testid="InputPassword__toggle"
               type="button"
             >
@@ -155,13 +155,13 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
         class="sc-AxjAm fmGClo flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="secondMnemonic"
         >
           2nd Mnemonic
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -179,7 +179,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
             class="sc-AxhCb sc-AxgMl jreOpL my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
               data-testid="InputPassword__toggle"
               type="button"
             >
@@ -212,7 +212,7 @@ exports[`AuthenticationStep should show only ledger confirmation 1`] = `
       data-testid="AuthenticationStep"
     >
       <div
-        class="flex items-end justify-between bg-theme-background"
+        class="flex justify-between items-end bg-theme-background"
       >
         <div>
           <h1
@@ -241,7 +241,7 @@ exports[`AuthenticationStep should show only ledger confirmation 1`] = `
         Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
       </div>
       <div
-        class="inline-flex items-center justify-center w-full mt-8 space-x-3"
+        class="inline-flex justify-center items-center mt-8 space-x-3 w-full"
       >
         <div
           class="sc-fzoLsD gjSfIV"

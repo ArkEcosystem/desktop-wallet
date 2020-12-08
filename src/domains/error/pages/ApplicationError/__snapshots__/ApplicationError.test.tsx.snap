@@ -7,7 +7,7 @@ exports[`ApplicationError should render 1`] = `
     data-testid="Main"
   >
     <div
-      class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+      class="flex relative flex-col min-h-screen bg-theme-secondary-background"
     >
       <nav
         aria-labelledby="main menu"
@@ -17,7 +17,7 @@ exports[`ApplicationError should render 1`] = `
           class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="relative flex justify-between h-20 md:h-24"
+            class="flex relative justify-between h-20 md:h-24"
           >
             <div
               class="flex items-center my-auto"
@@ -39,13 +39,13 @@ exports[`ApplicationError should render 1`] = `
         class="flex flex-col flex-1 "
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
+          class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center text-center"
         >
           <div
-            class="container py-16 mx-auto px-14"
+            class="container py-16 px-14 mx-auto"
           >
             <div
-              class="w-64 mx-auto lg:w-128"
+              class="mx-auto w-64 lg:w-128"
             >
               <svg>
                 error-banner.svg
@@ -67,8 +67,7 @@ exports[`ApplicationError should render 1`] = `
               </p>
             </div>
             <button
-              class="sc-AxjAm colAFb mt-8"
-              color="primary"
+              class="sc-AxjAm ilOjMZ mt-8"
               data-testid="ApplicationError__button--reload"
               type="button"
             >

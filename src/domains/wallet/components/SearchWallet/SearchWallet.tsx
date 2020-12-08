@@ -78,7 +78,7 @@ const SearchWalletListItem = ({
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
 					data-testid={`SearchWalletListItem__select-${index}`}
-					variant="plain"
+					variant="secondary"
 					onClick={() => onAction({ address, coinId, coinName, name })}
 				>
 					{t("COMMON.SELECT")}

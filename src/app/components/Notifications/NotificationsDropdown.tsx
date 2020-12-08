@@ -39,7 +39,7 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 						>
 							<Icon name="Notification" width={15} height={18} className="p-1" />
 							{hasUnread && (
-								<div className="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800">
+								<div className="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800">
 									<div className="w-2 h-2 rounded-full bg-theme-danger-500" />
 								</div>
 							)}

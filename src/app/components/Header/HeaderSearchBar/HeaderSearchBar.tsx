@@ -48,7 +48,7 @@ export const HeaderSearchBar = ({
 			{!searchbarVisible && (
 				<button
 					data-testid="header-search-bar__button"
-					className="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+					className="my-auto h-full font-semibold cursor-pointer focus:outline-none"
 					onClick={() => setSearchbarVisible(true)}
 				>
 					{children ? (
@@ -78,7 +78,7 @@ export const HeaderSearchBar = ({
 					{extra && (
 						<div className="flex items-center">
 							<div>{extra}</div>
-							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+							<div className="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 						</div>
 					)}
 

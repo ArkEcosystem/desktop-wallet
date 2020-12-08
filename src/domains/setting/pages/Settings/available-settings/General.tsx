@@ -247,7 +247,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 					<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
 
-					<div className="flex justify-between w-full mt-8">
+					<div className="flex justify-between mt-8 w-full">
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
@@ -371,13 +371,13 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 					<ListDivided items={otherItems} />
 				</div>
 
-				<div className="flex justify-between w-full pt-2">
-					<Button onClick={() => setIsResetProfileOpen(true)} color="danger" variant="plain">
+				<div className="flex justify-between pt-2 w-full">
+					<Button onClick={() => setIsResetProfileOpen(true)} variant="danger">
 						<Icon name="Reset" />
 						<span>{t("COMMON.RESET_DATA")}</span>
 					</Button>
 					<div className="space-x-3">
-						<Button variant="plain">{t("COMMON.CANCEL")}</Button>
+						<Button variant="secondary">{t("COMMON.CANCEL")}</Button>
 						<Button type="submit" data-testid="General-settings__submit-button">
 							{t("COMMON.SAVE")}
 						</Button>

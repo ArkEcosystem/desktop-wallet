@@ -115,7 +115,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 							</TableCell>
 
 							<TableCell variant="end" className="w-16" innerClassName="justify-end">
-								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
+								<Button variant="secondary">{t("COMMON.INSTALL")}</Button>
 							</TableCell>
 						</TableRow>
 					)}

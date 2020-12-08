@@ -6,16 +6,39 @@ import { FilterWallets } from "./FilterWallets";
 
 const networks = [
 	{
-		name: "ARK",
+		coin: "ARK",
+		name: "ARK Devnet",
+		id: "ark.mainnet",
+		isSelected: false,
+		isLive: true,
+	},
+	{
+		name: "LSK Testnet",
+		coin: "LSK",
+		id: "lsk.testnet",
 		isSelected: true,
+		isLive: false,
+	},
+	{
+		name: "Compedia",
+		coin: "BIND",
+		id: "compedia.mainnet",
+		isSelected: false,
+		isLive: false,
 	},
 	{
 		name: "Ethereum",
+		coin: "ETH",
+		id: "eth.mainnet",
 		isSelected: true,
+		isLive: true,
 	},
 	{
 		name: "Bitcoin",
+		coin: "BTC",
+		id: "btc.mainnet",
 		isSelected: false,
+		isLive: true,
 	},
 ];
 
@@ -30,9 +53,9 @@ describe("FilterWallets", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should emit event for transactions view toggle", () => {
+	it("should emit onChange for transactions view toggle", () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(<FilterWallets networks={networks} toggleTransactionsView={fn} />);
+		const { getByTestId } = render(<FilterWallets networks={networks} onChange={fn} />);
 		const toggle = getByTestId("filter-wallets_toggle--transactions");
 
 		act(() => {
@@ -42,7 +65,7 @@ describe("FilterWallets", () => {
 		expect(fn).toBeCalled();
 	});
 
-	it("should ignore emit event for transactions view if callback not provided", () => {
+	it("should not emit onChange for transactions view toggle", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<FilterWallets networks={networks} />);
 		const toggle = getByTestId("filter-wallets_toggle--transactions");
@@ -54,9 +77,21 @@ describe("FilterWallets", () => {
 		expect(fn).not.toBeCalled();
 	});
 
-	it("should emit event for portfolio view toggle", () => {
+	it("should emit onChange for network selection", () => {
 		const onPortfolioView = jest.fn();
-		const { getByTestId } = render(<FilterWallets networks={networks} togglePortfolioView={onPortfolioView} />);
+		const { getByTestId } = render(<FilterWallets networks={networks} onChange={onPortfolioView} />);
+		const toggle = getByTestId("NetworkOption__ARK");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(onPortfolioView).toBeCalled();
+	});
+
+	it("should emit onChange for portfolio view toggle", () => {
+		const onPortfolioView = jest.fn();
+		const { getByTestId } = render(<FilterWallets networks={networks} onChange={onPortfolioView} />);
 		const toggle = getByTestId("filter-wallets_toggle--portfolio");
 
 		act(() => {
@@ -66,7 +101,7 @@ describe("FilterWallets", () => {
 		expect(onPortfolioView).toBeCalled();
 	});
 
-	it("should ignore emit event for portfolio view if callback not provided", () => {
+	it("should not emit onChange for portfolio view toggle", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<FilterWallets networks={networks} />);
 		const toggle = getByTestId("filter-wallets_toggle--portfolio");
@@ -78,9 +113,9 @@ describe("FilterWallets", () => {
 		expect(fn).not.toBeCalled();
 	});
 
-	it("should emit event for wallets display", () => {
+	it("should emit onChange for wallets display type change", () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(<FilterWallets networks={networks} onWalletsDisplayType={fn} />);
+		const { getByTestId } = render(<FilterWallets networks={networks} onChange={fn} />);
 
 		act(() => {
 			fireEvent.click(getByTestId("filter-wallets__wallets"));
@@ -93,7 +128,7 @@ describe("FilterWallets", () => {
 		expect(fn).toBeCalled();
 	});
 
-	it("should ignore emit event for wallet display if callback not provided", () => {
+	it("should not emit onChange for wallet display type change", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<FilterWallets networks={networks} />);
 

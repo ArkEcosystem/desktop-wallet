@@ -17,7 +17,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800">
+		<div className="rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800">
 			<div className="relative p-4">
 				<div className="flex divide-x divide-theme-neutral-300">
 					<div className="flex flex-col w-1/2 justify-center px-4 py-2">
@@ -48,7 +48,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
 				</div>
 			</div>
 
-			<div className="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast">
+			<div className="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast">
 				<AmountLabel>{t("TRANSACTION.TOTAL_AMOUNT")}</AmountLabel>
 				<Amount
 					ticker={ticker}

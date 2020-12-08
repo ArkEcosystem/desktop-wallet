@@ -22,11 +22,11 @@ export const DevelopmentNetwork = ({ isOpen, onClose, onCancel, onContinue }: De
 			onClose={onClose}
 		>
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="plain" onClick={onCancel} data-testid="DevelopmentNetwork__cancel-button">
+				<Button variant="secondary" onClick={onCancel} data-testid="DevelopmentNetwork__cancel-button">
 					{t("COMMON.CANCEL")}
 				</Button>
 
-				<Button variant="solid" onClick={onContinue} data-testid="DevelopmentNetwork__continue-button">
+				<Button onClick={onContinue} data-testid="DevelopmentNetwork__continue-button">
 					{t("COMMON.CONTINUE")}
 				</Button>
 			</div>

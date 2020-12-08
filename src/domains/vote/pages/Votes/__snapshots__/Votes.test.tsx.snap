@@ -7,7 +7,7 @@ exports[`Votes should emit action on continue button to unvote/vote 1`] = `<Docu
 exports[`Votes should filter current delegates 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -17,7 +17,7 @@ exports[`Votes should filter current delegates 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -33,7 +33,7 @@ exports[`Votes should filter current delegates 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -92,8 +92,7 @@ exports[`Votes should filter current delegates 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -107,7 +106,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -121,11 +120,10 @@ exports[`Votes should filter current delegates 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -144,11 +142,10 @@ exports[`Votes should filter current delegates 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -168,7 +165,7 @@ exports[`Votes should filter current delegates 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -214,7 +211,7 @@ exports[`Votes should filter current delegates 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -252,7 +249,7 @@ exports[`Votes should filter current delegates 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -284,10 +281,10 @@ exports[`Votes should filter current delegates 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -311,7 +308,7 @@ exports[`Votes should filter current delegates 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -335,7 +332,7 @@ exports[`Votes should filter current delegates 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="VotesFilter"
@@ -366,10 +363,10 @@ exports[`Votes should filter current delegates 1`] = `
                       >
                         <div>
                           <div
-                            class="w-64 px-6 py-4"
+                            class="py-4 px-6 w-64"
                           >
                             <label
-                              class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                              class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
                               data-testid="VotesFilter__option--all"
                             >
                               <span>
@@ -418,7 +415,7 @@ exports[`Votes should filter current delegates 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateTable"
@@ -640,7 +637,7 @@ exports[`Votes should filter current delegates 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt evNuPC space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -665,7 +662,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="sc-AxjAm jmgDQY text-xs text-theme-primary"
@@ -682,7 +679,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           #
@@ -693,7 +690,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           %
@@ -704,7 +701,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -721,7 +718,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -732,7 +729,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -743,7 +740,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -754,7 +751,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -765,10 +762,10 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt koMYSa justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -782,10 +779,10 @@ exports[`Votes should filter current delegates 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-10 mb-24"
+              class="flex justify-center mt-10 mb-24 w-full"
             />
             <div
-              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -954,8 +951,7 @@ exports[`Votes should filter current delegates 1`] = `
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ hNClQs"
-                      color="primary"
+                      class="sc-AxirZ knSZSh"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -977,7 +973,7 @@ exports[`Votes should filter current delegates 1`] = `
 exports[`Votes should hide testnet wallet if disabled from profile setting 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -987,7 +983,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -1003,7 +999,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -1062,8 +1058,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1077,7 +1072,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1091,11 +1086,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -1114,11 +1108,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -1138,7 +1131,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1174,7 +1167,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   />
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -1210,7 +1203,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1242,10 +1235,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -1269,7 +1262,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -1293,7 +1286,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="VotesFilter"
@@ -1326,7 +1319,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateTable"
@@ -1548,7 +1541,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt evNuPC space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -1573,7 +1566,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="sc-AxjAm jmgDQY text-xs text-theme-primary"
@@ -1590,7 +1583,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           #
@@ -1601,7 +1594,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           %
@@ -1612,7 +1605,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -1629,7 +1622,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -1640,7 +1633,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -1651,7 +1644,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -1662,7 +1655,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -1673,10 +1666,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt koMYSa justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -1692,7 +1685,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -1717,14 +1710,14 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -1735,7 +1728,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -1746,7 +1739,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -1763,7 +1756,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -1774,7 +1767,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -1785,7 +1778,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -1796,7 +1789,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -1807,10 +1800,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -1826,7 +1819,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -1851,14 +1844,14 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -1869,7 +1862,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -1880,7 +1873,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -1897,7 +1890,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -1908,7 +1901,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -1919,7 +1912,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -1930,7 +1923,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -1941,10 +1934,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -1960,7 +1953,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -1985,14 +1978,14 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -2003,7 +1996,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -2014,7 +2007,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -2031,7 +2024,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -2042,7 +2035,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -2053,7 +2046,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -2064,7 +2057,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -2075,10 +2068,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -2094,7 +2087,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -2119,14 +2112,14 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #12
@@ -2137,7 +2130,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -2148,7 +2141,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -2165,7 +2158,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -2176,7 +2169,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -2187,7 +2180,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -2198,7 +2191,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -2209,10 +2202,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-4"
                           type="button"
@@ -2226,10 +2219,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-10 mb-24"
+              class="flex justify-center mt-10 mb-24 w-full"
             />
             <div
-              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -2398,8 +2391,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ hNClQs"
-                      color="primary"
+                      class="sc-AxirZ knSZSh"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -2425,7 +2417,7 @@ exports[`Votes should navigate to import wallet page 1`] = `<DocumentFragment />
 exports[`Votes should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2435,7 +2427,7 @@ exports[`Votes should render 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -2451,7 +2443,7 @@ exports[`Votes should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -2510,8 +2502,7 @@ exports[`Votes should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2525,7 +2516,7 @@ exports[`Votes should render 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2539,11 +2530,10 @@ exports[`Votes should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -2562,11 +2552,10 @@ exports[`Votes should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -2586,7 +2575,7 @@ exports[`Votes should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -2632,7 +2621,7 @@ exports[`Votes should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -2670,7 +2659,7 @@ exports[`Votes should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2702,10 +2691,10 @@ exports[`Votes should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -2729,7 +2718,7 @@ exports[`Votes should render 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -2753,7 +2742,7 @@ exports[`Votes should render 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="VotesFilter"
@@ -2786,7 +2775,7 @@ exports[`Votes should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateTable"
@@ -3008,7 +2997,7 @@ exports[`Votes should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt evNuPC space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3033,7 +3022,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="sc-AxjAm jmgDQY text-xs text-theme-primary"
@@ -3050,7 +3039,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           #
@@ -3061,7 +3050,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           %
@@ -3072,7 +3061,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -3089,7 +3078,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -3100,7 +3089,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -3111,7 +3100,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -3122,7 +3111,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           ...
@@ -3133,10 +3122,10 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
+                        class="sc-fzokOt koMYSa justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -3152,7 +3141,7 @@ exports[`Votes should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3177,14 +3166,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -3195,7 +3184,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -3206,7 +3195,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -3223,7 +3212,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3234,7 +3223,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3245,7 +3234,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3256,7 +3245,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3267,10 +3256,10 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -3286,7 +3275,7 @@ exports[`Votes should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3311,14 +3300,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -3329,7 +3318,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -3340,7 +3329,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -3357,7 +3346,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3368,7 +3357,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3379,7 +3368,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3390,7 +3379,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3401,10 +3390,10 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -3420,7 +3409,7 @@ exports[`Votes should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3445,14 +3434,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -3463,7 +3452,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -3474,7 +3463,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -3491,7 +3480,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3502,7 +3491,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3513,7 +3502,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3524,7 +3513,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3535,10 +3524,10 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -3554,7 +3543,7 @@ exports[`Votes should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -3579,14 +3568,14 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #12
@@ -3597,7 +3586,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -3608,7 +3597,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -3625,7 +3614,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3636,7 +3625,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3647,7 +3636,7 @@ exports[`Votes should render 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3658,7 +3647,7 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -3669,10 +3658,10 @@ exports[`Votes should render 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-4"
                           type="button"
@@ -3686,10 +3675,10 @@ exports[`Votes should render 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-10 mb-24"
+              class="flex justify-center mt-10 mb-24 w-full"
             />
             <div
-              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -3858,8 +3847,7 @@ exports[`Votes should render 1`] = `
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ hNClQs"
-                      color="primary"
+                      class="sc-AxirZ knSZSh"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -3881,7 +3869,7 @@ exports[`Votes should render 1`] = `
 exports[`Votes should render with no wallets 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3891,7 +3879,7 @@ exports[`Votes should render with no wallets 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -3907,7 +3895,7 @@ exports[`Votes should render with no wallets 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -3966,8 +3954,7 @@ exports[`Votes should render with no wallets 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -3988,11 +3975,10 @@ exports[`Votes should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ kbIqtJ w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 disabled=""
                 type="button"
@@ -4012,11 +3998,10 @@ exports[`Votes should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -4036,7 +4021,7 @@ exports[`Votes should render with no wallets 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -4082,7 +4067,7 @@ exports[`Votes should render with no wallets 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -4120,7 +4105,7 @@ exports[`Votes should render with no wallets 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4152,10 +4137,10 @@ exports[`Votes should render with no wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -4179,7 +4164,7 @@ exports[`Votes should render with no wallets 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -4203,7 +4188,7 @@ exports[`Votes should render with no wallets 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="Votes__FilterWallets"
@@ -4236,7 +4221,7 @@ exports[`Votes should render with no wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="border border-solid border-theme-neutral-300 dark:border-theme-neutral-800 p-6 rounded-lg text-theme-secondary-text undefined"
@@ -4244,15 +4229,14 @@ exports[`Votes should render with no wallets 1`] = `
           >
             <div>
               <div
-                class="flex items-center justify-between"
+                class="flex justify-between items-center"
               >
                 Your must first Create or Import an address to view your current voting status
                 <div
                   class="flex -m-3 space-x-3"
                 >
                   <button
-                    class="sc-AxirZ hTzPEr"
-                    color="primary"
+                    class="sc-AxirZ jIUtSy"
                     type="button"
                   >
                     <div
@@ -4273,8 +4257,7 @@ exports[`Votes should render with no wallets 1`] = `
                     </div>
                   </button>
                   <button
-                    class="sc-AxirZ hTzPEr"
-                    color="primary"
+                    class="sc-AxirZ jIUtSy"
                     type="button"
                   >
                     <div
@@ -4308,7 +4291,7 @@ exports[`Votes should render with no wallets 1`] = `
 exports[`Votes should select a delegate 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -4318,7 +4301,7 @@ exports[`Votes should select a delegate 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -4334,7 +4317,7 @@ exports[`Votes should select a delegate 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -4393,8 +4376,7 @@ exports[`Votes should select a delegate 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -4408,7 +4390,7 @@ exports[`Votes should select a delegate 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4422,11 +4404,10 @@ exports[`Votes should select a delegate 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -4445,11 +4426,10 @@ exports[`Votes should select a delegate 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -4469,7 +4449,7 @@ exports[`Votes should select a delegate 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -4515,7 +4495,7 @@ exports[`Votes should select a delegate 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -4553,7 +4533,7 @@ exports[`Votes should select a delegate 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4585,10 +4565,10 @@ exports[`Votes should select a delegate 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -4612,7 +4592,7 @@ exports[`Votes should select a delegate 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -4636,7 +4616,7 @@ exports[`Votes should select a delegate 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="VotesFilter"
@@ -4669,7 +4649,7 @@ exports[`Votes should select a delegate 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateTable"
@@ -4891,7 +4871,7 @@ exports[`Votes should select a delegate 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt evNuPC space-x-4 font-bold bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -4916,7 +4896,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt kparMo justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <div
                           class="sc-AxjAm jmgDQY text-xs text-theme-danger"
@@ -4933,7 +4913,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           #
@@ -4944,7 +4924,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           %
@@ -4955,7 +4935,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt kparMo justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -4972,7 +4952,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           ...
@@ -4983,7 +4963,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           ...
@@ -4994,7 +4974,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           ...
@@ -5005,7 +4985,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           ...
@@ -5016,10 +4996,10 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end bg-theme-danger-50 dark:bg-theme-danger-900"
+                        class="sc-fzokOt koMYSa justify-end bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <button
-                          class="sc-AxirZ gfCA-dQ"
+                          class="sc-AxirZ jIUtSy"
                           color="danger"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -5035,7 +5015,7 @@ exports[`Votes should select a delegate 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -5060,14 +5040,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -5078,7 +5058,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5089,7 +5069,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -5106,7 +5086,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5117,7 +5097,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5128,7 +5108,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5139,7 +5119,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5150,10 +5130,10 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -5169,7 +5149,7 @@ exports[`Votes should select a delegate 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -5194,14 +5174,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -5212,7 +5192,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5223,7 +5203,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -5240,7 +5220,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5251,7 +5231,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5262,7 +5242,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5273,7 +5253,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5284,10 +5264,10 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -5303,7 +5283,7 @@ exports[`Votes should select a delegate 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -5328,14 +5308,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -5346,7 +5326,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5357,7 +5337,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -5374,7 +5354,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5385,7 +5365,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5396,7 +5376,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5407,7 +5387,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5418,10 +5398,10 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -5437,7 +5417,7 @@ exports[`Votes should select a delegate 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -5462,14 +5442,14 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #12
@@ -5480,7 +5460,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -5491,7 +5471,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -5508,7 +5488,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5519,7 +5499,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5530,7 +5510,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5541,7 +5521,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -5552,10 +5532,10 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-4"
                           type="button"
@@ -5569,10 +5549,10 @@ exports[`Votes should select a delegate 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-10 mb-24"
+              class="flex justify-center mt-10 mb-24 w-full"
             />
             <div
-              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -5741,8 +5721,7 @@ exports[`Votes should select a delegate 1`] = `
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ hNClQs"
-                      color="primary"
+                      class="sc-AxirZ hwiDkK"
                       data-testid="DelegateTable__continue-button"
                       type="button"
                     >
@@ -5765,7 +5744,7 @@ exports[`Votes should select an address and delegate 1`] = `<DocumentFragment />
 exports[`Votes should select an address without vote 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -5775,7 +5754,7 @@ exports[`Votes should select an address without vote 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -5791,7 +5770,7 @@ exports[`Votes should select an address without vote 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -5850,8 +5829,7 @@ exports[`Votes should select an address without vote 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5865,7 +5843,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5879,11 +5857,10 @@ exports[`Votes should select an address without vote 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -5902,11 +5879,10 @@ exports[`Votes should select an address without vote 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -5926,7 +5902,7 @@ exports[`Votes should select an address without vote 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -5972,7 +5948,7 @@ exports[`Votes should select an address without vote 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -6010,7 +5986,7 @@ exports[`Votes should select an address without vote 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -6042,10 +6018,10 @@ exports[`Votes should select an address without vote 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -6069,7 +6045,7 @@ exports[`Votes should select an address without vote 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -6093,7 +6069,7 @@ exports[`Votes should select an address without vote 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="VotesFilter"
@@ -6126,7 +6102,7 @@ exports[`Votes should select an address without vote 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateTable"
@@ -6348,7 +6324,7 @@ exports[`Votes should select an address without vote 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -6373,14 +6349,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -6391,7 +6367,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -6402,7 +6378,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -6419,7 +6395,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6430,7 +6406,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6441,7 +6417,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6452,7 +6428,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6463,10 +6439,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -6482,7 +6458,7 @@ exports[`Votes should select an address without vote 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -6507,14 +6483,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #2
@@ -6525,7 +6501,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -6536,7 +6512,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -6553,7 +6529,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6564,7 +6540,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6575,7 +6551,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6586,7 +6562,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6597,10 +6573,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -6616,7 +6592,7 @@ exports[`Votes should select an address without vote 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -6641,14 +6617,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #3
@@ -6659,7 +6635,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -6670,7 +6646,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -6687,7 +6663,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6698,7 +6674,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6709,7 +6685,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6720,7 +6696,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6731,10 +6707,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -6750,7 +6726,7 @@ exports[`Votes should select an address without vote 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -6775,14 +6751,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #
@@ -6793,7 +6769,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -6804,7 +6780,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -6821,7 +6797,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6832,7 +6808,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6843,7 +6819,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6854,7 +6830,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6865,10 +6841,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -6884,7 +6860,7 @@ exports[`Votes should select an address without vote 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4 font-bold "
+                        class="sc-fzokOt evNuPC space-x-4 font-bold "
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -6909,14 +6885,14 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       />
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           #12
@@ -6927,7 +6903,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           %
@@ -6938,7 +6914,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center "
+                        class="sc-fzokOt kparMo justify-center "
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -6955,7 +6931,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6966,7 +6942,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6977,7 +6953,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6988,7 +6964,7 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text "
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text "
                       >
                         <span>
                           ...
@@ -6999,10 +6975,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="sc-fzokOt femqhX justify-end "
+                        class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
+                          class="sc-AxirZ jIUtSy"
                           color="primary"
                           data-testid="DelegateRow__toggle-4"
                           type="button"
@@ -7016,10 +6992,10 @@ exports[`Votes should select an address without vote 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-10 mb-24"
+              class="flex justify-center mt-10 mb-24 w-full"
             />
             <div
-              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -7188,8 +7164,7 @@ exports[`Votes should select an address without vote 1`] = `
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ hNClQs"
-                      color="primary"
+                      class="sc-AxirZ knSZSh"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -7211,7 +7186,7 @@ exports[`Votes should select an address without vote 1`] = `
 exports[`Votes should select favorites option in the wallets display type 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -7221,7 +7196,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -7237,7 +7212,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -7296,8 +7271,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -7311,7 +7285,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -7325,11 +7299,10 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -7348,11 +7321,10 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -7372,7 +7344,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -7418,7 +7390,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -7456,7 +7428,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -7488,10 +7460,10 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -7515,7 +7487,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -7539,7 +7511,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="Votes__FilterWallets"
@@ -7570,7 +7542,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                       >
                         <div>
                           <div
-                            class="px-10 py-7 w-128"
+                            class="py-7 px-10 w-128"
                           >
                             <div
                               class="flex flex-col text-left"
@@ -7647,7 +7619,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                                 class="flex flex-col"
                               >
                                 <div
-                                  class="flex items-center justify-between"
+                                  class="flex justify-between items-center"
                                 >
                                   <div
                                     class="font-semibold text-theme-secondary-text"
@@ -7659,7 +7631,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                                     data-testid="dropdown__toggle"
                                   >
                                     <div
-                                      class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+                                      class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
                                       data-testid="filter-wallets__wallets"
                                     >
                                       <span
@@ -7705,7 +7677,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
 exports[`Votes should select ledger option in the wallets display type 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -7715,7 +7687,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -7731,7 +7703,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -7790,8 +7762,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -7805,7 +7776,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -7819,11 +7790,10 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -7842,11 +7812,10 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -7866,7 +7835,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -7912,7 +7881,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -7950,7 +7919,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -7982,10 +7951,10 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -8009,7 +7978,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -8033,7 +8002,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="Votes__FilterWallets"
@@ -8064,7 +8033,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       >
                         <div>
                           <div
-                            class="px-10 py-7 w-128"
+                            class="py-7 px-10 w-128"
                           >
                             <div
                               class="flex flex-col text-left"
@@ -8141,7 +8110,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                 class="flex flex-col"
                               >
                                 <div
-                                  class="flex items-center justify-between"
+                                  class="flex justify-between items-center"
                                 >
                                   <div
                                     class="font-semibold text-theme-secondary-text"
@@ -8153,7 +8122,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                     data-testid="dropdown__toggle"
                                   >
                                     <div
-                                      class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+                                      class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
                                       data-testid="filter-wallets__wallets"
                                     >
                                       <span
@@ -8199,7 +8168,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
 exports[`Votes should toggle network selection from network filters 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -8209,7 +8178,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -8225,7 +8194,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -8284,8 +8253,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ jFqSPL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -8299,7 +8267,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -8313,11 +8281,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -8336,11 +8303,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxirZ jFqSPL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
+                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -8360,7 +8326,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -8406,7 +8372,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -8444,7 +8410,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -8476,10 +8442,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -8503,7 +8469,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -8527,7 +8493,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   </button>
                 </div>
                 <div
-                  class="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <div
                   data-testid="Votes__FilterWallets"
@@ -8558,7 +8524,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       >
                         <div>
                           <div
-                            class="px-10 py-7 w-128"
+                            class="py-7 px-10 w-128"
                           >
                             <div
                               class="flex flex-col text-left"
@@ -8635,7 +8601,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                 class="flex flex-col"
                               >
                                 <div
-                                  class="flex items-center justify-between"
+                                  class="flex justify-between items-center"
                                 >
                                   <div
                                     class="font-semibold text-theme-secondary-text"
@@ -8647,7 +8613,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                     data-testid="dropdown__toggle"
                                   >
                                     <div
-                                      class="flex items-center justify-end cursor-pointer text-theme-secondary-text"
+                                      class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
                                       data-testid="filter-wallets__wallets"
                                     >
                                       <span
@@ -8689,7 +8655,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="AddressTable"
@@ -8896,7 +8862,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4"
+                        class="sc-fzokOt evNuPC space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -8932,7 +8898,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center text-sm font-bold text-center align-middle"
+                        class="sc-fzokOt kparMo justify-center text-sm font-bold text-center align-middle"
                       >
                         <div
                           class="inline-flex items-center space-x-2"
@@ -8941,7 +8907,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
                       >
                         <span
                           data-testid="Amount"
@@ -8952,7 +8918,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd space-x-4 font-bold"
+                        class="sc-fzokOt kparMo space-x-4 font-bold"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -8975,7 +8941,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text"
                       >
                         <span>
                           #
@@ -8984,7 +8950,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center"
+                        class="sc-fzokOt kparMo justify-center"
                       >
                         <div
                           class="sc-AxjAm cpczEI text-xl text-theme-primary"
@@ -9000,7 +8966,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center"
+                        class="sc-fzokOt kparMo justify-center"
                       >
                         <div
                           class="sc-AxjAm jmgDQY text-theme-success"
@@ -9016,11 +8982,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt femqhX justify-end"
+                        class="sc-fzokOt koMYSa justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ jIUtSy"
                           data-testid="AddressRow__select-0"
                           type="button"
                         >
@@ -9035,7 +9000,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4"
+                        class="sc-fzokOt evNuPC space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -9071,7 +9036,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center text-sm font-bold text-center align-middle"
+                        class="sc-fzokOt kparMo justify-center text-sm font-bold text-center align-middle"
                       >
                         <div
                           class="inline-flex items-center space-x-2"
@@ -9080,7 +9045,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
                       >
                         <span
                           data-testid="Amount"
@@ -9091,7 +9056,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd space-x-4 font-bold"
+                        class="sc-fzokOt kparMo space-x-4 font-bold"
                       >
                         <div
                           class="sc-fznKkj cEmdXt border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -9105,26 +9070,25 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text"
                       />
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center"
+                        class="sc-fzokOt kparMo justify-center"
                       />
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center"
+                        class="sc-fzokOt kparMo justify-center"
                       />
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt femqhX justify-end"
+                        class="sc-fzokOt koMYSa justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ jIUtSy"
                           data-testid="AddressRow__select-1"
                           type="button"
                         >
@@ -9139,7 +9103,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fzokOt iLGIQv space-x-4"
+                        class="sc-fzokOt evNuPC space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -9169,7 +9133,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center text-sm font-bold text-center align-middle"
+                        class="sc-fzokOt kparMo justify-center text-sm font-bold text-center align-middle"
                       >
                         <div
                           class="inline-flex items-center space-x-2"
@@ -9178,7 +9142,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
+                        class="sc-fzokOt kparMo justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
                       >
                         <span
                           data-testid="Amount"
@@ -9189,7 +9153,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd space-x-4 font-bold"
+                        class="sc-fzokOt kparMo space-x-4 font-bold"
                       >
                         <div
                           class="sc-fznKkj cEmdXt border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -9203,26 +9167,25 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center font-bold text-theme-secondary-text"
+                        class="sc-fzokOt kparMo justify-center font-bold text-theme-secondary-text"
                       />
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center"
+                        class="sc-fzokOt kparMo justify-center"
                       />
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt gzIgEd justify-center"
+                        class="sc-fzokOt kparMo justify-center"
                       />
                     </td>
                     <td>
                       <div
-                        class="sc-fzokOt femqhX justify-end"
+                        class="sc-fzokOt koMYSa justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ jIUtSy"
                           data-testid="AddressRow__select-2"
                           type="button"
                         >

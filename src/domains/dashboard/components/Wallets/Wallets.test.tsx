@@ -1,55 +1,58 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import Transport, { Observer } from "@ledgerhq/hw-transport";
+import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
+import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, within } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
-import { networks } from "../../data";
 import { Wallets } from "./Wallets";
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 let profile: Profile;
+let emptyProfile: Profile;
 let wallets: ReadWriteWallet[];
 
-// Wallet filter properties
-const filterProperties = {
-	networks,
-	selectedNetworkIds: ["ark.devnet", "eth.mainnet"],
-	visibleTransactionsView: true,
-	visiblePortfolioView: true,
-	walletsDisplayType: "all",
-	onNetworkChange: (changedNetwork: any, newNetworksList: any) => {
-		console.log("changed network", changedNetwork);
-		console.log("changed network new list", newNetworksList);
-	},
-	togglePortfolioView: (isChecked: boolean) => {
-		console.log("show portfolio view", isChecked);
-	},
-	toggleTransactionsView: (isChecked: boolean) => {
-		console.log("show transactions view", isChecked);
-	},
-	onViewAllNetworks: () => {
-		alert("on view all networks");
-	},
-	onWalletsDisplayType: () => {
-		alert("on wallets display");
-	},
-};
+const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
 
 describe("Wallets", () => {
-	beforeEach(() => {
+	beforeAll(async () => {
+		nock("https://neoscan.io/api/main_net/v1/")
+			.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
+			.reply(200, []);
+
 		history.push(dashboardURL);
 
+		emptyProfile = env.profiles().create("Empty");
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		const wallet = await profile
+			.wallets()
+			.importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+
 		wallets = profile.wallets().values();
+
+		await syncDelegates();
+		await wallet.syncVotes();
 	});
 
 	it("should render grid", () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={wallets} filterProperties={filterProperties} />
+				<Wallets />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -57,184 +60,14 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(getAllByTestId("WalletCard__blank")).toBeTruthy();
+		expect(getAllByTestId("WalletsGrid")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.each(["all", "favorites", "ledger"])("should render wallets type in a grid view", (type) => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
+	it("should render list", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets
-					wallets={wallets}
-					filterProperties={{
-						...filterProperties,
-						walletsDisplayType: type,
-					}}
-				/>
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(getAllByTestId("WalletCard__blank")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render one grid row when less than three wallets", () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={new Array(1).fill(wallets[0])} filterProperties={filterProperties} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(getAllByTestId("WalletCard__blank")).toHaveLength(2);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render two grid rows when more than three wallets", () => {
-		const { asFragment, getAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={new Array(5).fill(wallets[0])} filterProperties={filterProperties} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(getAllByTestId("WalletCard__blank")).toHaveLength(1);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render list", () => {
-		const { asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={wallets} viewType="list" filterProperties={filterProperties} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it.each(["all", "favorites", "ledger"])("should render wallets type in a list view", (type) => {
-		const { asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets
-					wallets={wallets}
-					viewType="list"
-					filterProperties={{
-						...filterProperties,
-						walletsDisplayType: type,
-					}}
-				/>
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should redirect when clicking on row", () => {
-		const { getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={wallets} viewType="list" filterProperties={filterProperties} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		act(() => {
-			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()!));
-		});
-
-		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);
-	});
-
-	it("should render with empty wallets list", () => {
-		const { asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={[]} filterProperties={filterProperties} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render with list view enabled as default", () => {
-		const { asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render with list view enabled as default and empty wallet list", () => {
-		const { asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should change wallet view type from list to grid", () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		const toggle = getByTestId("LayoutControls__grid--icon");
-
-		expect(() => getAllByTestId("Card")).toThrow(/Unable to find an element by/);
-
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(getAllByTestId("Card")).toHaveLength(3);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should change wallet view type from grid to list", () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="grid" wallets={[]} filterProperties={filterProperties} />
+				<Wallets />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -243,22 +76,18 @@ describe("Wallets", () => {
 		);
 
 		const toggle = getByTestId("LayoutControls__list--icon");
-
-		expect(getAllByTestId("Card")).toHaveLength(3);
-
 		act(() => {
 			fireEvent.click(toggle);
 		});
 
-		expect(() => getAllByTestId("Card")).toThrow(/Unable to find an element by/);
-
+		await waitFor(() => expect(getByTestId("WalletsList")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should hide the view more button if there are less than 10 wallets", () => {
-		const { asFragment, queryByTestId } = renderWithRouter(
+	it("should toggle between grid and list view", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={new Array(9).fill(wallets[0])} viewType="list" filterProperties={filterProperties} />
+				<Wallets />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -266,14 +95,26 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(queryByTestId("Wallets__ViewMore")).toBeFalsy();
+		act(() => {
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		});
+
+		await waitFor(() => expect(getByTestId("WalletsList")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
+		});
+
+		expect(getByTestId("WalletsGrid")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should show the view more button if there are more than 10 wallets", () => {
-		const { asFragment, queryByTestId } = renderWithRouter(
+	it("should render without testnet wallets", () => {
+		profile.settings().set(ProfileSetting.UseTestNetworks, false);
+
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={new Array(11).fill(wallets[0])} viewType="list" filterProperties={filterProperties} />
+				<Wallets />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -281,20 +122,14 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(queryByTestId("WalletsList__ViewMore")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+		profile.settings().set(ProfileSetting.UseTestNetworks, true);
 	});
 
-	it("should load more wallets", () => {
-		const lastWallet = profile.wallets().findById("d044a552-7a49-411c-ae16-8ff407acc430");
-
-		const { container, getByTestId } = renderWithRouter(
+	it("should load more wallets", async () => {
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets
-					wallets={[...new Array(10).fill(wallets[0]), lastWallet]}
-					viewType="list"
-					filterProperties={filterProperties}
-				/>
+				<Wallets listPagerLimit={1} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -302,12 +137,167 @@ describe("Wallets", () => {
 			},
 		);
 
-		expect(container.innerHTML).not.toContain(lastWallet.address());
+		const toggle = getByTestId("LayoutControls__list--icon");
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		await waitFor(() => expect(getByTestId("WalletsList")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("WalletsList__ViewMore")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId("WalletsList__ViewMore"));
 		});
 
-		expect(container.innerHTML).toContain(lastWallet.address());
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(3));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should handle wallet creation", () => {
+		const onCreateWallet = jest.fn();
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets onCreateWallet={onCreateWallet} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		fireEvent.click(getByTestId("WalletControls__create-wallet"));
+
+		expect(onCreateWallet).toHaveBeenCalled();
+	});
+
+	it("should handle wallet import", () => {
+		const onImportWallet = jest.fn();
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets onImportWallet={onImportWallet} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		fireEvent.click(getByTestId("WalletControls__import-wallet"));
+
+		expect(onImportWallet).toHaveBeenCalled();
+	});
+
+	it("should handle filter change", async () => {
+		const { getByTestId, findByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		await findByTestId("filter-wallets_toggle--transactions");
+
+		const toggle = getByTestId("filter-wallets_toggle--transactions");
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toHaveAttribute("checked"));
+	});
+
+	it("should open and close ledger import modal", async () => {
+		const unsubscribe = jest.fn();
+		let observer: Observer<any>;
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
+
+		const { asFragment, getByTestId, getByText, queryByTestId, getAllByRole } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<LedgerProvider transport={transport}>
+					<Wallets />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		act(() => {
+			fireEvent.click(getByText("Import Ledger"));
+		});
+
+		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() => expect(queryByTestId("LedgerWaitingDevice-description")).not.toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByText("Import Ledger"));
+		});
+
+		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-description")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+		listenSpy.mockReset();
+	});
+
+	it("should handle list wallet click", () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const toggle = getByTestId("LayoutControls__list--icon");
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		act(() => {
+			fireEvent.click(within(getByTestId("WalletTable")).getByText(wallets[0].alias()!));
+		});
+
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/wallets/${wallets[0].id()}`);
+	});
+
+	it("should render empty profile wallets", async () => {
+		history.push(`/profiles/${emptyProfile.id()}/dashboard`);
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets />
+			</Route>,
+			{
+				routes: [`/profiles/${emptyProfile.id()}/dashboard`],
+				history,
+			},
+		);
+
+		const toggle = getByTestId("LayoutControls__list--icon");
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		await waitFor(() => expect(getByTestId("WalletsList")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

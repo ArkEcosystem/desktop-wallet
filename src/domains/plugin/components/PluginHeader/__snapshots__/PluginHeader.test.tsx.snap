@@ -11,14 +11,14 @@ exports[`PluginHeader should render as installed 1`] = `
     >
       <img
         alt="Plugin"
-        class="rounded-lg w-44 h-44"
+        class="w-44 h-44 rounded-lg"
         src="placeholder.png"
       />
       <div
-        class="flex flex-col justify-center w-full pl-8"
+        class="flex flex-col justify-center pl-8 w-full"
       >
         <div
-          class="flex items-center justify-between"
+          class="flex justify-between items-center"
         >
           <div
             class="flex flex-col"
@@ -38,16 +38,14 @@ exports[`PluginHeader should render as installed 1`] = `
             class="flex"
           >
             <button
-              class="sc-AxjAm colAFb"
-              color="primary"
+              class="sc-AxjAm ilOjMZ"
               data-testid="PluginHeader__button--open"
               type="button"
             >
               Open
             </button>
             <button
-              class="sc-AxjAm colAFb ml-3"
-              color="primary"
+              class="sc-AxjAm ilOjMZ ml-3"
               data-testid="PluginHeader__button--update"
               type="button"
             >
@@ -62,8 +60,7 @@ exports[`PluginHeader should render as installed 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm fCKjFI ml-3"
-              color="primary"
+              class="sc-AxjAm dBbvQh ml-3"
               data-testid="PluginHeader__button--warning"
               type="button"
             >
@@ -78,8 +75,7 @@ exports[`PluginHeader should render as installed 1`] = `
               </div>
             </button>
             <button
-              class="sc-AxjAm fCKjFI ml-3"
-              color="primary"
+              class="sc-AxjAm dBbvQh ml-3"
               data-testid="PluginHeader__button--uninstall"
               type="button"
             >
@@ -96,7 +92,7 @@ exports[`PluginHeader should render as installed 1`] = `
           </div>
         </div>
         <div
-          class="grid grid-flow-col grid-cols-5 pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
+          class="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
         >
           <div
             class="flex"
@@ -254,14 +250,14 @@ exports[`PluginHeader should render properly 1`] = `
     >
       <img
         alt="Plugin"
-        class="rounded-lg w-44 h-44"
+        class="w-44 h-44 rounded-lg"
         src="placeholder.png"
       />
       <div
-        class="flex flex-col justify-center w-full pl-8"
+        class="flex flex-col justify-center pl-8 w-full"
       >
         <div
-          class="flex items-center justify-between"
+          class="flex justify-between items-center"
         >
           <div
             class="flex flex-col"
@@ -281,16 +277,14 @@ exports[`PluginHeader should render properly 1`] = `
             class="flex"
           >
             <button
-              class="sc-AxjAm colAFb"
-              color="primary"
+              class="sc-AxjAm ilOjMZ"
               data-testid="PluginHeader__button--install"
               type="button"
             >
               Install
             </button>
             <button
-              class="sc-AxjAm fCKjFI ml-3"
-              color="primary"
+              class="sc-AxjAm dBbvQh ml-3"
               data-testid="PluginHeader__button--warning"
               type="button"
             >
@@ -307,7 +301,7 @@ exports[`PluginHeader should render properly 1`] = `
           </div>
         </div>
         <div
-          class="grid grid-flow-col grid-cols-5 pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
+          class="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
         >
           <div
             class="flex"

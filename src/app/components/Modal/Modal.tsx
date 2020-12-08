@@ -76,7 +76,7 @@ const ModalContent = (props: ModalContentProps) => {
 			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl ${offsetClass}`}
 			data-testid="modal__inner"
 		>
-			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400">
+			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400">
 				<Button
 					data-testid="modal__close-btn"
 					variant="transparent"
@@ -90,7 +90,7 @@ const ModalContent = (props: ModalContentProps) => {
 
 			<div className="relative">
 				{props.banner ? (
-					<div className="relative h-56 mb-10 -mx-10 -mt-10">
+					<div className="relative -mx-10 mb-10 -mt-10 h-56">
 						{props.banner}
 
 						<div className="absolute bottom-0 left-0 mb-10 ml-10">
@@ -135,7 +135,7 @@ export const Modal = ({
 	if (!isOpen) return <></>;
 
 	return (
-		<div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay">
+		<div className="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay">
 			<div
 				className="fixed z-50 w-full h-full bg-black opacity-50"
 				data-testid="modal__overlay"

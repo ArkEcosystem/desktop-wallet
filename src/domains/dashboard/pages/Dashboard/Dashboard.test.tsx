@@ -4,7 +4,6 @@ import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
-import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -21,11 +20,9 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { balances } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
-let emptyProfile: Profile;
 let profile: Profile;
 
 const fixtureProfileId = getDefaultProfileId();
@@ -66,7 +63,6 @@ afterAll(() => {
 });
 
 beforeEach(() => {
-	emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 	history.push(dashboardURL);
 });
@@ -83,311 +79,8 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render wallets", async () => {
-		Promise.resolve().then(() => jest.useFakeTimers());
-
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
-
-		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
-
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
-	it("should both live and testnet wallets", async () => {
-		Promise.resolve().then(() => jest.useFakeTimers());
-		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
-
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
-
-		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
-
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-		useNetworksMock.mockRestore();
-	});
-
-	it("should render with no wallets", async () => {
-		dashboardURL = `/profiles/${emptyProfile.id()}/dashboard`;
-		history.push(dashboardURL);
-
-		Promise.resolve().then(() => jest.useFakeTimers());
-
-		const { asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		Promise.resolve().then(() => jest.advanceTimersByTime(1000));
-
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
-	it("should hide transaction view", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await act(async () => {
-			await waitFor(
-				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-				{ timeout: 5000 },
-			);
-
-			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-
-			await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toBeTruthy());
-
-			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
-
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
-		});
-	});
-
-	it("should show transaction view", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await act(async () => {
-			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-
-			await waitFor(() => expect(getByTestId("filter-wallets_toggle--transactions")).toBeTruthy());
-
-			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
-
-			await waitFor(
-				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-				{ timeout: 5000 },
-			);
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
-		});
-	});
-
-	it("should render portfolio percentage bar", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render portfolio chart", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should change wallet view type from grid to list", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await act(async () => {
-			const toggle = getByTestId("LayoutControls__list--icon");
-
-			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
-
-			fireEvent.click(toggle);
-
-			await waitFor(() => expect(() => getAllByTestId("WalletTable")).toBeTruthy());
-
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
-		});
-	});
-
-	it("should hide portfolio view", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await act(async () => {
-			await waitFor(
-				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-				{ timeout: 5000 },
-			);
-
-			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-
-			await waitFor(() =>
-				expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy(),
-			);
-
-			const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
-
-			fireEvent.click(toggle);
-
-			await waitFor(() => expect(getByTestId("filter-wallets__wallets")).toBeTruthy());
-
-			const firstOption = getByTestId("dropdown__option--0");
-			await waitFor(() => expect(firstOption).toBeTruthy());
-
-			fireEvent.click(firstOption);
-
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
-		});
-	});
-
-	it("should toggle network selection from network filters", async () => {
-		const { getByTestId, asFragment, getAllByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await act(async () => {
-			await waitFor(
-				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-				{ timeout: 5000 },
-			);
-
-			const gridViewType = getByTestId("LayoutControls__grid--icon");
-			fireEvent.click(gridViewType);
-			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
-
-			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-
-			await waitFor(() =>
-				expect(within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle")).toBeTruthy(),
-			);
-
-			const toggle = within(getByTestId("FilterWallets")).getByTestId("dropdown__toggle");
-			fireEvent.click(toggle);
-
-			await waitFor(() =>
-				expect(within(getAllByTestId("FilterNetwork")[0]).getByTestId("NetworkOption__ARK")).toBeTruthy(),
-			);
-			fireEvent.click(within(getAllByTestId("FilterNetwork")[0]).getByTestId("NetworkOption__ARK"));
-
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
-
-			const listViewToggle = getByTestId("LayoutControls__list--icon");
-			fireEvent.click(listViewToggle);
-			await waitFor(() => expect(getAllByTestId("TableRow").length).toBeGreaterThan(0));
-
-			fireEvent.click(gridViewType);
-			await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(3));
-
-			fireEvent.click(toggle);
-
-			await waitFor(() =>
-				expect(within(getAllByTestId("FilterNetwork")[0]).getByTestId("NetworkOption__ARK")).toBeTruthy(),
-			);
-			fireEvent.click(within(getAllByTestId("FilterNetwork")[0]).getByTestId("NetworkOption__ARK"));
-		});
-	});
-
-	it("should select an option in the wallets display type", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await act(async () => {
-			await waitFor(
-				() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-				{ timeout: 5000 },
-			);
-
-			fireEvent.click(within(getByTestId("WalletControls")).getByTestId("dropdown__toggle"));
-
-			await waitFor(() => expect(getByTestId("filter-wallets_toggle--portfolio")).toBeTruthy());
-
-			fireEvent.click(getByTestId("filter-wallets_toggle--portfolio"));
-
-			await waitFor(() => expect(asFragment()).toMatchSnapshot());
-		});
 	});
 
 	it("should navigate to import ledger page", async () => {
@@ -439,7 +132,29 @@ describe("Dashboard", () => {
 		listenSpy.mockReset();
 	});
 
-	it("should navigate to import page", async () => {
+	it("should navigate to create wallet page", async () => {
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 5000 },
+		);
+
+		fireEvent.click(getByText("Create"));
+
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should navigate to import wallet page", async () => {
 		const { asFragment, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
@@ -461,128 +176,5 @@ describe("Dashboard", () => {
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should navigate to create page", async () => {
-		const { asFragment, getByTestId, getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
-
-		fireEvent.click(getByText("Create"));
-
-		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should fetch more transactions", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(
-			() => {
-				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
-				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
-			},
-			{ timeout: 5000 },
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId("transactions__fetch-more-button"));
-		});
-
-		expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.LOADING);
-
-		await waitFor(
-			() => {
-				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
-				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
-			},
-			{ timeout: 5000 },
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should open detail modal on transaction row click", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
-
-		act(() => {
-			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
-		});
-
-		await waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeInTheDocument();
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should filter by type", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard />
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
-
-		expect(getByTestId("FilterTransactionsToggle")).toBeInTheDocument();
-
-		act(() => {
-			fireEvent.click(getByTestId("FilterTransactionsToggle"));
-		});
-
-		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
-
-		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--core-0"));
-		});
-
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 5000 },
-		);
 	});
 });

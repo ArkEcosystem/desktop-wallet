@@ -85,13 +85,13 @@ export const CreateProfile = () => {
 
 	return (
 		<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
-			<Section className="flex flex-col justify-center flex-1">
-				<div className="max-w-lg mx-auto -mt-10">
+			<Section className="flex flex-col flex-1 justify-center">
+				<div className="mx-auto -mt-10 max-w-lg">
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
 					<div className="text-theme-secondary-text">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
 					<Form
-						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
 						context={form}
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"
@@ -101,7 +101,7 @@ export const CreateProfile = () => {
 
 							<div className="relative mt-8 space-y-8">
 								<div className="flex justify-between -mt-6">
-									<FormField name="name" className="w-full mr-6">
+									<FormField name="name" className="mr-6 w-full">
 										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 										<Input ref={register(createProfile.name())} />
 										<FormHelperText />
@@ -168,7 +168,7 @@ export const CreateProfile = () => {
 						</div>
 
 						<div className="flex justify-end pt-4 space-x-3">
-							<Button variant="plain" onClick={() => history.push("/")}>
+							<Button variant="secondary" onClick={() => history.push("/")}>
 								{t("COMMON.BACK")}
 							</Button>
 

@@ -60,7 +60,7 @@ export const SecondStep = () => {
 
 			<div className="flex justify-end w-full">
 				<Clipboard data={mnemonic}>
-					<Button data-testid="CreateWallet__copy" variant="plain">
+					<Button data-testid="CreateWallet__copy" variant="secondary">
 						<Icon name="Copy" />
 						<span>{t("COMMON.COPY")}</span>
 					</Button>
@@ -69,7 +69,7 @@ export const SecondStep = () => {
 
 			<Divider dashed />
 
-			<div className="flex items-center justify-between">
+			<div className="flex justify-between items-center">
 				<div className="space-y-2">
 					<span className="text-lg font-semibold text-theme-secondary-text">
 						{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
@@ -85,7 +85,7 @@ export const SecondStep = () => {
 			<div className="flex justify-end w-full">
 				<Button
 					data-testid="CreateWallet__download"
-					variant="plain"
+					variant="secondary"
 					className="flex items-center space-x-2"
 					onClick={handleDownload}
 				>

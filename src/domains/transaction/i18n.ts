@@ -14,6 +14,7 @@ export const translations: { [key: string]: any } = {
 	DELEGATE_NAME: "Delegate Name",
 	DELEGATE_PUBLICKEY: "Delegate PublicKey",
 	DESCRIPTION: "Description",
+	DISPLAY_NAME: "Display Name",
 	ENCRYPTION_PASSWORD: "Encryption Password",
 	ID: "ID",
 	INCOMING: "Incoming",

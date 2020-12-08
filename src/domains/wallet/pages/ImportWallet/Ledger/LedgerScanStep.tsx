@@ -223,7 +223,7 @@ export const LedgerScanStep = ({
 				<div>
 					<Button
 						data-testid="LedgerScanStep__view-more"
-						variant="plain"
+						variant="secondary"
 						className="w-full"
 						disabled={!isConnected || canRetry || isBusy}
 						onClick={scanMore}
