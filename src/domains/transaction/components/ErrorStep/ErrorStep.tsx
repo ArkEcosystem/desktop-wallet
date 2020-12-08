@@ -18,7 +18,7 @@ export const ErrorStep = ({ title, subtitle, onBack, onRepeat, isRepeatDisabled 
 		<div data-testid="ErrorStep">
 			<div>
 				<h1 className="mb-8 text-lg font-bold md:text-4xl">{title || t("TRANSACTION.ERROR.TITLE")}</h1>
-				<div className="mx-auto my-4 w-128">
+				<div className="my-4 mx-auto w-128">
 					<MistakeBanner />
 				</div>
 				<div className="my-8 text-md text-theme-secondary-text">

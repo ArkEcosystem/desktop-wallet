@@ -1,5 +1,4 @@
 import { Address } from "app/components/Address";
-import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
@@ -26,20 +25,16 @@ type ReceiveFundsProps = {
 export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
 	const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
-	const maxLength = 255;
-
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { amount, smartbridge } = form.watch();
 
-	const { qrCodeData } = useQRCode({
+	const { uri, image } = useQRCode({
 		amount,
-		smartbridge: smartbridge?.slice(0, maxLength),
+		smartbridge,
 		network,
 		address,
 	});
-
-	const { uri, image } = qrCodeData || {};
 
 	return (
 		<Modal
@@ -50,7 +45,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 			onClose={onClose}
 		>
 			{name && (
-				<div data-testid="ReceiveFunds__info">
+				<div data-testid="ReceiveFunds__name">
 					<TransactionDetail
 						borderPosition="bottom"
 						label={t("COMMON.NAME")}
@@ -61,7 +56,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				</div>
 			)}
 
-			<div data-testid="ReceiveFunds__info">
+			<div data-testid="ReceiveFunds__address">
 				<TransactionDetail
 					label={t("COMMON.ADDRESS")}
 					borderPosition="bottom"
@@ -87,7 +82,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				{!isFormOpen && (
 					<Button
 						variant="secondary"
-						className="w-full mt-8"
+						className="mt-8 w-full"
 						onClick={() => setIsFormOpen(true)}
 						data-testid="ReceiveFunds__toggle"
 					>
@@ -97,22 +92,16 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 				{isFormOpen && (
 					<Form context={form} onSubmit={console.log}>
-						<ReceiveFundsForm maxLength={maxLength} />
+						<ReceiveFundsForm />
 					</Form>
 				)}
 			</div>
 
-			{smartbridge?.length > maxLength && (
-				<div className="mt-8">
-					<Alert variant="warning">{t("WALLETS.MODAL_RECEIVE_FUNDS.WARNING", { maxLength })}</Alert>
-				</div>
-			)}
-
-			<div className="w-64 h-64 mx-auto mt-8">
+			<div className="mx-auto mt-8 w-64 h-64">
 				{image && (
 					<img
 						src={image}
-						className="w-64 h-64 p-3 border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="p-3 w-64 h-64 rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
 					/>
@@ -121,19 +110,19 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 			{isFormOpen && (
 				<>
-					<div className="max-w-sm mx-auto mt-6 text-center text-theme-neutral-600">
+					<div className="mx-auto mt-6 max-w-sm text-center text-theme-neutral-600">
 						{t("COMMON.QR_CODE_HELP_TEXT")}
 					</div>
 
 					<div
-						className="flex mt-8 overflow-hidden font-medium border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="flex overflow-hidden mt-8 font-medium rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
 						data-testid="ReceiveFundsForm__uri"
 					>
 						<div className="p-6 bg-theme-neutral-200 dark:bg-theme-neutral-800">
 							<span className="text-theme-secondary-text">{t("COMMON.QR_SHORT")}</span>
 						</div>
 
-						<div className="flex items-center justify-between w-full pl-6 pr-5 space-x-4 overflow-hidden bg-theme-neutral-100 dark:bg-theme-background">
+						<div className="flex overflow-hidden justify-between items-center pr-5 pl-6 space-x-4 w-full bg-theme-neutral-100 dark:bg-theme-background">
 							<span className="truncate">{uri}</span>
 							<span className="flex text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700">
 								<Clipboard data={uri}>

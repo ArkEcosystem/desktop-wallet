@@ -68,7 +68,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 				<FormLabel label={t("WALLETS.SIGNATORY")} />
 				<div className="relative">
 					<Input type="text" disabled />
-					<div className="absolute top-0 flex items-center mt-2 ml-4">
+					<div className="flex absolute top-0 items-center mt-2 ml-4">
 						<div className="flex items-center">
 							<Avatar address="test" size="sm" noShadow />
 							<span className="ml-3 font-semibold ">{signatoryAddress}</span>

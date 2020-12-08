@@ -60,7 +60,7 @@ exports[`PluginGrid should render 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 80%;"
                     >
                       <svg
@@ -85,7 +85,7 @@ exports[`PluginGrid should render 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           />
         </div>
       </div>
@@ -141,7 +141,7 @@ exports[`PluginGrid should render 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 70%;"
                     >
                       <svg
@@ -166,14 +166,14 @@ exports[`PluginGrid should render 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex justify-center w-4 overflow-hidden"
+                class="flex overflow-hidden justify-center w-4"
               >
                 <div
                   class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -272,7 +272,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 80%;"
                     >
                       <svg
@@ -297,7 +297,7 @@ exports[`PluginGrid should render without pagination 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           />
         </div>
       </div>
@@ -353,7 +353,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 70%;"
                     >
                       <svg
@@ -378,14 +378,14 @@ exports[`PluginGrid should render without pagination 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex justify-center w-4 overflow-hidden"
+                class="flex overflow-hidden justify-center w-4"
               >
                 <div
                   class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -469,7 +469,7 @@ exports[`PluginGrid should split by page 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 70%;"
                     >
                       <svg
@@ -494,14 +494,14 @@ exports[`PluginGrid should split by page 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex justify-center w-4 overflow-hidden"
+                class="flex overflow-hidden justify-center w-4"
               >
                 <div
                   class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -621,7 +621,7 @@ exports[`PluginGrid should trigger delete 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 80%;"
                     >
                       <svg
@@ -646,7 +646,7 @@ exports[`PluginGrid should trigger delete 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           />
         </div>
       </div>
@@ -702,7 +702,7 @@ exports[`PluginGrid should trigger delete 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 70%;"
                     >
                       <svg
@@ -727,14 +727,14 @@ exports[`PluginGrid should trigger delete 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex justify-center w-4 overflow-hidden"
+                class="flex overflow-hidden justify-center w-4"
               >
                 <div
                   class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -833,7 +833,7 @@ exports[`PluginGrid should trigger select 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 80%;"
                     >
                       <svg
@@ -858,7 +858,7 @@ exports[`PluginGrid should trigger select 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           />
         </div>
       </div>
@@ -914,7 +914,7 @@ exports[`PluginGrid should trigger select 1`] = `
                     class="relative my-auto"
                   >
                     <div
-                      class="absolute overflow-hidden"
+                      class="overflow-hidden absolute"
                       style="width: 70%;"
                     >
                       <svg
@@ -939,14 +939,14 @@ exports[`PluginGrid should trigger select 1`] = `
             </div>
           </div>
           <div
-            class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
           >
             <div
               class="relative"
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex justify-center w-4 overflow-hidden"
+                class="flex overflow-hidden justify-center w-4"
               >
                 <div
                   class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"

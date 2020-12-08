@@ -65,7 +65,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					onChange={handleInput}
 				/>
 				{Number(min) < Number(max) && (
-					<div className="absolute bottom-0 w-full px-1">
+					<div className="absolute bottom-0 px-1 w-full">
 						<Range
 							colors={["var(--theme-color-primary)", "transparent"]}
 							step={sanitizeStep({ min: Number(minValue), max: Number(max), step })}

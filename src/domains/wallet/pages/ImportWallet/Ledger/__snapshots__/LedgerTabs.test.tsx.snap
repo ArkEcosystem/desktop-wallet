@@ -31,7 +31,7 @@ exports[`LedgerTabs should render connection step 1`] = `
           data-testid="ImportWallet__first-step"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -52,13 +52,13 @@ exports[`LedgerTabs should render connection step 1`] = `
             class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="network"
             >
               Cryptoasset
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -170,7 +170,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
           data-testid="LedgerScanStep"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -191,13 +191,13 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
             class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="network"
             >
               Cryptoasset
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>

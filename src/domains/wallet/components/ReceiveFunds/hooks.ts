@@ -11,14 +11,18 @@ type QRCodeProps = {
 };
 
 export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps) => {
-	const [qrCodeData, setQrCodeData] = useState<{ uri?: string; image?: string } | undefined>();
+	const [qrCodeData, setQrCodeData] = useState<{ uri?: string; image?: string }>({
+		uri: undefined,
+		image: undefined,
+	});
 
+	const maxLength = 255;
 	const isDark = useDarkMode();
 
 	const formatQR = useCallback(({ network, amount, address, smartbridge }: QRCodeProps) => {
 		const uriParams = {
 			...(amount && { amount }),
-			...(smartbridge && { vendorField: smartbridge }),
+			...(smartbridge && { vendorField: smartbridge?.slice(0, maxLength) }),
 		};
 
 		const networkPrefix = network?.split(".")[0];
@@ -61,5 +65,5 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 		generateQrCode();
 	}, [amount, color, smartbridge, network, address, formatQR]);
 
-	return { qrCodeData };
+	return qrCodeData;
 };

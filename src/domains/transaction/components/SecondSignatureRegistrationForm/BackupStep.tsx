@@ -69,7 +69,7 @@ export const BackupStep = () => {
 
 			<Divider dashed />
 
-			<div className="flex items-center justify-between">
+			<div className="flex justify-between items-center">
 				<div className="space-y-2">
 					<span className="text-lg font-semibold text-theme-secondary-text">
 						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.TITLE")}

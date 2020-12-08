@@ -244,7 +244,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			<Section className="flex-1">
 				<Form
 					data-testid="Registration__form"
-					className="max-w-xl mx-auto"
+					className="mx-auto max-w-xl"
 					context={form}
 					onSubmit={submitForm}
 				>

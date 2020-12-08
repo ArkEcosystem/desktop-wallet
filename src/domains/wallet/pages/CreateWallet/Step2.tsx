@@ -69,7 +69,7 @@ export const SecondStep = () => {
 
 			<Divider dashed />
 
-			<div className="flex items-center justify-between">
+			<div className="flex justify-between items-center">
 				<div className="space-y-2">
 					<span className="text-lg font-semibold text-theme-secondary-text">
 						{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.TITLE")}

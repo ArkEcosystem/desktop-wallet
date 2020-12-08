@@ -1,6 +1,7 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -10,7 +11,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useQueryParams } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
-import { enableNetworkInDashboardFilters } from "domains/dashboard/utils";
+import { useDashboardConfig } from "domains/dashboard/pages";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -32,6 +33,7 @@ export const ImportWallet = () => {
 	const { env, persist } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
+	const { selectedNetworkIds, setValue } = useDashboardConfig({ profile: activeProfile });
 
 	const { t } = useTranslation();
 
@@ -105,7 +107,7 @@ export const ImportWallet = () => {
 				wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
 			}
 
-			enableNetworkInDashboardFilters(activeProfile, wallet.network().id());
+			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
 			setWalletData(wallet);
 			await persist();
 
@@ -127,7 +129,7 @@ export const ImportWallet = () => {
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form
-					className="max-w-xl mx-auto"
+					className="mx-auto max-w-xl"
 					context={form}
 					onSubmit={handleSubmit as any}
 					data-testid="ImportWallet__form"

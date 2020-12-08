@@ -10,13 +10,13 @@ exports[`ContactForm should select 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
         Name
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -34,13 +34,13 @@ exports[`ContactForm should select 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
           Cryptoasset
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -94,13 +94,13 @@ exports[`ContactForm should select 1`] = `
         data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="address"
         >
           Address
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -117,7 +117,7 @@ exports[`ContactForm should select 1`] = `
             class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
               data-testid="InputAddress__qr-button"
               type="button"
             >
@@ -184,13 +184,13 @@ exports[`ContactForm should select with errors 1`] = `
       class="sc-AxiKw HGhoX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
         Name
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -214,13 +214,13 @@ exports[`ContactForm should select with errors 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
           Cryptoasset
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -274,13 +274,13 @@ exports[`ContactForm should select with errors 1`] = `
         data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="address"
         >
           Address
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -297,7 +297,7 @@ exports[`ContactForm should select with errors 1`] = `
             class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
               data-testid="InputAddress__qr-button"
               type="button"
             >
@@ -364,13 +364,13 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
         Name
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -388,13 +388,13 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
           Cryptoasset
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -448,13 +448,13 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="address"
         >
           Address
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -471,7 +471,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
             class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
               data-testid="InputAddress__qr-button"
               type="button"
             >
@@ -538,13 +538,13 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
         Name
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -562,13 +562,13 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="sc-AxiKw iQzisX flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
           Cryptoasset
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -622,13 +622,13 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         data-testid="ContactForm__address"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="address"
         >
           Address
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -645,7 +645,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
               data-testid="InputAddress__qr-button"
               type="button"
             >

@@ -3,7 +3,7 @@
 exports[`CreateProfile should fail password confirmation 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -13,7 +13,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -40,13 +40,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto -mt-10"
+            class="mx-auto -mt-10 max-w-lg"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -59,7 +59,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
               Create a new Profile below.
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -75,16 +75,16 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     class="flex justify-between -mt-6"
                   >
                     <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                      class="sc-AxiKw iQzisX mr-6 w-full"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Name
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -117,11 +117,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex items-center justify-center w-22 h-22"
+                                class="flex justify-center items-center w-22 h-22"
                               >
                                 <div
                                   class="sc-AxhUy cPXLjK text-white"
@@ -143,7 +143,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="password"
                     >
@@ -169,7 +169,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -190,13 +190,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     class="sc-AxiKw HGhoX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="confirmPassword"
                     >
                       Confirm Password
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -215,7 +215,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -241,13 +241,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -338,10 +338,10 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col w-full space-y-2"
+                          class="flex flex-col space-y-2 w-full"
                         >
                           <div
-                            class="flex items-center justify-between space-x-5"
+                            class="flex justify-between items-center space-x-5"
                           >
                             <span
                               class="text-xl font-semibold"
@@ -414,7 +414,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
 exports[`CreateProfile should not create new profile if profile name exists 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -424,7 +424,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -451,13 +451,13 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto -mt-10"
+            class="mx-auto -mt-10 max-w-lg"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -470,7 +470,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
               Create a new Profile below.
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -486,16 +486,16 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                     class="flex justify-between -mt-6"
                   >
                     <fieldset
-                      class="sc-AxiKw HGhoX w-full mr-6"
+                      class="sc-AxiKw HGhoX mr-6 w-full"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Name
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -534,11 +534,11 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex items-center justify-center w-22 h-22"
+                                class="flex justify-center items-center w-22 h-22"
                               >
                                 <div
                                   class="sc-AxhUy cPXLjK text-white"
@@ -560,7 +560,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="password"
                     >
@@ -586,7 +586,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -607,7 +607,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="confirmPassword"
                     >
@@ -633,7 +633,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -654,13 +654,13 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -987,10 +987,10 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col w-full space-y-2"
+                          class="flex flex-col space-y-2 w-full"
                         >
                           <div
-                            class="flex items-center justify-between space-x-5"
+                            class="flex justify-between items-center space-x-5"
                           >
                             <span
                               class="text-xl font-semibold"
@@ -1063,7 +1063,7 @@ exports[`CreateProfile should not create new profile if profile name exists 1`] 
 exports[`CreateProfile should not upload avatar image 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1073,7 +1073,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -1100,13 +1100,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto -mt-10"
+            class="mx-auto -mt-10 max-w-lg"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -1119,7 +1119,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
               Create a new Profile below.
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -1135,16 +1135,16 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="flex justify-between -mt-6"
                   >
                     <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                      class="sc-AxiKw iQzisX mr-6 w-full"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Name
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -1177,11 +1177,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex items-center justify-center w-22 h-22"
+                                class="flex justify-center items-center w-22 h-22"
                               >
                                 <div
                                   class="sc-AxhUy cPXLjK text-white"
@@ -1203,7 +1203,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="password"
                     >
@@ -1229,7 +1229,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -1250,7 +1250,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="confirmPassword"
                     >
@@ -1276,7 +1276,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -1297,13 +1297,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -1630,10 +1630,10 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col w-full space-y-2"
+                          class="flex flex-col space-y-2 w-full"
                         >
                           <div
-                            class="flex items-center justify-between space-x-5"
+                            class="flex justify-between items-center space-x-5"
                           >
                             <span
                               class="text-xl font-semibold"
@@ -1705,7 +1705,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
 exports[`CreateProfile should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1715,7 +1715,7 @@ exports[`CreateProfile should render 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -1742,13 +1742,13 @@ exports[`CreateProfile should render 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto -mt-10"
+            class="mx-auto -mt-10 max-w-lg"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -1761,7 +1761,7 @@ exports[`CreateProfile should render 1`] = `
               Create a new Profile below.
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -1777,16 +1777,16 @@ exports[`CreateProfile should render 1`] = `
                     class="flex justify-between -mt-6"
                   >
                     <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                      class="sc-AxiKw iQzisX mr-6 w-full"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Name
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -1803,7 +1803,7 @@ exports[`CreateProfile should render 1`] = `
                         class="flex flex-row mt-2"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 border-2 border-dashed rounded border-theme-primary-contrast"
+                          class="flex justify-center items-center w-24 h-24 rounded border-2 border-dashed border-theme-primary-contrast"
                         >
                           <div
                             class="overflow-hidden rounded-full w-22 h-22"
@@ -1836,7 +1836,7 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="password"
                     >
@@ -1862,7 +1862,7 @@ exports[`CreateProfile should render 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -1883,7 +1883,7 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="confirmPassword"
                     >
@@ -1909,7 +1909,7 @@ exports[`CreateProfile should render 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -1930,13 +1930,13 @@ exports[`CreateProfile should render 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -2021,10 +2021,10 @@ exports[`CreateProfile should render 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col w-full space-y-2"
+                          class="flex flex-col space-y-2 w-full"
                         >
                           <div
-                            class="flex items-center justify-between space-x-5"
+                            class="flex justify-between items-center space-x-5"
                           >
                             <span
                               class="text-xl font-semibold"
@@ -2097,7 +2097,7 @@ exports[`CreateProfile should render 1`] = `
 exports[`CreateProfile should store profile 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2107,7 +2107,7 @@ exports[`CreateProfile should store profile 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -2134,13 +2134,13 @@ exports[`CreateProfile should store profile 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto -mt-10"
+            class="mx-auto -mt-10 max-w-lg"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -2153,7 +2153,7 @@ exports[`CreateProfile should store profile 1`] = `
               Create a new Profile below.
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -2169,16 +2169,16 @@ exports[`CreateProfile should store profile 1`] = `
                     class="flex justify-between -mt-6"
                   >
                     <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                      class="sc-AxiKw iQzisX mr-6 w-full"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Name
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -2206,11 +2206,11 @@ exports[`CreateProfile should store profile 1`] = `
                               src="data:image/png;base64,avatarImage"
                             />
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex items-center justify-center w-22 h-22"
+                                class="flex justify-center items-center w-22 h-22"
                               >
                                 <div
                                   class="sc-AxhUy cPXLjK text-white"
@@ -2225,7 +2225,12 @@ exports[`CreateProfile should store profile 1`] = `
                             </div>
                           </div>
                           <button
+<<<<<<< HEAD
                             class="sc-AxjAm fToPIQ absolute flex items-center justify-center w-6 h-6 p-1 -top-3 -right-3"
+=======
+                            class="sc-AxjAm fGMGAX flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                            color="danger"
+>>>>>>> develop
                             data-testid="SelectProfileImage__remove-button"
                             type="button"
                           >
@@ -2247,7 +2252,7 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="password"
                     >
@@ -2273,7 +2278,7 @@ exports[`CreateProfile should store profile 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -2294,7 +2299,7 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="confirmPassword"
                     >
@@ -2320,7 +2325,7 @@ exports[`CreateProfile should store profile 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -2341,13 +2346,13 @@ exports[`CreateProfile should store profile 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -2674,10 +2679,10 @@ exports[`CreateProfile should store profile 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col w-full space-y-2"
+                          class="flex flex-col space-y-2 w-full"
                         >
                           <div
-                            class="flex items-center justify-between space-x-5"
+                            class="flex justify-between items-center space-x-5"
                           >
                             <span
                               class="text-xl font-semibold"
@@ -2749,7 +2754,7 @@ exports[`CreateProfile should store profile 1`] = `
 exports[`CreateProfile should store profile with password 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2759,7 +2764,7 @@ exports[`CreateProfile should store profile with password 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -2786,13 +2791,13 @@ exports[`CreateProfile should store profile with password 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto -mt-10"
+            class="mx-auto -mt-10 max-w-lg"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -2805,7 +2810,7 @@ exports[`CreateProfile should store profile with password 1`] = `
               Create a new Profile below.
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -2821,16 +2826,16 @@ exports[`CreateProfile should store profile with password 1`] = `
                     class="flex justify-between -mt-6"
                   >
                     <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                      class="sc-AxiKw iQzisX mr-6 w-full"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Name
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -2863,11 +2868,11 @@ exports[`CreateProfile should store profile with password 1`] = `
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex items-center justify-center w-22 h-22"
+                                class="flex justify-center items-center w-22 h-22"
                               >
                                 <div
                                   class="sc-AxhUy cPXLjK text-white"
@@ -2889,7 +2894,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="password"
                     >
@@ -2915,7 +2920,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -2936,13 +2941,13 @@ exports[`CreateProfile should store profile with password 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="confirmPassword"
                     >
                       Confirm Password
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -2960,7 +2965,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -2981,13 +2986,13 @@ exports[`CreateProfile should store profile with password 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -3314,10 +3319,10 @@ exports[`CreateProfile should store profile with password 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col w-full space-y-2"
+                          class="flex flex-col space-y-2 w-full"
                         >
                           <div
-                            class="flex items-center justify-between space-x-5"
+                            class="flex justify-between items-center space-x-5"
                           >
                             <span
                               class="text-xl font-semibold"
@@ -3389,7 +3394,7 @@ exports[`CreateProfile should store profile with password 1`] = `
 exports[`CreateProfile should upload and remove avatar image 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3399,7 +3404,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -3426,13 +3431,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto -mt-10"
+            class="mx-auto -mt-10 max-w-lg"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -3445,7 +3450,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
               Create a new Profile below.
             </div>
             <form
-              class="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="CreateProfile__form"
             >
               <div
@@ -3461,16 +3466,16 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="flex justify-between -mt-6"
                   >
                     <fieldset
-                      class="sc-AxiKw iQzisX w-full mr-6"
+                      class="sc-AxiKw iQzisX mr-6 w-full"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
                         Name
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -3503,11 +3508,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               TE
                             </span>
                             <div
-                              class="absolute z-50 hidden overflow-hidden rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex items-center justify-center w-22 h-22"
+                                class="flex justify-center items-center w-22 h-22"
                               >
                                 <div
                                   class="sc-AxhUy cPXLjK text-white"
@@ -3529,7 +3534,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="password"
                     >
@@ -3555,7 +3560,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -3576,7 +3581,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="confirmPassword"
                     >
@@ -3602,7 +3607,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         class="sc-AxgMl sc-Axmtr hWILTO my-px mr-4"
                       >
                         <button
-                          class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
@@ -3623,13 +3628,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                       data-testid="FormLabel"
                       for="currency"
                     >
                       Currency
                       <div
-                        class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
                       />
                     </label>
@@ -3956,10 +3961,10 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         data-testid="list-divided-item__inner-wrapper"
                       >
                         <div
-                          class="flex flex-col w-full space-y-2"
+                          class="flex flex-col space-y-2 w-full"
                         >
                           <div
-                            class="flex items-center justify-between space-x-5"
+                            class="flex justify-between items-center space-x-5"
                           >
                             <span
                               class="text-xl font-semibold"

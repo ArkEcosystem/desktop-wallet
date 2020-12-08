@@ -5,7 +5,7 @@ exports[`TransactionDetailModal should not render if not open 1`] = `<DocumentFr
 exports[`TransactionDetailModal should render a delegate registration modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -16,7 +16,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -322,7 +322,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
 exports[`TransactionDetailModal should render a delegate resignation modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -333,7 +333,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -639,7 +639,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
 exports[`TransactionDetailModal should render a entity modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -650,7 +650,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -937,7 +937,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
 exports[`TransactionDetailModal should render a ipfs modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -948,7 +948,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -1267,7 +1267,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
 exports[`TransactionDetailModal should render a legacy magistrate modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -1278,7 +1278,7 @@ exports[`TransactionDetailModal should render a legacy magistrate modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -1565,7 +1565,7 @@ exports[`TransactionDetailModal should render a legacy magistrate modal 1`] = `
 exports[`TransactionDetailModal should render a multi payment modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -1576,7 +1576,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -1946,7 +1946,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
 exports[`TransactionDetailModal should render a multi signature modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -1957,7 +1957,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -2311,7 +2311,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
 exports[`TransactionDetailModal should render a second signature modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -2322,7 +2322,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -2609,7 +2609,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
 exports[`TransactionDetailModal should render a transfer modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -2620,7 +2620,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -3032,7 +3032,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
 exports[`TransactionDetailModal should render a unvote modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -3043,7 +3043,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"
@@ -3482,7 +3482,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
 exports[`TransactionDetailModal should render a vote modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -3493,7 +3493,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxiKw dstVep w-11 h-11"

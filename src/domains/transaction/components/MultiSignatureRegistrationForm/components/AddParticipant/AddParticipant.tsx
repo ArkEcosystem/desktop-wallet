@@ -131,7 +131,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 					</FormField>
 
 					<Button
-						className="w-full my-4"
+						className="my-4 w-full"
 						variant="secondary"
 						type="button"
 						disabled={isValidating || !address}

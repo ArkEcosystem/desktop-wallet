@@ -244,7 +244,7 @@ export const AddRecipient = ({
 										});
 										singleRecipientOnChange(remainingBalance.toString(), recipientAddress);
 									}}
-									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
+									className="pr-3 pl-6 mr-1 h-12 text-theme-primary focus:outline-none"
 								>
 									{t("TRANSACTION.SEND_ALL")}
 								</button>
@@ -261,7 +261,7 @@ export const AddRecipient = ({
 						}
 						data-testid="add-recipient__add-btn"
 						variant="secondary"
-						className="w-full mt-4"
+						className="mt-4 w-full"
 						onClick={() =>
 							handleAddRecipient(
 								recipientAddress as string,

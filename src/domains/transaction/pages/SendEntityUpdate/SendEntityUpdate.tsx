@@ -153,7 +153,7 @@ export const SendEntityUpdate = ({ formDefaultValues }: SendEntityUpdateProps) =
 				{isLoading && <Loader />}
 
 				{!isLoading && (
-					<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
+					<Form className="mx-auto max-w-xl" context={form} onSubmit={handleSubmit}>
 						<Tabs activeId={activeTab}>
 							<StepIndicator size={4} activeIndex={activeTab} />
 

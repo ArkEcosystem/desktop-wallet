@@ -267,7 +267,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 
 					<div>
 						<>
-							<div className="relative flex justify-between">
+							<div className="flex relative justify-between">
 								<h2 className="mb-8 font-bold">
 									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
 								</h2>
@@ -301,7 +301,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 								<Button
 									data-testid="transactions__fetch-more-button"
 									variant="secondary"
-									className="w-full mt-10 mb-5"
+									className="mt-10 mb-5 w-full"
 									onClick={() => fetchMore()}
 								>
 									{isLoadingTransactions ? <Spinner size="sm" /> : t("COMMON.VIEW_MORE")}

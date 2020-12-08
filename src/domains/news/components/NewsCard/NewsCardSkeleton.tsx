@@ -16,7 +16,7 @@ export const NewsCardSkeleton = () => {
 			<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard__skeleton">
 				<div className="flex justify-between w-full">
 					<div className="flex items-center space-x-4">
-						<div className="relative flex items-center justify-center h-12">
+						<div className="flex relative justify-center items-center h-12">
 							<Skeleton circle width={44} height={44} />
 							<Circle className="absolute border-transparent bg-theme-background" noShadow />
 						</div>

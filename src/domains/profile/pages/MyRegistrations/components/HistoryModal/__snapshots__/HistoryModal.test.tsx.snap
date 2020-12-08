@@ -3,7 +3,7 @@
 exports[`HistoryModal should render empty state 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -14,7 +14,7 @@ exports[`HistoryModal should render empty state 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxirZ gKDmVV w-11 h-11"
@@ -116,7 +116,7 @@ exports[`HistoryModal should render empty state 1`] = `
                 data-testid="Pagination"
               >
                 <div
-                  class="flex items-center px-5 py-3 rounded bg-theme-primary-contrast text-theme-primary"
+                  class="flex items-center py-3 px-5 rounded bg-theme-primary-contrast text-theme-primary"
                 >
                   Page 1 of 3
                 </div>
@@ -163,7 +163,7 @@ exports[`HistoryModal should render empty state 1`] = `
 exports[`HistoryModal should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -174,7 +174,7 @@ exports[`HistoryModal should render properly 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxirZ gKDmVV w-11 h-11"
@@ -285,7 +285,7 @@ exports[`HistoryModal should render properly 1`] = `
                       </span>
                     </td>
                     <td
-                      class="flex items-center justify-end py-6 font-semibold text-theme-primary-500"
+                      class="flex justify-end items-center py-6 font-semibold text-theme-primary-500"
                     >
                       <div
                         class="sc-AxjAm pXfjM"
@@ -322,7 +322,7 @@ exports[`HistoryModal should render properly 1`] = `
                       </span>
                     </td>
                     <td
-                      class="flex items-center justify-end py-6 font-semibold text-theme-primary-500"
+                      class="flex justify-end items-center py-6 font-semibold text-theme-primary-500"
                     >
                       <div
                         class="sc-AxjAm pXfjM"
@@ -359,7 +359,7 @@ exports[`HistoryModal should render properly 1`] = `
                       </span>
                     </td>
                     <td
-                      class="flex items-center justify-end py-6 font-semibold text-theme-primary-500"
+                      class="flex justify-end items-center py-6 font-semibold text-theme-primary-500"
                     >
                       <div
                         class="sc-AxjAm pXfjM"
@@ -396,7 +396,7 @@ exports[`HistoryModal should render properly 1`] = `
                       </span>
                     </td>
                     <td
-                      class="flex items-center justify-end py-6 font-semibold text-theme-primary-500"
+                      class="flex justify-end items-center py-6 font-semibold text-theme-primary-500"
                     >
                       <div
                         class="sc-AxjAm pXfjM"
@@ -425,7 +425,7 @@ exports[`HistoryModal should render properly 1`] = `
                 data-testid="Pagination"
               >
                 <div
-                  class="flex items-center px-5 py-3 rounded bg-theme-primary-contrast text-theme-primary"
+                  class="flex items-center py-3 px-5 rounded bg-theme-primary-contrast text-theme-primary"
                 >
                   Page 1 of 3
                 </div>

@@ -23,7 +23,7 @@ export const Dropdown = () => {
 	];
 
 	return (
-		<div className="max-w-xs space-y-4">
+		<div className="space-y-4 max-w-xs">
 			<Select options={options} placeholder="Select option" />
 			<Select options={options} placeholder="Invalid" isInvalid />
 			<Select options={options} placeholder="Disabled" disabled />

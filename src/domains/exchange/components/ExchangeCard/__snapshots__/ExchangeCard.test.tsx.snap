@@ -21,7 +21,7 @@ exports[`AddExchangeCard should render 1`] = `
       Add Exchange
     </div>
     <div
-      class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
     />
   </div>
 </div>
@@ -37,12 +37,12 @@ exports[`BlankExchangeCard should render when blank 1`] = `
       class="flex items-center p-2 font-semibold text-theme-primary-contrast"
     >
       <div
-        class="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-contrast"
+        class="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-contrast"
       />
       Exchange Name
     </div>
     <div
-      class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
     />
   </div>
 </div>
@@ -75,14 +75,14 @@ exports[`ExchangeCard should render 1`] = `
       </div>
     </div>
     <div
-      class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
     >
       <div
         class="relative"
         data-testid="dropdown__toggle"
       >
         <div
-          class="flex justify-center w-4 overflow-hidden"
+          class="flex overflow-hidden justify-center w-4"
         >
           <div
             class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"

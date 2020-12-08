@@ -3,7 +3,7 @@
 exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -14,7 +14,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -51,7 +51,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -286,7 +286,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -421,7 +421,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
 exports[`MultiSignatureDetail should not show send button when waiting for confirmations 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -432,7 +432,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -469,7 +469,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -704,7 +704,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -828,7 +828,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
 exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -839,7 +839,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -876,7 +876,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -1058,7 +1058,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -1182,7 +1182,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
 exports[`MultiSignatureDetail should render summary step for multi payment 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -1193,7 +1193,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -1230,7 +1230,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -1379,7 +1379,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                     data-testid="recipient-list__recipient-list-item"
                                   >
                                     <td
-                                      class="w-12 py-4"
+                                      class="py-4 w-12"
                                     >
                                       <div
                                         class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
@@ -1434,7 +1434,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                     data-testid="recipient-list__recipient-list-item"
                                   >
                                     <td
-                                      class="w-12 py-4"
+                                      class="py-4 w-12"
                                     >
                                       <div
                                         class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
@@ -1622,7 +1622,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -1746,7 +1746,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
 exports[`MultiSignatureDetail should render summary step for multi signature 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -1757,7 +1757,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -1794,7 +1794,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -1946,7 +1946,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -2070,7 +2070,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
 exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -2081,7 +2081,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -2118,7 +2118,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -2353,7 +2353,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -2477,7 +2477,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
 exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -2488,7 +2488,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -2525,7 +2525,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -2769,7 +2769,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -2893,7 +2893,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
 exports[`MultiSignatureDetail should render summary step for vote 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -2904,7 +2904,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -2941,7 +2941,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -3185,7 +3185,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -3309,7 +3309,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
 exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -3320,7 +3320,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -3357,7 +3357,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -3592,7 +3592,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -3734,7 +3734,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
 exports[`MultiSignatureDetail should show send button when able to broadcast 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -3745,7 +3745,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -3782,7 +3782,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -4017,7 +4017,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                     </div>
                   </div>
                   <div
-                    class="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <div
                       data-testid="Signatures"
@@ -4152,7 +4152,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
 exports[`MultiSignatureDetail should sign transaction after authentication page 1`] = `
 <div>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
@@ -4163,7 +4163,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 transition-all duration-100 ease-linear rounded bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
           class="sc-AxjAm cshtse w-11 h-11"
@@ -4200,7 +4200,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
               >
                 <section>
                   <div
-                    class="flex items-end justify-between bg-theme-background"
+                    class="flex justify-between items-end bg-theme-background"
                   >
                     <div>
                       <h1
@@ -4212,7 +4212,7 @@ exports[`MultiSignatureDetail should sign transaction after authentication page 
                     </div>
                   </div>
                   <svg
-                    class="w-full my-4"
+                    class="my-4 w-full"
                   >
                     transaction-successful.svg
                   </svg>

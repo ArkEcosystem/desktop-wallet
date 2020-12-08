@@ -1,3 +1,4 @@
+import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -5,7 +6,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import { enableNetworkInDashboardFilters } from "domains/dashboard/utils";
+import { useDashboardConfig } from "domains/dashboard/pages";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -25,6 +26,8 @@ export const CreateWallet = () => {
 	const activeProfile = useActiveProfile();
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const nameMaxLength = 42;
+
+	const { selectedNetworkIds, setValue: setConfiguration } = useDashboardConfig({ profile: activeProfile });
 
 	const crumbs = [
 		{
@@ -47,7 +50,7 @@ export const CreateWallet = () => {
 		const formattedName = name.trim().substring(0, nameMaxLength);
 		activeProfile.wallets().update(getValues("wallet").id(), { alias: formattedName });
 
-		enableNetworkInDashboardFilters(activeProfile, getValues("wallet").network().id());
+		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, getValues("wallet").network().id()]));
 		await persist();
 
 		setValue("wallet", null);
@@ -77,7 +80,7 @@ export const CreateWallet = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 

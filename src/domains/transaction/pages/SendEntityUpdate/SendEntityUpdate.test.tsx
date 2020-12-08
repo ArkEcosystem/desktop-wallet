@@ -488,7 +488,7 @@ describe("SendEntityUpdate", () => {
 
 		const transactionMock = createTransactionMock(wallet);
 
-		const { getByTestId, findByTestId } = renderPage();
+		const { getByText, getByTestId, findByTestId } = renderPage();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -523,7 +523,10 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("SummaryStep__ipfs-data")).toBeTruthy());
+
+		await waitFor(() => expect(getByText(IpfsFixture.data.meta.displayName)).toBeTruthy());
+		await waitFor(() => expect(getByText(IpfsFixture.data.meta.description)).toBeTruthy());
+		await waitFor(() => expect(getByText(IpfsFixture.data.meta.website)).toBeTruthy());
 
 		loadingToastMock.mockRestore();
 		signMock.mockRestore();
@@ -544,7 +547,7 @@ describe("SendEntityUpdate", () => {
 
 		const transactionMock = createTransactionMock(wallet);
 
-		const { asFragment, findByTestId, getByTestId } = renderPage();
+		const { asFragment, getByText, findByTestId, getByTestId } = renderPage();
 
 		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
 		await waitFor(() =>
@@ -576,7 +579,11 @@ describe("SendEntityUpdate", () => {
 		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		await waitFor(() => expect(getByTestId("SummaryStep__ipfs-data")).toBeTruthy());
+
+		await waitFor(() => expect(getByText(IpfsFixture.data.meta.displayName)).toBeTruthy());
+		await waitFor(() => expect(getByText(IpfsFixture.data.meta.description)).toBeTruthy());
+		await waitFor(() => expect(getByText(IpfsFixture.data.meta.website)).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		signMock.mockRestore();
