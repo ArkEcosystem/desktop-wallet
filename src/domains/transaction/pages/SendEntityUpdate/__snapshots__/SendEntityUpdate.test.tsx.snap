@@ -6634,75 +6634,76 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
                         </div>
                       </div>
                       <div
-                        data-testid="SummaryStep__ipfs-data"
+                        class="sc-fznyAO ismzvh"
+                        data-testid="TransactionDetail"
                       >
                         <div
-                          class="sc-fznyAO ismzvh"
-                          data-testid="TransactionDetail"
+                          class="flex-1 space-y-2"
                         >
                           <div
-                            class="flex-1 space-y-2"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral-700"
-                            >
-                              Name
-                            </div>
-                            <div
-                              class="font-semibold"
-                            />
+                            Display Name
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            business2reg
                           </div>
                         </div>
+                      </div>
+                      <div
+                        class="sc-fznyAO ismzvh"
+                        data-testid="TransactionDetail"
+                      >
                         <div
-                          class="sc-fznyAO ismzvh"
-                          data-testid="TransactionDetail"
+                          class="flex-1 space-y-2"
                         >
                           <div
-                            class="flex-1 space-y-2"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral-700"
-                            >
-                              Description
-                            </div>
-                            <div
-                              class="font-semibold"
-                            />
+                            Description
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            Testing
                           </div>
                         </div>
+                      </div>
+                      <div
+                        class="sc-fznyAO ismzvh"
+                        data-testid="TransactionDetail"
+                      >
                         <div
-                          class="sc-fznyAO ismzvh"
-                          data-testid="TransactionDetail"
+                          class="flex-1 space-y-2"
                         >
                           <div
-                            class="flex-1 space-y-2"
+                            class="text-sm font-semibold text-theme-neutral-700"
                           >
-                            <div
-                              class="text-sm font-semibold text-theme-neutral-700"
+                            Website
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            <a
+                              class="sc-fznKkj bTaUiX inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                              data-testid="Link"
+                              rel="noopener noreferrer"
+                              to="https://ark.io/"
                             >
-                              Website
-                            </div>
-                            <div
-                              class="font-semibold"
-                            >
-                              <a
-                                class="sc-fznKkj bTaUiX inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                                data-testid="Link"
-                                rel="noopener noreferrer"
-                                to="https://ark.io/"
+                              https://ark.io/
+                              <div
+                                class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                                data-testid="Link__external"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  class="sc-AxiKw dzBdqj flex-shrink-0 "
-                                  data-testid="Link__external"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    redirect.svg
-                                  </svg>
-                                </div>
-                              </a>
-                            </div>
+                                <svg>
+                                  redirect.svg
+                                </svg>
+                              </div>
+                            </a>
                           </div>
                         </div>
                       </div>
