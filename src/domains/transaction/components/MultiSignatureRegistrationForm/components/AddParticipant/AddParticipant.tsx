@@ -132,7 +132,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 
 					<Button
 						className="my-4 w-full"
-						variant="plain"
+						variant="secondary"
 						type="button"
 						disabled={isValidating || !address}
 						onClick={handleSubmit(() => addParticipant())}

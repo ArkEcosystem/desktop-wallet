@@ -174,7 +174,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
-					variant="plain"
+					variant="secondary"
 					onClick={() => onSelect?.(wallet.address())}
 					data-testid={`AddressRow__select-${index}`}
 				>

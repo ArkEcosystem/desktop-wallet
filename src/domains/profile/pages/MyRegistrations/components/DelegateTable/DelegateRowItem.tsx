@@ -95,7 +95,7 @@ export const DelegateRowItem = ({ wallet, onAction, isConfirmed }: DelegateRowIt
 				<span data-testid="DelegateRowItem__actions">
 					<Dropdown
 						toggleContent={
-							<Button variant="plain" size="icon">
+							<Button variant="secondary" size="icon">
 								<Icon name="Settings" width={20} height={20} />
 							</Button>
 						}

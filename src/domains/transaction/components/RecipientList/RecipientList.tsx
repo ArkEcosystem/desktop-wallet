@@ -101,7 +101,7 @@ const RecipientListItem = ({
 			{isEditable && (
 				<td className="py-6 w-20 text-right">
 					<Button
-						variant="plain"
+						variant="secondary"
 						onClick={() => typeof onRemove === "function" && onRemove(address)}
 						data-testid="recipient-list__remove-recipient"
 					>

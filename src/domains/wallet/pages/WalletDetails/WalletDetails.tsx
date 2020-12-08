@@ -300,7 +300,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 							{transactions.length > 0 && hasMore && (
 								<Button
 									data-testid="transactions__fetch-more-button"
-									variant="plain"
+									variant="secondary"
 									className="mt-10 mb-5 w-full"
 									onClick={() => fetchMore()}
 								>

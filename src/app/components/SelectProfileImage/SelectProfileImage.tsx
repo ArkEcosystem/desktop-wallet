@@ -78,7 +78,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								<UploadButtonWrapper>
 									<Button
 										className="upload-button w-22 h-22"
-										variant="plain"
+										variant="secondary"
 										onClick={handleUploadImage}
 										data-testid="SelectProfileImage__upload-button"
 									>
@@ -118,8 +118,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 							<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.DELETE_AVATAR")}>
 								<Button
 									size="icon"
-									color="danger"
-									variant="plain"
+									variant="danger"
 									className="flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
 									onClick={() => onSelect("")}
 									data-testid="SelectProfileImage__remove-button"

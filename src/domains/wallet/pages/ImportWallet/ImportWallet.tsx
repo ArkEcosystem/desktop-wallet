@@ -160,7 +160,7 @@ export const ImportWallet = () => {
 									{activeTab < 3 && (
 										<Button
 											disabled={activeTab === 1 || isSubmitting}
-											variant="plain"
+											variant="secondary"
 											onClick={handleBack}
 											data-testid="ImportWallet__back-button"
 										>

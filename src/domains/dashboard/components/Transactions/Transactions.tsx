@@ -100,7 +100,7 @@ export const Transactions = memo(({ emptyText, isCompact, profile, isVisible = t
 			{transactions.length > 0 && (
 				<Button
 					data-testid="transactions__fetch-more-button"
-					variant="plain"
+					variant="secondary"
 					className="mt-10 mb-5 w-full"
 					disabled={isLoading}
 					onClick={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
