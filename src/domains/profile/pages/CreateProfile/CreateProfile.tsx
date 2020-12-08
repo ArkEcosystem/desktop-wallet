@@ -82,13 +82,11 @@ export const CreateProfile = () => {
 
 							<div className="relative mt-8 space-y-8">
 								<div className="flex justify-between -mt-6">
-									<div className="mr-6 w-full">
-										<FormField name="name">
-											<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-											<Input ref={register(createProfile.name())} />
-											<FormHelperText />
-										</FormField>
-									</div>
+									<FormField name="name" className="mr-6 w-full">
+										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
+										<Input ref={register(createProfile.name())} />
+										<FormHelperText />
+									</FormField>
 
 									<SelectProfileImage
 										className="-mt-6"
