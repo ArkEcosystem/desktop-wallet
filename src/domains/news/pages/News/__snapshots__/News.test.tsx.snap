@@ -3,7 +3,7 @@
 exports[`News should filter results based on category query and asset 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -13,7 +13,7 @@ exports[`News should filter results based on category query and asset 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -29,7 +29,7 @@ exports[`News should filter results based on category query and asset 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -104,7 +104,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -118,7 +118,7 @@ exports[`News should filter results based on category query and asset 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -141,7 +141,7 @@ exports[`News should filter results based on category query and asset 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -165,7 +165,7 @@ exports[`News should filter results based on category query and asset 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -211,7 +211,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -249,7 +249,7 @@ exports[`News should filter results based on category query and asset 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -281,10 +281,10 @@ exports[`News should filter results based on category query and asset 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -321,7 +321,7 @@ exports[`News should filter results based on category query and asset 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 hRKUkv"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="container flex space-x-8"
@@ -420,7 +420,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </p>
                     </div>
                     <div
-                      class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                     />
                   </div>
                 </div>
@@ -432,7 +432,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   class="relative"
                 >
                   <div
-                    class="absolute top-0 flex text-center rounded-b-xl bg-theme-primary-contrast right-4"
+                    class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-contrast"
                   >
                     <span
                       class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary"
@@ -442,11 +442,11 @@ exports[`News should filter results based on category query and asset 1`] = `
                   </div>
                   <img
                     alt="Blockfolio Banner"
-                    class="w-full border-2 rounded-lg border-theme-primary-contrast"
+                    class="w-full rounded-lg border-2 border-theme-primary-contrast"
                     src="blockfolio-banner.png"
                   />
                   <div
-                    class="absolute top-24 left-10"
+                    class="absolute left-10 top-24"
                   >
                     <div
                       class="flex flex-col space-y-5 text-theme-background"
@@ -525,14 +525,14 @@ exports[`News should filter results based on category query and asset 1`] = `
               class="flex-none w-2/6"
             >
               <div
-                class="p-8 border-2 rounded-lg bg-theme-background border-theme-primary-contrast"
+                class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-contrast"
                 data-testid="NewsOptions"
               >
                 <div
                   class="flex flex-col space-y-8"
                 >
                   <div
-                    class="flex items-center justify-between px-2 py-4 rounded-md shadow-xl"
+                    class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
                   >
                     <input
                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
@@ -558,7 +558,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="flex flex-col space-y-3"
                   >
                     <div
-                      class="flex items-center justify-between"
+                      class="flex justify-between items-center"
                     >
                       <h5
                         class="font-semibold"
@@ -803,7 +803,7 @@ exports[`News should filter results based on category query and asset 1`] = `
 exports[`News should filter results based on category query and asset 2`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -813,7 +813,7 @@ exports[`News should filter results based on category query and asset 2`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -829,7 +829,7 @@ exports[`News should filter results based on category query and asset 2`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -904,7 +904,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -918,7 +918,7 @@ exports[`News should filter results based on category query and asset 2`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -941,7 +941,7 @@ exports[`News should filter results based on category query and asset 2`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxhCb eFOAhf w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -965,7 +965,7 @@ exports[`News should filter results based on category query and asset 2`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1011,7 +1011,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -1049,7 +1049,7 @@ exports[`News should filter results based on category query and asset 2`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1081,10 +1081,10 @@ exports[`News should filter results based on category query and asset 2`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -1121,7 +1121,7 @@ exports[`News should filter results based on category query and asset 2`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 hRKUkv"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="container flex space-x-8"
@@ -1233,7 +1233,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </p>
                     </div>
                     <div
-                      class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+                      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
                     />
                   </div>
                 </div>
@@ -1245,7 +1245,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                   class="relative"
                 >
                   <div
-                    class="absolute top-0 flex text-center rounded-b-xl bg-theme-primary-contrast right-4"
+                    class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-contrast"
                   >
                     <span
                       class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary"
@@ -1255,11 +1255,11 @@ exports[`News should filter results based on category query and asset 2`] = `
                   </div>
                   <img
                     alt="Blockfolio Banner"
-                    class="w-full border-2 rounded-lg border-theme-primary-contrast"
+                    class="w-full rounded-lg border-2 border-theme-primary-contrast"
                     src="blockfolio-banner.png"
                   />
                   <div
-                    class="absolute top-24 left-10"
+                    class="absolute left-10 top-24"
                   >
                     <div
                       class="flex flex-col space-y-5 text-theme-background"
@@ -1408,14 +1408,14 @@ exports[`News should filter results based on category query and asset 2`] = `
               class="flex-none w-2/6"
             >
               <div
-                class="p-8 border-2 rounded-lg bg-theme-background border-theme-primary-contrast"
+                class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-contrast"
                 data-testid="NewsOptions"
               >
                 <div
                   class="flex flex-col space-y-8"
                 >
                   <div
-                    class="flex items-center justify-between px-2 py-4 rounded-md shadow-xl"
+                    class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
                   >
                     <input
                       class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
@@ -1441,7 +1441,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="flex flex-col space-y-3"
                   >
                     <div
-                      class="flex items-center justify-between"
+                      class="flex justify-between items-center"
                     >
                       <h5
                         class="font-semibold"

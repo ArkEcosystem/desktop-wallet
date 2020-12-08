@@ -7,8 +7,6 @@ import { fireEvent, render, waitFor } from "utils/testing-library";
 
 import { ReceiveFundsForm } from "./";
 
-const maxLength = 255;
-
 describe("ReceiveFundsForm", () => {
 	it("should render", async () => {
 		const { result: form } = renderHook(() => useForm());
@@ -16,7 +14,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm maxLength={maxLength} />
+					<ReceiveFundsForm />
 				</Form>,
 			);
 
@@ -32,7 +30,7 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm maxLength={maxLength} />
+					<ReceiveFundsForm />
 				</Form>,
 			);
 
@@ -52,14 +50,35 @@ describe("ReceiveFundsForm", () => {
 		await act(async () => {
 			const { asFragment, getByTestId } = render(
 				<Form context={form.current} onSubmit={(_) => _}>
-					<ReceiveFundsForm maxLength={maxLength} />
+					<ReceiveFundsForm />
 				</Form>,
 			);
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
 
 			fireEvent.input(getByTestId("ReceiveFundsForm__smartbridge"), { target: { value: "test" } });
-
 			await waitFor(() => expect(form.current.getValues("smartbridge")).toBe("test"));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue("test"));
+
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
+
+	it("should show alert if smartbridge value is too long", async () => {
+		const smartbridge = Array(256).fill("x").join("");
+		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { smartbridge } }));
+
+		await act(async () => {
+			const { asFragment, getByTestId } = render(
+				<Form context={form.current} onSubmit={(_) => _}>
+					<ReceiveFundsForm />
+				</Form>,
+			);
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(smartbridge));
+
+			fireEvent.input(getByTestId("ReceiveFundsForm__smartbridge"), { target: { value: smartbridge } });
+			await waitFor(() => expect(form.current.getValues("smartbridge")).toBe(smartbridge));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(smartbridge));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge-warning")).toBeInTheDocument());
 
 			expect(asFragment()).toMatchSnapshot();
 		});

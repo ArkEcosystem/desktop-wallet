@@ -9,7 +9,7 @@ exports[`WalletHeader should render 1`] = `
       class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
     >
       <div
-        class="container flex items-center mx-auto px-14"
+        class="container flex items-center px-14 mx-auto"
       >
         <div
           class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -37,7 +37,7 @@ exports[`WalletHeader should render 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col overflow-hidden"
+            class="flex overflow-hidden flex-col"
           >
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
@@ -113,7 +113,7 @@ exports[`WalletHeader should render 1`] = `
             class="my-auto"
           >
             <button
-              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+              class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
               color="primary"
               data-testid="WalletHeader__star-button"
               type="button"
@@ -182,7 +182,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
       class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
     >
       <div
-        class="container flex items-center mx-auto px-14"
+        class="container flex items-center px-14 mx-auto"
       >
         <div
           class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -210,7 +210,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col overflow-hidden"
+            class="flex overflow-hidden flex-col"
           >
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
@@ -331,7 +331,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             class="my-auto"
           >
             <button
-              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+              class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
               color="primary"
               data-testid="WalletHeader__star-button"
               type="button"
@@ -400,7 +400,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
       class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
     >
       <div
-        class="container flex items-center mx-auto px-14"
+        class="container flex items-center px-14 mx-auto"
       >
         <div
           class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -428,7 +428,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col overflow-hidden"
+            class="flex overflow-hidden flex-col"
           >
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
@@ -549,7 +549,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             class="my-auto"
           >
             <button
-              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+              class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
               color="primary"
               data-testid="WalletHeader__star-button"
               type="button"
@@ -618,7 +618,7 @@ exports[`WalletHeader should show modifiers 1`] = `
       class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
     >
       <div
-        class="container flex items-center mx-auto px-14"
+        class="container flex items-center px-14 mx-auto"
       >
         <div
           class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -646,7 +646,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col overflow-hidden"
+            class="flex overflow-hidden flex-col"
           >
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
@@ -749,7 +749,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             class="my-auto"
           >
             <button
-              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+              class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
               color="primary"
               data-testid="WalletHeader__star-button"
               type="button"

@@ -80,18 +80,18 @@ export const Welcome = () => {
 	return (
 		<>
 			<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
-				<Section className="flex flex-col justify-center flex-1 text-center">
+				<Section className="flex flex-col flex-1 justify-center text-center">
 					<h1 className="mb-8 font-extrabold">
 						<Trans i18nKey="PROFILE.PAGE_WELCOME.TITLE">
 							Welcome to the <br /> ARK Desktop Wallet
 						</Trans>
 					</h1>
 
-					<div className="w-64 mx-auto lg:w-96">
+					<div className="mx-auto w-64 lg:w-96">
 						<Image name="WelcomeBanner" />
 					</div>
 
-					<div className="max-w-lg mx-auto mt-8 md:max-w-xl">
+					<div className="mx-auto mt-8 max-w-lg md:max-w-xl">
 						<h2 className="mx-4 text-xl font-bold md:text-2xl">
 							{t("COMMON.SELECT_OPTION", { option: t("COMMON.PROFILE") })}
 						</h2>

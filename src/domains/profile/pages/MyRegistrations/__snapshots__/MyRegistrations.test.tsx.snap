@@ -3,7 +3,7 @@
 exports[`MyRegistrations should filter registrations based on profile setting 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -13,7 +13,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -29,7 +29,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -103,7 +103,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -117,7 +117,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -140,7 +140,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -164,7 +164,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -200,7 +200,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                   />
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -236,7 +236,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -268,10 +268,10 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -295,7 +295,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -339,7 +339,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -761,7 +761,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -1469,7 +1469,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateRegistrations"
@@ -1774,7 +1774,7 @@ exports[`MyRegistrations should handle entity update dropdown action 1`] = `<Doc
 exports[`MyRegistrations should render business registrations 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1784,7 +1784,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -1800,7 +1800,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -1874,7 +1874,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1888,7 +1888,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -1911,7 +1911,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -1935,7 +1935,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1981,7 +1981,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -2019,7 +2019,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2051,10 +2051,10 @@ exports[`MyRegistrations should render business registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -2078,7 +2078,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -2122,7 +2122,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -2544,7 +2544,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -3252,7 +3252,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateRegistrations"
@@ -3549,7 +3549,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
 exports[`MyRegistrations should render delegate registrations 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3559,7 +3559,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -3575,7 +3575,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -3649,7 +3649,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -3663,7 +3663,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -3686,7 +3686,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -3710,7 +3710,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -3756,7 +3756,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -3794,7 +3794,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3826,10 +3826,10 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -3853,7 +3853,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -3897,7 +3897,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -4319,7 +4319,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -5027,7 +5027,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateRegistrations"
@@ -5324,7 +5324,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
 exports[`MyRegistrations should render empty state 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -5334,7 +5334,7 @@ exports[`MyRegistrations should render empty state 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -5350,7 +5350,7 @@ exports[`MyRegistrations should render empty state 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -5431,7 +5431,7 @@ exports[`MyRegistrations should render empty state 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -5455,7 +5455,7 @@ exports[`MyRegistrations should render empty state 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -5479,7 +5479,7 @@ exports[`MyRegistrations should render empty state 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -5525,7 +5525,7 @@ exports[`MyRegistrations should render empty state 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -5563,7 +5563,7 @@ exports[`MyRegistrations should render empty state 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -5595,10 +5595,10 @@ exports[`MyRegistrations should render empty state 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -5622,7 +5622,7 @@ exports[`MyRegistrations should render empty state 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -5666,7 +5666,7 @@ exports[`MyRegistrations should render empty state 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="text-center"
@@ -5693,7 +5693,7 @@ exports[`MyRegistrations should render empty state 1`] = `
 exports[`MyRegistrations should render entity delegate registrations 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -5703,7 +5703,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -5719,7 +5719,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -5793,7 +5793,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5807,7 +5807,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -5830,7 +5830,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -5854,7 +5854,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -5900,7 +5900,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -5938,7 +5938,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -5970,10 +5970,10 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -5997,7 +5997,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -6041,7 +6041,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="EntityDelegateRegistrations"
@@ -6324,7 +6324,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
 exports[`MyRegistrations should render plugin registrations 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -6334,7 +6334,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -6350,7 +6350,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -6424,7 +6424,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6438,7 +6438,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -6461,7 +6461,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -6485,7 +6485,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -6531,7 +6531,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -6569,7 +6569,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -6601,10 +6601,10 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -6628,7 +6628,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -6672,7 +6672,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -7094,7 +7094,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -7802,7 +7802,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateRegistrations"
@@ -8099,7 +8099,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
 exports[`MyRegistrations should render with unsynced wallets 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -8109,7 +8109,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -8125,7 +8125,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -8199,7 +8199,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -8213,7 +8213,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -8236,7 +8236,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -8260,7 +8260,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -8306,7 +8306,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -8344,7 +8344,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -8376,10 +8376,10 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -8403,7 +8403,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                   class="relative"
                 >
                   <button
-                    class="h-full my-auto font-semibold cursor-pointer focus:outline-none"
+                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
                   >
                     <div
@@ -8447,7 +8447,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -8726,7 +8726,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -9148,7 +9148,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateRegistrations"
@@ -9445,7 +9445,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
 exports[`MyRegistrations should reset search results when clicking search reset button 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -9455,7 +9455,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -9471,7 +9471,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -9545,7 +9545,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -9559,7 +9559,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -9582,7 +9582,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -9606,7 +9606,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -9652,7 +9652,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -9690,7 +9690,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -9722,10 +9722,10 @@ exports[`MyRegistrations should reset search results when clicking search reset 
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -9809,7 +9809,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -10231,7 +10231,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -10939,7 +10939,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateRegistrations"
@@ -11236,7 +11236,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
 exports[`MyRegistrations should search and find business entity 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -11246,7 +11246,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -11262,7 +11262,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -11336,7 +11336,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -11350,7 +11350,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -11373,7 +11373,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -11397,7 +11397,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -11443,7 +11443,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -11481,7 +11481,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -11513,10 +11513,10 @@ exports[`MyRegistrations should search and find business entity 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -11600,7 +11600,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -11879,7 +11879,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -12305,7 +12305,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
 exports[`MyRegistrations should search and find delegate wallet 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -12315,7 +12315,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -12331,7 +12331,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -12405,7 +12405,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -12419,7 +12419,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -12442,7 +12442,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -12466,7 +12466,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -12512,7 +12512,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -12550,7 +12550,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -12582,10 +12582,10 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -12669,7 +12669,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -13091,7 +13091,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -13799,7 +13799,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="DelegateRegistrations"
@@ -14096,7 +14096,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
 exports[`MyRegistrations should search and find plugin entity 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -14106,7 +14106,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -14122,7 +14122,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -14196,7 +14196,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -14210,7 +14210,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -14233,7 +14233,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -14257,7 +14257,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -14303,7 +14303,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -14341,7 +14341,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -14373,10 +14373,10 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -14460,7 +14460,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="BusinessRegistrations"
@@ -14739,7 +14739,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             data-testid="PluginRegistrations"
@@ -15165,7 +15165,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
 exports[`MyRegistrations should search and see empty results screen 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -15175,7 +15175,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -15191,7 +15191,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -15265,7 +15265,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -15279,7 +15279,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -15302,7 +15302,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -15326,7 +15326,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -15372,7 +15372,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -15410,7 +15410,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -15442,10 +15442,10 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -15529,7 +15529,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex flex-col justify-center h-full text-center bg-theme-background flex-1"
@@ -15547,7 +15547,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                 No results found. Refine your search and try again
               </div>
               <div
-                class="mx-auto my-4 w-128"
+                class="my-4 mx-auto w-128"
               >
                 <svg>
                   no-results.svg

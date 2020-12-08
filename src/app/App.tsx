@@ -26,7 +26,14 @@ import { StubStorage } from "tests/mocks";
 import { Theme } from "types";
 
 import { middlewares, RouterView, routes } from "../router";
-import { EnvironmentProvider, LedgerProvider, ThemeProvider, useEnvironmentContext, useThemeContext } from "./contexts";
+import {
+	ConfigurationProvider,
+	EnvironmentProvider,
+	LedgerProvider,
+	ThemeProvider,
+	useEnvironmentContext,
+	useThemeContext,
+} from "./contexts";
 import { useDarkMode, useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
@@ -160,11 +167,13 @@ export const App = () => {
 		<I18nextProvider i18n={i18n}>
 			<EnvironmentProvider env={env}>
 				<ThemeProvider>
-					<ErrorBoundary FallbackComponent={ApplicationError}>
-						<LedgerProvider transport={LedgerTransportNodeHID}>
-							<Main />
-						</LedgerProvider>
-					</ErrorBoundary>
+					<ConfigurationProvider>
+						<ErrorBoundary FallbackComponent={ApplicationError}>
+							<LedgerProvider transport={LedgerTransportNodeHID}>
+								<Main />
+							</LedgerProvider>
+						</ErrorBoundary>
+					</ConfigurationProvider>
 				</ThemeProvider>
 			</EnvironmentProvider>
 		</I18nextProvider>

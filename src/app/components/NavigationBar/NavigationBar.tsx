@@ -75,7 +75,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 					</Circle>
 
 					<div
-						className="relative inline-flex items-center justify-center align-middle rounded-full"
+						className="inline-flex relative justify-center items-center align-middle rounded-full"
 						data-testid="navbar__user--avatar"
 					>
 						<AvatarWrapper size="lg">
@@ -89,7 +89,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 							) : (
 								<img
 									alt="Profile Avatar"
-									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+									className="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
 									src={avatarImage}
 								/>
 							)}
@@ -175,7 +175,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
 			<div className="px-4 sm:px-6 lg:px-10">
-				<div className="relative flex justify-between h-20 md:h-24">
+				<div className="flex relative justify-between h-20 md:h-24">
 					<div className="flex items-center my-auto">
 						<LogoContainer>
 							<ARKLogo width={48} />
@@ -186,14 +186,14 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 					{variant === "full" && (
 						<>
-							<ul className="flex h-20 ml-4 mr-auto space-x-8 md:h-24">{renderMenu()}</ul>
+							<ul className="flex mr-auto ml-4 space-x-8 h-20 md:h-24">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
 
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
-								<div className="flex items-center overflow-hidden rounded-lg">
+								<div className="flex overflow-hidden items-center rounded-lg">
 									<Button
 										disabled={!wallets.length}
 										variant="transparent"
@@ -208,7 +208,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
-								<div className="flex items-center overflow-hidden rounded-lg">
+								<div className="flex overflow-hidden items-center rounded-lg">
 									<Button
 										size="icon"
 										variant="transparent"
@@ -223,7 +223,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 							</div>
 
-							<div className="flex items-center my-auto ml-8 mr-4">
+							<div className="flex items-center my-auto mr-4 ml-8">
 								<div className="text-right">
 									<div className="text-xs font-semibold text-theme-neutral-700">
 										{t("COMMON.YOUR_BALANCE")}

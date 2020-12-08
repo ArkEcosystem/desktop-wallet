@@ -8,21 +8,21 @@ export default { title: "App / Components / Card" };
 export const Default = () => <Card className="inline-flex">ARK Ecosystem</Card>;
 
 export const Control = () => (
-	<div className="grid max-w-lg grid-cols-3 gap-4">
+	<div className="grid grid-cols-3 gap-4 max-w-lg">
 		<CardControl defaultChecked={true} className="grid">
-			<div className="flex flex-col items-center justify-between h-full space-y-3">
+			<div className="flex flex-col justify-between items-center space-y-3 h-full">
 				<span className="text-center">ARK Ecosystem</span>
 				<CardControlState />
 			</div>
 		</CardControl>
 		<CardControl className="grid">
-			<div className="flex flex-col items-center justify-between h-full">
+			<div className="flex flex-col justify-between items-center h-full">
 				<span>Bitcoin</span>
 				<CardControlState />
 			</div>
 		</CardControl>
 		<CardControl className="grid" disabled>
-			<div className="flex flex-col items-center justify-between h-full">
+			<div className="flex flex-col justify-between items-center h-full">
 				<span>Ethereum</span>
 				<CardControlState />
 			</div>

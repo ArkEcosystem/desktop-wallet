@@ -1,50 +1,172 @@
-import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+/* eslint-disable @typescript-eslint/require-await */
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
+import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
-import { renderWithRouter, waitFor } from "utils/testing-library";
+import { Route } from "react-router-dom";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	useDefaultNetMocks,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
-import { transactions } from "../../data";
 import { Transactions } from "./Transactions";
 
+const history = createMemoryHistory();
+let profile: Profile;
+
+const fixtureProfileId = getDefaultProfileId();
+let dashboardURL: string;
+
+beforeAll(async () => {
+	useDefaultNetMocks();
+
+	nock("https://neoscan.io/api/main_net/v1/")
+		.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
+		.reply(200, []);
+
+	nock("https://dwallets.ark.io")
+		.get("/api/transactions")
+		.query(true)
+		.reply(200, () => {
+			const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
+			return {
+				meta,
+				data: data.slice(0, 2),
+			};
+		})
+		.persist();
+
+	profile = env.profiles().findById(fixtureProfileId);
+
+	await syncDelegates();
+});
+
+beforeEach(() => {
+	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
+	history.push(dashboardURL);
+});
+
 describe("Transactions", () => {
-	it("should render with", () => {
-		const { container } = renderWithRouter(<Transactions fetchMoreAction={() => console.log("fetchMoreAction")} />);
-
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should render with custom title", () => {
-		const { container } = renderWithRouter(
-			<Transactions title="Transaction history" fetchMoreAction={() => console.log("fetchMoreAction")} />,
+	it("should render", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={profile} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 
-		expect(container).toMatchSnapshot();
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with transactions", () => {
-		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
-			votes.map(
-				(vote: string, index: number) =>
-					new ReadOnlyWallet({
-						address: vote,
-						username: `delegate-${index}`,
-					}),
-			),
+	it("should render hidden", async () => {
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard" isVisible={false}>
+				<Transactions profile={profile} isVisible={false} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 
-		const { container } = renderWithRouter(
-			<Transactions transactions={transactions} fetchMoreAction={() => console.log("fetchMoreAction")} />,
-		);
-
-		expect(container).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render empty results screen", async () => {
-		const { container, getByTestId } = renderWithRouter(
-			<Transactions fetchMoreAction={() => console.log("fetchMoreAction")} isUsingFilters={true} />,
+	it("should filter by type", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={profile} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+
+		expect(getByTestId("FilterTransactionsToggle")).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(getByTestId("FilterTransactionsToggle"));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--core-0"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+	});
+
+	it("should open detail modal on transaction row click", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={profile} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+
+		act(() => {
+			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeInTheDocument();
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should fetch more transactions", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={profile} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("EmptyResults")).toBeInTheDocument();
+			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
 		});
+
+		act(() => {
+			fireEvent.click(getByTestId("transactions__fetch-more-button"));
+		});
+
+		expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.LOADING);
+
+		await waitFor(() => {
+			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
+		});
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

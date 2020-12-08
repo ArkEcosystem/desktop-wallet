@@ -7,7 +7,7 @@ exports[`LinkCollection should add links 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -17,7 +17,7 @@ exports[`LinkCollection should add links 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -46,13 +46,13 @@ exports[`LinkCollection should add links 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="type"
             >
               Add media
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -145,13 +145,13 @@ exports[`LinkCollection should add links 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="value"
             >
               Link
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -337,7 +337,7 @@ exports[`LinkCollection should remove links 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -347,7 +347,7 @@ exports[`LinkCollection should remove links 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -376,13 +376,13 @@ exports[`LinkCollection should remove links 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="type"
             >
               Add media
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -454,13 +454,13 @@ exports[`LinkCollection should remove links 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="value"
             >
               Link
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -495,7 +495,7 @@ exports[`LinkCollection should render 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -505,7 +505,7 @@ exports[`LinkCollection should render 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
           height="10"
           width="10"
         >
@@ -531,7 +531,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -541,7 +541,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -570,13 +570,13 @@ exports[`LinkCollection should select a specific link type 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="type"
             >
               Add media
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -648,13 +648,13 @@ exports[`LinkCollection should select a specific link type 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="value"
             >
               Link
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -949,7 +949,7 @@ exports[`LinkCollection should toggle open/close link collection 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -959,7 +959,7 @@ exports[`LinkCollection should toggle open/close link collection 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
           height="10"
           width="10"
         >

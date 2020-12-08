@@ -64,7 +64,7 @@ export const CompactPagination = ({
 				</Button>
 			)}
 
-			<div className="flex items-center px-5 py-3 rounded bg-theme-primary-contrast text-theme-primary">
+			<div className="flex items-center py-3 px-5 rounded bg-theme-primary-contrast text-theme-primary">
 				{`${t("COMMON.PAGE")} ${currentPage} ${t("COMMON.OF")} ${totalPages}`}
 			</div>
 

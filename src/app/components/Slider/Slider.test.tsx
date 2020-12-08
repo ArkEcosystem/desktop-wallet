@@ -73,6 +73,11 @@ describe("Slider", () => {
 		const { container } = render(<Slider data={multiple} />);
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render pagination on top right", () => {
+		const { container } = render(<Slider data={multiple} paginationPosition="top-right" />);
+		expect(container).toMatchSnapshot();
+	});
 });
 
 describe("useSlider hook", () => {
@@ -87,5 +92,19 @@ describe("useSlider hook", () => {
 		expect(result.current.containerHeight).toBe(288);
 		expect(result.current.showPagination).toBe(true);
 		expect(result.current.slideStyles).toStrictEqual({ height: "192px", marginTop: "0" });
+	});
+
+	it("should adjust height based on slides per column", () => {
+		const { result } = renderHook(() =>
+			useSlider({
+				container: ".slide-container",
+				paginationPosition: "bottom-center",
+				data: multiple,
+				options: { slidesPerColumn: 2 },
+			}),
+		);
+		expect(result.current.containerHeight).toBe(480);
+		expect(result.current.showPagination).toBe(true);
+		expect(result.current.slideStyles).toStrictEqual({ height: "192px" });
 	});
 });

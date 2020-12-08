@@ -3,7 +3,7 @@
 exports[`WalletDetails should not fail if the votes have not yet been synchronized 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -13,7 +13,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -29,7 +29,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -103,7 +103,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -117,7 +117,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -140,7 +140,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -164,7 +164,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -210,7 +210,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -248,7 +248,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -283,7 +283,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
           class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
-            class="container flex items-center mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -323,7 +323,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 </div>
               </div>
               <div
-                class="flex flex-col overflow-hidden"
+                class="flex overflow-hidden flex-col"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -405,7 +405,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+                  class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   color="primary"
                   data-testid="WalletHeader__star-button"
                   type="button"
@@ -466,7 +466,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
         class="Section__SectionWrapper-sc-8cjvre-0 iJyoWF"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex"
@@ -524,7 +524,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     </div>
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -614,7 +614,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     />
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -666,11 +666,11 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="relative flex justify-between"
+              class="flex relative justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -1057,7 +1057,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               </div>
             </div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              class="sc-AxjAm fCKjFI mt-10 mb-5 w-full"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -1075,7 +1075,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
 exports[`WalletDetails should open detail modal on transaction row click 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -1085,7 +1085,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -1101,7 +1101,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -1175,7 +1175,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1189,7 +1189,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -1212,7 +1212,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -1236,7 +1236,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1282,7 +1282,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -1320,7 +1320,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1355,7 +1355,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
           class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
-            class="container flex items-center mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -1395,7 +1395,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col overflow-hidden"
+                class="flex overflow-hidden flex-col"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -1477,7 +1477,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+                  class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   color="primary"
                   data-testid="WalletHeader__star-button"
                   type="button"
@@ -1538,7 +1538,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 iJyoWF"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex"
@@ -1598,7 +1598,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col justify-between h-full ml-4 mr-8"
+                    class="flex flex-col justify-between mr-8 ml-4 h-full"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -1617,7 +1617,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -1690,7 +1690,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     />
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -1742,11 +1742,11 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="relative flex justify-between"
+              class="flex relative justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -2133,7 +2133,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              class="sc-AxjAm fCKjFI mt-10 mb-5 w-full"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -2151,7 +2151,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
 exports[`WalletDetails should remove wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -2161,7 +2161,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -2177,7 +2177,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -2251,7 +2251,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2265,7 +2265,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -2288,7 +2288,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -2312,7 +2312,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -2358,7 +2358,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -2396,7 +2396,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2431,7 +2431,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
           class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
-            class="container flex items-center mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -2471,7 +2471,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col overflow-hidden"
+                class="flex overflow-hidden flex-col"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -2553,7 +2553,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+                  class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   color="primary"
                   data-testid="WalletHeader__star-button"
                   type="button"
@@ -2614,7 +2614,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 iJyoWF"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex"
@@ -2674,7 +2674,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col justify-between h-full ml-4 mr-8"
+                    class="flex flex-col justify-between mr-8 ml-4 h-full"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -2693,7 +2693,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -2766,7 +2766,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     />
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -2818,11 +2818,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="relative flex justify-between"
+              class="flex relative justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -3209,7 +3209,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              class="sc-AxjAm fCKjFI mt-10 mb-5 w-full"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -3227,7 +3227,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
 exports[`WalletDetails should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -3237,7 +3237,7 @@ exports[`WalletDetails should render 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -3253,7 +3253,7 @@ exports[`WalletDetails should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -3327,7 +3327,7 @@ exports[`WalletDetails should render 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -3341,7 +3341,7 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -3364,7 +3364,7 @@ exports[`WalletDetails should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -3388,7 +3388,7 @@ exports[`WalletDetails should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -3434,7 +3434,7 @@ exports[`WalletDetails should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -3472,7 +3472,7 @@ exports[`WalletDetails should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3507,7 +3507,7 @@ exports[`WalletDetails should render 1`] = `
           class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
-            class="container flex items-center mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -3547,7 +3547,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col overflow-hidden"
+                class="flex overflow-hidden flex-col"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -3635,7 +3635,7 @@ exports[`WalletDetails should render 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+                  class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   color="primary"
                   data-testid="WalletHeader__star-button"
                   type="button"
@@ -3696,7 +3696,7 @@ exports[`WalletDetails should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 iJyoWF"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex"
@@ -3756,7 +3756,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col justify-between h-full ml-4 mr-8"
+                    class="flex flex-col justify-between mr-8 ml-4 h-full"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -3775,7 +3775,7 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -3848,7 +3848,7 @@ exports[`WalletDetails should render 1`] = `
                     />
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -3900,11 +3900,11 @@ exports[`WalletDetails should render 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="relative flex justify-between"
+              class="flex relative justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -4291,7 +4291,7 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              class="sc-AxjAm fCKjFI mt-10 mb-5 w-full"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -4309,7 +4309,7 @@ exports[`WalletDetails should render 1`] = `
 exports[`WalletDetails should render when wallet hasn't voted 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -4319,7 +4319,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -4335,7 +4335,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -4409,7 +4409,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4423,7 +4423,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -4446,7 +4446,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -4470,7 +4470,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -4516,7 +4516,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -4554,7 +4554,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4589,7 +4589,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
           class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
-            class="container flex items-center mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -4629,7 +4629,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col overflow-hidden"
+                class="flex overflow-hidden flex-col"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -4711,7 +4711,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+                  class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   color="primary"
                   data-testid="WalletHeader__star-button"
                   type="button"
@@ -4772,7 +4772,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 iJyoWF"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex"
@@ -4830,7 +4830,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -4920,7 +4920,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                     />
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -4972,11 +4972,11 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="relative flex justify-between"
+              class="flex relative justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -5363,7 +5363,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              class="sc-AxjAm fCKjFI mt-10 mb-5 w-full"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -5381,7 +5381,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
 exports[`WalletDetails should render when wallet not found for votes 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -5391,7 +5391,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -5407,7 +5407,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -5481,7 +5481,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5495,7 +5495,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -5518,7 +5518,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -5542,7 +5542,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -5588,7 +5588,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -5626,7 +5626,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -5661,7 +5661,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
           class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
-            class="container flex items-center mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -5701,7 +5701,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col overflow-hidden"
+                class="flex overflow-hidden flex-col"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -5783,7 +5783,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+                  class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   color="primary"
                   data-testid="WalletHeader__star-button"
                   type="button"
@@ -5844,7 +5844,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 iJyoWF"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex"
@@ -5902,7 +5902,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -5992,7 +5992,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     />
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -6044,11 +6044,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="relative flex justify-between"
+              class="flex relative justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -6435,7 +6435,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              class="sc-AxjAm fCKjFI mt-10 mb-5 w-full"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -6453,7 +6453,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
 exports[`WalletDetails should star and unstar a wallet 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -6463,7 +6463,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -6479,7 +6479,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -6553,7 +6553,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6567,7 +6567,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -6590,7 +6590,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -6614,7 +6614,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -6660,7 +6660,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -6698,7 +6698,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -6733,7 +6733,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
           class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
-            class="container flex items-center mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -6773,7 +6773,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col overflow-hidden"
+                class="flex overflow-hidden flex-col"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -6855,7 +6855,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+                  class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   color="primary"
                   data-testid="WalletHeader__star-button"
                   type="button"
@@ -6916,7 +6916,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 iJyoWF"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex"
@@ -6976,7 +6976,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col justify-between h-full ml-4 mr-8"
+                    class="flex flex-col justify-between mr-8 ml-4 h-full"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -6995,7 +6995,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -7068,7 +7068,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     />
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -7120,11 +7120,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="relative flex justify-between"
+              class="flex relative justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -7511,7 +7511,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              class="sc-AxjAm fCKjFI mt-10 mb-5 w-full"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"
@@ -7529,7 +7529,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
 exports[`WalletDetails should update wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
@@ -7539,7 +7539,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
@@ -7555,7 +7555,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -7629,7 +7629,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -7643,7 +7643,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -7666,7 +7666,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
               <button
                 class="sc-AxjAm cGlMcw w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
@@ -7690,7 +7690,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -7736,7 +7736,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -7774,7 +7774,7 @@ exports[`WalletDetails should update wallet name 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -7809,7 +7809,7 @@ exports[`WalletDetails should update wallet name 1`] = `
           class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
         >
           <div
-            class="container flex items-center mx-auto px-14"
+            class="container flex items-center px-14 mx-auto"
           >
             <div
               class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -7849,7 +7849,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col overflow-hidden"
+                class="flex overflow-hidden flex-col"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -7937,7 +7937,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+                  class="sc-AxjAm cGlMcw w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   color="primary"
                   data-testid="WalletHeader__star-button"
                   type="button"
@@ -7998,7 +7998,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 iJyoWF"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
             class="flex"
@@ -8058,7 +8058,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col justify-between h-full ml-4 mr-8"
+                    class="flex flex-col justify-between mr-8 ml-4 h-full"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -8077,7 +8077,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-sm font-semibold text-theme-neutral"
@@ -8150,7 +8150,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     />
                   </div>
                   <div
-                    class="flex justify-between flex-1"
+                    class="flex flex-1 justify-between"
                   >
                     <div
                       class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -8202,11 +8202,11 @@ exports[`WalletDetails should update wallet name 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div>
             <div
-              class="relative flex justify-between"
+              class="flex relative justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -8593,7 +8593,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-10 mb-5"
+              class="sc-AxjAm fCKjFI mt-10 mb-5 w-full"
               color="primary"
               data-testid="transactions__fetch-more-button"
               type="button"

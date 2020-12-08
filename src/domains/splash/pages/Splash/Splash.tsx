@@ -28,14 +28,14 @@ export const Splash = ({ year }: any) => {
 
 	return (
 		<Page navbarVariant="logo-only">
-			<Section className="flex flex-col justify-center flex-1 text-center select-none">
-				<div className="w-64 mx-auto lg:w-96">
+			<Section className="flex flex-col flex-1 justify-center text-center select-none">
+				<div className="mx-auto w-64 lg:w-96">
 					<Image name="WelcomeBanner" />
 				</div>
 
 				<div data-testid="Splash__text" className="mt-8">
 					<h1 className="text-4xl font-extrabold">{t("SPLASH.BRAND")}</h1>
-					<p className="text-theme-secondary-text animate-pulse">{t("SPLASH.LOADING")}</p>
+					<p className="animate-pulse text-theme-secondary-text">{t("SPLASH.LOADING")}</p>
 					<div className="flex justify-center mt-4">
 						<div className="animate-spin">
 							<CircularProgressBar
@@ -53,7 +53,7 @@ export const Splash = ({ year }: any) => {
 				</div>
 				<div
 					data-testid="Splash__footer"
-					className="fixed left-0 right-0 flex items-center justify-center text-xs font-semibold bottom-5 text-theme-neutral-500 dark:text-theme-neutral-700"
+					className="flex fixed right-0 left-0 bottom-5 justify-center items-center text-xs font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
 				>
 					<div>
 						{currentYear} {t("SPLASH.COPYRIGHT")}

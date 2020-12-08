@@ -173,7 +173,7 @@ export const SummaryStep = ({
 				</div>
 			</TransactionDetail>
 
-			<div className="px-10 pt-6 mt-4 -mx-10 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800">
+			<div className="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800">
 				<Signatures transactionId={transaction.id()} publicKeys={participants} wallet={wallet} />
 			</div>
 		</section>

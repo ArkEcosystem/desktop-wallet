@@ -54,7 +54,7 @@ exports[`WalletVote should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col justify-between h-full ml-4 mr-8"
+        class="flex flex-col justify-between mr-8 ml-4 h-full"
       >
         <span
           class="text-sm font-semibold text-theme-neutral"
@@ -73,7 +73,7 @@ exports[`WalletVote should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col items-center justify-between h-full pl-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+        class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
       >
         <span
           class="text-sm font-semibold text-theme-neutral"
@@ -573,7 +573,7 @@ exports[`WalletVote should render the maximum votes 1`] = `
         </div>
       </div>
       <div
-        class="flex justify-between flex-1"
+        class="flex flex-1 justify-between"
       >
         <div
           class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -672,7 +672,7 @@ exports[`WalletVote should render without votes 1`] = `
         </div>
       </div>
       <div
-        class="flex justify-between flex-1"
+        class="flex flex-1 justify-between"
       >
         <div
           class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"

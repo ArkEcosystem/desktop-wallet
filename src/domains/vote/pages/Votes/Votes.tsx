@@ -2,7 +2,7 @@ import { ProfileSetting, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/p
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
-import { Dropdown, DropdownOption } from "app/components/Dropdown";
+import { Dropdown } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
@@ -124,11 +124,9 @@ export const Votes = () => {
 		useTestNetworks: activeProfile.settings().get(ProfileSetting.UseTestNetworks) as boolean,
 		selectedNetworkIds,
 		walletsDisplayType,
-		onNetworkChange: (_: any, networks: any[]) => {
-			setSelectedNetworkIds(networks.filter((network) => network.isSelected).map((network) => network.id));
-		},
-		onWalletsDisplayType: ({ value }: DropdownOption) => {
-			setWalletsDisplayType(value as string);
+		onChange: (key: string, value: any) => {
+			if (key === "walletsDisplayType") setWalletsDisplayType(value);
+			if (key === "selectedNetworkIds") setSelectedNetworkIds(value);
 		},
 	};
 
@@ -249,7 +247,7 @@ export const Votes = () => {
 								onReset={() => setSearchQuery("")}
 								debounceTimeout={100}
 							/>
-							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+							<div className="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
 									<Dropdown
@@ -260,7 +258,7 @@ export const Votes = () => {
 											</div>
 										}
 									>
-										<div className="px-10 py-7 w-128">
+										<div className="py-7 px-10 w-128">
 											<FilterWallets {...filterProperties} showToggleViews={false} />
 										</div>
 									</Dropdown>
@@ -280,7 +278,7 @@ export const Votes = () => {
 			{isEmptyObject(walletsByCoin) ? (
 				<Section className="flex-1">
 					<EmptyBlock>
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<Trans
 								i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
 								defaults="Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status"

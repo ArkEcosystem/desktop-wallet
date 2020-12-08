@@ -203,7 +203,8 @@ describe("NavigationBar", () => {
 			fireEvent.click(getAllByText("Select")[0]);
 		});
 
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(2));
+		await waitFor(() => expect(getByTestId("ReceiveFunds__name")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("ReceiveFunds__address")).toBeInTheDocument());
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
 
 		act(() => {
