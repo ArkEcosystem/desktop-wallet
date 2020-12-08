@@ -43,7 +43,7 @@ export const PeerListItem = ({ coin, network, name, host, isMultiSignature, opti
 					<Dropdown
 						toggleContent={
 							<div className="float-right">
-								<Button variant="plain" size="icon">
+								<Button variant="secondary" size="icon">
 									<Icon name="Settings" width={20} height={20} />
 								</Button>
 							</div>

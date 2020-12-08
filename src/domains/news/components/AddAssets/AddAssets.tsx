@@ -80,7 +80,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 				</div>
 
 				<div className="flex justify-end mt-4 space-x-3">
-					<Button variant="plain">{t("COMMON.CANCEL")}</Button>
+					<Button variant="secondary">{t("COMMON.CANCEL")}</Button>
 					<Button type="submit">{t("COMMON.UPDATE")}</Button>
 				</div>
 			</Form>

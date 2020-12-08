@@ -56,7 +56,7 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
 					data-testid="RecipientListItem__select-button"
-					variant="plain"
+					variant="secondary"
 					onClick={() => onAction(recipient.address)}
 				>
 					{t("COMMON.SELECT")}

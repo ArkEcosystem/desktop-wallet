@@ -41,7 +41,7 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 			onClose={onClose}
 		>
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="plain" onClick={onCancel} data-testid="ResetProfile__cancel-button">
+				<Button variant="secondary" onClick={onCancel} data-testid="ResetProfile__cancel-button">
 					{t("COMMON.CANCEL")}
 				</Button>
 

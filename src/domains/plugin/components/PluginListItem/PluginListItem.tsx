@@ -69,7 +69,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 			<TableCell variant="end" className="w-16" innerClassName="justify-end">
 				{!plugin.isInstalled && (
-					<Button variant="plain" onClick={() => onInstall(plugin)} data-testid="PluginListItem__install">
+					<Button variant="secondary" onClick={() => onInstall(plugin)} data-testid="PluginListItem__install">
 						{t("COMMON.INSTALL")}
 					</Button>
 				)}
@@ -77,7 +77,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 				{plugin.isInstalled && (
 					<Dropdown
 						toggleContent={
-							<Button variant="plain" size="icon" className="text-left">
+							<Button variant="secondary" size="icon" className="text-left">
 								<Icon name="Settings" width={20} height={20} />
 							</Button>
 						}

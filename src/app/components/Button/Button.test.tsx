@@ -10,33 +10,25 @@ describe("Button", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render contrast text if not primary", () => {
-		const { container } = render(<Button color="danger" />);
-
-		expect(container).toHaveStyle("color: var(--theme-color-danger-contrast);");
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should render white text if primary", () => {
-		const { container } = render(<Button variant="solid" color="primary" />);
-
-		expect(container).toHaveStyle("color: var(--theme-white);");
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should render as plain", () => {
-		const { container } = render(<Button variant="plain" />);
+	it("should render as primary button", () => {
+		const { container } = render(<Button variant="primary" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render as outline", () => {
-		const { container } = render(<Button variant="outline" />);
+	it("should render as secondary button", () => {
+		const { container } = render(<Button variant="secondary" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render as transparent", () => {
+	it("should render as danger button", () => {
+		const { container } = render(<Button variant="danger" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render as transparent button", () => {
 		const { container } = render(<Button variant="transparent" />);
 
 		expect(container).toMatchSnapshot();

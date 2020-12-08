@@ -131,7 +131,7 @@ export const DelegateRow = ({
 			<TableCell variant="end" className="w-40" innerClassName={`justify-end ${getColorSelected()}`}>
 				{isVoted ? (
 					<Button
-						variant="plain"
+						variant="secondary"
 						color={!isSelectedUnvote ? "primary" : "danger"}
 						onClick={() => onUnvoteSelect?.(delegate.address())}
 						data-testid={`DelegateRow__toggle-${index}`}
@@ -146,7 +146,7 @@ export const DelegateRow = ({
 						{!isSelectedVote && isVoteDisabled ? (
 							<span>
 								<Button
-									variant="plain"
+									variant="secondary"
 									color="primary"
 									disabled
 									data-testid={`DelegateRow__toggle-${index}`}
@@ -156,7 +156,7 @@ export const DelegateRow = ({
 							</span>
 						) : (
 							<Button
-								variant="plain"
+								variant="secondary"
 								color={isSelectedVote ? "success" : "primary"}
 								onClick={() => onVoteSelect?.(delegate.address())}
 								data-testid={`DelegateRow__toggle-${index}`}

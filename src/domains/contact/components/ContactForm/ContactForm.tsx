@@ -38,7 +38,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 			data-testid="contact-form__remove-address-btn"
 			size="icon"
 			className="flex items-center ml-auto"
-			variant="plain"
+			variant="secondary"
 			onClick={() => onRemove(address)}
 		>
 			<Icon name="Trash" />
@@ -214,7 +214,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 				<div className="mt-4">
 					<Button
 						data-testid="contact-form__add-address-btn"
-						variant="plain"
+						variant="secondary"
 						className="w-full"
 						disabled={!network || !address}
 						onClick={handleAddAddress}
@@ -228,21 +228,21 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 
 			<div className={`flex w-full ${contact ? "justify-between" : "justify-end"}`}>
 				{contact && (
-					<Button data-testid="contact-form__delete-btn" onClick={onDelete} color="danger" variant="plain">
+					<Button data-testid="contact-form__delete-btn" onClick={onDelete} variant="danger">
 						<Icon name="Trash" />
 						<span>{t("CONTACTS.CONTACT_FORM.DELETE_CONTACT")}</span>
 					</Button>
 				)}
 
 				<div className="space-x-3">
-					<Button data-testid="contact-form__cancel-btn" variant="plain" onClick={onCancel}>
+					<Button data-testid="contact-form__cancel-btn" variant="secondary" onClick={onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
 
 					<Button
 						data-testid="contact-form__save-btn"
 						type="submit"
-						variant="solid"
+						variant="primary"
 						disabled={addresses.length === 0 || !isNameValid}
 					>
 						{t("COMMON.SAVE")}

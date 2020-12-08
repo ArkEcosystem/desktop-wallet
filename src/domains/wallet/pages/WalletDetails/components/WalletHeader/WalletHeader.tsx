@@ -327,7 +327,7 @@ export const WalletHeader = ({
 						<div data-testid="WalletHeader__more-button" className="my-auto">
 							<Dropdown
 								toggleContent={
-									<Button variant="plain" size="icon" className="text-left">
+									<Button variant="secondary" size="icon" className="text-left">
 										<Icon name="Settings" width={20} height={20} />
 									</Button>
 								}

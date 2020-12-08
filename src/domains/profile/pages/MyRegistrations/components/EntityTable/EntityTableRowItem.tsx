@@ -68,7 +68,7 @@ export const EntityTableRowItem = ({ onAction, entity, type }: EntityTableRowIte
 			<TableCell variant="end" className="w-22" innerClassName="justify-end">
 				<Dropdown
 					toggleContent={
-						<Button variant="plain" size="icon">
+						<Button variant="secondary" size="icon">
 							<Icon name="Settings" width={20} height={20} />
 						</Button>
 					}

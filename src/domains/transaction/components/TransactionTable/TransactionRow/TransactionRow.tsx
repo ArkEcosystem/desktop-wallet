@@ -96,7 +96,7 @@ export const TransactionRow = ({
 
 			<TableCell variant="end" innerClassName="justify-end">
 				{isSignaturePending ? (
-					<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
+					<Button data-testid="TransactionRow__sign" variant="secondary" onClick={onSign}>
 						<Icon name="Edit" />
 						<span>Sign</span>
 					</Button>

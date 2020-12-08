@@ -72,21 +72,25 @@ export const WalletsControls = memo(
 				</div>
 
 				<div className="flex space-x-3">
-					<Button onClick={onCreateWallet} variant="plain" data-testid="WalletControls__create-wallet">
+					<Button onClick={onCreateWallet} variant="secondary" data-testid="WalletControls__create-wallet">
 						<div className="flex items-center space-x-2">
 							<Icon name="Plus" width={14} height={14} />
 							<span>{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
 						</div>
 					</Button>
 
-					<Button onClick={onImportWallet} variant="plain" data-testid="WalletControls__import-wallet">
+					<Button onClick={onImportWallet} variant="secondary" data-testid="WalletControls__import-wallet">
 						<div className="flex items-center space-x-2">
 							<Icon name="Import" width={16} height={16} />
 							<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
 						</div>
 					</Button>
 
-					<Button onClick={onImportLedgerWallet} variant="plain" data-testid="WalletControls__import-ledger">
+					<Button
+						onClick={onImportLedgerWallet}
+						variant="secondary"
+						data-testid="WalletControls__import-ledger"
+					>
 						<div className="flex items-center space-x-2">
 							<Icon name="Ledger" />
 							<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT_LEDGER")}</span>

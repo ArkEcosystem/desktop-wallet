@@ -351,12 +351,12 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				</div>
 
 				<div className="flex justify-between pt-2 w-full">
-					<Button onClick={() => setIsResetProfileOpen(true)} color="danger" variant="plain">
+					<Button onClick={() => setIsResetProfileOpen(true)} variant="danger">
 						<Icon name="Reset" />
 						<span>{t("COMMON.RESET_DATA")}</span>
 					</Button>
 					<div className="space-x-3">
-						<Button variant="plain">{t("COMMON.CANCEL")}</Button>
+						<Button variant="secondary">{t("COMMON.CANCEL")}</Button>
 						<Button type="submit" data-testid="General-settings__submit-button">
 							{t("COMMON.SAVE")}
 						</Button>
