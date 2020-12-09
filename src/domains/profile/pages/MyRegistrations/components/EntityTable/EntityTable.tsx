@@ -19,7 +19,6 @@ export const EntityTable = ({ entities, onAction, title, type, nameColumnHeader 
 	const columns = [
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.ADDRESS"),
-			className: "ml-25",
 		},
 		{
 			Header: nameColumnHeader,

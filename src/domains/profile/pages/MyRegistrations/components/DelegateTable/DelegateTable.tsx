@@ -21,7 +21,6 @@ export const DelegateTable = ({ wallets, onAction }: Props) => {
 	const columns = [
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE_NAME"),
-			className: "ml-25",
 		},
 		{
 			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.RANK"),

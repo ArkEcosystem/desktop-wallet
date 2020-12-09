@@ -38,7 +38,6 @@ const WalletTable = ({
 		{
 			Header: t("COMMON.ADDRESS"),
 			accessor: "address",
-			className: "ml-24",
 		},
 		{
 			Header: t("COMMON.WALLET_TYPE"),
