@@ -45,6 +45,7 @@
         :entity-name="delegateUsername"
         :entity-type="+step1.registrationType"
         @change="onEntityForm"
+        @invalid="isEntityFormInvalid = $event"
       >
         <ListDividedItem
           label=""
@@ -152,6 +153,8 @@ export default {
 
   data: () => ({
     step: 1,
+    isEntityFormInvalid: false,
+
     form: {
       fee: 0,
       passphrase: '',
@@ -220,7 +223,7 @@ export default {
         return !this.$v.step1.$invalid
       }
 
-      return !this.$refs.entity.$v.$invalid && !this.$v.$invalid
+      return !this.isEntityFormInvalid && !this.$v.$invalid
     },
 
     delegateUsername () {
@@ -286,11 +289,11 @@ export default {
         multiSignature: this.currentWallet.multiSignature
       }
 
-      const { entityName, ipfsData } = this.step2
+      const { entityName, ipfsContent } = this.step2
       const entityType = +this.step1.registrationType
 
       // eslint-disable-next-line
-      const sanitizedIpfsData = filter(ipfsData, (item) => !isEmpty(item))
+      const sanitizedIpfsContent = filter(ipfsContent, (item) => !isEmpty(item))
 
       return {
         ...transactionData,
@@ -301,7 +304,7 @@ export default {
           action: +this.$options.entityAction,
           data: {
             name: entityName,
-            ipfsData: await new File(new Request()).upload(sanitizedIpfsData)
+            ipfsData: await new File(new Request()).upload(sanitizedIpfsContent)
           }
         }
       }

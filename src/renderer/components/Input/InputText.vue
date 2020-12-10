@@ -2,7 +2,7 @@
   <InputField
     :label="label"
     :helper-text="helperText"
-    :is-dirty="isDirty"
+    :is-dirty="isInputDirty"
     :is-disabled="isDisabled"
     :is-focused="isFocused"
     :is-invalid="isInvalid"
@@ -88,6 +88,11 @@ export default {
       required: false,
       default: false
     },
+    isDirty: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     isInvalid: {
       type: Boolean,
       required: false,
@@ -132,11 +137,11 @@ export default {
         this.$emit('input', value)
       }
     },
-    isDirty () {
-      return !!this.inputValue
+    isInputDirty () {
+      return this.isDirty || !!this.inputValue
     },
     isWarning () {
-      return !!this.isDirty && !!this.warning
+      return !!this.isInputDirty && !!this.warning
     },
     warning () {
       if (this.$v.model.$dirty) {

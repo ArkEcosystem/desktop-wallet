@@ -1,66 +1,161 @@
 <template>
-  <div>
-    <div class="EntityFormDelegate__fieldset">
-      <span class="font-semibold mr-4">{{ $t('ENTITY.DELEGATE_TYPE') }}</span>
-      <InputSelect
-        v-model="$v.delegate.type.$model"
-        :items="delegateTypes"
-        label=""
-        name="delegate-type"
-        class="EntityFormDelegate__delegate-type"
-      />
-    </div>
+  <div class="EntityFormDelegate">
+    <InputSelect
+      v-model="$v.delegate.type.$model"
+      :items="delegateTypes"
+      :label="$t('ENTITY.DELEGATE_TYPE')"
+      name="delegate-type"
+      class="mb-4"
+    />
 
-    <div class="EntityFormDelegate__fieldset mt-4">
-      <span class="font-semibold mr-4">{{ $t('ENTITY.PAYOUT_COMISSION') }}</span>
-      <InputText
-        v-model="$v.delegate.payout.percentage.min.$model"
-        :is-invalid="$v.delegate.payout.percentage.min.$dirty && $v.delegate.payout.percentage.min.$invalid"
-        :label="$t('COMMON.FROM')"
-        type="number"
-        name="percentage-min"
-        class="flex-1"
-      />
-      <InputText
-        v-model="$v.delegate.payout.percentage.max.$model"
-        :is-invalid="$v.delegate.payout.percentage.max.$dirty && $v.delegate.payout.percentage.max.$invalid"
-        :label="$t('COMMON.TO')"
-        type="number"
-        name="percentage-max"
-        class="flex-1"
-      />
-    </div>
+    <ListDividedItem
+      label=""
+      item-value-class="w-full"
+    >
+      <div class="flex">
+        <h3 class="flex-1">
+          {{ $t('ENTITY.PAYOUT_COMISSION') }}
+        </h3>
+        <button
+          class="blue-button rounded-full w-5 h-5 m-0 p-0 flex items-center justify-center"
+          :class="{
+            'bg-blue text-white': isComissionOpen
+          }"
+          @click="isComissionOpen = !isComissionOpen"
+        >
+          <SvgIcon
+            name="chevron-down"
+            view-box="0 0 8 8"
+            :class="{
+              'rotate-180': isComissionOpen
+            }"
+          />
+        </button>
+      </div>
 
-    <div class="EntityFormDelegate__fieldset mt-4">
-      <span class="font-semibold mr-4 break-words">{{ $t('ENTITY.PAYOUT_FREQUENCY') }}</span>
-      <InputSelect
-        v-model="$v.delegate.payout.frequency.type.$model"
-        :items="frequencyTypes"
-        :label="$t('ENTITY.TYPE')"
-        name="frequency-type"
-        class="flex-1"
-      />
-      <InputText
-        v-model="$v.delegate.payout.frequency.value.$model"
-        :is-invalid="$v.delegate.payout.frequency.value.$dirty && $v.delegate.payout.frequency.value.$invalid"
-        :label="$t('COMMON.VALUE')"
-        type="number"
-        name="frequency-value"
-        class="flex-1"
-      />
-    </div>
+      <Collapse :is-open="isComissionOpen">
+        <div class="inline-flex items-center mb-3">
+          <span
+            class="font-semibold"
+            :class="{ 'text-theme-page-text-light': isComissionVariable }"
+          >
+            {{ $t('ENTITY.STATIC') }}
+          </span>
+          <ButtonSwitch
+            v-model="isComissionVariable"
+            class="mx-2"
+          />
+          <span
+            class="font-semibold"
+            :class="{ 'text-theme-page-text-light': !isComissionVariable }"
+          >
+            {{ $t('ENTITY.VARIABLE') }}
+          </span>
+        </div>
+        <div
+          v-if="isComissionVariable"
+          class="flex mb-2"
+        >
+          <InputText
+            v-model="$v.delegate.payout.percentage.min.$model"
+            :is-invalid="$v.delegate.payout.percentage.min.$dirty && $v.delegate.payout.percentage.min.$invalid"
+            :label="$t('COMMON.FROM')"
+            type="number"
+            name="percentage-min"
+            class="flex-1 mr-5"
+          />
+          <InputText
+            v-model="$v.delegate.payout.percentage.max.$model"
+            :is-invalid="$v.delegate.payout.percentage.max.$dirty && $v.delegate.payout.percentage.max.$invalid"
+            :label="$t('COMMON.TO')"
+            type="number"
+            name="percentage-max"
+            class="flex-1"
+          />
+        </div>
+        <div
+          v-else
+          class="mb-2"
+        >
+          <InputText
+            v-model="$v.delegate.payout.percentage.min.$model"
+            :is-invalid="$v.delegate.payout.percentage.min.$dirty && $v.delegate.payout.percentage.min.$invalid"
+            :label="$t('ENTITY.PERCENTAGE')"
+            type="number"
+            name="percentage-static"
+            class="flex-1"
+            @input="onComissionStaticInput"
+          />
+        </div>
+      </Collapse>
+    </ListDividedItem>
+
+    <ListDividedItem
+      label=""
+      item-value-class="w-full"
+    >
+      <div class="flex">
+        <h3 class="flex-1">
+          {{ $t('ENTITY.PAYOUT_FREQUENCY') }}
+        </h3>
+        <button
+          class="blue-button rounded-full w-5 h-5 m-0 p-0 flex items-center justify-center"
+          :class="{
+            'bg-blue text-white': isFrequencyOpen
+          }"
+          @click="isFrequencyOpen = !isFrequencyOpen"
+        >
+          <SvgIcon
+            name="chevron-down"
+            view-box="0 0 8 8"
+            :class="{
+              'rotate-180': isFrequencyOpen
+            }"
+          />
+        </button>
+      </div>
+
+      <Collapse :is-open="isFrequencyOpen">
+        <div class="flex mb-2">
+          <InputText
+            v-model="$v.delegate.payout.frequency.value.$model"
+            :is-invalid="$v.delegate.payout.frequency.value.$dirty && $v.delegate.payout.frequency.value.$invalid"
+            :label="$t('ENTITY.EVERY')"
+            type="number"
+            name="frequency-value"
+            class="flex-1 mr-5"
+          />
+
+          <InputSelect
+            v-model="$v.delegate.payout.frequency.type.$model"
+            :items="frequencyTypes"
+            :label="$t('ENTITY.TYPE')"
+            name="frequency-type"
+            class="w-1/3"
+          />
+        </div>
+      </Collapse>
+    </ListDividedItem>
   </div>
 </template>
 
 <script>
+import { ButtonSwitch } from '@/components/Button'
 import { InputText, InputSelect } from '@/components/Input'
+import { ListDividedItem } from '@/components/ListDivided'
+import { Collapse } from '@/components/Collapse'
+import SvgIcon from '@/components/SvgIcon'
 import { between, required } from 'vuelidate/lib/validators'
-import { get } from '@arkecosystem/utils'
+import { get, cloneDeep } from '@arkecosystem/utils'
 
 export default {
   components: {
+    Collapse,
+    ButtonSwitch,
+    InputSelect,
     InputText,
-    InputSelect
+    ListDividedItem,
+    SvgIcon
   },
 
   props: {
@@ -72,6 +167,10 @@ export default {
   },
 
   data: () => ({
+    isComissionOpen: true,
+    isFrequencyOpen: true,
+    isComissionVariable: false,
+
     delegate: {
       type: 'public',
       payout: {
@@ -97,11 +196,11 @@ export default {
 
     frequencyTypes () {
       return {
-        day: this.$t('MARKET.DAY'),
-        week: this.$t('MARKET.WEEK'),
-        month: this.$t('MARKET.MONTH'),
-        quarter: this.$t('MARKET.QUARTER'),
-        year: this.$t('MARKET.YEAR')
+        day: this.$tc('MARKET.DAY', 1),
+        week: this.$tc('MARKET.WEEK', 1),
+        month: this.$tc('MARKET.MONTH', 1),
+        quarter: this.$tc('MARKET.QUARTER', 1),
+        year: this.$tc('MARKET.YEAR', 1)
       }
     },
 
@@ -122,19 +221,33 @@ export default {
       handler (value) {
         this.$emit('invalid', value)
       }
+    },
+    isComissionVariable (value) {
+      if (value) {
+        this.onComissionStaticInput()
+      }
     }
   },
 
   mounted () {
     const delegate = get(this.ipfsContent, 'delegate')
+
     if (delegate) {
-      this.delegate = delegate
+      this.delegate = cloneDeep(delegate)
+
+      if (delegate.payout) {
+        this.isComissionVariable = delegate.payout.min !== delegate.payout.max
+      }
     }
   },
 
   methods: {
     onTypeChange (value) {
       this.delegate.type = value ? 'private' : 'public'
+    },
+
+    onComissionStaticInput () {
+      this.delegate.payout.percentage.max = this.delegate.payout.percentage.min
     }
   },
 

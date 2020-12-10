@@ -88,7 +88,7 @@
       :entity-action="1"
       :delegate="selectedEntity.delegate"
       :entity-transaction="selectedEntity.transaction"
-      :ipfs-data-object="selectedEntity.ipfsDataObject"
+      :ipfs-content="selectedEntity.ipfsDataObject"
       :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
       title=""
       @cancel="closeModal"

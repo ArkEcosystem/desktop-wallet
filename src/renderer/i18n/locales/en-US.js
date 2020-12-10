@@ -249,11 +249,11 @@ export default {
     MARKET: 'Market',
     HISTORICAL_DATA: 'Historical data',
     CHECK_TRADEABLE: 'Check Tradeable',
-    DAY: 'Day',
-    WEEK: 'Week',
-    MONTH: 'Month',
-    QUARTER: 'Quarter',
-    YEAR: 'Year'
+    DAY: 'Day | Days | Daily',
+    WEEK: 'Week | Weeks | Weekly',
+    MONTH: 'Month | Months | Monthly',
+    QUARTER: 'Quarter | Quarters | Quarterly',
+    YEAR: 'Year | Years | Yearly'
   },
 
   TABLE: {
@@ -1492,8 +1492,20 @@ export default {
     PHOTO_VIDEO_DESCRIPTION: 'Tell your story through photos and videos (Optional)',
 
     DELEGATE_TYPE: 'Delegate Type',
+    PAYOUT: 'Payout',
     PAYOUT_COMISSION: 'Comission %',
     PAYOUT_FREQUENCY: 'Payout Frequency',
+
+    NETWORK: 'Network',
+    PLATFORM: 'Platform',
+    RELEASE_DATE: 'Release Date',
+    DEVELOPED_BY: 'Developed By',
+    REQUIREMENTS: 'Requirements',
+
+    EVERY: 'Every',
+    STATIC: 'Static',
+    VARIABLE: 'Variable',
+    PERCENTAGE: 'Percentage',
 
     ADD_LINK: 'Add Link',
     LINK: 'Link',

@@ -72,29 +72,111 @@
       </span>
     </ListDividedItem>
 
-    <ListDividedItem
-      v-if="getEntityProperty('delegate.payout.frequency.type')"
-      :label="$t('ENTITY.PAYOUT_COMISSION')"
-      item-value-class="w-full"
-    >
-      <div class="flex">
-        <span>{{ getEntityProperty('delegate.payout.percentage.min') }}%</span>
-        <span class="mx-1">-</span>
-        <span>{{ getEntityProperty('delegate.payout.percentage.max') }}%</span>
-      </div>
-    </ListDividedItem>
+    <template v-if="getEntityProperty('delegate')">
+      <ListDividedItem
+        v-if="getEntityProperty('delegate.payout')"
+        :label="$t('ENTITY.PAYOUT')"
+        item-value-class="w-full"
+      >
+        <span>
+          {{ $tc(delegateFrequencyLabel, 3) }}
+        </span>
+      </ListDividedItem>
 
-    <ListDividedItem
-      v-if="getEntityProperty('delegate.payout.frequency.type')"
-      :label="$t('ENTITY.PAYOUT_FREQUENCY')"
-      item-value-class="w-full"
-    >
-      <div class="flex">
-        <span>{{ delegateFrequencyTypes[getEntityProperty('delegate.payout.frequency.type')] }}</span>
-        <span class="mx-1">/</span>
-        <span>{{ getEntityProperty('delegate.payout.frequency.value') }}</span>
-      </div>
-    </ListDividedItem>
+      <ListDividedItem
+        v-if="getEntityProperty('delegate.payout.percentage')"
+        :label="`${$t('ENTITY.PAYOUT_COMISSION')} (${isDelegateComissionStatic ? $t('ENTITY.STATIC') : $t('ENTITY.VARIABLE')})`"
+        item-value-class="w-full"
+      >
+        <span v-if="isDelegateComissionStatic">{{ getEntityProperty('delegate.payout.percentage.min') }}%</span>
+        <div
+          v-else
+          class="flex items-baseline"
+        >
+          <span class="text-theme-page-text-light text-sm font-semibold">{{ $t('COMMON.FROM') }}</span>
+          <span class="mx-1">{{ getEntityProperty('delegate.payout.percentage.min') }}%</span>
+          <span class="text-theme-page-text-light text-sm font-semibold">{{ $t('COMMON.TO') }}</span>
+          <span class="mx-1">{{ getEntityProperty('delegate.payout.percentage.max') }}%</span>
+        </div>
+      </ListDividedItem>
+
+      <ListDividedItem
+        v-if="getEntityProperty('delegate.payout.frequency.type')"
+        :label="$t('ENTITY.PAYOUT_FREQUENCY')"
+        item-value-class="w-full"
+      >
+        <div class="flex">
+          <span>{{ getEntityProperty('delegate.payout.frequency.value') }} {{ $tc(delegateFrequencyLabel, 1) }}</span>
+        </div>
+      </ListDividedItem>
+    </template>
+
+    <template v-else-if="getEntityProperty('module')">
+      <ListDividedItem
+        :label="$t('ENTITY.DEVELOPED_BY')"
+        item-value-class="w-full"
+      >
+        <span class="break-all">{{ getEntityProperty('module.developedBy') }}</span>
+      </ListDividedItem>
+
+      <ListDividedItem
+        :label="$t('ENTITY.NETWORK')"
+        item-value-class="w-full"
+      >
+        <span class="break-all">{{ getEntityProperty('module.network') }}</span>
+      </ListDividedItem>
+
+      <ListDividedItem
+        :label="$t('ENTITY.RELEASE_DATE')"
+        item-value-class="w-full"
+      >
+        <span>{{ formatter_date(getEntityProperty('module.releaseDate'), 'L') }}</span>
+      </ListDividedItem>
+
+      <ListDividedItem
+        :label="$t('ENTITY.PLATFORM')"
+        item-value-class="w-full"
+      >
+        <span class="break-all">{{ getEntityProperty('module.platform') }}</span>
+      </ListDividedItem>
+
+      <ListDividedItem
+        :label="$t('ENTITY.REQUIREMENTS')"
+        item-value-class="w-full"
+      >
+        <span class="break-all">{{ getEntityProperty('module.requirements[0]') }}</span>
+      </ListDividedItem>
+    </template>
+
+    <template v-else-if="getEntityProperty('product')">
+      <ListDividedItem
+        :label="$t('ENTITY.DEVELOPED_BY')"
+        item-value-class="w-full"
+      >
+        <span class="break-all">{{ getEntityProperty('product.developedBy') }}</span>
+      </ListDividedItem>
+
+      <ListDividedItem
+        :label="$t('ENTITY.NETWORK')"
+        item-value-class="w-full"
+      >
+        <span class="break-all">{{ getEntityProperty('product.network') }}</span>
+      </ListDividedItem>
+
+      <ListDividedItem
+        :label="$t('ENTITY.RELEASE_DATE')"
+        item-value-class="w-full"
+      >
+        <span>{{ formatter_date(getEntityProperty('product.releaseDate'), 'L') }}</span>
+      </ListDividedItem>
+
+      <ListDividedItem
+        :label="$t('ENTITY.PLATFORM')"
+        item-value-class="w-full"
+      >
+        <span class="break-all">{{ getEntityProperty('product.platform') }}</span>
+      </ListDividedItem>
+    </template>
 
     <ListDividedItem
       v-if="getEntityProperty('sourceControl.length')"
@@ -273,14 +355,19 @@ export default {
       }
     },
 
-    delegateFrequencyTypes () {
+    isDelegateComissionStatic () {
+      const percentage = this.getEntityProperty('delegate.payout.percentage')
+      return percentage.min === percentage.max
+    },
+
+    delegateFrequencyLabel () {
       return {
-        day: this.$t('MARKET.DAY'),
-        week: this.$t('MARKET.WEEK'),
-        month: this.$t('MARKET.MONTH'),
-        quarter: this.$t('MARKET.QUARTER'),
-        year: this.$t('MARKET.YEAR')
-      }
+        day: 'MARKET.DAY',
+        week: 'MARKET.WEEK',
+        month: 'MARKET.MONTH',
+        quarter: 'MARKET.QUARTER',
+        year: 'MARKET.YEAR'
+      }[this.getEntityProperty('delegate.payout.frequency.type')]
     },
 
     mediaLinks () {
@@ -293,7 +380,7 @@ export default {
 
   methods: {
     getEntityProperty (path) {
-      return get(this.transaction.entityForm, `ipfsData.${path}`)
+      return get(this.transaction.entityForm, `ipfsContent.${path}`)
     }
   }
 }

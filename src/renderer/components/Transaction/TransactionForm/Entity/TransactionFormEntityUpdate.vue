@@ -14,7 +14,7 @@
       ref="entity"
       :entity-name="entityName"
       :entity-type="entityType"
-      :ipfs-data-object="ipfsDataObject"
+      :ipfs-content="ipfsContent"
       @change="onEntityForm"
       @invalid="isEntityFormInvalid = $event"
     >
@@ -129,7 +129,7 @@ export default {
       required: false,
       default: undefined
     },
-    ipfsDataObject: {
+    ipfsContent: {
       type: Object,
       required: false,
       default: () => {}
@@ -232,8 +232,8 @@ export default {
         multiSignature: this.currentWallet.multiSignature
       }
 
-      const { ipfsData, entityName } = this.entityForm
-      const sanitizedIpfsData = filter(ipfsData, (item) => !isEmpty(item))
+      const { ipfsContent, entityName } = this.entityForm
+      const sanitizedIpfsData = filter(ipfsContent, (item) => !isEmpty(item))
       const hash = await new File(new Request()).upload(sanitizedIpfsData)
 
       const asset = {

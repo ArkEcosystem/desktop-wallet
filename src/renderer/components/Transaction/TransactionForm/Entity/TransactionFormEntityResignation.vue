@@ -170,10 +170,7 @@ export default {
 
     emitNext (transaction) {
       this.$emit('next', {
-        transaction: {
-          ...transaction,
-          entityTransaction: this.entityTransaction
-        },
+        transaction,
         wallet: this.senderWallet
       })
     }

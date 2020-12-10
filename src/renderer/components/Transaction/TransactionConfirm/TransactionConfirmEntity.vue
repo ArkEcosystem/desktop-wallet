@@ -10,7 +10,7 @@
 
 <script>
 import { TRANSACTION_TYPES, TRANSACTION_GROUPS } from '@config'
-import { TransactionConfirmEntityRegistration, TransactionConfirmEntityResignation, TransactionConfirmEntityUpdate } from './Entity'
+import * as entityConfirmationComponents from './Entity'
 
 export default {
   name: 'TransactionConfirmEntity',
@@ -19,9 +19,7 @@ export default {
   transactionType: TRANSACTION_TYPES.GROUP_2.ENTITY,
 
   components: {
-    TransactionConfirmEntityRegistration,
-    TransactionConfirmEntityResignation,
-    TransactionConfirmEntityUpdate
+    ...entityConfirmationComponents
   },
 
   inject: ['currentWallet', 'transaction'],
@@ -32,8 +30,8 @@ export default {
 
   mounted () {
     const entityAction = this.transaction.asset.action
-    const component = Object.values(this.$options.components).find(component => {
-      return component.entityAction === entityAction
+    const component = Object.values(entityConfirmationComponents).find(item => {
+      return item.entityAction === entityAction
     })
 
     if (!component) {

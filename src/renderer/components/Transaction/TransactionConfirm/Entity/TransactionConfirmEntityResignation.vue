@@ -29,7 +29,7 @@
       :label="$t('ENTITY.TYPE')"
       item-value-class="w-full"
     >
-      <span>{{ transaction.entityTransaction.data.name }}</span>
+      <span>{{ entity.data.name }}</span>
     </ListDividedItem>
 
     <ListDividedItem
@@ -80,6 +80,10 @@ export default {
       }
 
       return labels[this.transaction.asset.type]
+    },
+
+    entity () {
+      return this.$store.getters['entity/byRegistrationId'](this.transaction.id)
     }
   }
 }

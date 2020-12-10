@@ -1,8 +1,12 @@
 <template>
-  <ListDivided :is-floating-label="true">
+  <ListDivided
+    :is-floating-label="true"
+    class="EntityForm"
+  >
     <ListDividedItem
       label=""
       item-value-class="w-full mb-4"
+      :hide-border="isDelegateType || isModuleType || isProductType"
     >
       <InputText
         v-model="$v.form.entityName.$model"
@@ -14,42 +18,53 @@
       />
 
       <InputText
-        v-model="$v.form.ipfsData.meta.displayName.$model"
-        :is-invalid="$v.form.ipfsData.meta.displayName.$dirty && $v.form.ipfsData.meta.displayName.$invalid"
+        v-model="$v.form.ipfsContent.meta.displayName.$model"
+        :is-invalid="$v.form.ipfsContent.meta.displayName.$dirty && $v.form.ipfsContent.meta.displayName.$invalid"
         :label="`${$t('ENTITY.DISPLAY_NAME')} (${$t('COMMON.OPTIONAL')})`"
         name="display-name"
         class="mt-4"
       />
 
       <InputText
-        v-model="$v.form.ipfsData.meta.description.$model"
-        :is-invalid="$v.form.ipfsData.meta.description.$dirty && $v.form.ipfsData.meta.description.$invalid"
+        v-model="$v.form.ipfsContent.meta.description.$model"
+        :is-invalid="$v.form.ipfsContent.meta.description.$dirty && $v.form.ipfsContent.meta.description.$invalid"
         :label="`${$t('ENTITY.DESCRIPTION')} (${$t('COMMON.OPTIONAL')})`"
         name="description"
         class="mt-4"
       />
 
       <InputText
-        v-model="$v.form.ipfsData.meta.website.$model"
-        :is-invalid="$v.form.ipfsData.meta.website.$dirty && $v.form.ipfsData.meta.website.$invalid"
+        v-model="$v.form.ipfsContent.meta.website.$model"
+        :is-invalid="$v.form.ipfsContent.meta.website.$dirty && $v.form.ipfsContent.meta.website.$invalid"
         :label="`${$t('ENTITY.WEBSITE')} (${$t('COMMON.OPTIONAL')})`"
         name="website"
         class="mt-4"
       />
     </ListDividedItem>
 
-    <ListDividedItem
+    <EntityFormDelegate
       v-if="isDelegateType"
-      label=""
-      item-value-class="w-full mb-4"
-    >
-      <EntityFormDelegate
-        ref="delegateForm"
-        :ipfs-content="ipfsDataObject"
-        @change="onChangeDelegateForm"
-        @invalid="isDelegateFormInvalid = $event"
-      />
-    </ListDividedItem>
+      ref="delegateForm"
+      :ipfs-content="ipfsContent"
+      @change="onChangeDelegateForm"
+      @invalid="isDelegateFormInvalid = $event"
+    />
+
+    <EntityFormModule
+      v-else-if="isModuleType"
+      ref="moduleForm"
+      :ipfs-content="ipfsContent"
+      @change="onChangeModuleForm"
+      @invalid="isModuleFormInvalid = $event"
+    />
+
+    <EntityFormProduct
+      v-else-if="isProductType"
+      ref="productForm"
+      :ipfs-content="ipfsContent"
+      @change="onChangeProductForm"
+      @invalid="isProductFormInvalid = $event"
+    />
 
     <ListDividedItem
       label=""
@@ -83,7 +98,7 @@
       <Collapse :is-open="isSourceControlOpen">
         <EntityLinkEditableList
           type="sourceControl"
-          :links="form.ipfsData.sourceControl"
+          :links="form.ipfsContent.sourceControl"
           @change="(links) => updateEntityLinks(links, 'sourceControl')"
         />
       </Collapse>
@@ -121,7 +136,7 @@
       <Collapse :is-open="isSocialMediaOpen">
         <EntityLinkEditableList
           type="socialMedia"
-          :links="form.ipfsData.socialMedia"
+          :links="form.ipfsContent.socialMedia"
           @change="(links) => updateEntityLinks(links, 'socialMedia')"
         />
       </Collapse>
@@ -179,12 +194,16 @@ import { required, url, minLength, maxLength, helpers } from 'vuelidate/lib/vali
 import { isObject } from '@arkecosystem/utils'
 
 import EntityFormDelegate from './EntityFormDelegate'
+import EntityFormModule from './EntityFormModule'
+import EntityFormProduct from './EntityFormProduct'
 
 export default {
   components: {
     Collapse,
     EntityLinkEditableList,
     EntityFormDelegate,
+    EntityFormModule,
+    EntityFormProduct,
     InputText,
     ListDivided,
     ListDividedItem,
@@ -201,7 +220,7 @@ export default {
       required: false,
       default: ''
     },
-    ipfsDataObject: {
+    ipfsContent: {
       type: Object,
       required: false,
       default: () => {}
@@ -214,10 +233,12 @@ export default {
     isMediaOpen: false,
 
     isDelegateFormInvalid: false,
+    isModuleFormInvalid: false,
+    isProductFormInvalid: false,
 
     form: {
       entityName: '',
-      ipfsData: {
+      ipfsContent: {
         meta: {
           displayName: '',
           description: '',
@@ -236,8 +257,16 @@ export default {
       return TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE === this.entityType
     },
 
+    isModuleType () {
+      return TRANSACTION_TYPES_ENTITY.TYPE.MODULE === this.entityType
+    },
+
+    isProductType () {
+      return TRANSACTION_TYPES_ENTITY.TYPE.PRODUCT === this.entityType
+    },
+
     mediaLinks () {
-      return [...this.form.ipfsData.images, ...this.form.ipfsData.videos]
+      return [...this.form.ipfsContent.images, ...this.form.ipfsContent.videos]
     },
 
     isNameDuplicated () {
@@ -282,24 +311,24 @@ export default {
   },
 
   beforeMount () {
-    if (isObject(this.ipfsDataObject)) {
-      const keys = Object.keys(this.form.ipfsData)
+    if (isObject(this.ipfsContent)) {
+      const keys = Object.keys(this.form.ipfsContent)
 
       for (const key of keys) {
-        if (this.ipfsDataObject[key]) {
-          this.$set(this.form.ipfsData, key, this.ipfsDataObject[key])
+        if (this.ipfsContent[key]) {
+          this.$set(this.form.ipfsContent, key, this.ipfsContent[key])
         }
       }
 
-      if (this.form.ipfsData.sourceControl.length) {
+      if (this.form.ipfsContent.sourceControl.length) {
         this.isSourceControlOpen = true
       }
 
-      if (this.form.ipfsData.socialMedia.length) {
+      if (this.form.ipfsContent.socialMedia.length) {
         this.isSocialMediaOpen = true
       }
 
-      if (this.form.ipfsData.images.length || this.form.ipfsData.videos.length) {
+      if (this.form.ipfsContent.images.length || this.form.ipfsContent.videos.length) {
         this.isMediaOpen = true
       }
     }
@@ -310,16 +339,24 @@ export default {
       if (type === 'media') {
         const videos = links.filter(link => link.type === 'video')
         const images = links.filter(link => link.type !== 'video')
-        this.$set(this.form.ipfsData, 'videos', videos)
-        this.$set(this.form.ipfsData, 'images', images)
+        this.$set(this.form.ipfsContent, 'videos', videos)
+        this.$set(this.form.ipfsContent, 'images', images)
         return
       }
 
-      this.$set(this.form.ipfsData, type, links)
+      this.$set(this.form.ipfsContent, type, links)
     },
 
     onChangeDelegateForm (delegate) {
-      this.$set(this.form.ipfsData, 'delegate', delegate)
+      this.$set(this.form.ipfsContent, 'delegate', delegate)
+    },
+
+    onChangeModuleForm (data) {
+      this.$set(this.form.ipfsContent, 'module', data)
+    },
+
+    onChangeProductForm (data) {
+      this.$set(this.form.ipfsContent, 'product', data)
     }
   },
 
@@ -334,7 +371,7 @@ export default {
           return !this.isNameDuplicated
         }
       },
-      ipfsData: {
+      ipfsContent: {
         meta: {
           displayName: {
             minLength: minLength(3)
@@ -350,6 +387,16 @@ export default {
         delegate: {
           isValid () {
             return !this.isDelegateFormInvalid
+          }
+        },
+        module: {
+          isValid () {
+            return !this.isModuleFormInvalid
+          }
+        },
+        product: {
+          isValid () {
+            return !this.isProductFormInvalid
           }
         }
       }

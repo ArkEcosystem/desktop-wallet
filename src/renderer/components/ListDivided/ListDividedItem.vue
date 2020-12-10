@@ -1,6 +1,7 @@
 <template>
   <li
-    class="ListDividedItem flex flex-col py-4 w-full border-b border-dashed border-theme-line-separator"
+    class="ListDividedItem flex flex-col py-4 w-full border-dashed border-theme-line-separator"
+    :class="hideBorder ? 'border-b-0' : 'border-b'"
   >
     <div
       :class="isFloatingLabel ? 'flex-col items-start' : 'items-center'"
@@ -68,6 +69,11 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    hideBorder: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   }
 }

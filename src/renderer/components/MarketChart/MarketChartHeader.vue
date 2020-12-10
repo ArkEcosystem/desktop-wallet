@@ -20,7 +20,7 @@
           :disabled="activePeriod === period"
           @click="emitPeriodChange(period)"
         >
-          {{ $t(translation) }}
+          {{ $tc(translation, 0) }}
         </button>
       </div>
     </Transition>
