@@ -222,10 +222,8 @@ export default {
         this.$emit('invalid', value)
       }
     },
-    isComissionVariable (value) {
-      if (value) {
-        this.onComissionStaticInput()
-      }
+    isComissionVariable () {
+      this.onComissionStaticInput()
     }
   },
 
