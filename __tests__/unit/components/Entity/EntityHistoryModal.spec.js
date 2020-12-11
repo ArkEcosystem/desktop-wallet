@@ -44,7 +44,7 @@ describe('EntityHistoryModal', () => {
       i18n
     })
 
-    await new Promise(resolve => setTimeout(resolve, 200))
+    await new Promise(resolve => setTimeout(resolve, 300))
 
     expect(wrapper.text()).toContain('ENTITY.ACTIONS.REGISTER')
     expect(wrapper.text()).toContain('1606902120000')

@@ -7,7 +7,7 @@ import { TransactionConfirmEntityRegistration, TransactionConfirmEntityUpdate, T
 import store from '@/store'
 
 import { business } from '../../../__fixtures__/store/entity'
-import { businessRegistration } from '../../../__fixtures__/store/transaction'
+import { businessRegistration, businessUpdate, businessResignation } from '../../../__fixtures__/store/transaction'
 import { network1 } from '../../../__fixtures__/store/network'
 import { profile1 } from '../../../__fixtures__/store/profile'
 
@@ -16,20 +16,10 @@ Vue.use(apiClient)
 
 const i18n = useI18nGlobally()
 
-const createWrapper = (Component) => {
+const createWrapper = (Component, props) => {
   return mount(Component, {
+    ...props,
     i18n,
-    propsData: {
-      transaction: {
-        ...businessRegistration,
-        entityForm: {
-          entityName: 'test'
-        }
-      },
-      currentWallet: {
-        address: 'address-1'
-      }
-    },
     store,
     mocks: {
       wallet_formatAddress: jest.fn((address) => `formatted-${address}`),
@@ -48,21 +38,52 @@ beforeAll(() => {
 
 describe('Registration', () => {
   it('should have entity action (0)', () => {
-    const wrapper = createWrapper(TransactionConfirmEntityRegistration)
+    const wrapper = createWrapper(TransactionConfirmEntityRegistration, {
+      propsData: {
+        transaction: {
+          ...businessRegistration,
+          entityForm: {
+            entityName: 'test'
+          }
+        },
+        currentWallet: {
+          address: 'address-1'
+        }
+      }
+    })
     expect(wrapper.vm.$options.entityAction).toBe(0)
   })
 })
 
 describe('Update', () => {
   it('should have entity action (1)', () => {
-    const wrapper = createWrapper(TransactionConfirmEntityUpdate)
+    const wrapper = createWrapper(TransactionConfirmEntityUpdate, {
+      propsData: {
+        transaction: {
+          ...businessUpdate,
+          entityForm: {
+            entityName: 'test'
+          }
+        },
+        currentWallet: {
+          address: 'address-1'
+        }
+      }
+    })
     expect(wrapper.vm.$options.entityAction).toBe(1)
   })
 })
 
 describe('Resignation', () => {
   it('should have entity action (2)', () => {
-    const wrapper = createWrapper(TransactionConfirmEntityResignation)
+    const wrapper = createWrapper(TransactionConfirmEntityResignation, {
+      propsData: {
+        transaction: businessResignation,
+        currentWallet: {
+          address: 'address-1'
+        }
+      }
+    })
     expect(wrapper.vm.$options.entityAction).toBe(2)
   })
 })

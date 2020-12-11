@@ -83,7 +83,7 @@ export default {
     },
 
     entity () {
-      return this.$store.getters['entity/byRegistrationId'](this.transaction.id)
+      return this.$store.getters['entity/byRegistrationId'](this.transaction.asset.registrationId)
     }
   }
 }
