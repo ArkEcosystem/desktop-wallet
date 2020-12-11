@@ -125,9 +125,6 @@ import { required } from 'vuelidate/lib/validators'
 import { ListDividedItem } from '@/components/ListDivided'
 import { PassphraseInput } from '@/components/Passphrase'
 import Loader from '@/components/utils/Loader'
-import { File } from '@arkecosystem/platform-sdk-ipfs'
-import { Request } from '@arkecosystem/platform-sdk-http-got'
-import { filter, isEmpty } from '@arkecosystem/utils'
 import EntityForm from './EntityForm'
 import mixin from '../mixin'
 import truncate from '@/filters/truncate'
@@ -292,9 +289,6 @@ export default {
       const { entityName, ipfsContent } = this.step2
       const entityType = +this.step1.registrationType
 
-      // eslint-disable-next-line
-      const sanitizedIpfsContent = filter(ipfsContent, (item) => !isEmpty(item))
-
       return {
         ...transactionData,
         asset: {
@@ -304,7 +298,7 @@ export default {
           action: +this.$options.entityAction,
           data: {
             name: entityName,
-            ipfsData: await new File(new Request()).upload(sanitizedIpfsContent)
+            ipfsData: await this.$store.dispatch('entity/uploadIpfsContent', ipfsContent)
           }
         }
       }

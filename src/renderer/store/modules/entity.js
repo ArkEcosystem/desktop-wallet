@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { filter, uniqBy, set } from '@arkecosystem/utils'
+import { filter, uniqBy, set, isObject, isEmpty } from '@arkecosystem/utils'
 import { Request } from '@arkecosystem/platform-sdk-http-got'
 import { File } from '@arkecosystem/platform-sdk-ipfs'
 
@@ -168,6 +168,27 @@ export default {
         promises.push(dispatch('fetchIpfsContent', { registrationId, ipfsHash: entity.data.ipfsData }))
       }
       await Promise.allSettled(promises)
+    },
+
+    uploadIpfsContent (_, ipfsContent) {
+      const sanitizeObject = (obj) => {
+        const result = {}
+        if (isEmpty(obj)) {
+          return result
+        }
+        for (const [key, value] of Object.entries(obj)) {
+          let item = value
+          if (isObject(item)) {
+            item = sanitizeObject(item)
+          }
+          if (!isEmpty(item)) {
+            result[key] = item
+          }
+        }
+        return result
+      }
+
+      return new File(new Request()).upload(sanitizeObject(ipfsContent))
     }
   }
 }

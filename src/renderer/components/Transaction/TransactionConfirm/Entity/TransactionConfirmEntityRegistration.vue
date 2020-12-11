@@ -113,6 +113,7 @@
 
     <template v-else-if="getEntityProperty('module')">
       <ListDividedItem
+        v-if="getEntityProperty('module.developedBy')"
         :label="$t('ENTITY.DEVELOPED_BY')"
         item-value-class="w-full"
       >
@@ -120,6 +121,7 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="getEntityProperty('module.network')"
         :label="$t('ENTITY.NETWORK')"
         item-value-class="w-full"
       >
@@ -127,6 +129,7 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="getEntityProperty('module.releaseDate')"
         :label="$t('ENTITY.RELEASE_DATE')"
         item-value-class="w-full"
       >
@@ -134,6 +137,7 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="getEntityProperty('module.platform')"
         :label="$t('ENTITY.PLATFORM')"
         item-value-class="w-full"
       >
@@ -141,6 +145,7 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="getEntityProperty('module.requirements[0]')"
         :label="$t('ENTITY.REQUIREMENTS')"
         item-value-class="w-full"
       >
@@ -150,6 +155,7 @@
 
     <template v-else-if="getEntityProperty('product')">
       <ListDividedItem
+        v-if="getEntityProperty('product.developedBy')"
         :label="$t('ENTITY.DEVELOPED_BY')"
         item-value-class="w-full"
       >
@@ -157,6 +163,7 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="getEntityProperty('product.network')"
         :label="$t('ENTITY.NETWORK')"
         item-value-class="w-full"
       >
@@ -164,6 +171,7 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="getEntityProperty('product.releaseDate')"
         :label="$t('ENTITY.RELEASE_DATE')"
         item-value-class="w-full"
       >
@@ -171,6 +179,7 @@
       </ListDividedItem>
 
       <ListDividedItem
+        v-if="getEntityProperty('product.platform')"
         :label="$t('ENTITY.PLATFORM')"
         item-value-class="w-full"
       >

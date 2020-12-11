@@ -94,9 +94,7 @@ import { PassphraseInput } from '@/components/Passphrase'
 import { ModalLoader } from '@/components/Modal'
 import Loader from '@/components/utils/Loader'
 
-import { File } from '@arkecosystem/platform-sdk-ipfs'
-import { Request } from '@arkecosystem/platform-sdk-http-got'
-import { filter, isEmpty, cloneDeep } from '@arkecosystem/utils'
+import { cloneDeep } from '@arkecosystem/utils'
 import EntityForm from './EntityForm'
 import mixin from '../mixin'
 
@@ -235,8 +233,7 @@ export default {
       }
 
       const { ipfsContent, entityName } = this.entityForm
-      const sanitizedIpfsData = filter(ipfsContent, (item) => !isEmpty(item))
-      const hash = await new File(new Request()).upload(sanitizedIpfsData)
+      const hash = await this.$store.dispatch('entity/uploadIpfsContent', ipfsContent)
 
       const asset = {
         type: this.entityType,

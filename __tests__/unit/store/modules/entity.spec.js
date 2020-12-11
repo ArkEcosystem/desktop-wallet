@@ -6,6 +6,7 @@ import store from '@/store'
 import * as entitiesFixture from '../../__fixtures__/store/entity'
 import { network1 } from '../../__fixtures__/store/network'
 import { profile1 } from '../../__fixtures__/store/profile'
+import { File } from '@arkecosystem/platform-sdk-ipfs'
 
 const entities = Object.values(entitiesFixture)
 
@@ -98,5 +99,14 @@ describe('entity store module', () => {
 
     await store.dispatch('entity/fetchIpfsContent', { registrationId: entitiesFixture.plugin.id, ipfsHash: entitiesFixture.plugin.data.ipfsData })
     expect(store.state.entity.ipfsContent.failed[entitiesFixture.plugin.id]).toBeTruthy()
+  })
+
+  it('should sanitize ipfs content', async () => {
+    const uploadSpy = jest.spyOn(File.prototype, 'upload').mockReturnValue()
+
+    await store.dispatch('entity/uploadIpfsContent', { key1: null, key2: undefined, key3: {}, key4: [], key5: { a: 1, b: undefined, c: null, d: [null], e: 'value' } })
+    expect(uploadSpy).toHaveBeenCalledWith({ key5: { a: 1, e: 'value' } })
+
+    jest.clearAllMocks()
   })
 })

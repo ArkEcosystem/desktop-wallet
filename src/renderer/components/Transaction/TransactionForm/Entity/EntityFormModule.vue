@@ -5,42 +5,42 @@
     item-value-class="w-full mb-4"
   >
     <InputText
-      v-model="$v.module.developedBy.$model"
-      :is-invalid="$v.module.developedBy.$dirty && $v.module.developedBy.$invalid"
-      :label="`${$t('ENTITY.DEVELOPED_BY')}`"
+      v-model="$v.form.developedBy.$model"
+      :is-invalid="$v.form.developedBy.$dirty && $v.form.developedBy.$invalid"
+      :label="`${$t('ENTITY.DEVELOPED_BY')} (${$t('COMMON.OPTIONAL')})`"
       name="module-developed-by"
     />
 
     <InputText
-      v-model="$v.module.network.$model"
-      :is-invalid="$v.module.network.$dirty && $v.module.network.$invalid"
-      :label="`${$t('ENTITY.NETWORK')}`"
+      v-model="$v.form.network.$model"
+      :is-invalid="$v.form.network.$dirty && $v.form.network.$invalid"
+      :label="`${$t('ENTITY.NETWORK')} (${$t('COMMON.OPTIONAL')})`"
       name="module-network"
       class="mt-4"
     />
 
     <InputText
-      v-model="$v.module.platform.$model"
-      :is-invalid="$v.module.platform.$dirty && $v.module.platform.$invalid"
-      :label="`${$t('ENTITY.PLATFORM')}`"
+      v-model="$v.form.platform.$model"
+      :is-invalid="$v.form.platform.$dirty && $v.form.platform.$invalid"
+      :label="`${$t('ENTITY.PLATFORM')} (${$t('COMMON.OPTIONAL')})`"
       name="module-platform"
       class="mt-4"
     />
 
     <InputText
-      v-model="$v.module.requirements.$model"
-      :is-invalid="$v.module.requirements.$dirty && $v.module.requirements.$invalid"
-      :label="`${$t('ENTITY.REQUIREMENTS')}`"
+      v-model="$v.form.requirements.$model"
+      :is-invalid="$v.form.requirements.$dirty && $v.form.requirements.$invalid"
+      :label="`${$t('ENTITY.REQUIREMENTS')} (${$t('COMMON.OPTIONAL')})`"
       name="module-requirements"
       class="mt-4"
     />
 
     <InputText
-      v-model="$v.module.releaseDate.$model"
+      v-model="$v.form.releaseDate.$model"
       type="date"
       :is-dirty="true"
-      :is-invalid="$v.module.releaseDate.$dirty && $v.module.releaseDate.$invalid"
-      :label="`${$t('ENTITY.RELEASE_DATE')}`"
+      :is-invalid="$v.form.releaseDate.$dirty && $v.form.releaseDate.$invalid"
+      :label="`${$t('ENTITY.RELEASE_DATE')} (${$t('COMMON.OPTIONAL')})`"
       name="module-release-date"
       class="EntityFormProduct__date mt-4"
     >
@@ -62,7 +62,6 @@
 import { InputText } from '@/components/Input'
 import { ListDividedItem } from '@/components/ListDivided'
 import SvgIcon from '@/components/SvgIcon'
-import { required } from 'vuelidate/lib/validators'
 import { get, cloneDeep } from '@arkecosystem/utils'
 
 export default {
@@ -81,7 +80,7 @@ export default {
   },
 
   data: () => ({
-    module: {
+    form: {
       developedBy: undefined,
       network: undefined,
       platform: undefined,
@@ -97,13 +96,13 @@ export default {
   },
 
   watch: {
-    module: {
+    form: {
       deep: true,
       handler (value) {
         const { requirements, ...data } = value
         this.$emit('change', {
           ...data,
-          requirements: [requirements]
+          requirements: requirements ? [requirements] : undefined
         })
       }
     },
@@ -124,27 +123,21 @@ export default {
         data.requirements = requirements[0]
       }
 
-      this.module = data
+      for (const key of Object.keys(this.form)) {
+        if (key in data) {
+          this.$set(this.form, key, data[key])
+        }
+      }
     }
   },
 
   validations: {
-    module: {
-      developedBy: {
-        required
-      },
-      network: {
-        required
-      },
-      releaseDate: {
-        required
-      },
-      platform: {
-        required
-      },
-      requirements: {
-        required
-      }
+    form: {
+      developedBy: {},
+      network: {},
+      releaseDate: {},
+      platform: {},
+      requirements: {}
     }
   }
 }

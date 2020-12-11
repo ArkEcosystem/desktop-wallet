@@ -231,7 +231,13 @@ export default {
     const delegate = get(this.ipfsContent, 'delegate')
 
     if (delegate) {
-      this.delegate = cloneDeep(delegate)
+      const data = cloneDeep(delegate)
+
+      for (const key of Object.keys(this.form)) {
+        if (key in data) {
+          this.$set(this.delegate, key, data[key])
+        }
+      }
 
       if (delegate.payout) {
         this.isComissionVariable = delegate.payout.min !== delegate.payout.max

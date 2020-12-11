@@ -7,14 +7,14 @@
     <InputText
       v-model="$v.product.developedBy.$model"
       :is-invalid="$v.product.developedBy.$dirty && $v.product.developedBy.$invalid"
-      :label="`${$t('ENTITY.DEVELOPED_BY')}`"
+      :label="`${$t('ENTITY.DEVELOPED_BY')} (${$t('COMMON.OPTIONAL')})`"
       name="product-developed-by"
     />
 
     <InputText
       v-model="$v.product.network.$model"
       :is-invalid="$v.product.network.$dirty && $v.product.network.$invalid"
-      :label="`${$t('ENTITY.NETWORK')}`"
+      :label="`${$t('ENTITY.NETWORK')} (${$t('COMMON.OPTIONAL')})`"
       name="product-network"
       class="mt-4"
     />
@@ -22,7 +22,7 @@
     <InputText
       v-model="$v.product.platform.$model"
       :is-invalid="$v.product.platform.$dirty && $v.product.platform.$invalid"
-      :label="`${$t('ENTITY.PLATFORM')}`"
+      :label="`${$t('ENTITY.PLATFORM')} (${$t('COMMON.OPTIONAL')})`"
       name="product-platform"
       class="mt-4"
     />
@@ -32,7 +32,7 @@
       type="date"
       :is-dirty="true"
       :is-invalid="$v.product.releaseDate.$dirty && $v.product.releaseDate.$invalid"
-      :label="`${$t('ENTITY.RELEASE_DATE')}`"
+      :label="`${$t('ENTITY.RELEASE_DATE')} (${$t('COMMON.OPTIONAL')})`"
       name="product-release-date"
       class="EntityFormProduct__date mt-4"
     >
@@ -54,7 +54,6 @@
 import { InputText } from '@/components/Input'
 import { ListDividedItem } from '@/components/ListDivided'
 import SvgIcon from '@/components/SvgIcon'
-import { required } from 'vuelidate/lib/validators'
 import { get, cloneDeep } from '@arkecosystem/utils'
 
 export default {
@@ -105,24 +104,21 @@ export default {
   mounted () {
     const value = get(this.ipfsContent, 'product')
     if (value) {
-      this.product = cloneDeep(value)
+      const data = cloneDeep(value)
+      for (const key of Object.keys(this.product)) {
+        if (key in data) {
+          this.$set(this.product, key, data[key])
+        }
+      }
     }
   },
 
   validations: {
     product: {
-      developedBy: {
-        required
-      },
-      network: {
-        required
-      },
-      releaseDate: {
-        required
-      },
-      platform: {
-        required
-      }
+      developedBy: {},
+      network: {},
+      releaseDate: {},
+      platform: {}
     }
   }
 }
