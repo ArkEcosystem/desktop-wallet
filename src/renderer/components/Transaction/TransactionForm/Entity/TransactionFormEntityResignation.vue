@@ -15,7 +15,7 @@
       name="entity-name"
       :label="$t('ENTITY.NAME')"
       :is-disabled="true"
-      :value="entityTransaction.data.name"
+      :value="entity.data.name"
       class="mb-4"
     />
 
@@ -89,8 +89,8 @@ export default {
   mixins: [mixin],
 
   props: {
-    entityTransaction: {
-      type: Object,
+    registrationId: {
+      type: String,
       required: true
     }
   },
@@ -105,12 +105,18 @@ export default {
   }),
 
   computed: {
-    isUndefined () {
-      return this.transaction_isUndefinedResignation(this.entityTransaction.type, this.entityTransaction.typeGroup, this.entityTransaction.asset)
+    entity () {
+      return this.$store.getters['entity/byRegistrationId'](this.registrationId)
     },
+
+    isUndefined () {
+      return this.transaction_isUndefinedResignation(this.entity.type, this.entity.typeGroup, this.entity.asset)
+    },
+
     title () {
       return this.isUndefined ? this.$t('TRANSACTION.TYPE.UNDEFINED_RESIGNATION') : this.$t(`TRANSACTION.TYPE.${this.entityTypeLabel.toUpperCase()}_ENTITY_RESIGNATION`)
     },
+
     entityTypeLabel () {
       const types = {
         [TRANSACTION_TYPES_ENTITY.TYPE.BUSINESS.toString()]: this.$tc('ENTITY.TYPES.BUSINESS', 1),
@@ -119,11 +125,11 @@ export default {
         [TRANSACTION_TYPES_ENTITY.TYPE.MODULE.toString()]: this.$tc('ENTITY.TYPES.MODULE', 1),
         [TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE.toString()]: this.$tc('ENTITY.TYPES.DELEGATE', 1)
       }
-      return types[this.entityTransaction.type] || this.$t('TRANSACTION.TYPE.UNDEFINED')
+      return types[this.entity.type] || this.$t('TRANSACTION.TYPE.UNDEFINED')
     },
 
     senderWallet () {
-      return this.$store.getters['wallet/byAddress'](this.entityTransaction.address)
+      return this.$store.getters['wallet/byAddress'](this.entity.address)
     },
 
     currentWallet () {
@@ -146,7 +152,7 @@ export default {
         multiSignature: this.currentWallet.multiSignature
       }
 
-      const { type, subType, id: registrationId } = this.entityTransaction
+      const { type, subType, id: registrationId } = this.entity
 
       return {
         ...transactionData,

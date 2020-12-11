@@ -51,7 +51,7 @@ describe('InputText', () => {
         value: 'testing'
       }
     })
-    expect(wrapper.vm.isDirty).toBeTrue()
+    expect(wrapper.vm.inputIsDirty).toBeTrue()
   })
 
   it('should show a helper text', () => {

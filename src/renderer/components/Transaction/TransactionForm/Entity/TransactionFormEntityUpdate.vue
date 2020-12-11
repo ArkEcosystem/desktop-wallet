@@ -96,7 +96,7 @@ import Loader from '@/components/utils/Loader'
 
 import { File } from '@arkecosystem/platform-sdk-ipfs'
 import { Request } from '@arkecosystem/platform-sdk-http-got'
-import { filter, isEmpty } from '@arkecosystem/utils'
+import { filter, isEmpty, cloneDeep } from '@arkecosystem/utils'
 import EntityForm from './EntityForm'
 import mixin from '../mixin'
 
@@ -124,15 +124,10 @@ export default {
       required: false,
       default: undefined
     },
-    entityTransaction: {
+    entity: {
       type: Object,
       required: false,
       default: undefined
-    },
-    ipfsContent: {
-      type: Object,
-      required: false,
-      default: () => {}
     }
   },
 
@@ -149,9 +144,16 @@ export default {
   }),
 
   computed: {
+    ipfsContent () {
+      if (this.entity) {
+        return cloneDeep(this.$store.getters['entity/ipfsContentByRegistrationId'](this.entity.id))
+      }
+      return {}
+    },
+
     entityName () {
-      if (this.entityTransaction) {
-        return this.entityTransaction.data.name
+      if (this.entity) {
+        return this.entity.data.name
       }
 
       if (this.delegate) {
@@ -162,24 +164,24 @@ export default {
     },
 
     entityType () {
-      return this.entityTransaction ? this.entityTransaction.type : TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE
+      return this.entity ? this.entity.type : TRANSACTION_TYPES_ENTITY.TYPE.DELEGATE
     },
 
     entitySubType () {
-      return this.entityTransaction ? this.entityTransaction.subType : TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
+      return this.entity ? this.entity.subType : TRANSACTION_TYPES_ENTITY.SUBTYPE.NONE
     },
 
     entityActionType () {
-      return !this.entityTransaction ? TRANSACTION_TYPES_ENTITY.ACTION.REGISTER : TRANSACTION_TYPES_ENTITY.ACTION.UPDATE
+      return !this.entity ? TRANSACTION_TYPES_ENTITY.ACTION.REGISTER : TRANSACTION_TYPES_ENTITY.ACTION.UPDATE
     },
 
     senderAddress () {
-      return this.delegate ? this.delegate.address : this.entityTransaction.address
+      return this.delegate ? this.delegate.address : this.entity.address
     },
 
     isUndefined () {
-      if (this.entityTransaction) {
-        return this.transaction_isUndefinedUpdate(this.entityTransaction.type, this.entityTransaction.typeGroup, this.entityTransaction.asset)
+      if (this.entity) {
+        return this.transaction_isUndefinedUpdate(this.entity.type, this.entity.typeGroup, this.entity.asset)
       }
 
       return false
@@ -245,8 +247,9 @@ export default {
         }
       }
 
-      if (this.entityTransaction) {
-        asset.registrationId = this.entityTransaction.id
+      // Delegate registration or entity update
+      if (this.entity) {
+        asset.registrationId = this.entity.id
       } else {
         asset.data.name = entityName
       }

@@ -74,7 +74,7 @@
       :type="6"
       :group="2"
       :entity-action="2"
-      :entity-transaction="selectedEntity.transaction"
+      :registration-id="selectedEntity.entity.id"
       :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
       title=""
       @cancel="closeModal"
@@ -87,8 +87,7 @@
       :group="2"
       :entity-action="1"
       :delegate="selectedEntity.delegate"
-      :entity-transaction="selectedEntity.transaction"
-      :ipfs-content="selectedEntity.ipfsDataObject"
+      :entity="selectedEntity.entity"
       :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
       title=""
       @cancel="closeModal"
@@ -190,9 +189,9 @@ export default {
       }
     },
 
-    openModal ({ transaction, row: delegate, ipfsDataObject }, action) {
+    openModal ({ entity, row: delegate }, action) {
       this.modalAction = action
-      this.selectedEntity = { transaction, delegate, ipfsDataObject }
+      this.selectedEntity = { entity, delegate }
     },
 
     closeModal () {

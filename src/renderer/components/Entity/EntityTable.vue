@@ -248,18 +248,13 @@ export default {
     },
 
     emitSelect (key, row) {
-      let transaction = row
-      let ipfsDataObject
+      let entity = row
 
       if (this.isDelegateEntityType) {
-        transaction = this.getDelegateEntity(row.address)
+        entity = this.getDelegateEntity(row.address)
       }
 
-      if (transaction) {
-        ipfsDataObject = this.$store.getters['entity/ipfsContentByRegistrationId'](transaction.id)
-      }
-
-      this.$emit(key, { transaction, row, ipfsDataObject })
+      this.$emit(key, { entity, row })
     },
 
     closeDropdowns () {
