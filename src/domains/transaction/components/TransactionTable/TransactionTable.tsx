@@ -40,7 +40,6 @@ export const TransactionTable = memo(
 			},
 			{
 				Header: t("COMMON.RECIPIENT"),
-				className: "ml-25",
 				cellWidth: "w-96",
 			},
 			{

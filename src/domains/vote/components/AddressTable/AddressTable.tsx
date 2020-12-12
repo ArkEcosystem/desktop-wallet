@@ -23,7 +23,6 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		{
 			Header: t("COMMON.MY_ADDRESS"),
 			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.WALLET_TYPE"),
