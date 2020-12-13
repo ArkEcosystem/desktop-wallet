@@ -79,7 +79,6 @@ export const LedgerTable = ({
 		{
 			Header: t("COMMON.WALLET"),
 			accessor: "address",
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.BALANCE"),

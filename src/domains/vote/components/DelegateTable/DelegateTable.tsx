@@ -48,7 +48,6 @@ export const DelegateTable = ({
 		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: (delegate: ReadOnlyWallet) => isLoading || delegate.username(),
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.STATUS"),

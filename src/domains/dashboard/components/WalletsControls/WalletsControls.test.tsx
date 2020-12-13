@@ -11,7 +11,6 @@ describe("WalletsControls", () => {
 		walletsDisplayType: "all",
 		selectedNetworkIds: [],
 		showTransactions: true,
-		showPortfolio: true,
 		useTestNetworks: true,
 		showToggleViews: true,
 		isFilterChanged: false,

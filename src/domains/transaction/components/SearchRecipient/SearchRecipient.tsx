@@ -112,7 +112,6 @@ export const SearchRecipient = ({ title, description, profile, isOpen, onClose, 
 		{
 			Header: t("COMMON.ADDRESS"),
 			accessor: "address",
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.NAME"),

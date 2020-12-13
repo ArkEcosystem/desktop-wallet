@@ -11,7 +11,6 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 		setValue,
 		walletsDisplayType,
 		selectedNetworkIds,
-		showPortfolio,
 		showTransactions,
 		viewType,
 	} = useDashboardConfig({ profile });
@@ -32,13 +31,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 	}, [profile, selectedNetworkIds]);
 
 	const defaultWalletFilters = useMemo(
-		() =>
-			pick(defaultConfiguration, [
-				"walletsDisplayType",
-				"selectedNetworkIds",
-				"showPortfolio",
-				"showTransactions",
-			]),
+		() => pick(defaultConfiguration, ["walletsDisplayType", "selectedNetworkIds", "showTransactions"]),
 		[defaultConfiguration],
 	);
 
@@ -47,10 +40,9 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			!isEqual(defaultWalletFilters, {
 				walletsDisplayType,
 				selectedNetworkIds,
-				showPortfolio,
 				showTransactions,
 			}),
-		[walletsDisplayType, selectedNetworkIds, showPortfolio, showTransactions, defaultWalletFilters],
+		[walletsDisplayType, selectedNetworkIds, showTransactions, defaultWalletFilters],
 	);
 
 	return useMemo<FilterWalletsHookProps & { update: (key: string, value: any) => void }>(
@@ -59,7 +51,6 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 			useTestNetworks: profile.settings().get(ProfileSetting.UseTestNetworks),
 			walletsDisplayType,
 			selectedNetworkIds,
-			showPortfolio,
 			showTransactions,
 			isFilterChanged,
 			viewType,
@@ -68,7 +59,6 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 		[
 			walletsDisplayType,
 			selectedNetworkIds,
-			showPortfolio,
 			showTransactions,
 			viewType,
 			isFilterChanged,

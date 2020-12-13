@@ -8,10 +8,6 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Your Wallets",
 			DESCRIPTION: "Select the display of your wallets",
 		},
-		CHART: {
-			TITLE: "Portfolio Chart",
-			DESCRIPTION: "You can hide this unit if you like",
-		},
 		TRANSACTION_HISTORY: {
 			TITLE: "Transaction History",
 			DESCRIPTION: "You can hide this unit if you like",

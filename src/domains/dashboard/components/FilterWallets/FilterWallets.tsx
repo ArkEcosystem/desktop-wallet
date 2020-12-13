@@ -10,7 +10,6 @@ import { FilterWalletsProps } from "./";
 export const FilterWallets = ({
 	networks,
 	walletsDisplayType,
-	showPortfolio,
 	showTransactions,
 	useTestNetworks,
 	showToggleViews,
@@ -80,24 +79,6 @@ export const FilterWallets = ({
 			{showToggleViews && (
 				<>
 					<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
-
-					<div className="flex flex-col mb-6">
-						<div className="flex justify-between items-center">
-							<div className="font-semibold text-theme-secondary-text">
-								{t("DASHBOARD.FILTER_WALLETS.CHART.TITLE")}
-							</div>
-
-							<Toggle
-								checked={showPortfolio}
-								data-testid="filter-wallets_toggle--portfolio"
-								onChange={(event) => onChange?.("showPortfolio", event.target.checked)}
-							/>
-						</div>
-
-						<div className="pr-12 mt-1 text-sm text-theme-neutral">
-							{t("DASHBOARD.FILTER_WALLETS.CHART.DESCRIPTION")}
-						</div>
-					</div>
 
 					<div className="flex flex-col">
 						<div className="flex justify-between items-center">

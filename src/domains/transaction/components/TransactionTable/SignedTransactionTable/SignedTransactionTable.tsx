@@ -215,7 +215,6 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
-			className: "ml-25",
 			cellWidth: "w-96",
 		},
 		{
