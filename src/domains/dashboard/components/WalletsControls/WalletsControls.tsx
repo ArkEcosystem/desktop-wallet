@@ -59,7 +59,7 @@ export const WalletsControls = memo(
 						dropdownClass="transform -translate-y-4"
 						toggleContent={
 							<div className="group">
-								<ControlButton isActive={filterProperties?.isFilterChanged}>
+								<ControlButton isActive={filterProperties.isFilterChanged}>
 									<Icon name="Filters" width={17} height={19} />
 								</ControlButton>
 							</div>

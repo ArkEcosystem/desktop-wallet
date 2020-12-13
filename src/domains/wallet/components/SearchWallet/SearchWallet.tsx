@@ -121,7 +121,6 @@ export const SearchWallet = ({
 		{
 			Header: t("COMMON.WALLET_ADDRESS"),
 			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
-			className: showNetwork ? "ml-24" : "ml-15",
 		},
 		{
 			Header: t("COMMON.BALANCE"),

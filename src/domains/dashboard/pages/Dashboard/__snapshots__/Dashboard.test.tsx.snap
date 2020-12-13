@@ -261,157 +261,6 @@ exports[`Dashboard should render 1`] = `
           class="container py-16 px-14 mx-auto"
         >
           <div
-            class="-mb-2 text-4xl font-bold"
-          >
-            Portfolio Chart
-          </div>
-          <div
-            class="recharts-responsive-container mb-16"
-            id="undefined"
-            style="width: 100%; height: 260px;"
-          >
-            <div
-              class="sc-fzoXWK hCbUwo text-theme-neutral-300 dark:text-theme-neutral-800 pb"
-              data-testid="line-chart-wrapper"
-            >
-              <div>
-                <div
-                  class="flex space-x-3"
-                >
-                  <div
-                    class="pt-4 text-sm font-semibold cursor-pointer text-theme-secondary-text"
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="my-auto text-base"
-                      >
-                        Period: 22 Jun - 28 Jun
-                      </div>
-                      <div
-                        class="my-auto ml-1"
-                      >
-                        <div
-                          class="sc-AxirZ iQaTP"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex flex-1 justify-end space-x-3"
-                  >
-                    <div
-                      class="my-auto text-sm text-base text-theme-secondary-text"
-                    >
-                      28 Jun, 2020
-                    </div>
-                    <div
-                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
-                    >
-                      <div
-                        class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
-                      />
-                      <div
-                        class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-                      >
-                        <span>
-                          2.16 - 
-                        </span>
-                        BTC
-                      </div>
-                    </div>
-                    <div
-                      class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
-                    >
-                      <div
-                        class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
-                      />
-                      <div
-                        class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-                      >
-                        <span>
-                          8,000 - 
-                        </span>
-                        USD
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="active-dot"
-              >
-                <svg
-                  class="text-theme-undefined"
-                  fill="currentColor"
-                  height="50"
-                  stroke="currentColor"
-                  width="50"
-                  x="-25"
-                  y="-25"
-                >
-                  chart-active-dot.svg
-                </svg>
-              </div>
-            </div>
-            <div />
-          </div>
-          <div
-            class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
-          />
-          <div>
-            <div
-              class="flex space-x-3"
-            >
-              <div
-                class="py-4 text-lg font-bold text-theme-neutral-800"
-              >
-                Total Portfolio
-              </div>
-              <div
-                class="flex flex-1 justify-end space-x-3"
-              >
-                <div
-                  class="flex justify-end items-center py-4 pr-0 pl-6"
-                  data-testid="item-percentage"
-                >
-                  <div
-                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
-                  />
-                  <div
-                    class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-                  >
-                    <span>
-                      ARK - 100%
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex -space-x-1"
-            >
-              <div
-                class="h-1 rounded-sm bg-theme-danger-400"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
-      >
-        <div
-          class="container py-16 px-14 mx-auto"
-        >
-          <div
             class="flex justify-between items-center mb-8"
           >
             <div
@@ -598,7 +447,7 @@ exports[`Dashboard should render 1`] = `
                         data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                       >
                         <div
-                          class="sc-fznxKY deLtin h-48"
+                          class="sc-fzpmMD fKkTYv h-48"
                           data-testid="Card"
                         >
                           <div
@@ -674,7 +523,7 @@ exports[`Dashboard should render 1`] = `
                         data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                       >
                         <div
-                          class="sc-fznxKY deLtin h-48"
+                          class="sc-fzpmMD fKkTYv h-48"
                           data-testid="Card"
                         >
                           <div
@@ -750,7 +599,7 @@ exports[`Dashboard should render 1`] = `
                         data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                       >
                         <div
-                          class="sc-fznxKY deLtin h-48"
+                          class="sc-fzpmMD fKkTYv h-48"
                           data-testid="Card"
                         >
                           <div
@@ -972,7 +821,7 @@ exports[`Dashboard should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top ml-25"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Recipient
