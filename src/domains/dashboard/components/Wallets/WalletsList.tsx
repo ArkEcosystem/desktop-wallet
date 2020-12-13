@@ -15,7 +15,6 @@ export const WalletsList = memo(({ isVisible = true, wallets, hasMore, onRowClic
 		{
 			Header: t("COMMON.WALLET_ADDRESS"),
 			accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet.alias() || wallet.address(),
-			className: "ml-24",
 		},
 		{
 			Header: t("COMMON.WALLET_TYPE"),

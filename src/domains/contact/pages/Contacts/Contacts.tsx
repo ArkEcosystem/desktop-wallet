@@ -85,7 +85,6 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.CRYPTOASSET"),
@@ -94,7 +93,6 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 		{
 			Header: t("COMMON.ADDRESS"),
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.ACCOUNT_TYPE"),
