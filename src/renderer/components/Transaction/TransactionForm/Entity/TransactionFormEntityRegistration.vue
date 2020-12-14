@@ -289,6 +289,15 @@ export default {
       const { entityName, ipfsContent } = this.step2
       const entityType = +this.step1.registrationType
 
+      const data = {
+        name: entityName,
+        ipfsData: await this.$store.dispatch('entity/uploadIpfsContent', ipfsContent)
+      }
+
+      if (data.ipfsData === null) {
+        delete data.ipfsData
+      }
+
       return {
         ...transactionData,
         asset: {
@@ -296,10 +305,7 @@ export default {
           // @TODO: let the user choose what sub-type they wish to use.
           subType: 0,
           action: +this.$options.entityAction,
-          data: {
-            name: entityName,
-            ipfsData: await this.$store.dispatch('entity/uploadIpfsContent', ipfsContent)
-          }
+          data
         }
       }
     },
@@ -314,11 +320,9 @@ export default {
 
     emitNext (transaction) {
       this.$emit('next', {
-        transaction: {
-          ...transaction,
-          entityForm: this.step2
-        },
-        wallet: this.senderWallet
+        transaction,
+        wallet: this.senderWallet,
+        entityForm: this.step2
       })
     }
   },

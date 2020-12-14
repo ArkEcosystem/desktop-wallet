@@ -74,7 +74,8 @@ export default {
   provide () {
     return {
       currentWallet: this.currentWallet,
-      transaction: this.transaction
+      transaction: this.transaction,
+      extra: this.extra
     }
   },
 
@@ -98,6 +99,11 @@ export default {
       required: true
     },
     wallet: {
+      type: Object,
+      required: false,
+      default: null
+    },
+    extra: {
       type: Object,
       required: false,
       default: null

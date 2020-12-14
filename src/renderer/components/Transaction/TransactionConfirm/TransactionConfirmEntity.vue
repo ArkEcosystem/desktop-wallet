@@ -3,6 +3,7 @@
     :is="activeComponent"
     :current-wallet="currentWallet"
     :transaction="transaction"
+    :extra="extra"
     v-bind="$attrs"
     v-on="$listeners"
   />
@@ -22,7 +23,7 @@ export default {
     ...entityConfirmationComponents
   },
 
-  inject: ['currentWallet', 'transaction'],
+  inject: ['currentWallet', 'transaction', 'extra'],
 
   data: () => ({
     activeComponent: null

@@ -151,10 +151,15 @@ export default {
     },
 
     async fetchIpfsContent ({ commit }, { registrationId, ipfsHash }) {
+      if (!ipfsHash) {
+        return
+      }
+
       commit('SET_IPFS_LOADING', { registrationId })
       try {
         const request = new Request().timeout(5000)
         const ipfsContent = await new File(request).get(ipfsHash)
+
         commit('SET_IPFS_CONTENT', { registrationId, ipfsContent })
       } catch (error) {
         commit('SET_IPFS_FAILED', { registrationId, message: error.message })
@@ -186,6 +191,12 @@ export default {
           }
         }
         return result
+      }
+
+      const sanitized = sanitizeObject(ipfsContent)
+
+      if (isEmpty(sanitized)) {
+        return null
       }
 
       return new File(new Request()).upload(sanitizeObject(ipfsContent))

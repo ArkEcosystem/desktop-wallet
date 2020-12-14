@@ -40,8 +40,8 @@ describe('Registration', () => {
   it('should have entity action (0)', () => {
     const wrapper = createWrapper(TransactionConfirmEntityRegistration, {
       propsData: {
-        transaction: {
-          ...businessRegistration,
+        transaction: businessRegistration,
+        extra: {
           entityForm: {
             entityName: 'test'
           }
@@ -59,8 +59,8 @@ describe('Update', () => {
   it('should have entity action (1)', () => {
     const wrapper = createWrapper(TransactionConfirmEntityUpdate, {
       propsData: {
-        transaction: {
-          ...businessUpdate,
+        transaction: businessUpdate,
+        extra: {
           entityForm: {
             entityName: 'test'
           }

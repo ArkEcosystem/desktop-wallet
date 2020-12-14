@@ -233,15 +233,20 @@ export default {
       }
 
       const { ipfsContent, entityName } = this.entityForm
-      const hash = await this.$store.dispatch('entity/uploadIpfsContent', ipfsContent)
+
+      const data = {
+        ipfsData: await this.$store.dispatch('entity/uploadIpfsContent', ipfsContent)
+      }
+
+      if (data.ipfsData === null) {
+        delete data.ipfsData
+      }
 
       const asset = {
         type: this.entityType,
         subType: this.entitySubType,
         action: this.entityActionType,
-        data: {
-          ipfsData: hash
-        }
+        data
       }
 
       // Delegate registration or entity update
@@ -267,11 +272,9 @@ export default {
 
     emitNext (transaction) {
       this.$emit('next', {
-        transaction: {
-          ...transaction,
-          entityForm: this.entityForm
-        },
-        wallet: this.senderWallet
+        transaction: transaction,
+        wallet: this.senderWallet,
+        entityForm: this.entityForm
       })
     }
   },

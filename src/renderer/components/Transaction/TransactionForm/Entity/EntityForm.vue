@@ -366,7 +366,7 @@ export default {
         required,
         minLength: minLength(3),
         maxLength: maxLength(128),
-        pattern: helpers.regex('pattern', /^[a-zA-Z0-9_-]+$/),
+        pattern: helpers.regex('pattern', /^[a-zA-Z0-9_!@$&.-]+$/),
         isValid () {
           return !this.isNameDuplicated
         }

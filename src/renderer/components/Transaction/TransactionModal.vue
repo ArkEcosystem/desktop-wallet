@@ -20,6 +20,7 @@
       v-if="transaction"
       :transaction="transaction"
       :wallet="walletOverride"
+      :extra="extra"
       @back="onBack"
       @confirm="onConfirm"
     />
@@ -178,10 +179,11 @@ export default {
   },
 
   methods: {
-    onBuilt ({ transaction, wallet }) {
+    onBuilt ({ transaction, wallet, ...rest }) {
       this.step = 1
       this.transaction = transaction
       this.walletOverride = wallet
+      this.extra = rest
     },
 
     onBack () {

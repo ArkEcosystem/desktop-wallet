@@ -3,6 +3,7 @@
     mode="UPDATE"
     :current-wallet="currentWallet"
     :transaction="transaction"
+    :extra="extra"
   />
 </template>
 
@@ -27,6 +28,11 @@ export default {
     transaction: {
       type: Object,
       required: true
+    },
+    extra: {
+      type: Object,
+      required: false,
+      default: () => {}
     }
   }
 }

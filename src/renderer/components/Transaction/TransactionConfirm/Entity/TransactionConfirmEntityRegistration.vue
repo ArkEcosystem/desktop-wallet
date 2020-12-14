@@ -29,7 +29,7 @@
       :label="$t('ENTITY.NAME')"
       item-value-class="w-full"
     >
-      <span>{{ transaction.entityForm.entityName }}</span>
+      <span>{{ extra.entityForm.entityName }}</span>
     </ListDividedItem>
 
     <ListDividedItem
@@ -327,6 +327,11 @@ export default {
       type: Object,
       required: true
     },
+    extra: {
+      type: Object,
+      required: false,
+      default: () => {}
+    },
     mode: {
       type: String,
       required: false,
@@ -389,7 +394,7 @@ export default {
 
   methods: {
     getEntityProperty (path) {
-      return get(this.transaction.entityForm, `ipfsContent.${path}`)
+      return get(this.extra.entityForm, `ipfsContent.${path}`)
     }
   }
 }
