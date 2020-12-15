@@ -1470,7 +1470,10 @@ export default {
     RESIGNED: 'Resigned',
 
     TRANSACTION_REVIEW: 'Transaction Review',
-    NAME_DUPLICATE_VALIDATION: 'Name already registered',
+    NAME_PATTERN_VALIDATION: 'The name must only contain alphanumeric characters',
+    NAME_DUPLICATE_VALIDATION: 'This name has already been registered',
+    MIN_LENGTH_VALIDATION: 'The {name} must be greater than or equal to {length} characters long',
+    MAX_LENGTH_VALIDATION: 'The {name} must be less than or equal to {length} characters long',
     FAILED_FETCH_IPFS: 'Failed to fetch IPFS content. Press to retry.',
 
     NAME: 'Name',

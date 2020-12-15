@@ -13,7 +13,7 @@
         :is-disabled="!!entityName"
         :is-invalid="$v.form.entityName.$dirty && $v.form.entityName.$invalid"
         :label="$t('ENTITY.NAME')"
-        :helper-text="duplicateNameWarning"
+        :helper-text="nameValidationMessage"
         name="name"
       />
 
@@ -37,6 +37,7 @@
         v-model="$v.form.ipfsContent.meta.website.$model"
         :is-invalid="$v.form.ipfsContent.meta.website.$dirty && $v.form.ipfsContent.meta.website.$invalid"
         :label="`${$t('ENTITY.WEBSITE')} (${$t('COMMON.OPTIONAL')})`"
+        :helper-text="webisteValdationMessage"
         name="website"
         class="mt-4"
       />
@@ -276,10 +277,31 @@ export default {
       return this.$store.getters['entity/hasEntityName'](this.form.entityName)
     },
 
-    duplicateNameWarning () {
-      if (this.isNameDuplicated) {
+    nameValidationMessage () {
+      if (!this.$v.form.entityName.isValid) {
         return this.$t('ENTITY.NAME_DUPLICATE_VALIDATION')
       }
+
+      if (!this.$v.form.entityName.pattern) {
+        return this.$t('ENTITY.NAME_PATTERN_VALIDATION')
+      }
+
+      if (!this.$v.form.entityName.minLength) {
+        return this.$t('ENTITY.MIN_LENGTH_VALIDATION', { name: 'name', length: 3 })
+      }
+
+      if (!this.$v.form.entityName.maxLength) {
+        return this.$t('ENTITY.MAX_LENGTH_VALIDATION', { name: 'name', length: 128 })
+      }
+
+      return undefined
+    },
+
+    webisteValdationMessage () {
+      if (!this.$v.form.ipfsContent.meta.website.url) {
+        return this.$t('VALIDATION.INVALID_URL')
+      }
+
       return undefined
     },
 
@@ -377,8 +399,7 @@ export default {
             minLength: minLength(3)
           },
           description: {
-            minLength: minLength(3),
-            maxLength: maxLength(512)
+            minLength: minLength(3)
           },
           website: {
             url
