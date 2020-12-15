@@ -25,7 +25,7 @@
         class="mt-4"
       />
 
-      <InputText
+      <InputTextarea
         v-model="$v.form.ipfsContent.meta.description.$model"
         :is-invalid="$v.form.ipfsContent.meta.description.$dirty && $v.form.ipfsContent.meta.description.$invalid"
         :label="`${$t('ENTITY.DESCRIPTION')} (${$t('COMMON.OPTIONAL')})`"
@@ -187,7 +187,7 @@
 <script>
 import { TRANSACTION_TYPES_ENTITY } from '@config'
 import { Collapse } from '@/components/Collapse'
-import { InputText } from '@/components/Input'
+import { InputText, InputTextarea } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { EntityLinkEditableList } from '@/components/Entity'
 import SvgIcon from '@/components/SvgIcon'
@@ -206,6 +206,7 @@ export default {
     EntityFormModule,
     EntityFormProduct,
     InputText,
+    InputTextarea,
     ListDivided,
     ListDividedItem,
     SvgIcon

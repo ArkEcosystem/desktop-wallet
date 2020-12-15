@@ -10,6 +10,7 @@ import InputPublicKey from './InputPublicKey'
 import InputSelect from './InputSelect'
 import InputSwitch from './InputSwitch'
 import InputText from './InputText'
+import InputTextarea from './InputTextarea'
 
 export * from './InputGrid'
 export * from './InputToggle'
@@ -26,5 +27,6 @@ export {
   InputPublicKey,
   InputSelect,
   InputSwitch,
-  InputText
+  InputText,
+  InputTextarea
 }
