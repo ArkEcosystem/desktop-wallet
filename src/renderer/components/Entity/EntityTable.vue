@@ -54,12 +54,18 @@
           <span v-else-if="hasIpfsFailed(data.row.id)">
             <ButtonReload
               :title="$t('ENTITY.FAILED_FETCH_IPFS')"
-              :is-refresh="isIpfsLoading(data.row.id)"
               view-box="0 0 18 17"
               @click="onReloadIpfs(data.row)"
             />
           </span>
-          <span v-else>N/A</span>
+          <span v-else-if="hasIpfsLoaded(data.row.id)">N/A</span>
+          <span v-else>
+            <ButtonReload
+              :title="$t('ENTITY.FETCH_IPFS')"
+              view-box="0 0 18 17"
+              @click="onReloadIpfs(data.row)"
+            />
+          </span>
         </div>
 
         <div
@@ -207,6 +213,10 @@ export default {
 
     hasIpfsFailed (id) {
       return !!this.$store.getters['entity/ipfsContentFailedMessage'](id)
+    },
+
+    hasIpfsLoaded (id) {
+      return !!this.$store.getters['entity/hasLoadedIpfsContent'](id)
     },
 
     isEntityResigned (row) {

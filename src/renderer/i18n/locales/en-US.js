@@ -1475,6 +1475,7 @@ export default {
     MIN_LENGTH_VALIDATION: 'The {name} must be greater than or equal to {length} characters long',
     MAX_LENGTH_VALIDATION: 'The {name} must be less than or equal to {length} characters long',
     FAILED_FETCH_IPFS: 'Failed to fetch IPFS content. Press to retry.',
+    FETCH_IPFS: 'Press to fetch the IPFS content.',
 
     NAME: 'Name',
     TYPE: 'Type',

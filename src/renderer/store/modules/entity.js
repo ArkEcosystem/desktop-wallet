@@ -67,6 +67,18 @@ export default {
 
     isIpfsContentLoading: (state) => (registrationId) => {
       return !!state.ipfsContent.loading[registrationId]
+    },
+
+    hasLoadedIpfsContent: (state) => (registrationId) => {
+      if (state.ipfsContent.result[registrationId]) {
+        return true
+      }
+
+      if (state.ipfsContent.failed[registrationId]) {
+        return true
+      }
+
+      return false
     }
   },
 
@@ -131,7 +143,7 @@ export default {
       dispatch('fetchAllIpfsContent')
     },
 
-    async loadRecent ({ commit, getters, rootGetters }) {
+    async loadRecent ({ commit, getters, dispatch, rootGetters }) {
       const current = Object.values(getters.bySessionNetwork)
       const { entities } = await this._vm.$client.fetchEntities({
         page: 1,
@@ -142,6 +154,8 @@ export default {
 
       const { id: networkId } = rootGetters['session/network']
       commit('UPDATE_ENTITIES', { entities: result, networkId })
+
+      dispatch('fetchPendingIpfsContent')
     },
 
     async fetchTransactionsHistory (_, registrationId) {
@@ -152,7 +166,7 @@ export default {
 
     async fetchIpfsContent ({ commit }, { registrationId, ipfsHash }) {
       if (!ipfsHash) {
-        return
+        return commit('SET_IPFS_CONTENT', { registrationId, ipfsContent: undefined })
       }
 
       commit('SET_IPFS_LOADING', { registrationId })
@@ -171,6 +185,17 @@ export default {
       const promises = []
       for (const [registrationId, entity] of Object.entries(registrations)) {
         promises.push(dispatch('fetchIpfsContent', { registrationId, ipfsHash: entity.data.ipfsData }))
+      }
+      await Promise.allSettled(promises)
+    },
+
+    async fetchPendingIpfsContent ({ getters, dispatch }) {
+      const registrations = getters.bySessionProfile
+      const promises = []
+      for (const [registrationId, entity] of Object.entries(registrations)) {
+        if (!getters.hasLoadedIpfsContent(registrationId)) {
+          promises.push(dispatch('fetchIpfsContent', { registrationId, ipfsHash: entity.data.ipfsData }))
+        }
       }
       await Promise.allSettled(promises)
     },
