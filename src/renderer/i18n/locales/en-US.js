@@ -1462,6 +1462,7 @@ export default {
     MY_REGISTRATIONS: 'My Registrations',
     REGISTRATION: 'Registration',
     REGISTRATION_TYPE: 'Registration Type',
+    REFRESH_REGISTRATIONS: 'Refresh your registrations list',
 
     REGISTRATION_STEP1_DESCRIPTION: 'Select the address and the registration type.',
     REGISTRATION_STEP2_DESCRIPTION: 'Enter registration details below.',

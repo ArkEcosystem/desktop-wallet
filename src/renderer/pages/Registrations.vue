@@ -2,28 +2,41 @@
   <section class="Registrations flex flex-col">
     <div class="bg-theme-feature rounded-lg w-full px-10 py-5 mb-3 flex items-center justify-between">
       <h2>{{ $t('ENTITY.MY_REGISTRATIONS') }}</h2>
-      <ButtonModal
-        :disabled="!wallets.length"
-        :label="$t('ENTITY.NEW_REGISTRATION')"
-        class="Registrations__new-button m-0 ButtonGeneric blue-button"
-      >
-        <template slot-scope="{ toggle, isOpen }">
-          <TransactionModal
-            v-if="isOpen"
-            :type="6"
-            :group="2"
-            :entity-action="0"
-            :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
-            title=""
-            @cancel="toggle"
-            @sent="onSentRegistration(toggle)"
-          />
-        </template>
-      </ButtonModal>
+      <div class="flex">
+        <ButtonReload
+          v-if="isReady"
+          :is-refreshing="isLoading"
+          :title="$t('ENTITY.REFRESH_REGISTRATIONS')"
+          :without-background="true"
+          view-box="0 0 18 18"
+          tooltip-placement="left"
+          class="mr-5"
+          @click="loadRegistrations"
+        />
+
+        <ButtonModal
+          :disabled="!wallets.length"
+          :label="$t('ENTITY.NEW_REGISTRATION')"
+          class="Registrations__new-button m-0 ButtonGeneric blue-button"
+        >
+          <template slot-scope="{ toggle, isOpen }">
+            <TransactionModal
+              v-if="isOpen"
+              :type="6"
+              :group="2"
+              :entity-action="0"
+              :confirmation-title="$t('ENTITY.TRANSACTION_REVIEW')"
+              title=""
+              @cancel="toggle"
+              @sent="onSentRegistration(toggle)"
+            />
+          </template>
+        </ButtonModal>
+      </div>
     </div>
 
     <div
-      class="bg-theme-feature rounded-lg w-full h-full p-10 flex flex-col overflow-y-auto"
+      class="bg-theme-feature rounded-lg w-full h-full p-10 flex flex-col overflow-y-auto relative"
     >
       <div v-if="isLoading">
         <Loader />
@@ -98,7 +111,7 @@
 
 <script>
 import { TRANSACTION_TYPES_ENTITY } from '@config'
-import { ButtonModal } from '@/components/Button'
+import { ButtonModal, ButtonReload } from '@/components/Button'
 import { TransactionModal } from '@/components/Transaction'
 import { EntityTableCommon, EntityTableDelegate } from '@/components/Entity'
 import SvgIcon from '@/components/SvgIcon'
@@ -109,6 +122,7 @@ export default {
 
   components: {
     ButtonModal,
+    ButtonReload,
     EntityTableCommon,
     EntityTableDelegate,
     Loader,
@@ -117,7 +131,8 @@ export default {
   },
 
   data: () => ({
-    isLoading: true,
+    isReady: false,
+    isLoading: false,
     modalAction: undefined,
     selectedEntity: undefined
   }),
@@ -164,7 +179,7 @@ export default {
 
   mounted () {
     if (!this.wallets.length) {
-      this.isLoading = false
+      this.isReady = true
     } else {
       this.loadRegistrations()
     }
@@ -172,6 +187,7 @@ export default {
 
   methods: {
     async loadRegistrations () {
+      this.isLoading = true
       try {
         await this.$store.dispatch('entity/loadRecent')
       } catch (error) {
@@ -181,6 +197,7 @@ export default {
         }))
       }
       this.isLoading = false
+      this.isReady = true
     },
 
     onDropdownClick () {
