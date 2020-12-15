@@ -70,11 +70,11 @@ export default {
     },
 
     hasLoadedIpfsContent: (state) => (registrationId) => {
-      if (state.ipfsContent.result[registrationId]) {
+      if (registrationId in state.ipfsContent.result) {
         return true
       }
 
-      if (state.ipfsContent.failed[registrationId]) {
+      if (registrationId in state.ipfsContent.failed) {
         return true
       }
 
