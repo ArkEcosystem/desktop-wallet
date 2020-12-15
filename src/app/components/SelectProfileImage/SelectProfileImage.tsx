@@ -60,7 +60,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 		}
 	};
 
-	const isSvg = useMemo(() => value && value.endsWith("</svg>"), [value]);
+	const isSvg = useMemo(() => value?.endsWith("</svg>"), [value]);
 
 	return (
 		<div className={`group ${className}`}>
@@ -82,7 +82,12 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 										onClick={handleUploadImage}
 										data-testid="SelectProfileImage__upload-button"
 									>
-										<Icon name="Upload" className="upload-button__icon text-theme-primary" />
+										<Icon
+											name="Upload"
+											className="upload-button__icon text-theme-primary"
+											width={24}
+											height={18}
+										/>
 									</Button>
 								</UploadButtonWrapper>
 							</div>
@@ -109,7 +114,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 									data-testid="SelectProfileImage__upload-button"
 								>
 									<div className="flex justify-center items-center w-22 h-22">
-										<Icon name="Upload" className="text-white" />
+										<Icon name="Upload" className="text-white" width={24} height={18} />
 									</div>
 								</div>
 							</ProfileImageStyled>

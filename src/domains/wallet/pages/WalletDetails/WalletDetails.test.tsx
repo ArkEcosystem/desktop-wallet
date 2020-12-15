@@ -430,7 +430,9 @@ describe("WalletDetails", () => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${newWallet.id()}`;
 		history.push(walletUrl);
 
-		const { asFragment } = await renderPage();
+		const { asFragment, getByTestId } = await renderPage();
+
+		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 
