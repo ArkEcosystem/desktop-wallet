@@ -28,7 +28,7 @@ export const entityRegistration = (t: any) => ({
 
 				return matches.length
 					? t("COMMON.VALIDATION.FORBIDDEN_CHARACTERS", {
-							characters: sortBy(uniq(matches))
+							characters: sortBy(uniq(matches.split("")))
 								.map((char) => `'${char}'`)
 								.join(", "),
 					  })
