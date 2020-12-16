@@ -22,11 +22,17 @@ export const entityRegistration = (t: any) => ({
 		},
 		validate: {
 			pattern: (value: string) => {
-				const matches = value.split(/[a-zA-Z0-9_!@$&.-]+$/).reduce((acc, curr) => curr ? acc + curr : acc, "");
+				const matches = value
+					.split(/[a-zA-Z0-9_!@$&.-]+$/)
+					.reduce((acc, curr) => (curr ? acc + curr : acc), "");
 
-				return matches.length ? t("COMMON.VALIDATION.FORBIDDEN_CHARACTERS", {
-					characters: sortBy(uniq(matches)).map((char) => `'${char}'`).join(", "),
-				}) : true;
+				return matches.length
+					? t("COMMON.VALIDATION.FORBIDDEN_CHARACTERS", {
+							characters: sortBy(uniq(matches))
+								.map((char) => `'${char}'`)
+								.join(", "),
+					  })
+					: true;
 			},
 		},
 	}),
