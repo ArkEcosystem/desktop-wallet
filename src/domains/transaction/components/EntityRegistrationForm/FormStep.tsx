@@ -110,7 +110,7 @@ export const FormStep = ({ title, description, showEntityNameField = true, walle
 
 			{showEntityNameField && (
 				<FormField name="entityName">
-					<FormLabel>{t("TRANSACTION.NAME")}</FormLabel>
+					<FormLabel required>{t("TRANSACTION.NAME")}</FormLabel>
 					<Input
 						data-testid="EntityRegistrationForm__entity-name"
 						type="text"
@@ -122,7 +122,7 @@ export const FormStep = ({ title, description, showEntityNameField = true, walle
 			)}
 
 			<FormField name="ipfsData.meta.displayName">
-				<FormLabel>{t("TRANSACTION.ENTITY.DISPLAY_NAME")}</FormLabel>
+				<FormLabel required={false} optional>{t("TRANSACTION.ENTITY.DISPLAY_NAME")}</FormLabel>
 				<Input
 					data-testid="EntityRegistrationForm__display-name"
 					type="text"
@@ -133,7 +133,7 @@ export const FormStep = ({ title, description, showEntityNameField = true, walle
 			</FormField>
 
 			<FormField name="ipfsData.meta.description">
-				<FormLabel>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
+				<FormLabel required={false} optional>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 				<TextArea
 					data-testid="EntityRegistrationForm__description"
 					onChange={handleInput}
@@ -143,7 +143,7 @@ export const FormStep = ({ title, description, showEntityNameField = true, walle
 			</FormField>
 
 			<FormField name="ipfsData.meta.website">
-				<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
+				<FormLabel required={false} optional>{t("TRANSACTION.WEBSITE")}</FormLabel>
 				<Input
 					data-testid="EntityRegistrationForm__website"
 					type="text"
