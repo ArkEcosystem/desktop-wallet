@@ -363,10 +363,12 @@ exports[`Registration should fill all data including link collections 1`] = `
                           for="ipfsData.meta.displayName"
                         >
                           Display Name
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -385,10 +387,12 @@ exports[`Registration should fill all data including link collections 1`] = `
                           for="ipfsData.meta.description"
                         >
                           Description
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <textarea
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -407,10 +411,12 @@ exports[`Registration should fill all data including link collections 1`] = `
                           for="ipfsData.meta.website"
                         >
                           Website
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -7082,10 +7088,12 @@ exports[`Registration should validate description 1`] = `
                           for="ipfsData.meta.displayName"
                         >
                           Display Name
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -7104,10 +7112,12 @@ exports[`Registration should validate description 1`] = `
                           for="ipfsData.meta.description"
                         >
                           Description
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <textarea
                           aria-invalid="true"
@@ -7132,10 +7142,12 @@ exports[`Registration should validate description 1`] = `
                           for="ipfsData.meta.website"
                         >
                           Website
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -7746,10 +7758,12 @@ exports[`Registration should validate display name 1`] = `
                           for="ipfsData.meta.displayName"
                         >
                           Display Name
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           aria-invalid="true"
@@ -7774,10 +7788,12 @@ exports[`Registration should validate display name 1`] = `
                           for="ipfsData.meta.description"
                         >
                           Description
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <textarea
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -7794,10 +7810,12 @@ exports[`Registration should validate display name 1`] = `
                           for="ipfsData.meta.website"
                         >
                           Website
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -8414,10 +8432,12 @@ exports[`Registration should validate entity name 1`] = `
                           for="ipfsData.meta.displayName"
                         >
                           Display Name
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -8436,10 +8456,12 @@ exports[`Registration should validate entity name 1`] = `
                           for="ipfsData.meta.description"
                         >
                           Description
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <textarea
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -8456,10 +8478,12 @@ exports[`Registration should validate entity name 1`] = `
                           for="ipfsData.meta.website"
                         >
                           Website
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -9070,10 +9094,12 @@ exports[`Registration should validate website url 1`] = `
                           for="ipfsData.meta.displayName"
                         >
                           Display Name
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -9092,10 +9118,12 @@ exports[`Registration should validate website url 1`] = `
                           for="ipfsData.meta.description"
                         >
                           Description
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <textarea
                           class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
@@ -9112,10 +9140,12 @@ exports[`Registration should validate website url 1`] = `
                           for="ipfsData.meta.website"
                         >
                           Website
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
+                          <span
+                            class="ml-1 text-theme-neutral-light"
+                            data-testid="FormLabel__optional"
+                          >
+                            (optional)
+                          </span>
                         </label>
                         <input
                           aria-invalid="true"
