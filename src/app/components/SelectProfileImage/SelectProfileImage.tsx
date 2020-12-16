@@ -78,7 +78,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 								<img
 									src={isSvg ? `data:image/svg+xml;utf8,${value}` : value}
 									className="min-h-full"
-									alt="Profile Image"
+									alt="Avatar"
 								/>
 								{isSvg && (
 									<span className="absolute text-2xl font-semibold text-theme-background">
