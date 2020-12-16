@@ -25,7 +25,7 @@ const ProfileAvatar = ({ address }: any) => {
 	if (!address)
 		return (
 			<Circle
-				className="ml-4 mr-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+				className="mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
 				size="sm"
 				noShadow
 			/>

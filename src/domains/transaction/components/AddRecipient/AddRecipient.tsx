@@ -246,7 +246,7 @@ export const AddRecipient = ({
 										});
 										singleRecipientOnChange(remainingBalance.toString(), recipientAddress);
 									}}
-									className="pr-3 pl-6 mr-1 h-12 text-theme-primary font-medium focus:outline-none"
+									className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
 								>
 									{t("TRANSACTION.SEND_ALL")}
 								</button>
