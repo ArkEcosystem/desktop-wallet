@@ -677,8 +677,8 @@ describe("Registration", () => {
 		waitFor(() => expect(feeInput).toHaveValue("0"));
 	});
 
-	it("should validate entity name", async () => {
-		const { asFragment, getByTestId } = await renderPage(wallet);
+	it("should show error if entity name is too short", async () => {
+		const { asFragment, getByTestId, getByText } = await renderPage(wallet);
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
@@ -702,7 +702,110 @@ describe("Registration", () => {
 			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: "ab" } });
 		});
 
-		await waitFor(() => expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveAttribute("aria-invalid"));
+		await waitFor(() => {
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveAttribute("aria-invalid");
+			expect(getByText("'Name' should have at least 3 characters"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show error if entity name is too long", async () => {
+		const { asFragment, getByTestId, getByText } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), {
+				target: { value: Array(256).fill("x").join("") },
+			});
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveAttribute("aria-invalid");
+			expect(getByText("'Name' should have at most 128 characters"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show error if entity name contains forbidden characters", async () => {
+		const { asFragment, getByTestId, getByText } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: "<x>" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("EntityRegistrationForm__entity-name")).toHaveAttribute("aria-invalid");
+			expect(getByText("The following characters are not allowed: '<', '>'"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not show error if entity name is valid", async () => {
+		const { asFragment, getByTestId, getByText } = await renderPage(wallet);
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
+		});
+
+		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Business")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("RegistrationTypeIcon-Business"));
+		});
+
+		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(getByTestId("Registration__continue-button"));
+		});
+
+		await waitFor(() => expect(getByTestId("EntityRegistrationForm")).toBeTruthy());
+
+		act(() => {
+			fireEvent.change(getByTestId("EntityRegistrationForm__entity-name"), { target: { value: "entity" } });
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("EntityRegistrationForm__entity-name")).not.toHaveAttribute("aria-invalid"),
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
