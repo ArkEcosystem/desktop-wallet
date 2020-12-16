@@ -22,8 +22,12 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const { watch, register, formState, setValue, trigger } = form;
-	const { name, confirmPassword } = watch(["name", "confirmPassword"], { name: "" });
+	const { errors, watch, register, formState, setValue, trigger } = form;
+	const { name, password, passwordConfirmation } = watch(["name", "passwordConfirmation", "password"], {
+		name: "",
+		password: "",
+		passwordConfirmation: "",
+	});
 
 	const [avatarImage, setAvatarImage] = useState("");
 
@@ -81,15 +85,16 @@ export const CreateProfile = () => {
 							<h3>{t("PROFILE.PAGE_CREATE_PROFILE.NEW_PROFILE")}</h3>
 
 							<div className="relative mt-8 space-y-8">
-								<div className="flex justify-between -mt-6">
-									<FormField name="name" className="mr-6 w-full">
-										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-										<Input ref={register(createProfile.name())} />
-										<FormHelperText />
-									</FormField>
+								<div className="flex justify-between -mt-4">
+									<div className="mr-6 w-full">
+										<FormField name="name">
+											<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
+											<Input ref={register(createProfile.name())} />
+											<FormHelperText />
+										</FormField>
+									</div>
 
 									<SelectProfileImage
-										className="-mt-6"
 										value={avatarImage}
 										name={formattedName}
 										showLabel={false}
@@ -104,21 +109,30 @@ export const CreateProfile = () => {
 										optional
 									/>
 									<InputPassword
-										ref={register(createProfile.password())}
+										ref={register(createProfile.password(passwordConfirmation))}
 										onChange={() => {
-											if (confirmPassword) trigger("confirmPassword");
+											if (!password) {
+												setValue("passwordConfirmation", "");
+											}
+											trigger("passwordConfirmation");
 										}}
 									/>
 									<FormHelperText />
 								</FormField>
 
-								<FormField name="confirmPassword">
+								<FormField name="passwordConfirmation">
 									<FormLabel
 										label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
-										required={!!watch("password")}
-										optional={!watch("password")}
+										required={false}
 									/>
-									<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
+									<InputPassword
+										ref={register(createProfile.passwordConfirmation(password))}
+										disabled={
+											!passwordConfirmation &&
+											(!password || errors.password?.type === "minLength")
+										}
+										onChange={() => trigger("password")}
+									/>
 									<FormHelperText />
 								</FormField>
 

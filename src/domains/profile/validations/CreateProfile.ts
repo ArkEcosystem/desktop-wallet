@@ -4,7 +4,7 @@ export const createProfile = (t: any, env: Environment) => ({
 	name: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-		}).toString(),
+		}),
 		validate: {
 			maxLength: (name: string) =>
 				name.trim().length > 42
@@ -27,7 +27,13 @@ export const createProfile = (t: any, env: Environment) => ({
 			},
 		},
 	}),
-	password: () => ({
+	password: (passwordConfirmation: string) => ({
+		validate: (value: string) =>
+			!value ||
+			value === passwordConfirmation ||
+			t("COMMON.VALIDATION.SUBJECT_MISMATCH", {
+				subject: t("COMMON.PASSWORDS"),
+			}),
 		minLength: {
 			value: 6,
 			message: t("COMMON.VALIDATION.MIN_LENGTH", {
@@ -36,13 +42,17 @@ export const createProfile = (t: any, env: Environment) => ({
 			}),
 		},
 	}),
-	confirmPassword: (password: string) => ({
-		validate: (confirmPassword: string) =>
-			!!password && password !== confirmPassword ? t("COMMON.VALIDATION.PASSWORD_MISMATCH") : true,
+	passwordConfirmation: (password: string) => ({
+		validate: (value: string) =>
+			!value ||
+			value === password ||
+			t("COMMON.VALIDATION.SUBJECT_MISMATCH", {
+				subject: t("COMMON.PASSWORDS"),
+			}),
 	}),
 	currency: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
-		}).toString(),
+		}),
 	}),
 });
