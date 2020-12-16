@@ -65,7 +65,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 	return (
 		<div className={`group space-y-2 ${className}`}>
 			{showLabel && (
-				<span className="text-sm cursor-default font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text">
+				<span className="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text">
 					{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
 				</span>
 			)}
@@ -118,8 +118,8 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 					</div>
 				) : (
 					<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
-						<div className="w-20 h-20 rounded-md border-2 border-dashed border-theme-primary-contrast p-1">
-							<div className="overflow-hidden rounded-full h-full">
+						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-primary-contrast">
+							<div className="overflow-hidden h-full rounded-full">
 								<UploadButtonWrapper>
 									<Button
 										variant="secondary"

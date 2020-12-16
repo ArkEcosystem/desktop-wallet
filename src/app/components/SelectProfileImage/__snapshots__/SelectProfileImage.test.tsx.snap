@@ -6,7 +6,7 @@ exports[`SelectProfileImage should render 1`] = `
     class="group space-y-2 undefined"
   >
     <span
-      class="text-sm cursor-default font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text"
+      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text"
     >
       Profile Image
     </span>
@@ -14,10 +14,10 @@ exports[`SelectProfileImage should render 1`] = `
       class="flex flex-row"
     >
       <div
-        class="w-20 h-20 rounded-md border-2 border-dashed border-theme-primary-contrast p-1"
+        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-primary-contrast"
       >
         <div
-          class="overflow-hidden rounded-full h-full"
+          class="overflow-hidden h-full rounded-full"
         >
           <div
             class="sc-AxiKw XepdS"
