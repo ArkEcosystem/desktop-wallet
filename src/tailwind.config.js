@@ -1,6 +1,4 @@
 const defaultConfig = require("tailwindcss/defaultConfig");
-const tailwindUI = require("@tailwindcss/ui");
-const tailwindcssDebugScreens = require("tailwindcss-debug-screens");
 
 module.exports = {
 	purge: false,
@@ -229,5 +227,5 @@ module.exports = {
 		opacity: [...defaultConfig.variants.opacity, "group-hover"],
 		padding: [...defaultConfig.variants.padding, "first", "last"],
 	},
-	plugins: [tailwindUI, tailwindcssDebugScreens],
+	plugins: [require("@tailwindcss/forms")],
 };

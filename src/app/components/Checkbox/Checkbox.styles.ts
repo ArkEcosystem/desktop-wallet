@@ -1,6 +1,8 @@
 import tw, { css } from "twin.macro";
 
-const baseStyle = [tw`w-4 h-4 transition duration-150 ease-in-out form-checkbox`];
+const baseStyle = [
+	tw`w-4 h-4 transition duration-150 ease-in-out rounded focus:ring-offset-0 border-theme-neutral-300`,
+];
 
 const getColor = (color: string) => {
 	const colorBase = `var(--theme-color-${color})`;
