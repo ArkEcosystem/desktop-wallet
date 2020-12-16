@@ -32,7 +32,7 @@ const getSize = (size?: Size): any => {
 		case "sm":
 			return tw`px-3 py-2 space-x-2 text-sm`;
 		case "lg":
-			return tw`px-6 py-4 space-x-4 text-lg`;
+			return tw`px-6 py-4 space-x-4`;
 		case "icon":
 			return tw`p-3`;
 		default:

@@ -25,7 +25,7 @@ export function FormLabel(props: FormLabelProps) {
 	return (
 		<label
 			data-testid="FormLabel"
-			className="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+			className="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
 			htmlFor={fieldContext?.name}
 			{...labelProps}
 		>
@@ -42,7 +42,7 @@ export function FormLabel(props: FormLabelProps) {
 
 			{props.optional && (
 				<Tooltip content={t("COMMON.VALIDATION.OPTIONAL")}>
-					<span data-testid="FormLabel__optional" className="ml-1 text-theme-neutral-light">
+					<span data-testid="FormLabel__optional" className="ml-1 text-theme-secondary-text">
 						({t("COMMON.OPTIONAL")})
 					</span>
 				</Tooltip>
