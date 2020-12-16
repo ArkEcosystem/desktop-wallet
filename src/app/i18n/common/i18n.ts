@@ -206,6 +206,8 @@ export const translations: { [key: string]: any } = {
 	YOUR_BALANCE: "Your balance",
 	YOUR_PASSPHRASE: "Your Passphrase",
 
+	NOTICE_NO_WALLETS: "Create or import a wallet first",
+
 	CLIPBOARD: {
 		SUCCESS: "Copied!",
 		TOOLTIP_TEXT: "Copy to clipboard",
