@@ -21,9 +21,9 @@ import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { matchPath, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 import { Theme } from "types";
+import { migrateFixtures, restoreProfiles } from "utils/migrate-fixtures";
 
 import { middlewares, RouterView, routes } from "../router";
 import {
@@ -95,8 +95,13 @@ const Main = () => {
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
 
 			try {
-				await env.verify(shouldUseFixture ? fixtureData : undefined);
+				await env.verify(shouldUseFixture ? migrateFixtures() : undefined);
 				await env.boot();
+
+				if (shouldUseFixture) {
+					await restoreProfiles(env);
+				}
+
 				await runAll();
 				await persist();
 			} catch (error) {

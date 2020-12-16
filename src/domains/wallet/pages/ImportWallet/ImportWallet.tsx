@@ -81,7 +81,7 @@ export const ImportWallet = () => {
 			}
 		};
 
-		const rates = () => env.exchangeRates().syncCoinByProfile(activeProfile, wallet.currency(), [wallet]);
+		const rates = () => env.exchangeRates().syncAll(activeProfile, wallet.currency());
 
 		await Promise.allSettled([votes(), rates(), fees()]);
 		await persist();
