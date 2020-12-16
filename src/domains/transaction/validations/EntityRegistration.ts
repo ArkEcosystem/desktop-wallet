@@ -1,3 +1,4 @@
+import { sortBy, uniq } from "@arkecosystem/utils";
 import * as yup from "yup";
 
 export const entityRegistration = (t: any) => ({
@@ -19,12 +20,17 @@ export const entityRegistration = (t: any) => ({
 				maxLength: 128,
 			}),
 		},
-		pattern: /^[a-zA-Z0-9_-]+$/,
+		validate: {
+			pattern: (value: string) => {
+				const matches = value.split(/[a-zA-Z0-9_!@$&.-]+$/).reduce((acc, curr) => curr ? acc + curr : acc, "");
+
+				return matches.length ? t("COMMON.VALIDATION.FORBIDDEN_CHARACTERS", {
+					characters: sortBy(uniq(matches)).map((char) => `'${char}'`).join(", "),
+				}) : true;
+			},
+		},
 	}),
 	displayName: () => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.NAME"),
-		}),
 		minLength: {
 			value: 3,
 			message: t("COMMON.VALIDATION.MIN_LENGTH", {
@@ -41,9 +47,6 @@ export const entityRegistration = (t: any) => ({
 		},
 	}),
 	description: () => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.DESCRIPTION"),
-		}),
 		minLength: {
 			value: 3,
 			message: t("COMMON.VALIDATION.MIN_LENGTH", {
@@ -60,16 +63,14 @@ export const entityRegistration = (t: any) => ({
 		},
 	}),
 	website: () => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.WEBSITE"),
-		}),
 		validate: {
 			valid: (value: string) => {
-				if (!yup.string().url().isValidSync(value)) {
+				if (value && !yup.string().url().isValidSync(value)) {
 					return t("COMMON.VALIDATION.FIELD_INVALID", {
 						field: t("COMMON.WEBSITE"),
-					}).toString();
+					});
 				}
+
 				return true;
 			},
 		},
