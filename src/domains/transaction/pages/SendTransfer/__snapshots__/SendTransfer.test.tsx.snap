@@ -405,7 +405,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
                                 placeholder="Enter a cryptoasset name"
@@ -469,7 +469,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         >
                           <div>
                             <button
-                              class="sc-fznxKY kXfvkB SelectAddress  "
+                              class="sc-fznxKY dwXnrU SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -494,7 +494,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               </div>
                             </button>
                             <input
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -589,7 +589,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                       />
                                     </div>
                                     <input
-                                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                                      class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                                       data-testid="SelectRecipient__input"
                                       disabled=""
                                       name="recipientAddress"
@@ -631,7 +631,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   class="sc-fznxsB hhZPAY"
                                 >
                                   <input
-                                    class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                                    class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                     data-testid="add-recipient__amount-input"
                                     disabled=""
                                     name="amount"
@@ -670,7 +670,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           class="sc-fznxsB hhZPAY"
                         >
                           <input
-                            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+                            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
                             data-testid="Input__smartbridge"
                             name="smartbridge"
                             placeholder=" "
@@ -710,7 +710,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               class="sc-fznxsB hhZPAY"
                             >
                               <input
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -736,7 +736,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         aria-valuemax="2e-8"
                                         aria-valuemin="0"
                                         aria-valuenow="0"
-                                        class="sc-fzoiQi kEqFhK"
+                                        class="sc-fzoiQi dhJwTO"
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
@@ -1175,7 +1175,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
@@ -1320,7 +1320,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 aria-controls="SendTransactionForm__network-menu"
                 aria-labelledby="SendTransactionForm__network-label"
                 autocomplete="off"
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -1359,7 +1359,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
         >
           <div>
             <button
-              class="sc-fznxKY kXfvkB SelectAddress  "
+              class="sc-fznxKY dwXnrU SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
@@ -1384,7 +1384,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               </div>
             </button>
             <input
-              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
@@ -1479,7 +1479,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                       />
                     </div>
                     <input
-                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                      class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                       data-testid="SelectRecipient__input"
                       disabled=""
                       name="recipientAddress"
@@ -1521,7 +1521,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                   class="sc-fznxsB hhZPAY"
                 >
                   <input
-                    class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                    class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                     data-testid="add-recipient__amount-input"
                     disabled=""
                     name="amount"
@@ -1560,7 +1560,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
           class="sc-fznxsB hhZPAY"
         >
           <input
-            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
             data-testid="Input__smartbridge"
             name="smartbridge"
             placeholder=" "
@@ -1600,7 +1600,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               class="sc-fznxsB hhZPAY"
             >
               <input
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="InputCurrency"
                 name="fee"
                 type="text"
@@ -1626,7 +1626,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                         aria-valuemax="2e-8"
                         aria-valuemin="0"
                         aria-valuenow="0"
-                        class="sc-fzoiQi kEqFhK"
+                        class="sc-fzoiQi dhJwTO"
                         data-testid="Range__thumb"
                         draggable="false"
                         role="slider"
@@ -1755,7 +1755,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
                 aria-controls="SendTransactionForm__network-menu"
                 aria-labelledby="SendTransactionForm__network-label"
                 autocomplete="off"
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -1794,7 +1794,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
         >
           <div>
             <button
-              class="sc-fznxKY kXfvkB SelectAddress  "
+              class="sc-fznxKY dwXnrU SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
@@ -1819,7 +1819,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
               </div>
             </button>
             <input
-              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
@@ -1914,7 +1914,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
                       />
                     </div>
                     <input
-                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                      class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                       data-testid="SelectRecipient__input"
                       disabled=""
                       name="recipientAddress"
@@ -1956,7 +1956,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
                   class="sc-fznxsB hhZPAY"
                 >
                   <input
-                    class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                    class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                     data-testid="add-recipient__amount-input"
                     disabled=""
                     name="amount"
@@ -1995,7 +1995,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
           class="sc-fznxsB hhZPAY"
         >
           <input
-            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
             data-testid="Input__smartbridge"
             name="smartbridge"
             placeholder=" "
@@ -2035,7 +2035,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
               class="sc-fznxsB hhZPAY"
             >
               <input
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="InputCurrency"
                 name="fee"
                 type="text"
@@ -2061,7 +2061,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
                         aria-valuemax="2e-8"
                         aria-valuemin="0"
                         aria-valuenow="0"
-                        class="sc-fzoiQi kEqFhK"
+                        class="sc-fzoiQi dhJwTO"
                         data-testid="Range__thumb"
                         draggable="false"
                         role="slider"
@@ -2190,7 +2190,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                 aria-controls="SendTransactionForm__network-menu"
                 aria-labelledby="SendTransactionForm__network-label"
                 autocomplete="off"
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -2229,7 +2229,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
         >
           <div>
             <button
-              class="sc-fznxKY kXfvkB SelectAddress  "
+              class="sc-fznxKY dwXnrU SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
@@ -2254,7 +2254,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               </div>
             </button>
             <input
-              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
@@ -2360,7 +2360,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                       </div>
                     </div>
                     <input
-                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                      class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                       data-testid="SelectRecipient__input"
                       disabled=""
                       name="recipientAddress"
@@ -2402,7 +2402,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                   class="sc-fznxsB hhZPAY"
                 >
                   <input
-                    class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                    class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                     data-testid="add-recipient__amount-input"
                     disabled=""
                     name="amount"
@@ -2441,7 +2441,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
           class="sc-fznxsB hhZPAY"
         >
           <input
-            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
             data-testid="Input__smartbridge"
             name="smartbridge"
             placeholder=" "
@@ -2481,7 +2481,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               class="sc-fznxsB hhZPAY"
             >
               <input
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="InputCurrency"
                 name="fee"
                 type="text"
@@ -2507,7 +2507,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                         aria-valuemax="2e-8"
                         aria-valuemin="0"
                         aria-valuenow="0"
-                        class="sc-fzoiQi kEqFhK"
+                        class="sc-fzoiQi dhJwTO"
                         data-testid="Range__thumb"
                         draggable="false"
                         role="slider"
@@ -3516,7 +3516,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 disabled=""
                                 id="SendTransactionForm__network-input"
@@ -3556,7 +3556,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         >
                           <div>
                             <button
-                              class="sc-fznxKY kXfvkB SelectAddress  "
+                              class="sc-fznxKY dwXnrU SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -3599,7 +3599,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               </div>
                             </button>
                             <input
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -3694,7 +3694,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                       />
                                     </div>
                                     <input
-                                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                                      class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                                       data-testid="SelectRecipient__input"
                                       name="recipientAddress"
                                       type="text"
@@ -3735,7 +3735,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   class="sc-fznxsB hhZPAY"
                                 >
                                   <input
-                                    class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                                    class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                     data-testid="add-recipient__amount-input"
                                     name="amount"
                                     placeholder="Amount"
@@ -3773,7 +3773,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           class="sc-fznxsB hhZPAY"
                         >
                           <input
-                            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+                            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
                             data-testid="Input__smartbridge"
                             name="smartbridge"
                             placeholder=" "
@@ -3813,7 +3813,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               class="sc-fznxsB hhZPAY"
                             >
                               <input
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -3839,7 +3839,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                         aria-valuemax="6.63"
                                         aria-valuemin="0.00357"
                                         aria-valuenow="0.71538139"
-                                        class="sc-fzoiQi kEqFhK"
+                                        class="sc-fzoiQi dhJwTO"
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
@@ -4308,7 +4308,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
                                 placeholder="Enter a cryptoasset name"
@@ -4347,7 +4347,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                         >
                           <div>
                             <button
-                              class="sc-fznxKY kXfvkB SelectAddress  "
+                              class="sc-fznxKY dwXnrU SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -4372,7 +4372,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               </div>
                             </button>
                             <input
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -4467,7 +4467,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                       />
                                     </div>
                                     <input
-                                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                                      class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                                       data-testid="SelectRecipient__input"
                                       disabled=""
                                       name="recipientAddress"
@@ -4509,7 +4509,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                   class="sc-fznxsB hhZPAY"
                                 >
                                   <input
-                                    class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                                    class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                     data-testid="add-recipient__amount-input"
                                     disabled=""
                                     name="amount"
@@ -4548,7 +4548,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                           class="sc-fznxsB hhZPAY"
                         >
                           <input
-                            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+                            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
                             data-testid="Input__smartbridge"
                             name="smartbridge"
                             placeholder=" "
@@ -4588,7 +4588,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               class="sc-fznxsB hhZPAY"
                             >
                               <input
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -4614,7 +4614,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                         aria-valuemax="2e-8"
                                         aria-valuemin="0"
                                         aria-valuenow="0"
-                                        class="sc-fzoiQi kEqFhK"
+                                        class="sc-fzoiQi dhJwTO"
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
@@ -5102,7 +5102,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
                                 placeholder="Enter a cryptoasset name"
@@ -5166,7 +5166,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         >
                           <div>
                             <button
-                              class="sc-fznxKY kXfvkB SelectAddress  "
+                              class="sc-fznxKY dwXnrU SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -5209,7 +5209,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               </div>
                             </button>
                             <input
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -5304,7 +5304,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       />
                                     </div>
                                     <input
-                                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                                      class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                                       data-testid="SelectRecipient__input"
                                       name="recipientAddress"
                                       type="text"
@@ -5345,7 +5345,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   class="sc-fznxsB hhZPAY"
                                 >
                                   <input
-                                    class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                                    class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                     data-testid="add-recipient__amount-input"
                                     name="amount"
                                     placeholder="Amount"
@@ -5383,7 +5383,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           class="sc-fznxsB hhZPAY"
                         >
                           <input
-                            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+                            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
                             data-testid="Input__smartbridge"
                             name="smartbridge"
                             placeholder=" "
@@ -5425,7 +5425,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               class="sc-fznxsB hhZPAY"
                             >
                               <input
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -5451,7 +5451,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         aria-valuemax="6.63"
                                         aria-valuemin="0.00357"
                                         aria-valuenow="0.71538139"
-                                        class="sc-fzoiQi kEqFhK"
+                                        class="sc-fzoiQi dhJwTO"
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
@@ -5939,7 +5939,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 id="SendTransactionForm__network-input"
                                 placeholder="Enter a cryptoasset name"
@@ -6003,7 +6003,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         >
                           <div>
                             <button
-                              class="sc-fznxKY kXfvkB SelectAddress  "
+                              class="sc-fznxKY dwXnrU SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -6028,7 +6028,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               </div>
                             </button>
                             <input
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -6123,7 +6123,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                       />
                                     </div>
                                     <input
-                                      class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                                      class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                                       data-testid="SelectRecipient__input"
                                       disabled=""
                                       name="recipientAddress"
@@ -6165,7 +6165,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                   class="sc-fznxsB hhZPAY"
                                 >
                                   <input
-                                    class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                                    class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                                     data-testid="add-recipient__amount-input"
                                     disabled=""
                                     name="amount"
@@ -6204,7 +6204,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                           class="sc-fznxsB hhZPAY"
                         >
                           <input
-                            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+                            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
                             data-testid="Input__smartbridge"
                             name="smartbridge"
                             placeholder=" "
@@ -6244,7 +6244,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               class="sc-fznxsB hhZPAY"
                             >
                               <input
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -6270,7 +6270,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                         aria-valuemax="2e-8"
                                         aria-valuemin="0"
                                         aria-valuenow="0"
-                                        class="sc-fzoiQi kEqFhK"
+                                        class="sc-fzoiQi dhJwTO"
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
