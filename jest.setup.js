@@ -1,5 +1,6 @@
 import MockDate from "mockdate";
-import { env, restoreProfiles, envStorageFixture } from "./src/utils/testing-library";
+import { env } from "./src/utils/testing-library";
+import { restoreProfiles } from "./src/utils/migrate-fixtures";
 
 jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 	const { createTransportReplayer } = require("@ledgerhq/hw-transport-mocker");

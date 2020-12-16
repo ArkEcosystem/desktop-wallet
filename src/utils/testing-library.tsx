@@ -1,5 +1,4 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Base64 } from "@arkecosystem/platform-sdk-crypto";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { render } from "@testing-library/react";
 import { ConfigurationProvider, EnvironmentProvider, ThemeProvider } from "app/contexts";
@@ -13,6 +12,7 @@ import { Router } from "react-router-dom";
 import delegate from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
+import { migrateFixtures } from "utils/migrate-fixtures";
 
 const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
 	<I18nextProvider i18n={i18n}>
@@ -127,44 +127,9 @@ export const mockIpcRenderer = () => {
 
 mockIpcRenderer();
 
-/**
- *  Since PSDK v2 profile stubs need to decoded/decrypted and restored.
-
- *  This function reads the raw env storage fixture
- *  (which is kept in raw format for convienience) and feeds Environment storage
- *  with properly encoded profile data.
- */
-export const envStorageFixture = () => {
-	// encode profiles (sdk v2)
-	const profiles = {};
-	for (const [id, profileData] of Object.entries(fixtureData.profiles)) {
-		//@ts-ignore
-		profiles[id] = {
-			id,
-			//@ts-ignore
-			password: undefined,
-			data: Base64.encode(JSON.stringify(profileData)),
-		};
-	}
-	return { profiles, data: fixtureData.data };
-};
-
-export const restoreProfiles = async () => Promise.allSettled(
-		env
-			.profiles()
-			.values()
-			.map(async (profile) => {
-				await profile.restore();
-				//@ts-ignore
-				const usesPassword = !!fixtureData.profiles[profile.id()].settings.PASSWORD;
-				if (usesPassword) profile.auth().setPassword("password");
-				return profile;
-			}),
-	);
-
 const envWithMocks = () => {
 	defaultNetMocks();
-	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(envStorageFixture()) });
+	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(migrateFixtures()) });
 };
 
 export const env = envWithMocks();
