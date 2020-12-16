@@ -37,13 +37,13 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
           >
             <div>
               <div
-                class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
+                class="SubForm__SubFormWrapper-c4tqfs-0 hxcWQc"
               >
                 <fieldset
                   class="sc-AxjAm fmGClo flex flex-col space-y-2"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
                     for="address"
                   >
@@ -62,18 +62,18 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                         class="absolute left-1"
                       >
                         <div
-                          class="sc-AxirZ fuoUNN mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+                          class="sc-AxirZ fuoUNN mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                         />
                       </div>
                       <input
-                        class="sc-fznKkj heLFsS overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                        class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                         data-testid="SelectRecipient__input"
                         name="address"
                         type="text"
                         value=""
                       />
                       <div
-                        class="flex absolute right-4 items-center space-x-3 cursor-pointer"
+                        class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
                         data-testid="SelectRecipient__select-recipient"
                       >
                         <div
@@ -90,7 +90,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   </div>
                 </fieldset>
                 <button
-                  class="sc-fzozJi hPGjdj my-4 w-full"
+                  class="sc-fzozJi btvaXl my-4 w-full"
                   disabled=""
                   type="button"
                 >
@@ -214,7 +214,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             class="py-6 w-20 text-right"
                           >
                             <button
-                              class="sc-fzozJi dTpjFo"
+                              class="sc-fzozJi iIWqEi"
                               data-testid="recipient-list__remove-recipient"
                               type="button"
                             >
@@ -244,7 +244,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               class="sc-AxjAm fmGClo flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="minParticipants"
               >
@@ -258,7 +258,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 class="sc-fzqNJr gmzgI"
               >
                 <input
-                  class="sc-fznKkj heLFsS overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="MultiSignatureRegistrationForm__min-participants"
                   name="minParticipants"
                   type="number"
@@ -275,7 +275,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               class="sc-AxjAm fmGClo flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="fee"
               >
@@ -296,7 +296,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     class="sc-fzqNJr gmzgI"
                   >
                     <input
-                      class="sc-fznKkj heLFsS overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                      class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -727,13 +727,13 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                   class="relative p-4"
                 >
                   <div
-                    class="flex divide-x divide-theme-neutral-300"
+                    class="flex divide-x divide-theme-neutral-300 dark:divide-theme-neutral-800"
                   >
                     <div
                       class="flex flex-col w-1/2 justify-center px-4 py-2"
                     >
                       <span
-                        class="sc-fzoiQi klRelP"
+                        class="sc-fzoiQi bhRPMx"
                       >
                         Transaction Amount
                       </span>
@@ -748,7 +748,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                       class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                     >
                       <span
-                        class="sc-fzoiQi klRelP"
+                        class="sc-fzoiQi bhRPMx"
                       >
                         Transaction Fee
                       </span>
@@ -764,7 +764,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                     class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
                   >
                     <div
-                      class="py-2 ml-px bg-theme-background"
+                      class="py-2 ml-px bg-theme-background text-theme-neutral-900 dark:text-theme-neutral-600"
                     >
                       <div
                         class="sc-AxiKw dzBdqj"
@@ -779,10 +779,10 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
+                  class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-300 dark:bg-theme-neutral-800"
                 >
                   <span
-                    class="sc-fzoiQi klRelP"
+                    class="sc-fzoiQi bhRPMx"
                   >
                     Total Amount
                   </span>

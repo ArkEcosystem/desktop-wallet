@@ -88,7 +88,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm iOqITs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -119,7 +119,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm iOqITs w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -141,7 +141,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm iOqITs w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -285,19 +285,19 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
           >
             <div>
               <ul
-                class="sc-fzpmMD jvIdID"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK iszZWS"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -332,7 +332,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       class="sc-AxirZ kMHTdH flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="mnemonic"
                       >
@@ -348,7 +348,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
@@ -357,7 +357,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                           class="sc-fzoLag sc-fzpjYC fdEbuY my-px mr-4"
                         >
                           <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
                             data-testid="InputPassword__toggle"
                             type="button"
                           >
@@ -385,14 +385,14 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh"
+                    class="sc-AxjAm dEdzdP"
                     data-testid="SendIpfs__button--back"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm iWHhrC"
+                    class="sc-AxjAm jWBCsI"
                     data-testid="SendIpfs__button--submit"
                     disabled=""
                     type="submit"
@@ -498,7 +498,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm iOqITs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -529,7 +529,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm iOqITs w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -551,7 +551,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm iOqITs w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -695,19 +695,19 @@ exports[`SendIpfs should navigate between steps 1`] = `
           >
             <div>
               <ul
-                class="sc-fzpmMD jvIdID"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
               </ul>
               <div
@@ -935,14 +935,14 @@ exports[`SendIpfs should navigate between steps 1`] = `
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh block"
+                    class="sc-AxjAm dEdzdP block"
                     data-testid="SendIpfs__button--back-to-wallet"
                     type="button"
                   >
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm dBbvQh space-x-2"
+                    class="sc-AxjAm dEdzdP space-x-2"
                     data-testid="SendIpfs__button--copy"
                     type="button"
                   >
@@ -1006,7 +1006,7 @@ exports[`SendIpfs should render form step 1`] = `
           class="mb-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="network"
           >
@@ -1037,7 +1037,7 @@ exports[`SendIpfs should render form step 1`] = `
                 class="sc-fzoLag sc-fzoXzr jnLryM px-4"
               >
                 <div
-                  class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                  class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                   data-testid="SelectNetworkInput__network"
                 />
               </div>
@@ -1046,7 +1046,7 @@ exports[`SendIpfs should render form step 1`] = `
                 aria-controls="SendTransactionForm__network-menu"
                 aria-labelledby="SendTransactionForm__network-label"
                 autocomplete="off"
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -1069,7 +1069,7 @@ exports[`SendIpfs should render form step 1`] = `
           class="mb-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="senderAddress"
           >
@@ -1085,18 +1085,18 @@ exports[`SendIpfs should render form step 1`] = `
         >
           <div>
             <button
-              class="sc-fznxKY kXfvkB SelectAddress  "
+              class="sc-fzoXWK itcndn SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
               <div
-                class="sc-AxgMl eLFBRi mx-4 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="sc-AxgMl eLFBRi ml-4 mr-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
               />
               <div
                 class="inline-flex items-center"
               />
               <div
-                class="flex absolute right-4 items-center space-x-3"
+                class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxiKw dklFyP"
@@ -1110,7 +1110,7 @@ exports[`SendIpfs should render form step 1`] = `
               </div>
             </button>
             <input
-              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
@@ -1124,7 +1124,7 @@ exports[`SendIpfs should render form step 1`] = `
         class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="hash"
         >
@@ -1138,7 +1138,7 @@ exports[`SendIpfs should render form step 1`] = `
           class="sc-fznxsB hhZPAY"
         >
           <input
-            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="Input__hash"
             name="hash"
             placeholder=" "
@@ -1151,7 +1151,7 @@ exports[`SendIpfs should render form step 1`] = `
         class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="fee"
         >
@@ -1172,7 +1172,7 @@ exports[`SendIpfs should render form step 1`] = `
               class="sc-fznxsB hhZPAY"
             >
               <input
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="InputCurrency"
                 name="fee"
                 type="text"
@@ -1219,7 +1219,7 @@ exports[`SendIpfs should render form step 1`] = `
             >
               <button
                 aria-checked="true"
-                class="sc-fznMAR cAzocZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                 data-testid="SelectionBarOption"
                 role="radio"
                 type="button"
@@ -1228,7 +1228,7 @@ exports[`SendIpfs should render form step 1`] = `
               </button>
               <button
                 aria-checked="false"
-                class="sc-fznMAR cAzocZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                 data-testid="SelectionBarOption"
                 role="radio"
                 type="button"
@@ -1237,7 +1237,7 @@ exports[`SendIpfs should render form step 1`] = `
               </button>
               <button
                 aria-checked="false"
-                class="sc-fznMAR cAzocZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                 data-testid="SelectionBarOption"
                 role="radio"
                 type="button"
@@ -1420,13 +1420,13 @@ exports[`SendIpfs should render review step 1`] = `
             class="relative p-4"
           >
             <div
-              class="flex divide-x divide-theme-neutral-300"
+              class="flex divide-x divide-theme-neutral-300 dark:divide-theme-neutral-800"
             >
               <div
                 class="flex flex-col w-1/2 justify-center px-4 py-2"
               >
                 <span
-                  class="sc-fznWOq evvoWC"
+                  class="sc-fznxKY eBLCzX"
                 >
                   Transaction Amount
                 </span>
@@ -1441,7 +1441,7 @@ exports[`SendIpfs should render review step 1`] = `
                 class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
               >
                 <span
-                  class="sc-fznWOq evvoWC"
+                  class="sc-fznxKY eBLCzX"
                 >
                   Transaction Fee
                 </span>
@@ -1457,7 +1457,7 @@ exports[`SendIpfs should render review step 1`] = `
               class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
             >
               <div
-                class="py-2 ml-px bg-theme-background"
+                class="py-2 ml-px bg-theme-background text-theme-neutral-900 dark:text-theme-neutral-600"
               >
                 <div
                   class="sc-AxiKw dzBdqj"
@@ -1472,10 +1472,10 @@ exports[`SendIpfs should render review step 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
+            class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-300 dark:bg-theme-neutral-800"
           >
             <span
-              class="sc-fznWOq evvoWC"
+              class="sc-fznxKY eBLCzX"
             >
               Total Amount
             </span>
@@ -1645,7 +1645,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm iOqITs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1676,7 +1676,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
               class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm iOqITs w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -1698,7 +1698,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
               class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm iOqITs w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -1842,19 +1842,19 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
           >
             <div>
               <ul
-                class="sc-fzpmMD jvIdID"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK iszZWS"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoXWK iszZWS"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoXWK iszZWS"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -1895,7 +1895,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           class="mb-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                             data-testid="FormLabel"
                             for="network"
                           >
@@ -1953,7 +1953,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 disabled=""
                                 id="SendTransactionForm__network-input"
@@ -1977,7 +1977,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           class="mb-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                             data-testid="FormLabel"
                             for="senderAddress"
                           >
@@ -1993,7 +1993,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         >
                           <div>
                             <button
-                              class="sc-fznxKY kXfvkB SelectAddress  "
+                              class="sc-fzoXWK itcndn SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -2022,7 +2022,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 </span>
                               </div>
                               <div
-                                class="flex absolute right-4 items-center space-x-3"
+                                class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-neutral-600"
                               >
                                 <div
                                   class="sc-AxiKw dklFyP"
@@ -2036,7 +2036,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </div>
                             </button>
                             <input
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -2050,7 +2050,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         class="sc-AxirZ kMHTdH flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                           data-testid="FormLabel"
                           for="hash"
                         >
@@ -2065,7 +2065,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         >
                           <input
                             aria-invalid="true"
-                            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                            class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                             data-testid="Input__hash"
                             name="hash"
                             placeholder=" "
@@ -2083,7 +2083,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         class="sc-AxirZ izhStr flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                           data-testid="FormLabel"
                           for="fee"
                         >
@@ -2104,7 +2104,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="sc-fznxsB hhZPAY"
                             >
                               <input
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -2120,7 +2120,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznMAR cAzocZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2129,7 +2129,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznMAR cAzocZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2138,7 +2138,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznMAR cAzocZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2156,7 +2156,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxjAm iWHhrC"
+                    class="sc-AxjAm jWBCsI"
                     data-testid="SendIpfs__button--back"
                     disabled=""
                     type="button"
@@ -2164,7 +2164,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm iWHhrC"
+                    class="sc-AxjAm jWBCsI"
                     data-testid="SendIpfs__button--continue"
                     disabled=""
                     type="button"
@@ -2270,7 +2270,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm iOqITs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2301,7 +2301,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm iOqITs w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -2323,7 +2323,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
               class="flex overflow-hidden items-center rounded-lg"
             >
               <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                class="sc-AxjAm iOqITs w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -2467,19 +2467,19 @@ exports[`SendIpfs should show error step and go back 1`] = `
           >
             <div>
               <ul
-                class="sc-fzpmMD jvIdID"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoXWK fyzFOX"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
               </ul>
               <div
@@ -2514,14 +2514,14 @@ exports[`SendIpfs should show error step and go back 1`] = `
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="sc-AxjAm dBbvQh"
+                        class="sc-AxjAm dEdzdP"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
                         Back to Wallet
                       </button>
                       <button
-                        class="sc-AxjAm ilOjMZ space-x-2"
+                        class="sc-AxjAm hiBvgP space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
