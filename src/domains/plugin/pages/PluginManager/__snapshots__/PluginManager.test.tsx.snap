@@ -7,7 +7,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -89,7 +89,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -117,23 +117,27 @@ exports[`PluginManager should cancel install plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -141,21 +145,25 @@ exports[`PluginManager should cancel install plugin 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -304,7 +312,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -335,7 +343,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -933,7 +941,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -1081,7 +1089,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -1229,7 +1237,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -1377,7 +1385,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -1529,7 +1537,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -1689,7 +1697,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -1849,7 +1857,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -2273,7 +2281,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -2421,7 +2429,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -2569,7 +2577,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -2717,7 +2725,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -2869,7 +2877,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -3029,7 +3037,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -3189,7 +3197,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -3612,7 +3620,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -3760,7 +3768,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -3908,7 +3916,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -4056,7 +4064,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -4208,7 +4216,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -4368,7 +4376,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -4528,7 +4536,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -4567,7 +4575,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4579,7 +4587,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -4649,7 +4657,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -4677,23 +4685,27 @@ exports[`PluginManager should close install plugin modal 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4701,21 +4713,25 @@ exports[`PluginManager should close install plugin modal 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4864,7 +4880,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -4895,7 +4911,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -5493,7 +5509,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -5641,7 +5657,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -5789,7 +5805,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -5937,7 +5953,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -6089,7 +6105,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -6249,7 +6265,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -6409,7 +6425,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -6833,7 +6849,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -6981,7 +6997,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -7129,7 +7145,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -7277,7 +7293,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -7429,7 +7445,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -7589,7 +7605,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -7749,7 +7765,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -8172,7 +8188,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -8320,7 +8336,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -8468,7 +8484,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -8616,7 +8632,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -8768,7 +8784,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -8928,7 +8944,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -9088,7 +9104,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -9127,7 +9143,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9139,7 +9155,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -9209,7 +9225,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -9237,23 +9253,27 @@ exports[`PluginManager should delete plugin on game 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -9261,21 +9281,25 @@ exports[`PluginManager should delete plugin on game 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -9424,7 +9448,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -9455,7 +9479,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -10026,7 +10050,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                           class="sc-fzokOt koMYSa justify-end"
                         >
                           <button
-                            class="sc-AxjAm dBbvQh"
+                            class="sc-AxjAm liXtzU"
                             data-testid="PluginListItem__install"
                             type="button"
                           >
@@ -10174,7 +10198,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                           class="sc-fzokOt koMYSa justify-end"
                         >
                           <button
-                            class="sc-AxjAm dBbvQh"
+                            class="sc-AxjAm liXtzU"
                             data-testid="PluginListItem__install"
                             type="button"
                           >
@@ -10322,7 +10346,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                           class="sc-fzokOt koMYSa justify-end"
                         >
                           <button
-                            class="sc-AxjAm dBbvQh"
+                            class="sc-AxjAm liXtzU"
                             data-testid="PluginListItem__install"
                             type="button"
                           >
@@ -10470,7 +10494,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                           class="sc-fzokOt koMYSa justify-end"
                         >
                           <button
-                            class="sc-AxjAm dBbvQh"
+                            class="sc-AxjAm liXtzU"
                             data-testid="PluginListItem__install"
                             type="button"
                           >
@@ -10622,7 +10646,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF text-left"
+                              class="sc-AxjAm dKkppo text-left"
                               type="button"
                             >
                               <div
@@ -10782,7 +10806,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF text-left"
+                              class="sc-AxjAm dKkppo text-left"
                               type="button"
                             >
                               <div
@@ -10942,7 +10966,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF text-left"
+                              class="sc-AxjAm dKkppo text-left"
                               type="button"
                             >
                               <div
@@ -10966,14 +10990,14 @@ exports[`PluginManager should delete plugin on game 1`] = `
                 class="flex justify-center"
               >
                 <div
-                  class="sc-fznxKY bszUvz mt-5"
+                  class="sc-fzoXWK dYYJIA mt-5"
                   data-testid="Pagination"
                 >
                   <div
                     class="flex px-2 rounded bg-theme-primary-contrast"
                   >
                     <div
-                      class="sc-fznMAR cvZfCC current-page"
+                      class="sc-fzpmMD iMtKyy current-page"
                     >
                       1
                     </div>
@@ -10996,7 +11020,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11008,7 +11032,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -11078,7 +11102,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -11106,23 +11130,27 @@ exports[`PluginManager should delete plugin on home 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -11130,21 +11158,25 @@ exports[`PluginManager should delete plugin on home 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -11293,7 +11325,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -11324,7 +11356,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -11550,7 +11582,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -11631,7 +11663,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -11712,7 +11744,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -11793,7 +11825,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -11874,7 +11906,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -11974,7 +12006,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12074,7 +12106,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12206,7 +12238,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12287,7 +12319,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12368,7 +12400,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12449,7 +12481,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12530,7 +12562,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12630,7 +12662,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12730,7 +12762,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12861,7 +12893,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -12942,7 +12974,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -13023,7 +13055,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -13104,7 +13136,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -13185,7 +13217,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -13285,7 +13317,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -13385,7 +13417,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -13504,7 +13536,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -13516,7 +13548,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -13586,7 +13618,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -13614,23 +13646,27 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -13638,21 +13674,25 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -13801,7 +13841,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -13832,7 +13872,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -14403,7 +14443,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                           class="sc-fzokOt koMYSa justify-end"
                         >
                           <button
-                            class="sc-AxjAm dBbvQh"
+                            class="sc-AxjAm liXtzU"
                             data-testid="PluginListItem__install"
                             type="button"
                           >
@@ -14551,7 +14591,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                           class="sc-fzokOt koMYSa justify-end"
                         >
                           <button
-                            class="sc-AxjAm dBbvQh"
+                            class="sc-AxjAm liXtzU"
                             data-testid="PluginListItem__install"
                             type="button"
                           >
@@ -14699,7 +14739,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                           class="sc-fzokOt koMYSa justify-end"
                         >
                           <button
-                            class="sc-AxjAm dBbvQh"
+                            class="sc-AxjAm liXtzU"
                             data-testid="PluginListItem__install"
                             type="button"
                           >
@@ -14847,7 +14887,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                           class="sc-fzokOt koMYSa justify-end"
                         >
                           <button
-                            class="sc-AxjAm dBbvQh"
+                            class="sc-AxjAm liXtzU"
                             data-testid="PluginListItem__install"
                             type="button"
                           >
@@ -14999,7 +15039,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF text-left"
+                              class="sc-AxjAm dKkppo text-left"
                               type="button"
                             >
                               <div
@@ -15159,7 +15199,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF text-left"
+                              class="sc-AxjAm dKkppo text-left"
                               type="button"
                             >
                               <div
@@ -15319,7 +15359,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF text-left"
+                              class="sc-AxjAm dKkppo text-left"
                               type="button"
                             >
                               <div
@@ -15343,14 +15383,14 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                 class="flex justify-center"
               >
                 <div
-                  class="sc-fznxKY bszUvz mt-5"
+                  class="sc-fzoXWK dYYJIA mt-5"
                   data-testid="Pagination"
                 >
                   <div
                     class="flex px-2 rounded bg-theme-primary-contrast"
                   >
                     <div
-                      class="sc-fznMAR cvZfCC current-page"
+                      class="sc-fzpmMD iMtKyy current-page"
                     >
                       1
                     </div>
@@ -15378,7 +15418,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cshtse w-11 h-11"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -15496,14 +15536,14 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm dBbvQh"
+                class="sc-AxjAm liXtzU"
                 data-testid="InstallPlugin__cancel-button"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm ilOjMZ"
+                class="sc-AxjAm bwcsry"
                 data-testid="InstallPlugin__install-button"
                 type="button"
               >
@@ -15525,7 +15565,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -15537,7 +15577,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -15607,7 +15647,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -15635,23 +15675,27 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -15659,21 +15703,25 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -15822,7 +15870,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -15853,7 +15901,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -16451,7 +16499,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -16599,7 +16647,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -16747,7 +16795,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -16895,7 +16943,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -17047,7 +17095,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -17207,7 +17255,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -17367,7 +17415,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -17791,7 +17839,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -17939,7 +17987,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -18087,7 +18135,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -18235,7 +18283,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -18387,7 +18435,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -18547,7 +18595,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -18707,7 +18755,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -19130,7 +19178,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -19278,7 +19326,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -19426,7 +19474,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -19574,7 +19622,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                 class="sc-fzokOt koMYSa justify-end"
                               >
                                 <button
-                                  class="sc-AxjAm dBbvQh"
+                                  class="sc-AxjAm liXtzU"
                                   data-testid="PluginListItem__install"
                                   type="button"
                                 >
@@ -19726,7 +19774,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -19886,7 +19934,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -20046,7 +20094,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                                   data-testid="dropdown__toggle"
                                 >
                                   <button
-                                    class="sc-AxjAm iEqmsF text-left"
+                                    class="sc-AxjAm dKkppo text-left"
                                     type="button"
                                   >
                                     <div
@@ -20090,7 +20138,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cshtse w-11 h-11"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -20208,14 +20256,14 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm dBbvQh"
+                class="sc-AxjAm liXtzU"
                 data-testid="InstallPlugin__cancel-button"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm ilOjMZ"
+                class="sc-AxjAm bwcsry"
                 data-testid="InstallPlugin__install-button"
                 type="button"
               >
@@ -20237,7 +20285,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -20249,7 +20297,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -20319,7 +20367,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -20347,23 +20395,27 @@ exports[`PluginManager should install plugin from header install button 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -20371,21 +20423,25 @@ exports[`PluginManager should install plugin from header install button 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -20534,7 +20590,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -20565,7 +20621,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -20791,7 +20847,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -20872,7 +20928,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -20953,7 +21009,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21034,7 +21090,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21115,7 +21171,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21215,7 +21271,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21315,7 +21371,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21447,7 +21503,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21528,7 +21584,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21609,7 +21665,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21690,7 +21746,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21771,7 +21827,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21871,7 +21927,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -21971,7 +22027,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -22102,7 +22158,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -22183,7 +22239,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -22264,7 +22320,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -22345,7 +22401,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -22426,7 +22482,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -22526,7 +22582,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -22626,7 +22682,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -22750,7 +22806,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cshtse w-11 h-11"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -22868,14 +22924,14 @@ exports[`PluginManager should install plugin from header install button 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm dBbvQh"
+                class="sc-AxjAm liXtzU"
                 data-testid="InstallPlugin__cancel-button"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm ilOjMZ"
+                class="sc-AxjAm bwcsry"
                 data-testid="InstallPlugin__install-button"
                 type="button"
               >
@@ -22897,7 +22953,7 @@ exports[`PluginManager should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -22909,7 +22965,7 @@ exports[`PluginManager should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -22979,7 +23035,7 @@ exports[`PluginManager should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -23007,23 +23063,27 @@ exports[`PluginManager should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -23031,21 +23091,25 @@ exports[`PluginManager should render 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -23194,7 +23258,7 @@ exports[`PluginManager should render 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -23225,7 +23289,7 @@ exports[`PluginManager should render 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -23451,7 +23515,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -23532,7 +23596,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -23613,7 +23677,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -23694,7 +23758,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -23775,7 +23839,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -23875,7 +23939,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -23975,7 +24039,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24107,7 +24171,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24188,7 +24252,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24269,7 +24333,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24350,7 +24414,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24431,7 +24495,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24531,7 +24595,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24631,7 +24695,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24762,7 +24826,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24843,7 +24907,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -24924,7 +24988,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -25005,7 +25069,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -25086,7 +25150,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -25186,7 +25250,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -25286,7 +25350,7 @@ exports[`PluginManager should render 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -25405,7 +25469,7 @@ exports[`PluginManager should search for plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -25417,7 +25481,7 @@ exports[`PluginManager should search for plugin 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -25487,7 +25551,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -25515,23 +25579,27 @@ exports[`PluginManager should search for plugin 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -25539,21 +25607,25 @@ exports[`PluginManager should search for plugin 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -25752,7 +25824,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -25783,7 +25855,7 @@ exports[`PluginManager should search for plugin 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -26009,7 +26081,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26090,7 +26162,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26171,7 +26243,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26252,7 +26324,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26333,7 +26405,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26433,7 +26505,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26533,7 +26605,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26665,7 +26737,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26746,7 +26818,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26827,7 +26899,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26908,7 +26980,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -26989,7 +27061,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27089,7 +27161,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27189,7 +27261,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27320,7 +27392,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27401,7 +27473,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27482,7 +27554,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27563,7 +27635,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27644,7 +27716,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27744,7 +27816,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27844,7 +27916,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -27965,7 +28037,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -27977,7 +28049,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -28047,7 +28119,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -28075,23 +28147,27 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -28099,21 +28175,25 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -28262,7 +28342,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -28293,7 +28373,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -28497,7 +28577,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -28578,7 +28658,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -28659,7 +28739,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -28740,7 +28820,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -28821,7 +28901,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -28921,7 +29001,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -29021,7 +29101,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Card"
                     >
                       <div
@@ -29122,14 +29202,14 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   class="flex justify-center mt-4"
                 >
                   <div
-                    class="sc-fznxKY bszUvz mt-5"
+                    class="sc-fzoXWK dYYJIA mt-5"
                     data-testid="Pagination"
                   >
                     <div
                       class="flex px-2 rounded bg-theme-primary-contrast"
                     >
                       <div
-                        class="sc-fznMAR cvZfCC current-page"
+                        class="sc-fzpmMD iMtKyy current-page"
                       >
                         1
                       </div>
@@ -29153,7 +29233,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -29165,7 +29245,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -29235,7 +29315,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -29263,23 +29343,27 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -29287,21 +29371,25 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -29450,7 +29538,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="sc-AxjAm ilOjMZ"
+                  class="sc-AxjAm bwcsry"
                   data-testid="PluginManager_header--install"
                   type="button"
                 >
@@ -29481,7 +29569,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           class="-my-5"
         >
           <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
+            class="sc-fznWOq kaztYq sticky top-20 md:top-24 bg-theme-neutral-contrast"
             data-testid="PluginManagerNavigationBar"
           >
             <div
@@ -29707,7 +29795,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -29788,7 +29876,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -29869,7 +29957,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -29950,7 +30038,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30031,7 +30119,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30131,7 +30219,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30231,7 +30319,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30363,7 +30451,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30444,7 +30532,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30525,7 +30613,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30606,7 +30694,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30687,7 +30775,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30787,7 +30875,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -30887,7 +30975,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -31018,7 +31106,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--0"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -31099,7 +31187,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--1"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -31180,7 +31268,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--2"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -31261,7 +31349,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--3"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -31342,7 +31430,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--5"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -31442,7 +31530,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--6"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div
@@ -31542,7 +31630,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         data-testid="PluginCard--7"
                       >
                         <div
-                          class="sc-fzolEj ittEuL border-theme-primary-contrast hover:border-theme-background"
+                          class="sc-fznMAR kEdvej border-theme-primary-contrast hover:border-theme-background"
                           data-testid="Card"
                         >
                           <div

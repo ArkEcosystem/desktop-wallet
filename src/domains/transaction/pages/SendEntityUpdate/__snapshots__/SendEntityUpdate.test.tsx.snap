@@ -7,7 +7,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -88,7 +88,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -116,23 +116,27 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -140,21 +144,25 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -285,19 +293,19 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -576,7 +584,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -585,7 +593,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -594,7 +602,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -612,7 +620,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -636,7 +644,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -648,7 +656,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -717,7 +725,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -745,23 +753,27 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -769,21 +781,25 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -914,19 +930,19 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -1205,7 +1221,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -1214,7 +1230,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -1223,7 +1239,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -1241,7 +1257,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -1265,7 +1281,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1277,7 +1293,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1346,7 +1362,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1374,23 +1390,27 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1398,21 +1418,25 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1543,19 +1567,19 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -1834,7 +1858,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -1843,7 +1867,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -1852,7 +1876,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -1870,7 +1894,7 @@ exports[`SendEntityUpdate should fail validation on description textarea in firs
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -1894,7 +1918,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1906,7 +1930,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1975,7 +1999,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2003,23 +2027,27 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2027,21 +2055,25 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2172,19 +2204,19 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -2463,7 +2495,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2472,7 +2504,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2481,7 +2513,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2499,7 +2531,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -2523,7 +2555,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2535,7 +2567,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2604,7 +2636,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2632,23 +2664,27 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2656,21 +2692,25 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2801,19 +2841,19 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -3092,7 +3132,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -3101,7 +3141,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -3110,7 +3150,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -3128,7 +3168,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -3152,7 +3192,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3164,7 +3204,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3233,7 +3273,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -3261,23 +3301,27 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3285,21 +3329,25 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3430,19 +3478,19 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -3721,7 +3769,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -3730,7 +3778,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -3739,7 +3787,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -3757,7 +3805,7 @@ exports[`SendEntityUpdate should fail validation on display name input in first 
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -3781,7 +3829,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3793,7 +3841,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3862,7 +3910,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -3890,23 +3938,27 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3914,21 +3966,25 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4059,19 +4115,19 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -4350,7 +4406,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -4359,7 +4415,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -4368,7 +4424,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -4386,7 +4442,7 @@ exports[`SendEntityUpdate should fail validation on website input in first step 
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -4410,7 +4466,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4422,7 +4478,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -4491,7 +4547,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -4519,23 +4575,27 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4543,21 +4603,25 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4688,19 +4752,19 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -5073,7 +5137,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                                 class="flex flex-col w-1/2 justify-center px-4 py-2"
                               >
                                 <span
-                                  class="sc-fzoxKX iJGASp"
+                                  class="sc-fzqBkg eiTlXa"
                                 >
                                   Transaction Amount
                                 </span>
@@ -5088,7 +5152,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                                 class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                               >
                                 <span
-                                  class="sc-fzoxKX iJGASp"
+                                  class="sc-fzqBkg eiTlXa"
                                 >
                                   Transaction Fee
                                 </span>
@@ -5122,7 +5186,7 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                             class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
                           >
                             <span
-                              class="sc-fzoxKX iJGASp"
+                              class="sc-fzqBkg eiTlXa"
                             >
                               Total Amount
                             </span>
@@ -5142,14 +5206,14 @@ exports[`SendEntityUpdate should render 2nd step 1`] = `
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh"
+                    class="sc-AxjAm liXtzU"
                     data-testid="SendEntityUpdate__back-button"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -5173,7 +5237,7 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5185,7 +5249,7 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -5254,7 +5318,7 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5282,23 +5346,27 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5306,21 +5374,25 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5451,19 +5523,19 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -5545,14 +5617,14 @@ exports[`SendEntityUpdate should render 3rd step 1`] = `
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh"
+                    class="sc-AxjAm liXtzU"
                     data-testid="SendEntityUpdate__back-button"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm iWHhrC space-x-2"
+                    class="sc-AxjAm ghbEwY space-x-2"
                     data-testid="SendEntityUpdate__send-button"
                     disabled=""
                     type="submit"
@@ -5588,7 +5660,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5600,7 +5672,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -5669,7 +5741,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5697,23 +5769,27 @@ exports[`SendEntityUpdate should should go back 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5721,21 +5797,25 @@ exports[`SendEntityUpdate should should go back 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5866,19 +5946,19 @@ exports[`SendEntityUpdate should should go back 1`] = `
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -6151,7 +6231,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -6160,7 +6240,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -6169,7 +6249,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fznWOq hCtJzi relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fznxKY eTkpzl relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -6187,7 +6267,7 @@ exports[`SendEntityUpdate should should go back 1`] = `
                   class="flex justify-end mt-8 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm bwcsry"
                     data-testid="SendEntityUpdate__continue-button"
                     type="button"
                   >
@@ -6211,7 +6291,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6223,7 +6303,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -6292,7 +6372,7 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -6320,23 +6400,27 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6344,21 +6428,25 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6489,19 +6577,19 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
               </ul>
               <div
@@ -6695,14 +6783,14 @@ exports[`SendEntityUpdate should successfully submit entity update transaction 1
                     class="flex justify-end space-x-3"
                   >
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm liXtzU"
                       data-testid="SendEntityUpdate__wallet-button"
                       type="button"
                     >
                       Back to Wallet
                     </button>
                     <button
-                      class="sc-AxjAm dBbvQh space-x-2"
+                      class="sc-AxjAm liXtzU space-x-2"
                       data-testid="SendEntityUpdate__download-button"
                       type="submit"
                     >

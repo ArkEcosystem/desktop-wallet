@@ -4,7 +4,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-fzoyTs eYLloN"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
   >
     <div
       class="px-4 sm:px-6 lg:px-10"
@@ -16,7 +16,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           class="flex items-center my-auto"
         >
           <div
-            class="sc-fzoNJl hlUna-D"
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
           >
             <svg
               width="48"
@@ -63,7 +63,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxiKw dstVep w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                  class="sc-AxiKw ekAUEk w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                   data-testid="navbar__buttons--notifications"
                   type="button"
                 >
@@ -91,23 +91,27 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
-            <button
-              class="sc-AxiKw dstVep w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-              data-testid="navbar__buttons--send"
-              type="button"
+            <div
+              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
             >
-              <div
-                class="sc-AxjAm kzGOk p-1"
-                height="18"
-                width="18"
+              <button
+                class="sc-AxiKw ekAUEk"
+                data-testid="navbar__buttons--send"
+                type="button"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxjAm kzGOk p-1"
+                  height="18"
+                  width="18"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -115,21 +119,25 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           <div
             class="flex overflow-hidden items-center rounded-lg"
           >
-            <button
-              class="sc-AxiKw dstVep w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-              data-testid="navbar__buttons--receive"
-              type="button"
+            <div
+              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
             >
-              <div
-                class="sc-AxjAm jmgDQY p-1"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxiKw ekAUEk"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  qr-code.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxjAm jmgDQY p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    qr-code.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -222,7 +230,7 @@ exports[`NavigationBar should render 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-fzoyTs eYLloN"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
   >
     <div
       class="px-4 sm:px-6 lg:px-10"
@@ -234,7 +242,7 @@ exports[`NavigationBar should render 1`] = `
           class="flex items-center my-auto"
         >
           <div
-            class="sc-fzoNJl hlUna-D"
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
           >
             <svg
               width="48"
@@ -303,7 +311,7 @@ exports[`NavigationBar should render 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxiKw dstVep w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                  class="sc-AxiKw ekAUEk w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                   data-testid="navbar__buttons--notifications"
                   type="button"
                 >
@@ -331,23 +339,27 @@ exports[`NavigationBar should render 1`] = `
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
-            <button
-              class="sc-AxiKw dstVep w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-              data-testid="navbar__buttons--send"
-              type="button"
+            <div
+              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
             >
-              <div
-                class="sc-AxjAm kzGOk p-1"
-                height="18"
-                width="18"
+              <button
+                class="sc-AxiKw ekAUEk"
+                data-testid="navbar__buttons--send"
+                type="button"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxjAm kzGOk p-1"
+                  height="18"
+                  width="18"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -355,21 +367,25 @@ exports[`NavigationBar should render 1`] = `
           <div
             class="flex overflow-hidden items-center rounded-lg"
           >
-            <button
-              class="sc-AxiKw dstVep w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-              data-testid="navbar__buttons--receive"
-              type="button"
+            <div
+              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
             >
-              <div
-                class="sc-AxjAm jmgDQY p-1"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxiKw ekAUEk"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  qr-code.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxjAm jmgDQY p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    qr-code.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -466,7 +482,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-fzoyTs eYLloN"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
   >
     <div
       class="px-4 sm:px-6 lg:px-10"
@@ -478,7 +494,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
           class="flex items-center my-auto"
         >
           <div
-            class="sc-fzoNJl hlUna-D"
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
           >
             <svg
               width="48"
@@ -525,7 +541,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxiKw dstVep w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                  class="sc-AxiKw ekAUEk w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                   data-testid="navbar__buttons--notifications"
                   type="button"
                 >
@@ -553,23 +569,27 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
-            <button
-              class="sc-AxiKw dstVep w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-              data-testid="navbar__buttons--send"
-              type="button"
+            <div
+              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
             >
-              <div
-                class="sc-AxjAm kzGOk p-1"
-                height="18"
-                width="18"
+              <button
+                class="sc-AxiKw ekAUEk"
+                data-testid="navbar__buttons--send"
+                type="button"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxjAm kzGOk p-1"
+                  height="18"
+                  width="18"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -577,21 +597,25 @@ exports[`NavigationBar should render with custom menu 1`] = `
           <div
             class="flex overflow-hidden items-center rounded-lg"
           >
-            <button
-              class="sc-AxiKw dstVep w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-              data-testid="navbar__buttons--receive"
-              type="button"
+            <div
+              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
             >
-              <div
-                class="sc-AxjAm jmgDQY p-1"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxiKw ekAUEk"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  qr-code.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxjAm jmgDQY p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    qr-code.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -688,7 +712,7 @@ exports[`NavigationBar should render with title 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-fzoyTs eYLloN"
+    class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
   >
     <div
       class="px-4 sm:px-6 lg:px-10"
@@ -700,7 +724,7 @@ exports[`NavigationBar should render with title 1`] = `
           class="flex items-center my-auto"
         >
           <div
-            class="sc-fzoNJl hlUna-D"
+            class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
           >
             <svg
               width="48"
@@ -774,7 +798,7 @@ exports[`NavigationBar should render with title 1`] = `
                 class="overflow-hidden rounded-lg"
               >
                 <button
-                  class="sc-AxiKw dstVep w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                  class="sc-AxiKw ekAUEk w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                   data-testid="navbar__buttons--notifications"
                   type="button"
                 >
@@ -802,23 +826,27 @@ exports[`NavigationBar should render with title 1`] = `
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
-            <button
-              class="sc-AxiKw dstVep w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-              data-testid="navbar__buttons--send"
-              type="button"
+            <div
+              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
             >
-              <div
-                class="sc-AxjAm kzGOk p-1"
-                height="18"
-                width="18"
+              <button
+                class="sc-AxiKw ekAUEk"
+                data-testid="navbar__buttons--send"
+                type="button"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxjAm kzGOk p-1"
+                  height="18"
+                  width="18"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -826,21 +854,25 @@ exports[`NavigationBar should render with title 1`] = `
           <div
             class="flex overflow-hidden items-center rounded-lg"
           >
-            <button
-              class="sc-AxiKw dstVep w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-              data-testid="navbar__buttons--receive"
-              type="button"
+            <div
+              class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
             >
-              <div
-                class="sc-AxjAm jmgDQY p-1"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxiKw ekAUEk"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  qr-code.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxjAm jmgDQY p-1"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    qr-code.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"

@@ -7,7 +7,7 @@ exports[`Settings should change a password 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`Settings should change a password 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -88,7 +88,7 @@ exports[`Settings should change a password 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -109,24 +109,28 @@ exports[`Settings should change a password 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb ktDKBB w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -134,21 +138,26 @@ exports[`Settings should change a password 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -277,7 +286,7 @@ exports[`Settings should change a password 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -568,7 +577,7 @@ exports[`Settings should change a password 1`] = `
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="sc-AxhCb djgWBt"
+                        class="sc-AxhCb eTekev"
                         data-testid="Password-settings__submit-button"
                         disabled=""
                         type="submit"
@@ -595,7 +604,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -607,7 +616,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -676,7 +685,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -704,23 +713,27 @@ exports[`Settings should not update profile if profile name exists 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb chOSeo"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -728,21 +741,25 @@ exports[`Settings should not update profile if profile name exists 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb chOSeo"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -871,7 +888,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -1040,7 +1057,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzolEj bUpNWF"
+                            class="sc-fznMAR fgHzUl"
                           >
                             <img
                               alt="Profile avatar"
@@ -1171,7 +1188,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-381-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-381-menu"
                                   role="listbox"
                                 />
@@ -1255,7 +1272,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-383-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-383-menu"
                                   role="listbox"
                                 />
@@ -1343,7 +1360,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-385-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-385-menu"
                                   role="listbox"
                                 />
@@ -1427,7 +1444,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-387-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-387-menu"
                                   role="listbox"
                                 />
@@ -1511,7 +1528,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-389-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-389-menu"
                                   role="listbox"
                                 />
@@ -1542,7 +1559,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       Security
                     </h2>
                     <ul
-                      class="sc-fzpmMD jBhThj"
+                      class="sc-fzoNJl eWPwQU"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -1731,7 +1748,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-391-label"
-                                    class="sc-fznMAR hmfZwn"
+                                    class="sc-fzpmMD iRWnqb"
                                     id="downshift-391-menu"
                                     role="listbox"
                                   />
@@ -1763,7 +1780,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       Other
                     </h2>
                     <ul
-                      class="sc-fzpmMD jBhThj"
+                      class="sc-fzoNJl eWPwQU"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -1922,7 +1939,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="sc-AxhCb kSIbWL"
+                      class="sc-AxhCb hIjDOO"
                       type="button"
                     >
                       <div
@@ -1942,13 +1959,13 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxhCb bFynmq"
+                        class="sc-AxhCb hSyNZX"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxhCb kPVjPW"
+                        class="sc-AxhCb jeOvWZ"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -1974,7 +1991,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1986,7 +2003,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2055,7 +2072,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2076,24 +2093,28 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb ktDKBB w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2101,21 +2122,26 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2244,7 +2270,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -2394,7 +2420,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   id="plugin-settings__form"
                 >
                   <ul
-                    class="sc-fzpmMD jBhThj"
+                    class="sc-fzoNJl eWPwQU"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -2451,14 +2477,14 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                           class="flex justify-end pt-6 space-x-3 w-full"
                         >
                           <button
-                            class="sc-AxhCb bFynmq"
+                            class="sc-AxhCb hSyNZX"
                             data-testid="plugins__open-list"
                             type="button"
                           >
                             Open List
                           </button>
                           <button
-                            class="sc-AxhCb bFynmq"
+                            class="sc-AxhCb hSyNZX"
                             data-testid="plugins__add-plugin"
                             type="button"
                           >
@@ -2577,7 +2603,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-1397-label"
-                                    class="sc-fznMAR hmfZwn"
+                                    class="sc-fzpmMD iRWnqb"
                                     id="downshift-1397-menu"
                                     role="listbox"
                                   />
@@ -2610,7 +2636,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="flex justify-end pt-2 w-full"
                   >
                     <button
-                      class="sc-AxhCb kPVjPW"
+                      class="sc-AxhCb jeOvWZ"
                       data-testid="Plugins-settings__submit-button"
                       type="submit"
                     >
@@ -2635,7 +2661,7 @@ exports[`Settings should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2647,7 +2673,7 @@ exports[`Settings should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2716,7 +2742,7 @@ exports[`Settings should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2744,23 +2770,27 @@ exports[`Settings should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb chOSeo"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2768,21 +2798,25 @@ exports[`Settings should render 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb chOSeo"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2911,7 +2945,7 @@ exports[`Settings should render 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -3080,7 +3114,7 @@ exports[`Settings should render 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzolEj bUpNWF"
+                            class="sc-fznMAR fgHzUl"
                           >
                             <img
                               alt="Profile avatar"
@@ -3205,7 +3239,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-1-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-1-menu"
                                   role="listbox"
                                 />
@@ -3289,7 +3323,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-3-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-3-menu"
                                   role="listbox"
                                 />
@@ -3377,7 +3411,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-5-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-5-menu"
                                   role="listbox"
                                 />
@@ -3461,7 +3495,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-7-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-7-menu"
                                   role="listbox"
                                 />
@@ -3545,7 +3579,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-9-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-9-menu"
                                   role="listbox"
                                 />
@@ -3576,7 +3610,7 @@ exports[`Settings should render 1`] = `
                       Security
                     </h2>
                     <ul
-                      class="sc-fzpmMD jBhThj"
+                      class="sc-fzoNJl eWPwQU"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -3764,7 +3798,7 @@ exports[`Settings should render 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-11-label"
-                                    class="sc-fznMAR hmfZwn"
+                                    class="sc-fzpmMD iRWnqb"
                                     id="downshift-11-menu"
                                     role="listbox"
                                   />
@@ -3796,7 +3830,7 @@ exports[`Settings should render 1`] = `
                       Other
                     </h2>
                     <ul
-                      class="sc-fzpmMD jBhThj"
+                      class="sc-fzoNJl eWPwQU"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -3953,7 +3987,7 @@ exports[`Settings should render 1`] = `
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="sc-AxhCb kSIbWL"
+                      class="sc-AxhCb hIjDOO"
                       type="button"
                     >
                       <div
@@ -3973,13 +4007,13 @@ exports[`Settings should render 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxhCb bFynmq"
+                        class="sc-AxhCb hSyNZX"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxhCb kPVjPW"
+                        class="sc-AxhCb jeOvWZ"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -4005,7 +4039,7 @@ exports[`Settings should render password settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4017,7 +4051,7 @@ exports[`Settings should render password settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -4086,7 +4120,7 @@ exports[`Settings should render password settings 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -4107,24 +4141,28 @@ exports[`Settings should render password settings 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb ktDKBB w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4132,21 +4170,26 @@ exports[`Settings should render password settings 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4275,7 +4318,7 @@ exports[`Settings should render password settings 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -4521,7 +4564,7 @@ exports[`Settings should render password settings 1`] = `
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="sc-AxhCb djgWBt"
+                        class="sc-AxhCb eTekev"
                         data-testid="Password-settings__submit-button"
                         disabled=""
                         type="submit"
@@ -4548,7 +4591,7 @@ exports[`Settings should render peer settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4560,7 +4603,7 @@ exports[`Settings should render peer settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -4629,7 +4672,7 @@ exports[`Settings should render peer settings 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -4650,24 +4693,28 @@ exports[`Settings should render peer settings 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb ktDKBB w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4675,21 +4722,26 @@ exports[`Settings should render peer settings 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4818,7 +4870,7 @@ exports[`Settings should render peer settings 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -4968,7 +5020,7 @@ exports[`Settings should render peer settings 1`] = `
                   id="peer-settings__form"
                 >
                   <ul
-                    class="sc-fzpmMD jBhThj"
+                    class="sc-fzoNJl eWPwQU"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -5086,7 +5138,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="flex justify-end w-full"
                   >
                     <button
-                      class="sc-AxhCb kPVjPW"
+                      class="sc-AxhCb jeOvWZ"
                       data-testid="Peer-settings__submit-button"
                       type="submit"
                     >
@@ -5111,7 +5163,7 @@ exports[`Settings should render plugin settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5123,7 +5175,7 @@ exports[`Settings should render plugin settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -5192,7 +5244,7 @@ exports[`Settings should render plugin settings 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5213,24 +5265,28 @@ exports[`Settings should render plugin settings 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb ktDKBB w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5238,21 +5294,26 @@ exports[`Settings should render plugin settings 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5381,7 +5442,7 @@ exports[`Settings should render plugin settings 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -5531,7 +5592,7 @@ exports[`Settings should render plugin settings 1`] = `
                   id="plugin-settings__form"
                 >
                   <ul
-                    class="sc-fzpmMD jBhThj"
+                    class="sc-fzoNJl eWPwQU"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -5588,14 +5649,14 @@ exports[`Settings should render plugin settings 1`] = `
                           class="flex justify-end pt-6 space-x-3 w-full"
                         >
                           <button
-                            class="sc-AxhCb bFynmq"
+                            class="sc-AxhCb hSyNZX"
                             data-testid="plugins__open-list"
                             type="button"
                           >
                             Open List
                           </button>
                           <button
-                            class="sc-AxhCb bFynmq"
+                            class="sc-AxhCb hSyNZX"
                             data-testid="plugins__add-plugin"
                             type="button"
                           >
@@ -5714,7 +5775,7 @@ exports[`Settings should render plugin settings 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-1285-label"
-                                    class="sc-fznMAR hmfZwn"
+                                    class="sc-fzpmMD iRWnqb"
                                     id="downshift-1285-menu"
                                     role="listbox"
                                   />
@@ -5747,7 +5808,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="flex justify-end pt-2 w-full"
                   >
                     <button
-                      class="sc-AxhCb kPVjPW"
+                      class="sc-AxhCb jeOvWZ"
                       data-testid="Plugins-settings__submit-button"
                       type="submit"
                     >
@@ -5772,7 +5833,7 @@ exports[`Settings should set a password 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5784,7 +5845,7 @@ exports[`Settings should set a password 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -5853,7 +5914,7 @@ exports[`Settings should set a password 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5874,24 +5935,28 @@ exports[`Settings should set a password 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb ktDKBB w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5899,21 +5964,26 @@ exports[`Settings should set a password 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6042,7 +6112,7 @@ exports[`Settings should set a password 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -6333,7 +6403,7 @@ exports[`Settings should set a password 1`] = `
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="sc-AxhCb djgWBt"
+                        class="sc-AxhCb eTekev"
                         data-testid="Password-settings__submit-button"
                         disabled=""
                         type="submit"
@@ -6360,7 +6430,7 @@ exports[`Settings should show an error toast if the current password does not ma
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6372,7 +6442,7 @@ exports[`Settings should show an error toast if the current password does not ma
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -6441,7 +6511,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -6462,24 +6532,28 @@ exports[`Settings should show an error toast if the current password does not ma
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb ktDKBB w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6487,21 +6561,26 @@ exports[`Settings should show an error toast if the current password does not ma
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb hQsvmD"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6630,7 +6709,7 @@ exports[`Settings should show an error toast if the current password does not ma
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -6921,7 +7000,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="sc-AxhCb kPVjPW"
+                        class="sc-AxhCb jeOvWZ"
                         data-testid="Password-settings__submit-button"
                         type="submit"
                       >
@@ -6947,7 +7026,7 @@ exports[`Settings should update profile 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6959,7 +7038,7 @@ exports[`Settings should update profile 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -7028,7 +7107,7 @@ exports[`Settings should update profile 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -7056,23 +7135,27 @@ exports[`Settings should update profile 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb chOSeo"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -7080,21 +7163,25 @@ exports[`Settings should update profile 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb chOSeo"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -7223,7 +7310,7 @@ exports[`Settings should update profile 1`] = `
             class="px-10 my-16 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
           >
             <div
-              class="sc-fzoXWK bjfOxE"
+              class="sc-fzoyTs hroXia"
             >
               <ul>
                 <div
@@ -7392,7 +7479,7 @@ exports[`Settings should update profile 1`] = `
                           class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
                         >
                           <div
-                            class="sc-fzolEj bUpNWF"
+                            class="sc-fznMAR fgHzUl"
                           >
                             <img
                               alt="Profile avatar"
@@ -7517,7 +7604,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-39-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-39-menu"
                                   role="listbox"
                                 />
@@ -7601,7 +7688,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-41-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-41-menu"
                                   role="listbox"
                                 />
@@ -7689,7 +7776,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-43-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-43-menu"
                                   role="listbox"
                                 />
@@ -7773,7 +7860,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-45-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-45-menu"
                                   role="listbox"
                                 />
@@ -7857,7 +7944,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-47-label"
-                                  class="sc-fznMAR hmfZwn"
+                                  class="sc-fzpmMD iRWnqb"
                                   id="downshift-47-menu"
                                   role="listbox"
                                 />
@@ -7888,7 +7975,7 @@ exports[`Settings should update profile 1`] = `
                       Security
                     </h2>
                     <ul
-                      class="sc-fzpmMD jBhThj"
+                      class="sc-fzoNJl eWPwQU"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -8077,7 +8164,7 @@ exports[`Settings should update profile 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-49-label"
-                                    class="sc-fznMAR hmfZwn"
+                                    class="sc-fzpmMD iRWnqb"
                                     id="downshift-49-menu"
                                     role="listbox"
                                   />
@@ -8109,7 +8196,7 @@ exports[`Settings should update profile 1`] = `
                       Other
                     </h2>
                     <ul
-                      class="sc-fzpmMD jBhThj"
+                      class="sc-fzoNJl eWPwQU"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -8268,7 +8355,7 @@ exports[`Settings should update profile 1`] = `
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="sc-AxhCb kSIbWL"
+                      class="sc-AxhCb hIjDOO"
                       type="button"
                     >
                       <div
@@ -8288,13 +8375,13 @@ exports[`Settings should update profile 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxhCb bFynmq"
+                        class="sc-AxhCb hSyNZX"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxhCb kPVjPW"
+                        class="sc-AxhCb jeOvWZ"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >

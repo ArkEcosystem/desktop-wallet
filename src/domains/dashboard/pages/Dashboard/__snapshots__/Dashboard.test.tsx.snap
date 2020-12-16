@@ -13,7 +13,7 @@ exports[`Dashboard should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -25,7 +25,7 @@ exports[`Dashboard should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -95,7 +95,7 @@ exports[`Dashboard should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxhCb hVGza-d w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxhCb chOSeo w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -123,23 +123,27 @@ exports[`Dashboard should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxhCb chOSeo"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -147,21 +151,25 @@ exports[`Dashboard should render 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxhCb hVGza-d w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxhCb chOSeo"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -351,7 +359,7 @@ exports[`Dashboard should render 1`] = `
                   class="flex space-x-3"
                 >
                   <button
-                    class="sc-AxhCb bFynmq"
+                    class="sc-AxhCb hSyNZX"
                     data-testid="WalletControls__create-wallet"
                     type="button"
                   >
@@ -373,7 +381,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="sc-AxhCb bFynmq"
+                    class="sc-AxhCb hSyNZX"
                     data-testid="WalletControls__import-wallet"
                     type="button"
                   >
@@ -395,7 +403,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="sc-AxhCb bFynmq"
+                    class="sc-AxhCb hSyNZX"
                     data-testid="WalletControls__import-ledger"
                     type="button"
                   >
@@ -447,7 +455,7 @@ exports[`Dashboard should render 1`] = `
                         data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                       >
                         <div
-                          class="sc-fzpmMD fKkTYv h-48"
+                          class="sc-fzoNJl fCeaiE h-48"
                           data-testid="Card"
                         >
                           <div
@@ -523,7 +531,7 @@ exports[`Dashboard should render 1`] = `
                         data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                       >
                         <div
-                          class="sc-fzpmMD fKkTYv h-48"
+                          class="sc-fzoNJl fCeaiE h-48"
                           data-testid="Card"
                         >
                           <div
@@ -599,7 +607,7 @@ exports[`Dashboard should render 1`] = `
                         data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
                       >
                         <div
-                          class="sc-fzpmMD fKkTYv h-48"
+                          class="sc-fzoNJl fCeaiE h-48"
                           data-testid="Card"
                         >
                           <div
@@ -1530,7 +1538,7 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb bFynmq mt-10 mb-5 w-full"
+            class="sc-AxhCb hSyNZX mt-10 mb-5 w-full"
             data-testid="transactions__fetch-more-button"
             type="button"
           >
