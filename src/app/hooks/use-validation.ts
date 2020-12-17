@@ -11,7 +11,6 @@ import {
 	sendVote,
 } from "domains/transaction/validations";
 import { receiveFunds } from "domains/wallet/validations";
-
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
