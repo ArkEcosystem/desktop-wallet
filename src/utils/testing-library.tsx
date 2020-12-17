@@ -12,7 +12,6 @@ import { Router } from "react-router-dom";
 import delegate from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
-import { migrateFixtures } from "utils/migrate-fixtures";
 
 const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
 	<I18nextProvider i18n={i18n}>
@@ -129,7 +128,7 @@ mockIpcRenderer();
 
 const envWithMocks = () => {
 	defaultNetMocks();
-	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(migrateFixtures()) });
+	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 };
 
 export const env = envWithMocks();
