@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -33,19 +32,11 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
-	const [availableNetworks, setAvailableNetworks] = useState<any[]>([]);
 	const { registrationType: selectedRegistrationType } = useParams();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
-
-	const networks = useMemo(() => {
-		const usesTestNetworks = activeProfile.settings().get(ProfileSetting.UseTestNetworks);
-		return usesTestNetworks
-			? env.availableNetworks()
-			: env.availableNetworks().filter((network) => network.isLive());
-	}, [env, activeProfile]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
 	const { formState, getValues, register, setValue, setError, unregister } = form;
@@ -78,18 +69,20 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	}, [register]);
 
 	useEffect(() => {
-		if (!activeWallet?.address?.()) return;
+		if (!activeWallet?.address?.()) {
+			return;
+		}
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
-		for (const network of networks) {
-			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, { shouldValidate: true, shouldDirty: true });
-
-				break;
-			}
-		}
-	}, [activeWallet, networks, setValue]);
+		const network = env
+			.availableNetworks()
+			.find(
+				(network: Coins.Network) =>
+					network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId(),
+			);
+		setValue("network", network, { shouldValidate: true, shouldDirty: true });
+	}, [activeWallet, env, setValue]);
 
 	useEffect(() => {
 		if (!activeWallet?.address?.() || !registrationType?.value) {
@@ -155,16 +148,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		t,
 	]);
 
-	useEffect(() => {
-		const userNetworks: string[] = [];
-		const wallets: any = activeProfile.wallets().values();
-		for (const wallet of wallets) {
-			userNetworks.push(wallet.networkId());
-		}
-
-		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
-	}, [activeProfile, networks]);
-
 	const handleSubmit = async () => {
 		try {
 			const transaction = await registrationForm!.signTransaction({
@@ -204,10 +187,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		{
 			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
-		},
-		{
-			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-			label: activeWallet.address(),
 		},
 	];
 

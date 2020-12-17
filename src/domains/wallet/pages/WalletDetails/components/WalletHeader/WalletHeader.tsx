@@ -84,29 +84,31 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, exchangeCurrency,
 			});
 		}
 
-		if (wallet.network().can(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
-			primaryOptions.options.push({
-				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
-				value: "second-signature",
-			});
-		}
+		if (wallet.hasSyncedWithNetwork()) {
+			if (wallet.network().can(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+				primaryOptions.options.push({
+					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
+					value: "second-signature",
+				});
+			}
 
-		if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
-			primaryOptions.options.push({
-				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
-				value: "delegate-registration",
-			});
-		}
+			if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
+				primaryOptions.options.push({
+					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
+					value: "delegate-registration",
+				});
+			}
 
-		if (
-			wallet.network().can(Coins.FeatureFlag.TransactionDelegateResignation) &&
-			wallet.isDelegate() &&
-			!wallet.isResignedDelegate()
-		) {
-			primaryOptions.options.push({
-				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
-				value: "delegate-resignation",
-			});
+			if (
+				wallet.network().can(Coins.FeatureFlag.TransactionDelegateResignation) &&
+				wallet.isDelegate() &&
+				!wallet.isResignedDelegate()
+			) {
+				primaryOptions.options.push({
+					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
+					value: "delegate-resignation",
+				});
+			}
 		}
 	}
 

@@ -179,24 +179,27 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("WalletVote__skeleton")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to votes page when clicking on WalletVote button (vote)", async () => {
-		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
-		history.push(walletUrl);
-
+		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId("WalletVote__button"));
 		});
 
-		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${blankWallet.id()}/votes`);
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}/votes`);
+
+		walletSpy.mockRestore();
+		historySpy.mockRestore();
 	});
 
 	it("should navigate to vote page when clicking on WalletVote button (unvote)", async () => {
@@ -213,52 +216,6 @@ describe("WalletDetails", () => {
 			search: "?unvotes=D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 		});
 		historySpy.mockRestore();
-	});
-
-	it("should navigate to new registration page when clicking on WalletRegistrations button (register)", async () => {
-		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
-		history.push(walletUrl);
-
-		const historySpy = jest.spyOn(history, "push");
-
-		const { getByTestId, queryAllByTestId } = await renderPage();
-
-		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
-
-		act(() => {
-			fireEvent.click(getByTestId("WalletRegistrations__button"));
-		});
-
-		expect(historySpy).toHaveBeenCalledWith(
-			`/profiles/${profile.id()}/wallets/${blankWallet.id()}/send-entity-registration`,
-		);
-	});
-
-	it("should navigate to registrations page when clicking on WalletRegistrations button (show all)", async () => {
-		const historySpy = jest.spyOn(history, "push").mockReturnValue();
-		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
-		const { getByTestId, queryAllByTestId } = await renderPage();
-
-		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
-
-		act(() => {
-			fireEvent.click(getByTestId("WalletRegistrations__button"));
-		});
-
-		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/registrations`);
-		isMultiSignatureSpy.mockRestore();
-		historySpy.mockRestore();
-	});
-
-	it("should render when wallet hasn't voted", async () => {
-		walletUrl = `/profiles/${profile.id()}/wallets/${unvotedWallet.id()}`;
-		history.push(walletUrl);
-
-		const { asFragment, getByTestId } = await renderPage();
-
-		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should update wallet name", async () => {

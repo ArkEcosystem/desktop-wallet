@@ -1,3 +1,4 @@
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -24,10 +25,17 @@ export const WalletVote = ({ onButtonClick }: WalletVoteProps) => {
 		return <section data-testid="WalletVote">{<WalletVoteSkeleton />}</section>;
 	}
 
-	const votes = activeWallet.votes();
+	let votes: ReadOnlyWallet[];
+
+	try {
+		votes = activeWallet.votes();
+	} catch {
+		votes = [];
+	}
+
 	const maxVotes = activeWallet.network().maximumVotesPerWallet();
 
-	const hasNoVotes = votes?.length === 0;
+	const hasNoVotes = votes.length === 0;
 	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
 
 	const renderVotes = () => {
