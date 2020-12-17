@@ -104,7 +104,7 @@ export const PasswordSettings = ({ env, formConfig, onSuccess, onError }: Settin
 					);
 				})}
 
-				<div className="flex justify-end w-full mt-8">
+				<div className="flex justify-end mt-8 w-full">
 					<Button data-testid="Password-settings__submit-button" disabled={!formState.isValid} type="submit">
 						{usesPassword ? t("SETTINGS.PASSWORD.BUTTON.UPDATE") : t("SETTINGS.PASSWORD.BUTTON.CREATE")}
 					</Button>

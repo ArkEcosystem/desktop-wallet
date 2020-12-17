@@ -66,7 +66,7 @@ export const WalletRegistrations = ({
 						<Circle size="lg" className="border-theme-neutral-500 dark:border-theme-neutral-700" />
 					</div>
 
-					<div className="flex justify-between flex-1">
+					<div className="flex flex-1 justify-between">
 						<div className="flex flex-col mr-4 font-semibold leading-snug text-theme-text">
 							<span className="mr-2">
 								{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY_DESCRIPTION")}
@@ -80,7 +80,7 @@ export const WalletRegistrations = ({
 						</div>
 
 						<Button
-							variant="plain"
+							variant="secondary"
 							onClick={() => onButtonClick(true)}
 							data-testid="WalletRegistrations__button"
 						>
@@ -168,7 +168,7 @@ export const WalletRegistrations = ({
 				)}
 
 				<Button
-					variant="plain"
+					variant="secondary"
 					className="ml-auto"
 					onClick={() => onButtonClick()}
 					data-testid="WalletRegistrations__button"

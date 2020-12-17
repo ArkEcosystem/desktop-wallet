@@ -57,7 +57,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 						<span className="mb-3 font-semibold text-theme-secondary-text">
 							{t("NEWS.ADD_ASSETS.ALL_ASSETS")}
 						</span>
-						<div className="flex flex-wrap mt-3 -mx-3">
+						<div className="flex flex-wrap -mx-3 mt-3">
 							{allAssets?.map((asset, index) => (
 								<Circle
 									key={index}
@@ -80,7 +80,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 				</div>
 
 				<div className="flex justify-end mt-4 space-x-3">
-					<Button variant="plain">{t("COMMON.CANCEL")}</Button>
+					<Button variant="secondary">{t("COMMON.CANCEL")}</Button>
 					<Button type="submit">{t("COMMON.UPDATE")}</Button>
 				</div>
 			</Form>

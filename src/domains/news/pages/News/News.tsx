@@ -116,7 +116,7 @@ export const News = ({ itemsPerPage }: Props) => {
 					<div className="flex-none w-4/6">
 						{!isLoading && news.length === 0 && (
 							<EmptyResults
-								className="border-2 rounded-lg border-theme-primary-contrast"
+								className="rounded-lg border-2 border-theme-primary-contrast"
 								title={t("COMMON.EMPTY_RESULTS.TITLE")}
 								subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
 							/>
@@ -133,7 +133,7 @@ export const News = ({ itemsPerPage }: Props) => {
 						{!isLoading && (
 							<div className="space-y-6">
 								{news?.map((data, index) => (
-									<NewsCard key={index} coin={coins[0]} {...data} />
+									<NewsCard key={index} {...data} />
 								))}
 							</div>
 						)}

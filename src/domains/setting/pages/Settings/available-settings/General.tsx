@@ -12,6 +12,7 @@ import { useActiveProfile } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
+import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { setScreenshotProtection } from "utils/electron-utils";
@@ -31,10 +32,14 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const [avatarImage, setAvatarImage] = useState(activeProfile.settings().get(ProfileSetting.Avatar) || "");
 
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
+	const [isOpenDevelopmentNetworkModal, setIsOpenDevelopmentNetworkModal] = useState(false);
 	const [isResetProfileOpen, setIsResetProfileOpen] = useState(false);
 
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
+	);
+	const [isDevelopmentNetwork, setIsDevelopmentNetwork] = useState(
+		activeProfile.settings().get(ProfileSetting.UseTestNetworks) || false,
 	);
 
 	const profiles = useMemo(() => env.profiles().values(), [env]);
@@ -63,6 +68,21 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const handleAdvancedMode = (isAccepted: boolean) => {
 		setIsOpenAdvancedModeModal(false);
 		setIsAdvancedMode(isAccepted);
+	};
+
+	const handleOpenDevelopmentNetworkModal = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { checked } = event.target;
+
+		if (checked) {
+			setIsDevelopmentNetwork(checked);
+		} else {
+			setIsOpenDevelopmentNetworkModal(!checked);
+		}
+	};
+
+	const handleDevelopmentNetwork = (isAccepted: boolean) => {
+		setIsOpenDevelopmentNetworkModal(false);
+		setIsDevelopmentNetwork(isAccepted);
 	};
 
 	const securityItems = [
@@ -126,7 +146,8 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="useTestNetworks"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.UseTestNetworks)}
+					checked={isDevelopmentNetwork}
+					onChange={handleOpenDevelopmentNetworkModal}
 					data-testid="General-settings__toggle--useTestNetworks"
 				/>
 			),
@@ -226,7 +247,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 
 					<SelectProfileImage value={avatarImage} name={name} onSelect={setAvatarImage} />
 
-					<div className="flex justify-between w-full mt-8">
+					<div className="flex justify-between mt-8 w-full">
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
@@ -350,13 +371,13 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 					<ListDivided items={otherItems} />
 				</div>
 
-				<div className="flex justify-between w-full pt-2">
-					<Button onClick={() => setIsResetProfileOpen(true)} color="danger" variant="plain">
+				<div className="flex justify-between pt-2 w-full">
+					<Button onClick={() => setIsResetProfileOpen(true)} variant="danger">
 						<Icon name="Reset" />
 						<span>{t("COMMON.RESET_DATA")}</span>
 					</Button>
 					<div className="space-x-3">
-						<Button variant="plain">{t("COMMON.CANCEL")}</Button>
+						<Button variant="secondary">{t("COMMON.CANCEL")}</Button>
 						<Button type="submit" data-testid="General-settings__submit-button">
 							{t("COMMON.SAVE")}
 						</Button>
@@ -369,6 +390,13 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				onClose={() => handleAdvancedMode(false)}
 				onDecline={() => handleAdvancedMode(false)}
 				onAccept={() => handleAdvancedMode(true)}
+			/>
+
+			<DevelopmentNetwork
+				isOpen={isOpenDevelopmentNetworkModal}
+				onClose={() => setIsOpenDevelopmentNetworkModal(false)}
+				onCancel={() => handleDevelopmentNetwork(true)}
+				onContinue={() => handleDevelopmentNetwork(false)}
 			/>
 
 			<ResetProfile

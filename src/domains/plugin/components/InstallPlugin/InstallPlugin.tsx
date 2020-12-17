@@ -47,7 +47,7 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel }: InstallPluginProps)
 				<div className="flex justify-end mt-8 space-x-3">
 					{activeStep === 1 && (
 						<>
-							<Button variant="plain" onClick={onCancel} data-testid="InstallPlugin__cancel-button">
+							<Button variant="secondary" onClick={onCancel} data-testid="InstallPlugin__cancel-button">
 								{t("COMMON.CANCEL")}
 							</Button>
 							<Button onClick={handleNext} data-testid="InstallPlugin__download-button">
@@ -59,7 +59,7 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel }: InstallPluginProps)
 					{/* TODO: Remove these buttons from the second step in the functional code */}
 					{activeStep === 2 && (
 						<>
-							<Button variant="plain" onClick={handleBack} data-testid="InstallPlugin__back-button">
+							<Button variant="secondary" onClick={handleBack} data-testid="InstallPlugin__back-button">
 								{t("COMMON.BACK")}
 							</Button>
 							<Button onClick={handleNext} data-testid="InstallPlugin__continue-button">
@@ -70,7 +70,7 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel }: InstallPluginProps)
 
 					{activeStep === 3 && (
 						<>
-							<Button variant="plain" onClick={handleBack} data-testid="InstallPlugin__cancel-button">
+							<Button variant="secondary" onClick={handleBack} data-testid="InstallPlugin__cancel-button">
 								{t("COMMON.CANCEL")}
 							</Button>
 							<Button data-testid="InstallPlugin__install-button">{t("COMMON.INSTALL")}</Button>

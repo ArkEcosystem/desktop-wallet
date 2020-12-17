@@ -12,15 +12,15 @@ export const BlockfolioAd = () => {
 
 	return (
 		<div className="relative">
-			<div className="absolute top-0 flex text-center rounded-b-xl bg-theme-primary-contrast right-4">
+			<div className="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-contrast">
 				<span className="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary">{t("NEWS.AD")}</span>
 			</div>
 			<img
 				src={BlockfolioBanner}
-				className="w-full border-2 rounded-lg border-theme-primary-contrast"
+				className="w-full rounded-lg border-2 border-theme-primary-contrast"
 				alt="Blockfolio Banner"
 			/>
-			<div className="absolute top-24 left-10">
+			<div className="absolute left-10 top-24">
 				<div className="flex flex-col space-y-5 text-theme-background">
 					<Link to="https://blockfolio.com/" showExternalIcon={false} isExternal>
 						<SvgCollection.Blockfolio className="-mx-8 text-theme-background" width={238} height={47} />

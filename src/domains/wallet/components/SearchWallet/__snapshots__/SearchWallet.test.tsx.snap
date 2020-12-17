@@ -1,24 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchWallet should render 1`] = `
+exports[`SearchWallet uses fiat value = false should render 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ jFqSPL w-11 h-11"
-          color="primary"
+          class="sc-AxirZ gKDmVV w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -74,7 +73,272 @@ exports[`SearchWallet should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top ml-24"
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Wallet Address
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxiKw GMmVY"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end"
+                      >
+                        <div>
+                          Balance
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxiKw GMmVY"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end no-border"
+                      >
+                        <div>
+                          <div
+                            class="relative"
+                          >
+                            <button
+                              class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
+                              data-testid="header-search-bar__button"
+                            >
+                              <div
+                                class="flex items-center space-x-3"
+                              >
+                                <span
+                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                >
+                                  Search
+                                </span>
+                                <div
+                                  class="sc-AxiKw cytFlT text-theme-primary-300 dark:text-theme-neutral-600"
+                                  height="18"
+                                  width="18"
+                                >
+                                  <svg>
+                                    search.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="sc-fznZeY gQCGHj group"
+                    data-testid="TableRow"
+                  >
+                    <td>
+                      <div
+                        class="sc-fznKkj bSJzgJ space-x-4"
+                      >
+                        <div
+                          class="-space-x-2"
+                        >
+                          <div
+                            aria-label="ARK Devnet"
+                            class="sc-fzokOt keXHvo border-theme-primary-100 text-theme-primary-400"
+                            data-testid="NetworkIcon-ARK-ark.devnet"
+                          >
+                            <div
+                              class="sc-AxiKw dklFyP"
+                              data-testid="NetworkIcon__icon"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                ark.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="inline-flex items-center"
+                        >
+                          <span
+                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                            data-testid="address__wallet-name"
+                          >
+                            Sample Wallet
+                          </span>
+                          <span
+                            class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                            data-testid="address__wallet-address"
+                          >
+                            D8rr7B1d6 … VBMs6YUYD
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fznKkj cXxwSD font-semibold justify-end"
+                      >
+                        <span
+                          data-testid="Amount"
+                        >
+                          33.75089801 DARK
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="sc-fznKkj csNbpV justify-end"
+                      >
+                        <button
+                          class="sc-AxirZ jIUtSy"
+                          data-testid="SearchWalletListItem__select-0"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SearchWallet uses fiat value = true should render 1`] = `
+<DocumentFragment>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+      >
+        <button
+          class="sc-AxirZ gKDmVV w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="sc-AxiKw kgmJgX"
+            height="14"
+            width="14"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Select Account
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div
+            class="mt-1 text-theme-secondary-text"
+          >
+            Find and select the account you want to receive funds to
+          </div>
+          <div
+            class="mt-8"
+          >
+            <div
+              class="sc-fznyAO jJDQKq -mt-3"
+              role="table"
+            >
+              <table
+                cellpadding="0"
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                    role="row"
+                  >
+                    <th
+                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Wallet Address
@@ -169,19 +433,21 @@ exports[`SearchWallet should render 1`] = `
                             class="relative"
                           >
                             <button
-                              class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                              class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                               data-testid="header-search-bar__button"
                             >
                               <div
                                 class="flex items-center space-x-3"
                               >
-                                <span>
+                                <span
+                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                >
                                   Search
                                 </span>
                                 <div
-                                  class="sc-AxiKw dklFyP"
-                                  height="20"
-                                  width="20"
+                                  class="sc-AxiKw cytFlT text-theme-primary-300 dark:text-theme-neutral-600"
+                                  height="18"
+                                  width="18"
                                 >
                                   <svg>
                                     search.svg
@@ -204,7 +470,7 @@ exports[`SearchWallet should render 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="-space-x-2"
@@ -260,7 +526,7 @@ exports[`SearchWallet should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu font-semibold justify-end"
+                        class="sc-fznKkj cXxwSD font-semibold justify-end"
                       >
                         <span
                           data-testid="Amount"
@@ -271,7 +537,7 @@ exports[`SearchWallet should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu text-theme-neutral-light justify-end"
+                        class="sc-fznKkj cXxwSD text-theme-neutral-light justify-end"
                       >
                         <span
                           data-testid="Amount"
@@ -282,11 +548,10 @@ exports[`SearchWallet should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ jIUtSy"
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >

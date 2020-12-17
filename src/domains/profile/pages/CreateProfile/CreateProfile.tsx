@@ -11,7 +11,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -22,26 +22,20 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const { watch, register, setError, formState, setValue, trigger } = form;
-	const { name, confirmPassword } = watch();
-
-	const nameMaxLength = 42;
+	const { watch, register, formState, setValue, trigger } = form;
+	const { name, confirmPassword } = watch(["name", "confirmPassword"], { name: "" });
 
 	const [avatarImage, setAvatarImage] = useState("");
 
 	const { createProfile } = useValidation();
-	const profiles = useMemo(() => env.profiles().values(), [env]);
-	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
+
+	const formattedName = name.trim();
 
 	useEffect(() => {
-		if ((!avatarImage || isSvg) && name) {
-			setAvatarImage(AvatarSDK.make(name));
-		} else {
-			if (isSvg && !name) {
-				setAvatarImage("");
-			}
+		if (!avatarImage || avatarImage.endsWith("</svg>")) {
+			setAvatarImage(formattedName ? AvatarSDK.make(formattedName) : "");
 		}
-	}, [name, avatarImage, isSvg, setAvatarImage]);
+	}, [formattedName, avatarImage, setAvatarImage]);
 
 	const otherItems = [
 		{
@@ -54,25 +48,12 @@ export const CreateProfile = () => {
 	];
 
 	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
-		const formattedName = name.substring(0, nameMaxLength);
-		const profileExists = profiles.some((profile) => profile.name() === formattedName);
+		const profile = env.profiles().create(name.trim());
 
-		if (profileExists) {
-			return setError("name", {
-				type: "manual",
-				message: t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS"),
-			});
-		}
-
-		const profile = env.profiles().create(formattedName);
-
-		profile.settings().set(ProfileSetting.MarketProvider, "cryptocompare");
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
-		if (avatarImage && !isSvg) {
-			profile.settings().set(ProfileSetting.Avatar, avatarImage);
-		}
+		profile.settings().set(ProfileSetting.Avatar, avatarImage);
 
 		if (password) {
 			profile.auth().setPassword(password);
@@ -85,13 +66,13 @@ export const CreateProfile = () => {
 
 	return (
 		<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
-			<Section className="flex flex-col justify-center flex-1">
-				<div className="max-w-lg mx-auto -mt-10">
+			<Section className="flex flex-col flex-1 justify-center">
+				<div className="mx-auto -mt-10 max-w-lg">
 					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
 					<div className="text-theme-secondary-text">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
 					<Form
-						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
 						context={form}
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"
@@ -101,7 +82,7 @@ export const CreateProfile = () => {
 
 							<div className="relative mt-8 space-y-8">
 								<div className="flex justify-between -mt-6">
-									<FormField name="name" className="w-full mr-6">
+									<FormField name="name" className="mr-6 w-full">
 										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 										<Input ref={register(createProfile.name())} />
 										<FormHelperText />
@@ -110,7 +91,7 @@ export const CreateProfile = () => {
 									<SelectProfileImage
 										className="-mt-6"
 										value={avatarImage}
-										name={name}
+										name={formattedName}
 										showLabel={false}
 										onSelect={setAvatarImage}
 									/>
@@ -168,7 +149,7 @@ export const CreateProfile = () => {
 						</div>
 
 						<div className="flex justify-end pt-4 space-x-3">
-							<Button variant="plain" onClick={() => history.push("/")}>
+							<Button variant="secondary" onClick={() => history.push("/")}>
 								{t("COMMON.BACK")}
 							</Button>
 

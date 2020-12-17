@@ -77,7 +77,7 @@ export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdat
 					{activeStep === 1 && (
 						<>
 							<Button
-								variant="plain"
+								variant="secondary"
 								className="mt-2 sm:mt-0"
 								onClick={handleCancel}
 								data-testid="WalletUpdate__cancel-button"

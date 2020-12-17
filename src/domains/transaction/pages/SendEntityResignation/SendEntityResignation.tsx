@@ -198,7 +198,7 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 				{isLoading && <Loader />}
 
 				<div className={isLoading ? "hidden" : ""}>
-					<Form className="max-w-xl mx-auto" context={form} onSubmit={handleSubmit}>
+					<Form className="mx-auto max-w-xl" context={form} onSubmit={handleSubmit}>
 						<Tabs activeId={activeTab}>
 							{fees && (
 								<>
@@ -228,7 +228,7 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 												<Button
 													disabled={activeTab === 1}
 													data-testid="SendEntityResignation__back-button"
-													variant="plain"
+													variant="secondary"
 													onClick={handleBack}
 												>
 													{t("COMMON.BACK")}
@@ -261,7 +261,7 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 												<div className="flex justify-end space-x-3">
 													<Button
 														data-testid="SendEntityResignation__wallet-button"
-														variant="plain"
+														variant="secondary"
 														onClick={() => {
 															history.push(`/profiles/${activeProfile.id()}/dashboard`);
 														}}
@@ -271,7 +271,7 @@ export const SendEntityResignation = ({ formDefaultData }: any) => {
 
 													<Button
 														data-testid="SendEntityResignation__download-button"
-														variant="plain"
+														variant="secondary"
 														className="space-x-2"
 													>
 														<Icon name="Download" />

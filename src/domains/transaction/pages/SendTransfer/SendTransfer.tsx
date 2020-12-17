@@ -187,7 +187,7 @@ export const SendTransfer = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -234,7 +234,7 @@ export const SendTransfer = () => {
 												<Button
 													disabled={activeTab === 1}
 													data-testid="SendTransfer__button--back"
-													variant="plain"
+													variant="secondary"
 													onClick={handleBack}
 												>
 													{t("COMMON.BACK")}
@@ -253,7 +253,7 @@ export const SendTransfer = () => {
 											<>
 												<Button
 													data-testid="SendTransfer__button--back"
-													variant="plain"
+													variant="secondary"
 													onClick={handleBack}
 												>
 													{t("COMMON.BACK")}
@@ -277,7 +277,7 @@ export const SendTransfer = () => {
 									<>
 										<Button
 											data-testid="SendTransfer__button--back-to-wallet"
-											variant="plain"
+											variant="secondary"
 											className="block"
 											onClick={() =>
 												history.push(`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`)
@@ -289,7 +289,7 @@ export const SendTransfer = () => {
 										<Button
 											onClick={copyTransaction}
 											data-testid="SendTransfer__button--copy"
-											variant="plain"
+											variant="secondary"
 											className="space-x-2"
 										>
 											<Icon name="Copy" />

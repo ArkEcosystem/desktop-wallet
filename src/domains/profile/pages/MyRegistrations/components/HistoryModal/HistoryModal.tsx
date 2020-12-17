@@ -43,7 +43,7 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 							<td className="py-6 font-semibold text-center">
 								<span>{rowData.date}</span>
 							</td>
-							<td className="flex items-center justify-end py-6 font-semibold text-theme-primary-500">
+							<td className="flex justify-end items-center py-6 font-semibold text-theme-primary-500">
 								<Icon name="Redirect" width={15} height={15} />
 								<span className="ml-2">View</span>
 							</td>

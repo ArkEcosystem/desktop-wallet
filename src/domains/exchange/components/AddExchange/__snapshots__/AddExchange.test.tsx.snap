@@ -5,22 +5,21 @@ exports[`AddExchange should not render if not open 1`] = `<DocumentFragment />`;
 exports[`AddExchange should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw jCpCzv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxiKw jCpCzv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm cshtse w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -39,7 +38,7 @@ exports[`AddExchange should render a modal 1`] = `
         class="relative"
       >
         <div
-          class="relative h-56 mb-10 -mx-10 -mt-10"
+          class="relative -mx-10 mb-10 -mt-10 h-56"
         >
           <svg>
             add-exchange-banner.svg
@@ -239,7 +238,7 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-18"
                     >
                       <div
-                        class="sc-AxhUy kKbjPF"
+                        class="sc-AxhUy XkfdI"
                       >
                         <div
                           class="w-12 h-12"
@@ -252,7 +251,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <div
                           class="flex flex-col"
@@ -270,7 +269,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <span>
                           Other
@@ -279,7 +278,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <div
                           class="flex"
@@ -289,7 +288,7 @@ exports[`AddExchange should render a modal 1`] = `
                             class="relative my-auto"
                           >
                             <div
-                              class="absolute overflow-hidden"
+                              class="overflow-hidden absolute"
                               style="width: 89.99999999999999%;"
                             >
                               <svg
@@ -314,7 +313,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <span>
                           v 1.3.8
@@ -325,11 +324,10 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-AxhUy BWtAR justify-end"
+                        class="sc-AxhUy eaijwM justify-end"
                       >
                         <button
-                          class="sc-AxjAm fCKjFI"
-                          color="primary"
+                          class="sc-AxjAm dBbvQh"
                           type="button"
                         >
                           Install
@@ -345,7 +343,7 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-18"
                     >
                       <div
-                        class="sc-AxhUy kKbjPF"
+                        class="sc-AxhUy XkfdI"
                       >
                         <div
                           class="w-12 h-12"
@@ -358,7 +356,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <div
                           class="flex flex-col"
@@ -376,7 +374,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <span>
                           Other
@@ -385,7 +383,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <div
                           class="flex"
@@ -395,7 +393,7 @@ exports[`AddExchange should render a modal 1`] = `
                             class="relative my-auto"
                           >
                             <div
-                              class="absolute overflow-hidden"
+                              class="overflow-hidden absolute"
                               style="width: 89.99999999999999%;"
                             >
                               <svg
@@ -420,7 +418,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <span>
                           v 1.3.8
@@ -431,11 +429,10 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-AxhUy BWtAR justify-end"
+                        class="sc-AxhUy eaijwM justify-end"
                       >
                         <button
-                          class="sc-AxjAm fCKjFI"
-                          color="primary"
+                          class="sc-AxjAm dBbvQh"
                           type="button"
                         >
                           Install
@@ -451,7 +448,7 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-18"
                     >
                       <div
-                        class="sc-AxhUy kKbjPF"
+                        class="sc-AxhUy XkfdI"
                       >
                         <div
                           class="w-12 h-12"
@@ -464,7 +461,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <div
                           class="flex flex-col"
@@ -482,7 +479,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <span>
                           Other
@@ -491,7 +488,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <div
                           class="flex"
@@ -501,7 +498,7 @@ exports[`AddExchange should render a modal 1`] = `
                             class="relative my-auto"
                           >
                             <div
-                              class="absolute overflow-hidden"
+                              class="overflow-hidden absolute"
                               style="width: 95%;"
                             >
                               <svg
@@ -526,7 +523,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <span>
                           v 1.3.8
@@ -537,11 +534,10 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-AxhUy BWtAR justify-end"
+                        class="sc-AxhUy eaijwM justify-end"
                       >
                         <button
-                          class="sc-AxjAm fCKjFI"
-                          color="primary"
+                          class="sc-AxjAm dBbvQh"
                           type="button"
                         >
                           Install
@@ -557,7 +553,7 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-18"
                     >
                       <div
-                        class="sc-AxhUy kKbjPF"
+                        class="sc-AxhUy XkfdI"
                       >
                         <div
                           class="w-12 h-12"
@@ -570,7 +566,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <div
                           class="flex flex-col"
@@ -588,7 +584,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <span>
                           Other
@@ -597,7 +593,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <div
                           class="flex"
@@ -607,7 +603,7 @@ exports[`AddExchange should render a modal 1`] = `
                             class="relative my-auto"
                           >
                             <div
-                              class="absolute overflow-hidden"
+                              class="overflow-hidden absolute"
                               style="width: 40%;"
                             >
                               <svg
@@ -632,7 +628,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-AxhUy bZUqDH"
+                        class="sc-AxhUy heXTMG"
                       >
                         <span>
                           v 1.3.8
@@ -643,11 +639,10 @@ exports[`AddExchange should render a modal 1`] = `
                       class="w-16"
                     >
                       <div
-                        class="sc-AxhUy BWtAR justify-end"
+                        class="sc-AxhUy eaijwM justify-end"
                       >
                         <button
-                          class="sc-AxjAm fCKjFI"
-                          color="primary"
+                          class="sc-AxjAm dBbvQh"
                           type="button"
                         >
                           Install

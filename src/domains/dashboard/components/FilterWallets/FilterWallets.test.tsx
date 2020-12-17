@@ -6,16 +6,39 @@ import { FilterWallets } from "./FilterWallets";
 
 const networks = [
 	{
-		name: "ARK",
+		coin: "ARK",
+		name: "ARK Devnet",
+		id: "ark.mainnet",
+		isSelected: false,
+		isLive: true,
+	},
+	{
+		name: "LSK Testnet",
+		coin: "LSK",
+		id: "lsk.testnet",
 		isSelected: true,
+		isLive: false,
+	},
+	{
+		name: "Compedia",
+		coin: "BIND",
+		id: "compedia.mainnet",
+		isSelected: false,
+		isLive: false,
 	},
 	{
 		name: "Ethereum",
+		coin: "ETH",
+		id: "eth.mainnet",
 		isSelected: true,
+		isLive: true,
 	},
 	{
 		name: "Bitcoin",
+		coin: "BTC",
+		id: "btc.mainnet",
 		isSelected: false,
+		isLive: true,
 	},
 ];
 
@@ -30,57 +53,46 @@ describe("FilterWallets", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should emit event for transactions view toggle", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<FilterWallets networks={networks} toggleTransactionsView={fn} />);
-		const toggle = getByTestId("filter-wallets_toggle--transactions");
+	it("should emit onChange for transactions view toggle", () => {
+		const onChange = jest.fn();
+
+		const { getByTestId } = render(<FilterWallets networks={networks} onChange={onChange} />);
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
 		});
 
-		expect(fn).toBeCalled();
+		expect(onChange).toBeCalled();
 	});
 
-	it("should ignore emit event for transactions view if callback not provided", () => {
-		const fn = jest.fn();
+	it("should not emit onChange for transactions view toggle", () => {
+		const onChange = jest.fn();
+
 		const { getByTestId } = render(<FilterWallets networks={networks} />);
-		const toggle = getByTestId("filter-wallets_toggle--transactions");
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.click(getByTestId("filter-wallets_toggle--transactions"));
 		});
 
-		expect(fn).not.toBeCalled();
+		expect(onChange).not.toBeCalled();
 	});
 
-	it("should emit event for portfolio view toggle", () => {
-		const onPortfolioView = jest.fn();
-		const { getByTestId } = render(<FilterWallets networks={networks} togglePortfolioView={onPortfolioView} />);
-		const toggle = getByTestId("filter-wallets_toggle--portfolio");
+	it("should emit onChange for network selection", () => {
+		const onChange = jest.fn();
+
+		const { getByTestId } = render(<FilterWallets networks={networks} onChange={onChange} />);
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 		});
 
-		expect(onPortfolioView).toBeCalled();
+		expect(onChange).toBeCalled();
 	});
 
-	it("should ignore emit event for portfolio view if callback not provided", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<FilterWallets networks={networks} />);
-		const toggle = getByTestId("filter-wallets_toggle--portfolio");
+	it("should emit onChange for wallets display type change", () => {
+		const onChange = jest.fn();
 
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(fn).not.toBeCalled();
-	});
-
-	it("should emit event for wallets display", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(<FilterWallets networks={networks} onWalletsDisplayType={fn} />);
+		const { getByTestId } = render(<FilterWallets networks={networks} onChange={onChange} />);
 
 		act(() => {
 			fireEvent.click(getByTestId("filter-wallets__wallets"));
@@ -90,11 +102,12 @@ describe("FilterWallets", () => {
 			fireEvent.click(getByTestId("dropdown__option--0"));
 		});
 
-		expect(fn).toBeCalled();
+		expect(onChange).toBeCalled();
 	});
 
-	it("should ignore emit event for wallet display if callback not provided", () => {
-		const fn = jest.fn();
+	it("should not emit onChange for wallet display type change", () => {
+		const onChange = jest.fn();
+
 		const { getByTestId } = render(<FilterWallets networks={networks} />);
 
 		act(() => {
@@ -105,6 +118,6 @@ describe("FilterWallets", () => {
 			fireEvent.click(getByTestId("dropdown__option--0"));
 		});
 
-		expect(fn).not.toBeCalled();
+		expect(onChange).not.toBeCalled();
 	});
 });

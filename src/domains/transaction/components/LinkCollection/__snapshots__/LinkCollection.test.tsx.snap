@@ -7,7 +7,7 @@ exports[`LinkCollection should add links 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -17,7 +17,7 @@ exports[`LinkCollection should add links 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -46,13 +46,13 @@ exports[`LinkCollection should add links 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="type"
             >
               Add media
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -145,13 +145,13 @@ exports[`LinkCollection should add links 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="value"
             >
               Link
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -163,8 +163,7 @@ exports[`LinkCollection should add links 1`] = `
             />
           </fieldset>
           <button
-            class="sc-AxjAm fCKjFI col-span-2"
-            color="primary"
+            class="sc-AxjAm iWHhrC col-span-2"
             data-testid="LinkCollection__add-link"
             disabled=""
             type="button"
@@ -273,7 +272,7 @@ exports[`LinkCollection should add links 1`] = `
                 class="w-40"
               >
                 <div
-                  class="sc-fznZeY jPEzpp font-semibold"
+                  class="sc-fznZeY dUDxcU font-semibold"
                 >
                   <input
                     name="links[0].type"
@@ -287,7 +286,7 @@ exports[`LinkCollection should add links 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-fznZeY hbjVwL font-semibold break-all"
+                  class="sc-fznZeY wdbCa font-semibold break-all"
                 >
                   <input
                     name="links[0].value"
@@ -301,11 +300,10 @@ exports[`LinkCollection should add links 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-fznZeY fBPWGl justify-end"
+                  class="sc-fznZeY eiFQJQ justify-end"
                 >
                   <button
-                    class="sc-AxjAm eRbxBA"
-                    color="primary"
+                    class="sc-AxjAm iEqmsF"
                     data-testid="LinkCollection__remove-link"
                     type="button"
                   >
@@ -337,7 +335,7 @@ exports[`LinkCollection should remove links 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -347,7 +345,7 @@ exports[`LinkCollection should remove links 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -376,13 +374,13 @@ exports[`LinkCollection should remove links 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="type"
             >
               Add media
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -454,13 +452,13 @@ exports[`LinkCollection should remove links 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="value"
             >
               Link
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -473,8 +471,7 @@ exports[`LinkCollection should remove links 1`] = `
             />
           </fieldset>
           <button
-            class="sc-AxjAm fCKjFI col-span-2"
-            color="primary"
+            class="sc-AxjAm iWHhrC col-span-2"
             data-testid="LinkCollection__add-link"
             disabled=""
             type="button"
@@ -495,7 +492,7 @@ exports[`LinkCollection should render 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -505,7 +502,7 @@ exports[`LinkCollection should render 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
           height="10"
           width="10"
         >
@@ -531,7 +528,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -541,7 +538,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -570,13 +567,13 @@ exports[`LinkCollection should select a specific link type 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="type"
             >
               Add media
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -648,13 +645,13 @@ exports[`LinkCollection should select a specific link type 1`] = `
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="value"
             >
               Link
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -667,8 +664,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
             />
           </fieldset>
           <button
-            class="sc-AxjAm fCKjFI col-span-2"
-            color="primary"
+            class="sc-AxjAm iWHhrC col-span-2"
             data-testid="LinkCollection__add-link"
             disabled=""
             type="button"
@@ -807,7 +803,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="w-16"
               >
                 <div
-                  class="sc-fznZeY jPEzpp justify-center"
+                  class="sc-fznZeY dUDxcU justify-center"
                 >
                   <input
                     class="sc-fzpans jffRdD"
@@ -821,7 +817,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="w-40"
               >
                 <div
-                  class="sc-fznZeY hbjVwL font-semibold"
+                  class="sc-fznZeY wdbCa font-semibold"
                 >
                   <input
                     name="links[0].type"
@@ -835,7 +831,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-fznZeY hbjVwL font-semibold break-all"
+                  class="sc-fznZeY wdbCa font-semibold break-all"
                 >
                   <input
                     name="links[0].value"
@@ -849,11 +845,10 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-fznZeY fBPWGl justify-end"
+                  class="sc-fznZeY eiFQJQ justify-end"
                 >
                   <button
-                    class="sc-AxjAm eRbxBA"
-                    color="primary"
+                    class="sc-AxjAm iEqmsF"
                     data-testid="LinkCollection__remove-link"
                     type="button"
                   >
@@ -878,14 +873,14 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="w-16"
               >
                 <div
-                  class="sc-fznZeY jPEzpp justify-center"
+                  class="sc-fznZeY dUDxcU justify-center"
                 />
               </td>
               <td
                 class="w-40"
               >
                 <div
-                  class="sc-fznZeY hbjVwL font-semibold"
+                  class="sc-fznZeY wdbCa font-semibold"
                 >
                   <input
                     name="links[1].type"
@@ -899,7 +894,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-fznZeY hbjVwL font-semibold break-all"
+                  class="sc-fznZeY wdbCa font-semibold break-all"
                 >
                   <input
                     name="links[1].value"
@@ -913,11 +908,10 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-fznZeY fBPWGl justify-end"
+                  class="sc-fznZeY eiFQJQ justify-end"
                 >
                   <button
-                    class="sc-AxjAm eRbxBA"
-                    color="primary"
+                    class="sc-AxjAm iEqmsF"
                     data-testid="LinkCollection__remove-link"
                     type="button"
                   >
@@ -949,7 +943,7 @@ exports[`LinkCollection should toggle open/close link collection 1`] = `
     data-testid="LinkCollection"
   >
     <div
-      class="flex items-center justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
       <span
@@ -959,7 +953,7 @@ exports[`LinkCollection should toggle open/close link collection 1`] = `
       </span>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+          class="sc-AxiKw ksjdLL flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
           height="10"
           width="10"
         >

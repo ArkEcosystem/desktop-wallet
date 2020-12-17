@@ -13,12 +13,12 @@ import { Action } from "app/components/Notifications/models";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 import { NavbarVariant } from "types";
-import { exitApp, openExternal } from "utils/electron-utils";
+import { openExternal } from "utils/electron-utils";
 
 import { Amount } from "../Amount";
 import { defaultStyle } from "./NavigationBar.styles";
@@ -75,7 +75,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 					</Circle>
 
 					<div
-						className="relative inline-flex items-center justify-center align-middle rounded-full"
+						className="inline-flex relative justify-center items-center align-middle rounded-full"
 						data-testid="navbar__user--avatar"
 					>
 						<AvatarWrapper size="lg">
@@ -89,7 +89,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 							) : (
 								<img
 									alt="Profile Avatar"
-									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+									className="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
 									src={avatarImage}
 								/>
 							)}
@@ -161,10 +161,21 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 	const getExchangeCurrency = () => profile?.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
+	const wallets = useMemo(() => {
+		if (!profile) return [];
+
+		if (profile?.settings().get(ProfileSetting.UseTestNetworks)) return profile?.wallets().values();
+
+		return profile
+			?.wallets()
+			.values()
+			.filter((wallet) => wallet.network().isLive());
+	}, [profile]);
+
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
 			<div className="px-4 sm:px-6 lg:px-10">
-				<div className="relative flex justify-between h-20 md:h-24">
+				<div className="flex relative justify-between h-20 md:h-24">
 					<div className="flex items-center my-auto">
 						<LogoContainer>
 							<ARKLogo width={48} />
@@ -175,32 +186,33 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 					{variant === "full" && (
 						<>
-							<ul className="flex h-20 ml-4 mr-auto space-x-8 md:h-24">{renderMenu()}</ul>
+							<ul className="flex mr-auto ml-4 space-x-8 h-20 md:h-24">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
 
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
-								<div className="flex items-center overflow-hidden rounded-lg">
+								<div className="flex overflow-hidden items-center rounded-lg">
 									<Button
+										disabled={!wallets.length}
 										variant="transparent"
 										size="icon"
-										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+										className="w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
 										onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
 										data-testid="navbar__buttons--send"
 									>
-										<Icon name="Sent" width={22} height={22} className="p-1" />
+										<Icon name="Sent" width={18} height={18} className="p-1" />
 									</Button>
 								</div>
 
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
-								<div className="flex items-center overflow-hidden rounded-lg">
+								<div className="flex overflow-hidden items-center rounded-lg">
 									<Button
 										size="icon"
 										variant="transparent"
-										className="text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+										className="w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
 										onClick={() => setSearchWalletIsOpen(true)}
 										data-testid="navbar__buttons--receive"
 									>
@@ -211,7 +223,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 							</div>
 
-							<div className="flex items-center my-auto ml-8 mr-4">
+							<div className="flex items-center my-auto mr-4 ml-8">
 								<div className="text-right">
 									<div className="text-xs font-semibold text-theme-neutral-700">
 										{t("COMMON.YOUR_BALANCE")}
@@ -236,10 +248,6 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 											return openExternal(action.mountPath());
 										}
 
-										if (action?.isExecutable) {
-											return action.execute();
-										}
-
 										return history.push(action.mountPath(profile?.id()));
 									}}
 								/>
@@ -256,7 +264,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 						title={t("WALLETS.MODAL_SELECT_ACCOUNT.TITLE")}
 						description={t("WALLETS.MODAL_SELECT_ACCOUNT.DESCRIPTION")}
 						searchPlaceholder={t("WALLETS.MODAL_SELECT_ACCOUNT.SEARCH_PLACEHOLDER")}
-						wallets={profile.wallets().values()}
+						wallets={wallets}
 						onSelectWallet={handleSelectWallet}
 						onClose={() => setSearchWalletIsOpen(false)}
 					/>
@@ -329,12 +337,6 @@ NavigationBar.defaultProps = {
 			label: "Sign Out",
 			value: "sign-out",
 			mountPath: () => `/`,
-		},
-		{
-			label: "Exit",
-			value: "exit",
-			isExecutable: true,
-			execute: () => exitApp(),
 		},
 	],
 };

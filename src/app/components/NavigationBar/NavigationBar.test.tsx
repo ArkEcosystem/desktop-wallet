@@ -132,7 +132,7 @@ describe("NavigationBar", () => {
 		profile.settings().set(ProfileSetting.ExchangeCurrency, "BTC");
 	});
 
-	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support", "Exit"])(
+	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(
 		"should handle '%s' click on user actions dropdown",
 		async (label) => {
 			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
@@ -150,9 +150,6 @@ describe("NavigationBar", () => {
 				const externalLink = "https://ark.io/contact";
 				const openExternalMock = jest.spyOn(electron.shell, "openExternal").mockImplementation();
 				expect(openExternalMock).toHaveBeenCalledWith(externalLink);
-			} else if (label === "Exit") {
-				const sendEventMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
-				expect(sendEventMock).toHaveBeenCalledWith("exit-app");
 			} else {
 				expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
 			}
@@ -206,7 +203,8 @@ describe("NavigationBar", () => {
 			fireEvent.click(getAllByText("Select")[0]);
 		});
 
-		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__info")).toHaveLength(2));
+		await waitFor(() => expect(getByTestId("ReceiveFunds__name")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("ReceiveFunds__address")).toBeInTheDocument());
 		await waitFor(() => expect(queryAllByTestId("ReceiveFunds__qrcode")).toHaveLength(1));
 
 		act(() => {
@@ -256,5 +254,15 @@ describe("NavigationBar", () => {
 
 		const { asFragment } = renderWithRouter(<NavigationBar profile={profile} menu={menu} />);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should disable send transfer button when no wallets", () => {
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+		const { container, getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("navbar__buttons--send")).toHaveAttribute("disabled");
+
+		useNetworksMock.mockRestore();
 	});
 });

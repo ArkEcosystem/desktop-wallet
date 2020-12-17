@@ -45,7 +45,7 @@ export const CompactPagination = ({
 			{showFirst && (
 				<Button
 					data-testid="CompactPagination__first"
-					variant="plain"
+					variant="secondary"
 					className="w-8"
 					onClick={() => onSelectPage((currentPage = 1))}
 				>
@@ -56,7 +56,7 @@ export const CompactPagination = ({
 			{showPrevious && (
 				<Button
 					data-testid="CompactPagination__previous"
-					variant="plain"
+					variant="secondary"
 					className="w-8"
 					onClick={() => onSelectPage((currentPage -= 1))}
 				>
@@ -64,14 +64,14 @@ export const CompactPagination = ({
 				</Button>
 			)}
 
-			<div className="flex items-center px-5 py-3 rounded bg-theme-primary-contrast text-theme-primary">
+			<div className="flex items-center py-3 px-5 rounded bg-theme-primary-contrast text-theme-primary">
 				{`${t("COMMON.PAGE")} ${currentPage} ${t("COMMON.OF")} ${totalPages}`}
 			</div>
 
 			{showNext && (
 				<Button
 					data-testid="CompactPagination__next"
-					variant="plain"
+					variant="secondary"
 					className="w-8"
 					onClick={() => onSelectPage((currentPage += 1))}
 				>
@@ -82,7 +82,7 @@ export const CompactPagination = ({
 			{showLast && (
 				<Button
 					data-testid="CompactPagination__last"
-					variant="plain"
+					variant="secondary"
 					className="w-8"
 					onClick={() => onSelectPage((currentPage = totalPages))}
 				>

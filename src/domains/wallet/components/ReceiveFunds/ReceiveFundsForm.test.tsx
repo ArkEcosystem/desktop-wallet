@@ -10,47 +10,77 @@ import { ReceiveFundsForm } from "./";
 describe("ReceiveFundsForm", () => {
 	it("should render", async () => {
 		const { result: form } = renderHook(() => useForm());
-		const { asFragment, getByTestId } = render(
-			<Form context={form.current} onSubmit={(_) => _}>
-				<ReceiveFundsForm />
-			</Form>,
-		);
-		await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
-		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const { asFragment, getByTestId } = render(
+				<Form context={form.current} onSubmit={(_) => _}>
+					<ReceiveFundsForm />
+				</Form>,
+			);
+
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
+			expect(asFragment()).toMatchSnapshot();
+		});
 	});
 
 	it("should emit amount onChange event", async () => {
 		const { result: form } = renderHook(() => useForm({ mode: "onChange" }));
-		const { asFragment, getByTestId } = render(
-			<Form context={form.current} onSubmit={(_) => _}>
-				<ReceiveFundsForm />
-			</Form>,
-		);
-		await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
 
 		await act(async () => {
+			const { asFragment, getByTestId } = render(
+				<Form context={form.current} onSubmit={(_) => _}>
+					<ReceiveFundsForm />
+				</Form>,
+			);
+
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
+
 			fireEvent.input(getByTestId("ReceiveFundsForm__amount"), { target: { value: "10" } });
+
+			await waitFor(() => expect(form.current.getValues("amount")).toBe("10"));
+
+			expect(asFragment()).toMatchSnapshot();
 		});
-
-		await waitFor(() => expect(form.current.getValues("amount")).toBe("10"));
-
-		expect(asFragment()).toMatchSnapshot();
 	});
+
 	it("should emit smartbridge onChange event", async () => {
 		const { result: form } = renderHook(() => useForm({ mode: "onChange" }));
-		const { asFragment, getByTestId } = render(
-			<Form context={form.current} onSubmit={(_) => _}>
-				<ReceiveFundsForm />
-			</Form>,
-		);
-		await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
 
 		await act(async () => {
+			const { asFragment, getByTestId } = render(
+				<Form context={form.current} onSubmit={(_) => _}>
+					<ReceiveFundsForm />
+				</Form>,
+			);
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
+
 			fireEvent.input(getByTestId("ReceiveFundsForm__smartbridge"), { target: { value: "test" } });
+			await waitFor(() => expect(form.current.getValues("smartbridge")).toBe("test"));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue("test"));
+
+			expect(asFragment()).toMatchSnapshot();
 		});
+	});
 
-		await waitFor(() => expect(form.current.getValues("smartbridge")).toBe("test"));
+	it("should show alert if smartbridge value is too long", async () => {
+		const smartbridge = Array(256).fill("x").join("");
+		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { smartbridge } }));
 
-		expect(asFragment()).toMatchSnapshot();
+		await act(async () => {
+			const { asFragment, getByTestId } = render(
+				<Form context={form.current} onSubmit={(_) => _}>
+					<ReceiveFundsForm />
+				</Form>,
+			);
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(smartbridge));
+
+			fireEvent.input(getByTestId("ReceiveFundsForm__smartbridge"), { target: { value: smartbridge } });
+			await waitFor(() => expect(form.current.getValues("smartbridge")).toBe(smartbridge));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(smartbridge));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge-warning")).toBeInTheDocument());
+
+			expect(asFragment()).toMatchSnapshot();
+		});
 	});
 });

@@ -3,7 +3,7 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
-import { EmptyBlock } from "app/components/EmptyBlock";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
@@ -48,7 +48,6 @@ export const DelegateTable = ({
 		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: (delegate: ReadOnlyWallet) => isLoading || delegate.username(),
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.STATUS"),
@@ -178,7 +177,15 @@ export const DelegateTable = ({
 	const skeletonList = new Array(8).fill({});
 	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
 
-	if (!isLoading && totalDelegates === 0) return <EmptyBlock className="-mt-5">{emptyText}</EmptyBlock>;
+	if (!isLoading && totalDelegates === 0) {
+		return (
+			<EmptyResults
+				className="mt-16"
+				title={t("COMMON.EMPTY_RESULTS.TITLE")}
+				subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+			/>
+		);
+	}
 
 	return (
 		<div data-testid="DelegateTable">
@@ -207,7 +214,7 @@ export const DelegateTable = ({
 				}}
 			</Table>
 
-			<div className="flex justify-center w-full mt-10 mb-24">
+			<div className="flex justify-center mt-10 mb-24 w-full">
 				{totalDelegates > itemsPerPage! && (
 					<Pagination
 						totalCount={totalDelegates}
@@ -219,7 +226,7 @@ export const DelegateTable = ({
 			</div>
 
 			<div
-				className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
+				className="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
 				data-testid="DelegateTable__footer"
 			>
 				<div className="container flex-1 px-8 mx-auto">

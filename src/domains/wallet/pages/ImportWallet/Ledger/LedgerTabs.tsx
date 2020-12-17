@@ -42,7 +42,7 @@ export const Paginator = ({
 		<div className="flex justify-between mt-10">
 			<div>
 				{showRetry && (
-					<Button variant="plain" onClick={onRetry} data-testid="Paginator__retry-button">
+					<Button variant="secondary" onClick={onRetry} data-testid="Paginator__retry-button">
 						<Icon name="Reset" />
 						<span>{t("COMMON.RETRY")}</span>
 					</Button>
@@ -53,7 +53,7 @@ export const Paginator = ({
 				{activeIndex < size && (
 					<Button
 						disabled={activeIndex === 1}
-						variant="plain"
+						variant="secondary"
 						onClick={() => onBack?.(activeIndex - 1)}
 						data-testid="Paginator__back-button"
 					>

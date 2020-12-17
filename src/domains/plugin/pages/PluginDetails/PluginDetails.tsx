@@ -57,9 +57,9 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 			<Section>
 				<div className="flex">
 					<div className="flex flex-col">
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<h2 className="mb-0">Reviews ARK Explorer</h2>
-							<Button data-testid="ReviewBox__button--comment" variant="plain">
+							<Button data-testid="ReviewBox__button--comment" variant="secondary">
 								Leave a comment
 							</Button>
 						</div>
@@ -70,7 +70,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 					</div>
 
 					<div
-						className="p-8 mb-auto ml-32 border-2 border-theme-neutral-300 dark:border-theme-neutral-800 rounded-xl"
+						className="p-8 mb-auto ml-32 rounded-xl border-2 border-theme-neutral-300 dark:border-theme-neutral-800"
 						data-testid="plugin-details__review-box"
 					>
 						<ReviewBox averageScore={averageRating} ratings={ratings} totalAvaliations={totalAvaliations} />

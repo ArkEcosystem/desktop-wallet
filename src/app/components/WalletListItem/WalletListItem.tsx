@@ -52,8 +52,7 @@ export const WalletListItem = ({
 		if (typeof onAction === "function") onAction(action);
 	};
 
-	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
-
+	/* istanbul ignore next */
 	const getIconName = (type: string) => {
 		switch (type) {
 			case "Starred":
@@ -66,6 +65,14 @@ export const WalletListItem = ({
 	};
 
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
+
+	const WalletIcon = ({ type }: { type: string }) => (
+		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+			<div className={`inline-block p-1 ${getIconColor(type)}`}>
+				<Icon name={getIconName(type)} width={20} />
+			</div>
+		</Tooltip>
+	);
 
 	return (
 		<TableRow
@@ -91,17 +98,14 @@ export const WalletListItem = ({
 				innerClassName="justify-center text-sm font-bold text-center align-middle"
 			>
 				<div className="inline-flex items-center space-x-2">
-					{wallet.hasSyncedWithNetwork() &&
-						walletTypes.map((type: string) =>
-							// @ts-ignore
-							wallet[`is${type}`]() ? (
-								<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-									<span className={getIconColor(type)}>
-										<Icon name={getIconName(type)} width={18} />
-									</span>
-								</Tooltip>
-							) : null,
-						)}
+					{[
+						wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
+						wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
+						/* istanbul ignore next */
+						wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
+							<WalletIcon key="MultiSignature" type="MultiSignature" />
+						),
+					]}
 				</div>
 			</TableCell>
 

@@ -11,14 +11,14 @@ import { useTranslation } from "react-i18next";
 import Linkify from "react-linkify";
 
 type Props = {
-	coin?: any;
 	coverImage?: string;
 } & BlockfolioSignal;
 
-export const NewsCard = ({ text, category, author, created_at: createdAt, coin, coverImage }: Props) => {
+export const NewsCard = ({ text, category, author, created_at: createdAt, coverImage }: Props) => {
 	const { t } = useTranslation();
 
-	const asset: any = coins[coin];
+	// @ts-ignore
+	const asset: any = coins[author.coin?.toLowerCase()];
 
 	return (
 		<div data-testid="NewsCard">

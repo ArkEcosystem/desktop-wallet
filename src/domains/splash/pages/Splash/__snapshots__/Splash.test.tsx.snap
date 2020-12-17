@@ -3,23 +3,23 @@
 exports[`Splash should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU kXIIqE"
+      class="sc-fzoyTs hNKhgm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="sc-fzoNJl hlUna-D"
             >
               <svg
                 width="48"
@@ -35,13 +35,13 @@ exports[`Splash should render 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col justify-center flex-1 text-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex flex-col flex-1 justify-center text-center select-none"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <div
-            class="w-64 mx-auto lg:w-96"
+            class="mx-auto w-64 lg:w-96"
           >
             <svg>
               welcome-banner.svg
@@ -57,7 +57,7 @@ exports[`Splash should render 1`] = `
               ARK Desktop Wallet
             </h1>
             <p
-              class="text-theme-secondary-text animate-pulse"
+              class="animate-pulse text-theme-secondary-text"
             >
               Initializing...
             </p>
@@ -98,7 +98,7 @@ exports[`Splash should render 1`] = `
             </div>
           </div>
           <div
-            class="fixed left-0 right-0 flex items-center justify-center text-xs font-semibold bottom-5 text-theme-neutral-500 dark:text-theme-neutral-700"
+            class="flex fixed right-0 left-0 bottom-5 justify-center items-center text-xs font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
             data-testid="Splash__footer"
           >
             <div>
@@ -116,7 +116,7 @@ exports[`Splash should render 1`] = `
               type="vertical"
             />
             <div
-              class="sc-fzoNJl czpddf"
+              class="sc-fzoXWK kyrNbz"
             >
               <svg
                 width="18"

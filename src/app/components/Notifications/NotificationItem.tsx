@@ -18,7 +18,7 @@ export const NotificationItem = ({
 	return (
 		<tr data-testid="NotificationItem">
 			<td className="w-8 h-8">
-				<div className="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo" />
+				<div className="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo" />
 			</td>
 			<td>
 				<VisibilitySensor

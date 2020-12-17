@@ -1,26 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddPeer should not render if not open 1`] = `<DocumentFragment />`;
+exports[`CreatePeer should not render if not open 1`] = `<DocumentFragment />`;
 
-exports[`AddPeer should render add peer modal 1`] = `
+exports[`CreatePeer should render create peer modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw Zauxd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxiKw Zauxd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm cshtse w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -54,13 +53,13 @@ exports[`AddPeer should render add peer modal 1`] = `
               class="sc-AxhUy dJlYTe my-8"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="network"
               >
                 Cryptoasset
                 <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                   data-testid="FormLabel__required"
                 />
               </label>
@@ -113,13 +112,13 @@ exports[`AddPeer should render add peer modal 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="name"
               >
                 Name
                 <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                   data-testid="FormLabel__required"
                 />
               </label>
@@ -127,19 +126,20 @@ exports[`AddPeer should render add peer modal 1`] = `
                 class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="PeerForm__name-input"
                 name="name"
+                value=""
               />
             </fieldset>
             <fieldset
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="host"
               >
                 Peer IP
                 <div
-                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                  class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                   data-testid="FormLabel__required"
                 />
               </label>
@@ -147,13 +147,14 @@ exports[`AddPeer should render add peer modal 1`] = `
                 class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="PeerForm__host-input"
                 name="host"
+                value=""
               />
             </fieldset>
             <fieldset
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="type"
               >
@@ -187,9 +188,8 @@ exports[`AddPeer should render add peer modal 1`] = `
               class="flex justify-end mt-4"
             >
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
-                data-testid="PeerForm__add-button"
+                class="sc-AxjAm iWHhrC"
+                data-testid="PeerForm__submit-button"
                 disabled=""
                 type="submit"
               >

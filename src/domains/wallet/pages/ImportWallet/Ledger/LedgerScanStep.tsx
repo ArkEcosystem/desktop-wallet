@@ -79,7 +79,6 @@ export const LedgerTable = ({
 		{
 			Header: t("COMMON.WALLET"),
 			accessor: "address",
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.BALANCE"),
@@ -223,7 +222,7 @@ export const LedgerScanStep = ({
 				<div>
 					<Button
 						data-testid="LedgerScanStep__view-more"
-						variant="plain"
+						variant="secondary"
 						className="w-full"
 						disabled={!isConnected || canRetry || isBusy}
 						onClick={scanMore}

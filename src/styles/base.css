@@ -21,3 +21,9 @@ main {
 .important\:z-0 {
 	z-index: 0 !important;
 }
+
+@layer utilities {
+	.overflow-overlay {
+		overflow: overlay;
+	}
+}

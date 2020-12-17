@@ -135,7 +135,7 @@ export const SendIpfs = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -180,7 +180,7 @@ export const SendIpfs = () => {
 												<Button
 													disabled={activeTab === 1}
 													data-testid="SendIpfs__button--back"
-													variant="plain"
+													variant="secondary"
 													onClick={handleBack}
 												>
 													{t("COMMON.BACK")}
@@ -203,7 +203,7 @@ export const SendIpfs = () => {
 											<>
 												<Button
 													data-testid="SendIpfs__button--back"
-													variant="plain"
+													variant="secondary"
 													onClick={handleBack}
 												>
 													{t("COMMON.BACK")}
@@ -229,7 +229,7 @@ export const SendIpfs = () => {
 									<>
 										<Button
 											data-testid="SendIpfs__button--back-to-wallet"
-											variant="plain"
+											variant="secondary"
 											className="block"
 											onClick={() =>
 												history.push(
@@ -243,7 +243,7 @@ export const SendIpfs = () => {
 										<Button
 											onClick={copyTransaction}
 											data-testid="SendIpfs__button--copy"
-											variant="plain"
+											variant="secondary"
 											className="space-x-2"
 										>
 											<Icon name="Copy" />

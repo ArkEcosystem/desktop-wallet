@@ -1,4 +1,5 @@
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { groupBy } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
@@ -8,11 +9,13 @@ import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import { AddPeer } from "domains/setting/components/AddPeer";
+import { CreatePeer } from "domains/setting/components/CreatePeer";
 import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
+import { UpdatePeer } from "domains/setting/components/UpdatePeer";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import * as yup from "yup";
 
 import { SettingsProps } from "../Settings.models";
 
@@ -21,37 +24,38 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const { state } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
+	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
+		activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast) || false,
+	);
 	const [isCustomPeer, setIsCustomPeer] = useState(
 		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
 	);
-	const [peers, setPeers] = useState([]);
-	const [isAddPeer, setIsAddPeer] = useState(false);
+
+	const loadPeers = useCallback(() => {
+		const allPeers: any = activeProfile.peers().all();
+
+		return Object.keys(allPeers).reduce((peers: any, coinKey: string) => {
+			for (const coin of Object.keys(allPeers[coinKey])) {
+				for (const network of Object.keys(allPeers[coinKey][coin])) {
+					for (const peer of allPeers[coinKey][coin][network]) {
+						peers.push({
+							...peer,
+							coin: coinKey,
+							network: `${coin}.${network}`,
+						});
+					}
+				}
+			}
+
+			return peers;
+		}, []);
+	}, [activeProfile]);
+
+	const [peers, setPeers] = useState(loadPeers());
+	const [isCreatePeer, setIsCreatePeer] = useState(false);
 
 	const [peerAction, setPeerAction] = useState<string | null>(null);
 	const [selectedPeer, setSelectedPeer] = useState<any | null>(null);
-
-	const loadPeers = useCallback(
-		() =>
-			activeProfile
-				.peers()
-				.values()
-				.reduce((peers: any, data: any) => {
-					for (const coin of Object.keys(data)) {
-						for (const network of Object.keys(data[coin])) {
-							for (const peer of data[coin][network]) {
-								peers.push({
-									...peer,
-									coin,
-									network,
-								});
-							}
-						}
-					}
-
-					return peers;
-				}, []),
-		[activeProfile],
-	);
 
 	useEffect(() => {
 		if (!peerAction) {
@@ -62,6 +66,38 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	useEffect(() => {
 		setPeers(loadPeers());
 	}, [loadPeers, state]);
+
+	const peerGroupByNetwork: any = useMemo(() => groupBy(peers, (peer) => peer.network), [peers]);
+
+	const syncWallets = useCallback(async () => {
+		const promises: Promise<void>[] = [];
+
+		for (const wallet of activeProfile.wallets().values()) {
+			promises.push(wallet.sync());
+		}
+
+		await Promise.allSettled(promises);
+	}, [activeProfile]);
+
+	useEffect(() => {
+		if (
+			isMultiPeerBroadcast &&
+			(!isCustomPeer ||
+				Object.keys(peerGroupByNetwork).every((network) => peerGroupByNetwork[network].length < 2))
+		) {
+			setIsMultiPeerBroadcast(false);
+
+			const savePeerSettings = async () => {
+				activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
+				activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
+
+				await syncWallets();
+				await env.persist();
+			};
+
+			savePeerSettings();
+		}
+	}, [activeProfile, env, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, syncWallets]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -104,8 +140,15 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				<Toggle
 					ref={register()}
 					name="isMultiPeerBroadcast"
-					defaultChecked={activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast)}
+					checked={isMultiPeerBroadcast}
+					onChange={(event) => setIsMultiPeerBroadcast(event.target.checked)}
 					data-testid="General-peers__toggle--isMultiPeerBroadcast"
+					disabled={
+						!(
+							isCustomPeer &&
+							Object.keys(peerGroupByNetwork).some((network) => peerGroupByNetwork[network].length > 1)
+						)
+					}
 				/>
 			),
 			wrapperClass: "pb-6",
@@ -133,6 +176,23 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		},
 	];
 
+	const validateHost = (network: string, host: string) => {
+		const hostHasProtocol = (value: string) => /^https?:\/\//.test(value);
+
+		if (!yup.string().url().isValidSync(host)) {
+			return t("SETTINGS.PEERS.VALIDATION.NOT_VALID", { field: t("SETTINGS.PEERS.PEER_IP") });
+		}
+
+		if (!hostHasProtocol(host)) {
+			return t("SETTINGS.PEERS.VALIDATION.NO_PROTOCOL", { field: t("SETTINGS.PEERS.PEER_IP") });
+		}
+
+		return (
+			!peerGroupByNetwork?.[network]?.some((peer: any) => peer.host === host) ||
+			t("SETTINGS.PEERS.VALIDATION.HOST_EXISTS")
+		);
+	};
+
 	const handlePeerAction = (action: string, peer: any) => {
 		setPeerAction(action);
 		setSelectedPeer(peer);
@@ -146,6 +206,7 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
 		activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
 
+		await syncWallets();
 		await env.persist();
 
 		onSuccess(t("SETTINGS.PEERS.SUCCESS"));
@@ -167,9 +228,9 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 						</Table>
 
 						<Button
-							variant="plain"
-							className="w-full mt-8 mb-2"
-							onClick={() => setIsAddPeer(true)}
+							variant="secondary"
+							className="mt-8 mb-2 w-full"
+							onClick={() => setIsCreatePeer(true)}
 							data-testid="Peer-list__add-button"
 						>
 							{t("SETTINGS.PEERS.ADD_PEER")}
@@ -188,22 +249,34 @@ export const Peer = ({ env, formConfig, onSuccess }: SettingsProps) => {
 				</div>
 			</Form>
 
-			<AddPeer
-				isOpen={isAddPeer}
+			<CreatePeer
+				isOpen={isCreatePeer}
 				networks={availableNetworks}
 				profile={activeProfile}
-				onClose={() => setIsAddPeer(false)}
+				onClose={() => setIsCreatePeer(false)}
+				onValidateHost={validateHost}
 			/>
 
 			{selectedPeer && (
-				<DeletePeer
-					isOpen={peerAction === "delete"}
-					peer={selectedPeer}
-					profile={activeProfile}
-					onCancel={resetPeerAction}
-					onClose={resetPeerAction}
-					onDelete={resetPeerAction}
-				/>
+				<>
+					<UpdatePeer
+						isOpen={peerAction === "edit"}
+						networks={availableNetworks}
+						peer={selectedPeer}
+						profile={activeProfile}
+						onClose={resetPeerAction}
+						onValidateHost={validateHost}
+					/>
+
+					<DeletePeer
+						isOpen={peerAction === "delete"}
+						peer={selectedPeer}
+						profile={activeProfile}
+						onCancel={resetPeerAction}
+						onClose={resetPeerAction}
+						onDelete={resetPeerAction}
+					/>
+				</>
 			)}
 		</>
 	);

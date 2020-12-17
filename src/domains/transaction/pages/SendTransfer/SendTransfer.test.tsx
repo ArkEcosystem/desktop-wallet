@@ -73,7 +73,6 @@ beforeAll(async () => {
 describe("SendTransfer", () => {
 	it("should render 1st step (form)", async () => {
 		const { result: form } = renderHook(() => useForm());
-
 		await act(async () => {
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
@@ -84,6 +83,24 @@ describe("SendTransfer", () => {
 			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
 		});
+	});
+
+	it("should render 1st step (form) without test networks", async () => {
+		const { result: form } = renderHook(() => useForm());
+
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+
+		await act(async () => {
+			const { getByTestId, asFragment } = render(
+				<FormProvider {...form.current}>
+					<FormStep networks={env.availableNetworks()} profile={profile} />
+				</FormProvider>,
+			);
+
+			expect(getByTestId("SendTransfer__form-step")).toBeTruthy();
+			expect(asFragment()).toMatchSnapshot();
+		});
+		useNetworksMock.mockRestore();
 	});
 
 	it("should render 1st step with deeplink values and use them", async () => {

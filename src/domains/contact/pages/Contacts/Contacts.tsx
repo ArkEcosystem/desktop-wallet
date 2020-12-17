@@ -27,7 +27,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 			{showSearchBar && (
 				<>
 					<HeaderSearchBar onSearch={onSearch} />
-					<div className="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="pl-8 my-auto ml-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 				</>
 			)}
 
@@ -85,7 +85,6 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		{
 			Header: t("COMMON.NAME"),
 			accessor: "name",
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.CRYPTOASSET"),
@@ -94,7 +93,6 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 		{
 			Header: t("COMMON.ADDRESS"),
-			className: "ml-15",
 		},
 		{
 			Header: t("COMMON.ACCOUNT_TYPE"),

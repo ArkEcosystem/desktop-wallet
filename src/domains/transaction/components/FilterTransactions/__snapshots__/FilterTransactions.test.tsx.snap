@@ -1,0 +1,628 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterTransactions should open dropdown list with all transaction types 1`] = `
+<div>
+  <div
+    data-testid="FilterTransactions"
+  >
+    <div
+      class="relative"
+    >
+      <span>
+        <div
+          class="flex items-center space-x-2 cursor-pointer"
+          data-testid="FilterTransactionsToggle"
+        >
+          <div
+            class="font-semibold"
+          >
+            <span
+              class="text-theme-neutral-500"
+            >
+              Type: 
+            </span>
+            <span
+              class="text-theme-neutral-600"
+            >
+              All
+            </span>
+          </div>
+          <div
+            class="sc-AxirZ bkWcEv bg-theme-primary-600 text-theme-primary-contrast p-1 rounded-xl"
+            height="9"
+            width="9"
+          >
+            <svg>
+              chevron-up.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="sc-AxiKw hdSMzb mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl max-h-128 overflow-y-auto"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <div
+            class="pt-5 pb-1"
+          >
+            <div
+              class="mt-4 first:mt-0"
+            >
+              <ul>
+                <ul
+                  data-testid="dropdown__options"
+                >
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--all-0"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        All
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </ul>
+            </div>
+            <div
+              class="mt-4 first:mt-0"
+            >
+              <div
+                class="mx-8 -my-2"
+              >
+                <div
+                  class="sc-AxjAm iUsVaG border-theme-neutral-300 dark:border-theme-neutral-800"
+                  type="horizontal"
+                />
+              </div>
+              <ul>
+                <li
+                  class="block px-8 pt-4 text-xs font-bold text-left uppercase cursor-pointer whitespace-no-wrap text-theme-neutral-500"
+                >
+                  CORE
+                </li>
+                <ul
+                  data-testid="dropdown__options"
+                >
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-0"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Transfer
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-1"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Second Signature
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-2"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Delegate Registration
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-3"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Vote
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-4"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Vote / Unvote
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-5"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Multisignature
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-6"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        IPFS
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-7"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Multipayment
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-8"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Timelock
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-9"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Timelock Claim
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--core-10"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Timelock Refund
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </ul>
+            </div>
+            <div
+              class="mt-4 first:mt-0"
+            >
+              <div
+                class="mx-8 -my-2"
+              >
+                <div
+                  class="sc-AxjAm iUsVaG border-theme-neutral-300 dark:border-theme-neutral-800"
+                  type="horizontal"
+                />
+              </div>
+              <ul>
+                <li
+                  class="block px-8 pt-4 text-xs font-bold text-left uppercase cursor-pointer whitespace-no-wrap text-theme-neutral-500"
+                >
+                  Magistrate
+                </li>
+                <ul
+                  data-testid="dropdown__options"
+                >
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-0"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Business Registration
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-1"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Business Resignation
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-2"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Business Update
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-3"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Delegate Registration (AIP36)
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-4"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Delegate Resignation (AIP36)
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-5"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Delegate Update
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-6"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Entity Registration
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-7"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Entity Resignation
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-8"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Entity Update
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-9"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Bridgechain Registration (Legacy)
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-10"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Bridgechain Resignation (Legacy)
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-11"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Bridgechain Update (Legacy)
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-12"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Business Registration (Legacy)
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-13"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Business Resignation (Legacy)
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-14"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Business Update (Legacy)
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-15"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Module Registration
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-16"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Module Resignation
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-17"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Module Update
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-18"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Plugin Registration
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-19"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Plugin Resignation
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-20"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Plugin Update
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-21"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Product Registration
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-22"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Product Resignation
+                      </span>
+                    </div>
+                  </li>
+                  <li
+                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    data-testid="dropdown__option--magistrate-23"
+                  >
+                    <div
+                      class=""
+                    >
+                      <span>
+                        Product Update
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FilterTransactions should render 1`] = `
+<div>
+  <div
+    data-testid="FilterTransactions"
+  >
+    <div
+      class="relative"
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="flex items-center space-x-2 cursor-pointer"
+        data-testid="FilterTransactionsToggle"
+      >
+        <div
+          class="font-semibold"
+        >
+          <span
+            class="text-theme-neutral-500"
+          >
+            Type: 
+          </span>
+          <span
+            class="text-theme-neutral-600"
+          >
+            All
+          </span>
+        </div>
+        <div
+          class="sc-AxirZ bkWcEv bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+          height="9"
+          width="9"
+        >
+          <svg>
+            chevron-down.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`FilterTransactions should render with default selected option 1`] = `
+<div>
+  <div
+    data-testid="FilterTransactions"
+  >
+    <div
+      class="relative"
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="flex items-center space-x-2 cursor-pointer"
+        data-testid="FilterTransactionsToggle"
+      >
+        <div
+          class="font-semibold"
+        >
+          <span
+            class="text-theme-neutral-500"
+          >
+            Type: 
+          </span>
+          <span
+            class="text-theme-neutral-600"
+          >
+            All
+          </span>
+        </div>
+        <div
+          class="sc-AxirZ bkWcEv bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
+          height="9"
+          width="9"
+        >
+          <svg>
+            chevron-down.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

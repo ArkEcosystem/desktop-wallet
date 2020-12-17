@@ -181,7 +181,7 @@ export const WalletHeader = ({
 	return (
 		<header data-testid="WalletHeader">
 			<div className="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800">
-				<div className="container flex items-center mx-auto px-14">
+				<div className="container flex items-center px-14 mx-auto">
 					<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800">
 						<div className="flex -space-x-1">
 							<NetworkIcon
@@ -194,7 +194,7 @@ export const WalletHeader = ({
 							<Avatar size="lg" address={address} shadowColor="--theme-color-neutral-900" />
 						</div>
 
-						<div className="flex flex-col overflow-hidden">
+						<div className="flex overflow-hidden flex-col">
 							<div className="flex items-center space-x-5 text-theme-secondary-text">
 								{name && (
 									<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -302,7 +302,7 @@ export const WalletHeader = ({
 							<Button
 								size="icon"
 								variant="transparent"
-								className="text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
+								className="w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
 								data-testid="WalletHeader__star-button"
 								onClick={onStar}
 							>
@@ -327,7 +327,7 @@ export const WalletHeader = ({
 						<div data-testid="WalletHeader__more-button" className="my-auto">
 							<Dropdown
 								toggleContent={
-									<Button variant="plain" size="icon" className="text-left">
+									<Button variant="secondary" size="icon" className="text-left">
 										<Icon name="Settings" width={20} height={20} />
 									</Button>
 								}

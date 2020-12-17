@@ -1,3 +1,4 @@
+import { Alert } from "app/components/Alert";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputCounter, InputCurrency } from "app/components/Input";
 import { useValidation } from "app/hooks";
@@ -11,6 +12,8 @@ export const ReceiveFundsForm = () => {
 	const form = useFormContext();
 	const { getValues, setValue, register } = form;
 	const { receiveFunds } = useValidation();
+	const { smartbridge } = form.watch();
+	const maxLength = receiveFunds.smartbridge().maxLength?.value;
 
 	useEffect(() => {
 		register("amount");
@@ -30,7 +33,8 @@ export const ReceiveFundsForm = () => {
 					/>
 					<FormHelperText />
 				</FormField>
-				<FormField name="smartbridge" className="relative">
+
+				<FormField name="smartbridge">
 					<FormLabel label={t("COMMON.SMARTBRIDGE")} required={false} optional={true} />
 					<InputCounter
 						ref={register(receiveFunds.smartbridge())}
@@ -38,10 +42,17 @@ export const ReceiveFundsForm = () => {
 						type="text"
 						placeholder=" "
 						className="pr-24"
-						maxLengthLabel="255"
+						defaultValue={smartbridge}
+						maxLengthLabel={maxLength.toString()}
 					/>
 					<FormHelperText />
 				</FormField>
+
+				{smartbridge?.length > maxLength && (
+					<div className="mt-8" data-testid="ReceiveFundsForm__smartbridge-warning">
+						<Alert variant="warning">{t("WALLETS.MODAL_RECEIVE_FUNDS.WARNING", { maxLength })}</Alert>
+					</div>
+				)}
 			</div>
 		</div>
 	);

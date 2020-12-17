@@ -42,6 +42,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		})),
 	);
 
+	const hasCoinsSelected = Object.values(coins).some((coin) => coin.isSelected);
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const showSelectAllCategories = useMemo(() => categories.some((option: Option) => !option.isSelected), [
@@ -74,14 +75,6 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		);
 	};
 
-	const handleSelectCoin = (selectedCoin: CoinOption) => {
-		const updatedCoins = coins.map((coin: CoinOption) => ({
-			...coin,
-			isSelected: coin.name === selectedCoin.name,
-		}));
-		setCoins(updatedCoins);
-	};
-
 	const handleSearchInput = (searchQuery: string) => {
 		const query = searchQuery.substr(0, 32);
 		setSearchQuery(query);
@@ -109,11 +102,11 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 	return (
 		<div
-			className="p-8 border-2 rounded-lg bg-theme-background border-theme-primary-contrast"
+			className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-contrast"
 			data-testid="NewsOptions"
 		>
 			<div className="flex flex-col space-y-8">
-				<div className="flex items-center justify-between px-2 py-4 rounded-md shadow-xl">
+				<div className="flex justify-between items-center py-4 px-2 rounded-md shadow-xl">
 					<Input
 						data-testid="NewsOptions__search"
 						className="border-none shadow-none NewsOptions__search"
@@ -132,7 +125,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 				<Divider dashed />
 
 				<div className="flex flex-col space-y-3">
-					<div className="flex items-center justify-between">
+					<div className="flex justify-between items-center">
 						<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
 						{showSelectAllCategories && (
 							<button
@@ -168,10 +161,16 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
-						<FilterNetwork networks={coins} hideViewAll onChange={handleSelectCoin} />
+						<FilterNetwork networks={coins} hideViewAll onChange={(_, networks) => setCoins(networks)} />
 					</div>
 
-					<Button className="w-full" variant="plain" onClick={handleSubmit} data-testid="NewsOptions__submit">
+					<Button
+						disabled={!hasCoinsSelected}
+						className="w-full"
+						variant="secondary"
+						onClick={handleSubmit}
+						data-testid="NewsOptions__submit"
+					>
 						{t("NEWS.NEWS_OPTIONS.UPDATE_FILTER")}
 					</Button>
 				</div>

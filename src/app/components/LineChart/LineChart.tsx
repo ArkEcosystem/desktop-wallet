@@ -14,6 +14,7 @@ type LineChartProps = {
 	onPeriodClick?: () => void;
 	width?: number;
 	height?: number;
+	showAnimation?: boolean;
 };
 
 const ActiveDotSvg = SvgCollection["ChartActiveDot"];
@@ -65,13 +66,13 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 						</div>
 					</div>
 				)}
-				<div className="flex justify-end flex-1 space-x-3">
+				<div className="flex flex-1 justify-end space-x-3">
 					{legend && (
 						<div className="my-auto text-sm text-base text-theme-secondary-text">{legend?.label}</div>
 					)}
 					{lines &&
 						lines.map((item: any, index: number) => (
-							<div key={index} className="flex items-center justify-end p-4 pt-4 pr-0 min-w-32">
+							<div key={index} className="flex justify-end items-center p-4 pt-4 pr-0 min-w-32">
 								<div
 									className={`mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 								/>
@@ -91,7 +92,15 @@ const Wrapper = styled.div`
 	${chartStyles}
 `;
 
-export const ChartContent = ({ period, onPeriodClick, data, lines, width, height }: LineChartProps) => {
+export const ChartContent = ({
+	period,
+	onPeriodClick,
+	data,
+	lines,
+	width,
+	height,
+	showAnimation = true,
+}: LineChartProps) => {
 	const defaultValue = data.concat().pop();
 	const [legend, setLegend] = useState(defaultValue);
 
@@ -115,6 +124,7 @@ export const ChartContent = ({ period, onPeriodClick, data, lines, width, height
 				{lines &&
 					lines.map((line: any, index: number) => (
 						<Line
+							isAnimationActive={showAnimation}
 							type="monotone"
 							key={index}
 							dataKey={line.dataKey}

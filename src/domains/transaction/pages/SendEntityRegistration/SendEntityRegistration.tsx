@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Enums } from "@arkecosystem/platform-sdk-profiles";
+import { Enums, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -41,7 +41,12 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	const networks = useMemo(() => env.availableNetworks(), [env]);
+	const networks = useMemo(() => {
+		const usesTestNetworks = activeProfile.settings().get(ProfileSetting.UseTestNetworks);
+		return usesTestNetworks
+			? env.availableNetworks()
+			: env.availableNetworks().filter((network) => network.isLive());
+	}, [env, activeProfile]);
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
 	const { formState, getValues, register, setValue, setError, unregister } = form;
@@ -239,7 +244,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 			<Section className="flex-1">
 				<Form
 					data-testid="Registration__form"
-					className="max-w-xl mx-auto"
+					className="mx-auto max-w-xl"
 					context={form}
 					onSubmit={submitForm}
 				>
@@ -296,7 +301,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									<Button
 										disabled={activeTab === 1}
 										data-testid="Registration__back-button"
-										variant="plain"
+										variant="secondary"
 										onClick={handleBack}
 									>
 										{t("COMMON.BACK")}
@@ -329,7 +334,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 									<div className="flex justify-end space-x-3">
 										<Button
 											data-testid="Registration__button--back-to-wallet"
-											variant="plain"
+											variant="secondary"
 											onClick={() =>
 												history.push(
 													`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
@@ -341,7 +346,7 @@ export const SendEntityRegistration = ({ formDefaultValues }: SendEntityRegistra
 
 										<Button
 											data-testid="Registration__download-button"
-											variant="plain"
+											variant="secondary"
 											className="space-x-2"
 										>
 											<Icon name="Download" />

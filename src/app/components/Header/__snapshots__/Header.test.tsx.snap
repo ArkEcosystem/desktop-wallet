@@ -3,7 +3,7 @@
 exports[`Header should render an header 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-end justify-between bg-theme-background"
+    class="flex justify-between items-end bg-theme-background"
   >
     <div>
       <h1
@@ -20,7 +20,7 @@ exports[`Header should render an header 1`] = `
 exports[`Header should render an header with a subtitle 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-end justify-between bg-theme-background"
+    class="flex justify-between items-end bg-theme-background"
   >
     <div>
       <h1
@@ -43,7 +43,7 @@ exports[`Header should render an header with a subtitle 1`] = `
 exports[`Header should render an header with extra 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-end justify-between bg-theme-background"
+    class="flex justify-between items-end bg-theme-background"
   >
     <div>
       <h1
@@ -64,16 +64,14 @@ exports[`Header should render an header with extra 1`] = `
         class="flex justify-end space-x-3"
       >
         <button
-          class="sc-AxjAm colAFb"
-          color="primary"
+          class="sc-AxjAm ilOjMZ"
           data-testid="header__extra"
           type="button"
         >
           Extra 1
         </button>
         <button
-          class="sc-AxjAm colAFb"
-          color="primary"
+          class="sc-AxjAm ilOjMZ"
           data-testid="header__extra"
           type="button"
         >

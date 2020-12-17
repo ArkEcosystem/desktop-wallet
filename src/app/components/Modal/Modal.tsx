@@ -1,10 +1,11 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { usePrevious } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
-import { modalTopOffsetClass, useModal } from "./";
+import { modalOffsetClass, useModal } from "./";
 
 type ModalProps = {
 	children: React.ReactNode;
@@ -54,22 +55,28 @@ const ModalContainer = styled.div<{ size?: Size }>`
 `;
 
 const ModalContent = (props: ModalContentProps) => {
-	const [topOffsetClass, setTopOffsetClass] = useState<string>();
+	const [offsetClass, setOffsetClass] = useState<string>();
 	const modalRef = useRef<any>();
 
+	const previousHeight = usePrevious(modalRef?.current?.clientHeight);
+
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
-		const topClass = modalTopOffsetClass(modalRef?.current?.clientHeight, window.innerHeight);
-		setTopOffsetClass(topClass);
-	}, [modalRef, setTopOffsetClass]);
+		const currentHeight = modalRef?.current?.clientHeight;
+
+		if (previousHeight !== currentHeight) {
+			setOffsetClass(modalOffsetClass(currentHeight, window.innerHeight));
+		}
+	});
 
 	return (
 		<ModalContainer
 			ref={modalRef}
 			size={props.size}
-			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background ${topOffsetClass}`}
+			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl ${offsetClass}`}
 			data-testid="modal__inner"
 		>
-			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900">
+			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400">
 				<Button
 					data-testid="modal__close-btn"
 					variant="transparent"
@@ -83,7 +90,7 @@ const ModalContent = (props: ModalContentProps) => {
 
 			<div className="relative">
 				{props.banner ? (
-					<div className="relative h-56 mb-10 -mx-10 -mt-10">
+					<div className="relative -mx-10 mb-10 -mt-10 h-56">
 						{props.banner}
 
 						<div className="absolute bottom-0 left-0 mb-10 ml-10">
@@ -128,7 +135,7 @@ export const Modal = ({
 	if (!isOpen) return <></>;
 
 	return (
-		<div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto">
+		<div className="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay">
 			<div
 				className="fixed z-50 w-full h-full bg-black opacity-50"
 				data-testid="modal__overlay"

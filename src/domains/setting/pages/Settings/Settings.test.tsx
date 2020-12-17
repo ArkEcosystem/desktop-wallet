@@ -78,7 +78,7 @@ describe("Settings", () => {
 	it("should update profile", async () => {
 		const profilesCount = env.profiles().count();
 
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,
@@ -107,6 +107,18 @@ describe("Settings", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
 		fireEvent.click(getByTestId("AdvancedMode__accept-button"));
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		// Toggle Test Development Network
+		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.DESCRIPTION,
+		);
+		fireEvent.click(getByTestId("DevelopmentNetwork__continue-button"));
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		// Toggle Test Development Network
+		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
+
 		// Toggle Update Ledger in Background
 		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
@@ -128,8 +140,6 @@ describe("Settings", () => {
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 
-		// Toggle Test Development networks
-		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
 		// Open Advanced Mode Modal
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
@@ -193,6 +203,41 @@ describe("Settings", () => {
 
 	it.each([
 		["close", "modal__close-btn"],
+		["cancel", "DevelopmentNetwork__cancel-button"],
+		["continue", "DevelopmentNetwork__continue-button"],
+	])("should open & close development network modal (%s)", async (_, buttonId) => {
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		act(() => {
+			fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
+		});
+
+		expect(getByTestId("modal__inner")).toBeInTheDocument();
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.DESCRIPTION,
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId(buttonId));
+		});
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+	});
+
+	it.each([
+		["close", "modal__close-btn"],
 		["cancel", "ResetProfile__cancel-button"],
 		["reset", "ResetProfile__submit-button"],
 	])("should open & close reset profile modal (%s)", async (_, buttonId) => {
@@ -225,6 +270,9 @@ describe("Settings", () => {
 	});
 
 	it("should render peer settings", async () => {
+		// Import a wallet after the profile reset test
+		await profile.wallets().importByAddress("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax", "ARK", "ark.devnet");
+
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
@@ -257,8 +305,8 @@ describe("Settings", () => {
 
 		expect(getByTestId("Peer-settings__submit-button")).toBeTruthy();
 
-		fireEvent.click(getByTestId("General-peers__toggle--isMultiPeerBroadcast"));
 		fireEvent.click(getByTestId("General-peers__toggle--isCustomPeer"));
+		fireEvent.click(getByTestId("General-peers__toggle--isMultiPeerBroadcast"));
 
 		expect(getByTestId("Peer-list__add-button")).toBeTruthy();
 
@@ -269,8 +317,8 @@ describe("Settings", () => {
 		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
 	});
 
-	it("should add & delete custom peer", async () => {
-		const { findByTestId, getByTestId } = renderWithRouter(
+	it("should show an error message for invalid peer (host)", async () => {
+		const { findByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,
@@ -306,10 +354,117 @@ describe("Settings", () => {
 		});
 
 		act(() => {
-			fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "167.114.29.48:4003/api" },
+			});
 		});
 
-		const submitButton = getByTestId("PeerForm__add-button");
+		await waitFor(() => expect(getByText("The 'Peer IP' is not valid")).toBeVisible());
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "//167.114.29.48:4003/api" },
+			});
+		});
+
+		await waitFor(() => expect(getByText("The 'Peer IP' does not have 'http://' or 'https://'")).toBeVisible());
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
+		});
+
+		const submitButton = getByTestId("PeerForm__submit-button");
+		expect(submitButton).toBeTruthy();
+		await waitFor(() => {
+			expect(submitButton).not.toHaveAttribute("disabled");
+		});
+
+		fireEvent.click(submitButton);
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+	});
+
+	it("should add & delete custom peer", async () => {
+		const { findByTestId, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		fireEvent.click(await findByTestId("side-menu__item--Peer"));
+
+		expect(getByTestId("Peer-list__add-button")).toBeTruthy();
+
+		const addPeerButton = getByTestId("Peer-list__add-button");
+		expect(addPeerButton).toBeTruthy();
+		await act(async () => {
+			fireEvent.click(addPeerButton);
+		});
+
+		expect(getByTestId("modal__inner")).toBeTruthy();
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() =>
+			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
+		});
+
+		await waitFor(() => expect(getByText(translations.SETTINGS.PEERS.VALIDATION.HOST_EXISTS)).toBeVisible());
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() =>
+			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(""));
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() =>
+			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.mouseDown(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://89.45.251.233:4003/api" },
+			});
+		});
+
+		const submitButton = getByTestId("PeerForm__submit-button");
 		expect(submitButton).toBeTruthy();
 		await waitFor(() => {
 			expect(submitButton).not.toHaveAttribute("disabled");
@@ -319,7 +474,7 @@ describe("Settings", () => {
 
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 
-		const toggle = within(getByTestId("Peer-settings__table")).getByTestId("dropdown__toggle");
+		const toggle = within(getByTestId("Peer-settings__table")).getAllByTestId("dropdown__toggle")[0];
 
 		act(() => {
 			fireEvent.click(toggle);
@@ -337,13 +492,128 @@ describe("Settings", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DELETE_PEER.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DELETE_PEER.DESCRIPTION);
 
-		const deleteBtn = getByTestId("DeleteResource__submit-button");
+		const deleteButton = getByTestId("DeleteResource__submit-button");
 
 		act(() => {
-			fireEvent.click(deleteBtn);
+			fireEvent.click(deleteButton);
 		});
 
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+	});
+
+	it("should enable broadcast to multiple peers", async () => {
+		const toastSpy = jest.spyOn(toasts, "success");
+
+		const { findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		fireEvent.click(await findByTestId("side-menu__item--Peer"));
+
+		expect(getByTestId("Peer-list__add-button")).toBeTruthy();
+
+		const addPeerButton = getByTestId("Peer-list__add-button");
+		expect(addPeerButton).toBeTruthy();
+		await act(async () => {
+			fireEvent.click(addPeerButton);
+		});
+
+		expect(getByTestId("modal__inner")).toBeTruthy();
+
+		act(() => {
+			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+		});
+
+		await waitFor(() =>
+			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+		});
+
+		act(() => {
+			fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
+		});
+
+		expect(getByTestId("PeerForm__submit-button")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("PeerForm__submit-button")).not.toHaveAttribute("disabled");
+		});
+
+		fireEvent.click(getByTestId("PeerForm__submit-button"));
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+
+		fireEvent.click(getByTestId("General-peers__toggle--isMultiPeerBroadcast"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("Peer-settings__submit-button"));
+		});
+
+		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
+	});
+
+	it("should disable broadcast to multiple peers", async () => {
+		const toastSpy = jest.spyOn(toasts, "success");
+
+		const { findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		fireEvent.click(await findByTestId("side-menu__item--Peer"));
+
+		expect(getByTestId("Peer-list__add-button")).toBeTruthy();
+
+		const toggle = within(getByTestId("Peer-settings__table")).getAllByTestId("dropdown__toggle")[0];
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(getByTestId("dropdown__content")).toBeTruthy();
+
+		const deleteOption = getByTestId("dropdown__option--1");
+		expect(deleteOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(deleteOption);
+		});
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DELETE_PEER.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DELETE_PEER.DESCRIPTION);
+
+		const deleteButton = getByTestId("DeleteResource__submit-button");
+
+		act(() => {
+			fireEvent.click(deleteButton);
+		});
+
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+
+		fireEvent.click(getByTestId("General-peers__toggle--isCustomPeer"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("Peer-settings__submit-button"));
+		});
+
+		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
 	});
 
 	it("should render plugin settings", async () => {

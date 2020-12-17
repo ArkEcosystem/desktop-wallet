@@ -30,7 +30,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 		return (
 			<div data-testid="WalletCard__blank" className={`w-64 inline-block ${className}`}>
 				<Card className="h-48">
-					<div className="flex flex-col justify-between h-full p-4">
+					<div className="flex flex-col justify-between p-4 h-full">
 						<div className="flex -space-x-2">
 							<Circle
 								size="lg"
@@ -55,8 +55,6 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 		);
 	}
 
-	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
-
 	const getIconName = (type: string) => {
 		switch (type) {
 			case "Starred":
@@ -70,29 +68,30 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 
 	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
 
+	const WalletIcon = ({ type }: { type: string }) => (
+		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+			<div className={`inline-block p-1 ${getIconColor(type)}`}>
+				<Icon name={getIconName(type)} width={20} />
+			</div>
+		</Tooltip>
+	);
+
 	return (
 		<div className={`w-64 inline-block ${className}`} data-testid={`WalletCard__${wallet.address()}`}>
 			<Card
-				addonIcons={
-					!!wallet &&
-					wallet.hasSyncedWithNetwork() &&
-					walletTypes.map((type: string) =>
-						// @ts-ignore
-						wallet[`is${type}`]() ? (
-							<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-								<div className={`inline-block p-1 ${getIconColor(type)}`}>
-									<Icon name={getIconName(type)} width={20} />
-								</div>
-							</Tooltip>
-						) : null,
-					)
-				}
+				addonIcons={[
+					wallet.isLedger() && <WalletIcon key="Ledger" type="Ledger" />,
+					wallet.isStarred() && <WalletIcon key="Starred" type="Starred" />,
+					wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
+						<WalletIcon key="MultiSignature" type="MultiSignature" />
+					),
+				]}
 				className="h-48"
 				actions={actions}
 				onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`)}
 				onSelect={onSelect}
 			>
-				<div className="relative flex flex-col justify-between h-full p-4">
+				<div className="flex relative flex-col justify-between p-4 h-full">
 					<div className="flex items-center space-x-4">
 						<div className="-space-x-2 whitespace-no-wrap">
 							<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} />

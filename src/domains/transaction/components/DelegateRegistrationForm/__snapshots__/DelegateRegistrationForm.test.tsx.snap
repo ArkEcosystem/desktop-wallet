@@ -11,7 +11,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
-          class="flex items-end justify-between bg-theme-background"
+          class="flex justify-between items-end bg-theme-background"
         >
           <div>
             <h1
@@ -29,7 +29,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
           </div>
         </div>
         <div
-          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="sc-fznyAO kutBGx flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -116,13 +116,13 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
             class="sc-fznKkj bETwhb flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
               Delegate Name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -143,13 +143,13 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
               Transaction Fee
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -171,7 +171,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                     value="2"
                   />
                   <div
-                    class="absolute bottom-0 w-full px-1"
+                    class="absolute bottom-0 px-1 w-full"
                   >
                     <div
                       class="flex flex-wrap justify-center"
@@ -205,13 +205,13 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -220,7 +220,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -229,7 +229,7 @@ exports[`DelegateRegistrationForm should error for invalid username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -258,7 +258,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
-          class="flex items-end justify-between bg-theme-background"
+          class="flex justify-between items-end bg-theme-background"
         >
           <div>
             <h1
@@ -276,7 +276,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
           </div>
         </div>
         <div
-          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="sc-fznyAO kutBGx flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -363,13 +363,13 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
             class="sc-fznKkj bETwhb flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
               Delegate Name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -390,13 +390,13 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
               Transaction Fee
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -418,7 +418,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                     value="2"
                   />
                   <div
-                    class="absolute bottom-0 w-full px-1"
+                    class="absolute bottom-0 px-1 w-full"
                   >
                     <div
                       class="flex flex-wrap justify-center"
@@ -452,13 +452,13 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -467,7 +467,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -476,7 +476,7 @@ exports[`DelegateRegistrationForm should error for long username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -505,7 +505,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
-          class="flex items-end justify-between bg-theme-background"
+          class="flex justify-between items-end bg-theme-background"
         >
           <div>
             <h1
@@ -523,7 +523,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
           </div>
         </div>
         <div
-          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="sc-fznyAO kutBGx flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -610,13 +610,13 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
             class="sc-fznKkj bETwhb flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
               Delegate Name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -637,13 +637,13 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
               Transaction Fee
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -665,7 +665,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                     value="2"
                   />
                   <div
-                    class="absolute bottom-0 w-full px-1"
+                    class="absolute bottom-0 px-1 w-full"
                   >
                     <div
                       class="flex flex-wrap justify-center"
@@ -699,13 +699,13 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -714,7 +714,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -723,7 +723,7 @@ exports[`DelegateRegistrationForm should error if username already exists 1`] = 
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -752,7 +752,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
-          class="flex items-end justify-between bg-theme-background"
+          class="flex justify-between items-end bg-theme-background"
         >
           <div>
             <h1
@@ -770,7 +770,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           </div>
         </div>
         <div
-          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="sc-fznyAO kutBGx flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -857,13 +857,13 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
               Delegate Name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -878,13 +878,13 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
               Transaction Fee
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -906,7 +906,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                     value="2"
                   />
                   <div
-                    class="absolute bottom-0 w-full px-1"
+                    class="absolute bottom-0 px-1 w-full"
                   >
                     <div
                       class="flex flex-wrap justify-center"
@@ -940,13 +940,13 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -955,7 +955,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -964,7 +964,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -993,7 +993,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
         data-testid="DelegateRegistrationForm__review-step"
       >
         <div
-          class="flex items-end justify-between bg-theme-background"
+          class="flex justify-between items-end bg-theme-background"
         >
           <div>
             <h1
@@ -1119,7 +1119,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
             class="mt-2"
           >
             <div
-              class="border rounded-lg border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
             >
               <div
                 class="relative p-4"
@@ -1177,7 +1177,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
+                class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
               >
                 <span
                   class="sc-fznJRM jknkrm"
@@ -1211,7 +1211,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
-          class="flex items-end justify-between bg-theme-background"
+          class="flex justify-between items-end bg-theme-background"
         >
           <div>
             <h1
@@ -1229,7 +1229,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="sc-fznyAO kutBGx flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -1316,13 +1316,13 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
               Delegate Name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -1337,13 +1337,13 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
               Transaction Fee
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -1365,7 +1365,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                     value="10"
                   />
                   <div
-                    class="absolute bottom-0 w-full px-1"
+                    class="absolute bottom-0 px-1 w-full"
                   >
                     <div
                       class="flex flex-wrap justify-center"
@@ -1399,13 +1399,13 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1414,7 +1414,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1423,7 +1423,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   </button>
                   <button
                     aria-checked="true"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1452,7 +1452,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
-          class="flex items-end justify-between bg-theme-background"
+          class="flex justify-between items-end bg-theme-background"
         >
           <div>
             <h1
@@ -1470,7 +1470,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="sc-fznyAO kutBGx flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="sc-fznyAO kutBGx flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -1557,13 +1557,13 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="username"
             >
               Delegate Name
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -1578,13 +1578,13 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="sc-fznKkj kSgktX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
               Transaction Fee
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -1606,7 +1606,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                     value="2"
                   />
                   <div
-                    class="absolute bottom-0 w-full px-1"
+                    class="absolute bottom-0 px-1 w-full"
                   >
                     <div
                       class="flex flex-wrap justify-center"
@@ -1640,13 +1640,13 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               </div>
               <div>
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1655,7 +1655,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -1664,7 +1664,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznxsB gQANRa relative px-5 transition-colors duration-300 border-transparent focus:outline-none border-b-3"
+                    class="sc-fznxsB gQANRa relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"

@@ -7,7 +7,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
     data-testid="LedgerConnectionStep"
   >
     <div
-      class="flex items-end justify-between bg-theme-background"
+      class="flex justify-between items-end bg-theme-background"
     >
       <div>
         <h1
@@ -28,13 +28,13 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
         Cryptoasset
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -97,7 +97,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       </div>
     </fieldset>
     <div
-      class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="sc-AxirZ laMNgs flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
         class="flex items-center justify-center text-theme-success-600"
@@ -136,7 +136,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
     data-testid="LedgerConnectionStep"
   >
     <div
-      class="flex items-end justify-between bg-theme-background"
+      class="flex justify-between items-end bg-theme-background"
     >
       <div>
         <h1
@@ -157,13 +157,13 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
         Cryptoasset
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -226,10 +226,10 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       </div>
     </fieldset>
     <div
-      class="sc-AxirZ laMNgs flex flex-col space-y-5 overflow-hidden border rounded-lg bg-theme-neutral-100 border-theme-neutral-300 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="sc-AxirZ laMNgs flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="flex items-center justify-center text-theme-danger-600"
+        class="flex items-center justify-center text-theme-danger-400"
       >
         <div
           class="sc-AxjAm fYfzg"
@@ -242,7 +242,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
         </div>
       </div>
       <span
-        class="pointer-events-none border rounded-md border-theme-danger-600"
+        class="pointer-events-none border rounded-md border-theme-danger-400"
       />
       <div
         class="flex flex-col space-y-2"

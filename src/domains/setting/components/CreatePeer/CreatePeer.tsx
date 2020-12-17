@@ -6,19 +6,20 @@ import { PeerForm } from "domains/setting/components/PeerForm";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type AddPeerProps = {
+type CreatePeerProps = {
 	isOpen: boolean;
 	networks: Coins.Network[];
 	profile: Profile;
 	onClose?: () => void;
+	onValidateHost?: any;
 };
 
-export const AddPeer = ({ isOpen, networks, profile, onClose }: AddPeerProps) => {
+export const CreatePeer = ({ isOpen, networks, profile, onClose, onValidateHost }: CreatePeerProps) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
 
-	const handleOnAddPeer = async ({
+	const handleCreatePeer = async ({
 		network,
 		name,
 		host,
@@ -42,12 +43,12 @@ export const AddPeer = ({ isOpen, networks, profile, onClose }: AddPeerProps) =>
 
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
-			<PeerForm networks={networks} onSave={handleOnAddPeer} />
+			<PeerForm networks={networks} onValidateHost={onValidateHost} onSave={handleCreatePeer} />
 		</Modal>
 	);
 };
 
-AddPeer.defaultProps = {
+CreatePeer.defaultProps = {
 	isOpen: false,
 	networks: [],
 };

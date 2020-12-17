@@ -53,13 +53,13 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 			<TableCell>
 				{plugin.isInstalled ? (
-					<div className="flex w-6 h-6 mx-auto border-2 rounded-full border-theme-success-200 text-theme-success-500">
+					<div className="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500">
 						<div className="m-auto">
 							<Icon name="Checkmark" width={15} height={15} />
 						</div>
 					</div>
 				) : (
-					<div className="flex w-6 h-6 mx-auto">
+					<div className="flex mx-auto w-6 h-6">
 						<div className="m-auto text-theme-neutral">
 							<Icon name="Dash" width={15} height={15} />
 						</div>
@@ -69,7 +69,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 			<TableCell variant="end" className="w-16" innerClassName="justify-end">
 				{!plugin.isInstalled && (
-					<Button variant="plain" onClick={() => onInstall(plugin)} data-testid="PluginListItem__install">
+					<Button variant="secondary" onClick={() => onInstall(plugin)} data-testid="PluginListItem__install">
 						{t("COMMON.INSTALL")}
 					</Button>
 				)}
@@ -77,7 +77,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 				{plugin.isInstalled && (
 					<Dropdown
 						toggleContent={
-							<Button variant="plain" size="icon" className="text-left">
+							<Button variant="secondary" size="icon" className="text-left">
 								<Icon name="Settings" width={20} height={20} />
 							</Button>
 						}

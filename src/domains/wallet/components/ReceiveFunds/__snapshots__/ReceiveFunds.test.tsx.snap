@@ -3,27 +3,26 @@
 exports[`ReceiveFunds should not render qrcode without an address 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxhUy gDYeUI absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxirZ gKDmVV w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxiKw kgmJgX"
+            class="sc-AxhCb ipiIgT"
             height="14"
             width="14"
           >
@@ -50,10 +49,10 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
             Enter the amount you wish to transfer to this address and confirm
           </div>
           <div
-            data-testid="ReceiveFunds__info"
+            data-testid="ReceiveFunds__address"
           >
             <div
-              class="sc-fznKkj bhWxzE"
+              class="sc-Axmtr dAZmZS"
               data-testid="TransactionDetail"
             >
               <div
@@ -68,9 +67,11 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3"
+                    class="flex items-center space-x-2"
                   >
-                    <span />
+                    <div
+                      class="inline-flex items-center"
+                    />
                     <span
                       class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
@@ -79,7 +80,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
+                          class="sc-AxhCb fxrKLH"
                           height="1em"
                           width="1em"
                         >
@@ -93,15 +94,15 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                 </div>
               </div>
               <div
-                class="-space-x-2"
+                class="-space-x-2 whitespace-no-wrap"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-fzplWN jUnIkq border-theme-primary-100 text-theme-primary-400"
+                  class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
-                    class="sc-AxiKw dklFyP"
+                    class="sc-AxhCb VoPpj"
                     data-testid="NetworkIcon__icon"
                     height="20"
                     width="20"
@@ -130,8 +131,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
           </div>
           <div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-8 mb-2"
-              color="primary"
+              class="sc-AxirZ jIUtSy mt-8 w-full"
               data-testid="ReceiveFunds__toggle"
               type="button"
             >
@@ -139,7 +139,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
             </button>
           </div>
           <div
-            class="mt-8"
+            class="mx-auto mt-8 w-64 h-64"
           />
         </div>
       </div>
@@ -151,27 +151,26 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
 exports[`ReceiveFunds should render with a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxhUy gDYeUI absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxirZ gKDmVV w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxiKw kgmJgX"
+            class="sc-AxhCb ipiIgT"
             height="14"
             width="14"
           >
@@ -198,10 +197,10 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             Enter the amount you wish to transfer to this address and confirm
           </div>
           <div
-            data-testid="ReceiveFunds__info"
+            data-testid="ReceiveFunds__name"
           >
             <div
-              class="sc-fznKkj bhWxzE"
+              class="sc-Axmtr dAZmZS"
               data-testid="TransactionDetail"
             >
               <div
@@ -220,11 +219,11 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
               </div>
               <div
                 aria-label="ARK Devnet"
-                class="sc-fzplWN jUnIkq border-theme-primary-100 text-theme-primary-400"
+                class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
-                  class="sc-AxiKw dklFyP"
+                  class="sc-AxhCb VoPpj"
                   data-testid="NetworkIcon__icon"
                   height="20"
                   width="20"
@@ -237,10 +236,10 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             </div>
           </div>
           <div
-            data-testid="ReceiveFunds__info"
+            data-testid="ReceiveFunds__address"
           >
             <div
-              class="sc-fznKkj bhWxzE"
+              class="sc-Axmtr dAZmZS"
               data-testid="TransactionDetail"
             >
               <div
@@ -255,11 +254,18 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3"
+                    class="flex items-center space-x-2"
                   >
-                    <span>
-                      abc
-                    </span>
+                    <div
+                      class="inline-flex items-center"
+                    >
+                      <span
+                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        abc
+                      </span>
+                    </div>
                     <span
                       class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
@@ -268,7 +274,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
+                          class="sc-AxhCb fxrKLH"
                           height="1em"
                           width="1em"
                         >
@@ -282,7 +288,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="-space-x-2"
+                class="-space-x-2 whitespace-no-wrap"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
@@ -303,8 +309,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           </div>
           <div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-8 mb-2"
-              color="primary"
+              class="sc-AxirZ jIUtSy mt-8 w-full"
               data-testid="ReceiveFunds__toggle"
               type="button"
             >
@@ -312,13 +317,13 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             </button>
           </div>
           <div
-            class="mt-8"
+            class="mx-auto mt-8 w-64 h-64"
           >
             <img
               alt="QR Code"
-              class="w-64 h-64 mx-auto"
+              class="p-3 w-64 h-64 rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="ReceiveFunds__qrcode"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAAAklEQVR4AewaftIAAASwSURBVO3BAWolBxQDwX7C97+ykgMk4AEP+63tqgOKfkxbnrg7nmjLW+6OJ9ryprtDPyNImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTNC5LmffFQW/4md8ffoi1P3B1PtOVNbfmb3B3fFSTNC5LmBUnzgqR5QdK8IGlekDQvSJoXJM0LkuYFSfO+eNnd8Unaov92dzzRlt/s7vgkbXlLkDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzftCf1Rb3nR3fFdbtClImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTNC5LmfaE/6u54oi1vuTve1Bb9GUHSvCBpXpA0L0iaFyTNC5LmBUnzgqR5QdK8IGlekDTvi5e1Rf+vLW9qi/5bW/4WQdK8IGlekDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNO+Lh+4O/Zy744m2PHF3fFdbnrg7nmjLm+4O/bcgaV6QNC9ImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iad/0XkqYFSfOCpHlB0rwgaV6QNC9ImhckzQuS5gVJ84KkeUHSvAPKA215092h/9eWJ+6Ot7Tlibvjiba86e54oi1P3B2fIkiaFyTNC5LmBUnzgqR5QdK8IGlekDQvSJoXJM0LkuZ98bK745O05U13x5vujifa8l13xxN3h/6ctnxXkDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzTug6Me05be6O97UljfdHU+05Ym744m2PHF3vCVImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTNu/6LD3J3fJK2vOnueFNb3nJ3/GZtedPd8aa2fFeQNC9ImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTN++Khu+OJtnyStjxxdzzRlifa8sTd8Za7429yd7ypLU/cHU/cHd8VJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzQuS5gVJ867/Qn/M3fFEW564O76rLU/cHZ+kLU/cHU+05U13xxNt+a4gaV6QNC9ImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iad0DRj2nLE3fHE215y93xRFt+s7vjTW35FEHSvCBpXpA0L0iaFyTNC5LmBUnzgqR5QdK8IGlekDTvgPJAW/4md8cTbXni7nhTW36ru+OJtnySu+NNbfmuIGlekDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNC9ImvfFy+6OT9KW36wtv9Xd8aa744m2vKktT9wdT9wd3xUkzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTNC5LmBUnzvtCvcne8pS1P3B2fpC1vujueaMsTbXlLkDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzftCf1Rbnrg73nJ3fJK2vOnu+CR3x1uCpHlB0rwgaV6QNC9ImhckzQuS5gVJ84KkeUHSvCBp3hcva4t+Tlvecne8qS1vujueaMsTd8cTd8enCJLmBUnzgqR5QdK8IGlekDQvSJoXJM0LkuYFSfOCpHkHFP2YtjxxdzzRlk9xd7ypLU/cHW9qy28VJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzQuS5v0DzxHx73yJDcQAAAAASUVORK5CYII="
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAAAklEQVR4AewaftIAAAUmSURBVO3BgYkYOQAEwfZwiVjCyj8egZSK/wP4h1vw4vO4q759Hz9+ol/mns0TYy6euGfzljEXT9yzedOYC/0aQVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr0gqV6QVO+Dh+7Z/E3GXPwt7tk8MebiiXs2b7pn8zcZc/FZQVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr0gqV6QVO+Dl425+Eru2ei/jbl44p7Nn2zMxVdyz+YtQVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr0gqV6QVO8D/Vb3bN405uKz7tmoU5BUL0iqFyTVC5LqBUn1gqR6QVK9IKlekFQvSKoXJNX7QL/VmIsn7tm8ZczFm+7Z6PcIkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6gVJ9YKkeh+87J6N/t89mzfds9F/u2fztwiS6gVJ9YKkekFSvSCpXpBUL0iqFyTVC5LqBUn1gqR6Hzw05kK/zpiLJ+7ZPDHm4rPu2Twx5uKJezZvGnOh/xYk1QuS6gVJ9YKkekFSvSCpXpBUL0iqFyTVC5LqBUn1vv38F5KqBUn1gqR6QVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr1v38ePnzxwz+ZNYy70/+7ZPDHm4i33bJ4Yc/HEPZs3jbl44p7NE2MuvoogqV6QVC9Iqhck1QuS6gVJ9YKkekFSvSCpXpBUL0iq98HLxlx8Jfds3jTm4k1jLp64Z/NZYy6eGHOh3+eezWcFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6gVJ9YKkekFSvW/fx4+f6Je5Z/OnGnPxpns2bxpz8cQ9myfGXDxxz+aJMRdvCZLqBUn1gqR6QVK9IKlekFQvSKoXJNULkuoFSfW+/fwXX8iYi6/kns2bxly86Z7NW8Zc/Mnu2bxpzMWb7tl8VpBUL0iqFyTVC5LqBUn1gqR6QVK9IKlekFQvSKoXJNX74KExF0/cs/lK7tk8MebiiXs2T9yzeWLMxVvGXPxNxly86Z7NE2Munhhz8VlBUr0gqV6QVC9Iqhck1QuS6gVJ9YKkekFSvSCpXpBU79vPf6HfZszFE/dsnhhz8Vn3bJ4Yc/GV3LN5YszFE/ds3jTm4ol7Np8VJNULkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6gVJ9b59Hz9+ol/mns0TYy6euGfzljEXT9yz+ZONuXjTPZuvIkiqFyTVC5LqBUn1gqR6QVK9IKlekFQvSKoXJNULkup9+z5+/OSBezZ/kzEXT9yzeWLMxZvu2fypxlw8cc/mKxlz8aZ7Np8VJNULkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6gVJ9T542ZiLr+SezZ/sns2faszFm8ZcPHHP5k33bJ4Yc/HEmIvPCpLqBUn1gqR6QVK9IKlekFQvSKoXJNULkuoFSfWCpHof6I8y5uIt92yeGHPxldyzedOYiyfu2Txxz+YtQVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr0gqV6QVO8D/Vb3bJ4Yc/GWMRdfyT2bN425+ErGXLwlSKoXJNULkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6n3wsns2+nXu2bxlzMWb7tm8aczFE/dsnhhz8cSYi68iSKoXJNULkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6n37Pn78RL/MPZsnxlw8cc/mqxhz8aZ7Nk+MuXjTPZs/VZBUL0iqFyTVC5LqBUn1gqR6QVK9IKlekFQvSKr3D8bl8/cHO34bAAAAAElFTkSuQmCC"
             />
           </div>
         </div>
@@ -331,27 +336,26 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
 exports[`ReceiveFunds should render without a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxhUy gDYeUI absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxirZ gKDmVV w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxiKw kgmJgX"
+            class="sc-AxhCb ipiIgT"
             height="14"
             width="14"
           >
@@ -378,10 +382,10 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
             Enter the amount you wish to transfer to this address and confirm
           </div>
           <div
-            data-testid="ReceiveFunds__info"
+            data-testid="ReceiveFunds__address"
           >
             <div
-              class="sc-fznKkj bhWxzE"
+              class="sc-Axmtr dAZmZS"
               data-testid="TransactionDetail"
             >
               <div
@@ -396,11 +400,18 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3"
+                    class="flex items-center space-x-2"
                   >
-                    <span>
-                      abc
-                    </span>
+                    <div
+                      class="inline-flex items-center"
+                    >
+                      <span
+                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        abc
+                      </span>
+                    </div>
                     <span
                       class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
@@ -409,7 +420,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxiKw dzBdqj"
+                          class="sc-AxhCb fxrKLH"
                           height="1em"
                           width="1em"
                         >
@@ -423,15 +434,15 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="-space-x-2"
+                class="-space-x-2 whitespace-no-wrap"
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-fzplWN jUnIkq border-theme-primary-100 text-theme-primary-400"
+                  class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
-                    class="sc-AxiKw dklFyP"
+                    class="sc-AxhCb VoPpj"
                     data-testid="NetworkIcon__icon"
                     height="20"
                     width="20"
@@ -460,8 +471,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           </div>
           <div>
             <button
-              class="sc-AxjAm fCKjFI w-full mt-8 mb-2"
-              color="primary"
+              class="sc-AxirZ jIUtSy mt-8 w-full"
               data-testid="ReceiveFunds__toggle"
               type="button"
             >
@@ -469,13 +479,13 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
             </button>
           </div>
           <div
-            class="mt-8"
+            class="mx-auto mt-8 w-64 h-64"
           >
             <img
               alt="QR Code"
-              class="w-64 h-64 mx-auto"
+              class="p-3 w-64 h-64 rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
               data-testid="ReceiveFunds__qrcode"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAAAklEQVR4AewaftIAAASwSURBVO3BAWolBxQDwX7C97+ykgMk4AEP+63tqgOKfkxbnrg7nmjLW+6OJ9ryprtDPyNImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTNC5LmffFQW/4md8ffoi1P3B1PtOVNbfmb3B3fFSTNC5LmBUnzgqR5QdK8IGlekDQvSJoXJM0LkuYFSfO+eNnd8Unaov92dzzRlt/s7vgkbXlLkDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzftCf1Rb3nR3fFdbtClImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTNC5LmfaE/6u54oi1vuTve1Bb9GUHSvCBpXpA0L0iaFyTNC5LmBUnzgqR5QdK8IGlekDTvi5e1Rf+vLW9qi/5bW/4WQdK8IGlekDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNO+Lh+4O/Zy744m2PHF3fFdbnrg7nmjLm+4O/bcgaV6QNC9ImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iad/0XkqYFSfOCpHlB0rwgaV6QNC9ImhckzQuS5gVJ84KkeUHSvAPKA215092h/9eWJ+6Ot7Tlibvjiba86e54oi1P3B2fIkiaFyTNC5LmBUnzgqR5QdK8IGlekDQvSJoXJM0LkuZ98bK745O05U13x5vujifa8l13xxN3h/6ctnxXkDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzTug6Me05be6O97UljfdHU+05Ym744m2PHF3vCVImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTNu/6LD3J3fJK2vOnueFNb3nJ3/GZtedPd8aa2fFeQNC9ImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTN++Khu+OJtnyStjxxdzzRlifa8sTd8Za7429yd7ypLU/cHU/cHd8VJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzQuS5gVJ867/Qn/M3fFEW564O76rLU/cHZ+kLU/cHU+05U13xxNt+a4gaV6QNC9ImhckzQuS5gVJ84KkeUHSvCBpXpA0L0iad0DRj2nLE3fHE215y93xRFt+s7vjTW35FEHSvCBpXpA0L0iaFyTNC5LmBUnzgqR5QdK8IGlekDTvgPJAW/4md8cTbXni7nhTW36ru+OJtnySu+NNbfmuIGlekDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNC9ImvfFy+6OT9KW36wtv9Xd8aa744m2vKktT9wdT9wd3xUkzQuS5gVJ84KkeUHSvCBpXpA0L0iaFyTNC5LmBUnzvtCvcne8pS1P3B2fpC1vujueaMsTbXlLkDQvSJoXJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzftCf1Rbnrg73nJ3fJK2vOnu+CR3x1uCpHlB0rwgaV6QNC9ImhckzQuS5gVJ84KkeUHSvCBp3hcva4t+Tlvecne8qS1vujueaMsTd8cTd8enCJLmBUnzgqR5QdK8IGlekDQvSJoXJM0LkuYFSfOCpHkHFP2YtjxxdzzRlk9xd7ypLU/cHW9qy28VJM0LkuYFSfOCpHlB0rwgaV6QNC9ImhckzQuS5v0DzxHx73yJDcQAAAAASUVORK5CYII="
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAYAAACI7Fo9AAAAAklEQVR4AewaftIAAAUmSURBVO3BgYkYOQAEwfZwiVjCyj8egZSK/wP4h1vw4vO4q759Hz9+ol/mns0TYy6euGfzljEXT9yzedOYC/0aQVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr0gqV6QVO+Dh+7Z/E3GXPwt7tk8MebiiXs2b7pn8zcZc/FZQVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr0gqV6QVO+Dl425+Eru2ei/jbl44p7Nn2zMxVdyz+YtQVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr0gqV6QVO8D/Vb3bN405uKz7tmoU5BUL0iqFyTVC5LqBUn1gqR6QVK9IKlekFQvSKoXJNX7QL/VmIsn7tm8ZczFm+7Z6PcIkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6gVJ9YKkeh+87J6N/t89mzfds9F/u2fztwiS6gVJ9YKkekFSvSCpXpBUL0iqFyTVC5LqBUn1gqR6Hzw05kK/zpiLJ+7ZPDHm4rPu2Twx5uKJezZvGnOh/xYk1QuS6gVJ9YKkekFSvSCpXpBUL0iqFyTVC5LqBUn1vv38F5KqBUn1gqR6QVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr1v38ePnzxwz+ZNYy70/+7ZPDHm4i33bJ4Yc/HEPZs3jbl44p7NE2MuvoogqV6QVC9Iqhck1QuS6gVJ9YKkekFSvSCpXpBUL0iq98HLxlx8Jfds3jTm4k1jLp64Z/NZYy6eGHOh3+eezWcFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6gVJ9YKkekFSvW/fx4+f6Je5Z/OnGnPxpns2bxpz8cQ9myfGXDxxz+aJMRdvCZLqBUn1gqR6QVK9IKlekFQvSKoXJNULkuoFSfW+/fwXX8iYi6/kns2bxly86Z7NW8Zc/Mnu2bxpzMWb7tl8VpBUL0iqFyTVC5LqBUn1gqR6QVK9IKlekFQvSKoXJNX74KExF0/cs/lK7tk8MebiiXs2T9yzeWLMxVvGXPxNxly86Z7NE2Munhhz8VlBUr0gqV6QVC9Iqhck1QuS6gVJ9YKkekFSvSCpXpBU79vPf6HfZszFE/dsnhhz8Vn3bJ4Yc/GV3LN5YszFE/ds3jTm4ol7Np8VJNULkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6gVJ9b59Hz9+ol/mns0TYy6euGfzljEXT9yz+ZONuXjTPZuvIkiqFyTVC5LqBUn1gqR6QVK9IKlekFQvSKoXJNULkup9+z5+/OSBezZ/kzEXT9yzeWLMxZvu2fypxlw8cc/mKxlz8aZ7Np8VJNULkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6gVJ9T542ZiLr+SezZ/sns2faszFm8ZcPHHP5k33bJ4Yc/HEmIvPCpLqBUn1gqR6QVK9IKlekFQvSKoXJNULkuoFSfWCpHof6I8y5uIt92yeGHPxldyzedOYiyfu2Txxz+YtQVK9IKlekFQvSKoXJNULkuoFSfWCpHpBUr0gqV6QVO8D/Vb3bJ4Yc/GWMRdfyT2bN425+ErGXLwlSKoXJNULkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6n3wsns2+nXu2bxlzMWb7tm8aczFE/dsnhhz8cSYi68iSKoXJNULkuoFSfWCpHpBUr0gqV6QVC9Iqhck1QuS6n37Pn78RL/MPZsnxlw8cc/mqxhz8aZ7Nk+MuXjTPZs/VZBUL0iqFyTVC5LqBUn1gqR6QVK9IKlekFQvSKr3D8bl8/cHO34bAAAAAElFTkSuQmCC"
             />
           </div>
         </div>

@@ -6,57 +6,27 @@ export default {
 	title: "Domains / Dashboard / Components / WalletsControls",
 };
 
-export const Default = () => {
-	const networks = [
-		{
-			name: "ARK",
-			isSelected: true,
-		},
-		{
-			name: "Ethereum",
-			isSelected: true,
-		},
-		{
-			name: "Bitcoin",
-			isSelected: false,
-		},
-	];
-
-	const filterProperties = {
-		visibleTransactionsView: true,
-		visiblePortfolioView: true,
-		networks,
-		onNetworkChange: (changedNetwork: any, newNetworksList: any) => {
-			console.log("changed network", changedNetwork);
-			console.log("changed network new list", newNetworksList);
-		},
-		togglePortfolioView: (isChecked: boolean) => {
-			console.log("show portfolio view", isChecked);
-		},
-		toggleTransactionsView: (isChecked: boolean) => {
-			console.log("show portfolio view", isChecked);
-		},
-		onWalletsDisplay: () => {
-			alert("on Wallet display");
-		},
-		onViewAllNetworks: () => {
-			alert("on view all networks");
-		},
-	};
-
-	return (
-		<div className="flex">
-			<h2 className="w-2/4 mt-1">Wallets</h2>
-			<div className="w-2/4">
-				<WalletsControls
-					onCreateWallet={() => alert("Create wallet")}
-					onImportWallet={() => alert("Import wallet")}
-					onSelectGridView={() => console.log("Show grid view")}
-					onSelectListView={() => console.log("Show list view")}
-					filterProperties={filterProperties}
-					viewType="grid"
-				/>
-			</div>
-		</div>
-	);
+const filterProperties = {
+	networks: [],
+	viewType: "list",
+	walletsDisplayType: "all",
+	selectedNetworkIds: [],
+	showTransactions: true,
+	useTestNetworks: true,
+	showToggleViews: true,
+	isFilterChanged: false,
 };
+export const Default = () => (
+	<div className="flex">
+		<h2 className="w-2/4 mt-1">Wallets</h2>
+		<div className="w-2/4">
+			<WalletsControls
+				filterProperties={filterProperties as any}
+				onCreateWallet={() => alert("Create wallet")}
+				onImportWallet={() => alert("Import wallet")}
+				onSelectGridView={() => console.log("Show grid view")}
+				onSelectListView={() => console.log("Show list view")}
+			/>
+		</div>
+	</div>
+);

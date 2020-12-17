@@ -30,7 +30,7 @@ export const BlankExchangeCard = () => {
 	return (
 		<Card>
 			<div className="flex items-center p-2 font-semibold text-theme-primary-contrast">
-				<div className="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-contrast" />
+				<div className="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-contrast" />
 
 				{t("EXCHANGE.EXCHANGE_NAME")}
 			</div>

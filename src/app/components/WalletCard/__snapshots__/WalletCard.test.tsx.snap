@@ -11,7 +11,7 @@ exports[`Wallet Card should render 1`] = `
       data-testid="Card"
     >
       <div
-        class="relative flex flex-col justify-between h-full p-4"
+        class="flex relative flex-col justify-between p-4 h-full"
       >
         <div
           class="flex items-center space-x-4"
@@ -69,7 +69,7 @@ exports[`Wallet Card should render 1`] = `
         </span>
       </div>
       <div
-        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       >
         <div
           class="inline-block p-1 text-theme-neutral-600"
@@ -85,19 +85,6 @@ exports[`Wallet Card should render 1`] = `
           </div>
         </div>
         <div
-          class="inline-block p-1 text-theme-neutral-600"
-        >
-          <div
-            class="sc-AxirZ jMELNc"
-            height="1em"
-            width="20"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
           class="inline-block p-1 text-theme-warning-400"
         >
           <div
@@ -107,6 +94,19 @@ exports[`Wallet Card should render 1`] = `
           >
             <svg>
               star.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block p-1 text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ jMELNc"
+            height="1em"
+            width="20"
+          >
+            <svg>
+              multisig.svg
             </svg>
           </div>
         </div>
@@ -127,7 +127,7 @@ exports[`Wallet Card should render blank 1`] = `
       data-testid="Card"
     >
       <div
-        class="flex flex-col justify-between h-full p-4"
+        class="flex flex-col justify-between p-4 h-full"
       >
         <div
           class="flex -space-x-2"
@@ -151,7 +151,7 @@ exports[`Wallet Card should render blank 1`] = `
         </span>
       </div>
       <div
-        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       />
     </div>
   </div>
@@ -169,7 +169,7 @@ exports[`Wallet Card should render with actions 1`] = `
       data-testid="Card"
     >
       <div
-        class="relative flex flex-col justify-between h-full p-4"
+        class="flex relative flex-col justify-between p-4 h-full"
       >
         <div
           class="flex items-center space-x-4"
@@ -227,7 +227,7 @@ exports[`Wallet Card should render with actions 1`] = `
         </span>
       </div>
       <div
-        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       >
         <div
           class="inline-block p-1 text-theme-neutral-600"
@@ -239,19 +239,6 @@ exports[`Wallet Card should render with actions 1`] = `
           >
             <svg>
               ledger.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-neutral-600"
-        >
-          <div
-            class="sc-AxirZ jMELNc"
-            height="1em"
-            width="20"
-          >
-            <svg>
-              multisig.svg
             </svg>
           </div>
         </div>
@@ -269,11 +256,24 @@ exports[`Wallet Card should render with actions 1`] = `
           </div>
         </div>
         <div
+          class="inline-block p-1 text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ jMELNc"
+            height="1em"
+            width="20"
+          >
+            <svg>
+              multisig.svg
+            </svg>
+          </div>
+        </div>
+        <div
           class="relative"
           data-testid="dropdown__toggle"
         >
           <div
-            class="flex justify-center w-4 overflow-hidden"
+            class="flex overflow-hidden justify-center w-4"
           >
             <div
               class="sc-AxirZ iQaTP p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
@@ -303,7 +303,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
       data-testid="Card"
     >
       <div
-        class="relative flex flex-col justify-between h-full p-4"
+        class="flex relative flex-col justify-between p-4 h-full"
       >
         <div
           class="flex items-center space-x-4"
@@ -361,7 +361,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
         </span>
       </div>
       <div
-        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       >
         <div
           class="inline-block p-1 text-theme-neutral-600"
@@ -377,19 +377,6 @@ exports[`Wallet Card should render with wallet data 1`] = `
           </div>
         </div>
         <div
-          class="inline-block p-1 text-theme-neutral-600"
-        >
-          <div
-            class="sc-AxirZ jMELNc"
-            height="1em"
-            width="20"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
           class="inline-block p-1 text-theme-warning-400"
         >
           <div
@@ -399,6 +386,19 @@ exports[`Wallet Card should render with wallet data 1`] = `
           >
             <svg>
               star.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block p-1 text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ jMELNc"
+            height="1em"
+            width="20"
+          >
+            <svg>
+              multisig.svg
             </svg>
           </div>
         </div>
@@ -420,7 +420,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
       data-testid="Card"
     >
       <div
-        class="relative flex flex-col justify-between h-full p-4"
+        class="flex relative flex-col justify-between p-4 h-full"
       >
         <div
           class="flex items-center space-x-4"
@@ -478,7 +478,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
         </span>
       </div>
       <div
-        class="absolute flex items-center m-4 space-x-1 -top-1 -right-1"
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       >
         <div
           class="inline-block p-1 text-theme-neutral-600"
@@ -494,19 +494,6 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           </div>
         </div>
         <div
-          class="inline-block p-1 text-theme-neutral-600"
-        >
-          <div
-            class="sc-AxirZ jMELNc"
-            height="1em"
-            width="20"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
           class="inline-block p-1 text-theme-warning-400"
         >
           <div
@@ -516,6 +503,19 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           >
             <svg>
               star.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="inline-block p-1 text-theme-neutral-600"
+        >
+          <div
+            class="sc-AxirZ jMELNc"
+            height="1em"
+            width="20"
+          >
+            <svg>
+              multisig.svg
             </svg>
           </div>
         </div>

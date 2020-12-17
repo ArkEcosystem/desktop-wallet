@@ -20,7 +20,7 @@ export const Default = () => (
 		<div>{text("Content", "Modal Content")}</div>
 
 		<div className="flex justify-end mt-4 space-x-3">
-			<Button variant="plain" onClick={() => alert("cancel")}>
+			<Button variant="secondary" onClick={() => alert("cancel")}>
 				Cancel
 			</Button>
 
