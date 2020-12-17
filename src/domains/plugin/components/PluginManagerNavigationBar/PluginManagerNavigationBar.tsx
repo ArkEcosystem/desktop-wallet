@@ -1,7 +1,8 @@
 import { LayoutControls } from "app/components/LayoutControls";
 import React from "react";
-import { styled } from "twin.macro";
 import { useTranslation } from "react-i18next";
+import { styled } from "twin.macro";
+
 import { defaultStyle } from "./styles";
 
 type PluginManagerNavigationBar = {
@@ -28,7 +29,10 @@ export const PluginManagerNavigationBar = ({
 	const { t } = useTranslation();
 
 	return (
-		<NavWrapper data-testid="PluginManagerNavigationBar" className="sticky md:top-24 top-20 bg-theme-neutral-contrast dark:bg-theme-neutral-800">
+		<NavWrapper
+			data-testid="PluginManagerNavigationBar"
+			className="sticky md:top-24 top-20 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+		>
 			<div className="container flex items-center justify-between mx-auto px-14">
 				<div>
 					<ul className="flex h-24">
@@ -45,7 +49,9 @@ export const PluginManagerNavigationBar = ({
 									>
 										<span>{menuItem.title}</span>
 										{menuItem.count && (
-											<span className="ml-1 text-theme-neutral dark:text-theme-neutral-700">{menuItem.count}</span>
+											<span className="ml-1 text-theme-neutral dark:text-theme-neutral-700">
+												{menuItem.count}
+											</span>
 										)}
 									</button>
 
