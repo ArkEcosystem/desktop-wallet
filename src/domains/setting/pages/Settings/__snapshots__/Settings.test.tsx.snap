@@ -1026,25 +1026,25 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group undefined"
+                      class="group space-y-2 undefined"
                     >
                       <span
-                        class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text"
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text"
                       >
                         Profile Image
                       </span>
                       <div
-                        class="flex flex-row mt-2"
+                        class="flex flex-row"
                       >
                         <div
-                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                          class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-fzolEj bUpNWF"
+                            class="sc-fzolEj iUnPPS"
                           >
                             <img
-                              alt="Profile avatar"
-                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              alt="Avatar"
+                              class="min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                             />
                             <span
@@ -1053,14 +1053,14 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                               JA
                             </span>
                             <div
-                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex justify-center items-center w-22 h-22"
+                                class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-AxirZ hUTXVg text-white"
+                                  class="sc-AxirZ hUTXVg text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -3066,25 +3066,25 @@ exports[`Settings should render 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group undefined"
+                      class="group space-y-2 undefined"
                     >
                       <span
-                        class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text"
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text"
                       >
                         Profile Image
                       </span>
                       <div
-                        class="flex flex-row mt-2"
+                        class="flex flex-row"
                       >
                         <div
-                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                          class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-fzolEj bUpNWF"
+                            class="sc-fzolEj iUnPPS"
                           >
                             <img
-                              alt="Profile avatar"
-                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              alt="Avatar"
+                              class="min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                             />
                             <span
@@ -3093,14 +3093,14 @@ exports[`Settings should render 1`] = `
                               JO
                             </span>
                             <div
-                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex justify-center items-center w-22 h-22"
+                                class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-AxirZ hUTXVg text-white"
+                                  class="sc-AxirZ hUTXVg text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -7378,25 +7378,25 @@ exports[`Settings should update profile 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group undefined"
+                      class="group space-y-2 undefined"
                     >
                       <span
-                        class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text"
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text"
                       >
                         Profile Image
                       </span>
                       <div
-                        class="flex flex-row mt-2"
+                        class="flex flex-row"
                       >
                         <div
-                          class="relative w-24 h-24 rounded bg-theme-neutral-contrast"
+                          class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-fzolEj bUpNWF"
+                            class="sc-fzolEj iUnPPS"
                           >
                             <img
-                              alt="Profile avatar"
-                              class="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+                              alt="Avatar"
+                              class="min-h-full"
                               src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
                             />
                             <span
@@ -7405,14 +7405,14 @@ exports[`Settings should update profile 1`] = `
                               TE
                             </span>
                             <div
-                              class="hidden overflow-hidden absolute z-50 rounded-full upload-button-overlay w-22 h-22"
+                              class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                             >
                               <div
-                                class="flex justify-center items-center w-22 h-22"
+                                class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-AxirZ hUTXVg text-white"
+                                  class="sc-AxirZ hUTXVg text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
