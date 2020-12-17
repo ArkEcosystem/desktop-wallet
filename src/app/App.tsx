@@ -21,9 +21,11 @@ import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { matchPath, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import fixtureData from "tests/fixtures/env/storage.json";
+import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 import { StubStorage } from "tests/mocks";
 import { Theme } from "types";
-import { migrateFixtures, restoreProfiles } from "utils/migrate-fixtures";
+import { migrateProfiles,restoreProfilePasswords } from "utils/migrate-fixtures";
 
 import { middlewares, RouterView, routes } from "../router";
 import {
@@ -34,7 +36,7 @@ import {
 	useEnvironmentContext,
 	useThemeContext,
 } from "./contexts";
-import { useDarkMode, useDeeplink, useEnvSynchronizer, useNetworkStatus } from "./hooks";
+import { useDarkMode, useDeeplink, useEnvSynchronizer, useNetworkStatus, useProfileSynchronizer } from "./hooks";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
@@ -47,6 +49,8 @@ const Main = () => {
 	const { env, persist } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
+
+	useProfileSynchronizer();
 
 	const pathname = (location as any).location?.pathname || location.pathname;
 	const nativeTheme = electron.remote.nativeTheme;
@@ -95,16 +99,18 @@ const Main = () => {
 			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
 
 			try {
-				await env.verify(shouldUseFixture ? migrateFixtures() : undefined);
-				await env.boot();
-
 				if (shouldUseFixture) {
-					await restoreProfiles(env);
+					await migrateProfiles(env, fixtureData.profiles);
+					restoreProfilePasswords(env, TestingPasswords);
 				}
 
+				await env.verify();
+				await env.boot();
+
 				await runAll();
-				await persist();
+				// await persist();
 			} catch (error) {
+				console.log("error", error);
 				handleError(error);
 			}
 
