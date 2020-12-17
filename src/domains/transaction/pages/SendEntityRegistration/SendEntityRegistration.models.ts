@@ -3,6 +3,8 @@ import { Enums, Environment, Profile, ReadWriteWallet } from "@arkecosystem/plat
 import { TFunction } from "i18next";
 import { useForm } from "react-hook-form";
 
+// @TODO: rename all the "SendEntityRegistration" types and interfaces in here because they are not specific to AIP36 but used for everything
+
 export type ExtendedSignedTransactionData = Contracts.SignedTransactionData & {
 	generatedAddress?: string;
 };
