@@ -25,7 +25,7 @@ test("should fail delegate resignation submission", async (t: any) => {
 	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
-	const continueBtn = "[data-testid=SendEntityResignation__continue-button]";
+	const continueBtn = "[data-testid=SendResignation__continue-button]";
 
 	// Go to step 2
 	await t.hover(Selector(continueBtn));
@@ -42,7 +42,7 @@ test("should fail delegate resignation submission", async (t: any) => {
 		replace: true,
 	});
 
-	const sendButton = "[data-testid=SendEntityResignation__send-button]";
+	const sendButton = "[data-testid=SendResignation__send-button]";
 	await t.click(Selector(sendButton));
 
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
@@ -52,7 +52,7 @@ test("should successfully submit delegate resignation", async (t) => {
 	await goToProfile(t);
 	await goToMyRegistrations(t);
 	await goToResignDelegatePage(t);
-	const continueButton = "[data-testid=SendEntityResignation__continue-button]";
+	const continueButton = "[data-testid=SendResignation__continue-button]";
 
 	// Go to step 2
 	await t.hover(Selector(continueButton));
@@ -69,7 +69,7 @@ test("should successfully submit delegate resignation", async (t) => {
 		{ replace: true },
 	);
 
-	const sendButton = "[data-testid=SendEntityResignation__send-button]";
+	const sendButton = "[data-testid=SendResignation__send-button]";
 	await t.click(Selector(sendButton));
 
 	await t.expect(Selector("[data-testid=SendDelegateResignation__summary-step]").exists).ok();

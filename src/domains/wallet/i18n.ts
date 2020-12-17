@@ -180,6 +180,8 @@ export const translations: { [key: string]: any } = {
 			SIGN_MESSAGE: "Sign Message",
 			STORE_HASH: "Store Hash",
 			WALLET_NAME: "Wallet Name",
+			REGISTER_DELEGATE: "Register Delegate",
+			RESIGN_DELEGATE: "Resign Delegate",
 		},
 	},
 

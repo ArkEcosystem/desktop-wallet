@@ -2,7 +2,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
-import { StepProps } from "domains/transaction/pages/SendEntityResignation/SendEntityResignation.models";
+import { StepProps } from "domains/transaction/pages/SendResignation/SendResignation.models";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

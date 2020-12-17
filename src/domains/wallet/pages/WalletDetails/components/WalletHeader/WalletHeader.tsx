@@ -1,4 +1,5 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -6,72 +7,58 @@ import { Clipboard } from "app/components/Clipboard";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
+import { useEnvironmentContext } from "app/contexts";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import React from "react";
+import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
+import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
+import { SignMessage } from "domains/wallet/components/SignMessage";
+import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
+import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
-type Props = {
-	address: string;
-	balance: BigNumber;
+type WalletHeaderProps = {
+	profile: Profile;
+	wallet: ReadWriteWallet;
 	currencyDelta?: number;
-	coin: string;
-	currencyBalance?: BigNumber;
 	exchangeCurrency?: string;
-	isLedger?: boolean;
-	isMultisig?: boolean;
-	isStarred?: boolean;
-	name?: string;
-	network: string;
-	publicKey?: string;
-	ticker: string;
-	showMultiSignatureOption?: boolean;
-	showSecondSignatureOption?: boolean;
-	showSignMessageOption?: boolean;
-	showStoreHashOption?: boolean;
-	showVerifyMessageOption?: boolean;
-	onDeleteWallet: () => void;
-	onMultiSignature: () => void;
-	onReceiveFunds: () => void;
-	onSecondSignature: () => void;
 	onSend?: () => void;
-	onSignMessage: () => void;
-	onStar: () => void;
-	onStoreHash: () => void;
-	onUpdateWalletName: () => void;
-	onVerifyMessage: () => void;
 };
 
-export const WalletHeader = ({
-	address,
-	balance,
-	coin,
-	currencyBalance,
-	currencyDelta,
-	exchangeCurrency,
-	isLedger,
-	isMultisig,
-	isStarred,
-	name,
-	network,
-	publicKey,
-	ticker,
-	showMultiSignatureOption,
-	showSecondSignatureOption,
-	showSignMessageOption,
-	showStoreHashOption,
-	showVerifyMessageOption,
-	onDeleteWallet,
-	onMultiSignature,
-	onReceiveFunds,
-	onSecondSignature,
-	onSend,
-	onSignMessage,
-	onStar,
-	onStoreHash,
-	onUpdateWalletName,
-	onVerifyMessage,
-}: Props) => {
+export const WalletHeader = ({ profile, wallet, currencyDelta, exchangeCurrency, onSend }: WalletHeaderProps) => {
+	const [modal, setModal] = useState<string | undefined>();
+
+	const history = useHistory();
+
 	const { t } = useTranslation();
+	const { persist } = useEnvironmentContext();
+
+	const handleStar = async () => {
+		wallet.toggleStarred();
+		await persist();
+	};
+
+	const handleUpdateName = async (name: string) => {
+		if (name) {
+			wallet.settings().set(WalletSetting.Alias, name);
+		} else {
+			wallet.settings().forget(WalletSetting.Alias);
+		}
+
+		await persist();
+
+		setModal(undefined);
+	};
+
+	const handleDeleteWallet = async () => {
+		profile.wallets().forget(wallet.id());
+		await persist();
+
+		setModal(undefined);
+
+		history.push(`/profiles/${profile.id()}/dashboard`);
+	};
 
 	const primaryOptions: DropdownOptionGroup = {
 		key: "primary",
@@ -89,18 +76,38 @@ export const WalletHeader = ({
 		],
 	};
 
-	if (showMultiSignatureOption) {
-		primaryOptions.options.push({
-			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
-			value: "multi-signature",
-		});
-	}
+	if (!wallet.isLedger()) {
+		if (wallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)) {
+			primaryOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
+				value: "multi-signature",
+			});
+		}
 
-	if (showSecondSignatureOption) {
-		primaryOptions.options.push({
-			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
-			value: "second-signature",
-		});
+		if (wallet.network().can(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			primaryOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
+				value: "second-signature",
+			});
+		}
+
+		if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
+			primaryOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
+				value: "delegate-registration",
+			});
+		}
+
+		if (
+			wallet.network().can(Coins.FeatureFlag.TransactionDelegateResignation) &&
+			wallet.isDelegate() &&
+			!wallet.isResignedDelegate()
+		) {
+			primaryOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
+				value: "delegate-resignation",
+			});
+		}
 	}
 
 	const additionalOptions: DropdownOptionGroup = {
@@ -109,21 +116,21 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (showSignMessageOption) {
+	if (wallet.network().can(Coins.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (showVerifyMessageOption) {
+	if (wallet.network().can(Coins.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.MODAL_VERIFY_MESSAGE.TITLE"),
 			value: "verify-message",
 		});
 	}
 
-	if (showStoreHashOption) {
+	if (wallet.network().can(Coins.FeatureFlag.TransactionIpfs)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH"),
 			value: "store-hash",
@@ -144,201 +151,240 @@ export const WalletHeader = ({
 	};
 
 	const handleSelect = (option: DropdownOption) => {
-		if (option.value === "wallet-name") {
-			return onUpdateWalletName();
-		}
-
-		if (option.value === "receive-funds") {
-			return onReceiveFunds();
-		}
-
 		if (option.value === "multi-signature") {
-			return onMultiSignature();
+			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-registration/multiSignature`);
 		}
 
 		if (option.value === "second-signature") {
-			return onSecondSignature();
+			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-registration/secondSignature`);
 		}
 
-		if (option.value === "sign-message") {
-			return onSignMessage();
+		if (option.value === "delegate-registration") {
+			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-registration/delegate`);
 		}
 
-		if (option.value === "verify-message") {
-			return onVerifyMessage();
+		if (option.value === "delegate-resignation") {
+			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-resignation`);
 		}
 
 		if (option.value === "store-hash") {
-			return onStoreHash();
+			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-ipfs`);
 		}
 
-		/* istanbul ignore else */
-		if (option.value === "delete-wallet") {
-			return onDeleteWallet();
-		}
+		setModal(option.value?.toString());
 	};
 
 	return (
-		<header data-testid="WalletHeader">
-			<div className="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800">
-				<div className="container flex items-center px-14 mx-auto">
-					<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800">
-						<div className="flex -space-x-1">
-							<NetworkIcon
-								coin={coin}
-								network={network}
-								size="lg"
-								className="border-theme-neutral-dark text-theme-secondary-text"
-								noShadow
-							/>
-							<Avatar size="lg" address={address} shadowColor="--theme-color-neutral-900" />
-						</div>
+		<>
+			<header data-testid="WalletHeader">
+				<div className="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800">
+					<div className="container flex items-center px-14 mx-auto">
+						<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800">
+							<div className="flex -space-x-1">
+								<NetworkIcon
+									coin={wallet.coinId()}
+									network={wallet.networkId()}
+									size="lg"
+									className="border-theme-neutral-dark text-theme-secondary-text"
+									noShadow
+								/>
+								<Avatar size="lg" address={wallet.address()} shadowColor="--theme-color-neutral-900" />
+							</div>
 
-						<div className="flex overflow-hidden flex-col">
-							<div className="flex items-center space-x-5 text-theme-secondary-text">
-								{name && (
-									<span data-testid="WalletHeader__name" className="text-sm font-semibold">
-										{name}
-									</span>
-								)}
-
-								<div className="flex items-center space-x-3">
-									{isLedger && (
-										<Tooltip content={t("COMMON.LEDGER")}>
-											<span data-testid="WalletHeader__ledger">
-												<Icon
-													name="Ledger"
-													className="hover:text-theme-neutral"
-													width={16}
-													height={16}
-												/>
-											</span>
-										</Tooltip>
+							<div className="flex overflow-hidden flex-col">
+								<div className="flex items-center space-x-5 text-theme-secondary-text">
+									{wallet.alias() && (
+										<span data-testid="WalletHeader__name" className="text-sm font-semibold">
+											{wallet.alias()}
+										</span>
 									)}
 
-									{isMultisig && (
-										<Tooltip content={t("COMMON.MULTISIGNATURE")}>
-											<span data-testid="WalletHeader__multisig">
-												<Icon
-													name="Multisig"
-													className="hover:text-theme-neutral"
-													width={20}
-													height={20}
-												/>
-											</span>
-										</Tooltip>
+									<div className="flex items-center space-x-3">
+										{wallet.isLedger() && (
+											<Tooltip content={t("COMMON.LEDGER")}>
+												<span data-testid="WalletHeader__ledger">
+													<Icon
+														name="Ledger"
+														className="hover:text-theme-neutral"
+														width={16}
+														height={16}
+													/>
+												</span>
+											</Tooltip>
+										)}
+
+										{wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
+											<Tooltip content={t("COMMON.MULTISIGNATURE")}>
+												<span data-testid="WalletHeader__multisig">
+													<Icon
+														name="Multisig"
+														className="hover:text-theme-neutral"
+														width={20}
+														height={20}
+													/>
+												</span>
+											</Tooltip>
+										)}
+									</div>
+								</div>
+
+								<div className="flex items-center space-x-5">
+									<span className="text-lg font-semibold text-white truncate">
+										{wallet.address()}
+									</span>
+
+									<div className="flex items-end mb-2 space-x-3 text-theme-secondary-text">
+										<Clipboard
+											data={wallet.address()}
+											tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}
+										>
+											<Icon
+												name="CopyAddress"
+												className="hover:text-theme-neutral"
+												width={13}
+												height={21}
+											/>
+										</Clipboard>
+
+										<Clipboard
+											data={wallet.publicKey()}
+											tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_PUBLIC_KEY")}
+										>
+											<Icon
+												name="CopyKey"
+												className="hover:text-theme-neutral"
+												width={17}
+												height={21}
+											/>
+										</Clipboard>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div className="flex items-center w-1/2 pl-12 space-x-2 h-13">
+							<div className="flex flex-col mr-auto">
+								<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
+									<span>{t("COMMON.BALANCE")}:</span>
+
+									{wallet.convertedBalance() && (
+										<Amount
+											value={wallet.convertedBalance()}
+											ticker={exchangeCurrency!}
+											data-testid="WalletHeader__currency-balance"
+											className="ml-1"
+										/>
+									)}
+
+									{!!currencyDelta && (
+										<span
+											className={`inline-flex items-center ml-2 ${
+												currencyDelta > 0 ? "text-theme-success" : "text-theme-danger"
+											}`}
+										>
+											<Icon
+												name="ChevronUp"
+												className={currencyDelta < 0 ? "rotate-180" : ""}
+												width={10}
+											/>
+											<span className="ml-1">{currencyDelta}%</span>
+										</span>
 									)}
 								</div>
+
+								<Amount
+									value={wallet.balance()}
+									ticker={wallet.currency()}
+									data-testid="WalletHeader__balance"
+									className="text-lg font-semibold text-white"
+								/>
 							</div>
 
-							<div className="flex items-center space-x-5">
-								<span className="text-lg font-semibold text-white truncate">{address}</span>
-
-								<div className="flex items-end mb-2 space-x-3 text-theme-secondary-text">
-									<Clipboard data={address} tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}>
-										<Icon
-											name="CopyAddress"
-											className="hover:text-theme-neutral"
-											width={13}
-											height={21}
-										/>
-									</Clipboard>
-
-									<Clipboard
-										data={publicKey}
-										tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_PUBLIC_KEY")}
-									>
-										<Icon
-											name="CopyKey"
-											className="hover:text-theme-neutral"
-											width={17}
-											height={21}
-										/>
-									</Clipboard>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div className="flex items-center w-1/2 pl-12 space-x-2 h-13">
-						<div className="flex flex-col mr-auto">
-							<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
-								<span>{t("COMMON.BALANCE")}:</span>
-
-								{currencyBalance && (
-									<Amount
-										value={currencyBalance}
-										ticker={exchangeCurrency!}
-										data-testid="WalletHeader__currency-balance"
-										className="ml-1"
-									/>
-								)}
-
-								{!!currencyDelta && (
-									<span
-										className={`inline-flex items-center ml-2 ${
-											currencyDelta > 0 ? "text-theme-success" : "text-theme-danger"
-										}`}
-									>
-										<Icon
-											name="ChevronUp"
-											className={currencyDelta < 0 ? "rotate-180" : ""}
-											width={10}
-										/>
-										<span className="ml-1">{currencyDelta}%</span>
-									</span>
-								)}
-							</div>
-
-							<Amount
-								value={balance}
-								ticker={ticker}
-								data-testid="WalletHeader__balance"
-								className="text-lg font-semibold text-white"
-							/>
-						</div>
-
-						<div className="my-auto">
-							<Button
-								size="icon"
-								variant="transparent"
-								className="w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
-								data-testid="WalletHeader__star-button"
-								onClick={onStar}
-							>
-								<Tooltip
-									content={
-										isStarred
-											? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
-											: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
-									}
+							<div className="my-auto">
+								<Button
+									size="icon"
+									variant="transparent"
+									className="w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+									data-testid="WalletHeader__star-button"
+									onClick={handleStar}
 								>
-									<span className={isStarred ? "text-theme-warning-400" : ""}>
-										<Icon name={isStarred ? "Star" : "StarOutline"} />
-									</span>
-								</Tooltip>
+									<Tooltip
+										content={
+											wallet.isStarred()
+												? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
+												: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
+										}
+									>
+										<span className={wallet.isStarred() ? "text-theme-warning-400" : ""}>
+											<Icon name={wallet.isStarred() ? "Star" : "StarOutline"} />
+										</span>
+									</Tooltip>
+								</Button>
+							</div>
+
+							<Button data-testid="WalletHeader__send-button" className="my-auto" onClick={onSend}>
+								{t("COMMON.SEND")}
 							</Button>
-						</div>
 
-						<Button data-testid="WalletHeader__send-button" className="my-auto" onClick={onSend}>
-							{t("COMMON.SEND")}
-						</Button>
-
-						<div data-testid="WalletHeader__more-button" className="my-auto">
-							<Dropdown
-								toggleContent={
-									<Button variant="secondary" size="icon" className="text-left">
-										<Icon name="Settings" width={20} height={20} />
-									</Button>
-								}
-								onSelect={handleSelect}
-								options={[primaryOptions, additionalOptions, secondaryOptions]}
-								dropdownClass="top-5 right-3 text-left"
-							/>
+							<div data-testid="WalletHeader__more-button" className="my-auto">
+								<Dropdown
+									toggleContent={
+										<Button variant="secondary" size="icon" className="text-left">
+											<Icon name="Settings" width={20} height={20} />
+										</Button>
+									}
+									onSelect={handleSelect}
+									options={[primaryOptions, additionalOptions, secondaryOptions]}
+									dropdownClass="top-5 right-3 text-left"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</header>
+			</header>
+
+			<SignMessage
+				profileId={profile.id()}
+				walletId={wallet.id()}
+				signatoryAddress={wallet.address()}
+				isOpen={modal === "sign-message"}
+				onClose={() => setModal(undefined)}
+				onCancel={() => setModal(undefined)}
+			/>
+
+			<VerifyMessage
+				isOpen={modal === "verify-message"}
+				onClose={() => setModal(undefined)}
+				onCancel={() => setModal(undefined)}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+				signatory={wallet.publicKey()}
+			/>
+
+			<ReceiveFunds
+				isOpen={modal === "receive-funds"}
+				address={wallet.address()}
+				icon={wallet.coinId()}
+				name={wallet.alias()}
+				network={wallet.networkId()}
+				onClose={() => setModal(undefined)}
+			/>
+
+			<UpdateWalletName
+				wallet={wallet}
+				profile={profile}
+				isOpen={modal === "wallet-name"}
+				onClose={() => setModal(undefined)}
+				onCancel={() => setModal(undefined)}
+				onSave={handleUpdateName}
+			/>
+
+			<DeleteWallet
+				isOpen={modal === "delete-wallet"}
+				onClose={() => setModal(undefined)}
+				onCancel={() => setModal(undefined)}
+				onDelete={handleDeleteWallet}
+			/>
+		</>
 	);
 };

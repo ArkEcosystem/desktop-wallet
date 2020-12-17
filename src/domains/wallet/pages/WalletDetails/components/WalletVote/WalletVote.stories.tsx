@@ -17,9 +17,9 @@ export default {
 };
 
 export const Default = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
-	<WalletVote votes={delegates} onButtonClick={action("onButtonClick")} />
+	<WalletVote onButtonClick={action("onButtonClick")} />
 );
 
 export const Empty = () => <WalletVote onButtonClick={action("onButtonClick")} />;
 
-export const Loading = () => <WalletVote isLoading={true} onButtonClick={action("onButtonClick")} />;
+export const Loading = () => <WalletVote onButtonClick={action("onButtonClick")} />;

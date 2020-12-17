@@ -1,8 +1,7 @@
-import { SendEntityRegistration } from "./SendEntityRegistration";
-import { SendEntityResignation } from "./SendEntityResignation";
-import { SendEntityUpdate } from "./SendEntityUpdate";
 import { SendIpfs } from "./SendIpfs";
+import { SendRegistration } from "./SendRegistration";
+import { SendResignation } from "./SendResignation";
 import { SendTransfer } from "./SendTransfer";
 import { SendVote } from "./SendVote";
 
-export { SendEntityRegistration, SendEntityResignation, SendTransfer, SendIpfs, SendVote, SendEntityUpdate };
+export { SendRegistration, SendResignation, SendTransfer, SendIpfs, SendVote };
