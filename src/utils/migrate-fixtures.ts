@@ -1,34 +1,36 @@
 import { Base64 } from "@arkecosystem/platform-sdk-crypto";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 
-export const migrateFixtures = () => {
-	const profiles: Record<string, any> = {};
+// TODO: Use Migrator
+export const migrateProfiles = async (env: Environment, profiles: any) => {
+	env.profiles().fill(profiles);
 
-	for (const [id, profileData] of Object.entries(fixtureData.profiles)) {
-		profiles[id] = {
-			id,
-			password: undefined,
-			data: Base64.encode(JSON.stringify(profileData)),
-		};
-	}
-	return { profiles, data: fixtureData.data };
-};
-
-export const restoreProfiles = async (environment: Environment) =>
-	Promise.allSettled(
-		environment
+	return Promise.allSettled(
+		env
 			.profiles()
 			.values()
 			.map(async (profile) => {
+				const profileData: Record<string, any> = profile.getRawData();
+				profile.setRawData({
+					id: profile.id(),
+					password: profile.settings().get(ProfileSetting.Password),
+					data: Base64.encode(JSON.stringify({ id: profile.id(), ...profileData })),
+				});
+
 				await profile.restore();
-
-				//@ts-ignore
-				const password = fixtureData.profiles[profile.id()].settings.PASSWORD;
-				if (password) {
-					profile.auth().setPassword(password);
-				}
-
 				return profile;
 			}),
 	);
+};
+
+export const restoreProfilePasswords = (env: Environment, passwords: any) =>
+	env
+		.profiles()
+		.values()
+		.map((profile) => {
+			const password = passwords?.profiles[profile.id()]?.password;
+			if (password) {
+				profile.auth().setPassword(password);
+			}
+			return profile;
+		});
