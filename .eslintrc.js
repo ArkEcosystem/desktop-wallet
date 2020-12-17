@@ -67,7 +67,8 @@ module.exports = {
 		"react-hooks/exhaustive-deps": "warn",
 		"react-hooks/rules-of-hooks": "error",
 		"react/self-closing-comp": "error",
-		"simple-import-sort/sort": "error",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
 		"unused-imports/no-unused-imports-ts": "error",
 	},
 	settings: {

@@ -1,6 +1,6 @@
+import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
 import { Money, Numeral } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
 import React from "react";
 
 type AmountProps = {

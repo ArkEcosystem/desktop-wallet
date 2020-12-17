@@ -1,5 +1,5 @@
-import { TransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
+import { TransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";

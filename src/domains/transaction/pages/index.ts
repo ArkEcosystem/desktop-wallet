@@ -5,4 +5,4 @@ import { SendIpfs } from "./SendIpfs";
 import { SendTransfer } from "./SendTransfer";
 import { SendVote } from "./SendVote";
 
-export { SendEntityRegistration, SendEntityResignation, SendTransfer, SendIpfs, SendVote, SendEntityUpdate };
+export { SendEntityRegistration, SendEntityResignation, SendEntityUpdate, SendIpfs, SendTransfer, SendVote };

@@ -1,5 +1,5 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { TransferInput } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { env, getDefaultProfileId, getDefaultWalletMnemonic } from "utils/testing-library";
 

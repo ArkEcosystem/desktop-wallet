@@ -1,6 +1,6 @@
+import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
 import { images } from "app/assets/images";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";

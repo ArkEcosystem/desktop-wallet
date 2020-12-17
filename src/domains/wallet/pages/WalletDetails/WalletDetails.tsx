@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
-import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
+import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";

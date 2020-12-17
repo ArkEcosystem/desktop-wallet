@@ -1,6 +1,6 @@
+import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { File } from "@arkecosystem/platform-sdk-ipfs";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
