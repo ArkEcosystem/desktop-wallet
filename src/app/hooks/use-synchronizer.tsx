@@ -1,5 +1,8 @@
+
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import { matchPath } from "react-router-dom";
 
 import { useNotifications, useUpdater } from "./";
 
@@ -41,11 +44,7 @@ export const useSynchronizer = (jobs: Job[]) => {
 		}
 	}, [run, jobs, stop]);
 
-	const runAll = useCallback(async () => {
-		for (const job of jobs) {
-			await run(job.callback);
-		}
-	}, [run, jobs]);
+	const runAll = useCallback(async () => Promise.allSettled(jobs.map((job) => run(job.callback))), [run, jobs]);
 
 	useEffect(() => {
 		const current = timers.current;
@@ -69,22 +68,10 @@ export const useEnvSynchronizer = () => {
 			callback: () => env.delegates().syncAll(),
 			interval: Intervals.Long,
 		};
+
 		const syncFees = {
 			callback: () => env.fees().syncAll(),
 			interval: Intervals.Medium,
-		};
-		const syncExchangeRates = {
-			callback: () => env.exchangeRates().syncAll(),
-			interval: Intervals.Long,
-		};
-		const syncWallets = {
-			callback: () => env.wallets().syncAll(),
-			interval: Intervals.Short,
-		};
-
-		const syncNotifications = {
-			callback: () => notifications.syncReceivedTransactions(),
-			interval: Intervals.Short,
 		};
 
 		const syncWalletUpdates = {
@@ -92,8 +79,61 @@ export const useEnvSynchronizer = () => {
 			interval: Intervals.Long,
 		};
 
-		return [syncDelegates, syncFees, syncExchangeRates, syncWallets, syncNotifications, syncWalletUpdates];
+		return [syncDelegates, syncFees, syncWalletUpdates];
 	}, [env, notifications, notifyForUpdates]);
 
 	return useSynchronizer(jobs);
+};
+
+const useProfileWatcher = () => {
+	const { env } = useEnvironmentContext();
+	const location = useLocation();
+	const pathname = (location as any).location?.pathname || location.pathname;
+	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
+	const profileId = (match?.params as any)?.profileId;
+
+	return useMemo(() => {
+		if (!profileId || env.profiles().count() === 0) return;
+		return env.profiles().findById(profileId);
+	}, [profileId, env, pathname, env.profiles().count()]);
+};
+
+export const useProfileSynchronizer = () => {
+	const { env } = useEnvironmentContext();
+	const { notifications } = useNotifications();
+
+	const profile = useProfileWatcher();
+
+	const walletsCount = profile?.wallets().count();
+
+	const jobs = useMemo(() => {
+		if (!profile) return [];
+
+		const syncExchangeRates = {
+			callback: () => {
+				const currencies = Object.keys(env.coins().all());
+				return Promise.all(currencies.map((currency) => env.exchangeRates().syncAll(profile, currency)));
+			},
+			interval: Intervals.Long,
+		};
+
+		const syncWallets = {
+			callback: () => env.wallets().syncByProfile(profile),
+			interval: Intervals.Short,
+		};
+
+		const syncNotifications = {
+			callback: () => notifications.notifyReceivedTransactions({ profile }),
+			interval: Intervals.Short,
+		};
+
+		return [syncWallets, syncExchangeRates, syncNotifications];
+	}, [env, profile, walletsCount]);
+
+	const { start, runAll } = useSynchronizer(jobs);
+
+	useEffect(() => {
+		runAll();
+		start();
+	}, [jobs, profile, env]);
 };
