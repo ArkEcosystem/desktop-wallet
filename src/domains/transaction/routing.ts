@@ -1,8 +1,4 @@
-import {
-	SendIpfs,
-	SendTransfer,
-	SendVote,
-} from "./pages";
+import { SendIpfs, SendTransfer, SendVote } from "./pages";
 
 export const TransactionRoutes = [
 	{
