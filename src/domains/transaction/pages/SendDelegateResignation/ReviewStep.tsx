@@ -6,7 +6,7 @@ import {
 	TransactionNetwork,
 	TransactionSender,
 } from "domains/transaction/components/TransactionDetail";
-import { StepProps } from "domains/transaction/pages/SendResignation/SendResignation.models";
+import { StepProps } from "domains/transaction/pages/SendDelegateResignation/SendDelegateResignation.models";
 import React from "react";
 import { useTranslation } from "react-i18next";
 

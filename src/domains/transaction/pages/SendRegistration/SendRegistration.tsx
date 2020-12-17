@@ -75,15 +75,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		register("network", { required: true });
 		register("registrationType", { required: true });
 		register("senderAddress", { required: true });
-
-		register("ipfsData");
-		register("ipfsData.images");
-		register("ipfsData.videos");
-		register("ipfsData.sourceControl");
-		register("ipfsData.socialMedia");
-		register("ipfsData.meta.displayName");
-		register("ipfsData.meta.description");
-		register("ipfsData.meta.website");
 	}, [register]);
 
 	useEffect(() => {
@@ -101,7 +92,9 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	}, [activeWallet, networks, setValue]);
 
 	useEffect(() => {
-		if (!activeWallet?.address?.() || !registrationType?.value) return;
+		if (!activeWallet?.address?.() || !registrationType?.value) {
+			return;
+		}
 
 		const fees = getFeesByRegistrationType(registrationType.value);
 		setValue("fees", fees);
@@ -172,7 +165,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		setAvailableNetworks(networks.filter((network) => userNetworks.includes(network.id())));
 	}, [activeProfile, networks]);
 
-	const submitForm = async () => {
+	const handleSubmit = async () => {
 		try {
 			const transaction = await registrationForm!.signTransaction({
 				env,
@@ -230,7 +223,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 					data-testid="Registration__form"
 					className="mx-auto max-w-xl"
 					context={form}
-					onSubmit={submitForm}
+					onSubmit={handleSubmit}
 				>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={stepCount} activeIndex={activeTab} />
@@ -242,7 +235,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
 									}
 									isRepeatDisabled={formState.isSubmitting}
-									onRepeat={form.handleSubmit(submitForm)}
+									onRepeat={form.handleSubmit(handleSubmit)}
 								/>
 							</TabPanel>
 
@@ -346,16 +339,5 @@ SendRegistration.defaultProps = {
 			max: "2",
 		},
 		fee: "0",
-		ipfsData: {
-			meta: {
-				displayName: undefined,
-				description: undefined,
-				website: undefined,
-			},
-			images: [],
-			videos: [],
-			sourceControl: [],
-			socialMedia: [],
-		},
 	},
 };

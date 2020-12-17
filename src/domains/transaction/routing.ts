@@ -1,4 +1,4 @@
-import { SendIpfs, SendRegistration, SendResignation, SendTransfer, SendVote } from "./pages";
+import { SendDelegateResignation, SendIpfs, SendRegistration, SendTransfer, SendVote } from "./pages";
 
 export const TransactionRoutes = [
 	{
@@ -7,9 +7,9 @@ export const TransactionRoutes = [
 		component: SendRegistration,
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId/send-resignation",
+		path: "/profiles/:profileId/wallets/:walletId/send-delegate-resignation",
 		exact: true,
-		component: SendResignation,
+		component: SendDelegateResignation,
 	},
 	{
 		path: "/profiles/:profileId/wallets/:walletId/send-transfer",

@@ -3,7 +3,7 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TransactionDetail, TransactionSender } from "domains/transaction/components/TransactionDetail";
-import { StepProps } from "domains/transaction/pages/SendResignation/SendResignation.models";
+import { StepProps } from "domains/transaction/pages/SendDelegateResignation/SendDelegateResignation.models";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";

@@ -1,12 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 
-export type PasswordType = "mnemonic" | "password" | "ledger";
-
-export type SendResignationProps = {
-	formDefaultData?: any;
-};
-
 export type StepProps = {
 	senderWallet: ReadWriteWallet;
 	delegate?: ReadOnlyWallet | any;

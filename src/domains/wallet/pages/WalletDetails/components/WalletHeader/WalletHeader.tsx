@@ -164,7 +164,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, exchangeCurrency,
 		}
 
 		if (option.value === "delegate-resignation") {
-			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-resignation`);
+			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-delegate-resignation`);
 		}
 
 		if (option.value === "store-hash") {
