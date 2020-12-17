@@ -107,6 +107,18 @@ describe("Settings", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
 		fireEvent.click(getByTestId("AdvancedMode__accept-button"));
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		// Toggle Test Development Network
+		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.DESCRIPTION,
+		);
+		fireEvent.click(getByTestId("DevelopmentNetwork__continue-button"));
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		// Toggle Test Development Network
+		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
+
 		// Toggle Update Ledger in Background
 		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
@@ -128,8 +140,6 @@ describe("Settings", () => {
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 
-		// Toggle Test Development networks
-		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
 		// Open Advanced Mode Modal
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER);
@@ -189,6 +199,41 @@ describe("Settings", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it.each([
+		["close", "modal__close-btn"],
+		["cancel", "DevelopmentNetwork__cancel-button"],
+		["continue", "DevelopmentNetwork__continue-button"],
+	])("should open & close development network modal (%s)", async (_, buttonId) => {
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(container).toBeTruthy();
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		act(() => {
+			fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
+		});
+
+		expect(getByTestId("modal__inner")).toBeInTheDocument();
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(
+			translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.DESCRIPTION,
+		);
+
+		await act(async () => {
+			fireEvent.click(getByTestId(buttonId));
+		});
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
 	it.each([

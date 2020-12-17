@@ -29,7 +29,7 @@ export const useValidation = () => {
 			sendVote: sendVote(t),
 			multiSignatureRegistration: multiSignatureRegistration(t),
 			receiveFunds: receiveFunds(t),
-			createProfile: createProfile(t),
+			createProfile: createProfile(t, env),
 		}),
 		[t, env],
 	);

@@ -48,7 +48,7 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION: "Create a new Profile below.",
 		NEW_PROFILE: "New Profile",
 		VALIDATION: {
-			NAME_EXISTS: "Profile name already exists",
+			NAME_EXISTS: "A profile with this name already exists",
 		},
 	},
 	PAGE_MY_REGISTRATIONS: {

@@ -11,7 +11,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -22,26 +22,20 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const { watch, register, setError, formState, setValue, trigger } = form;
-	const { name, confirmPassword } = watch();
-
-	const nameMaxLength = 42;
+	const { watch, register, formState, setValue, trigger } = form;
+	const { name, confirmPassword } = watch(["name", "confirmPassword"], { name: "" });
 
 	const [avatarImage, setAvatarImage] = useState("");
 
 	const { createProfile } = useValidation();
-	const profiles = useMemo(() => env.profiles().values(), [env]);
-	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
+
+	const formattedName = name.trim();
 
 	useEffect(() => {
-		if ((!avatarImage || isSvg) && name) {
-			setAvatarImage(AvatarSDK.make(name));
-		} else {
-			if (isSvg && !name) {
-				setAvatarImage("");
-			}
+		if (!avatarImage || avatarImage.endsWith("</svg>")) {
+			setAvatarImage(formattedName ? AvatarSDK.make(formattedName) : "");
 		}
-	}, [name, avatarImage, isSvg, setAvatarImage]);
+	}, [formattedName, avatarImage, setAvatarImage]);
 
 	const otherItems = [
 		{
@@ -54,25 +48,12 @@ export const CreateProfile = () => {
 	];
 
 	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
-		const formattedName = name.substring(0, nameMaxLength);
-		const profileExists = profiles.some((profile) => profile.name() === formattedName);
+		const profile = env.profiles().create(name.trim());
 
-		if (profileExists) {
-			return setError("name", {
-				type: "manual",
-				message: t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS"),
-			});
-		}
-
-		const profile = env.profiles().create(formattedName);
-
-		profile.settings().set(ProfileSetting.MarketProvider, "cryptocompare");
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
-		if (avatarImage && !isSvg) {
-			profile.settings().set(ProfileSetting.Avatar, avatarImage);
-		}
+		profile.settings().set(ProfileSetting.Avatar, avatarImage);
 
 		if (password) {
 			profile.auth().setPassword(password);
@@ -110,7 +91,7 @@ export const CreateProfile = () => {
 									<SelectProfileImage
 										className="-mt-6"
 										value={avatarImage}
-										name={name}
+										name={formattedName}
 										showLabel={false}
 										onSelect={setAvatarImage}
 									/>

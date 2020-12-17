@@ -3,6 +3,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider, ThemeProvider } from "app/contexts";
 import { httpClient } from "app/services";
+import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
 import os from "os";
 import React from "react";
@@ -98,11 +99,6 @@ describe("CreateProfile", () => {
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
-		// Trigger field errors
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
-
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
@@ -150,35 +146,47 @@ describe("CreateProfile", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should not create new profile if profile name exists", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
+	it("should not be able to create new profile if name already exists", async () => {
+		const name = "test profile";
+		const profile = env.profiles().create(name);
+
+		const { asFragment, getAllByTestId, getByTestId, getByText } = await renderComponent();
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: name } });
 
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
+		expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS)).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+
+		env.profiles().forget(profile.id());
+	});
+
+	it("should not be able to create new profile if name is too long", async () => {
+		const { asFragment, getAllByTestId, getByTestId, getByText } = await renderComponent();
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
-
-		await act(async () => {
-			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
-		});
-
+		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
+
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile".repeat(10) } });
+
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
+
+		expect(getByText("'Name' should have at most 42 characters")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -203,7 +211,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		expect(env.profiles().values()[2].usesPassword()).toBe(true);
+		expect(env.profiles().last().usesPassword()).toBe(true);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -211,34 +219,26 @@ describe("CreateProfile", () => {
 	it("should fail password confirmation", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
-		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
-		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "test password" } });
-		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "wrong" } });
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "asdasdas" } });
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
-
-		await act(async () => {
-			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
-		});
-
+		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
+		fireEvent.change(getAllByTestId("Input")[1], { target: { value: "test password" } });
+		fireEvent.change(getAllByTestId("Input")[2], { target: { value: "wrong" } });
+
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
-		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveAttribute("aria-invalid"));
 
-		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "" } });
 		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "password" } });
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "password" } });
 
-		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveValue(""));
-		await waitFor(() => expect(getAllByTestId("Input")[1]).toHaveValue("password"));
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
-		await waitFor(() => expect(getAllByTestId("Input")[2]).toHaveAttribute("aria-invalid"));
+		fireEvent.input(getAllByTestId("Input")[2], { target: { value: "test password" } });
+		fireEvent.input(getAllByTestId("Input")[1], { target: { value: "wrong" } });
+
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
