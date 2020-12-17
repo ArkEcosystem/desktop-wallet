@@ -25,7 +25,7 @@ import fixtureData from "tests/fixtures/env/storage.json";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 import { StubStorage } from "tests/mocks";
 import { Theme } from "types";
-import { migrateProfiles,restoreProfilePasswords } from "utils/migrate-fixtures";
+import { migrateProfiles, restoreProfilePasswords } from "utils/migrate-fixtures";
 
 import { middlewares, RouterView, routes } from "../router";
 import {
