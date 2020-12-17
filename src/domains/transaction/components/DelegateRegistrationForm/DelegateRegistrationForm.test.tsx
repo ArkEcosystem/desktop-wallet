@@ -114,74 +114,6 @@ describe("DelegateRegistrationForm", () => {
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
-	it("should error for invalid username", async () => {
-		const { asFragment, container, form, getByTestId, rerender } = await renderComponent();
-
-		await act(async () => {
-			fireEvent.change(getByTestId("Input__username"), { target: { value: "invalid delegate" } });
-		});
-
-		await act(async () => {
-			rerender(
-				<FormProvider {...form}>
-					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
-				</FormProvider>,
-			);
-
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
-		});
-
-		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("invalid delegate"));
-		await waitFor(() => expect(container).toHaveTextContent("'Delegate Name' is invalid"));
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
-	it("should error for long username", async () => {
-		const { asFragment, container, form, getByTestId, rerender } = await renderComponent();
-
-		await act(async () => {
-			fireEvent.change(getByTestId("Input__username"), {
-				target: { value: "thisisaveryveryverylongdelegatename" },
-			});
-		});
-
-		await act(async () => {
-			rerender(
-				<FormProvider {...form}>
-					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
-				</FormProvider>,
-			);
-
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
-		});
-
-		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("thisisaveryveryverylongdelegatename"));
-		await waitFor(() => expect(container).toHaveTextContent("'Delegate Name' should have at most 20 characters"));
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
-	it("should error if username already exists", async () => {
-		const { asFragment, container, form, getByTestId, rerender } = await renderComponent();
-
-		await act(async () => {
-			fireEvent.change(getByTestId("Input__username"), { target: { value: "arkx" } });
-		});
-
-		await act(async () => {
-			rerender(
-				<FormProvider {...form}>
-					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
-				</FormProvider>,
-			);
-
-			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
-		});
-
-		await waitFor(() => expect(getByTestId("Input__username")).toHaveValue("arkx"));
-		await waitFor(() => expect(container).toHaveTextContent("'Delegate Name' already exists"));
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
 	it("should set fee", async () => {
 		const { asFragment, getByTestId } = await renderComponent({ fee: "100000000" });
 
@@ -194,6 +126,51 @@ describe("DelegateRegistrationForm", () => {
 
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should show error if username contains illegal characters", async () => {
+		const { asFragment, getByTestId, getByText } = await renderComponent();
+
+		await act(async () => {
+			fireEvent.change(getByTestId("Input__username"), { target: { value: "<invalid>" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
+			expect(getByText("The following characters are not allowed: '<', '>'")).toBeTruthy();
+		});
+
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should error if username is too long", async () => {
+		const { asFragment, getByTestId, getByText } = await renderComponent();
+
+		await act(async () => {
+			fireEvent.change(getByTestId("Input__username"), {
+				target: { value: "thisisaveryveryverylongdelegatename" },
+			});
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
+			expect(getByText("'Delegate Name' should have at most 20 characters")).toBeTruthy();
+		});
+
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should show error if username already exists", async () => {
+		const { asFragment, getByTestId, getByText } = await renderComponent();
+
+		await act(async () => {
+			fireEvent.change(getByTestId("Input__username"), { target: { value: "arkx" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
+			expect(getByText("'Delegate Name' already exists")).toBeTruthy();
+		});
 	});
 
 	it("should sign transaction", async () => {

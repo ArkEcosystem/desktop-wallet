@@ -221,6 +221,7 @@ export const translations: { [key: string]: any } = {
 		OPTIONAL: "This field is optional",
 		FIELD_REQUIRED: "'{{field}}' is required",
 		FIELD_INVALID: "'{{field}}' is invalid",
+		ILLEGAL_CHARACTERS: "The following characters are not allowed: {{- characters}}",
 		IS_REQUIRED: "is required",
 		EXISTS: "'{{field}}' already exists",
 		MAX_LENGTH: "'{{field}}' should have at most {{maxLength}} characters",
