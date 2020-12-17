@@ -20,6 +20,7 @@ type WalletsProps = {
 	onSelectViewType?: any;
 	onWalletAction?: any;
 	listPagerLimit?: number;
+	walletsCount?: number;
 };
 
 export const Wallets = ({
@@ -28,6 +29,7 @@ export const Wallets = ({
 	onImportWallet,
 	onImportLedgerWallet,
 	onWalletAction,
+	walletsCount,
 	listPagerLimit = 10,
 }: WalletsProps) => {
 	const [viewMore, setViewMore] = useState(false);
@@ -46,7 +48,7 @@ export const Wallets = ({
 			.wallets()
 			.values()
 			.filter((wallet) => wallet.network().isLive());
-	}, [activeProfile]);
+	}, [activeProfile, walletsCount]);
 
 	const { listWallets, listHasMore, gridWallets, sliderOptions } = useWalletDisplay({
 		wallets,

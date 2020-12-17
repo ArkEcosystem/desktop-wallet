@@ -14,12 +14,14 @@ export const Dashboard = () => {
 	const activeProfile = useActiveProfile();
 
 	const { showTransactions } = useDashboardConfig({ profile: activeProfile });
+	const profileWalletsCount = activeProfile.wallets().count();
 
 	return (
 		<>
 			<Page profile={activeProfile}>
 				<Wallets
 					title={t("COMMON.WALLETS")}
+					walletsCount={profileWalletsCount}
 					onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 					onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
 					onImportLedgerWallet={() =>
@@ -27,7 +29,7 @@ export const Dashboard = () => {
 					}
 				/>
 
-				<Transactions profile={activeProfile} isVisible={showTransactions} />
+				<Transactions profile={activeProfile} isVisible={showTransactions} walletsCount={profileWalletsCount} />
 			</Page>
 		</>
 	);

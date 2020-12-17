@@ -161,6 +161,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 	const getExchangeCurrency = () => profile?.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
+	const profileWalletsCount = profile?.wallets().count();
 	const wallets = useMemo(() => {
 		if (!profile) return [];
 
@@ -170,7 +171,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 			?.wallets()
 			.values()
 			.filter((wallet) => wallet.network().isLive());
-	}, [profile]);
+	}, [profile, profileWalletsCount]);
 
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
