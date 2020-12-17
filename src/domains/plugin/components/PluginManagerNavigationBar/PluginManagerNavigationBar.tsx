@@ -31,9 +31,9 @@ export const PluginManagerNavigationBar = ({
 	return (
 		<NavWrapper
 			data-testid="PluginManagerNavigationBar"
-			className="sticky md:top-24 top-20 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+			className="sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
 		>
-			<div className="container flex items-center justify-between mx-auto px-14">
+			<div className="container flex justify-between items-center px-14 mx-auto">
 				<div>
 					<ul className="flex h-24">
 						{menu &&
@@ -56,7 +56,7 @@ export const PluginManagerNavigationBar = ({
 									</button>
 
 									{index < menu.length - 1 && (
-										<div className="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800" />
+										<div className="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800" />
 									)}
 								</li>
 							))}
@@ -76,7 +76,7 @@ export const PluginManagerNavigationBar = ({
 						<span className="ml-1 text-theme-neutral dark:text-theme-neutral-700">8</span>
 					</button>
 
-					<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 					<LayoutControls
 						data-testid="PluginManagerControls"
