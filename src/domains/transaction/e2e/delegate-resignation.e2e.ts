@@ -1,8 +1,12 @@
 import { Selector } from "testcafe";
 
+import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
-import { goToWallet } from "../../wallet/e2e/common";
+import { goToProfile } from "../../profile/e2e/common";
+import { importWalletByAddress } from "../../wallet/e2e/common";
 import { goToDelegateResignationPage } from "./common";
+
+const translations = buildTranslations();
 
 createFixture(`Delegate Resignation action`, [
 	mockRequest(
@@ -19,10 +23,29 @@ createFixture(`Delegate Resignation action`, [
 			},
 		},
 	),
+	mockRequest(
+		"https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+		{
+			address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+			publicKey: "02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
+			nonce: "1",
+			balance: "9990000000",
+			attributes: {
+				delegate: {
+					username: "testwallet",
+				},
+			},
+			isDelegate: true,
+			isResigned: false,
+		},
+	),
 ]);
 
 test("should fail delegate resignation submission", async (t: any) => {
-	await goToWallet(t, "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
+	await goToProfile(t);
+
+	await importWallet(t, "passphrase");
+
 	await goToDelegateResignationPage(t);
 
 	const continueBtn = "[data-testid=SendDelegateResignation__continue-button]";
@@ -37,19 +60,17 @@ test("should fail delegate resignation submission", async (t: any) => {
 
 	// Type wrong mnemonic
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
-
-	await t.typeText(Selector("[data-testid=AuthenticationStep__second-mnemonic]"), "wrong second mnemonic", {
-		replace: true,
-	});
-
-	const sendButton = "[data-testid=SendDelegateResignation__send-button]";
-	await t.click(Selector(sendButton));
-
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
+
+	const sendButton = Selector("button").withText(translations.COMMON.SEND);
+	await t.expect(sendButton.hasAttribute("disabled")).ok();
 });
 
 test("should successfully submit delegate resignation", async (t) => {
-	await goToWallet(t, "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
+	await goToProfile(t);
+
+	await importWalletByAddress(t, "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f");
+
 	await goToDelegateResignationPage(t);
 
 	const continueButton = "[data-testid=SendDelegateResignation__continue-button]";
@@ -62,15 +83,13 @@ test("should successfully submit delegate resignation", async (t) => {
 	await t.hover(Selector(continueButton));
 	await t.click(Selector(continueButton));
 
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "v3wallet2", { replace: true });
-	await t.typeText(
-		Selector("[data-testid=AuthenticationStep__second-mnemonic]"),
-		"merge warfare desk catch produce typical young submit enemy wool off card",
-		{ replace: true },
-	);
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
+	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).notOk();
 
-	const sendButton = "[data-testid=SendDelegateResignation__send-button]";
-	await t.click(Selector(sendButton));
+	const sendButton = Selector("button").withText(translations.COMMON.SEND);
+	await t.expect(sendButton.hasAttribute("disabled")).notOk();
+
+	await t.click(sendButton);
 
 	await t.expect(Selector("[data-testid=SendDelegateResignation__summary-step]").exists).ok();
 });

@@ -10,6 +10,6 @@ test("should navigate to transfer page", async (t) => {
 });
 
 test("should navigate to delegate resignation page", async (t) => {
-	await goToWallet(t, "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
+	await goToWallet(t, "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f");
 	await goToDelegateResignationPage(t);
 });

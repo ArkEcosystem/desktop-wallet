@@ -2,9 +2,13 @@ import { Selector } from "testcafe";
 
 import { CustomSelector, CustomSnapshot } from "../../../utils/e2e-interfaces";
 import { createFixture, scrollToBottom } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "./common";
 
-createFixture(`Wallet Details`).beforeEach(async (t) => await goToWallet(t));
+createFixture(`Wallet Details`).beforeEach(async (t) => {
+	await goToProfile(t);
+	await goToWallet(t);
+});
 
 // TODO: Investigate better and fix why loading is immediate in e2e
 // test("should show initial loading state", async (t) => {

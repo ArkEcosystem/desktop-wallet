@@ -34,7 +34,7 @@ createFixture(`IPFS Transaction action`, [
 ]);
 
 test("should navigate to IPFS page", async (t) => {
-	// Navigate to wallet page
+	await goToProfile(t);
 	await goToWallet(t);
 
 	// Click store hash option in dropdown menu
@@ -50,7 +50,7 @@ test("should navigate to IPFS page", async (t) => {
 });
 
 test("should show an error if an invalid IPFS hash is entered", async (t) => {
-	// Navigate to wallet page
+	await goToProfile(t);
 	await goToWallet(t);
 
 	// Click store hash option in dropdown menu
@@ -70,7 +70,7 @@ test("should show an error if an invalid IPFS hash is entered", async (t) => {
 });
 
 test("should show an error if wrong mnemonic", async (t) => {
-	// Navigate to wallet page
+	await goToProfile(t);
 	await goToWallet(t);
 
 	// Click store hash option in dropdown menu

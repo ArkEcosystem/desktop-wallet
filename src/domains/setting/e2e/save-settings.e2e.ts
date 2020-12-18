@@ -22,6 +22,7 @@ test("should save settings", async (t) => {
 	await t.click(Selector("[data-testid=AdvancedMode__accept-button]"));
 	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 
+	await t.hover(Selector("[data-testid=SelectDropdownInput__typeahead]").withText("1 minute"));
 	await t.click(Selector("[data-testid=SelectDropdownInput__typeahead]").withText("1 minute"));
 	await t.click('[data-testid="select-list__toggle-option-2"]');
 
