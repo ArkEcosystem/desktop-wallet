@@ -10,19 +10,19 @@ exports[`SignMessage should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fznyAO ioJhAT absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ gbgRxA w-11 h-11"
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxhUy gyuKyi"
+            class="sc-bdfBwQ bfBhNR"
             height="14"
             width="14"
           >
@@ -56,7 +56,7 @@ exports[`SignMessage should render 1`] = `
               data-testid="SignMessage__form"
             >
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
               >
                 <label
                   class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -73,7 +73,7 @@ exports[`SignMessage should render 1`] = `
                   class="relative"
                 >
                   <input
-                    class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="Input"
                     disabled=""
                     name="signatory-address"
@@ -86,7 +86,7 @@ exports[`SignMessage should render 1`] = `
                       class="flex items-center"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD"
                         data-testid="Avatar"
                       >
                         <div
@@ -109,7 +109,7 @@ exports[`SignMessage should render 1`] = `
                 </div>
               </fieldset>
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
               >
                 <label
                   class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -123,14 +123,14 @@ exports[`SignMessage should render 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="SignMessage__message-input"
                   name="message"
                   type="text"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
               >
                 <label
                   class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -144,17 +144,17 @@ exports[`SignMessage should render 1`] = `
                   />
                 </label>
                 <div
-                  class="sc-fzozJi OgXfh max-w-20"
+                  class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                   data-testid="InputPassword"
                 >
                   <input
-                    class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                    class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                     data-testid="SignMessage__mnemonic-input"
                     name="mnemonic"
                     type="password"
                   />
                   <div
-                    class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                   >
                     <button
                       class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -162,7 +162,7 @@ exports[`SignMessage should render 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-AxhUy cPXLjK"
+                        class="sc-bdfBwQ fPrsah"
                         height="1em"
                         width="1em"
                       >
@@ -178,14 +178,14 @@ exports[`SignMessage should render 1`] = `
                 class="flex justify-end space-x-3"
               >
                 <button
-                  class="sc-AxirZ bVQYPH"
+                  class="Button-mdtvtf-0 khjEGA"
                   data-testid="SignMessage__cancel"
                   type="button"
                 >
                   Cancel
                 </button>
                 <button
-                  class="sc-AxirZ dsMKOl"
+                  class="Button-mdtvtf-0 cvPqli"
                   data-testid="SignMessage__submit-button"
                   type="submit"
                 >
@@ -211,19 +211,19 @@ exports[`SignMessage should sign message 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fznyAO ioJhAT absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ gbgRxA w-11 h-11"
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxhUy gyuKyi"
+            class="sc-bdfBwQ bfBhNR"
             height="14"
             width="14"
           >
@@ -257,7 +257,7 @@ exports[`SignMessage should sign message 1`] = `
               data-testid="SignMessage__form"
             >
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
               >
                 <label
                   class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -274,7 +274,7 @@ exports[`SignMessage should sign message 1`] = `
                   class="relative"
                 >
                   <input
-                    class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="Input"
                     disabled=""
                     name="signatory-address"
@@ -287,7 +287,7 @@ exports[`SignMessage should sign message 1`] = `
                       class="flex items-center"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bXyrQO"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD"
                         data-testid="Avatar"
                       >
                         <div
@@ -310,7 +310,7 @@ exports[`SignMessage should sign message 1`] = `
                 </div>
               </fieldset>
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
               >
                 <label
                   class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -324,14 +324,14 @@ exports[`SignMessage should sign message 1`] = `
                   />
                 </label>
                 <input
-                  class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="SignMessage__message-input"
                   name="message"
                   type="text"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
               >
                 <label
                   class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -345,17 +345,17 @@ exports[`SignMessage should sign message 1`] = `
                   />
                 </label>
                 <div
-                  class="sc-fzozJi OgXfh max-w-20"
+                  class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                   data-testid="InputPassword"
                 >
                   <input
-                    class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                    class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                     data-testid="SignMessage__mnemonic-input"
                     name="mnemonic"
                     type="password"
                   />
                   <div
-                    class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                   >
                     <button
                       class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -363,7 +363,7 @@ exports[`SignMessage should sign message 1`] = `
                       type="button"
                     >
                       <div
-                        class="sc-AxhUy cPXLjK"
+                        class="sc-bdfBwQ fPrsah"
                         height="1em"
                         width="1em"
                       >
@@ -379,14 +379,14 @@ exports[`SignMessage should sign message 1`] = `
                 class="flex justify-end space-x-3"
               >
                 <button
-                  class="sc-AxirZ bVQYPH"
+                  class="Button-mdtvtf-0 khjEGA"
                   data-testid="SignMessage__cancel"
                   type="button"
                 >
                   Cancel
                 </button>
                 <button
-                  class="sc-AxirZ dsMKOl"
+                  class="Button-mdtvtf-0 cvPqli"
                   data-testid="SignMessage__submit-button"
                   type="submit"
                 >

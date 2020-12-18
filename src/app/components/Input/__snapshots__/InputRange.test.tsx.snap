@@ -3,10 +3,10 @@
 exports[`InputRange should render with default value 1`] = `
 <DocumentFragment>
   <div
-    class="sc-Axmtr jzhOwR"
+    class="InputGroup-sc-1obbdqe-3 bgPpWR"
   >
     <input
-      class="sc-AxhCb cSTvrC overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+      class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
       data-testid="InputCurrency"
       type="text"
       value="5"
@@ -19,19 +19,19 @@ exports[`InputRange should render with default value 1`] = `
         data-testid="Range"
       >
         <div
-          class="sc-AxjAm gVIMxU"
+          class="Range__Track-sc-10itqc2-0 sgjTD"
           data-testid="Range__track"
           style="transform: scale(1); cursor: pointer;"
         >
           <div
-            class="sc-AxirZ iCiXDi"
+            class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
             data-testid="Range__track__filled"
           >
             <div
               aria-valuemax="10"
               aria-valuemin="0"
               aria-valuenow="5"
-              class="sc-AxiKw fncWHU"
+              class="Range__Thumb-sc-10itqc2-2 RpEAg"
               data-testid="Range__thumb"
               draggable="false"
               role="slider"

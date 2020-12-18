@@ -10,11 +10,11 @@ exports[`AddressTable should render 1`] = `
     >
       <div
         aria-label="ARK Devnet"
-        class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+        class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
-          class="sc-AxjAm buCJuk"
+          class="sc-bdfBwQ iyevwF"
           data-testid="NetworkIcon__icon"
           height="20"
           width="20"
@@ -40,7 +40,7 @@ exports[`AddressTable should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxirZ jhHiEf -mt-3"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -71,7 +71,7 @@ exports[`AddressTable should render 1`] = `
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxjAm hdgaLj"
+                    class="sc-bdfBwQ iABjnS"
                     height="12"
                     width="15"
                   >
@@ -115,7 +115,7 @@ exports[`AddressTable should render 1`] = `
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxjAm hdgaLj"
+                    class="sc-bdfBwQ iABjnS"
                     height="12"
                     width="15"
                   >
@@ -202,15 +202,15 @@ exports[`AddressTable should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="sc-AxhCb jCOJxD group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxiKw lptRhd space-x-4"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
                   data-testid="Avatar"
                 >
                   <div
@@ -233,7 +233,7 @@ exports[`AddressTable should render 1`] = `
                     ARK Wallet 1
                   </span>
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -243,7 +243,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv justify-center text-sm font-bold text-center align-middle"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center text-sm font-bold text-center align-middle"
               >
                 <div
                   class="inline-flex items-center space-x-2"
@@ -252,7 +252,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
               >
                 <span
                   data-testid="Amount"
@@ -263,10 +263,10 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv space-x-4 font-bold"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4 font-bold"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
                   data-testid="Avatar"
                 >
                   <div
@@ -286,7 +286,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv justify-center font-bold text-theme-secondary-text"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text"
               >
                 <span>
                   #
@@ -295,10 +295,10 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv justify-center"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
               >
                 <div
-                  class="sc-AxjAm cpczEI text-xl text-theme-primary"
+                  class="sc-bdfBwQ fPrsah text-xl text-theme-primary"
                   data-testid="AddressRow__profile"
                   height="1em"
                   width="1em"
@@ -311,10 +311,10 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv justify-center"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
               >
                 <div
-                  class="sc-AxjAm jmgDQY text-theme-success"
+                  class="sc-bdfBwQ iSzUah text-theme-success"
                   data-testid="AddressRow__status"
                   height="22"
                   width="22"
@@ -327,10 +327,10 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxiKw jYnXjB justify-end"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
               >
                 <button
-                  class="sc-AxheI fWdQCG"
+                  class="Button-mdtvtf-0 khjEGA"
                   data-testid="AddressRow__select-0"
                   type="button"
                 >
@@ -356,11 +356,11 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
     >
       <div
         aria-label="ARK Devnet"
-        class="sc-AxhUy iDenJW border-theme-primary-100 text-theme-primary-400"
+        class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
-          class="sc-AxjAm buCJuk"
+          class="sc-bdfBwQ iyevwF"
           data-testid="NetworkIcon__icon"
           height="20"
           width="20"
@@ -386,7 +386,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
       </div>
     </div>
     <div
-      class="sc-AxirZ jhHiEf -mt-3"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -417,7 +417,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxjAm hdgaLj"
+                    class="sc-bdfBwQ iABjnS"
                     height="12"
                     width="15"
                   >
@@ -461,7 +461,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxjAm hdgaLj"
+                    class="sc-bdfBwQ iABjnS"
                     height="12"
                     width="15"
                   >
@@ -520,15 +520,15 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
           role="rowgroup"
         >
           <tr
-            class="sc-AxhCb jCOJxD group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
             data-testid="TableRow"
           >
             <td>
               <div
-                class="sc-AxiKw lptRhd space-x-4"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
                   data-testid="Avatar"
                 >
                   <div
@@ -551,7 +551,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                     ARK Wallet 1
                   </span>
                   <span
-                    class="sc-AxgMl fFPQpl text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -561,7 +561,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv justify-center text-sm font-bold text-center align-middle"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center text-sm font-bold text-center align-middle"
               >
                 <div
                   class="inline-flex items-center space-x-2"
@@ -570,7 +570,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text whitespace-no-wrap"
               >
                 <span
                   data-testid="Amount"
@@ -581,7 +581,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv space-x-4 font-bold"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4 font-bold"
               >
                 <div
                   class="flex items-center h-11"
@@ -593,7 +593,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                       class="inline-block"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                         data-testid="Avatar"
                       >
                         <div
@@ -613,7 +613,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="sc-AxiKw kzuWLv"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
               >
                 <div
                   class="font-bold text-theme-neutral-light"
@@ -631,10 +631,10 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="sc-AxiKw jYnXjB justify-end"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
               >
                 <button
-                  class="sc-AxheI fWdQCG"
+                  class="Button-mdtvtf-0 khjEGA"
                   data-testid="AddressRow__select-0"
                   type="button"
                 >

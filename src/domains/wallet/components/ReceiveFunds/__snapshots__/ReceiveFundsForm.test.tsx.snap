@@ -13,7 +13,7 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
         class="mt-8 space-y-8"
       >
         <fieldset
-          class="sc-AxjAm fmGClo flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
         >
           <label
             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -23,7 +23,7 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
             Amount
           </label>
           <input
-            class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="ReceiveFundsForm__amount"
             name="amount"
             placeholder="Amount"
@@ -32,7 +32,7 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
           />
         </fieldset>
         <fieldset
-          class="sc-AxjAm fmGClo flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
         >
           <label
             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -48,10 +48,10 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
             </span>
           </label>
           <div
-            class="sc-fzqNJr gmzgI"
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               placeholder=" "
@@ -59,7 +59,7 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
               value=""
             />
             <div
-              class="sc-fznZeY sc-fzqBZW iAaafO px-2 text-sm pointer-events-none text-theme-neutral"
+              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-neutral"
               data-testid="InputCounter__counter"
             >
               0/255
@@ -85,7 +85,7 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
         class="mt-8 space-y-8"
       >
         <fieldset
-          class="sc-AxjAm fmGClo flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
         >
           <label
             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -95,7 +95,7 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
             Amount
           </label>
           <input
-            class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="ReceiveFundsForm__amount"
             name="amount"
             placeholder="Amount"
@@ -104,7 +104,7 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
           />
         </fieldset>
         <fieldset
-          class="sc-AxjAm fmGClo flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
         >
           <label
             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -120,10 +120,10 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
             </span>
           </label>
           <div
-            class="sc-fzqNJr gmzgI"
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               placeholder=" "
@@ -131,7 +131,7 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
               value=""
             />
             <div
-              class="sc-fznZeY sc-fzqBZW iAaafO px-2 text-sm pointer-events-none text-theme-neutral"
+              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-neutral"
               data-testid="InputCounter__counter"
             >
               4/255
@@ -157,7 +157,7 @@ exports[`ReceiveFundsForm should render 1`] = `
         class="mt-8 space-y-8"
       >
         <fieldset
-          class="sc-AxjAm fmGClo flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
         >
           <label
             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -167,7 +167,7 @@ exports[`ReceiveFundsForm should render 1`] = `
             Amount
           </label>
           <input
-            class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="ReceiveFundsForm__amount"
             name="amount"
             placeholder="Amount"
@@ -176,7 +176,7 @@ exports[`ReceiveFundsForm should render 1`] = `
           />
         </fieldset>
         <fieldset
-          class="sc-AxjAm fmGClo flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
         >
           <label
             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -192,10 +192,10 @@ exports[`ReceiveFundsForm should render 1`] = `
             </span>
           </label>
           <div
-            class="sc-fzqNJr gmzgI"
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               placeholder=" "
@@ -203,7 +203,7 @@ exports[`ReceiveFundsForm should render 1`] = `
               value=""
             />
             <div
-              class="sc-fznZeY sc-fzqBZW iAaafO px-2 text-sm pointer-events-none text-theme-neutral"
+              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-neutral"
               data-testid="InputCounter__counter"
             >
               0/255
@@ -229,7 +229,7 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
         class="mt-8 space-y-8"
       >
         <fieldset
-          class="sc-AxjAm fmGClo flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
         >
           <label
             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -239,7 +239,7 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
             Amount
           </label>
           <input
-            class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="ReceiveFundsForm__amount"
             name="amount"
             placeholder="Amount"
@@ -248,7 +248,7 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
           />
         </fieldset>
         <fieldset
-          class="sc-AxjAm fmGClo flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
         >
           <label
             class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -264,10 +264,10 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
             </span>
           </label>
           <div
-            class="sc-fzqNJr gmzgI"
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               placeholder=" "
@@ -275,7 +275,7 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
               value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             />
             <div
-              class="sc-fznZeY sc-fzqBZW iAaafO px-2 text-sm pointer-events-none text-theme-neutral"
+              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV px-2 text-sm pointer-events-none text-theme-neutral"
               data-testid="InputCounter__counter"
             >
               256/255
@@ -287,13 +287,13 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
           data-testid="ReceiveFundsForm__smartbridge-warning"
         >
           <div
-            class="sc-fznyAO kutBGx flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+            class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
           >
             <div
               class="flex items-center justify-center text-theme-warning-600"
             >
               <div
-                class="sc-AxhCb djOzjH"
+                class="sc-bdfBwQ daKoZl"
                 height="1.75em"
                 width="1.75em"
               >
