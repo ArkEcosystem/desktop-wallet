@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -22,11 +22,10 @@ type WalletHeaderProps = {
 	profile: Profile;
 	wallet: ReadWriteWallet;
 	currencyDelta?: number;
-	exchangeCurrency?: string;
 	onSend?: () => void;
 };
 
-export const WalletHeader = ({ profile, wallet, currencyDelta, exchangeCurrency, onSend }: WalletHeaderProps) => {
+export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletHeaderProps) => {
 	const [modal, setModal] = useState<string | undefined>();
 
 	const history = useHistory();
@@ -272,7 +271,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, exchangeCurrency,
 									{wallet.convertedBalance() && (
 										<Amount
 											value={wallet.convertedBalance()}
-											ticker={exchangeCurrency!}
+											ticker={profile.settings().get(ProfileSetting.ExchangeCurrency)}
 											data-testid="WalletHeader__currency-balance"
 											className="ml-1"
 										/>
