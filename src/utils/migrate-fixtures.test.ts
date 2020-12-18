@@ -5,7 +5,7 @@ import fixtureData from "tests/fixtures/env/storage.json";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 import { StubStorage } from "tests/mocks";
 
-import { migrateProfiles, restoreProfilePassword,restoreProfilePasswords } from "./migrate-fixtures";
+import { migrateProfiles, restoreProfilePassword, restoreProfilePasswords } from "./migrate-fixtures";
 
 let env: Environment;
 
