@@ -10,13 +10,14 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
 import { Action } from "app/components/Notifications/models";
+import { Tooltip } from "app/components/Tooltip";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
-import tw, { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 import { NavbarVariant } from "types";
 import { openExternal } from "utils/electron-utils";
 
@@ -109,6 +110,14 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 	);
 };
 
+const ButtonWrapper = styled.div`
+	${css`
+		button {
+			${tw`w-13 h-13 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-neutral-600 not-disabled:(hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200)`};
+		}
+	`};
+`;
+
 const LogoContainer = styled.div`
 	${tw`flex items-center justify-center w-12 h-12 my-auto mr-4 text-white rounded bg-logo`};
 `;
@@ -194,31 +203,38 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
-								<div className="flex overflow-hidden items-center rounded-lg">
-									<Button
-										disabled={!wallets.length}
-										variant="transparent"
-										size="icon"
-										className="w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-										onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
-										data-testid="navbar__buttons--send"
-									>
-										<Icon name="Sent" width={18} height={18} className="p-1" />
-									</Button>
+								<div className="flex items-center">
+									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
+										<ButtonWrapper>
+											<Button
+												data-testid="navbar__buttons--send"
+												disabled={!wallets.length}
+												size="icon"
+												variant="transparent"
+												onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
+											>
+												<Icon name="Sent" width={18} height={18} className="p-1" />
+											</Button>
+										</ButtonWrapper>
+									</Tooltip>
 								</div>
 
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
 
 								<div className="flex overflow-hidden items-center rounded-lg">
-									<Button
-										size="icon"
-										variant="transparent"
-										className="w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-										onClick={() => setSearchWalletIsOpen(true)}
-										data-testid="navbar__buttons--receive"
-									>
-										<Icon name="QrCode" width={22} height={22} className="p-1" />
-									</Button>
+									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
+										<ButtonWrapper>
+											<Button
+												data-testid="navbar__buttons--receive"
+												disabled={!wallets.length}
+												size="icon"
+												variant="transparent"
+												onClick={() => setSearchWalletIsOpen(true)}
+											>
+												<Icon name="QrCode" width={22} height={22} className="p-1" />
+											</Button>
+										</ButtonWrapper>
+									</Tooltip>
 								</div>
 
 								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
