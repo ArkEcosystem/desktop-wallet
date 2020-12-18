@@ -10,24 +10,24 @@ createFixture(`Plugins routing`).beforeEach(async (t) => await goToPlugins(t));
 
 test("should navigate and apply filters", async (t) => {
 	// Filtering by game
-	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.GAME));
-	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.GAME).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME).exists).ok();
 
 	// Filtering by utility
-	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.UTILITY));
-	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.UTILITY).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY).exists).ok();
 
 	// Filtering by themes
-	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.THEMES));
-	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.THEMES).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES).exists).ok();
 
 	// Filtering by other
-	await t.click(Selector("span").withExactText(translations.PLUGINS.CATEGORIES.OTHER));
-	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.OTHER).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER).exists).ok();
 
 	// Filtering by user plugins
-	await t.click(Selector("span").withExactText("MyPlugin"));
-	await t.expect(Selector("h2").withExactText(translations.PLUGINS.CATEGORIES.MY_PLUGINS).exists).ok();
+	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS));
+	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS).exists).ok();
 });
 
 test("should navigate to plugin details and back", async (t) => {
