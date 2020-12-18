@@ -27,6 +27,8 @@ export const importWallet = async (
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
+
+	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 };
 
 export const importWalletByAddress = async (
@@ -48,4 +50,6 @@ export const importWalletByAddress = async (
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
+
+	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 };

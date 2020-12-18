@@ -26,7 +26,10 @@ createFixture(`Multiple Transfer action`, [
 ]);
 
 test("should show an error if wrong mnemonic", async (t: any) => {
+	// Navigate to profile page
 	await goToProfile(t);
+
+	// Navigate to wallet page
 	await goToWallet(t);
 
 	// Navigate to transfer page
