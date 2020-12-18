@@ -39,7 +39,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const activeWallet = useActiveWallet();
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
-	const { formState, getValues, register, setValue, setError, unregister } = form;
+	const { formState, getValues, register, setValue, setError } = form;
 	const { registrationType } = getValues();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 2 : 1;
@@ -171,12 +171,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
-
-		if (activeTab - 1 === 1) {
-			for (const field of registrationForm!.formFields) {
-				unregister(field);
-			}
-		}
 	};
 
 	const handleNext = () => {

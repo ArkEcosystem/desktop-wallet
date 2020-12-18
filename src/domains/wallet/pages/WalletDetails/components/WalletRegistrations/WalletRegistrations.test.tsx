@@ -1,9 +1,8 @@
-
-import {  ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env,  getDefaultProfileId, renderWithRouter } from "testing-library";
+import { env, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { WalletRegistrations } from "./WalletRegistrations";
 
