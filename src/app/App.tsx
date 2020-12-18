@@ -100,15 +100,14 @@ const Main = () => {
 
 			try {
 				if (shouldUseFixture) {
-					await migrateProfiles(env, fixtureData.profiles);
+					migrateProfiles(env, fixtureData.profiles);
 					restoreProfilePasswords(env, TestingPasswords);
 				}
 
 				await env.verify();
 				await env.boot();
 
-				await runAll();
-				// await persist();
+				runAll();
 			} catch (error) {
 				console.log("error", error);
 				handleError(error);
