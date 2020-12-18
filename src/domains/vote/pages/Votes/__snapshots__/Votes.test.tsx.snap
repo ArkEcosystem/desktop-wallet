@@ -11,7 +11,7 @@ exports[`Votes should filter current delegates 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -23,7 +23,7 @@ exports[`Votes should filter current delegates 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -92,7 +92,7 @@ exports[`Votes should filter current delegates 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -120,23 +120,27 @@ exports[`Votes should filter current delegates 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -144,21 +148,25 @@ exports[`Votes should filter current delegates 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -372,7 +380,7 @@ exports[`Votes should filter current delegates 1`] = `
                               <span>
                                 <input
                                   checked=""
-                                  class="sc-fzoXWK fEraoK rounded-lg"
+                                  class="sc-fzoyTs fHKBnY rounded-lg"
                                   color="success"
                                   name="all"
                                   type="checkbox"
@@ -388,7 +396,7 @@ exports[`Votes should filter current delegates 1`] = `
                             >
                               <span>
                                 <input
-                                  class="sc-fzoXWK fEraoK rounded-lg"
+                                  class="sc-fzoyTs fHKBnY rounded-lg"
                                   color="success"
                                   name="current"
                                   type="checkbox"
@@ -765,7 +773,7 @@ exports[`Votes should filter current delegates 1`] = `
                         class="sc-fzokOt koMYSa justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -951,7 +959,7 @@ exports[`Votes should filter current delegates 1`] = `
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ knSZSh"
+                      class="sc-AxirZ SYQSD"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -977,7 +985,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -989,7 +997,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1058,7 +1066,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1086,23 +1094,27 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1110,21 +1122,25 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1669,7 +1685,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="sc-fzokOt koMYSa justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -1803,7 +1819,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -1937,7 +1953,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -2071,7 +2087,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -2205,7 +2221,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-4"
                           type="button"
@@ -2391,7 +2407,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ knSZSh"
+                      class="sc-AxirZ SYQSD"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -2421,7 +2437,7 @@ exports[`Votes should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2433,7 +2449,7 @@ exports[`Votes should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2502,7 +2518,7 @@ exports[`Votes should render 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2530,23 +2546,27 @@ exports[`Votes should render 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2554,21 +2574,25 @@ exports[`Votes should render 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3125,7 +3149,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt koMYSa justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -3259,7 +3283,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -3393,7 +3417,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -3527,7 +3551,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -3661,7 +3685,7 @@ exports[`Votes should render 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-4"
                           type="button"
@@ -3847,7 +3871,7 @@ exports[`Votes should render 1`] = `
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ knSZSh"
+                      class="sc-AxirZ SYQSD"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -3873,7 +3897,7 @@ exports[`Votes should render with no wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3885,7 +3909,7 @@ exports[`Votes should render with no wallets 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3954,7 +3978,7 @@ exports[`Votes should render with no wallets 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -3975,24 +3999,28 @@ exports[`Votes should render with no wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ kbIqtJ w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ hdvOcn"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4000,21 +4028,26 @@ exports[`Votes should render with no wallets 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ hdvOcn"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4236,7 +4269,7 @@ exports[`Votes should render with no wallets 1`] = `
                   class="flex -m-3 space-x-3"
                 >
                   <button
-                    class="sc-AxirZ jIUtSy"
+                    class="sc-AxirZ bVQYPH"
                     type="button"
                   >
                     <div
@@ -4257,7 +4290,7 @@ exports[`Votes should render with no wallets 1`] = `
                     </div>
                   </button>
                   <button
-                    class="sc-AxirZ jIUtSy"
+                    class="sc-AxirZ bVQYPH"
                     type="button"
                   >
                     <div
@@ -4295,7 +4328,7 @@ exports[`Votes should select a delegate 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4307,7 +4340,7 @@ exports[`Votes should select a delegate 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -4376,7 +4409,7 @@ exports[`Votes should select a delegate 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -4404,23 +4437,27 @@ exports[`Votes should select a delegate 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4428,21 +4465,25 @@ exports[`Votes should select a delegate 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4999,7 +5040,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt koMYSa justify-end bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="danger"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -5133,7 +5174,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -5267,7 +5308,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -5401,7 +5442,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -5535,7 +5576,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-4"
                           type="button"
@@ -5721,7 +5762,7 @@ exports[`Votes should select a delegate 1`] = `
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ hwiDkK"
+                      class="sc-AxirZ dsMKOl"
                       data-testid="DelegateTable__continue-button"
                       type="button"
                     >
@@ -5748,7 +5789,7 @@ exports[`Votes should select an address without vote 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5760,7 +5801,7 @@ exports[`Votes should select an address without vote 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -5829,7 +5870,7 @@ exports[`Votes should select an address without vote 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5857,23 +5898,27 @@ exports[`Votes should select an address without vote 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5881,21 +5926,25 @@ exports[`Votes should select an address without vote 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6442,7 +6491,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -6576,7 +6625,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -6710,7 +6759,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -6844,7 +6893,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-3"
                           type="button"
@@ -6978,7 +7027,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="sc-fzokOt koMYSa justify-end "
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           color="primary"
                           data-testid="DelegateRow__toggle-4"
                           type="button"
@@ -7164,7 +7213,7 @@ exports[`Votes should select an address without vote 1`] = `
                   </div>
                   <span>
                     <button
-                      class="sc-AxirZ knSZSh"
+                      class="sc-AxirZ SYQSD"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -7190,7 +7239,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7202,7 +7251,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -7271,7 +7320,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -7299,23 +7348,27 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -7323,21 +7376,25 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -7681,7 +7738,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -7693,7 +7750,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -7762,7 +7819,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -7790,23 +7847,27 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -7814,21 +7875,25 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -8172,7 +8237,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8184,7 +8249,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -8253,7 +8318,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxirZ gKDmVV w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxirZ gbgRxA w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -8281,23 +8346,27 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -8305,21 +8374,25 @@ exports[`Votes should toggle network selection from network filters 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxirZ gKDmVV w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxirZ gbgRxA"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -8985,7 +9058,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="sc-fzokOt koMYSa justify-end"
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="AddressRow__select-0"
                           type="button"
                         >
@@ -9088,7 +9161,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="sc-fzokOt koMYSa justify-end"
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="AddressRow__select-1"
                           type="button"
                         >
@@ -9185,7 +9258,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="sc-fzokOt koMYSa justify-end"
                       >
                         <button
-                          class="sc-AxirZ jIUtSy"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="AddressRow__select-2"
                           type="button"
                         >

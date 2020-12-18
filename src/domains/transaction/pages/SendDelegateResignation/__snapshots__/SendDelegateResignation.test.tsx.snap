@@ -7,7 +7,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXWK bhEdTb"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpmMD cYiEKU"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -88,7 +88,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzqBZW enxbhL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -116,23 +116,27 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -140,21 +144,25 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -286,19 +294,19 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -511,7 +519,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-fzqBZW iGuoJb"
+                    class="sc-fzqBZW dXzdDJ"
                     data-testid="SendDelegateResignation__back-button"
                     disabled=""
                     type="button"
@@ -519,7 +527,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-fzqBZW kyJGGM"
+                    class="sc-fzqBZW bgGEXD"
                     data-testid="SendDelegateResignation__continue-button"
                     type="button"
                   >
@@ -543,7 +551,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXWK bhEdTb"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -555,7 +563,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpmMD cYiEKU"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -624,7 +632,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzqBZW enxbhL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -652,23 +660,27 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -676,21 +688,25 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -822,19 +838,19 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -1047,7 +1063,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-fzqBZW iGuoJb"
+                    class="sc-fzqBZW dXzdDJ"
                     data-testid="SendDelegateResignation__back-button"
                     disabled=""
                     type="button"
@@ -1055,7 +1071,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                     Back
                   </button>
                   <button
-                    class="sc-fzqBZW kyJGGM"
+                    class="sc-fzqBZW bgGEXD"
                     data-testid="SendDelegateResignation__continue-button"
                     type="button"
                   >
@@ -1079,7 +1095,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXWK bhEdTb"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1091,7 +1107,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpmMD cYiEKU"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1160,7 +1176,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzqBZW enxbhL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1188,23 +1204,27 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1212,21 +1232,25 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1358,19 +1382,19 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -1593,14 +1617,14 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-fzqBZW cvFWQA"
+                    class="sc-fzqBZW kZjHht"
                     data-testid="SendDelegateResignation__back-button"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="sc-fzqBZW kyJGGM"
+                    class="sc-fzqBZW bgGEXD"
                     data-testid="SendDelegateResignation__continue-button"
                     type="button"
                   >
@@ -1624,7 +1648,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXWK bhEdTb"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1636,7 +1660,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpmMD cYiEKU"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1705,7 +1729,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzqBZW enxbhL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1733,23 +1757,27 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1757,21 +1785,25 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1903,19 +1935,19 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -2042,14 +2074,14 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-fzqBZW cvFWQA"
+                    class="sc-fzqBZW kZjHht"
                     data-testid="SendDelegateResignation__back-button"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="sc-fzqBZW iGuoJb space-x-2"
+                    class="sc-fzqBZW dXzdDJ space-x-2"
                     data-testid="SendDelegateResignation__send-button"
                     disabled=""
                     type="submit"
@@ -2085,7 +2117,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXWK bhEdTb"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2097,7 +2129,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpmMD cYiEKU"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2166,7 +2198,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzqBZW enxbhL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2194,23 +2226,27 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2218,21 +2254,25 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2364,19 +2404,19 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
               </ul>
               <div
@@ -2411,14 +2451,14 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="sc-fzqBZW cvFWQA"
+                        class="sc-fzqBZW kZjHht"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
                         Back to Wallet
                       </button>
                       <button
-                        class="sc-fzqBZW kyJGGM space-x-2"
+                        class="sc-fzqBZW bgGEXD space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
@@ -2447,7 +2487,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXWK bhEdTb"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2459,7 +2499,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpmMD cYiEKU"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2528,7 +2568,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzqBZW enxbhL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2556,23 +2596,27 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2580,21 +2624,25 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2726,19 +2774,19 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
               </ul>
               <div
@@ -2773,14 +2821,14 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="sc-fzqBZW cvFWQA"
+                        class="sc-fzqBZW kZjHht"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
                         Back to Wallet
                       </button>
                       <button
-                        class="sc-fzqBZW kyJGGM space-x-2"
+                        class="sc-fzqBZW bgGEXD space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
@@ -2809,7 +2857,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXWK bhEdTb"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2821,7 +2869,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpmMD cYiEKU"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2890,7 +2938,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzqBZW enxbhL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2918,23 +2966,27 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2942,21 +2994,25 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3088,19 +3144,19 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY kSqrIB"
+                  class="sc-fzoXWK iszZWS"
                 />
               </ul>
               <div
@@ -3233,14 +3289,14 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-fzqBZW cvFWQA"
+                    class="sc-fzqBZW kZjHht"
                     data-testid="SendDelegateResignation__back-button"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="sc-fzqBZW iGuoJb space-x-2"
+                    class="sc-fzqBZW dXzdDJ space-x-2"
                     data-testid="SendDelegateResignation__send-button"
                     disabled=""
                     type="submit"
@@ -3276,7 +3332,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXWK bhEdTb"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3288,7 +3344,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzpmMD cYiEKU"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3357,7 +3413,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-fzqBZW enxbhL w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -3385,23 +3441,27 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm kzGOk p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3409,21 +3469,25 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-fzqBZW enxbhL w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxjAm jmgDQY p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3555,19 +3619,19 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
           >
             <div>
               <ul
-                class="sc-fznMAR glTYAP"
+                class="sc-fzpmMD jvIdID"
               >
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
                 <li
-                  class="sc-fznxKY hpZjkw"
+                  class="sc-fzoXWK fyzFOX"
                 />
               </ul>
               <div
@@ -3832,14 +3896,14 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                     class="flex justify-end space-x-3"
                   >
                     <button
-                      class="sc-fzqBZW cvFWQA"
+                      class="sc-fzqBZW kZjHht"
                       data-testid="SendDelegateResignation__wallet-button"
                       type="button"
                     >
                       Back to Wallet
                     </button>
                     <button
-                      class="sc-fzqBZW cvFWQA space-x-2"
+                      class="sc-fzqBZW kZjHht space-x-2"
                       data-testid="SendDelegateResignation__download-button"
                       type="button"
                     >

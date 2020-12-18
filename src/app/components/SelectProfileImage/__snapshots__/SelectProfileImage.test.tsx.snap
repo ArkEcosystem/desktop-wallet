@@ -3,32 +3,32 @@
 exports[`SelectProfileImage should render 1`] = `
 <div>
   <div
-    class="group undefined"
+    class="group space-y-2 undefined"
   >
     <span
-      class="text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text"
+      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text"
     >
       Profile Image
     </span>
     <div
-      class="flex flex-row mt-2"
+      class="flex flex-row"
     >
       <div
-        class="flex justify-center items-center w-24 h-24 rounded border-2 border-dashed border-theme-primary-contrast"
+        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-primary-contrast"
       >
         <div
-          class="overflow-hidden rounded-full w-22 h-22"
+          class="overflow-hidden h-full rounded-full"
         >
           <div
-            class="sc-AxiKw iNCFpk"
+            class="sc-AxiKw XepdS"
           >
             <button
-              class="sc-AxjAm dBbvQh upload-button w-22 h-22"
+              class="sc-AxjAm liXtzU"
               data-testid="SelectProfileImage__upload-button"
               type="button"
             >
               <div
-                class="sc-AxirZ hUTXVg upload-button__icon text-theme-primary"
+                class="sc-AxirZ hUTXVg text-theme-primary dark:text-theme-neutral-200"
                 height="18"
                 width="24"
               >

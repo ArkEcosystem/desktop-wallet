@@ -235,16 +235,14 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					/>
 				</Section>
 
-				<div>
-					<div className="-my-5">
-						<PluginManagerNavigationBar
-							selected={currentView}
-							onChange={setCurrentView}
-							selectedViewType={viewType}
-							onSelectGridView={() => setViewType("grid")}
-							onSelectListView={() => setViewType("list")}
-						/>
-					</div>
+				<div className="-mb-5">
+					<PluginManagerNavigationBar
+						selected={currentView}
+						onChange={setCurrentView}
+						selectedViewType={viewType}
+						onSelectGridView={() => setViewType("grid")}
+						onSelectListView={() => setViewType("list")}
+					/>
 				</div>
 
 				<Section>
