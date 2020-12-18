@@ -1,7 +1,9 @@
-import { useEnvironmentContext } from "app/contexts";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { useConfiguration,useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { matchPath } from "react-router-dom";
+import { restoreProfilePassword } from "utils/migrate-fixtures";
 
 import { useNotifications, useUpdater } from "./";
 
@@ -43,7 +45,7 @@ export const useSynchronizer = (jobs: Job[]) => {
 		}
 	}, [run, jobs, stop]);
 
-	const runAll = useCallback(async () => Promise.allSettled(jobs.map((job) => run(job.callback))), [run, jobs]);
+	const runAll = useCallback(() => Promise.allSettled(jobs.map((job) => run(job.callback))), [run, jobs]);
 
 	useEffect(() => {
 		const current = timers.current;
@@ -97,11 +99,36 @@ const useProfileWatcher = () => {
 	}, [profileId, env, pathname, env.profiles().count()]);
 };
 
+export const useProfileRestore = () => {
+	const { env, persist } = useEnvironmentContext();
+	const { setConfiguration } = useConfiguration();
+
+	return useMemo(() => {
+		const restoreProfile = async (profile: Profile) => {
+			const isDev = process.env.REACT_APP_BUILD_MODE === "demo";
+			setConfiguration({ profileIsSyncing: true });
+			if (isDev) {
+				// Perform restore to make migrated wallets available in profile.wallets()
+				await profile.restore();
+
+				restoreProfilePassword(profile);
+				persist();
+
+				setConfiguration({ profileIsSyncing: false });
+			}
+		};
+
+		return {
+			restoreProfile,
+		};
+	}, [env]);
+};
+
 export const useProfileSynchronizer = () => {
 	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
-
 	const profile = useProfileWatcher();
+	const { restoreProfile } = useProfileRestore();
 
 	const walletsCount = profile?.wallets().count();
 
@@ -132,7 +159,11 @@ export const useProfileSynchronizer = () => {
 	const { start, runAll } = useSynchronizer(jobs);
 
 	useEffect(() => {
-		runAll();
+		if (profile) {
+			restoreProfile(profile);
+		}
+
 		start();
+		runAll();
 	}, [jobs, profile, env]);
 };
