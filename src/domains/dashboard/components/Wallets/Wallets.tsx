@@ -48,7 +48,7 @@ export const Wallets = ({
 			.wallets()
 			.values()
 			.filter((wallet) => wallet.network().isLive());
-	}, [activeProfile, walletsCount]);
+	}, [activeProfile, walletsCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const { listWallets, listHasMore, gridWallets, sliderOptions } = useWalletDisplay({
 		wallets,

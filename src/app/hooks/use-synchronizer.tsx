@@ -61,7 +61,6 @@ export const useSynchronizer = (jobs: Job[]) => {
 
 export const useEnvSynchronizer = () => {
 	const { env } = useEnvironmentContext();
-	const { notifications } = useNotifications();
 	const { notifyForUpdates } = useUpdater();
 
 	const jobs = useMemo(() => {
@@ -81,7 +80,7 @@ export const useEnvSynchronizer = () => {
 		};
 
 		return [syncDelegates, syncFees, syncWalletUpdates];
-	}, [env, notifications, notifyForUpdates]);
+	}, [env, notifyForUpdates]);
 
 	return useSynchronizer(jobs);
 };
@@ -92,15 +91,16 @@ const useProfileWatcher = () => {
 	const pathname = (location as any).location?.pathname || location.pathname;
 	const match = useMemo(() => matchPath(pathname, { path: "/profiles/:profileId" }), [pathname]);
 	const profileId = (match?.params as any)?.profileId;
+	const allProfilesCount = env.profiles().count();
 
 	return useMemo(() => {
 		if (!profileId || env.profiles().count() === 0) return;
 		return env.profiles().findById(profileId);
-	}, [profileId, env, pathname, env.profiles().count()]);
+	}, [profileId, env, allProfilesCount]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 export const useProfileRestore = () => {
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const { setConfiguration } = useConfiguration();
 
 	return useMemo(() => {
@@ -121,7 +121,7 @@ export const useProfileRestore = () => {
 		return {
 			restoreProfile,
 		};
-	}, [env]);
+	}, [persist, setConfiguration]);
 };
 
 export const useProfileSynchronizer = () => {
@@ -154,7 +154,7 @@ export const useProfileSynchronizer = () => {
 		};
 
 		return [syncWallets, syncExchangeRates, syncNotifications];
-	}, [env, profile, walletsCount]);
+	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const { start, runAll } = useSynchronizer(jobs);
 
@@ -165,5 +165,5 @@ export const useProfileSynchronizer = () => {
 
 		start();
 		runAll();
-	}, [jobs, profile, env]);
+	}, [jobs, profile, runAll, start, restoreProfile]);
 };

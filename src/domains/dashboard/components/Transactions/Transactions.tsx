@@ -68,7 +68,7 @@ export const Transactions = memo(
 
 				setTransactions(currentTransactions.concat(transactionsAggregate));
 			},
-			[transactions, profile, selectedTransactionType, setIsLoading, setTransactions, walletsCount],
+			[transactions, profile, selectedTransactionType, setIsLoading, setTransactions, walletsCount], // eslint-disable-line react-hooks/exhaustive-deps
 		);
 
 		useEffect(() => {

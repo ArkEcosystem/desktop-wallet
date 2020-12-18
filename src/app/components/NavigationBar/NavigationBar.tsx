@@ -180,7 +180,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 			?.wallets()
 			.values()
 			.filter((wallet) => wallet.network().isLive());
-	}, [profile, profileWalletsCount]);
+	}, [profile, profileWalletsCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<NavWrapper aria-labelledby="main menu" noShadow={variant !== "full"}>
