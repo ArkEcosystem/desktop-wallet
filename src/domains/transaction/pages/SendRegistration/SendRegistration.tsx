@@ -13,7 +13,7 @@ import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import { isMnemonicError } from "domains/transaction/utils";
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect,  useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -32,7 +32,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
-	const { registrationType: selectedRegistrationType } = useParams();
+	const { registrationType } = useParams();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -40,7 +40,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultValues });
 	const { formState, getValues, register, setValue, setError } = form;
-	const { registrationType } = getValues();
 
 	const stepCount = registrationForm ? registrationForm.tabSteps + 2 : 1;
 
@@ -64,7 +63,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		register("fees");
 
 		register("network", { required: true });
-		register("registrationType", { required: true });
 		register("senderAddress", { required: true });
 	}, [register]);
 
@@ -85,68 +83,30 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	}, [activeWallet, env, setValue]);
 
 	useEffect(() => {
-		if (!activeWallet?.address?.() || !registrationType?.value) {
+		if (!activeWallet?.address?.()) {
 			return;
 		}
 
-		const fees = getFeesByRegistrationType(registrationType.value);
+		const fees = getFeesByRegistrationType(registrationType);
 		setValue("fees", fees);
 		setValue("fee", fees?.avg || fees?.static);
 	}, [setValue, activeWallet, registrationType, getFeesByRegistrationType]);
 
-	useLayoutEffect(() => {
-		if (selectedRegistrationType === "delegate") {
-			setRegistrationForm(DelegateRegistrationForm);
-			setValue(
-				"registrationType",
-				{
-					value: "delegateRegistration",
-					label: "Multisignature",
-				},
-				{ shouldValidate: true, shouldDirty: true },
-			);
+	useEffect(() => {
+		setFeesByRegistrationType(registrationType);
 
-			return setFeesByRegistrationType("delegateRegistration");
+		if (registrationType === "delegateRegistration") {
+			return setRegistrationForm(DelegateRegistrationForm);
 		}
 
-		if (selectedRegistrationType === "secondSignature") {
-			setRegistrationForm(SecondSignatureRegistrationForm);
-			setValue(
-				"registrationType",
-				{
-					value: "secondSignature",
-					label: "Second Signature",
-				},
-				{ shouldValidate: true, shouldDirty: true },
-			);
-
-			return setFeesByRegistrationType("secondSignature");
+		if (registrationType === "secondSignature") {
+			return setRegistrationForm(SecondSignatureRegistrationForm);
 		}
 
-		if (selectedRegistrationType === "multiSignature") {
-			setRegistrationForm(MultiSignatureRegistrationForm);
-			setValue(
-				"registrationType",
-				{
-					value: "multiSignature",
-					label: "Multisignature",
-				},
-				{ shouldValidate: true, shouldDirty: true },
-			);
-
-			return setFeesByRegistrationType("multiSignature");
+		if (registrationType === "multiSignature") {
+			return setRegistrationForm(MultiSignatureRegistrationForm);
 		}
-	}, [
-		activeWallet,
-		env,
-		getFeesByRegistrationType,
-		getValues,
-		register,
-		selectedRegistrationType,
-		setFeesByRegistrationType,
-		setValue,
-		t,
-	]);
+	}, [registrationType, setFeesByRegistrationType, setValue]);
 
 	const handleSubmit = async () => {
 		try {
@@ -154,7 +114,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 				env,
 				form,
 				profile: activeProfile,
-				type: registrationType.type,
 			});
 
 			setTransaction(transaction);
@@ -184,11 +143,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		},
 	];
 
-	const registrationTitleByType = useMemo(
-		() => t("TRANSACTION.PAGE_REGISTRATION.TITLE", { title: registrationType?.label }),
-		[t, registrationType],
-	);
-
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
@@ -215,7 +169,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 							{registrationForm && getValues("fees") && (
 								<>
 									<registrationForm.component
-										title={registrationTitleByType}
 										activeTab={activeTab}
 										fees={getValues("fees")}
 										wallet={activeWallet}

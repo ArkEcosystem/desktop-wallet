@@ -161,7 +161,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		}
 
 		if (option.value === "delegate-registration") {
-			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-registration/delegate`);
+			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-registration/delegateRegistration`);
 		}
 
 		if (option.value === "delegate-resignation") {

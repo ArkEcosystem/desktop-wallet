@@ -31,7 +31,7 @@ const passphrase = getDefaultWalletMnemonic();
 
 const path = "/profiles/:profileId/wallets/:walletId/send-registration/:registrationType";
 
-const renderPage = async (wallet: ReadWriteWallet, type = "delegate") => {
+const renderPage = async (wallet: ReadWriteWallet, type = "delegateRegistration") => {
 	const registrationURL = `/profiles/${profile.id()}/wallets/${wallet.id()}/send-registration/${type}`;
 
 	history.push(registrationURL);
@@ -90,7 +90,7 @@ describe("Registration", () => {
 	});
 
 	it.each([
-		["delegate", "Register Delegate"],
+		["delegateRegistration", "Register Delegate"],
 		["secondSignature", "Register Second Signature"],
 		["multiSignature", "Multisignature Registration"],
 	])("should handle registrationType param (%s)", async (type, label) => {
