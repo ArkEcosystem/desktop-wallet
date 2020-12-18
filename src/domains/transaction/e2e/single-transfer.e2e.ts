@@ -68,6 +68,9 @@ test("should send transfer successfully with a multisig wallet", async (t) => {
 });
 
 test("should show an error if wrong mnemonic", async (t) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
 	// Navigate to wallet page
 	await goToWallet(t);
 

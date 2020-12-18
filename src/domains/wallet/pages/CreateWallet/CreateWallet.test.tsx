@@ -468,8 +468,12 @@ describe("CreateWallet", () => {
 			fireEvent.click(getByTestId(`CreateWallet__save-button`));
 		});
 
-		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile?.id()}/dashboard`));
-		expect(profile.wallets().first().alias()).toEqual("Test Wallet");
+		const wallet = profile.wallets().first();
+
+		await waitFor(() =>
+			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`),
+		);
+		expect(wallet.alias()).toEqual("Test Wallet");
 
 		expect(asFragment()).toMatchSnapshot();
 	});

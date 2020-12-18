@@ -10,20 +10,11 @@ export default { title: "Domains / Wallet / Components / WalletRegistrations" };
 export const Default = () => (
 	<WalletsDecorator count={1} withDelegate={true}>
 		{({ delegate }: { delegate: Contracts.WalletData }) => (
-			<WalletRegistrations
-				delegate={{
-					username: delegate.username()!,
-					isResigned: delegate.isResignedDelegate(),
-				}}
-				entities={[]}
-				isMultiSignature
-				isSecondSignature
-				onButtonClick={action("onButtonClick")}
-			/>
+			<WalletRegistrations onButtonClick={action("onButtonClick")} />
 		)}
 	</WalletsDecorator>
 );
 
 export const Empty = () => <WalletRegistrations onButtonClick={action("onButtonClick")} />;
 
-export const Loading = () => <WalletRegistrations isLoading={true} onButtonClick={action("onButtonClick")} />;
+export const Loading = () => <WalletRegistrations onButtonClick={action("onButtonClick")} />;

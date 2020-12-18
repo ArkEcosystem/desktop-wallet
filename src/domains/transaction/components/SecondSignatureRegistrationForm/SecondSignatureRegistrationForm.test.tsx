@@ -62,7 +62,7 @@ describe("SecondSignatureRegistrationForm", () => {
 	const Component = ({
 		form,
 		onSubmit,
-		activeTab = 2,
+		activeTab = 1,
 	}: {
 		form: ReturnType<typeof useForm>;
 		onSubmit: () => void;
@@ -83,7 +83,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const passphrase = "mock bip39 passphrase";
 		const bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
 
-		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
+		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={1} />);
 
 		await waitFor(() => expect(result.current.getValues("secondMnemonic")).toEqual(passphrase));
 		await waitFor(() => expect(screen.getByTestId("SecondSignatureRegistrationForm__generation-step")));
@@ -118,7 +118,7 @@ describe("SecondSignatureRegistrationForm", () => {
 					},
 				}),
 			);
-			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
 
 			await waitFor(() => expect(screen.getByTestId("SecondSignature__backup-step")).toBeTruthy());
 
@@ -155,7 +155,7 @@ describe("SecondSignatureRegistrationForm", () => {
 				}),
 			);
 
-			render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+			render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
 
 			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
 				filePath: "filePath",
@@ -183,7 +183,7 @@ describe("SecondSignatureRegistrationForm", () => {
 				}),
 			);
 
-			render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+			render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
 
 			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
 				filePath: undefined,
@@ -211,7 +211,7 @@ describe("SecondSignatureRegistrationForm", () => {
 				}),
 			);
 
-			render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
+			render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
 
 			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => {
 				throw new Error("Error");
@@ -237,7 +237,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			}),
 		);
 
-		render(<Component form={result.current} onSubmit={() => void 0} activeTab={4} />);
+		render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
 
 		await waitFor(() => expect(screen.getByTestId("SecondSignature__confirmation-step")).toBeTruthy());
 		expect(result.current.getValues("verification")).toBeUndefined();
@@ -269,7 +269,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			}),
 		);
 
-		render(<Component form={result.current} onSubmit={() => void 0} activeTab={5} />);
+		render(<Component form={result.current} onSubmit={() => void 0} activeTab={4} />);
 
 		await waitFor(() => expect(screen.getByTestId("SecondSignature__review-step")).toBeTruthy());
 	});
