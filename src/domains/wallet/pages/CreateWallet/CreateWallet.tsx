@@ -47,15 +47,20 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		const formattedName = name.trim().substring(0, nameMaxLength);
-		activeProfile.wallets().update(getValues("wallet").id(), { alias: formattedName });
+		const wallet = getValues("wallet");
 
-		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, getValues("wallet").network().id()]));
+		if (name) {
+			const formattedName = name.trim().substring(0, nameMaxLength);
+			activeProfile.wallets().update(wallet.id(), { alias: formattedName });
+		}
+
+		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+
 		await persist();
 
 		setValue("wallet", null);
 
-		history.push(dashboardRoute);
+		history.push(`profiles/${activeProfile.id()}/wallets/${wallet.id()}`);
 	};
 
 	useEffect(

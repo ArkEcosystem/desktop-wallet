@@ -13,7 +13,6 @@ export const importWallet = async (
 	t: any,
 	passphrase = "passphrase",
 	alias = "Test Wallet",
-	navigateToWallet = true,
 ) => {
 	await t.click(Selector("a").withText("Portfolio")); // @TODO replace with i18n key
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
@@ -28,17 +27,12 @@ export const importWallet = async (
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
-
-	if (navigateToWallet) {
-		await goToWallet(t, address);
-	}
 };
 
 export const importWalletByAddress = async (
 	t: any,
 	address: string,
 	alias = "Test Wallet",
-	navigateToWallet = true,
 ) => {
 	await t.click(Selector("a").withText("Portfolio")); // @TODO replace with i18n key
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
@@ -54,8 +48,4 @@ export const importWalletByAddress = async (
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
-
-	if (navigateToWallet) {
-		await goToWallet(t, address);
-	}
 };
