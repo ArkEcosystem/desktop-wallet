@@ -1,10 +1,6 @@
-
-
 import { createFixture } from "../../../utils/e2e-utils";
 import { goToWallet } from "../../wallet/e2e/common";
 import { goToDelegateResignationPage, goToTransferPage } from "./common";
-
-const translations = buildTranslations();
 
 createFixture(`Transactions routing`);
 

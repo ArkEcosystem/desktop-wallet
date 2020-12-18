@@ -3,8 +3,8 @@ import { Selector } from "testcafe";
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { importWallet } from "../../wallet/e2e/common";
-
+import { goToWallet, importWallet } from "../../wallet/e2e/common";
+import { goToDelegateRegistrationPage } from "./common";
 
 const translations = buildTranslations();
 

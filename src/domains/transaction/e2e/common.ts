@@ -28,7 +28,7 @@ export const goToDelegateRegistrationPage = async (t: any) => {
 
 	const delegateRegistrationOption = Selector(
 		"[data-testid=WalletHeader] [data-testid=dropdown__options] li",
-	).withText(translations.TRANSACTION - PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE);
+	).withText(translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE);
 	await t.click(delegateRegistrationOption);
 
 	await t
@@ -45,7 +45,7 @@ export const goToDelegateResignationPage = async (t: any) => {
 
 	const delegateResignationOption = Selector(
 		"[data-testid=WalletHeader] [data-testid=dropdown__options] li",
-	).withText(translations.TRANSACTION - PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE);
+	).withText(translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE);
 	await t.click(delegateResignationOption);
 
 	await t

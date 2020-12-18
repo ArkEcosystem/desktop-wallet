@@ -1,6 +1,7 @@
 import { Selector } from "testcafe";
 
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { goToWallet } from "../../wallet/e2e/common";
 import { goToDelegateResignationPage } from "./common";
 
 createFixture(`Delegate Resignation action`, [
