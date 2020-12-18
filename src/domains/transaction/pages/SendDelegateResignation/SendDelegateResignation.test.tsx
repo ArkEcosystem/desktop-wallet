@@ -421,7 +421,7 @@ describe("SendDelegateResignation", () => {
 				fireEvent.click(getByTestId("SendDelegateResignation__wallet-button"));
 			});
 
-			expect(history.location.pathname).toMatch(dashboardUrl);
+			expect(history.location.pathname).toMatch(`/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}`);
 
 			secondPublicKeyMock.mockRestore();
 			signMock.mockRestore();

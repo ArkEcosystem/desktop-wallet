@@ -116,7 +116,6 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 				<WalletHeader
 					profile={activeProfile}
 					wallet={activeWallet}
-					exchangeCurrency={exchangeCurrency}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
 					}

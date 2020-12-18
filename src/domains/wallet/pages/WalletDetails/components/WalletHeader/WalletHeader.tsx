@@ -271,7 +271,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 									{wallet.convertedBalance() && (
 										<Amount
 											value={wallet.convertedBalance()}
-											ticker={profile.settings().get(ProfileSetting.ExchangeCurrency)}
+											ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency)!}
 											data-testid="WalletHeader__currency-balance"
 											className="ml-1"
 										/>
