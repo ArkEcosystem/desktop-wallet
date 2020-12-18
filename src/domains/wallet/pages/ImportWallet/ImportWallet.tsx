@@ -121,7 +121,7 @@ export const ImportWallet = () => {
 				await persist();
 			}
 
-			history.push(`profiles/${activeProfile.id()}/wallets/${wallet!.id()}`);
+			history.push(`profiles/${activeProfile.id()}/wallets/${walletData?.id()}`);
 		}
 	};
 

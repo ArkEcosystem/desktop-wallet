@@ -24,14 +24,13 @@ export const CreateWallet = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const activeProfile = useActiveProfile();
-	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const nameMaxLength = 42;
 
 	const { selectedNetworkIds, setValue: setConfiguration } = useDashboardConfig({ profile: activeProfile });
 
 	const crumbs = [
 		{
-			route: dashboardRoute,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
