@@ -19,7 +19,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 
 	const { getValues, register, unregister, setValue, watch } = useFormContext();
 	const username = getValues("username");
-	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
+	const [usernames, setUsernames] = useState<string[]>([]);
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
@@ -30,19 +30,19 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	}, [register, unregister, common, fees, wallet]);
 
 	useEffect(() => {
-		setDelegates(env.delegates().all(wallet.coinId(), wallet.networkId()));
+		setUsernames(
+			env
+				.delegates()
+				.all(wallet.coinId(), wallet.networkId())
+				.map((delegate: ReadOnlyWallet) => delegate.username()!),
+		);
 	}, [env, wallet]);
 
 	useEffect(() => {
 		if (!username) {
-			register("username", {
-				...delegateRegistration.username(),
-				validate: (value) =>
-					!delegates.some((delegate: ReadOnlyWallet) => delegate.username() === value) ||
-					t("COMMON.VALIDATION.EXISTS", { field: t("COMMON.DELEGATE_NAME") }).toString(),
-			});
+			register("username", delegateRegistration.username(usernames));
 		}
-	}, [delegateRegistration, delegates, register, username, t]);
+	}, [delegateRegistration, usernames, register, username, t]);
 
 	return (
 		<section data-testid="DelegateRegistrationForm__form-step" className="space-y-8">

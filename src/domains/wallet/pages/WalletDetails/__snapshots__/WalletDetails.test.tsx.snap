@@ -7,7 +7,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -88,7 +88,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -116,23 +116,27 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -140,21 +144,25 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -402,7 +410,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cshtse w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+                  class="sc-AxjAm kFYDUZ w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
@@ -422,7 +430,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 </button>
               </div>
               <button
-                class="sc-AxjAm ilOjMZ my-auto"
+                class="sc-AxjAm fabXME my-auto"
                 data-testid="WalletHeader__send-button"
                 type="button"
               >
@@ -437,7 +445,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm iEqmsF text-left"
+                    class="sc-AxjAm jTKdki text-left"
                     type="button"
                   >
                     <div
@@ -552,7 +560,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletVote__button"
                       type="button"
                     >
@@ -641,7 +649,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletRegistrations__button"
                       type="button"
                     >
@@ -1049,7 +1057,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               </div>
             </div>
             <button
-              class="sc-AxjAm dBbvQh mt-10 mb-5 w-full"
+              class="sc-AxjAm kMuZka mt-10 mb-5 w-full"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -1070,7 +1078,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1082,7 +1090,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1151,7 +1159,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1179,23 +1187,27 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1203,21 +1215,25 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1465,7 +1481,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cshtse w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+                  class="sc-AxjAm kFYDUZ w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
@@ -1485,7 +1501,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm ilOjMZ my-auto"
+                class="sc-AxjAm fabXME my-auto"
                 data-testid="WalletHeader__send-button"
                 type="button"
               >
@@ -1500,7 +1516,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm iEqmsF text-left"
+                    class="sc-AxjAm jTKdki text-left"
                     type="button"
                   >
                     <div
@@ -1620,7 +1636,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm dBbvQh ml-auto"
+                    class="sc-AxjAm kMuZka ml-auto"
                     data-testid="WalletVote__button"
                     type="button"
                   >
@@ -1708,7 +1724,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletRegistrations__button"
                       type="button"
                     >
@@ -2116,7 +2132,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm dBbvQh mt-10 mb-5 w-full"
+              class="sc-AxjAm kMuZka mt-10 mb-5 w-full"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -2137,7 +2153,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2149,7 +2165,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2218,7 +2234,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2246,23 +2262,27 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2270,21 +2290,25 @@ exports[`WalletDetails should remove wallet name 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2532,7 +2556,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cshtse w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+                  class="sc-AxjAm kFYDUZ w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
@@ -2552,7 +2576,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm ilOjMZ my-auto"
+                class="sc-AxjAm fabXME my-auto"
                 data-testid="WalletHeader__send-button"
                 type="button"
               >
@@ -2567,7 +2591,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm iEqmsF text-left"
+                    class="sc-AxjAm jTKdki text-left"
                     type="button"
                   >
                     <div
@@ -2687,7 +2711,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm dBbvQh ml-auto"
+                    class="sc-AxjAm kMuZka ml-auto"
                     data-testid="WalletVote__button"
                     type="button"
                   >
@@ -2775,7 +2799,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletRegistrations__button"
                       type="button"
                     >
@@ -3183,7 +3207,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm dBbvQh mt-10 mb-5 w-full"
+              class="sc-AxjAm kMuZka mt-10 mb-5 w-full"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -3204,7 +3228,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3216,7 +3240,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3285,7 +3309,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -3313,23 +3337,27 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3337,21 +3365,25 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3599,7 +3631,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cshtse w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+                  class="sc-AxjAm kFYDUZ w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
@@ -3619,7 +3651,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm ilOjMZ my-auto"
+                class="sc-AxjAm fabXME my-auto"
                 data-testid="WalletHeader__send-button"
                 type="button"
               >
@@ -3634,7 +3666,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm iEqmsF text-left"
+                    class="sc-AxjAm jTKdki text-left"
                     type="button"
                   >
                     <div
@@ -3749,7 +3781,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletVote__button"
                       type="button"
                     >
@@ -3838,7 +3870,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletRegistrations__button"
                       type="button"
                     >
@@ -4246,7 +4278,7 @@ exports[`WalletDetails should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm dBbvQh mt-10 mb-5 w-full"
+              class="sc-AxjAm kMuZka mt-10 mb-5 w-full"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -4267,7 +4299,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -4279,7 +4311,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -4348,7 +4380,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -4376,23 +4408,27 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4400,21 +4436,25 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -4662,7 +4702,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cshtse w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+                  class="sc-AxjAm kFYDUZ w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
@@ -4682,7 +4722,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm ilOjMZ my-auto"
+                class="sc-AxjAm fabXME my-auto"
                 data-testid="WalletHeader__send-button"
                 type="button"
               >
@@ -4697,7 +4737,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm iEqmsF text-left"
+                    class="sc-AxjAm jTKdki text-left"
                     type="button"
                   >
                     <div
@@ -4812,7 +4852,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletVote__button"
                       type="button"
                     >
@@ -4901,7 +4941,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletRegistrations__button"
                       type="button"
                     >
@@ -5309,7 +5349,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm dBbvQh mt-10 mb-5 w-full"
+              class="sc-AxjAm kMuZka mt-10 mb-5 w-full"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -5330,7 +5370,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5342,7 +5382,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -5411,7 +5451,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5439,23 +5479,27 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5463,21 +5507,25 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5725,7 +5773,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cshtse w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+                  class="sc-AxjAm kFYDUZ w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
@@ -5745,7 +5793,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm ilOjMZ my-auto"
+                class="sc-AxjAm fabXME my-auto"
                 data-testid="WalletHeader__send-button"
                 type="button"
               >
@@ -5760,7 +5808,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm iEqmsF text-left"
+                    class="sc-AxjAm jTKdki text-left"
                     type="button"
                   >
                     <div
@@ -5880,7 +5928,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm dBbvQh ml-auto"
+                    class="sc-AxjAm kMuZka ml-auto"
                     data-testid="WalletVote__button"
                     type="button"
                   >
@@ -5968,7 +6016,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletRegistrations__button"
                       type="button"
                     >
@@ -6376,7 +6424,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm dBbvQh mt-10 mb-5 w-full"
+              class="sc-AxjAm kMuZka mt-10 mb-5 w-full"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -6397,7 +6445,7 @@ exports[`WalletDetails should update wallet name 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6409,7 +6457,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -6478,7 +6526,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -6506,23 +6554,27 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6530,21 +6582,25 @@ exports[`WalletDetails should update wallet name 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6798,7 +6854,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 class="my-auto"
               >
                 <button
-                  class="sc-AxjAm cshtse w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+                  class="sc-AxjAm kFYDUZ w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
                   data-testid="WalletHeader__star-button"
                   type="button"
                 >
@@ -6818,7 +6874,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 </button>
               </div>
               <button
-                class="sc-AxjAm ilOjMZ my-auto"
+                class="sc-AxjAm fabXME my-auto"
                 data-testid="WalletHeader__send-button"
                 type="button"
               >
@@ -6833,7 +6889,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxjAm iEqmsF text-left"
+                    class="sc-AxjAm jTKdki text-left"
                     type="button"
                   >
                     <div
@@ -6953,7 +7009,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-AxjAm dBbvQh ml-auto"
+                    class="sc-AxjAm kMuZka ml-auto"
                     data-testid="WalletVote__button"
                     type="button"
                   >
@@ -7041,7 +7097,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxjAm dBbvQh"
+                      class="sc-AxjAm kMuZka"
                       data-testid="WalletRegistrations__button"
                       type="button"
                     >
@@ -7449,7 +7505,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <button
-              class="sc-AxjAm dBbvQh mt-10 mb-5 w-full"
+              class="sc-AxjAm kMuZka mt-10 mb-5 w-full"
               data-testid="transactions__fetch-more-button"
               type="button"
             >

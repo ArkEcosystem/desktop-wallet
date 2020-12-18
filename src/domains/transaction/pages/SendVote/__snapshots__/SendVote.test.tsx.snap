@@ -13,7 +13,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -25,7 +25,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -94,7 +94,7 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -122,23 +122,27 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -146,21 +150,25 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -674,14 +682,14 @@ exports[`SendVote should send a unvote & vote transaction 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh"
+                    class="sc-AxjAm kMuZka"
                     data-testid="SendVote__button--back-to-wallet"
                     type="button"
                   >
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm dBbvQh space-x-2"
+                    class="sc-AxjAm kMuZka space-x-2"
                     data-testid="SendVote__button--download"
                     type="button"
                   >
@@ -716,7 +724,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -728,7 +736,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -797,7 +805,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -825,23 +833,27 @@ exports[`SendVote should send a unvote transaction 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -849,21 +861,25 @@ exports[`SendVote should send a unvote transaction 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1317,14 +1333,14 @@ exports[`SendVote should send a unvote transaction 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh"
+                    class="sc-AxjAm kMuZka"
                     data-testid="SendVote__button--back-to-wallet"
                     type="button"
                   >
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm dBbvQh space-x-2"
+                    class="sc-AxjAm kMuZka space-x-2"
                     data-testid="SendVote__button--download"
                     type="button"
                   >
@@ -1359,7 +1375,7 @@ exports[`SendVote should send a vote transaction 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1371,7 +1387,7 @@ exports[`SendVote should send a vote transaction 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1440,7 +1456,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1468,23 +1484,27 @@ exports[`SendVote should send a vote transaction 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1492,21 +1512,25 @@ exports[`SendVote should send a vote transaction 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1960,14 +1984,14 @@ exports[`SendVote should send a vote transaction 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh"
+                    class="sc-AxjAm kMuZka"
                     data-testid="SendVote__button--back-to-wallet"
                     type="button"
                   >
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm dBbvQh space-x-2"
+                    class="sc-AxjAm kMuZka space-x-2"
                     data-testid="SendVote__button--download"
                     type="button"
                   >
@@ -2002,7 +2026,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2014,7 +2038,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2083,7 +2107,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2111,23 +2135,27 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2135,21 +2163,25 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2343,7 +2375,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
@@ -2380,14 +2412,14 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh"
+                    class="sc-AxjAm kMuZka"
                     data-testid="SendVote__button--back"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm iWHhrC space-x-2"
+                    class="sc-AxjAm iuNsgO space-x-2"
                     data-testid="SendVote__button--submit"
                     disabled=""
                     type="submit"
@@ -2423,7 +2455,7 @@ exports[`SendVote should show error step and go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2435,7 +2467,7 @@ exports[`SendVote should show error step and go back 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2504,7 +2536,7 @@ exports[`SendVote should show error step and go back 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2532,23 +2564,27 @@ exports[`SendVote should show error step and go back 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2556,21 +2592,25 @@ exports[`SendVote should show error step and go back 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2748,14 +2788,14 @@ exports[`SendVote should show error step and go back 1`] = `
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="sc-AxjAm dBbvQh"
+                        class="sc-AxjAm kMuZka"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
                         Back to Wallet
                       </button>
                       <button
-                        class="sc-AxjAm ilOjMZ space-x-2"
+                        class="sc-AxjAm fabXME space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >

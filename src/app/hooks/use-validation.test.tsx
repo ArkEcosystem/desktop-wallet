@@ -4,7 +4,7 @@ import { EnvironmentProvider } from "app/contexts";
 import React from "react";
 import { env } from "utils/testing-library";
 
-import { useValidation } from "./validations";
+import { useValidation } from "./use-validation";
 
 const defaultFees = {
 	min: "1",

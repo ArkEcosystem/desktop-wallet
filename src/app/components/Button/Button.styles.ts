@@ -3,21 +3,24 @@ import { ButtonVariant, Size } from "types";
 
 // @TODO add focus-visible:shadow-outline
 const baseStyle = [
-	tw`inline-flex items-center justify-center font-semibold text-center transition-all duration-100 ease-linear rounded focus:outline-none`,
+	tw`inline-flex items-center justify-center font-semibold text-center transition-all duration-100 ease-linear rounded leading-tight focus:outline-none`,
 	css`
-		line-height: 1.25;
 		&:disabled {
-			${tw`cursor-not-allowed bg-theme-neutral-200 text-theme-neutral-light dark:bg-theme-neutral-800 dark:text-theme-neutral-700`}
+			${tw`cursor-not-allowed`},
 		}
 	`,
 ];
 
 const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
-	if (disabled) return;
+	if (disabled) {
+		return variant === "transparent"
+			? tw`disabled:(text-theme-neutral-400 dark:text-theme-neutral-700)`
+			: tw`disabled:(bg-theme-neutral-200 text-theme-neutral-light dark:bg-theme-neutral-800 dark:text-theme-neutral-700)`;
+	}
 
 	switch (variant) {
 		case "primary":
-			return tw`bg-theme-primary hover:bg-theme-primary-700 dark:bg-theme-neutral-800 text-white dark:text-theme-neutral-200 dark:hover:text-white`;
+			return tw`bg-theme-primary hover:bg-theme-primary-700 text-white`;
 		case "secondary":
 			return tw`bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-neutral-800 text-theme-primary-600 dark:text-theme-neutral-200 hover:text-white`;
 		case "danger":

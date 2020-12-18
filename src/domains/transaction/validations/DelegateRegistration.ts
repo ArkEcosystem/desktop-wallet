@@ -1,5 +1,7 @@
+import { validatePattern } from "utils/validations";
+
 export const delegateRegistration = (t: any) => ({
-	username: () => ({
+	username: (usernames: string[]) => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.DELEGATE_NAME"),
 		}),
@@ -10,11 +12,10 @@ export const delegateRegistration = (t: any) => ({
 				maxLength: 20,
 			}),
 		},
-		pattern: {
-			value: /^[a-z0-9!@$&_.]+$/,
-			message: t("COMMON.VALIDATION.FIELD_INVALID", {
-				field: t("COMMON.DELEGATE_NAME"),
-			}),
+		validate: {
+			pattern: (value: string) => validatePattern(t, value, /[a-z0-9!@$&_.]+/),
+			unique: (value: string) =>
+				!usernames.includes(value) || t("COMMON.VALIDATION.EXISTS", { field: t("COMMON.DELEGATE_NAME") }),
 		},
 	}),
 });

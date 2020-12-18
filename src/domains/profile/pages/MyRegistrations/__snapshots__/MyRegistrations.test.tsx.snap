@@ -7,7 +7,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -88,7 +88,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -116,23 +116,27 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -140,21 +144,25 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -319,7 +327,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -586,7 +594,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -728,7 +736,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -1006,7 +1014,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -1148,7 +1156,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -1290,7 +1298,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -1432,7 +1440,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -1723,7 +1731,7 @@ exports[`MyRegistrations should filter registrations based on profile setting 1`
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF"
+                              class="sc-AxjAm jTKdki"
                               type="button"
                             >
                               <div
@@ -1767,7 +1775,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1779,7 +1787,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1848,7 +1856,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1876,23 +1884,27 @@ exports[`MyRegistrations should render business registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1900,21 +1912,25 @@ exports[`MyRegistrations should render business registrations 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2091,7 +2107,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -2358,7 +2374,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -2500,7 +2516,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -2778,7 +2794,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -2920,7 +2936,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -3062,7 +3078,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -3204,7 +3220,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -3495,7 +3511,7 @@ exports[`MyRegistrations should render business registrations 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF"
+                              class="sc-AxjAm jTKdki"
                               type="button"
                             >
                               <div
@@ -3531,7 +3547,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -3543,7 +3559,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3612,7 +3628,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -3640,23 +3656,27 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3664,21 +3684,25 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -3855,7 +3879,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -4122,7 +4146,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -4264,7 +4288,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -4542,7 +4566,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -4684,7 +4708,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -4826,7 +4850,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -4968,7 +4992,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -5259,7 +5283,7 @@ exports[`MyRegistrations should render delegate registrations 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF"
+                              class="sc-AxjAm jTKdki"
                               type="button"
                             >
                               <div
@@ -5295,7 +5319,7 @@ exports[`MyRegistrations should render empty state 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5307,7 +5331,7 @@ exports[`MyRegistrations should render empty state 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -5376,7 +5400,7 @@ exports[`MyRegistrations should render empty state 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5397,24 +5421,28 @@ exports[`MyRegistrations should render empty state 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm dVMAQq w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                disabled=""
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm cfCNhC"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5422,21 +5450,26 @@ exports[`MyRegistrations should render empty state 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm cfCNhC"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5613,7 +5646,7 @@ exports[`MyRegistrations should render empty state 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -5660,7 +5693,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -5672,7 +5705,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -5741,7 +5774,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -5769,23 +5802,27 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5793,21 +5830,25 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -5984,7 +6025,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -6251,7 +6292,7 @@ exports[`MyRegistrations should render entity delegate registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -6286,7 +6327,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -6298,7 +6339,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -6367,7 +6408,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -6395,23 +6436,27 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6419,21 +6464,25 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -6610,7 +6659,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -6877,7 +6926,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -7019,7 +7068,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -7297,7 +7346,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -7439,7 +7488,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -7581,7 +7630,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -7723,7 +7772,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -8014,7 +8063,7 @@ exports[`MyRegistrations should render plugin registrations 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF"
+                              class="sc-AxjAm jTKdki"
                               type="button"
                             >
                               <div
@@ -8050,7 +8099,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -8062,7 +8111,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -8131,7 +8180,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -8159,23 +8208,27 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -8183,21 +8236,25 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -8374,7 +8431,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -8641,7 +8698,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -8919,7 +8976,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -9061,7 +9118,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -9352,7 +9409,7 @@ exports[`MyRegistrations should render with unsynced wallets 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF"
+                              class="sc-AxjAm jTKdki"
                               type="button"
                             >
                               <div
@@ -9388,7 +9445,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -9400,7 +9457,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -9469,7 +9526,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -9497,23 +9554,27 @@ exports[`MyRegistrations should reset search results when clicking search reset 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -9521,21 +9582,25 @@ exports[`MyRegistrations should reset search results when clicking search reset 
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -9707,7 +9772,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                       class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw gQWtzJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value=""
@@ -9728,7 +9793,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -9995,7 +10060,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -10137,7 +10202,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -10415,7 +10480,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -10557,7 +10622,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -10699,7 +10764,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -10841,7 +10906,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -11132,7 +11197,7 @@ exports[`MyRegistrations should reset search results when clicking search reset 
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF"
+                              class="sc-AxjAm jTKdki"
                               type="button"
                             >
                               <div
@@ -11168,7 +11233,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -11180,7 +11245,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -11249,7 +11314,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -11277,23 +11342,27 @@ exports[`MyRegistrations should search and find business entity 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -11301,21 +11370,25 @@ exports[`MyRegistrations should search and find business entity 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -11487,7 +11560,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                       class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw gQWtzJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="ark wallet 2"
@@ -11508,7 +11581,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -11775,7 +11848,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -12053,7 +12126,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -12195,7 +12268,7 @@ exports[`MyRegistrations should search and find business entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -12230,7 +12303,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -12242,7 +12315,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -12311,7 +12384,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -12339,23 +12412,27 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -12363,21 +12440,25 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -12549,7 +12630,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                       class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw gQWtzJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="testwallet"
@@ -12570,7 +12651,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -12837,7 +12918,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -12979,7 +13060,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -13257,7 +13338,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -13399,7 +13480,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -13541,7 +13622,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -13683,7 +13764,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -13974,7 +14055,7 @@ exports[`MyRegistrations should search and find delegate wallet 1`] = `
                             data-testid="dropdown__toggle"
                           >
                             <button
-                              class="sc-AxjAm iEqmsF"
+                              class="sc-AxjAm jTKdki"
                               type="button"
                             >
                               <div
@@ -14010,7 +14091,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -14022,7 +14103,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -14091,7 +14172,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -14119,23 +14200,27 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -14143,21 +14228,25 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -14329,7 +14418,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                       class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw gQWtzJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="ark wallet 2"
@@ -14350,7 +14439,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >
@@ -14617,7 +14706,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -14895,7 +14984,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -15037,7 +15126,7 @@ exports[`MyRegistrations should search and find plugin entity 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="sc-AxjAm iEqmsF"
+                            class="sc-AxjAm jTKdki"
                             type="button"
                           >
                             <div
@@ -15072,7 +15161,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -15084,7 +15173,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -15153,7 +15242,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -15181,23 +15270,27 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ iOZZCn p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ iOZZCn p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -15205,21 +15298,25 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxirZ hmuEJr p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxirZ hmuEJr p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -15391,7 +15488,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                       class="flex-1"
                     >
                       <input
-                        class="sc-AxiKw gQWtzJ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
+                        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-3 border-none shadow-none HeaderSearchBar__input"
                         data-testid="Input"
                         placeholder="Search..."
                         value="1234567890"
@@ -15412,7 +15509,7 @@ exports[`MyRegistrations should search and see empty results screen 1`] = `
                   class="pl-10"
                 >
                   <button
-                    class="sc-AxjAm ilOjMZ"
+                    class="sc-AxjAm fabXME"
                     data-testid="MyRegistrations__cta-register"
                     type="button"
                   >

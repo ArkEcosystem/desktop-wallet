@@ -7,7 +7,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -19,7 +19,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -88,7 +88,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -116,23 +116,27 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -140,21 +144,25 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -348,7 +356,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
@@ -385,14 +393,14 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh"
+                    class="sc-AxjAm kMuZka"
                     data-testid="SendIpfs__button--back"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm iWHhrC"
+                    class="sc-AxjAm iuNsgO"
                     data-testid="SendIpfs__button--submit"
                     disabled=""
                     type="submit"
@@ -417,7 +425,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -429,7 +437,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -498,7 +506,7 @@ exports[`SendIpfs should navigate between steps 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -526,23 +534,27 @@ exports[`SendIpfs should navigate between steps 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -550,21 +562,25 @@ exports[`SendIpfs should navigate between steps 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -935,14 +951,14 @@ exports[`SendIpfs should navigate between steps 1`] = `
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxjAm dBbvQh block"
+                    class="sc-AxjAm kMuZka block"
                     data-testid="SendIpfs__button--back-to-wallet"
                     type="button"
                   >
                     Back to Wallet
                   </button>
                   <button
-                    class="sc-AxjAm dBbvQh space-x-2"
+                    class="sc-AxjAm kMuZka space-x-2"
                     data-testid="SendIpfs__button--copy"
                     type="button"
                   >
@@ -1046,7 +1062,7 @@ exports[`SendIpfs should render form step 1`] = `
                 aria-controls="SendTransactionForm__network-menu"
                 aria-labelledby="SendTransactionForm__network-label"
                 autocomplete="off"
-                class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -1085,7 +1101,7 @@ exports[`SendIpfs should render form step 1`] = `
         >
           <div>
             <button
-              class="sc-fzoXWK gYtA-Dm SelectAddress  "
+              class="sc-fzoyTs cgVdph SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
@@ -1110,7 +1126,7 @@ exports[`SendIpfs should render form step 1`] = `
               </div>
             </button>
             <input
-              class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
@@ -1138,7 +1154,7 @@ exports[`SendIpfs should render form step 1`] = `
           class="sc-fznxsB hhZPAY"
         >
           <input
-            class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="Input__hash"
             name="hash"
             placeholder=" "
@@ -1172,7 +1188,7 @@ exports[`SendIpfs should render form step 1`] = `
               class="sc-fznxsB hhZPAY"
             >
               <input
-                class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="InputCurrency"
                 name="fee"
                 type="text"
@@ -1219,7 +1235,7 @@ exports[`SendIpfs should render form step 1`] = `
             >
               <button
                 aria-checked="true"
-                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                class="sc-fzoNJl gCmvhq relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                 data-testid="SelectionBarOption"
                 role="radio"
                 type="button"
@@ -1228,7 +1244,7 @@ exports[`SendIpfs should render form step 1`] = `
               </button>
               <button
                 aria-checked="false"
-                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                class="sc-fzoNJl gCmvhq relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                 data-testid="SelectionBarOption"
                 role="radio"
                 type="button"
@@ -1237,7 +1253,7 @@ exports[`SendIpfs should render form step 1`] = `
               </button>
               <button
                 aria-checked="false"
-                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                class="sc-fzoNJl gCmvhq relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                 data-testid="SelectionBarOption"
                 role="radio"
                 type="button"
@@ -1426,7 +1442,7 @@ exports[`SendIpfs should render review step 1`] = `
                 class="flex flex-col w-1/2 justify-center px-4 py-2"
               >
                 <span
-                  class="sc-fznxKY eBLCzX"
+                  class="sc-fzoXWK ddpuyQ"
                 >
                   Transaction Amount
                 </span>
@@ -1441,7 +1457,7 @@ exports[`SendIpfs should render review step 1`] = `
                 class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
               >
                 <span
-                  class="sc-fznxKY eBLCzX"
+                  class="sc-fzoXWK ddpuyQ"
                 >
                   Transaction Fee
                 </span>
@@ -1475,7 +1491,7 @@ exports[`SendIpfs should render review step 1`] = `
             class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-300 dark:bg-theme-neutral-800"
           >
             <span
-              class="sc-fznxKY eBLCzX"
+              class="sc-fzoXWK ddpuyQ"
             >
               Total Amount
             </span>
@@ -1564,7 +1580,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -1576,7 +1592,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1645,7 +1661,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1673,23 +1689,27 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1697,21 +1717,25 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -1953,7 +1977,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 disabled=""
                                 id="SendTransactionForm__network-input"
@@ -1993,7 +2017,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         >
                           <div>
                             <button
-                              class="sc-fzoXWK gYtA-Dm SelectAddress  "
+                              class="sc-fzoyTs cgVdph SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -2036,7 +2060,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </div>
                             </button>
                             <input
-                              class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -2065,7 +2089,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         >
                           <input
                             aria-invalid="true"
-                            class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                            class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                             data-testid="Input__hash"
                             name="hash"
                             placeholder=" "
@@ -2104,7 +2128,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="sc-fznxsB hhZPAY"
                             >
                               <input
-                                class="sc-fzoyAV kcEYME overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
@@ -2120,7 +2144,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fzoNJl gCmvhq relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2129,7 +2153,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fzoNJl gCmvhq relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2138,7 +2162,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </button>
                               <button
                                 aria-checked="true"
-                                class="sc-fzpmMD jaYDMx relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                class="sc-fzoNJl gCmvhq relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                                 type="button"
@@ -2156,7 +2180,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="sc-AxjAm iWHhrC"
+                    class="sc-AxjAm iuNsgO"
                     data-testid="SendIpfs__button--back"
                     disabled=""
                     type="button"
@@ -2164,7 +2188,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm iWHhrC"
+                    class="sc-AxjAm iuNsgO"
                     data-testid="SendIpfs__button--continue"
                     disabled=""
                     type="button"
@@ -2189,7 +2213,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyTs eYLloN"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -2201,7 +2225,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoNJl hlUna-D"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2270,7 +2294,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cshtse w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    class="sc-AxjAm kFYDUZ w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -2298,23 +2322,27 @@ exports[`SendIpfs should show error step and go back 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw cytFlT p-1"
-                  height="18"
-                  width="18"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw cytFlT p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2322,21 +2350,25 @@ exports[`SendIpfs should show error step and go back 1`] = `
             <div
               class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cshtse w-13 h-13 text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxiKw fFXzuz p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm kFYDUZ"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxiKw fFXzuz p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
@@ -2514,14 +2546,14 @@ exports[`SendIpfs should show error step and go back 1`] = `
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="sc-AxjAm dBbvQh"
+                        class="sc-AxjAm kMuZka"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
                         Back to Wallet
                       </button>
                       <button
-                        class="sc-AxjAm ilOjMZ space-x-2"
+                        class="sc-AxjAm fabXME space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
