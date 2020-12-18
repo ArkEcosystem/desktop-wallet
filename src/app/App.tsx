@@ -107,9 +107,8 @@ const Main = () => {
 				await env.verify();
 				await env.boot();
 
-				runAll();
+				await runAll();
 			} catch (error) {
-				console.log("error", error);
 				handleError(error);
 			}
 

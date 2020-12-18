@@ -1,5 +1,6 @@
 import MockDate from "mockdate";
 import { env } from "./src/utils/testing-library";
+import { migrateProfiles, restoreProfilePasswords } from "./src/utils/migrate-fixtures";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
@@ -8,9 +9,18 @@ jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 });
 
 beforeAll(async () => {
-	await migrateProfiles(env, fixtureData.profiles);
+	migrateProfiles(env, fixtureData.profiles);
+
 	await env.verify();
 	await env.boot();
+
+	await Promise.allSettled(
+		env
+			.profiles()
+			.values()
+			.map((profile) => profile.restore()),
+	);
+	restoreProfilePasswords(env);
 });
 
 beforeEach(() => {

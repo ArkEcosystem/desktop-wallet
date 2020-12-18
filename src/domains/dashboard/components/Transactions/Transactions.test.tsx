@@ -169,4 +169,22 @@ describe("Transactions", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should show loading state if set", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions isLoading={true} profile={profile} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => {
+			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.LOADING);
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

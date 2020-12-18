@@ -23,7 +23,7 @@ type TransactionsProps = {
 };
 
 export const Transactions = memo(
-	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading }: TransactionsProps) => {
+	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading = false }: TransactionsProps) => {
 		const { t } = useTranslation();
 
 		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();

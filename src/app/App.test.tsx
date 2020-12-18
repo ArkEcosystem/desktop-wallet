@@ -102,9 +102,10 @@ describe("App", () => {
 	it("should get the profile theme from the route", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
-		electron.remote.nativeTheme.shouldUseDarkColors = true;
+		const profileDashboardUrl = "/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard";
+		electron.remote.nativeTheme.shouldUseDarkColors = false;
 
-		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />);
+		const { findByTestId, getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />);
 
 		await waitFor(() => {
 			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
@@ -112,15 +113,30 @@ describe("App", () => {
 
 		expect(history.location.pathname).toMatch("/");
 
-		expect(document.body).toHaveClass("theme-dark");
+		expect(document.body).toHaveClass("theme-light");
 
 		await act(async () => {
-			fireEvent.click(getAllByTestId("Card")[0]);
+			fireEvent.click(getAllByTestId("Card")[1]);
 		});
 
-		expect(history.location.pathname).toMatch(dashboardUrl);
+		await waitFor(() => {
+			expect(getByTestId("SignIn__input--password")).toBeInTheDocument();
+		});
 
-		expect(document.body).toHaveClass("theme-light");
+		await act(async () => {
+			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: "password" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("SignIn__input--password")).toHaveValue("password");
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SignIn__submit-button"));
+		});
+
+		await waitFor(() => expect(history.location.pathname).toMatch(profileDashboardUrl));
+		await waitFor(() => expect(document.body).toHaveClass("theme-dark"));
 	});
 
 	it("should close splash screen if not demo", async () => {
