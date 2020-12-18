@@ -3,7 +3,7 @@ import { Selector } from "testcafe";
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { importWalletByAddress } from "../../wallet/e2e/common";
+import { importWallet } from "../../wallet/e2e/common";
 import { goToDelegateResignationPage } from "./common";
 
 const translations = buildTranslations();
@@ -69,7 +69,7 @@ test("should fail delegate resignation submission", async (t: any) => {
 test("should successfully submit delegate resignation", async (t) => {
 	await goToProfile(t);
 
-	await importWalletByAddress(t, "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f");
+	await importWallet(t, "passphrase");
 
 	await goToDelegateResignationPage(t);
 
