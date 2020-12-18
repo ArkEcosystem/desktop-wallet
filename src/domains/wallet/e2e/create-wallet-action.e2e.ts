@@ -46,7 +46,7 @@ test("should create a wallet", async (t) => {
 		mnemonicWords.push(textContent.replace(/[0-9]+/, "").trim());
 	}
 	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
-	
+
 	// Confirm your password
 	await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok();
 
