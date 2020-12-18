@@ -330,186 +330,184 @@ exports[`PluginManager should cancel install plugin 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -4890,186 +4888,184 @@ exports[`PluginManager should close install plugin modal 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -9450,186 +9446,184 @@ exports[`PluginManager should delete plugin on game 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -11319,186 +11313,184 @@ exports[`PluginManager should delete plugin on home 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -13827,186 +13819,184 @@ exports[`PluginManager should download & install plugin on game 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -15848,186 +15838,184 @@ exports[`PluginManager should download & install plugin on home 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -20560,186 +20548,184 @@ exports[`PluginManager should install plugin from header install button 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -23220,186 +23206,184 @@ exports[`PluginManager should render 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -25778,186 +25762,184 @@ exports[`PluginManager should search for plugin 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -28288,186 +28270,184 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
@@ -29476,186 +29456,184 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
           </div>
         </div>
       </div>
-      <div>
-        <div
-          class="-my-5"
+      <div
+        class="-mb-5"
+      >
+        <nav
+          class="sc-fzqBkg dWACL sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
+          data-testid="PluginManagerNavigationBar"
         >
-          <nav
-            class="sc-fzqBkg eGuwTS sticky top-20 md:top-24 bg-theme-neutral-contrast"
-            data-testid="PluginManagerNavigationBar"
+          <div
+            class="container flex justify-between items-center px-14 mx-auto"
           >
-            <div
-              class="container flex justify-between items-center px-14 mx-auto"
-            >
-              <div>
-                <ul
-                  class="flex h-24"
-                >
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-                      data-testid="PluginManagerNavigationBar__home"
-                      title="Home"
-                    >
-                      <span>
-                        Home
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__game"
-                      title="Game"
-                    >
-                      <span>
-                        Game
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        48
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__utility"
-                      title="Utility"
-                    >
-                      <span>
-                        Utility
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        264
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__themes"
-                      title="Themes"
-                    >
-                      <span>
-                        Themes
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        96
-                      </span>
-                    </button>
-                    <div
-                      class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-                    />
-                  </li>
-                  <li
-                    class="flex"
-                  >
-                    <button
-                      class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                      data-testid="PluginManagerNavigationBar__other"
-                      title="Other"
-                    >
-                      <span>
-                        Other
-                      </span>
-                      <span
-                        class="ml-1 text-theme-neutral"
-                      >
-                        27
-                      </span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div
+            <div>
+              <ul
                 class="flex h-24"
               >
-                <button
-                  class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                <li
+                  class="flex"
                 >
-                  <span>
-                    MyPlugin
-                  </span>
-                  <span
-                    class="ml-1 text-theme-neutral"
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    data-testid="PluginManagerNavigationBar__home"
+                    title="Home"
                   >
-                    8
-                  </span>
-                </button>
+                    <span>
+                      Home
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__game"
+                    title="Game"
+                  >
+                    <span>
+                      Game
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      48
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__utility"
+                    title="Utility"
+                  >
+                    <span>
+                      Utility
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      264
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__themes"
+                    title="Themes"
+                  >
+                    <span>
+                      Themes
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      96
+                    </span>
+                  </button>
+                  <div
+                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                  />
+                </li>
+                <li
+                  class="flex"
+                >
+                  <button
+                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    data-testid="PluginManagerNavigationBar__other"
+                    title="Other"
+                  >
+                    <span>
+                      Other
+                    </span>
+                    <span
+                      class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                    >
+                      27
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex h-24"
+            >
+              <button
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                data-testid="PluginManagerNavigationBar__my-plugins"
+                title="My Plugins"
+              >
+                <span>
+                  My Plugins
+                </span>
+                <span
+                  class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+                >
+                  8
+                </span>
+              </button>
+              <div
+                class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center space-x-1"
+              >
                 <div
-                  class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-                />
-                <div
-                  class="flex items-center space-x-1"
+                  class="group"
+                  data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__grid"
+                    class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
+                    data-testid="LayoutControls__grid--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-                      data-testid="LayoutControls__grid--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          grid-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        grid-view.svg
+                      </svg>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="group"
+                  data-testid="LayoutControls__list"
+                >
                   <div
-                    class="group"
-                    data-testid="LayoutControls__list"
+                    class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
+                    data-testid="LayoutControls__list--icon"
                   >
                     <div
-                      class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-                      data-testid="LayoutControls__list--icon"
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-AxirZ eEbZjj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          list-view.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        list-view.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
       <div
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu"
