@@ -1,5 +1,5 @@
 import { Base64 } from "@arkecosystem/platform-sdk-crypto";
-import { Environment, Profile,ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 
 // TODO: Use Migrator
