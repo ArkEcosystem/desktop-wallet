@@ -1,8 +1,7 @@
 import { Selector } from "testcafe";
 
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
-import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
-import { goToResignDelegatePage } from "./common";
+import { goToDelegateResignationPage } from "./common";
 
 createFixture(`Delegate Resignation action`, [
 	mockRequest(
@@ -22,9 +21,9 @@ createFixture(`Delegate Resignation action`, [
 ]);
 
 test("should fail delegate resignation submission", async (t: any) => {
-	await goToProfile(t);
-	await goToMyRegistrations(t);
-	await goToResignDelegatePage(t);
+	await goToWallet(t, "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
+	await goToDelegateResignationPage(t);
+
 	const continueBtn = "[data-testid=SendDelegateResignation__continue-button]";
 
 	// Go to step 2
@@ -49,9 +48,9 @@ test("should fail delegate resignation submission", async (t: any) => {
 });
 
 test("should successfully submit delegate resignation", async (t) => {
-	await goToProfile(t);
-	await goToMyRegistrations(t);
-	await goToResignDelegatePage(t);
+	await goToWallet(t, "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
+	await goToDelegateResignationPage(t);
+
 	const continueButton = "[data-testid=SendDelegateResignation__continue-button]";
 
 	// Go to step 2

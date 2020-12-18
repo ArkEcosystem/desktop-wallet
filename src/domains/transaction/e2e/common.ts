@@ -19,15 +19,34 @@ export const goToRegistrationPage = async (t: any) => {
 	await t.expect(Selector("[data-testid=Registration__form]").exists).ok();
 };
 
-export const goToResignDelegatePage = async (t: any) => {
-	const delegateDropdown = Selector("[data-testid=DelegateRowItem__actions] [data-testid=dropdown__toggle]");
-	await t.expect(delegateDropdown.exists).ok();
+export const goToDelegateRegistrationPage = async (t: any) => {
+	const walletDropdown = Selector("[data-testid=WalletHeader] [data-testid=dropdown__toggle]");
+	await t.expect(walletDropdown.exists).ok();
 
-	await t.hover(delegateDropdown);
-	await t.click(delegateDropdown);
+	await t.hover(walletDropdown);
+	await t.click(walletDropdown);
 
-	const delegateResignOption = Selector("[data-testid=DelegateRowItem__actions] [data-testid=dropdown__option--1]");
-	await t.click(delegateResignOption);
+	const delegateRegistrationOption = Selector(
+		"[data-testid=WalletHeader] [data-testid=dropdown__options] li",
+	).withText(translations.TRANSACTION - PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE);
+	await t.click(delegateRegistrationOption);
+
+	await t
+		.expect(Selector("div").withText(translations.TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE).exists)
+		.ok();
+};
+
+export const goToDelegateResignationPage = async (t: any) => {
+	const walletDropdown = Selector("[data-testid=WalletHeader] [data-testid=dropdown__toggle]");
+	await t.expect(walletDropdown.exists).ok();
+
+	await t.hover(walletDropdown);
+	await t.click(walletDropdown);
+
+	const delegateResignationOption = Selector(
+		"[data-testid=WalletHeader] [data-testid=dropdown__options] li",
+	).withText(translations.TRANSACTION - PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE);
+	await t.click(delegateResignationOption);
 
 	await t
 		.expect(
