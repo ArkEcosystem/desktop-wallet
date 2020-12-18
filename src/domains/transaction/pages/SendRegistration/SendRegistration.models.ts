@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import {  Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { TFunction } from "i18next";
 import { useForm } from "react-hook-form";
 
