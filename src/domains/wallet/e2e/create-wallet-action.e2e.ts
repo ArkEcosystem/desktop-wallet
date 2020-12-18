@@ -14,6 +14,35 @@ createFixture(
 			"coins/ark/devnet/wallets/not-found",
 			404,
 		),
+		mockRequest(
+			(request: any) =>
+				!!request.url.match(
+					new RegExp(BASEURL + "transactions\\?page=1&limit=15&address=([-0-9a-zA-Z]{1,34})"),
+				),
+			{
+				meta: {
+					totalCountIsEstimate: true,
+					count: 0,
+					pageCount: 0,
+					totalCount: 0,
+					next: null,
+					previous: null,
+					self: null,
+					first: null,
+					last: null,
+				},
+				data: [],
+			},
+		),
+		mockRequest(
+			(request: any) =>
+				!!request.url.match(
+					new RegExp(
+						"https://dmusig1.ark.io/transactions\\?publicKey=([-0-9a-zA-Z]{1,66})&state=(ready|pending)",
+					),
+				),
+			[],
+		),
 	],
 );
 
