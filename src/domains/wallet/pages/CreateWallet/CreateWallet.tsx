@@ -59,7 +59,7 @@ export const CreateWallet = () => {
 
 		setValue("wallet", null);
 
-		history.push(`profiles/${activeProfile.id()}/wallets/${wallet.id()}`);
+		history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`);
 	};
 
 	useEffect(
