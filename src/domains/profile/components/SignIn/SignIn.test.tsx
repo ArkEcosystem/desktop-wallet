@@ -139,6 +139,7 @@ describe("SignIn", () => {
 
 		act(() => {
 			Promise.resolve().then(() => {
+				jest.useFakeTimers();
 				jest.advanceTimersByTime(65000);
 				jest.clearAllTimers();
 			});
