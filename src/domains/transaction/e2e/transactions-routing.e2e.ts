@@ -1,6 +1,6 @@
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { goToWallet } from "../../wallet/e2e/common";
+import { goToWallet, importWallet } from "../../wallet/e2e/common";
 import { goToDelegateResignationPage, goToTransferPage } from "./common";
 
 createFixture(`Transactions routing`, [
@@ -27,6 +27,6 @@ test("should navigate to transfer page", async (t) => {
 
 test("should navigate to delegate resignation page", async (t) => {
 	await goToProfile(t);
-	await goToWallet(t, "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS");
+	await importWallet(t, "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS");
 	await goToDelegateResignationPage(t);
 });
