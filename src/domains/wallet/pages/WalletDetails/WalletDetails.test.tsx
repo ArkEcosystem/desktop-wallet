@@ -129,14 +129,14 @@ describe("WalletDetails", () => {
 		networkFeatureSpy.mockRestore();
 	});
 
-	it("should not render wallet registrations when the network does not support second signatures, delegate registrations and entity registrations", async () => {
+	it("should not render wallet registrations when the network does not support second signatures, multisignatures & delegate registrations", async () => {
 		const networkFeatureSpy = jest.spyOn(wallet, "canAny");
 
 		when(networkFeatureSpy)
 			.calledWith([
 				Coins.FeatureFlag.TransactionSecondSignature,
+				Coins.FeatureFlag.TransactionMultiSignature,
 				Coins.FeatureFlag.TransactionDelegateRegistration,
-				Coins.FeatureFlag.TransactionEntityRegistration,
 			])
 			.mockReturnValue(false);
 
@@ -150,25 +150,25 @@ describe("WalletDetails", () => {
 	});
 
 	it.each([
-		["second signatures", "TransactionSecondSignature"],
 		["delegate registrations", "TransactionDelegateRegistration"],
-		["entity registrations", "TransactionEntityRegistration"],
+		["multisignatures", "TransactionMultiSignature"],
+		["second signatures", "TransactionSecondSignature"],
 	])("should render wallet registrations when the network does support %s", async (name, feature) => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
 
 		when(networkFeatureSpy)
-			.calledWith(Coins.FeatureFlag.TransactionSecondSignature)
-			.mockReturnValue(false)
 			.calledWith(Coins.FeatureFlag.TransactionDelegateRegistration)
 			.mockReturnValue(false)
-			.calledWith(Coins.FeatureFlag.TransactionEntityRegistration)
+			.calledWith(Coins.FeatureFlag.TransactionMultiSignature)
+			.mockReturnValue(false)
+			.calledWith(Coins.FeatureFlag.TransactionSecondSignature)
 			.mockReturnValue(false)
 			.calledWith(Coins.FeatureFlag[feature])
 			.mockReturnValue(true);
 
-		const { getAllByTestId } = await renderPage(false);
+		const { getByTestId } = await renderPage(false);
 
-		await waitFor(() => expect(getAllByTestId("WalletRegistrations")).toHaveLength(1));
+		await waitFor(() => expect(getByTestId("WalletRegistrations")).toBeTruthy());
 
 		networkFeatureSpy.mockRestore();
 	});

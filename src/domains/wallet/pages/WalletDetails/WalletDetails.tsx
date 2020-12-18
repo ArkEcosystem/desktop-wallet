@@ -62,9 +62,9 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 		setShowWalletRegistrations(
 			!activeWallet.isLedger() &&
 				activeWallet.canAny([
-					Coins.FeatureFlag.TransactionSecondSignature,
 					Coins.FeatureFlag.TransactionDelegateRegistration,
-					Coins.FeatureFlag.TransactionEntityRegistration,
+					Coins.FeatureFlag.TransactionMultiSignature,
+					Coins.FeatureFlag.TransactionSecondSignature,
 				]),
 		);
 	}, [activeWallet]);
