@@ -18,7 +18,6 @@ const walletMocks = () => {
 	const addresses = [
 		"D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 		"D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
-		"D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 		"D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 		"D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 		"DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
@@ -52,29 +51,6 @@ const multisignatureMocks = () => {
 		mocks.push(
 			...publicKeys.map((identifier: string) =>
 				mockRequest(`https://dmusig1.ark.io/transactions?publicKey=${identifier}&state=${state}`, []),
-			),
-		);
-	}
-
-	return mocks;
-};
-
-const entityRegistrationMocks = () => {
-	const types = {
-		0: "business",
-		2: "plugin",
-		4: "delegate",
-	};
-
-	const mocks: any = [];
-
-	for (const [key, type] of Object.entries(types)) {
-		mocks.push(
-			...publicKeys.map((identifier: string) =>
-				mockRequest(
-					`https://dwallets.ark.io/api/transactions?senderPublicKey=${identifier}&type=6&typeGroup=2&asset.type=${key}&asset.action=0`,
-					`coins/ark/devnet/transactions/${type}-registrations`,
-				),
 			),
 		);
 	}
@@ -131,21 +107,6 @@ const searchAddressesMocks = () => {
 	return mocks;
 };
 
-const businessRegistrations = () => {
-	const transactionIds = [
-		"df520b0a278314e998dc93be1e20c72b8313950c19da23967a9db60eb4e990da",
-		"075c83e721e910d24ab98fb4864789efaae5d29f50cd08a11145cd43f3dd4c4a",
-		"03e44853b26f450d5aba78e3fad390faa8ae9aa6995b1fa80b8d191516b52f1e",
-	];
-
-	return transactionIds.map((id: string) =>
-		mockRequest(
-			`https://dwallets.ark.io/api/transactions/${id}`,
-			"coins/ark/devnet/transactions/business-registration",
-		),
-	);
-};
-
 export const mockRequest = (url: string | object | Function, fixture: string | object | Function, statusCode = 200) =>
 	RequestMock()
 		.onRequestTo(url)
@@ -193,10 +154,6 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/devnet/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/devnet/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=30", "coins/ark/devnet/transactions"),
-
-		...businessRegistrations(),
-
-		...entityRegistrationMocks(),
 
 		...searchAddressesMocks(),
 	],
