@@ -72,9 +72,6 @@ test("should send multiple transfer successfully", async (t) => {
 	// Import wallet
 	await importWallet(t, "passphrase");
 
-	// Navigate to wallet details page
-	await goToWallet("DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS");
-
 	// Navigate to transfer page
 	await goToTransferPage(t);
 

@@ -46,10 +46,10 @@ test("should create a wallet", async (t) => {
 		mnemonicWords.push(textContent.replace(/[0-9]+/, "").trim());
 	}
 	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
-	~(
-		// Confirm your password
-		(await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok())
-	);
+	
+	// Confirm your password
+	await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok();
+
 	for (let i = 0; i < 3; i++) {
 		const selectWordPhrase = await Selector("[data-testid=MnemonicVerificationOptions__title]").textContent;
 		const wordNumber = selectWordPhrase.match(/[0-9]+/)?.[0];
@@ -65,5 +65,5 @@ test("should create a wallet", async (t) => {
 
 	// Save and finish
 	await t.click(Selector("button").withExactText(translations().COMMON.SAVE_FINISH));
-	await t.expect(Selector("div").withExactText(translations().COMMON.WALLETS).exists).ok();
+	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 });
