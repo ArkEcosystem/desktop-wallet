@@ -1,4 +1,5 @@
 import { Page } from "app/components/Layout";
+import { useConfiguration } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
@@ -14,6 +15,8 @@ export const Dashboard = () => {
 	const activeProfile = useActiveProfile();
 
 	const { showTransactions } = useDashboardConfig({ profile: activeProfile });
+	const { profileIsSyncing } = useConfiguration();
+
 	const profileWalletsCount = activeProfile.wallets().count();
 
 	return (
@@ -29,7 +32,12 @@ export const Dashboard = () => {
 					}
 				/>
 
-				<Transactions profile={activeProfile} isVisible={showTransactions} walletsCount={profileWalletsCount} />
+				<Transactions
+					profile={activeProfile}
+					isVisible={showTransactions}
+					walletsCount={profileWalletsCount}
+					isLoading={profileIsSyncing}
+				/>
 			</Page>
 		</>
 	);

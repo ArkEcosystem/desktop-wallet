@@ -19,10 +19,11 @@ type TransactionsProps = {
 	profile: Profile;
 	isVisible?: boolean;
 	walletsCount?: number;
+	isLoading?: boolean;
 };
 
 export const Transactions = memo(
-	({ emptyText, isCompact, profile, isVisible = true, walletsCount }: TransactionsProps) => {
+	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading }: TransactionsProps) => {
 		const { t } = useTranslation();
 
 		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
@@ -31,7 +32,7 @@ export const Transactions = memo(
 		const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(
 			undefined,
 		);
-		const [isLoading, setIsLoading] = useState(true);
+		const [isLoadingTransactions, setIsLoading] = useState(isLoading);
 		const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [
 			profile,
 		]);
@@ -39,7 +40,6 @@ export const Transactions = memo(
 		const fetchTransactions = useCallback(
 			async ({ flush, mode }: { flush: boolean; mode: string }) => {
 				let currentTransactions = [...transactions];
-				console.log("fetching transactions");
 
 				if (flush) {
 					profile.transactionAggregate().flush();
@@ -62,7 +62,9 @@ export const Transactions = memo(
 				const response = await profile.transactionAggregate()[method](queryParams);
 				const transactionsAggregate = response.items();
 
-				setIsLoading(false);
+				if (isLoading === false) {
+					setIsLoading(false);
+				}
 
 				setTransactions(currentTransactions.concat(transactionsAggregate));
 			},
@@ -97,8 +99,8 @@ export const Transactions = memo(
 				<TransactionTable
 					transactions={transactions}
 					exchangeCurrency={exchangeCurrency}
-					hideHeader={!isLoading && transactions.length === 0}
-					isLoading={isLoading}
+					hideHeader={!isLoadingTransactions && transactions.length === 0}
+					isLoading={isLoadingTransactions}
 					skeletonRowsLimit={8}
 					onRowClick={setTransactionModalItem}
 					isCompact={isCompact}
@@ -109,20 +111,20 @@ export const Transactions = memo(
 						data-testid="transactions__fetch-more-button"
 						variant="secondary"
 						className="mt-10 mb-5 w-full"
-						disabled={isLoading}
+						disabled={isLoadingTransactions}
 						onClick={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
 					>
-						{isLoading ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
+						{isLoadingTransactions ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
 					</Button>
 				)}
 
-				{!isLoading && transactions.length === 0 && !selectedTransactionType && (
+				{!isLoadingTransactions && transactions.length === 0 && !selectedTransactionType && (
 					<EmptyBlock className="-mt-5">
 						{emptyText || t("DASHBOARD.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
 					</EmptyBlock>
 				)}
 
-				{!isLoading && transactions.length === 0 && !!selectedTransactionType && (
+				{!isLoadingTransactions && transactions.length === 0 && !!selectedTransactionType && (
 					<EmptyResults
 						className="flex-1"
 						title={t("COMMON.EMPTY_RESULTS.TITLE")}
