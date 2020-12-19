@@ -240,18 +240,16 @@ describe("Registration", () => {
 	it("should set fee", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage(wallet);
 
-		act(() => {
-			fireEvent.click(getByTestId("Registration__continue-button"));
-		});
-
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+
+		const feeInput = getByTestId("InputCurrency");
+		await waitFor(() => expect(feeInput).not.toHaveValue("0"));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("SelectionBarOption")[1]);
 		});
 
-		const feeInput = getByTestId("InputCurrency");
-		waitFor(() => expect(feeInput).toHaveValue("0"));
+		await waitFor(() => expect(feeInput).not.toHaveValue("0"));
 	});
 
 	it("should show mnemonic error", async () => {

@@ -87,16 +87,16 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	useEffect(() => {
 		setFeesByRegistrationType(registrationType);
 
-		if (registrationType === "delegateRegistration") {
-			return setRegistrationForm(DelegateRegistrationForm);
-		}
-
-		if (registrationType === "secondSignature") {
-			return setRegistrationForm(SecondSignatureRegistrationForm);
-		}
-
-		if (registrationType === "multiSignature") {
-			return setRegistrationForm(MultiSignatureRegistrationForm);
+		switch (registrationType) {
+			case "secondSignature": {
+				return setRegistrationForm(SecondSignatureRegistrationForm);
+			}
+			case "multiSignature": {
+				return setRegistrationForm(MultiSignatureRegistrationForm);
+			}
+			default: {
+				return setRegistrationForm(DelegateRegistrationForm);
+			}
 		}
 	}, [registrationType, setFeesByRegistrationType, setValue]);
 

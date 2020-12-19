@@ -1,8 +1,8 @@
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { Tooltip } from "app/components/Tooltip";
-import { useActiveWallet } from "app/hooks/env";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,27 +14,26 @@ type DelegateInfo = {
 };
 
 type WalletRegistrationsProps = {
+	wallet: ReadWriteWallet;
 	onButtonClick: (newRegistration?: boolean) => void;
 };
 
-export const WalletRegistrations = ({ onButtonClick }: WalletRegistrationsProps) => {
+export const WalletRegistrations = ({ wallet, onButtonClick }: WalletRegistrationsProps) => {
 	const { t } = useTranslation();
 
-	const activeWallet = useActiveWallet();
-
-	if (!activeWallet.hasSyncedWithNetwork()) {
+	if (!wallet.hasSyncedWithNetwork()) {
 		return <section data-testid="WalletRegistrations">{<WalletRegistrationsSkeleton />}</section>;
 	}
 
-	const delegate = activeWallet.isDelegate()
+	const delegate = wallet.isDelegate()
 		? {
-				username: activeWallet.username(),
-				isResigned: activeWallet.isResignedDelegate(),
+				username: wallet.username(),
+				isResigned: wallet.isResignedDelegate(),
 		  }
 		: undefined;
 
-	const isMultiSignature = activeWallet.isMultiSignature();
-	const isSecondSignature = activeWallet.isSecondSignature();
+	const isMultiSignature = wallet.isMultiSignature();
+	const isSecondSignature = wallet.isSecondSignature();
 
 	const renderRegistrations = () => {
 		if (!delegate && !isSecondSignature && !isMultiSignature) {

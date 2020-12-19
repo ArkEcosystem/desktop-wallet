@@ -1,18 +1,11 @@
 import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
-import { createMemoryHistory } from "history";
 import React from "react";
-import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, syncDelegates } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates } from "testing-library";
 
 import { WalletVote } from "./WalletVote";
 
-const history = createMemoryHistory();
-
 let wallet: ReadWriteWallet;
-let votes: ReadOnlyWallet[];
-
-let walletURL: string;
 
 describe("WalletVote", () => {
 	beforeEach(async () => {
@@ -21,21 +14,10 @@ describe("WalletVote", () => {
 
 		await syncDelegates();
 		await wallet.syncVotes();
-
-		walletURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
-		history.push(walletURL);
 	});
 
 	it("should render", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={jest.fn()} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
-		);
+		const { asFragment, getByTestId } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
 
 		expect(getByTestId("WalletVote")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -44,15 +26,7 @@ describe("WalletVote", () => {
 	it("should render loading state", () => {
 		const walletSpy = jest.spyOn(wallet, "hasSyncedWithNetwork").mockReturnValue(false);
 
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={jest.fn()} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
-		);
+		const { asFragment, getByTestId } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
 
 		expect(getByTestId("WalletVote__skeleton")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -63,15 +37,7 @@ describe("WalletVote", () => {
 	it("should render without votes", () => {
 		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
 
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={jest.fn()} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
-		);
+		const { asFragment, getByTestId } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
 
 		expect(getByTestId("WalletVote__empty")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -83,15 +49,7 @@ describe("WalletVote", () => {
 		jest.spyOn(wallet, "votes").mockReturnValue([]);
 		jest.spyOn(wallet.network(), "maximumVotesPerWallet").mockReturnValue(101);
 
-		const { asFragment, getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={jest.fn()} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
-		);
+		const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
 
 		expect(getByText("(0/101)")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -110,14 +68,8 @@ describe("WalletVote", () => {
 			}),
 		]);
 
-		const { asFragment, getAllByTestId, getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={jest.fn()} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
+		const { asFragment, getAllByTestId, getByText } = render(
+			<WalletVote wallet={wallet} onButtonClick={jest.fn()} />,
 		);
 
 		expect(getByText("status-ok.svg")).toBeTruthy();
@@ -141,14 +93,8 @@ describe("WalletVote", () => {
 			),
 		);
 
-		const { asFragment, getAllByTestId, getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={jest.fn()} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
+		const { asFragment, getAllByTestId, getByText } = render(
+			<WalletVote wallet={wallet} onButtonClick={jest.fn()} />,
 		);
 
 		if (count < 4) {
@@ -168,15 +114,7 @@ describe("WalletVote", () => {
 
 		const onButtonClick = jest.fn();
 
-		const { getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={onButtonClick} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
-		);
+		const { getByText } = render(<WalletVote wallet={wallet} onButtonClick={onButtonClick} />);
 
 		act(() => {
 			fireEvent.click(getByText(commonTranslations.VOTE));
@@ -200,15 +138,7 @@ describe("WalletVote", () => {
 
 		const onButtonClick = jest.fn();
 
-		const { getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={onButtonClick} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
-		);
+		const { getByText } = render(<WalletVote wallet={wallet} onButtonClick={onButtonClick} />);
 
 		act(() => {
 			fireEvent.click(getByText(commonTranslations.UNVOTE));
@@ -234,15 +164,7 @@ describe("WalletVote", () => {
 
 		const onButtonClick = jest.fn();
 
-		const { getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletVote onButtonClick={onButtonClick} />
-			</Route>,
-			{
-				routes: [walletURL],
-				history,
-			},
-		);
+		const { getByText } = render(<WalletVote wallet={wallet} onButtonClick={onButtonClick} />);
 
 		act(() => {
 			fireEvent.click(getByText(commonTranslations.SHOW_ALL));

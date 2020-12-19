@@ -1,4 +1,4 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -6,34 +6,32 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { Tooltip } from "app/components/Tooltip";
-import { useActiveWallet } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
 type WalletVoteProps = {
+	wallet: ReadWriteWallet;
 	onButtonClick: (address?: string) => void;
 };
 
-export const WalletVote = ({ onButtonClick }: WalletVoteProps) => {
+export const WalletVote = ({ wallet, onButtonClick }: WalletVoteProps) => {
 	const { t } = useTranslation();
 
-	const activeWallet = useActiveWallet();
-
-	if (!activeWallet.hasSyncedWithNetwork()) {
+	if (!wallet.hasSyncedWithNetwork()) {
 		return <section data-testid="WalletVote">{<WalletVoteSkeleton />}</section>;
 	}
 
 	let votes: ReadOnlyWallet[];
 
 	try {
-		votes = activeWallet.votes();
+		votes = wallet.votes();
 	} catch {
 		votes = [];
 	}
 
-	const maxVotes = activeWallet.network().maximumVotesPerWallet();
+	const maxVotes = wallet.network().maximumVotesPerWallet();
 
 	const hasNoVotes = votes.length === 0;
 	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
