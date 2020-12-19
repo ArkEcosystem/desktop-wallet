@@ -129,7 +129,7 @@ export const WalletVote = ({ onButtonClick }: WalletVoteProps) => {
 			);
 		}
 
-		const [first, second, ...rest] = votes || [];
+		const [first, second, ...rest] = votes;
 
 		const renderAvatar = (address: string, username?: string) => (
 			<Tooltip content={username}>

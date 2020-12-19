@@ -356,7 +356,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       >
                         <input
                           aria-invalid="true"
-                          class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                           data-testid="AuthenticationStep__mnemonic"
                           name="mnemonic"
                           type="password"
@@ -1062,7 +1062,7 @@ exports[`SendIpfs should render form step 1`] = `
                 aria-controls="SendTransactionForm__network-menu"
                 aria-labelledby="SendTransactionForm__network-label"
                 autocomplete="off"
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                 data-testid="SelectNetworkInput__input"
                 id="SendTransactionForm__network-input"
                 placeholder="Enter a cryptoasset name"
@@ -1126,7 +1126,7 @@ exports[`SendIpfs should render form step 1`] = `
               </div>
             </button>
             <input
-              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
               data-testid="SelectAddress__input"
               name="senderAddress"
               readonly=""
@@ -1154,7 +1154,7 @@ exports[`SendIpfs should render form step 1`] = `
           class="sc-fznxsB hhZPAY"
         >
           <input
-            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="Input__hash"
             name="hash"
             placeholder=" "
@@ -1188,7 +1188,7 @@ exports[`SendIpfs should render form step 1`] = `
               class="sc-fznxsB hhZPAY"
             >
               <input
-                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="InputCurrency"
                 name="fee"
                 type="text"
@@ -1214,7 +1214,7 @@ exports[`SendIpfs should render form step 1`] = `
                         aria-valuemax="2e-8"
                         aria-valuemin="0"
                         aria-valuenow="0"
-                        class="sc-fzoiQi kEqFhK"
+                        class="sc-fzoiQi dhJwTO"
                         data-testid="Range__thumb"
                         draggable="false"
                         role="slider"
@@ -1977,7 +1977,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 aria-controls="SendTransactionForm__network-menu"
                                 aria-labelledby="SendTransactionForm__network-label"
                                 autocomplete="off"
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                                 data-testid="SelectNetworkInput__input"
                                 disabled=""
                                 id="SendTransactionForm__network-input"
@@ -2060,7 +2060,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </div>
                             </button>
                             <input
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
                               data-testid="SelectAddress__input"
                               name="senderAddress"
                               readonly=""
@@ -2089,7 +2089,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         >
                           <input
                             aria-invalid="true"
-                            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+                            class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
                             data-testid="Input__hash"
                             name="hash"
                             placeholder=" "
@@ -2128,7 +2128,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="sc-fznxsB hhZPAY"
                             >
                               <input
-                                class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"

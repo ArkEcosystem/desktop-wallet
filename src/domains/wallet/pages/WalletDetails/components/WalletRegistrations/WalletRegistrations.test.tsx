@@ -87,6 +87,27 @@ describe("WalletRegistrations", () => {
 		jest.clearAllMocks();
 	});
 
+	it("should render inactive icons without a second signature registration", () => {
+		jest.spyOn(wallet, "isDelegate").mockReturnValue(true);
+		jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(false);
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletRegistrations onButtonClick={jest.fn()} />
+			</Route>,
+			{
+				routes: [walletURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("WalletRegistrations__inactive")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		jest.clearAllMocks();
+	});
+
 	it("should render inactive icons without a multisignature registration", () => {
 		jest.spyOn(wallet, "isDelegate").mockReturnValue(true);
 		jest.spyOn(wallet, "isMultiSignature").mockReturnValue(false);

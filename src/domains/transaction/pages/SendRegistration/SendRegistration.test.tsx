@@ -191,11 +191,15 @@ describe("Registration", () => {
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
-			// Step 2
 			fireEvent.click(getByTestId("Registration__continue-button"));
 			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy());
 
-			// Step 3 - signing
+			fireEvent.click(getByTestId("Registration__back-button"));
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
+
+			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
+			fireEvent.click(getByTestId("Registration__continue-button"));
+
 			fireEvent.click(getByTestId("Registration__continue-button"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 

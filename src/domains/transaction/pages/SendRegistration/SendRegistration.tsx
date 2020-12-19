@@ -67,10 +67,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	}, [register]);
 
 	useEffect(() => {
-		if (!activeWallet?.address?.()) {
-			return;
-		}
-
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
 		const network = env
@@ -83,10 +79,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	}, [activeWallet, env, setValue]);
 
 	useEffect(() => {
-		if (!activeWallet?.address?.()) {
-			return;
-		}
-
 		const fees = getFeesByRegistrationType(registrationType);
 		setValue("fees", fees);
 		setValue("fee", fees?.avg || fees?.static);

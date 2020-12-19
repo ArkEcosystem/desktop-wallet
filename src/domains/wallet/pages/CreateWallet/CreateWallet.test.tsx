@@ -72,60 +72,62 @@ describe("CreateWallet", () => {
 		bip39GenerateMock.mockRestore();
 	});
 
-	it("should render 1st step", async () => {
-		const { result: form } = renderHook(() => useForm());
-		const { getByTestId, asFragment } = render(
-			<FormProvider {...form.current}>
-				<FirstStep env={env} profile={profile} />
-			</FormProvider>,
-		);
+	describe("1st step", () => {
+		it("should render", async () => {
+			const { result: form } = renderHook(() => useForm());
+			const { getByTestId, asFragment } = render(
+				<FormProvider {...form.current}>
+					<FirstStep env={env} profile={profile} />
+				</FormProvider>,
+			);
 
-		expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+			expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
+			expect(asFragment()).toMatchSnapshot();
 
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-		expect(selectNetworkInput).toBeTruthy();
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
 
-		act(() => {
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+			act(() => {
+				fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+			});
+
+			act(() => {
+				fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			});
+
+			expect(selectNetworkInput).toHaveAttribute("disabled");
+
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+			await waitFor(() => expect(selectNetworkInput).not.toHaveAttribute("disabled"));
 		});
 
-		act(() => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		it("should render without test networks", async () => {
+			profile.settings().set(ProfileSetting.UseTestNetworks, false);
+
+			const { result: form } = renderHook(() => useForm());
+			const { getByTestId, asFragment, queryByTestId } = render(
+				<FormProvider {...form.current}>
+					<FirstStep env={env} profile={profile} />
+				</FormProvider>,
+			);
+
+			expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
+
+			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			expect(selectNetworkInput).toBeTruthy();
+
+			act(() => {
+				fireEvent.focus(selectNetworkInput);
+			});
+
+			expect(queryByTestId("NetworkIcon-ARK-ark.mainnet")).toBeInTheDocument();
+			expect(queryByTestId("NetworkIcon-ARK-ark.devnet")).toBeNull();
+
+			expect(asFragment()).toMatchSnapshot();
+
+			profile.settings().set(ProfileSetting.UseTestNetworks, true);
 		});
-
-		expect(selectNetworkInput).toHaveAttribute("disabled");
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
-
-		await waitFor(() => expect(selectNetworkInput).not.toHaveAttribute("disabled"));
-	});
-
-	it("should render 1st step without test networks", async () => {
-		profile.settings().set(ProfileSetting.UseTestNetworks, false);
-
-		const { result: form } = renderHook(() => useForm());
-		const { getByTestId, asFragment, queryByTestId } = render(
-			<FormProvider {...form.current}>
-				<FirstStep env={env} profile={profile} />
-			</FormProvider>,
-		);
-
-		expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-		expect(selectNetworkInput).toBeTruthy();
-
-		act(() => {
-			fireEvent.focus(selectNetworkInput);
-		});
-
-		expect(queryByTestId("NetworkIcon-ARK-ark.mainnet")).toBeInTheDocument();
-		expect(queryByTestId("NetworkIcon-ARK-ark.devnet")).toBeNull();
-
-		expect(asFragment()).toMatchSnapshot();
-
-		profile.settings().set(ProfileSetting.UseTestNetworks, true);
 	});
 
 	describe("2nd step", () => {
@@ -311,7 +313,6 @@ describe("CreateWallet", () => {
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
 
-		// Submit
 		await act(async () => {
 			fireEvent.change(walletNameInput, { target: { value: "Test" } });
 		});
@@ -319,42 +320,10 @@ describe("CreateWallet", () => {
 		expect(form.current.getValues()).toEqual({ name: "Test" });
 	});
 
-	// it("should not allow quick swapping of networks", async () => {
-	// 	const history = createMemoryHistory();
-	// 	const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
-	// 	history.push(createURL);
-
-	// 	const { queryAllByText, getAllByTestId, getByTestId, getByText, asFragment } = renderWithRouter(
-	// 		<Route path="/profiles/:profileId/wallets/create">
-	// 			<CreateWallet />
-	// 		</Route>,
-	// 		{
-	// 			routes: [createURL],
-	// 			history,
-	// 		},
-	// 	);
-
-	// 	await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
-	// 	expect(asFragment()).toMatchSnapshot();
-
-	// 	const continueButton = getByTestId("CreateWallet__continue-button");
-	// 	const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
-
-	// 	fireEvent.click(networkIcons[1]); // click DARK
-	// 	fireEvent.click(networkIcons[0]); // click ARK
-
-	// 	expect(getByTestId("SelectNetworkInput__input")).toHaveAttribute("disabled");
-	// 	for (const networkIcon of getAllByTestId("SelectNetwork__NetworkIcon--container")) {
-	// 		expect(networkIcon).toHaveAttribute("disabled");
-	// 	}
-	// 	expect(continueButton).toHaveAttribute("disabled");
-
-	// 	expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveClass("border-theme-success-200");
-
-	// 	await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
-	// });
-
-	it("should render", async () => {
+	it.each([
+		["with alias", "Test Wallet"],
+		["without alias", undefined],
+	])("should create a wallet %s", async (type, alias) => {
 		const history = createMemoryHistory();
 		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
@@ -463,8 +432,12 @@ describe("CreateWallet", () => {
 		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
 		const historySpy = jest.spyOn(history, "push");
+
 		act(() => {
-			fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });
+			if (alias) {
+				fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: alias } });
+			}
+
 			fireEvent.click(getByTestId(`CreateWallet__save-button`));
 		});
 
@@ -473,7 +446,8 @@ describe("CreateWallet", () => {
 		await waitFor(() =>
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`),
 		);
-		expect(wallet.alias()).toEqual("Test Wallet");
+
+		expect(wallet.alias()).toEqual(alias);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

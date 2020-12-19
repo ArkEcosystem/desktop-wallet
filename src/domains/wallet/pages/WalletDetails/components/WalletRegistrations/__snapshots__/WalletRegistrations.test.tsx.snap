@@ -288,6 +288,76 @@ exports[`WalletRegistrations should render inactive icons without a multisignatu
 </DocumentFragment>
 `;
 
+exports[`WalletRegistrations should render inactive icons without a second signature registration 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletRegistrations"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        Registrations
+      </h2>
+    </div>
+    <div
+      class="flex items-center h-11"
+    >
+      <div
+        class="flex items-center mr-8 -space-x-2"
+      >
+        <div
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
+        >
+          <div
+            class="sc-AxirZ dqZknP"
+            height="21"
+            width="21"
+          >
+            <svg>
+              multisig.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
+        >
+          <div
+            class="sc-AxirZ dqZknP"
+            height="21"
+            width="21"
+          >
+            <svg>
+              delegate.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+        data-testid="WalletRegistrations__inactive"
+      >
+        <div
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+        >
+          <div
+            class="sc-AxirZ dqZknP"
+            height="21"
+            width="21"
+          >
+            <svg>
+              key.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
 exports[`WalletRegistrations should render loading state 1`] = `
 <DocumentFragment>
   <section
