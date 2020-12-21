@@ -1,9 +1,11 @@
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
+import * as useQRCodeHook from "domains/wallet/components/ReceiveFunds/hooks";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter, within } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter, waitFor, within } from "testing-library";
 
 import { WalletHeader } from "./WalletHeader";
 
@@ -15,17 +17,25 @@ let wallet: ReadWriteWallet;
 let walletUrl: string;
 
 describe("WalletHeader", () => {
-	beforeEach(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 
+		await wallet.syncVotes();
+
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
-		history.push(walletUrl);
+		jest.spyOn(useQRCodeHook, "useQRCode").mockImplementation(() => ({}));
+	});
+
+	afterAll(() => {
+		useQRCodeHook.useQRCode.mockRestore();
 	});
 
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<WalletHeader profile={profile} wallet={wallet} />);
+		const { asFragment, getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
+
+		waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -64,8 +74,8 @@ describe("WalletHeader", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should open & close sign message modal", () => {
-		const { getByTestId } = render(<WalletHeader profile={profile} wallet={wallet} />);
+	it.each(["cancel", "close"])("should open & %s sign message modal", (action) => {
+		const { getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
@@ -74,71 +84,109 @@ describe("WalletHeader", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--additional-0"));
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE,
+				),
+			);
 		});
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(walletTranslations.MODAL_SIGN_MESSAGE.TITLE);
 
 		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
+			if (action === "close") {
+				fireEvent.click(getByTestId("modal__close-btn"));
+			} else {
+				fireEvent.click(getByText(commonTranslations.CANCEL));
+			}
 		});
+
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
-	it("should open & close verify message modal", () => {
-		const { getByTestId } = render(<WalletHeader profile={profile} wallet={wallet} />);
+	it.each(["cancel", "close"])("should open & %s verify message modal", (action) => {
+		const { getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
 
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--additional-1"));
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE,
+				),
+			);
 		});
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(walletTranslations.MODAL_VERIFY_MESSAGE.TITLE);
 
 		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
+			if (action === "close") {
+				fireEvent.click(getByTestId("modal__close-btn"));
+			} else {
+				fireEvent.click(getByText(commonTranslations.CANCEL));
+			}
 		});
+
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
-	it("should open & close delete wallet modal", () => {
-		const { getByTestId } = render(<WalletHeader profile={profile} wallet={wallet} />);
+	it.each(["cancel", "close"])("should open & %s delete wallet modal", (action) => {
+		const { getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
 
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--secondary-0"));
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.DELETE,
+				),
+			);
 		});
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(walletTranslations.MODAL_DELETE_WALLET.TITLE);
 
 		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
+			if (action === "close") {
+				fireEvent.click(getByTestId("modal__close-btn"));
+			} else {
+				fireEvent.click(getByText(commonTranslations.CANCEL));
+			}
 		});
+
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
-	it("should open & close wallet name modal", () => {
-		const { getByTestId } = render(<WalletHeader profile={profile} wallet={wallet} />);
+	it.each(["cancel", "close"])("should open & %s wallet name modal", (action) => {
+		const { getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
 
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--primary-0"));
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME,
+				),
+			);
 		});
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(walletTranslations.MODAL_NAME_WALLET.TITLE);
+		waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(walletTranslations.MODAL_NAME_WALLET.TITLE),
+		);
 
 		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
+			if (action === "close") {
+				fireEvent.click(getByTestId("modal__close-btn"));
+			} else {
+				fireEvent.click(getByText(commonTranslations.CANCEL));
+			}
 		});
+
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
@@ -150,7 +198,11 @@ describe("WalletHeader", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--primary-1"));
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.RECEIVE_FUNDS,
+				),
+			);
 		});
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(walletTranslations.MODAL_RECEIVE_FUNDS.TITLE);
@@ -162,6 +214,8 @@ describe("WalletHeader", () => {
 	});
 
 	it("should handle multisignature registration", () => {
+		history.push(walletUrl);
+
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId } = renderWithRouter(
@@ -179,7 +233,11 @@ describe("WalletHeader", () => {
 		});
 
 		act(() => {
-			fireEvent.click(within(getByTestId("dropdown__content")).getByText("Multisignature"));
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE,
+				),
+			);
 		});
 
 		expect(historySpy).toHaveBeenCalledWith(
@@ -190,6 +248,8 @@ describe("WalletHeader", () => {
 	});
 
 	it("should handle second signature registration", () => {
+		history.push(walletUrl);
+
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId } = renderWithRouter(
@@ -207,7 +267,11 @@ describe("WalletHeader", () => {
 		});
 
 		act(() => {
-			fireEvent.click(within(getByTestId("dropdown__content")).getByText("Second Signature"));
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE,
+				),
+			);
 		});
 
 		expect(historySpy).toHaveBeenCalledWith(
@@ -217,7 +281,9 @@ describe("WalletHeader", () => {
 		historySpy.mockRestore();
 	});
 
-	it("should handle store hash option", () => {
+	it("should handle delegate registration", () => {
+		history.push(walletUrl);
+
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId } = renderWithRouter(
@@ -235,7 +301,81 @@ describe("WalletHeader", () => {
 		});
 
 		act(() => {
-			fireEvent.click(within(getByTestId("dropdown__content")).getByText("Store Hash"));
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE,
+				),
+			);
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(
+			`/profiles/${profile.id()}/wallets/${wallet.id()}/send-registration/delegateRegistration`,
+		);
+
+		historySpy.mockRestore();
+	});
+
+	it("should handle delegate resignation", () => {
+		history.push(walletUrl);
+
+		const walletSpy = jest.spyOn(wallet, "isDelegate").mockReturnValue(true);
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletHeader profile={profile} wallet={wallet} />
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE,
+				),
+			);
+		});
+
+		expect(historySpy).toHaveBeenCalledWith(
+			`/profiles/${profile.id()}/wallets/${wallet.id()}/send-delegate-resignation`,
+		);
+
+		historySpy.mockRestore();
+		walletSpy.mockRestore();
+	});
+
+	it("should handle store hash option", () => {
+		history.push(walletUrl);
+
+		const historySpy = jest.spyOn(history, "push");
+
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletHeader profile={profile} wallet={wallet} />
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH,
+				),
+			);
 		});
 
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-ipfs`);

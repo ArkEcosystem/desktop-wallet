@@ -126,7 +126,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 	if (wallet.network().can(Coins.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
-			label: t("WALLETS.MODAL_VERIFY_MESSAGE.TITLE"),
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",
 		});
 	}

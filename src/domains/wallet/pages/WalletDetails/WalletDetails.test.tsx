@@ -52,8 +52,8 @@ const renderPage = async (waitForTopSection = true) => {
 	const { getByTestId, queryAllByTestId } = rendered;
 
 	if (waitForTopSection) {
-		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
-		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("WalletRegistrations")).toBeTruthy());
 	}
 
 	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1));
@@ -111,8 +111,6 @@ describe("WalletDetails", () => {
 	beforeEach(() => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(walletUrl);
-		jest.useFakeTimers();
-		jest.advanceTimersByTime(30000);
 	});
 
 	it("should not render wallet vote when the network does not support votes", async () => {
