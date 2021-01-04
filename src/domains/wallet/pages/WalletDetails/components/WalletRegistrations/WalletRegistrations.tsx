@@ -13,12 +13,9 @@ type DelegateInfo = {
 	isResigned: boolean;
 };
 
-type WalletRegistrationsProps = {
-	wallet: ReadWriteWallet;
-	onButtonClick: (newRegistration?: boolean) => void;
-};
+type WalletRegistrationsProps = { wallet: ReadWriteWallet };
 
-export const WalletRegistrations = ({ wallet, onButtonClick }: WalletRegistrationsProps) => {
+export const WalletRegistrations = ({ wallet }: WalletRegistrationsProps) => {
 	const { t } = useTranslation();
 
 	if (!wallet.hasSyncedWithNetwork()) {

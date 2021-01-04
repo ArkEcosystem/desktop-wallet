@@ -218,7 +218,6 @@ describe("WalletDetails", () => {
 
 	it("should update wallet name", async () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
@@ -247,7 +246,6 @@ describe("WalletDetails", () => {
 
 	it("should remove wallet name", async () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
@@ -276,7 +274,6 @@ describe("WalletDetails", () => {
 
 	it("should star and unstar a wallet", async () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		expect(wallet.isStarred()).toBe(false);
 
@@ -314,8 +311,6 @@ describe("WalletDetails", () => {
 	it("should fetch more transactions", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
-
 		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
 
 		act(() => {
@@ -348,7 +343,6 @@ describe("WalletDetails", () => {
 
 	it("should delete wallet", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		const dropdown = getAllByTestId("dropdown__toggle")[2];
 		expect(dropdown).toBeTruthy();

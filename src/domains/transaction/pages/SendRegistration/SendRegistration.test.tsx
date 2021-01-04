@@ -113,65 +113,6 @@ describe("Registration", () => {
 		});
 	});
 
-	// it("should not set fee if no fee options", async () => {
-	// 	const setRegistrationForm = jest.fn();
-	// 	const network = {
-	// 		id: () => "ark.devnet",
-	// 		coin: () => "ARK",
-	// 		can: () => true,
-	// 	};
-	// 	const fees = {};
-
-	// 	const { result: form } = renderHook(() =>
-	// 		useForm({
-	// 			defaultValues: {
-	// 				network,
-	// 			},
-	// 		}),
-	// 	);
-	// 	const setValueSpy = jest.spyOn(form.current, "setValue");
-	// 	let rendered: RenderResult;
-
-	// 	await renderHookAct(async () => {
-	// 		rendered = render(
-	// 			<FormProvider {...form.current}>
-	// 				<RegistrationTypeStep
-	// 					networks={env.availableNetworks()}
-	// 					profile={profile}
-	// 					wallet={wallet}
-	// 					setRegistrationForm={setRegistrationForm}
-	// 					fees={fees}
-	// 				/>
-	// 			</FormProvider>,
-	// 		);
-
-	// 		await waitFor(() => expect(rendered.getByTestId("Registration__selection-step")).toBeTruthy());
-	// 	});
-
-	// 	const { asFragment, getByTestId } = rendered!;
-
-	// 	await renderHookAct(async () => {
-	// 		fireEvent.focus(getByTestId("SelectRegistrationTypeInput__input"));
-
-	// 		await waitFor(() => expect(getByTestId("RegistrationTypeIcon-Delegate")).toBeTruthy());
-
-	// 		fireEvent.click(getByTestId("RegistrationTypeIcon-Delegate"));
-
-	// 		await waitFor(() => expect(setValueSpy).toHaveBeenNthCalledWith(1, "network", { ...network }));
-	// 		await waitFor(() =>
-	// 			expect(setValueSpy).toHaveBeenNthCalledWith(
-	// 				2,
-	// 				"registrationType",
-	// 				{ label: "Delegate", value: "delegateRegistration" },
-	// 				{ shouldValidate: true, shouldDirty: true },
-	// 			),
-	// 		);
-	// 		await waitFor(() => expect(setRegistrationForm).toHaveBeenCalledTimes(1));
-	// 		await waitFor(() => expect(setValueSpy).not.toHaveBeenNthCalledWith(3, "fee", "1", true));
-	// 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	// 	});
-	// });
-
 	it("should register delegate", async () => {
 		const { asFragment, getByTestId, history } = await renderPage(wallet);
 
@@ -243,7 +184,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
 		const feeInput = getByTestId("InputCurrency");
-		await waitFor(() => expect(feeInput).not.toHaveValue("0"));
+		await waitFor(() => expect(feeInput).toHaveValue("25"));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("SelectionBarOption")[1]);

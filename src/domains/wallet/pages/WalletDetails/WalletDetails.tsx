@@ -97,16 +97,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 			});
 		}
 
-		/* istanbul ignore next */
 		history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
-	};
-
-	const handleRegistrationsButton = (newRegistration?: boolean) => {
-		if (newRegistration) {
-			return history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-registration`);
-		}
-
-		history.push(`/profiles/${activeProfile.id()}/registrations`);
 	};
 
 	/* istanbul ignore next */
@@ -132,10 +123,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 
 							{showWalletRegistrations && (
 								<div className="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800">
-									<WalletRegistrations
-										wallet={activeWallet}
-										onButtonClick={handleRegistrationsButton}
-									/>
+									<WalletRegistrations wallet={activeWallet} />
 								</div>
 							)}
 						</div>

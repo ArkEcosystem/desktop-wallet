@@ -53,7 +53,8 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 			const fees = getFeesByRegistrationType(type);
 
 			setValue("fees", fees);
-			setValue("fee", fees?.avg);
+			/* istanbul ignore next */
+			setValue("fee", fees?.avg || fees?.static);
 		},
 		[getFeesByRegistrationType, setValue],
 	);
@@ -79,12 +80,6 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	}, [activeWallet, env, setValue]);
 
 	useEffect(() => {
-		const fees = getFeesByRegistrationType(registrationType);
-		setValue("fees", fees);
-		setValue("fee", fees?.avg || fees?.static);
-	}, [setValue, activeWallet, registrationType, getFeesByRegistrationType]);
-
-	useEffect(() => {
 		setFeesByRegistrationType(registrationType);
 
 		switch (registrationType) {
@@ -98,7 +93,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 				return setRegistrationForm(DelegateRegistrationForm);
 			}
 		}
-	}, [registrationType, setFeesByRegistrationType, setValue]);
+	}, [registrationType, setFeesByRegistrationType]);
 
 	const handleSubmit = async () => {
 		try {

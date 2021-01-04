@@ -1,5 +1,4 @@
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
-import { action } from "@storybook/addon-actions";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
 
@@ -10,9 +9,7 @@ export default {
 	decorators: [(storyFn: any) => <WalletsDecorator count={1}>{storyFn}</WalletsDecorator>],
 };
 
-export const Default = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
-	<WalletRegistrations wallet={wallets[0]} onButtonClick={action("onButtonClick")} />
-);
+export const Default = ({ wallets }: { wallets: ReadWriteWallet[] }) => <WalletRegistrations wallet={wallets[0]} />;
 
 export const Empty = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
 	<WalletRegistrations
@@ -22,7 +19,6 @@ export const Empty = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
 			isMultiSignature: () => false,
 			isSecondSignature: () => false,
 		}}
-		onButtonClick={action("onButtonClick")}
 	/>
 );
 
@@ -32,6 +28,5 @@ export const Loading = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
 			...wallets[0],
 			hasSyncedWithNetwork: () => false,
 		}}
-		onButtonClick={action("onButtonClick")}
 	/>
 );
