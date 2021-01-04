@@ -266,7 +266,11 @@ export const SendTransfer = () => {
 													className="space-x-2"
 												>
 													<Icon name="Send" width={20} height={20} />
-													{isSubmitting ? <Spinner size="sm" /> : t("COMMON.SEND")}
+													{isSubmitting ? (
+														<Spinner size="sm" />
+													) : (
+														<span>{t("COMMON.SEND")}</span>
+													)}
 												</Button>
 											</>
 										)}

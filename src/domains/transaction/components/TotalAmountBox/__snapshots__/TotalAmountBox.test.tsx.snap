@@ -9,13 +9,13 @@ exports[`TotalAmountBox should render 1`] = `
       class="relative p-4"
     >
       <div
-        class="flex divide-x divide-theme-neutral-300"
+        class="flex divide-x divide-theme-neutral-300 dark:divide-theme-neutral-800"
       >
         <div
           class="flex flex-col w-1/2 justify-center px-4 py-2"
         >
           <span
-            class="TotalAmountBox__AmountLabel-sc-178fnso-0 kcOGmg"
+            class="TotalAmountBox__AmountLabel-sc-178fnso-0 fRDOzg"
           >
             Transaction Amount
           </span>
@@ -30,7 +30,7 @@ exports[`TotalAmountBox should render 1`] = `
           class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
         >
           <span
-            class="TotalAmountBox__AmountLabel-sc-178fnso-0 kcOGmg"
+            class="TotalAmountBox__AmountLabel-sc-178fnso-0 fRDOzg"
           >
             Transaction Fee
           </span>
@@ -46,10 +46,10 @@ exports[`TotalAmountBox should render 1`] = `
         class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
       >
         <div
-          class="py-2 ml-px bg-theme-background"
+          class="py-2 ml-px bg-theme-background text-theme-neutral-900 dark:text-theme-neutral-600"
         >
           <div
-            class="sc-bdfBwQ fPrsah"
+            class="sc-AxjAm cpczEI"
             height="1em"
             width="1em"
           >
@@ -61,10 +61,10 @@ exports[`TotalAmountBox should render 1`] = `
       </div>
     </div>
     <div
-      class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-contrast"
+      class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-300 dark:bg-theme-neutral-800"
     >
       <span
-        class="TotalAmountBox__AmountLabel-sc-178fnso-0 kcOGmg"
+        class="TotalAmountBox__AmountLabel-sc-178fnso-0 fRDOzg"
       >
         Total Amount
       </span>

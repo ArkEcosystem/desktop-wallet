@@ -12,19 +12,19 @@ exports[`UpdateContact should render a modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 kxLMYS absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          class="Button-mdtvtf-0 HqoSC w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-bdfBwQ bfBhNR"
+            class="sc-AxjAm hSsKJo"
             height="14"
             width="14"
           >
@@ -53,10 +53,10 @@ exports[`UpdateContact should render a modal 1`] = `
               data-testid="contact-form"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                class="FormField__FormFieldStyled-yeauwd-0 cFZIpK flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                   data-testid="FormLabel"
                   for="name"
                 >
@@ -67,20 +67,20 @@ exports[`UpdateContact should render a modal 1`] = `
                   />
                 </label>
                 <input
-                  class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="Input__InputStyled-wu99qs-0 dniGhT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="contact-form__name-input"
                   name="name"
                   value="Brian"
                 />
               </fieldset>
               <div
-                class="SubForm__SubFormWrapper-c4tqfs-0 gaGCoQ"
+                class="SubForm__SubFormWrapper-c4tqfs-0 eAZpAS"
               >
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                  class="FormField__FormFieldStyled-yeauwd-0 cFZIpK flex flex-col space-y-2"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
                     for="network"
                   >
@@ -103,14 +103,14 @@ exports[`UpdateContact should render a modal 1`] = `
                         id="ContactForm__network-label"
                       />
                       <div
-                        class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                        class="InputGroup-sc-1obbdqe-3 gyJUIf"
                         data-testid="SelectNetworkInput"
                       >
                         <div
-                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 ilcxWo px-4"
                         >
                           <div
-                            class="Circle-uw7h4j-0 blBpcG border-theme-neutral-light text-theme-neutral"
+                            class="Circle-uw7h4j-0 gKnkQg border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                             data-testid="SelectNetworkInput__network"
                           />
                         </div>
@@ -119,7 +119,7 @@ exports[`UpdateContact should render a modal 1`] = `
                           aria-controls="ContactForm__network-menu"
                           aria-labelledby="ContactForm__network-label"
                           autocomplete="off"
-                          class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                          class="Input__InputStyled-wu99qs-0 dniGhT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                           data-testid="SelectNetworkInput__input"
                           id="ContactForm__network-input"
                           placeholder="Enter a cryptoasset name"
@@ -136,11 +136,11 @@ exports[`UpdateContact should render a modal 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                  class="FormField__FormFieldStyled-yeauwd-0 cFZIpK flex flex-col space-y-2"
                   data-testid="ContactForm__address"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
                     for="address"
                   >
@@ -151,16 +151,16 @@ exports[`UpdateContact should render a modal 1`] = `
                     />
                   </label>
                   <div
-                    class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                    class="InputGroup-sc-1obbdqe-3 gyJUIf max-w-20"
                   >
                     <input
-                      class="Input__InputStyled-wu99qs-0 hnWTtO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                      class="Input__InputStyled-wu99qs-0 dniGhT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                       data-testid="contact-form__address-input"
                       name="address"
                       type="text"
                     />
                     <div
-                      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bdmbMb my-px mr-4"
                     >
                       <button
                         class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
@@ -168,7 +168,7 @@ exports[`UpdateContact should render a modal 1`] = `
                         type="button"
                       >
                         <div
-                          class="sc-bdfBwQ iyevwF"
+                          class="sc-AxjAm buCJuk"
                           height="20"
                           width="20"
                         >
@@ -184,7 +184,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="mt-4"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU w-full"
+                    class="Button-mdtvtf-0 gIhjQC w-full"
                     data-testid="contact-form__add-address-btn"
                     disabled=""
                     type="button"
@@ -216,11 +216,11 @@ exports[`UpdateContact should render a modal 1`] = `
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          class="Circle-uw7h4j-0 kvHpSX border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
+                            class="sc-AxjAm buCJuk"
                             data-testid="NetworkIcon__icon"
                             height="20"
                             width="20"
@@ -231,7 +231,7 @@ exports[`UpdateContact should render a modal 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hCugTW"
                           data-testid="Avatar"
                         >
                           <div
@@ -253,7 +253,7 @@ exports[`UpdateContact should render a modal 1`] = `
                         class="inline-flex items-center"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 ixgfsX text-theme-text truncate font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           D61mfSggzb … oHaqJ3Dyib
@@ -261,12 +261,12 @@ exports[`UpdateContact should render a modal 1`] = `
                       </div>
                     </span>
                     <button
-                      class="Button-mdtvtf-0 hhoMLD flex items-center ml-auto"
+                      class="Button-mdtvtf-0 doFROh flex items-center ml-auto"
                       data-testid="contact-form__remove-address-btn"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-AxjAm cpczEI"
                         height="1em"
                         width="1em"
                       >
@@ -282,12 +282,12 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="flex w-full justify-between"
               >
                 <button
-                  class="Button-mdtvtf-0 hsWmPR"
+                  class="Button-mdtvtf-0 fncmwX"
                   data-testid="contact-form__delete-btn"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
+                    class="sc-AxjAm cpczEI"
                     height="1em"
                     width="1em"
                   >
@@ -303,14 +303,14 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 khjEGA"
+                    class="Button-mdtvtf-0 haEDvy"
                     data-testid="contact-form__cancel-btn"
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
-                    class="Button-mdtvtf-0 cvPqli"
+                    class="Button-mdtvtf-0 btrirE"
                     data-testid="contact-form__save-btn"
                     type="submit"
                   >
