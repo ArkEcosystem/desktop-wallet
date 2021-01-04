@@ -21,6 +21,8 @@ import {
 
 import { WalletDetails } from "./WalletDetails";
 
+jest.setTimeout(10000);
+
 const history = createMemoryHistory();
 let walletUrl: string;
 
