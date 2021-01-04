@@ -53,7 +53,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
               class="sc-AxhUy dJlYTe my-8"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="network"
               >
@@ -110,7 +110,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                       aria-controls="CustomPeers__network-menu"
                       aria-labelledby="CustomPeers__network-label"
                       autocomplete="off"
-                      class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       id="CustomPeers__network-input"
                       placeholder="Enter a cryptoasset name"
@@ -130,7 +130,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -141,7 +141,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="PeerForm__name-input"
                 name="name"
                 value="ROBank"
@@ -151,7 +151,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="host"
               >
@@ -162,7 +162,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                 />
               </label>
               <input
-                class="sc-AxgMl gprtDB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="PeerForm__host-input"
                 name="host"
                 value="http://167.114.29.48:4003/api"
@@ -172,13 +172,13 @@ exports[`UpdatePeer should render update peer modal 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="type"
               >
                 Type
                 <span
-                  class="ml-1 text-theme-neutral-light"
+                  class="ml-1 text-theme-secondary-text"
                   data-testid="FormLabel__optional"
                 >
                   (optional)

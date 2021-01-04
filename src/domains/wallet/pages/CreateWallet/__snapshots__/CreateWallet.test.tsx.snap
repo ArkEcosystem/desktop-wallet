@@ -28,7 +28,7 @@ exports[`CreateWallet 1st step should render 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="network"
       >
@@ -58,7 +58,7 @@ exports[`CreateWallet 1st step should render 1`] = `
               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
             >
               <div
-                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -67,7 +67,7 @@ exports[`CreateWallet 1st step should render 1`] = `
               aria-controls="CreateWallet__network-menu"
               aria-labelledby="CreateWallet__network-label"
               autocomplete="off"
-              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="CreateWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -115,7 +115,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="network"
       >
@@ -145,7 +145,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
             >
               <div
-                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -154,7 +154,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
               aria-controls="CreateWallet__network-menu"
               aria-labelledby="CreateWallet__network-label"
               autocomplete="off"
-              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="CreateWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -687,19 +687,19 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoNJl fLBodk"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoyTs gSSopp"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -734,7 +734,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -764,7 +764,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -773,7 +773,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1118,19 +1118,19 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoNJl fLBodk"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoyTs gSSopp"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -1165,7 +1165,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -1195,7 +1195,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -1204,7 +1204,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1551,19 +1551,19 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoNJl fLBodk"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoyTs gSSopp"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -1598,7 +1598,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -1628,7 +1628,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -1637,7 +1637,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1794,20 +1794,20 @@ exports[`CreateWallet should render 4th step 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="name"
       >
         Wallet name
         <span
-          class="ml-1 text-theme-neutral-light"
+          class="ml-1 text-theme-secondary-text"
           data-testid="FormLabel__optional"
         >
           (optional)
         </span>
       </label>
       <input
-        class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />
@@ -2109,19 +2109,19 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
           >
             <div>
               <ul
-                class="sc-fzoNJl fLBodk"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoyTs gSSopp"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoyTs gDSWzs"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -2156,7 +2156,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -2186,7 +2186,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -2195,7 +2195,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV edirQv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"

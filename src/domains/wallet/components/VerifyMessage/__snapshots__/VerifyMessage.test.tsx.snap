@@ -136,7 +136,7 @@ exports[`VerifyMessage should render 1`] = `
                     class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                   >
                     <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                       data-testid="FormLabel"
                       for="signed-message-content"
                     >
@@ -147,7 +147,7 @@ exports[`VerifyMessage should render 1`] = `
                       />
                     </label>
                     <input
-                      class="sc-AxhUy hUGYTP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                      class="sc-AxhUy bmthJt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="VerifyMessage_message-content"
                       name="signed-message-content"
                       type="text"
@@ -285,7 +285,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="sc-AxhCb ckQmOL mt-8"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
                     for="message"
                   >
@@ -296,7 +296,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxhUy hUGYTP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxhUy bmthJt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__message-input"
                     name="message"
                     type="text"
@@ -306,7 +306,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="sc-AxhCb ckQmOL mt-8"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
                     for="signatory"
                   >
@@ -317,7 +317,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxhUy hUGYTP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxhUy bmthJt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__signatory-input"
                     disabled=""
                     name="signatory"
@@ -329,7 +329,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="sc-AxhCb ckQmOL mt-8"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
                     for="signature"
                   >
@@ -340,7 +340,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="sc-AxhUy hUGYTP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-AxhUy bmthJt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__signature-input"
                     name="signature"
                     type="text"
