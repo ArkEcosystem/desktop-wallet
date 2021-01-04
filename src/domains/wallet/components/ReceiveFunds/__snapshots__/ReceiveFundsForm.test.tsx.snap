@@ -16,14 +16,14 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
           class="sc-AxjAm fmGClo flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <input
-            class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="ReceiveFundsForm__amount"
             name="amount"
             placeholder="Amount"
@@ -35,13 +35,13 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
           class="sc-AxjAm fmGClo flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
             <span
-              class="ml-1 text-theme-neutral-light"
+              class="ml-1 text-theme-secondary-text"
               data-testid="FormLabel__optional"
             >
               (optional)
@@ -51,7 +51,7 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
             class="sc-fzqNJr gmzgI"
           >
             <input
-              class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               placeholder=" "
@@ -88,14 +88,14 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
           class="sc-AxjAm fmGClo flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <input
-            class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="ReceiveFundsForm__amount"
             name="amount"
             placeholder="Amount"
@@ -107,13 +107,13 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
           class="sc-AxjAm fmGClo flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
             <span
-              class="ml-1 text-theme-neutral-light"
+              class="ml-1 text-theme-secondary-text"
               data-testid="FormLabel__optional"
             >
               (optional)
@@ -123,7 +123,7 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
             class="sc-fzqNJr gmzgI"
           >
             <input
-              class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               placeholder=" "
@@ -160,14 +160,14 @@ exports[`ReceiveFundsForm should render 1`] = `
           class="sc-AxjAm fmGClo flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <input
-            class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="ReceiveFundsForm__amount"
             name="amount"
             placeholder="Amount"
@@ -179,13 +179,13 @@ exports[`ReceiveFundsForm should render 1`] = `
           class="sc-AxjAm fmGClo flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
             <span
-              class="ml-1 text-theme-neutral-light"
+              class="ml-1 text-theme-secondary-text"
               data-testid="FormLabel__optional"
             >
               (optional)
@@ -195,7 +195,7 @@ exports[`ReceiveFundsForm should render 1`] = `
             class="sc-fzqNJr gmzgI"
           >
             <input
-              class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               placeholder=" "
@@ -232,14 +232,14 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
           class="sc-AxjAm fmGClo flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="amount"
           >
             Amount
           </label>
           <input
-            class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+            class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
             data-testid="ReceiveFundsForm__amount"
             name="amount"
             placeholder="Amount"
@@ -251,13 +251,13 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
           class="sc-AxjAm fmGClo flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
             data-testid="FormLabel"
             for="smartbridge"
           >
             Smartbridge
             <span
-              class="ml-1 text-theme-neutral-light"
+              class="ml-1 text-theme-secondary-text"
               data-testid="FormLabel__optional"
             >
               (optional)
@@ -267,7 +267,7 @@ exports[`ReceiveFundsForm should show alert if smartbridge value is too long 1`]
             class="sc-fzqNJr gmzgI"
           >
             <input
-              class="sc-fznKkj jcYrEG overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
+              class="sc-fznKkj iJvAgI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-24"
               data-testid="ReceiveFundsForm__smartbridge"
               name="smartbridge"
               placeholder=" "

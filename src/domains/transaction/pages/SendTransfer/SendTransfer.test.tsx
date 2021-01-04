@@ -382,8 +382,8 @@ describe("SendTransfer", () => {
 			);
 
 			// Amount
-			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "1" } });
-			await waitFor(() => expect(getByTestId("add-recipient__amount-input")).toHaveValue("1"));
+			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -507,8 +507,8 @@ describe("SendTransfer", () => {
 			);
 
 			// Amount
-			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
+			fireEvent.click(getByTestId("AddRecipient__send-all"));
+			expect(getByTestId("AddRecipient__amount")).toHaveValue("33.03551662");
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -628,8 +628,8 @@ describe("SendTransfer", () => {
 			);
 
 			// Amount
-			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
+			fireEvent.click(getByTestId("AddRecipient__send-all"));
+			expect(getByTestId("AddRecipient__amount")).toHaveValue("33.03551662");
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -697,8 +697,8 @@ describe("SendTransfer", () => {
 			);
 
 			// Amount
-			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
+			fireEvent.click(getByTestId("AddRecipient__send-all"));
+			expect(getByTestId("AddRecipient__amount")).toHaveValue("33.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -781,8 +781,8 @@ describe("SendTransfer", () => {
 			);
 
 			// Amount
-			fireEvent.click(getByTestId("add-recipient__send-all"));
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("33.03551662");
+			fireEvent.click(getByTestId("AddRecipient__send-all"));
+			expect(getByTestId("AddRecipient__amount")).toHaveValue("33.03551662");
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -873,7 +873,7 @@ describe("SendTransfer", () => {
 
 		await utilsAct(async () => {
 			// Select multiple tab
-			fireEvent.click(getByTestId("add-recipient-is-multiple-toggle"));
+			fireEvent.click(getByTestId("AddRecipient__multi"));
 
 			// Select recipient
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
@@ -884,10 +884,10 @@ describe("SendTransfer", () => {
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			);
 
-			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "1" } });
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("1");
+			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
+			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
 
-			fireEvent.click(getByTestId("add-recipient__add-btn"));
+			fireEvent.click(getByTestId("AddRecipient__add-button"));
 			await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(1));
 
 			// Select recipient #2
@@ -899,10 +899,10 @@ describe("SendTransfer", () => {
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			);
 
-			fireEvent.input(getByTestId("add-recipient__amount-input"), { target: { value: "1" } });
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("1");
+			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
+			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
 
-			fireEvent.click(getByTestId("add-recipient__add-btn"));
+			fireEvent.click(getByTestId("AddRecipient__add-button"));
 			await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(2));
 
 			// Smartbridge

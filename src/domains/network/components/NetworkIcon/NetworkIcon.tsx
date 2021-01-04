@@ -20,7 +20,7 @@ type Props = {
 const Placeholder = (props: CircleProps) => (
 	<Circle
 		data-testid="NetworkIcon__placeholder"
-		className="border-theme-neutral-light text-theme-neutral"
+		className="border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
 		{...props}
 	/>
 );
