@@ -106,7 +106,7 @@ describe("SignIn", () => {
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 	});
 
-	it.skip("should set an error and disable the input if the password is invalid multiple times", async () => {
+	it("should set an error and disable the input if the password is invalid multiple times", async () => {
 		const onSuccess = jest.fn();
 
 		let renderContext: any;
@@ -145,6 +145,6 @@ describe("SignIn", () => {
 		// wait for form to be updated
 		await findByTestId("SignIn__submit-button");
 
-		await waitFor(() => expect(queryByText("The Password is invalid")).toBeTruthy(), { timeout: 5000 });
+		await waitFor(() => expect(queryByText("The Password is invalid")).toBeTruthy(), { timeout: 10000 });
 	});
 });
