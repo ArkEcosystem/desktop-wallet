@@ -107,7 +107,7 @@ export const PluginListItem = ({
 					<div className="flex items-center space-x-2">
 						{plugin.hasLaunch && (
 							<Button
-								variant="plain"
+								variant="secondary"
 								onClick={() => onLaunch?.(plugin)}
 								data-testid="PluginListItem__launch"
 							>

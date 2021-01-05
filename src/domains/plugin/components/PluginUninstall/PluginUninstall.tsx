@@ -39,7 +39,7 @@ export const PluginUninstallConfirmation = ({ isOpen, profile, plugin, onClose, 
 			onClose={onClose}
 		>
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="plain" onClick={onCancel} data-testid="PluginUninstall__cancel-button">
+				<Button variant="secondary" onClick={onCancel} data-testid="PluginUninstall__cancel-button">
 					{t("COMMON.CANCEL")}
 				</Button>
 

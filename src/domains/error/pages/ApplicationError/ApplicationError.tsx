@@ -24,7 +24,7 @@ export const ApplicationError = ({ resetErrorBoundary }: FallbackProps) => {
 
 					<OriginalButton
 						color="primary"
-						variant="solid"
+						variant="secondary"
 						data-testid="ApplicationError__button--reload"
 						onClick={resetErrorBoundary}
 						className="mt-8"
