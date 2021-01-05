@@ -34,7 +34,7 @@ const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) =>
 	await act(async () => {
 		renderer = render(
 			<FormProvider {...form.current}>
-				<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
+				<DelegateRegistrationForm.component activeTab={1} fees={fees} wallet={wallet} />
 			</FormProvider>,
 		);
 
@@ -83,7 +83,7 @@ describe("DelegateRegistrationForm", () => {
 
 		rerender(
 			<FormProvider {...form}>
-				<DelegateRegistrationForm.component activeTab={3} fees={fees} wallet={wallet} />
+				<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
 			</FormProvider>,
 		);
 
@@ -102,7 +102,7 @@ describe("DelegateRegistrationForm", () => {
 		await act(async () => {
 			rerender(
 				<FormProvider {...form}>
-					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
+					<DelegateRegistrationForm.component activeTab={1} fees={fees} wallet={wallet} />
 				</FormProvider>,
 			);
 
@@ -138,7 +138,7 @@ describe("DelegateRegistrationForm", () => {
 		await act(async () => {
 			rerender(
 				<FormProvider {...form}>
-					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
+					<DelegateRegistrationForm.component activeTab={1} fees={fees} wallet={wallet} />
 				</FormProvider>,
 			);
 
@@ -163,7 +163,7 @@ describe("DelegateRegistrationForm", () => {
 		await act(async () => {
 			rerender(
 				<FormProvider {...form}>
-					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
+					<DelegateRegistrationForm.component activeTab={1} fees={fees} wallet={wallet} />
 				</FormProvider>,
 			);
 
@@ -186,7 +186,7 @@ describe("DelegateRegistrationForm", () => {
 		await act(async () => {
 			rerender(
 				<FormProvider {...form}>
-					<DelegateRegistrationForm.component activeTab={2} fees={fees} wallet={wallet} />
+					<DelegateRegistrationForm.component activeTab={1} fees={fees} wallet={wallet} />
 				</FormProvider>,
 			);
 

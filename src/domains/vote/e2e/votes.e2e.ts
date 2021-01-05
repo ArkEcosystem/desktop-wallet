@@ -62,7 +62,7 @@ createFixture(`Votes`, [
 ]);
 
 test("should navigate to votes page from navigation bar", async (t) => {
-	// Navigate to wallet page
+	await goToProfile(t);
 	await goToWallet(t);
 
 	// Navigate to vote page

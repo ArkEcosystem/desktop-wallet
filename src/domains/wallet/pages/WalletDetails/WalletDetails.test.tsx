@@ -21,6 +21,8 @@ import {
 
 import { WalletDetails } from "./WalletDetails";
 
+jest.setTimeout(10000);
+
 const history = createMemoryHistory();
 let walletUrl: string;
 
@@ -52,8 +54,8 @@ const renderPage = async (waitForTopSection = true) => {
 	const { getByTestId, queryAllByTestId } = rendered;
 
 	if (waitForTopSection) {
-		await waitFor(() => expect(queryAllByTestId("WalletVote")).toHaveLength(1));
-		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("WalletRegistrations")).toBeTruthy());
 	}
 
 	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1));
@@ -111,8 +113,6 @@ describe("WalletDetails", () => {
 	beforeEach(() => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(walletUrl);
-		jest.useFakeTimers();
-		jest.advanceTimersByTime(30000);
 	});
 
 	it("should not render wallet vote when the network does not support votes", async () => {
@@ -129,14 +129,14 @@ describe("WalletDetails", () => {
 		networkFeatureSpy.mockRestore();
 	});
 
-	it("should not render wallet registrations when the network does not support second signatures, delegate registrations and entity registrations", async () => {
+	it("should not render wallet registrations when the network does not support second signatures, multisignatures & delegate registrations", async () => {
 		const networkFeatureSpy = jest.spyOn(wallet, "canAny");
 
 		when(networkFeatureSpy)
 			.calledWith([
 				Coins.FeatureFlag.TransactionSecondSignature,
+				Coins.FeatureFlag.TransactionMultiSignature,
 				Coins.FeatureFlag.TransactionDelegateRegistration,
-				Coins.FeatureFlag.TransactionEntityRegistration,
 			])
 			.mockReturnValue(false);
 
@@ -150,25 +150,25 @@ describe("WalletDetails", () => {
 	});
 
 	it.each([
-		["second signatures", "TransactionSecondSignature"],
 		["delegate registrations", "TransactionDelegateRegistration"],
-		["entity registrations", "TransactionEntityRegistration"],
+		["multisignatures", "TransactionMultiSignature"],
+		["second signatures", "TransactionSecondSignature"],
 	])("should render wallet registrations when the network does support %s", async (name, feature) => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
 
 		when(networkFeatureSpy)
-			.calledWith(Coins.FeatureFlag.TransactionSecondSignature)
-			.mockReturnValue(false)
 			.calledWith(Coins.FeatureFlag.TransactionDelegateRegistration)
 			.mockReturnValue(false)
-			.calledWith(Coins.FeatureFlag.TransactionEntityRegistration)
+			.calledWith(Coins.FeatureFlag.TransactionMultiSignature)
+			.mockReturnValue(false)
+			.calledWith(Coins.FeatureFlag.TransactionSecondSignature)
 			.mockReturnValue(false)
 			.calledWith(Coins.FeatureFlag[feature])
 			.mockReturnValue(true);
 
-		const { getAllByTestId } = await renderPage(false);
+		const { getByTestId } = await renderPage(false);
 
-		await waitFor(() => expect(getAllByTestId("WalletRegistrations")).toHaveLength(1));
+		await waitFor(() => expect(getByTestId("WalletRegistrations")).toBeTruthy());
 
 		networkFeatureSpy.mockRestore();
 	});
@@ -179,24 +179,27 @@ describe("WalletDetails", () => {
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("WalletVote__skeleton")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to votes page when clicking on WalletVote button (vote)", async () => {
-		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
-		history.push(walletUrl);
-
+		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId, queryAllByTestId } = await renderPage();
+
+		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId("WalletVote__button"));
 		});
 
-		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${blankWallet.id()}/votes`);
+		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}/votes`);
+
+		walletSpy.mockRestore();
+		historySpy.mockRestore();
 	});
 
 	it("should navigate to vote page when clicking on WalletVote button (unvote)", async () => {
@@ -215,55 +218,8 @@ describe("WalletDetails", () => {
 		historySpy.mockRestore();
 	});
 
-	it("should navigate to new registration page when clicking on WalletRegistrations button (register)", async () => {
-		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
-		history.push(walletUrl);
-
-		const historySpy = jest.spyOn(history, "push");
-
-		const { getByTestId, queryAllByTestId } = await renderPage();
-
-		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
-
-		act(() => {
-			fireEvent.click(getByTestId("WalletRegistrations__button"));
-		});
-
-		expect(historySpy).toHaveBeenCalledWith(
-			`/profiles/${profile.id()}/wallets/${blankWallet.id()}/send-entity-registration`,
-		);
-	});
-
-	it("should navigate to registrations page when clicking on WalletRegistrations button (show all)", async () => {
-		const historySpy = jest.spyOn(history, "push").mockReturnValue();
-		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
-		const { getByTestId, queryAllByTestId } = await renderPage();
-
-		await waitFor(() => expect(queryAllByTestId("WalletRegistrations")).toHaveLength(1));
-
-		act(() => {
-			fireEvent.click(getByTestId("WalletRegistrations__button"));
-		});
-
-		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/registrations`);
-		isMultiSignatureSpy.mockRestore();
-		historySpy.mockRestore();
-	});
-
-	it("should render when wallet hasn't voted", async () => {
-		walletUrl = `/profiles/${profile.id()}/wallets/${unvotedWallet.id()}`;
-		history.push(walletUrl);
-
-		const { asFragment, getByTestId } = await renderPage();
-
-		await waitFor(() => expect(getByTestId("WalletVote__empty")).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should update wallet name", async () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
@@ -292,7 +248,6 @@ describe("WalletDetails", () => {
 
 	it("should remove wallet name", async () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		act(() => {
 			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
@@ -321,7 +276,6 @@ describe("WalletDetails", () => {
 
 	it("should star and unstar a wallet", async () => {
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		expect(wallet.isStarred()).toBe(false);
 
@@ -359,8 +313,6 @@ describe("WalletDetails", () => {
 	it("should fetch more transactions", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
-
 		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
 
 		act(() => {
@@ -393,7 +345,6 @@ describe("WalletDetails", () => {
 
 	it("should delete wallet", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
-		await waitFor(() => expect(getAllByTestId("WalletVote")).toHaveLength(1));
 
 		const dropdown = getAllByTestId("dropdown__toggle")[2];
 		expect(dropdown).toBeTruthy();

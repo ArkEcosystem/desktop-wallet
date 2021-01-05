@@ -58,7 +58,7 @@ exports[`AddAssets should render a modal 1`] = `
               class="sc-AxgMl cwpxCQ my-8"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="network"
               >
@@ -88,7 +88,7 @@ exports[`AddAssets should render a modal 1`] = `
                       class="sc-AxmLO sc-fzozJi flvnfR px-4"
                     >
                       <div
-                        class="sc-AxhCb esLhBV border-theme-neutral-light text-theme-neutral"
+                        class="sc-AxhCb esLhBV border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                         data-testid="SelectNetworkInput__network"
                       />
                     </div>
@@ -97,7 +97,7 @@ exports[`AddAssets should render a modal 1`] = `
                       aria-controls="AddAssets__network-menu"
                       aria-labelledby="AddAssets__network-label"
                       autocomplete="off"
-                      class="sc-Axmtr axolg overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                      class="sc-Axmtr dbowQO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                       data-testid="SelectNetworkInput__input"
                       id="AddAssets__network-input"
                       placeholder="Enter the asset name"

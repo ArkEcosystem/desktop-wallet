@@ -132,7 +132,7 @@ describe("NavigationBar", () => {
 		profile.settings().set(ProfileSetting.ExchangeCurrency, "BTC");
 	});
 
-	it.each(["Contacts", "Votes", "Registrations", "Settings", "Support"])(
+	it.each(["Contacts", "Votes", "Settings", "Support"])(
 		"should handle '%s' click on user actions dropdown",
 		async (label) => {
 			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);

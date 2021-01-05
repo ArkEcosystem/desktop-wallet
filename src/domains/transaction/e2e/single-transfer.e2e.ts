@@ -41,10 +41,6 @@ test("should send transfer successfully with a multisig wallet", async (t) => {
 	// Import wallet
 	await importWalletByAddress(t, "DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq");
 
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
 	// Navigate to transfer page
 	await goToTransferPage(t);
 
@@ -54,7 +50,7 @@ test("should send transfer successfully with a multisig wallet", async (t) => {
 	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
 
 	// Amount
-	await t.click(Selector("[data-testid=add-recipient__send-all]"));
+	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
 
 	// Review step
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
@@ -68,6 +64,9 @@ test("should send transfer successfully with a multisig wallet", async (t) => {
 });
 
 test("should show an error if wrong mnemonic", async (t) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
 	// Navigate to wallet page
 	await goToWallet(t);
 
@@ -80,7 +79,7 @@ test("should show an error if wrong mnemonic", async (t) => {
 	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
 
 	// Amount
-	await t.click(Selector("[data-testid=add-recipient__send-all]"));
+	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
 
 	// Type smartbridge & go to step 2
 	await t.typeText(Selector("[data-testid=Input__smartbridge]"), "test smartbridge");
@@ -103,10 +102,6 @@ test("should send transfer successfully", async (t) => {
 	// Import wallet
 	await importWallet(t, "passphrase");
 
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
 	// Navigate to transfer page
 	await goToTransferPage(t);
 
@@ -116,7 +111,7 @@ test("should send transfer successfully", async (t) => {
 	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
 
 	// Amount
-	await t.click(Selector("[data-testid=add-recipient__send-all]"));
+	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
 
 	// Type smartbridge & go to step 2
 	await t.typeText(Selector("[data-testid=Input__smartbridge]"), "test smartbridge");

@@ -11,15 +11,15 @@ const InputStyled = styled.input`
 		box-shadow: 0 0 0 1px var(--theme-color-primary);
 	}
 	&::placeholder {
-		${tw`text-theme-neutral-light`}
+		${tw`text-theme-neutral-400 dark:text-theme-neutral-700`}
 	}
 	&:disabled {
-		${tw`border-theme-neutral-300 dark:border-theme-neutral-800 bg-theme-neutral-contrast text-theme-secondary-text`}
+		${tw`border-theme-neutral-300 dark:border-theme-neutral-700 bg-theme-neutral-100 dark:bg-theme-neutral-800 text-theme-secondary-text`}
 	}
 	&[aria-invalid="true"] {
-		${tw`border-theme-danger`}
+		${tw`border-theme-danger-500`}
 		&:focus {
-			box-shadow: 0 0 0 1px var(--theme-color-danger);
+			box-shadow: 0 0 0 1px var(--theme-color-danger-500);
 		}
 	}
 	&.shadow-none {
@@ -36,7 +36,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		return (
 			<InputStyled
 				data-testid="Input"
-				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 ${
+				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 ${
 					className || ""
 				}`}
 				name={fieldContext?.name}

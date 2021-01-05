@@ -24,14 +24,13 @@ export const CreateWallet = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const activeProfile = useActiveProfile();
-	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const nameMaxLength = 42;
 
 	const { selectedNetworkIds, setValue: setConfiguration } = useDashboardConfig({ profile: activeProfile });
 
 	const crumbs = [
 		{
-			route: dashboardRoute,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
@@ -47,15 +46,20 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		const formattedName = name.trim().substring(0, nameMaxLength);
-		activeProfile.wallets().update(getValues("wallet").id(), { alias: formattedName });
+		const wallet = getValues("wallet");
 
-		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, getValues("wallet").network().id()]));
+		if (name) {
+			const formattedName = name.trim().substring(0, nameMaxLength);
+			activeProfile.wallets().update(wallet.id(), { alias: formattedName });
+		}
+
+		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+
 		await persist();
 
 		setValue("wallet", null);
 
-		history.push(dashboardRoute);
+		history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`);
 	};
 
 	useEffect(
