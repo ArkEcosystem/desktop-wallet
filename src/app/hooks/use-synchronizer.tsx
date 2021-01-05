@@ -107,6 +107,7 @@ export const useProfileRestore = () => {
 		const restoreProfile = async (profile: Profile) => {
 			const isDev = process.env.REACT_APP_BUILD_MODE === "demo";
 			setConfiguration({ profileIsSyncing: true });
+
 			if (isDev) {
 				// Perform restore to make migrated wallets available in profile.wallets()
 				await profile.restore();

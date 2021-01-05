@@ -23,7 +23,7 @@ type TransactionsProps = {
 };
 
 export const Transactions = memo(
-	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading = false }: TransactionsProps) => {
+	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading = true }: TransactionsProps) => {
 		const { t } = useTranslation();
 
 		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
@@ -75,6 +75,10 @@ export const Transactions = memo(
 			if (isVisible) fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 			// eslint-disable-next-line
 		}, [activeTransactionModeTab, selectedTransactionType, walletsCount]);
+
+		useEffect(() => {
+			setIsLoading(isLoading);
+		}, [setIsLoading, isLoading]);
 
 		if (!isVisible) return <></>;
 
