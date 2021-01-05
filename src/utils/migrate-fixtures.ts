@@ -14,6 +14,7 @@ export const migrateProfiles = (env: Environment, profiles: any) => {
 
 			profile.setRawData({
 				id: profile.id(),
+				name: profile.name(),
 				password: profile.settings().get(ProfileSetting.Password),
 				data: Base64.encode(JSON.stringify({ id: profile.id(), ...profileData })),
 			});
