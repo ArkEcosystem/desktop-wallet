@@ -736,7 +736,7 @@ exports[`Dashboard should render 1`] = `
             class="mb-8"
           >
             <div
-              class="sc-fzqNJr jXCDvQ w-full"
+              class="sc-fzqNJr ccJDok w-full"
             >
               <button
                 aria-selected="true"
@@ -1538,11 +1538,12 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <button
-            class="sc-AxhCb hSyNZX mt-10 mb-5 w-full"
+            class="sc-AxhCb eTekev mt-10 mb-5 w-full"
             data-testid="transactions__fetch-more-button"
+            disabled=""
             type="button"
           >
-            View More
+            Loading ...
           </button>
         </div>
       </div>
