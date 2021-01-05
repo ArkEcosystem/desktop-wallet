@@ -6,9 +6,23 @@ import { Pagination } from "./Pagination";
 const handleSelectPage = jest.fn();
 
 describe("Pagination", () => {
-	it("should render properly", () => {
+	it("should render", () => {
 		const { asFragment } = render(
 			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render condensed", () => {
+		const { asFragment } = render(
+			<Pagination
+				totalCount={12}
+				itemsPerPage={4}
+				onSelectPage={handleSelectPage}
+				currentPage={1}
+				variant="condensed"
+			/>,
 		);
 
 		expect(asFragment()).toMatchSnapshot();

@@ -48,7 +48,7 @@ describe("MultiSignature Registration Form", () => {
 	const Component = ({
 		form,
 		onSubmit = () => void 0,
-		activeTab = 2,
+		activeTab = 1,
 	}: {
 		form: ReturnType<typeof useForm>;
 		onSubmit?: () => void;
@@ -120,7 +120,7 @@ describe("MultiSignature Registration Form", () => {
 			}),
 		);
 
-		const { asFragment } = render(<Component activeTab={3} form={result.current} />);
+		const { asFragment } = render(<Component activeTab={2} form={result.current} />);
 
 		expect(screen.getByText(transactionTranslations.MULTISIGNATURE.PARTICIPANTS)).toBeInTheDocument();
 		expect(screen.getByText(transactionTranslations.MULTISIGNATURE.MIN_SIGNATURES)).toBeInTheDocument();

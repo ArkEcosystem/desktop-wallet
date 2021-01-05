@@ -1,0 +1,3933 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="overflow-hidden rounded-lg"
+                >
+                  <button
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm gvXdNR p-1"
+                      height="18"
+                      width="15"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto mr-4 ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-neutral-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fzplWN jUnIkq border-theme-primary-contrast dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznJRM hNbUKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm djuHuo"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-secondary-text active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+        >
+          <span>
+            Back to Wallet
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 px-14 mx-auto"
+        >
+          <form
+            class="mx-auto max-w-xl"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <section
+                    class="space-y-8"
+                    data-testid="SendDelegateResignation__form-step"
+                  >
+                    <div
+                      class="flex justify-between items-end bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
+                        >
+                          Delegate Resignation
+                        </h1>
+                        <div
+                          class="text-theme-secondary-text"
+                          data-testid="header__subtitle"
+                        >
+                          Resign your delegate for always.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxirZ laMNgs flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+                    >
+                      <div
+                        class="flex items-center justify-center text-theme-warning-600"
+                      >
+                        <div
+                          class="sc-AxjAm fYfzg"
+                          height="1.75em"
+                          width="1.75em"
+                        >
+                          <svg>
+                            alert-warning.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <span
+                        class="pointer-events-none border rounded-md border-theme-warning-600"
+                      />
+                      <div
+                        class="flex flex-col space-y-2"
+                      >
+                        <p
+                          class="leading-relaxed break-words"
+                        >
+                          Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-fznKkj cYdjTE"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral-700"
+                          >
+                            Sender
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            <div
+                              class="inline-flex items-center"
+                            >
+                              <span
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                data-testid="address__wallet-name"
+                              >
+                                ARK Wallet 2
+                              </span>
+                              <span
+                                class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                D5sRKW … cvJtwb
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center -space-x-2"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-fznKkj jxqYqB"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral-700"
+                          >
+                            Delegate Name
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            testwallet2
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="space-y-8"
+                    >
+                      <fieldset
+                        class="sc-AxiKw iQzisX font-normal"
+                      >
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                          data-testid="FormLabel"
+                          for="fee"
+                        >
+                          Transaction Fee
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <div
+                          class="flex space-x-2"
+                          data-testid="InputFee"
+                        >
+                          <div
+                            class="flex-1"
+                          >
+                            <div
+                              class="sc-Axmtr jzhOwR"
+                            >
+                              <input
+                                class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                data-testid="InputCurrency"
+                                name="fee"
+                                type="text"
+                                value="1"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
+                              data-testid="SelectionBar"
+                              role="radiogroup"
+                            >
+                              <button
+                                aria-checked="false"
+                                class="sc-fzpans gWxirZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                                type="button"
+                              >
+                                Min
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fzpans gWxirZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                                type="button"
+                              >
+                                Average
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fzpans gWxirZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                                type="button"
+                              >
+                                Max
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                >
+                  <button
+                    class="sc-fzqBZW dXzdDJ"
+                    data-testid="SendDelegateResignation__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-fzqBZW bgGEXD"
+                    data-testid="SendDelegateResignation__continue-button"
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="overflow-hidden rounded-lg"
+                >
+                  <button
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm gvXdNR p-1"
+                      height="18"
+                      width="15"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto mr-4 ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-neutral-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fzplWN jUnIkq border-theme-primary-contrast dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznJRM hNbUKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm djuHuo"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-secondary-text active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+        >
+          <span>
+            Back to Wallet
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 px-14 mx-auto"
+        >
+          <form
+            class="mx-auto max-w-xl"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <section
+                    class="space-y-8"
+                    data-testid="SendDelegateResignation__form-step"
+                  >
+                    <div
+                      class="flex justify-between items-end bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
+                        >
+                          Delegate Resignation
+                        </h1>
+                        <div
+                          class="text-theme-secondary-text"
+                          data-testid="header__subtitle"
+                        >
+                          Resign your delegate for always.
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="sc-AxirZ laMNgs flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+                    >
+                      <div
+                        class="flex items-center justify-center text-theme-warning-600"
+                      >
+                        <div
+                          class="sc-AxjAm fYfzg"
+                          height="1.75em"
+                          width="1.75em"
+                        >
+                          <svg>
+                            alert-warning.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <span
+                        class="pointer-events-none border rounded-md border-theme-warning-600"
+                      />
+                      <div
+                        class="flex flex-col space-y-2"
+                      >
+                        <p
+                          class="leading-relaxed break-words"
+                        >
+                          Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-fznKkj cYdjTE"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral-700"
+                          >
+                            Sender
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            <div
+                              class="inline-flex items-center"
+                            >
+                              <span
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                data-testid="address__wallet-name"
+                              >
+                                ARK Wallet 2
+                              </span>
+                              <span
+                                class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                D5sRKW … cvJtwb
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center -space-x-2"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-fznKkj jxqYqB"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral-700"
+                          >
+                            Delegate Name
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            testwallet2
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="space-y-8"
+                    >
+                      <fieldset
+                        class="sc-AxiKw iQzisX font-normal"
+                      >
+                        <label
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                          data-testid="FormLabel"
+                          for="fee"
+                        >
+                          Transaction Fee
+                          <div
+                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                            data-testid="FormLabel__required"
+                          />
+                        </label>
+                        <div
+                          class="flex space-x-2"
+                          data-testid="InputFee"
+                        >
+                          <div
+                            class="flex-1"
+                          >
+                            <div
+                              class="sc-Axmtr jzhOwR"
+                            >
+                              <input
+                                class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                                data-testid="InputCurrency"
+                                name="fee"
+                                type="text"
+                                value="25"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
+                              data-testid="SelectionBar"
+                              role="radiogroup"
+                            >
+                              <button
+                                aria-checked="true"
+                                class="sc-fzpans gWxirZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                                type="button"
+                              >
+                                Min
+                              </button>
+                              <button
+                                aria-checked="true"
+                                class="sc-fzpans gWxirZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                                type="button"
+                              >
+                                Average
+                              </button>
+                              <button
+                                aria-checked="true"
+                                class="sc-fzpans gWxirZ relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                                type="button"
+                              >
+                                Max
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                >
+                  <button
+                    class="sc-fzqBZW dXzdDJ"
+                    data-testid="SendDelegateResignation__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-fzqBZW bgGEXD"
+                    data-testid="SendDelegateResignation__continue-button"
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="overflow-hidden rounded-lg"
+                >
+                  <button
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm gvXdNR p-1"
+                      height="18"
+                      width="15"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto mr-4 ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-neutral-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fzplWN jUnIkq border-theme-primary-contrast dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznJRM hNbUKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm djuHuo"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-secondary-text active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+        >
+          <span>
+            Back to Wallet
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 px-14 mx-auto"
+        >
+          <form
+            class="mx-auto max-w-xl"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <section
+                    class="space-y-8"
+                    data-testid="SendDelegateResignation__review-step"
+                  >
+                    <div
+                      class="flex justify-between items-end bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
+                        >
+                          Transaction Review
+                        </h1>
+                        <div
+                          class="text-theme-secondary-text"
+                          data-testid="header__subtitle"
+                        >
+                          Check the information again before Resignation
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="sc-fznKkj cYdjTE"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral-700"
+                          >
+                            Cryptoasset
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            ARK Devnet
+                          </div>
+                        </div>
+                        <div
+                          aria-label="ARK Devnet"
+                          class="sc-fzplWN jUnIkq border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
+                        >
+                          <div
+                            class="sc-AxjAm buCJuk"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-fznKkj ceNXiw"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral-700"
+                          >
+                            Sender
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            <div
+                              class="inline-flex items-center"
+                            >
+                              <span
+                                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                data-testid="address__wallet-name"
+                              >
+                                ARK Wallet 2
+                              </span>
+                              <span
+                                class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                D5sRKW … cvJtwb
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-center -space-x-2"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full"
+                            >
+                              <img
+                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-fznKkj ceNXiw"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral-700"
+                          >
+                            Delegate Name
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            testwallet2
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="mt-2"
+                      >
+                        <div
+                          class="rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
+                        >
+                          <div
+                            class="relative p-4"
+                          >
+                            <div
+                              class="flex divide-x divide-theme-neutral-300 dark:divide-theme-neutral-800"
+                            >
+                              <div
+                                class="flex flex-col w-1/2 justify-center px-4 py-2"
+                              >
+                                <span
+                                  class="sc-fzpjYC PBrcj"
+                                >
+                                  Transaction Amount
+                                </span>
+                                <span
+                                  class="mt-1 text-lg font-semibold"
+                                  data-testid="total-amount-box__transaction-amount"
+                                >
+                                  0 DARK
+                                </span>
+                              </div>
+                              <div
+                                class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
+                              >
+                                <span
+                                  class="sc-fzpjYC PBrcj"
+                                >
+                                  Transaction Fee
+                                </span>
+                                <span
+                                  class="mt-1 text-lg font-semibold"
+                                  data-testid="total-amount-box__transaction-fee"
+                                >
+                                  25 DARK
+                                </span>
+                              </div>
+                            </div>
+                            <div
+                              class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+                            >
+                              <div
+                                class="py-2 ml-px bg-theme-background text-theme-neutral-900 dark:text-theme-neutral-600"
+                              >
+                                <div
+                                  class="sc-AxjAm cpczEI"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    plus.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-300 dark:bg-theme-neutral-800"
+                          >
+                            <span
+                              class="sc-fzpjYC PBrcj"
+                            >
+                              Total Amount
+                            </span>
+                            <span
+                              class="text-2xl font-bold"
+                              data-testid="total-amount-box__total"
+                            >
+                              25 DARK
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                >
+                  <button
+                    class="sc-fzqBZW kZjHht"
+                    data-testid="SendDelegateResignation__back-button"
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-fzqBZW bgGEXD"
+                    data-testid="SendDelegateResignation__continue-button"
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="overflow-hidden rounded-lg"
+                >
+                  <button
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm gvXdNR p-1"
+                      height="18"
+                      width="15"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto mr-4 ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-neutral-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fzplWN jUnIkq border-theme-primary-contrast dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznJRM hNbUKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm djuHuo"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-secondary-text active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+        >
+          <span>
+            Back to Wallet
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 px-14 mx-auto"
+        >
+          <form
+            class="mx-auto max-w-xl"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <div
+                    class="space-y-8"
+                    data-testid="AuthenticationStep"
+                  >
+                    <div
+                      class="flex justify-between items-end bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
+                        >
+                          Authenticate
+                        </h1>
+                        <div
+                          class="text-theme-secondary-text"
+                          data-testid="header__subtitle"
+                        >
+                          Enter your twelve word mnemonic to authenticate the transaction.
+                        </div>
+                      </div>
+                    </div>
+                    <fieldset
+                      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                    >
+                      <label
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                        data-testid="FormLabel"
+                        for="mnemonic"
+                      >
+                        Mnemonic
+                        <div
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-Axmtr jzhOwR max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__mnemonic"
+                          name="mnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-AxhUy sc-AxheI bYHtKZ my-px mr-4"
+                        >
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxjAm cpczEI"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset
+                      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                    >
+                      <label
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                        data-testid="FormLabel"
+                        for="secondMnemonic"
+                      >
+                        2nd Mnemonic
+                        <div
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-Axmtr jzhOwR max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__second-mnemonic"
+                          name="secondMnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-AxhUy sc-AxheI bYHtKZ my-px mr-4"
+                        >
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxjAm cpczEI"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                >
+                  <button
+                    class="sc-fzqBZW kZjHht"
+                    data-testid="SendDelegateResignation__back-button"
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-fzqBZW dXzdDJ space-x-2"
+                    data-testid="SendDelegateResignation__send-button"
+                    disabled=""
+                    type="submit"
+                  >
+                    <div
+                      class="sc-AxjAm buCJuk"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        send.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Send
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SendDelegateResignation Delegate Resignation should show error step 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="overflow-hidden rounded-lg"
+                >
+                  <button
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm gvXdNR p-1"
+                      height="18"
+                      width="15"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto mr-4 ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-neutral-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fzplWN jUnIkq border-theme-primary-contrast dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznJRM hNbUKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm djuHuo"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-secondary-text active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+        >
+          <span>
+            Back to Wallet
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 px-14 mx-auto"
+        >
+          <form
+            class="mx-auto max-w-xl"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <div
+                    data-testid="ErrorStep"
+                  >
+                    <div>
+                      <h1
+                        class="mb-8 text-lg font-bold md:text-4xl"
+                      >
+                        Transaction Error
+                      </h1>
+                      <div
+                        class="my-4 mx-auto w-128"
+                      >
+                        <svg>
+                          mistake-banner.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="my-8 text-md text-theme-secondary-text"
+                      >
+                        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-end space-x-3"
+                    >
+                      <button
+                        class="sc-fzqBZW kZjHht"
+                        data-testid="ErrorStep__wallet-button"
+                        type="button"
+                      >
+                        Back to Wallet
+                      </button>
+                      <button
+                        class="sc-fzqBZW bgGEXD space-x-2"
+                        data-testid="ErrorStep__repeat-button"
+                        type="button"
+                      >
+                        Retry
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SendDelegateResignation Delegate Resignation should show error step and go back 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="overflow-hidden rounded-lg"
+                >
+                  <button
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm gvXdNR p-1"
+                      height="18"
+                      width="15"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto mr-4 ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-neutral-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fzplWN jUnIkq border-theme-primary-contrast dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznJRM hNbUKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm djuHuo"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-secondary-text active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+        >
+          <span>
+            Back to Wallet
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 px-14 mx-auto"
+        >
+          <form
+            class="mx-auto max-w-xl"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <div
+                    data-testid="ErrorStep"
+                  >
+                    <div>
+                      <h1
+                        class="mb-8 text-lg font-bold md:text-4xl"
+                      >
+                        Transaction Error
+                      </h1>
+                      <div
+                        class="my-4 mx-auto w-128"
+                      >
+                        <svg>
+                          mistake-banner.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="my-8 text-md text-theme-secondary-text"
+                      >
+                        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-end space-x-3"
+                    >
+                      <button
+                        class="sc-fzqBZW kZjHht"
+                        data-testid="ErrorStep__wallet-button"
+                        type="button"
+                      >
+                        Back to Wallet
+                      </button>
+                      <button
+                        class="sc-fzqBZW bgGEXD space-x-2"
+                        data-testid="ErrorStep__repeat-button"
+                        type="button"
+                      >
+                        Retry
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SendDelegateResignation Delegate Resignation should show mnemonic authentication error 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="overflow-hidden rounded-lg"
+                >
+                  <button
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm gvXdNR p-1"
+                      height="18"
+                      width="15"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto mr-4 ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-neutral-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fzplWN jUnIkq border-theme-primary-contrast dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznJRM hNbUKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm djuHuo"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-secondary-text active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+        >
+          <span>
+            Back to Wallet
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 px-14 mx-auto"
+        >
+          <form
+            class="mx-auto max-w-xl"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <div
+                    class="space-y-8"
+                    data-testid="AuthenticationStep"
+                  >
+                    <div
+                      class="flex justify-between items-end bg-theme-background"
+                    >
+                      <div>
+                        <h1
+                          class="mb-0 md:text-4xl"
+                          data-testid="header__title"
+                        >
+                          Authenticate
+                        </h1>
+                        <div
+                          class="text-theme-secondary-text"
+                          data-testid="header__subtitle"
+                        >
+                          Enter your twelve word mnemonic to authenticate the transaction.
+                        </div>
+                      </div>
+                    </div>
+                    <fieldset
+                      class="sc-AxiKw HGhoX flex flex-col space-y-2"
+                    >
+                      <label
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                        data-testid="FormLabel"
+                        for="mnemonic"
+                      >
+                        Mnemonic
+                        <div
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-Axmtr jzhOwR max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          aria-invalid="true"
+                          class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__mnemonic"
+                          name="mnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-AxhUy sc-AxheI bYHtKZ my-px mr-4"
+                        >
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxjAm cpczEI"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                      <p
+                        class="text-sm text-theme-danger"
+                      >
+                        Invalid Mnemonic
+                      </p>
+                    </fieldset>
+                    <fieldset
+                      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                    >
+                      <label
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                        data-testid="FormLabel"
+                        for="secondMnemonic"
+                      >
+                        2nd Mnemonic
+                        <div
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                          data-testid="FormLabel__required"
+                        />
+                      </label>
+                      <div
+                        class="sc-Axmtr jzhOwR max-w-20"
+                        data-testid="InputPassword"
+                      >
+                        <input
+                          class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                          data-testid="AuthenticationStep__second-mnemonic"
+                          name="secondMnemonic"
+                          type="password"
+                        />
+                        <div
+                          class="sc-AxhUy sc-AxheI bYHtKZ my-px mr-4"
+                        >
+                          <button
+                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
+                            data-testid="InputPassword__toggle"
+                            type="button"
+                          >
+                            <div
+                              class="sc-AxjAm cpczEI"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                eye.svg
+                              </svg>
+                            </div>
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                >
+                  <button
+                    class="sc-fzqBZW kZjHht"
+                    data-testid="SendDelegateResignation__back-button"
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-fzqBZW dXzdDJ space-x-2"
+                    data-testid="SendDelegateResignation__send-button"
+                    disabled=""
+                    type="submit"
+                  >
+                    <div
+                      class="sc-AxjAm buCJuk"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        send.svg
+                      </svg>
+                    </div>
+                    <span>
+                      Send
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SendDelegateResignation Delegate Resignation should successfully sign and submit resignation transaction 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-10"
+      >
+        <div
+          class="flex relative justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
+            >
+              <svg
+                width="48"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="overflow-hidden rounded-lg"
+                >
+                  <button
+                    class="sc-fzqBZW kzlwGm w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                    data-testid="navbar__buttons--notifications"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm gvXdNR p-1"
+                      height="18"
+                      width="15"
+                    >
+                      <svg>
+                        notification.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    >
+                      <div
+                        class="w-2 h-2 rounded-full bg-theme-danger-500"
+                      />
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm kzGOk p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+            <div
+              class="flex overflow-hidden items-center rounded-lg"
+            >
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
+              >
+                <button
+                  class="sc-fzqBZW kzlwGm"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxjAm jmgDQY p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto mr-4 ml-8"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-neutral-700"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="ml-4 -space-x-2 cursor-pointer"
+                data-testid="navbar__useractions"
+              >
+                <div
+                  class="sc-fzplWN jUnIkq border-theme-primary-contrast dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-secondary-text dark:text-theme-neutral-800"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        btc.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
+                  data-testid="navbar__user--avatar"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  >
+                    <img
+                      alt="Profile Avatar"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    />
+                    <span
+                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                    >
+                      JO
+                    </span>
+                  </div>
+                  <span
+                    class="sc-fznJRM hNbUKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  >
+                    <div
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
+                    </div>
+                    <span />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm djuHuo"
+        height="24"
+        width="13"
+      >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-secondary-text active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+        >
+          <span>
+            Back to Wallet
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 "
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
+      >
+        <div
+          class="container py-16 px-14 mx-auto"
+        >
+          <form
+            class="mx-auto max-w-xl"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <section
+                    class="space-y-8"
+                    data-testid="SendDelegateResignation__summary-step"
+                  >
+                    <section
+                      class="space-y-8"
+                      data-testid="TransactionSuccessful"
+                    >
+                      <div
+                        class="flex justify-between items-end bg-theme-background"
+                      >
+                        <div>
+                          <h1
+                            class="mb-0 md:text-4xl"
+                            data-testid="header__title"
+                          >
+                            Transaction Sent
+                          </h1>
+                        </div>
+                      </div>
+                      <svg
+                        class="w-full"
+                      >
+                        transaction-successful.svg
+                      </svg>
+                      <p
+                        class="text-theme-secondary-text"
+                      >
+                        Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+                      </p>
+                      <div>
+                        <div
+                          class="sc-fznKkj cYdjTE"
+                          data-testid="TransactionDetail"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral-700"
+                            >
+                              ID
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              <div
+                                class="flex items-center space-x-3"
+                              >
+                                <a
+                                  class="sc-fznZeY bEAkxr inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                                  data-testid="Link"
+                                  rel="noopener noreferrer"
+                                  to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                                >
+                                  <span
+                                    class="sc-fzokOt gcdrkZ text-theme-primary-dark"
+                                    data-testid="TruncateMiddle"
+                                  >
+                                    8f913b6b719e7 … f1b89abb49877
+                                  </span>
+                                </a>
+                                <span
+                                  class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                                >
+                                  <div
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
+                                  >
+                                    <div
+                                      class="sc-AxjAm cpczEI"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        copy.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-fznKkj ceNXiw"
+                          data-testid="TransactionDetail"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral-700"
+                            >
+                              Cryptoasset
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              ARK Devnet
+                            </div>
+                          </div>
+                          <div
+                            aria-label="ARK Devnet"
+                            class="sc-fzplWN jUnIkq border-theme-primary-100 text-theme-primary-400"
+                            data-testid="NetworkIcon-ARK-ark.devnet"
+                          >
+                            <div
+                              class="sc-AxjAm buCJuk"
+                              data-testid="NetworkIcon__icon"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                ark.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-fznKkj ceNXiw"
+                          data-testid="TransactionDetail"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral-700"
+                            >
+                              Sender
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              <div
+                                class="inline-flex items-center"
+                              >
+                                <span
+                                  class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                                  data-testid="address__wallet-name"
+                                >
+                                  ARK Wallet 2
+                                </span>
+                                <span
+                                  class="sc-fzokOt gcdrkZ text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                                  data-testid="address__wallet-address"
+                                >
+                                  D5sRKW … cvJtwb
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="flex items-center -space-x-2"
+                          >
+                            <div
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                              data-testid="Avatar"
+                            >
+                              <div
+                                class="w-full h-full"
+                              >
+                                <img
+                                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-fznKkj ceNXiw"
+                          data-testid="TransactionDetail"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral-700"
+                            >
+                              Transaction Type
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              Delegate Resignation
+                            </div>
+                          </div>
+                          <div
+                            class="sc-fzplWN jUnIkq border-theme-text"
+                          >
+                            <div
+                              class="sc-AxjAm dngvBu"
+                              height="20"
+                              width="19"
+                            >
+                              <svg>
+                                delegate-resigned.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-fznKkj ceNXiw"
+                          data-testid="TransactionDetail"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral-700"
+                            >
+                              Delegate Name
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              testwallet2
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="sc-fznKkj kfgSjW"
+                          data-testid="TransactionDetail"
+                        >
+                          <div
+                            class="flex-1 space-y-2"
+                          >
+                            <div
+                              class="text-sm font-semibold text-theme-neutral-700"
+                            >
+                              Transaction Fee
+                            </div>
+                            <div
+                              class="font-semibold"
+                            >
+                              <span
+                                data-testid="Amount"
+                              >
+                                0.1 DARK
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                >
+                  <div
+                    class="flex justify-end space-x-3"
+                  >
+                    <button
+                      class="sc-fzqBZW kZjHht"
+                      data-testid="SendDelegateResignation__wallet-button"
+                      type="button"
+                    >
+                      Back to Wallet
+                    </button>
+                    <button
+                      class="sc-fzqBZW kZjHht space-x-2"
+                      data-testid="SendDelegateResignation__download-button"
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          download.svg
+                        </svg>
+                      </div>
+                      <span>
+                        Download
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,4 +1,4 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { action } from "@storybook/addon-actions";
 import React from "react";
 import { WalletsDecorator } from "utils/storybook";
@@ -16,10 +16,26 @@ export default {
 	],
 };
 
-export const Default = ({ delegates }: { delegates: ReadOnlyWallet[] }) => (
-	<WalletVote votes={delegates} onButtonClick={action("onButtonClick")} />
+export const Default = ({ delegates, wallets }: { delegates: ReadOnlyWallet[]; wallets: ReadWriteWallet[] }) => (
+	<WalletVote wallet={wallets[0]} onButtonClick={action("onButtonClick")} />
 );
 
-export const Empty = () => <WalletVote onButtonClick={action("onButtonClick")} />;
+export const Empty = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
+	<WalletVote
+		wallet={{
+			...wallets[0],
+			votes: () => [],
+		}}
+		onButtonClick={action("onButtonClick")}
+	/>
+);
 
-export const Loading = () => <WalletVote isLoading={true} onButtonClick={action("onButtonClick")} />;
+export const Loading = ({ wallets }: { wallets: ReadWriteWallet[] }) => (
+	<WalletVote
+		wallet={{
+			...wallets[0],
+			hasSyncedWithNetwork: () => false,
+		}}
+		onButtonClick={action("onButtonClick")}
+	/>
+);

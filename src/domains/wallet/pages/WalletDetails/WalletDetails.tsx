@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
-import { ExtendedTransactionData, ProfileSetting, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
@@ -8,18 +8,12 @@ import { EmptyResults } from "app/components/EmptyResults";
 import { Page, Section } from "app/components/Layout";
 import { Spinner } from "app/components/Spinner";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
-import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
-import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
-import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
-import { SignMessage } from "domains/wallet/components/SignMessage";
-import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
-import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -28,17 +22,11 @@ import { WalletHeader, WalletRegistrations, WalletVote } from "./components";
 import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
 type WalletDetailsProps = {
-	txSkeletonRowsLimit?: number;
 	transactionLimit?: number;
 };
 
-export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletDetailsProps) => {
-	const [isReceiveFunds, setIsReceiveFunds] = useState(false);
-	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
-	const [isSigningMessage, setIsSigningMessage] = useState(false);
-	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
+export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	const [isLoading, setIsLoading] = useState(true);
-	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<SignedTransactionData | undefined>(
 		undefined,
@@ -47,7 +35,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 
 	const { t } = useTranslation();
 
-	const { persist } = useEnvironmentContext();
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -67,15 +54,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		transactionType: selectedTransactionType,
 	});
 
-	const walletVotes = () => {
-		// Being synced in background and will be updated after persisting
-		try {
-			return activeWallet.votes();
-		} catch (e) {
-			return [];
-		}
-	};
-
 	const [showWalletVote, setShowWalletVote] = useState(false);
 	const [showWalletRegistrations, setShowWalletRegistrations] = useState(false);
 
@@ -84,16 +62,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		setShowWalletRegistrations(
 			!activeWallet.isLedger() &&
 				activeWallet.canAny([
-					Coins.FeatureFlag.TransactionSecondSignature,
 					Coins.FeatureFlag.TransactionDelegateRegistration,
-					Coins.FeatureFlag.TransactionEntityRegistration,
+					Coins.FeatureFlag.TransactionMultiSignature,
+					Coins.FeatureFlag.TransactionSecondSignature,
 				]),
 		);
 	}, [activeWallet]);
 
-	const coinName = activeWallet.coinId();
-	const networkId = activeWallet.networkId();
-	const ticker = activeWallet.currency();
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
 	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
@@ -113,30 +88,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		fetchAllData();
 	}, [fetchInit]);
 
-	const handleDeleteWallet = async () => {
-		activeProfile.wallets().forget(activeWallet.id());
-		await persist();
-		setIsDeleteWallet(false);
-		history.push(dashboardRoute);
-	};
-
-	const handleUpdateName = async (name: string) => {
-		if (name) {
-			activeWallet.settings().set(WalletSetting.Alias, name);
-		} else {
-			activeWallet.settings().forget(WalletSetting.Alias);
-		}
-
-		await persist();
-
-		setIsUpdateWalletName(false);
-	};
-
-	const handleStar = async () => {
-		activeWallet.toggleStarred();
-		await persist();
-	};
-
 	const handleVoteButton = (address?: string) => {
 		/* istanbul ignore else */
 		if (address) {
@@ -146,18 +97,7 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 			});
 		}
 
-		/* istanbul ignore next */
 		history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`);
-	};
-
-	const handleRegistrationsButton = (newRegistration?: boolean) => {
-		if (newRegistration) {
-			return history.push(
-				`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-entity-registration`,
-			);
-		}
-
-		history.push(`/profiles/${activeProfile.id()}/registrations`);
 	};
 
 	/* istanbul ignore next */
@@ -165,51 +105,11 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 		<>
 			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
-					address={activeWallet.address()}
-					balance={activeWallet.balance()}
-					coin={coinName}
-					currencyBalance={activeWallet.convertedBalance()}
-					exchangeCurrency={exchangeCurrency}
-					isLedger={activeWallet.isLedger()}
-					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
-					isStarred={activeWallet.isStarred()}
-					name={activeWallet.alias()}
-					network={networkId}
-					publicKey={activeWallet.publicKey()}
-					ticker={ticker}
-					showMultiSignatureOption={
-						!activeWallet.isLedger() &&
-						activeWallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)
-					}
-					showSecondSignatureOption={
-						!activeWallet.isLedger() &&
-						activeWallet.network().can(Coins.FeatureFlag.TransactionSecondSignature)
-					}
-					showSignMessageOption={activeWallet.network().can(Coins.FeatureFlag.MessageSign)}
-					showStoreHashOption={activeWallet.network().can(Coins.FeatureFlag.TransactionIpfs)}
-					showVerifyMessageOption={activeWallet.network().can(Coins.FeatureFlag.MessageVerify)}
-					onDeleteWallet={() => setIsDeleteWallet(true)}
-					onMultiSignature={() =>
-						history.push(
-							`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/multiSignature/send-entity-registration`,
-						)
-					}
-					onReceiveFunds={() => setIsReceiveFunds(true)}
-					onSecondSignature={() =>
-						history.push(
-							`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/secondSignature/send-entity-registration`,
-						)
-					}
+					profile={activeProfile}
+					wallet={activeWallet}
 					onSend={() =>
 						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
 					}
-					onSignMessage={() => setIsSigningMessage(true)}
-					onStar={handleStar}
-					onStoreHash={() =>
-						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-ipfs`)
-					}
-					onUpdateWalletName={() => setIsUpdateWalletName(true)}
-					onVerifyMessage={() => setIsVerifyingMessage(true)}
 				/>
 
 				{(showWalletVote || showWalletRegistrations) && (
@@ -217,36 +117,13 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 						<div className="flex">
 							{showWalletVote && (
 								<div className="flex-1 pr-12 last:pr-0">
-									<WalletVote
-										votes={activeWallet.hasSyncedWithNetwork() ? walletVotes() : []}
-										maxVotes={activeWallet.network().maximumVotesPerWallet()}
-										isLoading={isLoading}
-										onButtonClick={handleVoteButton}
-									/>
+									<WalletVote wallet={activeWallet} onButtonClick={handleVoteButton} />
 								</div>
 							)}
 
 							{showWalletRegistrations && (
 								<div className="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800">
-									<WalletRegistrations
-										delegate={
-											activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
-												? {
-														username: activeWallet.username(),
-														isResigned: activeWallet.isResignedDelegate(),
-												  }
-												: undefined
-										}
-										entities={activeWallet.hasSyncedWithNetwork() ? activeWallet.entities() : []}
-										isLoading={isLoading}
-										isMultiSignature={
-											activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()
-										}
-										isSecondSignature={
-											activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()
-										}
-										onButtonClick={handleRegistrationsButton}
-									/>
+									<WalletRegistrations wallet={activeWallet} />
 								</div>
 							)}
 						</div>
@@ -293,7 +170,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 								exchangeCurrency={exchangeCurrency}
 								hideHeader={!isLoadingTransactions && transactions.length === 0}
 								isLoading={isLoadingTransactions}
-								skeletonRowsLimit={txSkeletonRowsLimit}
 								onRowClick={(row) => setTransactionModalItem(row)}
 							/>
 
@@ -325,49 +201,6 @@ export const WalletDetails = ({ txSkeletonRowsLimit, transactionLimit }: WalletD
 					</div>
 				</Section>
 			</Page>
-
-			<ReceiveFunds
-				isOpen={isReceiveFunds}
-				address={activeWallet.address()}
-				icon={activeWallet.coinId()}
-				name={activeWallet.alias()}
-				network={activeWallet.networkId()}
-				onClose={() => setIsReceiveFunds(false)}
-			/>
-
-			<UpdateWalletName
-				wallet={activeWallet}
-				profile={activeProfile}
-				isOpen={isUpdateWalletName}
-				onClose={() => setIsUpdateWalletName(false)}
-				onCancel={() => setIsUpdateWalletName(false)}
-				onSave={handleUpdateName}
-			/>
-
-			<SignMessage
-				profileId={activeProfile.id()}
-				walletId={activeWallet.id()}
-				signatoryAddress={activeWallet.address()}
-				isOpen={isSigningMessage}
-				onClose={() => setIsSigningMessage(false)}
-				onCancel={() => setIsSigningMessage(false)}
-			/>
-
-			<DeleteWallet
-				isOpen={isDeleteWallet}
-				onClose={() => setIsDeleteWallet(false)}
-				onCancel={() => setIsDeleteWallet(false)}
-				onDelete={handleDeleteWallet}
-			/>
-
-			<VerifyMessage
-				isOpen={isVerifyingMessage}
-				onClose={() => setIsVerifyingMessage(false)}
-				onCancel={() => setIsVerifyingMessage(false)}
-				walletId={activeWallet.id()}
-				profileId={activeProfile.id()}
-				signatory={activeWallet.publicKey()}
-			/>
 
 			{signedTransactionModalItem && (
 				<MultiSignatureDetail

@@ -14,6 +14,35 @@ createFixture(
 			"coins/ark/devnet/wallets/not-found",
 			404,
 		),
+		mockRequest(
+			(request: any) =>
+				!!request.url.match(
+					new RegExp(BASEURL + "transactions\\?page=1&limit=15&address=([-0-9a-zA-Z]{1,34})"),
+				),
+			{
+				meta: {
+					totalCountIsEstimate: true,
+					count: 0,
+					pageCount: 0,
+					totalCount: 0,
+					next: null,
+					previous: null,
+					self: null,
+					first: null,
+					last: null,
+				},
+				data: [],
+			},
+		),
+		mockRequest(
+			(request: any) =>
+				!!request.url.match(
+					new RegExp(
+						"https://dmusig1.ark.io/transactions\\?publicKey=([-0-9a-zA-Z]{1,66})&state=(ready|pending)",
+					),
+				),
+			[],
+		),
 	],
 );
 
@@ -46,10 +75,10 @@ test("should create a wallet", async (t) => {
 		mnemonicWords.push(textContent.replace(/[0-9]+/, "").trim());
 	}
 	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
-	~(
-		// Confirm your password
-		(await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok())
-	);
+
+	// Confirm your password
+	await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok();
+
 	for (let i = 0; i < 3; i++) {
 		const selectWordPhrase = await Selector("[data-testid=MnemonicVerificationOptions__title]").textContent;
 		const wordNumber = selectWordPhrase.match(/[0-9]+/)?.[0];
@@ -65,5 +94,5 @@ test("should create a wallet", async (t) => {
 
 	// Save and finish
 	await t.click(Selector("button").withExactText(translations().COMMON.SAVE_FINISH));
-	await t.expect(Selector("div").withExactText(translations().COMMON.WALLETS).exists).ok();
+	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 });
