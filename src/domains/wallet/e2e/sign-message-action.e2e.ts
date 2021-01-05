@@ -2,11 +2,15 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, scrollToTop } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`Sign Message`).beforeEach(async (t) => await goToWallet(t));
+createFixture(`Sign Message`).beforeEach(async (t) => {
+	await goToProfile(t);
+	await goToWallet(t);
+});
 
 test("Should open and close sign message modal", async (t) => {
 	await scrollToTop();

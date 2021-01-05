@@ -255,57 +255,6 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    entity-update:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/entity-update.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
     transactions-routing:
         needs: build-and-upload
 
@@ -1020,57 +969,6 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    my-registrations-routing:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/my-registrations-routing.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
     navigate-profile-settings:
         needs: build-and-upload
 
@@ -1165,57 +1063,6 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/create-profile-routing.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    my-registrations-search:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/my-registrations-search.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}

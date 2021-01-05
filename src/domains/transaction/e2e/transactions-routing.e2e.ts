@@ -1,35 +1,34 @@
-import { Selector } from "testcafe";
+import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
+import { goToWallet, importWalletByAddress } from "../../wallet/e2e/common";
+import { goToDelegateResignationPage, goToTransferPage } from "./common";
 
-import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
-import { goToMyRegistrations, goToProfile } from "../../profile/e2e/common";
-import { goToWallet } from "../../wallet/e2e/common";
-import { goToRegistrationPage, goToResignDelegatePage, goToTransferPage } from "./common";
-
-const translations = buildTranslations();
-
-createFixture(`Transactions routing`);
+createFixture(`Transactions routing`, [
+	mockRequest("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS", {
+		data: {
+			address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+			publicKey: "02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
+			nonce: "1",
+			balance: "10000000000",
+			attributes: {
+				delegate: {
+					username: "testwallet",
+				},
+			},
+			isDelegate: true,
+			isResigned: false,
+		},
+	}),
+]);
 
 test("should navigate to transfer page", async (t) => {
+	await goToProfile(t);
 	await goToWallet(t);
 	await goToTransferPage(t);
 });
 
-test("should navigate to my registrations page", async (t) => {
-	await goToWallet(t, "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb");
-
-	// Go to my registrations page
-	await t.click(Selector("[data-testid=WalletRegistrations__button]"));
-	await t.expect(Selector("h1").withText(translations.PROFILE.PAGE_MY_REGISTRATIONS.TITLE).exists).ok();
-});
-
-test("should navigate to registration page", async (t) => {
-	await goToWallet(t);
-	await goToRegistrationPage(t);
-});
-
-test("should navigate to delegate resignation page", async (t) => {
+test.only("should navigate to delegate resignation page", async (t) => {
 	await goToProfile(t);
-	await goToMyRegistrations(t);
-	await goToResignDelegatePage(t);
+	await importWalletByAddress(t, "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS");
+	await goToDelegateResignationPage(t);
 });

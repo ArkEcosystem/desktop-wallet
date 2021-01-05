@@ -4,7 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
-import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
+import { SendRegistrationForm } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
 import React from "react";
 
 import { BackupStep, GenerationStep, ReviewStep, VerificationStep } from "./";
@@ -19,16 +19,16 @@ const component = ({
 	wallet: ReadWriteWallet;
 }) => (
 	<Tabs activeId={activeTab}>
-		<TabPanel tabId={2}>
+		<TabPanel tabId={1}>
 			<GenerationStep wallet={wallet} fees={fees} />
 		</TabPanel>
-		<TabPanel tabId={3}>
+		<TabPanel tabId={2}>
 			<BackupStep />
 		</TabPanel>
-		<TabPanel tabId={4}>
+		<TabPanel tabId={3}>
 			<VerificationStep />
 		</TabPanel>
-		<TabPanel tabId={5}>
+		<TabPanel tabId={4}>
 			<ReviewStep wallet={wallet} />
 		</TabPanel>
 	</Tabs>
@@ -62,7 +62,7 @@ const transactionDetails = ({
 component.displayName = "SecondSignatureRegistrationForm";
 transactionDetails.displayName = "SecondSignatureRegistrationFormTransactionDetails";
 
-export const SecondSignatureRegistrationForm: SendEntityRegistrationForm = {
+export const SecondSignatureRegistrationForm: SendRegistrationForm = {
 	tabSteps: 4,
 	component,
 	transactionDetails,

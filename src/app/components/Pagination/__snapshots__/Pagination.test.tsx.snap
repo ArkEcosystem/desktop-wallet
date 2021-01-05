@@ -1171,7 +1171,7 @@ exports[`Pagination should not render previous buttons on first page 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Pagination should render properly 1`] = `
+exports[`Pagination should render 1`] = `
 <DocumentFragment>
   <div
     class="Pagination__Wrapper-x7juhx-0 hyaceY"
@@ -1209,6 +1209,51 @@ exports[`Pagination should render properly 1`] = `
       >
         <svg>
           forward.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Pagination should render condensed 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw bpKMZT"
+    data-testid="Pagination"
+  >
+    <div
+      class="flex items-center py-3 px-5 rounded bg-theme-primary-contrast text-theme-primary"
+    >
+      Page 1 of 3
+    </div>
+    <button
+      class="sc-AxjAm liXtzU w-8"
+      data-testid="CompactPagination__next"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          forward.svg
+        </svg>
+      </div>
+    </button>
+    <button
+      class="sc-AxjAm liXtzU w-8"
+      data-testid="CompactPagination__last"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          pagination-last.svg
         </svg>
       </div>
     </button>

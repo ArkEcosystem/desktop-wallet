@@ -26,6 +26,9 @@ createFixture(`Multiple Transfer action`, [
 ]);
 
 test("should show an error if wrong mnemonic", async (t: any) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
 	// Navigate to wallet page
 	await goToWallet(t);
 
@@ -68,10 +71,6 @@ test("should send multiple transfer successfully", async (t) => {
 
 	// Import wallet
 	await importWallet(t, "passphrase");
-
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Navigate to transfer page
 	await goToTransferPage(t);

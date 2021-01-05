@@ -34,7 +34,7 @@ createFixture(`IPFS Transaction action`, [
 ]);
 
 test("should navigate to IPFS page", async (t) => {
-	// Navigate to wallet page
+	await goToProfile(t);
 	await goToWallet(t);
 
 	// Click store hash option in dropdown menu
@@ -50,7 +50,7 @@ test("should navigate to IPFS page", async (t) => {
 });
 
 test("should show an error if an invalid IPFS hash is entered", async (t) => {
-	// Navigate to wallet page
+	await goToProfile(t);
 	await goToWallet(t);
 
 	// Click store hash option in dropdown menu
@@ -70,7 +70,7 @@ test("should show an error if an invalid IPFS hash is entered", async (t) => {
 });
 
 test("should show an error if wrong mnemonic", async (t) => {
-	// Navigate to wallet page
+	await goToProfile(t);
 	await goToWallet(t);
 
 	// Click store hash option in dropdown menu
@@ -96,49 +96,12 @@ test("should show an error if wrong mnemonic", async (t) => {
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
 
-test("should send IPFS successfully with a multisig wallet", async (t) => {
-	// Navigate to profile page
-	await goToProfile(t);
-
-	// Import wallet
-	await importWalletByAddress(t, "DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq");
-
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
-	// Click store hash option in dropdown menu
-	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
-	await t.click(
-		Selector('[data-testid="WalletHeader__more-button"] li').withText(
-			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH,
-		),
-	);
-
-	// Navigate to IPFS page
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE).exists).ok();
-
-	// Type IPFS hash & go to step 2
-	await t.typeText(Selector("[data-testid=Input__hash]"), "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
-	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
-
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE).exists).ok();
-	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
-
-	// Transaction successful
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
-});
-
 test("should send IPFS successfully", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
 
 	// Import wallet
 	await importWallet(t, "passphrase");
-
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 
 	// Click store hash option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -160,6 +123,35 @@ test("should send IPFS successfully", async (t) => {
 	// Type mnemonic
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
 	await t.click(Selector("[data-testid=SendIpfs__button--submit]"));
+
+	// Transaction successful
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
+});
+
+test("should send IPFS successfully with a multisig wallet", async (t) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
+	// Import wallet
+	await importWalletByAddress(t, "DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq");
+
+	// Click store hash option in dropdown menu
+	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
+	await t.click(
+		Selector('[data-testid="WalletHeader__more-button"] li').withText(
+			translations.WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH,
+		),
+	);
+
+	// Navigate to IPFS page
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE).exists).ok();
+
+	// Type IPFS hash & go to step 2
+	await t.typeText(Selector("[data-testid=Input__hash]"), "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
+
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE).exists).ok();
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Transaction successful
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();

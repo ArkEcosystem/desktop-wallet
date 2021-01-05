@@ -1,7 +1,6 @@
 export * from "./Authentication";
 export * from "./Common";
 export * from "./DelegateRegistration";
-export * from "./EntityRegistration";
 export * from "./MultiSignatureRegistration";
 export * from "./SendIpfs";
 export * from "./SendTransfer";
