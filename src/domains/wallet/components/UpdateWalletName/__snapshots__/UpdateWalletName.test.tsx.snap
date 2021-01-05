@@ -5,22 +5,21 @@ exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment
 exports[`UpdateWalletName should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -59,14 +58,14 @@ exports[`UpdateWalletName should render a modal 1`] = `
               class="sc-AxirZ izhStr flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="name"
               >
                 Name
               </label>
               <input
-                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -75,15 +74,13 @@ exports[`UpdateWalletName should render a modal 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fCKjFI"
-                color="primary"
+                class="sc-AxjAm liXtzU"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
+                class="sc-AxjAm bwcsry"
                 data-testid="UpdateWalletName__submit"
                 type="submit"
               >
@@ -101,22 +98,21 @@ exports[`UpdateWalletName should render a modal 1`] = `
 exports[`UpdateWalletName should show an error message for duplicate name 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -155,7 +151,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
               class="sc-AxirZ kMHTdH flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -163,7 +159,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -177,15 +173,13 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fCKjFI"
-                color="primary"
+                class="sc-AxjAm liXtzU"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
+                class="sc-AxjAm ghbEwY"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
                 type="submit"
@@ -204,22 +198,21 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
 exports[`UpdateWalletName should show an error message for duplicate name 2`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -258,7 +251,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
               class="sc-AxirZ kMHTdH flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -266,7 +259,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -280,15 +273,13 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fCKjFI"
-                color="primary"
+                class="sc-AxjAm liXtzU"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
+                class="sc-AxjAm ghbEwY"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
                 type="submit"
@@ -307,22 +298,21 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
 exports[`UpdateWalletName should show an error message for duplicate name 3`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -361,7 +351,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
               class="sc-AxirZ kMHTdH flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -369,7 +359,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -383,15 +373,13 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fCKjFI"
-                color="primary"
+                class="sc-AxjAm liXtzU"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
+                class="sc-AxjAm ghbEwY"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
                 type="submit"
@@ -410,22 +398,21 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
 exports[`UpdateWalletName should show an error message for duplicate name 4`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -464,7 +451,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
               class="sc-AxirZ kMHTdH flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -472,7 +459,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -486,15 +473,13 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fCKjFI"
-                color="primary"
+                class="sc-AxjAm liXtzU"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
+                class="sc-AxjAm ghbEwY"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
                 type="submit"
@@ -513,22 +498,21 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
 exports[`UpdateWalletName should show error message when name consists only of whitespace 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -567,7 +551,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
               class="sc-AxirZ kMHTdH flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -575,7 +559,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -589,15 +573,13 @@ exports[`UpdateWalletName should show error message when name consists only of w
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fCKjFI"
-                color="primary"
+                class="sc-AxjAm liXtzU"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
+                class="sc-AxjAm ghbEwY"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
                 type="submit"
@@ -616,22 +598,21 @@ exports[`UpdateWalletName should show error message when name consists only of w
 exports[`UpdateWalletName should show error message when name exceeds 42 characters 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzpans eODffd absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -670,7 +651,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               class="sc-AxirZ kMHTdH flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -678,7 +659,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               </label>
               <input
                 aria-invalid="true"
-                class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                 data-testid="UpdateWalletName__input"
                 name="name"
               />
@@ -692,15 +673,13 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="sc-AxjAm fCKjFI"
-                color="primary"
+                class="sc-AxjAm liXtzU"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm colAFb"
-                color="primary"
+                class="sc-AxjAm ghbEwY"
                 data-testid="UpdateWalletName__submit"
                 disabled=""
                 type="submit"

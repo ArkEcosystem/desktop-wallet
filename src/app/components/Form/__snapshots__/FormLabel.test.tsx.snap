@@ -3,16 +3,16 @@
 exports[`FormLabel should render & hover if optional 1`] = `
 <DocumentFragment>
   <label
-    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
     data-testid="FormLabel"
   >
     Test
     <div
-      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
       data-testid="FormLabel__required"
     />
     <span
-      class="ml-1 text-theme-neutral-light"
+      class="ml-1 text-theme-secondary-text"
       data-testid="FormLabel__optional"
     >
       (optional)
@@ -24,12 +24,12 @@ exports[`FormLabel should render & hover if optional 1`] = `
 exports[`FormLabel should render & hover if required 1`] = `
 <DocumentFragment>
   <label
-    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
     data-testid="FormLabel"
   >
     Test
     <div
-      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
       data-testid="FormLabel__required"
     />
   </label>
@@ -39,13 +39,13 @@ exports[`FormLabel should render & hover if required 1`] = `
 exports[`FormLabel should render with name from context 1`] = `
 <DocumentFragment>
   <label
-    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
     data-testid="FormLabel"
     for="test"
   >
     Test Label
     <div
-      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
       data-testid="FormLabel__required"
     />
   </label>

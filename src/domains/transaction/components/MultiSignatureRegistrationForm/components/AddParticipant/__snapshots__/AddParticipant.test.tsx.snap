@@ -4,25 +4,25 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
+      class="SubForm__SubFormWrapper-c4tqfs-0 hxcWQc"
     >
       <fieldset
         class="sc-AxirZ kMHTdH flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="address"
         >
           Multisignature Participant
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
         <div>
           <div
-            class="relative flex items-center w-full text-left"
+            class="flex relative items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -45,14 +45,14 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
               value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
             />
             <div
-              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
               data-testid="SelectRecipient__select-recipient"
             >
               <div
@@ -74,8 +74,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
         </p>
       </fieldset>
       <button
-        class="sc-AxjAm fCKjFI w-full my-4"
-        color="primary"
+        class="sc-AxjAm liXtzU my-4 w-full"
         type="button"
       >
         Add Participant
@@ -195,11 +194,10 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </td>
                 <td
-                  class="w-20 py-6 text-right"
+                  class="py-6 w-20 text-right"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
                   >
@@ -232,25 +230,25 @@ exports[`Add Participant should fail to find 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
+      class="SubForm__SubFormWrapper-c4tqfs-0 hxcWQc"
     >
       <fieldset
         class="sc-AxirZ kMHTdH flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="address"
         >
           Multisignature Participant
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
         <div>
           <div
-            class="relative flex items-center w-full text-left"
+            class="flex relative items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -273,14 +271,14 @@ exports[`Add Participant should fail to find 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
               value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
             />
             <div
-              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
               data-testid="SelectRecipient__select-recipient"
             >
               <div
@@ -302,8 +300,7 @@ exports[`Add Participant should fail to find 1`] = `
         </p>
       </fieldset>
       <button
-        class="sc-AxjAm fCKjFI w-full my-4"
-        color="primary"
+        class="sc-AxjAm liXtzU my-4 w-full"
         type="button"
       >
         Add Participant
@@ -423,11 +420,10 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </td>
                 <td
-                  class="w-20 py-6 text-right"
+                  class="py-6 w-20 text-right"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
                   >
@@ -460,25 +456,25 @@ exports[`Add Participant should fail with cold wallet 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
+      class="SubForm__SubFormWrapper-c4tqfs-0 hxcWQc"
     >
       <fieldset
         class="sc-AxirZ kMHTdH flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="address"
         >
           Multisignature Participant
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
         <div>
           <div
-            class="relative flex items-center w-full text-left"
+            class="flex relative items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -501,14 +497,14 @@ exports[`Add Participant should fail with cold wallet 1`] = `
             </div>
             <input
               aria-invalid="true"
-              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
               value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
             />
             <div
-              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
               data-testid="SelectRecipient__select-recipient"
             >
               <div
@@ -530,8 +526,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
         </p>
       </fieldset>
       <button
-        class="sc-AxjAm fCKjFI w-full my-4"
-        color="primary"
+        class="sc-AxjAm liXtzU my-4 w-full"
         type="button"
       >
         Add Participant
@@ -651,11 +646,10 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="w-20 py-6 text-right"
+                  class="py-6 w-20 text-right"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
                   >
@@ -688,43 +682,43 @@ exports[`Add Participant should render custom participants 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
+      class="SubForm__SubFormWrapper-c4tqfs-0 hxcWQc"
     >
       <fieldset
         class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="address"
         >
           Multisignature Participant
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
         <div>
           <div
-            class="relative flex items-center w-full text-left"
+            class="flex relative items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
               class="absolute left-1"
             >
               <div
-                class="sc-AxhCb esLhBV mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="sc-AxhCb esLhBV mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
               />
             </div>
             <input
-              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
               value=""
             />
             <div
-              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
               data-testid="SelectRecipient__select-recipient"
             >
               <div
@@ -741,8 +735,7 @@ exports[`Add Participant should render custom participants 1`] = `
         </div>
       </fieldset>
       <button
-        class="sc-AxjAm fCKjFI w-full my-4"
-        color="primary"
+        class="sc-AxjAm ghbEwY my-4 w-full"
         disabled=""
         type="button"
       >
@@ -863,11 +856,10 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </td>
                 <td
-                  class="w-20 py-6 text-right"
+                  class="py-6 w-20 text-right"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
                   >
@@ -900,25 +892,25 @@ exports[`Add Participant should work with a remote wallet 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
+      class="SubForm__SubFormWrapper-c4tqfs-0 hxcWQc"
     >
       <fieldset
         class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="address"
         >
           Multisignature Participant
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
         <div>
           <div
-            class="relative flex items-center w-full text-left"
+            class="flex relative items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -940,14 +932,14 @@ exports[`Add Participant should work with a remote wallet 1`] = `
               </div>
             </div>
             <input
-              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
               value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
             />
             <div
-              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
               data-testid="SelectRecipient__select-recipient"
             >
               <div
@@ -964,8 +956,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
         </div>
       </fieldset>
       <button
-        class="sc-AxjAm fCKjFI w-full my-4"
-        color="primary"
+        class="sc-AxjAm ghbEwY my-4 w-full"
         disabled=""
         type="button"
       >
@@ -1086,11 +1077,10 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="w-20 py-6 text-right"
+                  class="py-6 w-20 text-right"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
                   >
@@ -1158,11 +1148,10 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="w-20 py-6 text-right"
+                  class="py-6 w-20 text-right"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
                   >
@@ -1195,25 +1184,25 @@ exports[`Add Participant should work with an imported wallet 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
+      class="SubForm__SubFormWrapper-c4tqfs-0 hxcWQc"
     >
       <fieldset
         class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="address"
         >
           Multisignature Participant
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
         <div>
           <div
-            class="relative flex items-center w-full text-left"
+            class="flex relative items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -1235,14 +1224,14 @@ exports[`Add Participant should work with an imported wallet 1`] = `
               </div>
             </div>
             <input
-              class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+              class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
               data-testid="SelectRecipient__input"
               name="address"
               type="text"
               value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
             />
             <div
-              class="absolute flex items-center space-x-3 cursor-pointer right-4"
+              class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
               data-testid="SelectRecipient__select-recipient"
             >
               <div
@@ -1259,8 +1248,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
         </div>
       </fieldset>
       <button
-        class="sc-AxjAm fCKjFI w-full my-4"
-        color="primary"
+        class="sc-AxjAm ghbEwY my-4 w-full"
         disabled=""
         type="button"
       >
@@ -1381,11 +1369,10 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="w-20 py-6 text-right"
+                  class="py-6 w-20 text-right"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
                   >
@@ -1453,11 +1440,10 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="w-20 py-6 text-right"
+                  class="py-6 w-20 text-right"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="recipient-list__remove-recipient"
                     type="button"
                   >

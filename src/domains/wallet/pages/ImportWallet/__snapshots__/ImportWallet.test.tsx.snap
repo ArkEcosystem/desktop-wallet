@@ -3,23 +3,23 @@
 exports[`ImportWallet should empty all wallets and import by address 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -29,7 +29,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -88,22 +88,21 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -117,54 +116,62 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm bTZSQQ"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm bTZSQQ"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -210,7 +217,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -248,7 +255,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -280,24 +287,24 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -311,7 +318,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -332,13 +339,13 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -362,7 +369,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -371,7 +378,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -393,8 +400,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__back-button"
                     disabled=""
                     type="button"
@@ -402,8 +408,7 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__continue-button"
                     disabled=""
                     type="button"
@@ -424,23 +429,23 @@ exports[`ImportWallet should empty all wallets and import by address 1`] = `
 exports[`ImportWallet should go to previous step 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -450,7 +455,7 @@ exports[`ImportWallet should go to previous step 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -509,22 +514,21 @@ exports[`ImportWallet should go to previous step 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -538,54 +542,60 @@ exports[`ImportWallet should go to previous step 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -631,7 +641,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -669,7 +679,7 @@ exports[`ImportWallet should go to previous step 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -701,24 +711,24 @@ exports[`ImportWallet should go to previous step 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -732,7 +742,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -753,13 +763,13 @@ exports[`ImportWallet should go to previous step 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -783,7 +793,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -792,7 +802,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -814,8 +824,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__back-button"
                     disabled=""
                     type="button"
@@ -823,8 +832,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__continue-button"
                     disabled=""
                     type="button"
@@ -845,23 +853,23 @@ exports[`ImportWallet should go to previous step 1`] = `
 exports[`ImportWallet should import by address 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -871,7 +879,7 @@ exports[`ImportWallet should import by address 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -930,22 +938,21 @@ exports[`ImportWallet should import by address 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -959,54 +966,60 @@ exports[`ImportWallet should import by address 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1052,7 +1065,7 @@ exports[`ImportWallet should import by address 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -1090,7 +1103,7 @@ exports[`ImportWallet should import by address 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1122,24 +1135,24 @@ exports[`ImportWallet should import by address 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -1153,7 +1166,7 @@ exports[`ImportWallet should import by address 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -1174,13 +1187,13 @@ exports[`ImportWallet should import by address 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -1204,7 +1217,7 @@ exports[`ImportWallet should import by address 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -1213,7 +1226,7 @@ exports[`ImportWallet should import by address 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1235,8 +1248,7 @@ exports[`ImportWallet should import by address 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__back-button"
                     disabled=""
                     type="button"
@@ -1244,8 +1256,7 @@ exports[`ImportWallet should import by address 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__continue-button"
                     disabled=""
                     type="button"
@@ -1266,23 +1277,23 @@ exports[`ImportWallet should import by address 1`] = `
 exports[`ImportWallet should import by address and fill a wallet name 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1292,7 +1303,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -1351,22 +1362,21 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1380,54 +1390,60 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1473,7 +1489,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -1511,7 +1527,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1543,24 +1559,24 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -1574,7 +1590,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -1595,13 +1611,13 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -1625,7 +1641,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -1634,7 +1650,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1656,8 +1672,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__back-button"
                     disabled=""
                     type="button"
@@ -1665,8 +1680,7 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__continue-button"
                     disabled=""
                     type="button"
@@ -1687,23 +1701,23 @@ exports[`ImportWallet should import by address and fill a wallet name 1`] = `
 exports[`ImportWallet should import by mnemonic 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -1713,7 +1727,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -1772,22 +1786,21 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1801,54 +1814,60 @@ exports[`ImportWallet should import by mnemonic 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -1894,7 +1913,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -1932,7 +1951,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1964,24 +1983,24 @@ exports[`ImportWallet should import by mnemonic 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -1995,7 +2014,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -2016,13 +2035,13 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -2046,7 +2065,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -2055,7 +2074,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -2077,8 +2096,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__back-button"
                     disabled=""
                     type="button"
@@ -2086,8 +2104,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__continue-button"
                     disabled=""
                     type="button"
@@ -2112,7 +2129,7 @@ exports[`ImportWallet should render 1st step 1`] = `
     data-testid="ImportWallet__first-step"
   >
     <div
-      class="flex items-end justify-between bg-theme-background"
+      class="flex justify-between items-end bg-theme-background"
     >
       <div>
         <h1
@@ -2133,13 +2150,13 @@ exports[`ImportWallet should render 1st step 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="network"
       >
         Cryptoasset
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -2163,7 +2180,7 @@ exports[`ImportWallet should render 1st step 1`] = `
               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
             >
               <div
-                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -2172,7 +2189,7 @@ exports[`ImportWallet should render 1st step 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="ImportWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -2199,7 +2216,7 @@ exports[`ImportWallet should render 1st step without test networks 1`] = `
     data-testid="ImportWallet__first-step"
   >
     <div
-      class="flex items-end justify-between bg-theme-background"
+      class="flex justify-between items-end bg-theme-background"
     >
       <div>
         <h1
@@ -2220,13 +2237,13 @@ exports[`ImportWallet should render 1st step without test networks 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="network"
       >
         Cryptoasset
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -2250,7 +2267,7 @@ exports[`ImportWallet should render 1st step without test networks 1`] = `
               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
             >
               <div
-                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -2259,7 +2276,7 @@ exports[`ImportWallet should render 1st step without test networks 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="ImportWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -2335,7 +2352,7 @@ exports[`ImportWallet should render 2st step 1`] = `
     data-testid="ImportWallet__second-step"
   >
     <div
-      class="flex items-end justify-between bg-theme-background"
+      class="flex justify-between items-end bg-theme-background"
     >
       <div>
         <h1
@@ -2356,7 +2373,7 @@ exports[`ImportWallet should render 2st step 1`] = `
       class="flex flex-col"
     >
       <div
-        class="flex items-center justify-between"
+        class="flex justify-between items-center"
       >
         <div
           class="text-lg font-semibold text-theme-secondary-text"
@@ -2373,10 +2390,10 @@ exports[`ImportWallet should render 2st step 1`] = `
             type="checkbox"
           />
           <div
-            class="Toggle__Handle-qyyifx-1 kLalye"
+            class="Toggle__Handle-qyyifx-1 juvWiy"
           >
             <span
-              class="Toggle__HandleInner-qyyifx-2 kvoLnZ"
+              class="Toggle__HandleInner-qyyifx-2 ggonKR"
             />
           </div>
         </label>
@@ -2394,13 +2411,13 @@ exports[`ImportWallet should render 2st step 1`] = `
         class="sc-AxirZ izhStr flex flex-col space-y-2"
       >
         <label
-          class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
           data-testid="FormLabel"
           for="passphrase"
         >
           Your Passphrase
           <div
-            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
           />
         </label>
@@ -2409,7 +2426,7 @@ exports[`ImportWallet should render 2st step 1`] = `
           data-testid="InputPassword"
         >
           <input
-            class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+            class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
             data-testid="ImportWallet__passphrase-input"
             name="passphrase"
             type="password"
@@ -2418,7 +2435,7 @@ exports[`ImportWallet should render 2st step 1`] = `
             class="sc-fzoLag sc-fzpjYC fdEbuY my-px mr-4"
           >
             <button
-              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
               data-testid="InputPassword__toggle"
               type="button"
             >
@@ -2447,7 +2464,7 @@ exports[`ImportWallet should render 3st step 1`] = `
     data-testid="ImportWallet__third-step"
   >
     <div
-      class="flex items-end justify-between bg-theme-background"
+      class="flex justify-between items-end bg-theme-background"
     >
       <div>
         <h1
@@ -2570,20 +2587,20 @@ exports[`ImportWallet should render 3st step 1`] = `
       class="sc-AxirZ izhStr flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="name"
       >
         Wallet name
         <span
-          class="ml-1 text-theme-neutral-light"
+          class="ml-1 text-theme-secondary-text"
           data-testid="FormLabel__optional"
         >
           (optional)
         </span>
       </label>
       <input
-        class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="ImportWallet__name-input"
         name="name"
       />
@@ -2595,23 +2612,23 @@ exports[`ImportWallet should render 3st step 1`] = `
 exports[`ImportWallet should render as ledger import 1`] = `
 <div>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -2621,7 +2638,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -2680,22 +2697,21 @@ exports[`ImportWallet should render as ledger import 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2709,54 +2725,62 @@ exports[`ImportWallet should render as ledger import 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm bTZSQQ"
+                  data-testid="navbar__buttons--send"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm bTZSQQ"
+                  data-testid="navbar__buttons--receive"
+                  disabled=""
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -2802,7 +2826,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -2840,7 +2864,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2872,27 +2896,27 @@ exports[`ImportWallet should render as ledger import 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -2907,7 +2931,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -2928,13 +2952,13 @@ exports[`ImportWallet should render as ledger import 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -2958,7 +2982,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -2967,7 +2991,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -2994,8 +3018,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                   class="flex space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="Paginator__back-button"
                     disabled=""
                     type="button"
@@ -3003,8 +3026,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm bwcsry"
                     data-testid="Paginator__continue-button"
                     type="button"
                   >
@@ -3024,23 +3046,23 @@ exports[`ImportWallet should render as ledger import 1`] = `
 exports[`ImportWallet should show an error message for duplicate address 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3050,7 +3072,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -3109,22 +3131,21 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -3138,54 +3159,60 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -3231,7 +3258,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -3269,7 +3296,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3301,24 +3328,24 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -3332,7 +3359,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -3353,13 +3380,13 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -3383,7 +3410,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -3392,7 +3419,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -3414,8 +3441,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__back-button"
                     disabled=""
                     type="button"
@@ -3423,8 +3449,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__continue-button"
                     disabled=""
                     type="button"
@@ -3445,23 +3470,23 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
 exports[`ImportWallet should show an error message for duplicate name 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3471,7 +3496,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -3530,22 +3555,21 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -3559,54 +3583,60 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -3652,7 +3682,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -3690,7 +3720,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -3722,24 +3752,24 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -3753,7 +3783,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -3774,13 +3804,13 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -3804,7 +3834,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -3813,7 +3843,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -3835,8 +3865,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__back-button"
                     disabled=""
                     type="button"
@@ -3844,8 +3873,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__continue-button"
                     disabled=""
                     type="button"
@@ -3866,23 +3894,23 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
 exports[`ImportWallet should show an error message for invalid address 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex flex-col min-h-screen bg-theme-secondary-background"
+    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNqU idcjef"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bYVjZm"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="flex relative justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center my-auto"
           >
             <div
-              class="sc-fzoyTs kDQbbx"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 eOhBDy"
             >
               <svg
                 width="48"
@@ -3892,7 +3920,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
             </div>
           </div>
           <ul
-            class="flex h-20 ml-4 mr-auto space-x-8 md:h-24"
+            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
           >
             <li
               class="flex"
@@ -3951,22 +3979,21 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                   class="overflow-hidden rounded-lg"
                 >
                   <button
-                    class="sc-AxjAm cGlMcw group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    color="primary"
+                    class="sc-AxjAm jzyfYz w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb draJkT p-1"
-                      height="22"
-                      width="22"
+                      class="sc-AxhCb bPyuTe p-1"
+                      height="18"
+                      width="15"
                     >
                       <svg>
                         notification.svg
                       </svg>
                     </div>
                     <div
-                      class="absolute right-0 flex items-center justify-center w-3 h-3 mr-3 -mt-3 transition-all duration-100 ease-linear rounded-full bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
                     >
                       <div
                         class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -3980,54 +4007,60 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex items-center"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--send"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--send"
+                  type="button"
                 >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb eHGcDb p-1"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      sent.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
             <div
-              class="flex items-center overflow-hidden rounded-lg"
+              class="flex overflow-hidden items-center rounded-lg"
             >
-              <button
-                class="sc-AxjAm cGlMcw text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
+              <div
+                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 kfMacx"
               >
-                <div
-                  class="sc-AxhCb draJkT p-1"
-                  height="22"
-                  width="22"
+                <button
+                  class="sc-AxjAm jzyfYz"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
                 >
-                  <svg>
-                    qr-code.svg
-                  </svg>
-                </div>
-              </button>
+                  <div
+                    class="sc-AxhCb draJkT p-1"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      qr-code.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8 mr-4"
+            class="flex items-center my-auto mr-4 ml-8"
           >
             <div
               class="text-right"
@@ -4073,7 +4106,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                   </span>
                 </div>
                 <div
-                  class="relative inline-flex items-center justify-center align-middle rounded-full"
+                  class="inline-flex relative justify-center items-center align-middle rounded-full"
                   data-testid="navbar__user--avatar"
                 >
                   <div
@@ -4111,7 +4144,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 mx-auto font-semibold px-14 text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -4143,24 +4176,24 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
         class="Section__SectionWrapper-sc-8cjvre-0 bryymu flex-1"
       >
         <div
-          class="container py-16 mx-auto px-14"
+          class="container py-16 px-14 mx-auto"
         >
           <form
-            class="max-w-xl mx-auto"
+            class="mx-auto max-w-xl"
             data-testid="ImportWallet__form"
           >
             <div>
               <ul
-                class="sc-fzoXWK fKqATg"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
               >
                 <li
-                  class="sc-fzoNJl lleTTz"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
                 <li
-                  class="sc-fzoNJl gpaoSa"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
                 />
               </ul>
               <div
@@ -4174,7 +4207,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                     data-testid="ImportWallet__first-step"
                   >
                     <div
-                      class="flex items-end justify-between bg-theme-background"
+                      class="flex justify-between items-end bg-theme-background"
                     >
                       <div>
                         <h1
@@ -4195,13 +4228,13 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                       class="sc-AxirZ izhStr flex flex-col space-y-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                         data-testid="FormLabel"
                         for="network"
                       >
                         Cryptoasset
                         <div
-                          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                           data-testid="FormLabel__required"
                         />
                       </label>
@@ -4225,7 +4258,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               class="sc-fzoLag sc-fzoXzr jnLryM px-4"
                             >
                               <div
-                                class="sc-AxgMl eLFBRi border-theme-neutral-light text-theme-neutral"
+                                class="sc-AxgMl eLFBRi border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -4234,7 +4267,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               aria-controls="ImportWallet__network-menu"
                               aria-labelledby="ImportWallet__network-label"
                               autocomplete="off"
-                              class="sc-fzoyAV TAWLD overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-fzoyAV cdwlAN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="ImportWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -4256,8 +4289,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__back-button"
                     disabled=""
                     type="button"
@@ -4265,8 +4297,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY"
                     data-testid="ImportWallet__continue-button"
                     disabled=""
                     type="button"

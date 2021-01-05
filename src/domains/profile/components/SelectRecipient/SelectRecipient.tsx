@@ -21,7 +21,7 @@ const ProfileAvatar = ({ address }: any) => {
 	if (!address)
 		return (
 			<Circle
-				className="mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+				className="mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
 				size="sm"
 				noShadow
 			/>
@@ -58,12 +58,12 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 
 		return (
 			<div>
-				<div data-testid="SelectRecipient__wrapper" className="relative flex items-center w-full text-left">
+				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
 					<div className="absolute left-1">
 						<ProfileAvatar address={selectedAddress} />
 					</div>
 					<Input
-						className="pl-14 pr-11"
+						className="pr-11 pl-14"
 						data-testid="SelectRecipient__input"
 						type="text"
 						ref={ref}
@@ -75,7 +75,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 
 					<div
 						data-testid="SelectRecipient__select-recipient"
-						className="absolute flex items-center space-x-3 cursor-pointer right-4"
+						className="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
 						onClick={openRecipients}
 					>
 						<Icon name="User" width={20} height={20} />

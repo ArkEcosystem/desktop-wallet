@@ -83,7 +83,7 @@ describe("NewsOptions", () => {
 		expect(onSearch).toBeCalledWith("test query");
 		expect(onSubmit).toBeCalledWith({
 			categories: expect.arrayContaining(["Technical"]),
-			coins: expect.arrayContaining(["ark"]),
+			coins: expect.arrayContaining(["ARK"]),
 			searchQuery: expect.stringMatching("test query"),
 		});
 	});
@@ -137,8 +137,31 @@ describe("NewsOptions", () => {
 
 		expect(onSubmit).toBeCalledWith({
 			categories: expect.arrayContaining(["Technical"]),
-			coins: expect.arrayContaining(["ark"]),
+			coins: expect.arrayContaining(["ARK"]),
 			searchQuery: expect.stringMatching("test query"),
+		});
+	});
+
+	it("should handle multiple selections", () => {
+		const onSubmit = jest.fn();
+
+		const { getByTestId } = render(
+			<NewsOptions selectedCategories={categories} selectedCoins={coins} onSubmit={onSubmit} />,
+		);
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkOption__ETH"));
+			fireEvent.click(getByTestId("NetworkOption__BTC"));
+		});
+
+		act(() => {
+			fireEvent.click(getByTestId("NewsOptions__submit"));
+		});
+
+		expect(onSubmit).toBeCalledWith({
+			categories: ["Technical"],
+			coins: ["ETH", "BTC"],
+			searchQuery: "",
 		});
 	});
 });

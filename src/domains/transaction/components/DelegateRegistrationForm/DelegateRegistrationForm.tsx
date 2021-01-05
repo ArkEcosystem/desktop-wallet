@@ -4,17 +4,17 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
-import { SendEntityRegistrationForm } from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
+import { SendRegistrationForm } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
 import React from "react";
 
 import { FormStep, ReviewStep } from "./";
 
 const component = ({ activeTab, fees, wallet }: { activeTab: number; fees: any; wallet: ReadWriteWallet }) => (
 	<Tabs activeId={activeTab}>
-		<TabPanel tabId={2}>
+		<TabPanel tabId={1}>
 			<FormStep fees={fees} wallet={wallet} />
 		</TabPanel>
-		<TabPanel tabId={3}>
+		<TabPanel tabId={2}>
 			<ReviewStep wallet={wallet} />
 		</TabPanel>
 	</Tabs>
@@ -52,7 +52,7 @@ const transactionDetails = ({
 component.displayName = "DelegateRegistrationForm";
 transactionDetails.displayName = "DelegateRegistrationFormTransactionDetails";
 
-export const DelegateRegistrationForm: SendEntityRegistrationForm = {
+export const DelegateRegistrationForm: SendRegistrationForm = {
 	tabSteps: 2,
 	component,
 	transactionDetails,
@@ -77,6 +77,7 @@ export const DelegateRegistrationForm: SendEntityRegistrationForm = {
 		});
 
 		await senderWallet.transaction().broadcast(transactionId);
+
 		await env.persist();
 
 		return senderWallet.transaction().transaction(transactionId);

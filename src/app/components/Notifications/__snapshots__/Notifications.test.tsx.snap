@@ -7,7 +7,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
     data-testid="NotificationsWrapper"
   >
     <div
-      class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
     >
       Plugins
     </div>
@@ -29,7 +29,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
               class="w-8 h-8"
             >
               <div
-                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
               />
             </td>
             <td>
@@ -63,7 +63,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
               class="w-8 h-8"
             >
               <div
-                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
               />
             </td>
             <td>
@@ -97,7 +97,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
       class="mt-4"
     >
       <div
-        class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
       >
         Transactions
       </div>
@@ -118,7 +118,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
             >
               <td>
                 <div
-                  class="sc-AxiKw ezKnmZ space-x-3"
+                  class="sc-AxiKw fVmMMg space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -167,7 +167,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-AxiKw fVLXTF justify-end"
+                  class="sc-AxiKw eDJbGU justify-end"
                 >
                   <div
                     class="sc-AxhUy dVEcwV whitespace-no-wrap"
@@ -189,7 +189,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
             >
               <td>
                 <div
-                  class="sc-AxiKw ezKnmZ space-x-3"
+                  class="sc-AxiKw fVmMMg space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -238,7 +238,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-AxiKw fVLXTF justify-end"
+                  class="sc-AxiKw eDJbGU justify-end"
                 >
                   <div
                     class="sc-AxhUy dVEcwV whitespace-no-wrap"
@@ -268,7 +268,7 @@ exports[`Notifications should render with empty notifications 1`] = `
     class="styles__NotificationsWrapper-fnayqc-0 iUAjZu"
   >
     <div
-      class="p-6 mb-5 border-2 border-theme-neutral-300 dark:border-theme-neutral-800 text-md rounded-xl text-theme-secondary-text"
+      class="p-6 mb-5 rounded-xl border-2 border-theme-neutral-300 dark:border-theme-neutral-800 text-md text-theme-secondary-text"
     >
       You have no notifications at this time
     </div>
@@ -308,7 +308,7 @@ exports[`Notifications should render with plugins 1`] = `
     data-testid="NotificationsWrapper"
   >
     <div
-      class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
     >
       Plugins
     </div>
@@ -330,7 +330,7 @@ exports[`Notifications should render with plugins 1`] = `
               class="w-8 h-8"
             >
               <div
-                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
               />
             </td>
             <td>
@@ -364,7 +364,7 @@ exports[`Notifications should render with plugins 1`] = `
               class="w-8 h-8"
             >
               <div
-                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
               />
             </td>
             <td>
@@ -398,7 +398,7 @@ exports[`Notifications should render with plugins 1`] = `
       class="mt-4"
     >
       <div
-        class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
       >
         Transactions
       </div>
@@ -419,7 +419,7 @@ exports[`Notifications should render with plugins 1`] = `
             >
               <td>
                 <div
-                  class="sc-AxiKw ezKnmZ space-x-3"
+                  class="sc-AxiKw fVmMMg space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -468,7 +468,7 @@ exports[`Notifications should render with plugins 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-AxiKw fVLXTF justify-end"
+                  class="sc-AxiKw eDJbGU justify-end"
                 >
                   <div
                     class="sc-AxhUy dVEcwV whitespace-no-wrap"
@@ -490,7 +490,7 @@ exports[`Notifications should render with plugins 1`] = `
             >
               <td>
                 <div
-                  class="sc-AxiKw ezKnmZ space-x-3"
+                  class="sc-AxiKw fVmMMg space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -539,7 +539,7 @@ exports[`Notifications should render with plugins 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-AxiKw fVLXTF justify-end"
+                  class="sc-AxiKw eDJbGU justify-end"
                 >
                   <div
                     class="sc-AxhUy dVEcwV whitespace-no-wrap"
@@ -570,7 +570,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
     data-testid="NotificationsWrapper"
   >
     <div
-      class="z-10 py-4 pl-4 pr-8 mb-2 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
     >
       Plugins
     </div>
@@ -592,7 +592,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               class="w-8 h-8"
             >
               <div
-                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
               />
             </td>
             <td>
@@ -626,7 +626,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               class="w-8 h-8"
             >
               <div
-                class="flex items-center justify-center w-8 h-8 my-2 mr-4 text-white align-middle rounded-lg bg-logo"
+                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
               />
             </td>
             <td>
@@ -660,7 +660,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
       class="mt-4"
     >
       <div
-        class="z-10 py-1 pl-4 pr-8 -mx-4 text-sm font-bold text-theme-neutral -top-5"
+        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
       >
         Transactions
       </div>
@@ -681,7 +681,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
             >
               <td>
                 <div
-                  class="sc-AxiKw ezKnmZ space-x-3"
+                  class="sc-AxiKw fVmMMg space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -730,7 +730,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-AxiKw fVLXTF justify-end"
+                  class="sc-AxiKw eDJbGU justify-end"
                 >
                   <div
                     class="sc-AxhUy dVEcwV whitespace-no-wrap"
@@ -752,7 +752,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
             >
               <td>
                 <div
-                  class="sc-AxiKw ezKnmZ space-x-3"
+                  class="sc-AxiKw fVmMMg space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -801,7 +801,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-AxiKw fVLXTF justify-end"
+                  class="sc-AxiKw eDJbGU justify-end"
                 >
                   <div
                     class="sc-AxhUy dVEcwV whitespace-no-wrap"

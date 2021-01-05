@@ -99,7 +99,7 @@ describe("App", () => {
 			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 		});
 
-		expect(getByTestId("Main")).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
+		expect(document.body).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
 	});
 
 	it("should get the profile theme from the route", async () => {
@@ -115,7 +115,7 @@ describe("App", () => {
 
 		expect(history.location.pathname).toMatch("/");
 
-		expect(getByTestId("Main")).toHaveClass("theme-dark");
+		expect(document.body).toHaveClass("theme-dark");
 
 		await act(async () => {
 			fireEvent.click(getAllByTestId("Card")[0]);
@@ -123,7 +123,7 @@ describe("App", () => {
 
 		expect(history.location.pathname).toMatch(dashboardUrl);
 
-		expect(getByTestId("Main")).toHaveClass("theme-light");
+		expect(document.body).toHaveClass("theme-light");
 	});
 
 	it("should close splash screen if not demo", async () => {

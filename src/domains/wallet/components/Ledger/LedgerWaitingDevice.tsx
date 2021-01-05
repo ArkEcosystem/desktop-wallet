@@ -30,10 +30,10 @@ export const LedgerWaitingDevice = ({
 
 				<Image name="WaitingLedgerDevice" domain="wallet" className="mx-auto" />
 
-				<div className="inline-flex items-center justify-center w-full space-x-3">
+				<div className="inline-flex justify-center items-center space-x-3 w-full">
 					<Spinner color="primary" />
 					<span
-						className="font-semibold text-theme-text animate-pulse"
+						className="font-semibold animate-pulse text-theme-text"
 						data-testid="LedgerWaitingDevice-loading_message"
 					>
 						{t("WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE")}

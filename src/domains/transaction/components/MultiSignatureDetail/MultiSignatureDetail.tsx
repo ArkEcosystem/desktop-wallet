@@ -36,7 +36,7 @@ const Paginator = (props: {
 		<div className="flex justify-end mt-8 space-x-2">
 			{props.activeStep === 1 && (
 				<>
-					<Button data-testid="Paginator__cancel" variant="plain" onClick={props.onCancel}>
+					<Button data-testid="Paginator__cancel" variant="secondary" onClick={props.onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
 
@@ -48,7 +48,7 @@ const Paginator = (props: {
 
 			{props.activeStep === 2 && (
 				<>
-					<Button data-testid="Paginator__back" variant="plain" onClick={props.onBack}>
+					<Button data-testid="Paginator__back" variant="secondary" onClick={props.onBack}>
 						{t("COMMON.BACK")}
 					</Button>
 

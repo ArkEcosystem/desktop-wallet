@@ -10,10 +10,12 @@ import { useTranslation } from "react-i18next";
 
 type PeerFormProps = {
 	networks: Coins.Network[];
+	peer?: any;
 	onSave: any;
+	onValidateHost?: any;
 };
 
-export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
+export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -21,11 +23,29 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 	const { isValid } = formState;
 	const { network, name, host, isMultiSignature } = watch();
 
+	const nameMaxLength = 20;
+
 	useEffect(() => {
 		register("network", { required: true });
 	}, [register]);
 
+	useEffect(() => {
+		if (peer) {
+			const network = networks.find((network) => network.coin() === peer.coin && network.id() === peer.network);
+			setValue("network", network, { shouldValidate: true, shouldDirty: true });
+		}
+	}, [networks, peer, setValue]);
+
 	const handleSelectNetwork = (network?: Coins.Network | null) => {
+		if (form.errors.host?.message.includes("already exists")) {
+			form.clearErrors("host");
+
+			/* istanbul ignore else */
+			if (host) {
+				setValue("host", host, { shouldValidate: true, shouldDirty: true });
+			}
+		}
+
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 
@@ -48,7 +68,15 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("SETTINGS.PEERS.NAME"),
 						}).toString(),
+						maxLength: {
+							message: t("COMMON.VALIDATION.MAX_LENGTH", {
+								field: t("SETTINGS.PEERS.NAME"),
+								maxLength: nameMaxLength,
+							}),
+							value: nameMaxLength,
+						},
 					})}
+					defaultValue={peer?.name}
 					data-testid="PeerForm__name-input"
 				/>
 				<FormHelperText />
@@ -61,7 +89,15 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 							field: t("SETTINGS.PEERS.PEER_IP"),
 						}).toString(),
+						validate: (host) => {
+							if (peer?.host === host) {
+								return true;
+							}
+
+							return onValidateHost?.(network?.id(), host);
+						},
 					})}
+					defaultValue={peer?.host}
 					data-testid="PeerForm__host-input"
 				/>
 				<FormHelperText />
@@ -70,7 +106,12 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 			<FormField name="type">
 				<FormLabel label={t("SETTINGS.PEERS.TYPE")} required={false} optional />
 				<label htmlFor="isMultiSignature" className="flex items-center space-x-2">
-					<Checkbox name="isMultiSignature" ref={register()} data-testid="PeerForm__multisignature-toggle" />
+					<Checkbox
+						ref={register()}
+						name="isMultiSignature"
+						defaultChecked={peer?.isMultiSignature}
+						data-testid="PeerForm__multisignature-toggle"
+					/>
 					<span className="text-sm font-semibold text-theme-secondary-text">
 						{t("COMMON.MULTISIGNATURE")}
 					</span>
@@ -78,8 +119,8 @@ export const PeerForm = ({ networks, onSave }: PeerFormProps) => {
 			</FormField>
 
 			<div className="flex justify-end mt-4">
-				<Button type="submit" disabled={!isValid} data-testid="PeerForm__add-button">
-					{t("SETTINGS.PEERS.ADD_PEER")}
+				<Button type="submit" disabled={!isValid} data-testid="PeerForm__submit-button">
+					{t(`SETTINGS.PEERS.${!peer ? "ADD_PEER" : "EDIT_PEER"}`)}
 				</Button>
 			</div>
 		</Form>

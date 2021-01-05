@@ -70,7 +70,7 @@ describe("AddRecipient", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("add-recipient__amount-input")).toHaveValue("1");
+			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
 			expect(getByTestId("SelectRecipient__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
 		});
 
@@ -118,7 +118,7 @@ describe("AddRecipient", () => {
 		);
 
 		await act(async () => {
-			fireEvent.input(getByTestId("add-recipient__amount-input"), {
+			fireEvent.input(getByTestId("AddRecipient__amount"), {
 				target: {
 					value: "1",
 				},
@@ -169,7 +169,7 @@ describe("AddRecipient", () => {
 			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(8 * 1e8)} />,
 		);
 
-		const sendAll = getByTestId("add-recipient__send-all");
+		const sendAll = getByTestId("AddRecipient__send-all");
 		await act(async () => {
 			fireEvent.click(sendAll);
 		});
@@ -183,8 +183,8 @@ describe("AddRecipient", () => {
 			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
 		);
 
-		const singleButton = getByTestId("add-recipient-is-single-toggle");
-		const multipleButton = getByTestId("add-recipient-is-multiple-toggle");
+		const singleButton = getByTestId("AddRecipient__single");
+		const multipleButton = getByTestId("AddRecipient__multi");
 
 		const recipientLabel = "Recipient #1";
 
@@ -221,7 +221,7 @@ describe("AddRecipient", () => {
 		);
 
 		await act(async () => {
-			fireEvent.input(getByTestId("add-recipient__amount-input"), {
+			fireEvent.input(getByTestId("AddRecipient__amount"), {
 				target: {
 					value: values.displayAmount,
 				},
@@ -237,12 +237,12 @@ describe("AddRecipient", () => {
 			expect(form.current.getValues("amount")).toEqual(values.amount);
 			expect(form.current.getValues("displayAmount")).toEqual(values.displayAmount);
 
-			expect(getByTestId("add-recipient__add-btn")).toBeTruthy();
-			expect(getByTestId("add-recipient__add-btn")).not.toBeDisabled();
+			expect(getByTestId("AddRecipient__add-button")).toBeTruthy();
+			expect(getByTestId("AddRecipient__add-button")).not.toBeDisabled();
 		});
 
 		await act(async () => {
-			fireEvent.click(getByTestId("add-recipient__add-btn"));
+			fireEvent.click(getByTestId("AddRecipient__add-button"));
 		});
 
 		await waitFor(() =>
@@ -263,7 +263,7 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("SelectRecipient__input")).toBeDisabled();
-			expect(getByTestId("add-recipient__amount-input")).toBeDisabled();
+			expect(getByTestId("AddRecipient__amount")).toBeDisabled();
 		});
 	});
 
@@ -280,7 +280,7 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("SelectRecipient__input")).toBeDisabled();
-			expect(getByTestId("add-recipient__amount-input")).toBeDisabled();
+			expect(getByTestId("AddRecipient__amount")).toBeDisabled();
 		});
 	});
 
@@ -306,7 +306,7 @@ describe("AddRecipient", () => {
 		});
 
 		await act(async () => {
-			fireEvent.change(getByTestId("add-recipient__amount-input"), {
+			fireEvent.change(getByTestId("AddRecipient__amount"), {
 				target: {
 					value: "10000000000",
 				},
@@ -345,7 +345,7 @@ describe("AddRecipient", () => {
 		});
 
 		await act(async () => {
-			fireEvent.change(getByTestId("add-recipient__amount-input"), {
+			fireEvent.change(getByTestId("AddRecipient__amount"), {
 				target: {
 					value: "0.1",
 				},
@@ -427,7 +427,7 @@ describe("AddRecipient", () => {
 		});
 
 		await act(async () => {
-			fireEvent.change(getByTestId("add-recipient__amount-input"), {
+			fireEvent.change(getByTestId("AddRecipient__amount"), {
 				target: {
 					value: "1",
 				},
@@ -447,7 +447,7 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => expect(form.current.getValues("recipientAddress")).toEqual(values.recipientAddress));
 
-		await waitFor(() => expect(getByTestId("add-recipient__add-btn")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("AddRecipient__add-button")).toBeTruthy());
 	});
 
 	it("should add and remove recipient in multiple tab", async () => {
@@ -484,7 +484,7 @@ describe("AddRecipient", () => {
 		});
 
 		await act(async () => {
-			fireEvent.change(getByTestId("add-recipient__amount-input"), {
+			fireEvent.change(getByTestId("AddRecipient__amount"), {
 				target: {
 					value: "1",
 				},
@@ -503,8 +503,8 @@ describe("AddRecipient", () => {
 		});
 
 		await act(async () => {
-			await waitFor(() => expect(getByTestId("add-recipient__add-btn")).toBeTruthy());
-			fireEvent.click(getByTestId("add-recipient__add-btn"));
+			await waitFor(() => expect(getByTestId("AddRecipient__add-button")).toBeTruthy());
+			fireEvent.click(getByTestId("AddRecipient__add-button"));
 
 			await waitFor(() => expect(form.current.getValues("recipientAddress")).toEqual(""));
 			await waitFor(() => expect(form.current.getValues("amount")).toEqual(undefined));

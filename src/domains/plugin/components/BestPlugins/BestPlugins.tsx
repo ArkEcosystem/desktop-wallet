@@ -92,7 +92,7 @@ export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 							</TableCell>
 
 							<TableCell innerClassName="justify-end">
-								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
+								<Button variant="secondary">{t("COMMON.INSTALL")}</Button>
 							</TableCell>
 						</TableRow>
 					)}

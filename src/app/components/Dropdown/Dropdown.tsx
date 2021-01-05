@@ -44,12 +44,12 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 	<div key={key} className="mt-4 first:mt-0">
 		{hasDivider && (
 			<div className="mx-8 -my-2">
-				<Divider />
+				<Divider dashed />
 			</div>
 		)}
 		<ul>
 			{title && (
-				<li className="block px-8 text-xs font-bold text-left uppercase whitespace-no-wrap cursor-pointer text-theme-neutral-500">
+				<li className="block px-8 pt-4 text-xs font-bold text-left uppercase cursor-pointer whitespace-no-wrap text-theme-neutral-500">
 					{title}
 				</li>
 			)}
@@ -75,7 +75,7 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 		<ul data-testid="dropdown__options">
 			{(options as DropdownOption[]).map((option: DropdownOption, index: number) => (
 				<li
-					className="block px-8 py-4 text-base font-semibold text-left whitespace-no-wrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+					className="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
 					key={index}
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
 					onClick={(e: any) => {
@@ -117,7 +117,7 @@ const renderToggle = (isOpen: boolean, children: any, toggleIcon: string, toggle
 		const size = getSize(toggleSize);
 
 		return (
-			<div className="float-right outline-none cursor-pointer focus:outline-none">
+			<div className="float-right cursor-pointer outline-none focus:outline-none">
 				<Icon name={toggleIcon} width={size} height={size} />
 			</div>
 		);

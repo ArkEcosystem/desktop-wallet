@@ -186,7 +186,11 @@ const Row = ({
 
 			<TableCell variant="end" innerClassName="justify-end">
 				{canBeSigned ? (
-					<Button data-testid="TransactionRow__sign" variant="plain" onClick={() => onSign?.(transaction)}>
+					<Button
+						data-testid="TransactionRow__sign"
+						variant="secondary"
+						onClick={() => onSign?.(transaction)}
+					>
 						<Icon name="Edit" />
 						<span>{t("COMMON.SIGN")}</span>
 					</Button>
@@ -211,7 +215,6 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
-			className: "ml-25",
 			cellWidth: "w-96",
 		},
 		{

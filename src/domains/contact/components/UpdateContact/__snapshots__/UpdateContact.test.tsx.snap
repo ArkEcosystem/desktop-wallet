@@ -5,22 +5,21 @@ exports[`UpdateContact should not render if not open 1`] = `<DocumentFragment />
 exports[`UpdateContact should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxiKw cTRlJa absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-AxiKw cTRlJa absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxjAm cGlMcw w-11 h-11"
-          color="primary"
+          class="sc-AxjAm jzyfYz w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -57,37 +56,37 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="sc-AxhUy dJlYTe flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                   data-testid="FormLabel"
                   for="name"
                 >
                   Name
                   <div
-                    class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"
                   />
                 </label>
                 <input
-                  class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="contact-form__name-input"
                   name="name"
                   value="Brian"
                 />
               </fieldset>
               <div
-                class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
+                class="SubForm__SubFormWrapper-c4tqfs-0 hxcWQc"
               >
                 <fieldset
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
                     for="network"
                   >
                     Cryptoasset
                     <div
-                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                       data-testid="FormLabel__required"
                     />
                   </label>
@@ -111,7 +110,7 @@ exports[`UpdateContact should render a modal 1`] = `
                           class="sc-AxheI sc-Axmtr kSmZlB px-4"
                         >
                           <div
-                            class="sc-fznyAO cjLqJY border-theme-neutral-light text-theme-neutral"
+                            class="sc-fznyAO cjLqJY border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                             data-testid="SelectNetworkInput__network"
                           />
                         </div>
@@ -120,7 +119,7 @@ exports[`UpdateContact should render a modal 1`] = `
                           aria-controls="ContactForm__network-menu"
                           aria-labelledby="ContactForm__network-label"
                           autocomplete="off"
-                          class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                          class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                           data-testid="SelectNetworkInput__input"
                           id="ContactForm__network-input"
                           placeholder="Enter a cryptoasset name"
@@ -141,13 +140,13 @@ exports[`UpdateContact should render a modal 1`] = `
                   data-testid="ContactForm__address"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
                     for="address"
                   >
                     Address
                     <div
-                      class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                       data-testid="FormLabel__required"
                     />
                   </label>
@@ -155,7 +154,7 @@ exports[`UpdateContact should render a modal 1`] = `
                     class="sc-fzozJi OgXfh max-w-20"
                   >
                     <input
-                      class="sc-AxgMl bhhmvF overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                      class="sc-AxgMl bcLOwL overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                       data-testid="contact-form__address-input"
                       name="address"
                       type="text"
@@ -164,7 +163,7 @@ exports[`UpdateContact should render a modal 1`] = `
                       class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                     >
                       <button
-                        class="flex items-center justify-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                        class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
                         data-testid="InputAddress__qr-button"
                         type="button"
                       >
@@ -185,8 +184,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="mt-4"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI w-full"
-                    color="primary"
+                    class="sc-AxjAm ghbEwY w-full"
                     data-testid="contact-form__add-address-btn"
                     disabled=""
                     type="button"
@@ -263,8 +261,7 @@ exports[`UpdateContact should render a modal 1`] = `
                       </div>
                     </span>
                     <button
-                      class="sc-AxjAm eRbxBA flex items-center ml-auto"
-                      color="primary"
+                      class="sc-AxjAm dKkppo flex items-center ml-auto"
                       data-testid="contact-form__remove-address-btn"
                       type="button"
                     >
@@ -285,8 +282,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="flex w-full justify-between"
               >
                 <button
-                  class="sc-AxjAm fAAhtv"
-                  color="danger"
+                  class="sc-AxjAm hgnzqN"
                   data-testid="contact-form__delete-btn"
                   type="button"
                 >
@@ -307,16 +303,14 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="sc-AxjAm fCKjFI"
-                    color="primary"
+                    class="sc-AxjAm liXtzU"
                     data-testid="contact-form__cancel-btn"
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
-                    class="sc-AxjAm colAFb"
-                    color="primary"
+                    class="sc-AxjAm bwcsry"
                     data-testid="contact-form__save-btn"
                     type="submit"
                   >

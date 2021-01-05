@@ -10,13 +10,13 @@ exports[`PeerForm should render 1`] = `
       class="sc-AxiKw iQzisX my-8"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="network"
       >
         Cryptoasset
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -40,7 +40,7 @@ exports[`PeerForm should render 1`] = `
               class="sc-AxgMl sc-AxheI hUEXQW px-4"
             >
               <div
-                class="sc-fzplWN bjoBgQ border-theme-neutral-light text-theme-neutral"
+                class="sc-fzplWN bjoBgQ border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -49,7 +49,7 @@ exports[`PeerForm should render 1`] = `
               aria-controls="CustomPeers__network-menu"
               aria-labelledby="CustomPeers__network-label"
               autocomplete="off"
-              class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="CustomPeers__network-input"
               placeholder="Enter a cryptoasset name"
@@ -69,53 +69,55 @@ exports[`PeerForm should render 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="name"
       >
         Name
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
       <input
-        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="PeerForm__name-input"
         name="name"
+        value=""
       />
     </fieldset>
     <fieldset
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="host"
       >
         Peer IP
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
       <input
-        class="sc-AxhCb hnARsu overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="PeerForm__host-input"
         name="host"
+        value=""
       />
     </fieldset>
     <fieldset
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="type"
       >
         Type
         <span
-          class="ml-1 text-theme-neutral-light"
+          class="ml-1 text-theme-secondary-text"
           data-testid="FormLabel__optional"
         >
           (optional)
@@ -143,13 +145,186 @@ exports[`PeerForm should render 1`] = `
       class="flex justify-end mt-4"
     >
       <button
-        class="sc-AxjAm colAFb"
-        color="primary"
-        data-testid="PeerForm__add-button"
+        class="sc-AxjAm ghbEwY"
+        data-testid="PeerForm__submit-button"
         disabled=""
         type="submit"
       >
         Add Peer
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`PeerForm should render the peer on the form 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="PeerForm"
+  >
+    <fieldset
+      class="sc-AxiKw iQzisX my-8"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="CustomPeers__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="CustomPeers__network-input"
+            id="CustomPeers__network-label"
+          />
+          <div
+            class="sc-AxmLO kuiknc"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="sc-AxgMl sc-AxheI hUEXQW px-4"
+            >
+              <div
+                aria-label="ARK Devnet"
+                class="sc-fzplWN bjoBgQ border-theme-primary-100 text-theme-primary-400"
+                data-testid="SelectNetworkInput__network"
+              >
+                <div
+                  class="sc-AxhUy hSYVGy"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <span
+              class="sc-AxgMl mMYyr py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+              data-testid="SelectNetworkInput__typeahead"
+            >
+              ARK Devnet
+            </span>
+            <input
+              aria-autocomplete="list"
+              aria-controls="CustomPeers__network-menu"
+              aria-labelledby="CustomPeers__network-label"
+              autocomplete="off"
+              class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="CustomPeers__network-input"
+              placeholder="Enter a cryptoasset name"
+              value="ARK Devnet"
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="CustomPeers__network-label"
+          class="hidden"
+          id="CustomPeers__network-menu"
+          role="listbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        data-testid="FormLabel"
+        for="name"
+      >
+        Name
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <input
+        class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+        data-testid="PeerForm__name-input"
+        name="name"
+        value="ROBank"
+      />
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        data-testid="FormLabel"
+        for="host"
+      >
+        Peer IP
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <input
+        class="sc-AxhCb jrcCwA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+        data-testid="PeerForm__host-input"
+        name="host"
+        value="http://167.114.29.48:4003/api"
+      />
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        data-testid="FormLabel"
+        for="type"
+      >
+        Type
+        <span
+          class="ml-1 text-theme-secondary-text"
+          data-testid="FormLabel__optional"
+        >
+          (optional)
+        </span>
+      </label>
+      <label
+        class="flex items-center space-x-2"
+        for="isMultiSignature"
+      >
+        <input
+          class="sc-AxirZ dMNlTF"
+          color="success"
+          data-testid="PeerForm__multisignature-toggle"
+          name="isMultiSignature"
+          type="checkbox"
+        />
+        <span
+          class="text-sm font-semibold text-theme-secondary-text"
+        >
+          Multisignature
+        </span>
+      </label>
+    </fieldset>
+    <div
+      class="flex justify-end mt-4"
+    >
+      <button
+        class="sc-AxjAm bwcsry"
+        data-testid="PeerForm__submit-button"
+        type="submit"
+      >
+        Edit Peer
       </button>
     </div>
   </form>

@@ -27,8 +27,6 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 	const [shadowColor, setShadowColor] = useState("--theme-background-color");
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
 
-	const walletTypes = ["Ledger", "MultiSignature", "Starred"];
-
 	const getIconName = (type: string) => {
 		switch (type) {
 			case "Starred":
@@ -69,6 +67,14 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 		</Tooltip>
 	);
 
+	const WalletIcon = ({ type }: { type: string }) => (
+		<Tooltip content={t(`COMMON.${type.toUpperCase()}`)}>
+			<div className={`inline-block p-1 ${getIconColor(type)}`}>
+				<Icon name={getIconName(type)} width={20} />
+			</div>
+		</Tooltip>
+	);
+
 	return (
 		<TableRow
 			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
@@ -81,17 +87,13 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 			<TableCell innerClassName="justify-center text-sm font-bold text-center align-middle">
 				<div className="inline-flex items-center space-x-2">
-					{wallet.hasSyncedWithNetwork() &&
-						walletTypes.map((type: string) =>
-							// @ts-ignore
-							wallet[`is${type}`]() ? (
-								<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-									<span className={getIconColor(type)}>
-										<Icon name={getIconName(type)} width={18} />
-									</span>
-								</Tooltip>
-							) : null,
-						)}
+					{[
+						wallet.isLedger() && <WalletIcon key="ledger" type="Ledger" />,
+						wallet.isStarred() && <WalletIcon key="star" type="Starred" />,
+						wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
+							<WalletIcon key="multisig" type="MultiSignature" />
+						),
+					]}
 				</div>
 			</TableCell>
 
@@ -172,7 +174,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
-					variant="plain"
+					variant="secondary"
 					onClick={() => onSelect?.(wallet.address())}
 					data-testid={`AddressRow__select-${index}`}
 				>

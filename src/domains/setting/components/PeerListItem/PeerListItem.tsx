@@ -17,13 +17,12 @@ type PeerListItemProps = {
 };
 
 export const PeerListItem = ({ coin, network, name, host, isMultiSignature, options, onAction }: PeerListItemProps) => {
-	const networkId = `${coin}.${network}`;
-	const networkExtendedData = getNetworkExtendedData({ coin: coin.toUpperCase(), network: networkId });
+	const networkExtendedData = getNetworkExtendedData({ coin, network });
 
 	return (
 		<TableRow>
 			<TableCell variant="start" innerClassName="space-x-2">
-				<NetworkIcon size="lg" coin={coin.toUpperCase()} network={networkId} noShadow />
+				<NetworkIcon size="lg" coin={coin.toUpperCase()} network={network} noShadow />
 				<span>{networkExtendedData?.displayName}</span>
 			</TableCell>
 
@@ -44,13 +43,15 @@ export const PeerListItem = ({ coin, network, name, host, isMultiSignature, opti
 					<Dropdown
 						toggleContent={
 							<div className="float-right">
-								<Button variant="plain" size="icon">
+								<Button variant="secondary" size="icon">
 									<Icon name="Settings" width={20} height={20} />
 								</Button>
 							</div>
 						}
 						options={options}
-						onSelect={(action: DropdownOption) => onAction?.(action.value, { coin, network, host })}
+						onSelect={(action: DropdownOption) =>
+							onAction?.(action.value, { coin, network, name, host, isMultiSignature })
+						}
 					/>
 				)}
 			</TableCell>

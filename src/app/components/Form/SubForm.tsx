@@ -7,7 +7,7 @@ const SubFormWrapper = styled.div<{ noBackground?: boolean }>`
 		!noBackground &&
 		css`
 			& {
-				background-color: var(--theme-color-neutral-100);
+				${tw`bg-theme-secondary-background`}
 			}
 		`};
 `;

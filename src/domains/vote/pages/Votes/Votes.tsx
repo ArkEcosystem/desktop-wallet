@@ -2,8 +2,9 @@ import { ProfileSetting, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/p
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
-import { Dropdown, DropdownOption } from "app/components/Dropdown";
+import { Dropdown } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
+import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
@@ -32,6 +33,7 @@ export const Votes = () => {
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
+	const [searchQuery, setSearchQuery] = useState("");
 	const [walletsDisplayType, setWalletsDisplayType] = useState("all");
 	const [selectedNetworkIds, setSelectedNetworkIds] = useState(
 		uniq(
@@ -58,7 +60,17 @@ export const Votes = () => {
 	const walletsByCoin = useMemo(() => {
 		const wallets = activeProfile.wallets().allByCoin();
 
-		return Object.keys(wallets).reduce(
+		const usesTestNetworks = activeProfile.settings().get(ProfileSetting.UseTestNetworks);
+		const usedWallets = usesTestNetworks
+			? activeProfile.wallets().values()
+			: activeProfile
+					.wallets()
+					.values()
+					.filter((wallet) => wallet.network().isLive());
+
+		const usedCoins = uniq(usedWallets.map((wallet) => wallet.currency()));
+
+		return usedCoins.reduce(
 			(coins, coin) => ({
 				...coins,
 				[coin]: Object.values(wallets[coin]).filter((wallet: ReadWriteWallet) => {
@@ -101,7 +113,7 @@ export const Votes = () => {
 		[votes, delegates],
 	);
 
-	const filteredDelegates = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
+	const filteredDelegatesVotes = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
 		delegates,
 		currentVotes,
 		selectedFilter,
@@ -112,11 +124,9 @@ export const Votes = () => {
 		useTestNetworks: activeProfile.settings().get(ProfileSetting.UseTestNetworks) as boolean,
 		selectedNetworkIds,
 		walletsDisplayType,
-		onNetworkChange: (_: any, networks: any[]) => {
-			setSelectedNetworkIds(networks.filter((network) => network.isSelected).map((network) => network.id));
-		},
-		onWalletsDisplayType: ({ value }: DropdownOption) => {
-			setWalletsDisplayType(value as string);
+		onChange: (key: string, value: any) => {
+			if (key === "walletsDisplayType") setWalletsDisplayType(value);
+			if (key === "selectedNetworkIds") setSelectedNetworkIds(value);
 		},
 	};
 
@@ -162,6 +172,7 @@ export const Votes = () => {
 	const handleSelectAddress = (address: string) => {
 		const wallet = activeProfile.wallets().findByAddress(address);
 
+		setSearchQuery("");
 		setSelectedAddress(address);
 		setMaxVotes(wallet?.network().maximumVotesPerWallet());
 
@@ -191,6 +202,37 @@ export const Votes = () => {
 		if (votes.length === 0) setSelectedFilter("all");
 	}, [votes]);
 
+	const filteredWalletsByCoin = useMemo(() => {
+		if (!searchQuery.length) return walletsByCoin;
+
+		return Object.keys(walletsByCoin).reduce(
+			(coins, coin) => ({
+				...coins,
+				[coin]: Object.values(walletsByCoin[coin]).filter(
+					(wallet: ReadWriteWallet) =>
+						wallet.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
+						wallet.alias()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
+				),
+			}),
+			{} as Record<string, ReadWriteWallet[]>,
+		);
+	}, [searchQuery, walletsByCoin]);
+
+	const filteredDelegates = useMemo(() => {
+		if (!searchQuery.length) return filteredDelegatesVotes;
+
+		/* istanbul ignore next */
+		return filteredDelegatesVotes.filter(
+			(delegate) =>
+				delegate.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
+				delegate.username()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
+		);
+	}, [filteredDelegatesVotes, searchQuery]);
+
+	const isEmptyWalletsByCoin =
+		searchQuery.length > 0 &&
+		Object.keys(filteredWalletsByCoin).every((coin: string) => !filteredWalletsByCoin[coin].length);
+
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
@@ -199,8 +241,13 @@ export const Votes = () => {
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 					extra={
 						<div className="flex items-center space-x-8 text-theme-primary-light">
-							<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />
-							<div className="h-10 mr-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+							<HeaderSearchBar
+								placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
+								onSearch={setSearchQuery}
+								onReset={() => setSearchQuery("")}
+								debounceTimeout={100}
+							/>
+							<div className="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
 									<Dropdown
@@ -211,7 +258,7 @@ export const Votes = () => {
 											</div>
 										}
 									>
-										<div className="px-10 py-7 w-128">
+										<div className="py-7 px-10 w-128">
 											<FilterWallets {...filterProperties} showToggleViews={false} />
 										</div>
 									</Dropdown>
@@ -231,7 +278,7 @@ export const Votes = () => {
 			{isEmptyObject(walletsByCoin) ? (
 				<Section className="flex-1">
 					<EmptyBlock>
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<Trans
 								i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
 								defaults="Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status"
@@ -245,7 +292,7 @@ export const Votes = () => {
 							<div className="flex -m-3 space-x-3">
 								<Button
 									onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
-									variant="plain"
+									variant="secondary"
 								>
 									<div className="flex items-center space-x-2">
 										<Icon name="Plus" width={12} height={12} />
@@ -255,7 +302,7 @@ export const Votes = () => {
 
 								<Button
 									onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
-									variant="plain"
+									variant="secondary"
 								>
 									<div className="flex items-center space-x-2">
 										<Icon name="Import" width={15} height={15} />
@@ -267,13 +314,26 @@ export const Votes = () => {
 					</EmptyBlock>
 				</Section>
 			) : !selectedAddress ? (
-				Object.keys(walletsByCoin).map(
-					(coin, index) =>
-						walletsByCoin[coin].length > 0 && (
-							<Section className="flex-1" key={index}>
-								<AddressTable wallets={walletsByCoin[coin]} onSelect={handleSelectAddress} />
-							</Section>
-						),
+				isEmptyWalletsByCoin ? (
+					<Section className="flex-1">
+						<EmptyResults
+							className="mt-16"
+							title={t("COMMON.EMPTY_RESULTS.TITLE")}
+							subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+						/>
+					</Section>
+				) : (
+					Object.keys(filteredWalletsByCoin).map(
+						(coin, index) =>
+							filteredWalletsByCoin[coin].length > 0 && (
+								<Section className="flex-1" key={index}>
+									<AddressTable
+										wallets={filteredWalletsByCoin[coin]}
+										onSelect={handleSelectAddress}
+									/>
+								</Section>
+							),
+					)
 				)
 			) : (
 				<Section className="flex-1">

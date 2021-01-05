@@ -110,7 +110,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 									onSearch={() => console.log("search")}
 									extra={<SearchBarPluginFilters />}
 								/>
-								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+								<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
 								<Button
 									onClick={() => setInstallPlugin(true)}
 									data-testid="PluginsCategory_header--install"
@@ -128,7 +128,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 				<Section>
 					<div
 						data-testid={`PluginsCategoryHome__container`}
-						className="flex items-center justify-between mb-6"
+						className="flex justify-between items-center mb-6"
 					>
 						<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGINS_CATEGORY.LAYOUT_TITLE")}</h2>
 						<LayoutControls
@@ -139,7 +139,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 						/>
 					</div>
 
-					<div className="flex items-center justify-between" />
+					<div className="flex justify-between items-center" />
 
 					<Plugins
 						viewType={viewType}

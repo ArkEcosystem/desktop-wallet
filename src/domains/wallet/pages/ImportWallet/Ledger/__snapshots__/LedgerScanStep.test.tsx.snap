@@ -7,7 +7,7 @@ exports[`LedgerScanStep should render 1`] = `
     data-testid="LedgerScanStep"
   >
     <div
-      class="flex items-end justify-between bg-theme-background"
+      class="flex justify-between items-end bg-theme-background"
     >
       <div>
         <h1
@@ -28,13 +28,13 @@ exports[`LedgerScanStep should render 1`] = `
       class="sc-AxhUy dJlYTe flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
         data-testid="FormLabel"
         for="network"
       >
         Cryptoasset
         <div
-          class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
           data-testid="FormLabel__required"
         />
       </label>
@@ -79,7 +79,7 @@ exports[`LedgerScanStep should render 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="sc-fzoLsD hnfMJy overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-fzoLsD kjmvM overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -118,7 +118,7 @@ exports[`LedgerScanStep should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top ml-15"
+                class="flex flex-inline align-top "
               >
                 <div>
                   Wallet
@@ -199,7 +199,7 @@ exports[`LedgerScanStep should render 1`] = `
           >
             <td>
               <div
-                class="sc-AxmLO hcjZIX space-x-4"
+                class="sc-AxmLO bhAhmK space-x-4"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -231,7 +231,7 @@ exports[`LedgerScanStep should render 1`] = `
               class="w-64"
             >
               <div
-                class="sc-AxmLO icFOFd justify-end font-semibold"
+                class="sc-AxmLO jBBFIk justify-end font-semibold"
               >
                 <div>
                   <span
@@ -244,7 +244,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxmLO fdxEAb justify-center"
+                class="sc-AxmLO fevRsm justify-center"
               >
                 <input
                   class="sc-AxiKw dcKoEp"
@@ -260,7 +260,7 @@ exports[`LedgerScanStep should render 1`] = `
           >
             <td>
               <div
-                class="sc-AxmLO hcjZIX space-x-4"
+                class="sc-AxmLO bhAhmK space-x-4"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -292,7 +292,7 @@ exports[`LedgerScanStep should render 1`] = `
               class="w-64"
             >
               <div
-                class="sc-AxmLO icFOFd justify-end font-semibold"
+                class="sc-AxmLO jBBFIk justify-end font-semibold"
               >
                 <div>
                   <span
@@ -305,7 +305,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxmLO fdxEAb justify-center"
+                class="sc-AxmLO fevRsm justify-center"
               >
                 <input
                   class="sc-AxiKw dcKoEp"
@@ -321,7 +321,7 @@ exports[`LedgerScanStep should render 1`] = `
           >
             <td>
               <div
-                class="sc-AxmLO iVbjHf space-x-4"
+                class="sc-AxmLO cZYuES space-x-4"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -353,7 +353,7 @@ exports[`LedgerScanStep should render 1`] = `
               class="w-64"
             >
               <div
-                class="sc-AxmLO hhNLDB justify-end font-semibold"
+                class="sc-AxmLO cRRvrE justify-end font-semibold"
               >
                 <div>
                   <span
@@ -366,7 +366,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxmLO ddGHUb justify-center"
+                class="sc-AxmLO bBkAyK justify-center"
               >
                 <input
                   class="sc-AxiKw dcKoEp"
@@ -382,7 +382,7 @@ exports[`LedgerScanStep should render 1`] = `
           >
             <td>
               <div
-                class="sc-AxmLO hcjZIX space-x-4"
+                class="sc-AxmLO bhAhmK space-x-4"
               >
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -414,7 +414,7 @@ exports[`LedgerScanStep should render 1`] = `
               class="w-64"
             >
               <div
-                class="sc-AxmLO icFOFd justify-end font-semibold"
+                class="sc-AxmLO jBBFIk justify-end font-semibold"
               >
                 <div>
                   <span
@@ -427,7 +427,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="sc-AxmLO fdxEAb justify-center"
+                class="sc-AxmLO fevRsm justify-center"
               >
                 <input
                   class="sc-AxiKw dcKoEp"
@@ -442,8 +442,7 @@ exports[`LedgerScanStep should render 1`] = `
     </div>
     <div>
       <button
-        class="sc-AxirZ hTzPEr w-full"
-        color="primary"
+        class="sc-AxirZ bVQYPH w-full"
         data-testid="LedgerScanStep__view-more"
         type="button"
       >

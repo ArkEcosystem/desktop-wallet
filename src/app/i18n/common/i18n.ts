@@ -209,6 +209,8 @@ export const translations: { [key: string]: any } = {
 	YOUR_BALANCE: "Your balance",
 	YOUR_PASSPHRASE: "Your Passphrase",
 
+	NOTICE_NO_WALLETS: "Create or import a wallet first",
+
 	CLIPBOARD: {
 		SUCCESS: "Copied!",
 		TOOLTIP_TEXT: "Copy to clipboard",
@@ -224,6 +226,7 @@ export const translations: { [key: string]: any } = {
 		OPTIONAL: "This field is optional",
 		FIELD_REQUIRED: "'{{field}}' is required",
 		FIELD_INVALID: "'{{field}}' is invalid",
+		ILLEGAL_CHARACTERS: "The following characters are not allowed: {{- characters}}",
 		IS_REQUIRED: "is required",
 		EXISTS: "'{{field}}' already exists",
 		MAX_LENGTH: "'{{field}}' should have at most {{maxLength}} characters",

@@ -7,7 +7,7 @@ const peer = {
 	coin: "ark",
 	network: "devnet",
 	name: "ROBank",
-	host: "194.168.4.67",
+	host: "http://167.114.29.48:4003/api",
 	isMultiSignature: false,
 };
 

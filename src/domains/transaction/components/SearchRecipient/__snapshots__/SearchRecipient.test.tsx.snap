@@ -5,22 +5,21 @@ exports[`SearchRecipient should not render if not open 1`] = `<DocumentFragment 
 exports[`SearchRecipient should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ jFqSPL w-11 h-11"
-          color="primary"
+          class="sc-AxirZ gbgRxA w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -76,7 +75,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top ml-15"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Address
@@ -171,19 +170,21 @@ exports[`SearchRecipient should render a modal 1`] = `
                             class="relative"
                           >
                             <button
-                              class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                              class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                               data-testid="header-search-bar__button"
                             >
                               <div
                                 class="flex items-center space-x-3"
                               >
-                                <span>
+                                <span
+                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                >
                                   Search
                                 </span>
                                 <div
-                                  class="sc-AxiKw dklFyP"
-                                  height="20"
-                                  width="20"
+                                  class="sc-AxiKw cytFlT text-theme-primary-300 dark:text-theme-neutral-600"
+                                  height="18"
+                                  width="18"
                                 >
                                   <svg>
                                     search.svg
@@ -206,7 +207,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -236,7 +237,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -247,7 +248,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -258,11 +259,10 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -277,7 +277,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -307,7 +307,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -318,7 +318,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -329,11 +329,10 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -348,7 +347,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -378,7 +377,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -389,7 +388,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -400,11 +399,10 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -419,7 +417,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -449,7 +447,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -460,7 +458,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -471,11 +469,10 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -490,7 +487,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -520,7 +517,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -531,7 +528,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -542,11 +539,10 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -561,7 +557,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -591,7 +587,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -602,7 +598,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -613,11 +609,10 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -640,22 +635,21 @@ exports[`SearchRecipient should render a modal 1`] = `
 exports[`SearchRecipient should render a modal with custom title and description 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-y-auto"
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
       class="fixed z-50 w-full h-full bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto mb-24 overflow-hidden rounded-xl bg-theme-background "
+      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded bg-theme-primary-100 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 hover:text-white hover:bg-theme-neutral-900"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ jFqSPL w-11 h-11"
-          color="primary"
+          class="sc-AxirZ gbgRxA w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -711,7 +705,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top ml-15"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Address
@@ -806,19 +800,21 @@ exports[`SearchRecipient should render a modal with custom title and description
                             class="relative"
                           >
                             <button
-                              class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                              class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                               data-testid="header-search-bar__button"
                             >
                               <div
                                 class="flex items-center space-x-3"
                               >
-                                <span>
+                                <span
+                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                >
                                   Search
                                 </span>
                                 <div
-                                  class="sc-AxiKw dklFyP"
-                                  height="20"
-                                  width="20"
+                                  class="sc-AxiKw cytFlT text-theme-primary-300 dark:text-theme-neutral-600"
+                                  height="18"
+                                  width="18"
                                 >
                                   <svg>
                                     search.svg
@@ -841,7 +837,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -871,7 +867,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -882,7 +878,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -893,11 +889,10 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -912,7 +907,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -942,7 +937,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -953,7 +948,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -964,11 +959,10 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -983,7 +977,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -1013,7 +1007,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -1024,7 +1018,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -1035,11 +1029,10 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -1054,7 +1047,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -1084,7 +1077,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -1095,7 +1088,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -1106,11 +1099,10 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -1125,7 +1117,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -1155,7 +1147,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -1166,7 +1158,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -1177,11 +1169,10 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >
@@ -1196,7 +1187,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                   >
                     <td>
                       <div
-                        class="sc-fznKkj kKWDIo space-x-4"
+                        class="sc-fznKkj bSJzgJ space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -1226,7 +1217,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__name"
@@ -1237,7 +1228,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj hWxblu"
+                        class="sc-fznKkj cXxwSD"
                       >
                         <span
                           data-testid="RecipientListItem__type"
@@ -1248,11 +1239,10 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj ilBsNA justify-end"
+                        class="sc-fznKkj csNbpV justify-end"
                       >
                         <button
-                          class="sc-AxirZ hTzPEr"
-                          color="primary"
+                          class="sc-AxirZ bVQYPH"
                           data-testid="RecipientListItem__select-button"
                           type="button"
                         >

@@ -35,17 +35,19 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 
 			<div className="flex items-stretch select-buttons">
 				<Button
-					variant={isSingle ? "solid" : "plain"}
+					data-testid="AddRecipient__single"
 					className="flex-1"
-					data-testid="add-recipient-is-single-toggle"
+					size="lg"
+					variant={isSingle ? "primary" : "secondary"}
 					onClick={() => onChange?.(true)}
 				>
 					{t("TRANSACTION.SINGLE")}
 				</Button>
 				<Button
-					variant={!isSingle ? "solid" : "plain"}
+					data-testid="AddRecipient__multi"
 					className="flex-1 border-l-0"
-					data-testid="add-recipient-is-multiple-toggle"
+					size="lg"
+					variant={!isSingle ? "primary" : "secondary"}
 					onClick={() => onChange?.(false)}
 				>
 					{t("TRANSACTION.MULTIPLE")}
@@ -191,7 +193,7 @@ export const AddRecipient = ({
 			)}
 
 			<SubForm
-				data-testid="add-recipient__form-wrapper"
+				data-testid="AddRecipient__form-wrapper"
 				className={`${showMultiPaymentOption ? "mt-6" : ""}`}
 				noBackground={isSingle}
 			>
@@ -222,7 +224,7 @@ export const AddRecipient = ({
 						<InputGroup>
 							<InputCurrency
 								disabled={!isSenderFilled}
-								data-testid="add-recipient__amount-input"
+								data-testid="AddRecipient__amount"
 								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
 								value={getValues("displayAmount") || recipientsAmount}
@@ -235,7 +237,7 @@ export const AddRecipient = ({
 							<InputAddonEnd>
 								<button
 									type="button"
-									data-testid="add-recipient__send-all"
+									data-testid="AddRecipient__send-all"
 									onClick={() => {
 										setValue("displayAmount", remainingBalance.minus(fee).toHuman());
 										setValue("amount", remainingBalance.minus(fee).toString(), {
@@ -244,7 +246,7 @@ export const AddRecipient = ({
 										});
 										singleRecipientOnChange(remainingBalance.toString(), recipientAddress);
 									}}
-									className="h-12 pl-6 pr-3 mr-1 text-theme-primary focus:outline-none"
+									className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
 								>
 									{t("TRANSACTION.SEND_ALL")}
 								</button>
@@ -259,9 +261,9 @@ export const AddRecipient = ({
 						disabled={
 							!!errors.amount || !!errors.recipientAddress || BigNumber.make(getValues("amount")).isZero()
 						}
-						data-testid="add-recipient__add-btn"
-						variant="plain"
-						className="w-full mt-4"
+						data-testid="AddRecipient__add-button"
+						variant="secondary"
+						className="mt-4 w-full"
 						onClick={() =>
 							handleAddRecipient(
 								recipientAddress as string,

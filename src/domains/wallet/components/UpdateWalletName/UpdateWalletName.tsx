@@ -86,7 +86,7 @@ export const UpdateWalletName = ({ wallet, profile, isOpen, onClose, onCancel, o
 				</FormField>
 
 				<div className="flex justify-end mt-8 space-x-3">
-					<Button variant="plain" onClick={onCancel}>
+					<Button variant="secondary" onClick={onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
 

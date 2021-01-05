@@ -26,6 +26,9 @@ createFixture(`Multiple Transfer action`, [
 ]);
 
 test("should show an error if wrong mnemonic", async (t: any) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
 	// Navigate to wallet page
 	await goToWallet(t);
 
@@ -33,20 +36,20 @@ test("should show an error if wrong mnemonic", async (t: any) => {
 	await goToTransferPage(t);
 
 	// Select multiple button
-	await t.click(Selector("[data-testid=add-recipient-is-multiple-toggle]"));
+	await t.click(Selector("[data-testid=AddRecipient__multi]"));
 
 	// Add recipient #1
 	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
 		paste: true,
 	});
-	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
+	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Add recipient #2
 	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
 		paste: true,
 	});
-	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
+	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Go to step 2
@@ -69,28 +72,24 @@ test("should send multiple transfer successfully", async (t) => {
 	// Import wallet
 	await importWallet(t, "passphrase");
 
-	// Navigate to wallet details page
-	await t.click(Selector("[data-testid=WalletCard__DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS]"));
-	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
 	// Navigate to transfer page
 	await goToTransferPage(t);
 
 	// Select multiple button
-	await t.click(Selector("[data-testid=add-recipient-is-multiple-toggle]"));
+	await t.click(Selector("[data-testid=AddRecipient__multi]"));
 
 	// Add recipient #1
 	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
 		paste: true,
 	});
-	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
+	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Add recipient #2
 	await t.typeText(Selector("[data-testid=SelectRecipient__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
 		paste: true,
 	});
-	await t.typeText(Selector("[data-testid=add-recipient__amount-input]"), "10", { replace: true });
+	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Go to step 2

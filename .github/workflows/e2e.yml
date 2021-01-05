@@ -51,6 +51,465 @@ jobs:
                   name: build
                   path: ${{ github.workspace }}/build
 
+    votes:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/vote/e2e/votes.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    ipfs-transaction:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/ipfs-transaction.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    single-transfer:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/single-transfer.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    multiple-transfer:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/multiple-transfer.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    transactions-routing:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/transactions-routing.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    delegate-resignation:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/delegate-resignation.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    vote-transaction:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/vote-transaction.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    delegate-registration:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/delegate-registration.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    splash-screen:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/splash/e2e/splash-screen.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
     contacts-routing:
         needs: build-and-upload
 
@@ -102,7 +561,7 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    create-contact:
+    update-contact:
         needs: build-and-upload
 
         runs-on: ubuntu-latest
@@ -144,7 +603,7 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/create-contact.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/update-contact.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -204,7 +663,7 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    update-contact:
+    create-contact:
         needs: build-and-upload
 
         runs-on: ubuntu-latest
@@ -246,7 +705,58 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/update-contact.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/create-contact.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    plugins-routing:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/plugin/e2e/plugins-routing.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -357,7 +867,7 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    filtering:
+    welcome-screen:
         needs: build-and-upload
 
         runs-on: ubuntu-latest
@@ -399,109 +909,7 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/news/e2e/filtering.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    news-routing:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/news/e2e/news-routing.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    plugins-routing:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/plugin/e2e/plugins-routing.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/welcome-screen.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -561,6 +969,57 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
+    navigate-profile-settings:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/navigate-profile-settings.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
     create-profile-routing:
         needs: build-and-upload
 
@@ -604,6 +1063,57 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/create-profile-routing.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    notifications:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/notifications.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -663,7 +1173,7 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    my-registrations-routing:
+    news-routing:
         needs: build-and-upload
 
         runs-on: ubuntu-latest
@@ -705,7 +1215,7 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/my-registrations-routing.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/news/e2e/news-routing.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -714,7 +1224,7 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    navigate-profile-settings:
+    filtering:
         needs: build-and-upload
 
         runs-on: ubuntu-latest
@@ -756,517 +1266,7 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/navigate-profile-settings.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    welcome-screen:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/welcome-screen.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    save-settings:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/save-settings.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    settings-routing:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/settings-routing.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    splash-screen:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/splash/e2e/splash-screen.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    delegate-registration:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/delegate-registration.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    delegate-resignation:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/delegate-resignation.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    multiple-transfer:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/multiple-transfer.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    single-transfer:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/single-transfer.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    transactions-routing:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/transactions-routing.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
-    votes:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/vote/e2e/votes.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/news/e2e/filtering.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1377,7 +1377,7 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    import-wallet-action:
+    wallet-details:
         needs: build-and-upload
 
         runs-on: ubuntu-latest
@@ -1419,7 +1419,7 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/import-wallet-action.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/wallet-details.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1479,7 +1479,7 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    update-wallet-name-action:
+    import-wallet-action:
         needs: build-and-upload
 
         runs-on: ubuntu-latest
@@ -1521,7 +1521,7 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/update-wallet-name-action.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/import-wallet-action.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1581,57 +1581,6 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    wallet-details:
-        needs: build-and-upload
-
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: [12.x]
-
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-
-            - name: Cache node modules
-              uses: actions/cache@v2
-              with:
-                  path: node_modules
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-node-
-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-
-            - name: Update System
-              run: sudo apt-get update
-
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-
-            - name: Install (Yarn)
-              run: yarn install --ignore-engines --frozen-lockfile
-
-            - name: Download Build Artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: build
-                  path: ${{ github.workspace }}/build
-
-            - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/wallet-details.e2e.ts
-
-            - name: Upload Screenshots
-              if: ${{ failure() }}
-              uses: actions/upload-artifact@v2
-              with:
-                  name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/screenshots/**/*
-
     wallets-routing:
         needs: build-and-upload
 
@@ -1683,7 +1632,7 @@ jobs:
                   name: ${{ github.job }}-screenshots
                   path: ${{ github.workspace }}/screenshots/**/*
 
-    ipfs-transaction:
+    update-wallet-name-action:
         needs: build-and-upload
 
         runs-on: ubuntu-latest
@@ -1725,7 +1674,160 @@ jobs:
                   path: ${{ github.workspace }}/build
 
             - name: Test
-              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/ipfs-transaction.e2e.ts
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/update-wallet-name-action.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    save-settings:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/save-settings.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    reset-profile:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/reset-profile.e2e.ts
+
+            - name: Upload Screenshots
+              if: ${{ failure() }}
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ github.job }}-screenshots
+                  path: ${{ github.workspace }}/screenshots/**/*
+
+    settings-routing:
+        needs: build-and-upload
+
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [12.x]
+
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+
+            - name: Cache node modules
+              uses: actions/cache@v2
+              with:
+                  path: node_modules
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: ${{ runner.os }}-node-
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Update System
+              run: sudo apt-get update
+
+            - name: Install (Ledger Requirements)
+              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
+
+            - name: Install (Yarn)
+              run: yarn install --ignore-engines --frozen-lockfile
+
+            - name: Download Build Artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: build
+                  path: ${{ github.workspace }}/build
+
+            - name: Test
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/settings-routing.e2e.ts
 
             - name: Upload Screenshots
               if: ${{ failure() }}

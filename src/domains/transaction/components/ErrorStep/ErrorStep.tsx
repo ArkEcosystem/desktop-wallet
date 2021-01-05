@@ -18,7 +18,7 @@ export const ErrorStep = ({ title, subtitle, onBack, onRepeat, isRepeatDisabled 
 		<div data-testid="ErrorStep">
 			<div>
 				<h1 className="mb-8 text-lg font-bold md:text-4xl">{title || t("TRANSACTION.ERROR.TITLE")}</h1>
-				<div className="mx-auto my-4 w-128">
+				<div className="my-4 mx-auto w-128">
 					<MistakeBanner />
 				</div>
 				<div className="my-8 text-md text-theme-secondary-text">
@@ -27,7 +27,7 @@ export const ErrorStep = ({ title, subtitle, onBack, onRepeat, isRepeatDisabled 
 			</div>
 
 			<div className="flex justify-end space-x-3">
-				<Button onClick={() => onBack?.()} data-testid="ErrorStep__wallet-button" variant="plain">
+				<Button onClick={() => onBack?.()} data-testid="ErrorStep__wallet-button" variant="secondary">
 					{t("COMMON.BACK_TO_WALLET")}
 				</Button>
 

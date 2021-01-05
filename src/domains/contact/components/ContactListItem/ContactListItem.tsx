@@ -88,7 +88,7 @@ export const ContactListItem = ({ item, variant, onAction, options }: ContactLis
 									<Dropdown
 										toggleContent={
 											<div className="float-right">
-												<Button variant="plain" size="icon">
+												<Button variant="secondary" size="icon">
 													<Icon name="Settings" width={20} height={20} />
 												</Button>
 											</div>
@@ -102,7 +102,7 @@ export const ContactListItem = ({ item, variant, onAction, options }: ContactLis
 									<Button
 										data-testid={`ContactListItem__one-option-button-${index}`}
 										className="float-right"
-										variant="plain"
+										variant="secondary"
 										onClick={() => onAction?.(options[0], address.address())}
 									>
 										{options[0]?.label}

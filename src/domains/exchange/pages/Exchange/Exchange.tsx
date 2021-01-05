@@ -17,7 +17,7 @@ const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 
 	return (
 		<div className="grid grid-cols-8 mt-8">
-			<div className="flex flex-col h-32 col-span-6 mr-5 border-2 rounded-lg border-theme-primary-contrast">
+			<div className="flex flex-col col-span-6 mr-5 h-32 rounded-lg border-2 border-theme-primary-contrast">
 				<div className="flex flex-col m-auto text-center">
 					<span className="font-semibold">{t("EXCHANGE.YOUR_EXCHANGE_LIST")}</span>
 

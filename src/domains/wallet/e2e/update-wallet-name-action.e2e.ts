@@ -2,6 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "./common";
 
 const translations = buildTranslations();
@@ -19,6 +20,7 @@ const openUpdateWalletName = async (t: any) => {
 };
 
 const prepareTest = async (t: any) => {
+	await goToProfile(t);
 	await goToWallet(t);
 	await openUpdateWalletName(t);
 };

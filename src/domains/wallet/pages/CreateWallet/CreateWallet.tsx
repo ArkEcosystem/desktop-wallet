@@ -1,3 +1,4 @@
+import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -5,7 +6,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import { enableNetworkInDashboardFilters } from "domains/dashboard/utils";
+import { useDashboardConfig } from "domains/dashboard/pages";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -23,12 +24,13 @@ export const CreateWallet = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const activeProfile = useActiveProfile();
-	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const nameMaxLength = 42;
+
+	const { selectedNetworkIds, setValue: setConfiguration } = useDashboardConfig({ profile: activeProfile });
 
 	const crumbs = [
 		{
-			route: dashboardRoute,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
@@ -44,15 +46,20 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		const formattedName = name.trim().substring(0, nameMaxLength);
-		activeProfile.wallets().update(getValues("wallet").id(), { alias: formattedName });
+		const wallet = getValues("wallet");
 
-		enableNetworkInDashboardFilters(activeProfile, getValues("wallet").network().id());
+		if (name) {
+			const formattedName = name.trim().substring(0, nameMaxLength);
+			activeProfile.wallets().update(wallet.id(), { alias: formattedName });
+		}
+
+		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+
 		await persist();
 
 		setValue("wallet", null);
 
-		history.push(dashboardRoute);
+		history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`);
 	};
 
 	useEffect(
@@ -77,7 +84,7 @@ export const CreateWallet = () => {
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -99,7 +106,7 @@ export const CreateWallet = () => {
 								<Button
 									disabled={activeTab === 1}
 									data-testid="CreateWallet__back-button"
-									variant="plain"
+									variant="secondary"
 									onClick={handleBack}
 								>
 									{t("COMMON.BACK")}

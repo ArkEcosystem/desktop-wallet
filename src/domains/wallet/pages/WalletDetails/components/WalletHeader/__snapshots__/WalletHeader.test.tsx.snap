@@ -9,7 +9,7 @@ exports[`WalletHeader should render 1`] = `
       class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
     >
       <div
-        class="container flex items-center mx-auto px-14"
+        class="container flex items-center px-14 mx-auto"
       >
         <div
           class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -18,9 +18,21 @@ exports[`WalletHeader should render 1`] = `
             class="flex -space-x-1"
           >
             <div
-              class="sc-AxhUy cjgpZM border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="ARK Devnet"
+              class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
+              data-testid="NetworkIcon-ARK-ark.devnet"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                data-testid="NetworkIcon__icon"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
               data-testid="Avatar"
@@ -29,19 +41,25 @@ exports[`WalletHeader should render 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="abc"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                  title="abc"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
           </div>
           <div
-            class="flex flex-col overflow-hidden"
+            class="flex overflow-hidden flex-col"
           >
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
             >
+              <span
+                class="text-sm font-semibold"
+                data-testid="WalletHeader__name"
+              >
+                ARK Wallet 1
+              </span>
               <div
                 class="flex items-center space-x-3"
               />
@@ -52,7 +70,7 @@ exports[`WalletHeader should render 1`] = `
               <span
                 class="text-lg font-semibold text-white truncate"
               >
-                abc
+                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
               <div
                 class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -101,20 +119,25 @@ exports[`WalletHeader should render 1`] = `
               <span>
                 Balance:
               </span>
+              <span
+                class="ml-1"
+                data-testid="WalletHeader__currency-balance"
+              >
+                0 BTC
+              </span>
             </div>
             <span
               class="text-lg font-semibold text-white"
               data-testid="WalletHeader__balance"
             >
-              0 ARK
+              33.75089801 DARK
             </span>
           </div>
           <div
             class="my-auto"
           >
             <button
-              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
-              color="primary"
+              class="sc-AxjAm jzyfYz w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
               data-testid="WalletHeader__star-button"
               type="button"
             >
@@ -134,8 +157,7 @@ exports[`WalletHeader should render 1`] = `
             </button>
           </div>
           <button
-            class="sc-AxjAm colAFb my-auto"
-            color="primary"
+            class="sc-AxjAm bwcsry my-auto"
             data-testid="WalletHeader__send-button"
             type="button"
           >
@@ -150,8 +172,7 @@ exports[`WalletHeader should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm eRbxBA text-left"
-                color="primary"
+                class="sc-AxjAm dKkppo text-left"
                 type="button"
               >
                 <div
@@ -182,7 +203,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
       class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
     >
       <div
-        class="container flex items-center mx-auto px-14"
+        class="container flex items-center px-14 mx-auto"
       >
         <div
           class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -191,9 +212,21 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             class="flex -space-x-1"
           >
             <div
-              class="sc-AxhUy cjgpZM border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="ARK Devnet"
+              class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
+              data-testid="NetworkIcon-ARK-ark.devnet"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                data-testid="NetworkIcon__icon"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
               data-testid="Avatar"
@@ -202,49 +235,28 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="abc"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                  title="abc"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
           </div>
           <div
-            class="flex flex-col overflow-hidden"
+            class="flex overflow-hidden flex-col"
           >
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
             >
+              <span
+                class="text-sm font-semibold"
+                data-testid="WalletHeader__name"
+              >
+                ARK Wallet 1
+              </span>
               <div
                 class="flex items-center space-x-3"
-              >
-                <span
-                  data-testid="WalletHeader__ledger"
-                >
-                  <div
-                    class="sc-AxiKw bctdez hover:text-theme-neutral"
-                    height="16"
-                    width="16"
-                  >
-                    <svg>
-                      ledger.svg
-                    </svg>
-                  </div>
-                </span>
-                <span
-                  data-testid="WalletHeader__multisig"
-                >
-                  <div
-                    class="sc-AxiKw dklFyP hover:text-theme-neutral"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      multisig.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
+              />
             </div>
             <div
               class="flex items-center space-x-5"
@@ -252,7 +264,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
               <span
                 class="text-lg font-semibold text-white truncate"
               >
-                abc
+                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
               <div
                 class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -302,6 +314,12 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                 Balance:
               </span>
               <span
+                class="ml-1"
+                data-testid="WalletHeader__currency-balance"
+              >
+                0 BTC
+              </span>
+              <span
                 class="inline-flex items-center ml-2 text-theme-danger"
               >
                 <div
@@ -324,20 +342,19 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
               class="text-lg font-semibold text-white"
               data-testid="WalletHeader__balance"
             >
-              0 ARK
+              33.75089801 DARK
             </span>
           </div>
           <div
             class="my-auto"
           >
             <button
-              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
-              color="primary"
+              class="sc-AxjAm jzyfYz w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
               data-testid="WalletHeader__star-button"
               type="button"
             >
               <span
-                class="text-theme-warning-400"
+                class=""
               >
                 <div
                   class="sc-AxiKw dzBdqj"
@@ -345,15 +362,14 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                   width="1em"
                 >
                   <svg>
-                    star.svg
+                    star-outline.svg
                   </svg>
                 </div>
               </span>
             </button>
           </div>
           <button
-            class="sc-AxjAm colAFb my-auto"
-            color="primary"
+            class="sc-AxjAm bwcsry my-auto"
             data-testid="WalletHeader__send-button"
             type="button"
           >
@@ -368,8 +384,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm eRbxBA text-left"
-                color="primary"
+                class="sc-AxjAm dKkppo text-left"
                 type="button"
               >
                 <div
@@ -400,7 +415,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
       class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
     >
       <div
-        class="container flex items-center mx-auto px-14"
+        class="container flex items-center px-14 mx-auto"
       >
         <div
           class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -409,9 +424,21 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             class="flex -space-x-1"
           >
             <div
-              class="sc-AxhUy cjgpZM border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="ARK Devnet"
+              class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
+              data-testid="NetworkIcon-ARK-ark.devnet"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                data-testid="NetworkIcon__icon"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
               data-testid="Avatar"
@@ -420,49 +447,28 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="abc"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                  title="abc"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
           </div>
           <div
-            class="flex flex-col overflow-hidden"
+            class="flex overflow-hidden flex-col"
           >
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
             >
+              <span
+                class="text-sm font-semibold"
+                data-testid="WalletHeader__name"
+              >
+                ARK Wallet 1
+              </span>
               <div
                 class="flex items-center space-x-3"
-              >
-                <span
-                  data-testid="WalletHeader__ledger"
-                >
-                  <div
-                    class="sc-AxiKw bctdez hover:text-theme-neutral"
-                    height="16"
-                    width="16"
-                  >
-                    <svg>
-                      ledger.svg
-                    </svg>
-                  </div>
-                </span>
-                <span
-                  data-testid="WalletHeader__multisig"
-                >
-                  <div
-                    class="sc-AxiKw dklFyP hover:text-theme-neutral"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      multisig.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
+              />
             </div>
             <div
               class="flex items-center space-x-5"
@@ -470,7 +476,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
               <span
                 class="text-lg font-semibold text-white truncate"
               >
-                abc
+                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
               <div
                 class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -520,6 +526,12 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                 Balance:
               </span>
               <span
+                class="ml-1"
+                data-testid="WalletHeader__currency-balance"
+              >
+                0 BTC
+              </span>
+              <span
                 class="inline-flex items-center ml-2 text-theme-success"
               >
                 <div
@@ -542,20 +554,19 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
               class="text-lg font-semibold text-white"
               data-testid="WalletHeader__balance"
             >
-              0 ARK
+              33.75089801 DARK
             </span>
           </div>
           <div
             class="my-auto"
           >
             <button
-              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
-              color="primary"
+              class="sc-AxjAm jzyfYz w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
               data-testid="WalletHeader__star-button"
               type="button"
             >
               <span
-                class="text-theme-warning-400"
+                class=""
               >
                 <div
                   class="sc-AxiKw dzBdqj"
@@ -563,15 +574,14 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                   width="1em"
                 >
                   <svg>
-                    star.svg
+                    star-outline.svg
                   </svg>
                 </div>
               </span>
             </button>
           </div>
           <button
-            class="sc-AxjAm colAFb my-auto"
-            color="primary"
+            class="sc-AxjAm bwcsry my-auto"
             data-testid="WalletHeader__send-button"
             type="button"
           >
@@ -586,8 +596,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm eRbxBA text-left"
-                color="primary"
+                class="sc-AxjAm dKkppo text-left"
                 type="button"
               >
                 <div
@@ -618,7 +627,7 @@ exports[`WalletHeader should show modifiers 1`] = `
       class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
     >
       <div
-        class="container flex items-center mx-auto px-14"
+        class="container flex items-center px-14 mx-auto"
       >
         <div
           class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
@@ -627,9 +636,21 @@ exports[`WalletHeader should show modifiers 1`] = `
             class="flex -space-x-1"
           >
             <div
-              class="sc-AxhUy cjgpZM border-theme-neutral-light text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
+              aria-label="ARK Devnet"
+              class="sc-AxhUy cjgpZM border-theme-neutral-dark text-theme-secondary-text"
+              data-testid="NetworkIcon-ARK-ark.devnet"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                data-testid="NetworkIcon__icon"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 frgnwW"
               data-testid="Avatar"
@@ -638,19 +659,25 @@ exports[`WalletHeader should show modifiers 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="abc"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                  title="abc"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
           </div>
           <div
-            class="flex flex-col overflow-hidden"
+            class="flex overflow-hidden flex-col"
           >
             <div
               class="flex items-center space-x-5 text-theme-secondary-text"
             >
+              <span
+                class="text-sm font-semibold"
+                data-testid="WalletHeader__name"
+              >
+                ARK Wallet 1
+              </span>
               <div
                 class="flex items-center space-x-3"
               >
@@ -688,7 +715,7 @@ exports[`WalletHeader should show modifiers 1`] = `
               <span
                 class="text-lg font-semibold text-white truncate"
               >
-                abc
+                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
               <div
                 class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -737,25 +764,30 @@ exports[`WalletHeader should show modifiers 1`] = `
               <span>
                 Balance:
               </span>
+              <span
+                class="ml-1"
+                data-testid="WalletHeader__currency-balance"
+              >
+                0 BTC
+              </span>
             </div>
             <span
               class="text-lg font-semibold text-white"
               data-testid="WalletHeader__balance"
             >
-              0 ARK
+              33.75089801 DARK
             </span>
           </div>
           <div
             class="my-auto"
           >
             <button
-              class="sc-AxjAm cGlMcw text-theme-secondary-text hover:text-theme-neutral h-11 w-11"
-              color="primary"
+              class="sc-AxjAm jzyfYz w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
               data-testid="WalletHeader__star-button"
               type="button"
             >
               <span
-                class="text-theme-warning-400"
+                class=""
               >
                 <div
                   class="sc-AxiKw dzBdqj"
@@ -763,15 +795,14 @@ exports[`WalletHeader should show modifiers 1`] = `
                   width="1em"
                 >
                   <svg>
-                    star.svg
+                    star-outline.svg
                   </svg>
                 </div>
               </span>
             </button>
           </div>
           <button
-            class="sc-AxjAm colAFb my-auto"
-            color="primary"
+            class="sc-AxjAm bwcsry my-auto"
             data-testid="WalletHeader__send-button"
             type="button"
           >
@@ -786,8 +817,7 @@ exports[`WalletHeader should show modifiers 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-AxjAm eRbxBA text-left"
-                color="primary"
+                class="sc-AxjAm dKkppo text-left"
                 type="button"
               >
                 <div

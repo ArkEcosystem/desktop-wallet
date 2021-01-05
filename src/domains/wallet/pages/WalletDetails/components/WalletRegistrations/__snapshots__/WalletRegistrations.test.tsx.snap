@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WalletRegistrations should render empty mode 1`] = `
+exports[`WalletRegistrations should render empty state 1`] = `
 <DocumentFragment>
   <section
     data-testid="WalletRegistrations"
@@ -13,11 +13,6 @@ exports[`WalletRegistrations should render empty mode 1`] = `
       >
         Registrations
       </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (0)
-      </span>
     </div>
     <div
       class="flex items-center space-x-4"
@@ -27,10 +22,10 @@ exports[`WalletRegistrations should render empty mode 1`] = `
         class="flex items-center -space-x-2"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
-            class="sc-AxiKw dzBdqj text-xl"
+            class="sc-AxirZ iQaTP text-xl"
             height="1em"
             width="1em"
           >
@@ -40,11 +35,11 @@ exports[`WalletRegistrations should render empty mode 1`] = `
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700"
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700"
         />
       </div>
       <div
-        class="flex justify-between flex-1"
+        class="flex flex-1 justify-between"
       >
         <div
           class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
@@ -58,14 +53,14 @@ exports[`WalletRegistrations should render empty mode 1`] = `
             class="mt-1 mr-auto"
           >
             <a
-              class="sc-AxhCb cLQUbf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+              class="sc-AxiKw erSZKf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
               data-testid="Link"
               rel="noopener noreferrer"
               to="@TODO"
             >
               Learn more
               <div
-                class="sc-AxiKw dzBdqj flex-shrink-0 ml-2 text-sm"
+                class="sc-AxirZ iQaTP flex-shrink-0 ml-2 text-sm"
                 data-testid="Link__external"
                 height="1em"
                 width="1em"
@@ -77,21 +72,13 @@ exports[`WalletRegistrations should render empty mode 1`] = `
             </a>
           </div>
         </div>
-        <button
-          class="sc-AxjAm fCKjFI"
-          color="primary"
-          data-testid="WalletRegistrations__button"
-          type="button"
-        >
-          Register
-        </button>
       </div>
     </div>
   </section>
 </DocumentFragment>
 `;
 
-exports[`WalletRegistrations should render inactive icons when there are no entity registrations 1`] = `
+exports[`WalletRegistrations should render inactive icons without a delegate registration 1`] = `
 <DocumentFragment>
   <section
     data-testid="WalletRegistrations"
@@ -104,11 +91,6 @@ exports[`WalletRegistrations should render inactive icons when there are no enti
       >
         Registrations
       </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (3)
-      </span>
     </div>
     <div
       class="flex items-center h-11"
@@ -117,10 +99,10 @@ exports[`WalletRegistrations should render inactive icons when there are no enti
         class="flex items-center mr-8 -space-x-2"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -130,10 +112,10 @@ exports[`WalletRegistrations should render inactive icons when there are no enti
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -142,11 +124,68 @@ exports[`WalletRegistrations should render inactive icons when there are no enti
             </svg>
           </div>
         </div>
+      </div>
+      <div
+        class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+        data-testid="WalletRegistrations__inactive"
+      >
         <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
+            height="21"
+            width="21"
+          >
+            <svg>
+              delegate.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`WalletRegistrations should render inactive icons without a multisignature registration 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletRegistrations"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        Registrations
+      </h2>
+    </div>
+    <div
+      class="flex items-center h-11"
+    >
+      <div
+        class="flex items-center mr-8 -space-x-2"
+      >
+        <div
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
+        >
+          <div
+            class="sc-AxirZ dqZknP"
+            height="21"
+            width="21"
+          >
+            <svg>
+              key.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
+        >
+          <div
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -161,33 +200,25 @@ exports[`WalletRegistrations should render inactive icons when there are no enti
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
             <svg>
-              entity.svg
+              multisig.svg
             </svg>
           </div>
         </div>
       </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
     </div>
   </section>
 </DocumentFragment>
 `;
 
-exports[`WalletRegistrations should render inactive icons withour a multi signature registration 1`] = `
+exports[`WalletRegistrations should render inactive icons without a multisignature registration 2`] = `
 <DocumentFragment>
   <section
     data-testid="WalletRegistrations"
@@ -200,11 +231,6 @@ exports[`WalletRegistrations should render inactive icons withour a multi signat
       >
         Registrations
       </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (2)
-      </span>
     </div>
     <div
       class="flex items-center h-11"
@@ -213,10 +239,10 @@ exports[`WalletRegistrations should render inactive icons withour a multi signat
         class="flex items-center mr-8 -space-x-2"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -226,10 +252,10 @@ exports[`WalletRegistrations should render inactive icons withour a multi signat
           </div>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -244,10 +270,10 @@ exports[`WalletRegistrations should render inactive icons withour a multi signat
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -256,28 +282,7 @@ exports[`WalletRegistrations should render inactive icons withour a multi signat
             </svg>
           </div>
         </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              entity.svg
-            </svg>
-          </div>
-        </div>
       </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
     </div>
   </section>
 </DocumentFragment>
@@ -296,11 +301,6 @@ exports[`WalletRegistrations should render inactive icons without a second signa
       >
         Registrations
       </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (1)
-      </span>
     </div>
     <div
       class="flex items-center h-11"
@@ -309,10 +309,23 @@ exports[`WalletRegistrations should render inactive icons without a second signa
         class="flex items-center mr-8 -space-x-2"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
+            height="21"
+            width="21"
+          >
+            <svg>
+              multisig.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
+        >
+          <div
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -327,10 +340,10 @@ exports[`WalletRegistrations should render inactive icons without a second signa
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -339,41 +352,7 @@ exports[`WalletRegistrations should render inactive icons without a second signa
             </svg>
           </div>
         </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              entity.svg
-            </svg>
-          </div>
-        </div>
       </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
     </div>
   </section>
 </DocumentFragment>
@@ -385,15 +364,6 @@ exports[`WalletRegistrations should render loading state 1`] = `
     data-testid="WalletRegistrations"
   >
     <div
-      class="flex mb-4"
-    >
-      <h2
-        class="mb-0 font-bold"
-      >
-        Registrations
-      </h2>
-    </div>
-    <div
       class="flex items-center"
       data-testid="WalletRegistrations__skeleton"
     >
@@ -401,7 +371,7 @@ exports[`WalletRegistrations should render loading state 1`] = `
         class="flex items-center mr-4 -space-x-2"
       >
         <div
-          class="sc-AxirZ dxHwgH border-transparent"
+          class="sc-AxjAm jcZnVc border-transparent"
         >
           <span>
             <span
@@ -418,7 +388,7 @@ exports[`WalletRegistrations should render loading state 1`] = `
           </span>
         </div>
         <div
-          class="sc-AxirZ dxHwgH border-transparent"
+          class="sc-AxjAm jcZnVc border-transparent"
         >
           <span>
             <span
@@ -487,220 +457,6 @@ exports[`WalletRegistrations should render loading state 1`] = `
 </DocumentFragment>
 `;
 
-exports[`WalletRegistrations should show business icon 1`] = `
-<DocumentFragment>
-  <section
-    data-testid="WalletRegistrations"
-  >
-    <div
-      class="flex mb-4"
-    >
-      <h2
-        class="mb-0 font-bold"
-      >
-        Registrations
-      </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (3)
-      </span>
-    </div>
-    <div
-      class="flex items-center h-11"
-    >
-      <div
-        class="flex items-center mr-8 -space-x-2"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              business.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              plugin.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH relative border-theme-text text-theme-text"
-        >
-          <span
-            class="font-semibold"
-          >
-            +1
-          </span>
-        </div>
-      </div>
-      <div
-        class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-        data-testid="WalletRegistrations__inactive"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              key.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              delegate.svg
-            </svg>
-          </div>
-        </div>
-      </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`WalletRegistrations should show business icon for multiple business entities 1`] = `
-<DocumentFragment>
-  <section
-    data-testid="WalletRegistrations"
-  >
-    <div
-      class="flex mb-4"
-    >
-      <h2
-        class="mb-0 font-bold"
-      >
-        Registrations
-      </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (2)
-      </span>
-    </div>
-    <div
-      class="flex items-center h-11"
-    >
-      <div
-        class="flex items-center mr-8 -space-x-2"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              business.svg
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-        data-testid="WalletRegistrations__inactive"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              key.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              delegate.svg
-            </svg>
-          </div>
-        </div>
-      </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
 exports[`WalletRegistrations should show delegate icon 1`] = `
 <DocumentFragment>
   <section
@@ -714,11 +470,6 @@ exports[`WalletRegistrations should show delegate icon 1`] = `
       >
         Registrations
       </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (1)
-      </span>
     </div>
     <div
       class="flex items-center h-11"
@@ -727,10 +478,23 @@ exports[`WalletRegistrations should show delegate icon 1`] = `
         class="flex items-center mr-8 -space-x-2"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
+            height="21"
+            width="21"
+          >
+            <svg>
+              key.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
+        >
+          <div
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -745,23 +509,10 @@ exports[`WalletRegistrations should show delegate icon 1`] = `
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              key.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -770,334 +521,7 @@ exports[`WalletRegistrations should show delegate icon 1`] = `
             </svg>
           </div>
         </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              entity.svg
-            </svg>
-          </div>
-        </div>
       </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`WalletRegistrations should show generic icon 1`] = `
-<DocumentFragment>
-  <section
-    data-testid="WalletRegistrations"
-  >
-    <div
-      class="flex mb-4"
-    >
-      <h2
-        class="mb-0 font-bold"
-      >
-        Registrations
-      </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (1)
-      </span>
-    </div>
-    <div
-      class="flex items-center h-11"
-    >
-      <div
-        class="flex items-center mr-8 -space-x-2"
-      >
-        <div
-          class="sc-AxirZ dxHwgH relative border-theme-text text-theme-text"
-        >
-          <span
-            class="font-semibold"
-          >
-            +1
-          </span>
-        </div>
-      </div>
-      <div
-        class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-        data-testid="WalletRegistrations__inactive"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              key.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              delegate.svg
-            </svg>
-          </div>
-        </div>
-      </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`WalletRegistrations should show plugin icon 1`] = `
-<DocumentFragment>
-  <section
-    data-testid="WalletRegistrations"
-  >
-    <div
-      class="flex mb-4"
-    >
-      <h2
-        class="mb-0 font-bold"
-      >
-        Registrations
-      </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (3)
-      </span>
-    </div>
-    <div
-      class="flex items-center h-11"
-    >
-      <div
-        class="flex items-center mr-8 -space-x-2"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              business.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              plugin.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH relative border-theme-text text-theme-text"
-        >
-          <span
-            class="font-semibold"
-          >
-            +1
-          </span>
-        </div>
-      </div>
-      <div
-        class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-        data-testid="WalletRegistrations__inactive"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              key.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              delegate.svg
-            </svg>
-          </div>
-        </div>
-      </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
-    </div>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`WalletRegistrations should show plugin icon for multiple plugin entities 1`] = `
-<DocumentFragment>
-  <section
-    data-testid="WalletRegistrations"
-  >
-    <div
-      class="flex mb-4"
-    >
-      <h2
-        class="mb-0 font-bold"
-      >
-        Registrations
-      </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (2)
-      </span>
-    </div>
-    <div
-      class="flex items-center h-11"
-    >
-      <div
-        class="flex items-center mr-8 -space-x-2"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              plugin.svg
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-        data-testid="WalletRegistrations__inactive"
-      >
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              key.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              delegate.svg
-            </svg>
-          </div>
-        </div>
-      </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
     </div>
   </section>
 </DocumentFragment>
@@ -1116,11 +540,6 @@ exports[`WalletRegistrations should show resigned delegate icon 1`] = `
       >
         Registrations
       </h2>
-      <span
-        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-      >
-        (1)
-      </span>
     </div>
     <div
       class="flex items-center h-11"
@@ -1129,10 +548,23 @@ exports[`WalletRegistrations should show resigned delegate icon 1`] = `
         class="flex items-center mr-8 -space-x-2"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-text text-theme-text"
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
         >
           <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
+            height="21"
+            width="21"
+          >
+            <svg>
+              key.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="sc-AxjAm jcZnVc border-theme-text text-theme-text"
+        >
+          <div
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -1147,23 +579,10 @@ exports[`WalletRegistrations should show resigned delegate icon 1`] = `
         data-testid="WalletRegistrations__inactive"
       >
         <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+          class="sc-AxjAm jcZnVc border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
           <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              key.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
+            class="sc-AxirZ dqZknP"
             height="21"
             width="21"
           >
@@ -1172,28 +591,7 @@ exports[`WalletRegistrations should show resigned delegate icon 1`] = `
             </svg>
           </div>
         </div>
-        <div
-          class="sc-AxirZ dxHwgH border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          <div
-            class="sc-AxiKw jcWfEX"
-            height="21"
-            width="21"
-          >
-            <svg>
-              entity.svg
-            </svg>
-          </div>
-        </div>
       </div>
-      <button
-        class="sc-AxjAm fCKjFI ml-auto"
-        color="primary"
-        data-testid="WalletRegistrations__button"
-        type="button"
-      >
-        Show All
-      </button>
     </div>
   </section>
 </DocumentFragment>

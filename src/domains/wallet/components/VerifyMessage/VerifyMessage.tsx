@@ -146,7 +146,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 			<div className="mt-8">
 				<div className="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light">
 					<div className="flex flex-col">
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<div className="text-lg font-semibold">
 								{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY_JSON.TITLE")}
 							</div>
@@ -167,7 +167,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 				<Form id="VerifyMessage__form" context={form} onSubmit={handleSubmit}>
 					{renderFormContent()}
 					<div className="flex justify-end space-x-3">
-						<Button variant="plain" data-testid="VerifyMessage__cancel" onClick={onCancel}>
+						<Button variant="secondary" data-testid="VerifyMessage__cancel" onClick={onCancel}>
 							{t("COMMON.CANCEL")}
 						</Button>
 						<Button data-testid="VerifyMessage__submit" onClick={handleSubmit} type="submit">

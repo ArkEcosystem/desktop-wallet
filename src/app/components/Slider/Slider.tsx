@@ -26,11 +26,11 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 	return (
 		<div className="relative">
 			{showPagination && paginationPosition === "top-right" && (
-				<div className="absolute right-0 flex items-center w-auto h-6 space-x-2 -top-12 swiper-pagination" />
+				<div className="flex absolute right-0 -top-12 items-center space-x-2 w-auto h-6 swiper-pagination" />
 			)}
 
 			<div
-				className="px-5 -mx-5 -mb-8 overflow-hidden list-none slide-container"
+				className="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container"
 				style={{ height: `${containerHeight}px` }}
 			>
 				<div className={`h-full swiper-wrapper important:z-0 ${className || ""}`} ref={wrapperRef}>
@@ -42,7 +42,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 				</div>
 
 				{showPagination && paginationPosition === "bottom-center" && (
-					<div className="flex items-center justify-center h-6 swiper-pagination important:bottom-8 important:z-0" />
+					<div className="flex justify-center items-center h-6 swiper-pagination important:bottom-8 important:z-0" />
 				)}
 			</div>
 		</div>

@@ -4,28 +4,28 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import {
 	ExtendedSignedTransactionData,
-	SendEntityRegistrationComponent,
-	SendEntityRegistrationDetailsOptions,
-	SendEntityRegistrationForm,
-	SendEntityRegistrationSignOptions,
-} from "domains/transaction/pages/SendEntityRegistration/SendEntityRegistration.models";
+	SendRegistrationComponent,
+	SendRegistrationDetailsOptions,
+	SendRegistrationForm,
+	SendRegistrationSignOptions,
+} from "domains/transaction/pages/SendRegistration/SendRegistration.models";
 import React from "react";
 
 import { FormStep, ReviewStep } from "./";
 import { Participant } from "./components/AddParticipant/AddParticipant";
 
-const StepsComponent = ({ activeTab, fees, wallet, profile }: SendEntityRegistrationComponent) => (
+const StepsComponent = ({ activeTab, fees, wallet, profile }: SendRegistrationComponent) => (
 	<Tabs activeId={activeTab}>
-		<TabPanel tabId={2}>
+		<TabPanel tabId={1}>
 			<FormStep fees={fees} wallet={wallet} profile={profile} />
 		</TabPanel>
-		<TabPanel tabId={3}>
+		<TabPanel tabId={2}>
 			<ReviewStep wallet={wallet} />
 		</TabPanel>
 	</Tabs>
 );
 
-const transactionDetails = ({ transaction, translations, wallet }: SendEntityRegistrationDetailsOptions) => (
+const transactionDetails = ({ transaction, translations, wallet }: SendRegistrationDetailsOptions) => (
 	<>
 		<TransactionDetail
 			label={translations("TRANSACTION.TYPE")}
@@ -51,7 +51,7 @@ const transactionDetails = ({ transaction, translations, wallet }: SendEntityReg
 StepsComponent.displayName = "MultiSignatureRegistrationForm";
 transactionDetails.displayName = "MultiSignatureRegistrationFormTransactionDetails";
 
-const signTransaction = async ({ env, form, profile }: SendEntityRegistrationSignOptions) => {
+const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptions) => {
 	const { clearErrors, getValues } = form;
 
 	clearErrors("mnemonic");
@@ -93,7 +93,7 @@ const signTransaction = async ({ env, form, profile }: SendEntityRegistrationSig
 	return transaction;
 };
 
-export const MultiSignatureRegistrationForm: SendEntityRegistrationForm = {
+export const MultiSignatureRegistrationForm: SendRegistrationForm = {
 	tabSteps: 2,
 	component: StepsComponent,
 	transactionDetails,

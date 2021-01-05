@@ -88,7 +88,7 @@ export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsPro
 							<td className="py-10 text-center text-theme-secondary-text">v {rowData.version}</td>
 
 							<td className="w-16">
-								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
+								<Button variant="secondary">{t("COMMON.INSTALL")}</Button>
 							</td>
 						</tr>
 					)}

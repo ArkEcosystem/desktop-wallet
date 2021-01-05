@@ -4,19 +4,19 @@ exports[`LedgerTabs should render connection step 1`] = `
 <div>
   <div>
     <ul
-      class="sc-AxhUy dqZzRu"
+      class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
     >
       <li
-        class="sc-AxhCb hZvNDs"
+        class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
       />
       <li
-        class="sc-AxhCb ehiyCR"
+        class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
       />
       <li
-        class="sc-AxhCb ehiyCR"
+        class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
       />
       <li
-        class="sc-AxhCb ehiyCR"
+        class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
       />
     </ul>
     <div
@@ -31,7 +31,7 @@ exports[`LedgerTabs should render connection step 1`] = `
           data-testid="ImportWallet__first-step"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -49,16 +49,16 @@ exports[`LedgerTabs should render connection step 1`] = `
             </div>
           </div>
           <fieldset
-            class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
+            class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
               data-testid="FormLabel"
               for="network"
             >
               Cryptoasset
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -75,14 +75,14 @@ exports[`LedgerTabs should render connection step 1`] = `
                   id="ImportWallet__network-label"
                 />
                 <div
-                  class="sc-fznyAO dnZZBi"
+                  class="sc-fzpans diytpf"
                   data-testid="SelectNetworkInput"
                 >
                   <div
-                    class="sc-fzoLsD sc-fzpans kLdrHH px-4"
+                    class="sc-AxmLO sc-fzozJi flvnfR px-4"
                   >
                     <div
-                      class="sc-AxmLO hSwYaC border-theme-neutral-light text-theme-neutral"
+                      class="sc-AxheI iJrbEo border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                       data-testid="SelectNetworkInput__network"
                     />
                   </div>
@@ -91,7 +91,7 @@ exports[`LedgerTabs should render connection step 1`] = `
                     aria-controls="ImportWallet__network-menu"
                     aria-labelledby="ImportWallet__network-label"
                     autocomplete="off"
-                    class="sc-fzozJi gNOhWM overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                    class="sc-Axmtr dbowQO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                     data-testid="SelectNetworkInput__input"
                     id="ImportWallet__network-input"
                     placeholder="Enter a cryptoasset name"
@@ -118,8 +118,7 @@ exports[`LedgerTabs should render connection step 1`] = `
         class="flex space-x-3"
       >
         <button
-          class="sc-AxjAm fCKjFI"
-          color="primary"
+          class="sc-AxjAm ghbEwY"
           data-testid="Paginator__back-button"
           disabled=""
           type="button"
@@ -127,8 +126,7 @@ exports[`LedgerTabs should render connection step 1`] = `
           Back
         </button>
         <button
-          class="sc-AxjAm colAFb"
-          color="primary"
+          class="sc-AxjAm ghbEwY"
           data-testid="Paginator__continue-button"
           disabled=""
           type="button"
@@ -145,19 +143,19 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
 <div>
   <div>
     <ul
-      class="sc-AxhUy dqZzRu"
+      class="StepIndicator__StepWrapper-sc-15t41is-1 kuaQOz"
     >
       <li
-        class="sc-AxhCb hZvNDs"
+        class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
       />
       <li
-        class="sc-AxhCb hZvNDs"
+        class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
       />
       <li
-        class="sc-AxhCb hZvNDs"
+        class="StepIndicator__StepStyled-sc-15t41is-0 bCyPTv"
       />
       <li
-        class="sc-AxhCb ehiyCR"
+        class="StepIndicator__StepStyled-sc-15t41is-0 dnPEAk"
       />
     </ul>
     <div
@@ -172,7 +170,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
           data-testid="LedgerScanStep"
         >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="flex justify-between items-end bg-theme-background"
           >
             <div>
               <h1
@@ -190,16 +188,16 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
             </div>
           </div>
           <fieldset
-            class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
+            class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
               data-testid="FormLabel"
               for="network"
             >
               Cryptoasset
               <div
-                class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                 data-testid="FormLabel__required"
               />
             </label>
@@ -216,15 +214,15 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   id="ImportWallet__network-label"
                 />
                 <div
-                  class="sc-fznyAO dnZZBi"
+                  class="sc-fzpans diytpf"
                   data-testid="SelectNetworkInput"
                 >
                   <div
-                    class="sc-fzoLsD sc-fzpans kLdrHH px-4"
+                    class="sc-AxmLO sc-fzozJi flvnfR px-4"
                   >
                     <div
                       aria-label="ARK Devnet"
-                      class="sc-AxmLO hSwYaC border-theme-primary-100 text-theme-primary-400"
+                      class="sc-AxheI iJrbEo border-theme-primary-100 text-theme-primary-400"
                       data-testid="SelectNetworkInput__network"
                     >
                       <div
@@ -244,7 +242,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     aria-controls="ImportWallet__network-menu"
                     aria-labelledby="ImportWallet__network-label"
                     autocomplete="off"
-                    class="sc-fzozJi gNOhWM overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                    class="sc-Axmtr dbowQO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                     data-testid="SelectNetworkInput__input"
                     disabled=""
                     id="ImportWallet__network-input"
@@ -262,7 +260,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
             </div>
           </fieldset>
           <div
-            class="sc-fznxsB esFRHA -mt-3"
+            class="sc-fzoXzr dbrLwE -mt-3"
             role="table"
           >
             <table
@@ -283,7 +281,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top ml-15"
+                      class="flex flex-inline align-top "
                     >
                       <div>
                         Wallet
@@ -345,7 +343,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     >
                       <div>
                         <input
-                          class="sc-fzqARJ cLbUbR"
+                          class="sc-fznWqX kOmeTJ"
                           color="success"
                           data-testid="LedgerScanStep__select-all"
                           type="checkbox"
@@ -359,12 +357,12 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="sc-fznWqX iMHQwn group"
+                  class="sc-fznxsB dxVsdw group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-fznJRM iNaKIr space-x-4"
+                      class="sc-fzpjYC hjCBUh space-x-4"
                     >
                       <div
                         class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -384,7 +382,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                         class="inline-flex items-center"
                       >
                         <span
-                          class="sc-fzqNJr cPhlSZ text-theme-text truncate font-semibold text-base"
+                          class="sc-fzokOt gcdrkZ text-theme-text truncate font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DSyG9h … Ldw2ve
@@ -396,14 +394,14 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     class="w-64"
                   >
                     <div
-                      class="sc-fznJRM dYacoh justify-end font-semibold"
+                      class="sc-fzpjYC izkDoH justify-end font-semibold"
                     >
                       <div
                         class="flex items-center space-x-3 text-theme-danger-400"
                         data-testid="LedgerScanStep__amount-error"
                       >
                         <div
-                          class="sc-AxmLO hSwYaC border-theme-danger-400"
+                          class="sc-AxheI iJrbEo border-theme-danger-400"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -423,10 +421,10 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-fznJRM jONcbf justify-center"
+                      class="sc-fzpjYC jlpoTR justify-center"
                     >
                       <input
-                        class="sc-fzqARJ cLbUbR"
+                        class="sc-fznWqX kOmeTJ"
                         color="success"
                         disabled=""
                         type="checkbox"
@@ -435,12 +433,12 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="sc-fznWqX iMHQwn group"
+                  class="sc-fznxsB dxVsdw group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="sc-fznJRM iNaKIr space-x-4"
+                      class="sc-fzpjYC hjCBUh space-x-4"
                     >
                       <div
                         class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hIrkRK"
@@ -460,7 +458,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                         class="inline-flex items-center"
                       >
                         <span
-                          class="sc-fzqNJr cPhlSZ text-theme-text truncate font-semibold text-base"
+                          class="sc-fzokOt gcdrkZ text-theme-text truncate font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           DFJ5Z5 … LZkc6T
@@ -472,14 +470,14 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     class="w-64"
                   >
                     <div
-                      class="sc-fznJRM dYacoh justify-end font-semibold"
+                      class="sc-fzpjYC izkDoH justify-end font-semibold"
                     >
                       <div
                         class="flex items-center space-x-3 text-theme-danger-400"
                         data-testid="LedgerScanStep__amount-error"
                       >
                         <div
-                          class="sc-AxmLO hSwYaC border-theme-danger-400"
+                          class="sc-AxheI iJrbEo border-theme-danger-400"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -499,10 +497,10 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   </td>
                   <td>
                     <div
-                      class="sc-fznJRM jONcbf justify-center"
+                      class="sc-fzpjYC jlpoTR justify-center"
                     >
                       <input
-                        class="sc-fzqARJ cLbUbR"
+                        class="sc-fznWqX kOmeTJ"
                         color="success"
                         disabled=""
                         type="checkbox"
@@ -515,8 +513,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
           </div>
           <div>
             <button
-              class="sc-AxjAm fCKjFI w-full"
-              color="primary"
+              class="sc-AxjAm ghbEwY w-full"
               data-testid="LedgerScanStep__view-more"
               disabled=""
               type="button"
@@ -534,8 +531,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
     >
       <div>
         <button
-          class="sc-AxjAm fCKjFI"
-          color="primary"
+          class="sc-AxjAm liXtzU"
           data-testid="Paginator__retry-button"
           type="button"
         >
@@ -557,16 +553,14 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
         class="flex space-x-3"
       >
         <button
-          class="sc-AxjAm fCKjFI"
-          color="primary"
+          class="sc-AxjAm liXtzU"
           data-testid="Paginator__back-button"
           type="button"
         >
           Back
         </button>
         <button
-          class="sc-AxjAm colAFb"
-          color="primary"
+          class="sc-AxjAm ghbEwY"
           data-testid="Paginator__continue-button"
           disabled=""
           type="button"

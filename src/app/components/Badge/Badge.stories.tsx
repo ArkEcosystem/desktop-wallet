@@ -50,7 +50,7 @@ export const Colored = () => (
 		<Circle className="relative text-white border-theme-warning-500">
 			<Badge className="bg-theme-warning-500" position="top-right" />
 		</Circle>
-		<Circle className="relative text-white border-theme-primary-500 ml-7">
+		<Circle className="relative ml-7 text-white border-theme-primary-500">
 			<Badge className="border-theme-primary-500" position="right" />
 		</Circle>
 		<Circle className="relative text-white border-theme-danger-400">
@@ -62,7 +62,7 @@ export const Colored = () => (
 		<Circle className="relative text-white border-theme-warning-500">
 			<Badge className="bg-theme-warning-500" position="bottom-left" />
 		</Circle>
-		<Circle className="relative text-white border-theme-primary-500 ml-7">
+		<Circle className="relative ml-7 text-white border-theme-primary-500">
 			<Badge className="border-theme-primary-500" position="left" />
 		</Circle>
 		<Circle className="relative text-white border-theme-danger-400">

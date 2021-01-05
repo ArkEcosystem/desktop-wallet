@@ -1,62 +1,32 @@
 import tw, { css } from "twin.macro";
-import { Size } from "types";
+import { ButtonVariant, Size } from "types";
 
 // @TODO add focus-visible:shadow-outline
 const baseStyle = [
-	tw`inline-flex items-center justify-center font-semibold text-center transition-all duration-100 ease-linear rounded focus:outline-none`,
+	tw`inline-flex items-center justify-center font-semibold text-center transition-all duration-100 ease-linear rounded leading-tight focus:outline-none`,
 	css`
-		line-height: 1.25;
 		&:disabled {
-			${tw`cursor-not-allowed bg-theme-neutral-200 text-theme-neutral-light dark:bg-theme-neutral-800 dark:text-theme-neutral-700`}
+			${tw`cursor-not-allowed`},
 		}
 	`,
 ];
 
-const getColorsVariable = (name: string): any => ({
-	base: `var(--theme-color-${name})`,
-	contrast: `var(--theme-color-${name}-contrast)`,
-	rgb: `var(--theme-color-${name}-rgb)`,
-	dark: `var(--theme-color-${name}-dark)`,
-	light: `var(--theme-color-${name}-light)`,
-});
+const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
+	if (disabled) {
+		return variant === "transparent"
+			? tw`disabled:(text-theme-neutral-400 dark:text-theme-neutral-700)`
+			: tw`disabled:(bg-theme-neutral-200 text-theme-neutral-light dark:bg-theme-neutral-800 dark:text-theme-neutral-700)`;
+	}
 
-const getVariant = (name: string, colorName: string, color: ReturnType<typeof getColorsVariable>): any => {
-	switch (name) {
-		case "solid":
-			return css`
-				color: ${colorName === "primary" ? "var(--theme-white)" : color.contrast};
-				background-color: ${color.base};
-				&:not(:focus):hover:enabled {
-					background-color: ${color.dark};
-					box-shadow: 2px 3px 10px 2px rgba(${color.rgb}, 0.2);
-				}
-			`;
-		case "plain":
-			return css`
-				color: ${color.base};
-				background-color: ${color.contrast};
-				&:not(:focus):hover:enabled {
-					color: ${["danger", "primary"].includes(colorName) ? "var(--theme-white)" : color.base};
-					background-color: ${colorName === "danger"
-						? "var(--theme-color-danger-400)"
-						: colorName === "primary"
-						? color.dark
-						: color.light};
-				}
-			`;
-		case "outline":
-			return css`
-				color: ${color.base};
-				border: 2px solid ${color.contrast};
-				&:not(:focus):hover:enabled {
-					border-color: ${color.light};
-				}
-			`;
-		case "transparent":
-			return css`
-				background-color: transparent;
-				border: 0px none;
-			`;
+	switch (variant) {
+		case "primary":
+			return tw`bg-theme-primary hover:bg-theme-primary-700 text-white`;
+		case "secondary":
+			return tw`bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-neutral-800 text-theme-primary-600 dark:text-theme-neutral-200 hover:text-white`;
+		case "danger":
+			return tw`bg-theme-danger-100 dark:bg-theme-danger-400 hover:bg-theme-danger-400 dark:hover:bg-theme-danger-500 text-theme-danger-400 dark:text-white hover:text-white`;
+		default:
+			return tw`bg-transparent border-none`;
 	}
 };
 
@@ -65,7 +35,7 @@ const getSize = (size?: Size): any => {
 		case "sm":
 			return tw`px-3 py-2 space-x-2 text-sm`;
 		case "lg":
-			return tw`px-6 py-4 space-x-4 text-lg`;
+			return tw`px-6 py-4 space-x-4`;
 		case "icon":
 			return tw`p-3`;
 		default:
@@ -73,8 +43,12 @@ const getSize = (size?: Size): any => {
 	}
 };
 
-export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: Size }) => [
-	getSize(size),
-	...baseStyle,
-	...getVariant(variant!, color!, getColorsVariable(color!)),
-];
+export const getStyles = ({
+	variant,
+	size,
+	disabled,
+}: {
+	variant?: ButtonVariant;
+	size?: Size;
+	disabled?: boolean;
+}) => [getSize(size), ...baseStyle, getVariant(variant!, disabled!)];

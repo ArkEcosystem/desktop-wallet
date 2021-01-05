@@ -87,6 +87,7 @@ import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
+import { ReactComponent as SettingsHorizontal } from "./settings-horizontal.svg";
 import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
@@ -196,6 +197,7 @@ export const SvgCollection: any = {
 	Send,
 	Sent,
 	Settings,
+	SettingsHorizontal,
 	Smartbridge,
 	Sort,
 	Star,

@@ -2,9 +2,13 @@ import { Selector } from "testcafe";
 
 import { CustomSelector, CustomSnapshot } from "../../../utils/e2e-interfaces";
 import { createFixture, scrollToBottom } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet } from "./common";
 
-createFixture(`Wallet Details`).beforeEach(async (t) => await goToWallet(t));
+createFixture(`Wallet Details`).beforeEach(async (t) => {
+	await goToProfile(t);
+	await goToWallet(t);
+});
 
 // TODO: Investigate better and fix why loading is immediate in e2e
 // test("should show initial loading state", async (t) => {
@@ -41,21 +45,4 @@ test("should star a wallet", async (t) => {
 	await t.click(starButton);
 
 	await t.expect(starButton.innerHTML).notEql(starButtonContent);
-});
-
-test("should navigate from the bottom sheet", async (t) => {
-	await t.expect(Selector("[data-testid=WalletHeader]").withText("ARK Wallet 1").exists).ok();
-	await t.expect(Selector("[data-testid=TransactionRow__ID]").exists).ok();
-
-	const transactionTable = Selector("[data-testid=TransactionTable]");
-	const snapshot = await transactionTable.innerText;
-
-	// Open bottom menu
-	await t.click(Selector("[data-testid=WalletBottomSheetMenu__toggle]"));
-	// Select other wallet
-	await t.click(Selector("[data-testid=WalletTable] tr").withText("ARK Wallet 2"));
-
-	// Transaction table and header changed
-	await t.expect(Selector("[data-testid=WalletHeader]").withText("ARK Wallet 2").exists).ok();
-	await t.expect(transactionTable.innerText).notEql(snapshot);
 });

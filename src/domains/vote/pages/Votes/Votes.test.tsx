@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -50,10 +50,16 @@ const renderPage = (route: string, routePath = "/profiles/:profileId/wallets/:wa
 
 describe("Votes", () => {
 	beforeAll(async () => {
+		nock("https://neoscan.io/api/main_net/v1/")
+			.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
+			.reply(200, []);
+
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "ark.devnet");
+
+		wallet.settings().set(WalletSetting.Alias, "Sample Wallet");
 
 		nock.disableNetConnect();
 
@@ -201,7 +207,7 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should navigate to create page", () => {
+	it("should navigate to create create page", () => {
 		const route = `/profiles/${emptyProfile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, getByTestId, getByText } = renderPage(route, routePath, true);
@@ -216,7 +222,7 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should navigate to import page", () => {
+	it("should navigate to import wallet page", () => {
 		const route = `/profiles/${emptyProfile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, getByTestId, getByText } = renderPage(route, routePath, true);
@@ -370,5 +376,108 @@ describe("Votes", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should hide testnet wallet if disabled from profile setting", async () => {
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+		await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, container, getByTestId } = renderPage(route);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
+
+		expect(asFragment()).toMatchSnapshot();
+		useNetworksMock.mockRestore();
+	});
+
+	it("should filter wallets by address", async () => {
+		jest.useFakeTimers();
+		jest.advanceTimersByTime(100);
+
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { getByTestId, queryAllByTestId } = renderPage(route, routePath);
+
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(4));
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(searchInput).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.change(searchInput, { target: { value: "D8rr7B1d6TL6pf1" } });
+		});
+
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
+		jest.useRealTimers();
+	});
+
+	it("should filter wallets by alias", async () => {
+		jest.useFakeTimers();
+		jest.advanceTimersByTime(100);
+
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { getByTestId, queryAllByTestId } = renderPage(route, routePath);
+
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(4));
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(searchInput).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.change(searchInput, { target: { value: "Sample Wallet" } });
+		});
+
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
+		jest.useRealTimers();
+	});
+
+	it("should reset wallet search", async () => {
+		jest.useFakeTimers();
+		jest.advanceTimersByTime(100);
+
+		const route = `/profiles/${profile.id()}/votes`;
+		const routePath = "/profiles/:profileId/votes";
+		const { getByTestId, queryAllByTestId } = renderPage(route, routePath);
+
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(4));
+
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__button"));
+		});
+
+		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(searchInput).toBeInTheDocument());
+
+		// Search by wallet alias
+		act(() => {
+			fireEvent.change(searchInput, { target: { value: "non existent wallet name" } });
+		});
+
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(0));
+
+		// Reset search
+		act(() => {
+			fireEvent.click(getByTestId("header-search-bar__reset"));
+		});
+
+		await waitFor(() => expect(searchInput).toHaveValue(""));
+		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(4));
+
+		jest.useRealTimers();
 	});
 });

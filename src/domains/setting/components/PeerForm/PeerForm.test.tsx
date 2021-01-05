@@ -5,6 +5,14 @@ import { act, fireEvent, render, RenderResult, waitFor } from "testing-library";
 
 import { PeerForm } from "./PeerForm";
 
+const peer = {
+	coin: "ARK",
+	network: "ark.devnet",
+	name: "ROBank",
+	host: "http://167.114.29.48:4003/api",
+	isMultiSignature: false,
+};
+
 const onSave = jest.fn();
 
 describe("PeerForm", () => {
@@ -57,9 +65,11 @@ describe("PeerForm", () => {
 			expect(selectNetworkInput).toHaveValue("Bitcoin");
 
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
-			await fireEvent.input(getByTestId("PeerForm__host-input"), { target: { value: "194.168.4.67" } });
+			await fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4003/api" },
+			});
 
-			const submitButton = getByTestId("PeerForm__add-button");
+			const submitButton = getByTestId("PeerForm__submit-button");
 			expect(submitButton).toBeTruthy();
 			await waitFor(() => {
 				expect(submitButton).not.toHaveAttribute("disabled");
@@ -69,5 +79,21 @@ describe("PeerForm", () => {
 
 			await waitFor(() => expect(onSave).toHaveBeenCalled());
 		});
+	});
+
+	it("should render the peer on the form", async () => {
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = render(<PeerForm networks={networks} peer={peer} onSave={onSave} />);
+		});
+
+		const { asFragment, getByTestId } = rendered;
+
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
+		expect(getByTestId("PeerForm__name-input")).toHaveValue(peer.name);
+		expect(getByTestId("PeerForm__host-input")).toHaveValue(peer.host);
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -1,9 +1,9 @@
+import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputAddonEnd, InputAddonStart, InputGroup } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
@@ -28,7 +28,13 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { amount, smartbridge } = form.watch();
-	const { qrCodeDataUri, qrCodeDataImage } = useQRCode({ amount, smartbridge, network, address });
+
+	const { uri, image } = useQRCode({
+		amount,
+		smartbridge,
+		network,
+		address,
+	});
 
 	return (
 		<Modal
@@ -39,7 +45,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 			onClose={onClose}
 		>
 			{name && (
-				<div data-testid="ReceiveFunds__info">
+				<div data-testid="ReceiveFunds__name">
 					<TransactionDetail
 						borderPosition="bottom"
 						label={t("COMMON.NAME")}
@@ -50,19 +56,19 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				</div>
 			)}
 
-			<div data-testid="ReceiveFunds__info">
+			<div data-testid="ReceiveFunds__address">
 				<TransactionDetail
 					label={t("COMMON.ADDRESS")}
 					borderPosition="bottom"
 					extra={
-						<div className="-space-x-2">
+						<div className="-space-x-2 whitespace-no-wrap">
 							{!name && <NetworkIcon size="lg" coin={icon} network={network} />}
 							<Avatar address={address} size="lg" />
 						</div>
 					}
 				>
-					<div className="flex items-center space-x-3">
-						<span>{address}</span>
+					<div className="flex items-center space-x-2">
+						<Address address={address} maxChars={25} />
 						<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
 							<Clipboard data={address}>
 								<Icon name="Copy" />
@@ -75,8 +81,8 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 			<div>
 				{!isFormOpen && (
 					<Button
-						variant="plain"
-						className="w-full mt-8 mb-2"
+						variant="secondary"
+						className="mt-8 w-full"
 						onClick={() => setIsFormOpen(true)}
 						data-testid="ReceiveFunds__toggle"
 					>
@@ -91,11 +97,11 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				)}
 			</div>
 
-			<div className="mt-8">
-				{qrCodeDataImage && (
+			<div className="mx-auto mt-8 w-64 h-64">
+				{image && (
 					<img
-						src={qrCodeDataImage}
-						className="w-64 h-64 mx-auto"
+						src={image}
+						className="p-3 w-64 h-64 rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
 					/>
@@ -104,24 +110,26 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 			{isFormOpen && (
 				<>
-					<div className="max-w-sm mx-auto mt-6 text-center text-theme-neutral-600">
+					<div className="mx-auto mt-6 max-w-sm text-center text-theme-neutral-600">
 						{t("COMMON.QR_CODE_HELP_TEXT")}
 					</div>
 
-					<div className="mt-8" data-testid="ReceiveFundsForm__uri">
-						<InputGroup>
-							<InputAddonStart className="px-4 m-px border-r border-theme-neutral-500 bg-theme-neutral-200">
-								{t("COMMON.QR_SHORT")}
-							</InputAddonStart>
-							<Input className="truncate pl-18 pr-13" disabled value={qrCodeDataUri} />
-							<InputAddonEnd className="px-4 m-px border-r border-theme-neutral-500">
-								<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
-									<Clipboard data={qrCodeDataUri}>
-										<Icon name="Copy" />
-									</Clipboard>
-								</span>
-							</InputAddonEnd>
-						</InputGroup>
+					<div
+						className="flex overflow-hidden mt-8 font-medium rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
+						data-testid="ReceiveFundsForm__uri"
+					>
+						<div className="p-6 bg-theme-neutral-200 dark:bg-theme-neutral-800">
+							<span className="text-theme-secondary-text">{t("COMMON.QR_SHORT")}</span>
+						</div>
+
+						<div className="flex overflow-hidden justify-between items-center pr-5 pl-6 space-x-4 w-full bg-theme-neutral-100 dark:bg-theme-background">
+							<span className="truncate">{uri}</span>
+							<span className="flex text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700">
+								<Clipboard data={uri}>
+									<Icon name="Copy" width={12} height={15} className="p-1" />
+								</Clipboard>
+							</span>
+						</div>
 					</div>
 				</>
 			)}

@@ -14,10 +14,10 @@ type PageProps = {
 };
 
 export const Page = ({ navbarVariant, title, profile, crumbs, sidebar, children }: PageProps) => (
-	<div className="relative flex flex-col min-h-screen bg-theme-secondary-background">
+	<div className="flex relative flex-col min-h-screen bg-theme-secondary-background">
 		{<NavigationBar variant={navbarVariant} title={title} profile={profile} />}
 
-		{crumbs?.length && <Breadcrumbs crumbs={crumbs} className="container py-5 mx-auto font-semibold px-14" />}
+		{crumbs?.length && <Breadcrumbs crumbs={crumbs} className="container py-5 px-14 mx-auto font-semibold" />}
 
 		<div className={`flex flex-col flex-1 ${navbarVariant === "full" && !crumbs?.length ? "mt-5" : ""}`}>
 			{sidebar ? (
@@ -27,7 +27,7 @@ export const Page = ({ navbarVariant, title, profile, crumbs, sidebar, children 
 							{sidebar}
 						</div>
 
-						<div className="w-full ml-16">{children}</div>
+						<div className="ml-16 w-full">{children}</div>
 					</div>
 				</div>
 			) : (

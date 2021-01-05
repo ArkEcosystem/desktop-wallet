@@ -10,32 +10,18 @@ exports[`PeerListItem should render 1`] = `
       >
         <td>
           <div
-            class="sc-AxgMl erCQKr space-x-2"
+            class="sc-AxgMl fahKXy space-x-2"
           >
             <div
-              aria-label="ARK Devnet"
-              class="sc-Axmtr WBwgf border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-ark.devnet"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                data-testid="NetworkIcon__icon"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-            <span>
-              ARK Devnet
-            </span>
+              class="sc-Axmtr WBwgf border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+              data-testid="NetworkIcon__placeholder"
+            />
+            <span />
           </div>
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR"
+            class="sc-AxgMl SZsgs"
           >
             <span>
               ROBank
@@ -44,16 +30,16 @@ exports[`PeerListItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR"
+            class="sc-AxgMl SZsgs"
           >
             <span>
-              194.168.4.67
+              http://167.114.29.48:4003/api
             </span>
           </div>
         </td>
         <td>
           <div
-            class="sc-AxgMl blBnFR justify-center"
+            class="sc-AxgMl SZsgs justify-center"
           >
             <div
               class="sc-AxiKw dklFyP"
@@ -68,7 +54,7 @@ exports[`PeerListItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-AxgMl hSxjar justify-end"
+            class="sc-AxgMl bEeJcu justify-end"
           >
             <div
               class="relative"
@@ -78,8 +64,7 @@ exports[`PeerListItem should render 1`] = `
                 class="float-right"
               >
                 <button
-                  class="sc-AxjAm eRbxBA"
-                  color="primary"
+                  class="sc-AxjAm dKkppo"
                   type="button"
                 >
                   <div

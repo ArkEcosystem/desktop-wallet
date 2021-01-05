@@ -4,25 +4,25 @@ exports[`SelectRecipient should render disabled 1`] = `
 <div>
   <div>
     <div
-      class="relative flex items-center w-full text-left"
+      class="flex relative items-center w-full text-left"
       data-testid="SelectRecipient__wrapper"
     >
       <div
         class="absolute left-1"
       >
         <div
-          class="sc-AxjAm fWyUly mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+          class="sc-AxjAm fWyUly mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
         />
       </div>
       <input
-        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
         data-testid="SelectRecipient__input"
         disabled=""
         type="text"
         value=""
       />
       <div
-        class="absolute flex items-center space-x-3 cursor-pointer right-4"
+        class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
         data-testid="SelectRecipient__select-recipient"
       >
         <div
@@ -44,24 +44,24 @@ exports[`SelectRecipient should render empty 1`] = `
 <div>
   <div>
     <div
-      class="relative flex items-center w-full text-left"
+      class="flex relative items-center w-full text-left"
       data-testid="SelectRecipient__wrapper"
     >
       <div
         class="absolute left-1"
       >
         <div
-          class="sc-AxjAm fWyUly mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+          class="sc-AxjAm fWyUly mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
         />
       </div>
       <input
-        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
         data-testid="SelectRecipient__input"
         type="text"
         value=""
       />
       <div
-        class="absolute flex items-center space-x-3 cursor-pointer right-4"
+        class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
         data-testid="SelectRecipient__select-recipient"
       >
         <div
@@ -83,25 +83,25 @@ exports[`SelectRecipient should render invalid 1`] = `
 <div>
   <div>
     <div
-      class="relative flex items-center w-full text-left"
+      class="flex relative items-center w-full text-left"
       data-testid="SelectRecipient__wrapper"
     >
       <div
         class="absolute left-1"
       >
         <div
-          class="sc-AxjAm fWyUly mx-3 bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800"
+          class="sc-AxjAm fWyUly mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
         />
       </div>
       <input
         aria-invalid="true"
-        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
         data-testid="SelectRecipient__input"
         type="text"
         value=""
       />
       <div
-        class="absolute flex items-center space-x-3 cursor-pointer right-4"
+        class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
         data-testid="SelectRecipient__select-recipient"
       >
         <div
@@ -123,7 +123,7 @@ exports[`SelectRecipient should render with preselected address 1`] = `
 <div>
   <div>
     <div
-      class="relative flex items-center w-full text-left"
+      class="flex relative items-center w-full text-left"
       data-testid="SelectRecipient__wrapper"
     >
       <div
@@ -145,13 +145,13 @@ exports[`SelectRecipient should render with preselected address 1`] = `
         </div>
       </div>
       <input
-        class="sc-AxiKw geAJqa overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-text transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+        class="sc-AxiKw kVCaxI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
         data-testid="SelectRecipient__input"
         type="text"
         value="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
       />
       <div
-        class="absolute flex items-center space-x-3 cursor-pointer right-4"
+        class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
         data-testid="SelectRecipient__select-recipient"
       >
         <div

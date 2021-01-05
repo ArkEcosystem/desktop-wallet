@@ -33,7 +33,7 @@ export const ProfileCreated = ({ isOpen, onClose, onSkip, onStart }: ProfileCrea
 
 				<div className="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3">
 					<Button onClick={onStart}>{t("PROFILE.MODAL_PROFILE_CREATED.START_TUTORIAL")}</Button>
-					<Button variant="plain" className="mt-2 sm:mt-0" onClick={onSkip}>
+					<Button variant="secondary" className="mt-2 sm:mt-0" onClick={onSkip}>
 						{t("PROFILE.MODAL_PROFILE_CREATED.SKIP_TUTORIAL")}
 					</Button>
 				</div>
