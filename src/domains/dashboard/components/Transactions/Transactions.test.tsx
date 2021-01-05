@@ -143,7 +143,7 @@ describe("Transactions", () => {
 	it("should fetch more transactions", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={profile} />
+				<Transactions profile={profile} isLoading={false} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -152,7 +152,7 @@ describe("Transactions", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
+			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
 			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
 		});
 
