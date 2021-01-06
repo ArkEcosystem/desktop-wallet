@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { TransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
+import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";

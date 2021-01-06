@@ -1,2 +1,2 @@
-export * from "./MultiSignatureRegistrationDetail";
 export * from "./MultiSignatureDetail";
+export * from "./MultiSignatureRegistrationDetail";

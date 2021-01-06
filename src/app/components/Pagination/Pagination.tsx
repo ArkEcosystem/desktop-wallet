@@ -42,7 +42,7 @@ const PaginationButton = styled.div`
 `;
 
 const PaginationSearchButton = styled.div`
-	${tw`relative text-theme-primary-500 p-3 cursor-pointer flex flex-no-wrap items-center`}
+	${tw`relative text-theme-primary-500 p-3 cursor-pointer flex flex-nowrap items-center`}
 
 	&:hover {
 		${tw`bg-theme-primary text-white rounded`}

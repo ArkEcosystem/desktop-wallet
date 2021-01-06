@@ -1,10 +1,15 @@
 const defaultConfig = require("tailwindcss/defaultConfig");
-const tailwindUI = require("@tailwindcss/ui");
-const tailwindcssDebugScreens = require("tailwindcss-debug-screens");
 
 module.exports = {
 	purge: false,
+	darkMode: "media",
 	theme: {
+		screens: {
+			sm: "640px",
+			md: "768px",
+			lg: "1024px",
+			xl: "1280px",
+		},
 		fontFamily: {
 			sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
 		},
@@ -217,9 +222,6 @@ module.exports = {
 			listStyleType: {
 				circle: "circle",
 			},
-			screens: {
-				dark: { raw: "(prefers-color-scheme: dark)" },
-			},
 		},
 	},
 	variants: {
@@ -229,5 +231,5 @@ module.exports = {
 		opacity: [...defaultConfig.variants.opacity, "group-hover"],
 		padding: [...defaultConfig.variants.padding, "first", "last"],
 	},
-	plugins: [tailwindUI, tailwindcssDebugScreens],
+	plugins: [require("@tailwindcss/forms")],
 };

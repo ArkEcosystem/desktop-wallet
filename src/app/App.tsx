@@ -115,9 +115,6 @@ const Main = () => {
 		boot();
 	}, [env, handleError, persist, runAll, loadPlugins]);
 
-	/* istanbul ignore next */
-	const className = __DEV__ ? "debug-screens" : "";
-
 	const renderContent = () => {
 		if (showSplash) {
 			return <Splash />;
@@ -131,7 +128,7 @@ const Main = () => {
 	};
 
 	return (
-		<main className={className} data-testid="Main">
+		<main data-testid="Main">
 			<ToastContainer newestOnTop />
 
 			{renderContent()}

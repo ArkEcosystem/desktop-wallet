@@ -31,8 +31,8 @@ describe("MultiSignatureDetail", () => {
 		ipfs: undefined,
 	};
 
-	beforeAll(() => {
-		syncDelegates();
+	beforeAll(async () => {
+		await syncDelegates();
 	});
 
 	beforeEach(async () => {

@@ -3,7 +3,7 @@
 exports[`TransactionRecipients should render a recipients array 1`] = `
 <div>
   <div
-    class="sc-AxmLO cvWCIb"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
     data-testid="TransactionDetail"
   >
     <div
@@ -21,10 +21,10 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
           class="-my-2"
         >
           <div
-            class="sc-Axmtr SNYwX"
+            class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
           >
             <div
-              class="sc-AxhUy gupDsa -mt-3"
+              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
               role="table"
             >
               <table
@@ -91,7 +91,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                       class="py-4 w-12"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
                         data-testid="Avatar"
                       >
                         <div
@@ -115,7 +115,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                           class="inline-flex items-center"
                         >
                           <span
-                            class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             test-address
@@ -127,7 +127,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                       class="py-4 text-right"
                     >
                       <div
-                        class="sc-AxhCb jceXZf"
+                        class="Label-sc-1tj9hzr-0 ganlOQ"
                         color="danger"
                       >
                         <span
@@ -146,7 +146,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                       class="py-4 w-12"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNpDPZ"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
                         data-testid="Avatar"
                       >
                         <div
@@ -170,7 +170,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                           class="inline-flex items-center"
                         >
                           <span
-                            class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             test-address
@@ -182,7 +182,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                       class="py-4 text-right"
                     >
                       <div
-                        class="sc-AxhCb jceXZf"
+                        class="Label-sc-1tj9hzr-0 ganlOQ"
                         color="danger"
                       >
                         <span
@@ -207,7 +207,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
 exports[`TransactionRecipients should render a single recipient 1`] = `
 <div>
   <div
-    class="sc-AxmLO cvWCIb"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
     data-testid="TransactionDetail"
   >
     <div
@@ -225,7 +225,7 @@ exports[`TransactionRecipients should render a single recipient 1`] = `
           class="inline-flex items-center"
         >
           <span
-            class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
             data-testid="address__wallet-address"
           >
             test-address
@@ -234,7 +234,7 @@ exports[`TransactionRecipients should render a single recipient 1`] = `
       </div>
     </div>
     <div
-      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
       data-testid="Avatar"
     >
       <div
@@ -254,7 +254,7 @@ exports[`TransactionRecipients should render a single recipient 1`] = `
 exports[`TransactionRecipients should render a single recipient with alias 1`] = `
 <div>
   <div
-    class="sc-AxmLO cvWCIb"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
     data-testid="TransactionDetail"
   >
     <div
@@ -278,7 +278,7 @@ exports[`TransactionRecipients should render a single recipient with alias 1`] =
             test-alias
           </span>
           <span
-            class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
             data-testid="address__wallet-address"
           >
             test-address
@@ -287,7 +287,7 @@ exports[`TransactionRecipients should render a single recipient with alias 1`] =
       </div>
     </div>
     <div
-      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
       data-testid="Avatar"
     >
       <div

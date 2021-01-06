@@ -10,19 +10,19 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 NWPmM absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ gbgRxA w-11 h-11"
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxiKw kgmJgX"
+            class="sc-bdfBwQ bfBhNR"
             height="14"
             width="14"
           >
@@ -52,7 +52,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
             class="mt-8"
           >
             <div
-              class="sc-fznyAO jJDQKq -mt-3"
+              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
               role="table"
             >
               <table
@@ -83,7 +83,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-bdfBwQ iABjnS"
                             height="12"
                             width="15"
                           >
@@ -113,7 +113,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-bdfBwQ iABjnS"
                             height="12"
                             width="15"
                           >
@@ -150,7 +150,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                                   Search
                                 </span>
                                 <div
-                                  class="sc-AxiKw cytFlT text-theme-primary-300 dark:text-theme-neutral-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-neutral-600"
                                   height="18"
                                   width="18"
                                 >
@@ -170,23 +170,23 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-fznZeY gQCGHj group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="sc-fznKkj bSJzgJ space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
                       >
                         <div
                           class="-space-x-2"
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="sc-fzokOt keXHvo border-theme-primary-100 text-theme-primary-400"
+                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-AxiKw dklFyP"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -197,7 +197,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                             data-testid="Avatar"
                           >
                             <div
@@ -221,7 +221,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             Sample Wallet
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6 … VBMs6YUYD
@@ -231,7 +231,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj cXxwSD font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL font-semibold justify-end"
                       >
                         <span
                           data-testid="Amount"
@@ -242,10 +242,10 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj csNbpV justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                       >
                         <button
-                          class="sc-AxirZ bVQYPH"
+                          class="Button-mdtvtf-0 ifPnXw"
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
@@ -275,19 +275,19 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fzplWN iIyxwv absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 NWPmM absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ gbgRxA w-11 h-11"
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxiKw kgmJgX"
+            class="sc-bdfBwQ bfBhNR"
             height="14"
             width="14"
           >
@@ -317,7 +317,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
             class="mt-8"
           >
             <div
-              class="sc-fznyAO jJDQKq -mt-3"
+              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
               role="table"
             >
               <table
@@ -348,7 +348,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-bdfBwQ iABjnS"
                             height="12"
                             width="15"
                           >
@@ -378,7 +378,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-bdfBwQ iABjnS"
                             height="12"
                             width="15"
                           >
@@ -408,7 +408,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxiKw GMmVY"
+                            class="sc-bdfBwQ iABjnS"
                             height="12"
                             width="15"
                           >
@@ -445,7 +445,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                                   Search
                                 </span>
                                 <div
-                                  class="sc-AxiKw cytFlT text-theme-primary-300 dark:text-theme-neutral-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-neutral-600"
                                   height="18"
                                   width="18"
                                 >
@@ -465,23 +465,23 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="sc-fznZeY gQCGHj group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="sc-fznKkj bSJzgJ space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
                       >
                         <div
                           class="-space-x-2"
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="sc-fzokOt keXHvo border-theme-primary-100 text-theme-primary-400"
+                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
-                              class="sc-AxiKw dklFyP"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="NetworkIcon__icon"
                               height="20"
                               width="20"
@@ -492,7 +492,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                             data-testid="Avatar"
                           >
                             <div
@@ -516,7 +516,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             Sample Wallet
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6 … VBMs6YUYD
@@ -526,7 +526,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj cXxwSD font-semibold justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL font-semibold justify-end"
                       >
                         <span
                           data-testid="Amount"
@@ -537,7 +537,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj cXxwSD text-theme-neutral-light justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-neutral-light justify-end"
                       >
                         <span
                           data-testid="Amount"
@@ -548,10 +548,10 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="sc-fznKkj csNbpV justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                       >
                         <button
-                          class="sc-AxirZ bVQYPH"
+                          class="Button-mdtvtf-0 ifPnXw"
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >

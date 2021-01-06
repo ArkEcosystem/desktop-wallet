@@ -4,4 +4,4 @@ import { SendRegistration } from "./SendRegistration";
 import { SendTransfer } from "./SendTransfer";
 import { SendVote } from "./SendVote";
 
-export { SendRegistration, SendDelegateResignation, SendTransfer, SendIpfs, SendVote };
+export { SendDelegateResignation, SendIpfs, SendRegistration, SendTransfer, SendVote };

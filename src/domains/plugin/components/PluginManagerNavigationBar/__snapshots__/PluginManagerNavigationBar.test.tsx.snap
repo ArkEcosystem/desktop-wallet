@@ -2,33 +2,23 @@
 
 exports[`PluginManagerNavigationBar should render 1`] = `
 <DocumentFragment>
-<<<<<<< HEAD
   <div>
     <nav
-      class="sc-AxiKw fJGuCV sticky md:top-24 top-20 bg-theme-neutral-contrast"
+      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 czNPRY sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
       data-testid="PluginManagerNavigationBar"
-=======
-  <nav
-    class="sc-AxirZ gJMdXQ sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
-    data-testid="PluginManagerNavigationBar"
-  >
-    <div
-      class="container flex justify-between items-center px-14 mx-auto"
->>>>>>> origin/develop
     >
       <div
-        class="container flex items-center justify-between mx-auto px-14"
+        class="container flex justify-between items-center px-14 mx-auto"
       >
         <div>
           <ul
             class="flex h-24"
           >
-<<<<<<< HEAD
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
                 title="Home"
               >
@@ -37,248 +27,103 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 </span>
               </button>
               <div
-                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
               />
             </li>
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
                 title="Game"
               >
                 <span>
                   Game
                 </span>
-                <span
-                  class="ml-1 text-theme-neutral"
-                >
-                  48
-                </span>
               </button>
               <div
-                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
               />
             </li>
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
                 title="Utility"
               >
                 <span>
                   Utility
                 </span>
-                <span
-                  class="ml-1 text-theme-neutral"
-                >
-                  264
-                </span>
               </button>
               <div
-                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
               />
             </li>
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
                 title="Themes"
               >
                 <span>
                   Themes
                 </span>
-                <span
-                  class="ml-1 text-theme-neutral"
-                >
-                  96
-                </span>
               </button>
               <div
-                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
               />
             </li>
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
                 title="Other"
               >
                 <span>
                   Other
                 </span>
-                <span
-                  class="ml-1 text-theme-neutral"
-                >
-                  27
-                </span>
               </button>
             </li>
           </ul>
         </div>
-=======
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-              data-testid="PluginManagerNavigationBar__home"
-              title="Home"
-            >
-              <span>
-                Home
-              </span>
-            </button>
-            <div
-              class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </li>
-          <li
-            class="flex"
-          >
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-              data-testid="PluginManagerNavigationBar__game"
-              title="Game"
-            >
-              <span>
-                Game
-              </span>
-              <span
-                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-              >
-                48
-              </span>
-            </button>
-            <div
-              class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </li>
-          <li
-            class="flex"
-          >
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-              data-testid="PluginManagerNavigationBar__utility"
-              title="Utility"
-            >
-              <span>
-                Utility
-              </span>
-              <span
-                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-              >
-                264
-              </span>
-            </button>
-            <div
-              class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </li>
-          <li
-            class="flex"
-          >
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-              data-testid="PluginManagerNavigationBar__themes"
-              title="Themes"
-            >
-              <span>
-                Themes
-              </span>
-              <span
-                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-              >
-                96
-              </span>
-            </button>
-            <div
-              class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </li>
-          <li
-            class="flex"
-          >
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-              data-testid="PluginManagerNavigationBar__other"
-              title="Other"
-            >
-              <span>
-                Other
-              </span>
-              <span
-                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-              >
-                27
-              </span>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="flex h-24"
-      >
-        <button
-          class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-          data-testid="PluginManagerNavigationBar__my-plugins"
-          title="My Plugins"
-        >
-          <span>
-            My Plugins
-          </span>
-          <span
-            class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-          >
-            8
-          </span>
-        </button>
-        <div
-          class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-        />
->>>>>>> origin/develop
         <div
           class="flex h-24"
         >
           <button
-            class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+            class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
             title="My Plugins"
           >
             <span>
-              MyPlugin
+              My Plugins
             </span>
             <span
-              class="ml-1 text-theme-neutral"
-            >
-              8
-            </span>
+              class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+            />
           </button>
           <div
-            class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center space-x-1"
           >
             <div
-<<<<<<< HEAD
               class="group"
               data-testid="LayoutControls__grid"
-=======
-              class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-              data-testid="LayoutControls__grid--icon"
->>>>>>> origin/develop
             >
               <div
-                class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
+                class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
                 data-testid="LayoutControls__grid--icon"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-gsTCUz fHxsLl"
                   height="20"
                   width="20"
                 >
@@ -289,20 +134,15 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               </div>
             </div>
             <div
-<<<<<<< HEAD
               class="group"
               data-testid="LayoutControls__list"
-=======
-              class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-              data-testid="LayoutControls__list--icon"
->>>>>>> origin/develop
             >
               <div
-                class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
                 data-testid="LayoutControls__list--icon"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-gsTCUz fHxsLl"
                   height="20"
                   width="20"
                 >
@@ -322,33 +162,23 @@ exports[`PluginManagerNavigationBar should render 1`] = `
 
 exports[`PluginManagerNavigationBar should update selected 1`] = `
 <DocumentFragment>
-<<<<<<< HEAD
   <div>
     <nav
-      class="sc-AxiKw fJGuCV sticky md:top-24 top-20 bg-theme-neutral-contrast"
+      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 czNPRY sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
       data-testid="PluginManagerNavigationBar"
-=======
-  <nav
-    class="sc-AxirZ gJMdXQ sticky top-20 md:top-24 bg-theme-neutral-contrast dark:bg-theme-neutral-800"
-    data-testid="PluginManagerNavigationBar"
-  >
-    <div
-      class="container flex justify-between items-center px-14 mx-auto"
->>>>>>> origin/develop
     >
       <div
-        class="container flex items-center justify-between mx-auto px-14"
+        class="container flex justify-between items-center px-14 mx-auto"
       >
         <div>
           <ul
             class="flex h-24"
           >
-<<<<<<< HEAD
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
                 title="Home"
               >
@@ -357,248 +187,103 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 </span>
               </button>
               <div
-                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
               />
             </li>
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
                 title="Game"
               >
                 <span>
                   Game
                 </span>
-                <span
-                  class="ml-1 text-theme-neutral"
-                >
-                  48
-                </span>
               </button>
               <div
-                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
               />
             </li>
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
                 title="Utility"
               >
                 <span>
                   Utility
                 </span>
-                <span
-                  class="ml-1 text-theme-neutral"
-                >
-                  264
-                </span>
               </button>
               <div
-                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
               />
             </li>
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
                 title="Themes"
               >
                 <span>
                   Themes
                 </span>
-                <span
-                  class="ml-1 text-theme-neutral"
-                >
-                  96
-                </span>
               </button>
               <div
-                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
               />
             </li>
             <li
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
                 title="Other"
               >
                 <span>
                   Other
                 </span>
-                <span
-                  class="ml-1 text-theme-neutral"
-                >
-                  27
-                </span>
               </button>
             </li>
           </ul>
         </div>
-=======
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
-              data-testid="PluginManagerNavigationBar__home"
-              title="Home"
-            >
-              <span>
-                Home
-              </span>
-            </button>
-            <div
-              class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </li>
-          <li
-            class="flex"
-          >
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-              data-testid="PluginManagerNavigationBar__game"
-              title="Game"
-            >
-              <span>
-                Game
-              </span>
-              <span
-                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-              >
-                48
-              </span>
-            </button>
-            <div
-              class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </li>
-          <li
-            class="flex"
-          >
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-              data-testid="PluginManagerNavigationBar__utility"
-              title="Utility"
-            >
-              <span>
-                Utility
-              </span>
-              <span
-                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-              >
-                264
-              </span>
-            </button>
-            <div
-              class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </li>
-          <li
-            class="flex"
-          >
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-              data-testid="PluginManagerNavigationBar__themes"
-              title="Themes"
-            >
-              <span>
-                Themes
-              </span>
-              <span
-                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-              >
-                96
-              </span>
-            </button>
-            <div
-              class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-          </li>
-          <li
-            class="flex"
-          >
-            <button
-              class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-              data-testid="PluginManagerNavigationBar__other"
-              title="Other"
-            >
-              <span>
-                Other
-              </span>
-              <span
-                class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-              >
-                27
-              </span>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="flex h-24"
-      >
-        <button
-          class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
-          data-testid="PluginManagerNavigationBar__my-plugins"
-          title="My Plugins"
-        >
-          <span>
-            My Plugins
-          </span>
-          <span
-            class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
-          >
-            8
-          </span>
-        </button>
-        <div
-          class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-        />
->>>>>>> origin/develop
         <div
           class="flex h-24"
         >
           <button
-            class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+            class="PluginManagerNavigationBar__item px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
             title="My Plugins"
           >
             <span>
-              MyPlugin
+              My Plugins
             </span>
             <span
-              class="ml-1 text-theme-neutral"
-            >
-              8
-            </span>
+              class="ml-1 text-theme-neutral dark:text-theme-neutral-700"
+            />
           </button>
           <div
-            class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
           />
           <div
             class="flex items-center space-x-1"
           >
             <div
-<<<<<<< HEAD
               class="group"
               data-testid="LayoutControls__grid"
-=======
-              class="LayoutControls__ControlButton-j2iwgi-0 jokMRz"
-              data-testid="LayoutControls__grid--icon"
->>>>>>> origin/develop
             >
               <div
-                class="LayoutControls__ControlButton-j2iwgi-0 gyDdjy"
+                class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
                 data-testid="LayoutControls__grid--icon"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-gsTCUz fHxsLl"
                   height="20"
                   width="20"
                 >
@@ -609,20 +294,15 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               </div>
             </div>
             <div
-<<<<<<< HEAD
               class="group"
               data-testid="LayoutControls__list"
-=======
-              class="LayoutControls__ControlButton-j2iwgi-0 gtQUIK"
-              data-testid="LayoutControls__list--icon"
->>>>>>> origin/develop
             >
               <div
-                class="LayoutControls__ControlButton-j2iwgi-0 iyqmGf"
+                class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
                 data-testid="LayoutControls__list--icon"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
+                  class="sc-gsTCUz fHxsLl"
                   height="20"
                   width="20"
                 >
