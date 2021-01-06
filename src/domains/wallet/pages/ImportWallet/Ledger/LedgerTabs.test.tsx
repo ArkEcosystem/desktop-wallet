@@ -239,7 +239,7 @@ describe("LedgerTabs", () => {
 			fireEvent.click(nextSelector());
 		});
 
-		await waitFor(() => expect(screen.getByTestId("LedgerImportStep")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("LedgerImportStep")).toBeInTheDocument(), { timeout: 10000 });
 
 		// Import wallets before entering the last step
 		expect(profile.wallets().values()).toHaveLength(4);

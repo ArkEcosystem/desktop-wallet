@@ -15,7 +15,7 @@ describe("SignIn", () => {
 		profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 	});
 
-	beforeAll(() => {
+	beforeEach(() => {
 		jest.useFakeTimers();
 	});
 
@@ -138,17 +138,13 @@ describe("SignIn", () => {
 		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
 		act(() => {
-			Promise.resolve().then(() => {
-				jest.advanceTimersByTime(65000);
-				jest.clearAllTimers();
-			});
+			jest.advanceTimersByTime(65000);
+			jest.clearAllTimers();
 		});
 
 		// wait for form to be updated
 		await findByTestId("SignIn__submit-button");
 
-		await waitFor(() => {
-			expect(queryByText("The Password is invalid")).toBeTruthy();
-		});
+		await waitFor(() => expect(queryByText("The Password is invalid")).toBeTruthy(), { timeout: 10000 });
 	});
 });

@@ -6,7 +6,7 @@ import React from "react";
 import { FallbackProps } from "react-error-boundary";
 import { useTranslation } from "react-i18next";
 
-export const ApplicationError = ({ resetErrorBoundary }: FallbackProps) => {
+export const ApplicationError = ({ resetErrorBoundary }: Partial<FallbackProps>) => {
 	const { t } = useTranslation();
 
 	return (

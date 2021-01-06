@@ -47,6 +47,8 @@ module.exports = {
 		"@typescript-eslint/no-unsafe-member-access": "off",
 		"@typescript-eslint/no-unsafe-return": "off",
 		"@typescript-eslint/no-unused-vars": "off",
+		"no-unused-expressions": "off",
+		"@typescript-eslint/no-unused-expressions": "off",
 		"@typescript-eslint/no-var-requires": "off",
 		"@typescript-eslint/prefer-regexp-exec": "off",
 		"@typescript-eslint/restrict-template-expressions": "off",
@@ -67,7 +69,8 @@ module.exports = {
 		"react-hooks/exhaustive-deps": "warn",
 		"react-hooks/rules-of-hooks": "error",
 		"react/self-closing-comp": "error",
-		"simple-import-sort/sort": "error",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
 		"unused-imports/no-unused-imports-ts": "error",
 	},
 	settings: {

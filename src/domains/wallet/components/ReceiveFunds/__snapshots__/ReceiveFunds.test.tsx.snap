@@ -10,19 +10,19 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy gDYeUI absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ gbgRxA w-11 h-11"
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxhCb ipiIgT"
+            class="sc-bdfBwQ bfBhNR"
             height="14"
             width="14"
           >
@@ -52,7 +52,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
             data-testid="ReceiveFunds__address"
           >
             <div
-              class="sc-Axmtr dAZmZS"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hjhrLd"
               data-testid="TransactionDetail"
             >
               <div
@@ -80,7 +80,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxhCb fxrKLH"
+                          class="sc-bdfBwQ fPrsah"
                           height="1em"
                           width="1em"
                         >
@@ -98,11 +98,11 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
+                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
-                    class="sc-AxhCb VoPpj"
+                    class="sc-bdfBwQ iyevwF"
                     data-testid="NetworkIcon__icon"
                     height="20"
                     width="20"
@@ -113,7 +113,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                   data-testid="Avatar"
                 >
                   <div
@@ -131,7 +131,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
           </div>
           <div>
             <button
-              class="sc-AxirZ bVQYPH mt-8 w-full"
+              class="Button-mdtvtf-0 ifPnXw mt-8 w-full"
               data-testid="ReceiveFunds__toggle"
               type="button"
             >
@@ -158,19 +158,19 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy gDYeUI absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ gbgRxA w-11 h-11"
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxhCb ipiIgT"
+            class="sc-bdfBwQ bfBhNR"
             height="14"
             width="14"
           >
@@ -200,7 +200,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             data-testid="ReceiveFunds__name"
           >
             <div
-              class="sc-Axmtr dAZmZS"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hjhrLd"
               data-testid="TransactionDetail"
             >
               <div
@@ -219,11 +219,11 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
               </div>
               <div
                 aria-label="ARK Devnet"
-                class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
                 data-testid="NetworkIcon-ARK-ark.devnet"
               >
                 <div
-                  class="sc-AxhCb VoPpj"
+                  class="sc-bdfBwQ iyevwF"
                   data-testid="NetworkIcon__icon"
                   height="20"
                   width="20"
@@ -239,7 +239,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             data-testid="ReceiveFunds__address"
           >
             <div
-              class="sc-Axmtr dAZmZS"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hjhrLd"
               data-testid="TransactionDetail"
             >
               <div
@@ -260,7 +260,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                       class="inline-flex items-center"
                     >
                       <span
-                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         abc
@@ -274,7 +274,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxhCb fxrKLH"
+                          class="sc-bdfBwQ fPrsah"
                           height="1em"
                           width="1em"
                         >
@@ -291,7 +291,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 class="-space-x-2 whitespace-no-wrap"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                   data-testid="Avatar"
                 >
                   <div
@@ -309,7 +309,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           </div>
           <div>
             <button
-              class="sc-AxirZ bVQYPH mt-8 w-full"
+              class="Button-mdtvtf-0 ifPnXw mt-8 w-full"
               data-testid="ReceiveFunds__toggle"
               type="button"
             >
@@ -343,19 +343,19 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="sc-AxhUy gDYeUI absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="sc-AxirZ gbgRxA w-11 h-11"
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
           <div
-            class="sc-AxhCb ipiIgT"
+            class="sc-bdfBwQ bfBhNR"
             height="14"
             width="14"
           >
@@ -385,7 +385,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
             data-testid="ReceiveFunds__address"
           >
             <div
-              class="sc-Axmtr dAZmZS"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hjhrLd"
               data-testid="TransactionDetail"
             >
               <div
@@ -406,7 +406,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                       class="inline-flex items-center"
                     >
                       <span
-                        class="sc-AxjAm StDqN text-theme-text truncate font-semibold text-base"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         abc
@@ -420,7 +420,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                         data-testid="clipboard__wrapper"
                       >
                         <div
-                          class="sc-AxhCb fxrKLH"
+                          class="sc-bdfBwQ fPrsah"
                           height="1em"
                           width="1em"
                         >
@@ -438,11 +438,11 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="sc-AxgMl eQpXWo border-theme-primary-100 text-theme-primary-400"
+                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
-                    class="sc-AxhCb VoPpj"
+                    class="sc-bdfBwQ iyevwF"
                     data-testid="NetworkIcon__icon"
                     height="20"
                     width="20"
@@ -453,7 +453,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 eHceTZ"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                   data-testid="Avatar"
                 >
                   <div
@@ -471,7 +471,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           </div>
           <div>
             <button
-              class="sc-AxirZ bVQYPH mt-8 w-full"
+              class="Button-mdtvtf-0 ifPnXw mt-8 w-full"
               data-testid="ReceiveFunds__toggle"
               type="button"
             >

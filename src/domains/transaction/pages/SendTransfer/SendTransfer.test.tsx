@@ -7,8 +7,8 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import transactionMultipleFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer-multiple.json";
 import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
+import transactionMultipleFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer-multiple.json";
 import {
 	act as utilsAct,
 	env,
