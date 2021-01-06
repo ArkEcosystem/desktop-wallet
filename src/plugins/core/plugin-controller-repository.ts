@@ -35,6 +35,10 @@ export class PluginControllerRepository {
 		return this.#plugins.find((item) => item.config().id() === id);
 	}
 
+	filterByCategory(category: string) {
+		return this.#plugins.filter((item) => item.config().categories().includes(category));
+	}
+
 	currentProfile() {
 		return this.#currentProfile;
 	}

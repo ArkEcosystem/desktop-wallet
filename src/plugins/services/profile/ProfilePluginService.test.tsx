@@ -31,7 +31,7 @@ describe("StorePluginService", () => {
 			wallets = api.profile().wallets();
 		};
 
-		ctrl = new PluginController(config, fixture, manager.services());
+		ctrl = new PluginController(config, fixture);
 		ctrl.enable(profile);
 
 		manager.plugins().push(ctrl);

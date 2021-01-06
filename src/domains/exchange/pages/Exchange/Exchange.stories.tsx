@@ -4,7 +4,7 @@ import { Exchange } from "./Exchange";
 
 export default { title: "Domains / Exchange / Pages / Exchange" };
 
-export const Default = () => <Exchange exchanges={[]} />;
+export const Default = () => <Exchange />;
 
 export const WithExchanges = () => {
 	const exchanges = [
@@ -26,5 +26,5 @@ export const WithExchanges = () => {
 		},
 	];
 
-	return <Exchange exchanges={exchanges} />;
+	return <Exchange />;
 };

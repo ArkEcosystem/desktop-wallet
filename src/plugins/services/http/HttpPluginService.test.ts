@@ -35,7 +35,7 @@ describe("HttpPluginService", () => {
 			response = result.json();
 		};
 
-		ctrl = new PluginController(config, fixture, manager.services());
+		ctrl = new PluginController(config, fixture);
 		ctrl.enable(profile);
 
 		manager.plugins().push(ctrl);
@@ -58,7 +58,7 @@ describe("HttpPluginService", () => {
 				.then((result) => result.json());
 		};
 
-		ctrl = new PluginController(config, fixture, manager.services());
+		ctrl = new PluginController(config, fixture);
 		ctrl.enable(profile);
 
 		manager.plugins().push(ctrl);

@@ -5,12 +5,9 @@ import { Slider } from "app/components/Slider";
 import { useActiveProfile } from "app/hooks";
 import { AddExchange } from "domains/exchange/components/AddExchange";
 import { AddExchangeCard, BlankExchangeCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
+import { LaunchRender, PluginController, usePluginManager } from "plugins";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-
-type ExchangeProps = {
-	exchanges: any[];
-};
 
 const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
@@ -91,12 +88,14 @@ const ExchangesList = ({
 	);
 };
 
-export const Exchange = ({ exchanges }: ExchangeProps) => {
+export const Exchange = () => {
 	const activeProfile = useActiveProfile();
 
 	const [modalIsOpen, setModalIsOpen] = useState(false);
-	const [selectedExchange, setSelectedExchange] = useState(null);
+	const [selectedExchange, setSelectedExchange] = useState<PluginController | undefined>(undefined);
+	const pluginManager = usePluginManager();
 
+	const exchanges = pluginManager.plugins().filterByCategory("exchange");
 	const { t } = useTranslation();
 
 	return (
@@ -119,12 +118,18 @@ export const Exchange = ({ exchanges }: ExchangeProps) => {
 
 				<Section className="flex-1">
 					{exchanges.length ? (
-						<div className="text-center">
-							<Image name="ExchangeCardsBanner" domain="exchange" className="mx-auto" />
+						<div>
+							{selectedExchange ? (
+								<LaunchRender manager={pluginManager} pluginId={selectedExchange.config().id()} />
+							) : (
+								<div className="text-center">
+									<Image name="ExchangeCardsBanner" domain="exchange" className="mx-auto" />
 
-							<div className="mt-8 text-theme-secondary-text">
-								{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}
-							</div>
+									<div className="mt-8 text-theme-secondary-text">
+										{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}
+									</div>
+								</div>
+							)}
 						</div>
 					) : (
 						<Image name="NoExchangesBanner" domain="exchange" className="mx-auto" />
@@ -135,8 +140,4 @@ export const Exchange = ({ exchanges }: ExchangeProps) => {
 			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 		</>
 	);
-};
-
-Exchange.defaultProps = {
-	exchanges: [],
 };

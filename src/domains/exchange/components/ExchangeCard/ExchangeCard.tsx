@@ -50,7 +50,7 @@ export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProp
 					</div>
 				</div>
 
-				<div className="truncate">{exchange.name}</div>
+				<div className="truncate">{exchange.config().name()}</div>
 			</div>
 		</Card>
 	);

@@ -26,7 +26,7 @@ describe("LaunchPluginService", () => {
 		manager.services().register([new LaunchPluginService()]);
 		manager.services().boot();
 
-		ctrl = new PluginController(config, fixture, manager.services());
+		ctrl = new PluginController(config, fixture);
 		ctrl.enable(profile);
 	});
 

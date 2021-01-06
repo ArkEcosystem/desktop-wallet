@@ -31,7 +31,7 @@ describe("EventsPluginService", () => {
 			api.events().on("activated", () => (ready = true));
 		};
 
-		ctrl = new PluginController(config, fixture, manager.services());
+		ctrl = new PluginController(config, fixture);
 		ctrl.enable(profile);
 
 		manager.plugins().push(ctrl);
