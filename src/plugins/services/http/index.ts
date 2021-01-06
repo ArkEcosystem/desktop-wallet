@@ -1,2 +1,2 @@
-export * from "./HttpPluginService";
 export * from "./HttpPluginProvider";
+export * from "./HttpPluginService";
