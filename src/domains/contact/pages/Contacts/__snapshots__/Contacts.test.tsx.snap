@@ -345,7 +345,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   class="pl-8 my-auto ml-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli whitespace-no-wrap"
+                  class="Button-mdtvtf-0 cvPqli whitespace-nowrap"
                   data-testid="contacts__add-contact-btn"
                   type="button"
                 >
@@ -444,7 +444,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top whitespace-no-wrap justify-center no-border"
+                        class="flex flex-inline align-top whitespace-nowrap justify-center no-border"
                       >
                         <div>
                           Account Type
@@ -1335,7 +1335,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                 class="flex justify-end items-top"
               >
                 <button
-                  class="Button-mdtvtf-0 cvPqli whitespace-no-wrap"
+                  class="Button-mdtvtf-0 cvPqli whitespace-nowrap"
                   data-testid="contacts__add-contact-btn"
                   type="button"
                 >

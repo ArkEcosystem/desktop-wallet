@@ -61,7 +61,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					label={t("COMMON.ADDRESS")}
 					borderPosition="bottom"
 					extra={
-						<div className="-space-x-2 whitespace-no-wrap">
+						<div className="-space-x-2 whitespace-nowrap">
 							{!name && <NetworkIcon size="lg" coin={icon} network={network} />}
 							<Avatar address={address} size="lg" />
 						</div>

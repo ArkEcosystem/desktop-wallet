@@ -42,7 +42,7 @@ export const SelectOptionsList = styled.ul`
 	}
 
 	.select-list-option {
-		${tw`px-10 border-0`};
+		${tw`px-10 border-0 text-theme-neutral-800 dark:text-theme-neutral-200`};
 
 		&__label {
 			${tw`py-4 `};
@@ -56,15 +56,26 @@ export const SelectOptionsList = styled.ul`
 
 		&:hover,
 		&.is-highlighted {
-			${tw`-mt-px bg-theme-neutral-contrast`};
 			padding-top: 1px;
 
 			&:last-child {
 				${tw`-mb-px`};
 			}
+		}
+
+		&.is-highlighted {
+			${tw`-mt-px bg-theme-danger-100 dark:bg-theme-danger-400 text-theme-danger-400 dark:text-white`};
 
 			.select-list-option__label {
-				${tw`border-b border-theme-neutral-contrast`};
+				${tw`border-b border-theme-danger-100 dark:border-theme-danger-400`};
+			}
+		}
+
+		&:hover {
+			${tw`-mt-px bg-theme-neutral-200 dark:bg-theme-primary-600 text-theme-primary dark:text-theme-neutral-200`};
+
+			.select-list-option__label {
+				${tw`border-b border-theme-neutral-200 dark:border-theme-primary-600`};
 			}
 		}
 
