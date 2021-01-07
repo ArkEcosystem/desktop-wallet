@@ -1,4 +1,6 @@
 export const translations: { [key: string]: any } = {
+	TITLE: "Settings",
+
 	GENERAL: {
 		MENU_ITEM: "General",
 		TITLE: "Profile Settings",
@@ -76,7 +78,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PEERS: {
-		MENU_ITEM: "Peer",
+		MENU_ITEM: "Peers",
 		TITLE: "Peer Settings",
 		SUBTITLE: "Customize your network peer settings.",
 		BROADCAST_TRANSACTIONS: {

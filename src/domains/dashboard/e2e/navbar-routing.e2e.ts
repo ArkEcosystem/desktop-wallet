@@ -47,6 +47,6 @@ test("should navigate to news", async (t) => {
 test("should navigate back to portfolio", async (t) => {
 	await t.click(Selector("p").withExactText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.NEWS.NEWS));
-	await t.click(Selector("a").withExactText(translations.COMMON.GO_BACK_TO_PORTFOLIO));
+	await t.click(Selector("a").withExactText(translations.COMMON.DASHBOARD));
 	await t.expect(getLocation()).contains("/dashboard");
 });

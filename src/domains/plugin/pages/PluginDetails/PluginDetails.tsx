@@ -26,13 +26,16 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 	const { t } = useTranslation();
 
-	const { author, about, permissions, screenshots, category, url, averageRating, version, size } = pluginData;
+	const { name, author, about, permissions, screenshots, category, url, averageRating, version, size } = pluginData;
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	const crumbs = [
 		{
+			label: t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE"),
 			route: `/profiles/${activeProfile.id()}/plugins`,
-			label: t("PLUGINS.GO_BACK_TO_PLUGIN_STORE"),
+		},
+		{
+			label: name,
 		},
 	];
 
@@ -40,6 +43,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<PluginHeader
+					name={name}
 					author={author}
 					category={category}
 					url={url}

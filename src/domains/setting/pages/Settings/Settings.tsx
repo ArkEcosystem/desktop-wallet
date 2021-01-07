@@ -71,8 +71,11 @@ export const Settings = () => {
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+			label: t("SETTINGS.TITLE"),
+			route: `/profiles/${activeProfile.id()}/settings`,
+		},
+		{
+			label: settingsItems.find((item) => item.itemKey === (activeSettings as any))!.label,
 		},
 	];
 

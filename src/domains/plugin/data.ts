@@ -76,6 +76,7 @@ export const ratings = [
 ];
 
 export const pluginData = {
+	name: "ARK Explorer",
 	author: "ARK Ecosystem",
 	about:
 		"Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.",

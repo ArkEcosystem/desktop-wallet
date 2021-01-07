@@ -127,8 +127,15 @@ export const SendIpfs = () => {
 
 	const crumbs = [
 		{
+			label: t("COMMON.PORTFOLIO"),
 			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+		},
+		{
+			label: activeWallet.alias() || activeWallet.address(),
+			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+		},
+		{
+			label: t("TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE"),
 		},
 	];
 
