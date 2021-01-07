@@ -51,6 +51,35 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
+	it("should render with BTC as the default exchange currency", async () => {
+		const walletWithExchangeCurrencyMock = jest.spyOn(wallets[0], "exchangeCurrency").mockReturnValue(undefined);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<SearchWallet
+					showFiatValue={showFiatValue}
+					isOpen={true}
+					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
+					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
+					wallets={wallets}
+				/>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SELECT_ACCOUNT.TITLE),
+		);
+		await waitFor(() =>
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SELECT_ACCOUNT.DESCRIPTION),
+		);
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+
+		walletWithExchangeCurrencyMock.mockRestore();
+	});
+
 	it("should handle close", () => {
 		const onClose = jest.fn();
 
