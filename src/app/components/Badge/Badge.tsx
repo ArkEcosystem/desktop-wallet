@@ -9,6 +9,7 @@ type BadgeProps = {
 	className?: string;
 	children?: React.ReactNode;
 	icon?: string;
+	iconClass?: string;
 	iconWidth?: number;
 	iconHeight?: number;
 	position?: Position;
@@ -17,9 +18,9 @@ type BadgeProps = {
 export const Wrapper = styled.span<BadgeProps>(getStyles);
 
 export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
-	({ className, children, icon, iconWidth, iconHeight, position, ...props }: BadgeProps, ref) => (
+	({ className, children, icon, iconClass, iconWidth, iconHeight, position, ...props }: BadgeProps, ref) => (
 		<Wrapper ref={ref} position={position} className={`${defaultClasses} ${className}`} {...props}>
-			{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
+			{!!icon && <Icon name={icon} className={iconClass} width={iconWidth} height={iconHeight} />}
 			<span>{children}</span>
 		</Wrapper>
 	),

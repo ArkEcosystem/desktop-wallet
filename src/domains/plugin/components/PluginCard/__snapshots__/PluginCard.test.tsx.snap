@@ -321,21 +321,24 @@ exports[`PluginCard should trigger delete 1`] = `
       >
         <div
           class="relative"
-          data-testid="dropdown__toggle"
         >
-          <div
-            class="flex overflow-hidden justify-center w-4"
+          <span
+            data-testid="dropdown__toggle"
           >
             <div
-              class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-              height="1em"
-              width="1em"
+              class="flex overflow-hidden justify-center w-4"
             >
-              <svg>
-                settings.svg
-              </svg>
+              <div
+                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </span>
         </div>
       </div>
     </div>
@@ -416,21 +419,24 @@ exports[`PluginCard should trigger view 1`] = `
       >
         <div
           class="relative"
-          data-testid="dropdown__toggle"
         >
-          <div
-            class="flex overflow-hidden justify-center w-4"
+          <span
+            data-testid="dropdown__toggle"
           >
             <div
-              class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-              height="1em"
-              width="1em"
+              class="flex overflow-hidden justify-center w-4"
             >
-              <svg>
-                settings.svg
-              </svg>
+              <div
+                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </span>
         </div>
       </div>
     </div>

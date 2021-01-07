@@ -163,7 +163,12 @@ const SelectDropdown = ({
 				</SelectOptionsList>
 			</div>
 			<InputAddonEnd className="w-10 pointer-events-none text-theme-neutral">
-				<Icon name="CaretDown" className={isOpen ? "transform rotate-180" : ""} width={7} height={5} />
+				<Icon
+					name="CaretDown"
+					className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+					width={7}
+					height={5}
+				/>
 			</InputAddonEnd>
 		</div>
 	);

@@ -5,15 +5,15 @@ exports[`PeerListItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="sc-gKsewC eiNKCb group"
+        class="sc-jSgupP doGWJy group"
         data-testid="TableRow"
       >
         <td>
           <div
-            class="sc-jSgupP fCZKEw space-x-2"
+            class="sc-eCssSg gouzsF space-x-2"
           >
             <div
-              class="sc-iBPRYJ PDWSt border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+              class="sc-gKsewC bREmxR border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
               data-testid="NetworkIcon__placeholder"
             />
             <span />
@@ -21,7 +21,7 @@ exports[`PeerListItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-jSgupP kaSgFC"
+            class="sc-eCssSg gAHrgj"
           >
             <span>
               ROBank
@@ -30,7 +30,7 @@ exports[`PeerListItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-jSgupP kaSgFC"
+            class="sc-eCssSg gAHrgj"
           >
             <span>
               http://167.114.29.48:4003/api
@@ -39,7 +39,7 @@ exports[`PeerListItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-jSgupP kaSgFC justify-center"
+            class="sc-eCssSg gAHrgj justify-center"
           >
             <div
               class="sc-dlfnbm bkiXKS"
@@ -54,30 +54,33 @@ exports[`PeerListItem should render 1`] = `
         </td>
         <td>
           <div
-            class="sc-jSgupP caCGxI justify-end"
+            class="sc-eCssSg jdemhl justify-end"
           >
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="float-right"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="sc-bdfBwQ jBrzAp"
-                  type="button"
+                <div
+                  class="float-right"
                 >
-                  <div
-                    class="sc-dlfnbm bkiXKS"
-                    height="20"
-                    width="20"
+                  <button
+                    class="sc-bdfBwQ jBrzAp"
+                    type="button"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
+                    <div
+                      class="sc-dlfnbm bkiXKS"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </span>
             </div>
           </div>
         </td>

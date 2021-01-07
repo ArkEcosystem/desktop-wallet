@@ -8,38 +8,44 @@ exports[`FilterTransactions should open dropdown list with all transaction types
     <div
       class="relative"
     >
-      <span>
-        <div
-          class="flex items-center space-x-2 cursor-pointer"
-          data-testid="FilterTransactionsToggle"
+      <span
+        data-testid="dropdown__toggle"
+      >
+        <button
+          class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+          data-testid="CollapseToggleButton"
         >
-          <div
-            class="font-semibold"
-          >
+          <span>
             <span
-              class="text-theme-neutral-500"
+              class="text-theme-neutral-500 dark:text-theme-neutral-600"
             >
-              Type: 
+              Type
+              :
+               
             </span>
             <span
-              class="text-theme-neutral-600"
+              class="text-theme-neutral-700 dark:text-theme-neutral-200"
             >
               All
             </span>
-          </div>
-          <div
-            class="sc-gsTCUz fHAELl bg-theme-primary-600 text-theme-primary-contrast p-1 rounded-xl"
-            height="9"
-            width="9"
+          </span>
+          <span
+            class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 ddCabQ"
           >
-            <svg>
-              chevron-up.svg
-            </svg>
-          </div>
-        </div>
+            <div
+              class="sc-bdfBwQ TENjd"
+              height="10"
+              width="10"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </span>
+        </button>
       </span>
       <div
-        class="sc-dlfnbm bCkZwy mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl max-h-128 overflow-y-auto"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl w-80 max-h-128 overflow-y-auto"
       >
         <div
           data-testid="dropdown__content"
@@ -55,7 +61,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__options"
                 >
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--all-0"
                   >
                     <div
@@ -76,13 +82,13 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                 class="mx-8 -my-2"
               >
                 <div
-                  class="sc-bdfBwQ dsyhWn border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="sc-gsTCUz HSUWv border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
               <ul>
                 <li
-                  class="block px-8 pt-4 text-xs font-bold text-left uppercase cursor-pointer whitespace-no-wrap text-theme-neutral-500"
+                  class="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-neutral-500"
                 >
                   CORE
                 </li>
@@ -90,7 +96,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__options"
                 >
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-0"
                   >
                     <div
@@ -102,7 +108,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-1"
                   >
                     <div
@@ -114,7 +120,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-2"
                   >
                     <div
@@ -126,7 +132,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-3"
                   >
                     <div
@@ -138,7 +144,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-4"
                   >
                     <div
@@ -150,7 +156,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-5"
                   >
                     <div
@@ -162,7 +168,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-6"
                   >
                     <div
@@ -174,7 +180,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-7"
                   >
                     <div
@@ -186,7 +192,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-8"
                   >
                     <div
@@ -198,7 +204,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-9"
                   >
                     <div
@@ -210,7 +216,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--core-10"
                   >
                     <div
@@ -231,13 +237,13 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                 class="mx-8 -my-2"
               >
                 <div
-                  class="sc-bdfBwQ dsyhWn border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="sc-gsTCUz HSUWv border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
               <ul>
                 <li
-                  class="block px-8 pt-4 text-xs font-bold text-left uppercase cursor-pointer whitespace-no-wrap text-theme-neutral-500"
+                  class="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-neutral-500"
                 >
                   Magistrate
                 </li>
@@ -245,7 +251,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__options"
                 >
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-0"
                   >
                     <div
@@ -257,7 +263,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-1"
                   >
                     <div
@@ -269,7 +275,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-2"
                   >
                     <div
@@ -281,7 +287,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-3"
                   >
                     <div
@@ -293,7 +299,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-4"
                   >
                     <div
@@ -305,7 +311,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-5"
                   >
                     <div
@@ -317,7 +323,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-6"
                   >
                     <div
@@ -329,7 +335,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-7"
                   >
                     <div
@@ -341,7 +347,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-8"
                   >
                     <div
@@ -353,7 +359,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-9"
                   >
                     <div
@@ -365,7 +371,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-10"
                   >
                     <div
@@ -377,7 +383,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-11"
                   >
                     <div
@@ -389,7 +395,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-12"
                   >
                     <div
@@ -401,7 +407,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-13"
                   >
                     <div
@@ -413,7 +419,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-14"
                   >
                     <div
@@ -425,7 +431,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-15"
                   >
                     <div
@@ -437,7 +443,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-16"
                   >
                     <div
@@ -449,7 +455,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-17"
                   >
                     <div
@@ -461,7 +467,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-18"
                   >
                     <div
@@ -473,7 +479,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-19"
                   >
                     <div
@@ -485,7 +491,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-20"
                   >
                     <div
@@ -497,7 +503,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-21"
                   >
                     <div
@@ -509,7 +515,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-22"
                   >
                     <div
@@ -521,7 +527,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                     </div>
                   </li>
                   <li
-                    class="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+                    class="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
                     data-testid="dropdown__option--magistrate-23"
                   >
                     <div
@@ -550,36 +556,43 @@ exports[`FilterTransactions should render 1`] = `
   >
     <div
       class="relative"
-      data-testid="dropdown__toggle"
     >
-      <div
-        class="flex items-center space-x-2 cursor-pointer"
-        data-testid="FilterTransactionsToggle"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <div
-          class="font-semibold"
+        <button
+          class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+          data-testid="CollapseToggleButton"
         >
-          <span
-            class="text-theme-neutral-500"
-          >
-            Type: 
+          <span>
+            <span
+              class="text-theme-neutral-500 dark:text-theme-neutral-600"
+            >
+              Type
+              :
+               
+            </span>
+            <span
+              class="text-theme-neutral-700 dark:text-theme-neutral-200"
+            >
+              All
+            </span>
           </span>
           <span
-            class="text-theme-neutral-600"
+            class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
           >
-            All
+            <div
+              class="sc-bdfBwQ TENjd"
+              height="10"
+              width="10"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
           </span>
-        </div>
-        <div
-          class="sc-gsTCUz fHAELl bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
-          height="9"
-          width="9"
-        >
-          <svg>
-            chevron-down.svg
-          </svg>
-        </div>
-      </div>
+        </button>
+      </span>
     </div>
   </div>
 </div>
@@ -592,36 +605,43 @@ exports[`FilterTransactions should render with default selected option 1`] = `
   >
     <div
       class="relative"
-      data-testid="dropdown__toggle"
     >
-      <div
-        class="flex items-center space-x-2 cursor-pointer"
-        data-testid="FilterTransactionsToggle"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <div
-          class="font-semibold"
+        <button
+          class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+          data-testid="CollapseToggleButton"
         >
-          <span
-            class="text-theme-neutral-500"
-          >
-            Type: 
+          <span>
+            <span
+              class="text-theme-neutral-500 dark:text-theme-neutral-600"
+            >
+              Type
+              :
+               
+            </span>
+            <span
+              class="text-theme-neutral-700 dark:text-theme-neutral-200"
+            >
+              All
+            </span>
           </span>
           <span
-            class="text-theme-neutral-600"
+            class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
           >
-            All
+            <div
+              class="sc-bdfBwQ TENjd"
+              height="10"
+              width="10"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
           </span>
-        </div>
-        <div
-          class="sc-gsTCUz fHAELl bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
-          height="9"
-          width="9"
-        >
-          <svg>
-            chevron-down.svg
-          </svg>
-        </div>
-      </div>
+        </button>
+      </span>
     </div>
   </div>
 </div>

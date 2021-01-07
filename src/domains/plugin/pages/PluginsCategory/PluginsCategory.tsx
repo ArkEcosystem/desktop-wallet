@@ -115,7 +115,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 									onClick={() => setInstallPlugin(true)}
 									data-testid="PluginsCategory_header--install"
 								>
-									<div className="flex items-center space-x-2 whitespace-no-wrap">
+									<div className="flex items-center space-x-2 whitespace-nowrap">
 										<Icon name="File" width={15} height={15} />
 										<span>Install File</span>
 									</div>

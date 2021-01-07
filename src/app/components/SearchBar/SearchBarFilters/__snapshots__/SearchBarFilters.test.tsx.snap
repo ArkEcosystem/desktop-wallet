@@ -8,21 +8,24 @@ exports[`SearchBarFilters should render 1`] = `
   >
     <div
       class="relative"
-      data-testid="dropdown__toggle"
     >
-      <div
-        class="float-right cursor-pointer outline-none focus:outline-none"
+      <span
+        data-testid="dropdown__toggle"
       >
         <div
-          class="sc-gsTCUz fHxsLl"
-          height="20"
-          width="20"
+          class="cursor-pointer outline-none focus:outline-none"
         >
-          <svg>
-            filters.svg
-          </svg>
+          <div
+            class="sc-gsTCUz fHxsLl"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </DocumentFragment>

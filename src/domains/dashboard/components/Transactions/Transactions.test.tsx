@@ -85,7 +85,7 @@ describe("Transactions", () => {
 	});
 
 	it("should filter by type", async () => {
-		const { getByTestId } = renderWithRouter(
+		const { getByRole, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Transactions profile={profile} />
 			</Route>,
@@ -97,10 +97,10 @@ describe("Transactions", () => {
 
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 
-		expect(getByTestId("FilterTransactionsToggle")).toBeInTheDocument();
+		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 
 		act(() => {
-			fireEvent.click(getByTestId("FilterTransactionsToggle"));
+			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
 		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());

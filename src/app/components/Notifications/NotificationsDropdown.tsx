@@ -29,12 +29,13 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 	return (
 		<div>
 			<Dropdown
+				dropdownClass="mt-8"
 				toggleContent={
 					<div className="overflow-hidden rounded-lg">
 						<Button
 							variant="transparent"
 							size="icon"
-							className="w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+							className="w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
 							data-testid="navbar__buttons--notifications"
 						>
 							<Icon name="Notification" width={15} height={18} className="p-1" />

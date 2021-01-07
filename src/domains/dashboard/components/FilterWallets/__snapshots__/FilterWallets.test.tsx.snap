@@ -39,25 +39,28 @@ exports[`FilterWallets should render 1`] = `
         </div>
         <div
           class="relative"
-          data-testid="dropdown__toggle"
         >
-          <div
-            class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
-            data-testid="filter-wallets__wallets"
+          <span
+            data-testid="dropdown__toggle"
           >
-            <span
-              class="inline-block mr-2 font-semibold"
-            />
             <div
-              class="sc-gsTCUz cmyhNZ"
-              height="12"
-              width="12"
+              class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
+              data-testid="filter-wallets__wallets"
             >
-              <svg>
-                chevron-down.svg
-              </svg>
+              <span
+                class="inline-block mr-2 font-semibold"
+              />
+              <div
+                class="sc-gsTCUz cmyhNZ"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </span>
         </div>
       </div>
       <div
@@ -147,7 +150,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
             data-testid="NetworkOption__ARK"
           >
             <div
-              class="sc-jSgupP hjWGBa relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+              class="sc-hKgILt jlgfEA relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
             >
               <div
                 class="sc-gsTCUz fHxsLl"
@@ -159,7 +162,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
                 </svg>
               </div>
               <span
-                class="sc-eCssSg ktCsei flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 <span />
               </span>
@@ -170,7 +173,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
             data-testid="NetworkOption__ETH"
           >
             <div
-              class="sc-jSgupP hjWGBa relative border-theme-success-500 text-theme-success-500"
+              class="sc-hKgILt jlgfEA relative border-theme-success-500 text-theme-success-500"
             >
               <div
                 class="sc-gsTCUz fHxsLl"
@@ -182,7 +185,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
                 </svg>
               </div>
               <span
-                class="sc-eCssSg ktCsei flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
               >
                 <div
                   class="sc-gsTCUz cmyhNZ"
@@ -216,25 +219,28 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </div>
         <div
           class="relative"
-          data-testid="dropdown__toggle"
         >
-          <div
-            class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
-            data-testid="filter-wallets__wallets"
+          <span
+            data-testid="dropdown__toggle"
           >
-            <span
-              class="inline-block mr-2 font-semibold"
-            />
             <div
-              class="sc-gsTCUz cmyhNZ"
-              height="12"
-              width="12"
+              class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
+              data-testid="filter-wallets__wallets"
             >
-              <svg>
-                chevron-down.svg
-              </svg>
+              <span
+                class="inline-block mr-2 font-semibold"
+              />
+              <div
+                class="sc-gsTCUz cmyhNZ"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </span>
         </div>
       </div>
       <div

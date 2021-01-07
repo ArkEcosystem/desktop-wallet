@@ -5,24 +5,24 @@ import { FilterTransactions } from "./";
 
 describe("FilterTransactions", () => {
 	it("should render", () => {
-		const { container, getByTestId } = render(<FilterTransactions />);
-		expect(getByTestId("FilterTransactionsToggle")).toBeInTheDocument();
+		const { container, getByRole } = render(<FilterTransactions />);
+		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with default selected option", () => {
-		const { container, getByTestId } = render(
+		const { container, getByRole } = render(
 			<FilterTransactions defaultSelected={{ label: "All", value: "all" }} />,
 		);
-		expect(getByTestId("FilterTransactionsToggle")).toBeInTheDocument();
+		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should open dropdown list with all transaction types", async () => {
-		const { container, getByTestId } = render(<FilterTransactions />);
-		expect(getByTestId("FilterTransactionsToggle")).toBeInTheDocument();
+		const { container, getByRole, getByTestId } = render(<FilterTransactions />);
+		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 		act(() => {
-			fireEvent.click(getByTestId("FilterTransactionsToggle"));
+			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
 		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
@@ -32,11 +32,11 @@ describe("FilterTransactions", () => {
 	it("should emit onChange", async () => {
 		const onSelect = jest.fn();
 
-		const { getByTestId } = render(<FilterTransactions onSelect={onSelect} />);
-		expect(getByTestId("FilterTransactionsToggle")).toBeInTheDocument();
+		const { getByRole, getByTestId } = render(<FilterTransactions onSelect={onSelect} />);
+		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 
 		act(() => {
-			fireEvent.click(getByTestId("FilterTransactionsToggle"));
+			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
 		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());

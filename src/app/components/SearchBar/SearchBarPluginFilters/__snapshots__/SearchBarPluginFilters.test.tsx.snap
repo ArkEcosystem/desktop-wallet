@@ -8,21 +8,24 @@ exports[`SearchBarPluginFilters should render 1`] = `
   >
     <div
       class="relative"
-      data-testid="dropdown__toggle"
     >
-      <div
-        class="mr-8 cursor-pointer"
+      <span
+        data-testid="dropdown__toggle"
       >
         <div
-          class="sc-dlfnbm bkiXKS"
-          height="20"
-          width="20"
+          class="mr-8 cursor-pointer"
         >
-          <svg>
-            filters.svg
-          </svg>
+          <div
+            class="sc-dlfnbm bkiXKS"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
         </div>
-      </div>
+      </span>
     </div>
   </div>
 </DocumentFragment>
@@ -37,7 +40,9 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="mr-8 cursor-pointer"
         >
@@ -53,7 +58,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
         </div>
       </span>
       <div
-        class="sc-hKgILt JcVQI mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -603,7 +608,9 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="mr-8 cursor-pointer"
         >
@@ -619,7 +626,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
         </div>
       </span>
       <div
-        class="sc-hKgILt JcVQI mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -1223,7 +1230,9 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="mr-8 cursor-pointer"
         >
@@ -1239,7 +1248,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
         </div>
       </span>
       <div
-        class="sc-hKgILt JcVQI mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -1719,7 +1728,9 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="mr-8 cursor-pointer"
         >
@@ -1735,7 +1746,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
         </div>
       </span>
       <div
-        class="sc-hKgILt JcVQI mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
       >
         <div
           data-testid="dropdown__content"

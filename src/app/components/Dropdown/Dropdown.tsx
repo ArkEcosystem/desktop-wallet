@@ -49,7 +49,7 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 		)}
 		<ul>
 			{title && (
-				<li className="block px-8 pt-4 text-xs font-bold text-left uppercase cursor-pointer whitespace-no-wrap text-theme-neutral-500">
+				<li className="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-neutral-500">
 					{title}
 				</li>
 			)}
@@ -75,7 +75,7 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 		<ul data-testid="dropdown__options">
 			{(options as DropdownOption[]).map((option: DropdownOption, index: number) => (
 				<li
-					className="block py-4 px-8 text-base font-semibold text-left cursor-pointer whitespace-no-wrap text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+					className="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
 					key={index}
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
 					onClick={(e: any) => {
@@ -117,7 +117,7 @@ const renderToggle = (isOpen: boolean, children: any, toggleIcon: string, toggle
 		const size = getSize(toggleSize);
 
 		return (
-			<div className="float-right cursor-pointer outline-none focus:outline-none">
+			<div className="cursor-pointer outline-none focus:outline-none">
 				<Icon name={toggleIcon} width={size} height={size} />
 			</div>
 		);
@@ -157,24 +157,20 @@ export const Dropdown = ({
 	const ref = useRef(null);
 	useEffect(() => clickOutsideHandler(ref, hide), [ref]);
 
-	if (!isOpen) {
-		return (
-			<div onClick={toggle} ref={ref} className="relative" data-testid="dropdown__toggle">
-				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
-			</div>
-		);
-	}
-
 	return (
 		<div ref={ref} className="relative">
-			<span onClick={toggle}>{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}</span>
+			<span data-testid="dropdown__toggle" onClick={toggle}>
+				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
+			</span>
 
-			<Wrapper position={position} className={`${defaultClasses} ${dropdownClass}`}>
-				<div data-testid="dropdown__content">
-					{renderOptions(options, select)}
-					{children && <div>{children}</div>}
-				</div>
-			</Wrapper>
+			{isOpen && (
+				<Wrapper position={position} className={`${defaultClasses} ${dropdownClass}`}>
+					<div data-testid="dropdown__content">
+						{renderOptions(options, select)}
+						{children && <div>{children}</div>}
+					</div>
+				</Wrapper>
+			)}
 		</div>
 	);
 };

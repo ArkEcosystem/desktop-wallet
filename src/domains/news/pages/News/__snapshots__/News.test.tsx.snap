@@ -83,34 +83,37 @@ exports[`News should filter results based on category query and asset 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-gsTCUz eMnCVw p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-dlfnbm crromh w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -123,7 +126,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="sc-hKgILt hnVlH"
+                  class="sc-dlfnbm crromh"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -149,7 +152,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="sc-hKgILt hnVlH"
+                  class="sc-dlfnbm crromh"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -192,62 +195,65 @@ exports[`News should filter results based on category query and asset 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
+                    class="sc-hKgILt jlgfEA border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-gsTCUz jsttWF"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -354,7 +360,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           class="flex items-center space-x-4"
                         >
                           <div
-                            class="sc-eCssSg jpOWCB border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                            class="sc-hKgILt kneING border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                             data-testid="NetworkIcon__placeholder"
                           />
                           <div>
@@ -392,7 +398,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           class="flex flex-col justify-end"
                         >
                           <div
-                            class="sc-jrAGrp fBjtZk"
+                            class="sc-fubCfw fzOunL"
                             color="warning"
                           >
                             <span
@@ -415,7 +421,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         Major League Hacking is having another virtual workshop showcasing ARK technology on August 19th 2020. Anyone can join at 5PM EDT to Build a Blockchain Taco Shop with ARK!
 
                         <a
-                          class="sc-iqHYGH fIEebf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-jrAGrp jEgHJx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://organize.mlh.io/participants/events/3858-build-a-blockchain-taco-shop-with-ark-io"
@@ -457,7 +463,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex flex-col space-y-5 text-theme-background"
                     >
                       <a
-                        class="sc-iqHYGH fIEebf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-jrAGrp jEgHJx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://blockfolio.com/"
@@ -480,7 +486,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex mt-12 space-x-2"
                     >
                       <a
-                        class="sc-iqHYGH fIEebf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-jrAGrp jEgHJx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
@@ -492,7 +498,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         </svg>
                       </a>
                       <a
-                        class="sc-iqHYGH fIEebf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-jrAGrp jEgHJx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
@@ -540,7 +546,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
                   >
                     <input
-                      class="sc-hBEYos gofQcw overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
+                      class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
                       data-testid="NewsOptions__search"
                       maxlength="32"
                       placeholder="Search"
@@ -686,7 +692,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                             data-testid="NetworkOption__ARK"
                           >
                             <div
-                              class="sc-eCssSg dCjbOv relative border-theme-success-500 text-theme-success-500"
+                              class="sc-hKgILt jlgfEA relative border-theme-success-500 text-theme-success-500"
                             >
                               <div
                                 class="sc-gsTCUz fHxsLl"
@@ -698,7 +704,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                                 </svg>
                               </div>
                               <span
-                                class="sc-dlfnbm Klsnb flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
                               >
                                 <div
                                   class="sc-gsTCUz cmyhNZ"
@@ -718,7 +724,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                             data-testid="NetworkOption__ETH"
                           >
                             <div
-                              class="sc-eCssSg dCjbOv relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                              class="sc-hKgILt jlgfEA relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                             >
                               <div
                                 class="sc-gsTCUz fHxsLl"
@@ -730,7 +736,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                                 </svg>
                               </div>
                               <span
-                                class="sc-dlfnbm Klsnb flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                               >
                                 <span />
                               </span>
@@ -741,7 +747,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                             data-testid="NetworkOption__BTC"
                           >
                             <div
-                              class="sc-eCssSg dCjbOv relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                              class="sc-hKgILt jlgfEA relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                             >
                               <div
                                 class="sc-gsTCUz fHxsLl"
@@ -753,7 +759,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                                 </svg>
                               </div>
                               <span
-                                class="sc-dlfnbm Klsnb flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                               >
                                 <span />
                               </span>
@@ -764,7 +770,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                             data-testid="NetworkOption__LSK"
                           >
                             <div
-                              class="sc-eCssSg dCjbOv relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                              class="sc-hKgILt jlgfEA relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                             >
                               <div
                                 class="sc-gsTCUz fHxsLl"
@@ -776,7 +782,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                                 </svg>
                               </div>
                               <span
-                                class="sc-dlfnbm Klsnb flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                               >
                                 <span />
                               </span>
@@ -786,7 +792,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-hKgILt bVeckg w-full"
+                      class="sc-dlfnbm bmSKty w-full"
                       data-testid="NewsOptions__submit"
                       type="button"
                     >
@@ -887,34 +893,37 @@ exports[`News should filter results based on category query and asset 2`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-gsTCUz eMnCVw p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-dlfnbm crromh w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -927,7 +936,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="sc-hKgILt hnVlH"
+                  class="sc-dlfnbm crromh"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -953,7 +962,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="sc-hKgILt hnVlH"
+                  class="sc-dlfnbm crromh"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -996,62 +1005,65 @@ exports[`News should filter results based on category query and asset 2`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
+                    class="sc-hKgILt jlgfEA border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-gsTCUz jsttWF"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1159,7 +1171,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         >
                           <div
                             aria-label="ARK"
-                            class="sc-eCssSg jpOWCB border-theme-danger-light text-theme-danger-400"
+                            class="sc-hKgILt kneING border-theme-danger-light text-theme-danger-400"
                             data-testid="NetworkIcon-ARK-ark.mainnet"
                           >
                             <div
@@ -1210,7 +1222,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           class="flex flex-col justify-end"
                         >
                           <div
-                            class="sc-jrAGrp fBjtZk"
+                            class="sc-fubCfw fzOunL"
                             color="warning"
                           >
                             <span
@@ -1232,7 +1244,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       >
                         Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
                         <a
-                          class="sc-iqHYGH fIEebf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                          class="sc-jrAGrp jEgHJx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                           data-testid="Link"
                           rel="noopener noreferrer"
                           to="https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461"
@@ -1274,7 +1286,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex flex-col space-y-5 text-theme-background"
                     >
                       <a
-                        class="sc-iqHYGH fIEebf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-jrAGrp jEgHJx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://blockfolio.com/"
@@ -1297,7 +1309,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex mt-12 space-x-2"
                     >
                       <a
-                        class="sc-iqHYGH fIEebf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-jrAGrp jEgHJx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
@@ -1309,7 +1321,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         </svg>
                       </a>
                       <a
-                        class="sc-iqHYGH fIEebf inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                        class="sc-jrAGrp jEgHJx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                         data-testid="Link"
                         rel="noopener noreferrer"
                         to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
@@ -1378,7 +1390,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-hKgILt bVeckg"
+                    class="sc-dlfnbm bmSKty"
                     data-testid="Pagination__next"
                     type="button"
                   >
@@ -1394,7 +1406,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     </div>
                   </button>
                   <button
-                    class="sc-hKgILt bVeckg"
+                    class="sc-dlfnbm bmSKty"
                     data-testid="Pagination__last"
                     type="button"
                   >
@@ -1425,7 +1437,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
                   >
                     <input
-                      class="sc-hBEYos gofQcw overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
+                      class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
                       data-testid="NewsOptions__search"
                       maxlength="32"
                       placeholder="Search"
@@ -1566,7 +1578,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                             data-testid="NetworkOption__ARK"
                           >
                             <div
-                              class="sc-eCssSg dCjbOv relative border-theme-success-500 text-theme-success-500"
+                              class="sc-hKgILt jlgfEA relative border-theme-success-500 text-theme-success-500"
                             >
                               <div
                                 class="sc-gsTCUz fHxsLl"
@@ -1578,7 +1590,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                                 </svg>
                               </div>
                               <span
-                                class="sc-dlfnbm Klsnb flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
                               >
                                 <div
                                   class="sc-gsTCUz cmyhNZ"
@@ -1598,7 +1610,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                             data-testid="NetworkOption__ETH"
                           >
                             <div
-                              class="sc-eCssSg dCjbOv relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                              class="sc-hKgILt jlgfEA relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                             >
                               <div
                                 class="sc-gsTCUz fHxsLl"
@@ -1610,7 +1622,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                                 </svg>
                               </div>
                               <span
-                                class="sc-dlfnbm Klsnb flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                               >
                                 <span />
                               </span>
@@ -1621,7 +1633,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                             data-testid="NetworkOption__BTC"
                           >
                             <div
-                              class="sc-eCssSg dCjbOv relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                              class="sc-hKgILt jlgfEA relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                             >
                               <div
                                 class="sc-gsTCUz fHxsLl"
@@ -1633,7 +1645,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                                 </svg>
                               </div>
                               <span
-                                class="sc-dlfnbm Klsnb flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                               >
                                 <span />
                               </span>
@@ -1644,7 +1656,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                             data-testid="NetworkOption__LSK"
                           >
                             <div
-                              class="sc-eCssSg dCjbOv relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                              class="sc-hKgILt jlgfEA relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
                             >
                               <div
                                 class="sc-gsTCUz fHxsLl"
@@ -1656,7 +1668,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                                 </svg>
                               </div>
                               <span
-                                class="sc-dlfnbm Klsnb flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                                class="Badge__Wrapper-sc-1d7juq8-0 kmVGEa flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
                               >
                                 <span />
                               </span>
@@ -1666,7 +1678,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-hKgILt bVeckg w-full"
+                      class="sc-dlfnbm bmSKty w-full"
                       data-testid="NewsOptions__submit"
                       type="button"
                     >
