@@ -1,6 +1,5 @@
-export * from "./SecondSignatureRegistrationForm";
-
-export * from "./GenerationStep";
 export * from "./BackupStep";
-export * from "./VerificationStep";
+export * from "./GenerationStep";
 export * from "./ReviewStep";
+export * from "./SecondSignatureRegistrationForm";
+export * from "./VerificationStep";

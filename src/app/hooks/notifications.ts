@@ -1,5 +1,5 @@
-import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { TransactionDataType } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";

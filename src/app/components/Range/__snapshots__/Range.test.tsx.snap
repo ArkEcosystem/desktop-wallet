@@ -7,19 +7,23 @@ exports[`Range should render 1`] = `
     data-testid="Range"
   >
     <div
-      class="sc-AxjAm gVIMxU"
+      class="Range__Track-sc-10itqc2-0 sgjTD"
       data-testid="Range__track"
       style="transform: scale(1); cursor: pointer;"
     >
       <div
-        class="sc-AxirZ iCiXDi"
+        class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
         data-testid="Range__track__filled"
       >
         <div
           aria-valuemax="100"
           aria-valuemin="1"
           aria-valuenow="10"
+<<<<<<< HEAD
           class="sc-AxiKw jKNfZI"
+=======
+          class="Range__Thumb-sc-10itqc2-2 RpEAg"
+>>>>>>> develop
           data-testid="Range__thumb"
           draggable="false"
           role="slider"
