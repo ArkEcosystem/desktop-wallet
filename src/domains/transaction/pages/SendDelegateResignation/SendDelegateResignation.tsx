@@ -45,8 +45,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 			route: `/profiles/${activeProfile.id()}/dashboard`,
 		},
 		{
-			/* istanbul ignore next */
-			label: activeWallet.alias() || activeWallet.address(),
+			label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
 			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
 		},
 		{
