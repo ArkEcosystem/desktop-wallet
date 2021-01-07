@@ -40,7 +40,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -78,7 +78,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                        class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -92,7 +92,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="Input"
                           name="name"
                         />
@@ -108,7 +108,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-cxFLnm diPnOu"
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bsMpzO"
                           >
                             <img
                               alt="Avatar"
@@ -128,7 +128,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-eCssSg gMAgrk text-white dark:text-theme-neutral-200"
+                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -144,7 +144,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="sc-dlfnbm bgmIMu flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -160,18 +160,18 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
                         aria-invalid="true"
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -179,7 +179,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -197,7 +197,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </p>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm bgmIMu flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -211,18 +211,18 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       />
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
                         aria-invalid="true"
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -230,7 +230,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -248,7 +248,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </p>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -265,7 +265,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -286,11 +286,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             id="downshift-133-label"
                           />
                           <div
-                            class="sc-fubCfw dApVFO"
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="sc-jSgupP gBEobF py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -301,7 +301,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                               aria-controls="downshift-133-menu"
                               aria-labelledby="downshift-133-label"
                               autocomplete="off"
-                              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-132-input"
                               name="currency"
@@ -552,10 +552,10 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ w-10 pointer-events-none text-theme-neutral"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-eCssSg lpfCnp transform rotate-180"
+                            class="sc-bdfBwQ gLRWTb transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -572,7 +572,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                   class="pb-4 mt-8"
                 >
                   <ul
-                    class="sc-bBXqnf dKcsfw"
+                    class="sc-gsTCUz fEYMbl"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -626,7 +626,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                   </ul>
                 </div>
                 <div
-                  class="sc-gsTCUz kuyrcV border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="Divider-sc-19q4mlo-0 daSmjL border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
@@ -634,13 +634,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="sc-bdfBwQ jLSdvl"
+                  class="Button-mdtvtf-0 ifPnXw"
                   type="button"
                 >
                   Back
                 </button>
                 <button
-                  class="sc-bdfBwQ cgPxRB"
+                  class="Button-mdtvtf-0 eVVyXU"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -697,7 +697,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -735,7 +735,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="sc-dlfnbm bgmIMu flex flex-col space-y-2"
+                        class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -750,7 +750,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         </label>
                         <input
                           aria-invalid="true"
-                          class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="Input"
                           name="name"
                         />
@@ -771,7 +771,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-cxFLnm diPnOu"
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bsMpzO"
                           >
                             <img
                               alt="Avatar"
@@ -791,7 +791,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-eCssSg gMAgrk text-white dark:text-theme-neutral-200"
+                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -807,7 +807,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </div>
                   </div>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -823,17 +823,17 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -841,7 +841,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -854,7 +854,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -870,17 +870,17 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -888,7 +888,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -901,7 +901,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -918,7 +918,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       class="relative w-full"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -939,11 +939,11 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             id="downshift-49-label"
                           />
                           <div
-                            class="sc-fubCfw dApVFO"
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="sc-jSgupP gBEobF py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -954,7 +954,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                               aria-controls="downshift-49-menu"
                               aria-labelledby="downshift-49-label"
                               autocomplete="off"
-                              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-48-input"
                               name="currency"
@@ -1205,10 +1205,10 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </ul>
                         </div>
                         <div
-                          class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ w-10 pointer-events-none text-theme-neutral"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-eCssSg lpfCnp transform rotate-180"
+                            class="sc-bdfBwQ gLRWTb transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -1225,7 +1225,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                   class="pb-4 mt-8"
                 >
                   <ul
-                    class="sc-bBXqnf dKcsfw"
+                    class="sc-gsTCUz fEYMbl"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -1279,7 +1279,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                   </ul>
                 </div>
                 <div
-                  class="sc-gsTCUz kuyrcV border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="Divider-sc-19q4mlo-0 daSmjL border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
@@ -1287,13 +1287,13 @@ exports[`CreateProfile should not be able to create new profile if name already 
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="sc-bdfBwQ jLSdvl"
+                  class="Button-mdtvtf-0 ifPnXw"
                   type="button"
                 >
                   Back
                 </button>
                 <button
-                  class="sc-bdfBwQ cgPxRB"
+                  class="Button-mdtvtf-0 eVVyXU"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -1350,7 +1350,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -1388,7 +1388,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="sc-dlfnbm bgmIMu flex flex-col space-y-2"
+                        class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -1403,7 +1403,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         </label>
                         <input
                           aria-invalid="true"
-                          class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="Input"
                           name="name"
                         />
@@ -1424,7 +1424,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-cxFLnm diPnOu"
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bsMpzO"
                           >
                             <img
                               alt="Avatar"
@@ -1444,7 +1444,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-eCssSg gMAgrk text-white dark:text-theme-neutral-200"
+                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -1460,7 +1460,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </div>
                   </div>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -1476,17 +1476,17 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -1494,7 +1494,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -1507,7 +1507,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -1523,17 +1523,17 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -1541,7 +1541,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -1554,7 +1554,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -1571,7 +1571,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       class="relative w-full"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -1592,11 +1592,11 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             id="downshift-75-label"
                           />
                           <div
-                            class="sc-fubCfw dApVFO"
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="sc-jSgupP gBEobF py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -1607,7 +1607,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                               aria-controls="downshift-75-menu"
                               aria-labelledby="downshift-75-label"
                               autocomplete="off"
-                              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-74-input"
                               name="currency"
@@ -1858,10 +1858,10 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </ul>
                         </div>
                         <div
-                          class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ w-10 pointer-events-none text-theme-neutral"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-eCssSg lpfCnp transform rotate-180"
+                            class="sc-bdfBwQ gLRWTb transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -1878,7 +1878,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                   class="pb-4 mt-8"
                 >
                   <ul
-                    class="sc-bBXqnf dKcsfw"
+                    class="sc-gsTCUz fEYMbl"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -1932,7 +1932,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                   </ul>
                 </div>
                 <div
-                  class="sc-gsTCUz kuyrcV border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="Divider-sc-19q4mlo-0 daSmjL border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
@@ -1940,13 +1940,13 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="sc-bdfBwQ jLSdvl"
+                  class="Button-mdtvtf-0 ifPnXw"
                   type="button"
                 >
                   Back
                 </button>
                 <button
-                  class="sc-bdfBwQ cgPxRB"
+                  class="Button-mdtvtf-0 eVVyXU"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -2003,7 +2003,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -2041,7 +2041,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                        class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2055,7 +2055,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="Input"
                           name="name"
                         />
@@ -2071,7 +2071,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-cxFLnm diPnOu"
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bsMpzO"
                           >
                             <img
                               alt="Avatar"
@@ -2091,7 +2091,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-eCssSg gMAgrk text-white dark:text-theme-neutral-200"
+                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -2107,7 +2107,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2123,17 +2123,17 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -2141,7 +2141,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -2154,7 +2154,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2170,17 +2170,17 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -2188,7 +2188,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -2201,7 +2201,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2218,7 +2218,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -2239,11 +2239,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             id="downshift-201-label"
                           />
                           <div
-                            class="sc-fubCfw dApVFO"
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="sc-jSgupP gBEobF py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -2254,7 +2254,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               aria-controls="downshift-201-menu"
                               aria-labelledby="downshift-201-label"
                               autocomplete="off"
-                              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-200-input"
                               name="currency"
@@ -2505,10 +2505,10 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ w-10 pointer-events-none text-theme-neutral"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-eCssSg lpfCnp transform rotate-180"
+                            class="sc-bdfBwQ gLRWTb transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -2525,7 +2525,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                   class="pb-4 mt-8"
                 >
                   <ul
-                    class="sc-bBXqnf dKcsfw"
+                    class="sc-gsTCUz fEYMbl"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -2579,7 +2579,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                   </ul>
                 </div>
                 <div
-                  class="sc-gsTCUz kuyrcV border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="Divider-sc-19q4mlo-0 daSmjL border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
@@ -2587,13 +2587,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="sc-bdfBwQ jLSdvl"
+                  class="Button-mdtvtf-0 ifPnXw"
                   type="button"
                 >
                   Back
                 </button>
                 <button
-                  class="sc-bdfBwQ dzPkdf"
+                  class="Button-mdtvtf-0 cvPqli"
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
@@ -2649,7 +2649,7 @@ exports[`CreateProfile should render 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -2687,7 +2687,7 @@ exports[`CreateProfile should render 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                        class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2701,7 +2701,7 @@ exports[`CreateProfile should render 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="Input"
                           name="name"
                         />
@@ -2720,15 +2720,15 @@ exports[`CreateProfile should render 1`] = `
                             class="overflow-hidden h-full rounded-full"
                           >
                             <div
-                              class="sc-iwyYcG hLjAje"
+                              class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 jJOzoi"
                             >
                               <button
-                                class="sc-bdfBwQ jLSdvl"
+                                class="Button-mdtvtf-0 ifPnXw"
                                 data-testid="SelectProfileImage__upload-button"
                                 type="button"
                               >
                                 <div
-                                  class="sc-eCssSg gMAgrk text-theme-primary dark:text-theme-neutral-200"
+                                  class="sc-bdfBwQ cdgnVS text-theme-primary dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -2744,7 +2744,7 @@ exports[`CreateProfile should render 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2760,17 +2760,17 @@ exports[`CreateProfile should render 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -2778,7 +2778,7 @@ exports[`CreateProfile should render 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -2791,7 +2791,7 @@ exports[`CreateProfile should render 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2807,17 +2807,17 @@ exports[`CreateProfile should render 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -2825,7 +2825,7 @@ exports[`CreateProfile should render 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -2838,7 +2838,7 @@ exports[`CreateProfile should render 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2855,7 +2855,7 @@ exports[`CreateProfile should render 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -2876,7 +2876,7 @@ exports[`CreateProfile should render 1`] = `
                             id="downshift-1-label"
                           />
                           <div
-                            class="sc-fubCfw dApVFO"
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             data-testid="SelectDropdownInput"
                           >
                             <input
@@ -2884,7 +2884,7 @@ exports[`CreateProfile should render 1`] = `
                               aria-controls="downshift-1-menu"
                               aria-labelledby="downshift-1-label"
                               autocomplete="off"
-                              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-0-input"
                               name="currency"
@@ -2900,10 +2900,10 @@ exports[`CreateProfile should render 1`] = `
                           />
                         </div>
                         <div
-                          class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ w-10 pointer-events-none text-theme-neutral"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-eCssSg lpfCnp"
+                            class="sc-bdfBwQ gLRWTb"
                             height="5"
                             width="7"
                           >
@@ -2920,7 +2920,7 @@ exports[`CreateProfile should render 1`] = `
                   class="pb-4 mt-8"
                 >
                   <ul
-                    class="sc-bBXqnf dKcsfw"
+                    class="sc-gsTCUz fEYMbl"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -2974,7 +2974,7 @@ exports[`CreateProfile should render 1`] = `
                   </ul>
                 </div>
                 <div
-                  class="sc-gsTCUz kuyrcV border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="Divider-sc-19q4mlo-0 daSmjL border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
@@ -2982,13 +2982,13 @@ exports[`CreateProfile should render 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="sc-bdfBwQ jLSdvl"
+                  class="Button-mdtvtf-0 ifPnXw"
                   type="button"
                 >
                   Back
                 </button>
                 <button
-                  class="sc-bdfBwQ cgPxRB"
+                  class="Button-mdtvtf-0 eVVyXU"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -3045,7 +3045,7 @@ exports[`CreateProfile should store profile 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -3083,7 +3083,7 @@ exports[`CreateProfile should store profile 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                        class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -3097,7 +3097,7 @@ exports[`CreateProfile should store profile 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="Input"
                           name="name"
                         />
@@ -3113,7 +3113,7 @@ exports[`CreateProfile should store profile 1`] = `
                           class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-cxFLnm diPnOu"
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bsMpzO"
                           >
                             <img
                               alt="Avatar"
@@ -3128,7 +3128,7 @@ exports[`CreateProfile should store profile 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-eCssSg gMAgrk text-white dark:text-theme-neutral-200"
+                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -3140,12 +3140,12 @@ exports[`CreateProfile should store profile 1`] = `
                             </div>
                           </div>
                           <button
-                            class="sc-bdfBwQ hJBcCs flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                            class="Button-mdtvtf-0 jBHZRy flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                             data-testid="SelectProfileImage__remove-button"
                             type="button"
                           >
                             <div
-                              class="sc-eCssSg hBrKCH"
+                              class="sc-bdfBwQ fdfkzt"
                               height="12"
                               width="12"
                             >
@@ -3159,7 +3159,7 @@ exports[`CreateProfile should store profile 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -3175,17 +3175,17 @@ exports[`CreateProfile should store profile 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -3193,7 +3193,7 @@ exports[`CreateProfile should store profile 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -3206,7 +3206,7 @@ exports[`CreateProfile should store profile 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -3222,17 +3222,17 @@ exports[`CreateProfile should store profile 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -3240,7 +3240,7 @@ exports[`CreateProfile should store profile 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -3253,7 +3253,7 @@ exports[`CreateProfile should store profile 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -3270,7 +3270,7 @@ exports[`CreateProfile should store profile 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -3291,11 +3291,11 @@ exports[`CreateProfile should store profile 1`] = `
                             id="downshift-11-label"
                           />
                           <div
-                            class="sc-fubCfw dApVFO"
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="sc-jSgupP gBEobF py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -3306,7 +3306,7 @@ exports[`CreateProfile should store profile 1`] = `
                               aria-controls="downshift-11-menu"
                               aria-labelledby="downshift-11-label"
                               autocomplete="off"
-                              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-10-input"
                               name="currency"
@@ -3557,10 +3557,10 @@ exports[`CreateProfile should store profile 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ w-10 pointer-events-none text-theme-neutral"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-eCssSg lpfCnp transform rotate-180"
+                            class="sc-bdfBwQ gLRWTb transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -3577,7 +3577,7 @@ exports[`CreateProfile should store profile 1`] = `
                   class="pb-4 mt-8"
                 >
                   <ul
-                    class="sc-bBXqnf dKcsfw"
+                    class="sc-gsTCUz fEYMbl"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -3631,7 +3631,7 @@ exports[`CreateProfile should store profile 1`] = `
                   </ul>
                 </div>
                 <div
-                  class="sc-gsTCUz kuyrcV border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="Divider-sc-19q4mlo-0 daSmjL border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
@@ -3639,13 +3639,13 @@ exports[`CreateProfile should store profile 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="sc-bdfBwQ jLSdvl"
+                  class="Button-mdtvtf-0 ifPnXw"
                   type="button"
                 >
                   Back
                 </button>
                 <button
-                  class="sc-bdfBwQ dzPkdf"
+                  class="Button-mdtvtf-0 cvPqli"
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
@@ -3701,7 +3701,7 @@ exports[`CreateProfile should store profile with password 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -3739,7 +3739,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                        class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -3753,7 +3753,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="Input"
                           name="name"
                         />
@@ -3769,7 +3769,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-cxFLnm diPnOu"
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bsMpzO"
                           >
                             <img
                               alt="Avatar"
@@ -3789,7 +3789,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-eCssSg gMAgrk text-white dark:text-theme-neutral-200"
+                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -3805,7 +3805,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -3821,17 +3821,17 @@ exports[`CreateProfile should store profile with password 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -3839,7 +3839,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -3852,7 +3852,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -3866,17 +3866,17 @@ exports[`CreateProfile should store profile with password 1`] = `
                       />
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -3884,7 +3884,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -3897,7 +3897,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -3914,7 +3914,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -3935,11 +3935,11 @@ exports[`CreateProfile should store profile with password 1`] = `
                             id="downshift-101-label"
                           />
                           <div
-                            class="sc-fubCfw dApVFO"
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="sc-jSgupP gBEobF py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -3950,7 +3950,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               aria-controls="downshift-101-menu"
                               aria-labelledby="downshift-101-label"
                               autocomplete="off"
-                              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-100-input"
                               name="currency"
@@ -4201,10 +4201,10 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ w-10 pointer-events-none text-theme-neutral"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-eCssSg lpfCnp transform rotate-180"
+                            class="sc-bdfBwQ gLRWTb transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -4221,7 +4221,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                   class="pb-4 mt-8"
                 >
                   <ul
-                    class="sc-bBXqnf dKcsfw"
+                    class="sc-gsTCUz fEYMbl"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -4275,7 +4275,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                   </ul>
                 </div>
                 <div
-                  class="sc-gsTCUz kuyrcV border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="Divider-sc-19q4mlo-0 daSmjL border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
@@ -4283,13 +4283,13 @@ exports[`CreateProfile should store profile with password 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="sc-bdfBwQ jLSdvl"
+                  class="Button-mdtvtf-0 ifPnXw"
                   type="button"
                 >
                   Back
                 </button>
                 <button
-                  class="sc-bdfBwQ dzPkdf"
+                  class="Button-mdtvtf-0 cvPqli"
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
@@ -4345,7 +4345,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex flex-col flex-1 justify-center"
+        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -4383,7 +4383,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       class="mr-6 w-full"
                     >
                       <fieldset
-                        class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                        class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                       >
                         <label
                           class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -4397,7 +4397,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                           data-testid="Input"
                           name="name"
                         />
@@ -4413,7 +4413,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           class="relative w-20 h-20"
                         >
                           <div
-                            class="sc-cxFLnm diPnOu"
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bsMpzO"
                           >
                             <img
                               alt="Avatar"
@@ -4433,7 +4433,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                                 class="flex justify-center items-center h-full"
                               >
                                 <div
-                                  class="sc-eCssSg gMAgrk text-white dark:text-theme-neutral-200"
+                                  class="sc-bdfBwQ cdgnVS text-white dark:text-theme-neutral-200"
                                   height="18"
                                   width="24"
                                 >
@@ -4449,7 +4449,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </div>
                   </div>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -4465,17 +4465,17 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="password"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -4483,7 +4483,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -4496,7 +4496,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -4512,17 +4512,17 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       </span>
                     </label>
                     <div
-                      class="sc-fubCfw dApVFO max-w-20"
+                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                       data-testid="InputPassword"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                         data-testid="Input"
                         name="confirmPassword"
                         type="password"
                       />
                       <div
-                        class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ my-px mr-4"
+                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                       >
                         <button
                           class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
@@ -4530,7 +4530,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-eCssSg faOweb"
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
@@ -4543,7 +4543,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-dlfnbm dMJJGC flex flex-col space-y-2"
+                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -4560,7 +4560,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
@@ -4581,11 +4581,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             id="downshift-167-label"
                           />
                           <div
-                            class="sc-fubCfw dApVFO"
+                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
                             data-testid="SelectDropdownInput"
                           >
                             <span
-                              class="sc-jSgupP gBEobF py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
                               data-testid="SelectDropdownInput__typeahead"
                             >
                               BTC (Ƀ)
@@ -4596,7 +4596,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               aria-controls="downshift-167-menu"
                               aria-labelledby="downshift-167-label"
                               autocomplete="off"
-                              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                               data-testid="SelectDropdownInput__input"
                               id="downshift-166-input"
                               name="currency"
@@ -4847,10 +4847,10 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </ul>
                         </div>
                         <div
-                          class="sc-jSgupP sc-iBPRYJ gBEobF kvzSYZ w-10 pointer-events-none text-theme-neutral"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                         >
                           <div
-                            class="sc-eCssSg lpfCnp transform rotate-180"
+                            class="sc-bdfBwQ gLRWTb transform rotate-180"
                             height="5"
                             width="7"
                           >
@@ -4867,7 +4867,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   class="pb-4 mt-8"
                 >
                   <ul
-                    class="sc-bBXqnf dKcsfw"
+                    class="sc-gsTCUz fEYMbl"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -4921,7 +4921,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   </ul>
                 </div>
                 <div
-                  class="sc-gsTCUz kuyrcV border-theme-neutral-300 dark:border-theme-neutral-800"
+                  class="Divider-sc-19q4mlo-0 daSmjL border-theme-neutral-300 dark:border-theme-neutral-800"
                   type="horizontal"
                 />
               </div>
@@ -4929,13 +4929,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="sc-bdfBwQ jLSdvl"
+                  class="Button-mdtvtf-0 ifPnXw"
                   type="button"
                 >
                   Back
                 </button>
                 <button
-                  class="sc-bdfBwQ dzPkdf"
+                  class="Button-mdtvtf-0 cvPqli"
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >

@@ -17,7 +17,7 @@ exports[`LinkCollection should add links 1`] = `
       </span>
       <div>
         <div
-          class="sc-dlfnbm bBhhq flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-bdfBwQ TENjd flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -36,14 +36,14 @@ exports[`LinkCollection should add links 1`] = `
       class="mt-4 space-y-4"
     >
       <div
-        class="SubForm__SubFormWrapper-c4tqfs-0 bdhBBW"
+        class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
       >
         <div
           class="grid gap-4"
           style="grid-template-columns: 2fr 3fr;"
         >
           <fieldset
-            class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
           >
             <label
               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -60,7 +60,7 @@ exports[`LinkCollection should add links 1`] = `
               class="relative w-full"
             >
               <input
-                class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                 data-testid="select-list__input"
                 name="type"
                 readonly=""
@@ -81,11 +81,11 @@ exports[`LinkCollection should add links 1`] = `
                     id="downshift-5-label"
                   />
                   <div
-                    class="sc-iBPRYJ eBglsL"
+                    class="InputGroup-sc-1obbdqe-3 bgPpWR"
                     data-testid="SelectDropdownInput"
                   >
                     <span
-                      class="sc-eCssSg dgKRTw py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+                      class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
                       data-testid="SelectDropdownInput__typeahead"
                     >
                       Twitter
@@ -96,7 +96,7 @@ exports[`LinkCollection should add links 1`] = `
                       aria-controls="downshift-5-menu"
                       aria-labelledby="downshift-5-label"
                       autocomplete="off"
-                      class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                       data-testid="SelectDropdownInput__input"
                       id="downshift-4-input"
                       name="type"
@@ -126,10 +126,10 @@ exports[`LinkCollection should add links 1`] = `
                   </ul>
                 </div>
                 <div
-                  class="sc-eCssSg sc-gKsewC dgKRTw dAcDld w-10 pointer-events-none text-theme-neutral"
+                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                 >
                   <div
-                    class="sc-dlfnbm ljKayU transform rotate-180"
+                    class="sc-bdfBwQ gLRWTb transform rotate-180"
                     height="5"
                     width="7"
                   >
@@ -142,7 +142,7 @@ exports[`LinkCollection should add links 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
           >
             <label
               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -157,13 +157,13 @@ exports[`LinkCollection should add links 1`] = `
             </label>
             <input
               aria-invalid="false"
-              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="LinkCollection__input-link"
               name="value"
             />
           </fieldset>
           <button
-            class="sc-bdfBwQ cgPxRB col-span-2"
+            class="Button-mdtvtf-0 eVVyXU col-span-2"
             data-testid="LinkCollection__add-link"
             disabled=""
             type="button"
@@ -173,7 +173,7 @@ exports[`LinkCollection should add links 1`] = `
         </div>
       </div>
       <div
-        class="sc-iqHYGH enVqzb -mt-3"
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
         role="table"
       >
         <table
@@ -204,7 +204,7 @@ exports[`LinkCollection should add links 1`] = `
                     data-testid="table__Sort"
                   >
                     <div
-                      class="sc-dlfnbm iDOPVV"
+                      class="sc-bdfBwQ iABjnS"
                       height="12"
                       width="15"
                     >
@@ -234,7 +234,7 @@ exports[`LinkCollection should add links 1`] = `
                     data-testid="table__Sort"
                   >
                     <div
-                      class="sc-dlfnbm iDOPVV"
+                      class="sc-bdfBwQ iABjnS"
                       height="12"
                       width="15"
                     >
@@ -265,14 +265,14 @@ exports[`LinkCollection should add links 1`] = `
             role="rowgroup"
           >
             <tr
-              class="sc-dQppl fgFAlk group"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
               data-testid="TableRow"
             >
               <td
                 class="w-40"
               >
                 <div
-                  class="sc-crrsfI cSzKod font-semibold"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gEFZAQ font-semibold"
                 >
                   <input
                     name="links[0].type"
@@ -286,7 +286,7 @@ exports[`LinkCollection should add links 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-crrsfI juCHkL font-semibold break-all"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 laKrVi font-semibold break-all"
                 >
                   <input
                     name="links[0].value"
@@ -300,15 +300,15 @@ exports[`LinkCollection should add links 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-crrsfI fxDHsd justify-end"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                 >
                   <button
-                    class="sc-bdfBwQ jBrzAp"
+                    class="Button-mdtvtf-0 eXKKLD"
                     data-testid="LinkCollection__remove-link"
                     type="button"
                   >
                     <div
-                      class="sc-dlfnbm gimfHi"
+                      class="sc-bdfBwQ fPrsah"
                       height="1em"
                       width="1em"
                     >
@@ -345,7 +345,7 @@ exports[`LinkCollection should remove links 1`] = `
       </span>
       <div>
         <div
-          class="sc-dlfnbm bBhhq flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-bdfBwQ TENjd flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -364,14 +364,14 @@ exports[`LinkCollection should remove links 1`] = `
       class="mt-4 space-y-4"
     >
       <div
-        class="SubForm__SubFormWrapper-c4tqfs-0 bdhBBW"
+        class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
       >
         <div
           class="grid gap-4"
           style="grid-template-columns: 2fr 3fr;"
         >
           <fieldset
-            class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
           >
             <label
               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -388,7 +388,7 @@ exports[`LinkCollection should remove links 1`] = `
               class="relative w-full"
             >
               <input
-                class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                 data-testid="select-list__input"
                 name="type"
                 readonly=""
@@ -409,7 +409,7 @@ exports[`LinkCollection should remove links 1`] = `
                     id="downshift-33-label"
                   />
                   <div
-                    class="sc-iBPRYJ eBglsL"
+                    class="InputGroup-sc-1obbdqe-3 bgPpWR"
                     data-testid="SelectDropdownInput"
                   >
                     <input
@@ -417,7 +417,7 @@ exports[`LinkCollection should remove links 1`] = `
                       aria-controls="downshift-33-menu"
                       aria-labelledby="downshift-33-label"
                       autocomplete="off"
-                      class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                       data-testid="SelectDropdownInput__input"
                       id="downshift-32-input"
                       name="type"
@@ -433,10 +433,10 @@ exports[`LinkCollection should remove links 1`] = `
                   />
                 </div>
                 <div
-                  class="sc-eCssSg sc-gKsewC dgKRTw dAcDld w-10 pointer-events-none text-theme-neutral"
+                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                 >
                   <div
-                    class="sc-dlfnbm ljKayU"
+                    class="sc-bdfBwQ gLRWTb"
                     height="5"
                     width="7"
                   >
@@ -449,7 +449,7 @@ exports[`LinkCollection should remove links 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
           >
             <label
               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -464,14 +464,14 @@ exports[`LinkCollection should remove links 1`] = `
             </label>
             <input
               aria-invalid="false"
-              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="LinkCollection__input-link"
               disabled=""
               name="value"
             />
           </fieldset>
           <button
-            class="sc-bdfBwQ cgPxRB col-span-2"
+            class="Button-mdtvtf-0 eVVyXU col-span-2"
             data-testid="LinkCollection__add-link"
             disabled=""
             type="button"
@@ -502,7 +502,7 @@ exports[`LinkCollection should render 1`] = `
       </span>
       <div>
         <div
-          class="sc-dlfnbm bBhhq flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+          class="sc-bdfBwQ TENjd flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
           height="10"
           width="10"
         >
@@ -538,7 +538,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
       </span>
       <div>
         <div
-          class="sc-dlfnbm bBhhq flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
+          class="sc-bdfBwQ TENjd flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -557,14 +557,14 @@ exports[`LinkCollection should select a specific link type 1`] = `
       class="mt-4 space-y-4"
     >
       <div
-        class="SubForm__SubFormWrapper-c4tqfs-0 bdhBBW"
+        class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
       >
         <div
           class="grid gap-4"
           style="grid-template-columns: 2fr 3fr;"
         >
           <fieldset
-            class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
           >
             <label
               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -581,7 +581,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="relative w-full"
             >
               <input
-                class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
                 data-testid="select-list__input"
                 name="type"
                 readonly=""
@@ -602,7 +602,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     id="downshift-89-label"
                   />
                   <div
-                    class="sc-iBPRYJ eBglsL"
+                    class="InputGroup-sc-1obbdqe-3 bgPpWR"
                     data-testid="SelectDropdownInput"
                   >
                     <input
@@ -610,7 +610,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                       aria-controls="downshift-89-menu"
                       aria-labelledby="downshift-89-label"
                       autocomplete="off"
-                      class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
                       data-testid="SelectDropdownInput__input"
                       id="downshift-88-input"
                       name="type"
@@ -626,10 +626,10 @@ exports[`LinkCollection should select a specific link type 1`] = `
                   />
                 </div>
                 <div
-                  class="sc-eCssSg sc-gKsewC dgKRTw dAcDld w-10 pointer-events-none text-theme-neutral"
+                  class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                 >
                   <div
-                    class="sc-dlfnbm ljKayU"
+                    class="sc-bdfBwQ gLRWTb"
                     height="5"
                     width="7"
                   >
@@ -642,7 +642,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
           >
             <label
               class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -657,14 +657,14 @@ exports[`LinkCollection should select a specific link type 1`] = `
             </label>
             <input
               aria-invalid="false"
-              class="sc-hKgILt idkeoP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="LinkCollection__input-link"
               disabled=""
               name="value"
             />
           </fieldset>
           <button
-            class="sc-bdfBwQ cgPxRB col-span-2"
+            class="Button-mdtvtf-0 eVVyXU col-span-2"
             data-testid="LinkCollection__add-link"
             disabled=""
             type="button"
@@ -674,7 +674,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
         </div>
       </div>
       <div
-        class="sc-iqHYGH enVqzb -mt-3"
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
         role="table"
       >
         <table
@@ -705,7 +705,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     data-testid="table__Sort"
                   >
                     <div
-                      class="sc-dlfnbm iDOPVV"
+                      class="sc-bdfBwQ iABjnS"
                       height="12"
                       width="15"
                     >
@@ -735,7 +735,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     data-testid="table__Sort"
                   >
                     <div
-                      class="sc-dlfnbm iDOPVV"
+                      class="sc-bdfBwQ iABjnS"
                       height="12"
                       width="15"
                     >
@@ -765,7 +765,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     data-testid="table__Sort"
                   >
                     <div
-                      class="sc-dlfnbm iDOPVV"
+                      class="sc-bdfBwQ iABjnS"
                       height="12"
                       width="15"
                     >
@@ -796,17 +796,17 @@ exports[`LinkCollection should select a specific link type 1`] = `
             role="rowgroup"
           >
             <tr
-              class="sc-dQppl fgFAlk group"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
               data-testid="TableRow"
             >
               <td
                 class="w-16"
               >
                 <div
-                  class="sc-crrsfI cSzKod justify-center"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gEFZAQ justify-center"
                 >
                   <input
-                    class="sc-kEjbxe jBjrau"
+                    class="RadioButton-sc-17mep65-0 NmGfr"
                     color="success"
                     data-testid="LinkCollection__selected"
                     type="radio"
@@ -817,7 +817,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="w-40"
               >
                 <div
-                  class="sc-crrsfI juCHkL font-semibold"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 laKrVi font-semibold"
                 >
                   <input
                     name="links[0].type"
@@ -831,7 +831,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-crrsfI juCHkL font-semibold break-all"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 laKrVi font-semibold break-all"
                 >
                   <input
                     name="links[0].value"
@@ -845,15 +845,15 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-crrsfI fxDHsd justify-end"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                 >
                   <button
-                    class="sc-bdfBwQ jBrzAp"
+                    class="Button-mdtvtf-0 eXKKLD"
                     data-testid="LinkCollection__remove-link"
                     type="button"
                   >
                     <div
-                      class="sc-dlfnbm gimfHi"
+                      class="sc-bdfBwQ fPrsah"
                       height="1em"
                       width="1em"
                     >
@@ -866,21 +866,21 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
             </tr>
             <tr
-              class="sc-dQppl fgFAlk group"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
               data-testid="TableRow"
             >
               <td
                 class="w-16"
               >
                 <div
-                  class="sc-crrsfI cSzKod justify-center"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gEFZAQ justify-center"
                 />
               </td>
               <td
                 class="w-40"
               >
                 <div
-                  class="sc-crrsfI juCHkL font-semibold"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 laKrVi font-semibold"
                 >
                   <input
                     name="links[1].type"
@@ -894,7 +894,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-crrsfI juCHkL font-semibold break-all"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 laKrVi font-semibold break-all"
                 >
                   <input
                     name="links[1].value"
@@ -908,15 +908,15 @@ exports[`LinkCollection should select a specific link type 1`] = `
               </td>
               <td>
                 <div
-                  class="sc-crrsfI fxDHsd justify-end"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                 >
                   <button
-                    class="sc-bdfBwQ jBrzAp"
+                    class="Button-mdtvtf-0 eXKKLD"
                     data-testid="LinkCollection__remove-link"
                     type="button"
                   >
                     <div
-                      class="sc-dlfnbm gimfHi"
+                      class="sc-bdfBwQ fPrsah"
                       height="1em"
                       width="1em"
                     >
@@ -953,7 +953,7 @@ exports[`LinkCollection should toggle open/close link collection 1`] = `
       </span>
       <div>
         <div
-          class="sc-dlfnbm bBhhq flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+          class="sc-bdfBwQ TENjd flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
           height="10"
           width="10"
         >
