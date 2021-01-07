@@ -83,34 +83,37 @@ exports[`Exchange should not render filler exchange cards 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -123,12 +126,12 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-gsTCUz byDVwN p-1"
                     height="18"
                     width="18"
                   >
@@ -149,12 +152,12 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-gsTCUz gbSRoN p-1"
                     height="22"
                     width="22"
                   >
@@ -192,62 +195,65 @@ exports[`Exchange should not render filler exchange cards 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -257,7 +263,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -327,21 +333,24 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -379,21 +388,24 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -431,21 +443,24 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -462,7 +477,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                         class="flex items-center p-2 font-semibold text-theme-primary"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+                          class="sc-gsTCUz cXMmJt p-4 mr-4 rounded-lg bg-theme-primary-contrast"
                           height="1em"
                           width="1em"
                         >
@@ -484,7 +499,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -593,34 +608,37 @@ exports[`Exchange should open & close add exchange modal 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -633,12 +651,12 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-gsTCUz byDVwN p-1"
                     height="18"
                     width="18"
                   >
@@ -659,12 +677,12 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-gsTCUz gbSRoN p-1"
                     height="22"
                     width="22"
                   >
@@ -702,62 +720,65 @@ exports[`Exchange should open & close add exchange modal 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -767,7 +788,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -837,21 +858,24 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -889,21 +913,24 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -941,21 +968,24 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -972,7 +1002,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                         class="flex items-center p-2 font-semibold text-theme-primary"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+                          class="sc-gsTCUz cXMmJt p-4 mr-4 rounded-lg bg-theme-primary-contrast"
                           height="1em"
                           width="1em"
                         >
@@ -994,7 +1024,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -1103,34 +1133,37 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -1143,12 +1176,12 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-gsTCUz byDVwN p-1"
                     height="18"
                     width="18"
                   >
@@ -1169,12 +1202,12 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-gsTCUz gbSRoN p-1"
                     height="22"
                     width="22"
                   >
@@ -1212,62 +1245,65 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1277,7 +1313,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -1329,7 +1365,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                 class="flex items-center p-2 font-semibold text-theme-primary"
               >
                 <div
-                  class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+                  class="sc-gsTCUz cXMmJt p-4 mr-4 rounded-lg bg-theme-primary-contrast"
                   height="1em"
                   width="1em"
                 >
@@ -1347,7 +1383,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -1447,34 +1483,37 @@ exports[`Exchange should render 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -1487,12 +1526,12 @@ exports[`Exchange should render 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-gsTCUz byDVwN p-1"
                     height="18"
                     width="18"
                   >
@@ -1513,12 +1552,12 @@ exports[`Exchange should render 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-gsTCUz gbSRoN p-1"
                     height="22"
                     width="22"
                   >
@@ -1556,62 +1595,65 @@ exports[`Exchange should render 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1621,7 +1663,7 @@ exports[`Exchange should render 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -1673,7 +1715,7 @@ exports[`Exchange should render 1`] = `
                 class="flex items-center p-2 font-semibold text-theme-primary"
               >
                 <div
-                  class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+                  class="sc-gsTCUz cXMmJt p-4 mr-4 rounded-lg bg-theme-primary-contrast"
                   height="1em"
                   width="1em"
                 >
@@ -1691,7 +1733,7 @@ exports[`Exchange should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -1791,34 +1833,37 @@ exports[`Exchange should render filler exchange cards 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -1831,12 +1876,12 @@ exports[`Exchange should render filler exchange cards 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-gsTCUz byDVwN p-1"
                     height="18"
                     width="18"
                   >
@@ -1857,12 +1902,12 @@ exports[`Exchange should render filler exchange cards 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-gsTCUz gbSRoN p-1"
                     height="22"
                     width="22"
                   >
@@ -1900,62 +1945,65 @@ exports[`Exchange should render filler exchange cards 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1965,7 +2013,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -2038,21 +2086,24 @@ exports[`Exchange should render filler exchange cards 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2090,21 +2141,24 @@ exports[`Exchange should render filler exchange cards 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2142,21 +2196,24 @@ exports[`Exchange should render filler exchange cards 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2194,21 +2251,24 @@ exports[`Exchange should render filler exchange cards 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2225,7 +2285,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                         class="flex items-center p-2 font-semibold text-theme-primary"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+                          class="sc-gsTCUz cXMmJt p-4 mr-4 rounded-lg bg-theme-primary-contrast"
                           height="1em"
                           width="1em"
                         >
@@ -2310,7 +2370,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -2419,34 +2479,37 @@ exports[`Exchange should render with exchanges 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -2459,12 +2522,12 @@ exports[`Exchange should render with exchanges 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-gsTCUz byDVwN p-1"
                     height="18"
                     width="18"
                   >
@@ -2485,12 +2548,12 @@ exports[`Exchange should render with exchanges 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-gsTCUz gbSRoN p-1"
                     height="22"
                     width="22"
                   >
@@ -2528,62 +2591,65 @@ exports[`Exchange should render with exchanges 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -2593,7 +2659,7 @@ exports[`Exchange should render with exchanges 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -2663,21 +2729,24 @@ exports[`Exchange should render with exchanges 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2715,21 +2784,24 @@ exports[`Exchange should render with exchanges 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2767,21 +2839,24 @@ exports[`Exchange should render with exchanges 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -2798,7 +2873,7 @@ exports[`Exchange should render with exchanges 1`] = `
                         class="flex items-center p-2 font-semibold text-theme-primary"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+                          class="sc-gsTCUz cXMmJt p-4 mr-4 rounded-lg bg-theme-primary-contrast"
                           height="1em"
                           width="1em"
                         >
@@ -2820,7 +2895,7 @@ exports[`Exchange should render with exchanges 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -2929,34 +3004,37 @@ exports[`Exchange should select exchange 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="sc-hKgILt hnVlH w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-gsTCUz eMnCVw p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -2969,12 +3047,12 @@ exports[`Exchange should select exchange 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-gsTCUz byDVwN p-1"
                     height="18"
                     width="18"
                   >
@@ -2995,12 +3073,12 @@ exports[`Exchange should select exchange 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-hKgILt hnVlH"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-gsTCUz gbSRoN p-1"
                     height="22"
                     width="22"
                   >
@@ -3038,62 +3116,65 @@ exports[`Exchange should select exchange 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-gsTCUz cXMmJt"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="sc-dlfnbm eMrbhY flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-gsTCUz jsttWF"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
@@ -3103,7 +3184,7 @@ exports[`Exchange should select exchange 1`] = `
       class="flex flex-col flex-1 mt-5"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -3173,21 +3254,24 @@ exports[`Exchange should select exchange 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -3225,21 +3309,24 @@ exports[`Exchange should select exchange 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -3277,21 +3364,24 @@ exports[`Exchange should select exchange 1`] = `
                       >
                         <div
                           class="relative"
-                          data-testid="dropdown__toggle"
                         >
-                          <div
-                            class="flex overflow-hidden justify-center w-4"
+                          <span
+                            data-testid="dropdown__toggle"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                              height="1em"
-                              width="1em"
+                              class="flex overflow-hidden justify-center w-4"
                             >
-                              <svg>
-                                settings.svg
-                              </svg>
+                              <div
+                                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
                             </div>
-                          </div>
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -3308,7 +3398,7 @@ exports[`Exchange should select exchange 1`] = `
                         class="flex items-center p-2 font-semibold text-theme-primary"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+                          class="sc-gsTCUz cXMmJt p-4 mr-4 rounded-lg bg-theme-primary-contrast"
                           height="1em"
                           width="1em"
                         >
@@ -3330,7 +3420,7 @@ exports[`Exchange should select exchange 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
