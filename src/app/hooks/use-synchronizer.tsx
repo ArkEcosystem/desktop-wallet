@@ -113,7 +113,7 @@ export const useProfileRestore = () => {
 				await profile.restore();
 
 				restoreProfilePassword(profile);
-				persist();
+				await persist();
 
 				setConfiguration({ profileIsSyncing: false });
 			}

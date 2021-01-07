@@ -182,7 +182,7 @@ describe("Transactions", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.LOADING);
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
 		});
 
 		expect(asFragment()).toMatchSnapshot();

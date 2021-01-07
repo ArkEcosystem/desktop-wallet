@@ -23,7 +23,7 @@ type TransactionsProps = {
 };
 
 export const Transactions = memo(
-	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading = true }: TransactionsProps) => {
+	({ emptyText, isCompact, profile, isVisible = true, walletsCount, isLoading = false }: TransactionsProps) => {
 		const { t } = useTranslation();
 
 		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
@@ -68,16 +68,10 @@ export const Transactions = memo(
 		);
 
 		useEffect(() => {
-			if (isVisible) {
-				setIsLoading(true);
+			if (isVisible && !isLoading) {
 				fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 			}
-			// eslint-disable-next-line
-		}, [activeTransactionModeTab, selectedTransactionType, walletsCount]);
-
-		useEffect(() => {
-			setIsLoading(isLoading);
-		}, [setIsLoading, isLoading]);
+		}, [activeTransactionModeTab, selectedTransactionType, walletsCount, isLoading]);
 
 		if (!isVisible) return <></>;
 
@@ -132,7 +126,7 @@ export const Transactions = memo(
 					</EmptyBlock>
 				)}
 
-				{transactions.length === 0 && !!selectedTransactionType && (
+				{transactions.length === 0 && !!selectedTransactionType && !isLoadingTransactions && (
 					<EmptyResults
 						className="flex-1"
 						title={t("COMMON.EMPTY_RESULTS.TITLE")}
