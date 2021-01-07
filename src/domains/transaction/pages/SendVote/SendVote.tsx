@@ -89,6 +89,7 @@ export const SendVote = () => {
 			route: `/profiles/${activeProfile.id()}/dashboard`,
 		},
 		{
+			/* istanbul ignore next */
 			label: activeWallet.alias() || activeWallet.address(),
 			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
 		},

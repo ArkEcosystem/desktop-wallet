@@ -75,7 +75,7 @@ export const Settings = () => {
 			route: `/profiles/${activeProfile.id()}/settings`,
 		},
 		{
-			label: settingsItems.find((item) => item.itemKey === (activeSettings as any))!.label,
+			label: settingsItems.find((item) => item.itemKey === activeSettings)!.label,
 		},
 	];
 

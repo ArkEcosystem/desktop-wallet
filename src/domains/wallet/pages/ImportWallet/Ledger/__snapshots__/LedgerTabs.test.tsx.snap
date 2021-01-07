@@ -82,7 +82,7 @@ exports[`LedgerTabs should render connection step 1`] = `
                     class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
                   >
                     <div
-                      class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                      class="Circle-uw7h4j-0 bMFmZf border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                       data-testid="SelectNetworkInput__network"
                     />
                   </div>
@@ -118,7 +118,7 @@ exports[`LedgerTabs should render connection step 1`] = `
         class="flex space-x-3"
       >
         <button
-          class="Button-mdtvtf-0 eVVyXU"
+          class="Button-mdtvtf-0 jqEyNv"
           data-testid="Paginator__back-button"
           disabled=""
           type="button"
@@ -126,7 +126,7 @@ exports[`LedgerTabs should render connection step 1`] = `
           Back
         </button>
         <button
-          class="Button-mdtvtf-0 eVVyXU"
+          class="Button-mdtvtf-0 jqEyNv"
           data-testid="Paginator__continue-button"
           disabled=""
           type="button"
@@ -222,7 +222,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   >
                     <div
                       aria-label="ARK Devnet"
-                      class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                      class="Circle-uw7h4j-0 bMFmZf border-theme-primary-100 text-theme-primary-400"
                       data-testid="SelectNetworkInput__network"
                     >
                       <div
@@ -357,12 +357,12 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                  class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD space-x-4"
                     >
                       <div
                         class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -394,14 +394,14 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     class="w-64"
                   >
                     <div
-                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-semibold"
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx justify-end font-semibold"
                     >
                       <div
                         class="flex items-center space-x-3 text-theme-danger-400"
                         data-testid="LedgerScanStep__amount-error"
                       >
                         <div
-                          class="Circle-uw7h4j-0 blBpcG border-theme-danger-400"
+                          class="Circle-uw7h4j-0 bMFmZf border-theme-danger-400"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -421,7 +421,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   </td>
                   <td>
                     <div
-                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-center"
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-center"
                     >
                       <input
                         class="Checkbox-sc-17gwqiq-0 cLiiJm"
@@ -433,12 +433,12 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                  class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                   data-testid="TableRow"
                 >
                   <td>
                     <div
-                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD space-x-4"
                     >
                       <div
                         class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -470,14 +470,14 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                     class="w-64"
                   >
                     <div
-                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-semibold"
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx justify-end font-semibold"
                     >
                       <div
                         class="flex items-center space-x-3 text-theme-danger-400"
                         data-testid="LedgerScanStep__amount-error"
                       >
                         <div
-                          class="Circle-uw7h4j-0 blBpcG border-theme-danger-400"
+                          class="Circle-uw7h4j-0 bMFmZf border-theme-danger-400"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -497,7 +497,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   </td>
                   <td>
                     <div
-                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-center"
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-center"
                     >
                       <input
                         class="Checkbox-sc-17gwqiq-0 cLiiJm"
@@ -513,7 +513,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
           </div>
           <div>
             <button
-              class="Button-mdtvtf-0 eVVyXU w-full"
+              class="Button-mdtvtf-0 jqEyNv w-full"
               data-testid="LedgerScanStep__view-more"
               disabled=""
               type="button"
@@ -531,7 +531,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
     >
       <div>
         <button
-          class="Button-mdtvtf-0 ifPnXw"
+          class="Button-mdtvtf-0 fEHbkH"
           data-testid="Paginator__retry-button"
           type="button"
         >
@@ -553,14 +553,14 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
         class="flex space-x-3"
       >
         <button
-          class="Button-mdtvtf-0 ifPnXw"
+          class="Button-mdtvtf-0 fEHbkH"
           data-testid="Paginator__back-button"
           type="button"
         >
           Back
         </button>
         <button
-          class="Button-mdtvtf-0 eVVyXU"
+          class="Button-mdtvtf-0 jqEyNv"
           data-testid="Paginator__continue-button"
           disabled=""
           type="button"

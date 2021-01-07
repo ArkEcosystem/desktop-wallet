@@ -21,15 +21,11 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 			<Icon name="ArrowLeft" className="text-theme-neutral-500" width={13} height={24} />
 
 			{crumbs.map((crumb: Crumb, index: number) => (
-				<>
-					{isLast(index) && (
-						<span key={index} className="text-theme-neutral-700">
-							{crumb.label}
-						</span>
-					)}
+				<span key={index} className="space-x-3">
+					{isLast(index) && <span className="text-theme-neutral-700">{crumb.label}</span>}
 
 					{!isLast(index) && crumb.route && (
-						<span key={index} className="space-x-3">
+						<>
 							<NavLink to={crumb.route} className="text-theme-neutral-500 hover:underline">
 								<span>{crumb.label}</span>
 							</NavLink>
@@ -40,9 +36,9 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 									type="vertical"
 								/>
 							</span>
-						</span>
+						</>
 					)}
-				</>
+				</span>
 			))}
 		</div>
 	) : null;

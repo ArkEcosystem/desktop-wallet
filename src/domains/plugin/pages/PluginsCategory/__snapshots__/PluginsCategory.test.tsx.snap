@@ -91,7 +91,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -126,7 +126,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -152,7 +152,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -204,7 +204,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -238,7 +238,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -260,11 +260,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -272,19 +272,34 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -347,7 +362,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -682,14 +697,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -700,7 +715,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -721,7 +736,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -730,7 +745,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -739,7 +754,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -774,7 +789,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -783,7 +798,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -792,7 +807,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -817,10 +832,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -830,14 +845,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -848,7 +863,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -869,7 +884,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -878,7 +893,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -887,7 +902,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -922,7 +937,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -931,7 +946,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -940,7 +955,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -965,10 +980,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -978,14 +993,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -996,7 +1011,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1017,7 +1032,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -1026,7 +1041,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -1035,7 +1050,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -1070,7 +1085,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -1079,7 +1094,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -1088,7 +1103,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -1113,10 +1128,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1126,14 +1141,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -1144,7 +1159,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1165,7 +1180,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -1174,7 +1189,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -1183,7 +1198,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -1218,7 +1233,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -1227,7 +1242,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -1236,7 +1251,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -1261,10 +1276,10 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1274,14 +1289,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -1292,7 +1307,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1313,7 +1328,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -1322,7 +1337,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -1331,7 +1346,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -1366,7 +1381,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -1375,7 +1390,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -1384,7 +1399,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -1409,7 +1424,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -1418,7 +1433,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -1437,14 +1452,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -1455,7 +1470,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1476,7 +1491,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -1485,7 +1500,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -1494,7 +1509,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -1529,7 +1544,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -1538,7 +1553,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -1547,7 +1562,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -1572,7 +1587,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -1581,7 +1596,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -1600,14 +1615,14 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -1618,7 +1633,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -1639,7 +1654,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -1648,7 +1663,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -1657,7 +1672,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -1692,7 +1707,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -1701,7 +1716,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -1710,7 +1725,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -1735,7 +1750,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -1744,7 +1759,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -1884,7 +1899,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1919,7 +1934,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1945,7 +1960,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1997,7 +2012,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -2031,7 +2046,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -2053,11 +2068,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -2065,19 +2080,34 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -2140,7 +2170,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -2475,14 +2505,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -2493,7 +2523,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -2514,7 +2544,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -2523,7 +2553,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -2532,7 +2562,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -2567,7 +2597,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -2576,7 +2606,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -2585,7 +2615,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -2610,10 +2640,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -2623,14 +2653,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -2641,7 +2671,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -2662,7 +2692,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -2671,7 +2701,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -2680,7 +2710,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -2715,7 +2745,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -2724,7 +2754,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -2733,7 +2763,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -2758,10 +2788,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -2771,14 +2801,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -2789,7 +2819,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -2810,7 +2840,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -2819,7 +2849,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -2828,7 +2858,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -2863,7 +2893,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -2872,7 +2902,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -2881,7 +2911,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -2906,10 +2936,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -2919,14 +2949,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -2937,7 +2967,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -2958,7 +2988,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -2967,7 +2997,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -2976,7 +3006,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -3011,7 +3041,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -3020,7 +3050,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -3029,7 +3059,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -3054,10 +3084,10 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -3067,14 +3097,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -3085,7 +3115,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -3106,7 +3136,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -3115,7 +3145,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -3124,7 +3154,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -3159,7 +3189,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -3168,7 +3198,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -3177,7 +3207,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -3202,7 +3232,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -3211,7 +3241,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -3230,14 +3260,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -3248,7 +3278,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -3269,7 +3299,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -3278,7 +3308,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -3287,7 +3317,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -3322,7 +3352,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -3331,7 +3361,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -3340,7 +3370,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -3365,7 +3395,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -3374,7 +3404,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -3393,14 +3423,14 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -3411,7 +3441,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -3432,7 +3462,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -3441,7 +3471,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -3450,7 +3480,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -3485,7 +3515,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -3494,7 +3524,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -3503,7 +3533,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -3528,7 +3558,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -3537,7 +3567,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -3677,7 +3707,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3712,7 +3742,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -3738,7 +3768,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -3790,7 +3820,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -3824,7 +3854,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -3846,11 +3876,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -3858,19 +3888,34 @@ exports[`PluginsCategory should delete plugin 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -3933,7 +3978,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -4768,7 +4813,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4803,7 +4848,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -4829,7 +4874,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -4881,7 +4926,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -4915,7 +4960,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -4937,11 +4982,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -4949,19 +4994,34 @@ exports[`PluginsCategory should download & install plugin 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -5024,7 +5084,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -5359,14 +5419,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5377,7 +5437,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5398,7 +5458,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -5407,7 +5467,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -5416,7 +5476,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -5451,7 +5511,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -5460,7 +5520,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -5469,7 +5529,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -5494,10 +5554,10 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -5507,14 +5567,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5525,7 +5585,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5546,7 +5606,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -5555,7 +5615,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -5564,7 +5624,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -5599,7 +5659,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -5608,7 +5668,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -5617,7 +5677,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -5642,10 +5702,10 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -5655,14 +5715,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5673,7 +5733,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5694,7 +5754,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -5703,7 +5763,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -5712,7 +5772,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -5747,7 +5807,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -5756,7 +5816,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -5765,7 +5825,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -5790,10 +5850,10 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -5803,14 +5863,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5821,7 +5881,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5842,7 +5902,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -5851,7 +5911,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -5860,7 +5920,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -5895,7 +5955,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -5904,7 +5964,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -5913,7 +5973,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -5938,10 +5998,10 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -5951,14 +6011,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -5969,7 +6029,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -5990,7 +6050,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -5999,7 +6059,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -6008,7 +6068,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -6043,7 +6103,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -6052,7 +6112,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -6061,7 +6121,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -6086,7 +6146,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -6095,7 +6155,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -6114,14 +6174,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -6132,7 +6192,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -6153,7 +6213,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -6162,7 +6222,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -6171,7 +6231,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -6206,7 +6266,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -6215,7 +6275,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -6224,7 +6284,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -6249,7 +6309,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -6258,7 +6318,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -6277,14 +6337,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -6295,7 +6355,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -6316,7 +6376,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -6325,7 +6385,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -6334,7 +6394,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -6369,7 +6429,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -6378,7 +6438,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -6387,7 +6447,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -6412,7 +6472,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -6421,7 +6481,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -6482,7 +6542,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          class="Button-mdtvtf-0 dyFJik w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -6564,7 +6624,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           class=""
                         >
                           <div
-                            class="Circle-uw7h4j-0 JkqUV relative z-10 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+                            class="Circle-uw7h4j-0 cPaasd relative z-10 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <span
                               class="text-theme-success"
@@ -6581,7 +6641,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             </span>
                           </div>
                           <div
-                            class="Circle-uw7h4j-0 JkqUV relative z-0 -ml-1 bg-theme-background border-theme-success"
+                            class="Circle-uw7h4j-0 cPaasd relative z-0 -ml-1 bg-theme-background border-theme-success"
                           >
                             <span
                               class="text-xs font-semibold text-theme-success"
@@ -6600,14 +6660,14 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="Button-mdtvtf-0 ifPnXw"
+                class="Button-mdtvtf-0 fEHbkH"
                 data-testid="InstallPlugin__cancel-button"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="Button-mdtvtf-0 cvPqli"
+                class="Button-mdtvtf-0 gRMEUp"
                 data-testid="InstallPlugin__install-button"
                 type="button"
               >
@@ -6713,7 +6773,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6748,7 +6808,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -6774,7 +6834,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -6826,7 +6886,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -6860,7 +6920,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -6882,11 +6942,11 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -6894,19 +6954,34 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -6969,7 +7044,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -7725,7 +7800,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          class="Button-mdtvtf-0 dyFJik w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -7807,7 +7882,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           class=""
                         >
                           <div
-                            class="Circle-uw7h4j-0 JkqUV relative z-10 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+                            class="Circle-uw7h4j-0 cPaasd relative z-10 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             <span
                               class="text-theme-success"
@@ -7824,7 +7899,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                             </span>
                           </div>
                           <div
-                            class="Circle-uw7h4j-0 JkqUV relative z-0 -ml-1 bg-theme-background border-theme-success"
+                            class="Circle-uw7h4j-0 cPaasd relative z-0 -ml-1 bg-theme-background border-theme-success"
                           >
                             <span
                               class="text-xs font-semibold text-theme-success"
@@ -7843,14 +7918,14 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="Button-mdtvtf-0 ifPnXw"
+                class="Button-mdtvtf-0 fEHbkH"
                 data-testid="InstallPlugin__cancel-button"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="Button-mdtvtf-0 cvPqli"
+                class="Button-mdtvtf-0 gRMEUp"
                 data-testid="InstallPlugin__install-button"
                 type="button"
               >
@@ -7956,7 +8031,7 @@ exports[`PluginsCategory should render 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7991,7 +8066,7 @@ exports[`PluginsCategory should render 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -8017,7 +8092,7 @@ exports[`PluginsCategory should render 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -8069,7 +8144,7 @@ exports[`PluginsCategory should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -8103,7 +8178,7 @@ exports[`PluginsCategory should render 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -8125,11 +8200,11 @@ exports[`PluginsCategory should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -8137,19 +8212,34 @@ exports[`PluginsCategory should render 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -8212,7 +8302,7 @@ exports[`PluginsCategory should render 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -9047,7 +9137,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -9082,7 +9172,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -9108,7 +9198,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -9160,7 +9250,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -9194,7 +9284,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -9216,11 +9306,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -9228,19 +9318,34 @@ exports[`PluginsCategory should search for plugin 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -9354,7 +9459,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -10189,7 +10294,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -10224,7 +10329,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -10250,7 +10355,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -10302,7 +10407,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -10336,7 +10441,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -10358,11 +10463,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -10370,19 +10475,34 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -10445,7 +10565,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -11280,7 +11400,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -11315,7 +11435,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -11341,7 +11461,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -11393,7 +11513,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -11427,7 +11547,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -11449,11 +11569,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -11461,19 +11581,34 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -11536,7 +11671,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   class="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
                 />
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="Button-mdtvtf-0 gRMEUp"
                   data-testid="PluginsCategory_header--install"
                   type="button"
                 >
@@ -11871,14 +12006,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -11889,7 +12024,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -11910,7 +12045,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -11919,7 +12054,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -11928,7 +12063,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -11963,7 +12098,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -11972,7 +12107,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -11981,7 +12116,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -12006,10 +12141,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -12019,14 +12154,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12037,7 +12172,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12058,7 +12193,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -12067,7 +12202,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -12076,7 +12211,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -12111,7 +12246,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -12120,7 +12255,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -12129,7 +12264,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -12154,10 +12289,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -12167,14 +12302,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12185,7 +12320,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12206,7 +12341,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -12215,7 +12350,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -12224,7 +12359,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -12259,7 +12394,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -12268,7 +12403,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -12277,7 +12412,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -12302,10 +12437,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -12315,14 +12450,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12333,7 +12468,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12354,7 +12489,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -12363,7 +12498,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Utility
@@ -12372,7 +12507,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -12407,7 +12542,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -12416,7 +12551,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               4.2 MB
@@ -12425,7 +12560,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6"
@@ -12450,10 +12585,10 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <button
-                              class="Button-mdtvtf-0 ifPnXw"
+                              class="Button-mdtvtf-0 fEHbkH"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -12463,14 +12598,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12481,7 +12616,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12502,7 +12637,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -12511,7 +12646,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -12520,7 +12655,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -12555,7 +12690,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -12564,7 +12699,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -12573,7 +12708,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -12598,7 +12733,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -12607,7 +12742,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -12626,14 +12761,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12644,7 +12779,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12665,7 +12800,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -12674,7 +12809,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -12683,7 +12818,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -12718,7 +12853,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -12727,7 +12862,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -12736,7 +12871,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -12761,7 +12896,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -12770,7 +12905,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div
@@ -12789,14 +12924,14 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                       </tr>
                       <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 vHXsu group"
                         data-testid="TableRow"
                       >
                         <td
                           class="w-20"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bVkjUD"
                           >
                             <svg
                               class="w-15 h-15"
@@ -12807,7 +12942,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx space-x-2"
                           >
                             <a
                               class="font-semibold link"
@@ -12828,7 +12963,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx pr-16"
                           >
                             <span>
                               ARK.io
@@ -12837,7 +12972,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               Other
@@ -12846,7 +12981,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex"
@@ -12881,7 +13016,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               v 1.3.8
@@ -12890,7 +13025,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <span>
                               163 KB
@@ -12899,7 +13034,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         </td>
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 bWRZBx"
                           >
                             <div
                               class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
@@ -12924,7 +13059,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fZsVtz justify-end"
                           >
                             <div
                               class="relative"
@@ -12933,7 +13068,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                 data-testid="dropdown__toggle"
                               >
                                 <button
-                                  class="Button-mdtvtf-0 eXKKLD text-left"
+                                  class="Button-mdtvtf-0 hBTrQj text-left"
                                   type="button"
                                 >
                                   <div

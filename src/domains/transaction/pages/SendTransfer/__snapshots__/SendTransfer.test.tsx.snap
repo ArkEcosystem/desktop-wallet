@@ -90,7 +90,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -125,7 +125,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -151,7 +151,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -203,7 +203,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -237,7 +237,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -259,11 +259,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -271,18 +271,33 @@ exports[`SendTransfer should display disabled address selection input if selecte
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
+          class="text-theme-neutral-500 hover:underline"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
-            Go back to Portfolio
+            Portfolio
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Send
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -384,7 +399,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                  class="Circle-uw7h4j-0 bMFmZf border-theme-primary-100 text-theme-primary-400"
                                   data-testid="SelectNetworkInput__network"
                                 >
                                   <div
@@ -434,7 +449,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 cnQsQi text-theme-success-500 border-theme-success-200"
+                                class="Circle-uw7h4j-0 duvWxG text-theme-success-500 border-theme-success-200"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -475,12 +490,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         >
                           <div>
                             <button
-                              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+                              class="sc-dlfnbm cXtIYp SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
                               <div
-                                class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                                class="Circle-uw7h4j-0 bMFmZf mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                               />
                               <div
                                 class="inline-flex items-center"
@@ -514,7 +529,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="sc-gsTCUz iykIgO"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary"
@@ -547,14 +562,14 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="Button-mdtvtf-0 fiUdIG flex-1"
+                                class="Button-mdtvtf-0 jNSLbY flex-1"
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
                                 Single
                               </button>
                               <button
-                                class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+                                class="Button-mdtvtf-0 dJVjhm flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
@@ -591,7 +606,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                       class="absolute left-1"
                                     >
                                       <div
-                                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                                        class="Circle-uw7h4j-0 bMFmZf mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                                       />
                                     </div>
                                     <input
@@ -799,7 +814,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--back"
                     disabled=""
                     type="button"
@@ -807,7 +822,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
                     type="button"
@@ -915,7 +930,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -950,7 +965,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -976,7 +991,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1028,7 +1043,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -1062,7 +1077,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -1084,11 +1099,11 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -1096,18 +1111,52 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
+          class="text-theme-neutral-500 hover:underline"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
-            Go back to Portfolio
+            Portfolio
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
+        >
+          <span>
+            ARK Wallet 1
+          </span>
+        </a>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Send
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -1224,14 +1273,14 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 ifPnXw"
+                    class="Button-mdtvtf-0 fEHbkH"
                     data-testid="SendTransfer__button--back"
                     type="button"
                   >
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU space-x-2"
+                    class="Button-mdtvtf-0 jqEyNv space-x-2"
                     data-testid="SendTransfer__button--submit"
                     disabled=""
                     type="submit"
@@ -1325,7 +1374,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
               >
                 <div
-                  class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                  class="Circle-uw7h4j-0 bMFmZf border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                   data-testid="SelectNetworkInput__network"
                 />
               </div>
@@ -1373,12 +1422,12 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
         >
           <div>
             <button
-              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+              class="sc-dlfnbm cXtIYp SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                class="Circle-uw7h4j-0 bMFmZf mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
               />
               <div
                 class="inline-flex items-center"
@@ -1412,7 +1461,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
         data-testid="recipient-address"
       >
         <div
-          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+          class="sc-gsTCUz iykIgO"
         >
           <div
             class="text-theme-secondary-text hover:text-theme-primary"
@@ -1445,14 +1494,14 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               class="flex items-stretch select-buttons"
             >
               <button
-                class="Button-mdtvtf-0 fiUdIG flex-1"
+                class="Button-mdtvtf-0 jNSLbY flex-1"
                 data-testid="AddRecipient__single"
                 type="button"
               >
                 Single
               </button>
               <button
-                class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+                class="Button-mdtvtf-0 dJVjhm flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
@@ -1489,7 +1538,7 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
                       class="absolute left-1"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                        class="Circle-uw7h4j-0 bMFmZf mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                       />
                     </div>
                     <input
@@ -1760,7 +1809,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
               >
                 <div
-                  class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                  class="Circle-uw7h4j-0 bMFmZf border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                   data-testid="SelectNetworkInput__network"
                 />
               </div>
@@ -1808,12 +1857,12 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
         >
           <div>
             <button
-              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+              class="sc-dlfnbm cXtIYp SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                class="Circle-uw7h4j-0 bMFmZf mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
               />
               <div
                 class="inline-flex items-center"
@@ -1847,7 +1896,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
         data-testid="recipient-address"
       >
         <div
-          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+          class="sc-gsTCUz iykIgO"
         >
           <div
             class="text-theme-secondary-text hover:text-theme-primary"
@@ -1880,14 +1929,14 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
               class="flex items-stretch select-buttons"
             >
               <button
-                class="Button-mdtvtf-0 fiUdIG flex-1"
+                class="Button-mdtvtf-0 jNSLbY flex-1"
                 data-testid="AddRecipient__single"
                 type="button"
               >
                 Single
               </button>
               <button
-                class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+                class="Button-mdtvtf-0 dJVjhm flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
@@ -1924,7 +1973,7 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
                       class="absolute left-1"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                        class="Circle-uw7h4j-0 bMFmZf mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                       />
                     </div>
                     <input
@@ -2195,7 +2244,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
               >
                 <div
-                  class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                  class="Circle-uw7h4j-0 bMFmZf border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                   data-testid="SelectNetworkInput__network"
                 />
               </div>
@@ -2243,12 +2292,12 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
         >
           <div>
             <button
-              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+              class="sc-dlfnbm cXtIYp SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                class="Circle-uw7h4j-0 bMFmZf mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
               />
               <div
                 class="inline-flex items-center"
@@ -2282,7 +2331,7 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
         data-testid="recipient-address"
       >
         <div
-          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+          class="sc-gsTCUz iykIgO"
         >
           <div
             class="text-theme-secondary-text hover:text-theme-primary"
@@ -2315,14 +2364,14 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               class="flex items-stretch select-buttons"
             >
               <button
-                class="Button-mdtvtf-0 fiUdIG flex-1"
+                class="Button-mdtvtf-0 jNSLbY flex-1"
                 data-testid="AddRecipient__single"
                 type="button"
               >
                 Single
               </button>
               <button
-                class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+                class="Button-mdtvtf-0 dJVjhm flex-1 border-l-0"
                 data-testid="AddRecipient__multi"
                 type="button"
               >
@@ -2619,7 +2668,7 @@ exports[`SendTransfer should render 2nd step (review) 1`] = `
       </div>
       <div
         aria-label="ARK Devnet"
-        class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+        class="Circle-uw7h4j-0 cPaasd border-theme-primary-100 text-theme-primary-400"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
@@ -2948,7 +2997,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
         </div>
         <div
           aria-label="ARK Devnet"
-          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+          class="Circle-uw7h4j-0 cPaasd border-theme-primary-100 text-theme-primary-400"
           data-testid="NetworkIcon-ARK-ark.devnet"
         >
           <div
@@ -3073,7 +3122,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
             class="font-semibold"
           >
             <div
-              class="Label-sc-1tj9hzr-0 ganlOQ"
+              class="Label-sc-1tj9hzr-0 iTsHfJ"
               color="danger"
             >
               <span
@@ -3085,7 +3134,7 @@ exports[`SendTransfer should render 4th step (summary) 1`] = `
           </div>
         </div>
         <div
-          class="Circle-uw7h4j-0 JkqUV border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+          class="Circle-uw7h4j-0 cPaasd border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
         >
           <div
             class="sc-bdfBwQ fPrsah"
@@ -3216,7 +3265,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3251,7 +3300,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -3277,7 +3326,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -3329,7 +3378,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -3363,7 +3412,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -3385,11 +3434,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -3397,18 +3446,52 @@ exports[`SendTransfer should render form and use location state 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
+          class="text-theme-neutral-500 hover:underline"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
-            Go back to Portfolio
+            Portfolio
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
+        >
+          <span>
+            ARK Wallet 1
+          </span>
+        </a>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Send
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -3510,7 +3593,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                  class="Circle-uw7h4j-0 bMFmZf border-theme-primary-100 text-theme-primary-400"
                                   data-testid="SelectNetworkInput__network"
                                 >
                                   <div
@@ -3576,7 +3659,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         >
                           <div>
                             <button
-                              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+                              class="sc-dlfnbm cXtIYp SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -3633,7 +3716,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="sc-gsTCUz iykIgO"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary"
@@ -3666,14 +3749,14 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="Button-mdtvtf-0 fiUdIG flex-1"
+                                class="Button-mdtvtf-0 jNSLbY flex-1"
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
                                 Single
                               </button>
                               <button
-                                class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+                                class="Button-mdtvtf-0 dJVjhm flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
@@ -3710,7 +3793,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                       class="absolute left-1"
                                     >
                                       <div
-                                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                                        class="Circle-uw7h4j-0 bMFmZf mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                                       />
                                     </div>
                                     <input
@@ -3916,7 +3999,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--back"
                     disabled=""
                     type="button"
@@ -3924,7 +4007,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
                     type="button"
@@ -4032,7 +4115,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4067,7 +4150,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -4093,7 +4176,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -4145,7 +4228,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -4179,7 +4262,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -4201,11 +4284,11 @@ exports[`SendTransfer should render registration form without selected wallet 1`
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -4213,18 +4296,33 @@ exports[`SendTransfer should render registration form without selected wallet 1`
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
+          class="text-theme-neutral-500 hover:underline"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
-            Go back to Portfolio
+            Portfolio
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Send
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -4325,7 +4423,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
                               >
                                 <div
-                                  class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                                  class="Circle-uw7h4j-0 bMFmZf border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                   data-testid="SelectNetworkInput__network"
                                 />
                               </div>
@@ -4373,12 +4471,12 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                         >
                           <div>
                             <button
-                              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+                              class="sc-dlfnbm cXtIYp SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
                               <div
-                                class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                                class="Circle-uw7h4j-0 bMFmZf mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                               />
                               <div
                                 class="inline-flex items-center"
@@ -4412,7 +4510,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="sc-gsTCUz iykIgO"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary"
@@ -4445,14 +4543,14 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="Button-mdtvtf-0 fiUdIG flex-1"
+                                class="Button-mdtvtf-0 jNSLbY flex-1"
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
                                 Single
                               </button>
                               <button
-                                class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+                                class="Button-mdtvtf-0 dJVjhm flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
@@ -4489,7 +4587,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                                       class="absolute left-1"
                                     >
                                       <div
-                                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                                        class="Circle-uw7h4j-0 bMFmZf mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                                       />
                                     </div>
                                     <input
@@ -4697,7 +4795,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--back"
                     disabled=""
                     type="button"
@@ -4705,7 +4803,7 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
                     type="button"
@@ -4813,7 +4911,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4848,7 +4946,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -4874,7 +4972,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -4926,7 +5024,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -4960,7 +5058,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -4982,11 +5080,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -4994,18 +5092,33 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
+          class="text-theme-neutral-500 hover:underline"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
-            Go back to Portfolio
+            Portfolio
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Send
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -5107,7 +5220,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                  class="Circle-uw7h4j-0 bMFmZf border-theme-primary-100 text-theme-primary-400"
                                   data-testid="SelectNetworkInput__network"
                                 >
                                   <div
@@ -5157,7 +5270,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 cnQsQi text-theme-success-500 border-theme-success-200"
+                                class="Circle-uw7h4j-0 duvWxG text-theme-success-500 border-theme-success-200"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -5198,7 +5311,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         >
                           <div>
                             <button
-                              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+                              class="sc-dlfnbm cXtIYp SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
@@ -5255,7 +5368,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="sc-gsTCUz iykIgO"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary"
@@ -5288,14 +5401,14 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="Button-mdtvtf-0 fiUdIG flex-1"
+                                class="Button-mdtvtf-0 jNSLbY flex-1"
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
                                 Single
                               </button>
                               <button
-                                class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+                                class="Button-mdtvtf-0 dJVjhm flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
@@ -5332,7 +5445,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       class="absolute left-1"
                                     >
                                       <div
-                                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                                        class="Circle-uw7h4j-0 bMFmZf mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                                       />
                                     </div>
                                     <input
@@ -5540,7 +5653,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--back"
                     disabled=""
                     type="button"
@@ -5548,7 +5661,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
                     type="button"
@@ -5656,7 +5769,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -5691,7 +5804,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -5717,7 +5830,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -5769,7 +5882,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -5803,7 +5916,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -5825,11 +5938,11 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -5837,18 +5950,33 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
+          class="text-theme-neutral-500 hover:underline"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
-            Go back to Portfolio
+            Portfolio
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Send
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -5950,7 +6078,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                  class="Circle-uw7h4j-0 bMFmZf border-theme-primary-100 text-theme-primary-400"
                                   data-testid="SelectNetworkInput__network"
                                 >
                                   <div
@@ -6000,7 +6128,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 cnQsQi text-theme-success-500 border-theme-success-200"
+                                class="Circle-uw7h4j-0 duvWxG text-theme-success-500 border-theme-success-200"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -6041,12 +6169,12 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         >
                           <div>
                             <button
-                              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+                              class="sc-dlfnbm cXtIYp SelectAddress  "
                               data-testid="SelectAddress__wrapper"
                               type="button"
                             >
                               <div
-                                class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                                class="Circle-uw7h4j-0 bMFmZf mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                               />
                               <div
                                 class="inline-flex items-center"
@@ -6080,7 +6208,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="sc-gsTCUz iykIgO"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary"
@@ -6113,14 +6241,14 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               class="flex items-stretch select-buttons"
                             >
                               <button
-                                class="Button-mdtvtf-0 fiUdIG flex-1"
+                                class="Button-mdtvtf-0 jNSLbY flex-1"
                                 data-testid="AddRecipient__single"
                                 type="button"
                               >
                                 Single
                               </button>
                               <button
-                                class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+                                class="Button-mdtvtf-0 dJVjhm flex-1 border-l-0"
                                 data-testid="AddRecipient__multi"
                                 type="button"
                               >
@@ -6157,7 +6285,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                                       class="absolute left-1"
                                     >
                                       <div
-                                        class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                                        class="Circle-uw7h4j-0 bMFmZf mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
                                       />
                                     </div>
                                     <input
@@ -6365,7 +6493,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--back"
                     disabled=""
                     type="button"
@@ -6373,7 +6501,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 jqEyNv"
                     data-testid="SendTransfer__button--continue"
                     disabled=""
                     type="button"
@@ -6481,7 +6609,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6516,7 +6644,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -6542,7 +6670,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -6594,7 +6722,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -6628,7 +6756,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -6650,11 +6778,11 @@ exports[`SendTransfer should send a single transfer 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -6662,18 +6790,52 @@ exports[`SendTransfer should send a single transfer 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
+          class="text-theme-neutral-500 hover:underline"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
-            Go back to Portfolio
+            Portfolio
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
+        >
+          <span>
+            ARK Wallet 1
+          </span>
+        </a>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Send
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -6811,7 +6973,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          class="Circle-uw7h4j-0 cPaasd border-theme-primary-100 text-theme-primary-400"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -6936,7 +7098,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="Label-sc-1tj9hzr-0 ganlOQ"
+                              class="Label-sc-1tj9hzr-0 iTsHfJ"
                               color="danger"
                             >
                               <span
@@ -6948,7 +7110,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Circle-uw7h4j-0 JkqUV border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
+                          class="Circle-uw7h4j-0 cPaasd border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -6991,14 +7153,14 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 ifPnXw block"
+                    class="Button-mdtvtf-0 fEHbkH block"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
                   >
                     Back to Wallet
                   </button>
                   <button
-                    class="Button-mdtvtf-0 ifPnXw space-x-2"
+                    class="Button-mdtvtf-0 fEHbkH space-x-2"
                     data-testid="SendTransfer__button--copy"
                     type="button"
                   >
@@ -7118,7 +7280,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="Button-mdtvtf-0 dyFJik w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7153,7 +7315,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -7179,7 +7341,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="Button-mdtvtf-0 dyFJik"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -7231,7 +7393,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 cPaasd border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -7265,7 +7427,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
                         class="sc-bdfBwQ TENjd transition-transform "
@@ -7287,11 +7449,11 @@ exports[`SendTransfer should show error step and go back 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -7299,18 +7461,52 @@ exports[`SendTransfer should show error step and go back 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
+          class="text-theme-neutral-500 hover:underline"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
-            Go back to Portfolio
+            Portfolio
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
+        >
+          <span>
+            ARK Wallet 1
+          </span>
+        </a>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 ixjViw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Send
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -7374,14 +7570,14 @@ exports[`SendTransfer should show error step and go back 1`] = `
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="Button-mdtvtf-0 ifPnXw"
+                        class="Button-mdtvtf-0 fEHbkH"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
                         Back to Wallet
                       </button>
                       <button
-                        class="Button-mdtvtf-0 cvPqli space-x-2"
+                        class="Button-mdtvtf-0 gRMEUp space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >
