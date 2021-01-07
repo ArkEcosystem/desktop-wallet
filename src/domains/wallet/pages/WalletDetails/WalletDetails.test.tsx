@@ -325,10 +325,10 @@ describe("WalletDetails", () => {
 	});
 
 	it("should filter by type", async () => {
-		const { getByTestId } = await renderPage();
+		const { getByRole, getByTestId } = await renderPage();
 
 		act(() => {
-			fireEvent.click(getByTestId("FilterTransactionsToggle"));
+			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
 		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());

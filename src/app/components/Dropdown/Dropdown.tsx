@@ -117,7 +117,7 @@ const renderToggle = (isOpen: boolean, children: any, toggleIcon: string, toggle
 		const size = getSize(toggleSize);
 
 		return (
-			<div className="float-right cursor-pointer outline-none focus:outline-none">
+			<div className="cursor-pointer outline-none focus:outline-none">
 				<Icon name={toggleIcon} width={size} height={size} />
 			</div>
 		);
@@ -157,24 +157,20 @@ export const Dropdown = ({
 	const ref = useRef(null);
 	useEffect(() => clickOutsideHandler(ref, hide), [ref]);
 
-	if (!isOpen) {
-		return (
-			<div onClick={toggle} ref={ref} className="relative" data-testid="dropdown__toggle">
-				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
-			</div>
-		);
-	}
-
 	return (
 		<div ref={ref} className="relative">
-			<span onClick={toggle}>{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}</span>
+			<span data-testid="dropdown__toggle" onClick={toggle}>
+				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
+			</span>
 
-			<Wrapper position={position} className={`${defaultClasses} ${dropdownClass}`}>
-				<div data-testid="dropdown__content">
-					{renderOptions(options, select)}
-					{children && <div>{children}</div>}
-				</div>
-			</Wrapper>
+			{isOpen && (
+				<Wrapper position={position} className={`${defaultClasses} ${dropdownClass}`}>
+					<div data-testid="dropdown__content">
+						{renderOptions(options, select)}
+						{children && <div>{children}</div>}
+					</div>
+				</Wrapper>
+			)}
 		</div>
 	);
 };

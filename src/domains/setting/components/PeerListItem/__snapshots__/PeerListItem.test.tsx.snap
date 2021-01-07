@@ -58,26 +58,29 @@ exports[`PeerListItem should render 1`] = `
           >
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="float-right"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <button
-                  class="Button-mdtvtf-0 eXKKLD"
-                  type="button"
+                <div
+                  class="float-right"
                 >
-                  <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
+                  <button
+                    class="Button-mdtvtf-0 eXKKLD"
+                    type="button"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </span>
             </div>
           </div>
         </td>

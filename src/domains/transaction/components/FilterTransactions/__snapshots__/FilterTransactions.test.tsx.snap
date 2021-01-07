@@ -8,38 +8,44 @@ exports[`FilterTransactions should open dropdown list with all transaction types
     <div
       class="relative"
     >
-      <span>
-        <div
-          class="flex items-center space-x-2 cursor-pointer"
-          data-testid="FilterTransactionsToggle"
+      <span
+        data-testid="dropdown__toggle"
+      >
+        <button
+          class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+          data-testid="CollapseToggleButton"
         >
-          <div
-            class="font-semibold"
-          >
+          <span>
             <span
-              class="text-theme-neutral-500"
+              class="text-theme-neutral-500 dark:text-theme-neutral-600"
             >
-              Type: 
+              Type
+              :
+               
             </span>
             <span
-              class="text-theme-neutral-600"
+              class="text-theme-neutral-700 dark:text-theme-neutral-200"
             >
               All
             </span>
-          </div>
-          <div
-            class="sc-bdfBwQ iTgmQF bg-theme-primary-600 text-theme-primary-contrast p-1 rounded-xl"
-            height="9"
-            width="9"
+          </span>
+          <span
+            class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 ddCabQ"
           >
-            <svg>
-              chevron-up.svg
-            </svg>
-          </div>
-        </div>
+            <div
+              class="sc-bdfBwQ TENjd"
+              height="10"
+              width="10"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </span>
+        </button>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl max-h-128 overflow-y-auto"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl w-80 max-h-128 overflow-y-auto"
       >
         <div
           data-testid="dropdown__content"
@@ -550,36 +556,43 @@ exports[`FilterTransactions should render 1`] = `
   >
     <div
       class="relative"
-      data-testid="dropdown__toggle"
     >
-      <div
-        class="flex items-center space-x-2 cursor-pointer"
-        data-testid="FilterTransactionsToggle"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <div
-          class="font-semibold"
+        <button
+          class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+          data-testid="CollapseToggleButton"
         >
-          <span
-            class="text-theme-neutral-500"
-          >
-            Type: 
+          <span>
+            <span
+              class="text-theme-neutral-500 dark:text-theme-neutral-600"
+            >
+              Type
+              :
+               
+            </span>
+            <span
+              class="text-theme-neutral-700 dark:text-theme-neutral-200"
+            >
+              All
+            </span>
           </span>
           <span
-            class="text-theme-neutral-600"
+            class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
           >
-            All
+            <div
+              class="sc-bdfBwQ TENjd"
+              height="10"
+              width="10"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
           </span>
-        </div>
-        <div
-          class="sc-bdfBwQ iTgmQF bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
-          height="9"
-          width="9"
-        >
-          <svg>
-            chevron-down.svg
-          </svg>
-        </div>
-      </div>
+        </button>
+      </span>
     </div>
   </div>
 </div>
@@ -592,36 +605,43 @@ exports[`FilterTransactions should render with default selected option 1`] = `
   >
     <div
       class="relative"
-      data-testid="dropdown__toggle"
     >
-      <div
-        class="flex items-center space-x-2 cursor-pointer"
-        data-testid="FilterTransactionsToggle"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <div
-          class="font-semibold"
+        <button
+          class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+          data-testid="CollapseToggleButton"
         >
-          <span
-            class="text-theme-neutral-500"
-          >
-            Type: 
+          <span>
+            <span
+              class="text-theme-neutral-500 dark:text-theme-neutral-600"
+            >
+              Type
+              :
+               
+            </span>
+            <span
+              class="text-theme-neutral-700 dark:text-theme-neutral-200"
+            >
+              All
+            </span>
           </span>
           <span
-            class="text-theme-neutral-600"
+            class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
           >
-            All
+            <div
+              class="sc-bdfBwQ TENjd"
+              height="10"
+              width="10"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
           </span>
-        </div>
-        <div
-          class="sc-bdfBwQ iTgmQF bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
-          height="9"
-          width="9"
-        >
-          <svg>
-            chevron-down.svg
-          </svg>
-        </div>
-      </div>
+        </button>
+      </span>
     </div>
   </div>
 </div>

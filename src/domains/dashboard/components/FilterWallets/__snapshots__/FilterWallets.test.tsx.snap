@@ -39,25 +39,28 @@ exports[`FilterWallets should render 1`] = `
         </div>
         <div
           class="relative"
-          data-testid="dropdown__toggle"
         >
-          <div
-            class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
-            data-testid="filter-wallets__wallets"
+          <span
+            data-testid="dropdown__toggle"
           >
-            <span
-              class="inline-block mr-2 font-semibold"
-            />
             <div
-              class="sc-bdfBwQ fdfkzt"
-              height="12"
-              width="12"
+              class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
+              data-testid="filter-wallets__wallets"
             >
-              <svg>
-                chevron-down.svg
-              </svg>
+              <span
+                class="inline-block mr-2 font-semibold"
+              />
+              <div
+                class="sc-bdfBwQ fdfkzt"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </span>
         </div>
       </div>
       <div
@@ -216,25 +219,28 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </div>
         <div
           class="relative"
-          data-testid="dropdown__toggle"
         >
-          <div
-            class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
-            data-testid="filter-wallets__wallets"
+          <span
+            data-testid="dropdown__toggle"
           >
-            <span
-              class="inline-block mr-2 font-semibold"
-            />
             <div
-              class="sc-bdfBwQ fdfkzt"
-              height="12"
-              width="12"
+              class="flex justify-end items-center cursor-pointer text-theme-secondary-text"
+              data-testid="filter-wallets__wallets"
             >
-              <svg>
-                chevron-down.svg
-              </svg>
+              <span
+                class="inline-block mr-2 font-semibold"
+              />
+              <div
+                class="sc-bdfBwQ fdfkzt"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
             </div>
-          </div>
+          </span>
         </div>
       </div>
       <div

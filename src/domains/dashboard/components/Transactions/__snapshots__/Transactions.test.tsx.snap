@@ -22,36 +22,41 @@ exports[`Transactions should fetch more transactions 1`] = `
         >
           <div
             class="relative"
-            data-testid="dropdown__toggle"
           >
-            <div
-              class="flex items-center space-x-2 cursor-pointer"
-              data-testid="FilterTransactionsToggle"
+            <span
+              data-testid="dropdown__toggle"
             >
-              <div
-                class="font-semibold"
+              <button
+                class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+                data-testid="CollapseToggleButton"
               >
-                <span
-                  class="text-theme-neutral-500"
-                >
-                  Type: 
+                <span>
+                  <span
+                    class="text-theme-neutral-500 dark:text-theme-neutral-600"
+                  >
+                    Type: 
+                  </span>
+                  <span
+                    class="text-theme-neutral-700 dark:text-theme-neutral-200"
+                  >
+                    All
+                  </span>
                 </span>
                 <span
-                  class="text-theme-neutral-600"
+                  class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
                 >
-                  All
+                  <div
+                    class="sc-bdfBwQ TENjd"
+                    height="10"
+                    width="10"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </span>
-              </div>
-              <div
-                class="sc-bdfBwQ iTgmQF bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
-                height="9"
-                width="9"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
+              </button>
+            </span>
           </div>
         </div>
       </div>
@@ -1514,36 +1519,41 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
         >
           <div
             class="relative"
-            data-testid="dropdown__toggle"
           >
-            <div
-              class="flex items-center space-x-2 cursor-pointer"
-              data-testid="FilterTransactionsToggle"
+            <span
+              data-testid="dropdown__toggle"
             >
-              <div
-                class="font-semibold"
+              <button
+                class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+                data-testid="CollapseToggleButton"
               >
-                <span
-                  class="text-theme-neutral-500"
-                >
-                  Type: 
+                <span>
+                  <span
+                    class="text-theme-neutral-500 dark:text-theme-neutral-600"
+                  >
+                    Type: 
+                  </span>
+                  <span
+                    class="text-theme-neutral-700 dark:text-theme-neutral-200"
+                  >
+                    All
+                  </span>
                 </span>
                 <span
-                  class="text-theme-neutral-600"
+                  class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
                 >
-                  All
+                  <div
+                    class="sc-bdfBwQ TENjd"
+                    height="10"
+                    width="10"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </span>
-              </div>
-              <div
-                class="sc-bdfBwQ iTgmQF bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
-                height="9"
-                width="9"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
+              </button>
+            </span>
           </div>
         </div>
       </div>
@@ -2386,36 +2396,41 @@ exports[`Transactions should render 1`] = `
         >
           <div
             class="relative"
-            data-testid="dropdown__toggle"
           >
-            <div
-              class="flex items-center space-x-2 cursor-pointer"
-              data-testid="FilterTransactionsToggle"
+            <span
+              data-testid="dropdown__toggle"
             >
-              <div
-                class="font-semibold"
+              <button
+                class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+                data-testid="CollapseToggleButton"
               >
-                <span
-                  class="text-theme-neutral-500"
-                >
-                  Type: 
+                <span>
+                  <span
+                    class="text-theme-neutral-500 dark:text-theme-neutral-600"
+                  >
+                    Type: 
+                  </span>
+                  <span
+                    class="text-theme-neutral-700 dark:text-theme-neutral-200"
+                  >
+                    All
+                  </span>
                 </span>
                 <span
-                  class="text-theme-neutral-600"
+                  class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
                 >
-                  All
+                  <div
+                    class="sc-bdfBwQ TENjd"
+                    height="10"
+                    width="10"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
                 </span>
-              </div>
-              <div
-                class="sc-bdfBwQ iTgmQF bg-theme-primary-100 text-theme-primary-600 p-1 rounded-xl"
-                height="9"
-                width="9"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
+              </button>
+            </span>
           </div>
         </div>
       </div>
