@@ -6,7 +6,7 @@ type Props = {
 
 export function MnemonicList({ mnemonic }: Props) {
 	return (
-		<ul className="grid grid-cols-2 row-gap-5 col-gap-3 md:grid-cols-3 lg:grid-cols-4">
+		<ul className="grid grid-cols-2 gap-y-5 gap-x-3 md:grid-cols-3 lg:grid-cols-4">
 			{mnemonic.split(" ").map((word, index) => (
 				<li
 					data-testid="MnemonicList__item"

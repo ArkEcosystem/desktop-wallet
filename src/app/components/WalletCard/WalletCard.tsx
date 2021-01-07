@@ -93,7 +93,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 			>
 				<div className="flex relative flex-col justify-between p-4 h-full">
 					<div className="flex items-center space-x-4">
-						<div className="-space-x-2 whitespace-no-wrap">
+						<div className="-space-x-2 whitespace-nowrap">
 							<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} />
 							<Avatar size="lg" address={wallet.address()} />
 						</div>

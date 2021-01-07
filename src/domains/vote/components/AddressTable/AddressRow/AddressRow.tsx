@@ -97,7 +97,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 				</div>
 			</TableCell>
 
-			<TableCell innerClassName="justify-end font-bold text-theme-secondary-text whitespace-no-wrap">
+			<TableCell innerClassName="justify-end font-bold text-theme-secondary-text whitespace-nowrap">
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
