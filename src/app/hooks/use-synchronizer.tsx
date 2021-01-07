@@ -105,18 +105,13 @@ export const useProfileRestore = () => {
 
 	return useMemo(() => {
 		const restoreProfile = async (profile: Profile) => {
-			const isDev = process.env.REACT_APP_BUILD_MODE === "demo";
 			setConfiguration({ profileIsSyncing: true });
 
-			if (isDev) {
-				// Perform restore to make migrated wallets available in profile.wallets()
-				await profile.restore();
+			await profile.restore();
+			restoreProfilePassword(profile);
+			await persist();
 
-				restoreProfilePassword(profile);
-				await persist();
-
-				setConfiguration({ profileIsSyncing: false });
-			}
+			setConfiguration({ profileIsSyncing: false });
 		};
 
 		return {
@@ -160,7 +155,9 @@ export const useProfileSynchronizer = () => {
 	const { start, runAll } = useSynchronizer(jobs);
 
 	useEffect(() => {
-		if (profile) {
+		const isDev = process.env.REACT_APP_BUILD_MODE === "demo";
+		if (profile && isDev) {
+			// Perform restore to make migrated wallets available in profile.wallets()
 			restoreProfile(profile);
 		}
 
