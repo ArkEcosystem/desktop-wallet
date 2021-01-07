@@ -6,7 +6,7 @@ import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
 import os from "os";
 import React from "react";
-import { act, env,fireEvent, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";

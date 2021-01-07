@@ -2,7 +2,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { httpClient } from "app/services";
 import React from "react";
 import { StubStorage } from "tests/mocks";
-import { act, env,fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
+import { act, env, fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { EnvironmentProvider, useEnvironmentContext } from "./Environment";
 
