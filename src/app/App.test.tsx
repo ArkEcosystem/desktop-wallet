@@ -9,6 +9,7 @@ import nock from "nock";
 import React from "react";
 import {
 	act,
+	env,
 	fireEvent,
 	getDefaultProfileId,
 	RenderResult,
@@ -61,6 +62,8 @@ const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 describe("App", () => {
 	beforeAll(async () => {
+		env.reset();
+
 		useDefaultNetMocks();
 
 		nock("https://dwallets.ark.io")
@@ -68,6 +71,10 @@ describe("App", () => {
 			.query({ limit: 20 })
 			.reply(200, require("tests/fixtures/coins/ark/devnet/notification-transactions.json"))
 			.persist();
+	});
+
+	beforeEach(async () => {
+		env.reset();
 	});
 
 	it("should render splash screen", async () => {

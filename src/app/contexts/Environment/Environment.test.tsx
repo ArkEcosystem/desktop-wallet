@@ -1,9 +1,8 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Storage } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import React from "react";
 import { StubStorage } from "tests/mocks";
-import { act, fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
+import { act, env,fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { EnvironmentProvider, useEnvironmentContext } from "./Environment";
 
@@ -26,7 +25,7 @@ describe("Environment Context", () => {
 	});
 
 	it("should render the wrapper properly", () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		const { container, asFragment, getByText } = render(
 			<EnvironmentProvider env={env}>
@@ -59,7 +58,7 @@ describe("Environment Context", () => {
 		};
 
 		const App = () => {
-			const env = new Environment({ coins: { ARK }, httpClient, storage: db });
+			env.reset({ coins: { ARK }, httpClient, storage: db });
 
 			return (
 				<EnvironmentProvider env={env}>
