@@ -72,7 +72,7 @@ export const TransactionRow = ({
 			)}
 
 			<TableCell variant={showExplorerLink ? "middle" : "start"} innerClassName="text-theme-secondary-text">
-				<span data-testid="TransactionRow__timestamp" className="whitespace-no-wrap">
+				<span data-testid="TransactionRow__timestamp" className="whitespace-nowrap">
 					{transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")}
 				</span>
 			</TableCell>
@@ -102,7 +102,7 @@ export const TransactionRow = ({
 					</Button>
 				) : (
 					exchangeCurrency && (
-						<span data-testid="TransactionRow__currency" className="whitespace-no-wrap">
+						<span data-testid="TransactionRow__currency" className="whitespace-nowrap">
 							<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
 						</span>
 					)
