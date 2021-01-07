@@ -25,7 +25,7 @@ exports[`CreateWallet 1st step should render 1`] = `
       </div>
     </div>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -51,14 +51,14 @@ exports[`CreateWallet 1st step should render 1`] = `
             id="CreateWallet__network-label"
           />
           <div
-            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            class="sc-fFubgz euvnlH"
             data-testid="SelectNetworkInput"
           >
             <div
-              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+              class="sc-kstrdz sc-hBEYos jQPHwW vaRgi px-4"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                class="sc-eCssSg cZeZpt border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -67,7 +67,7 @@ exports[`CreateWallet 1st step should render 1`] = `
               aria-controls="CreateWallet__network-menu"
               aria-labelledby="CreateWallet__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="CreateWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -112,7 +112,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
       </div>
     </div>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -138,14 +138,14 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
             id="CreateWallet__network-label"
           />
           <div
-            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            class="sc-fFubgz euvnlH"
             data-testid="SelectNetworkInput"
           >
             <div
-              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+              class="sc-kstrdz sc-hBEYos jQPHwW vaRgi px-4"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                class="sc-eCssSg cZeZpt border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -154,7 +154,7 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
               aria-controls="CreateWallet__network-menu"
               aria-labelledby="CreateWallet__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="CreateWallet__network-input"
               placeholder="Enter a cryptoasset name"
@@ -177,11 +177,11 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
           >
             <div
               aria-label="ARK"
-              class="Circle-uw7h4j-0 cnQsQi border-theme-danger-light text-theme-danger-400"
+              class="sc-eCssSg irYUwk border-theme-danger-light text-theme-danger-400"
               data-testid="NetworkIcon-ARK-ark.mainnet"
             >
               <div
-                class="sc-bdfBwQ jewoEV"
+                class="sc-hKgILt bSWBFA"
                 data-testid="NetworkIcon__icon"
                 height="26"
                 width="26"
@@ -201,11 +201,11 @@ exports[`CreateWallet 1st step should render without test networks 1`] = `
           >
             <div
               aria-label="Compendia"
-              class="Circle-uw7h4j-0 cnQsQi border-theme-primary-100 text-theme-primary-400"
+              class="sc-eCssSg irYUwk border-theme-primary-100 text-theme-primary-400"
               data-testid="NetworkIcon-ARK-compendia.mainnet"
             >
               <div
-                class="sc-bdfBwQ jewoEV"
+                class="sc-hKgILt bSWBFA"
                 data-testid="NetworkIcon__icon"
                 height="26"
                 width="26"
@@ -242,13 +242,13 @@ exports[`CreateWallet 2nd step should render 1`] = `
       </div>
     </div>
     <div
-      class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="sc-hHftDr czhkIO flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
         class="flex items-center justify-center text-theme-warning-600"
       >
         <div
-          class="sc-bdfBwQ daKoZl"
+          class="sc-hKgILt eNPrTc"
           height="1.75em"
           width="1.75em"
         >
@@ -312,12 +312,12 @@ exports[`CreateWallet 2nd step should render 1`] = `
         data-testid="clipboard__wrapper"
       >
         <button
-          class="Button-mdtvtf-0 ifPnXw"
+          class="sc-bdfBwQ jLSdvl"
           data-testid="CreateWallet__copy"
           type="button"
         >
           <div
-            class="sc-bdfBwQ fPrsah"
+            class="sc-hKgILt gZImXI"
             height="1em"
             width="1em"
           >
@@ -332,7 +332,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
       </div>
     </div>
     <div
-      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-neutral-300 dark:border-theme-neutral-800"
+      class="sc-dlfnbm gFDEbc border-theme-neutral-300 dark:border-theme-neutral-800"
       type="horizontal"
     />
     <div
@@ -353,7 +353,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
         </p>
       </div>
       <div
-        class="sc-bdfBwQ fTnhmh"
+        class="sc-hKgILt fTqxig"
         height="40"
         width="40"
       >
@@ -366,12 +366,12 @@ exports[`CreateWallet 2nd step should render 1`] = `
       class="flex justify-end w-full"
     >
       <button
-        class="Button-mdtvtf-0 ifPnXw flex items-center space-x-2"
+        class="sc-bdfBwQ jLSdvl flex items-center space-x-2"
         data-testid="CreateWallet__download"
         type="button"
       >
         <div
-          class="sc-bdfBwQ fPrsah"
+          class="sc-hKgILt gZImXI"
           height="1em"
           width="1em"
         >
@@ -385,7 +385,7 @@ exports[`CreateWallet 2nd step should render 1`] = `
       </button>
     </div>
     <div
-      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-neutral-300 dark:border-theme-neutral-800"
+      class="sc-dlfnbm gFDEbc border-theme-neutral-300 dark:border-theme-neutral-800"
       type="horizontal"
     />
   </section>
@@ -482,12 +482,12 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="sc-bdfBwQ eCJZTi w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
+                        class="sc-hKgILt eFnOMJ p-1"
                         height="18"
                         width="15"
                       >
@@ -517,13 +517,13 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 khSIiz"
+                  class="sc-bdfBwQ fBlybR"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-hKgILt isYgXI p-1"
                     height="18"
                     width="18"
                   >
@@ -544,13 +544,13 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 khSIiz"
+                  class="sc-bdfBwQ fBlybR"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-hKgILt bHahaM p-1"
                     height="22"
                     width="22"
                   >
@@ -593,17 +593,17 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="ml-4 -space-x-2 cursor-pointer"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-hKgILt gZImXI"
                         height="1em"
                         width="1em"
                       >
@@ -618,7 +618,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
                       <img
                         alt="Profile Avatar"
@@ -631,10 +631,10 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd"
+                        class="sc-hKgILt ziIxQ transition-transform "
                         height="10"
                         width="10"
                       >
@@ -657,7 +657,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-hKgILt jAbZTE"
         height="24"
         width="13"
       >
@@ -682,7 +682,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -693,19 +693,19 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
           >
             <div>
               <ul
-                class="StepIndicator__StepWrapper-sc-15t41is-1 iToWWb"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 fgRghd"
               >
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 dATCfl"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 ha-DRch"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
               </ul>
               <div
@@ -737,7 +737,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                      class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -763,14 +763,14 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                             id="CreateWallet__network-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="sc-fFubgz euvnlH"
                             data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                              class="sc-kstrdz sc-hBEYos jQPHwW vaRgi px-4"
                             >
                               <div
-                                class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                                class="sc-eCssSg cZeZpt border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -779,7 +779,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -801,7 +801,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="sc-bdfBwQ cgPxRB"
                     data-testid="CreateWallet__back-button"
                     disabled=""
                     type="button"
@@ -809,7 +809,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="sc-bdfBwQ cgPxRB"
                     data-testid="CreateWallet__continue-button"
                     disabled=""
                     type="button"
@@ -919,12 +919,12 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="sc-bdfBwQ eCJZTi w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
+                        class="sc-hKgILt eFnOMJ p-1"
                         height="18"
                         width="15"
                       >
@@ -954,13 +954,13 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 khSIiz"
+                  class="sc-bdfBwQ fBlybR"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-hKgILt isYgXI p-1"
                     height="18"
                     width="18"
                   >
@@ -981,13 +981,13 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 khSIiz"
+                  class="sc-bdfBwQ fBlybR"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-hKgILt bHahaM p-1"
                     height="22"
                     width="22"
                   >
@@ -1030,17 +1030,17 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="ml-4 -space-x-2 cursor-pointer"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-hKgILt gZImXI"
                         height="1em"
                         width="1em"
                       >
@@ -1055,7 +1055,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
                       <img
                         alt="Profile Avatar"
@@ -1068,10 +1068,10 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd"
+                        class="sc-hKgILt ziIxQ transition-transform "
                         height="10"
                         width="10"
                       >
@@ -1094,7 +1094,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-hKgILt jAbZTE"
         height="24"
         width="13"
       >
@@ -1119,7 +1119,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -1130,19 +1130,19 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
           >
             <div>
               <ul
-                class="StepIndicator__StepWrapper-sc-15t41is-1 iToWWb"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 fgRghd"
               >
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 dATCfl"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 ha-DRch"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
               </ul>
               <div
@@ -1174,7 +1174,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                      class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -1200,14 +1200,14 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                             id="CreateWallet__network-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="sc-fFubgz euvnlH"
                             data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                              class="sc-kstrdz sc-hBEYos jQPHwW vaRgi px-4"
                             >
                               <div
-                                class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                                class="sc-eCssSg cZeZpt border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -1216,7 +1216,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1238,7 +1238,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="sc-bdfBwQ cgPxRB"
                     data-testid="CreateWallet__back-button"
                     disabled=""
                     type="button"
@@ -1246,7 +1246,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="sc-bdfBwQ cgPxRB"
                     data-testid="CreateWallet__continue-button"
                     disabled=""
                     type="button"
@@ -1358,12 +1358,12 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="sc-bdfBwQ eCJZTi w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
+                        class="sc-hKgILt eFnOMJ p-1"
                         height="18"
                         width="15"
                       >
@@ -1393,13 +1393,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 khSIiz"
+                  class="sc-bdfBwQ fBlybR"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-hKgILt isYgXI p-1"
                     height="18"
                     width="18"
                   >
@@ -1420,13 +1420,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 khSIiz"
+                  class="sc-bdfBwQ fBlybR"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-hKgILt bHahaM p-1"
                     height="22"
                     width="22"
                   >
@@ -1469,17 +1469,17 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="ml-4 -space-x-2 cursor-pointer"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-hKgILt gZImXI"
                         height="1em"
                         width="1em"
                       >
@@ -1494,7 +1494,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
                       <img
                         alt="Profile Avatar"
@@ -1507,10 +1507,10 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd"
+                        class="sc-hKgILt ziIxQ transition-transform "
                         height="10"
                         width="10"
                       >
@@ -1533,7 +1533,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-hKgILt jAbZTE"
         height="24"
         width="13"
       >
@@ -1558,7 +1558,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -1569,19 +1569,19 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
           >
             <div>
               <ul
-                class="StepIndicator__StepWrapper-sc-15t41is-1 iToWWb"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 fgRghd"
               >
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 dATCfl"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 ha-DRch"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
               </ul>
               <div
@@ -1613,7 +1613,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                      class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -1639,14 +1639,14 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             id="CreateWallet__network-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="sc-fFubgz euvnlH"
                             data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                              class="sc-kstrdz sc-hBEYos jQPHwW vaRgi px-4"
                             >
                               <div
-                                class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                                class="sc-eCssSg cZeZpt border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -1655,7 +1655,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -1677,7 +1677,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="sc-bdfBwQ cgPxRB"
                     data-testid="CreateWallet__back-button"
                     disabled=""
                     type="button"
@@ -1685,7 +1685,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="sc-bdfBwQ cgPxRB"
                     data-testid="CreateWallet__continue-button"
                     disabled=""
                     type="button"
@@ -1731,7 +1731,7 @@ exports[`CreateWallet should render 4th step 1`] = `
     </div>
     <div>
       <div
-        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 luNWb"
+        class="sc-jrAGrp cBIpLc"
         data-testid="TransactionDetail"
       >
         <div
@@ -1750,11 +1750,11 @@ exports[`CreateWallet should render 4th step 1`] = `
         </div>
         <div
           aria-label="ARK Devnet"
-          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+          class="sc-eCssSg dCjbOv border-theme-primary-100 text-theme-primary-400"
           data-testid="NetworkIcon-ARK-ark.devnet"
         >
           <div
-            class="sc-bdfBwQ iyevwF"
+            class="sc-hKgILt feRWcU"
             data-testid="NetworkIcon__icon"
             height="20"
             width="20"
@@ -1766,7 +1766,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         </div>
       </div>
       <div
-        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hjhrLd"
+        class="sc-jrAGrp gsVbyG"
         data-testid="TransactionDetail"
       >
         <div
@@ -1784,7 +1784,7 @@ exports[`CreateWallet should render 4th step 1`] = `
               class="inline-flex items-center"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="sc-iqHYGH text-theme-text truncate font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 TEST-WALLET-ADDRESS
@@ -1793,7 +1793,7 @@ exports[`CreateWallet should render 4th step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
           data-testid="Avatar"
         >
           <div
@@ -1809,7 +1809,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </div>
     </div>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
     >
       <label
         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -1825,7 +1825,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         </span>
       </label>
       <input
-        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+        class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />
@@ -1924,12 +1924,12 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                     class="overflow-hidden rounded-lg"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      class="sc-bdfBwQ eCJZTi w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
+                        class="sc-hKgILt eFnOMJ p-1"
                         height="18"
                         width="15"
                       >
@@ -1959,12 +1959,12 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-bdfBwQ eCJZTi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
+                    class="sc-hKgILt isYgXI p-1"
                     height="18"
                     width="18"
                   >
@@ -1985,12 +1985,12 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                 class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
               >
                 <button
-                  class="Button-mdtvtf-0 gVVPUs"
+                  class="sc-bdfBwQ eCJZTi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
                   <div
-                    class="sc-bdfBwQ iSzUah p-1"
+                    class="sc-hKgILt bHahaM p-1"
                     height="22"
                     width="22"
                   >
@@ -2033,17 +2033,17 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="ml-4 -space-x-2 cursor-pointer"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="sc-eCssSg dCjbOv border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
+                        class="sc-hKgILt gZImXI"
                         height="1em"
                         width="1em"
                       >
@@ -2058,7 +2058,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                     data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jYFLoz"
                     >
                       <img
                         alt="Profile Avatar"
@@ -2071,10 +2071,10 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iJGxmt flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd"
+                        class="sc-hKgILt ziIxQ transition-transform "
                         height="10"
                         width="10"
                       >
@@ -2097,7 +2097,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-hKgILt jAbZTE"
         height="24"
         width="13"
       >
@@ -2122,7 +2122,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
       class="flex flex-col flex-1 "
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 bIBWlw flex-1"
       >
         <div
           class="container py-16 px-14 mx-auto"
@@ -2133,19 +2133,19 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
           >
             <div>
               <ul
-                class="StepIndicator__StepWrapper-sc-15t41is-1 iToWWb"
+                class="StepIndicator__StepWrapper-sc-15t41is-1 fgRghd"
               >
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 dATCfl"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 ha-DRch"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
                 <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 iXQYzG"
+                  class="StepIndicator__StepStyled-sc-15t41is-0 cwYifG"
                 />
               </ul>
               <div
@@ -2177,7 +2177,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                      class="sc-gsTCUz kiZvwh flex flex-col space-y-2"
                     >
                       <label
                         class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -2203,14 +2203,14 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                             id="CreateWallet__network-label"
                           />
                           <div
-                            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                            class="sc-fFubgz euvnlH"
                             data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+                              class="sc-kstrdz sc-hBEYos jQPHwW vaRgi px-4"
                             >
                               <div
-                                class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                                class="sc-eCssSg cZeZpt border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
                                 data-testid="SelectNetworkInput__network"
                               />
                             </div>
@@ -2219,7 +2219,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                               aria-controls="CreateWallet__network-menu"
                               aria-labelledby="CreateWallet__network-label"
                               autocomplete="off"
-                              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                              class="sc-bqyKva jbYoac overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                               data-testid="SelectNetworkInput__input"
                               id="CreateWallet__network-input"
                               placeholder="Enter a cryptoasset name"
@@ -2241,7 +2241,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="sc-bdfBwQ cgPxRB"
                     data-testid="CreateWallet__back-button"
                     disabled=""
                     type="button"
@@ -2249,7 +2249,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                     Back
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="sc-bdfBwQ cgPxRB"
                     data-testid="CreateWallet__continue-button"
                     disabled=""
                     type="button"

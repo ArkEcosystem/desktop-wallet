@@ -117,7 +117,7 @@ const renderToggle = (isOpen: boolean, children: any, toggleIcon: string, toggle
 		const size = getSize(toggleSize);
 
 		return (
-			<div className="float-right cursor-pointer outline-none focus:outline-none">
+			<div className="cursor-pointer outline-none focus:outline-none">
 				<Icon name={toggleIcon} width={size} height={size} />
 			</div>
 		);
