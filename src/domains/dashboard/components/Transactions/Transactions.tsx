@@ -40,6 +40,7 @@ export const Transactions = memo(
 		const fetchTransactions = useCallback(
 			async ({ flush, mode }: { flush: boolean; mode: string }) => {
 				let currentTransactions = [...transactions];
+				setIsLoading(true);
 
 				if (flush) {
 					profile.transactionAggregate().flush();
@@ -54,25 +55,23 @@ export const Transactions = memo(
 				};
 				const method = methodMap[mode as keyof typeof methodMap];
 
-				setIsLoading(true);
-
 				const limit = { limit: 30 };
 				const queryParams = selectedTransactionType ? { ...limit, ...selectedTransactionType } : limit;
 				// @ts-ignore
 				const response = await profile.transactionAggregate()[method](queryParams);
 				const transactionsAggregate = response.items();
 
-				if (isLoading === false) {
-					setIsLoading(false);
-				}
-
 				setTransactions(currentTransactions.concat(transactionsAggregate));
+				setIsLoading(false);
 			},
-			[transactions, profile, selectedTransactionType, setIsLoading, setTransactions, walletsCount, isLoading], // eslint-disable-line react-hooks/exhaustive-deps
+			[transactions, profile, selectedTransactionType, setIsLoading, setTransactions, walletsCount], // eslint-disable-line react-hooks/exhaustive-deps
 		);
 
 		useEffect(() => {
-			if (isVisible) fetchTransactions({ flush: true, mode: activeTransactionModeTab });
+			if (isVisible) {
+				setIsLoading(true);
+				fetchTransactions({ flush: true, mode: activeTransactionModeTab });
+			}
 			// eslint-disable-next-line
 		}, [activeTransactionModeTab, selectedTransactionType, walletsCount]);
 
@@ -86,7 +85,12 @@ export const Transactions = memo(
 			<Section className="flex-1" data-testid="dashboard__transactions-view">
 				<div className="flex relative justify-between">
 					<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
-					<FilterTransactions onSelect={(_, type) => setSelectedTransactionType(type)} className="mt-6" />
+					<FilterTransactions
+						onSelect={(_, type) => {
+							setSelectedTransactionType(type);
+						}}
+						className="mt-6"
+					/>
 				</div>
 				<Tabs
 					className="mb-8"
@@ -122,13 +126,13 @@ export const Transactions = memo(
 					</Button>
 				)}
 
-				{!isLoadingTransactions && transactions.length === 0 && !selectedTransactionType && (
+				{transactions.length === 0 && !selectedTransactionType && !isLoadingTransactions && (
 					<EmptyBlock className="-mt-5">
 						{emptyText || t("DASHBOARD.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
 					</EmptyBlock>
 				)}
 
-				{!isLoadingTransactions && transactions.length === 0 && !!selectedTransactionType && (
+				{transactions.length === 0 && !!selectedTransactionType && (
 					<EmptyResults
 						className="flex-1"
 						title={t("COMMON.EMPTY_RESULTS.TITLE")}
