@@ -10,14 +10,14 @@ exports[`VerifyMessage should render 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="sc-iqHYGH doWMsO absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          class="sc-dlfnbm crromh w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -99,7 +99,7 @@ exports[`VerifyMessage should render 1`] = `
                 class="mt-8"
               >
                 <div
-                  class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+                  class="sc-gsTCUz dewLOO flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
                 >
                   <div
                     class="flex items-center justify-center text-theme-warning-600"
@@ -133,7 +133,7 @@ exports[`VerifyMessage should render 1`] = `
                   class="mt-8"
                 >
                   <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                    class="sc-hKgILt gSlAiw flex flex-col space-y-2"
                   >
                     <label
                       class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -147,7 +147,7 @@ exports[`VerifyMessage should render 1`] = `
                       />
                     </label>
                     <input
-                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                      class="sc-eCssSg gBAjdA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="VerifyMessage_message-content"
                       name="signed-message-content"
                       type="text"
@@ -160,14 +160,14 @@ exports[`VerifyMessage should render 1`] = `
                 class="flex justify-end space-x-3"
               >
                 <button
-                  class="Button-mdtvtf-0 ifPnXw"
+                  class="sc-dlfnbm bmSKty"
                   data-testid="VerifyMessage__cancel"
                   type="button"
                 >
                   Cancel
                 </button>
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="sc-dlfnbm edMnVo"
                   data-testid="VerifyMessage__submit"
                   type="submit"
                 >
@@ -193,14 +193,14 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      class="sc-iqHYGH doWMsO absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
         <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          class="sc-dlfnbm crromh w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -282,7 +282,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 data-testid="noverify-address__content"
               >
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs mt-8"
+                  class="sc-hKgILt gSlAiw mt-8"
                 >
                   <label
                     class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -296,14 +296,14 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-eCssSg gBAjdA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__message-input"
                     name="message"
                     type="text"
                   />
                 </fieldset>
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs mt-8"
+                  class="sc-hKgILt gSlAiw mt-8"
                 >
                   <label
                     class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -317,7 +317,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-eCssSg gBAjdA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__signatory-input"
                     disabled=""
                     name="signatory"
@@ -326,7 +326,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   />
                 </fieldset>
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs mt-8"
+                  class="sc-hKgILt gSlAiw mt-8"
                 >
                   <label
                     class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
@@ -340,7 +340,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     />
                   </label>
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="sc-eCssSg gBAjdA overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage__signature-input"
                     name="signature"
                     type="text"
@@ -351,14 +351,14 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="flex justify-end space-x-3"
               >
                 <button
-                  class="Button-mdtvtf-0 ifPnXw"
+                  class="sc-dlfnbm bmSKty"
                   data-testid="VerifyMessage__cancel"
                   type="button"
                 >
                   Cancel
                 </button>
                 <button
-                  class="Button-mdtvtf-0 cvPqli"
+                  class="sc-dlfnbm edMnVo"
                   data-testid="VerifyMessage__submit"
                   type="submit"
                 >
