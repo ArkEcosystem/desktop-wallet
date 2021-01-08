@@ -281,10 +281,47 @@ exports[`Registration should show error step and go back 1`] = `
         <span
           class="space-x-3"
         >
+          <a
+            class="text-theme-neutral-500 hover:underline"
+            href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          >
+            <span>
+              Portfolio
+            </span>
+          </a>
+          <span>
+            <div
+              class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+              type="vertical"
+            />
+          </span>
+        </span>
+        <span
+          class="space-x-3"
+        >
+          <a
+            aria-current="page"
+            class="text-theme-neutral-500 hover:underline active"
+            href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
+          >
+            <span>
+              ARK Wallet 2
+            </span>
+          </a>
+          <span>
+            <div
+              class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+              type="vertical"
+            />
+          </span>
+        </span>
+        <span
+          class="space-x-3"
+        >
           <span
             class="text-theme-neutral-700"
           >
-            Portfolio
+            Register Delegate
           </span>
         </span>
       </div>
