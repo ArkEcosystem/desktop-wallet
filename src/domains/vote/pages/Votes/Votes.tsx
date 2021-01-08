@@ -52,8 +52,11 @@ export const Votes = () => {
 
 	const crumbs = [
 		{
+			label: t("COMMON.PORTFOLIO"),
 			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+		},
+		{
+			label: t("VOTE.VOTES_PAGE.TITLE"),
 		},
 	];
 

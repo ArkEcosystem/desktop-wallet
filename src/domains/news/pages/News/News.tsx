@@ -46,13 +46,6 @@ export const News = ({ itemsPerPage }: Props) => {
 
 	const { t } = useTranslation();
 
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
-		},
-	];
-
 	useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [currentPage, coins]);
 
 	useEffect(() => {
@@ -96,7 +89,7 @@ export const News = ({ itemsPerPage }: Props) => {
 	};
 
 	return (
-		<Page profile={activeProfile} crumbs={crumbs}>
+		<Page profile={activeProfile}>
 			<Section>
 				<Header
 					title={t("NEWS.PAGE_NEWS.TITLE")}

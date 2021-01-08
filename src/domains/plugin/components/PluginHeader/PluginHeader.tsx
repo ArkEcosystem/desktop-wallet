@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import { PluginSpecs } from "./components/PluginSpecs";
 
 type Props = {
+	name: string;
 	author: string;
 	category: string;
 	url: string;
@@ -16,7 +17,7 @@ type Props = {
 	isInstalled?: boolean;
 };
 
-export const PluginHeader = ({ author, category, url, rating, version, size, isInstalled }: Props) => {
+export const PluginHeader = ({ name, author, category, url, rating, version, size, isInstalled }: Props) => {
 	const { t } = useTranslation();
 
 	const getPluginButtons = () => {
@@ -54,7 +55,7 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 				<div className="flex flex-col justify-center pl-8 w-full">
 					<div className="flex justify-between items-center">
 						<div className="flex flex-col">
-							<span className="text-2xl font-bold">ARK Explorer</span>
+							<span className="text-2xl font-bold">{name}</span>
 							<span className="text-medium text-theme-neutral">
 								Use the ARK Mainnet explorer directly within the wallet
 							</span>
@@ -76,5 +77,6 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 };
 
 PluginHeader.defaultProps = {
+	name: "ARK Explorer",
 	isInstalled: false,
 };

@@ -30,8 +30,11 @@ export const CreateWallet = () => {
 
 	const crumbs = [
 		{
+			label: t("COMMON.PORTFOLIO"),
 			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+		},
+		{
+			label: t("WALLETS.PAGE_CREATE_WALLET.TITLE"),
 		},
 	];
 

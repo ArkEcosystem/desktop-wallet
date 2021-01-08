@@ -41,8 +41,15 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const crumbs = [
 		{
+			label: t("COMMON.PORTFOLIO"),
+			route: `/profiles/${activeProfile.id()}/dashboard`,
+		},
+		{
+			label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
 			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-			label: t("COMMON.BACK_TO_WALLET"),
+		},
+		{
+			label: t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.TITLE"),
 		},
 	];
 

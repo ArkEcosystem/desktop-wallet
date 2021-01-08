@@ -261,11 +261,11 @@ exports[`Registration should show error step and go back 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -273,18 +273,15 @@ exports[`Registration should show error step and go back 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
-        <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        <span
+          class="text-theme-neutral-700"
         >
-          <span>
-            Go back to Portfolio
-          </span>
-        </a>
-      </div>
+          Portfolio
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
