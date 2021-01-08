@@ -71,6 +71,7 @@ export const Transactions = memo(
 			if (isVisible && !isLoading) {
 				fetchTransactions({ flush: true, mode: activeTransactionModeTab });
 			}
+			// eslint-disable-next-line
 		}, [activeTransactionModeTab, selectedTransactionType, walletsCount, isLoading]);
 
 		if (!isVisible) return <></>;

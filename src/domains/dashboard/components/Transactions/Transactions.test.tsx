@@ -112,6 +112,37 @@ describe("Transactions", () => {
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 	});
 
+	it("should filer by type and see empty screen", async () => {
+		const emptyProfile = env.profiles().create("test");
+		const emptyProfileURL = `/profiles/${emptyProfile.id()}/dashboard`;
+
+		const { getByRole, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={emptyProfile} />
+			</Route>,
+			{
+				routes: [emptyProfileURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
+
+		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(getByRole("button", { name: /Type/ }));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--core-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("EmptyResults")).toBeInTheDocument());
+	});
+
 	it("should open detail modal on transaction row click", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
