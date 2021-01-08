@@ -85,8 +85,15 @@ export const SendVote = () => {
 
 	const crumbs = [
 		{
+			label: t("COMMON.PORTFOLIO"),
 			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+		},
+		{
+			label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
+			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+		},
+		{
+			label: t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE"),
 		},
 	];
 

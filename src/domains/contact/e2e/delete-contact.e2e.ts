@@ -13,7 +13,9 @@ test("should open and close contact deletion modal", async (t) => {
 		'[data-testid="ContactList"] tbody > tr:first-child [data-testid="ContactListItem__name"]',
 	).textContent;
 
-	await t.click(Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]'));
+	await t.click(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
+	);
 	await t.click(
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__options"] li').withText(
 			translations.COMMON.DELETE,
@@ -45,7 +47,9 @@ test("should open and cancel contact deletion modal", async (t) => {
 		'[data-testid="ContactList"] tbody > tr:first-child [data-testid="ContactListItem__name"]',
 	).textContent;
 
-	await t.click(Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]'));
+	await t.click(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
+	);
 	await t.click(
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__options"] li').withText(
 			translations.COMMON.DELETE,
@@ -77,7 +81,9 @@ test("should delete contact", async (t) => {
 		'[data-testid="ContactList"] tbody > tr:first-child [data-testid="ContactListItem__name"]',
 	).textContent;
 
-	await t.click(Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]'));
+	await t.click(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
+	);
 	await t.click(
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__options"] li').withText(
 			translations.COMMON.DELETE,

@@ -5,11 +5,11 @@ exports[`Breadcrumbs should not render without crumbs 1`] = `<DocumentFragment /
 exports[`Breadcrumbs should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-3 text-sm undefined text-theme-secondary-text"
+    class="flex items-center space-x-3 text-sm "
     data-testid="breadcrumbs__wrapper"
   >
     <div
-      class="sc-bdfBwQ imIpud"
+      class="sc-bdfBwQ imIpud text-theme-neutral-500"
       height="24"
       width="13"
     >
@@ -17,18 +17,15 @@ exports[`Breadcrumbs should render 1`] = `
         arrow-left.svg
       </svg>
     </div>
-    <div
+    <span
       class="space-x-3"
     >
-      <a
-        class="text-theme-secondary-text"
-        href="/dashboard"
+      <span
+        class="text-theme-neutral-700"
       >
-        <span>
-          Dashboard
-        </span>
-      </a>
-    </div>
+        Dashboard
+      </span>
+    </span>
   </div>
 </DocumentFragment>
 `;
@@ -36,11 +33,11 @@ exports[`Breadcrumbs should render 1`] = `
 exports[`Breadcrumbs should render with custom classes 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-3 text-sm class-name text-theme-neutral"
+    class="flex items-center space-x-3 text-sm class-name"
     data-testid="breadcrumbs__wrapper"
   >
     <div
-      class="sc-bdfBwQ imIpud"
+      class="sc-bdfBwQ imIpud text-theme-neutral-500"
       height="24"
       width="13"
     >
@@ -48,11 +45,11 @@ exports[`Breadcrumbs should render with custom classes 1`] = `
         arrow-left.svg
       </svg>
     </div>
-    <div
+    <span
       class="space-x-3"
     >
       <a
-        class=""
+        class="text-theme-neutral-500 hover:underline"
         href="/wallets"
       >
         <span>
@@ -65,19 +62,16 @@ exports[`Breadcrumbs should render with custom classes 1`] = `
           type="vertical"
         />
       </span>
-    </div>
-    <div
+    </span>
+    <span
       class="space-x-3"
     >
-      <a
-        class="text-theme-secondary-text"
-        href="/wallets/my_wallet"
+      <span
+        class="text-theme-neutral-700"
       >
-        <span>
-          My Wallet
-        </span>
-      </a>
-    </div>
+        My Wallet
+      </span>
+    </span>
   </div>
 </DocumentFragment>
 `;

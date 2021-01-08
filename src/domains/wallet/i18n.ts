@@ -64,6 +64,8 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_CREATE_WALLET: {
+		TITLE: "Create Wallet",
+
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to create your new wallet address",
@@ -98,6 +100,8 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_IMPORT_WALLET: {
+		TITLE: "Import Wallet",
+
 		CRYPTOASSET_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to import your existing wallet address",

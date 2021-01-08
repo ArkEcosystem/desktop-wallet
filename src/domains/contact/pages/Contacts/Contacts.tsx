@@ -31,7 +31,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 				</>
 			)}
 
-			<Button data-testid="contacts__add-contact-btn" className="whitespace-no-wrap" onClick={onAddContact}>
+			<Button data-testid="contacts__add-contact-btn" className="whitespace-nowrap" onClick={onAddContact}>
 				{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT")}
 			</Button>
 		</div>
@@ -76,8 +76,11 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const crumbs = [
 		{
+			label: t("COMMON.PORTFOLIO"),
 			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+		},
+		{
+			label: t("CONTACTS.CONTACTS_PAGE.TITLE"),
 		},
 	];
 
@@ -96,7 +99,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 		{
 			Header: t("COMMON.ACCOUNT_TYPE"),
-			className: "whitespace-no-wrap justify-center no-border",
+			className: "whitespace-nowrap justify-center no-border",
 			minimumWidth: true,
 		},
 		{

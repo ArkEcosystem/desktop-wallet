@@ -1,7 +1,5 @@
 export const translations: { [key: string]: any } = {
 	DEVELOPER_RESPONSE: "Developer response",
-	GO_BACK_TO_PLUGIN_STORE: "Go back to plugin store",
-	GO_BACK_TO_PLUGIN_MANAGER: "Go back to Plugin Manager",
 
 	MODAL_BEST_PLUGINS: {
 		TITLE: "Best applications of the month",

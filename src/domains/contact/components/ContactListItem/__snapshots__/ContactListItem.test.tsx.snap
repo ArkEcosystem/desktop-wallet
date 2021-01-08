@@ -118,10 +118,9 @@ exports[`ContactListItem should render 1`] = `
           >
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="float-right"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <button
                   class="Button-mdtvtf-0 eXKKLD"
@@ -137,7 +136,7 @@ exports[`ContactListItem should render 1`] = `
                     </svg>
                   </div>
                 </button>
-              </div>
+              </span>
             </div>
           </div>
         </td>
@@ -265,10 +264,9 @@ exports[`ContactListItem should render as delegate 1`] = `
           >
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="float-right"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <button
                   class="Button-mdtvtf-0 eXKKLD"
@@ -284,7 +282,7 @@ exports[`ContactListItem should render as delegate 1`] = `
                     </svg>
                   </div>
                 </button>
-              </div>
+              </span>
             </div>
           </div>
         </td>
@@ -391,10 +389,9 @@ exports[`ContactListItem should render using variant 1`] = `
           >
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="float-right"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <button
                   class="Button-mdtvtf-0 eXKKLD"
@@ -410,7 +407,7 @@ exports[`ContactListItem should render using variant 1`] = `
                     </svg>
                   </div>
                 </button>
-              </div>
+              </span>
             </div>
           </div>
         </td>
@@ -538,10 +535,9 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
           >
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="float-right"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <button
                   class="Button-mdtvtf-0 eXKKLD"
@@ -557,7 +553,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
                     </svg>
                   </div>
                 </button>
-              </div>
+              </span>
             </div>
           </div>
         </td>
@@ -855,10 +851,9 @@ exports[`ContactListItem should render with multiple options 1`] = `
           >
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="float-right"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <button
                   class="Button-mdtvtf-0 eXKKLD"
@@ -874,7 +869,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
                     </svg>
                   </div>
                 </button>
-              </div>
+              </span>
             </div>
           </div>
         </td>
@@ -1171,7 +1166,7 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
           >
             <button
-              class="Button-mdtvtf-0 ifPnXw float-right"
+              class="Button-mdtvtf-0 ifPnXw"
               data-testid="ContactListItem__one-option-button-0"
               type="button"
             >

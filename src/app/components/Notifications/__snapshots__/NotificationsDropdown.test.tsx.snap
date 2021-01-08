@@ -6,12 +6,14 @@ exports[`Notifications should open and cancel wallet update notification modal 1
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+            class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
             data-testid="navbar__buttons--notifications"
             type="button"
           >
@@ -35,7 +37,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl mt-8"
       >
         <div
           data-testid="dropdown__content"
@@ -212,7 +214,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -283,7 +285,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -403,12 +405,14 @@ exports[`Notifications should open and cancel wallet update notification modal 2
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+            class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
             data-testid="navbar__buttons--notifications"
             type="button"
           >
@@ -432,7 +436,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl mt-8"
       >
         <div
           data-testid="dropdown__content"
@@ -609,7 +613,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -680,7 +684,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -713,12 +717,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+            class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
             data-testid="navbar__buttons--notifications"
             type="button"
           >
@@ -742,7 +748,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl mt-8"
       >
         <div
           data-testid="dropdown__content"
@@ -919,7 +925,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -990,7 +996,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -1393,12 +1399,14 @@ exports[`Notifications should open and close transaction details modal 2`] = `
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+            class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
             data-testid="navbar__buttons--notifications"
             type="button"
           >
@@ -1422,7 +1430,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl mt-8"
       >
         <div
           data-testid="dropdown__content"
@@ -1599,7 +1607,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -1670,7 +1678,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -1703,12 +1711,14 @@ exports[`Notifications should open and close wallet update notification modal 1`
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+            class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
             data-testid="navbar__buttons--notifications"
             type="button"
           >
@@ -1732,7 +1742,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl mt-8"
       >
         <div
           data-testid="dropdown__content"
@@ -1909,7 +1919,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -1980,7 +1990,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -2100,12 +2110,14 @@ exports[`Notifications should open and close wallet update notification modal 2`
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+            class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
             data-testid="navbar__buttons--notifications"
             type="button"
           >
@@ -2129,7 +2141,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl mt-8"
       >
         <div
           data-testid="dropdown__content"
@@ -2306,7 +2318,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -2377,7 +2389,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -2410,12 +2422,14 @@ exports[`Notifications should render with transactions and plugins 1`] = `
     <div
       class="relative"
     >
-      <span>
+      <span
+        data-testid="dropdown__toggle"
+      >
         <div
           class="overflow-hidden rounded-lg"
         >
           <button
-            class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+            class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
             data-testid="navbar__buttons--notifications"
             type="button"
           >
@@ -2439,7 +2453,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
         </div>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-8 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl mt-8"
       >
         <div
           data-testid="dropdown__content"
@@ -2616,7 +2630,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >
@@ -2687,7 +2701,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                               class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
                             >
                               <div
-                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-no-wrap"
+                                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                                 color="success"
                                 data-testid="TransactionRowAmount"
                               >

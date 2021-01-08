@@ -62,8 +62,9 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 		<Dropdown
 			onSelect={onUserAction}
 			options={userActions}
+			dropdownClass="mt-8 -mr-4"
 			toggleContent={(isOpen: boolean) => (
-				<div className="ml-4 -space-x-2 cursor-pointer" data-testid="navbar__useractions">
+				<div className="my-0.5 ml-4 -space-x-2 cursor-pointer" data-testid="navbar__useractions">
 					<Circle className="border-theme-primary-contrast dark:border-theme-neutral-800" size="lg">
 						<span className="text-theme-secondary-text dark:text-theme-neutral-800">
 							{exchangeCurrency && (
@@ -99,7 +100,8 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 						<Badge
 							className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
 							position="right"
-							icon={isOpen ? "ChevronUp" : "ChevronDown"}
+							icon="ChevronDown"
+							iconClass={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
 							iconWidth={10}
 							iconHeight={10}
 						/>

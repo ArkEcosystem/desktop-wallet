@@ -1,5 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -177,12 +178,23 @@ export const SendTransfer = () => {
 		copy(transaction.id());
 	};
 
-	const crumbs = [
+	const crumbs: Crumb[] = [
 		{
+			label: t("COMMON.PORTFOLIO"),
 			route: `/profiles/${activeProfile.id()}/dashboard`,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
+
+	if (hasWalletId) {
+		crumbs.push({
+			label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
+			route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+		});
+	}
+
+	crumbs.push({
+		label: t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE"),
+	});
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>

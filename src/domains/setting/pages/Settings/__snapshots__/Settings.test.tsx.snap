@@ -82,27 +82,30 @@ exports[`Settings should change a password 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+                      <div
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -186,73 +189,76 @@ exports[`Settings should change a password 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      J
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        J
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -260,18 +266,34 @@ exports[`Settings should change a password 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Password
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -339,7 +361,7 @@ exports[`Settings should change a password 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -679,34 +701,37 @@ exports[`Settings should not update profile if profile name exists 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -788,73 +813,76 @@ exports[`Settings should not update profile if profile name exists 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      J
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        J
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -862,18 +890,34 @@ exports[`Settings should not update profile if profile name exists 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          General
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -944,7 +988,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -1188,7 +1232,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-381-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-381-menu"
                                   role="listbox"
                                 />
@@ -1197,7 +1241,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -1272,7 +1316,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-383-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-383-menu"
                                   role="listbox"
                                 />
@@ -1281,7 +1325,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -1360,7 +1404,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-385-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-385-menu"
                                   role="listbox"
                                 />
@@ -1369,7 +1413,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -1444,7 +1488,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-387-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-387-menu"
                                   role="listbox"
                                 />
@@ -1453,7 +1497,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -1528,7 +1572,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-389-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-389-menu"
                                   role="listbox"
                                 />
@@ -1537,7 +1581,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -1748,7 +1792,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-391-label"
-                                    class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                    class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                     id="downshift-391-menu"
                                     role="listbox"
                                   />
@@ -1757,7 +1801,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                                   class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb"
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
                                     height="5"
                                     width="7"
                                   >
@@ -2066,27 +2110,30 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+                      <div
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -2170,73 +2217,76 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      J
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        J
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -2244,18 +2294,34 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -2323,7 +2389,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -2603,7 +2669,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-1397-label"
-                                    class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                    class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                     id="downshift-1397-menu"
                                     role="listbox"
                                   />
@@ -2612,7 +2678,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                   class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb"
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
                                     height="5"
                                     width="7"
                                   >
@@ -2736,34 +2802,37 @@ exports[`Settings should render 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -2845,73 +2914,76 @@ exports[`Settings should render 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      JO
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -2919,18 +2991,34 @@ exports[`Settings should render 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          General
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -3001,7 +3089,7 @@ exports[`Settings should render 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -3239,7 +3327,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-1-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-1-menu"
                                   role="listbox"
                                 />
@@ -3248,7 +3336,7 @@ exports[`Settings should render 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -3323,7 +3411,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-3-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-3-menu"
                                   role="listbox"
                                 />
@@ -3332,7 +3420,7 @@ exports[`Settings should render 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -3411,7 +3499,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-5-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-5-menu"
                                   role="listbox"
                                 />
@@ -3420,7 +3508,7 @@ exports[`Settings should render 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -3495,7 +3583,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-7-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-7-menu"
                                   role="listbox"
                                 />
@@ -3504,7 +3592,7 @@ exports[`Settings should render 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -3579,7 +3667,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-9-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-9-menu"
                                   role="listbox"
                                 />
@@ -3588,7 +3676,7 @@ exports[`Settings should render 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -3798,7 +3886,7 @@ exports[`Settings should render 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-11-label"
-                                    class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                    class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                     id="downshift-11-menu"
                                     role="listbox"
                                   />
@@ -3807,7 +3895,7 @@ exports[`Settings should render 1`] = `
                                   class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb"
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
                                     height="5"
                                     width="7"
                                   >
@@ -4114,27 +4202,30 @@ exports[`Settings should render password settings 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+                      <div
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -4218,73 +4309,76 @@ exports[`Settings should render password settings 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      J
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        J
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -4292,18 +4386,34 @@ exports[`Settings should render password settings 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Password
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -4371,7 +4481,7 @@ exports[`Settings should render password settings 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -4666,27 +4776,30 @@ exports[`Settings should render peer settings 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+                      <div
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -4770,73 +4883,76 @@ exports[`Settings should render peer settings 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      J
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        J
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -4844,18 +4960,34 @@ exports[`Settings should render peer settings 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Peers
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -4926,7 +5058,7 @@ exports[`Settings should render peer settings 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -5238,27 +5370,30 @@ exports[`Settings should render plugin settings 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+                      <div
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -5342,73 +5477,76 @@ exports[`Settings should render plugin settings 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      J
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        J
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -5416,18 +5554,34 @@ exports[`Settings should render plugin settings 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -5495,7 +5649,7 @@ exports[`Settings should render plugin settings 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -5775,7 +5929,7 @@ exports[`Settings should render plugin settings 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-1285-label"
-                                    class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                    class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                     id="downshift-1285-menu"
                                     role="listbox"
                                   />
@@ -5784,7 +5938,7 @@ exports[`Settings should render plugin settings 1`] = `
                                   class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb"
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
                                     height="5"
                                     width="7"
                                   >
@@ -5908,27 +6062,30 @@ exports[`Settings should set a password 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+                      <div
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -6012,73 +6169,76 @@ exports[`Settings should set a password 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      J
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        J
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -6086,18 +6246,34 @@ exports[`Settings should set a password 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Password
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -6165,7 +6341,7 @@ exports[`Settings should set a password 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -6505,27 +6681,30 @@ exports[`Settings should show an error toast if the current password does not ma
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+                      <div
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -6609,73 +6788,76 @@ exports[`Settings should show an error toast if the current password does not ma
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      J
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        J
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -6683,18 +6865,34 @@ exports[`Settings should show an error toast if the current password does not ma
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Password
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -6762,7 +6960,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -7101,34 +7299,37 @@ exports[`Settings should update profile 1`] = `
             <div>
               <div
                 class="relative"
-                data-testid="dropdown__toggle"
               >
-                <div
-                  class="overflow-hidden rounded-lg"
+                <span
+                  data-testid="dropdown__toggle"
                 >
-                  <button
-                    class="Button-mdtvtf-0 gVVPUs w-13 h-13 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                    data-testid="navbar__buttons--notifications"
-                    type="button"
+                  <div
+                    class="overflow-hidden rounded-lg"
                   >
-                    <div
-                      class="sc-bdfBwQ liSwOQ p-1"
-                      height="18"
-                      width="15"
-                    >
-                      <svg>
-                        notification.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                    <button
+                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
                     >
                       <div
-                        class="w-2 h-2 rounded-full bg-theme-danger-500"
-                      />
-                    </div>
-                  </button>
-                </div>
+                        class="sc-bdfBwQ liSwOQ p-1"
+                        height="18"
+                        width="15"
+                      >
+                        <svg>
+                          notification.svg
+                        </svg>
+                      </div>
+                      <div
+                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                      >
+                        <div
+                          class="w-2 h-2 rounded-full bg-theme-danger-500"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </span>
               </div>
             </div>
             <div
@@ -7210,73 +7411,76 @@ exports[`Settings should update profile 1`] = `
             </div>
             <div
               class="relative"
-              data-testid="dropdown__toggle"
             >
-              <div
-                class="ml-4 -space-x-2 cursor-pointer"
-                data-testid="navbar__useractions"
+              <span
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <span
-                    class="text-theme-secondary-text dark:text-theme-neutral-800"
-                  >
-                    <div
-                      class="sc-bdfBwQ fPrsah"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </span>
-                </div>
-                <div
-                  class="inline-flex relative justify-center items-center align-middle rounded-full"
-                  data-testid="navbar__user--avatar"
+                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
                   >
-                    <img
-                      alt="Profile Avatar"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                    />
                     <span
-                      class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      class="text-theme-secondary-text dark:text-theme-neutral-800"
                     >
-                      TE
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
                     </span>
                   </div>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                  <div
+                    class="inline-flex relative justify-center items-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <div
-                      class="sc-bdfBwQ TENjd"
-                      height="10"
-                      width="10"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        TE
+                      </span>
                     </div>
-                    <span />
-                  </span>
+                    <span
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                    >
+                      <div
+                        class="sc-bdfBwQ TENjd transition-transform "
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </span>
             </div>
           </div>
         </div>
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -7284,18 +7488,34 @@ exports[`Settings should update profile 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          General
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -7366,7 +7586,7 @@ exports[`Settings should update profile 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -7604,7 +7824,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-39-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-39-menu"
                                   role="listbox"
                                 />
@@ -7613,7 +7833,7 @@ exports[`Settings should update profile 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -7688,7 +7908,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-41-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-41-menu"
                                   role="listbox"
                                 />
@@ -7697,7 +7917,7 @@ exports[`Settings should update profile 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -7776,7 +7996,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-43-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-43-menu"
                                   role="listbox"
                                 />
@@ -7785,7 +8005,7 @@ exports[`Settings should update profile 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -7860,7 +8080,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-45-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-45-menu"
                                   role="listbox"
                                 />
@@ -7869,7 +8089,7 @@ exports[`Settings should update profile 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -7944,7 +8164,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="downshift-47-label"
-                                  class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                  class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                   id="downshift-47-menu"
                                   role="listbox"
                                 />
@@ -7953,7 +8173,7 @@ exports[`Settings should update profile 1`] = `
                                 class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
-                                  class="sc-bdfBwQ gLRWTb"
+                                  class="sc-bdfBwQ gLRWTb transition-transform "
                                   height="5"
                                   width="7"
                                 >
@@ -8164,7 +8384,7 @@ exports[`Settings should update profile 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-49-label"
-                                    class="styles__SelectOptionsList-b2falt-1 bAgCGs"
+                                    class="styles__SelectOptionsList-b2falt-1 iaPZIm"
                                     id="downshift-49-menu"
                                     role="listbox"
                                   />
@@ -8173,7 +8393,7 @@ exports[`Settings should update profile 1`] = `
                                   class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
-                                    class="sc-bdfBwQ gLRWTb"
+                                    class="sc-bdfBwQ gLRWTb transition-transform "
                                     height="5"
                                     width="7"
                                   >

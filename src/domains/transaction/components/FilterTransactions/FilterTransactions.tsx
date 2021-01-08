@@ -1,5 +1,5 @@
+import { CollapseToggleButton } from "app/components/Collapse";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
-import { Icon } from "app/components/Icon";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
 import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -8,32 +8,6 @@ type FilterTransactionsProps = {
 	className?: string;
 	defaultSelected?: DropdownOption;
 	onSelect?: (selectedOption: DropdownOption, types: any) => void;
-};
-
-type FilterTransactionsToggleProps = {
-	isOpen: boolean;
-	selectedOption?: DropdownOption;
-};
-
-const FilterTransactionsToggle = ({ selectedOption, isOpen }: FilterTransactionsToggleProps) => {
-	const iconColorClass = isOpen
-		? "bg-theme-primary-600 text-theme-primary-contrast"
-		: "bg-theme-primary-100 text-theme-primary-600";
-
-	return (
-		<div className="flex items-center space-x-2 cursor-pointer" data-testid="FilterTransactionsToggle">
-			<div className="font-semibold">
-				<span className="text-theme-neutral-500">Type: </span>
-				<span className="text-theme-neutral-600">{selectedOption?.label}</span>
-			</div>
-			<Icon
-				className={`${iconColorClass} p-1 rounded-xl`}
-				name={isOpen ? "ChevronUp" : "ChevronDown"}
-				width={9}
-				height={9}
-			/>
-		</div>
-	);
 };
 
 export const FilterTransactions = memo(({ className, onSelect, defaultSelected }: FilterTransactionsProps) => {
@@ -68,10 +42,22 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected }
 	return (
 		<div className={className} data-testid="FilterTransactions">
 			<Dropdown
-				dropdownClass="max-h-128 overflow-y-auto"
+				dropdownClass="w-80 max-h-128 overflow-y-auto"
 				options={allOptions}
 				toggleContent={(isOpen: boolean) => (
-					<FilterTransactionsToggle isOpen={isOpen} selectedOption={selectedOption} />
+					<CollapseToggleButton
+						isOpen={isOpen}
+						label={
+							<>
+								<span className="text-theme-neutral-500 dark:text-theme-neutral-600">
+									{t("COMMON.TYPE")}:{" "}
+								</span>
+								<span className="text-theme-neutral-700 dark:text-theme-neutral-200">
+									{selectedOption?.label}
+								</span>
+							</>
+						}
+					/>
 				)}
 				onSelect={handleSelect}
 			/>
