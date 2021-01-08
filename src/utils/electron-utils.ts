@@ -1,5 +1,4 @@
 import electron, { FileFilter, ipcRenderer } from "electron";
-import isDev from "electron-is-dev";
 import { readFileSync, writeFileSync } from "fs";
 import os from "os";
 import path from "path";
@@ -24,7 +23,7 @@ const setScreenshotProtection = (enabled: boolean) => {
 	}
 
 	// Ignore the setting in dev mode
-	if (isDev) {
+	if (!electron.app.isPackaged) {
 		electron.remote.getCurrentWindow().setContentProtection(false);
 		return;
 	}
