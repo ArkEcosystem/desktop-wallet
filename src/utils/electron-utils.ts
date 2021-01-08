@@ -23,7 +23,7 @@ const setScreenshotProtection = (enabled: boolean) => {
 	}
 
 	// Ignore the setting in dev mode
-	if (!electron.app.isPackaged) {
+	if (!electron.remote.app.isPackaged) {
 		electron.remote.getCurrentWindow().setContentProtection(false);
 		return;
 	}
