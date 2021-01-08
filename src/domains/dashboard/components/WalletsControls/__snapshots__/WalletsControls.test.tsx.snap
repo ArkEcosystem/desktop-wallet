@@ -2,154 +2,156 @@
 
 exports[`WalletsControls should render 1`] = `
 <div>
-  <div
-    class="flex justify-end"
-    data-testid="WalletControls"
-  >
+  <div>
     <div
-      class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
+      class="flex justify-end"
+      data-testid="WalletControls"
     >
       <div
-        class="flex items-center space-x-1"
+        class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
       >
         <div
-          class="group"
-          data-testid="LayoutControls__grid"
-        >
-          <div
-            class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
-            data-testid="LayoutControls__grid--icon"
-          >
-            <div
-              class="sc-bdfBwQ iyevwF"
-              height="20"
-              width="20"
-            >
-              <svg>
-                grid-view.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          class="group"
-          data-testid="LayoutControls__list"
-        >
-          <div
-            class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
-            data-testid="LayoutControls__list--icon"
-          >
-            <div
-              class="sc-bdfBwQ iyevwF"
-              height="20"
-              width="20"
-            >
-              <svg>
-                list-view.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
-    >
-      <div
-        class="relative"
-      >
-        <span
-          data-testid="dropdown__toggle"
+          class="flex items-center space-x-1"
         >
           <div
             class="group"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-bdfBwQ eBdiJn"
-                height="19"
-                width="17"
+                class="sc-gsTCUz fHxsLl"
+                height="20"
+                width="20"
               >
                 <svg>
-                  filters.svg
+                  grid-view.svg
                 </svg>
               </div>
             </div>
           </div>
-        </span>
+          <div
+            class="group"
+            data-testid="LayoutControls__list"
+          >
+            <div
+              class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
+              data-testid="LayoutControls__list--icon"
+            >
+              <div
+                class="sc-gsTCUz fHxsLl"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  list-view.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div
-      class="flex space-x-3"
-    >
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="WalletControls__create-wallet"
-        type="button"
+      <div
+        class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
       >
         <div
-          class="flex items-center space-x-2"
+          class="relative"
         >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
+          <span
+            data-testid="dropdown__toggle"
           >
-            <svg>
-              plus.svg
-            </svg>
-          </div>
-          <span>
-            Create
+            <div
+              class="group"
+            >
+              <div
+                class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
+              >
+                <div
+                  class="sc-gsTCUz jtTYoP"
+                  height="19"
+                  width="17"
+                >
+                  <svg>
+                    filters.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
           </span>
         </div>
-      </button>
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="WalletControls__import-wallet"
-        type="button"
+      </div>
+      <div
+        class="flex space-x-3"
       >
-        <div
-          class="flex items-center space-x-2"
+        <button
+          class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+          data-testid="WalletControls__create-wallet"
+          type="button"
         >
           <div
-            class="sc-bdfBwQ fpbFeh"
-            height="16"
-            width="16"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              import.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                plus.svg
+              </svg>
+            </div>
+            <span>
+              Create
+            </span>
           </div>
-          <span>
-            Import
-          </span>
-        </div>
-      </button>
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="WalletControls__import-ledger"
-        type="button"
-      >
-        <div
-          class="flex items-center space-x-2"
+        </button>
+        <button
+          class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+          data-testid="WalletControls__import-wallet"
+          type="button"
         >
           <div
-            class="sc-bdfBwQ fPrsah"
-            height="1em"
-            width="1em"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              ledger.svg
-            </svg>
+            <div
+              class="sc-gsTCUz cyuCsN"
+              height="16"
+              width="16"
+            >
+              <svg>
+                import.svg
+              </svg>
+            </div>
+            <span>
+              Import
+            </span>
           </div>
-          <span>
-            Import Ledger
-          </span>
-        </div>
-      </button>
+        </button>
+        <button
+          class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+          data-testid="WalletControls__import-ledger"
+          type="button"
+        >
+          <div
+            class="flex items-center space-x-2"
+          >
+            <div
+              class="sc-gsTCUz cXMmJt"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ledger.svg
+              </svg>
+            </div>
+            <span>
+              Import Ledger
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -157,154 +159,156 @@ exports[`WalletsControls should render 1`] = `
 
 exports[`WalletsControls should render with networks selection 1`] = `
 <div>
-  <div
-    class="flex justify-end"
-    data-testid="WalletControls"
-  >
+  <div>
     <div
-      class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
+      class="flex justify-end"
+      data-testid="WalletControls"
     >
       <div
-        class="flex items-center space-x-1"
+        class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
       >
         <div
-          class="group"
-          data-testid="LayoutControls__grid"
-        >
-          <div
-            class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
-            data-testid="LayoutControls__grid--icon"
-          >
-            <div
-              class="sc-bdfBwQ iyevwF"
-              height="20"
-              width="20"
-            >
-              <svg>
-                grid-view.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          class="group"
-          data-testid="LayoutControls__list"
-        >
-          <div
-            class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
-            data-testid="LayoutControls__list--icon"
-          >
-            <div
-              class="sc-bdfBwQ iyevwF"
-              height="20"
-              width="20"
-            >
-              <svg>
-                list-view.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
-    >
-      <div
-        class="relative"
-      >
-        <span
-          data-testid="dropdown__toggle"
+          class="flex items-center space-x-1"
         >
           <div
             class="group"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-bdfBwQ eBdiJn"
-                height="19"
-                width="17"
+                class="sc-gsTCUz fHxsLl"
+                height="20"
+                width="20"
               >
                 <svg>
-                  filters.svg
+                  grid-view.svg
                 </svg>
               </div>
             </div>
           </div>
-        </span>
+          <div
+            class="group"
+            data-testid="LayoutControls__list"
+          >
+            <div
+              class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
+              data-testid="LayoutControls__list--icon"
+            >
+              <div
+                class="sc-gsTCUz fHxsLl"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  list-view.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div
-      class="flex space-x-3"
-    >
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="WalletControls__create-wallet"
-        type="button"
+      <div
+        class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
       >
         <div
-          class="flex items-center space-x-2"
+          class="relative"
         >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
+          <span
+            data-testid="dropdown__toggle"
           >
-            <svg>
-              plus.svg
-            </svg>
-          </div>
-          <span>
-            Create
+            <div
+              class="group"
+            >
+              <div
+                class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
+              >
+                <div
+                  class="sc-gsTCUz jtTYoP"
+                  height="19"
+                  width="17"
+                >
+                  <svg>
+                    filters.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
           </span>
         </div>
-      </button>
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="WalletControls__import-wallet"
-        type="button"
+      </div>
+      <div
+        class="flex space-x-3"
       >
-        <div
-          class="flex items-center space-x-2"
+        <button
+          class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+          data-testid="WalletControls__create-wallet"
+          type="button"
         >
           <div
-            class="sc-bdfBwQ fpbFeh"
-            height="16"
-            width="16"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              import.svg
-            </svg>
+            <div
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                plus.svg
+              </svg>
+            </div>
+            <span>
+              Create
+            </span>
           </div>
-          <span>
-            Import
-          </span>
-        </div>
-      </button>
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="WalletControls__import-ledger"
-        type="button"
-      >
-        <div
-          class="flex items-center space-x-2"
+        </button>
+        <button
+          class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+          data-testid="WalletControls__import-wallet"
+          type="button"
         >
           <div
-            class="sc-bdfBwQ fPrsah"
-            height="1em"
-            width="1em"
+            class="flex items-center space-x-2"
           >
-            <svg>
-              ledger.svg
-            </svg>
+            <div
+              class="sc-gsTCUz cyuCsN"
+              height="16"
+              width="16"
+            >
+              <svg>
+                import.svg
+              </svg>
+            </div>
+            <span>
+              Import
+            </span>
           </div>
-          <span>
-            Import Ledger
-          </span>
-        </div>
-      </button>
+        </button>
+        <button
+          class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+          data-testid="WalletControls__import-ledger"
+          type="button"
+        >
+          <div
+            class="flex items-center space-x-2"
+          >
+            <div
+              class="sc-gsTCUz cXMmJt"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ledger.svg
+              </svg>
+            </div>
+            <span>
+              Import Ledger
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>

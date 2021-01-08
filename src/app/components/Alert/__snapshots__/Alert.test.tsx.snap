@@ -2,84 +2,90 @@
 
 exports[`Alert should render 1`] = `
 <DocumentFragment>
-  <div
-    class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
-  >
+  <div>
     <div
-      class="flex items-center justify-center text-theme-warning-600"
+      class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="sc-bdfBwQ daKoZl"
-        height="1.75em"
-        width="1.75em"
+        class="flex items-center justify-center text-theme-warning-600"
       >
-        <svg>
-          alert-warning.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cUuJwN"
+          height="1.75em"
+          width="1.75em"
+        >
+          <svg>
+            alert-warning.svg
+          </svg>
+        </div>
       </div>
+      <span
+        class="pointer-events-none border rounded-md border-theme-warning-600"
+      />
+      <div
+        class="flex flex-col space-y-2"
+      />
     </div>
-    <span
-      class="pointer-events-none border rounded-md border-theme-warning-600"
-    />
-    <div
-      class="flex flex-col space-y-2"
-    />
   </div>
 </DocumentFragment>
 `;
 
 exports[`Alert should render a large one 1`] = `
 <div>
-  <div
-    class="Alert__AlertWrapper-sc-1rcd7no-0 grmxUp flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
-  >
+  <div>
     <div
-      class="flex items-center justify-center text-theme-warning-600"
+      class="Alert__AlertWrapper-sc-1rcd7no-0 grmxUp flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="sc-bdfBwQ daKoZl"
-        height="1.75em"
-        width="1.75em"
+        class="flex items-center justify-center text-theme-warning-600"
       >
-        <svg>
-          alert-warning.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cUuJwN"
+          height="1.75em"
+          width="1.75em"
+        >
+          <svg>
+            alert-warning.svg
+          </svg>
+        </div>
       </div>
+      <span
+        class="pointer-events-none border rounded-md border-theme-warning-600"
+      />
+      <div
+        class="flex flex-col space-y-2"
+      />
     </div>
-    <span
-      class="pointer-events-none border rounded-md border-theme-warning-600"
-    />
-    <div
-      class="flex flex-col space-y-2"
-    />
   </div>
 </div>
 `;
 
 exports[`Alert should render a small one 1`] = `
 <div>
-  <div
-    class="Alert__AlertWrapper-sc-1rcd7no-0 ifLGhi flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
-  >
+  <div>
     <div
-      class="flex items-center justify-center text-theme-warning-600"
+      class="Alert__AlertWrapper-sc-1rcd7no-0 ifLGhi flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
-        class="sc-bdfBwQ daKoZl"
-        height="1.75em"
-        width="1.75em"
+        class="flex items-center justify-center text-theme-warning-600"
       >
-        <svg>
-          alert-warning.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cUuJwN"
+          height="1.75em"
+          width="1.75em"
+        >
+          <svg>
+            alert-warning.svg
+          </svg>
+        </div>
       </div>
+      <span
+        class="pointer-events-none border rounded-md border-theme-warning-600"
+      />
+      <div
+        class="flex flex-col space-y-2"
+      />
     </div>
-    <span
-      class="pointer-events-none border rounded-md border-theme-warning-600"
-    />
-    <div
-      class="flex flex-col space-y-2"
-    />
   </div>
 </div>
 `;

@@ -1,98 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InstallPlugin should not render if not open 1`] = `<DocumentFragment />`;
+exports[`InstallPlugin should not render if not open 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
 exports[`InstallPlugin should render 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Attention
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div>
+          <button
+            class="Button__StyledButton-mdtvtf-0 IdcN w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
+          >
             <div
-              data-testid="tab-pabel__active-panel"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <section
-                data-testid="InstallPlugin__step--first"
-              >
-                <p
-                  class="mt-4 text-lg font-semibold text-theme-secondary-text"
-                >
-                  This plugin needs the following permissions:
-                </p>
-                <div
-                  class="max-w-sm"
-                >
-                  <ul
-                    class="mt-2 ml-5 leading-8 list-outside list-circle text-theme-secondary-text"
-                  >
-                    <li>
-                      Allows access to the Desktop Wallet alerts
-                    </li>
-                    <li>
-                      Allows access to play audio from within the Desktop Wallet
-                    </li>
-                    <li>
-                      Allows access to the Desktop Wallet events
-                    </li>
-                  </ul>
-                </div>
-              </section>
+              <svg>
+                cross-slim.svg
+              </svg>
             </div>
-            <div
-              class="flex justify-end mt-8 space-x-3"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="InstallPlugin__cancel-button"
-                type="button"
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Attention
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div>
+              <div
+                data-testid="tab-pabel__active-panel"
               >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 cvPqli"
-                data-testid="InstallPlugin__download-button"
-                type="button"
+                <section
+                  data-testid="InstallPlugin__step--first"
+                >
+                  <p
+                    class="mt-4 text-lg font-semibold text-theme-secondary-text"
+                  >
+                    This plugin needs the following permissions:
+                  </p>
+                  <div
+                    class="max-w-sm"
+                  >
+                    <ul
+                      class="mt-2 ml-5 leading-8 list-outside list-circle text-theme-secondary-text"
+                    >
+                      <li>
+                        Allows access to the Desktop Wallet alerts
+                      </li>
+                      <li>
+                        Allows access to play audio from within the Desktop Wallet
+                      </li>
+                      <li>
+                        Allows access to the Desktop Wallet events
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+              <div
+                class="flex justify-end mt-8 space-x-3"
               >
-                Download
-              </button>
+                <button
+                  class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+                  data-testid="InstallPlugin__cancel-button"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button__StyledButton-mdtvtf-0 ebCALD"
+                  data-testid="InstallPlugin__download-button"
+                  type="button"
+                >
+                  Download
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -104,229 +110,235 @@ exports[`InstallPlugin should render 1`] = `
 
 exports[`InstallPlugin should render 1st step 1`] = `
 <DocumentFragment>
-  <section
-    data-testid="InstallPlugin__step--first"
-  >
-    <p
-      class="mt-4 text-lg font-semibold text-theme-secondary-text"
+  <div>
+    <section
+      data-testid="InstallPlugin__step--first"
     >
-      This plugin needs the following permissions:
-    </p>
-    <div
-      class="max-w-sm"
-    >
-      <ul
-        class="mt-2 ml-5 leading-8 list-outside list-circle text-theme-secondary-text"
+      <p
+        class="mt-4 text-lg font-semibold text-theme-secondary-text"
       >
-        <li>
-          Allows access to the Desktop Wallet alerts
-        </li>
-        <li>
-          Allows access to play audio from within the Desktop Wallet
-        </li>
-        <li>
-          Allows access to the Desktop Wallet events
-        </li>
-      </ul>
-    </div>
-  </section>
+        This plugin needs the following permissions:
+      </p>
+      <div
+        class="max-w-sm"
+      >
+        <ul
+          class="mt-2 ml-5 leading-8 list-outside list-circle text-theme-secondary-text"
+        >
+          <li>
+            Allows access to the Desktop Wallet alerts
+          </li>
+          <li>
+            Allows access to play audio from within the Desktop Wallet
+          </li>
+          <li>
+            Allows access to the Desktop Wallet events
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`InstallPlugin should render 2st step 1`] = `
 <DocumentFragment>
-  <section
-    data-testid="InstallPlugin__step--second"
-  >
-    <div
-      class="flex mt-4"
+  <div>
+    <section
+      data-testid="InstallPlugin__step--second"
     >
       <div
-        class="flex-shrink-0 mr-6"
-      >
-        <img
-          alt="Plugin Logo"
-          class="w-32 h-32 rounded-xl"
-          src="placeholder.png"
-        />
-      </div>
-      <div
-        class="flex-1"
+        class="flex mt-4"
       >
         <div
-          class="flex flex-col justify-around h-full"
+          class="flex-shrink-0 mr-6"
         >
-          <div>
-            <p
-              class="text-sm font-semibold text-theme-neutral-light"
-            >
-              Plugin
-            </p>
-            <p
-              class="text-lg font-semibold text-theme-black"
-            >
-              ARK Explorer
-            </p>
-          </div>
+          <img
+            alt="Plugin Logo"
+            class="w-32 h-32 rounded-xl"
+            src="placeholder.png"
+          />
+        </div>
+        <div
+          class="flex-1"
+        >
           <div
-            class="flex justify-between"
+            class="flex flex-col justify-around h-full"
           >
-            <span>
+            <div>
               <p
                 class="text-sm font-semibold text-theme-neutral-light"
               >
-                Downloaded
+                Plugin
               </p>
               <p
-                class="font-bold text-theme-secondary-text"
+                class="text-lg font-semibold text-theme-black"
               >
-                154 KB / 154 KB
+                ARK Explorer
               </p>
-            </span>
+            </div>
             <div
-              class="mr-2"
+              class="flex justify-between"
             >
-              <svg
-                height="50"
-                viewBox="0 0 50 50"
-                width="50"
-              >
-                <circle
-                  cx="25"
-                  cy="25"
-                  fill="transparent"
-                  r="23"
-                  stroke="var(--theme-color-success-200)"
-                  stroke-width="4"
-                />
-                <circle
-                  cx="25"
-                  cy="25"
-                  fill="transparent"
-                  r="23"
-                  stroke="var(--theme-color-success)"
-                  stroke-dasharray="144.51326206513048"
-                  stroke-dashoffset="31.792917654328704"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="4"
-                  transform="rotate(-90 25 25)"
-                />
-                <text
-                  data-testid="CircularProgressBar__percentage"
-                  dy="0.3em"
-                  fill="var(--theme-color-success)"
-                  font-size="0.8rem"
-                  font-weight="600"
-                  text-anchor="middle"
-                  x="50%"
-                  y="50%"
+              <span>
+                <p
+                  class="text-sm font-semibold text-theme-neutral-light"
                 >
-                  <tspan>
-                    78
-                    <tspan
-                      dy="-0.6em"
-                      font-size="0.4rem"
-                      font-weight="bold"
-                    >
-                      %
+                  Downloaded
+                </p>
+                <p
+                  class="font-bold text-theme-secondary-text"
+                >
+                  154 KB / 154 KB
+                </p>
+              </span>
+              <div
+                class="mr-2"
+              >
+                <svg
+                  height="50"
+                  viewBox="0 0 50 50"
+                  width="50"
+                >
+                  <circle
+                    cx="25"
+                    cy="25"
+                    fill="transparent"
+                    r="23"
+                    stroke="var(--theme-color-success-200)"
+                    stroke-width="4"
+                  />
+                  <circle
+                    cx="25"
+                    cy="25"
+                    fill="transparent"
+                    r="23"
+                    stroke="var(--theme-color-success)"
+                    stroke-dasharray="144.51326206513048"
+                    stroke-dashoffset="31.792917654328704"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="4"
+                    transform="rotate(-90 25 25)"
+                  />
+                  <text
+                    data-testid="CircularProgressBar__percentage"
+                    dy="0.3em"
+                    fill="var(--theme-color-success)"
+                    font-size="0.8rem"
+                    font-weight="600"
+                    text-anchor="middle"
+                    x="50%"
+                    y="50%"
+                  >
+                    <tspan>
+                      78
+                      <tspan
+                        dy="-0.6em"
+                        font-size="0.4rem"
+                        font-weight="bold"
+                      >
+                        %
+                      </tspan>
                     </tspan>
-                  </tspan>
-                </text>
-              </svg>
+                  </text>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`InstallPlugin should render 3st step 1`] = `
 <DocumentFragment>
-  <section
-    data-testid="InstallPlugin__step--third"
-  >
-    <div
-      class="flex mt-4"
+  <div>
+    <section
+      data-testid="InstallPlugin__step--third"
     >
       <div
-        class="flex-shrink-0 mr-6"
-      >
-        <img
-          alt="Plugin Logo"
-          class="w-32 h-32 rounded-xl"
-          src="placeholder.png"
-        />
-      </div>
-      <div
-        class="flex-1"
+        class="flex mt-4"
       >
         <div
-          class="flex flex-col justify-around h-full"
+          class="flex-shrink-0 mr-6"
         >
-          <div>
-            <p
-              class="text-sm font-semibold text-theme-neutral-light"
-            >
-              Plugin
-            </p>
-            <p
-              class="text-lg font-semibold text-theme-black"
-            >
-              ARK Explorer
-            </p>
-          </div>
+          <img
+            alt="Plugin Logo"
+            class="w-32 h-32 rounded-xl"
+            src="placeholder.png"
+          />
+        </div>
+        <div
+          class="flex-1"
+        >
           <div
-            class="flex justify-between"
+            class="flex flex-col justify-around h-full"
           >
-            <span>
+            <div>
               <p
                 class="text-sm font-semibold text-theme-neutral-light"
               >
-                Downloaded
+                Plugin
               </p>
               <p
-                class="font-bold text-theme-secondary-text"
+                class="text-lg font-semibold text-theme-black"
               >
-                Completed
+                ARK Explorer
               </p>
-            </span>
+            </div>
             <div
-              class=""
+              class="flex justify-between"
             >
-              <div
-                class="Circle-uw7h4j-0 JkqUV relative z-10 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
-              >
-                <span
-                  class="text-theme-success"
+              <span>
+                <p
+                  class="text-sm font-semibold text-theme-neutral-light"
                 >
-                  <div
-                    class="sc-bdfBwQ fcykxB"
-                    height="28"
-                    width="28"
+                  Downloaded
+                </p>
+                <p
+                  class="font-bold text-theme-secondary-text"
+                >
+                  Completed
+                </p>
+              </span>
+              <div
+                class=""
+              >
+                <div
+                  class="Circle-uw7h4j-0 JkqUV relative z-10 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+                >
+                  <span
+                    class="text-theme-success"
                   >
-                    <svg>
-                      checkmark.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="Circle-uw7h4j-0 JkqUV relative z-0 -ml-1 bg-theme-background border-theme-success"
-              >
-                <span
-                  class="text-xs font-semibold text-theme-success"
+                    <div
+                      class="sc-gsTCUz jddDKp"
+                      height="28"
+                      width="28"
+                    >
+                      <svg>
+                        checkmark.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="Circle-uw7h4j-0 JkqUV relative z-0 -ml-1 bg-theme-background border-theme-success"
                 >
-                  100%
-                </span>
+                  <span
+                    class="text-xs font-semibold text-theme-success"
+                  >
+                    100%
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </DocumentFragment>
 `;

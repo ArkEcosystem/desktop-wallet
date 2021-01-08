@@ -2,86 +2,90 @@
 
 exports[`Notifications should render notification item 1`] = `
 <div>
-  <table>
-    <tbody>
-      <tr
-        data-testid="NotificationItem"
-      >
-        <td
-          class="w-8 h-8"
+  <div>
+    <table>
+      <tbody>
+        <tr
+          data-testid="NotificationItem"
         >
-          <div
-            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
-          />
-        </td>
-        <td>
-          <div>
-            <span
-              class="font-bold text-md text-theme-neutral-600"
-            >
-              ARK Desktop Wallet
-            </span>
-            <span
-              class="text-md text-theme-neutral-600"
-            >
-               
-              - update v2.5.6
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-            data-testid="NotificationItem__action"
+          <td
+            class="w-8 h-8"
           >
-            Update
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            <div
+              class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
+            />
+          </td>
+          <td>
+            <div>
+              <span
+                class="font-bold text-md text-theme-neutral-600"
+              >
+                ARK Desktop Wallet
+              </span>
+              <span
+                class="text-md text-theme-neutral-600"
+              >
+                 
+                - update v2.5.6
+              </span>
+            </div>
+          </td>
+          <td>
+            <div
+              class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+              data-testid="NotificationItem__action"
+            >
+              Update
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 `;
 
 exports[`Notifications should render with custom action name 1`] = `
 <div>
-  <table>
-    <tbody>
-      <tr
-        data-testid="NotificationItem"
-      >
-        <td
-          class="w-8 h-8"
+  <div>
+    <table>
+      <tbody>
+        <tr
+          data-testid="NotificationItem"
         >
-          <div
-            class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
-          />
-        </td>
-        <td>
-          <div>
-            <span
-              class="font-bold text-md text-theme-neutral-600"
-            >
-              New plugin updates
-            </span>
-            <span
-              class="text-md text-theme-neutral-600"
-            >
-               
-              test
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-            data-testid="NotificationItem__action"
+          <td
+            class="w-8 h-8"
           >
-            custom action name
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            <div
+              class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
+            />
+          </td>
+          <td>
+            <div>
+              <span
+                class="font-bold text-md text-theme-neutral-600"
+              >
+                New plugin updates
+              </span>
+              <span
+                class="text-md text-theme-neutral-600"
+              >
+                 
+                test
+              </span>
+            </div>
+          </td>
+          <td>
+            <div
+              class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+              data-testid="NotificationItem__action"
+            >
+              custom action name
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 `;

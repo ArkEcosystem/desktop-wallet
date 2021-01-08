@@ -2,10 +2,12 @@
 
 exports[`TimeAgo should render 1`] = `
 <DocumentFragment>
-  <span
-    data-testid="timeago"
-  >
-    11 days ago
-  </span>
+  <div>
+    <span
+      data-testid="timeago"
+    >
+      11 days ago
+    </span>
+  </div>
 </DocumentFragment>
 `;

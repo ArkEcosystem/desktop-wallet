@@ -2,26 +2,30 @@
 
 exports[`RouterView should render 1`] = `
 <DocumentFragment>
-  <div
-    class="RouterView__Wrapper-sef01e-0"
-    data-testid="RouterView__wrapper"
-  >
-    <h1>
-      Test
-    </h1>
+  <div>
+    <div
+      class="RouterView__Wrapper-sef01e-0"
+      data-testid="RouterView__wrapper"
+    >
+      <h1>
+        Test
+      </h1>
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`RouterView should render with custom wrapper 1`] = `
 <DocumentFragment>
-  <section
-    class="RouterView__Wrapper-sef01e-0"
-    data-testid="RouterView__wrapper"
-  >
-    <h1>
-      Test
-    </h1>
-  </section>
+  <div>
+    <section
+      class="RouterView__Wrapper-sef01e-0"
+      data-testid="RouterView__wrapper"
+    >
+      <h1>
+        Test
+      </h1>
+    </section>
+  </div>
 </DocumentFragment>
 `;

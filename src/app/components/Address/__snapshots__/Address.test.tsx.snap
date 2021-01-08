@@ -2,65 +2,73 @@
 
 exports[`Formatted Address should not render without address 1`] = `
 <div>
-  <div
-    class="inline-flex items-center"
-  />
+  <div>
+    <div
+      class="inline-flex items-center"
+    />
+  </div>
 </div>
 `;
 
 exports[`Formatted Address should render address only 1`] = `
 <div>
-  <div
-    class="inline-flex items-center"
-  >
-    <span
-      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-      data-testid="address__wallet-address"
+  <div>
+    <div
+      class="inline-flex items-center"
     >
-      ASuusX … GQ3kqT
-    </span>
+      <span
+        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+        data-testid="address__wallet-address"
+      >
+        ASuusX … GQ3kqT
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Formatted Address should render with normal font 1`] = `
 <div>
-  <div
-    class="inline-flex items-center"
-  >
-    <span
-      class="max-w-24 flex-auto truncate mr-2 font-normal text-base text-theme-text"
-      data-testid="address__wallet-name"
+  <div>
+    <div
+      class="inline-flex items-center"
     >
-      Sample Wallet
-    </span>
-    <span
-      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-normal text-base"
-      data-testid="address__wallet-address"
-    >
-      ASuusX … GQ3kqT
-    </span>
+      <span
+        class="max-w-24 flex-auto truncate mr-2 font-normal text-base text-theme-text"
+        data-testid="address__wallet-name"
+      >
+        Sample Wallet
+      </span>
+      <span
+        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-normal text-base"
+        data-testid="address__wallet-address"
+      >
+        ASuusX … GQ3kqT
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Formatted Address should render with wallet name 1`] = `
 <div>
-  <div
-    class="inline-flex items-center"
-  >
-    <span
-      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-      data-testid="address__wallet-name"
+  <div>
+    <div
+      class="inline-flex items-center"
     >
-      Sample Wallet
-    </span>
-    <span
-      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-      data-testid="address__wallet-address"
-    >
-      ASuusX … GQ3kqT
-    </span>
+      <span
+        class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+        data-testid="address__wallet-name"
+      >
+        Sample Wallet
+      </span>
+      <span
+        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+        data-testid="address__wallet-address"
+      >
+        ASuusX … GQ3kqT
+      </span>
+    </div>
   </div>
 </div>
 `;

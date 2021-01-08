@@ -1,77 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumbs should not render without crumbs 1`] = `<DocumentFragment />`;
+exports[`Breadcrumbs should not render without crumbs 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
 exports[`Breadcrumbs should render 1`] = `
 <DocumentFragment>
-  <div
-    class="flex items-center space-x-3 text-sm "
-    data-testid="breadcrumbs__wrapper"
-  >
+  <div>
     <div
-      class="sc-bdfBwQ imIpud text-theme-neutral-500"
-      height="24"
-      width="13"
+      class="flex items-center space-x-3 text-sm "
+      data-testid="breadcrumbs__wrapper"
     >
-      <svg>
-        arrow-left.svg
-      </svg>
-    </div>
-    <span
-      class="space-x-3"
-    >
-      <span
-        class="text-theme-neutral-700"
+      <div
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
+        height="24"
+        width="13"
       >
-        Dashboard
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Dashboard
+        </span>
       </span>
-    </span>
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Breadcrumbs should render with custom classes 1`] = `
 <DocumentFragment>
-  <div
-    class="flex items-center space-x-3 text-sm class-name"
-    data-testid="breadcrumbs__wrapper"
-  >
+  <div>
     <div
-      class="sc-bdfBwQ imIpud text-theme-neutral-500"
-      height="24"
-      width="13"
+      class="flex items-center space-x-3 text-sm class-name"
+      data-testid="breadcrumbs__wrapper"
     >
-      <svg>
-        arrow-left.svg
-      </svg>
-    </div>
-    <span
-      class="space-x-3"
-    >
-      <a
-        class="text-theme-neutral-500 hover:underline"
-        href="/wallets"
+      <div
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
+        height="24"
+        width="13"
       >
-        <span>
-          Wallets
-        </span>
-      </a>
-      <span>
-        <div
-          class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
-          type="vertical"
-        />
-      </span>
-    </span>
-    <span
-      class="space-x-3"
-    >
+        <svg>
+          arrow-left.svg
+        </svg>
+      </div>
       <span
-        class="text-theme-neutral-700"
+        class="space-x-3"
       >
-        My Wallet
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/wallets"
+        >
+          <span>
+            Wallets
+          </span>
+        </a>
+        <span>
+          <div
+            class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
       </span>
-    </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          My Wallet
+        </span>
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;

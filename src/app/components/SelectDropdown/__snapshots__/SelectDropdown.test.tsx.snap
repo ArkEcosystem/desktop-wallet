@@ -2,63 +2,65 @@
 
 exports[`SelectDropdown should render 1`] = `
 <div>
-  <div
-    class="relative w-full"
-  >
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-      data-testid="select-list__input"
-      readonly=""
-      type="text"
-      value=""
-    />
+  <div>
     <div
       class="relative w-full"
     >
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+        data-testid="select-list__input"
+        readonly=""
+        type="text"
+        value=""
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-1-menu"
-        role="combobox"
+        class="relative w-full"
       >
-        <label
-          for="downshift-0-input"
-          id="downshift-1-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectDropdownInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="downshift-1-menu"
+          role="combobox"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-1-menu"
+          <label
+            for="downshift-0-input"
+            id="downshift-1-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectDropdownInput"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-1-menu"
+              aria-labelledby="downshift-1-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+              data-testid="SelectDropdownInput__input"
+              id="downshift-0-input"
+              placeholder="Select option"
+              value=""
+            />
+          </div>
+          <ul
             aria-labelledby="downshift-1-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-            data-testid="SelectDropdownInput__input"
-            id="downshift-0-input"
-            placeholder="Select option"
-            value=""
+            class="styles__SelectOptionsList-b2falt-1 iaPZIm"
+            id="downshift-1-menu"
+            role="listbox"
           />
         </div>
-        <ul
-          aria-labelledby="downshift-1-label"
-          class="styles__SelectOptionsList-b2falt-1 iaPZIm"
-          id="downshift-1-menu"
-          role="listbox"
-        />
-      </div>
-      <div
-        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
-      >
         <div
-          class="sc-bdfBwQ gLRWTb transition-transform "
-          height="5"
-          width="7"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
         >
-          <svg>
-            caret-down.svg
-          </svg>
+          <div
+            class="sc-gsTCUz dUmRCn transition-transform "
+            height="5"
+            width="7"
+          >
+            <svg>
+              caret-down.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -68,64 +70,66 @@ exports[`SelectDropdown should render 1`] = `
 
 exports[`SelectDropdown should render disabled 1`] = `
 <div>
-  <div
-    class="relative w-full"
-  >
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-      data-testid="select-list__input"
-      readonly=""
-      type="text"
-      value=""
-    />
+  <div>
     <div
       class="relative w-full"
     >
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+        data-testid="select-list__input"
+        readonly=""
+        type="text"
+        value=""
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-9-menu"
-        role="combobox"
+        class="relative w-full"
       >
-        <label
-          for="downshift-8-input"
-          id="downshift-9-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectDropdownInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="downshift-9-menu"
+          role="combobox"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-9-menu"
+          <label
+            for="downshift-8-input"
+            id="downshift-9-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectDropdownInput"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-9-menu"
+              aria-labelledby="downshift-9-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+              data-testid="SelectDropdownInput__input"
+              disabled=""
+              id="downshift-8-input"
+              placeholder="Select option"
+              value=""
+            />
+          </div>
+          <ul
             aria-labelledby="downshift-9-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-            data-testid="SelectDropdownInput__input"
-            disabled=""
-            id="downshift-8-input"
-            placeholder="Select option"
-            value=""
+            class="styles__SelectOptionsList-b2falt-1 iaPZIm"
+            id="downshift-9-menu"
+            role="listbox"
           />
         </div>
-        <ul
-          aria-labelledby="downshift-9-label"
-          class="styles__SelectOptionsList-b2falt-1 iaPZIm"
-          id="downshift-9-menu"
-          role="listbox"
-        />
-      </div>
-      <div
-        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
-      >
         <div
-          class="sc-bdfBwQ gLRWTb transition-transform "
-          height="5"
-          width="7"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
         >
-          <svg>
-            caret-down.svg
-          </svg>
+          <div
+            class="sc-gsTCUz dUmRCn transition-transform "
+            height="5"
+            width="7"
+          >
+            <svg>
+              caret-down.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -135,64 +139,66 @@ exports[`SelectDropdown should render disabled 1`] = `
 
 exports[`SelectDropdown should render invalid 1`] = `
 <div>
-  <div
-    class="relative w-full"
-  >
-    <input
-      aria-invalid="true"
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-      data-testid="select-list__input"
-      readonly=""
-      type="text"
-      value=""
-    />
+  <div>
     <div
       class="relative w-full"
     >
+      <input
+        aria-invalid="true"
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+        data-testid="select-list__input"
+        readonly=""
+        type="text"
+        value=""
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-5-menu"
-        role="combobox"
+        class="relative w-full"
       >
-        <label
-          for="downshift-4-input"
-          id="downshift-5-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectDropdownInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="downshift-5-menu"
+          role="combobox"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-5-menu"
+          <label
+            for="downshift-4-input"
+            id="downshift-5-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectDropdownInput"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-5-menu"
+              aria-labelledby="downshift-5-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+              data-testid="SelectDropdownInput__input"
+              id="downshift-4-input"
+              placeholder="Select option"
+              value=""
+            />
+          </div>
+          <ul
             aria-labelledby="downshift-5-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-            data-testid="SelectDropdownInput__input"
-            id="downshift-4-input"
-            placeholder="Select option"
-            value=""
+            class="styles__SelectOptionsList-b2falt-1 iaPZIm"
+            id="downshift-5-menu"
+            role="listbox"
           />
         </div>
-        <ul
-          aria-labelledby="downshift-5-label"
-          class="styles__SelectOptionsList-b2falt-1 iaPZIm"
-          id="downshift-5-menu"
-          role="listbox"
-        />
-      </div>
-      <div
-        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
-      >
         <div
-          class="sc-bdfBwQ gLRWTb transition-transform "
-          height="5"
-          width="7"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
         >
-          <svg>
-            caret-down.svg
-          </svg>
+          <div
+            class="sc-gsTCUz dUmRCn transition-transform "
+            height="5"
+            width="7"
+          >
+            <svg>
+              caret-down.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -202,63 +208,65 @@ exports[`SelectDropdown should render invalid 1`] = `
 
 exports[`SelectDropdown should render with empty options 1`] = `
 <div>
-  <div
-    class="relative w-full"
-  >
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-      data-testid="select-list__input"
-      readonly=""
-      type="text"
-      value=""
-    />
+  <div>
     <div
       class="relative w-full"
     >
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+        data-testid="select-list__input"
+        readonly=""
+        type="text"
+        value=""
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-23-menu"
-        role="combobox"
+        class="relative w-full"
       >
-        <label
-          for="downshift-22-input"
-          id="downshift-23-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectDropdownInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="downshift-23-menu"
+          role="combobox"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-23-menu"
+          <label
+            for="downshift-22-input"
+            id="downshift-23-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectDropdownInput"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-23-menu"
+              aria-labelledby="downshift-23-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+              data-testid="SelectDropdownInput__input"
+              id="downshift-22-input"
+              placeholder="Select option"
+              value=""
+            />
+          </div>
+          <ul
             aria-labelledby="downshift-23-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-            data-testid="SelectDropdownInput__input"
-            id="downshift-22-input"
-            placeholder="Select option"
-            value=""
+            class="styles__SelectOptionsList-b2falt-1 iaPZIm"
+            id="downshift-23-menu"
+            role="listbox"
           />
         </div>
-        <ul
-          aria-labelledby="downshift-23-label"
-          class="styles__SelectOptionsList-b2falt-1 iaPZIm"
-          id="downshift-23-menu"
-          role="listbox"
-        />
-      </div>
-      <div
-        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
-      >
         <div
-          class="sc-bdfBwQ gLRWTb transition-transform "
-          height="5"
-          width="7"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
         >
-          <svg>
-            caret-down.svg
-          </svg>
+          <div
+            class="sc-gsTCUz dUmRCn transition-transform "
+            height="5"
+            width="7"
+          >
+            <svg>
+              caret-down.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -268,69 +276,71 @@ exports[`SelectDropdown should render with empty options 1`] = `
 
 exports[`SelectDropdown should render with initial default value 1`] = `
 <div>
-  <div
-    class="relative w-full"
-  >
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-      data-testid="select-list__input"
-      readonly=""
-      type="text"
-      value="3"
-    />
+  <div>
     <div
       class="relative w-full"
     >
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+        data-testid="select-list__input"
+        readonly=""
+        type="text"
+        value="3"
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-13-menu"
-        role="combobox"
+        class="relative w-full"
       >
-        <label
-          for="downshift-12-input"
-          id="downshift-13-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectDropdownInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="downshift-13-menu"
+          role="combobox"
         >
-          <span
-            class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
-            data-testid="SelectDropdownInput__typeahead"
+          <label
+            for="downshift-12-input"
+            id="downshift-13-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectDropdownInput"
           >
-            Option 3
-          </span>
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-13-menu"
+            <span
+              class="InputGroup__InputAddon-sc-1obbdqe-0 bsvVEG py-3 pl-4 font-normal border border-transparent opacity-50 pointer-events-none"
+              data-testid="SelectDropdownInput__typeahead"
+            >
+              Option 3
+            </span>
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-13-menu"
+              aria-labelledby="downshift-13-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+              data-testid="SelectDropdownInput__input"
+              id="downshift-12-input"
+              placeholder="Select option"
+              value="Option 3"
+            />
+          </div>
+          <ul
             aria-labelledby="downshift-13-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-            data-testid="SelectDropdownInput__input"
-            id="downshift-12-input"
-            placeholder="Select option"
-            value="Option 3"
+            class="styles__SelectOptionsList-b2falt-1 iaPZIm"
+            id="downshift-13-menu"
+            role="listbox"
           />
         </div>
-        <ul
-          aria-labelledby="downshift-13-label"
-          class="styles__SelectOptionsList-b2falt-1 iaPZIm"
-          id="downshift-13-menu"
-          role="listbox"
-        />
-      </div>
-      <div
-        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
-      >
         <div
-          class="sc-bdfBwQ gLRWTb transition-transform "
-          height="5"
-          width="7"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
         >
-          <svg>
-            caret-down.svg
-          </svg>
+          <div
+            class="sc-gsTCUz dUmRCn transition-transform "
+            height="5"
+            width="7"
+          >
+            <svg>
+              caret-down.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -340,63 +350,65 @@ exports[`SelectDropdown should render with initial default value 1`] = `
 
 exports[`SelectDropdown should render with options values as numbers 1`] = `
 <div>
-  <div
-    class="relative w-full"
-  >
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-      data-testid="select-list__input"
-      readonly=""
-      type="text"
-      value=""
-    />
+  <div>
     <div
       class="relative w-full"
     >
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+        data-testid="select-list__input"
+        readonly=""
+        type="text"
+        value=""
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-27-menu"
-        role="combobox"
+        class="relative w-full"
       >
-        <label
-          for="downshift-26-input"
-          id="downshift-27-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectDropdownInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="downshift-27-menu"
+          role="combobox"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-27-menu"
+          <label
+            for="downshift-26-input"
+            id="downshift-27-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectDropdownInput"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-27-menu"
+              aria-labelledby="downshift-27-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+              data-testid="SelectDropdownInput__input"
+              id="downshift-26-input"
+              placeholder="Select option"
+              value=""
+            />
+          </div>
+          <ul
             aria-labelledby="downshift-27-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-            data-testid="SelectDropdownInput__input"
-            id="downshift-26-input"
-            placeholder="Select option"
-            value=""
+            class="styles__SelectOptionsList-b2falt-1 iaPZIm"
+            id="downshift-27-menu"
+            role="listbox"
           />
         </div>
-        <ul
-          aria-labelledby="downshift-27-label"
-          class="styles__SelectOptionsList-b2falt-1 iaPZIm"
-          id="downshift-27-menu"
-          role="listbox"
-        />
-      </div>
-      <div
-        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
-      >
         <div
-          class="sc-bdfBwQ gLRWTb transition-transform "
-          height="5"
-          width="7"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
         >
-          <svg>
-            caret-down.svg
-          </svg>
+          <div
+            class="sc-gsTCUz dUmRCn transition-transform "
+            height="5"
+            width="7"
+          >
+            <svg>
+              caret-down.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -406,63 +418,65 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
 
 exports[`SelectDropdown should render with wrong default value 1`] = `
 <div>
-  <div
-    class="relative w-full"
-  >
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
-      data-testid="select-list__input"
-      readonly=""
-      type="text"
-      value=""
-    />
+  <div>
     <div
       class="relative w-full"
     >
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 sr-only"
+        data-testid="select-list__input"
+        readonly=""
+        type="text"
+        value=""
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-19-menu"
-        role="combobox"
+        class="relative w-full"
       >
-        <label
-          for="downshift-18-input"
-          id="downshift-19-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectDropdownInput"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="downshift-19-menu"
+          role="combobox"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-19-menu"
+          <label
+            for="downshift-18-input"
+            id="downshift-19-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectDropdownInput"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-19-menu"
+              aria-labelledby="downshift-19-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
+              data-testid="SelectDropdownInput__input"
+              id="downshift-18-input"
+              placeholder="Select option"
+              value=""
+            />
+          </div>
+          <ul
             aria-labelledby="downshift-19-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 cursor-default"
-            data-testid="SelectDropdownInput__input"
-            id="downshift-18-input"
-            placeholder="Select option"
-            value=""
+            class="styles__SelectOptionsList-b2falt-1 iaPZIm"
+            id="downshift-19-menu"
+            role="listbox"
           />
         </div>
-        <ul
-          aria-labelledby="downshift-19-label"
-          class="styles__SelectOptionsList-b2falt-1 iaPZIm"
-          id="downshift-19-menu"
-          role="listbox"
-        />
-      </div>
-      <div
-        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
-      >
         <div
-          class="sc-bdfBwQ gLRWTb transition-transform "
-          height="5"
-          width="7"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV w-10 pointer-events-none text-theme-neutral"
         >
-          <svg>
-            caret-down.svg
-          </svg>
+          <div
+            class="sc-gsTCUz dUmRCn transition-transform "
+            height="5"
+            width="7"
+          >
+            <svg>
+              caret-down.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>

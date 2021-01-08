@@ -2,38 +2,40 @@
 
 exports[`TransactionNetwork should render 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        Cryptoasset
+        <div
+          class="text-sm font-semibold text-theme-neutral-700"
+        >
+          Cryptoasset
+        </div>
+        <div
+          class="font-semibold"
+        >
+          ARK Devnet
+        </div>
       </div>
       <div
-        class="font-semibold"
+        aria-label="ARK Devnet"
+        class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+        data-testid="NetworkIcon-ARK-ark.devnet"
       >
-        ARK Devnet
-      </div>
-    </div>
-    <div
-      aria-label="ARK Devnet"
-      class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-      data-testid="NetworkIcon-ARK-ark.devnet"
-    >
-      <div
-        class="sc-bdfBwQ iyevwF"
-        data-testid="NetworkIcon__icon"
-        height="20"
-        width="20"
-      >
-        <svg>
-          ark.svg
-        </svg>
+        <div
+          class="sc-gsTCUz fHxsLl"
+          data-testid="NetworkIcon__icon"
+          height="20"
+          width="20"
+        >
+          <svg>
+            ark.svg
+          </svg>
+        </div>
       </div>
     </div>
   </div>

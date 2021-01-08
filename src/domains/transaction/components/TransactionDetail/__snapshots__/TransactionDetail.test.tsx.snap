@@ -2,22 +2,24 @@
 
 exports[`TransactionDetail should render 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        Test
-      </div>
-      <div
-        class="font-semibold"
-      >
-        test
+        <div
+          class="text-sm font-semibold text-theme-neutral-700"
+        >
+          Test
+        </div>
+        <div
+          class="font-semibold"
+        >
+          test
+        </div>
       </div>
     </div>
   </div>
@@ -26,22 +28,24 @@ exports[`TransactionDetail should render 1`] = `
 
 exports[`TransactionDetail should render with bottom border 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hjhrLd"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hjhrLd"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        Test
-      </div>
-      <div
-        class="font-semibold"
-      >
-        test
+        <div
+          class="text-sm font-semibold text-theme-neutral-700"
+        >
+          Test
+        </div>
+        <div
+          class="font-semibold"
+        >
+          test
+        </div>
       </div>
     </div>
   </div>
@@ -50,63 +54,67 @@ exports[`TransactionDetail should render with bottom border 1`] = `
 
 exports[`TransactionDetail should render with extra children 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        Test
+        <div
+          class="text-sm font-semibold text-theme-neutral-700"
+        >
+          Test
+        </div>
+        <div
+          class="font-semibold"
+        >
+          test
+        </div>
       </div>
       <div
-        class="font-semibold"
-      >
-        test
-      </div>
+        data-testid="TEST_CHILD"
+      />
     </div>
-    <div
-      data-testid="TEST_CHILD"
-    />
   </div>
 </div>
 `;
 
 exports[`TransactionDetail should render with extra label 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        <span
-          class="mr-1"
-        >
-          Test
-        </span>
         <div
-          class="Label-sc-1tj9hzr-0 ftOOah"
-          color="warning"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
           <span
-            class="text-sm"
+            class="mr-1"
           >
-            Label extra
+            Test
           </span>
+          <div
+            class="Label-sc-1tj9hzr-0 ftOOah"
+            color="warning"
+          >
+            <span
+              class="text-sm"
+            >
+              Label extra
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        class="font-semibold"
-      >
-        test
+        <div
+          class="font-semibold"
+        >
+          test
+        </div>
       </div>
     </div>
   </div>
@@ -115,22 +123,24 @@ exports[`TransactionDetail should render with extra label 1`] = `
 
 exports[`TransactionDetail should render with top border 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        Test
-      </div>
-      <div
-        class="font-semibold"
-      >
-        test
+        <div
+          class="text-sm font-semibold text-theme-neutral-700"
+        >
+          Test
+        </div>
+        <div
+          class="font-semibold"
+        >
+          test
+        </div>
       </div>
     </div>
   </div>
@@ -139,22 +149,24 @@ exports[`TransactionDetail should render with top border 1`] = `
 
 exports[`TransactionDetail should render without border 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        Test
-      </div>
-      <div
-        class="font-semibold"
-      >
-        test
+        <div
+          class="text-sm font-semibold text-theme-neutral-700"
+        >
+          Test
+        </div>
+        <div
+          class="font-semibold"
+        >
+          test
+        </div>
       </div>
     </div>
   </div>
@@ -163,22 +175,24 @@ exports[`TransactionDetail should render without border 1`] = `
 
 exports[`TransactionDetail should render without padding 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        Test
-      </div>
-      <div
-        class="font-semibold"
-      >
-        test
+        <div
+          class="text-sm font-semibold text-theme-neutral-700"
+        >
+          Test
+        </div>
+        <div
+          class="font-semibold"
+        >
+          test
+        </div>
       </div>
     </div>
   </div>

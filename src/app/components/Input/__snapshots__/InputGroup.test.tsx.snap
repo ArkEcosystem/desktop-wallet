@@ -2,81 +2,87 @@
 
 exports[`InputGroup should render with both elements 1`] = `
 <DocumentFragment>
-  <div
-    class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-xs"
-  >
+  <div>
     <div
-      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
+      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-xs"
     >
-      <span
-        data-testid="start"
+      <div
+        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
       >
-        $
-      </span>
-    </div>
-    <div
-      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
-    >
-      <span
-        data-testid="end"
+        <span
+          data-testid="start"
+        >
+          $
+        </span>
+      </div>
+      <div
+        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
       >
-        $
-      </span>
+        <span
+          data-testid="end"
+        >
+          $
+        </span>
+      </div>
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-13"
+        data-testid="Input"
+        placeholder="Amount"
+        type="text"
+      />
     </div>
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-13"
-      data-testid="Input"
-      placeholder="Amount"
-      type="text"
-    />
   </div>
 </DocumentFragment>
 `;
 
 exports[`InputGroup should render with element on the left 1`] = `
 <DocumentFragment>
-  <div
-    class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-xs"
-  >
+  <div>
     <div
-      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
+      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-xs"
     >
-      <span
-        data-testid="start"
+      <div
+        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK"
       >
-        $
-      </span>
+        <span
+          data-testid="start"
+        >
+          $
+        </span>
+      </div>
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-13"
+        data-testid="Input"
+        placeholder="Amount"
+        type="text"
+      />
     </div>
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-13"
-      data-testid="Input"
-      placeholder="Amount"
-      type="text"
-    />
   </div>
 </DocumentFragment>
 `;
 
 exports[`InputGroup should render with element on the right 1`] = `
 <DocumentFragment>
-  <div
-    class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-xs"
-  >
+  <div>
     <div
-      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
+      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-xs"
     >
-      <span
-        data-testid="end"
+      <div
+        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
       >
-        $
-      </span>
+        <span
+          data-testid="end"
+        >
+          $
+        </span>
+      </div>
+      <input
+        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-13"
+        data-testid="Input"
+        placeholder="Amount"
+        type="text"
+      />
     </div>
-    <input
-      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-13"
-      data-testid="Input"
-      placeholder="Amount"
-      type="text"
-    />
   </div>
 </DocumentFragment>
 `;

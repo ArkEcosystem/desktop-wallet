@@ -2,76 +2,78 @@
 
 exports[`BlockfolioAd should render 1`] = `
 <DocumentFragment>
-  <div
-    class="relative"
-  >
+  <div>
     <div
-      class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-contrast"
-    >
-      <span
-        class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary"
-      >
-        Ad
-      </span>
-    </div>
-    <img
-      alt="Blockfolio Banner"
-      class="w-full rounded-lg border-2 border-theme-primary-contrast"
-      src="blockfolio-banner.png"
-    />
-    <div
-      class="absolute left-10 top-24"
+      class="relative"
     >
       <div
-        class="flex flex-col space-y-5 text-theme-background"
+        class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-contrast"
       >
-        <a
-          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-          data-testid="Link"
-          rel="noopener noreferrer"
-          to="https://blockfolio.com/"
+        <span
+          class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary"
         >
-          <svg
-            class="-mx-8 text-theme-background"
-            height="47"
-            width="238"
-          >
-            blockfolio.svg
-          </svg>
-        </a>
-        <p
-          class="w-3/4 text-lg font-medium"
-        >
-          The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free.
-        </p>
+          Ad
+        </span>
       </div>
+      <img
+        alt="Blockfolio Banner"
+        class="w-full rounded-lg border-2 border-theme-primary-contrast"
+        src="blockfolio-banner.png"
+      />
       <div
-        class="flex mt-12 space-x-2"
+        class="absolute left-10 top-24"
       >
-        <a
-          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-          data-testid="Link"
-          rel="noopener noreferrer"
-          to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
+        <div
+          class="flex flex-col space-y-5 text-theme-background"
         >
-          <svg
-            class="w-32 h-10 b-0"
+          <a
+            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+            data-testid="Link"
+            rel="noopener noreferrer"
+            to="https://blockfolio.com/"
           >
-            download-app-store.svg
-          </svg>
-        </a>
-        <a
-          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-          data-testid="Link"
-          rel="noopener noreferrer"
-          to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
+            <svg
+              class="-mx-8 text-theme-background"
+              height="47"
+              width="238"
+            >
+              blockfolio.svg
+            </svg>
+          </a>
+          <p
+            class="w-3/4 text-lg font-medium"
+          >
+            The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free.
+          </p>
+        </div>
+        <div
+          class="flex mt-12 space-x-2"
         >
-          <svg
-            class="w-32 h-10"
+          <a
+            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+            data-testid="Link"
+            rel="noopener noreferrer"
+            to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
           >
-            download-google-play.svg
-          </svg>
-        </a>
+            <svg
+              class="w-32 h-10 b-0"
+            >
+              download-app-store.svg
+            </svg>
+          </a>
+          <a
+            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+            data-testid="Link"
+            rel="noopener noreferrer"
+            to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
+          >
+            <svg
+              class="w-32 h-10"
+            >
+              download-google-play.svg
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -2,145 +2,147 @@
 
 exports[`PluginSpecs should render properly 1`] = `
 <DocumentFragment>
-  <div
-    class="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
-  >
+  <div>
     <div
-      class="flex"
+      class="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
     >
       <div
-        class="flex flex-col"
+        class="flex"
       >
-        <span
-          class="font-bold text-theme-neutral-light"
-        >
-          Author
-        </span>
         <div
-          class="flex items-center"
+          class="flex flex-col"
         >
           <span
-            class="font-bold text-theme-neutral-600"
+            class="font-bold text-theme-neutral-light"
           >
-            ARK Ecosystem
+            Author
           </span>
           <div
-            class="ml-3"
+            class="flex items-center"
           >
-            <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              width="1em"
+            <span
+              class="font-bold text-theme-neutral-600"
             >
-              <svg>
-                official-ark-plugin.svg
-              </svg>
+              ARK Ecosystem
+            </span>
+            <div
+              class="ml-3"
+            >
+              <div
+                class="sc-gsTCUz cXMmJt"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  official-ark-plugin.svg
+                </svg>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      class="flex px-6"
-    >
       <div
-        class="flex flex-col undefined"
+        class="flex px-6"
       >
-        <span
-          class="font-bold text-theme-neutral-light"
-        >
-          Category
-        </span>
-        <span
-          class="font-bold text-theme-neutral-600"
-        >
-          Utility
-        </span>
-      </div>
-    </div>
-    <div
-      class="flex px-6 -ml-5"
-    >
-      <div
-        class="flex flex-col"
-      >
-        <span
-          class="font-bold text-theme-neutral-light"
-        >
-          URL
-        </span>
-        <span
-          class="font-bold text-theme-primary"
-        >
-          github.com
-        </span>
-      </div>
-    </div>
-    <div
-      class="flex col-span-2 justify-between px-6 -ml-8"
-    >
-      <div
-        class="flex flex-col"
-      >
-        <span
-          class="font-bold text-theme-neutral-light"
-        >
-          Rating
-        </span>
         <div
-          class="flex items-center"
+          class="flex flex-col undefined"
         >
-          <div
-            class="pr-1 text-theme-warning-400"
+          <span
+            class="font-bold text-theme-neutral-light"
           >
-            <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                star.svg
-              </svg>
-            </div>
-          </div>
+            Category
+          </span>
           <span
             class="font-bold text-theme-neutral-600"
           >
-            4.6
+            Utility
           </span>
         </div>
       </div>
       <div
-        class="flex flex-col text-right"
+        class="flex px-6 -ml-5"
       >
-        <span
-          class="font-bold text-theme-neutral-light"
+        <div
+          class="flex flex-col"
         >
-          Version
-        </span>
-        <span
-          class="font-bold text-theme-neutral-600"
-        >
-          v.1.3.8
-        </span>
+          <span
+            class="font-bold text-theme-neutral-light"
+          >
+            URL
+          </span>
+          <span
+            class="font-bold text-theme-primary"
+          >
+            github.com
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      class="flex pl-6"
-    >
       <div
-        class="flex flex-col text-right"
+        class="flex col-span-2 justify-between px-6 -ml-8"
       >
-        <span
-          class="font-bold text-theme-neutral-light"
+        <div
+          class="flex flex-col"
         >
-          Size
-        </span>
-        <span
-          class="font-bold text-theme-neutral-600"
+          <span
+            class="font-bold text-theme-neutral-light"
+          >
+            Rating
+          </span>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="pr-1 text-theme-warning-400"
+            >
+              <div
+                class="sc-gsTCUz cXMmJt"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="font-bold text-theme-neutral-600"
+            >
+              4.6
+            </span>
+          </div>
+        </div>
+        <div
+          class="flex flex-col text-right"
         >
-          4.2 Mb
-        </span>
+          <span
+            class="font-bold text-theme-neutral-light"
+          >
+            Version
+          </span>
+          <span
+            class="font-bold text-theme-neutral-600"
+          >
+            v.1.3.8
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex pl-6"
+      >
+        <div
+          class="flex flex-col text-right"
+        >
+          <span
+            class="font-bold text-theme-neutral-light"
+          >
+            Size
+          </span>
+          <span
+            class="font-bold text-theme-neutral-600"
+          >
+            4.2 Mb
+          </span>
+        </div>
       </div>
     </div>
   </div>

@@ -2,80 +2,82 @@
 
 exports[`Notifications should render notification item 1`] = `
 <div>
-  <table>
-    <tbody>
-      <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
-        data-testid="TableRow"
-      >
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gEFZAQ space-x-3"
-          >
+  <div>
+    <table>
+      <tbody>
+        <tr
+          class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
+          data-testid="TableRow"
+        >
+          <td>
             <div
-              class="flex items-center -space-x-1"
-              data-testid="TransactionRowMode"
+              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gEFZAQ space-x-3"
             >
               <div
-                class="Circle-uw7h4j-0 gScSiC border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                class="flex items-center -space-x-1"
+                data-testid="TransactionRowMode"
               >
                 <div
-                  class="sc-bdfBwQ fPrsah"
-                  data-testid="TransactionRowMode__Received"
-                  height="1em"
-                  width="1em"
+                  class="Circle-uw7h4j-0 gScSiC border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                 >
-                  <svg>
-                    received.svg
-                  </svg>
+                  <div
+                    class="sc-gsTCUz cXMmJt"
+                    data-testid="TransactionRowMode__Received"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      received.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjqnOw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    />
+                  </div>
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
-                data-testid="Avatar"
+                class="inline-flex items-center"
               >
-                <div
-                  class="w-full h-full"
+                <span
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                  data-testid="address__wallet-address"
                 >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
+                  D8rr7B … s6YUYD
+                </span>
               </div>
             </div>
+          </td>
+          <td>
             <div
-              class="inline-flex items-center"
+              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
             >
-              <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                data-testid="address__wallet-address"
+              <div
+                class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                color="success"
+                data-testid="TransactionRowAmount"
               >
-                D8rr7B … s6YUYD
-              </span>
+                <span
+                  data-testid="Amount"
+                >
+                  + 20 DARK
+                </span>
+              </div>
             </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 fAIfLU justify-end"
-          >
-            <div
-              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-              color="success"
-              data-testid="TransactionRowAmount"
-            >
-              <span
-                data-testid="Amount"
-              >
-                + 20 DARK
-              </span>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 `;

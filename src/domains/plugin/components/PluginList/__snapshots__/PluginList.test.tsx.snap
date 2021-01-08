@@ -2,372 +2,383 @@
 
 exports[`PluginList should render 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="PluginList"
-  >
+  <div>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-      role="table"
+      data-testid="PluginList"
     >
-      <table
-        cellpadding="0"
-        class="table-auto"
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+        role="table"
       >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Logo
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Name
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Author
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Category
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Rating
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--5"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Version
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--6"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Size
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--7"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--8"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Actions
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-            data-testid="TableRow"
-          >
-            <td
-              class="w-20"
+          <thead>
+            <tr
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+              role="row"
             >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
               >
-                <svg
-                  class="w-15 h-15"
-                >
-                  changenow-logo.svg
-                </svg>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
-              >
-                <a
-                  class="font-semibold link"
-                  href="/"
-                >
-                  ARK Explorer
-                </a>
                 <div
-                  class="sc-bdfBwQ iNulIV"
-                  height="18"
-                  width="18"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <svg>
-                    official-ark-plugin.svg
-                  </svg>
+                  <div>
+                    Logo
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
-              >
-                <span>
-                  ARK.io
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  Utility
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
               >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="flex flex-inline align-top "
                 >
+                  <div>
+                    Name
+                  </div>
                   <div
-                    class="relative my-auto"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
                   >
                     <div
-                      class="overflow-hidden absolute"
-                      style="width: 80%;"
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
                     >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Author
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Category
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Rating
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Version
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--6"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Size
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--7"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    Status
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--8"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Actions
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-20"
+              >
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                >
+                  <div
+                    class="w-15 h-15 flex items-center justify-center"
+                  >
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNRfPD rounded"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ark-explorer"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="ark-explorer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                >
+                  <a
+                    class="font-semibold link"
+                    href="/"
+                  >
+                    ARK Explorer
+                  </a>
+                  <div
+                    class="sc-gsTCUz byDVwN"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      official-ark-plugin.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                >
+                  <span>
+                    ARK.io
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    Utility
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <div
+                    class="flex"
+                    data-testid="ReviewRating"
+                  >
+                    <div
+                      class="relative my-auto"
+                    >
+                      <div
+                        class="overflow-hidden absolute"
+                        style="width: 80%;"
+                      >
+                        <svg
+                          class="text-theme-warning-400 w-3"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
                       <svg
-                        class="text-theme-warning-400 w-3"
+                        class="text-theme-neutral w-3"
                       >
                         star.svg
                       </svg>
                     </div>
-                    <svg
-                      class="text-theme-neutral w-3"
+                    <span
+                      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                     >
-                      star.svg
-                    </svg>
+                      4.2
+                    </span>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                  >
-                    4.2
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    v1.3.8
                   </span>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  v 1.3.8
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  4.2 MB
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
+              </td>
+              <td>
                 <div
-                  class="flex mx-auto w-6 h-6"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    4.2 MB
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
                 >
                   <div
-                    class="m-auto text-theme-neutral"
+                    class="mx-auto flex items-center justify-center w-6 h-6 text-theme-neutral"
                   >
                     <div
-                      class="sc-bdfBwQ dfWOLJ"
-                      height="15"
-                      width="15"
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
                     >
                       <svg>
                         dash.svg
@@ -375,204 +386,217 @@ exports[`PluginList should render 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="w-16"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+              </td>
+              <td
+                class="w-16"
               >
-                <button
-                  class="Button-mdtvtf-0 ifPnXw"
-                  data-testid="PluginListItem__install"
-                  type="button"
-                >
-                  Install
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-            data-testid="TableRow"
-          >
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
-              >
-                <svg
-                  class="w-15 h-15"
-                >
-                  changenow-logo.svg
-                </svg>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
-              >
-                <a
-                  class="font-semibold link"
-                  href="/"
-                >
-                  ARK Avatars
-                </a>
                 <div
-                  class="sc-bdfBwQ eMktAO"
-                  height="20"
-                  width="14"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                 >
-                  <svg>
-                    grant.svg
-                  </svg>
+                  <button
+                    class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+                    data-testid="PluginListItem__install"
+                    type="button"
+                  >
+                    Install
+                  </button>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
-              >
-                <span>
-                  ARK.io
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  Other
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+              </td>
+            </tr>
+            <tr
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-20"
               >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
                 >
                   <div
-                    class="relative my-auto"
+                    class="w-15 h-15 flex items-center justify-center"
                   >
                     <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNRfPD rounded"
+                      data-testid="Avatar"
                     >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ark-avatars"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="ark-avatars"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                >
+                  <a
+                    class="font-semibold link"
+                    href="/"
+                  >
+                    ARK Avatars
+                  </a>
+                  <div
+                    class="sc-gsTCUz bVDqPu"
+                    height="20"
+                    width="14"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                >
+                  <span>
+                    ARK.io
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    Other
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <div
+                    class="flex"
+                    data-testid="ReviewRating"
+                  >
+                    <div
+                      class="relative my-auto"
+                    >
+                      <div
+                        class="overflow-hidden absolute"
+                        style="width: 70%;"
+                      >
+                        <svg
+                          class="text-theme-warning-400 w-3"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
                       <svg
-                        class="text-theme-warning-400 w-3"
+                        class="text-theme-neutral w-3"
                       >
                         star.svg
                       </svg>
                     </div>
-                    <svg
-                      class="text-theme-neutral w-3"
+                    <span
+                      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                     >
-                      star.svg
-                    </svg>
+                      3.8
+                    </span>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                  >
-                    3.8
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    v1.3.8
                   </span>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  v 1.3.8
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  163 KB
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
+              </td>
+              <td>
                 <div
-                  class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    163 KB
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
                 >
                   <div
-                    class="m-auto"
+                    class="mx-auto text-2xl text-theme-danger-400"
                   >
                     <div
-                      class="sc-bdfBwQ dfWOLJ"
-                      height="15"
-                      width="15"
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
                     >
                       <svg>
-                        checkmark.svg
+                        status-failed.svg
                       </svg>
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="w-16"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+              </td>
+              <td
+                class="w-16"
               >
                 <div
-                  class="relative"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                 >
-                  <span
-                    data-testid="dropdown__toggle"
+                  <div
+                    class="flex items-center space-x-2"
                   >
-                    <button
-                      class="Button-mdtvtf-0 eXKKLD text-left"
-                      type="button"
+                    <div
+                      class="relative"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
+                      <span
+                        data-testid="dropdown__toggle"
                       >
-                        <svg>
-                          settings.svg
-                        </svg>
-                      </div>
-                    </button>
-                  </span>
+                        <button
+                          class="Button__StyledButton-mdtvtf-0 ljdoJi text-left"
+                          type="button"
+                        >
+                          <div
+                            class="sc-gsTCUz fHxsLl"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      class="flex justify-center"
-    >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div
-        class="Pagination__Wrapper-x7juhx-0 hyaceY mt-5"
-        data-testid="Pagination"
+        class="flex justify-center"
       >
         <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
+          class="Pagination__Wrapper-x7juhx-0 hyaceY mt-5"
+          data-testid="Pagination"
         >
           <div
-            class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+            class="flex px-2 rounded bg-theme-primary-contrast"
           >
-            1
+            <div
+              class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+            >
+              1
+            </div>
           </div>
         </div>
       </div>
@@ -583,372 +607,383 @@ exports[`PluginList should render 1`] = `
 
 exports[`PluginList should render without pagination 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="PluginList"
-  >
+  <div>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-      role="table"
+      data-testid="PluginList"
     >
-      <table
-        cellpadding="0"
-        class="table-auto"
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+        role="table"
       >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Logo
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Name
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Author
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Category
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Rating
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--5"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Version
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--6"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Size
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--7"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--8"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Actions
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-            data-testid="TableRow"
-          >
-            <td
-              class="w-20"
+          <thead>
+            <tr
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+              role="row"
             >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
               >
-                <svg
-                  class="w-15 h-15"
-                >
-                  changenow-logo.svg
-                </svg>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
-              >
-                <a
-                  class="font-semibold link"
-                  href="/"
-                >
-                  ARK Explorer
-                </a>
                 <div
-                  class="sc-bdfBwQ iNulIV"
-                  height="18"
-                  width="18"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <svg>
-                    official-ark-plugin.svg
-                  </svg>
+                  <div>
+                    Logo
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
-              >
-                <span>
-                  ARK.io
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  Utility
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
               >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="flex flex-inline align-top "
                 >
+                  <div>
+                    Name
+                  </div>
                   <div
-                    class="relative my-auto"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
                   >
                     <div
-                      class="overflow-hidden absolute"
-                      style="width: 80%;"
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
                     >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Author
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Category
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Rating
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Version
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--6"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Size
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--7"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    Status
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--8"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Actions
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-20"
+              >
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                >
+                  <div
+                    class="w-15 h-15 flex items-center justify-center"
+                  >
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNRfPD rounded"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ark-explorer"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="ark-explorer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                >
+                  <a
+                    class="font-semibold link"
+                    href="/"
+                  >
+                    ARK Explorer
+                  </a>
+                  <div
+                    class="sc-gsTCUz byDVwN"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      official-ark-plugin.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                >
+                  <span>
+                    ARK.io
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    Utility
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <div
+                    class="flex"
+                    data-testid="ReviewRating"
+                  >
+                    <div
+                      class="relative my-auto"
+                    >
+                      <div
+                        class="overflow-hidden absolute"
+                        style="width: 80%;"
+                      >
+                        <svg
+                          class="text-theme-warning-400 w-3"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
                       <svg
-                        class="text-theme-warning-400 w-3"
+                        class="text-theme-neutral w-3"
                       >
                         star.svg
                       </svg>
                     </div>
-                    <svg
-                      class="text-theme-neutral w-3"
+                    <span
+                      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                     >
-                      star.svg
-                    </svg>
+                      4.2
+                    </span>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                  >
-                    4.2
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    v1.3.8
                   </span>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  v 1.3.8
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  4.2 MB
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
+              </td>
+              <td>
                 <div
-                  class="flex mx-auto w-6 h-6"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    4.2 MB
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
                 >
                   <div
-                    class="m-auto text-theme-neutral"
+                    class="mx-auto flex items-center justify-center w-6 h-6 text-theme-neutral"
                   >
                     <div
-                      class="sc-bdfBwQ dfWOLJ"
-                      height="15"
-                      width="15"
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
                     >
                       <svg>
                         dash.svg
@@ -956,189 +991,202 @@ exports[`PluginList should render without pagination 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="w-16"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+              </td>
+              <td
+                class="w-16"
               >
-                <button
-                  class="Button-mdtvtf-0 ifPnXw"
-                  data-testid="PluginListItem__install"
-                  type="button"
-                >
-                  Install
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-            data-testid="TableRow"
-          >
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
-              >
-                <svg
-                  class="w-15 h-15"
-                >
-                  changenow-logo.svg
-                </svg>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
-              >
-                <a
-                  class="font-semibold link"
-                  href="/"
-                >
-                  ARK Avatars
-                </a>
                 <div
-                  class="sc-bdfBwQ eMktAO"
-                  height="20"
-                  width="14"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                 >
-                  <svg>
-                    grant.svg
-                  </svg>
+                  <button
+                    class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+                    data-testid="PluginListItem__install"
+                    type="button"
+                  >
+                    Install
+                  </button>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
-              >
-                <span>
-                  ARK.io
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  Other
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+              </td>
+            </tr>
+            <tr
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-20"
               >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
                 >
                   <div
-                    class="relative my-auto"
+                    class="w-15 h-15 flex items-center justify-center"
                   >
                     <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNRfPD rounded"
+                      data-testid="Avatar"
                     >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ark-avatars"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="ark-avatars"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                >
+                  <a
+                    class="font-semibold link"
+                    href="/"
+                  >
+                    ARK Avatars
+                  </a>
+                  <div
+                    class="sc-gsTCUz bVDqPu"
+                    height="20"
+                    width="14"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                >
+                  <span>
+                    ARK.io
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    Other
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <div
+                    class="flex"
+                    data-testid="ReviewRating"
+                  >
+                    <div
+                      class="relative my-auto"
+                    >
+                      <div
+                        class="overflow-hidden absolute"
+                        style="width: 70%;"
+                      >
+                        <svg
+                          class="text-theme-warning-400 w-3"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
                       <svg
-                        class="text-theme-warning-400 w-3"
+                        class="text-theme-neutral w-3"
                       >
                         star.svg
                       </svg>
                     </div>
-                    <svg
-                      class="text-theme-neutral w-3"
+                    <span
+                      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                     >
-                      star.svg
-                    </svg>
+                      3.8
+                    </span>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                  >
-                    3.8
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    v1.3.8
                   </span>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  v 1.3.8
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  163 KB
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
+              </td>
+              <td>
                 <div
-                  class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    163 KB
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
                 >
                   <div
-                    class="m-auto"
+                    class="mx-auto text-2xl text-theme-danger-400"
                   >
                     <div
-                      class="sc-bdfBwQ dfWOLJ"
-                      height="15"
-                      width="15"
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
                     >
                       <svg>
-                        checkmark.svg
+                        status-failed.svg
                       </svg>
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="w-16"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+              </td>
+              <td
+                class="w-16"
               >
                 <div
-                  class="relative"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                 >
-                  <span
-                    data-testid="dropdown__toggle"
+                  <div
+                    class="flex items-center space-x-2"
                   >
-                    <button
-                      class="Button-mdtvtf-0 eXKKLD text-left"
-                      type="button"
+                    <div
+                      class="relative"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
+                      <span
+                        data-testid="dropdown__toggle"
                       >
-                        <svg>
-                          settings.svg
-                        </svg>
-                      </div>
-                    </button>
-                  </span>
+                        <button
+                          class="Button__StyledButton-mdtvtf-0 ljdoJi text-left"
+                          type="button"
+                        >
+                          <div
+                            class="sc-gsTCUz fHxsLl"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -1146,450 +1194,465 @@ exports[`PluginList should render without pagination 1`] = `
 
 exports[`PluginList should split by page 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="PluginList"
-  >
+  <div>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-      role="table"
+      data-testid="PluginList"
     >
-      <table
-        cellpadding="0"
-        class="table-auto"
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+        role="table"
       >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Logo
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Name
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Author
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Category
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Rating
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--5"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Version
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--6"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Size
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--7"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--8"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Actions
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-            data-testid="TableRow"
-          >
-            <td
-              class="w-20"
+          <thead>
+            <tr
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+              role="row"
             >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
               >
-                <svg
-                  class="w-15 h-15"
-                >
-                  changenow-logo.svg
-                </svg>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
-              >
-                <a
-                  class="font-semibold link"
-                  href="/"
-                >
-                  ARK Avatars
-                </a>
                 <div
-                  class="sc-bdfBwQ eMktAO"
-                  height="20"
-                  width="14"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <svg>
-                    grant.svg
-                  </svg>
+                  <div>
+                    Logo
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
-              >
-                <span>
-                  ARK.io
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  Other
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
               >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="flex flex-inline align-top "
                 >
+                  <div>
+                    Name
+                  </div>
                   <div
-                    class="relative my-auto"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
                   >
                     <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
                     >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Author
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Category
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Rating
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Version
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--6"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Size
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--7"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    Status
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--8"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Actions
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-20"
+              >
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                >
+                  <div
+                    class="w-15 h-15 flex items-center justify-center"
+                  >
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNRfPD rounded"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ark-avatars"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="ark-avatars"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                >
+                  <a
+                    class="font-semibold link"
+                    href="/"
+                  >
+                    ARK Avatars
+                  </a>
+                  <div
+                    class="sc-gsTCUz bVDqPu"
+                    height="20"
+                    width="14"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                >
+                  <span>
+                    ARK.io
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    Other
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <div
+                    class="flex"
+                    data-testid="ReviewRating"
+                  >
+                    <div
+                      class="relative my-auto"
+                    >
+                      <div
+                        class="overflow-hidden absolute"
+                        style="width: 70%;"
+                      >
+                        <svg
+                          class="text-theme-warning-400 w-3"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
                       <svg
-                        class="text-theme-warning-400 w-3"
+                        class="text-theme-neutral w-3"
                       >
                         star.svg
                       </svg>
                     </div>
-                    <svg
-                      class="text-theme-neutral w-3"
+                    <span
+                      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                     >
-                      star.svg
-                    </svg>
+                      3.8
+                    </span>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                  >
-                    3.8
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    v1.3.8
                   </span>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  v 1.3.8
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  163 KB
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
+              </td>
+              <td>
                 <div
-                  class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    163 KB
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
                 >
                   <div
-                    class="m-auto"
+                    class="mx-auto text-2xl text-theme-danger-400"
                   >
                     <div
-                      class="sc-bdfBwQ dfWOLJ"
-                      height="15"
-                      width="15"
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
                     >
                       <svg>
-                        checkmark.svg
+                        status-failed.svg
                       </svg>
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="w-16"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+              </td>
+              <td
+                class="w-16"
               >
                 <div
-                  class="relative"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                 >
-                  <span
-                    data-testid="dropdown__toggle"
+                  <div
+                    class="flex items-center space-x-2"
                   >
-                    <button
-                      class="Button-mdtvtf-0 eXKKLD text-left"
-                      type="button"
+                    <div
+                      class="relative"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
+                      <span
+                        data-testid="dropdown__toggle"
                       >
-                        <svg>
-                          settings.svg
-                        </svg>
-                      </div>
-                    </button>
-                  </span>
+                        <button
+                          class="Button__StyledButton-mdtvtf-0 ljdoJi text-left"
+                          type="button"
+                        >
+                          <div
+                            class="sc-gsTCUz fHxsLl"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      class="flex justify-center"
-    >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div
-        class="Pagination__Wrapper-x7juhx-0 hyaceY mt-5"
-        data-testid="Pagination"
+        class="flex justify-center"
       >
-        <button
-          class="Button-mdtvtf-0 ifPnXw"
-          data-testid="Pagination__previous"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ TENjd mr-2"
-            height="10"
-            width="10"
-          >
-            <svg>
-              back.svg
-            </svg>
-          </div>
-          Previous
-        </button>
         <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
+          class="Pagination__Wrapper-x7juhx-0 hyaceY mt-5"
+          data-testid="Pagination"
         >
-          <div
-            class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+          <button
+            class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+            data-testid="Pagination__previous"
+            type="button"
           >
-            1
-          </div>
+            <div
+              class="sc-gsTCUz jsttWF mr-2"
+              height="10"
+              width="10"
+            >
+              <svg>
+                back.svg
+              </svg>
+            </div>
+            Previous
+          </button>
           <div
-            class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+            class="flex px-2 rounded bg-theme-primary-contrast"
           >
-            2
+            <div
+              class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+            >
+              1
+            </div>
+            <div
+              class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+            >
+              2
+            </div>
           </div>
         </div>
       </div>
@@ -2181,372 +2244,383 @@ exports[`PluginList should trigger delete 1`] = `
 
 exports[`PluginList should trigger install 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="PluginList"
-  >
+  <div>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-      role="table"
+      data-testid="PluginList"
     >
-      <table
-        cellpadding="0"
-        class="table-auto"
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+        role="table"
       >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Logo
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Name
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Author
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Category
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Rating
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--5"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Version
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--6"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top "
-              >
-                <div>
-                  Size
-                </div>
-                <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                  data-testid="table__Sort"
-                >
-                  <div
-                    class="sc-bdfBwQ iABjnS"
-                    height="12"
-                    width="15"
-                  >
-                    <svg>
-                      sort.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--7"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--8"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Actions
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-            data-testid="TableRow"
-          >
-            <td
-              class="w-20"
+          <thead>
+            <tr
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+              role="row"
             >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
               >
-                <svg
-                  class="w-15 h-15"
-                >
-                  changenow-logo.svg
-                </svg>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
-              >
-                <a
-                  class="font-semibold link"
-                  href="/"
-                >
-                  ARK Explorer
-                </a>
                 <div
-                  class="sc-bdfBwQ iNulIV"
-                  height="18"
-                  width="18"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <svg>
-                    official-ark-plugin.svg
-                  </svg>
+                  <div>
+                    Logo
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
-              >
-                <span>
-                  ARK.io
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  Utility
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
               >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="flex flex-inline align-top "
                 >
+                  <div>
+                    Name
+                  </div>
                   <div
-                    class="relative my-auto"
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
                   >
                     <div
-                      class="overflow-hidden absolute"
-                      style="width: 80%;"
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
                     >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Author
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Category
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--4"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Rating
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--5"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Version
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--6"
+                role="columnheader"
+                style="cursor: pointer;"
+                title="Toggle SortBy"
+              >
+                <div
+                  class="flex flex-inline align-top "
+                >
+                  <div>
+                    Size
+                  </div>
+                  <div
+                    class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                    data-testid="table__Sort"
+                  >
+                    <div
+                      class="sc-gsTCUz fJUgCy"
+                      height="12"
+                      width="15"
+                    >
+                      <svg>
+                        sort.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--7"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top justify-center"
+                >
+                  <div>
+                    Status
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--8"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Actions
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-20"
+              >
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                >
+                  <div
+                    class="w-15 h-15 flex items-center justify-center"
+                  >
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNRfPD rounded"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ark-explorer"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="ark-explorer"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                >
+                  <a
+                    class="font-semibold link"
+                    href="/"
+                  >
+                    ARK Explorer
+                  </a>
+                  <div
+                    class="sc-gsTCUz byDVwN"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      official-ark-plugin.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                >
+                  <span>
+                    ARK.io
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    Utility
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <div
+                    class="flex"
+                    data-testid="ReviewRating"
+                  >
+                    <div
+                      class="relative my-auto"
+                    >
+                      <div
+                        class="overflow-hidden absolute"
+                        style="width: 80%;"
+                      >
+                        <svg
+                          class="text-theme-warning-400 w-3"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
                       <svg
-                        class="text-theme-warning-400 w-3"
+                        class="text-theme-neutral w-3"
                       >
                         star.svg
                       </svg>
                     </div>
-                    <svg
-                      class="text-theme-neutral w-3"
+                    <span
+                      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                     >
-                      star.svg
-                    </svg>
+                      4.2
+                    </span>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                  >
-                    4.2
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    v1.3.8
                   </span>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  v 1.3.8
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  4.2 MB
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
+              </td>
+              <td>
                 <div
-                  class="flex mx-auto w-6 h-6"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    4.2 MB
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
                 >
                   <div
-                    class="m-auto text-theme-neutral"
+                    class="mx-auto flex items-center justify-center w-6 h-6 text-theme-neutral"
                   >
                     <div
-                      class="sc-bdfBwQ dfWOLJ"
-                      height="15"
-                      width="15"
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
                     >
                       <svg>
                         dash.svg
@@ -2554,204 +2628,217 @@ exports[`PluginList should trigger install 1`] = `
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="w-16"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+              </td>
+              <td
+                class="w-16"
               >
-                <button
-                  class="Button-mdtvtf-0 ifPnXw"
-                  data-testid="PluginListItem__install"
-                  type="button"
-                >
-                  Install
-                </button>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-            data-testid="TableRow"
-          >
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
-              >
-                <svg
-                  class="w-15 h-15"
-                >
-                  changenow-logo.svg
-                </svg>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
-              >
-                <a
-                  class="font-semibold link"
-                  href="/"
-                >
-                  ARK Avatars
-                </a>
                 <div
-                  class="sc-bdfBwQ eMktAO"
-                  height="20"
-                  width="14"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                 >
-                  <svg>
-                    grant.svg
-                  </svg>
+                  <button
+                    class="Button__StyledButton-mdtvtf-0 bHPNtZ"
+                    data-testid="PluginListItem__install"
+                    type="button"
+                  >
+                    Install
+                  </button>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
-              >
-                <span>
-                  ARK.io
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  Other
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+              </td>
+            </tr>
+            <tr
+              class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+              data-testid="TableRow"
+            >
+              <td
+                class="w-20"
               >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
                 >
                   <div
-                    class="relative my-auto"
+                    class="w-15 h-15 flex items-center justify-center"
                   >
                     <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jNRfPD rounded"
+                      data-testid="Avatar"
                     >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="ark-avatars"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="ark-avatars"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2"
+                >
+                  <a
+                    class="font-semibold link"
+                    href="/"
+                  >
+                    ARK Avatars
+                  </a>
+                  <div
+                    class="sc-gsTCUz bVDqPu"
+                    height="20"
+                    width="14"
+                  >
+                    <svg>
+                      grant.svg
+                    </svg>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL pr-16"
+                >
+                  <span>
+                    ARK.io
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    Other
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <div
+                    class="flex"
+                    data-testid="ReviewRating"
+                  >
+                    <div
+                      class="relative my-auto"
+                    >
+                      <div
+                        class="overflow-hidden absolute"
+                        style="width: 70%;"
+                      >
+                        <svg
+                          class="text-theme-warning-400 w-3"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
                       <svg
-                        class="text-theme-warning-400 w-3"
+                        class="text-theme-neutral w-3"
                       >
                         star.svg
                       </svg>
                     </div>
-                    <svg
-                      class="text-theme-neutral w-3"
+                    <span
+                      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                     >
-                      star.svg
-                    </svg>
+                      3.8
+                    </span>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                  >
-                    3.8
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    v1.3.8
                   </span>
                 </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  v 1.3.8
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
-                <span>
-                  163 KB
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-              >
+              </td>
+              <td>
                 <div
-                  class="flex mx-auto w-6 h-6 rounded-full border-2 border-theme-success-200 text-theme-success-500"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+                >
+                  <span>
+                    163 KB
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
                 >
                   <div
-                    class="m-auto"
+                    class="mx-auto text-2xl text-theme-danger-400"
                   >
                     <div
-                      class="sc-bdfBwQ dfWOLJ"
-                      height="15"
-                      width="15"
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
                     >
                       <svg>
-                        checkmark.svg
+                        status-failed.svg
                       </svg>
                     </div>
                   </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="w-16"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+              </td>
+              <td
+                class="w-16"
               >
                 <div
-                  class="relative"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                 >
-                  <span
-                    data-testid="dropdown__toggle"
+                  <div
+                    class="flex items-center space-x-2"
                   >
-                    <button
-                      class="Button-mdtvtf-0 eXKKLD text-left"
-                      type="button"
+                    <div
+                      class="relative"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
+                      <span
+                        data-testid="dropdown__toggle"
                       >
-                        <svg>
-                          settings.svg
-                        </svg>
-                      </div>
-                    </button>
-                  </span>
+                        <button
+                          class="Button__StyledButton-mdtvtf-0 ljdoJi text-left"
+                          type="button"
+                        >
+                          <div
+                            class="sc-gsTCUz fHxsLl"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </button>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      class="flex justify-center"
-    >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div
-        class="Pagination__Wrapper-x7juhx-0 hyaceY mt-5"
-        data-testid="Pagination"
+        class="flex justify-center"
       >
         <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
+          class="Pagination__Wrapper-x7juhx-0 hyaceY mt-5"
+          data-testid="Pagination"
         >
           <div
-            class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+            class="flex px-2 rounded bg-theme-primary-contrast"
           >
-            1
+            <div
+              class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+            >
+              1
+            </div>
           </div>
         </div>
       </div>

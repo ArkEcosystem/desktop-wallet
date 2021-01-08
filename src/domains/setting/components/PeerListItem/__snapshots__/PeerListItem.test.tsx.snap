@@ -2,90 +2,92 @@
 
 exports[`PeerListItem should render 1`] = `
 <div>
-  <table>
-    <tbody>
-      <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-        data-testid="TableRow"
-      >
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-2"
-          >
+  <div>
+    <table>
+      <tbody>
+        <tr
+          class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+          data-testid="TableRow"
+        >
+          <td>
             <div
-              class="Circle-uw7h4j-0 hvqrfp border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
-              data-testid="NetworkIcon__placeholder"
-            />
-            <span />
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-          >
-            <span>
-              ROBank
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
-          >
-            <span>
-              http://167.114.29.48:4003/api
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-          >
-            <div
-              class="sc-bdfBwQ iyevwF"
-              height="20"
-              width="20"
+              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-2"
             >
-              <svg>
-                multisig.svg
-              </svg>
+              <div
+                class="Circle-uw7h4j-0 hvqrfp border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                data-testid="NetworkIcon__placeholder"
+              />
+              <span />
             </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
-          >
+          </td>
+          <td>
             <div
-              class="relative"
+              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
             >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="float-right"
-                >
-                  <button
-                    class="Button-mdtvtf-0 eXKKLD"
-                    type="button"
-                  >
-                    <div
-                      class="sc-bdfBwQ iyevwF"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        settings.svg
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+              <span>
+                ROBank
               </span>
             </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          </td>
+          <td>
+            <div
+              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL"
+            >
+              <span>
+                http://167.114.29.48:4003/api
+              </span>
+            </div>
+          </td>
+          <td>
+            <div
+              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+            >
+              <div
+                class="sc-gsTCUz fHxsLl"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  multisig.svg
+                </svg>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+            >
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="float-right"
+                  >
+                    <button
+                      class="Button__StyledButton-mdtvtf-0 ljdoJi"
+                      type="button"
+                    >
+                      <div
+                        class="sc-gsTCUz fHxsLl"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          settings.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 `;

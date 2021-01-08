@@ -2,84 +2,86 @@
 
 exports[`MnemonicList should contain mnemonic words 1`] = `
 <DocumentFragment>
-  <ul
-    class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4"
-  >
-    <li
-      class="relative py-3 px-3 rounded border border-theme-neutral-light"
-      data-testid="MnemonicList__item"
+  <div>
+    <ul
+      class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4"
     >
-      <span
-        class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+      <li
+        class="relative py-3 px-3 rounded border border-theme-neutral-light"
+        data-testid="MnemonicList__item"
       >
-        1
-      </span>
-      <span
-        class="font-medium text-theme-neutral-800"
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        >
+          1
+        </span>
+        <span
+          class="font-medium text-theme-neutral-800"
+        >
+          lorem
+        </span>
+      </li>
+      <li
+        class="relative py-3 px-3 rounded border border-theme-neutral-light"
+        data-testid="MnemonicList__item"
       >
-        lorem
-      </span>
-    </li>
-    <li
-      class="relative py-3 px-3 rounded border border-theme-neutral-light"
-      data-testid="MnemonicList__item"
-    >
-      <span
-        class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        >
+          2
+        </span>
+        <span
+          class="font-medium text-theme-neutral-800"
+        >
+          ipsum
+        </span>
+      </li>
+      <li
+        class="relative py-3 px-3 rounded border border-theme-neutral-light"
+        data-testid="MnemonicList__item"
       >
-        2
-      </span>
-      <span
-        class="font-medium text-theme-neutral-800"
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        >
+          3
+        </span>
+        <span
+          class="font-medium text-theme-neutral-800"
+        >
+          dolor
+        </span>
+      </li>
+      <li
+        class="relative py-3 px-3 rounded border border-theme-neutral-light"
+        data-testid="MnemonicList__item"
       >
-        ipsum
-      </span>
-    </li>
-    <li
-      class="relative py-3 px-3 rounded border border-theme-neutral-light"
-      data-testid="MnemonicList__item"
-    >
-      <span
-        class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        >
+          4
+        </span>
+        <span
+          class="font-medium text-theme-neutral-800"
+        >
+          sit
+        </span>
+      </li>
+      <li
+        class="relative py-3 px-3 rounded border border-theme-neutral-light"
+        data-testid="MnemonicList__item"
       >
-        3
-      </span>
-      <span
-        class="font-medium text-theme-neutral-800"
-      >
-        dolor
-      </span>
-    </li>
-    <li
-      class="relative py-3 px-3 rounded border border-theme-neutral-light"
-      data-testid="MnemonicList__item"
-    >
-      <span
-        class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
-      >
-        4
-      </span>
-      <span
-        class="font-medium text-theme-neutral-800"
-      >
-        sit
-      </span>
-    </li>
-    <li
-      class="relative py-3 px-3 rounded border border-theme-neutral-light"
-      data-testid="MnemonicList__item"
-    >
-      <span
-        class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
-      >
-        5
-      </span>
-      <span
-        class="font-medium text-theme-neutral-800"
-      >
-        amet
-      </span>
-    </li>
-  </ul>
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
+        >
+          5
+        </span>
+        <span
+          class="font-medium text-theme-neutral-800"
+        >
+          amet
+        </span>
+      </li>
+    </ul>
+  </div>
 </DocumentFragment>
 `;

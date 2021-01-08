@@ -1,325 +1,331 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IpfsDetail should not render if not open 1`] = `<DocumentFragment />`;
+exports[`IpfsDetail should not render if not open 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
 exports[`IpfsDetail should render a modal 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Transaction IPFS Hash
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX"
-            data-testid="TransactionDetail"
+          <button
+            class="Button__StyledButton-mdtvtf-0 IdcN w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="flex-1 space-y-2"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Transaction IPFS Hash
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Test Wallet
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B … s6YUYD
-                  </span>
+                  Sender
                 </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center -space-x-2"
-            >
-              <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
                 <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
+                  class="font-semibold"
                 >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                IPFS Hash
-              </div>
-              <div
-                class="font-semibold"
-              >
-                QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
-              </div>
-            </div>
-            <div
-              class="Circle-uw7h4j-0 JkqUV border-theme-text"
-            >
-              <div
-                class="sc-bdfBwQ ceUzTr"
-                height="23"
-                width="21"
-              >
-                <svg>
-                  ipfs.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34:41
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex space-x-3"
-                >
-                  <span>
-                    Not confirmed
-                  </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
-                    height="22"
-                    width="22"
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Test Wallet
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B … s6YUYD
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center -space-x-2"
+              >
+                <div
+                  class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                >
+                  <div
+                    class="sc-gsTCUz kzizsx"
+                    height="25"
+                    width="25"
                   >
                     <svg>
-                      status-pending.svg
+                      delegate.svg
                     </svg>
+                  </div>
+                </div>
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fCkmYE"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
             <div
-              class="flex-1 space-y-2"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                    data-testid="Link"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                  >
-                    <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
-                      data-testid="TruncateMiddle"
-                    >
-                      ee4175091d9f4 … 9d09bcf3ecefe
-                    </span>
-                  </a>
+                  Transaction Fee
+                </div>
+                <div
+                  class="font-semibold"
+                >
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    data-testid="Amount"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
+                    21 ARK
                   </span>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
             <div
-              class="flex-1 space-y-2"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                    data-testid="Link"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                  IPFS Hash
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
+                </div>
+              </div>
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-text"
+              >
+                <div
+                  class="sc-gsTCUz kDJgGT"
+                  height="23"
+                  width="21"
+                >
+                  <svg>
+                    ipfs.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Timestamp
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  31.07.2020 16:34:41
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Confirmations
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex space-x-3"
                   >
-                    <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
-                      data-testid="TruncateMiddle"
-                    >
-                      71fd1a494ded5 … 972b8075d67e9
+                    <span>
+                      Not confirmed
                     </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
-                  >
                     <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                      class="sc-gsTCUz gbSRoN text-theme-warning"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        status-pending.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  ID
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      data-testid="Link"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                        data-testid="TruncateMiddle"
+                      >
+                        ee4175091d9f4 … 9d09bcf3ecefe
+                      </span>
+                    </a>
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
                       >
-                        <svg>
-                          copy.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            copy.svg
+                          </svg>
+                        </div>
                       </div>
-                    </div>
-                  </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Block ID
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      data-testid="Link"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                        data-testid="TruncateMiddle"
+                      >
+                        71fd1a494ded5 … 972b8075d67e9
+                      </span>
+                    </a>
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    >
+                      <div
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            copy.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -333,316 +339,318 @@ exports[`IpfsDetail should render a modal 1`] = `
 
 exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Transaction IPFS Hash
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX"
-            data-testid="TransactionDetail"
+          <button
+            class="Button__StyledButton-mdtvtf-0 IdcN w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="flex-1 space-y-2"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Transaction IPFS Hash
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
+                  Sender
                 </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center -space-x-2"
-            >
-              <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
-              >
                 <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
+                  class="font-semibold"
                 >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                IPFS Hash
-              </div>
-              <div
-                class="font-semibold"
-              >
-                QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
-              </div>
-            </div>
-            <div
-              class="Circle-uw7h4j-0 JkqUV border-theme-text"
-            >
-              <div
-                class="sc-bdfBwQ ceUzTr"
-                height="23"
-                width="21"
-              >
-                <svg>
-                  ipfs.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34:41
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex space-x-3"
-                >
-                  <span>
-                    Not confirmed
-                  </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
-                    height="22"
-                    width="22"
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center -space-x-2"
+              >
+                <div
+                  class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                >
+                  <div
+                    class="sc-gsTCUz kzizsx"
+                    height="25"
+                    width="25"
                   >
                     <svg>
-                      status-pending.svg
+                      delegate.svg
                     </svg>
+                  </div>
+                </div>
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fCkmYE"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
             <div
-              class="flex-1 space-y-2"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                    data-testid="Link"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                  >
-                    <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
-                      data-testid="TruncateMiddle"
-                    >
-                      ee4175091d9f4 … 9d09bcf3ecefe
-                    </span>
-                  </a>
+                  Transaction Fee
+                </div>
+                <div
+                  class="font-semibold"
+                >
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    data-testid="Amount"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
+                    21 ARK
                   </span>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
             <div
-              class="flex-1 space-y-2"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                    data-testid="Link"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                  IPFS Hash
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
+                </div>
+              </div>
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-text"
+              >
+                <div
+                  class="sc-gsTCUz kDJgGT"
+                  height="23"
+                  width="21"
+                >
+                  <svg>
+                    ipfs.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Timestamp
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  31.07.2020 16:34:41
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Confirmations
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex space-x-3"
                   >
-                    <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
-                      data-testid="TruncateMiddle"
-                    >
-                      71fd1a494ded5 … 972b8075d67e9
+                    <span>
+                      Not confirmed
                     </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
-                  >
                     <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                      class="sc-gsTCUz gbSRoN text-theme-warning"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        status-pending.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  ID
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      data-testid="Link"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                        data-testid="TruncateMiddle"
+                      >
+                        ee4175091d9f4 … 9d09bcf3ecefe
+                      </span>
+                    </a>
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
                       >
-                        <svg>
-                          copy.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            copy.svg
+                          </svg>
+                        </div>
                       </div>
-                    </div>
-                  </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Block ID
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      data-testid="Link"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                        data-testid="TruncateMiddle"
+                      >
+                        71fd1a494ded5 … 972b8075d67e9
+                      </span>
+                    </a>
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    >
+                      <div
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            copy.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -656,324 +664,326 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
 
 exports[`IpfsDetail should render as confirmed 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Transaction IPFS Hash
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX"
-            data-testid="TransactionDetail"
+          <button
+            class="Button__StyledButton-mdtvtf-0 IdcN w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="flex-1 space-y-2"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Transaction IPFS Hash
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Sender
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Test Wallet
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8rr7B … s6YUYD
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex items-center -space-x-2"
+              >
+                <div
+                  class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                >
+                  <div
+                    class="sc-gsTCUz kzizsx"
+                    height="25"
+                    width="25"
+                  >
+                    <svg>
+                      delegate.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fCkmYE"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Transaction Fee
+                </div>
+                <div
+                  class="font-semibold"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Amount"
                   >
-                    Test Wallet
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B … s6YUYD
+                    21 ARK
                   </span>
                 </div>
               </div>
             </div>
             <div
-              class="flex items-center -space-x-2"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  IPFS Hash
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
+                </div>
+              </div>
+              <div
+                class="Circle-uw7h4j-0 JkqUV border-theme-text"
+              >
+                <div
+                  class="sc-gsTCUz kDJgGT"
+                  height="23"
+                  width="21"
                 >
                   <svg>
-                    delegate.svg
+                    ipfs.svg
                   </svg>
                 </div>
               </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="w-full h-full"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
+                  Timestamp
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  31.07.2020 16:34:41
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
             <div
-              class="flex-1 space-y-2"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                IPFS Hash
-              </div>
-              <div
-                class="font-semibold"
-              >
-                QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
-              </div>
-            </div>
-            <div
-              class="Circle-uw7h4j-0 JkqUV border-theme-text"
-            >
-              <div
-                class="sc-bdfBwQ ceUzTr"
-                height="23"
-                width="21"
-              >
-                <svg>
-                  ipfs.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34:41
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="flex space-x-3"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <span>
-                    Well confirmed
-                  </span>
-                  <span>
-                    <div
-                      class="sc-bdfBwQ iSzUah text-theme-success"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        status-ok.svg
-                      </svg>
-                    </div>
-                  </span>
+                  Confirmations
                 </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
-              >
                 <div
-                  class="flex items-center space-x-3"
+                  class="font-semibold"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                    data-testid="Link"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
+                  <div
+                    class="flex space-x-3"
                   >
-                    <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
-                      data-testid="TruncateMiddle"
-                    >
-                      ee4175091d9f4 … 9d09bcf3ecefe
+                    <span>
+                      Well confirmed
                     </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
+                    <span>
                       <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                        class="sc-gsTCUz gbSRoN text-theme-success"
+                        height="22"
+                        width="22"
                       >
                         <svg>
-                          copy.svg
+                          status-ok.svg
                         </svg>
                       </div>
-                    </div>
-                  </span>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-            data-testid="TransactionDetail"
-          >
             <div
-              class="flex-1 space-y-2"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
+                class="flex-1 space-y-2"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                    data-testid="Link"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                  ID
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex items-center space-x-3"
                   >
-                    <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
-                      data-testid="TruncateMiddle"
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      data-testid="Link"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                     >
-                      71fd1a494ded5 … 972b8075d67e9
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                        data-testid="TruncateMiddle"
+                      >
+                        ee4175091d9f4 … 9d09bcf3ecefe
+                      </span>
+                    </a>
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
                       >
-                        <svg>
-                          copy.svg
-                        </svg>
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            copy.svg
+                          </svg>
+                        </div>
                       </div>
-                    </div>
-                  </span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+              data-testid="TransactionDetail"
+            >
+              <div
+                class="flex-1 space-y-2"
+              >
+                <div
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Block ID
+                </div>
+                <div
+                  class="font-semibold"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                      data-testid="Link"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                        data-testid="TruncateMiddle"
+                      >
+                        71fd1a494ded5 … 972b8075d67e9
+                      </span>
+                    </a>
+                    <span
+                      class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    >
+                      <div
+                        class="inline-block cursor-pointer"
+                        data-testid="clipboard__wrapper"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            copy.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

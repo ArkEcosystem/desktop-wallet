@@ -2,44 +2,46 @@
 
 exports[`TransactionAmount should render 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
-      >
-        Amount
-      </div>
-      <div
-        class="font-semibold"
+        class="flex-1 space-y-2"
       >
         <div
-          class="Label-sc-1tj9hzr-0 fMWESr"
-          color="success"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
-          <span
-            data-testid="Amount"
+          Amount
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <div
+            class="Label-sc-1tj9hzr-0 fMWESr"
+            color="success"
           >
-            + 0.00000001 DARK
-          </span>
+            <span
+              data-testid="Amount"
+            >
+              + 0.00000001 DARK
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="Circle-uw7h4j-0 JkqUV border-theme-success-300 text-theme-success dark:border-theme-success"
-    >
       <div
-        class="sc-bdfBwQ fPrsah"
-        height="1em"
-        width="1em"
+        class="Circle-uw7h4j-0 JkqUV border-theme-success-300 text-theme-success dark:border-theme-success"
       >
-        <svg>
-          received.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cXMmJt"
+          height="1em"
+          width="1em"
+        >
+          <svg>
+            received.svg
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -48,44 +50,46 @@ exports[`TransactionAmount should render 1`] = `
 
 exports[`TransactionAmount should render currency amount 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
-      >
-        Amount
-      </div>
-      <div
-        class="font-semibold"
+        class="flex-1 space-y-2"
       >
         <div
-          class="Label-sc-1tj9hzr-0 fMWESr"
-          color="success"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
-          <span
-            data-testid="Amount"
+          Amount
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <div
+            class="Label-sc-1tj9hzr-0 fMWESr"
+            color="success"
           >
-            + 0.00000001 DARK
-          </span>
+            <span
+              data-testid="Amount"
+            >
+              + 0.00000001 DARK
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="Circle-uw7h4j-0 JkqUV border-theme-success-300 text-theme-success dark:border-theme-success"
-    >
       <div
-        class="sc-bdfBwQ fPrsah"
-        height="1em"
-        width="1em"
+        class="Circle-uw7h4j-0 JkqUV border-theme-success-300 text-theme-success dark:border-theme-success"
       >
-        <svg>
-          received.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cXMmJt"
+          height="1em"
+          width="1em"
+        >
+          <svg>
+            received.svg
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -94,44 +98,46 @@ exports[`TransactionAmount should render currency amount 1`] = `
 
 exports[`TransactionAmount should render label for multiple recipients 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
-      >
-        Amount
-      </div>
-      <div
-        class="font-semibold"
+        class="flex-1 space-y-2"
       >
         <div
-          class="Label-sc-1tj9hzr-0 fMWESr"
-          color="success"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
-          <span
-            data-testid="Amount"
+          Amount
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <div
+            class="Label-sc-1tj9hzr-0 fMWESr"
+            color="success"
           >
-            + 0.00000001 DARK
-          </span>
+            <span
+              data-testid="Amount"
+            >
+              + 0.00000001 DARK
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="Circle-uw7h4j-0 JkqUV border-theme-success-300 text-theme-success dark:border-theme-success"
-    >
       <div
-        class="sc-bdfBwQ fPrsah"
-        height="1em"
-        width="1em"
+        class="Circle-uw7h4j-0 JkqUV border-theme-success-300 text-theme-success dark:border-theme-success"
       >
-        <svg>
-          received.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cXMmJt"
+          height="1em"
+          width="1em"
+        >
+          <svg>
+            received.svg
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -140,44 +146,46 @@ exports[`TransactionAmount should render label for multiple recipients 1`] = `
 
 exports[`TransactionAmount should render label for multiple recipients 2`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
-      >
-        Total Amount
-      </div>
-      <div
-        class="font-semibold"
+        class="flex-1 space-y-2"
       >
         <div
-          class="Label-sc-1tj9hzr-0 fMWESr"
-          color="success"
+          class="text-sm font-semibold text-theme-neutral-700"
         >
-          <span
-            data-testid="Amount"
+          Total Amount
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <div
+            class="Label-sc-1tj9hzr-0 fMWESr"
+            color="success"
           >
-            + 0.00000001 DARK
-          </span>
+            <span
+              data-testid="Amount"
+            >
+              + 0.00000001 DARK
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="Circle-uw7h4j-0 JkqUV border-theme-success-300 text-theme-success dark:border-theme-success"
-    >
       <div
-        class="sc-bdfBwQ fPrsah"
-        height="1em"
-        width="1em"
+        class="Circle-uw7h4j-0 JkqUV border-theme-success-300 text-theme-success dark:border-theme-success"
       >
-        <svg>
-          received.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cXMmJt"
+          height="1em"
+          width="1em"
+        >
+          <svg>
+            received.svg
+          </svg>
+        </div>
       </div>
     </div>
   </div>

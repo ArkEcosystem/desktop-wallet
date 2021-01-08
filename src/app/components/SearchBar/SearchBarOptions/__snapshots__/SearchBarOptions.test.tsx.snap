@@ -2,27 +2,29 @@
 
 exports[`SearchBarOptions should render 1`] = `
 <DocumentFragment>
-  <div
-    class="flex items-center pr-8 my-1"
-    data-testid="SearchBarOptions"
-  >
+  <div>
     <div
-      class="relative"
+      class="flex items-center pr-8 my-1"
+      data-testid="SearchBarOptions"
     >
-      <span
-        data-testid="dropdown__toggle"
+      <div
+        class="relative"
       >
         <span
-          class="flex font-semibold cursor-pointer select-none"
+          data-testid="dropdown__toggle"
         >
-          Type
-          <svg
-            class="inline-block ml-2 w-2 text-black"
+          <span
+            class="flex font-semibold cursor-pointer select-none"
           >
-            chevron-down.svg
-          </svg>
+            Type
+            <svg
+              class="inline-block ml-2 w-2 text-black"
+            >
+              chevron-down.svg
+            </svg>
+          </span>
         </span>
-      </span>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -30,27 +32,29 @@ exports[`SearchBarOptions should render 1`] = `
 
 exports[`SearchBarOptions should render with selected option 1`] = `
 <DocumentFragment>
-  <div
-    class="flex items-center pr-8 my-1"
-    data-testid="SearchBarOptions"
-  >
+  <div>
     <div
-      class="relative"
+      class="flex items-center pr-8 my-1"
+      data-testid="SearchBarOptions"
     >
-      <span
-        data-testid="dropdown__toggle"
+      <div
+        class="relative"
       >
         <span
-          class="flex font-semibold cursor-pointer select-none"
+          data-testid="dropdown__toggle"
         >
-          TESTING LABEL
-          <svg
-            class="inline-block ml-2 w-2 text-black"
+          <span
+            class="flex font-semibold cursor-pointer select-none"
           >
-            chevron-down.svg
-          </svg>
+            TESTING LABEL
+            <svg
+              class="inline-block ml-2 w-2 text-black"
+            >
+              chevron-down.svg
+            </svg>
+          </span>
         </span>
-      </span>
+      </div>
     </div>
   </div>
 </DocumentFragment>

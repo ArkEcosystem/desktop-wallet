@@ -2,18 +2,26 @@
 
 exports[`Image should render 1`] = `
 <DocumentFragment>
-  <svg>
-    welcome-banner.svg
-  </svg>
+  <div>
+    <svg>
+      welcome-banner.svg
+    </svg>
+  </div>
 </DocumentFragment>
 `;
 
-exports[`Image should render nothing if image can't be found 1`] = `<DocumentFragment />`;
+exports[`Image should render nothing if image can't be found 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
 exports[`Image should render with domain 1`] = `
 <DocumentFragment>
-  <svg>
-    exchange-cards-banner.svg
-  </svg>
+  <div>
+    <svg>
+      exchange-cards-banner.svg
+    </svg>
+  </div>
 </DocumentFragment>
 `;
