@@ -62,8 +62,6 @@ const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 describe("App", () => {
 	beforeAll(async () => {
-		env.reset();
-
 		useDefaultNetMocks();
 
 		nock("https://dwallets.ark.io")
@@ -144,6 +142,54 @@ describe("App", () => {
 
 		await waitFor(() => expect(history.location.pathname).toMatch(profileDashboardUrl));
 		await waitFor(() => expect(document.body).toHaveClass("theme-dark"));
+	});
+
+	it("should enter profile", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+
+		electron.remote.nativeTheme.shouldUseDarkColors = false;
+
+		const { findByTestId, getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />);
+
+		await waitFor(() => {
+			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		});
+
+		const passwordProtectedProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		expect(history.location.pathname).toMatch("/");
+
+		expect(document.body).toHaveClass("theme-light");
+
+		await act(async () => {
+			fireEvent.click(getAllByTestId("Card")[1]);
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("SignIn__input--password")).toBeInTheDocument();
+		});
+
+		await act(async () => {
+			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: "password" } });
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("SignIn__input--password")).toHaveValue("password");
+		});
+
+		const wallet = await passwordProtectedProfile
+			.wallets()
+			.importByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", "ARK", "ark.devnet");
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SignIn__submit-button"));
+		});
+
+		await act(async () => {
+			await new Promise((resolve) => setTimeout(resolve, 500));
+		});
+
+		const profileDashboardUrl = `/profiles/${passwordProtectedProfile.id()}/dashboard`;
+		await waitFor(() => expect(history.location.pathname).toMatch(profileDashboardUrl));
 	});
 
 	it("should close splash screen if not demo", async () => {
