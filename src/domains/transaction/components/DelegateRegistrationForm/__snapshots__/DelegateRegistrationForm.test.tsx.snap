@@ -203,40 +203,38 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
-                <div
-                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
-                  data-testid="SelectionBar"
-                  role="radiogroup"
+              <div
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                data-testid="SelectionBar"
+                role="radiogroup"
+              >
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
                 >
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Min
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Average
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Max
-                  </button>
-                </div>
+                  Min
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Average
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Max
+                </button>
               </div>
             </div>
           </fieldset>
@@ -444,40 +442,38 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
-                <div
-                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
-                  data-testid="SelectionBar"
-                  role="radiogroup"
+              <div
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                data-testid="SelectionBar"
+                role="radiogroup"
+              >
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
                 >
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Min
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Average
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Max
-                  </button>
-                </div>
+                  Min
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Average
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Max
+                </button>
               </div>
             </div>
           </fieldset>
@@ -903,40 +899,38 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
-                <div
-                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
-                  data-testid="SelectionBar"
-                  role="radiogroup"
+              <div
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                data-testid="SelectionBar"
+                role="radiogroup"
+              >
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
                 >
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Min
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Average
-                  </button>
-                  <button
-                    aria-checked="true"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Max
-                  </button>
-                </div>
+                  Min
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Average
+                </button>
+                <button
+                  aria-checked="true"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Max
+                </button>
               </div>
             </div>
           </fieldset>
@@ -1144,40 +1138,38 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
-                <div
-                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
-                  data-testid="SelectionBar"
-                  role="radiogroup"
+              <div
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                data-testid="SelectionBar"
+                role="radiogroup"
+              >
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
                 >
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Min
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Average
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Max
-                  </button>
-                </div>
+                  Min
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Average
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Max
+                </button>
               </div>
             </div>
           </fieldset>
@@ -1391,40 +1383,38 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                   </div>
                 </div>
               </div>
-              <div>
-                <div
-                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
-                  data-testid="SelectionBar"
-                  role="radiogroup"
+              <div
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                data-testid="SelectionBar"
+                role="radiogroup"
+              >
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
                 >
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Min
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Average
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Max
-                  </button>
-                </div>
+                  Min
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Average
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Max
+                </button>
               </div>
             </div>
           </fieldset>
@@ -1638,40 +1628,38 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                   </div>
                 </div>
               </div>
-              <div>
-                <div
-                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
-                  data-testid="SelectionBar"
-                  role="radiogroup"
+              <div
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                data-testid="SelectionBar"
+                role="radiogroup"
+              >
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
                 >
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Min
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Average
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                    type="button"
-                  >
-                    Max
-                  </button>
-                </div>
+                  Min
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Average
+                </button>
+                <button
+                  aria-checked="false"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  data-testid="SelectionBarOption"
+                  role="radio"
+                  type="button"
+                >
+                  Max
+                </button>
               </div>
             </div>
           </fieldset>
