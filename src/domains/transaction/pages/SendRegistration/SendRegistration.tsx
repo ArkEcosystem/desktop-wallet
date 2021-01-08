@@ -1,4 +1,5 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Crumb } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -13,7 +14,7 @@ import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import { isMnemonicError } from "domains/transaction/utils";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
@@ -32,6 +33,8 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
+	const [crumbs, setCrumbs] = useState<Crumb[]>([]);
+
 	const { registrationType } = useParams();
 
 	const { env } = useEnvironmentContext();
@@ -123,12 +126,48 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 		setActiveTab(activeTab + 1);
 	};
 
-	const crumbs = [
-		{
-			label: t("COMMON.PORTFOLIO"),
-			route: `/profiles/${activeProfile.id()}/dashboard`,
-		},
-	];
+	const baseCrumbs: Crumb[] = useMemo(
+		() => [
+			{
+				label: t("COMMON.PORTFOLIO"),
+				route: `/profiles/${activeProfile.id()}/dashboard`,
+			},
+			{
+				label: activeWallet.alias() || /* istanbul ignore next */ activeWallet.address(),
+				route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
+			},
+		],
+		[activeProfile, activeWallet],
+	);
+
+	useEffect(() => {
+		switch (registrationType) {
+			case "secondSignature": {
+				return setCrumbs([
+					...baseCrumbs,
+					{
+						label: t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.TITLE"),
+					},
+				]);
+			}
+			case "multiSignature": {
+				return setCrumbs([
+					...baseCrumbs,
+					{
+						label: t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.TITLE"),
+					},
+				]);
+			}
+			default: {
+				return setCrumbs([
+					...baseCrumbs,
+					{
+						label: t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE"),
+					},
+				]);
+			}
+		}
+	}, [baseCrumbs, registrationType, t]);
 
 	return (
 		<Page profile={activeProfile} crumbs={crumbs}>
