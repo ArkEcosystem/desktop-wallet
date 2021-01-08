@@ -9,7 +9,7 @@ export const SelectionBar = ({ children }: GroupProps) => (
 	<div
 		data-testid="SelectionBar"
 		role="radiogroup"
-		className="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
+		className="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
 	>
 		{children}
 	</div>
@@ -17,15 +17,16 @@ export const SelectionBar = ({ children }: GroupProps) => (
 
 const SelectionBarOptionStyled = styled.button`
 	& {
-		padding: 0.6875rem 1.25rem 0.625rem;
+		${tw`mr-px last:mr-0 text-theme-neutral-900 dark:text-theme-neutral-600`};
 	}
 	&[aria-checked="true"] {
-		${tw`text-theme-success border-theme-success bg-theme-success-contrast font-semibold`}
+		-webkit-text-stroke: 0.5px var(--theme-color-success-600);
+		${tw`text-theme-success border-theme-success bg-theme-success-100 dark:bg-theme-success-900`}
 	}
-	& + &:after {
+	& + &:before {
 		content: "";
 		width: 1px;
-		${tw`bg-theme-neutral-300 top-1/2 absolute left-0 block h-6 transform -translate-y-1/2`};
+		${tw`bg-theme-neutral-300 dark:bg-theme-neutral-800 top-1/2 absolute block -left-px h-6 transform -translate-y-1/2`};
 	}
 `;
 
@@ -46,7 +47,7 @@ export const SelectionBarOption = ({ value, isValueChecked, setCheckedValue, chi
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
-			className="relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+			className="h-full relative px-4 first:pl-6 last:pr-6 border-transparent transition-colors duration-300 focus:outline-none border-b-3 items-center"
 		>
 			{children}
 		</SelectionBarOptionStyled>
