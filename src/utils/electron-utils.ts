@@ -23,12 +23,20 @@ const setScreenshotProtection = (enabled: boolean) => {
 	}
 
 	// Ignore the setting in dev mode
-	if (!electron.remote.app.isPackaged) {
+	if (!isDev()) {
 		electron.remote.getCurrentWindow().setContentProtection(false);
 		return;
 	}
 
 	electron.remote.getCurrentWindow().setContentProtection(enabled);
+};
+
+const isDev = () => {
+	// Based on https://github.com/sindresorhus/electron-is-dev/blob/master/index.js
+	const app = electron.remote.app;
+	const isEnvSet = "ELECTRON_IS_DEV" in process.env;
+
+	return isEnvSet ? parseInt(process.env.ELECTRON_IS_DEV!, 10) === 1 : !app.isPackaged;
 };
 
 const validatePath = (parentPath: string, filePath: string) => {
@@ -85,4 +93,4 @@ const exitApp = () => {
 	ipcRenderer.send("exit-app");
 };
 
-export { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection };
+export { exitApp, isDev, isIdle, openExternal, openFile, saveFile, setScreenshotProtection };
