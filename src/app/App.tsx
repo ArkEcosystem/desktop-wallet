@@ -41,6 +41,7 @@ import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
+const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
@@ -96,10 +97,8 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			/* istanbul ignore next */
-			const shouldUseFixture = process.env.REACT_APP_BUILD_MODE === "demo";
-
 			try {
-				if (shouldUseFixture) {
+				if (__DEMO__) {
 					migrateProfiles(env, fixtureData.profiles);
 					restoreProfilePasswords(env, TestingPasswords);
 				}
@@ -107,7 +106,7 @@ const Main = () => {
 				await env.verify();
 				await env.boot();
 
-				runAll();
+				await runAll();
 			} catch (error) {
 				handleError(error);
 			}
@@ -146,7 +145,7 @@ export const App = () => {
 	 */
 
 	/* istanbul ignore next */
-	const storage = __DEV__ ? new StubStorage() : "indexeddb";
+	const storage = __DEV__ || __DEMO__ ? new StubStorage() : "indexeddb";
 	const [env] = useState(
 		() =>
 			new Environment({
