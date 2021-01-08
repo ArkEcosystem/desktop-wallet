@@ -42,7 +42,7 @@ export const SelectOptionsList = styled.ul`
 	}
 
 	.select-list-option {
-		${tw`px-10 border-0 text-theme-neutral-800 dark:text-theme-neutral-200`};
+		${tw`px-10 border-0 text-theme-neutral-800 dark:text-theme-neutral-200 cursor-pointer transition`};
 
 		&__label {
 			${tw`py-4 `};
