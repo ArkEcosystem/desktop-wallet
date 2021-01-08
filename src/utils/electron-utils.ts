@@ -1,4 +1,5 @@
 import electron, { FileFilter, ipcRenderer } from "electron";
+import isDev from "electron-is-dev";
 import { readFileSync, writeFileSync } from "fs";
 import os from "os";
 import path from "path";
@@ -19,6 +20,12 @@ const defaultEncode = "utf8";
 
 const setScreenshotProtection = (enabled: boolean) => {
 	if (!electron.remote) {
+		return;
+	}
+
+	// Ignore the setting in dev mode
+	if (isDev) {
+		electron.remote.getCurrentWindow().setContentProtection(false);
 		return;
 	}
 
