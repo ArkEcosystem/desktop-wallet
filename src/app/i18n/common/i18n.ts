@@ -100,7 +100,6 @@ export const translations: { [key: string]: any } = {
 	FEE: "FEE",
 	MNEMONIC: "Mnemonic",
 	SECOND_MNEMONIC: "2nd Mnemonic",
-	DASHBOARD: "Dashboard",
 	DESCRIPTION: "Description",
 	WEBSITE: "Website",
 	NETWORK_NAME: "This name is provided by the network",
