@@ -1,5 +1,7 @@
 import { Tooltip } from "app/components/Tooltip";
+import { toasts } from "app/services";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link as RouterLink, LinkProps } from "react-router-dom";
 import { styled } from "twin.macro";
 import { openExternal } from "utils/electron-utils";
@@ -61,22 +63,30 @@ type Props = {
 	showExternalIcon?: boolean;
 } & LinkProps;
 
-export const Link = ({ tooltip, ...props }: Props) => (
-	<Tooltip content={tooltip} disabled={!tooltip}>
-		{props.isExternal ? (
-			<Anchor
-				onClick={(event) => {
-					event.stopPropagation();
-					event.preventDefault();
-					return openExternal(props.to);
-				}}
-				{...props}
-			/>
-		) : (
-			<RouterLink component={Anchor} {...props} />
-		)}
-	</Tooltip>
-);
+export const Link = ({ tooltip, ...props }: Props) => {
+	const { t } = useTranslation();
+
+	return (
+		<Tooltip content={tooltip} disabled={!tooltip}>
+			{props.isExternal ? (
+				<Anchor
+					onClick={async (event) => {
+						event.stopPropagation();
+						event.preventDefault();
+						try {
+							await openExternal(props.to);
+						} catch {
+							toasts.error(t("COMMON.ERRORS.INVALID_URL", { url: props.to }));
+						}
+					}}
+					{...props}
+				/>
+			) : (
+				<RouterLink component={Anchor} {...props} />
+			)}
+		</Tooltip>
+	);
+};
 
 Link.defaultProps = {
 	isExternal: false,
