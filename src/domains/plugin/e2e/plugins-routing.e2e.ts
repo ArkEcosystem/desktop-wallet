@@ -38,7 +38,7 @@ test("should navigate to plugin details and back", async (t) => {
 
 	await scrollToTop();
 
-	await t.click(Selector("span").withExactText(translations.PLUGINS.GO_BACK_TO_PLUGIN_STORE));
+	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.TITLE));
 
 	await t.expect(getLocation()).contains("/plugins");
 	await t.expect(getLocation()).notContains("/plugins/0");

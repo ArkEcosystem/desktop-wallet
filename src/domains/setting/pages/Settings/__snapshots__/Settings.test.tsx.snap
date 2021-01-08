@@ -254,11 +254,11 @@ exports[`Settings should change a password 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -266,18 +266,34 @@ exports[`Settings should change a password 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Password
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -345,7 +361,7 @@ exports[`Settings should change a password 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -862,11 +878,11 @@ exports[`Settings should not update profile if profile name exists 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -874,18 +890,34 @@ exports[`Settings should not update profile if profile name exists 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          General
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -956,7 +988,7 @@ exports[`Settings should not update profile if profile name exists 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -2250,11 +2282,11 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -2262,18 +2294,34 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -2341,7 +2389,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -2931,11 +2979,11 @@ exports[`Settings should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -2943,18 +2991,34 @@ exports[`Settings should render 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          General
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -3025,7 +3089,7 @@ exports[`Settings should render 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -4310,11 +4374,11 @@ exports[`Settings should render password settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -4322,18 +4386,34 @@ exports[`Settings should render password settings 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Password
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -4401,7 +4481,7 @@ exports[`Settings should render password settings 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -4868,11 +4948,11 @@ exports[`Settings should render peer settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -4880,18 +4960,34 @@ exports[`Settings should render peer settings 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Peers
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -4962,7 +5058,7 @@ exports[`Settings should render peer settings 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -5446,11 +5542,11 @@ exports[`Settings should render plugin settings 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -5458,18 +5554,34 @@ exports[`Settings should render plugin settings 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -5537,7 +5649,7 @@ exports[`Settings should render plugin settings 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -6122,11 +6234,11 @@ exports[`Settings should set a password 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -6134,18 +6246,34 @@ exports[`Settings should set a password 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Password
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -6213,7 +6341,7 @@ exports[`Settings should set a password 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -6725,11 +6853,11 @@ exports[`Settings should show an error toast if the current password does not ma
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -6737,18 +6865,34 @@ exports[`Settings should show an error toast if the current password does not ma
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Password
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -6816,7 +6960,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>
@@ -7332,11 +7476,11 @@ exports[`Settings should update profile 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -7344,18 +7488,34 @@ exports[`Settings should update profile 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
-          class="text-theme-secondary-text"
-          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+          aria-current="page"
+          class="text-theme-neutral-500 hover:underline active"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings"
         >
           <span>
-            Go back to Portfolio
+            Settings
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-bdfBwQ iEKVXm border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          General
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -7426,7 +7586,7 @@ exports[`Settings should update profile 1`] = `
                     <span
                       class="text-lg font-semibold"
                     >
-                      Peer
+                      Peers
                     </span>
                   </li>
                 </div>

@@ -260,11 +260,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -272,19 +272,34 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -2053,11 +2068,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -2065,19 +2080,34 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -3846,11 +3876,11 @@ exports[`PluginsCategory should delete plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -3858,19 +3888,34 @@ exports[`PluginsCategory should delete plugin 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -4937,11 +4982,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -4949,19 +4994,34 @@ exports[`PluginsCategory should download & install plugin 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -6882,11 +6942,11 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -6894,19 +6954,34 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -8125,11 +8200,11 @@ exports[`PluginsCategory should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -8137,19 +8212,34 @@ exports[`PluginsCategory should render 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -9216,11 +9306,11 @@ exports[`PluginsCategory should search for plugin 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -9228,19 +9318,34 @@ exports[`PluginsCategory should search for plugin 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -10358,11 +10463,11 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -10370,19 +10475,34 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -11449,11 +11569,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-gsTCUz fwbmIJ"
+        class="sc-gsTCUz fwbmIJ text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -11461,19 +11581,34 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to Plugin Manager
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-kEjbxe gpiDZJ border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Top Rated plugins
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "

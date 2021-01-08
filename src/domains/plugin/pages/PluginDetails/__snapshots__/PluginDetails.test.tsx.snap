@@ -260,11 +260,11 @@ exports[`PluginDetails should render properly 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-dlfnbm jXBjBC"
+        class="sc-dlfnbm jXBjBC text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -272,19 +272,34 @@ exports[`PluginDetails should render properly 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to plugin store
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-gsTCUz kBZZai border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          ARK Explorer
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -1752,11 +1767,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-dlfnbm jXBjBC"
+        class="sc-dlfnbm jXBjBC text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -1764,19 +1779,34 @@ exports[`PluginDetails should render properly as installed 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
-            Go back to plugin store
+            Plugin Manager
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-gsTCUz kBZZai border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          ARK Explorer
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "

@@ -41,13 +41,15 @@ export const ImportWallet = () => {
 	const { formState } = form;
 	const { isSubmitting, isValid } = formState;
 
-	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const nameMaxLength = 42;
 
 	const crumbs = [
 		{
-			route: dashboardRoute,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+			label: t("COMMON.PORTFOLIO"),
+			route: `/profiles/${activeProfile.id()}/dashboard`,
+		},
+		{
+			label: t("WALLETS.PAGE_IMPORT_WALLET.TITLE"),
 		},
 	];
 

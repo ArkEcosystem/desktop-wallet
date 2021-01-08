@@ -71,12 +71,13 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 
 	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
 
-	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
-
 	const crumbs = [
 		{
-			route: dashboardRoute,
-			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
+			label: t("COMMON.PORTFOLIO"),
+			route: `/profiles/${activeProfile.id()}/dashboard`,
+		},
+		{
+			label: activeWallet.alias() || activeWallet.address(),
 		},
 	];
 

@@ -259,11 +259,11 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -271,19 +271,52 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Portfolio
+          </span>
+        </a>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
-            Back to Wallet
+            ARK Wallet 2
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Delegate Resignation
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -809,11 +842,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -821,19 +854,52 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Portfolio
+          </span>
+        </a>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
-            Back to Wallet
+            ARK Wallet 2
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Delegate Resignation
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -1359,11 +1425,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -1371,19 +1437,52 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Portfolio
+          </span>
+        </a>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
-            Back to Wallet
+            ARK Wallet 2
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Delegate Resignation
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -1918,11 +2017,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -1930,19 +2029,52 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Portfolio
+          </span>
+        </a>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
-            Back to Wallet
+            ARK Wallet 2
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Delegate Resignation
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -2393,11 +2525,11 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -2405,19 +2537,52 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Portfolio
+          </span>
+        </a>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
-            Back to Wallet
+            ARK Wallet 2
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Delegate Resignation
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -2769,11 +2934,11 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -2781,19 +2946,52 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Portfolio
+          </span>
+        </a>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
-            Back to Wallet
+            ARK Wallet 2
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Delegate Resignation
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -3145,11 +3343,11 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -3157,19 +3355,52 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Portfolio
+          </span>
+        </a>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
-            Back to Wallet
+            ARK Wallet 2
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Delegate Resignation
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
@@ -3626,11 +3857,11 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
       </div>
     </nav>
     <div
-      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold text-theme-secondary-text"
+      class="flex items-center space-x-3 text-sm container py-5 px-14 mx-auto font-semibold"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-bdfBwQ imIpud"
+        class="sc-bdfBwQ imIpud text-theme-neutral-500"
         height="24"
         width="13"
       >
@@ -3638,19 +3869,52 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
           arrow-left.svg
         </svg>
       </div>
-      <div
+      <span
+        class="space-x-3"
+      >
+        <a
+          class="text-theme-neutral-500 hover:underline"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+        >
+          <span>
+            Portfolio
+          </span>
+        </a>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
         class="space-x-3"
       >
         <a
           aria-current="page"
-          class="text-theme-secondary-text active"
+          class="text-theme-neutral-500 hover:underline active"
           href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/d044a552-7a49-411c-ae16-8ff407acc430"
         >
           <span>
-            Back to Wallet
+            ARK Wallet 2
           </span>
         </a>
-      </div>
+        <span>
+          <div
+            class="sc-hHftDr jCsTle border-theme-neutral-300 dark:border-theme-neutral-800"
+            type="vertical"
+          />
+        </span>
+      </span>
+      <span
+        class="space-x-3"
+      >
+        <span
+          class="text-theme-neutral-700"
+        >
+          Delegate Resignation
+        </span>
+      </span>
     </div>
     <div
       class="flex flex-col flex-1 "
