@@ -10,6 +10,7 @@ export const remove = (dir: string): Promise<PluginRawInstance[]> => ipcRenderer
 
 export const injectHandler = () => {
 	const isDev = require("electron-is-dev");
+	const isE2E = process.env.ELECTRON_IS_E2E;
 	const paths: string[] = [];
 
 	const envDir = process.env.PLUGINS_DIR;
@@ -18,7 +19,7 @@ export const injectHandler = () => {
 		paths.push(envDir);
 	}
 
-	if (isDev) {
+	if (isDev || isE2E) {
 		paths.push(path.resolve("src/tests/fixtures/plugins"));
 	}
 

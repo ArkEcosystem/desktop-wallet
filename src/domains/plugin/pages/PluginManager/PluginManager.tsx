@@ -298,35 +298,45 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						)}
 
 						{currentView === "my-plugins" && viewType === "grid" && (
-							<PluginGrid
-								plugins={installedPlugins}
-								onSelect={handleSelectPlugin}
-								onDelete={() => console.log("delete")}
-								className="mt-6"
-							/>
+							<div>
+								<h2 className="font-bold">
+									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
+								</h2>
+								<PluginGrid
+									plugins={installedPlugins}
+									onSelect={handleSelectPlugin}
+									onDelete={() => console.log("delete")}
+									className="mt-6"
+								/>
+							</div>
 						)}
 
 						{currentView === "my-plugins" && viewType === "list" && (
-							<PluginList
-								showRating={false}
-								plugins={installedPlugins}
-								onInstall={void 0}
-								onEnable={(plugin: any) => {
-									pluginManager
-										.plugins()
-										.findById(plugin.id)
-										?.enable(activeProfile, { autoRun: true });
-									persist();
-								}}
-								onDisable={(plugin: any) => {
-									pluginManager.plugins().findById(plugin.id)?.disable(activeProfile);
-									persist();
-								}}
-								onLaunch={(plugin) =>
-									history.push(`/profiles/${activeProfile.id()}/plugins/${plugin.id}/view`)
-								}
-								className="mt-6"
-							/>
+							<div>
+								<h2 className="font-bold">
+									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
+								</h2>
+								<PluginList
+									showRating={false}
+									plugins={installedPlugins}
+									onInstall={void 0}
+									onEnable={(plugin: any) => {
+										pluginManager
+											.plugins()
+											.findById(plugin.id)
+											?.enable(activeProfile, { autoRun: true });
+										persist();
+									}}
+									onDisable={(plugin: any) => {
+										pluginManager.plugins().findById(plugin.id)?.disable(activeProfile);
+										persist();
+									}}
+									onLaunch={(plugin) =>
+										history.push(`/profiles/${activeProfile.id()}/plugins/${plugin.id}/view`)
+									}
+									className="mt-6"
+								/>
+							</div>
 						)}
 
 						{!["home", "my-plugins"].includes(currentView) && viewType === "grid" && (
