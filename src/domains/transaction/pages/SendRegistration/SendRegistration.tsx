@@ -137,7 +137,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 				route: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
 			},
 		],
-		[activeProfile, activeWallet],
+		[activeProfile, activeWallet, t],
 	);
 
 	useEffect(() => {
