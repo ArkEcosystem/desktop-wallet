@@ -24,6 +24,7 @@ import { ToastContainer } from "react-toastify";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 import { Theme } from "types";
+import { setThemeSource } from "utils/electron-utils";
 
 import { middlewares, RouterView, routes } from "../router";
 import {
@@ -69,11 +70,11 @@ const Main = () => {
 		if (profileId && profileId !== "create" && env.profiles().count()) {
 			const profileTheme = env.profiles().findById(profileId).settings().get<Theme>(ProfileSetting.Theme)!;
 			if (profileTheme !== theme) {
-				nativeTheme.themeSource = profileTheme;
+				setThemeSource(profileTheme);
 				setTheme(profileTheme);
 			}
 		} else {
-			nativeTheme.themeSource = "system";
+			setThemeSource("system");
 			setTheme(nativeTheme.shouldUseDarkColors ? "dark" : "light");
 		}
 	}, [env, match, nativeTheme, theme, setTheme]);

@@ -2,6 +2,7 @@ import electron, { FileFilter, ipcRenderer } from "electron";
 import { readFileSync, writeFileSync } from "fs";
 import os from "os";
 import path from "path";
+import { Theme } from "types";
 
 type DialogOptions = {
 	filters?: FileFilter | FileFilter[];
@@ -23,6 +24,10 @@ const setScreenshotProtection = (enabled: boolean) => {
 	}
 
 	electron.remote.getCurrentWindow().setContentProtection(enabled);
+};
+
+const setThemeSource = (themeSource: Theme) => {
+	electron.remote.nativeTheme.themeSource = themeSource;
 };
 
 const validatePath = (parentPath: string, filePath: string) => {
@@ -79,4 +84,4 @@ const exitApp = () => {
 	ipcRenderer.send("exit-app");
 };
 
-export { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection };
+export { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection, setThemeSource };

@@ -14,10 +14,9 @@ import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
 import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
-import { remote } from "electron";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { setScreenshotProtection } from "utils/electron-utils";
+import { setScreenshotProtection, setThemeSource } from "utils/electron-utils";
 
 import { SettingsProps } from "../Settings.models";
 
@@ -238,7 +237,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		setScreenshotProtection(isScreenshotProtection);
 
 		if (isDarkMode !== (theme === "dark")) {
-			remote.nativeTheme.themeSource = themeOption;
+			setThemeSource(themeOption);
 			setTheme(themeOption);
 		}
 
