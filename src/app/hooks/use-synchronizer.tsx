@@ -97,7 +97,15 @@ const useProfileWatcher = () => {
 
 	return useMemo(() => {
 		if (!profileId || env.profiles().count() === 0) return;
-		return env.profiles().findById(profileId);
+		let response: Profile | undefined;
+
+		try {
+			response = env.profiles().findById(profileId);
+		} catch (e) {
+			// Not a valid profile id. Ignore.
+		}
+
+		return response;
 	}, [profileId, env, allProfilesCount]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
