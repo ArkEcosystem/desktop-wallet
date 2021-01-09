@@ -1,6 +1,6 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { matchPath } from "react-router-dom";
 import { restoreProfilePassword } from "utils/migrate-fixtures";
@@ -19,6 +19,8 @@ enum Intervals {
 	Medium = 60000,
 	Long = 120000,
 }
+
+const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
 
 export const useSynchronizer = (jobs: Job[]) => {
 	const timers = useRef<number[]>([]);
@@ -125,6 +127,7 @@ export const useProfileSynchronizer = () => {
 	const { notifications } = useNotifications();
 	const profile = useProfileWatcher();
 	const { restoreProfile } = useProfileRestore();
+	const [restoredProfiles, setRestoredProfiles] = useState<String[]>([]);
 
 	const walletsCount = profile?.wallets().count();
 
@@ -155,13 +158,19 @@ export const useProfileSynchronizer = () => {
 	const { start, runAll } = useSynchronizer(jobs);
 
 	useEffect(() => {
-		const isDev = process.env.REACT_APP_BUILD_MODE === "demo";
-		if (profile && isDev) {
+		const shouldRestore = (profile?: Profile) => {
+			if (!profile || !__DEMO__) return false;
+
+			return !restoredProfiles.includes(profile.id?.());
+		};
+
+		if (profile && shouldRestore(profile)) {
 			// Perform restore to make migrated wallets available in profile.wallets()
 			restoreProfile(profile);
+			setRestoredProfiles([...restoredProfiles, profile.id()]);
 		}
 
 		start();
 		runAll();
-	}, [jobs, profile, runAll, start, restoreProfile]);
+	}, [jobs, profile, runAll, start, restoreProfile, restoredProfiles]);
 };
