@@ -24,15 +24,12 @@ const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
 
 export const useSynchronizer = (jobs: Job[]) => {
 	const timers = useRef<number[]>([]);
-	const { persist } = useEnvironmentContext();
+	// const { persist } = useEnvironmentContext();
 
-	const run = useCallback(
-		async (callback: Callback) => {
-			await callback();
-			await persist();
-		},
-		[persist],
-	);
+	const run = useCallback(async (callback: Callback) => {
+		await callback();
+		// await persist();
+	}, []);
 
 	const stop = useCallback(() => {
 		for (const timer of timers.current) {
@@ -109,33 +106,12 @@ const useProfileWatcher = () => {
 	}, [profileId, env, allProfilesCount]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-export const useProfileRestore = () => {
-	const { persist } = useEnvironmentContext();
-	const { setConfiguration } = useConfiguration();
-
-	return useMemo(() => {
-		const restoreProfile = async (profile: Profile) => {
-			setConfiguration({ profileIsSyncing: true });
-
-			await profile.restore();
-			restoreProfilePassword(profile);
-			await persist();
-
-			setConfiguration({ profileIsSyncing: false });
-		};
-
-		return {
-			restoreProfile,
-		};
-	}, [persist, setConfiguration]);
-};
-
 export const useProfileSynchronizer = () => {
-	const { env } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const { notifications } = useNotifications();
 	const profile = useProfileWatcher();
-	const { restoreProfile } = useProfileRestore();
 	const [restoredProfiles, setRestoredProfiles] = useState<String[]>([]);
+	const { setConfiguration } = useConfiguration();
 
 	const walletsCount = profile?.wallets().count();
 
@@ -172,13 +148,24 @@ export const useProfileSynchronizer = () => {
 			return !restoredProfiles.includes(profile.id?.());
 		};
 
-		if (profile && shouldRestore(profile)) {
-			// Perform restore to make migrated wallets available in profile.wallets()
-			restoreProfile(profile);
-			setRestoredProfiles([...restoredProfiles, profile.id()]);
-		}
+		const syncProfile = async (profile?: Profile) => {
+			if (profile && shouldRestore(profile)) {
+				setRestoredProfiles([...restoredProfiles, profile.id()]);
 
-		start();
-		runAll();
-	}, [jobs, profile, runAll, start, restoreProfile, restoredProfiles]);
+				setConfiguration({ profileIsSyncing: true });
+
+				// Perform restore to make migrated wallets available in profile.wallets()
+				await profile.restore();
+				restoreProfilePassword(profile);
+				await persist();
+
+				setConfiguration({ profileIsSyncing: false });
+			}
+
+			start();
+			runAll();
+		};
+
+		syncProfile(profile);
+	}, [jobs, profile, runAll, start, restoredProfiles, persist, setConfiguration]);
 };
