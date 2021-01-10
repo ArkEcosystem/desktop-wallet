@@ -215,7 +215,5 @@ describe("Transactions", () => {
 		await waitFor(() => {
 			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
 		});
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 });
