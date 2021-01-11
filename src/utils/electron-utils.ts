@@ -27,6 +27,10 @@ const setScreenshotProtection = (enabled: boolean) => {
 };
 
 const setThemeSource = (themeSource: Theme) => {
+	if (!electron.remote) {
+		return;
+	}
+
 	electron.remote.nativeTheme.themeSource = themeSource;
 };
 
