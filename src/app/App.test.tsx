@@ -21,7 +21,6 @@ import { App } from "./App";
 
 jest.mock(`electron`, () => {
 	let isUpdateCalled = false;
-	const setContentProtection = jest.fn();
 
 	return {
 		ipcRenderer: {
