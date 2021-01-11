@@ -1,5 +1,6 @@
 import electron, { FileFilter, ipcRenderer } from "electron";
 import { readFileSync, writeFileSync } from "fs";
+// import isDev from "electron-is-dev";
 import os from "os";
 import path from "path";
 

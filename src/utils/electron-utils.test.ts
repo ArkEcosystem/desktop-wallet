@@ -24,12 +24,12 @@ jest.mock("electron", () => {
 			powerMonitor: {
 				getSystemIdleTime: jest.fn(),
 			},
+			app: {
+				isPackaged: true,
+			},
 		},
 		shell: {
 			openExternal: jest.fn(),
-		},
-		ipcRenderer: {
-			send: jest.fn(),
 		},
 	};
 });
@@ -46,10 +46,32 @@ const defaultFilters = [
 
 describe("Electron utils", () => {
 	describe("setScreenshotProtection", () => {
-		it("should toggle", () => {
+		it("should not toggle in development mode", () => {
 			const setContentProtectionMock = jest
 				.spyOn(electron.remote.getCurrentWindow(), "setContentProtection")
 				.mockImplementation();
+
+			setScreenshotProtection(true);
+
+			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, false);
+
+			setContentProtectionMock.mockClear();
+			setScreenshotProtection(false);
+
+			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, false);
+
+			setContentProtectionMock.mockRestore();
+		});
+
+		it("should toggle in production mode", () => {
+			const setContentProtectionMock = jest
+				.spyOn(electron.remote.getCurrentWindow(), "setContentProtection")
+				.mockImplementation();
+
+			Object.defineProperty(electron.remote.app, "isPackaged", {
+				value: false,
+				configurable: true,
+			});
 
 			setScreenshotProtection(true);
 

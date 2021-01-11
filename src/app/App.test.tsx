@@ -21,6 +21,7 @@ import { App } from "./App";
 
 jest.mock(`electron`, () => {
 	let isUpdateCalled = false;
+	const setContentProtection = jest.fn();
 
 	return {
 		ipcRenderer: {
@@ -53,6 +54,9 @@ jest.mock(`electron`, () => {
 			getCurrentWindow: () => ({
 				setContentProtection: jest.fn(),
 			}),
+			app: {
+				isPackaged: true,
+			},
 		},
 	};
 });
