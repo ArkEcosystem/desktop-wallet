@@ -27,12 +27,14 @@ const setScreenshotProtection = (enabled: boolean) => {
 };
 
 const setThemeSource = (themeSource: Theme) => {
-	if (!electron.remote) {
+	if (!electron?.remote?.nativeTheme) {
 		return;
 	}
 
 	electron.remote.nativeTheme.themeSource = themeSource;
 };
+
+const shouldUseDarkColors = () => electron?.remote?.nativeTheme?.shouldUseDarkColors;
 
 const validatePath = (parentPath: string, filePath: string) => {
 	const relative = path.relative(parentPath, filePath);
@@ -88,4 +90,13 @@ const exitApp = () => {
 	ipcRenderer.send("exit-app");
 };
 
-export { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection, setThemeSource };
+export {
+	exitApp,
+	isIdle,
+	openExternal,
+	openFile,
+	saveFile,
+	setScreenshotProtection,
+	setThemeSource,
+	shouldUseDarkColors,
+};

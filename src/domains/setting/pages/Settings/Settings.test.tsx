@@ -32,6 +32,7 @@ jest.mock("electron", () => {
 			getCurrentWindow: () => ({
 				setContentProtection,
 			}),
+			nativeTheme: {},
 		},
 	};
 });

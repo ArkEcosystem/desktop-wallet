@@ -8,7 +8,6 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
-import { useThemeContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
@@ -16,13 +15,12 @@ import { AdvancedMode } from "domains/setting/components/AdvancedMode";
 import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { setScreenshotProtection, setThemeSource } from "utils/electron-utils";
+import { setScreenshotProtection } from "utils/electron-utils";
 
 import { SettingsProps } from "../Settings.models";
 
 export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 	const activeProfile = useActiveProfile();
-	const { theme, setTheme } = useThemeContext();
 
 	const { t } = useTranslation();
 
@@ -213,8 +211,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 			});
 		}
 
-		const themeOption = isDarkMode ? "dark" : "light";
-
 		activeProfile.settings().set(ProfileSetting.Name, formattedName);
 		activeProfile.settings().set(ProfileSetting.Locale, language);
 		activeProfile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
@@ -224,7 +220,7 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
 		activeProfile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
 		activeProfile.settings().set(ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
-		activeProfile.settings().set(ProfileSetting.Theme, themeOption);
+		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 		activeProfile.settings().set(ProfileSetting.UseTestNetworks, useTestNetworks);
 
@@ -235,11 +231,6 @@ export const General = ({ env, formConfig, onSuccess }: SettingsProps) => {
 		}
 
 		setScreenshotProtection(isScreenshotProtection);
-
-		if (isDarkMode !== (theme === "dark")) {
-			setThemeSource(themeOption);
-			setTheme(themeOption);
-		}
 
 		await env.persist();
 

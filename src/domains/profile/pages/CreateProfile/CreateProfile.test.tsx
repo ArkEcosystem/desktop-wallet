@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider, ThemeProvider } from "app/contexts";
+import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -60,9 +60,7 @@ const baseSettings = {
 const renderComponent = async () => {
 	const result = renderWithRouter(
 		<EnvironmentProvider env={env}>
-			<ThemeProvider>
-				<CreateProfile />
-			</ThemeProvider>
+			<CreateProfile />
 		</EnvironmentProvider>,
 	);
 	await waitFor(() => expect(result.getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));

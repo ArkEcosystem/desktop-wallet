@@ -1,6 +1,6 @@
 import { images } from "app/assets/images";
-import { useDarkMode } from "app/hooks";
 import React from "react";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 type Props = {
 	name: string;
@@ -8,13 +8,11 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const Image = ({ name, domain, ...props }: Props) => {
-	const isDark = useDarkMode();
-
 	const [imageName, setImageName] = React.useState("");
 
 	React.useLayoutEffect(() => {
-		setImageName(isDark ? `${name}Dark` : name);
-	}, [name, isDark]);
+		setImageName(shouldUseDarkColors() ? `${name}Dark` : name);
+	}, [name]);
 
 	// @ts-ignore
 	const Image = images[domain][imageName] || images[domain][name];

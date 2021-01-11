@@ -1,6 +1,14 @@
 import electron from "electron";
 
-import { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
+import {
+	exitApp,
+	isIdle,
+	openExternal,
+	openFile,
+	saveFile,
+	setScreenshotProtection,
+	setThemeSource,
+} from "./electron-utils";
 
 jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
@@ -21,6 +29,7 @@ jest.mock("electron", () => {
 			getCurrentWindow: () => ({
 				setContentProtection,
 			}),
+			nativeTheme: {},
 			powerMonitor: {
 				getSystemIdleTime: jest.fn(),
 			},
@@ -45,6 +54,13 @@ const defaultFilters = [
 ];
 
 describe("Electron utils", () => {
+	describe("setThemeSource", () => {
+		it("should set theme source", () => {
+			setThemeSource("theme");
+			expect(electron.remote.nativeTheme.themeSource).toEqual("theme");
+		});
+	});
+
 	describe("setScreenshotProtection", () => {
 		it("should toggle", () => {
 			const setContentProtectionMock = jest
