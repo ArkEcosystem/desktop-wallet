@@ -58,6 +58,9 @@ export const translations: { [key: string]: any } = {
 	EDIT: "Edit",
 	ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
 	ERROR: "Error",
+	ERRORS: {
+		INVALID_URL: "The link could not be opened: '{{url}}' is not a valid URL",
+	},
 	EXPLORER: "Explorer",
 	FAILED_FETCH: "Failed to fetch {{name}}. Reason {{msg}}",
 	FAILED_UPDATE: "Failed to update {{name}}. Reason: {{reason}}",
