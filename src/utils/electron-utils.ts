@@ -1,6 +1,5 @@
 import electron, { FileFilter, ipcRenderer } from "electron";
 import { readFileSync, writeFileSync } from "fs";
-// import isDev from "electron-is-dev";
 import os from "os";
 import path from "path";
 
@@ -34,7 +33,7 @@ const setScreenshotProtection = (enabled: boolean) => {
 
 const isDev = () => {
 	// Based on https://github.com/sindresorhus/electron-is-dev/blob/master/index.js
-	const app = electron.remote.app;
+	const app = electron.app || electron.remote.app;
 	const isEnvSet = "ELECTRON_IS_DEV" in process.env;
 
 	return isEnvSet ? parseInt(process.env.ELECTRON_IS_DEV!, 10) === 1 : !app.isPackaged;
