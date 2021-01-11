@@ -24,12 +24,15 @@ const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
 
 export const useSynchronizer = (jobs: Job[]) => {
 	const timers = useRef<number[]>([]);
-	// const { persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 
-	const run = useCallback(async (callback: Callback) => {
-		await callback();
-		// await persist();
-	}, []);
+	const run = useCallback(
+		async (callback: Callback) => {
+			await callback();
+			await persist();
+		},
+		[persist],
+	);
 
 	const stop = useCallback(() => {
 		for (const timer of timers.current) {

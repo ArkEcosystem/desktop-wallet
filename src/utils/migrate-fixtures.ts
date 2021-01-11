@@ -20,10 +20,10 @@ export const migrateProfiles = (env: Environment, profiles: any) => {
 			});
 
 			// Have migrated data available before restore. No need to sync for wallets
-			profile.peers().fill(profileData.peers);
-			profile.notifications().fill(profileData.notifications);
-			profile.data().fill(profileData.data);
-			profile.plugins().fill(profileData.plugins);
+			// profile.peers().fill(profileData.peers);
+			// profile.notifications().fill(profileData.notifications);
+			// profile.data().fill(profileData.data);
+			// profile.plugins().fill(profileData.plugins);
 			profile.settings().fill(profileData.settings);
 
 			return profile;
