@@ -7,18 +7,35 @@ jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 });
 
 jest.mock("electron", () => {
+	const setContentProtection = jest.fn();
+
 	return {
+		ipcRenderer: {
+			handle: jest.fn(),
+			invoke: jest.fn(),
+			on: jest.fn(),
+			removeListener: jest.fn(),
+			send: jest.fn(),
+		},
 		remote: {
+			app: {
+				isPackaged: true,
+			},
+			dialog: {
+				showOpenDialog: jest.fn(),
+				showSaveDialog: jest.fn(),
+			},
+			getCurrentWindow: () => ({ setContentProtection }),
 			nativeTheme: {
 				shouldUseDarkColors: true,
 				themeSource: "system",
 			},
-			getCurrentWindow: () => ({
-				setContentProtection: jest.fn(),
-			}),
-			app: {
-				isPackaged: true,
+			powerMonitor: {
+				getSystemIdleTime: jest.fn(),
 			},
+		},
+		shell: {
+			openExternal: jest.fn(),
 		},
 	};
 });

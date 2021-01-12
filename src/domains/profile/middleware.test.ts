@@ -6,31 +6,6 @@ import { ProfileMiddleware } from "./middleware";
 
 let subject: Middleware;
 
-jest.mock("electron", () => {
-	const setContentProtection = jest.fn();
-
-	return {
-		ipcRenderer: {
-			invoke: jest.fn(),
-			on: jest.fn(),
-			handle: jest.fn(),
-			send: jest.fn(),
-			removeListener: jest.fn(),
-		},
-		remote: {
-			powerMonitor: {
-				getSystemIdleTime: jest.fn(),
-			},
-			getCurrentWindow: () => ({
-				setContentProtection,
-			}),
-			app: {
-				isPackaged: true,
-			},
-		},
-	};
-});
-
 describe("ProfileMiddleware", () => {
 	beforeEach(() => {
 		subject = new ProfileMiddleware();

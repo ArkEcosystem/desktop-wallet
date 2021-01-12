@@ -3,15 +3,6 @@ import { act, fireEvent, render, screen, waitFor } from "utils/testing-library";
 
 import { useSynchronizer } from "./use-synchronizer";
 
-jest.mock("electron", () => ({
-	ipcRenderer: {
-		invoke: jest.fn(),
-		on: jest.fn(),
-		handle: jest.fn(),
-		send: jest.fn(),
-		removeListener: jest.fn(),
-	},
-}));
 describe("Synchronizer Hook", () => {
 	let onCall = jest.fn();
 	const job1 = jest.fn(() => Promise.resolve(onCall(1)));

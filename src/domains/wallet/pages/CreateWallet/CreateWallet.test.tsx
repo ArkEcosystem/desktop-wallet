@@ -27,21 +27,6 @@ import { FourthStep } from "./Step4";
 
 jest.setTimeout(8000);
 
-jest.mock("electron", () => ({
-	ipcRenderer: {
-		invoke: jest.fn(),
-		on: jest.fn(),
-		handle: jest.fn(),
-		send: jest.fn(),
-		removeListener: jest.fn(),
-	},
-	remote: {
-		dialog: {
-			showSaveDialog: jest.fn(),
-		},
-	},
-}));
-
 let profile: Profile;
 let bip39GenerateMock: any;
 
