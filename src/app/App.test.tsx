@@ -53,6 +53,9 @@ jest.mock(`electron`, () => {
 			getCurrentWindow: () => ({
 				setContentProtection: jest.fn(),
 			}),
+			app: {
+				isPackaged: true,
+			},
 		},
 	};
 });
