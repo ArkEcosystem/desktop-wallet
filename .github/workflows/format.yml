@@ -80,7 +80,18 @@ jobs:
                   yarn global add rustywind
                   rustywind --write src
 
+            - name: Check Changes
+              id: changes
+              run: |
+                  if [[ -z "$(git status --porcelain)" ]];
+                  then
+                    echo "::set-output name=changes::0"
+                  else
+                    echo "::set-output name=changes::1"
+                  fi
+
             - name: Update Snapshots
+              if: steps.changes.outputs.changes == 1
               run: yarn test --maxWorkers=4 --update-snapshot
 
             - uses: stefanzweifel/git-auto-commit-action@v4
