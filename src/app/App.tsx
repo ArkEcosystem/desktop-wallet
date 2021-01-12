@@ -48,7 +48,7 @@ const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 	const location = useLocation();
 	const { theme, setTheme } = useThemeContext();
-	const { env, persist } = useEnvironmentContext();
+	const { env } = useEnvironmentContext();
 	const isOnline = useNetworkStatus();
 	const { start, runAll } = useEnvSynchronizer();
 
@@ -115,7 +115,7 @@ const Main = () => {
 		};
 
 		boot();
-	}, [env, handleError, persist, runAll]);
+	}, [env, handleError, runAll]);
 
 	const renderContent = () => {
 		if (showSplash) {
