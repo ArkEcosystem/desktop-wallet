@@ -1,43 +1,7 @@
 import electron from "electron";
+import fs from "fs";
 
 import { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
-
-jest.mock("electron", () => {
-	const setContentProtection = jest.fn();
-
-	return {
-		ipcRenderer: {
-			invoke: jest.fn(),
-			on: jest.fn(),
-			handle: jest.fn(),
-			send: jest.fn(),
-			removeListener: jest.fn(),
-		},
-		remote: {
-			dialog: {
-				showOpenDialog: jest.fn(),
-				showSaveDialog: jest.fn(),
-			},
-			getCurrentWindow: () => ({
-				setContentProtection,
-			}),
-			powerMonitor: {
-				getSystemIdleTime: jest.fn(),
-			},
-		},
-		shell: {
-			openExternal: jest.fn(),
-		},
-		ipcRenderer: {
-			send: jest.fn(),
-		},
-	};
-});
-
-jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
-	readFileSync: jest.fn(),
-}));
 
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },
@@ -45,15 +9,74 @@ const defaultFilters = [
 ];
 
 describe("Electron utils", () => {
+	beforeEach(() => {
+		jest.spyOn(fs, "writeFileSync").mockImplementation();
+		jest.spyOn(fs, "readFileSync").mockImplementation();
+	});
+
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+
 	describe("setScreenshotProtection", () => {
-		it("should toggle", () => {
+		it("should not toggle in development mode", () => {
+			const setContentProtectionMock: any = electron.remote.getCurrentWindow().setContentProtection;
+
+			// Set Development mode
+			Object.defineProperty(electron.remote.app, "isPackaged", {
+				value: false,
+				configurable: true,
+			});
+
+			setScreenshotProtection(true);
+
+			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, false);
+
+			setContentProtectionMock.mockClear();
+			setScreenshotProtection(false);
+
+			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, false);
+
+			setContentProtectionMock.mockRestore();
+		});
+
+		it("should toggle in production mode", () => {
 			const setContentProtectionMock = jest
 				.spyOn(electron.remote.getCurrentWindow(), "setContentProtection")
 				.mockImplementation();
 
+			// Set Production mode
+			Object.defineProperty(electron.remote.app, "isPackaged", {
+				value: true,
+				configurable: true,
+			});
+
 			setScreenshotProtection(true);
 
 			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, true);
+
+			setContentProtectionMock.mockClear();
+			setScreenshotProtection(false);
+
+			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, false);
+
+			setContentProtectionMock.mockRestore();
+		});
+
+		it("should not toggle if process.env is set while in production", () => {
+			const setContentProtectionMock = jest
+				.spyOn(electron.remote.getCurrentWindow(), "setContentProtection")
+				.mockImplementation();
+
+			process.env.ELECTRON_IS_DEV = "1";
+
+			expect("ELECTRON_IS_DEV" in process.env).toBe(true);
+			expect(process.env.ELECTRON_IS_DEV).toBe("1");
+			expect(parseInt(process.env.ELECTRON_IS_DEV!, 10)).toBe(1);
+
+			setScreenshotProtection(true);
+
+			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, false);
 
 			setContentProtectionMock.mockClear();
 			setScreenshotProtection(false);

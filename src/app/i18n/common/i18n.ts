@@ -60,6 +60,9 @@ export const translations: { [key: string]: any } = {
 	ENABLE: "Enable",
 	ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
 	ERROR: "Error",
+	ERRORS: {
+		INVALID_URL: "The link could not be opened: '{{url}}' is not a valid URL",
+	},
 	EXPLORER: "Explorer",
 	FAILED_FETCH: "Failed to fetch {{name}}. Reason {{msg}}",
 	FAILED_UPDATE: "Failed to update {{name}}. Reason: {{reason}}",
@@ -90,7 +93,6 @@ export const translations: { [key: string]: any } = {
 	LOAD: "Load",
 	LOADING: "Loading ...",
 	LOADING_LEDGER: "Loading Ledger...",
-	MARKETSQUARE: "MarketSquare",
 	MESSAGE: "Message",
 	MY_ADDRESS: "My Address",
 	MY_WALLET: "My Wallet",

@@ -9,20 +9,6 @@ import { env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "
 
 import { NavigationBar } from "./NavigationBar";
 
-jest.mock("electron", () => ({
-	shell: {
-		openExternal: jest.fn(),
-	},
-	ipcRenderer: {
-		send: jest.fn(),
-		invoke: jest.fn(),
-		on: jest.fn(),
-		handle: jest.fn(),
-		send: jest.fn(),
-		removeListener: jest.fn(),
-	},
-}));
-
 let profile: Profile;
 
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;

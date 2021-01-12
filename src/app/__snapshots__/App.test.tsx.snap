@@ -14,14 +14,14 @@ exports[`App should close splash screen if not demo 1`] = `
         >
           <div
             class="Toastify__toast Toastify__toast--error Toastify__bounce-enter--bottom-right"
-            id="9alpnd4rl0"
+            id="pvig4975nk"
             style="animation-fill-mode: forwards; animation-duration: 750ms;"
           >
             <div
               class="Toastify__toast-body"
               role="alert"
             >
-              Cannot read property 'invoke' of undefined
+              instances is not iterable
             </div>
             <div
               class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--error"
@@ -98,7 +98,7 @@ exports[`App should close splash screen if not demo 1`] = `
                 <p
                   class="text-sm text-theme-secondary-text md:text-base"
                 >
-                  Sign in via MarketSquare or create a new Profile to get started.
+                  Create a new Profile to get started.
                 </p>
                 <div
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
@@ -216,14 +216,14 @@ exports[`App should render mock 1`] = `
         >
           <div
             class="Toastify__toast Toastify__toast--error"
-            id="9phsabziy2"
+            id="nqukkoel17"
             style="animation-fill-mode: forwards; animation-duration: 750ms;"
           >
             <div
               class="Toastify__toast-body"
               role="alert"
             >
-              Cannot read property 'invoke' of undefined
+              instances is not iterable
             </div>
             <div
               class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--error"
@@ -300,7 +300,7 @@ exports[`App should render mock 1`] = `
                 <p
                   class="text-sm text-theme-secondary-text md:text-base"
                 >
-                  Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.
+                  Choose from an existing Profile below or create a new Profile to get started.
                 </p>
                 <div
                   class="mt-8 space-y-3"
@@ -537,14 +537,14 @@ exports[`App should render splash screen 1`] = `
         >
           <div
             class="Toastify__toast Toastify__toast--error Toastify__bounce-enter--bottom-right"
-            id="xfs06xjoe8"
+            id="odqhy3xrck"
             style="animation-fill-mode: forwards; animation-duration: 750ms;"
           >
             <div
               class="Toastify__toast-body"
               role="alert"
             >
-              Cannot read property 'invoke' of undefined
+              instances is not iterable
             </div>
             <div
               class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--error"
@@ -621,7 +621,7 @@ exports[`App should render splash screen 1`] = `
                 <p
                   class="text-sm text-theme-secondary-text md:text-base"
                 >
-                  Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.
+                  Choose from an existing Profile below or create a new Profile to get started.
                 </p>
                 <div
                   class="mt-8 space-y-3"
@@ -858,14 +858,14 @@ exports[`App should render the offline screen if there is no internet connection
         >
           <div
             class="Toastify__toast Toastify__toast--error"
-            id="7khjxfg885"
+            id="solkqyts32"
             style="animation-fill-mode: forwards; animation-duration: 750ms;"
           >
             <div
               class="Toastify__toast-body"
               role="alert"
             >
-              Cannot read property 'invoke' of undefined
+              instances is not iterable
             </div>
             <div
               class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--error"
@@ -957,14 +957,14 @@ exports[`App should render welcome screen after splash screen 1`] = `
         >
           <div
             class="Toastify__toast Toastify__toast--error"
-            id="rze3bz4stl"
+            id="mimqbyamtc"
             style="animation-fill-mode: forwards; animation-duration: 750ms;"
           >
             <div
               class="Toastify__toast-body"
               role="alert"
             >
-              Cannot read property 'invoke' of undefined
+              instances is not iterable
             </div>
             <div
               class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--error"
@@ -1041,7 +1041,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                 <p
                   class="text-sm text-theme-secondary-text md:text-base"
                 >
-                  Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.
+                  Choose from an existing Profile below or create a new Profile to get started.
                 </p>
                 <div
                   class="mt-8 space-y-3"

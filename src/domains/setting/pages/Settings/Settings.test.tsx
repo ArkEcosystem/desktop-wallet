@@ -3,6 +3,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { buildTranslations } from "app/i18n/helpers";
 import { toasts } from "app/services";
 import electron from "electron";
+import fs from "fs";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -14,37 +15,11 @@ const translations = buildTranslations();
 
 jest.setTimeout(8000);
 
-jest.mock("electron", () => {
-	const setContentProtection = jest.fn();
-
-	return {
-		ipcRenderer: {
-			invoke: jest.fn(),
-			on: jest.fn(),
-			handle: jest.fn(),
-			send: jest.fn(),
-			removeListener: jest.fn(),
-		},
-		remote: {
-			dialog: {
-				showOpenDialog: jest.fn(),
-			},
-			getCurrentWindow: () => ({
-				setContentProtection,
-			}),
-		},
-	};
-});
-
 jest.mock("react-router-dom", () => ({
 	...jest.requireActual("react-router-dom"),
 	useHistory: () => ({
 		replace: jest.fn(),
 	}),
-}));
-
-jest.mock("fs", () => ({
-	readFileSync: jest.fn(() => "avatarImage"),
 }));
 
 let profile: Profile;
@@ -59,6 +34,14 @@ const showOpenDialogParams = {
 describe("Settings", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
+	});
+
+	beforeEach(() => {
+		jest.spyOn(fs, "readFileSync").mockImplementation(() => "avatarImage");
+	});
+
+	afterAll(() => {
+		jest.clearAllMocks();
 	});
 
 	it("should render", () => {
