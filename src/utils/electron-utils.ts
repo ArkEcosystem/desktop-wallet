@@ -19,7 +19,9 @@ const defaultFilters = [
 const defaultEncode = "utf8";
 
 const setScreenshotProtection = (enabled: boolean) => {
-	if (!electron.remote) {
+	// Ignore the setting in dev mode
+	if (isDev()) {
+		electron.remote.getCurrentWindow().setContentProtection(false);
 		return;
 	}
 
@@ -27,14 +29,18 @@ const setScreenshotProtection = (enabled: boolean) => {
 };
 
 const setThemeSource = (themeSource: Theme) => {
-	if (!electron?.remote?.nativeTheme) {
-		return;
-	}
-
 	electron.remote.nativeTheme.themeSource = themeSource;
 };
 
-const shouldUseDarkColors = () => electron?.remote?.nativeTheme?.shouldUseDarkColors;
+const shouldUseDarkColors = () => electron.remote.nativeTheme.shouldUseDarkColors;
+
+const isDev = () => {
+	// Based on https://github.com/sindresorhus/electron-is-dev/blob/master/index.js
+	const app = electron.app || electron.remote.app;
+	const isEnvSet = "ELECTRON_IS_DEV" in process.env;
+
+	return isEnvSet ? parseInt(process.env.ELECTRON_IS_DEV!, 10) === 1 : !app.isPackaged;
+};
 
 const validatePath = (parentPath: string, filePath: string) => {
 	const relative = path.relative(parentPath, filePath);
@@ -92,6 +98,7 @@ const exitApp = () => {
 
 export {
 	exitApp,
+	isDev,
 	isIdle,
 	openExternal,
 	openFile,

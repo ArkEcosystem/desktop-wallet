@@ -14,7 +14,7 @@ const nodeExternals = require("webpack-node-externals");
 const addNodeExternals = () =>
 	addWebpackExternals([
 		nodeExternals({
-			allowlist: [/tippy/, /swiper/, "isomorphic-fetch"],
+			allowlist: [/tippy/, /@popperjs\/core/, /swiper/, "isomorphic-fetch"],
 		}),
 	]);
 

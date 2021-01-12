@@ -5,19 +5,6 @@ import { act, fireEvent, renderWithRouter } from "testing-library";
 
 import { Link } from "./Link";
 
-jest.mock("electron", () => ({
-	ipcRenderer: {
-		invoke: jest.fn(),
-		on: jest.fn(),
-		handle: jest.fn(),
-		send: jest.fn(),
-		removeListener: jest.fn(),
-	},
-	shell: {
-		openExternal: jest.fn(),
-	},
-}));
-
 describe("Link", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = renderWithRouter(<Link to="/test">Test</Link>);

@@ -12,21 +12,6 @@ import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
 
-jest.mock("electron", () => ({
-	ipcRenderer: {
-		invoke: jest.fn(),
-		on: jest.fn(),
-		handle: jest.fn(),
-		send: jest.fn(),
-		removeListener: jest.fn(),
-	},
-	remote: {
-		dialog: {
-			showOpenDialog: jest.fn(),
-		},
-	},
-}));
-
 jest.mock("fs", () => ({
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
