@@ -1,5 +1,4 @@
 export const translations: { [key: string]: any } = {
-	SIGN_IN: "Sign In via MarketSquare",
 	CREATE_PROFILE: "Create Profile",
 	MODAL_PROFILE_CREATED: {
 		TITLE: "Profile Created!",
@@ -66,7 +65,6 @@ export const translations: { [key: string]: any } = {
 		DELEGATE_NAME: "Delegate Name",
 		FORGED_AMOUNT: "Forged Amount",
 		HISTORY: "History",
-		MSQ: "MSQ",
 		RANK: "Rank",
 		REPOSITORY: "Repository",
 		SEED: "Seed",
@@ -76,8 +74,8 @@ export const translations: { [key: string]: any } = {
 	},
 	PAGE_WELCOME: {
 		TITLE: "Welcome to the <1/> ARK Desktop Wallet",
-		HAS_NO_PROFILES: "Sign in via MarketSquare or create a new Profile to get started.",
+		HAS_NO_PROFILES: "Create a new Profile to get started.",
 		HAS_PROFILES:
-			"Choose from an existing Profile below, sign in via MarketSquare or create a new Profile to get started.",
+			"Choose from an existing Profile below or create a new Profile to get started.",
 	},
 };
