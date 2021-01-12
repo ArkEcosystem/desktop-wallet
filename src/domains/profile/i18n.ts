@@ -75,7 +75,6 @@ export const translations: { [key: string]: any } = {
 	PAGE_WELCOME: {
 		TITLE: "Welcome to the <1/> ARK Desktop Wallet",
 		HAS_NO_PROFILES: "Create a new Profile to get started.",
-		HAS_PROFILES:
-			"Choose from an existing Profile below or create a new Profile to get started.",
+		HAS_PROFILES: "Choose from an existing Profile below or create a new Profile to get started.",
 	},
 };
