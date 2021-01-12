@@ -18,9 +18,9 @@ const defaultFilters = [
 const defaultEncode = "utf8";
 
 const setScreenshotProtection = (enabled: boolean) => {
-	if (!electron.remote) {
-		return;
-	}
+	// if (!electron.remote) {
+	// 	return;
+	// }
 
 	// Ignore the setting in dev mode
 	if (isDev()) {
