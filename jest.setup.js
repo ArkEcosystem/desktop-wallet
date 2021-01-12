@@ -8,6 +8,23 @@ jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 	return createTransportReplayer();
 });
 
+jest.mock("electron", () => {
+	return {
+		remote: {
+			nativeTheme: {
+				shouldUseDarkColors: true,
+				themeSource: "system",
+			},
+			getCurrentWindow: () => ({
+				setContentProtection: jest.fn(),
+			}),
+			app: {
+				isPackaged: true,
+			},
+		},
+	};
+});
+
 beforeAll(async () => {
 	migrateProfiles(env, fixtureData.profiles);
 
