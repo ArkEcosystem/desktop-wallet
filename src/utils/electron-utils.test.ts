@@ -2,38 +2,6 @@ import electron from "electron";
 
 import { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
 
-jest.mock("electron", () => {
-	const setContentProtection = jest.fn();
-
-	return {
-		ipcRenderer: {
-			invoke: jest.fn(),
-			on: jest.fn(),
-			handle: jest.fn(),
-			send: jest.fn(),
-			removeListener: jest.fn(),
-		},
-		remote: {
-			dialog: {
-				showOpenDialog: jest.fn(),
-				showSaveDialog: jest.fn(),
-			},
-			getCurrentWindow: () => ({
-				setContentProtection,
-			}),
-			powerMonitor: {
-				getSystemIdleTime: jest.fn(),
-			},
-			app: {
-				isPackaged: true,
-			},
-		},
-		shell: {
-			openExternal: jest.fn(),
-		},
-	};
-});
-
 jest.mock("fs", () => ({
 	writeFileSync: jest.fn(),
 	readFileSync: jest.fn(),
@@ -47,9 +15,7 @@ const defaultFilters = [
 describe("Electron utils", () => {
 	describe("setScreenshotProtection", () => {
 		it("should not toggle in development mode", () => {
-			const setContentProtectionMock = jest
-				.spyOn(electron.remote.getCurrentWindow(), "setContentProtection")
-				.mockImplementation();
+			const setContentProtectionMock: any = electron.remote.getCurrentWindow().setContentProtection;
 
 			// Set Development mode
 			Object.defineProperty(electron.remote.app, "isPackaged", {
