@@ -112,20 +112,6 @@ export const defaultNetMocks = () => {
 
 export const useDefaultNetMocks = defaultNetMocks;
 
-export const mockIpcRenderer = () => {
-	jest.mock("electron", () => ({
-		ipcRenderer: {
-			invoke: jest.fn(),
-			on: jest.fn(),
-			handle: jest.fn(),
-			send: jest.fn(),
-			removeListener: jest.fn(),
-		},
-	}));
-};
-
-mockIpcRenderer();
-
 const envWithMocks = () => {
 	defaultNetMocks();
 	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });

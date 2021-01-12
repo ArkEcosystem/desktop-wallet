@@ -11,16 +11,6 @@ import { NotificationsDropdown } from "./";
 const history = createMemoryHistory();
 let profile: Profile;
 
-jest.mock("electron", () => ({
-	ipcRenderer: {
-		invoke: jest.fn(),
-		on: jest.fn(),
-		handle: jest.fn(),
-		send: jest.fn(),
-		removeListener: jest.fn(),
-	},
-}));
-
 describe("Notifications", () => {
 	beforeEach(() => {
 		const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;

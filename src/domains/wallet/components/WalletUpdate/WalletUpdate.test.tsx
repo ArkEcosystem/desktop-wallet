@@ -10,16 +10,6 @@ import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 import { WalletUpdate } from "./WalletUpdate";
 
-jest.mock("electron", () => ({
-	ipcRenderer: {
-		invoke: jest.fn(),
-		on: jest.fn(),
-		handle: jest.fn(),
-		send: jest.fn(),
-		removeListener: jest.fn(),
-	},
-}));
-
 describe("WalletUpdate", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<WalletUpdate isOpen={false} />);
