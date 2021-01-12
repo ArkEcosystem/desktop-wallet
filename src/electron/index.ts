@@ -4,6 +4,7 @@ import winState from "electron-window-state";
 import path from "path";
 
 import assignMenu from "./menu";
+import { setupPlugins } from "./plugins";
 import { setupUpdater } from "./updater";
 
 const windows = {};
@@ -139,3 +140,4 @@ app.on("open-url", (event, url) => {
 app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
 app.allowRendererProcessReuse = false;
 
+setupPlugins();
