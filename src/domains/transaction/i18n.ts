@@ -258,7 +258,7 @@ export const translations: { [key: string]: any } = {
 		},
 
 		PASSPHRASE_CONFIRMATION_STEP: {
-			TITLE: "Confirm your passphrase",
+			TITLE: "Confirm Your Passphrase",
 			SUBTITLE: "Confirm your password to continue",
 		},
 
