@@ -44,7 +44,7 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 		<div>
 			<p
 				data-testid="MnemonicVerificationOptions__title"
-				className="mb-2 font-semibold text-theme-neutral-700 dark:text-theme-neutral-200 text-lg"
+				className="mb-2 text-lg font-semibold text-theme-neutral-700 dark:text-theme-neutral-200"
 			>
 				{t(`WALLETS.MNEMONIC_VERIFICATION.SELECT_WORD`, {
 					position,
