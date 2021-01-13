@@ -119,7 +119,12 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 							}
 						}}
 					/>
-					<Icon className="mr-4 text-theme-primary-300 dark:text-theme-neutral-600" name="Search" width={18} height={18} />
+					<Icon
+						className="mr-4 text-theme-primary-300 dark:text-theme-neutral-600"
+						name="Search"
+						width={18}
+						height={18}
+					/>
 				</div>
 
 				<Divider dashed />
