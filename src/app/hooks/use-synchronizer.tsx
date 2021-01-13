@@ -62,7 +62,6 @@ export const useSynchronizer = (jobs: Job[]) => {
 };
 
 export const useEnvSynchronizer = () => {
-	const { env } = useEnvironmentContext();
 	const { notifyForUpdates } = useUpdater();
 
 	const jobs = useMemo(() => {
@@ -72,7 +71,7 @@ export const useEnvSynchronizer = () => {
 		};
 
 		return [syncWalletUpdates];
-	}, [env, notifyForUpdates]);
+	}, [notifyForUpdates]);
 
 	return useSynchronizer(jobs);
 };
@@ -172,12 +171,12 @@ export const useProfileSynchronizer = () => {
 
 			if (shouldSync(profile)) {
 				setSyncedProfiles([...syncedProfiles, profile.id()]);
-
 				runAll();
-				start();
 			}
+
+			start();
 		};
 
 		syncProfile(profile);
-	}, [jobs, profile, runAll, start, restoredProfiles, persist, setConfiguration]);
+	}, [jobs, profile, runAll, start, restoredProfiles, persist, setConfiguration, syncedProfiles]);
 };
