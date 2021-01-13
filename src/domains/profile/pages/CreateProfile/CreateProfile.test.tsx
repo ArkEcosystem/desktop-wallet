@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as profileTranslations } from "domains/profile/i18n";
@@ -16,7 +15,6 @@ jest.mock("fs", () => ({
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
 
-let env: Environment;
 let showOpenDialogMock: jest.SpyInstance;
 
 const showOpenDialogParams = {
