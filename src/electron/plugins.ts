@@ -1,4 +1,4 @@
-const { injectHandler } = require("../plugins/loader/loader-fs-handler");
+import { injectHandler } from "../plugins/loader/fs/loader-fs-handler";
 
 export const setupPlugins = () => {
 	injectHandler();

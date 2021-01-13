@@ -23,7 +23,6 @@ describe("PluginManagerProvider", () => {
 	it("should load plugins", () => {
 		const invokeMock = jest.spyOn(electron.ipcRenderer, "invoke").mockResolvedValue([]);
 
-		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
 		const Component = () => {
 			const { loadPlugins } = usePluginManagerContext();
 			const onClick = () => loadPlugins();
