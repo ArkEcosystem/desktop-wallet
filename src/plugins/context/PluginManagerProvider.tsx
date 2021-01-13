@@ -22,6 +22,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			const results = await PluginLoaderFileSystem.ipc().search();
 			pluginManager.plugins().fill(results);
 		} catch (e) {
+			/* istanbul ignore next */
 			toasts.error(e.message);
 		}
 	}, [pluginManager]);
@@ -37,6 +38,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		try {
 			await openExternal(url);
 		} catch (e) {
+			/* istanbul ignore next */
 			toasts.error(e.message);
 		}
 	}, []);
@@ -50,6 +52,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 				toasts.success(`The plugin ${plugin.config().title()} was removed successfully.`);
 			} catch (e) {
+				/* istanbul ignore next */
 				toasts.error(e.message);
 			}
 		},
@@ -74,4 +77,3 @@ export const PluginManagerProvider = ({
 };
 
 export const usePluginManagerContext = (): ReturnType<typeof useManager> => React.useContext(PluginManagerContext);
-export const usePluginManager = (): PluginManager => React.useContext(PluginManagerContext)?.pluginManager;

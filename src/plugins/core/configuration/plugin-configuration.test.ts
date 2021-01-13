@@ -61,6 +61,11 @@ describe("Plugin Configuration", () => {
 		expect(subject.version()).toBe("0.0.0");
 	});
 
+	it("should return custom version", () => {
+		const subject = PluginConfigurationData.make({ name: "plugin-test", version: "1.2.3" });
+		expect(subject.version()).toBe("1.2.3");
+	});
+
 	it("should return keywords", () => {
 		const subject = PluginConfigurationData.make({
 			name: "plugin-test",
@@ -132,5 +137,10 @@ describe("Plugin Configuration", () => {
 			"desktop-wallet": { logo: "https://google.com" },
 		});
 		expect(subject.logo()).toBeUndefined();
+	});
+
+	it("should return is not official", () => {
+		const subject = PluginConfigurationData.make({});
+		expect(subject.isOfficial()).toBe(false);
 	});
 });

@@ -1,5 +1,5 @@
-const { PluginLoaderFileSystem } = require("../plugins/loader");
+const { injectHandler } = require("../plugins/loader/loader-fs-handler");
 
 export const setupPlugins = () => {
-	PluginLoaderFileSystem.ipc().injectHandler();
+	injectHandler();
 };

@@ -12,6 +12,7 @@ export const LaunchRender = ({ pluginId, fallback, manager }: WithPluginManager<
 		try {
 			return manager.plugins().findById(pluginId)?.hooks().executeCommand("service:launch.render");
 		} catch (e) {
+			/* istanbul ignore next */
 			return;
 		}
 	}, [pluginId, manager]);

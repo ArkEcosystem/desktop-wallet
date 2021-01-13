@@ -27,6 +27,27 @@ describe("HttpPluginService", () => {
 		defaultNetMocks();
 	});
 
+	it("should create an instance", async () => {
+		let response: any;
+
+		const fixture = async (api: PluginAPI) => {
+			const result = await api.http().create().get("https://dwallets.ark.io/api/node/fees");
+			response = result.json();
+		};
+
+		ctrl = new PluginController(config, fixture);
+		ctrl.enable(profile);
+
+		manager.plugins().push(ctrl);
+		manager.plugins().runAllEnabled(profile);
+
+		await waitFor(() =>
+			expect(response).toMatchObject({
+				data: expect.anything(),
+			}),
+		);
+	});
+
 	it("should get from url", async () => {
 		let response: any;
 

@@ -46,10 +46,6 @@ export class PluginConfigurationData {
 		return this.#config.get<T>(key, defaultValue);
 	}
 
-	values() {
-		return this.#config.values();
-	}
-
 	manifest() {
 		return this.#manifest;
 	}
@@ -74,41 +70,32 @@ export class PluginConfigurationData {
 			if (typeof author === "string") {
 				return parseAuthor(author).name;
 			}
-			return author.name;
 		}
 
 		if (contributors?.length) {
 			if (typeof contributors?.[0]?.name === "string") {
 				return parseAuthor(contributors?.[0]?.name).name;
 			}
-			return contributors?.[0]?.name;
 		}
 
 		return `Unknown`;
 	}
 
 	keywords(): string[] {
-		const requiredKeywords = ["desktop-wallet"];
 		// @ts-ignore
 		const keywords: string[] = this.get("keywords", []);
-
-		for (const keyword of requiredKeywords) {
-			if (!keywords.includes(keyword)) {
-				throw new Error(`Missing required keyword ${keyword}`);
-			}
-		}
 
 		return uniq(keywords).map((item) => startCase(item) as string);
 	}
 
 	categories() {
 		const validCategories = ["game", "theme", "language", "utility", "exchange", "other"];
+		// @ts-ignore
+		const categories: string[] = this.manifest().get("categories", ["other"]);
 
-		const categories = this.manifest().get<string[]>("categories", ["other"]);
+		const result = intersection(categories, validCategories);
 
-		const result = intersection(categories!, validCategories);
-
-		return result.length ? result : ["other"];
+		return result;
 	}
 
 	permissions() {
