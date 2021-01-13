@@ -1,9 +1,9 @@
 import { Profile, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
-import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter } from "testing-library";
+import * as utils from "utils/electron-utils";
 
 import { WalletListItem } from "./WalletListItem";
 
@@ -148,7 +148,7 @@ describe("WalletListItem", () => {
 	});
 
 	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
-		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+		jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
 
 		const walletId = "fake-id";
 
@@ -174,7 +174,7 @@ describe("WalletListItem", () => {
 	});
 
 	it.each(["light", "dark"])("should set %s shadow color on mouse events for selected wallet", (theme) => {
-		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+		jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
 
 		const walletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
 

@@ -5,10 +5,10 @@ import { Avatar } from "app/components/Avatar";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
-import { useDarkMode } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 import { Dropdown } from "../Dropdown";
 
@@ -32,16 +32,14 @@ export const WalletListItem = ({
 	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
 	const hasActions = useMemo(() => actions && actions.length > 0, [actions]);
 
-	const isDark = useDarkMode();
-
 	const defaultShadowColor = useMemo(
 		() =>
 			isSelected
-				? isDark
+				? shouldUseDarkColors()
 					? "--theme-color-success-900"
 					: "--theme-color-success-100"
 				: "--theme-background-color",
-		[isDark, isSelected],
+		[isSelected],
 	);
 
 	const [shadowColor, setShadowColor] = React.useState<string>(defaultShadowColor);
@@ -77,7 +75,9 @@ export const WalletListItem = ({
 	return (
 		<TableRow
 			onClick={() => onClick?.(wallet.id())}
-			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
+			onMouseEnter={() =>
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+			}
 			onMouseLeave={() => setShadowColor(defaultShadowColor)}
 		>
 			<TableCell variant="start" isSelected={isSelected} innerClassName="space-x-4">

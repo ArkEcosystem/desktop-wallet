@@ -1,5 +1,6 @@
 import electron from "electron";
 import { Middleware } from "router/interfaces";
+import * as utils from "utils/electron-utils";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
 import { ProfileMiddleware } from "./middleware";
@@ -170,7 +171,6 @@ describe("ProfileMiddleware", () => {
 		const params = { location, redirect, env, history };
 		// @ts-ignore
 		expect(subject.handler(params)).toBe(true);
-		expect(subject.handler(params)).toBe(true);
 		expect(subject.state).toEqual(
 			expect.objectContaining({
 				intervalId: expect.any(Number),
@@ -198,7 +198,6 @@ describe("ProfileMiddleware", () => {
 		const params = { location, redirect, env, history };
 		// @ts-ignore
 		expect(subject.handler(params)).toBe(true);
-		expect(subject.handler(params)).toBe(true);
 
 		const state = JSON.parse(JSON.stringify(subject.state));
 
@@ -212,5 +211,49 @@ describe("ProfileMiddleware", () => {
 		// @ts-ignore
 		expect(subject.handler(params)).toBe(true);
 		expect(subject.state).toEqual(state);
+	});
+
+	it("should set the theme source if it doesn't match the profile theme", () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const utilsSpy = jest.spyOn(utils, "setThemeSource");
+
+		const location = {
+			pathname: `/profiles/${profile.id()}/dashboard`,
+		};
+		const redirect = jest.fn();
+		const history = { push: jest.fn() };
+		const params = { location, redirect, env, history };
+		// @ts-ignore
+		expect(subject.handler(params)).toBe(true);
+
+		expect(utilsSpy).toHaveBeenCalledWith("light");
+	});
+
+	it("should set the correct classes to document.body", () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const darkColorsSpy = jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(false);
+
+		const removeSpy = jest.spyOn(document.body.classList, "remove");
+		const addSpy = jest.spyOn(document.body.classList, "add");
+
+		const utilsSpy = jest.spyOn(utils, "setThemeSource");
+
+		const location = {
+			pathname: `/profiles/${profile.id()}/dashboard`,
+		};
+		const redirect = jest.fn();
+		const history = { push: jest.fn() };
+		const params = { location, redirect, env, history };
+		// @ts-ignore
+		expect(subject.handler(params)).toBe(true);
+
+		expect(utilsSpy).toHaveBeenCalledWith("light");
+
+		expect(removeSpy).toHaveBeenCalledWith("theme-dark");
+		expect(addSpy).toHaveBeenCalledWith("theme-light");
+
+		darkColorsSpy.mockRestore();
 	});
 });
