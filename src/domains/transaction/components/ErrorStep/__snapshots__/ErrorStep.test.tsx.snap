@@ -2,45 +2,47 @@
 
 exports[`ErrorStep should emit onBack 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="ErrorStep"
-  >
-    <div>
-      <h1
-        class="mb-8 text-lg font-bold md:text-4xl"
-      >
-        Custom error title
-      </h1>
-      <div
-        class="my-4 mx-auto w-128"
-      >
-        <svg>
-          mistake-banner.svg
-        </svg>
-      </div>
-      <div
-        class="my-8 text-md text-theme-secondary-text"
-      >
-        Custom error subtitle
-      </div>
-    </div>
+  <div>
     <div
-      class="flex justify-end space-x-3"
+      data-testid="ErrorStep"
     >
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="ErrorStep__wallet-button"
-        type="button"
+      <div>
+        <h1
+          class="mb-8 text-lg font-bold md:text-4xl"
+        >
+          Custom error title
+        </h1>
+        <div
+          class="my-4 mx-auto w-128"
+        >
+          <svg>
+            mistake-banner.svg
+          </svg>
+        </div>
+        <div
+          class="my-8 text-md text-theme-secondary-text"
+        >
+          Custom error subtitle
+        </div>
+      </div>
+      <div
+        class="flex justify-end space-x-3"
       >
-        Back to Wallet
-      </button>
-      <button
-        class="Button-mdtvtf-0 cvPqli space-x-2"
-        data-testid="ErrorStep__repeat-button"
-        type="button"
-      >
-        Retry
-      </button>
+        <button
+          class="Button-mdtvtf-0 ifPnXw"
+          data-testid="ErrorStep__wallet-button"
+          type="button"
+        >
+          Back to Wallet
+        </button>
+        <button
+          class="Button-mdtvtf-0 cvPqli space-x-2"
+          data-testid="ErrorStep__repeat-button"
+          type="button"
+        >
+          Retry
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -48,45 +50,47 @@ exports[`ErrorStep should emit onBack 1`] = `
 
 exports[`ErrorStep should emit onRepeat 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="ErrorStep"
-  >
-    <div>
-      <h1
-        class="mb-8 text-lg font-bold md:text-4xl"
-      >
-        Custom error title
-      </h1>
-      <div
-        class="my-4 mx-auto w-128"
-      >
-        <svg>
-          mistake-banner.svg
-        </svg>
-      </div>
-      <div
-        class="my-8 text-md text-theme-secondary-text"
-      >
-        Custom error subtitle
-      </div>
-    </div>
+  <div>
     <div
-      class="flex justify-end space-x-3"
+      data-testid="ErrorStep"
     >
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="ErrorStep__wallet-button"
-        type="button"
+      <div>
+        <h1
+          class="mb-8 text-lg font-bold md:text-4xl"
+        >
+          Custom error title
+        </h1>
+        <div
+          class="my-4 mx-auto w-128"
+        >
+          <svg>
+            mistake-banner.svg
+          </svg>
+        </div>
+        <div
+          class="my-8 text-md text-theme-secondary-text"
+        >
+          Custom error subtitle
+        </div>
+      </div>
+      <div
+        class="flex justify-end space-x-3"
       >
-        Back to Wallet
-      </button>
-      <button
-        class="Button-mdtvtf-0 cvPqli space-x-2"
-        data-testid="ErrorStep__repeat-button"
-        type="button"
-      >
-        Retry
-      </button>
+        <button
+          class="Button-mdtvtf-0 ifPnXw"
+          data-testid="ErrorStep__wallet-button"
+          type="button"
+        >
+          Back to Wallet
+        </button>
+        <button
+          class="Button-mdtvtf-0 cvPqli space-x-2"
+          data-testid="ErrorStep__repeat-button"
+          type="button"
+        >
+          Retry
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -94,45 +98,47 @@ exports[`ErrorStep should emit onRepeat 1`] = `
 
 exports[`ErrorStep should render with custom title and subtitle 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="ErrorStep"
-  >
-    <div>
-      <h1
-        class="mb-8 text-lg font-bold md:text-4xl"
-      >
-        Custom error title
-      </h1>
-      <div
-        class="my-4 mx-auto w-128"
-      >
-        <svg>
-          mistake-banner.svg
-        </svg>
-      </div>
-      <div
-        class="my-8 text-md text-theme-secondary-text"
-      >
-        Custom error subtitle
-      </div>
-    </div>
+  <div>
     <div
-      class="flex justify-end space-x-3"
+      data-testid="ErrorStep"
     >
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="ErrorStep__wallet-button"
-        type="button"
+      <div>
+        <h1
+          class="mb-8 text-lg font-bold md:text-4xl"
+        >
+          Custom error title
+        </h1>
+        <div
+          class="my-4 mx-auto w-128"
+        >
+          <svg>
+            mistake-banner.svg
+          </svg>
+        </div>
+        <div
+          class="my-8 text-md text-theme-secondary-text"
+        >
+          Custom error subtitle
+        </div>
+      </div>
+      <div
+        class="flex justify-end space-x-3"
       >
-        Back to Wallet
-      </button>
-      <button
-        class="Button-mdtvtf-0 cvPqli space-x-2"
-        data-testid="ErrorStep__repeat-button"
-        type="button"
-      >
-        Retry
-      </button>
+        <button
+          class="Button-mdtvtf-0 ifPnXw"
+          data-testid="ErrorStep__wallet-button"
+          type="button"
+        >
+          Back to Wallet
+        </button>
+        <button
+          class="Button-mdtvtf-0 cvPqli space-x-2"
+          data-testid="ErrorStep__repeat-button"
+          type="button"
+        >
+          Retry
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -140,45 +146,47 @@ exports[`ErrorStep should render with custom title and subtitle 1`] = `
 
 exports[`ErrorStep should render with default texts 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="ErrorStep"
-  >
-    <div>
-      <h1
-        class="mb-8 text-lg font-bold md:text-4xl"
-      >
-        Transaction Error
-      </h1>
-      <div
-        class="my-4 mx-auto w-128"
-      >
-        <svg>
-          mistake-banner.svg
-        </svg>
-      </div>
-      <div
-        class="my-8 text-md text-theme-secondary-text"
-      >
-        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
-      </div>
-    </div>
+  <div>
     <div
-      class="flex justify-end space-x-3"
+      data-testid="ErrorStep"
     >
-      <button
-        class="Button-mdtvtf-0 ifPnXw"
-        data-testid="ErrorStep__wallet-button"
-        type="button"
+      <div>
+        <h1
+          class="mb-8 text-lg font-bold md:text-4xl"
+        >
+          Transaction Error
+        </h1>
+        <div
+          class="my-4 mx-auto w-128"
+        >
+          <svg>
+            mistake-banner.svg
+          </svg>
+        </div>
+        <div
+          class="my-8 text-md text-theme-secondary-text"
+        >
+          An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+        </div>
+      </div>
+      <div
+        class="flex justify-end space-x-3"
       >
-        Back to Wallet
-      </button>
-      <button
-        class="Button-mdtvtf-0 cvPqli space-x-2"
-        data-testid="ErrorStep__repeat-button"
-        type="button"
-      >
-        Retry
-      </button>
+        <button
+          class="Button-mdtvtf-0 ifPnXw"
+          data-testid="ErrorStep__wallet-button"
+          type="button"
+        >
+          Back to Wallet
+        </button>
+        <button
+          class="Button-mdtvtf-0 cvPqli space-x-2"
+          data-testid="ErrorStep__repeat-button"
+          type="button"
+        >
+          Retry
+        </button>
+      </div>
     </div>
   </div>
 </DocumentFragment>

@@ -2,76 +2,78 @@
 
 exports[`ProfileCard should hide the balance if the profile uses a password 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="ProfileCard"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
-      data-testid="Card"
+      data-testid="ProfileCard"
     >
       <div
-        class="relative p-2 sm:flex sm:items-center"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+        data-testid="Card"
       >
         <div
-          class="flex flex-row justify-between w-full"
+          class="relative p-2 sm:flex sm:items-center"
         >
           <div
-            class="flex items-center"
+            class="flex flex-row justify-between w-full"
           >
             <div
-              class="w-11 h-11 rounded-full bg-theme-neutral-contrast"
-              data-testid="profile-card__user--avatarImage"
+              class="flex items-center"
             >
-              <img
-                alt="John Doe"
-                class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
-                src="avatarImage"
-                title="John Doe"
-              />
-            </div>
-            <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-            >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="w-11 h-11 rounded-full bg-theme-neutral-contrast"
+                data-testid="profile-card__user--avatarImage"
               >
-                Name
-              </p>
-              <p
-                class="font-semibold text-theme-text"
-                data-testid="profile-card__user--name"
+                <img
+                  alt="John Doe"
+                  class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                  src="avatarImage"
+                  title="John Doe"
+                />
+              </div>
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
               >
-                <span
-                  class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  John Doe
-                </span>
-              </p>
+                  Name
+                </p>
+                <p
+                  class="font-semibold text-theme-text"
+                  data-testid="profile-card__user--name"
+                >
+                  <span
+                    class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
-          <div
-            class="flex items-center"
-          >
             <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+              class="flex items-center"
             >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
               >
-                Total balance
-              </p>
-              <span
-                class="font-semibold text-theme-neutral-700"
-              >
-                N/A
-              </span>
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Total balance
+                </p>
+                <span
+                  class="font-semibold text-theme-neutral-700"
+                >
+                  N/A
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        <div
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        />
       </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
     </div>
   </div>
 </DocumentFragment>
@@ -79,76 +81,78 @@ exports[`ProfileCard should hide the balance if the profile uses a password 1`] 
 
 exports[`ProfileCard should hide the settings icon 1`] = `
 <div>
-  <div
-    data-testid="ProfileCard"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
-      data-testid="Card"
+      data-testid="ProfileCard"
     >
       <div
-        class="relative p-2 sm:flex sm:items-center"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+        data-testid="Card"
       >
         <div
-          class="flex flex-row justify-between w-full"
+          class="relative p-2 sm:flex sm:items-center"
         >
           <div
-            class="flex items-center"
+            class="flex flex-row justify-between w-full"
           >
             <div
-              class="w-11 h-11 rounded-full bg-theme-neutral-contrast"
-              data-testid="profile-card__user--avatarImage"
+              class="flex items-center"
             >
-              <img
-                alt="John Doe"
-                class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
-                src="avatarImage"
-                title="John Doe"
-              />
-            </div>
-            <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-            >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="w-11 h-11 rounded-full bg-theme-neutral-contrast"
+                data-testid="profile-card__user--avatarImage"
               >
-                Name
-              </p>
-              <p
-                class="font-semibold text-theme-text"
-                data-testid="profile-card__user--name"
+                <img
+                  alt="John Doe"
+                  class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                  src="avatarImage"
+                  title="John Doe"
+                />
+              </div>
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
               >
-                <span
-                  class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  John Doe
-                </span>
-              </p>
+                  Name
+                </p>
+                <p
+                  class="font-semibold text-theme-text"
+                  data-testid="profile-card__user--name"
+                >
+                  <span
+                    class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
-          <div
-            class="flex items-center"
-          >
             <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+              class="flex items-center"
             >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
               >
-                Total balance
-              </p>
-              <span
-                class="font-semibold text-theme-neutral-700"
-              >
-                N/A
-              </span>
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Total balance
+                </p>
+                <span
+                  class="font-semibold text-theme-neutral-700"
+                >
+                  N/A
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        <div
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        />
       </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
     </div>
   </div>
 </div>
@@ -156,81 +160,83 @@ exports[`ProfileCard should hide the settings icon 1`] = `
 
 exports[`ProfileCard should render 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="ProfileCard"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
-      data-testid="Card"
+      data-testid="ProfileCard"
     >
       <div
-        class="relative p-2 sm:flex sm:items-center"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+        data-testid="Card"
       >
         <div
-          class="flex flex-row justify-between w-full"
+          class="relative p-2 sm:flex sm:items-center"
         >
           <div
-            class="flex items-center"
+            class="flex flex-row justify-between w-full"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-              data-testid="profile-card__user--avatar"
+              class="flex items-center"
             >
-              <img
-                alt="John Doe"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                title="John Doe"
-              />
-              <span
-                class="absolute text-sm font-semibold text-theme-background"
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="profile-card__user--avatar"
               >
-                JO
-              </span>
-            </div>
-            <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-            >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
-              >
-                Name
-              </p>
-              <p
-                class="font-semibold text-theme-text"
-                data-testid="profile-card__user--name"
-              >
+                <img
+                  alt="John Doe"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="John Doe"
+                />
                 <span
-                  class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                  class="absolute text-sm font-semibold text-theme-background"
                 >
-                  John Doe
+                  JO
                 </span>
-              </p>
+              </div>
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+              >
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Name
+                </p>
+                <p
+                  class="font-semibold text-theme-text"
+                  data-testid="profile-card__user--name"
+                >
+                  <span
+                    class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
-          <div
-            class="flex items-center"
-          >
             <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+              class="flex items-center"
             >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
               >
-                Total balance
-              </p>
-              <span
-                class="font-semibold text-theme-text"
-                data-testid="profile-card__user--balance"
-              >
-                0 BTC
-              </span>
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Total balance
+                </p>
+                <span
+                  class="font-semibold text-theme-text"
+                  data-testid="profile-card__user--balance"
+                >
+                  0 BTC
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        <div
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        />
       </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
     </div>
   </div>
 </DocumentFragment>
@@ -238,77 +244,79 @@ exports[`ProfileCard should render 1`] = `
 
 exports[`ProfileCard should render the profile with avatar image 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="ProfileCard"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
-      data-testid="Card"
+      data-testid="ProfileCard"
     >
       <div
-        class="relative p-2 sm:flex sm:items-center"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+        data-testid="Card"
       >
         <div
-          class="flex flex-row justify-between w-full"
+          class="relative p-2 sm:flex sm:items-center"
         >
           <div
-            class="flex items-center"
+            class="flex flex-row justify-between w-full"
           >
             <div
-              class="w-11 h-11 rounded-full bg-theme-neutral-contrast"
-              data-testid="profile-card__user--avatarImage"
+              class="flex items-center"
             >
-              <img
-                alt="John Doe"
-                class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
-                src="avatarImage"
-                title="John Doe"
-              />
-            </div>
-            <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-            >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="w-11 h-11 rounded-full bg-theme-neutral-contrast"
+                data-testid="profile-card__user--avatarImage"
               >
-                Name
-              </p>
-              <p
-                class="font-semibold text-theme-text"
-                data-testid="profile-card__user--name"
+                <img
+                  alt="John Doe"
+                  class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                  src="avatarImage"
+                  title="John Doe"
+                />
+              </div>
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
               >
-                <span
-                  class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  John Doe
-                </span>
-              </p>
+                  Name
+                </p>
+                <p
+                  class="font-semibold text-theme-text"
+                  data-testid="profile-card__user--name"
+                >
+                  <span
+                    class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
-          <div
-            class="flex items-center"
-          >
             <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+              class="flex items-center"
             >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
               >
-                Total balance
-              </p>
-              <span
-                class="font-semibold text-theme-text"
-                data-testid="profile-card__user--balance"
-              >
-                0 BTC
-              </span>
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Total balance
+                </p>
+                <span
+                  class="font-semibold text-theme-text"
+                  data-testid="profile-card__user--balance"
+                >
+                  0 BTC
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        <div
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        />
       </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
     </div>
   </div>
 </DocumentFragment>
@@ -316,96 +324,98 @@ exports[`ProfileCard should render the profile with avatar image 1`] = `
 
 exports[`ProfileCard should render the settings icon 1`] = `
 <div>
-  <div
-    data-testid="ProfileCard"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
-      data-testid="Card"
+      data-testid="ProfileCard"
     >
       <div
-        class="relative p-2 sm:flex sm:items-center"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+        data-testid="Card"
       >
         <div
-          class="flex flex-row justify-between w-full"
+          class="relative p-2 sm:flex sm:items-center"
         >
           <div
-            class="flex items-center"
+            class="flex flex-row justify-between w-full"
           >
             <div
-              class="w-11 h-11 rounded-full bg-theme-neutral-contrast"
-              data-testid="profile-card__user--avatarImage"
+              class="flex items-center"
             >
-              <img
-                alt="John Doe"
-                class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
-                src="avatarImage"
-                title="John Doe"
-              />
-            </div>
-            <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
-            >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="w-11 h-11 rounded-full bg-theme-neutral-contrast"
+                data-testid="profile-card__user--avatarImage"
               >
-                Name
-              </p>
-              <p
-                class="font-semibold text-theme-text"
-                data-testid="profile-card__user--name"
+                <img
+                  alt="John Doe"
+                  class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                  src="avatarImage"
+                  title="John Doe"
+                />
+              </div>
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
               >
-                <span
-                  class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
                 >
-                  John Doe
-                </span>
-              </p>
+                  Name
+                </p>
+                <p
+                  class="font-semibold text-theme-text"
+                  data-testid="profile-card__user--name"
+                >
+                  <span
+                    class="ProfileCard__ProfileNameWrapper-sc-13or1gh-0 fCjcVb"
+                  >
+                    John Doe
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
-          <div
-            class="flex items-center"
-          >
             <div
-              class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+              class="flex items-center"
             >
-              <p
-                class="text-sm font-semibold text-theme-neutral-700"
+              <div
+                class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
               >
-                Total balance
-              </p>
-              <span
-                class="font-semibold text-theme-neutral-700"
-              >
-                N/A
-              </span>
+                <p
+                  class="text-sm font-semibold text-theme-neutral-700"
+                >
+                  Total balance
+                </p>
+                <span
+                  class="font-semibold text-theme-neutral-700"
+                >
+                  N/A
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
         <div
-          class="relative"
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
         >
-          <span
-            data-testid="dropdown__toggle"
+          <div
+            class="relative"
           >
-            <div
-              class="flex overflow-hidden justify-center w-4"
+            <span
+              data-testid="dropdown__toggle"
             >
               <div
-                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                height="1em"
-                width="1em"
+                class="flex overflow-hidden justify-center w-4"
               >
-                <svg>
-                  settings.svg
-                </svg>
+                <div
+                  class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
               </div>
-            </div>
-          </span>
+            </span>
+          </div>
         </div>
       </div>
     </div>

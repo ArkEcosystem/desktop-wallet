@@ -2,39 +2,41 @@
 
 exports[`TransactionMemo should render 1`] = `
 <div>
-  <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-    data-testid="TransactionDetail"
-  >
+  <div>
     <div
-      class="flex-1 space-y-2"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+      data-testid="TransactionDetail"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="flex-1 space-y-2"
       >
-        Smartbridge
-      </div>
-      <div
-        class="font-semibold"
-      >
-        <p
-          class="break-all"
+        <div
+          class="text-sm font-semibold text-theme-neutral-700"
         >
-          test memo
-        </p>
+          Smartbridge
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <p
+            class="break-all"
+          >
+            test memo
+          </p>
+        </div>
       </div>
-    </div>
-    <div
-      class="flex justify-center w-11 text-theme-neutral-900 dark:text-theme-neutral-600"
-    >
       <div
-        class="sc-bdfBwQ bVENOE"
-        height="22"
-        width="18"
+        class="flex justify-center w-11 text-theme-neutral-900 dark:text-theme-neutral-600"
       >
-        <svg>
-          smartbridge.svg
-        </svg>
+        <div
+          class="sc-gsTCUz lmEQUU"
+          height="22"
+          width="18"
+        >
+          <svg>
+            smartbridge.svg
+          </svg>
+        </div>
       </div>
     </div>
   </div>

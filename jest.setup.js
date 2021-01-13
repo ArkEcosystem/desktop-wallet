@@ -61,7 +61,9 @@ afterEach(() => {
 });
 
 afterAll(() => {
-	global.gc();
+	if (global.gc) {
+		global.gc();
+	}
 });
 
 window.scrollTo = jest.fn();

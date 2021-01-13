@@ -2,27 +2,31 @@
 
 exports[`Card should handle click 1`] = `
 <DocumentFragment>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz"
-    data-testid="Card"
-  >
-    Test
+  <div>
     <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz"
+      data-testid="Card"
+    >
+      Test
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Card should render 1`] = `
 <DocumentFragment>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
-    data-testid="Card"
-  >
+  <div>
     <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+      data-testid="Card"
+    >
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;

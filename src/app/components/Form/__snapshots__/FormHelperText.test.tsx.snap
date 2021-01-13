@@ -2,20 +2,24 @@
 
 exports[`FormHelperText should render error message 1`] = `
 <DocumentFragment>
-  <p
-    class="text-sm text-theme-danger"
-  >
-    Error Message
-  </p>
+  <div>
+    <p
+      class="text-sm text-theme-danger"
+    >
+      Error Message
+    </p>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`FormHelperText should render hint text 1`] = `
 <DocumentFragment>
-  <p
-    class="text-sm text-theme-neutral"
-  >
-    Test Message
-  </p>
+  <div>
+    <p
+      class="text-sm text-theme-neutral"
+    >
+      Test Message
+    </p>
+  </div>
 </DocumentFragment>
 `;

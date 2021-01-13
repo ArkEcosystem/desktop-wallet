@@ -2,30 +2,36 @@
 
 exports[`TextArea should render 1`] = `
 <DocumentFragment>
-  <textarea
-    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-    data-testid="TextArea"
-    style="height: 4px;"
-  />
+  <div>
+    <textarea
+      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+      data-testid="TextArea"
+      style="height: 4px;"
+    />
+  </div>
 </DocumentFragment>
 `;
 
 exports[`TextArea should render as disabled 1`] = `
 <DocumentFragment>
-  <textarea
-    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-    data-testid="TextArea"
-    disabled=""
-  />
+  <div>
+    <textarea
+      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+      data-testid="TextArea"
+      disabled=""
+    />
+  </div>
 </DocumentFragment>
 `;
 
 exports[`TextArea should render as invalid 1`] = `
 <DocumentFragment>
-  <textarea
-    aria-invalid="true"
-    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-    data-testid="TextArea"
-  />
+  <div>
+    <textarea
+      aria-invalid="true"
+      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+      data-testid="TextArea"
+    />
+  </div>
 </DocumentFragment>
 `;

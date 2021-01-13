@@ -1,93 +1,99 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment />`;
+exports[`UpdateWalletName should not render if not open 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
 exports[`UpdateWalletName should render a modal 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Name Wallet
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            You can enter the name of your wallet for a quick search in your wallet.
-          </div>
-          <form
-            class="mt-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
-            >
-              <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                data-testid="FormLabel"
-                for="name"
-              >
-                Name
-              </label>
-              <input
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                data-testid="UpdateWalletName__input"
-                name="name"
-              />
-            </fieldset>
             <div
-              class="flex justify-end mt-8 space-x-3"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 cvPqli"
-                data-testid="UpdateWalletName__submit"
-                type="submit"
-              >
-                Save
-              </button>
+              <svg>
+                cross-slim.svg
+              </svg>
             </div>
-          </form>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 cvPqli"
+                  data-testid="UpdateWalletName__submit"
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -97,97 +103,99 @@ exports[`UpdateWalletName should render a modal 1`] = `
 
 exports[`UpdateWalletName should show an error message for duplicate name 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Name Wallet
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            You can enter the name of your wallet for a quick search in your wallet.
-          </div>
-          <form
-            class="mt-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
-            >
-              <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                data-testid="FormLabel"
-                for="name"
-              >
-                Name
-              </label>
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                data-testid="UpdateWalletName__input"
-                name="name"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                A Wallet named 'ARK Wallet 2' already exists on this profile
-              </p>
-            </fieldset>
             <div
-              class="flex justify-end mt-8 space-x-3"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 eVVyXU"
-                data-testid="UpdateWalletName__submit"
-                disabled=""
-                type="submit"
-              >
-                Save
-              </button>
+              <svg>
+                cross-slim.svg
+              </svg>
             </div>
-          </form>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  A Wallet named 'ARK Wallet 2' already exists on this profile
+                </p>
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 eVVyXU"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -197,97 +205,99 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
 
 exports[`UpdateWalletName should show an error message for duplicate name 2`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Name Wallet
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            You can enter the name of your wallet for a quick search in your wallet.
-          </div>
-          <form
-            class="mt-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
-            >
-              <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                data-testid="FormLabel"
-                for="name"
-              >
-                Name
-              </label>
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                data-testid="UpdateWalletName__input"
-                name="name"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                A Wallet named 'ark wallet 2' already exists on this profile
-              </p>
-            </fieldset>
             <div
-              class="flex justify-end mt-8 space-x-3"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 eVVyXU"
-                data-testid="UpdateWalletName__submit"
-                disabled=""
-                type="submit"
-              >
-                Save
-              </button>
+              <svg>
+                cross-slim.svg
+              </svg>
             </div>
-          </form>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  A Wallet named 'ark wallet 2' already exists on this profile
+                </p>
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 eVVyXU"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -297,97 +307,99 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
 
 exports[`UpdateWalletName should show an error message for duplicate name 3`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Name Wallet
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            You can enter the name of your wallet for a quick search in your wallet.
-          </div>
-          <form
-            class="mt-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
-            >
-              <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                data-testid="FormLabel"
-                for="name"
-              >
-                Name
-              </label>
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                data-testid="UpdateWalletName__input"
-                name="name"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                A Wallet named 'ARK Wallet 2' already exists on this profile
-              </p>
-            </fieldset>
             <div
-              class="flex justify-end mt-8 space-x-3"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 eVVyXU"
-                data-testid="UpdateWalletName__submit"
-                disabled=""
-                type="submit"
-              >
-                Save
-              </button>
+              <svg>
+                cross-slim.svg
+              </svg>
             </div>
-          </form>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  A Wallet named 'ARK Wallet 2' already exists on this profile
+                </p>
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 eVVyXU"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -397,97 +409,99 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
 
 exports[`UpdateWalletName should show an error message for duplicate name 4`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Name Wallet
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            You can enter the name of your wallet for a quick search in your wallet.
-          </div>
-          <form
-            class="mt-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
-            >
-              <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                data-testid="FormLabel"
-                for="name"
-              >
-                Name
-              </label>
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                data-testid="UpdateWalletName__input"
-                name="name"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                A Wallet named 'ARK Wallet 2' already exists on this profile
-              </p>
-            </fieldset>
             <div
-              class="flex justify-end mt-8 space-x-3"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 eVVyXU"
-                data-testid="UpdateWalletName__submit"
-                disabled=""
-                type="submit"
-              >
-                Save
-              </button>
+              <svg>
+                cross-slim.svg
+              </svg>
             </div>
-          </form>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  A Wallet named 'ARK Wallet 2' already exists on this profile
+                </p>
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 eVVyXU"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -497,97 +511,99 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
 
 exports[`UpdateWalletName should show error message when name consists only of whitespace 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Name Wallet
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            You can enter the name of your wallet for a quick search in your wallet.
-          </div>
-          <form
-            class="mt-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
-            >
-              <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                data-testid="FormLabel"
-                for="name"
-              >
-                Name
-              </label>
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                data-testid="UpdateWalletName__input"
-                name="name"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                'Name' is invalid
-              </p>
-            </fieldset>
             <div
-              class="flex justify-end mt-8 space-x-3"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 eVVyXU"
-                data-testid="UpdateWalletName__submit"
-                disabled=""
-                type="submit"
-              >
-                Save
-              </button>
+              <svg>
+                cross-slim.svg
+              </svg>
             </div>
-          </form>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  'Name' is invalid
+                </p>
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 eVVyXU"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -597,97 +613,99 @@ exports[`UpdateWalletName should show error message when name consists only of w
 
 exports[`UpdateWalletName should show error message when name exceeds 42 characters 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Name Wallet
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            You can enter the name of your wallet for a quick search in your wallet.
-          </div>
-          <form
-            class="mt-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
-            >
-              <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                data-testid="FormLabel"
-                for="name"
-              >
-                Name
-              </label>
-              <input
-                aria-invalid="true"
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                data-testid="UpdateWalletName__input"
-                name="name"
-              />
-              <p
-                class="text-sm text-theme-danger"
-              >
-                'Name' should have at most 42 characters
-              </p>
-            </fieldset>
             <div
-              class="flex justify-end mt-8 space-x-3"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                type="button"
-              >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 eVVyXU"
-                data-testid="UpdateWalletName__submit"
-                disabled=""
-                type="submit"
-              >
-                Save
-              </button>
+              <svg>
+                cross-slim.svg
+              </svg>
             </div>
-          </form>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Name Wallet
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              You can enter the name of your wallet for a quick search in your wallet.
+            </div>
+            <form
+              class="mt-8"
+              data-testid="Form"
+            >
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                </label>
+                <input
+                  aria-invalid="true"
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="UpdateWalletName__input"
+                  name="name"
+                />
+                <p
+                  class="text-sm text-theme-danger"
+                >
+                  'Name' should have at most 42 characters
+                </p>
+              </fieldset>
+              <div
+                class="flex justify-end mt-8 space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 eVVyXU"
+                  data-testid="UpdateWalletName__submit"
+                  disabled=""
+                  type="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -2,41 +2,43 @@
 
 exports[`SelectProfileImage should render 1`] = `
 <div>
-  <div
-    class="group space-y-2 undefined"
-  >
-    <span
-      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text"
-    >
-      Profile Image
-    </span>
+  <div>
     <div
-      class="flex flex-row"
+      class="group space-y-2 undefined"
     >
+      <span
+        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text"
+      >
+        Profile Image
+      </span>
       <div
-        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-primary-contrast"
+        class="flex flex-row"
       >
         <div
-          class="overflow-hidden h-full rounded-full"
+          class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-primary-contrast"
         >
           <div
-            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 jJOzoi"
+            class="overflow-hidden h-full rounded-full"
           >
-            <button
-              class="Button-mdtvtf-0 ifPnXw"
-              data-testid="SelectProfileImage__upload-button"
-              type="button"
+            <div
+              class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 jJOzoi"
             >
-              <div
-                class="sc-bdfBwQ cdgnVS text-theme-primary dark:text-theme-neutral-200"
-                height="18"
-                width="24"
+              <button
+                class="Button-mdtvtf-0 ifPnXw"
+                data-testid="SelectProfileImage__upload-button"
+                type="button"
               >
-                <svg>
-                  upload.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-gsTCUz gVXdBu text-theme-primary dark:text-theme-neutral-200"
+                  height="18"
+                  width="24"
+                >
+                  <svg>
+                    upload.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>

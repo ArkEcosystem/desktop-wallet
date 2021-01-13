@@ -2,111 +2,115 @@
 
 exports[`SideBar should render empty 1`] = `
 <DocumentFragment>
-  <div
-    class="SideBar__SideBarContainer-sc-1yju7o6-0 gBtcTt"
-  >
-    <ul />
+  <div>
+    <div
+      class="SideBar__SideBarContainer-sc-1yju7o6-0 gBtcTt"
+    >
+      <ul />
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`SideBar should render with items 1`] = `
 <DocumentFragment>
-  <div
-    class="SideBar__SideBarContainer-sc-1yju7o6-0 gBtcTt"
-  >
-    <ul>
-      <div
-        class="relative cursor-pointer"
-        data-testid="side-menu__item--undefined"
-      >
-        <li
-          class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
+  <div>
+    <div
+      class="SideBar__SideBarContainer-sc-1yju7o6-0 gBtcTt"
+    >
+      <ul>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--undefined"
         >
-          <div
-            class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
-          />
-          <div
-            class="mr-3 text-theme-primary"
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
           >
             <div
-              class="sc-bdfBwQ iyevwF"
-              height="20"
-              width="20"
+              class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+            />
+            <div
+              class="mr-3 text-theme-primary"
             >
-              <svg>
-                general.svg
-              </svg>
+              <div
+                class="sc-gsTCUz fHxsLl"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  general.svg
+                </svg>
+              </div>
             </div>
-          </div>
-          <span
-            class="text-lg font-semibold"
-          >
-            General
-          </span>
-        </li>
-      </div>
-      <div
-        class="relative cursor-pointer"
-        data-testid="side-menu__item--undefined"
-      >
-        <li
-          class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
+            <span
+              class="text-lg font-semibold"
+            >
+              General
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--undefined"
         >
-          <div
-            class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
-          />
-          <div
-            class="mr-3 text-theme-primary"
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
           >
             <div
-              class="sc-bdfBwQ iyevwF"
-              height="20"
-              width="20"
+              class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+            />
+            <div
+              class="mr-3 text-theme-primary"
             >
-              <svg>
-                peer.svg
-              </svg>
+              <div
+                class="sc-gsTCUz fHxsLl"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  peer.svg
+                </svg>
+              </div>
             </div>
-          </div>
-          <span
-            class="text-lg font-semibold"
-          >
-            Peer
-          </span>
-        </li>
-      </div>
-      <div
-        class="relative cursor-pointer"
-        data-testid="side-menu__item--undefined"
-      >
-        <li
-          class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
+            <span
+              class="text-lg font-semibold"
+            >
+              Peer
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--undefined"
         >
-          <div
-            class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
-          />
-          <div
-            class="mr-3 text-theme-primary"
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary bg-theme-primary-100 dark:bg-theme-neutral-800"
           >
             <div
-              class="sc-bdfBwQ iyevwF"
-              height="20"
-              width="20"
+              class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary"
+            />
+            <div
+              class="mr-3 text-theme-primary"
             >
-              <svg>
-                plugin.svg
-              </svg>
+              <div
+                class="sc-gsTCUz fHxsLl"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  plugin.svg
+                </svg>
+              </div>
             </div>
-          </div>
-          <span
-            class="text-lg font-semibold"
-          >
-            Plugins
-          </span>
-        </li>
-      </div>
-    </ul>
+            <span
+              class="text-lg font-semibold"
+            >
+              Plugins
+            </span>
+          </li>
+        </div>
+      </ul>
+    </div>
   </div>
 </DocumentFragment>
 `;

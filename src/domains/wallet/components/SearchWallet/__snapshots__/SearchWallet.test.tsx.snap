@@ -2,260 +2,262 @@
 
 exports[`SearchWallet uses fiat value = false should render 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 NWPmM absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 NWPmM absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Select Account
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
-          >
-            Find and select the account you want to receive funds to
-          </div>
-          <div
-            class="mt-8"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-              role="table"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <table
-                cellpadding="0"
-                class="table-auto"
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Select Account
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              Find and select the account you want to receive funds to
+            </div>
+            <div
+              class="mt-8"
+            >
+              <div
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                role="table"
               >
-                <thead>
-                  <tr
-                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-                    role="row"
-                  >
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          Wallet Address
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end"
-                      >
-                        <div>
-                          Balance
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end no-border"
-                      >
-                        <div>
-                          <div
-                            class="relative"
-                          >
-                            <button
-                              class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                              data-testid="header-search-bar__button"
-                            >
-                              <div
-                                class="flex items-center space-x-3"
-                              >
-                                <span
-                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
-                                >
-                                  Search
-                                </span>
-                                <div
-                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-neutral-600"
-                                  height="18"
-                                  width="18"
-                                >
-                                  <svg>
-                                    search.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
+                <table
+                  cellpadding="0"
+                  class="table-auto"
                 >
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                  <thead>
+                    <tr
+                      class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                      role="row"
+                    >
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
                       >
                         <div
-                          class="-space-x-2"
+                          class="flex flex-inline align-top "
                         >
+                          <div>
+                            Wallet Address
+                          </div>
                           <div
-                            aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-                            data-testid="NetworkIcon-ARK-ark.devnet"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                            data-testid="table__Sort"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              data-testid="NetworkIcon__icon"
-                              height="20"
-                              width="20"
+                              class="sc-gsTCUz fJUgCy"
+                              height="12"
+                              width="15"
                             >
                               <svg>
-                                ark.svg
+                                sort.svg
                               </svg>
                             </div>
                           </div>
+                        </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end"
+                        >
+                          <div>
+                            Balance
+                          </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                            data-testid="Avatar"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                            data-testid="table__Sort"
                           >
                             <div
-                              class="w-full h-full"
+                              class="sc-gsTCUz fJUgCy"
+                              height="12"
+                              width="15"
                             >
-                              <img
-                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              />
+                              <svg>
+                                sort.svg
+                              </svg>
                             </div>
                           </div>
                         </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                      >
                         <div
-                          class="inline-flex items-center"
+                          class="flex flex-inline align-top justify-end no-border"
+                        >
+                          <div>
+                            <div
+                              class="relative"
+                            >
+                              <button
+                                class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
+                                data-testid="header-search-bar__button"
+                              >
+                                <div
+                                  class="flex items-center space-x-3"
+                                >
+                                  <span
+                                    class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                  >
+                                    Search
+                                  </span>
+                                  <div
+                                    class="sc-gsTCUz byDVwN text-theme-primary-300 dark:text-theme-neutral-600"
+                                    height="18"
+                                    width="18"
+                                  >
+                                    <svg>
+                                      search.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                        >
+                          <div
+                            class="-space-x-2"
+                          >
+                            <div
+                              aria-label="ARK Devnet"
+                              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
+                            >
+                              <div
+                                class="sc-gsTCUz fHxsLl"
+                                data-testid="NetworkIcon__icon"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                              data-testid="Avatar"
+                            >
+                              <div
+                                class="w-full h-full"
+                              >
+                                <img
+                                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="inline-flex items-center"
+                          >
+                            <span
+                              class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                              data-testid="address__wallet-name"
+                            >
+                              Sample Wallet
+                            </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D8rr7B1d6 … VBMs6YUYD
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL font-semibold justify-end"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                            data-testid="address__wallet-name"
+                            data-testid="Amount"
                           >
-                            Sample Wallet
-                          </span>
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B1d6 … VBMs6YUYD
+                            33.75089801 DARK
                           </span>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL font-semibold justify-end"
-                      >
-                        <span
-                          data-testid="Amount"
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                         >
-                          33.75089801 DARK
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
-                      >
-                        <button
-                          class="Button-mdtvtf-0 ifPnXw"
-                          data-testid="SearchWalletListItem__select-0"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                          <button
+                            class="Button-mdtvtf-0 ifPnXw"
+                            data-testid="SearchWalletListItem__select-0"
+                            type="button"
+                          >
+                            Select
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -267,301 +269,303 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
 
 exports[`SearchWallet uses fiat value = true should render 1`] = `
 <DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
+  <div>
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 NWPmM absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
-      >
-        <button
-          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="sc-bdfBwQ bfBhNR"
-            height="14"
-            width="14"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </button>
-      </div>
+        class="fixed z-50 w-full h-full bg-black opacity-50"
+        data-testid="modal__overlay"
+      />
       <div
-        class="relative"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 NWPmM absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+        data-testid="modal__inner"
       >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Select Account
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
         >
-          <div
-            class="mt-1 text-theme-secondary-text"
-          >
-            Find and select the account you want to receive funds to
-          </div>
-          <div
-            class="mt-8"
+          <button
+            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-              role="table"
+              class="sc-gsTCUz jEpOBt"
+              height="14"
+              width="14"
             >
-              <table
-                cellpadding="0"
-                class="table-auto"
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div
+          class="relative"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Select Account
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-1 text-theme-secondary-text"
+            >
+              Find and select the account you want to receive funds to
+            </div>
+            <div
+              class="mt-8"
+            >
+              <div
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                role="table"
               >
-                <thead>
-                  <tr
-                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-                    role="row"
-                  >
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          Wallet Address
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end"
-                      >
-                        <div>
-                          Balance
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end"
-                      >
-                        <div>
-                          Fiat Value
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end no-border"
-                      >
-                        <div>
-                          <div
-                            class="relative"
-                          >
-                            <button
-                              class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                              data-testid="header-search-bar__button"
-                            >
-                              <div
-                                class="flex items-center space-x-3"
-                              >
-                                <span
-                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
-                                >
-                                  Search
-                                </span>
-                                <div
-                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-neutral-600"
-                                  height="18"
-                                  width="18"
-                                >
-                                  <svg>
-                                    search.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
+                <table
+                  cellpadding="0"
+                  class="table-auto"
                 >
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                  <thead>
+                    <tr
+                      class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                      role="row"
+                    >
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
                       >
                         <div
-                          class="-space-x-2"
+                          class="flex flex-inline align-top "
                         >
+                          <div>
+                            Wallet Address
+                          </div>
                           <div
-                            aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-                            data-testid="NetworkIcon-ARK-ark.devnet"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                            data-testid="table__Sort"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              data-testid="NetworkIcon__icon"
-                              height="20"
-                              width="20"
+                              class="sc-gsTCUz fJUgCy"
+                              height="12"
+                              width="15"
                             >
                               <svg>
-                                ark.svg
+                                sort.svg
                               </svg>
                             </div>
                           </div>
+                        </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end"
+                        >
+                          <div>
+                            Balance
+                          </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                            data-testid="Avatar"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                            data-testid="table__Sort"
                           >
                             <div
-                              class="w-full h-full"
+                              class="sc-gsTCUz fJUgCy"
+                              height="12"
+                              width="15"
                             >
-                              <img
-                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              />
+                              <svg>
+                                sort.svg
+                              </svg>
                             </div>
                           </div>
                         </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
                         <div
-                          class="inline-flex items-center"
+                          class="flex flex-inline align-top justify-end"
+                        >
+                          <div>
+                            Fiat Value
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-gsTCUz fJUgCy"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end no-border"
+                        >
+                          <div>
+                            <div
+                              class="relative"
+                            >
+                              <button
+                                class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
+                                data-testid="header-search-bar__button"
+                              >
+                                <div
+                                  class="flex items-center space-x-3"
+                                >
+                                  <span
+                                    class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                  >
+                                    Search
+                                  </span>
+                                  <div
+                                    class="sc-gsTCUz byDVwN text-theme-primary-300 dark:text-theme-neutral-600"
+                                    height="18"
+                                    width="18"
+                                  >
+                                    <svg>
+                                      search.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                        >
+                          <div
+                            class="-space-x-2"
+                          >
+                            <div
+                              aria-label="ARK Devnet"
+                              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon-ARK-ark.devnet"
+                            >
+                              <div
+                                class="sc-gsTCUz fHxsLl"
+                                data-testid="NetworkIcon__icon"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                              data-testid="Avatar"
+                            >
+                              <div
+                                class="w-full h-full"
+                              >
+                                <img
+                                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="inline-flex items-center"
+                          >
+                            <span
+                              class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                              data-testid="address__wallet-name"
+                            >
+                              Sample Wallet
+                            </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D8rr7B1d6 … VBMs6YUYD
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL font-semibold justify-end"
                         >
                           <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                            data-testid="address__wallet-name"
+                            data-testid="Amount"
                           >
-                            Sample Wallet
-                          </span>
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B1d6 … VBMs6YUYD
+                            33.75089801 DARK
                           </span>
                         </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL font-semibold justify-end"
-                      >
-                        <span
-                          data-testid="Amount"
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-neutral-light justify-end"
                         >
-                          33.75089801 DARK
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-neutral-light justify-end"
-                      >
-                        <span
-                          data-testid="Amount"
+                          <span
+                            data-testid="Amount"
+                          >
+                            0 BTC
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
                         >
-                          0 BTC
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
-                      >
-                        <button
-                          class="Button-mdtvtf-0 ifPnXw"
-                          data-testid="SearchWalletListItem__select-0"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                          <button
+                            class="Button-mdtvtf-0 ifPnXw"
+                            data-testid="SearchWalletListItem__select-0"
+                            type="button"
+                          >
+                            Select
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

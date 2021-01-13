@@ -1,16 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Clipboard should not render without children 1`] = `<DocumentFragment />`;
+exports[`Clipboard should not render without children 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
 exports[`Clipboard should render with children 1`] = `
 <DocumentFragment>
-  <div
-    class="inline-block cursor-pointer"
-    data-testid="clipboard__wrapper"
-  >
-    <span>
-      Hello!
-    </span>
+  <div>
+    <div
+      class="inline-block cursor-pointer"
+      data-testid="clipboard__wrapper"
+    >
+      <span>
+        Hello!
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;

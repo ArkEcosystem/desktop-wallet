@@ -2,53 +2,55 @@
 
 exports[`Reply should render properly 1`] = `
 <DocumentFragment>
-  <div
-    class="flex flex-col mt-3"
-  >
+  <div>
     <div
-      class="flex items-center text-theme-neutral-light"
+      class="flex flex-col mt-3"
     >
       <div
-        class="flex items-center w-10"
+        class="flex items-center text-theme-neutral-light"
       >
         <div
-          class="sc-bdfBwQ liSwOQ mx-auto -mt-2"
-          height="18"
-          width="15"
+          class="flex items-center w-10"
         >
-          <svg>
-            reply-arrow.svg
-          </svg>
+          <div
+            class="sc-gsTCUz eMnCVw mx-auto -mt-2"
+            height="18"
+            width="15"
+          >
+            <svg>
+              reply-arrow.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
+        >
+          <span
+            class="text-lg font-semibold text-theme-text"
+          >
+            Developer response
+          </span>
+          <span
+            class="pl-3 text-sm font-semibold text-theme-neutral"
+          >
+            <span
+              data-testid="timeago"
+            >
+              11 days ago
+            </span>
+          </span>
         </div>
       </div>
       <div
-        class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
+        class="sc-dlfnbm hQdFZp mt-2 ml-10 text-theme-neutral-600"
       >
-        <span
-          class="text-lg font-semibold text-theme-text"
+        <a
+          href="#"
         >
-          Developer response
-        </span>
-        <span
-          class="pl-3 text-sm font-semibold text-theme-neutral"
-        >
-          <span
-            data-testid="timeago"
-          >
-            11 days ago
-          </span>
-        </span>
+          @Gerard Blezer
+        </a>
+         Our GitHub bount reward program utlilizes a tiered structure.
       </div>
-    </div>
-    <div
-      class="sc-gsTCUz hoNdtS mt-2 ml-10 text-theme-neutral-600"
-    >
-      <a
-        href="#"
-      >
-        @Gerard Blezer
-      </a>
-       Our GitHub bount reward program utlilizes a tiered structure.
     </div>
   </div>
 </DocumentFragment>

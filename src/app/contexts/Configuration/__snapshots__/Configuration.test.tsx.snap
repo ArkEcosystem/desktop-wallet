@@ -2,23 +2,27 @@
 
 exports[`Configuration Context should render the wrapper properly 1`] = `
 <DocumentFragment>
-  <span
-    data-testid="ConfigurationProvider__content"
-  >
-    Configuration Provider content
-  </span>
+  <div>
+    <span
+      data-testid="ConfigurationProvider__content"
+    >
+      Configuration Provider content
+    </span>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Configuration Context should update configuration 1`] = `
 <DocumentFragment>
-  <div
-    data-testid="Configuration__consumer"
-  >
-    Configuration content
+  <div>
     <div
-      data-testid="Configuration__transactions"
-    />
+      data-testid="Configuration__consumer"
+    >
+      Configuration content
+      <div
+        data-testid="Configuration__transactions"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;

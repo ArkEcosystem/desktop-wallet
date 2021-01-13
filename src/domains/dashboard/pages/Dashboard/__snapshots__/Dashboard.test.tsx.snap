@@ -1,92 +1,217 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Dashboard should navigate to create wallet page 1`] = `<DocumentFragment />`;
+exports[`Dashboard should navigate to create wallet page 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
-exports[`Dashboard should navigate to import ledger page 1`] = `<DocumentFragment />`;
+exports[`Dashboard should navigate to import ledger page 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
-exports[`Dashboard should navigate to import wallet page 1`] = `<DocumentFragment />`;
+exports[`Dashboard should navigate to import wallet page 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
 
 exports[`Dashboard should render 1`] = `
 <DocumentFragment>
-  <div
-    class="flex relative flex-col min-h-screen bg-theme-secondary-background"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 YyaZQ"
+  <div>
+    <div
+      class="flex relative flex-col min-h-screen bg-theme-secondary-background"
     >
-      <div
-        class="px-4 sm:px-6 lg:px-10"
+      <nav
+        aria-labelledby="main menu"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 YyaZQ"
       >
         <div
-          class="flex relative justify-between h-20 md:h-24"
+          class="px-4 sm:px-6 lg:px-10"
         >
           <div
-            class="flex items-center my-auto"
+            class="flex relative justify-between h-20 md:h-24"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+              class="flex items-center my-auto"
             >
-              <svg
-                width="48"
+              <div
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
               >
-                ark-logo.svg
-              </svg>
+                <svg
+                  width="48"
+                >
+                  ark-logo.svg
+                </svg>
+              </div>
             </div>
-          </div>
-          <ul
-            class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
-          >
-            <li
-              class="flex"
+            <ul
+              class="flex mr-auto ml-4 space-x-8 h-20 md:h-24"
             >
-              <a
-                aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
-                title="Portfolio"
+              <li
+                class="flex"
               >
-                Portfolio
-              </a>
-            </li>
-            <li
-              class="flex"
+                <a
+                  aria-current="page"
+                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+            <div
+              class="flex items-center my-auto space-x-4"
             >
-              <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
-                title="Plugins"
+              <div>
+                <div
+                  class="relative"
+                >
+                  <span
+                    data-testid="dropdown__toggle"
+                  >
+                    <div
+                      class="overflow-hidden rounded-lg"
+                    >
+                      <button
+                        class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+                        data-testid="navbar__buttons--notifications"
+                        type="button"
+                      >
+                        <div
+                          class="sc-gsTCUz eMnCVw p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
+                      </button>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div
+                class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex items-center"
               >
-                Plugins
-              </a>
-            </li>
-            <li
-              class="flex"
+                <div
+                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
+                >
+                  <button
+                    class="Button-mdtvtf-0 gVVPUs"
+                    data-testid="navbar__buttons--send"
+                    type="button"
+                  >
+                    <div
+                      class="sc-gsTCUz byDVwN p-1"
+                      height="18"
+                      width="18"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+              <div
+                class="flex overflow-hidden items-center rounded-lg"
+              >
+                <div
+                  class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
+                >
+                  <button
+                    class="Button-mdtvtf-0 gVVPUs"
+                    data-testid="navbar__buttons--receive"
+                    type="button"
+                  >
+                    <div
+                      class="sc-gsTCUz gbSRoN p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+              />
+            </div>
+            <div
+              class="flex items-center my-auto mr-4 ml-8"
             >
-              <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
-                title="Exchange"
+              <div
+                class="text-right"
               >
-                Exchange
-              </a>
-            </li>
-            <li
-              class="flex"
-            >
-              <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
-                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
-                title="News"
-              >
-                News
-              </a>
-            </li>
-          </ul>
-          <div
-            class="flex items-center my-auto space-x-4"
-          >
-            <div>
+                <div
+                  class="text-xs font-semibold text-theme-neutral-700"
+                >
+                  Your balance
+                </div>
+                <div
+                  class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    0 BTC
+                  </span>
+                </div>
+              </div>
               <div
                 class="relative"
               >
@@ -94,1470 +219,1359 @@ exports[`Dashboard should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="overflow-hidden rounded-lg"
+                    class="my-0.5 ml-4 -space-x-2 cursor-pointer"
+                    data-testid="navbar__useractions"
+                  >
+                    <div
+                      class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    >
+                      <span
+                        class="text-theme-secondary-text dark:text-theme-neutral-800"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </div>
+                    <div
+                      class="inline-flex relative justify-center items-center align-middle rounded-full"
+                      data-testid="navbar__user--avatar"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                      >
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
+                      <span
+                        class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      >
+                        <div
+                          class="sc-gsTCUz jsttWF transition-transform "
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                        <span />
+                      </span>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="flex flex-col flex-1 mt-5"
+      >
+        <div
+          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+        >
+          <div
+            class="container py-16 px-14 mx-auto"
+          >
+            <div
+              class="flex justify-between items-center mb-8"
+            >
+              <div
+                class="-mt-1 text-4xl font-bold"
+              >
+                Wallets
+              </div>
+              <div
+                class="text-right"
+              >
+                <div
+                  class="flex justify-end"
+                  data-testid="WalletControls"
+                >
+                  <div
+                    class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
+                  >
+                    <div
+                      class="flex items-center space-x-1"
+                    >
+                      <div
+                        class="group"
+                        data-testid="LayoutControls__grid"
+                      >
+                        <div
+                          class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
+                          data-testid="LayoutControls__grid--icon"
+                        >
+                          <div
+                            class="sc-gsTCUz fHxsLl"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              grid-view.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="group"
+                        data-testid="LayoutControls__list"
+                      >
+                        <div
+                          class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
+                          data-testid="LayoutControls__list--icon"
+                        >
+                          <div
+                            class="sc-gsTCUz fHxsLl"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              list-view.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
+                  >
+                    <div
+                      class="relative"
+                    >
+                      <span
+                        data-testid="dropdown__toggle"
+                      >
+                        <div
+                          class="group"
+                        >
+                          <div
+                            class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
+                          >
+                            <div
+                              class="sc-gsTCUz jtTYoP"
+                              height="19"
+                              width="17"
+                            >
+                              <svg>
+                                filters.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex space-x-3"
                   >
                     <button
-                      class="Button-mdtvtf-0 gVVPUs w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
-                      data-testid="navbar__buttons--notifications"
+                      class="Button-mdtvtf-0 ifPnXw"
+                      data-testid="WalletControls__create-wallet"
                       type="button"
                     >
                       <div
-                        class="sc-bdfBwQ liSwOQ p-1"
-                        height="18"
-                        width="15"
-                      >
-                        <svg>
-                          notification.svg
-                        </svg>
-                      </div>
-                      <div
-                        class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800"
+                        class="flex items-center space-x-2"
                       >
                         <div
-                          class="w-2 h-2 rounded-full bg-theme-danger-500"
-                        />
+                          class="sc-gsTCUz jEpOBt"
+                          height="14"
+                          width="14"
+                        >
+                          <svg>
+                            plus.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Create
+                        </span>
+                      </div>
+                    </button>
+                    <button
+                      class="Button-mdtvtf-0 ifPnXw"
+                      data-testid="WalletControls__import-wallet"
+                      type="button"
+                    >
+                      <div
+                        class="flex items-center space-x-2"
+                      >
+                        <div
+                          class="sc-gsTCUz cyuCsN"
+                          height="16"
+                          width="16"
+                        >
+                          <svg>
+                            import.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Import
+                        </span>
+                      </div>
+                    </button>
+                    <button
+                      class="Button-mdtvtf-0 ifPnXw"
+                      data-testid="WalletControls__import-ledger"
+                      type="button"
+                    >
+                      <div
+                        class="flex items-center space-x-2"
+                      >
+                        <div
+                          class="sc-gsTCUz cXMmJt"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Import Ledger
+                        </span>
                       </div>
                     </button>
                   </div>
-                </span>
+                </div>
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-            <div
-              class="flex items-center"
+              class="mt-1"
             >
               <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
+                class="w-full"
+                data-testid="WalletsGrid"
               >
-                <button
-                  class="Button-mdtvtf-0 gVVPUs"
-                  data-testid="navbar__buttons--send"
-                  type="button"
+                <div
+                  class="relative"
                 >
                   <div
-                    class="sc-bdfBwQ iNulIV p-1"
-                    height="18"
-                    width="18"
+                    class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                    style="height: 224px;"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="h-full swiper-wrapper important:z-0 "
+                      style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
+                    >
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px; margin-top: 0px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex relative flex-col justify-between p-4 h-full"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-nowrap"
+                                >
+                                  <div
+                                    aria-label="ARK Devnet"
+                                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz fHxsLl"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                        title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                >
+                                  ARK Wallet 1
+                                </span>
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                33.75089801 DARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                              </span>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px; margin-top: 0px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex relative flex-col justify-between p-4 h-full"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-nowrap"
+                                >
+                                  <div
+                                    aria-label="ARK Devnet"
+                                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                                    data-testid="NetworkIcon-ARK-ark.devnet"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz fHxsLl"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                                        title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                >
+                                  ARK Wallet 2
+                                </span>
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                57.68 DARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                              </span>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 192px; margin-top: 0px;"
+                      >
+                        <div
+                          class="w-64 inline-block w-full"
+                          data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                        >
+                          <div
+                            class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
+                            data-testid="Card"
+                          >
+                            <div
+                              class="flex relative flex-col justify-between p-4 h-full"
+                            >
+                              <div
+                                class="flex items-center space-x-4"
+                              >
+                                <div
+                                  class="-space-x-2 whitespace-nowrap"
+                                >
+                                  <div
+                                    aria-label="ARK"
+                                    class="Circle-uw7h4j-0 JkqUV border-theme-danger-light text-theme-danger-400"
+                                    data-testid="NetworkIcon-ARK-ark.mainnet"
+                                  >
+                                    <div
+                                      class="sc-gsTCUz fHxsLl"
+                                      data-testid="NetworkIcon__icon"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        ark.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                        title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="font-semibold truncate text-theme-secondary-text"
+                                />
+                              </div>
+                              <span
+                                class="mt-auto text-lg font-bold text-theme-text"
+                                data-testid="Amount"
+                              >
+                                50,114.21127898 ARK
+                              </span>
+                              <span
+                                class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+                              >
+                                AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                              </span>
+                            </div>
+                            <div
+                              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
-            <div
-              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
-            <div
-              class="flex overflow-hidden items-center rounded-lg"
-            >
-              <div
-                class="NavigationBar__ButtonWrapper-sc-1qsoskw-1 bvNwuz"
-              >
-                <button
-                  class="Button-mdtvtf-0 gVVPUs"
-                  data-testid="navbar__buttons--receive"
-                  type="button"
-                >
-                  <div
-                    class="sc-bdfBwQ iSzUah p-1"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      qr-code.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-            />
           </div>
+        </div>
+        <div
+          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
+        >
           <div
-            class="flex items-center my-auto mr-4 ml-8"
+            class="container py-16 px-14 mx-auto"
           >
             <div
-              class="text-right"
+              class="flex relative justify-between"
             >
               <div
-                class="text-xs font-semibold text-theme-neutral-700"
+                class="mb-8 text-4xl font-bold"
               >
-                Your balance
+                Transactions History
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                class="mt-6"
+                data-testid="FilterTransactions"
               >
-                <span
-                  data-testid="Amount"
+                <div
+                  class="relative"
                 >
-                  0 BTC
-                </span>
+                  <span
+                    data-testid="dropdown__toggle"
+                  >
+                    <button
+                      class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
+                      data-testid="CollapseToggleButton"
+                    >
+                      <span>
+                        <span
+                          class="text-theme-neutral-500 dark:text-theme-neutral-600"
+                        >
+                          Type: 
+                        </span>
+                        <span
+                          class="text-theme-neutral-700 dark:text-theme-neutral-200"
+                        >
+                          All
+                        </span>
+                      </span>
+                      <span
+                        class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
+                      >
+                        <div
+                          class="sc-gsTCUz jsttWF"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mb-8"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 jZKUHn w-full"
+              >
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0"
+                  data-testid="tabs__tab-button-all"
+                >
+                  All History
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0"
+                  data-testid="tabs__tab-button-received"
+                >
+                  Incoming
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0"
+                  data-testid="tabs__tab-button-sent"
+                >
+                  Outgoing
+                </button>
               </div>
             </div>
             <div
               class="relative"
-            >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="my-0.5 ml-4 -space-x-2 cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
-                  >
-                    <span
-                      class="text-theme-secondary-text dark:text-theme-neutral-800"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="inline-flex relative justify-center items-center align-middle rounded-full"
-                    data-testid="navbar__user--avatar"
-                  >
-                    <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                    >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                      >
-                        JO
-                      </span>
-                    </div>
-                    <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
-                    >
-                      <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex flex-col flex-1 mt-5"
-    >
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
-      >
-        <div
-          class="container py-16 px-14 mx-auto"
-        >
-          <div
-            class="flex justify-between items-center mb-8"
-          >
-            <div
-              class="-mt-1 text-4xl font-bold"
-            >
-              Wallets
-            </div>
-            <div
-              class="text-right"
+              data-testid="TransactionTable"
             >
               <div
-                class="flex justify-end"
-                data-testid="WalletControls"
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                role="table"
               >
-                <div
-                  class="flex items-center pr-5 mr-5 border-r border-theme-primary-contrast dark:border-theme-neutral-800"
+                <table
+                  cellpadding="0"
+                  class="table-auto"
                 >
-                  <div
-                    class="flex items-center space-x-1"
-                  >
-                    <div
-                      class="group"
-                      data-testid="LayoutControls__grid"
+                  <thead>
+                    <tr
+                      class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                      role="row"
                     >
-                      <div
-                        class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
-                        data-testid="LayoutControls__grid--icon"
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
                       >
                         <div
-                          class="sc-bdfBwQ iyevwF"
-                          height="20"
-                          width="20"
+                          class="flex flex-inline align-top "
                         >
-                          <svg>
-                            grid-view.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="group"
-                      data-testid="LayoutControls__list"
-                    >
-                      <div
-                        class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
-                        data-testid="LayoutControls__list--icon"
-                      >
-                        <div
-                          class="sc-bdfBwQ iyevwF"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            list-view.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast dark:border-theme-neutral-800"
-                >
-                  <div
-                    class="relative"
-                  >
-                    <span
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="group"
-                      >
-                        <div
-                          class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
-                        >
-                          <div
-                            class="sc-bdfBwQ eBdiJn"
-                            height="19"
-                            width="17"
-                          >
-                            <svg>
-                              filters.svg
-                            </svg>
+                          <div>
+                            ID
                           </div>
                         </div>
-                      </div>
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="flex space-x-3"
-                >
-                  <button
-                    class="Button-mdtvtf-0 ifPnXw"
-                    data-testid="WalletControls__create-wallet"
-                    type="button"
-                  >
-                    <div
-                      class="flex items-center space-x-2"
-                    >
-                      <div
-                        class="sc-bdfBwQ bfBhNR"
-                        height="14"
-                        width="14"
-                      >
-                        <svg>
-                          plus.svg
-                        </svg>
-                      </div>
-                      <span>
-                        Create
-                      </span>
-                    </div>
-                  </button>
-                  <button
-                    class="Button-mdtvtf-0 ifPnXw"
-                    data-testid="WalletControls__import-wallet"
-                    type="button"
-                  >
-                    <div
-                      class="flex items-center space-x-2"
-                    >
-                      <div
-                        class="sc-bdfBwQ fpbFeh"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          import.svg
-                        </svg>
-                      </div>
-                      <span>
-                        Import
-                      </span>
-                    </div>
-                  </button>
-                  <button
-                    class="Button-mdtvtf-0 ifPnXw"
-                    data-testid="WalletControls__import-ledger"
-                    type="button"
-                  >
-                    <div
-                      class="flex items-center space-x-2"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ledger.svg
-                        </svg>
-                      </div>
-                      <span>
-                        Import Ledger
-                      </span>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mt-1"
-          >
-            <div
-              class="w-full"
-              data-testid="WalletsGrid"
-            >
-              <div
-                class="relative"
-              >
-                <div
-                  class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
-                  style="height: 224px;"
-                >
-                  <div
-                    class="h-full swiper-wrapper important:z-0 "
-                    style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
-                  >
-                    <div
-                      class="swiper-slide"
-                      style="height: 192px; margin-top: 0px;"
-                    >
-                      <div
-                        class="w-64 inline-block w-full"
-                        data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
                       >
                         <div
-                          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
-                          data-testid="Card"
+                          class="flex flex-inline align-top "
                         >
+                          <div>
+                            Date
+                          </div>
                           <div
-                            class="flex relative flex-col justify-between p-4 h-full"
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                            data-testid="table__Sort"
                           >
                             <div
-                              class="flex items-center space-x-4"
+                              class="sc-gsTCUz fJUgCy"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top "
+                        >
+                          <div>
+                            Recipient
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-center"
+                        >
+                          <div>
+                            Info
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                        colspan="1"
+                        data-testid="table__th--4"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-center"
+                        >
+                          <div>
+                            Status
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                        colspan="1"
+                        data-testid="table__th--5"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end"
+                        >
+                          <div>
+                            Amount
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-gsTCUz fJUgCy"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+                        colspan="1"
+                        data-testid="table__th--6"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end float-right"
+                        >
+                          <div>
+                            Currency
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                        >
+                          <a
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            rel="noopener noreferrer"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                          >
+                            <div
+                              class="sc-gsTCUz cXMmJt"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-secondary-text"
+                        >
+                          <span
+                            class="whitespace-nowrap"
+                            data-testid="TransactionRow__timestamp"
+                          >
+                            23 Jul 2020 08:03:20
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        >
+                          <div
+                            class="flex items-center -space-x-1"
+                            data-testid="TransactionRowMode"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                             >
                               <div
-                                class="-space-x-2 whitespace-nowrap"
+                                class="sc-gsTCUz cXMmJt"
+                                data-testid="TransactionRowMode__Received"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  aria-label="ARK Devnet"
-                                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-                                  data-testid="NetworkIcon-ARK-ark.devnet"
-                                >
-                                  <div
-                                    class="sc-bdfBwQ iyevwF"
-                                    data-testid="NetworkIcon__icon"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full"
-                                  >
-                                    <img
-                                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                    />
-                                  </div>
-                                </div>
+                                <svg>
+                                  received.svg
+                                </svg>
                               </div>
-                              <span
-                                class="font-semibold truncate text-theme-secondary-text"
-                              >
-                                ARK Wallet 1
-                              </span>
                             </div>
-                            <span
-                              class="mt-auto text-lg font-bold text-theme-text"
-                              data-testid="Amount"
-                            >
-                              33.75089801 DARK
-                            </span>
-                            <span
-                              class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                            >
-                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                            </span>
-                          </div>
-                          <div
-                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="swiper-slide"
-                      style="height: 192px; margin-top: 0px;"
-                    >
-                      <div
-                        class="w-64 inline-block w-full"
-                        data-testid="WalletCard__D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                      >
-                        <div
-                          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
-                          data-testid="Card"
-                        >
-                          <div
-                            class="flex relative flex-col justify-between p-4 h-full"
-                          >
                             <div
-                              class="flex items-center space-x-4"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                              data-testid="Avatar"
                             >
                               <div
-                                class="-space-x-2 whitespace-nowrap"
+                                class="w-full h-full"
                               >
-                                <div
-                                  aria-label="ARK Devnet"
-                                  class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-                                  data-testid="NetworkIcon-ARK-ark.devnet"
-                                >
-                                  <div
-                                    class="sc-bdfBwQ iyevwF"
-                                    data-testid="NetworkIcon__icon"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full"
-                                  >
-                                    <img
-                                      alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                                      title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                    />
-                                  </div>
-                                </div>
+                                <img
+                                  alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                                  title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                                />
                               </div>
-                              <span
-                                class="font-semibold truncate text-theme-secondary-text"
-                              >
-                                ARK Wallet 2
-                              </span>
                             </div>
-                            <span
-                              class="mt-auto text-lg font-bold text-theme-text"
-                              data-testid="Amount"
-                            >
-                              57.68 DARK
-                            </span>
-                            <span
-                              class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                            >
-                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                            </span>
                           </div>
                           <div
-                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                          />
+                            class="inline-flex items-center"
+                          >
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkh … xfKwSv
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <div
-                      class="swiper-slide"
-                      style="height: 192px; margin-top: 0px;"
-                    >
-                      <div
-                        class="w-64 inline-block w-full"
-                        data-testid="WalletCard__AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
-                      >
+                      </td>
+                      <td>
                         <div
-                          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
-                          data-testid="Card"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
                         >
                           <div
-                            class="flex relative flex-col justify-between p-4 h-full"
+                            class="inline-flex space-x-1 align-middle"
+                            data-testid="TransactionRowInfo"
+                          />
+                        </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        >
+                          <div
+                            class="inline-flex p-1 align-middle"
+                            data-testid="TransactionRowConfirmation"
                           >
                             <div
-                              class="flex items-center space-x-4"
+                              class="sc-gsTCUz gbSRoN text-theme-success"
+                              data-testid="TransactionRowConfirmation__confirmed"
+                              height="22"
+                              width="22"
+                            >
+                              <svg>
+                                status-ok.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end"
+                        >
+                          <div
+                            class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                            color="success"
+                            data-testid="TransactionRowAmount"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              + 400,000 DARK
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        >
+                          <span
+                            class="whitespace-nowrap"
+                            data-testid="TransactionRow__currency"
+                          >
+                            <span
+                              class="text-theme-secondary-text"
+                              data-testid="TransactionRowAmount"
+                            >
+                              0 BTC
+                            </span>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                        >
+                          <a
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            rel="noopener noreferrer"
+                            to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                          >
+                            <div
+                              class="sc-gsTCUz cXMmJt"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-secondary-text"
+                        >
+                          <span
+                            class="whitespace-nowrap"
+                            data-testid="TransactionRow__timestamp"
+                          >
+                            23 Jul 2020 08:01:52
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        >
+                          <div
+                            class="flex items-center -space-x-1"
+                            data-testid="TransactionRowMode"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
                             >
                               <div
-                                class="-space-x-2 whitespace-nowrap"
+                                class="sc-gsTCUz cXMmJt"
+                                data-testid="TransactionRowMode__Received"
+                                height="1em"
+                                width="1em"
                               >
-                                <div
-                                  aria-label="ARK"
-                                  class="Circle-uw7h4j-0 JkqUV border-theme-danger-light text-theme-danger-400"
-                                  data-testid="NetworkIcon-ARK-ark.mainnet"
-                                >
-                                  <div
-                                    class="sc-bdfBwQ iyevwF"
-                                    data-testid="NetworkIcon__icon"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full"
-                                  >
-                                    <img
-                                      alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                      title="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
-                                    />
-                                  </div>
-                                </div>
+                                <svg>
+                                  received.svg
+                                </svg>
                               </div>
-                              <span
-                                class="font-semibold truncate text-theme-secondary-text"
-                              />
                             </div>
-                            <span
-                              class="mt-auto text-lg font-bold text-theme-text"
-                              data-testid="Amount"
+                            <div
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                              data-testid="Avatar"
                             >
-                              50,114.21127898 ARK
-                            </span>
-                            <span
-                              class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-                            >
-                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                            </span>
+                              <div
+                                class="w-full h-full"
+                              >
+                                <img
+                                  alt="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                                  title="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
+                                />
+                              </div>
+                            </div>
                           </div>
                           <div
-                            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                            class="inline-flex items-center"
+                          >
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5ey … bNF53A
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        >
+                          <div
+                            class="inline-flex space-x-1 align-middle"
+                            data-testid="TransactionRowInfo"
                           />
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        >
+                          <div
+                            class="inline-flex p-1 align-middle"
+                            data-testid="TransactionRowConfirmation"
+                          >
+                            <div
+                              class="sc-gsTCUz gbSRoN text-theme-success"
+                              data-testid="TransactionRowConfirmation__confirmed"
+                              height="22"
+                              width="22"
+                            >
+                              <svg>
+                                status-ok.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end"
+                        >
+                          <div
+                            class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                            color="success"
+                            data-testid="TransactionRowAmount"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              + 50,000 DARK
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        >
+                          <span
+                            class="whitespace-nowrap"
+                            data-testid="TransactionRow__currency"
+                          >
+                            <span
+                              class="text-theme-secondary-text"
+                              data-testid="TransactionRowAmount"
+                            >
+                              0 BTC
+                            </span>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                        >
+                          <a
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            rel="noopener noreferrer"
+                            to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                          >
+                            <div
+                              class="sc-gsTCUz cXMmJt"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-secondary-text"
+                        >
+                          <span
+                            class="whitespace-nowrap"
+                            data-testid="TransactionRow__timestamp"
+                          >
+                            23 Jul 2020 08:03:20
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        >
+                          <div
+                            class="flex items-center -space-x-1"
+                            data-testid="TransactionRowMode"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                            >
+                              <div
+                                class="sc-gsTCUz cXMmJt"
+                                data-testid="TransactionRowMode__Received"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  received.svg
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                              data-testid="Avatar"
+                            >
+                              <div
+                                class="w-full h-full"
+                              >
+                                <img
+                                  alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                                  title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="inline-flex items-center"
+                          >
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkh … xfKwSv
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        >
+                          <div
+                            class="inline-flex space-x-1 align-middle"
+                            data-testid="TransactionRowInfo"
+                          />
+                        </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        >
+                          <div
+                            class="inline-flex p-1 align-middle"
+                            data-testid="TransactionRowConfirmation"
+                          >
+                            <div
+                              class="sc-gsTCUz gbSRoN text-theme-success"
+                              data-testid="TransactionRowConfirmation__confirmed"
+                              height="22"
+                              width="22"
+                            >
+                              <svg>
+                                status-ok.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end"
+                        >
+                          <div
+                            class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                            color="success"
+                            data-testid="TransactionRowAmount"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              + 400,000 DARK
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        >
+                          <span
+                            class="whitespace-nowrap"
+                            data-testid="TransactionRow__currency"
+                          >
+                            <span
+                              class="text-theme-secondary-text"
+                              data-testid="TransactionRowAmount"
+                            >
+                              0 BTC
+                            </span>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
+                        >
+                          <a
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            rel="noopener noreferrer"
+                            to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
+                          >
+                            <div
+                              class="sc-gsTCUz cXMmJt"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-secondary-text"
+                        >
+                          <span
+                            class="whitespace-nowrap"
+                            data-testid="TransactionRow__timestamp"
+                          >
+                            23 Jul 2020 08:01:52
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        >
+                          <div
+                            class="flex items-center -space-x-1"
+                            data-testid="TransactionRowMode"
+                          >
+                            <div
+                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                            >
+                              <div
+                                class="sc-gsTCUz cXMmJt"
+                                data-testid="TransactionRowMode__Received"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  received.svg
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                              data-testid="Avatar"
+                            >
+                              <div
+                                class="w-full h-full"
+                              >
+                                <img
+                                  alt="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
+                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                                  title="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="inline-flex items-center"
+                          >
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5ey … bNF53A
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        >
+                          <div
+                            class="inline-flex space-x-1 align-middle"
+                            data-testid="TransactionRowInfo"
+                          />
+                        </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        >
+                          <div
+                            class="inline-flex p-1 align-middle"
+                            data-testid="TransactionRowConfirmation"
+                          >
+                            <div
+                              class="sc-gsTCUz gbSRoN text-theme-success"
+                              data-testid="TransactionRowConfirmation__confirmed"
+                              height="22"
+                              width="22"
+                            >
+                              <svg>
+                                status-ok.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end"
+                        >
+                          <div
+                            class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
+                            color="success"
+                            data-testid="TransactionRowAmount"
+                          >
+                            <span
+                              data-testid="Amount"
+                            >
+                              + 50,000 DARK
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        >
+                          <span
+                            class="whitespace-nowrap"
+                            data-testid="TransactionRow__currency"
+                          >
+                            <span
+                              class="text-theme-secondary-text"
+                              data-testid="TransactionRowAmount"
+                            >
+                              0 BTC
+                            </span>
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex-1"
-      >
-        <div
-          class="container py-16 px-14 mx-auto"
-        >
-          <div
-            class="flex relative justify-between"
-          >
-            <div
-              class="mb-8 text-4xl font-bold"
+            <button
+              class="Button-mdtvtf-0 ifPnXw mt-10 mb-5 w-full"
+              data-testid="transactions__fetch-more-button"
+              type="button"
             >
-              Transactions History
-            </div>
-            <div
-              class="mt-6"
-              data-testid="FilterTransactions"
-            >
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <button
-                    class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral"
-                    data-testid="CollapseToggleButton"
-                  >
-                    <span>
-                      <span
-                        class="text-theme-neutral-500 dark:text-theme-neutral-600"
-                      >
-                        Type: 
-                      </span>
-                      <span
-                        class="text-theme-neutral-700 dark:text-theme-neutral-200"
-                      >
-                        All
-                      </span>
-                    </span>
-                    <span
-                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
-                    >
-                      <div
-                        class="sc-bdfBwQ TENjd"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </button>
-                </span>
-              </div>
-            </div>
+              View More
+            </button>
           </div>
-          <div
-            class="mb-8"
-          >
-            <div
-              class="Tabs__TabList-sc-1lxyvu-1 jZKUHn w-full"
-            >
-              <button
-                aria-selected="true"
-                class="Tabs__TabButton-sc-1lxyvu-0"
-                data-testid="tabs__tab-button-all"
-              >
-                All History
-              </button>
-              <button
-                aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
-                data-testid="tabs__tab-button-received"
-              >
-                Incoming
-              </button>
-              <button
-                aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
-                data-testid="tabs__tab-button-sent"
-              >
-                Outgoing
-              </button>
-            </div>
-          </div>
-          <div
-            class="relative"
-            data-testid="TransactionTable"
-          >
-            <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-              role="table"
-            >
-              <table
-                cellpadding="0"
-                class="table-auto"
-              >
-                <thead>
-                  <tr
-                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-                    role="row"
-                  >
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          ID
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          Date
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          Recipient
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Info
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end"
-                      >
-                        <div>
-                          Amount
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
-                      colspan="1"
-                      data-testid="table__th--6"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end float-right"
-                      >
-                        <div>
-                          Currency
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
-                >
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
-                      >
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="TransactionRow__ID"
-                          rel="noopener noreferrer"
-                          to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
-                        >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              id.svg
-                            </svg>
-                          </div>
-                        </a>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-secondary-text"
-                      >
-                        <span
-                          class="whitespace-nowrap"
-                          data-testid="TransactionRow__timestamp"
-                        >
-                          23 Jul 2020 08:03:20
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
-                      >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
-                        >
-                          <div
-                            class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
-                          >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                received.svg
-                              </svg>
-                            </div>
-                          </div>
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                            data-testid="Avatar"
-                          >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                                title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="inline-flex items-center"
-                        >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D5pVkh … xfKwSv
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-                      >
-                        <div
-                          class="inline-flex space-x-1 align-middle"
-                          data-testid="TransactionRowInfo"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      class="w-16"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-                      >
-                        <div
-                          class="inline-flex p-1 align-middle"
-                          data-testid="TransactionRowConfirmation"
-                        >
-                          <div
-                            class="sc-bdfBwQ iSzUah text-theme-success"
-                            data-testid="TransactionRowConfirmation__confirmed"
-                            height="22"
-                            width="22"
-                          >
-                            <svg>
-                              status-ok.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end"
-                      >
-                        <div
-                          class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-                          color="success"
-                          data-testid="TransactionRowAmount"
-                        >
-                          <span
-                            data-testid="Amount"
-                          >
-                            + 400,000 DARK
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
-                      >
-                        <span
-                          class="whitespace-nowrap"
-                          data-testid="TransactionRow__currency"
-                        >
-                          <span
-                            class="text-theme-secondary-text"
-                            data-testid="TransactionRowAmount"
-                          >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
-                      >
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="TransactionRow__ID"
-                          rel="noopener noreferrer"
-                          to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
-                        >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              id.svg
-                            </svg>
-                          </div>
-                        </a>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-secondary-text"
-                      >
-                        <span
-                          class="whitespace-nowrap"
-                          data-testid="TransactionRow__timestamp"
-                        >
-                          23 Jul 2020 08:01:52
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
-                      >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
-                        >
-                          <div
-                            class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
-                          >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                received.svg
-                              </svg>
-                            </div>
-                          </div>
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                            data-testid="Avatar"
-                          >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                                title="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="inline-flex items-center"
-                        >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            DKY5ey … bNF53A
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-                      >
-                        <div
-                          class="inline-flex space-x-1 align-middle"
-                          data-testid="TransactionRowInfo"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      class="w-16"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-                      >
-                        <div
-                          class="inline-flex p-1 align-middle"
-                          data-testid="TransactionRowConfirmation"
-                        >
-                          <div
-                            class="sc-bdfBwQ iSzUah text-theme-success"
-                            data-testid="TransactionRowConfirmation__confirmed"
-                            height="22"
-                            width="22"
-                          >
-                            <svg>
-                              status-ok.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end"
-                      >
-                        <div
-                          class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-                          color="success"
-                          data-testid="TransactionRowAmount"
-                        >
-                          <span
-                            data-testid="Amount"
-                          >
-                            + 50,000 DARK
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
-                      >
-                        <span
-                          class="whitespace-nowrap"
-                          data-testid="TransactionRow__currency"
-                        >
-                          <span
-                            class="text-theme-secondary-text"
-                            data-testid="TransactionRowAmount"
-                          >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
-                      >
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="TransactionRow__ID"
-                          rel="noopener noreferrer"
-                          to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
-                        >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              id.svg
-                            </svg>
-                          </div>
-                        </a>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-secondary-text"
-                      >
-                        <span
-                          class="whitespace-nowrap"
-                          data-testid="TransactionRow__timestamp"
-                        >
-                          23 Jul 2020 08:03:20
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
-                      >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
-                        >
-                          <div
-                            class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
-                          >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                received.svg
-                              </svg>
-                            </div>
-                          </div>
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                            data-testid="Avatar"
-                          >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                                title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="inline-flex items-center"
-                        >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D5pVkh … xfKwSv
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-                      >
-                        <div
-                          class="inline-flex space-x-1 align-middle"
-                          data-testid="TransactionRowInfo"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      class="w-16"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-                      >
-                        <div
-                          class="inline-flex p-1 align-middle"
-                          data-testid="TransactionRowConfirmation"
-                        >
-                          <div
-                            class="sc-bdfBwQ iSzUah text-theme-success"
-                            data-testid="TransactionRowConfirmation__confirmed"
-                            height="22"
-                            width="22"
-                          >
-                            <svg>
-                              status-ok.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end"
-                      >
-                        <div
-                          class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-                          color="success"
-                          data-testid="TransactionRowAmount"
-                        >
-                          <span
-                            data-testid="Amount"
-                          >
-                            + 400,000 DARK
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
-                      >
-                        <span
-                          class="whitespace-nowrap"
-                          data-testid="TransactionRow__currency"
-                        >
-                          <span
-                            class="text-theme-secondary-text"
-                            data-testid="TransactionRowAmount"
-                          >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ"
-                      >
-                        <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                          data-testid="TransactionRow__ID"
-                          rel="noopener noreferrer"
-                          to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
-                        >
-                          <div
-                            class="sc-bdfBwQ fPrsah"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              id.svg
-                            </svg>
-                          </div>
-                        </a>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL text-theme-secondary-text"
-                      >
-                        <span
-                          class="whitespace-nowrap"
-                          data-testid="TransactionRow__timestamp"
-                        >
-                          23 Jul 2020 08:01:52
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
-                      >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
-                        >
-                          <div
-                            class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
-                          >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                received.svg
-                              </svg>
-                            </div>
-                          </div>
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                            data-testid="Avatar"
-                          >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                                title="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="inline-flex items-center"
-                        >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            DKY5ey … bNF53A
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-                      >
-                        <div
-                          class="inline-flex space-x-1 align-middle"
-                          data-testid="TransactionRowInfo"
-                        />
-                      </div>
-                    </td>
-                    <td
-                      class="w-16"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
-                      >
-                        <div
-                          class="inline-flex p-1 align-middle"
-                          data-testid="TransactionRowConfirmation"
-                        >
-                          <div
-                            class="sc-bdfBwQ iSzUah text-theme-success"
-                            data-testid="TransactionRowConfirmation__confirmed"
-                            height="22"
-                            width="22"
-                          >
-                            <svg>
-                              status-ok.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end"
-                      >
-                        <div
-                          class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-                          color="success"
-                          data-testid="TransactionRowAmount"
-                        >
-                          <span
-                            data-testid="Amount"
-                          >
-                            + 50,000 DARK
-                          </span>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
-                      >
-                        <span
-                          class="whitespace-nowrap"
-                          data-testid="TransactionRow__currency"
-                        >
-                          <span
-                            class="text-theme-secondary-text"
-                            data-testid="TransactionRowAmount"
-                          >
-                            0 BTC
-                          </span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <button
-            class="Button-mdtvtf-0 ifPnXw mt-10 mb-5 w-full"
-            data-testid="transactions__fetch-more-button"
-            type="button"
-          >
-            View More
-          </button>
         </div>
       </div>
     </div>

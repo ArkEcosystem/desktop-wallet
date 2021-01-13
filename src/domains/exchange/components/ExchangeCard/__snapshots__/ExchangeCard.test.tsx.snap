@@ -2,101 +2,107 @@
 
 exports[`AddExchangeCard should render 1`] = `
 <div>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun flex col-span-2"
-    data-testid="Card"
-  >
+  <div>
     <div
-      class="flex items-center p-2 font-semibold text-theme-primary"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun flex col-span-2"
+      data-testid="Card"
     >
       <div
-        class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
-        height="1em"
-        width="1em"
+        class="flex items-center p-2 font-semibold text-theme-primary"
       >
-        <svg>
-          plus.svg
-        </svg>
+        <div
+          class="sc-gsTCUz cXMmJt p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+          height="1em"
+          width="1em"
+        >
+          <svg>
+            plus.svg
+          </svg>
+        </div>
+        Add Exchange
       </div>
-      Add Exchange
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
     </div>
-    <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
   </div>
 </div>
 `;
 
 exports[`BlankExchangeCard should render when blank 1`] = `
 <div>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
-    data-testid="Card"
-  >
+  <div>
     <div
-      class="flex items-center p-2 font-semibold text-theme-primary-contrast"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+      data-testid="Card"
     >
       <div
-        class="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-contrast"
+        class="flex items-center p-2 font-semibold text-theme-primary-contrast"
+      >
+        <div
+          class="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-contrast"
+        />
+        Exchange Name
+      </div>
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       />
-      Exchange Name
     </div>
-    <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
   </div>
 </div>
 `;
 
 exports[`ExchangeCard should render 1`] = `
 <div>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
-    data-testid="Card"
-  >
+  <div>
     <div
-      class="flex items-center p-2 font-semibold text-theme-primary"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+      data-testid="Card"
     >
       <div
-        class="mr-4"
+        class="flex items-center p-2 font-semibold text-theme-primary"
       >
         <div
-          class="w-12 h-12"
+          class="mr-4"
         >
-          <svg>
-            changenow-logo.svg
-          </svg>
+          <div
+            class="w-12 h-12"
+          >
+            <svg>
+              changenow-logo.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="truncate"
+        >
+          Test Exchange
         </div>
       </div>
       <div
-        class="truncate"
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
       >
-        Test Exchange
-      </div>
-    </div>
-    <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    >
-      <div
-        class="relative"
-      >
-        <span
-          data-testid="dropdown__toggle"
+        <div
+          class="relative"
         >
-          <div
-            class="flex overflow-hidden justify-center w-4"
+          <span
+            data-testid="dropdown__toggle"
           >
             <div
-              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-              height="1em"
-              width="1em"
+              class="flex overflow-hidden justify-center w-4"
             >
-              <svg>
-                settings.svg
-              </svg>
+              <div
+                class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
             </div>
-          </div>
-        </span>
+          </span>
+        </div>
       </div>
     </div>
   </div>

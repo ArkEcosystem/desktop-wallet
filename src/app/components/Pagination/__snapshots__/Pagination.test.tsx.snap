@@ -2,789 +2,807 @@
 
 exports[`Pagination should handle first page click properly 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__first"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__first"
+        type="button"
       >
-        <span>
-          ...
-        </span>
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        99
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        100
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          99
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          100
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          101
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          102
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          103
+        </div>
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        101
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__last"
+        type="button"
       >
-        102
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        103
-      </div>
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
-      >
-        <span>
-          ...
-        </span>
-      </div>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle last page click properly 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        1
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          1
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          2
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          3
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        2
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__last"
+        type="button"
       >
-        3
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        4
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        5
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
-      >
-        <span>
-          ...
-        </span>
-      </div>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle next page click properly 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        1
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        2
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          1
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          2
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          3
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        3
-      </div>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle page selection properly 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        1
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          1
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          2
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          3
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        2
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        3
-      </div>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle previous page click properly 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__first"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__first"
+        type="button"
       >
-        <span>
-          ...
-        </span>
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        4
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        5
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          8
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          9
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          10
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        8
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
-      >
-        9
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        10
-      </div>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (first page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        1
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          1
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          2
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          3
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        2
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__last"
+        type="button"
       >
-        3
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        4
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        5
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
-      >
-        <span>
-          ...
-        </span>
-      </div>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (second page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        1
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        2
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          1
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          2
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          3
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        3
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__last"
+        type="button"
       >
-        4
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        5
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
-      >
-        <span>
-          ...
-        </span>
-      </div>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (third page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        1
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        2
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          1
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          2
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          3
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        3
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__last"
+        type="button"
       >
-        4
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        5
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
-      >
-        <span>
-          ...
-        </span>
-      </div>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include the last page (last page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__first"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__first"
+        type="button"
       >
-        <span>
-          ...
-        </span>
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        4
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        5
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        8
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        9
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
-      >
-        10
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          8
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          9
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          10
+        </div>
       </div>
     </div>
   </div>
@@ -793,291 +811,297 @@ exports[`Pagination should not render first button if pagination buttons include
 
 exports[`Pagination should not render first button if pagination buttons include the last page (second-to-last page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__first"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__first"
+        type="button"
       >
-        <span>
-          ...
-        </span>
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        4
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        5
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          8
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          9
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          10
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        8
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
-      >
-        9
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        10
-      </div>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include the last page (third-to-last page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__first"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__first"
+        type="button"
       >
-        <span>
-          ...
-        </span>
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        4
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        5
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          8
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          9
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          10
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
-      >
-        8
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        9
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        10
-      </div>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render next button on last page 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__first"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-first.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ TENjd mr-2"
-        height="10"
-        width="10"
-      >
-        <svg>
-          back.svg
-        </svg>
-      </div>
-      Previous
-    </button>
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__first"
+        type="button"
       >
-        <span>
-          ...
-        </span>
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__previous"
+        type="button"
       >
-        4
-      </div>
+        <div
+          class="sc-gsTCUz jsttWF mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </button>
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        5
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        8
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        9
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
-      >
-        10
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          8
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          9
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          10
+        </div>
       </div>
     </div>
   </div>
@@ -1086,177 +1110,183 @@ exports[`Pagination should not render next button on last page 1`] = `
 
 exports[`Pagination should not render previous buttons on first page 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        1
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          1
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          2
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          3
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          4
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          5
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          6
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          7
+        </div>
+        <div
+          class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+        >
+          <span>
+            ...
+          </span>
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        2
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__last"
+        type="button"
       >
-        3
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        4
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        5
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
-      >
-        <span>
-          ...
-        </span>
-      </div>
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__last"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should render 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 hyaceY"
-    data-testid="Pagination"
-  >
+  <div>
     <div
-      class="flex px-2 rounded bg-theme-primary-contrast"
+      class="Pagination__Wrapper-x7juhx-0 hyaceY"
+      data-testid="Pagination"
     >
       <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        class="flex px-2 rounded bg-theme-primary-contrast"
       >
-        1
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+        >
+          1
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          2
+        </div>
+        <div
+          class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+        >
+          3
+        </div>
       </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+      <button
+        class="Button-mdtvtf-0 ifPnXw"
+        data-testid="Pagination__next"
+        type="button"
       >
-        2
-      </div>
-      <div
-        class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
-      >
-        3
-      </div>
+        Next
+        <div
+          class="sc-gsTCUz cmyhNZ ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      Next
-      <div
-        class="sc-bdfBwQ fdfkzt ml-2"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Pagination should render condensed 1`] = `
 <DocumentFragment>
-  <div
-    class="CompactPagination__Wrapper-sc-19zmly1-0 dfaxFN"
-    data-testid="Pagination"
-  >
+  <div>
     <div
-      class="flex items-center py-3 px-5 rounded bg-theme-primary-contrast text-theme-primary"
+      class="CompactPagination__Wrapper-sc-19zmly1-0 dfaxFN"
+      data-testid="Pagination"
     >
-      Page 1 of 3
+      <div
+        class="flex items-center py-3 px-5 rounded bg-theme-primary-contrast text-theme-primary"
+      >
+        Page 1 of 3
+      </div>
+      <button
+        class="Button-mdtvtf-0 ifPnXw w-8"
+        data-testid="CompactPagination__next"
+        type="button"
+      >
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </button>
+      <button
+        class="Button-mdtvtf-0 ifPnXw w-8"
+        data-testid="CompactPagination__last"
+        type="button"
+      >
+        <div
+          class="sc-gsTCUz cmyhNZ"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </button>
     </div>
-    <button
-      class="Button-mdtvtf-0 ifPnXw w-8"
-      data-testid="CompactPagination__next"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          forward.svg
-        </svg>
-      </div>
-    </button>
-    <button
-      class="Button-mdtvtf-0 ifPnXw w-8"
-      data-testid="CompactPagination__last"
-      type="button"
-    >
-      <div
-        class="sc-bdfBwQ fdfkzt"
-        height="12"
-        width="12"
-      >
-        <svg>
-          pagination-last.svg
-        </svg>
-      </div>
-    </button>
   </div>
 </DocumentFragment>
 `;

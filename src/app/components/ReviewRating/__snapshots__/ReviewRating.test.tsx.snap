@@ -2,102 +2,108 @@
 
 exports[`ReviewRating should render 1`] = `
 <DocumentFragment>
-  <div
-    class="flex"
-    data-testid="ReviewRating"
-  >
+  <div>
     <div
-      class="relative my-auto"
+      class="flex"
+      data-testid="ReviewRating"
     >
       <div
-        class="overflow-hidden absolute"
-        style="width: 12.5%;"
+        class="relative my-auto"
       >
+        <div
+          class="overflow-hidden absolute"
+          style="width: 12.5%;"
+        >
+          <svg
+            class="text-theme-warning-400 w-5"
+          >
+            star.svg
+          </svg>
+        </div>
         <svg
-          class="text-theme-warning-400 w-5"
+          class="text-theme-neutral w-5"
         >
           star.svg
         </svg>
       </div>
-      <svg
-        class="text-theme-neutral w-5"
+      <span
+        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
       >
-        star.svg
-      </svg>
+        1.5
+      </span>
     </div>
-    <span
-      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-    >
-      1.5
-    </span>
   </div>
 </DocumentFragment>
 `;
 
 exports[`ReviewRating should render dash if no rating 1`] = `
 <DocumentFragment>
-  <div
-    class="flex"
-    data-testid="ReviewRating"
-  >
+  <div>
     <div
-      class="relative my-auto"
+      class="flex"
+      data-testid="ReviewRating"
     >
-      <svg
-        class="text-theme-neutral w-5"
+      <div
+        class="relative my-auto"
       >
-        star.svg
-      </svg>
+        <svg
+          class="text-theme-neutral w-5"
+        >
+          star.svg
+        </svg>
+      </div>
+      <span
+        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+      >
+        -
+      </span>
+      <span
+        class="text-theme-neutral"
+      >
+        /5
+      </span>
     </div>
-    <span
-      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-    >
-      -
-    </span>
-    <span
-      class="text-theme-neutral"
-    >
-      /5
-    </span>
   </div>
 </DocumentFragment>
 `;
 
 exports[`ReviewRating should render with total 1`] = `
 <DocumentFragment>
-  <div
-    class="flex"
-    data-testid="ReviewRating"
-  >
+  <div>
     <div
-      class="relative my-auto"
+      class="flex"
+      data-testid="ReviewRating"
     >
       <div
-        class="overflow-hidden absolute"
-        style="width: 12.5%;"
+        class="relative my-auto"
       >
+        <div
+          class="overflow-hidden absolute"
+          style="width: 12.5%;"
+        >
+          <svg
+            class="text-theme-warning-400 w-5"
+          >
+            star.svg
+          </svg>
+        </div>
         <svg
-          class="text-theme-warning-400 w-5"
+          class="text-theme-neutral w-5"
         >
           star.svg
         </svg>
       </div>
-      <svg
-        class="text-theme-neutral w-5"
+      <span
+        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
       >
-        star.svg
-      </svg>
+        1.5
+      </span>
+      <span
+        class="text-theme-neutral"
+      >
+        /5
+      </span>
     </div>
-    <span
-      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-    >
-      1.5
-    </span>
-    <span
-      class="text-theme-neutral"
-    >
-      /5
-    </span>
   </div>
 </DocumentFragment>
 `;

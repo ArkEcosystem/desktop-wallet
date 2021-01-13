@@ -2,323 +2,325 @@
 
 exports[`RecipientList should render condensed variant 1`] = `
 <div>
-  <div
-    class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
-  >
+  <div>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-      role="table"
+      class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
     >
-      <table
-        cellpadding="0"
-        class="table-auto"
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+        role="table"
       >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Avatar
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Address
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Amount
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Action
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
+          <thead>
+            <tr
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+              role="row"
+            >
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Avatar
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Address
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Amount
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Action
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
           >
-            <td
-              class="py-4 w-12"
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
-                data-testid="Avatar"
+              <td
+                class="py-4 w-12"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                    title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-4"
-            >
-              <div
-                class="max-w-lg"
+              </td>
+              <td
+                class="py-4"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="max-w-lg"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 1
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-4 text-right"
+              >
+                <div
+                  class="Label-sc-1tj9hzr-0 ganlOQ"
+                  color="danger"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Amount"
                   >
-                    Recipient 1
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
+                    + 0.000001 ARK
                   </span>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-4 text-right"
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
             >
-              <div
-                class="Label-sc-1tj9hzr-0 ganlOQ"
-                color="danger"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-4 w-12"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
-                data-testid="Avatar"
+              <td
+                class="py-4 w-12"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-4"
-            >
-              <div
-                class="max-w-lg"
+              </td>
+              <td
+                class="py-4"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="max-w-lg"
                 >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                  <div
+                    class="inline-flex items-center"
                   >
-                    Recipient 2
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
-                  </span>
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 2
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-4 text-right"
-            >
-              <div
-                class="Label-sc-1tj9hzr-0 ganlOQ"
-                color="danger"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-4 w-12"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
-                data-testid="Avatar"
+              </td>
+              <td
+                class="py-4 text-right"
               >
                 <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-4"
-            >
-              <div
-                class="max-w-lg"
-              >
-                <div
-                  class="inline-flex items-center"
+                  class="Label-sc-1tj9hzr-0 ganlOQ"
+                  color="danger"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Amount"
                   >
-                    Recipient 3
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    + 0.000001 ARK
                   </span>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-4 text-right"
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
             >
-              <div
-                class="Label-sc-1tj9hzr-0 ganlOQ"
-                color="danger"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-4 w-12"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
-                data-testid="Avatar"
+              <td
+                class="py-4 w-12"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-4"
-            >
-              <div
-                class="max-w-lg"
+              </td>
+              <td
+                class="py-4"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="max-w-lg"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 3
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-4 text-right"
+              >
+                <div
+                  class="Label-sc-1tj9hzr-0 ganlOQ"
+                  color="danger"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    data-testid="Amount"
                   >
-                    FAhFJK … SJKDFJ
+                    + 0.000001 ARK
                   </span>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-4 text-right"
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
             >
-              <div
-                class="Label-sc-1tj9hzr-0 ganlOQ"
-                color="danger"
+              <td
+                class="py-4 w-12"
               >
-                <span
-                  data-testid="Amount"
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jIHa-dg"
+                  data-testid="Avatar"
                 >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-4"
+              >
+                <div
+                  class="max-w-lg"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FAhFJK … SJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-4 text-right"
+              >
+                <div
+                  class="Label-sc-1tj9hzr-0 ganlOQ"
+                  color="danger"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    + 0.000001 ARK
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
@@ -326,475 +328,477 @@ exports[`RecipientList should render condensed variant 1`] = `
 
 exports[`RecipientList should render editable 1`] = `
 <div>
-  <div
-    class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
-  >
+  <div>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-      role="table"
+      class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
     >
-      <table
-        cellpadding="0"
-        class="table-auto"
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+        role="table"
       >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Avatar
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Address
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Amount
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Action
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
+          <thead>
+            <tr
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+              role="row"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
               >
                 <div
-                  class="w-full h-full"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <img
-                    alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                    title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  1
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
-                >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Recipient 1
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <span>
-                  Amount
-                </span>
-              </div>
-              <div
-                class="font-bold text-right text-theme-neutral-800"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-6 w-20 text-right"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="recipient-list__remove-recipient"
-                type="button"
-              >
-                <div
-                  class="py-1"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
+                  <div>
+                    Avatar
                   </div>
                 </div>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
               >
                 <div
-                  class="w-full h-full"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <img
-                    alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  2
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
-                >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Recipient 2
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <span>
-                  Amount
-                </span>
-              </div>
-              <div
-                class="font-bold text-right text-theme-neutral-800"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-6 w-20 text-right"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="recipient-list__remove-recipient"
-                type="button"
-              >
-                <div
-                  class="py-1"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
+                  <div>
+                    Address
                   </div>
                 </div>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
               >
                 <div
-                  class="w-full h-full"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <img
-                    alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  3
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
-                >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Recipient 3
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <span>
-                  Amount
-                </span>
-              </div>
-              <div
-                class="font-bold text-right text-theme-neutral-800"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-6 w-20 text-right"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="recipient-list__remove-recipient"
-                type="button"
-              >
-                <div
-                  class="py-1"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
+                  <div>
+                    Amount
                   </div>
                 </div>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--3"
+                role="columnheader"
               >
                 <div
-                  class="w-full h-full"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <img
-                    alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  4
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
-                >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FAhFJK … SJKDFJ
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <span>
-                  Amount
-                </span>
-              </div>
-              <div
-                class="font-bold text-right text-theme-neutral-800"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-            <td
-              class="py-6 w-20 text-right"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="recipient-list__remove-recipient"
-                type="button"
-              >
-                <div
-                  class="py-1"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
+                  <div>
+                    Action
                   </div>
                 </div>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    1
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 1
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                >
+                  <span>
+                    Amount
+                  </span>
+                </div>
+                <div
+                  class="font-bold text-right text-theme-neutral-800"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    + 0.000001 ARK
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-6 w-20 text-right"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="recipient-list__remove-recipient"
+                  type="button"
+                >
+                  <div
+                    class="py-1"
+                  >
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    2
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 2
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                >
+                  <span>
+                    Amount
+                  </span>
+                </div>
+                <div
+                  class="font-bold text-right text-theme-neutral-800"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    + 0.000001 ARK
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-6 w-20 text-right"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="recipient-list__remove-recipient"
+                  type="button"
+                >
+                  <div
+                    class="py-1"
+                  >
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    3
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 3
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                >
+                  <span>
+                    Amount
+                  </span>
+                </div>
+                <div
+                  class="font-bold text-right text-theme-neutral-800"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    + 0.000001 ARK
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-6 w-20 text-right"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="recipient-list__remove-recipient"
+                  type="button"
+                >
+                  <div
+                    class="py-1"
+                  >
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    4
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FAhFJK … SJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                >
+                  <span>
+                    Amount
+                  </span>
+                </div>
+                <div
+                  class="font-bold text-right text-theme-neutral-800"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    + 0.000001 ARK
+                  </span>
+                </div>
+              </td>
+              <td
+                class="py-6 w-20 text-right"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="recipient-list__remove-recipient"
+                  type="button"
+                >
+                  <div
+                    class="py-1"
+                  >
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
@@ -802,369 +806,371 @@ exports[`RecipientList should render editable 1`] = `
 
 exports[`RecipientList should render non-editable 1`] = `
 <div>
-  <div
-    class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
-  >
+  <div>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-      role="table"
+      class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
     >
-      <table
-        cellpadding="0"
-        class="table-auto"
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+        role="table"
       >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Avatar
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Address
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Amount
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
+          <thead>
+            <tr
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+              role="row"
+            >
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Avatar
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Address
+                  </div>
+                </div>
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
+              >
+                <div
+                  class="flex flex-inline align-top hidden"
+                >
+                  <div>
+                    Amount
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
           >
-            <td
-              class="py-6 w-14"
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              <td
+                class="py-6 w-14"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                    title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  1
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
+              </td>
+              <td
+                class="py-6"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
                 >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Recipient 1
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
+                  <span>
+                    Recipient
+                     #
+                    1
                   </span>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <span>
-                  Amount
-                </span>
-              </div>
-              <div
-                class="font-bold text-right text-theme-neutral-800"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
                 <div
-                  class="w-full h-full"
+                  class="max-w-sm"
                 >
-                  <img
-                    alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 1
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  2
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
+              </td>
+              <td
+                class="py-6"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="mb-1 text-sm font-semibold text-right text-theme-neutral"
                 >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Recipient 2
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                  <span>
+                    Amount
                   </span>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <span>
-                  Amount
-                </span>
-              </div>
-              <div
-                class="font-bold text-right text-theme-neutral-800"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
                 <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  3
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
+                  class="font-bold text-right text-theme-neutral-800"
                 >
                   <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Amount"
                   >
-                    Recipient 3
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    + 0.000001 ARK
                   </span>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
             >
-              <div
-                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <span>
-                  Amount
-                </span>
-              </div>
-              <div
-                class="font-bold text-right text-theme-neutral-800"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              <td
+                class="py-6 w-14"
               >
                 <div
-                  class="w-full h-full"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
                 >
-                  <img
-                    alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  4
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
+              </td>
+              <td
+                class="py-6"
               >
                 <div
-                  class="inline-flex items-center"
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FAhFJK … SJKDFJ
+                  <span>
+                    Recipient
+                     #
+                    2
                   </span>
                 </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <span>
-                  Amount
-                </span>
-              </div>
-              <div
-                class="font-bold text-right text-theme-neutral-800"
-              >
-                <span
-                  data-testid="Amount"
+                <div
+                  class="max-w-sm"
                 >
-                  + 0.000001 ARK
-                </span>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 2
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                >
+                  <span>
+                    Amount
+                  </span>
+                </div>
+                <div
+                  class="font-bold text-right text-theme-neutral-800"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    + 0.000001 ARK
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    3
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 3
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                >
+                  <span>
+                    Amount
+                  </span>
+                </div>
+                <div
+                  class="font-bold text-right text-theme-neutral-800"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    + 0.000001 ARK
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    4
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FAhFJK … SJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                >
+                  <span>
+                    Amount
+                  </span>
+                </div>
+                <div
+                  class="font-bold text-right text-theme-neutral-800"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    + 0.000001 ARK
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
@@ -1172,381 +1178,383 @@ exports[`RecipientList should render non-editable 1`] = `
 
 exports[`RecipientList should render without amount column 1`] = `
 <div>
-  <div
-    class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
-  >
+  <div>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-      role="table"
+      class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
     >
-      <table
-        cellpadding="0"
-        class="table-auto"
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+        role="table"
       >
-        <thead>
-          <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-            role="row"
-          >
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Avatar
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--1"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Address
-                </div>
-              </div>
-            </th>
-            <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-              colspan="1"
-              data-testid="table__th--2"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top hidden"
-              >
-                <div>
-                  Action
-                </div>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          role="rowgroup"
+        <table
+          cellpadding="0"
+          class="table-auto"
         >
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
+          <thead>
+            <tr
+              class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+              role="row"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--0"
+                role="columnheader"
               >
                 <div
-                  class="w-full h-full"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <img
-                    alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                    title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  1
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
-                >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Recipient 1
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6 w-20 text-right"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="recipient-list__remove-recipient"
-                type="button"
-              >
-                <div
-                  class="py-1"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
+                  <div>
+                    Avatar
                   </div>
                 </div>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--1"
+                role="columnheader"
               >
                 <div
-                  class="w-full h-full"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <img
-                    alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  2
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
-                >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Recipient 2
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6 w-20 text-right"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="recipient-list__remove-recipient"
-                type="button"
-              >
-                <div
-                  class="py-1"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
+                  <div>
+                    Address
                   </div>
                 </div>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
-          >
-            <td
-              class="py-6 w-14"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              </th>
+              <th
+                class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                colspan="1"
+                data-testid="table__th--2"
+                role="columnheader"
               >
                 <div
-                  class="w-full h-full"
+                  class="flex flex-inline align-top hidden"
                 >
-                  <img
-                    alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  3
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
-                >
-                  <span
-                    class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    Recipient 3
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6 w-20 text-right"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="recipient-list__remove-recipient"
-                type="button"
-              >
-                <div
-                  class="py-1"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      trash.svg
-                    </svg>
+                  <div>
+                    Action
                   </div>
                 </div>
-              </button>
-            </td>
-          </tr>
-          <tr
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
-            data-testid="recipient-list__recipient-list-item"
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            role="rowgroup"
           >
-            <td
-              class="py-6 w-14"
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
             >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
+              <td
+                class="py-6 w-14"
               >
                 <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                    title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                  />
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6"
-            >
-              <div
-                class="mb-1 text-sm font-semibold text-theme-neutral"
-              >
-                <span>
-                  Recipient
-                   #
-                  4
-                </span>
-              </div>
-              <div
-                class="max-w-sm"
-              >
-                <div
-                  class="inline-flex items-center"
-                >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="py-6 w-20 text-right"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="recipient-list__remove-recipient"
-                type="button"
-              >
-                <div
-                  class="py-1"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
+                    class="w-full h-full"
                   >
-                    <svg>
-                      trash.svg
-                    </svg>
+                    <img
+                      alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
                   </div>
                 </div>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    1
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 1
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6 w-20 text-right"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="recipient-list__remove-recipient"
+                  type="button"
+                >
+                  <div
+                    class="py-1"
+                  >
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    2
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 2
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6 w-20 text-right"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="recipient-list__remove-recipient"
+                  type="button"
+                >
+                  <div
+                    class="py-1"
+                  >
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    3
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                      data-testid="address__wallet-name"
+                    >
+                      Recipient 3
+                    </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6 w-20 text-right"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="recipient-list__remove-recipient"
+                  type="button"
+                >
+                  <div
+                    class="py-1"
+                  >
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </td>
+            </tr>
+            <tr
+              class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+              data-testid="recipient-list__recipient-list-item"
+            >
+              <td
+                class="py-6 w-14"
+              >
+                <div
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="w-full h-full"
+                  >
+                    <img
+                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
+                    />
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6"
+              >
+                <div
+                  class="mb-1 text-sm font-semibold text-theme-neutral"
+                >
+                  <span>
+                    Recipient
+                     #
+                    4
+                  </span>
+                </div>
+                <div
+                  class="max-w-sm"
+                >
+                  <div
+                    class="inline-flex items-center"
+                  >
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
+                    </span>
+                  </div>
+                </div>
+              </td>
+              <td
+                class="py-6 w-20 text-right"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="recipient-list__remove-recipient"
+                  type="button"
+                >
+                  <div
+                    class="py-1"
+                  >
+                    <div
+                      class="sc-gsTCUz cXMmJt"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        trash.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

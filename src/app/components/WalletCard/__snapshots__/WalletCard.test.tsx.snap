@@ -2,112 +2,114 @@
 
 exports[`Wallet Card should render 1`] = `
 <div>
-  <div
-    class="w-64 inline-block undefined"
-    data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
-      data-testid="Card"
+      class="w-64 inline-block undefined"
+      data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
     >
       <div
-        class="flex relative flex-col justify-between p-4 h-full"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
+        data-testid="Card"
       >
         <div
-          class="flex items-center space-x-4"
+          class="flex relative flex-col justify-between p-4 h-full"
         >
           <div
-            class="-space-x-2 whitespace-nowrap"
+            class="flex items-center space-x-4"
           >
             <div
-              aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-ark.devnet"
+              class="-space-x-2 whitespace-nowrap"
             >
               <div
-                class="sc-bdfBwQ iyevwF"
-                data-testid="NetworkIcon__icon"
-                height="20"
-                width="20"
+                aria-label="ARK Devnet"
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                data-testid="NetworkIcon-ARK-ark.devnet"
               >
-                <svg>
-                  ark.svg
-                </svg>
+                <div
+                  class="sc-gsTCUz fHxsLl"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
               </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-              data-testid="Avatar"
-            >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="Avatar"
               >
-                <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
               </div>
             </div>
+            <span
+              class="font-semibold truncate text-theme-secondary-text"
+            >
+              ARK Wallet 1
+            </span>
           </div>
           <span
-            class="font-semibold truncate text-theme-secondary-text"
+            class="mt-auto text-lg font-bold text-theme-text"
+            data-testid="Amount"
           >
-            ARK Wallet 1
+            33.75089801 DARK
+          </span>
+          <span
+            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+          >
+            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
         </div>
-        <span
-          class="mt-auto text-lg font-bold text-theme-text"
-          data-testid="Amount"
-        >
-          33.75089801 DARK
-        </span>
-        <span
-          class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
         <div
-          class="inline-block p-1 text-theme-neutral-600"
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
         >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-neutral-600"
           >
-            <svg>
-              ledger.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                ledger.svg
+              </svg>
+            </div>
           </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-warning-400"
-        >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-warning-400"
           >
-            <svg>
-              star.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                star.svg
+              </svg>
+            </div>
           </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-neutral-600"
-        >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-neutral-600"
           >
-            <svg>
-              multisig.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                multisig.svg
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -118,41 +120,43 @@ exports[`Wallet Card should render 1`] = `
 
 exports[`Wallet Card should render blank 1`] = `
 <div>
-  <div
-    class="w-64 inline-block undefined"
-    data-testid="WalletCard__blank"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun h-48"
-      data-testid="Card"
+      class="w-64 inline-block undefined"
+      data-testid="WalletCard__blank"
     >
       <div
-        class="flex flex-col justify-between p-4 h-full"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun h-48"
+        data-testid="Card"
       >
         <div
-          class="flex -space-x-2"
+          class="flex flex-col justify-between p-4 h-full"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
-          />
+            class="flex -space-x-2"
+          >
+            <div
+              class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+            />
+            <div
+              class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+            />
+          </div>
           <div
-            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
-          />
+            class="mt-auto text-lg font-bold text-theme-primary-contrast dark:text-theme-neutral-800"
+          >
+            Balance
+          </div>
+          <span
+            class="mt-1 text-xs font-semibold truncate text-theme-primary-contrast dark:text-theme-neutral-800"
+          >
+            Address
+          </span>
         </div>
         <div
-          class="mt-auto text-lg font-bold text-theme-primary-contrast dark:text-theme-neutral-800"
-        >
-          Balance
-        </div>
-        <span
-          class="mt-1 text-xs font-semibold truncate text-theme-primary-contrast dark:text-theme-neutral-800"
-        >
-          Address
-        </span>
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        />
       </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
     </div>
   </div>
 </div>
@@ -160,134 +164,136 @@ exports[`Wallet Card should render blank 1`] = `
 
 exports[`Wallet Card should render with actions 1`] = `
 <div>
-  <div
-    class="w-64 inline-block undefined"
-    data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
-      data-testid="Card"
+      class="w-64 inline-block undefined"
+      data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
     >
       <div
-        class="flex relative flex-col justify-between p-4 h-full"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
+        data-testid="Card"
       >
         <div
-          class="flex items-center space-x-4"
+          class="flex relative flex-col justify-between p-4 h-full"
         >
           <div
-            class="-space-x-2 whitespace-nowrap"
+            class="flex items-center space-x-4"
           >
             <div
-              aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-ark.devnet"
+              class="-space-x-2 whitespace-nowrap"
             >
               <div
-                class="sc-bdfBwQ iyevwF"
-                data-testid="NetworkIcon__icon"
-                height="20"
-                width="20"
+                aria-label="ARK Devnet"
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                data-testid="NetworkIcon-ARK-ark.devnet"
               >
-                <svg>
-                  ark.svg
-                </svg>
+                <div
+                  class="sc-gsTCUz fHxsLl"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
               </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-              data-testid="Avatar"
-            >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="Avatar"
               >
-                <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
               </div>
             </div>
+            <span
+              class="font-semibold truncate text-theme-secondary-text"
+            >
+              ARK Wallet 1
+            </span>
           </div>
           <span
-            class="font-semibold truncate text-theme-secondary-text"
+            class="mt-auto text-lg font-bold text-theme-text"
+            data-testid="Amount"
           >
-            ARK Wallet 1
+            33.75089801 DARK
+          </span>
+          <span
+            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+          >
+            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
         </div>
-        <span
-          class="mt-auto text-lg font-bold text-theme-text"
-          data-testid="Amount"
-        >
-          33.75089801 DARK
-        </span>
-        <span
-          class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
         <div
-          class="inline-block p-1 text-theme-neutral-600"
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
         >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
-          >
-            <svg>
-              ledger.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-warning-400"
-        >
-          <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
-          >
-            <svg>
-              star.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-neutral-600"
-        >
-          <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="relative"
-        >
-          <span
-            data-testid="dropdown__toggle"
+            class="inline-block p-1 text-theme-neutral-600"
           >
             <div
-              class="flex overflow-hidden justify-center w-4"
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                ledger.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="inline-block p-1 text-theme-warning-400"
+          >
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                star.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="inline-block p-1 text-theme-neutral-600"
+          >
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                multisig.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="relative"
+          >
+            <span
+              data-testid="dropdown__toggle"
             >
               <div
-                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
-                height="1em"
-                width="1em"
+                class="flex overflow-hidden justify-center w-4"
               >
-                <svg>
-                  settings.svg
-                </svg>
+                <div
+                  class="sc-gsTCUz cXMmJt p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
               </div>
-            </div>
-          </span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -297,229 +303,233 @@ exports[`Wallet Card should render with actions 1`] = `
 
 exports[`Wallet Card should render with wallet data 1`] = `
 <div>
-  <div
-    class="w-64 inline-block undefined"
-    data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
-      data-testid="Card"
+      class="w-64 inline-block undefined"
+      data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
     >
       <div
-        class="flex relative flex-col justify-between p-4 h-full"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
+        data-testid="Card"
       >
         <div
-          class="flex items-center space-x-4"
+          class="flex relative flex-col justify-between p-4 h-full"
         >
           <div
-            class="-space-x-2 whitespace-nowrap"
+            class="flex items-center space-x-4"
           >
             <div
-              aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-ark.devnet"
+              class="-space-x-2 whitespace-nowrap"
             >
               <div
-                class="sc-bdfBwQ iyevwF"
-                data-testid="NetworkIcon__icon"
-                height="20"
-                width="20"
+                aria-label="ARK Devnet"
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                data-testid="NetworkIcon-ARK-ark.devnet"
               >
-                <svg>
-                  ark.svg
-                </svg>
+                <div
+                  class="sc-gsTCUz fHxsLl"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
               </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-              data-testid="Avatar"
-            >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="Avatar"
               >
-                <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
               </div>
             </div>
+            <span
+              class="font-semibold truncate text-theme-secondary-text"
+            >
+              My wallet
+            </span>
           </div>
           <span
-            class="font-semibold truncate text-theme-secondary-text"
+            class="mt-auto text-lg font-bold text-theme-text"
+            data-testid="Amount"
           >
-            My wallet
+            33.75089801 DARK
+          </span>
+          <span
+            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+          >
+            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
         </div>
-        <span
-          class="mt-auto text-lg font-bold text-theme-text"
-          data-testid="Amount"
-        >
-          33.75089801 DARK
-        </span>
-        <span
-          class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
         <div
-          class="inline-block p-1 text-theme-neutral-600"
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
         >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-neutral-600"
           >
-            <svg>
-              ledger.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                ledger.svg
+              </svg>
+            </div>
           </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-warning-400"
-        >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-warning-400"
           >
-            <svg>
-              star.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                star.svg
+              </svg>
+            </div>
           </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-neutral-600"
-        >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-neutral-600"
           >
-            <svg>
-              multisig.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                multisig.svg
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    ,
   </div>
-  ,
 </div>
 `;
 
 exports[`Wallet Card should render with wallet data and optional icon 1`] = `
 <div>
-  <div
-    class="w-64 inline-block undefined"
-    data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-  >
+  <div>
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
-      data-testid="Card"
+      class="w-64 inline-block undefined"
+      data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
     >
       <div
-        class="flex relative flex-col justify-between p-4 h-full"
+        class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz h-48"
+        data-testid="Card"
       >
         <div
-          class="flex items-center space-x-4"
+          class="flex relative flex-col justify-between p-4 h-full"
         >
           <div
-            class="-space-x-2 whitespace-nowrap"
+            class="flex items-center space-x-4"
           >
             <div
-              aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon-ARK-ark.devnet"
+              class="-space-x-2 whitespace-nowrap"
             >
               <div
-                class="sc-bdfBwQ iyevwF"
-                data-testid="NetworkIcon__icon"
-                height="20"
-                width="20"
+                aria-label="ARK Devnet"
+                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                data-testid="NetworkIcon-ARK-ark.devnet"
               >
-                <svg>
-                  ark.svg
-                </svg>
+                <div
+                  class="sc-gsTCUz fHxsLl"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
               </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-              data-testid="Avatar"
-            >
               <div
-                class="w-full h-full"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="Avatar"
               >
-                <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                />
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
               </div>
             </div>
+            <span
+              class="font-semibold truncate text-theme-secondary-text"
+            >
+              My wallet
+            </span>
           </div>
           <span
-            class="font-semibold truncate text-theme-secondary-text"
+            class="mt-auto text-lg font-bold text-theme-text"
+            data-testid="Amount"
           >
-            My wallet
+            33.75089801 DARK
+          </span>
+          <span
+            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
+          >
+            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
         </div>
-        <span
-          class="mt-auto text-lg font-bold text-theme-text"
-          data-testid="Amount"
-        >
-          33.75089801 DARK
-        </span>
-        <span
-          class="mt-1 text-xs font-semibold truncate text-theme-secondary-text"
-        >
-          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-        </span>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
         <div
-          class="inline-block p-1 text-theme-neutral-600"
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
         >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-neutral-600"
           >
-            <svg>
-              ledger.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                ledger.svg
+              </svg>
+            </div>
           </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-warning-400"
-        >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-warning-400"
           >
-            <svg>
-              star.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                star.svg
+              </svg>
+            </div>
           </div>
-        </div>
-        <div
-          class="inline-block p-1 text-theme-neutral-600"
-        >
           <div
-            class="sc-bdfBwQ dCuQLW"
-            height="1em"
-            width="20"
+            class="inline-block p-1 text-theme-neutral-600"
           >
-            <svg>
-              multisig.svg
-            </svg>
+            <div
+              class="sc-gsTCUz fuytQK"
+              height="1em"
+              width="20"
+            >
+              <svg>
+                multisig.svg
+              </svg>
+            </div>
           </div>
         </div>
       </div>

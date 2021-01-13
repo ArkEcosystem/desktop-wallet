@@ -2,136 +2,140 @@
 
 exports[`LineChart should render 1`] = `
 <div>
-  <div
-    class="recharts-responsive-container mb-16"
-    id="undefined"
-    style="width: 100%; height: 300px;"
-  >
+  <div>
     <div
-      class="LineChart__Wrapper-sc-12v17j0-0 llpnRz text-theme-neutral-300 dark:text-theme-neutral-800 pb"
-      data-testid="line-chart-wrapper"
+      class="recharts-responsive-container mb-16"
+      id="undefined"
+      style="width: 100%; height: 300px;"
     >
-      <div>
-        <div
-          class="flex space-x-3"
-        >
+      <div
+        class="LineChart__Wrapper-sc-12v17j0-0 llpnRz text-theme-neutral-300 dark:text-theme-neutral-800 pb"
+        data-testid="line-chart-wrapper"
+      >
+        <div>
           <div
-            class="flex flex-1 justify-end space-x-3"
+            class="flex space-x-3"
           >
             <div
-              class="my-auto text-sm text-base text-theme-secondary-text"
-            />
+              class="flex flex-1 justify-end space-x-3"
+            >
+              <div
+                class="my-auto text-sm text-base text-theme-secondary-text"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="active-dot"
-      >
-        <svg
-          class="text-theme-undefined"
-          fill="currentColor"
-          height="50"
-          stroke="currentColor"
-          width="50"
-          x="-25"
-          y="-25"
+        <div
+          class="active-dot"
         >
-          chart-active-dot.svg
-        </svg>
+          <svg
+            class="text-theme-undefined"
+            fill="currentColor"
+            height="50"
+            stroke="currentColor"
+            width="50"
+            x="-25"
+            y="-25"
+          >
+            chart-active-dot.svg
+          </svg>
+        </div>
       </div>
+      <div />
     </div>
-    <div />
   </div>
 </div>
 `;
 
 exports[`LineChart should render with data 1`] = `
 <div>
-  <div
-    class="recharts-responsive-container mb-16"
-    id="undefined"
-    style="width: 100%; height: 300px;"
-  >
+  <div>
     <div
-      class="LineChart__Wrapper-sc-12v17j0-0 llpnRz text-theme-neutral-300 dark:text-theme-neutral-800 pb"
-      data-testid="line-chart-wrapper"
+      class="recharts-responsive-container mb-16"
+      id="undefined"
+      style="width: 100%; height: 300px;"
     >
-      <div>
-        <div
-          class="flex space-x-3"
-        >
+      <div
+        class="LineChart__Wrapper-sc-12v17j0-0 llpnRz text-theme-neutral-300 dark:text-theme-neutral-800 pb"
+        data-testid="line-chart-wrapper"
+      >
+        <div>
           <div
-            class="pt-4 text-sm font-semibold cursor-pointer text-theme-secondary-text"
+            class="flex space-x-3"
           >
             <div
-              class="flex items-center"
+              class="pt-4 text-sm font-semibold cursor-pointer text-theme-secondary-text"
             >
               <div
-                class="my-auto text-base"
-              >
-                Period
-                : 
-                22 Jun - 28 Jun
-              </div>
-              <div
-                class="my-auto ml-1"
+                class="flex items-center"
               >
                 <div
-                  class="sc-bdfBwQ fPrsah"
-                  height="1em"
-                  width="1em"
+                  class="my-auto text-base"
                 >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                  Period
+                  : 
+                  22 Jun - 28 Jun
+                </div>
+                <div
+                  class="my-auto ml-1"
+                >
+                  <div
+                    class="sc-gsTCUz cXMmJt"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-1 justify-end space-x-3"
+            >
+              <div
+                class="my-auto text-sm text-base text-theme-secondary-text"
+              >
+                22 Jun, 2020
+              </div>
+              <div
+                class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
+              >
+                <div
+                  class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+                />
+                <div
+                  class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+                >
+                  <span>
+                    0.26
+                     - 
+                  </span>
+                  BTC
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="flex flex-1 justify-end space-x-3"
+        </div>
+        <div
+          class="active-dot"
+        >
+          <svg
+            class="text-theme-undefined"
+            fill="currentColor"
+            height="50"
+            stroke="currentColor"
+            width="50"
+            x="-25"
+            y="-25"
           >
-            <div
-              class="my-auto text-sm text-base text-theme-secondary-text"
-            >
-              22 Jun, 2020
-            </div>
-            <div
-              class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
-            >
-              <div
-                class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
-              />
-              <div
-                class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-              >
-                <span>
-                  0.26
-                   - 
-                </span>
-                BTC
-              </div>
-            </div>
-          </div>
+            chart-active-dot.svg
+          </svg>
         </div>
       </div>
-      <div
-        class="active-dot"
-      >
-        <svg
-          class="text-theme-undefined"
-          fill="currentColor"
-          height="50"
-          stroke="currentColor"
-          width="50"
-          x="-25"
-          y="-25"
-        >
-          chart-active-dot.svg
-        </svg>
-      </div>
+      <div />
     </div>
-    <div />
   </div>
 </div>
 `;

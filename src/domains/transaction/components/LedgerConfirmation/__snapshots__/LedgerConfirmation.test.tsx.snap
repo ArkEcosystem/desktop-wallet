@@ -2,30 +2,32 @@
 
 exports[`LedgerConfirmation should render 1`] = `
 <DocumentFragment>
-  <svg
-    class="my-8"
-  >
-    confirm-transaction-ledger-banner.svg
-  </svg>
-  <div
-    class="mt-8 text-center text-theme-secondary-text"
-    data-testid="LedgerConfirmation-description"
-  >
-    Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
-  </div>
-  <div
-    class="inline-flex justify-center items-center mt-8 space-x-3 w-full"
-  >
-    <div
-      class="Spinner-sc-1tybciv-0 fgYPVA"
-      color="primary"
-    />
-    <span
-      class="font-semibold text-black"
-      data-testid="LedgerConfirmation-loading_message"
+  <div>
+    <svg
+      class="my-8"
     >
-      Waiting for confirmation ...
-    </span>
+      confirm-transaction-ledger-banner.svg
+    </svg>
+    <div
+      class="mt-8 text-center text-theme-secondary-text"
+      data-testid="LedgerConfirmation-description"
+    >
+      Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
+    </div>
+    <div
+      class="inline-flex justify-center items-center mt-8 space-x-3 w-full"
+    >
+      <div
+        class="Spinner-sc-1tybciv-0 fgYPVA"
+        color="primary"
+      />
+      <span
+        class="font-semibold text-black"
+        data-testid="LedgerConfirmation-loading_message"
+      >
+        Waiting for confirmation ...
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;

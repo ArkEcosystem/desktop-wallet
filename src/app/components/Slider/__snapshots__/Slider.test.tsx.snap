@@ -2,23 +2,25 @@
 
 exports[`Slider should render 1`] = `
 <div>
-  <div
-    class="relative"
-  >
+  <div>
     <div
-      class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
-      style="height: 224px;"
+      class="relative"
     >
       <div
-        class="h-full swiper-wrapper important:z-0 "
-        style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
+        class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+        style="height: 224px;"
       >
         <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
+          class="h-full swiper-wrapper important:z-0 "
+          style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
         >
-          <div>
-            Slider item
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div>
+              Slider item
+            </div>
           </div>
         </div>
       </div>
@@ -29,22 +31,24 @@ exports[`Slider should render 1`] = `
 
 exports[`Slider should render empty rows if template not provided 1`] = `
 <div>
-  <div
-    class="relative"
-  >
+  <div>
     <div
-      class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
-      style="height: 224px;"
+      class="relative"
     >
       <div
-        class="h-full swiper-wrapper important:z-0 "
-        style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
+        class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+        style="height: 224px;"
       >
         <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
+          class="h-full swiper-wrapper important:z-0 "
+          style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
         >
-          <div />
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
         </div>
       </div>
     </div>
@@ -54,87 +58,89 @@ exports[`Slider should render empty rows if template not provided 1`] = `
 
 exports[`Slider should render pagination 1`] = `
 <div>
-  <div
-    class="relative"
-  >
+  <div>
     <div
-      class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
-      style="height: 288px;"
+      class="relative"
     >
       <div
-        class="h-full swiper-wrapper important:z-0 "
-        style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
+        class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+        style="height: 288px;"
       >
         <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
+          class="h-full swiper-wrapper important:z-0 "
+          style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
         >
-          <div />
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
         </div>
         <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
+          class="flex justify-center items-center h-6 swiper-pagination important:bottom-8 important:z-0 swiper-pagination-clickable swiper-pagination-bullets"
+        />
       </div>
-      <div
-        class="flex justify-center items-center h-6 swiper-pagination important:bottom-8 important:z-0 swiper-pagination-clickable swiper-pagination-bullets"
-      />
     </div>
   </div>
 </div>
@@ -142,85 +148,87 @@ exports[`Slider should render pagination 1`] = `
 
 exports[`Slider should render pagination on top right 1`] = `
 <div>
-  <div
-    class="relative"
-  >
+  <div>
     <div
-      class="flex absolute right-0 -top-12 items-center space-x-2 w-auto h-6 swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-    />
-    <div
-      class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
-      style="height: 244px;"
+      class="relative"
     >
       <div
-        class="h-full swiper-wrapper important:z-0 "
-        style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
+        class="flex absolute right-0 -top-12 items-center space-x-2 w-auto h-6 swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+      />
+      <div
+        class="overflow-hidden px-5 -mx-5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+        style="height: 244px;"
       >
         <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
+          class="h-full swiper-wrapper important:z-0 "
+          style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
         >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
-        </div>
-        <div
-          class="swiper-slide"
-          style="height: 192px; margin-top: 0px;"
-        >
-          <div />
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
+          <div
+            class="swiper-slide"
+            style="height: 192px; margin-top: 0px;"
+          >
+            <div />
+          </div>
         </div>
       </div>
     </div>

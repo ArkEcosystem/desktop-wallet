@@ -2,28 +2,32 @@
 
 exports[`Icon should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdfBwQ fPrsah"
-    height="1em"
-    width="1em"
-  >
-    <svg>
-      ark.svg
-    </svg>
+  <div>
+    <div
+      class="sc-gsTCUz cXMmJt"
+      height="1em"
+      width="1em"
+    >
+      <svg>
+        ark.svg
+      </svg>
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Icon should render fallbackk 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-bdfBwQ fPrsah"
-    height="1em"
-    width="1em"
-  >
-    <span>
-      Not found
-    </span>
+  <div>
+    <div
+      class="sc-gsTCUz cXMmJt"
+      height="1em"
+      width="1em"
+    >
+      <span>
+        Not found
+      </span>
+    </div>
   </div>
 </DocumentFragment>
 `;
