@@ -46,6 +46,7 @@ export class ProfileMiddleware implements Middleware {
 
 				const profileTheme = profile.settings().get<Theme>(ProfileSetting.Theme)!;
 
+				/* istanbul ignore else */
 				if (
 					shouldUseDarkColors() !== (profileTheme === "dark") ||
 					!document.body.classList.contains(`theme-${theme}`)

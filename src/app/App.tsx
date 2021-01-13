@@ -50,7 +50,7 @@ const Main = () => {
 
 		document.body.classList.remove(`theme-${shouldUseDarkColors() ? "light" : "dark"}`);
 		document.body.classList.add(`theme-${shouldUseDarkColors() ? "dark" : "light"}`);
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const handleError = useErrorHandler();
 
