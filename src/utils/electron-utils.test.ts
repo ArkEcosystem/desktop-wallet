@@ -1,6 +1,14 @@
 import electron from "electron";
 
-import { exitApp, isIdle, openExternal, openFile, saveFile, setScreenshotProtection } from "./electron-utils";
+import {
+	exitApp,
+	isIdle,
+	openExternal,
+	openFile,
+	saveFile,
+	setScreenshotProtection,
+	setThemeSource,
+} from "./electron-utils";
 
 jest.mock("fs", () => ({
 	writeFileSync: jest.fn(),
@@ -13,6 +21,13 @@ const defaultFilters = [
 ];
 
 describe("Electron utils", () => {
+	describe("setThemeSource", () => {
+		it("should set theme source", () => {
+			setThemeSource("theme");
+			expect(electron.remote.nativeTheme.themeSource).toEqual("theme");
+		});
+	});
+
 	describe("setScreenshotProtection", () => {
 		it("should not toggle in development mode", () => {
 			const setContentProtectionMock: any = electron.remote.getCurrentWindow().setContentProtection;

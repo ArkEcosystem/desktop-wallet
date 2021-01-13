@@ -8,9 +8,9 @@ import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
 import { useEnvironmentContext } from "app/contexts";
-import { useDarkMode } from "app/hooks";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 type AddressRowProps = {
 	index: number;
@@ -22,7 +22,6 @@ type AddressRowProps = {
 export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProps) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
-	const isDark = useDarkMode();
 
 	const [shadowColor, setShadowColor] = useState("--theme-background-color");
 	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
@@ -77,7 +76,9 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 	return (
 		<TableRow
-			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
+			onMouseEnter={() =>
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+			}
 			onMouseLeave={() => setShadowColor("")}
 		>
 			<TableCell variant="start" innerClassName="space-x-4">

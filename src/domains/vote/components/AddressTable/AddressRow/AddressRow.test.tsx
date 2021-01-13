@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, ReadOnlyWallet, ReadWriteWallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
-import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";
 import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
+import * as utils from "utils/electron-utils";
 
 import { AddressRow } from "./AddressRow";
 
@@ -73,7 +73,7 @@ describe("AddressRow", () => {
 	});
 
 	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
-		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+		jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
 
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");

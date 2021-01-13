@@ -9,11 +9,11 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Modal } from "app/components/Modal";
 import { TableCell, TableRow } from "app/components/Table";
 import { Table } from "app/components/Table";
-import { useDarkMode } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 type SearchWalletListItemProps = {
 	address: string;
@@ -46,13 +46,13 @@ const SearchWalletListItem = ({
 }: SearchWalletListItemProps) => {
 	const [shadowColor, setShadowColor] = React.useState("--theme-background-color");
 
-	const isDark = useDarkMode();
-
 	const { t } = useTranslation();
 
 	return (
 		<TableRow
-			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
+			onMouseEnter={() =>
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+			}
 			onMouseLeave={() => setShadowColor("")}
 		>
 			<TableCell variant="start" innerClassName="space-x-4">
@@ -117,19 +117,19 @@ export const SearchWallet = ({
 
 	const { t } = useTranslation();
 
-	const commonColumns = [
-		{
-			Header: t("COMMON.WALLET_ADDRESS"),
-			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
-		},
-		{
-			Header: t("COMMON.BALANCE"),
-			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
-			className: "justify-end",
-		},
-	];
-
 	const columns = useMemo(() => {
+		const commonColumns = [
+			{
+				Header: t("COMMON.WALLET_ADDRESS"),
+				accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
+			},
+			{
+				Header: t("COMMON.BALANCE"),
+				accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
+				className: "justify-end",
+			},
+		];
+
 		if (showFiatValue) {
 			return [
 				...commonColumns,
@@ -171,7 +171,7 @@ export const SearchWallet = ({
 				disableSortBy: true,
 			},
 		];
-	}, [commonColumns, searchPlaceholder, showFiatValue, t]);
+	}, [searchPlaceholder, showFiatValue, t]);
 
 	const filteredWallets = useMemo(() => {
 		if (!query.length) return wallets;

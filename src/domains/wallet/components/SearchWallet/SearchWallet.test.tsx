@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import * as useDarkModeHook from "app/hooks/use-dark-mode";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "testing-library";
+import * as utils from "utils/electron-utils";
 
 import { translations } from "../../i18n";
 import { SearchWallet } from "./SearchWallet";
@@ -98,7 +98,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 	});
 
 	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
-		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => theme === "dark");
+		jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
 
 		const setState = jest.fn();
 		const useStateSpy = jest.spyOn(React, "useState");
