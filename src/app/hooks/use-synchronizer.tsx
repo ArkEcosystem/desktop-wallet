@@ -66,22 +66,12 @@ export const useEnvSynchronizer = () => {
 	const { notifyForUpdates } = useUpdater();
 
 	const jobs = useMemo(() => {
-		const syncDelegates = {
-			callback: () => env.delegates().syncAll(),
-			interval: Intervals.Long,
-		};
-
-		const syncFees = {
-			callback: () => env.fees().syncAll(),
-			interval: Intervals.Medium,
-		};
-
 		const syncWalletUpdates = {
 			callback: () => notifyForUpdates(),
 			interval: Intervals.Long,
 		};
 
-		return [syncDelegates, syncFees, syncWalletUpdates];
+		return [syncWalletUpdates];
 	}, [env, notifyForUpdates]);
 
 	return useSynchronizer(jobs);
@@ -114,12 +104,23 @@ export const useProfileSynchronizer = () => {
 	const { notifications } = useNotifications();
 	const profile = useProfileWatcher();
 	const [restoredProfiles, setRestoredProfiles] = useState<String[]>([]);
+	const [syncedProfiles, setSyncedProfiles] = useState<String[]>([]);
 	const { setConfiguration } = useConfiguration();
 
 	const walletsCount = profile?.wallets().count();
 
 	const jobs = useMemo(() => {
 		if (!profile) return [];
+
+		const syncDelegates = {
+			callback: () => env.delegates().syncAll(),
+			interval: Intervals.Long,
+		};
+
+		const syncFees = {
+			callback: () => env.fees().syncAll(),
+			interval: Intervals.Medium,
+		};
 
 		const syncExchangeRates = {
 			callback: () => {
@@ -139,7 +140,7 @@ export const useProfileSynchronizer = () => {
 			interval: Intervals.Short,
 		};
 
-		return [syncWallets, syncExchangeRates, syncNotifications];
+		return [syncWallets, syncFees, syncDelegates, syncExchangeRates, syncNotifications];
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const { start, runAll } = useSynchronizer(jobs);
@@ -151,8 +152,12 @@ export const useProfileSynchronizer = () => {
 			return !restoredProfiles.includes(profile.id?.());
 		};
 
+		const shouldSync = (profile?: Profile) => profile && !syncedProfiles.includes(profile.id?.());
+
 		const syncProfile = async (profile?: Profile) => {
-			if (profile && shouldRestore(profile)) {
+			if (!profile) return;
+
+			if (shouldRestore(profile)) {
 				setRestoredProfiles([...restoredProfiles, profile.id()]);
 
 				setConfiguration({ profileIsSyncing: true });
@@ -165,8 +170,12 @@ export const useProfileSynchronizer = () => {
 				setConfiguration({ profileIsSyncing: false });
 			}
 
-			start();
-			runAll();
+			if (shouldSync(profile)) {
+				setSyncedProfiles([...syncedProfiles, profile.id()]);
+
+				runAll();
+				start();
+			}
 		};
 
 		syncProfile(profile);
