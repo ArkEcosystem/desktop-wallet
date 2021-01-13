@@ -16,7 +16,9 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 
 	const persist = React.useCallback(async () => {
 		// e2e ci tests hang when persist is called
-		if (!__DEMO__) await env.persist();
+		if (!__DEMO__) {
+			await env.persist();
+		}
 
 		// Force update
 		setState({});
