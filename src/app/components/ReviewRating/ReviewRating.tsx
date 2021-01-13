@@ -8,18 +8,18 @@ type ReviewRatingProps = {
 };
 
 export const ReviewRating = (props: ReviewRatingProps) => (
-	<div className="flex" data-testid="ReviewRating">
-		<div className="relative my-auto">
+	<div className="flex items-center" data-testid="ReviewRating">
+		<div className="relative">
 			{props.rating > 0 && (
 				<div className="overflow-hidden absolute" style={{ width: `${((props.rating - 1) / 4) * 100}%` }}>
 					<SvgCollection.Star className={`text-theme-warning-400 w-${props.width}`} />
 				</div>
 			)}
 
-			<SvgCollection.Star className={`text-theme-neutral w-${props.width}`} />
+			<SvgCollection.Star className={`text-theme-neutral-500 dark:bg-theme-neutral-700 w-${props.width}`} />
 		</div>
 
-		<span className="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}">
+		<span className="ml-1">
 			{props.rating > 0 ? props.rating : "-"}
 		</span>
 
@@ -29,6 +29,6 @@ export const ReviewRating = (props: ReviewRatingProps) => (
 
 ReviewRating.defaultProps = {
 	value: 0,
-	width: 5,
+	width: 4,
 	showTotal: false,
 };
