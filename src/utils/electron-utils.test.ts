@@ -1,4 +1,5 @@
 import electron from "electron";
+import fs from "fs";
 
 import {
 	exitApp,
@@ -10,17 +11,21 @@ import {
 	setThemeSource,
 } from "./electron-utils";
 
-jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
-	readFileSync: jest.fn(),
-}));
-
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },
 	{ name: "All Files", extensions: ["*"] },
 ];
 
 describe("Electron utils", () => {
+	beforeEach(() => {
+		jest.spyOn(fs, "writeFileSync").mockImplementation();
+		jest.spyOn(fs, "readFileSync").mockImplementation();
+	});
+
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+
 	describe("setThemeSource", () => {
 		it("should set theme source", () => {
 			setThemeSource("theme");

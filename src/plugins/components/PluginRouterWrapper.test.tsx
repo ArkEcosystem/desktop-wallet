@@ -15,6 +15,10 @@ describe("PluginRouterWrapper", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+
 	it("should boot and dispose plugins when changing the profile", async () => {
 		const pluginManager = new PluginManager();
 		const bootSpy = jest.spyOn(pluginManager.plugins(), "runAllEnabled");

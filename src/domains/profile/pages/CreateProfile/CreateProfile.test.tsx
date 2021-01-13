@@ -5,16 +5,13 @@ import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
+import fs from "fs";
 import os from "os";
 import React from "react";
 import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
-
-jest.mock("fs", () => ({
-	readFileSync: jest.fn(() => "avatarImage"),
-}));
 
 let env: Environment;
 let showOpenDialogMock: jest.SpyInstance;
@@ -61,6 +58,12 @@ describe("CreateProfile", () => {
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: ["filePath"],
 		}));
+
+		jest.spyOn(fs, "readFileSync").mockImplementation(() => "avatarImage");
+	});
+
+	afterAll(() => {
+		jest.clearAllMocks();
 	});
 
 	it("should render", async () => {

@@ -13,6 +13,10 @@ describe("Plugin Controller subject", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+
 	it("should return all", () => {
 		subject.push(new PluginController({ name: "plugin-test" }, () => void 0));
 		expect(subject.all().length).toBe(1);

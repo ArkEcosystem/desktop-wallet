@@ -2,17 +2,19 @@
 
 exports[`Skeleton should render 1`] = `
 <DocumentFragment>
-  <span>
-    <span
-      class="flex items-center leading-none"
-    >
+  <div>
+    <span>
       <span
-        class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+        class="flex items-center leading-none"
       >
+        <span
+          class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+        >
+          ‌
+        </span>
         ‌
       </span>
-      ‌
     </span>
-  </span>
+  </div>
 </DocumentFragment>
 `;

@@ -3,6 +3,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { buildTranslations } from "app/i18n/helpers";
 import { toasts } from "app/services";
 import electron from "electron";
+import fs from "fs";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -21,10 +22,6 @@ jest.mock("react-router-dom", () => ({
 	}),
 }));
 
-jest.mock("fs", () => ({
-	readFileSync: jest.fn(() => "avatarImage"),
-}));
-
 let profile: Profile;
 let showOpenDialogMock: jest.SpyInstance;
 
@@ -35,6 +32,14 @@ const showOpenDialogParams = {
 };
 
 describe("Settings", () => {
+	beforeEach(() => {
+		jest.spyOn(fs, "readFileSync").mockImplementation();
+	});
+
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
