@@ -16,7 +16,7 @@ export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
 	return (
 		<Card className="flex col-span-2" onClick={onAddExchange}>
 			<div className="flex items-center p-2 font-semibold text-theme-primary">
-				<Icon name="Plus" className="p-4 mr-4 rounded-lg bg-theme-primary-contrast" />
+				<Icon name="Plus" className="p-4 mr-4 rounded-lg bg-theme-primary-100 dark:border-theme-neutral-800" />
 
 				{t("EXCHANGE.ADD_EXCHANGE")}
 			</div>
@@ -29,8 +29,8 @@ export const BlankExchangeCard = () => {
 
 	return (
 		<Card>
-			<div className="flex items-center p-2 font-semibold text-theme-primary-contrast">
-				<div className="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-contrast" />
+			<div className="flex items-center p-2 font-semibold text-theme-primary-contrast dark:text-theme-neutral-800">
+				<div className="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-100 dark:border-theme-neutral-800" />
 
 				{t("EXCHANGE.EXCHANGE_NAME")}
 			</div>
