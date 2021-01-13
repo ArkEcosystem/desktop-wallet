@@ -70,12 +70,11 @@ export class PluginConfigurationData {
 			if (typeof author === "string") {
 				return parseAuthor(author).name;
 			}
+			return author.name;
 		}
 
 		if (contributors?.length) {
-			if (typeof contributors?.[0]?.name === "string") {
-				return parseAuthor(contributors?.[0]?.name).name;
-			}
+			return parseAuthor(contributors?.[0]?.name).name;
 		}
 
 		return `Unknown`;

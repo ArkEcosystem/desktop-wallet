@@ -2,10 +2,12 @@ import * as yup from "yup";
 
 export const schema = yup.object().shape({
 	author: yup.lazy((value) =>
+		/* istanbul ignore next */
 		typeof value === "string" ? yup.string() : yup.array().of(yup.object({ name: yup.string() })),
 	),
 	keywords: yup.array().of(yup.string()),
 	contributors: yup.lazy((value) =>
+		/* istanbul ignore next */
 		typeof value === "string" ? yup.string() : yup.array().of(yup.object({ name: yup.string() })),
 	),
 	name: yup.string().required(),

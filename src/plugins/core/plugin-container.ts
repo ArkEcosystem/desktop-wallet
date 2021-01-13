@@ -1,5 +1,3 @@
-import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
-
 import { PluginServiceRepository } from "./plugin-service-repository";
 
 export class PluginContainer {
@@ -11,10 +9,6 @@ export class PluginContainer {
 
 	services(): PluginServiceRepository {
 		return this.#data.get("services");
-	}
-
-	registry(): PluginRegistry {
-		return this.#data.get("registry");
 	}
 }
 

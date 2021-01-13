@@ -1,4 +1,4 @@
-import { Profile, RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 
 import { PluginAPI } from "../types";
 import { PluginConfigurationData } from "./configuration";
@@ -14,22 +14,11 @@ export class PluginController {
 	#callback: Callback;
 	#dir: string | undefined;
 
-	#data: RegistryPlugin | undefined;
-
 	constructor(config: Record<string, any>, callback: Callback, dir?: string) {
 		this.#hooks = new PluginHooks();
 		this.#dir = dir;
 		this.#config = PluginConfigurationData.make(config, dir);
 		this.#callback = callback;
-	}
-
-	data() {
-		return this.#data;
-	}
-
-	async sync() {
-		const { data } = await container.registry().findById(this.config().id());
-		this.#data = data;
 	}
 
 	hooks() {
@@ -56,6 +45,7 @@ export class PluginController {
 		// @ts-ignore
 		profile.plugins().push({ id: this.config().id(), isEnabled: true });
 
+		/* istanbul ignore next */
 		if (options?.autoRun) {
 			this.run(profile);
 		}

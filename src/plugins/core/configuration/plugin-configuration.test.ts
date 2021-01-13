@@ -51,6 +51,11 @@ describe("Plugin Configuration", () => {
 		expect(subject.author()).toBe("Jhon");
 	});
 
+	it("should return author with object", () => {
+		const subject = PluginConfigurationData.make({ name: "plugin-test", author: { name: "Jhon" } });
+		expect(subject.author()).toBe("Jhon");
+	});
+
 	it("should return author from contributors", () => {
 		const subject = PluginConfigurationData.make({ name: "plugin-test", contributors: [{ name: "Jhon" }] });
 		expect(subject.author()).toBe("Jhon");
@@ -113,9 +118,14 @@ describe("Plugin Configuration", () => {
 	});
 
 	it("should return plugin size from package", async () => {
-		const subject = PluginConfigurationData.make({ name: "plugin-test", dist: { unpackedSize: 15000 } });
-		await subject.syncSize();
-		expect(subject.size()).toBe("15 kB");
+		const subject1 = PluginConfigurationData.make({ name: "plugin-test" });
+		const subject2 = PluginConfigurationData.make({ name: "plugin-test", dist: { unpackedSize: 15000 } });
+
+		await subject1.syncSize();
+		await subject2.syncSize();
+
+		expect(subject1.size()).toBe("0 B");
+		expect(subject2.size()).toBe("15 kB");
 	});
 
 	it("should return logo", () => {

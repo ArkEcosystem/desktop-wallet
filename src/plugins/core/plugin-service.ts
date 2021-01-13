@@ -8,11 +8,6 @@ export class PluginServiceData {
 		this.#instance = instance;
 	}
 
-	static make(instance: PluginService) {
-		const service = new PluginServiceData(instance);
-		return service;
-	}
-
 	instance<T extends PluginService>(): T {
 		return this.#instance as T;
 	}

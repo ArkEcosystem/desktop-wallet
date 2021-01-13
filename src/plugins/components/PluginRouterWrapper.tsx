@@ -25,6 +25,7 @@ export const PluginRouterWrapper = ({ children }: { children: React.ReactNode })
 			return;
 		}
 
+		/* istanbul ignore else */
 		if (current?.id() !== profile?.id()) {
 			pluginManager.plugins().dispose();
 			trigger();
