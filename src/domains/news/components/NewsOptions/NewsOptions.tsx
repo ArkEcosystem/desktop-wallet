@@ -102,7 +102,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 	return (
 		<div
-			className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-contrast"
+			className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
 			data-testid="NewsOptions"
 		>
 			<div className="flex flex-col space-y-8">
@@ -119,7 +119,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 							}
 						}}
 					/>
-					<Icon className="mr-4 text-theme-neutral" name="Search" width={20} height={20} />
+					<Icon className="mr-4 text-theme-primary-300 dark:text-theme-neutral-600" name="Search" width={18} height={18} />
 				</div>
 
 				<Divider dashed />
@@ -130,7 +130,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 						{showSelectAllCategories && (
 							<button
 								onClick={handleSelectAllCategories}
-								className="text-xs font-semibold focus:outline-none text-theme-neutral"
+								className="text-xs font-semibold focus:outline-none text-theme-neutral-800"
 							>
 								{t("COMMON.SELECT_ALL")}
 							</button>
