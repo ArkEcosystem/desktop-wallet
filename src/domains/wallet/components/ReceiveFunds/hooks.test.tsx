@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 
 import { act, renderHook } from "@testing-library/react-hooks";
-import * as useDarkModeHook from "app/hooks/use-dark-mode";
+import * as utils from "utils/electron-utils";
 import { waitFor } from "utils/testing-library";
 
 import { useQRCode } from "./";
@@ -10,7 +10,7 @@ describe("useQRCode hook", () => {
 	let darkModeSpy = jest.spyInstance;
 
 	beforeEach(() => {
-		darkModeSpy = jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => false);
+		darkModeSpy = jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(false);
 	});
 
 	afterEach(() => {
@@ -66,8 +66,6 @@ describe("useQRCode hook", () => {
 	});
 
 	it("should return undefined if address is not provided", async () => {
-		jest.spyOn(useDarkModeHook, "useDarkMode").mockImplementation(() => true);
-
 		await act(async () => {
 			const { result } = renderHook(() => useQRCode({ network: "ark" }));
 			await waitFor(() => expect(result.current.uri).toBe(undefined));

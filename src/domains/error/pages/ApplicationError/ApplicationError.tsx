@@ -1,7 +1,7 @@
 import { Button } from "app/components/Button";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
-import { useDarkMode } from "app/hooks";
+import { useThemeName } from "app/hooks";
 import React from "react";
 import { FallbackProps } from "react-error-boundary";
 import { useTranslation } from "react-i18next";
@@ -9,8 +9,10 @@ import { useTranslation } from "react-i18next";
 export const ApplicationError = ({ resetErrorBoundary }: Partial<FallbackProps>) => {
 	const { t } = useTranslation();
 
+	const theme = useThemeName();
+
 	return (
-		<main className={`theme-${useDarkMode() ? "dark" : "light"}`} data-testid="Main">
+		<main className={`theme-${theme}`} data-testid="Main">
 			<Page navbarVariant="logo-only">
 				<Section className="flex flex-col flex-1 justify-center text-center">
 					<div className="mx-auto w-64 lg:w-128">

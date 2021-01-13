@@ -1,7 +1,7 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { render } from "@testing-library/react";
-import { ConfigurationProvider, EnvironmentProvider, ThemeProvider } from "app/contexts";
+import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { i18n } from "app/i18n";
 import { PluginProviders } from "app/PluginProviders";
 import { httpClient } from "app/services";
@@ -18,9 +18,7 @@ const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) =
 	<I18nextProvider i18n={i18n}>
 		<EnvironmentProvider env={env}>
 			<ConfigurationProvider>
-				<ThemeProvider>
-					<PluginProviders>{children}</PluginProviders>
-				</ThemeProvider>
+				<PluginProviders>{children}</PluginProviders>
 			</ConfigurationProvider>
 		</EnvironmentProvider>
 	</I18nextProvider>

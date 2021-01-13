@@ -2,6 +2,7 @@ import electron, { FileFilter, ipcRenderer } from "electron";
 import { readFileSync, writeFileSync } from "fs";
 import os from "os";
 import path from "path";
+import { Theme } from "types";
 
 type DialogOptions = {
 	filters?: FileFilter | FileFilter[];
@@ -26,6 +27,12 @@ const setScreenshotProtection = (enabled: boolean) => {
 
 	electron.remote.getCurrentWindow().setContentProtection(enabled);
 };
+
+const setThemeSource = (themeSource: Theme) => {
+	electron.remote.nativeTheme.themeSource = themeSource;
+};
+
+const shouldUseDarkColors = () => electron.remote.nativeTheme.shouldUseDarkColors;
 
 const isDev = () => {
 	// Based on https://github.com/sindresorhus/electron-is-dev/blob/master/index.js
@@ -89,4 +96,14 @@ const exitApp = () => {
 	ipcRenderer.send("exit-app");
 };
 
-export { exitApp, isDev, isIdle, openExternal, openFile, saveFile, setScreenshotProtection };
+export {
+	exitApp,
+	isDev,
+	isIdle,
+	openExternal,
+	openFile,
+	saveFile,
+	setScreenshotProtection,
+	setThemeSource,
+	shouldUseDarkColors,
+};

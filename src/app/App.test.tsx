@@ -1,15 +1,14 @@
 /* eslint-disable @typescript-eslint/require-await */
-// import electron from "electron";
-
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
 import nock from "nock";
 import React from "react";
+import * as utils from "utils/electron-utils";
 import {
 	act,
-	fireEvent,
+	env,
 	getDefaultProfileId,
 	RenderResult,
 	renderWithRouter,
@@ -19,58 +18,47 @@ import {
 
 import { App } from "./App";
 
-jest.mock(`electron`, () => {
-	let isUpdateCalled = false;
-
-	return {
-		ipcRenderer: {
-			invoke: (event: string, data) => {
-				if (event === "updater:check-for-updates") {
-					const response = {
-						cancellationToken: isUpdateCalled ? null : "1",
-						updateInfo: { version: "3.0.0" },
-					};
-					isUpdateCalled = true;
-					return response;
-				}
-				return true;
-			},
-			on: (evt: any, callback: (evt: any, progress: any) => void) => {
-				if (evt === "updater:download-progress") {
-					callback(evt, { total: 10, percent: 30, transferred: 3 });
-				}
-			},
-			handle: jest.fn(),
-			send: jest.fn(),
-			removeListener: jest.fn(),
-		},
-
-		remote: {
-			nativeTheme: {
-				shouldUseDarkColors: true,
-				themeSource: "system",
-			},
-			getCurrentWindow: () => ({
-				setContentProtection: jest.fn(),
-			}),
-			app: {
-				isPackaged: true,
-			},
-		},
-	};
-});
-
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
+
+let profile: Profile;
 
 describe("App", () => {
 	beforeAll(async () => {
 		useDefaultNetMocks();
+
+		profile = env.profiles().findById(getDefaultProfileId());
 
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
 			.query({ limit: 20 })
 			.reply(200, require("tests/fixtures/coins/ark/devnet/notification-transactions.json"))
 			.persist();
+		jest.spyOn(electron.ipcRenderer, "invoke").mockImplementation((event: string, data) => {
+			let isUpdateCalled = false;
+			if (event === "updater:check-for-updates") {
+				const response = {
+					cancellationToken: isUpdateCalled ? null : "1",
+					updateInfo: { version: "3.0.0" },
+				};
+				isUpdateCalled = true;
+				return response;
+			}
+			if (event === "plugin:loader-fs.search") {
+				return [];
+			}
+			return true;
+		});
+		jest.spyOn(electron.ipcRenderer, "on").mockImplementation(
+			(evt: any, callback: (evt: any, progress: any) => void) => {
+				if (evt === "updater:download-progress") {
+					callback(evt, { total: 10, percent: 30, transferred: 3 });
+				}
+			},
+		);
+	});
+
+	afterAll(() => {
+		jest.clearAllMocks();
 	});
 
 	it("should render splash screen", async () => {
@@ -91,7 +79,7 @@ describe("App", () => {
 	it.each([false, true])("should set the theme based on system preferences", async (shouldUseDarkColors) => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
-		electron.remote.nativeTheme.shouldUseDarkColors = shouldUseDarkColors;
+		jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(shouldUseDarkColors);
 
 		const { getByTestId, getByText } = renderWithRouter(<App />);
 
@@ -100,30 +88,6 @@ describe("App", () => {
 		});
 
 		expect(document.body).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
-	});
-
-	it("should get the profile theme from the route", async () => {
-		process.env.REACT_APP_BUILD_MODE = "demo";
-
-		electron.remote.nativeTheme.shouldUseDarkColors = true;
-
-		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />);
-
-		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
-		});
-
-		expect(history.location.pathname).toMatch("/");
-
-		expect(document.body).toHaveClass("theme-dark");
-
-		await act(async () => {
-			fireEvent.click(getAllByTestId("Card")[0]);
-		});
-
-		expect(history.location.pathname).toMatch(dashboardUrl);
-
-		expect(document.body).toHaveClass("theme-light");
 	});
 
 	it("should close splash screen if not demo", async () => {

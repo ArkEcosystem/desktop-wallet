@@ -1,8 +1,8 @@
 import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
 import { TableCell, TableRow } from "app/components/Table";
-import { useDarkMode } from "app/hooks";
 import React from "react";
 import { Size } from "types";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
 import { TransactionRowMode } from "./TransactionRowMode";
@@ -17,11 +17,11 @@ type Props = {
 export const TransactionCompactRow = ({ transaction, walletName, iconSize, ...props }: Props) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
-	const isDark = useDarkMode();
-
 	return (
 		<TableRow
-			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
+			onMouseEnter={() =>
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+			}
 			onMouseLeave={() => setShadowColor("")}
 			{...props}
 		>

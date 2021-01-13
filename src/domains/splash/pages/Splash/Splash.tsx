@@ -4,10 +4,10 @@ import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Divider } from "app/components/Divider";
 import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
-import { useDarkMode } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 import { version } from "../../../../../package.json";
 
@@ -21,8 +21,6 @@ const LogoContainer = styled.div`
 
 export const Splash = ({ year }: any) => {
 	const { t } = useTranslation();
-
-	const isDark = useDarkMode();
 
 	const currentYear = year || DateTime.make().format("YYYY");
 
@@ -42,7 +40,9 @@ export const Splash = ({ year }: any) => {
 								showValue={false}
 								value={20}
 								strokeColor={
-									isDark ? "var(--theme-color-neutral-800)" : "var(--theme-color-success-200)"
+									shouldUseDarkColors()
+										? "var(--theme-color-neutral-800)"
+										: "var(--theme-color-success-200)"
 								}
 								strokeWidth={2}
 								size={40}

@@ -3,8 +3,8 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { TableCell, TableRow } from "app/components/Table";
-import { useDarkMode } from "app/hooks";
 import React from "react";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
 import { TransactionRowConfirmation } from "./TransactionRowConfirmation";
@@ -39,8 +39,6 @@ export const TransactionRow = ({
 }: Props) => {
 	const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
 
-	const isDark = useDarkMode();
-
 	if (isLoading)
 		return (
 			<TransactionRowSkeleton
@@ -53,7 +51,9 @@ export const TransactionRow = ({
 	return (
 		<TableRow
 			onClick={onClick}
-			onMouseEnter={() => setShadowColor(isDark ? "--theme-color-neutral-800" : "--theme-color-neutral-100")}
+			onMouseEnter={() =>
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+			}
 			onMouseLeave={() => setShadowColor("")}
 			{...props}
 		>

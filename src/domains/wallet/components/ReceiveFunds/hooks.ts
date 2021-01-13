@@ -1,7 +1,7 @@
 import { QRCode } from "@arkecosystem/platform-sdk-support";
-import { useDarkMode } from "app/hooks";
 import { stringify } from "querystring";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { shouldUseDarkColors } from "utils/electron-utils";
 
 type QRCodeProps = {
 	network?: string;
@@ -17,7 +17,6 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 	});
 
 	const maxLength = 255;
-	const isDark = useDarkMode();
 
 	const formatQR = useCallback(({ network, amount, address, smartbridge }: QRCodeProps) => {
 		const uriParams = {
@@ -30,21 +29,17 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 		return `${networkPrefix}:${address}${qrParameters && `?${qrParameters}`}`;
 	}, []);
 
-	const color = useMemo(
-		() =>
-			isDark
-				? {
-						dark: "#eef3f5",
-						light: "#212225",
-				  }
-				: {
-						dark: "#212225",
-						light: "#fff",
-				  },
-		[isDark],
-	);
-
 	useEffect(() => {
+		const color = shouldUseDarkColors()
+			? {
+					dark: "#eef3f5",
+					light: "#212225",
+			  }
+			: {
+					dark: "#212225",
+					light: "#fff",
+			  };
+
 		const generateQrCode = async () => {
 			const qrCodeDataUri = address ? formatQR({ network, amount, address, smartbridge }) : undefined;
 
@@ -63,7 +58,7 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 		};
 
 		generateQrCode();
-	}, [amount, color, smartbridge, network, address, formatQR]);
+	}, [amount, smartbridge, network, address, formatQR]);
 
 	return qrCodeData;
 };
