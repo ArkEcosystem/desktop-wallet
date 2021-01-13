@@ -1,4 +1,3 @@
-import { usePluginManager } from "plugins/context";
 import { WithPluginManager } from "plugins/types";
 import React, { useMemo } from "react";
 import { ErrorBoundary } from "react-error-boundary";
@@ -22,9 +21,4 @@ export const LaunchRender = ({ pluginId, fallback, manager }: WithPluginManager<
 			<>{result || fallback}</>
 		</ErrorBoundary>
 	);
-};
-
-export const PluginLaunchRender = (props: Props) => {
-	const manager = usePluginManager();
-	return <LaunchRender {...props} manager={manager} />;
 };

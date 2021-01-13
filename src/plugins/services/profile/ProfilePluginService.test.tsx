@@ -1,7 +1,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginAPI } from "plugins/types";
-import { env } from "utils/testing-library";
+import { env, getDefaultProfileId } from "utils/testing-library";
 
 import { ProfilePluginService } from "./ProfilePluginService";
 
@@ -17,7 +17,7 @@ describe("ProfilePluginService", () => {
 	let ctrl: PluginController;
 
 	beforeEach(() => {
-		profile = env.profiles().first();
+		profile = env.profiles().findById(getDefaultProfileId());
 
 		manager = new PluginManager();
 		manager.services().register([new ProfilePluginService()]);

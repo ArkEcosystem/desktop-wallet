@@ -12,6 +12,10 @@ describe("PluginLoaderFileSystem", () => {
 		subject = new PluginLoaderFileSystem([root]);
 	});
 
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+
 	it("should find manifests file in the folder", () => {
 		expect(subject.search()).toHaveLength(2);
 	});
