@@ -55,7 +55,7 @@ export const SendTransactionForm = ({
 
 			setFees(transactionFees);
 			setValue("fees", transactionFees);
-			setValue("fee", transactionFees.avg, { shouldValidate: true, shouldDirty: true });
+			setValue("fee", transactionFees.avg || transactionFees.static, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [env, setFees, setValue, profile, senderAddress, transactionType]);
 
