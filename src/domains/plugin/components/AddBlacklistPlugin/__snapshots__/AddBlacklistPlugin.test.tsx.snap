@@ -141,9 +141,9 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
+                            class="sc-bdfBwQ gvFuTp"
+                            height="5"
+                            width="10"
                           >
                             <svg>
                               sort.svg
@@ -171,9 +171,9 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
+                            class="sc-bdfBwQ gvFuTp"
+                            height="5"
+                            width="10"
                           >
                             <svg>
                               sort.svg
@@ -201,9 +201,9 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
+                            class="sc-bdfBwQ gvFuTp"
+                            height="5"
+                            width="10"
                           >
                             <svg>
                               sort.svg
@@ -301,11 +301,11 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       >
                         <span>
                           <div
-                            class="flex"
+                            class="flex items-center"
                             data-testid="ReviewRating"
                           >
                             <div
-                              class="relative my-auto"
+                              class="relative"
                             >
                               <div
                                 class="overflow-hidden absolute"
@@ -318,13 +318,13 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                                 </svg>
                               </div>
                               <svg
-                                class="text-theme-neutral w-3"
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                               >
                                 star.svg
                               </svg>
                             </div>
                             <span
-                              class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              class="ml-1"
                             >
                               4.6
                             </span>
@@ -399,11 +399,11 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       >
                         <span>
                           <div
-                            class="flex"
+                            class="flex items-center"
                             data-testid="ReviewRating"
                           >
                             <div
-                              class="relative my-auto"
+                              class="relative"
                             >
                               <div
                                 class="overflow-hidden absolute"
@@ -416,13 +416,13 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                                 </svg>
                               </div>
                               <svg
-                                class="text-theme-neutral w-3"
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                               >
                                 star.svg
                               </svg>
                             </div>
                             <span
-                              class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              class="ml-1"
                             >
                               4.6
                             </span>
@@ -497,11 +497,11 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       >
                         <span>
                           <div
-                            class="flex"
+                            class="flex items-center"
                             data-testid="ReviewRating"
                           >
                             <div
-                              class="relative my-auto"
+                              class="relative"
                             >
                               <div
                                 class="overflow-hidden absolute"
@@ -514,13 +514,13 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                                 </svg>
                               </div>
                               <svg
-                                class="text-theme-neutral w-3"
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                               >
                                 star.svg
                               </svg>
                             </div>
                             <span
-                              class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              class="ml-1"
                             >
                               4.8
                             </span>
@@ -604,11 +604,11 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       >
                         <span>
                           <div
-                            class="flex"
+                            class="flex items-center"
                             data-testid="ReviewRating"
                           >
                             <div
-                              class="relative my-auto"
+                              class="relative"
                             >
                               <div
                                 class="overflow-hidden absolute"
@@ -621,13 +621,13 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                                 </svg>
                               </div>
                               <svg
-                                class="text-theme-neutral w-3"
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                               >
                                 star.svg
                               </svg>
                             </div>
                             <span
-                              class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              class="ml-1"
                             >
                               4.9
                             </span>
