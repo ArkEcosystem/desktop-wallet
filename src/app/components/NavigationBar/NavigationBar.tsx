@@ -102,8 +102,8 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 							position="right"
 							icon="ChevronDown"
 							iconClass={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
-							iconWidth={10}
-							iconHeight={10}
+							iconWidth={8}
+							iconHeight={5}
 						/>
 					</div>
 				</div>
