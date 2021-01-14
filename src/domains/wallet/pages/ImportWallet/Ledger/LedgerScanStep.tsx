@@ -114,18 +114,18 @@ export const LedgerTable = ({
 				if (showSkeleton) {
 					return (
 						<TableRow>
-							<TableCell variant="start" innerClassName="space-x-4" noHover>
+							<TableCell variant="start" innerClassName="space-x-4">
 								<Circle className="border-transparent" size="lg">
 									<Skeleton circle height={44} width={44} />
 								</Circle>
 								<Skeleton height={16} width={120} />
 							</TableCell>
 
-							<TableCell innerClassName="justify-end" noHover>
+							<TableCell innerClassName="justify-end">
 								<AmountWrapper isLoading={true} />
 							</TableCell>
 
-							<TableCell variant="end" noHover>
+							<TableCell variant="end">
 								<Skeleton height={16} width={16} />
 							</TableCell>
 						</TableRow>
@@ -133,23 +133,19 @@ export const LedgerTable = ({
 				}
 
 				return (
-					<TableRow>
-						<TableCell isSelected={isSelected(wallet.index)} variant="start" innerClassName="space-x-4">
+					<TableRow isSelected={isSelected(wallet.index)}>
+						<TableCell variant="start" innerClassName="space-x-4">
 							<Avatar address={wallet.address} size="lg" noShadow />
 							<Address address={wallet.address} />
 						</TableCell>
 
-						<TableCell
-							innerClassName="justify-end font-semibold"
-							isSelected={isSelected(wallet.index)}
-							className="w-64"
-						>
+						<TableCell innerClassName="justify-end font-semibold" className="w-64">
 							<AmountWrapper isLoading={isLoading(wallet.index)} isFailed={isFailed(wallet.index)}>
 								<Amount value={wallet.balance!} ticker={network.ticker()} />
 							</AmountWrapper>
 						</TableCell>
 
-						<TableCell isSelected={isSelected(wallet.index)} variant="end" innerClassName="justify-center">
+						<TableCell variant="end" innerClassName="justify-center">
 							<Checkbox
 								disabled={isLoading(wallet.index) || isFailed(wallet.index)}
 								checked={isSelected(wallet.index)}

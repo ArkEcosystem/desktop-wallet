@@ -13,7 +13,6 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
-import { shouldUseDarkColors } from "utils/electron-utils";
 
 type SearchWalletListItemProps = {
 	address: string;
@@ -44,23 +43,14 @@ const SearchWalletListItem = ({
 	showNetwork,
 	onAction,
 }: SearchWalletListItemProps) => {
-	const [shadowColor, setShadowColor] = React.useState("--theme-background-color");
-
 	const { t } = useTranslation();
 
 	return (
-		<TableRow
-			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
-			}
-			onMouseLeave={() => setShadowColor("")}
-		>
+		<TableRow>
 			<TableCell variant="start" innerClassName="space-x-4">
 				<div className="-space-x-2">
-					{showNetwork && (
-						<NetworkIcon size="lg" coin={coinName} network={coinId} shadowColor={shadowColor} />
-					)}
-					<Avatar size="lg" address={address} shadowColor={shadowColor} />
+					{showNetwork && <NetworkIcon size="lg" coin={coinName} network={coinId} />}
+					<Avatar size="lg" address={address} />
 				</div>
 				<Address walletName={name} address={address} maxChars={22} />
 			</TableCell>
