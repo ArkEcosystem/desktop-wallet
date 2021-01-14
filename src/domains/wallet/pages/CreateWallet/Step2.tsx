@@ -71,15 +71,15 @@ export const SecondStep = () => {
 
 			<div className="flex justify-between items-center">
 				<div className="space-y-2">
-					<span className="text-lg font-semibold text-theme-secondary-text">
+					<span className="text-lg font-semibold">
 						{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
 					</span>
-					<p className="text-sm text-theme-neutral">
+					<p className="text-sm text-theme-secondary-text">
 						{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.DESCRIPTION")}
 					</p>
 				</div>
 
-				<Icon name="FilePassword" width={40} height={40} />
+				<Icon name="FilePassword" className="text-black dark:text-theme-neutral-600" width={40} height={40} />
 			</div>
 
 			<div className="flex justify-end w-full">

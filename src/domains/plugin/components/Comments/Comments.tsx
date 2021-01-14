@@ -59,7 +59,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 									<span>{t(`COMMON.${transformType(sortType)}`)}</span>
 									<Icon
 										name={sortBy.direction === "asc" ? "ChevronUp" : "ChevronDown"}
-										width={7}
+										width={8}
 										height={5}
 									/>
 								</span>

@@ -204,7 +204,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -238,12 +238,12 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -502,9 +502,9 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -532,9 +532,9 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -562,9 +562,9 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -592,9 +592,9 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -622,9 +622,9 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -652,9 +652,9 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -757,11 +757,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -774,13 +774,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -905,11 +905,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -922,13 +922,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -1053,11 +1053,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -1070,13 +1070,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -1201,11 +1201,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -1218,13 +1218,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -1349,11 +1349,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -1366,13 +1366,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -1512,11 +1512,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -1529,13 +1529,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -1675,11 +1675,11 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -1692,13 +1692,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -2012,7 +2012,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -2046,12 +2046,12 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -2310,9 +2310,9 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -2340,9 +2340,9 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -2370,9 +2370,9 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -2400,9 +2400,9 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -2430,9 +2430,9 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -2460,9 +2460,9 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -2565,11 +2565,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -2582,13 +2582,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -2713,11 +2713,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -2730,13 +2730,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -2861,11 +2861,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -2878,13 +2878,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -3009,11 +3009,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -3026,13 +3026,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -3157,11 +3157,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -3174,13 +3174,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -3320,11 +3320,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -3337,13 +3337,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -3483,11 +3483,11 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -3500,13 +3500,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -3820,7 +3820,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -3854,12 +3854,12 @@ exports[`PluginsCategory should delete plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -4079,7 +4079,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -4111,43 +4111,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4160,7 +4158,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -4192,43 +4190,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4241,7 +4237,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -4273,43 +4269,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4322,7 +4316,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -4354,43 +4348,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4403,7 +4395,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -4435,43 +4427,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4506,7 +4496,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -4538,43 +4528,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4609,7 +4597,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -4641,43 +4629,41 @@ exports[`PluginsCategory should delete plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -4926,7 +4912,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -4960,12 +4946,12 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -5224,9 +5210,9 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -5254,9 +5240,9 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -5284,9 +5270,9 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -5314,9 +5300,9 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -5344,9 +5330,9 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -5374,9 +5360,9 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -5479,11 +5465,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -5496,13 +5482,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -5627,11 +5613,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -5644,13 +5630,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -5775,11 +5761,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -5792,13 +5778,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -5923,11 +5909,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -5940,13 +5926,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -6071,11 +6057,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -6088,13 +6074,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -6234,11 +6220,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -6251,13 +6237,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -6397,11 +6383,11 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -6414,13 +6400,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -6886,7 +6872,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -6920,12 +6906,12 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -7145,7 +7131,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -7177,43 +7163,41 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -7226,7 +7210,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -7258,43 +7242,41 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -7307,7 +7289,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -7339,43 +7321,41 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -7388,7 +7368,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -7420,43 +7400,41 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -7469,7 +7447,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -7501,43 +7479,41 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -7572,7 +7548,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -7604,43 +7580,41 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -7675,7 +7649,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -7707,43 +7681,41 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -8144,7 +8116,7 @@ exports[`PluginsCategory should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -8178,12 +8150,12 @@ exports[`PluginsCategory should render 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -8403,7 +8375,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -8435,43 +8407,41 @@ exports[`PluginsCategory should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -8484,7 +8454,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -8516,43 +8486,41 @@ exports[`PluginsCategory should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -8565,7 +8533,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -8597,43 +8565,41 @@ exports[`PluginsCategory should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -8646,7 +8612,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -8678,43 +8644,41 @@ exports[`PluginsCategory should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -8727,7 +8691,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -8759,43 +8723,41 @@ exports[`PluginsCategory should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -8830,7 +8792,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -8862,43 +8824,41 @@ exports[`PluginsCategory should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -8933,7 +8893,7 @@ exports[`PluginsCategory should render 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -8965,43 +8925,41 @@ exports[`PluginsCategory should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -9250,7 +9208,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -9284,12 +9242,12 @@ exports[`PluginsCategory should search for plugin 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -9560,7 +9518,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -9592,43 +9550,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -9641,7 +9597,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -9673,43 +9629,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -9722,7 +9676,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -9754,43 +9708,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -9803,7 +9755,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -9835,43 +9787,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -9884,7 +9834,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -9916,43 +9866,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -9987,7 +9935,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -10019,43 +9967,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -10090,7 +10036,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -10122,43 +10068,41 @@ exports[`PluginsCategory should search for plugin 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -10407,7 +10351,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -10441,12 +10385,12 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -10666,7 +10610,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--0"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -10698,43 +10642,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -10747,7 +10689,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--1"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -10779,43 +10721,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -10828,7 +10768,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--2"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -10860,43 +10800,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -10909,7 +10847,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--3"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -10941,43 +10879,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 80%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 80%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                4.2
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              4.2
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -10990,7 +10926,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--5"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -11022,43 +10958,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -11093,7 +11027,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--6"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -11125,43 +11059,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -11196,7 +11128,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     data-testid="PluginCard--7"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
                       data-testid="Card"
                     >
                       <div
@@ -11228,43 +11160,41 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex space-x-4 text-sm text-theme-neutral-light"
+                          class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
                         >
                           <div
                             class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
                           >
                             ARK.io
                           </div>
-                          <div>
+                          <div
+                            class="flex items-center"
+                            data-testid="ReviewRating"
+                          >
                             <div
-                              class="flex"
-                              data-testid="ReviewRating"
+                              class="relative"
                             >
                               <div
-                                class="relative my-auto"
+                                class="overflow-hidden absolute"
+                                style="width: 70%;"
                               >
-                                <div
-                                  class="overflow-hidden absolute"
-                                  style="width: 70%;"
-                                >
-                                  <svg
-                                    class="text-theme-warning-400 w-5"
-                                  >
-                                    star.svg
-                                  </svg>
-                                </div>
                                 <svg
-                                  class="text-theme-neutral w-5"
+                                  class="text-theme-warning-400 w-4"
                                 >
                                   star.svg
                                 </svg>
                               </div>
-                              <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                              <svg
+                                class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                               >
-                                3.8
-                              </span>
+                                star.svg
+                              </svg>
                             </div>
+                            <span
+                              class="ml-1"
+                            >
+                              3.8
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -11513,7 +11443,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -11547,12 +11477,12 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -11811,9 +11741,9 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -11841,9 +11771,9 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -11871,9 +11801,9 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -11901,9 +11831,9 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -11931,9 +11861,9 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -11961,9 +11891,9 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                               data-testid="table__Sort"
                             >
                               <div
-                                class="sc-bdfBwQ iABjnS"
-                                height="12"
-                                width="15"
+                                class="sc-bdfBwQ gvFuTp"
+                                height="5"
+                                width="10"
                               >
                                 <svg>
                                   sort.svg
@@ -12066,11 +11996,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -12083,13 +12013,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -12214,11 +12144,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -12231,13 +12161,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -12362,11 +12292,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -12379,13 +12309,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -12510,11 +12440,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -12527,13 +12457,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 4.2
                               </span>
@@ -12658,11 +12588,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -12675,13 +12605,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -12821,11 +12751,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -12838,13 +12768,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>
@@ -12984,11 +12914,11 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                           >
                             <div
-                              class="flex"
+                              class="flex items-center"
                               data-testid="ReviewRating"
                             >
                               <div
-                                class="relative my-auto"
+                                class="relative"
                               >
                                 <div
                                   class="overflow-hidden absolute"
@@ -13001,13 +12931,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                                   </svg>
                                 </div>
                                 <svg
-                                  class="text-theme-neutral w-3"
+                                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                                 >
                                   star.svg
                                 </svg>
                               </div>
                               <span
-                                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                                class="ml-1"
                               >
                                 3.8
                               </span>

@@ -65,7 +65,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 			dropdownClass="mt-8 -mr-4"
 			toggleContent={(isOpen: boolean) => (
 				<div className="my-0.5 ml-4 -space-x-2 cursor-pointer" data-testid="navbar__useractions">
-					<Circle className="border-theme-primary-contrast dark:border-theme-neutral-800" size="lg">
+					<Circle className="border-theme-primary-100 dark:border-theme-neutral-800" size="lg">
 						<span className="text-theme-secondary-text dark:text-theme-neutral-800">
 							{exchangeCurrency && (
 								<Icon
@@ -98,12 +98,12 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 						</AvatarWrapper>
 
 						<Badge
-							className="bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+							className="bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
 							position="right"
 							icon="ChevronDown"
 							iconClass={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
-							iconWidth={10}
-							iconHeight={10}
+							iconWidth={8}
+							iconHeight={5}
 						/>
 					</div>
 				</div>

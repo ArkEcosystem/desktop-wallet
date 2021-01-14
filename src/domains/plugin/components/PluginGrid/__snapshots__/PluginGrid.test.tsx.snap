@@ -12,7 +12,7 @@ exports[`PluginGrid should render 1`] = `
         data-testid="PluginCard--ark-explorer"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -44,43 +44,41 @@ exports[`PluginGrid should render 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 80%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 80%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    4.2
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  4.2
+                </span>
               </div>
             </div>
           </div>
@@ -93,7 +91,7 @@ exports[`PluginGrid should render 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -125,43 +123,41 @@ exports[`PluginGrid should render 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 70%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    3.8
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  3.8
+                </span>
               </div>
             </div>
           </div>
@@ -227,7 +223,7 @@ exports[`PluginGrid should render without pagination 1`] = `
         data-testid="PluginCard--ark-explorer"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -259,43 +255,41 @@ exports[`PluginGrid should render without pagination 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 80%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 80%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    4.2
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  4.2
+                </span>
               </div>
             </div>
           </div>
@@ -308,7 +302,7 @@ exports[`PluginGrid should render without pagination 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -340,43 +334,41 @@ exports[`PluginGrid should render without pagination 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 70%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    3.8
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  3.8
+                </span>
               </div>
             </div>
           </div>
@@ -427,7 +419,7 @@ exports[`PluginGrid should split by page 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -459,43 +451,41 @@ exports[`PluginGrid should split by page 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 70%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    3.8
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  3.8
+                </span>
               </div>
             </div>
           </div>
@@ -582,7 +572,7 @@ exports[`PluginGrid should trigger delete 1`] = `
         data-testid="PluginCard--ark-explorer"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -614,43 +604,41 @@ exports[`PluginGrid should trigger delete 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 80%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 80%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    4.2
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  4.2
+                </span>
               </div>
             </div>
           </div>
@@ -663,7 +651,7 @@ exports[`PluginGrid should trigger delete 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -695,43 +683,41 @@ exports[`PluginGrid should trigger delete 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 70%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    3.8
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  3.8
+                </span>
               </div>
             </div>
           </div>
@@ -797,7 +783,7 @@ exports[`PluginGrid should trigger select 1`] = `
         data-testid="PluginCard--ark-explorer"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -829,43 +815,41 @@ exports[`PluginGrid should trigger select 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 80%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 80%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    4.2
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  4.2
+                </span>
               </div>
             </div>
           </div>
@@ -878,7 +862,7 @@ exports[`PluginGrid should trigger select 1`] = `
         data-testid="PluginCard--ark-avatars"
       >
         <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 kZYJmz border-theme-primary-contrast hover:border-theme-background"
+          class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
           data-testid="Card"
         >
           <div
@@ -910,43 +894,41 @@ exports[`PluginGrid should trigger select 1`] = `
               </div>
             </div>
             <div
-              class="flex space-x-4 text-sm text-theme-neutral-light"
+              class="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700"
             >
               <div
                 class="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
               >
                 ARK.io
               </div>
-              <div>
+              <div
+                class="flex items-center"
+                data-testid="ReviewRating"
+              >
                 <div
-                  class="flex"
-                  data-testid="ReviewRating"
+                  class="relative"
                 >
                   <div
-                    class="relative my-auto"
+                    class="overflow-hidden absolute"
+                    style="width: 70%;"
                   >
-                    <div
-                      class="overflow-hidden absolute"
-                      style="width: 70%;"
-                    >
-                      <svg
-                        class="text-theme-warning-400 w-5"
-                      >
-                        star.svg
-                      </svg>
-                    </div>
                     <svg
-                      class="text-theme-neutral w-5"
+                      class="text-theme-warning-400 w-4"
                     >
                       star.svg
                     </svg>
                   </div>
-                  <span
-                    class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                  <svg
+                    class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                   >
-                    3.8
-                  </span>
+                    star.svg
+                  </svg>
                 </div>
+                <span
+                  class="ml-1"
+                >
+                  3.8
+                </span>
               </div>
             </div>
           </div>

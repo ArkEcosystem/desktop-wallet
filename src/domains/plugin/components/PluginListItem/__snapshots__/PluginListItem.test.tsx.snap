@@ -56,11 +56,11 @@ exports[`PluginListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
           >
             <div
-              class="flex"
+              class="flex items-center"
               data-testid="ReviewRating"
             >
               <div
-                class="relative my-auto"
+                class="relative"
               >
                 <div
                   class="overflow-hidden absolute"
@@ -73,13 +73,13 @@ exports[`PluginListItem should render 1`] = `
                   </svg>
                 </div>
                 <svg
-                  class="text-theme-neutral w-3"
+                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                 >
                   star.svg
                 </svg>
               </div>
               <span
-                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                class="ml-1"
               >
                 4.2
               </span>
@@ -213,11 +213,11 @@ exports[`PluginListItem should render grant icon 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
           >
             <div
-              class="flex"
+              class="flex items-center"
               data-testid="ReviewRating"
             >
               <div
-                class="relative my-auto"
+                class="relative"
               >
                 <div
                   class="overflow-hidden absolute"
@@ -230,13 +230,13 @@ exports[`PluginListItem should render grant icon 1`] = `
                   </svg>
                 </div>
                 <svg
-                  class="text-theme-neutral w-3"
+                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                 >
                   star.svg
                 </svg>
               </div>
               <span
-                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                class="ml-1"
               >
                 4.2
               </span>
@@ -370,11 +370,11 @@ exports[`PluginListItem should render official icon 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
           >
             <div
-              class="flex"
+              class="flex items-center"
               data-testid="ReviewRating"
             >
               <div
-                class="relative my-auto"
+                class="relative"
               >
                 <div
                   class="overflow-hidden absolute"
@@ -387,13 +387,13 @@ exports[`PluginListItem should render official icon 1`] = `
                   </svg>
                 </div>
                 <svg
-                  class="text-theme-neutral w-3"
+                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                 >
                   star.svg
                 </svg>
               </div>
               <span
-                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                class="ml-1"
               >
                 4.2
               </span>
@@ -518,11 +518,11 @@ exports[`PluginListItem should trigger delete 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
           >
             <div
-              class="flex"
+              class="flex items-center"
               data-testid="ReviewRating"
             >
               <div
-                class="relative my-auto"
+                class="relative"
               >
                 <div
                   class="overflow-hidden absolute"
@@ -535,13 +535,13 @@ exports[`PluginListItem should trigger delete 1`] = `
                   </svg>
                 </div>
                 <svg
-                  class="text-theme-neutral w-3"
+                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                 >
                   star.svg
                 </svg>
               </div>
               <span
-                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                class="ml-1"
               >
                 4.2
               </span>
@@ -681,11 +681,11 @@ exports[`PluginListItem should trigger install 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
           >
             <div
-              class="flex"
+              class="flex items-center"
               data-testid="ReviewRating"
             >
               <div
-                class="relative my-auto"
+                class="relative"
               >
                 <div
                   class="overflow-hidden absolute"
@@ -698,13 +698,13 @@ exports[`PluginListItem should trigger install 1`] = `
                   </svg>
                 </div>
                 <svg
-                  class="text-theme-neutral w-3"
+                  class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
                 >
                   star.svg
                 </svg>
               </div>
               <span
-                class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                class="ml-1"
               >
                 4.2
               </span>

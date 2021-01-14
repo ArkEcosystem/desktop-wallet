@@ -110,9 +110,9 @@ exports[`AddExchange should render a modal 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
+                            class="sc-bdfBwQ gvFuTp"
+                            height="5"
+                            width="10"
                           >
                             <svg>
                               sort.svg
@@ -140,9 +140,9 @@ exports[`AddExchange should render a modal 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
+                            class="sc-bdfBwQ gvFuTp"
+                            height="5"
+                            width="10"
                           >
                             <svg>
                               sort.svg
@@ -170,9 +170,9 @@ exports[`AddExchange should render a modal 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
+                            class="sc-bdfBwQ gvFuTp"
+                            height="5"
+                            width="10"
                           >
                             <svg>
                               sort.svg
@@ -200,9 +200,9 @@ exports[`AddExchange should render a modal 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
+                            class="sc-bdfBwQ gvFuTp"
+                            height="5"
+                            width="10"
                           >
                             <svg>
                               sort.svg
@@ -281,30 +281,30 @@ exports[`AddExchange should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="flex"
+                          class="flex items-center"
                           data-testid="ReviewRating"
                         >
                           <div
-                            class="relative my-auto"
+                            class="relative"
                           >
                             <div
                               class="overflow-hidden absolute"
                               style="width: 89.99999999999999%;"
                             >
                               <svg
-                                class="text-theme-warning-400 w-5"
+                                class="text-theme-warning-400 w-4"
                               >
                                 star.svg
                               </svg>
                             </div>
                             <svg
-                              class="text-theme-neutral w-5"
+                              class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                             >
                               star.svg
                             </svg>
                           </div>
                           <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                            class="ml-1"
                           >
                             4.6
                           </span>
@@ -386,30 +386,30 @@ exports[`AddExchange should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="flex"
+                          class="flex items-center"
                           data-testid="ReviewRating"
                         >
                           <div
-                            class="relative my-auto"
+                            class="relative"
                           >
                             <div
                               class="overflow-hidden absolute"
                               style="width: 89.99999999999999%;"
                             >
                               <svg
-                                class="text-theme-warning-400 w-5"
+                                class="text-theme-warning-400 w-4"
                               >
                                 star.svg
                               </svg>
                             </div>
                             <svg
-                              class="text-theme-neutral w-5"
+                              class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                             >
                               star.svg
                             </svg>
                           </div>
                           <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                            class="ml-1"
                           >
                             4.6
                           </span>
@@ -491,30 +491,30 @@ exports[`AddExchange should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="flex"
+                          class="flex items-center"
                           data-testid="ReviewRating"
                         >
                           <div
-                            class="relative my-auto"
+                            class="relative"
                           >
                             <div
                               class="overflow-hidden absolute"
                               style="width: 95%;"
                             >
                               <svg
-                                class="text-theme-warning-400 w-5"
+                                class="text-theme-warning-400 w-4"
                               >
                                 star.svg
                               </svg>
                             </div>
                             <svg
-                              class="text-theme-neutral w-5"
+                              class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                             >
                               star.svg
                             </svg>
                           </div>
                           <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                            class="ml-1"
                           >
                             4.8
                           </span>
@@ -596,30 +596,30 @@ exports[`AddExchange should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm"
                       >
                         <div
-                          class="flex"
+                          class="flex items-center"
                           data-testid="ReviewRating"
                         >
                           <div
-                            class="relative my-auto"
+                            class="relative"
                           >
                             <div
                               class="overflow-hidden absolute"
                               style="width: 40%;"
                             >
                               <svg
-                                class="text-theme-warning-400 w-5"
+                                class="text-theme-warning-400 w-4"
                               >
                                 star.svg
                               </svg>
                             </div>
                             <svg
-                              class="text-theme-neutral w-5"
+                              class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
                             >
                               star.svg
                             </svg>
                           </div>
                           <span
-                            class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                            class="ml-1"
                           >
                             2.6
                           </span>
