@@ -139,64 +139,78 @@ const useProfileJobs = (profile?: Profile) => {
 };
 
 type ProfileSyncState = {
-	restoredProfiles: string[];
-	syncedProfiles: string[];
+	status: string | null;
 };
 
-export const useProfileSyncState = (profile?: Profile) => {
-	const { profileIsSyncing } = useConfiguration();
-	const { current } = useRef<ProfileSyncState>({ restoredProfiles: [], syncedProfiles: [] });
+export const useProfileSyncStatus = (profile?: Profile) => {
+	const { current } = useRef<ProfileSyncState>({
+		status: "idle",
+	});
+
+	const isIdle = () => current.status === "idle";
+	const isRestoring = () => current.status === "restoring";
+	const isSyncing = () => current.status === "syncing";
+	const isSynced = () => current.status === "synced";
+	const isCompleted = () => current.status === "completed";
 
 	const shouldRestore = () => {
 		if (!profile || !__DEMO__) return false;
-		return !current.restoredProfiles.includes(profile.id?.());
+
+		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
 	};
 
-	const shouldSync = () => profile && !current.syncedProfiles.includes(profile.id?.());
-
-	const isSyncCompleted = () => !shouldRestore() && !shouldSync() && profileIsSyncing;
+	const shouldSync = () => profile && !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
+	const isSyncCompleted = () => profile && isSynced() && !isCompleted();
 
 	return {
-		shouldRestore,
+		isIdle,
 		shouldSync,
+		shouldRestore,
 		isSyncCompleted,
-		restoredProfiles: current.restoredProfiles,
-		syncedProfiles: current.syncedProfiles,
+		status: () => current.status,
+		setStatus: (status: string) => (current.status = status),
 	};
 };
 
 export const useProfileSynchronizer = () => {
 	const { persist } = useEnvironmentContext();
-	const { setConfiguration } = useConfiguration();
+	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
 
-	const { shouldRestore, shouldSync, isSyncCompleted, restoredProfiles, syncedProfiles } = useProfileSyncState(
-		profile,
-	);
+	const { shouldRestore, shouldSync, isSyncCompleted, setStatus } = useProfileSyncStatus(profile);
 
 	const jobs = useProfileJobs(profile);
 	const { start, runAll } = useSynchronizer(jobs);
 
 	useEffect(() => {
 		const syncProfile = async (profile?: Profile) => {
-			if (!profile) return;
+			if (!profile) {
+				return;
+			}
 
 			if (shouldRestore()) {
-				restoredProfiles.push(profile.id());
+				setStatus("restoring");
 
 				// Perform restore to make migrated wallets available in profile.wallets()
 				await profile.restore();
 				restoreProfilePassword(profile);
 				await persist();
+
+				setStatus("restored");
 			}
 
 			if (shouldSync()) {
-				syncedProfiles.push(profile.id());
+				setStatus("syncing");
+
 				await runAll();
+
+				setStatus("synced");
 			}
 
-			if (isSyncCompleted()) {
+			if (isSyncCompleted() && profileIsSyncing) {
 				setConfiguration({ profileIsSyncing: false });
+				setStatus("completed");
+
 				// Start background jobs after initial sync
 				start();
 			}
@@ -211,9 +225,9 @@ export const useProfileSynchronizer = () => {
 		persist,
 		setConfiguration,
 		isSyncCompleted,
-		restoredProfiles,
 		shouldRestore,
 		shouldSync,
-		syncedProfiles,
+		setStatus,
+		profileIsSyncing,
 	]);
 };
