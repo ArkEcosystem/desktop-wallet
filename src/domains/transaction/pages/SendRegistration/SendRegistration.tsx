@@ -60,7 +60,7 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 			/* istanbul ignore next */
 			setValue("fee", fees?.avg || fees?.static);
 		},
-		[getFeesByRegistrationType, setValue],
+		[getFeesByRegistrationType, setValue, env],
 	);
 
 	useEffect(() => {
