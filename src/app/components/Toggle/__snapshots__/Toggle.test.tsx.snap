@@ -2,44 +2,40 @@
 
 exports[`Toggle should render 1`] = `
 <DocumentFragment>
-  <div>
-    <label
-      class="flex"
+  <label
+    class="flex"
+  >
+    <input
+      class="Toggle__Input-qyyifx-0 WGuGL"
+      type="checkbox"
+    />
+    <div
+      class="Toggle__Handle-qyyifx-1 kGDqio"
     >
-      <input
-        class="Toggle__Input-qyyifx-0 WGuGL"
-        type="checkbox"
+      <span
+        class="Toggle__HandleInner-qyyifx-2 jmzNUQ"
       />
-      <div
-        class="Toggle__Handle-qyyifx-1 kGDqio"
-      >
-        <span
-          class="Toggle__HandleInner-qyyifx-2 jmzNUQ"
-        />
-      </div>
-    </label>
-  </div>
+    </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`Toggle should toggle checked 1`] = `
 <DocumentFragment>
-  <div>
-    <label
-      class="flex"
+  <label
+    class="flex"
+  >
+    <input
+      class="Toggle__Input-qyyifx-0 WGuGL"
+      type="checkbox"
+    />
+    <div
+      class="Toggle__Handle-qyyifx-1 kGDqio"
     >
-      <input
-        class="Toggle__Input-qyyifx-0 WGuGL"
-        type="checkbox"
+      <span
+        class="Toggle__HandleInner-qyyifx-2 jmzNUQ"
       />
-      <div
-        class="Toggle__Handle-qyyifx-1 kGDqio"
-      >
-        <span
-          class="Toggle__HandleInner-qyyifx-2 jmzNUQ"
-        />
-      </div>
-    </label>
-  </div>
+    </div>
+  </label>
 </DocumentFragment>
 `;

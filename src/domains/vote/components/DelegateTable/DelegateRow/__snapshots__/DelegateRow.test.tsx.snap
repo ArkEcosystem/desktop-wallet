@@ -2,861 +2,853 @@
 
 exports[`DelegateRow should emit action on select button 1`] = `
 <DocumentFragment>
-  <div>
-    <table>
-      <tbody>
-        <tr
-          class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-          data-testid="TableRow"
+  <table>
+    <tbody>
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold "
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+            <span>
+              arkx
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
         >
-          <td>
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold "
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <span>
-                arkx
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
+          />
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              #
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              %
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
           >
             <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
-            />
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+              class="sc-bdfBwQ fPrsah text-xl text-theme-primary"
+              height="1em"
+              width="1em"
             >
-              <span>
-                #
-              </span>
+              <svg>
+                msq.svg
+              </svg>
             </div>
-          </td>
-          <td
-            class="w-20"
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                %
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
-            >
-              <div
-                class="sc-gsTCUz cXMmJt text-xl text-theme-primary"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  msq.svg
-                </svg>
-              </div>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+            <button
+              class="Button-mdtvtf-0 ifPnXw"
+              color="primary"
+              data-testid="DelegateRow__toggle-0"
+              type="button"
             >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end "
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                color="primary"
-                data-testid="DelegateRow__toggle-0"
-                type="button"
-              >
-                Select
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+              Select
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;
 
 exports[`DelegateRow should render 1`] = `
 <DocumentFragment>
-  <div>
-    <table>
-      <tbody>
-        <tr
-          class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-          data-testid="TableRow"
+  <table>
+    <tbody>
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold "
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+            <span>
+              arkx
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
         >
-          <td>
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold "
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <span>
-                arkx
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
+          />
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              #
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              %
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
           >
             <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
-            />
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+              class="sc-bdfBwQ fPrsah text-xl text-theme-primary"
+              height="1em"
+              width="1em"
             >
-              <span>
-                #
-              </span>
+              <svg>
+                msq.svg
+              </svg>
             </div>
-          </td>
-          <td
-            class="w-20"
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                %
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
-            >
-              <div
-                class="sc-gsTCUz cXMmJt text-xl text-theme-primary"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  msq.svg
-                </svg>
-              </div>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+            <button
+              class="Button-mdtvtf-0 ifPnXw"
+              color="primary"
+              data-testid="DelegateRow__toggle-0"
+              type="button"
             >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end "
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                color="primary"
-                data-testid="DelegateRow__toggle-0"
-                type="button"
-              >
-                Select
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+              Select
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;
 
 exports[`DelegateRow should render the selected delegate 1`] = `
 <DocumentFragment>
-  <div>
-    <table>
-      <tbody>
-        <tr
-          class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-          data-testid="TableRow"
+  <table>
+    <tbody>
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold bg-theme-success-50 dark:bg-theme-success-900"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+            <span>
+              arkx
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
         >
-          <td>
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold bg-theme-success-50 dark:bg-theme-success-900"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <span>
-                arkx
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center bg-theme-success-50 dark:bg-theme-success-900"
+          />
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
+          >
+            <span>
+              #
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
+          >
+            <span>
+              %
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center bg-theme-success-50 dark:bg-theme-success-900"
           >
             <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center bg-theme-success-50 dark:bg-theme-success-900"
-            />
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
+              class="sc-bdfBwQ fPrsah text-xl text-theme-primary"
+              height="1em"
+              width="1em"
             >
-              <span>
-                #
-              </span>
+              <svg>
+                msq.svg
+              </svg>
             </div>
-          </td>
-          <td
-            class="w-20"
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-            >
-              <span>
-                %
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center bg-theme-success-50 dark:bg-theme-success-900"
-            >
-              <div
-                class="sc-gsTCUz cXMmJt text-xl text-theme-primary"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  msq.svg
-                </svg>
-              </div>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end bg-theme-success-50 dark:bg-theme-success-900"
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
+            <button
+              class="Button-mdtvtf-0 ifPnXw"
+              color="success"
+              data-testid="DelegateRow__toggle-0"
+              type="button"
             >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end bg-theme-success-50 dark:bg-theme-success-900"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                color="success"
-                data-testid="DelegateRow__toggle-0"
-                type="button"
-              >
-                Selected
-              </button>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+              Selected
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;
 
 exports[`DelegateRow should render the selected vote 1`] = `
 <DocumentFragment>
-  <div>
-    <table>
-      <tbody>
-        <tr
-          class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-          data-testid="TableRow"
+  <table>
+    <tbody>
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+            <span>
+              arkx
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
         >
-          <td>
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                    title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  />
-                </div>
-              </div>
-              <span>
-                arkx
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
           >
             <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+              class="sc-bdfBwQ iSzUah text-xs text-theme-primary"
+              height="22"
+              width="22"
             >
-              <div
-                class="sc-gsTCUz gbSRoN text-xs text-theme-primary"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  status-ok.svg
-                </svg>
-              </div>
+              <svg>
+                status-ok.svg
+              </svg>
             </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <span>
-                #
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <span>
-                %
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <div
-                class="sc-gsTCUz cXMmJt text-xl text-theme-primary"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  msq.svg
-                </svg>
-              </div>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
-            >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                color="primary"
-                data-testid="DelegateRow__toggle-0"
-                type="button"
-              >
-                Current
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-          data-testid="TableRow"
+          </div>
+        </td>
+        <td
+          class="w-20"
         >
-          <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <span>
+              #
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <span>
+              %
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
             <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold "
+              class="sc-bdfBwQ fPrsah text-xl text-theme-primary"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                msq.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <button
+              class="Button-mdtvtf-0 ifPnXw"
+              color="primary"
+              data-testid="DelegateRow__toggle-0"
+              type="button"
+            >
+              Current
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold "
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+              data-testid="Avatar"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
-                data-testid="Avatar"
+                class="w-full h-full"
               >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                    title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                  />
-                </div>
+                <img
+                  alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                  title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
+                />
               </div>
-              <span>
-                genesis_42
-              </span>
             </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              genesis_42
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
+          />
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              #2
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              %
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
           >
             <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
-            />
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+              class="sc-bdfBwQ fPrsah text-xl text-theme-primary"
+              height="1em"
+              width="1em"
             >
-              <span>
-                #2
-              </span>
+              <svg>
+                msq.svg
+              </svg>
             </div>
-          </td>
-          <td
-            class="w-20"
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text "
+          >
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end "
+          >
+            <button
+              class="Button-mdtvtf-0 ifPnXw"
+              color="primary"
+              data-testid="DelegateRow__toggle-1"
+              type="button"
             >
-              <span>
-                %
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+              Select
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+        data-testid="TableRow"
+      >
+        <td>
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold "
           >
             <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
+              data-testid="Avatar"
             >
               <div
-                class="sc-gsTCUz cXMmJt text-xl text-theme-primary"
-                height="1em"
-                width="1em"
+                class="w-full h-full"
               >
-                <svg>
-                  msq.svg
-                </svg>
+                <img
+                  alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                  title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                />
               </div>
             </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              genesis_17
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
+          />
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              #3
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+          >
+            <span>
+              %
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
           >
             <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
+              class="sc-bdfBwQ fPrsah text-xl text-theme-primary"
+              height="1em"
+              width="1em"
             >
-              <span>
-                ...
-              </span>
+              <svg>
+                msq.svg
+              </svg>
             </div>
-          </td>
-          <td
-            class="w-20"
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-20"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text "
           >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end "
-            >
+            <span>
+              ...
+            </span>
+          </div>
+        </td>
+        <td
+          class="w-40"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end "
+          >
+            <span>
               <button
-                class="Button-mdtvtf-0 ifPnXw"
+                class="Button-mdtvtf-0 eVVyXU"
                 color="primary"
-                data-testid="DelegateRow__toggle-1"
+                data-testid="DelegateRow__toggle-2"
+                disabled=""
                 type="button"
               >
                 Select
               </button>
-            </div>
-          </td>
-        </tr>
-        <tr
-          class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
-          data-testid="TableRow"
-        >
-          <td>
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4 font-bold "
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                    title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                  />
-                </div>
-              </div>
-              <span>
-                genesis_17
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
-            />
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                #3
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                %
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center "
-            >
-              <div
-                class="sc-gsTCUz cXMmJt text-xl text-theme-primary"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  msq.svg
-                </svg>
-              </div>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-20"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-end font-bold text-theme-secondary-text "
-            >
-              <span>
-                ...
-              </span>
-            </div>
-          </td>
-          <td
-            class="w-40"
-          >
-            <div
-              class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end "
-            >
-              <span>
-                <button
-                  class="Button-mdtvtf-0 eVVyXU"
-                  color="primary"
-                  data-testid="DelegateRow__toggle-2"
-                  disabled=""
-                  type="button"
-                >
-                  Select
-                </button>
-              </span>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </DocumentFragment>
 `;

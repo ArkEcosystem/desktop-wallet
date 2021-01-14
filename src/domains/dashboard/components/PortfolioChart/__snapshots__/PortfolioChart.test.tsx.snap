@@ -2,290 +2,282 @@
 
 exports[`PortfolioChart should render 1`] = `
 <div>
-  <div>
+  <div
+    class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+  >
     <div
-      class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="container py-16 px-14 mx-auto"
+        class="-mb-2 text-4xl font-bold"
+      >
+        Portfolio Chart
+      </div>
+      <div
+        class="recharts-responsive-container mb-16"
+        id="undefined"
+        style="width: 100%; height: 260px;"
       >
         <div
-          class="-mb-2 text-4xl font-bold"
+          class="LineChart__Wrapper-sc-12v17j0-0 llpnRz text-theme-neutral-300 dark:text-theme-neutral-800 pb"
+          data-testid="line-chart-wrapper"
         >
-          Portfolio Chart
-        </div>
-        <div
-          class="recharts-responsive-container mb-16"
-          id="undefined"
-          style="width: 100%; height: 260px;"
-        >
-          <div
-            class="LineChart__Wrapper-sc-12v17j0-0 llpnRz text-theme-neutral-300 dark:text-theme-neutral-800 pb"
-            data-testid="line-chart-wrapper"
-          >
-            <div>
+          <div>
+            <div
+              class="flex space-x-3"
+            >
               <div
-                class="flex space-x-3"
+                class="pt-4 text-sm font-semibold cursor-pointer text-theme-secondary-text"
               >
                 <div
-                  class="pt-4 text-sm font-semibold cursor-pointer text-theme-secondary-text"
+                  class="flex items-center"
                 >
                   <div
-                    class="flex items-center"
+                    class="my-auto text-base"
                   >
-                    <div
-                      class="my-auto text-base"
-                    >
-                      Period
-                      : 
-                      22 Jun - 28 Jun
-                    </div>
-                    <div
-                      class="my-auto ml-1"
-                    >
-                      <div
-                        class="sc-gsTCUz cXMmJt"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex flex-1 justify-end space-x-3"
-                >
-                  <div
-                    class="my-auto text-sm text-base text-theme-secondary-text"
-                  >
-                    28 Jun, 2020
+                    Period
+                    : 
+                    22 Jun - 28 Jun
                   </div>
                   <div
-                    class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
+                    class="my-auto ml-1"
                   >
                     <div
-                      class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
-                    />
-                    <div
-                      class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
                     >
-                      <span>
-                        2.16
-                         - 
-                      </span>
-                      BTC
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
-                  >
-                    <div
-                      class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
-                    />
-                    <div
-                      class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-                    >
-                      <span>
-                        8,000
-                         - 
-                      </span>
-                      USD
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="active-dot"
-            >
-              <svg
-                class="text-theme-undefined"
-                fill="currentColor"
-                height="50"
-                stroke="currentColor"
-                width="50"
-                x="-25"
-                y="-25"
+              <div
+                class="flex flex-1 justify-end space-x-3"
               >
-                chart-active-dot.svg
-              </svg>
+                <div
+                  class="my-auto text-sm text-base text-theme-secondary-text"
+                >
+                  28 Jun, 2020
+                </div>
+                <div
+                  class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
+                >
+                  <div
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+                  />
+                  <div
+                    class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+                  >
+                    <span>
+                      2.16
+                       - 
+                    </span>
+                    BTC
+                  </div>
+                </div>
+                <div
+                  class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
+                >
+                  <div
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
+                  />
+                  <div
+                    class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+                  >
+                    <span>
+                      8,000
+                       - 
+                    </span>
+                    USD
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div />
+          <div
+            class="active-dot"
+          >
+            <svg
+              class="text-theme-undefined"
+              fill="currentColor"
+              height="50"
+              stroke="currentColor"
+              width="50"
+              x="-25"
+              y="-25"
+            >
+              chart-active-dot.svg
+            </svg>
+          </div>
         </div>
+        <div />
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`PortfolioChart should render hidden 1`] = `
-<div>
-  <div />
-</div>
-`;
+exports[`PortfolioChart should render hidden 1`] = `<div />`;
 
 exports[`PortfolioChart should render with balance 1`] = `
 <div>
-  <div>
+  <div
+    class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+  >
     <div
-      class="Section__SectionWrapper-sc-8cjvre-0 Aphxw"
+      class="container py-16 px-14 mx-auto"
     >
       <div
-        class="container py-16 px-14 mx-auto"
+        class="-mb-2 text-4xl font-bold"
+      >
+        Portfolio Chart
+      </div>
+      <div
+        class="recharts-responsive-container mb-16"
+        id="undefined"
+        style="width: 100%; height: 260px;"
       >
         <div
-          class="-mb-2 text-4xl font-bold"
+          class="LineChart__Wrapper-sc-12v17j0-0 llpnRz text-theme-neutral-300 dark:text-theme-neutral-800 pb"
+          data-testid="line-chart-wrapper"
         >
-          Portfolio Chart
-        </div>
-        <div
-          class="recharts-responsive-container mb-16"
-          id="undefined"
-          style="width: 100%; height: 260px;"
-        >
-          <div
-            class="LineChart__Wrapper-sc-12v17j0-0 llpnRz text-theme-neutral-300 dark:text-theme-neutral-800 pb"
-            data-testid="line-chart-wrapper"
-          >
-            <div>
+          <div>
+            <div
+              class="flex space-x-3"
+            >
               <div
-                class="flex space-x-3"
+                class="pt-4 text-sm font-semibold cursor-pointer text-theme-secondary-text"
               >
                 <div
-                  class="pt-4 text-sm font-semibold cursor-pointer text-theme-secondary-text"
+                  class="flex items-center"
                 >
                   <div
-                    class="flex items-center"
+                    class="my-auto text-base"
                   >
-                    <div
-                      class="my-auto text-base"
-                    >
-                      Period
-                      : 
-                      22 Jun - 28 Jun
-                    </div>
-                    <div
-                      class="my-auto ml-1"
-                    >
-                      <div
-                        class="sc-gsTCUz cXMmJt"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex flex-1 justify-end space-x-3"
-                >
-                  <div
-                    class="my-auto text-sm text-base text-theme-secondary-text"
-                  >
-                    28 Jun, 2020
+                    Period
+                    : 
+                    22 Jun - 28 Jun
                   </div>
                   <div
-                    class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
+                    class="my-auto ml-1"
                   >
                     <div
-                      class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
-                    />
-                    <div
-                      class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+                      class="sc-bdfBwQ fPrsah"
+                      height="1em"
+                      width="1em"
                     >
-                      <span>
-                        2.16
-                         - 
-                      </span>
-                      BTC
-                    </div>
-                  </div>
-                  <div
-                    class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
-                  >
-                    <div
-                      class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
-                    />
-                    <div
-                      class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-                    >
-                      <span>
-                        8,000
-                         - 
-                      </span>
-                      USD
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="active-dot"
-            >
-              <svg
-                class="text-theme-undefined"
-                fill="currentColor"
-                height="50"
-                stroke="currentColor"
-                width="50"
-                x="-25"
-                y="-25"
-              >
-                chart-active-dot.svg
-              </svg>
-            </div>
-          </div>
-          <div />
-        </div>
-        <div
-          class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
-        />
-        <div>
-          <div
-            class="flex space-x-3"
-          >
-            <div
-              class="py-4 text-lg font-bold text-theme-neutral-800"
-            >
-              Total Portfolio
-            </div>
-            <div
-              class="flex flex-1 justify-end space-x-3"
-            >
               <div
-                class="flex justify-end items-center py-4 pr-0 pl-6"
-                data-testid="item-percentage"
+                class="flex flex-1 justify-end space-x-3"
               >
                 <div
-                  class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
-                />
-                <div
-                  class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+                  class="my-auto text-sm text-base text-theme-secondary-text"
                 >
-                  <span>
-                    ARK
-                     - 
-                    3
-                    %
-                  </span>
+                  28 Jun, 2020
+                </div>
+                <div
+                  class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
+                >
+                  <div
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+                  />
+                  <div
+                    class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+                  >
+                    <span>
+                      2.16
+                       - 
+                    </span>
+                    BTC
+                  </div>
+                </div>
+                <div
+                  class="flex justify-end items-center p-4 pt-4 pr-0 min-w-32"
+                >
+                  <div
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
+                  />
+                  <div
+                    class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+                  >
+                    <span>
+                      8,000
+                       - 
+                    </span>
+                    USD
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div
-            class="flex -space-x-1"
+            class="active-dot"
+          >
+            <svg
+              class="text-theme-undefined"
+              fill="currentColor"
+              height="50"
+              stroke="currentColor"
+              width="50"
+              x="-25"
+              y="-25"
+            >
+              chart-active-dot.svg
+            </svg>
+          </div>
+        </div>
+        <div />
+      </div>
+      <div
+        class="pt-6 mb-2 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
+      />
+      <div>
+        <div
+          class="flex space-x-3"
+        >
+          <div
+            class="py-4 text-lg font-bold text-theme-neutral-800"
+          >
+            Total Portfolio
+          </div>
+          <div
+            class="flex flex-1 justify-end space-x-3"
           >
             <div
-              class="h-1 rounded-sm bg-theme-danger-400"
-            />
+              class="flex justify-end items-center py-4 pr-0 pl-6"
+              data-testid="item-percentage"
+            >
+              <div
+                class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
+              />
+              <div
+                class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+              >
+                <span>
+                  ARK
+                   - 
+                  3
+                  %
+                </span>
+              </div>
+            </div>
           </div>
+        </div>
+        <div
+          class="flex -space-x-1"
+        >
+          <div
+            class="h-1 rounded-sm bg-theme-danger-400"
+          />
         </div>
       </div>
     </div>

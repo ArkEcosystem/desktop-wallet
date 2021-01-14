@@ -2,18 +2,16 @@
 
 exports[`Header should render an header 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="flex justify-between items-end bg-theme-background"
-    >
-      <div>
-        <h1
-          class="mb-0 md:text-4xl"
-          data-testid="header__title"
-        >
-          Header test
-        </h1>
-      </div>
+  <div
+    class="flex justify-between items-end bg-theme-background"
+  >
+    <div>
+      <h1
+        class="mb-0 md:text-4xl"
+        data-testid="header__title"
+      >
+        Header test
+      </h1>
     </div>
   </div>
 </DocumentFragment>
@@ -21,23 +19,21 @@ exports[`Header should render an header 1`] = `
 
 exports[`Header should render an header with a subtitle 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="flex justify-between items-end bg-theme-background"
-    >
-      <div>
-        <h1
-          class="mb-0 md:text-4xl"
-          data-testid="header__title"
-        >
-          Header test
-        </h1>
-        <div
-          class="text-theme-secondary-text"
-          data-testid="header__subtitle"
-        >
-          Subtitle test
-        </div>
+  <div
+    class="flex justify-between items-end bg-theme-background"
+  >
+    <div>
+      <h1
+        class="mb-0 md:text-4xl"
+        data-testid="header__title"
+      >
+        Header test
+      </h1>
+      <div
+        class="text-theme-secondary-text"
+        data-testid="header__subtitle"
+      >
+        Subtitle test
       </div>
     </div>
   </div>
@@ -46,43 +42,41 @@ exports[`Header should render an header with a subtitle 1`] = `
 
 exports[`Header should render an header with extra 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="flex justify-between items-end bg-theme-background"
-    >
-      <div>
-        <h1
-          class="mb-0 md:text-4xl"
-          data-testid="header__title"
-        >
-          Header test
-        </h1>
-        <div
-          class="text-theme-secondary-text"
-          data-testid="header__subtitle"
-        >
-          Subtitle test
-        </div>
+  <div
+    class="flex justify-between items-end bg-theme-background"
+  >
+    <div>
+      <h1
+        class="mb-0 md:text-4xl"
+        data-testid="header__title"
+      >
+        Header test
+      </h1>
+      <div
+        class="text-theme-secondary-text"
+        data-testid="header__subtitle"
+      >
+        Subtitle test
       </div>
-      <div>
-        <div
-          class="flex justify-end space-x-3"
+    </div>
+    <div>
+      <div
+        class="flex justify-end space-x-3"
+      >
+        <button
+          class="Button-mdtvtf-0 cvPqli"
+          data-testid="header__extra"
+          type="button"
         >
-          <button
-            class="Button-mdtvtf-0 cvPqli"
-            data-testid="header__extra"
-            type="button"
-          >
-            Extra 1
-          </button>
-          <button
-            class="Button-mdtvtf-0 cvPqli"
-            data-testid="header__extra"
-            type="button"
-          >
-            Extra 2
-          </button>
-        </div>
+          Extra 1
+        </button>
+        <button
+          class="Button-mdtvtf-0 cvPqli"
+          data-testid="header__extra"
+          type="button"
+        >
+          Extra 2
+        </button>
       </div>
     </div>
   </div>

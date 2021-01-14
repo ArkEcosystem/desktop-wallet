@@ -2,32 +2,30 @@
 
 exports[`SearchBarFilters should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="flex relative items-center pr-8 text-theme-primary-400"
+    data-testid="SearchBarFilters"
+  >
     <div
-      class="flex relative items-center pr-8 text-theme-primary-400"
-      data-testid="SearchBarFilters"
+      class="relative"
     >
-      <div
-        class="relative"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <span
-          data-testid="dropdown__toggle"
+        <div
+          class="cursor-pointer outline-none focus:outline-none"
         >
           <div
-            class="cursor-pointer outline-none focus:outline-none"
+            class="sc-bdfBwQ iyevwF"
+            height="20"
+            width="20"
           >
-            <div
-              class="sc-gsTCUz fHxsLl"
-              height="20"
-              width="20"
-            >
-              <svg>
-                filters.svg
-              </svg>
-            </div>
+            <svg>
+              filters.svg
+            </svg>
           </div>
-        </span>
-      </div>
+        </div>
+      </span>
     </div>
   </div>
 </DocumentFragment>

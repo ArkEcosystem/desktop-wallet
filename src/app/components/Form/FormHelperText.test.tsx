@@ -35,11 +35,7 @@ describe("FormHelperText", () => {
 
 	it("should not render if nothing is provided", () => {
 		const { container } = render(<FormHelperText />);
-		expect(container).toMatchInlineSnapshot(`
-		<div>
-		  <div />
-		</div>
-	`);
+		expect(container).toMatchInlineSnapshot(`<div />`);
 	});
 
 	it("should read data from context", () => {

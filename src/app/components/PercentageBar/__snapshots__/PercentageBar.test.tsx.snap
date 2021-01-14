@@ -3,21 +3,19 @@
 exports[`PercentageBar should render 1`] = `
 <div>
   <div>
-    <div>
+    <div
+      class="flex space-x-3"
+    >
       <div
-        class="flex space-x-3"
-      >
-        <div
-          class="py-4 text-lg font-bold text-theme-neutral-800"
-        />
-        <div
-          class="flex flex-1 justify-end space-x-3"
-        />
-      </div>
+        class="py-4 text-lg font-bold text-theme-neutral-800"
+      />
       <div
-        class="flex -space-x-1"
+        class="flex flex-1 justify-end space-x-3"
       />
     </div>
+    <div
+      class="flex -space-x-1"
+    />
   </div>
 </div>
 `;
@@ -25,106 +23,104 @@ exports[`PercentageBar should render 1`] = `
 exports[`PercentageBar should render with data 1`] = `
 <div>
   <div>
-    <div>
+    <div
+      class="flex space-x-3"
+    >
       <div
-        class="flex space-x-3"
+        class="py-4 text-lg font-bold text-theme-neutral-800"
+      />
+      <div
+        class="flex flex-1 justify-end space-x-3"
       >
         <div
-          class="py-4 text-lg font-bold text-theme-neutral-800"
-        />
-        <div
-          class="flex flex-1 justify-end space-x-3"
+          class="flex justify-end items-center py-4 pr-0 pl-6"
+          data-testid="item-percentage"
         >
           <div
-            class="flex justify-end items-center py-4 pr-0 pl-6"
-            data-testid="item-percentage"
-          >
-            <div
-              class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
-            />
-            <div
-              class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-            >
-              <span>
-                ARK
-                 - 
-                40
-                %
-              </span>
-            </div>
-          </div>
+            class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
+          />
           <div
-            class="flex justify-end items-center py-4 pr-0 pl-6"
-            data-testid="item-percentage"
+            class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
           >
-            <div
-              class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
-            />
-            <div
-              class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-            >
-              <span>
-                BTC
-                 - 
-                25
-                %
-              </span>
-            </div>
+            <span>
+              ARK
+               - 
+              40
+              %
+            </span>
           </div>
+        </div>
+        <div
+          class="flex justify-end items-center py-4 pr-0 pl-6"
+          data-testid="item-percentage"
+        >
           <div
-            class="flex justify-end items-center py-4 pr-0 pl-6"
-            data-testid="item-percentage"
+            class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
+          />
+          <div
+            class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
           >
-            <div
-              class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
-            />
-            <div
-              class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-            >
-              <span>
-                ETH
-                 - 
-                20
-                %
-              </span>
-            </div>
+            <span>
+              BTC
+               - 
+              25
+              %
+            </span>
           </div>
+        </div>
+        <div
+          class="flex justify-end items-center py-4 pr-0 pl-6"
+          data-testid="item-percentage"
+        >
           <div
-            class="flex justify-end items-center py-4 pr-0 pl-6"
-            data-testid="item-percentage"
+            class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
+          />
+          <div
+            class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
           >
-            <div
-              class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
-            />
-            <div
-              class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-            >
-              <span>
-                Other
-                 - 
-                15
-                %
-              </span>
-            </div>
+            <span>
+              ETH
+               - 
+              20
+              %
+            </span>
+          </div>
+        </div>
+        <div
+          class="flex justify-end items-center py-4 pr-0 pl-6"
+          data-testid="item-percentage"
+        >
+          <div
+            class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
+          />
+          <div
+            class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
+          >
+            <span>
+              Other
+               - 
+              15
+              %
+            </span>
           </div>
         </div>
       </div>
+    </div>
+    <div
+      class="flex -space-x-1"
+    >
       <div
-        class="flex -space-x-1"
-      >
-        <div
-          class="h-1 rounded-sm bg-theme-danger-500"
-        />
-        <div
-          class="h-1 rounded-sm bg-theme-warning-500"
-        />
-        <div
-          class="h-1 rounded-sm bg-theme-primary-500"
-        />
-        <div
-          class="h-1 rounded-sm bg-theme-neutral-400"
-        />
-      </div>
+        class="h-1 rounded-sm bg-theme-danger-500"
+      />
+      <div
+        class="h-1 rounded-sm bg-theme-warning-500"
+      />
+      <div
+        class="h-1 rounded-sm bg-theme-primary-500"
+      />
+      <div
+        class="h-1 rounded-sm bg-theme-neutral-400"
+      />
     </div>
   </div>
 </div>
@@ -133,23 +129,21 @@ exports[`PercentageBar should render with data 1`] = `
 exports[`PercentageBar should render with title 1`] = `
 <div>
   <div>
-    <div>
+    <div
+      class="flex space-x-3"
+    >
       <div
-        class="flex space-x-3"
+        class="py-4 text-lg font-bold text-theme-neutral-800"
       >
-        <div
-          class="py-4 text-lg font-bold text-theme-neutral-800"
-        >
-          Total portfolio
-        </div>
-        <div
-          class="flex flex-1 justify-end space-x-3"
-        />
+        Total portfolio
       </div>
       <div
-        class="flex -space-x-1"
+        class="flex flex-1 justify-end space-x-3"
       />
     </div>
+    <div
+      class="flex -space-x-1"
+    />
   </div>
 </div>
 `;

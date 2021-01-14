@@ -2,23 +2,21 @@
 
 exports[`TransactionField should render 1`] = `
 <div>
-  <div>
+  <div
+    class="flex items-center py-4 true "
+  >
     <div
-      class="flex items-center py-4 true "
+      class="flex-1"
     >
       <div
-        class="flex-1"
+        class="text-sm font-medium text-theme-secondary-text"
       >
-        <div
-          class="text-sm font-medium text-theme-secondary-text"
-        >
-          Test
-        </div>
-        <div
-          class="mt-2"
-        >
-          test
-        </div>
+        Test
+      </div>
+      <div
+        class="mt-2"
+      >
+        test
       </div>
     </div>
   </div>
@@ -27,23 +25,21 @@ exports[`TransactionField should render 1`] = `
 
 exports[`TransactionField should render with border 1`] = `
 <div>
-  <div>
+  <div
+    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 "
+  >
     <div
-      class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 "
+      class="flex-1"
     >
       <div
-        class="flex-1"
+        class="text-sm font-medium text-theme-secondary-text"
       >
-        <div
-          class="text-sm font-medium text-theme-secondary-text"
-        >
-          Test
-        </div>
-        <div
-          class="mt-2"
-        >
-          test
-        </div>
+        Test
+      </div>
+      <div
+        class="mt-2"
+      >
+        test
       </div>
     </div>
   </div>
@@ -52,51 +48,47 @@ exports[`TransactionField should render with border 1`] = `
 
 exports[`TransactionField should render with extra children 1`] = `
 <div>
-  <div>
+  <div
+    class="flex items-center py-4 true "
+  >
     <div
-      class="flex items-center py-4 true "
+      class="flex-1"
     >
       <div
-        class="flex-1"
+        class="text-sm font-medium text-theme-secondary-text"
       >
-        <div
-          class="text-sm font-medium text-theme-secondary-text"
-        >
-          Test
-        </div>
-        <div
-          class="mt-2"
-        >
-          test
-        </div>
+        Test
       </div>
       <div
-        data-testid="TEST_CHILD"
-      />
+        class="mt-2"
+      >
+        test
+      </div>
     </div>
+    <div
+      data-testid="TEST_CHILD"
+    />
   </div>
 </div>
 `;
 
 exports[`TransactionField should render without padding 1`] = `
 <div>
-  <div>
+  <div
+    class="flex items-center py-4 true "
+  >
     <div
-      class="flex items-center py-4 true "
+      class="flex-1"
     >
       <div
-        class="flex-1"
+        class="text-sm font-medium text-theme-secondary-text"
       >
-        <div
-          class="text-sm font-medium text-theme-secondary-text"
-        >
-          Test
-        </div>
-        <div
-          class="mt-2"
-        >
-          test
-        </div>
+        Test
+      </div>
+      <div
+        class="mt-2"
+      >
+        test
       </div>
     </div>
   </div>

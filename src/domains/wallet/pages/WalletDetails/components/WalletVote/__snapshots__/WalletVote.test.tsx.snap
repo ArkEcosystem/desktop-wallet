@@ -2,264 +2,224 @@
 
 exports[`WalletVote should render 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      data-testid="WalletVote"
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        My Vote
+      </h2>
+      <span
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+      >
+        (1/1)
+      </span>
+    </div>
+    <div
+      class="flex items-center h-11"
     >
       <div
-        class="flex mb-4"
-      >
-        <h2
-          class="mb-0 font-bold"
-        >
-          My Vote
-        </h2>
-        <span
-          class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          (1/1)
-        </span>
-      </div>
-      <div
-        class="flex items-center h-11"
+        class="flex items-center -space-x-2"
       >
         <div
-          class="flex items-center -space-x-2"
+          class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
-          >
-            <div
-              class="sc-gsTCUz knmeNJ"
-              height="21"
-              width="21"
-            >
-              <svg>
-                vote.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-            data-testid="Avatar"
-          >
-            <div
-              class="w-full h-full"
-            >
-              <img
-                alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-between mr-8 ml-4 h-full"
-        >
-          <span
-            class="text-sm font-semibold text-theme-neutral"
-          >
-            Delegate
-          </span>
-          <div
-            class="inline-flex items-center"
-          >
-            <span
-              class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-              data-testid="address__wallet-name"
-            >
-              arkx
-            </span>
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-        >
-          <span
-            class="text-sm font-semibold text-theme-neutral"
-          >
-            Status
-          </span>
-          <div
-            class="sc-gsTCUz fHxsLl text-theme-warning"
-            height="20"
-            width="20"
+            class="sc-bdfBwQ bOxyah"
+            height="21"
+            width="21"
           >
             <svg>
-              status-pending.svg
+              vote.svg
             </svg>
           </div>
         </div>
-        <button
-          class="Button-mdtvtf-0 ifPnXw ml-auto"
-          data-testid="WalletVote__button"
-          type="button"
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+          data-testid="Avatar"
         >
-          Unvote
-        </button>
+          <div
+            class="w-full h-full"
+          >
+            <img
+              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+            />
+          </div>
+        </div>
       </div>
-    </section>
-  </div>
+      <div
+        class="flex flex-col justify-between mr-8 ml-4 h-full"
+      >
+        <span
+          class="text-sm font-semibold text-theme-neutral"
+        >
+          Delegate
+        </span>
+        <div
+          class="inline-flex items-center"
+        >
+          <span
+            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+            data-testid="address__wallet-name"
+          >
+            arkx
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+      >
+        <span
+          class="text-sm font-semibold text-theme-neutral"
+        >
+          Status
+        </span>
+        <div
+          class="sc-bdfBwQ iyevwF text-theme-warning"
+          height="20"
+          width="20"
+        >
+          <svg>
+            status-pending.svg
+          </svg>
+        </div>
+      </div>
+      <button
+        class="Button-mdtvtf-0 ifPnXw ml-auto"
+        data-testid="WalletVote__button"
+        type="button"
+      >
+        Unvote
+      </button>
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`WalletVote should render a single vote 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      data-testid="WalletVote"
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        My Votes
+      </h2>
+      <span
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+      >
+        (1/101)
+      </span>
+    </div>
+    <div
+      class="flex items-center h-11"
     >
       <div
-        class="flex mb-4"
+        class="flex items-center -space-x-2"
       >
-        <h2
-          class="mb-0 font-bold"
+        <div
+          class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
         >
-          My Votes
-        </h2>
-        <span
-          class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+          <div
+            class="sc-bdfBwQ bOxyah"
+            height="21"
+            width="21"
+          >
+            <svg>
+              vote.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+          data-testid="Avatar"
         >
-          (1/101)
-        </span>
+          <div
+            class="w-full h-full"
+          >
+            <img
+              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+            />
+          </div>
+        </div>
       </div>
       <div
-        class="flex items-center h-11"
+        class="flex flex-col justify-between mr-8 ml-4 h-full"
       >
-        <div
-          class="flex items-center -space-x-2"
+        <span
+          class="text-sm font-semibold text-theme-neutral"
         >
-          <div
-            class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
-          >
-            <div
-              class="sc-gsTCUz knmeNJ"
-              height="21"
-              width="21"
-            >
-              <svg>
-                vote.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-            data-testid="Avatar"
-          >
-            <div
-              class="w-full h-full"
-            >
-              <img
-                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-              />
-            </div>
-          </div>
-        </div>
+          Delegate
+        </span>
         <div
-          class="flex flex-col justify-between mr-8 ml-4 h-full"
+          class="inline-flex items-center"
         >
           <span
-            class="text-sm font-semibold text-theme-neutral"
+            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+            data-testid="address__wallet-name"
           >
-            Delegate
-          </span>
-          <div
-            class="inline-flex items-center"
-          >
-            <span
-              class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-              data-testid="address__wallet-name"
-            >
-              arkx
-            </span>
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
-        >
-          <span
-            class="text-sm font-semibold text-theme-neutral"
-          >
-            Status
-          </span>
-          <span>
-            <div
-              class="sc-gsTCUz fHxsLl text-theme-success"
-              height="20"
-              width="20"
-            >
-              <svg>
-                status-ok.svg
-              </svg>
-            </div>
+            arkx
           </span>
         </div>
-        <button
-          class="Button-mdtvtf-0 ifPnXw ml-auto"
-          data-testid="WalletVote__button"
-          type="button"
-        >
-          Unvote
-        </button>
       </div>
-    </section>
-  </div>
+      <div
+        class="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+      >
+        <span
+          class="text-sm font-semibold text-theme-neutral"
+        >
+          Status
+        </span>
+        <span>
+          <div
+            class="sc-bdfBwQ iyevwF text-theme-success"
+            height="20"
+            width="20"
+          >
+            <svg>
+              status-ok.svg
+            </svg>
+          </div>
+        </span>
+      </div>
+      <button
+        class="Button-mdtvtf-0 ifPnXw ml-auto"
+        data-testid="WalletVote__button"
+        type="button"
+      >
+        Unvote
+      </button>
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`WalletVote should render loading state 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      data-testid="WalletVote"
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex items-center"
+      data-testid="WalletVote__skeleton"
     >
       <div
-        class="flex items-center"
-        data-testid="WalletVote__skeleton"
+        class="flex items-center mr-4 -space-x-2"
       >
         <div
-          class="flex items-center mr-4 -space-x-2"
-        >
-          <div
-            class="Circle-uw7h4j-0 JkqUV border-transparent"
-          >
-            <span>
-              <span
-                class="flex items-center leading-none"
-              >
-                <span
-                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 44px; height: 44px; border-radius: 50%;"
-                >
-                  ‌
-                </span>
-                ‌
-              </span>
-            </span>
-          </div>
-          <div
-            class="Circle-uw7h4j-0 JkqUV border-transparent"
-          >
-            <span>
-              <span
-                class="flex items-center leading-none"
-              >
-                <span
-                  class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                  style="width: 44px; height: 44px; border-radius: 50%;"
-                >
-                  ‌
-                </span>
-                ‌
-              </span>
-            </span>
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-between h-10"
+          class="Circle-uw7h4j-0 JkqUV border-transparent"
         >
           <span>
             <span
@@ -267,20 +227,7 @@ exports[`WalletVote should render loading state 1`] = `
             >
               <span
                 class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                style="width: 150px; height: 14px;"
-              >
-                ‌
-              </span>
-              ‌
-            </span>
-          </span>
-          <span>
-            <span
-              class="flex items-center leading-none"
-            >
-              <span
-                class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                style="width: 100px; height: 16px;"
+                style="width: 44px; height: 44px; border-radius: 50%;"
               >
                 ‌
               </span>
@@ -289,7 +236,7 @@ exports[`WalletVote should render loading state 1`] = `
           </span>
         </div>
         <div
-          class="ml-auto"
+          class="Circle-uw7h4j-0 JkqUV border-transparent"
         >
           <span>
             <span
@@ -297,7 +244,7 @@ exports[`WalletVote should render loading state 1`] = `
             >
               <span
                 class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-                style="width: 100px; height: 44px;"
+                style="width: 44px; height: 44px; border-radius: 50%;"
               >
                 ‌
               </span>
@@ -306,520 +253,557 @@ exports[`WalletVote should render loading state 1`] = `
           </span>
         </div>
       </div>
-    </section>
-  </div>
+      <div
+        class="flex flex-col justify-between h-10"
+      >
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 150px; height: 14px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 100px; height: 16px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+      </div>
+      <div
+        class="ml-auto"
+      >
+        <span>
+          <span
+            class="flex items-center leading-none"
+          >
+            <span
+              class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+              style="width: 100px; height: 44px;"
+            >
+              ‌
+            </span>
+            ‌
+          </span>
+        </span>
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`WalletVote should render multiple votes (2) 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      data-testid="WalletVote"
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        My Votes
+      </h2>
+      <span
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+      >
+        (2/101)
+      </span>
+    </div>
+    <div
+      class="flex items-center h-11"
     >
       <div
-        class="flex mb-4"
-      >
-        <h2
-          class="mb-0 font-bold"
-        >
-          My Votes
-        </h2>
-        <span
-          class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          (2/101)
-        </span>
-      </div>
-      <div
-        class="flex items-center h-11"
+        class="flex items-center -space-x-2"
       >
         <div
-          class="flex items-center -space-x-2"
+          class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
+            class="sc-bdfBwQ bOxyah"
+            height="21"
+            width="21"
           >
-            <div
-              class="sc-gsTCUz knmeNJ"
-              height="21"
-              width="21"
-            >
-              <svg>
-                vote.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="flex -space-x-3"
-          >
-            <span
-              class="inline-block"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </span>
-            <span
-              class="inline-block"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </span>
+            <svg>
+              vote.svg
+            </svg>
           </div>
         </div>
-        <button
-          class="Button-mdtvtf-0 ifPnXw ml-auto"
-          data-testid="WalletVote__button"
-          type="button"
+        <div
+          class="flex -space-x-3"
         >
-          Show All
-        </button>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+          </span>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+          </span>
+        </div>
       </div>
-    </section>
-  </div>
+      <button
+        class="Button-mdtvtf-0 ifPnXw ml-auto"
+        data-testid="WalletVote__button"
+        type="button"
+      >
+        Show All
+      </button>
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`WalletVote should render multiple votes (3) 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      data-testid="WalletVote"
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        My Votes
+      </h2>
+      <span
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+      >
+        (3/101)
+      </span>
+    </div>
+    <div
+      class="flex items-center h-11"
     >
       <div
-        class="flex mb-4"
-      >
-        <h2
-          class="mb-0 font-bold"
-        >
-          My Votes
-        </h2>
-        <span
-          class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          (3/101)
-        </span>
-      </div>
-      <div
-        class="flex items-center h-11"
+        class="flex items-center -space-x-2"
       >
         <div
-          class="flex items-center -space-x-2"
+          class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
+            class="sc-bdfBwQ bOxyah"
+            height="21"
+            width="21"
           >
-            <div
-              class="sc-gsTCUz knmeNJ"
-              height="21"
-              width="21"
-            >
-              <svg>
-                vote.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="flex -space-x-3"
-          >
-            <span
-              class="inline-block"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </span>
-            <span
-              class="inline-block"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </span>
-            <span
-              class="inline-block"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </span>
+            <svg>
+              vote.svg
+            </svg>
           </div>
         </div>
-        <button
-          class="Button-mdtvtf-0 ifPnXw ml-auto"
-          data-testid="WalletVote__button"
-          type="button"
+        <div
+          class="flex -space-x-3"
         >
-          Show All
-        </button>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+          </span>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+          </span>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+          </span>
+        </div>
       </div>
-    </section>
-  </div>
+      <button
+        class="Button-mdtvtf-0 ifPnXw ml-auto"
+        data-testid="WalletVote__button"
+        type="button"
+      >
+        Show All
+      </button>
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`WalletVote should render multiple votes (4) 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      data-testid="WalletVote"
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        My Votes
+      </h2>
+      <span
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+      >
+        (4/101)
+      </span>
+    </div>
+    <div
+      class="flex items-center h-11"
     >
       <div
-        class="flex mb-4"
-      >
-        <h2
-          class="mb-0 font-bold"
-        >
-          My Votes
-        </h2>
-        <span
-          class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
-        >
-          (4/101)
-        </span>
-      </div>
-      <div
-        class="flex items-center h-11"
+        class="flex items-center -space-x-2"
       >
         <div
-          class="flex items-center -space-x-2"
+          class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text"
+            class="sc-bdfBwQ bOxyah"
+            height="21"
+            width="21"
           >
-            <div
-              class="sc-gsTCUz knmeNJ"
-              height="21"
-              width="21"
-            >
-              <svg>
-                vote.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="flex -space-x-3"
-          >
-            <span
-              class="inline-block"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </span>
-            <span
-              class="inline-block"
-            >
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </span>
-            <div
-              class="Circle-uw7h4j-0 JkqUV relative border-theme-text text-theme-text"
-            >
-              <span
-                class="font-semibold"
-              >
-                +2
-              </span>
-            </div>
+            <svg>
+              vote.svg
+            </svg>
           </div>
         </div>
-        <button
-          class="Button-mdtvtf-0 ifPnXw ml-auto"
-          data-testid="WalletVote__button"
-          type="button"
+        <div
+          class="flex -space-x-3"
         >
-          Show All
-        </button>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+          </span>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                />
+              </div>
+            </div>
+          </span>
+          <div
+            class="Circle-uw7h4j-0 JkqUV relative border-theme-text text-theme-text"
+          >
+            <span
+              class="font-semibold"
+            >
+              +2
+            </span>
+          </div>
+        </div>
       </div>
-    </section>
-  </div>
+      <button
+        class="Button-mdtvtf-0 ifPnXw ml-auto"
+        data-testid="WalletVote__button"
+        type="button"
+      >
+        Show All
+      </button>
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`WalletVote should render the maximum votes 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      data-testid="WalletVote"
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        My Votes
+      </h2>
+      <span
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+      >
+        (0/101)
+      </span>
+    </div>
+    <div
+      class="flex items-center space-x-4"
+      data-testid="WalletVote__empty"
     >
       <div
-        class="flex mb-4"
+        class="flex items-center -space-x-2"
       >
-        <h2
-          class="mb-0 font-bold"
+        <div
+          class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
-          My Votes
-        </h2>
-        <span
-          class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+          <div
+            class="sc-bdfBwQ bOxyah"
+            height="21"
+            width="21"
+          >
+            <svg>
+              vote.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex -space-x-3"
         >
-          (0/101)
-        </span>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700"
+            />
+          </span>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700"
+            />
+          </span>
+        </div>
       </div>
       <div
-        class="flex items-center space-x-4"
-        data-testid="WalletVote__empty"
+        class="flex flex-1 justify-between"
       >
         <div
-          class="flex items-center -space-x-2"
+          class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
         >
-          <div
-            class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+          <span
+            class="mr-2"
           >
-            <div
-              class="sc-gsTCUz knmeNJ"
-              height="21"
-              width="21"
-            >
-              <svg>
-                vote.svg
-              </svg>
-            </div>
-          </div>
+            You have not yet voted for a Delegate
+          </span>
           <div
-            class="flex -space-x-3"
+            class="mt-1 mr-auto"
           >
-            <span
-              class="inline-block"
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+              data-testid="Link"
+              rel="noopener noreferrer"
+              to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
             >
+              Learn more
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700"
-              />
-            </span>
-            <span
-              class="inline-block"
-            >
-              <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700"
-              />
-            </span>
-          </div>
-        </div>
-        <div
-          class="flex flex-1 justify-between"
-        >
-          <div
-            class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
-          >
-            <span
-              class="mr-2"
-            >
-              You have not yet voted for a Delegate
-            </span>
-            <div
-              class="mt-1 mr-auto"
-            >
-              <a
-                class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                data-testid="Link"
-                rel="noopener noreferrer"
-                to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
+                class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
               >
-                Learn more
-                <div
-                  class="sc-gsTCUz cXMmJt flex-shrink-0 ml-2 text-sm"
-                  data-testid="Link__external"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    redirect.svg
-                  </svg>
-                </div>
-              </a>
-            </div>
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
+            </a>
           </div>
-          <button
-            class="Button-mdtvtf-0 ifPnXw"
-            data-testid="WalletVote__button"
-            type="button"
-          >
-            Vote
-          </button>
         </div>
+        <button
+          class="Button-mdtvtf-0 ifPnXw"
+          data-testid="WalletVote__button"
+          type="button"
+        >
+          Vote
+        </button>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`WalletVote should render without votes 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      data-testid="WalletVote"
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex mb-4"
+    >
+      <h2
+        class="mb-0 font-bold"
+      >
+        My Vote
+      </h2>
+      <span
+        class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+      >
+        (0/1)
+      </span>
+    </div>
+    <div
+      class="flex items-center space-x-4"
+      data-testid="WalletVote__empty"
     >
       <div
-        class="flex mb-4"
+        class="flex items-center -space-x-2"
       >
-        <h2
-          class="mb-0 font-bold"
+        <div
+          class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
         >
-          My Vote
-        </h2>
-        <span
-          class="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700"
+          <div
+            class="sc-bdfBwQ bOxyah"
+            height="21"
+            width="21"
+          >
+            <svg>
+              vote.svg
+            </svg>
+          </div>
+        </div>
+        <div
+          class="flex -space-x-3"
         >
-          (0/1)
-        </span>
+          <span
+            class="inline-block"
+          >
+            <div
+              class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700"
+            />
+          </span>
+        </div>
       </div>
       <div
-        class="flex items-center space-x-4"
-        data-testid="WalletVote__empty"
+        class="flex flex-1 justify-between"
       >
         <div
-          class="flex items-center -space-x-2"
+          class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
         >
-          <div
-            class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+          <span
+            class="mr-2"
           >
-            <div
-              class="sc-gsTCUz knmeNJ"
-              height="21"
-              width="21"
-            >
-              <svg>
-                vote.svg
-              </svg>
-            </div>
-          </div>
+            You have not yet voted for a Delegate
+          </span>
           <div
-            class="flex -space-x-3"
+            class="mt-1 mr-auto"
           >
-            <span
-              class="inline-block"
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+              data-testid="Link"
+              rel="noopener noreferrer"
+              to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
             >
+              Learn more
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-neutral-500 dark:border-theme-neutral-700"
-              />
-            </span>
-          </div>
-        </div>
-        <div
-          class="flex flex-1 justify-between"
-        >
-          <div
-            class="flex flex-col mr-4 font-semibold leading-snug text-theme-text"
-          >
-            <span
-              class="mr-2"
-            >
-              You have not yet voted for a Delegate
-            </span>
-            <div
-              class="mt-1 mr-auto"
-            >
-              <a
-                class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                data-testid="Link"
-                rel="noopener noreferrer"
-                to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
+                class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
               >
-                Learn more
-                <div
-                  class="sc-gsTCUz cXMmJt flex-shrink-0 ml-2 text-sm"
-                  data-testid="Link__external"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    redirect.svg
-                  </svg>
-                </div>
-              </a>
-            </div>
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
+            </a>
           </div>
-          <button
-            class="Button-mdtvtf-0 ifPnXw"
-            data-testid="WalletVote__button"
-            type="button"
-          >
-            Vote
-          </button>
         </div>
+        <button
+          class="Button-mdtvtf-0 ifPnXw"
+          data-testid="WalletVote__button"
+          type="button"
+        >
+          Vote
+        </button>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;

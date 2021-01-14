@@ -8,11 +8,9 @@ describe("Shared Box", () => {
 		const { container } = render(<Box styled={{ color: "black" }} />);
 		expect(container).toMatchInlineSnapshot(`
 		<div>
-		  <div>
-		    <div
-		      class="sc-bdfBwQ bqrpcP"
-		    />
-		  </div>
+		  <div
+		    class="sc-bdfBwQ bqrpcP"
+		  />
 		</div>
 	`);
 	});

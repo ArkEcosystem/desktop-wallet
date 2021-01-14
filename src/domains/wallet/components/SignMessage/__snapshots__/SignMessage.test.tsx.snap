@@ -2,199 +2,197 @@
 
 exports[`SignMessage should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
     <div
-      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
     >
       <div
-        class="fixed z-50 w-full h-full bg-black opacity-50"
-        data-testid="modal__overlay"
-      />
-      <div
-        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-        data-testid="modal__inner"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        <button
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
         >
-          <button
-            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="sc-gsTCUz jEpOBt"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </button>
-        </div>
-        <div
-          class="relative"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Sign Message
-          </h2>
           <div
-            class="flex-1"
+            class="sc-bdfBwQ bfBhNR"
+            height="14"
+            width="14"
           >
-            <div
-              class="mt-1 text-theme-secondary-text"
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Sign Message
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div
+            class="mt-1 text-theme-secondary-text"
+          >
+            Insert a message below to sign using your private key
+          </div>
+          <div
+            class="mt-8"
+          >
+            <form
+              class="space-y-8"
+              data-testid="SignMessage__form"
             >
-              Insert a message below to sign using your private key
-            </div>
-            <div
-              class="mt-8"
-            >
-              <form
-                class="space-y-8"
-                data-testid="SignMessage__form"
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
               >
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="signatory-address"
                 >
-                  <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                    data-testid="FormLabel"
-                    for="signatory-address"
-                  >
-                    Signatory
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
+                  Signatory
                   <div
-                    class="relative"
-                  >
-                    <input
-                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      disabled=""
-                      name="signatory-address"
-                      type="text"
-                    />
-                    <div
-                      class="flex absolute top-0 items-center mt-2 ml-4"
-                    >
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="test"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                              title="test"
-                            />
-                          </div>
-                        </div>
-                        <span
-                          class="ml-3 font-semibold "
-                        >
-                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="relative"
                 >
-                  <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                    data-testid="FormLabel"
-                    for="message"
-                  >
-                    Message
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
                   <input
                     class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                    data-testid="SignMessage__message-input"
-                    name="message"
+                    data-testid="Input"
+                    disabled=""
+                    name="signatory-address"
                     type="text"
                   />
-                </fieldset>
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
-                >
-                  <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                    data-testid="FormLabel"
-                    for="mnemonic"
-                  >
-                    Your Passphrase
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
                   <div
-                    class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
-                    data-testid="InputPassword"
+                    class="flex absolute top-0 items-center mt-2 ml-4"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
-                      data-testid="SignMessage__mnemonic-input"
-                      name="mnemonic"
-                      type="password"
-                    />
                     <div
-                      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                      class="flex items-center"
                     >
-                      <button
-                        class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
-                        data-testid="InputPassword__toggle"
-                        type="button"
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD"
+                        data-testid="Avatar"
                       >
                         <div
-                          class="sc-gsTCUz cXMmJt"
-                          height="1em"
-                          width="1em"
+                          class="w-full h-full"
                         >
-                          <svg>
-                            eye.svg
-                          </svg>
+                          <img
+                            alt="test"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                            title="test"
+                          />
                         </div>
-                      </button>
+                      </div>
+                      <span
+                        class="ml-3 font-semibold "
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
                     </div>
                   </div>
-                </fieldset>
-                <div
-                  class="flex justify-end space-x-3"
-                >
-                  <button
-                    class="Button-mdtvtf-0 ifPnXw"
-                    data-testid="SignMessage__cancel"
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    class="Button-mdtvtf-0 cvPqli"
-                    data-testid="SignMessage__submit-button"
-                    type="submit"
-                  >
-                    Sign
-                  </button>
                 </div>
-              </form>
-            </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="message"
+                >
+                  Message
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="SignMessage__message-input"
+                  name="message"
+                  type="text"
+                />
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="mnemonic"
+                >
+                  Your Passphrase
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                    data-testid="SignMessage__mnemonic-input"
+                    name="mnemonic"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <div
+                class="flex justify-end space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="SignMessage__cancel"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 cvPqli"
+                  data-testid="SignMessage__submit-button"
+                  type="submit"
+                >
+                  Sign
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -205,199 +203,197 @@ exports[`SignMessage should render 1`] = `
 
 exports[`SignMessage should sign message 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
     <div
-      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
     >
       <div
-        class="fixed z-50 w-full h-full bg-black opacity-50"
-        data-testid="modal__overlay"
-      />
-      <div
-        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-        data-testid="modal__inner"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        <button
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
         >
-          <button
-            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="sc-gsTCUz jEpOBt"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </button>
-        </div>
-        <div
-          class="relative"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Sign Message
-          </h2>
           <div
-            class="flex-1"
+            class="sc-bdfBwQ bfBhNR"
+            height="14"
+            width="14"
           >
-            <div
-              class="mt-1 text-theme-secondary-text"
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Sign Message
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div
+            class="mt-1 text-theme-secondary-text"
+          >
+            Insert a message below to sign using your private key
+          </div>
+          <div
+            class="mt-8"
+          >
+            <form
+              class="space-y-8"
+              data-testid="SignMessage__form"
             >
-              Insert a message below to sign using your private key
-            </div>
-            <div
-              class="mt-8"
-            >
-              <form
-                class="space-y-8"
-                data-testid="SignMessage__form"
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
               >
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="signatory-address"
                 >
-                  <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                    data-testid="FormLabel"
-                    for="signatory-address"
-                  >
-                    Signatory
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
+                  Signatory
                   <div
-                    class="relative"
-                  >
-                    <input
-                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                      data-testid="Input"
-                      disabled=""
-                      name="signatory-address"
-                      type="text"
-                    />
-                    <div
-                      class="flex absolute top-0 items-center mt-2 ml-4"
-                    >
-                      <div
-                        class="flex items-center"
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="test"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                              title="test"
-                            />
-                          </div>
-                        </div>
-                        <span
-                          class="ml-3 font-semibold "
-                        >
-                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="relative"
                 >
-                  <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                    data-testid="FormLabel"
-                    for="message"
-                  >
-                    Message
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
                   <input
                     class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                    data-testid="SignMessage__message-input"
-                    name="message"
+                    data-testid="Input"
+                    disabled=""
+                    name="signatory-address"
                     type="text"
                   />
-                </fieldset>
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
-                >
-                  <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                    data-testid="FormLabel"
-                    for="mnemonic"
-                  >
-                    Your Passphrase
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
                   <div
-                    class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
-                    data-testid="InputPassword"
+                    class="flex absolute top-0 items-center mt-2 ml-4"
                   >
-                    <input
-                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
-                      data-testid="SignMessage__mnemonic-input"
-                      name="mnemonic"
-                      type="password"
-                    />
                     <div
-                      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                      class="flex items-center"
                     >
-                      <button
-                        class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
-                        data-testid="InputPassword__toggle"
-                        type="button"
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD"
+                        data-testid="Avatar"
                       >
                         <div
-                          class="sc-gsTCUz cXMmJt"
-                          height="1em"
-                          width="1em"
+                          class="w-full h-full"
                         >
-                          <svg>
-                            eye.svg
-                          </svg>
+                          <img
+                            alt="test"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                            title="test"
+                          />
                         </div>
-                      </button>
+                      </div>
+                      <span
+                        class="ml-3 font-semibold "
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
                     </div>
                   </div>
-                </fieldset>
-                <div
-                  class="flex justify-end space-x-3"
-                >
-                  <button
-                    class="Button-mdtvtf-0 ifPnXw"
-                    data-testid="SignMessage__cancel"
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    class="Button-mdtvtf-0 cvPqli"
-                    data-testid="SignMessage__submit-button"
-                    type="submit"
-                  >
-                    Sign
-                  </button>
                 </div>
-              </form>
-            </div>
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="message"
+                >
+                  Message
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="SignMessage__message-input"
+                  name="message"
+                  type="text"
+                />
+              </fieldset>
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="mnemonic"
+                >
+                  Your Passphrase
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <div
+                  class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                  data-testid="InputPassword"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                    data-testid="SignMessage__mnemonic-input"
+                    name="mnemonic"
+                    type="password"
+                  />
+                  <div
+                    class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
+                  >
+                    <button
+                      class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-neutral-600"
+                      data-testid="InputPassword__toggle"
+                      type="button"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          eye.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+              <div
+                class="flex justify-end space-x-3"
+              >
+                <button
+                  class="Button-mdtvtf-0 ifPnXw"
+                  data-testid="SignMessage__cancel"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="Button-mdtvtf-0 cvPqli"
+                  data-testid="SignMessage__submit-button"
+                  type="submit"
+                >
+                  Sign
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

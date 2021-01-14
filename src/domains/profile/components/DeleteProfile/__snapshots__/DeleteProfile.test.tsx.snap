@@ -2,87 +2,85 @@
 
 exports[`DeleteProfile should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
     <div
-      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
     >
       <div
-        class="fixed z-50 w-full h-full bg-black opacity-50"
-        data-testid="modal__overlay"
-      />
-      <div
-        class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-        data-testid="modal__inner"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        <button
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
         >
-          <button
-            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="sc-gsTCUz jEpOBt"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </button>
-        </div>
-        <div
-          class="relative"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Delete Profile
-          </h2>
           <div
-            class="flex-1"
+            class="sc-bdfBwQ bfBhNR"
+            height="14"
+            width="14"
           >
-            <svg
-              class="my-8 mx-auto w-64"
-            >
-              delete-banner.svg
+            <svg>
+              cross-slim.svg
             </svg>
-            <div
-              class="mt-1 text-theme-secondary-text"
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Delete Profile
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <svg
+            class="my-8 mx-auto w-64"
+          >
+            delete-banner.svg
+          </svg>
+          <div
+            class="mt-1 text-theme-secondary-text"
+          >
+            Do you really want to delete this profile? Once deleted, you will not be able to restore it.
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-3"
+          >
+            <button
+              class="Button-mdtvtf-0 ifPnXw"
+              data-testid="DeleteResource__cancel-button"
+              type="button"
             >
-              Do you really want to delete this profile? Once deleted, you will not be able to restore it.
-            </div>
-            <div
-              class="flex justify-end mt-8 space-x-3"
+              Cancel
+            </button>
+            <button
+              class="Button-mdtvtf-0 cvPqli"
+              data-testid="DeleteResource__submit-button"
+              type="submit"
             >
-              <button
-                class="Button-mdtvtf-0 ifPnXw"
-                data-testid="DeleteResource__cancel-button"
-                type="button"
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
               >
-                Cancel
-              </button>
-              <button
-                class="Button-mdtvtf-0 cvPqli"
-                data-testid="DeleteResource__submit-button"
-                type="submit"
-              >
-                <div
-                  class="sc-gsTCUz cXMmJt"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    trash.svg
-                  </svg>
-                </div>
-                <span>
-                  Delete
-                </span>
-              </button>
-            </div>
+                <svg>
+                  trash.svg
+                </svg>
+              </div>
+              <span>
+                Delete
+              </span>
+            </button>
           </div>
         </div>
       </div>

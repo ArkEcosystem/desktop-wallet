@@ -2,471 +2,469 @@
 
 exports[`Comments should render properly 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="w-full"
+  >
     <div
-      class="w-full"
+      class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
     >
+      <span
+        class="text-theme-text"
+      >
+        Sort by:
+      </span>
       <div
-        class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
+        class="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-light"
       >
         <span
-          class="text-theme-text"
-        >
-          Sort by:
-        </span>
-        <div
-          class="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-light"
+          class="cursor-pointer null"
         >
           <span
-            class="cursor-pointer null"
+            class="flex items-center space-x-1 text-theme-text"
+          >
+            <span>
+              Best
+            </span>
+            <div
+              class="sc-bdfBwQ gLRWTb"
+              height="5"
+              width="7"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </span>
+        </span>
+        <span
+          class="cursor-pointer pl-3"
+        >
+          <span>
+            Date
+          </span>
+        </span>
+        <span
+          class="cursor-pointer pl-3"
+        >
+          <span>
+            Most popular
+          </span>
+        </span>
+      </div>
+    </div>
+    <div>
+      <div
+        class="flex flex-col mt-5"
+      >
+        <div
+          class="flex justify-between items-center"
+        >
+          <div
+            class="flex relative items-center divide-x divide-theme-neutral-light"
           >
             <span
-              class="flex items-center space-x-1 text-theme-text"
+              class="pr-3 text-lg font-semibold"
             >
-              <span>
-                Best
-              </span>
+              Rok Cernec
+            </span>
+            <div
+              class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+            >
               <div
-                class="sc-gsTCUz dUmRCn"
-                height="5"
-                width="7"
+                class="sc-bdfBwQ TENjd"
+                height="10"
+                width="10"
               >
                 <svg>
-                  chevron-down.svg
+                  star.svg
                 </svg>
               </div>
+              <span
+                class="ml-1 text-theme-secondary-text"
+              >
+                4.6
+              </span>
+            </div>
+            <span
+              class="pl-3 text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                data-testid="timeago"
+              >
+                11 days ago
+              </span>
             </span>
-          </span>
-          <span
-            class="cursor-pointer pl-3"
+          </div>
+          <div
+            class="flex items-center space-x-2 font-semibold"
           >
-            <span>
-              Date
+            <span
+              class="text-theme-neutral-light"
+            >
+              0
             </span>
-          </span>
-          <span
-            class="cursor-pointer pl-3"
+            <div
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-up.svg
+              </svg>
+            </div>
+            <div
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
           >
-            <span>
-              Most popular
-            </span>
-          </span>
+            The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
+          </p>
         </div>
       </div>
-      <div>
+      <div
+        class="flex flex-col mt-5"
+      >
         <div
-          class="flex flex-col mt-5"
+          class="flex justify-between items-center"
         >
           <div
-            class="flex justify-between items-center"
+            class="flex relative items-center divide-x divide-theme-neutral-light"
           >
-            <div
-              class="flex relative items-center divide-x divide-theme-neutral-light"
+            <span
+              class="pr-3 text-lg font-semibold"
             >
-              <span
-                class="pr-3 text-lg font-semibold"
-              >
-                Rok Cernec
-              </span>
-              <div
-                class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
-              >
-                <div
-                  class="sc-gsTCUz jsttWF"
-                  height="10"
-                  width="10"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-1 text-theme-secondary-text"
-                >
-                  4.6
-                </span>
-              </div>
-              <span
-                class="pl-3 text-sm font-semibold text-theme-neutral"
-              >
-                <span
-                  data-testid="timeago"
-                >
-                  11 days ago
-                </span>
-              </span>
-            </div>
+              Gerard Blezer
+            </span>
             <div
-              class="flex items-center space-x-2 font-semibold"
+              class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
             >
-              <span
-                class="text-theme-neutral-light"
-              >
-                0
-              </span>
               <div
-                class="sc-gsTCUz ppMap text-theme-primary-light"
-                height="15"
-                width="15"
+                class="sc-bdfBwQ TENjd"
+                height="10"
+                width="10"
               >
                 <svg>
-                  chevron-up.svg
+                  star.svg
                 </svg>
               </div>
-              <div
-                class="sc-gsTCUz ppMap text-theme-primary-light"
-                height="15"
-                width="15"
+              <span
+                class="ml-1 text-theme-secondary-text"
               >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
+                4.6
+              </span>
             </div>
+            <span
+              class="pl-3 text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                data-testid="timeago"
+              >
+                11 days ago
+              </span>
+            </span>
           </div>
           <div
-            class="mt-2"
+            class="flex items-center space-x-2 font-semibold"
           >
-            <p
-              class="text-theme-neutral-600"
+            <span
+              class="text-theme-success"
             >
-              The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
-            </p>
+              +28
+            </span>
+            <div
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-up.svg
+              </svg>
+            </div>
+            <div
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
           </div>
         </div>
         <div
-          class="flex flex-col mt-5"
+          class="mt-2"
         >
+          <p
+            class="text-theme-neutral-600"
+          >
+            It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
+          </p>
           <div
-            class="flex justify-between items-center"
+            class="flex flex-col mt-3"
           >
             <div
-              class="flex relative items-center divide-x divide-theme-neutral-light"
+              class="flex items-center text-theme-neutral-light"
             >
-              <span
-                class="pr-3 text-lg font-semibold"
-              >
-                Gerard Blezer
-              </span>
               <div
-                class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                class="flex items-center w-10"
               >
                 <div
-                  class="sc-gsTCUz jsttWF"
-                  height="10"
-                  width="10"
+                  class="sc-bdfBwQ liSwOQ mx-auto -mt-2"
+                  height="18"
+                  width="15"
                 >
                   <svg>
-                    star.svg
+                    reply-arrow.svg
                   </svg>
                 </div>
-                <span
-                  class="ml-1 text-theme-secondary-text"
-                >
-                  4.6
-                </span>
               </div>
-              <span
-                class="pl-3 text-sm font-semibold text-theme-neutral"
+              <div
+                class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
               >
                 <span
-                  data-testid="timeago"
+                  class="text-lg font-semibold text-theme-text"
                 >
-                  11 days ago
+                  Developer response
                 </span>
-              </span>
-            </div>
-            <div
-              class="flex items-center space-x-2 font-semibold"
-            >
-              <span
-                class="text-theme-success"
-              >
-                +28
-              </span>
-              <div
-                class="sc-gsTCUz ppMap text-theme-primary-light"
-                height="15"
-                width="15"
-              >
-                <svg>
-                  chevron-up.svg
-                </svg>
-              </div>
-              <div
-                class="sc-gsTCUz ppMap text-theme-primary-light"
-                height="15"
-                width="15"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mt-2"
-          >
-            <p
-              class="text-theme-neutral-600"
-            >
-              It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
-            </p>
-            <div
-              class="flex flex-col mt-3"
-            >
-              <div
-                class="flex items-center text-theme-neutral-light"
-              >
-                <div
-                  class="flex items-center w-10"
-                >
-                  <div
-                    class="sc-gsTCUz eMnCVw mx-auto -mt-2"
-                    height="18"
-                    width="15"
-                  >
-                    <svg>
-                      reply-arrow.svg
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
+                <span
+                  class="pl-3 text-sm font-semibold text-theme-neutral"
                 >
                   <span
-                    class="text-lg font-semibold text-theme-text"
+                    data-testid="timeago"
                   >
-                    Developer response
+                    11 days ago
                   </span>
-                  <span
-                    class="pl-3 text-sm font-semibold text-theme-neutral"
-                  >
-                    <span
-                      data-testid="timeago"
-                    >
-                      11 days ago
-                    </span>
-                  </span>
-                </div>
-              </div>
-              <div
-                class="sc-dlfnbm hQdFZp mt-2 ml-10 text-theme-neutral-600"
-              >
-                <a
-                  href="#"
-                >
-                  @Gerard Blezer
-                </a>
-                 You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col mt-5"
-        >
-          <div
-            class="flex justify-between items-center"
-          >
-            <div
-              class="flex relative items-center divide-x divide-theme-neutral-light"
-            >
-              <span
-                class="pr-3 text-lg font-semibold"
-              >
-                Rok Cernec
-              </span>
-              <div
-                class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
-              >
-                <div
-                  class="sc-gsTCUz jsttWF"
-                  height="10"
-                  width="10"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-1 text-theme-secondary-text"
-                >
-                  4.6
                 </span>
               </div>
-              <span
-                class="pl-3 text-sm font-semibold text-theme-neutral"
-              >
-                <span
-                  data-testid="timeago"
-                >
-                  11 days ago
-                </span>
-              </span>
             </div>
             <div
-              class="flex items-center space-x-2 font-semibold"
+              class="sc-gsTCUz hoNdtS mt-2 ml-10 text-theme-neutral-600"
             >
-              <span
-                class="text-theme-neutral-light"
+              <a
+                href="#"
               >
-                0
-              </span>
-              <div
-                class="sc-gsTCUz ppMap text-theme-primary-light"
-                height="15"
-                width="15"
-              >
-                <svg>
-                  chevron-up.svg
-                </svg>
-              </div>
-              <div
-                class="sc-gsTCUz ppMap text-theme-primary-light"
-                height="15"
-                width="15"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
+                @Gerard Blezer
+              </a>
+               You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
             </div>
-          </div>
-          <div
-            class="mt-2"
-          >
-            <p
-              class="text-theme-neutral-600"
-            >
-              I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
-            </p>
-          </div>
-        </div>
-        <div
-          class="flex flex-col mt-5"
-        >
-          <div
-            class="flex justify-between items-center"
-          >
-            <div
-              class="flex relative items-center divide-x divide-theme-neutral-light"
-            >
-              <span
-                class="pr-3 text-lg font-semibold"
-              >
-                Rok Cernec
-              </span>
-              <div
-                class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
-              >
-                <div
-                  class="sc-gsTCUz jsttWF"
-                  height="10"
-                  width="10"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <span
-                  class="ml-1 text-theme-secondary-text"
-                >
-                  4.6
-                </span>
-              </div>
-              <span
-                class="pl-3 text-sm font-semibold text-theme-neutral"
-              >
-                <span
-                  data-testid="timeago"
-                >
-                  11 days ago
-                </span>
-              </span>
-            </div>
-            <div
-              class="flex items-center space-x-2 font-semibold"
-            >
-              <span
-                class="text-theme-danger-dark"
-              >
-                -5
-              </span>
-              <div
-                class="sc-gsTCUz ppMap text-theme-primary-light"
-                height="15"
-                width="15"
-              >
-                <svg>
-                  chevron-up.svg
-                </svg>
-              </div>
-              <div
-                class="sc-gsTCUz ppMap text-theme-primary-light"
-                height="15"
-                width="15"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mt-2"
-          >
-            <p
-              class="text-theme-neutral-600"
-            >
-              Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
-            </p>
           </div>
         </div>
       </div>
       <div
-        class="mt-7"
+        class="flex flex-col mt-5"
       >
         <div
-          class="Pagination__Wrapper-x7juhx-0 hyaceY"
-          data-testid="Pagination"
+          class="flex justify-between items-center"
         >
           <div
-            class="flex px-2 rounded bg-theme-primary-contrast"
+            class="flex relative items-center divide-x divide-theme-neutral-light"
           >
-            <div
-              class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+            <span
+              class="pr-3 text-lg font-semibold"
             >
-              1
-            </div>
+              Rok Cernec
+            </span>
             <div
-              class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+              class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
             >
-              2
+              <div
+                class="sc-bdfBwQ TENjd"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="ml-1 text-theme-secondary-text"
+              >
+                4.6
+              </span>
             </div>
-            <div
-              class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+            <span
+              class="pl-3 text-sm font-semibold text-theme-neutral"
             >
-              3
-            </div>
+              <span
+                data-testid="timeago"
+              >
+                11 days ago
+              </span>
+            </span>
           </div>
-          <button
-            class="Button-mdtvtf-0 ifPnXw"
-            data-testid="Pagination__next"
-            type="button"
+          <div
+            class="flex items-center space-x-2 font-semibold"
           >
-            Next
+            <span
+              class="text-theme-neutral-light"
+            >
+              0
+            </span>
             <div
-              class="sc-gsTCUz cmyhNZ ml-2"
-              height="12"
-              width="12"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              height="15"
+              width="15"
             >
               <svg>
-                forward.svg
+                chevron-up.svg
               </svg>
             </div>
-          </button>
+            <div
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
         </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
+          >
+            I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col mt-5"
+      >
+        <div
+          class="flex justify-between items-center"
+        >
+          <div
+            class="flex relative items-center divide-x divide-theme-neutral-light"
+          >
+            <span
+              class="pr-3 text-lg font-semibold"
+            >
+              Rok Cernec
+            </span>
+            <div
+              class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+            >
+              <div
+                class="sc-bdfBwQ TENjd"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="ml-1 text-theme-secondary-text"
+              >
+                4.6
+              </span>
+            </div>
+            <span
+              class="pl-3 text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                data-testid="timeago"
+              >
+                11 days ago
+              </span>
+            </span>
+          </div>
+          <div
+            class="flex items-center space-x-2 font-semibold"
+          >
+            <span
+              class="text-theme-danger-dark"
+            >
+              -5
+            </span>
+            <div
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-up.svg
+              </svg>
+            </div>
+            <div
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
+          >
+            Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-7"
+    >
+      <div
+        class="Pagination__Wrapper-x7juhx-0 hyaceY"
+        data-testid="Pagination"
+      >
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+          >
+            1
+          </div>
+          <div
+            class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+          >
+            2
+          </div>
+          <div
+            class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+          >
+            3
+          </div>
+        </div>
+        <button
+          class="Button-mdtvtf-0 ifPnXw"
+          data-testid="Pagination__next"
+          type="button"
+        >
+          Next
+          <div
+            class="sc-bdfBwQ fdfkzt ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </div>

@@ -2,71 +2,67 @@
 
 exports[`Card Control should render 1`] = `
 <DocumentFragment>
-  <div>
-    <label
-      class="CardControl___StyledLabel-sc-28luv0-3 iOtNpv"
+  <label
+    class="CardControl___StyledLabel-sc-28luv0-3 iOtNpv"
+  >
+    <input
+      class="CardControl__Input-sc-28luv0-0 eeHClU"
+      data-testid="card-control__undefined"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun CardControl__CustomCard-sc-28luv0-1 jgzojh"
+      data-testid="Card"
     >
-      <input
-        class="CardControl__Input-sc-28luv0-0 eeHClU"
-        data-testid="card-control__undefined"
-        type="checkbox"
-        value=""
-      />
       <div
-        class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun CardControl__CustomCard-sc-28luv0-1 jgzojh"
-        data-testid="Card"
-      >
-        <div
-          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-        />
-      </div>
-    </label>
-  </div>
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </div>
+  </label>
 </DocumentFragment>
 `;
 
 exports[`Card Control should render with a control state 1`] = `
 <DocumentFragment>
-  <div>
-    <label
-      class="CardControl___StyledLabel-sc-28luv0-3 iOtNpv grid"
+  <label
+    class="CardControl___StyledLabel-sc-28luv0-3 iOtNpv grid"
+  >
+    <input
+      class="CardControl__Input-sc-28luv0-0 eeHClU"
+      data-testid="card-control__undefined"
+      type="checkbox"
+      value=""
+    />
+    <div
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun CardControl__CustomCard-sc-28luv0-1 jgzojh"
+      data-testid="Card"
     >
-      <input
-        class="CardControl__Input-sc-28luv0-0 eeHClU"
-        data-testid="card-control__undefined"
-        type="checkbox"
-        value=""
-      />
       <div
-        class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun CardControl__CustomCard-sc-28luv0-1 jgzojh"
-        data-testid="Card"
+        class="flex flex-col justify-between items-center h-full"
       >
+        <span>
+          Bitcoin
+        </span>
         <div
-          class="flex flex-col justify-between items-center h-full"
+          class="CardControl__StateStyle-sc-28luv0-2 bJaqJB"
+          data-testid="card__control-state"
         >
-          <span>
-            Bitcoin
-          </span>
           <div
-            class="CardControl__StateStyle-sc-28luv0-2 bJaqJB"
-            data-testid="card__control-state"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
           >
-            <div
-              class="sc-gsTCUz cXMmJt"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                checkmark.svg
-              </svg>
-            </div>
+            <svg>
+              checkmark.svg
+            </svg>
           </div>
         </div>
-        <div
-          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-        />
       </div>
-    </label>
-  </div>
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </div>
+  </label>
 </DocumentFragment>
 `;

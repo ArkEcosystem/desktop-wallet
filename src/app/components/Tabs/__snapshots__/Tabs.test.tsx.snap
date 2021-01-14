@@ -3,30 +3,28 @@
 exports[`Tabs should react to use effect call 1`] = `
 <DocumentFragment>
   <div>
-    <div>
-      <div
-        class="Tabs__TabList-sc-1lxyvu-1 jZKUHn"
+    <div
+      class="Tabs__TabList-sc-1lxyvu-1 jZKUHn"
+    >
+      <button
+        aria-selected="true"
+        class="Tabs__TabButton-sc-1lxyvu-0"
+        data-testid="tabs__tab-button-1"
       >
-        <button
-          aria-selected="true"
-          class="Tabs__TabButton-sc-1lxyvu-0"
-          data-testid="tabs__tab-button-1"
-        >
-          First
-        </button>
-        <button
-          aria-selected="false"
-          class="Tabs__TabButton-sc-1lxyvu-0"
-          data-testid="tabs__tab-button-2"
-        >
-          Second
-        </button>
-      </div>
-      <div
-        data-testid="tab-pabel__active-panel"
+        First
+      </button>
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0"
+        data-testid="tabs__tab-button-2"
       >
-        1
-      </div>
+        Second
+      </button>
+    </div>
+    <div
+      data-testid="tab-pabel__active-panel"
+    >
+      1
     </div>
   </div>
 </DocumentFragment>
@@ -35,36 +33,34 @@ exports[`Tabs should react to use effect call 1`] = `
 exports[`Tabs should render 1`] = `
 <DocumentFragment>
   <div>
-    <div>
-      <div
-        class="Tabs__TabList-sc-1lxyvu-1 jZKUHn"
+    <div
+      class="Tabs__TabList-sc-1lxyvu-1 jZKUHn"
+    >
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0"
+        data-testid="tabs__tab-button-1"
       >
-        <button
-          aria-selected="false"
-          class="Tabs__TabButton-sc-1lxyvu-0"
-          data-testid="tabs__tab-button-1"
-        >
-          First
-        </button>
-        <button
-          aria-selected="false"
-          class="Tabs__TabButton-sc-1lxyvu-0"
-          data-testid="tabs__tab-button-2"
-        >
-          Second
-        </button>
-        <button
-          aria-selected="false"
-          class="Tabs__TabButton-sc-1lxyvu-0"
-          data-testid="tabs__tab-button-3"
-        >
-          Third
-        </button>
-      </div>
-      <div
-        class="mt-5"
-      />
+        First
+      </button>
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0"
+        data-testid="tabs__tab-button-2"
+      >
+        Second
+      </button>
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0"
+        data-testid="tabs__tab-button-3"
+      >
+        Third
+      </button>
     </div>
+    <div
+      class="mt-5"
+    />
   </div>
 </DocumentFragment>
 `;

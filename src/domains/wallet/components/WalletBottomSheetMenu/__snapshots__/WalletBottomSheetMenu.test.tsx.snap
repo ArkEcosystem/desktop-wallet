@@ -2,384 +2,382 @@
 
 exports[`WalletBottomSheetMenu should render 1`] = `
 <DocumentFragment>
-  <div>
-    <aside
-      class="z-auto sticky bottom-0 w-full"
-      data-testid="WalletBottomSheetMenu"
+  <aside
+    class="z-auto sticky bottom-0 w-full"
+    data-testid="WalletBottomSheetMenu"
+  >
+    <div
+      class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
+      data-testid="WalletBottomSheetMenu__header"
     >
       <div
-        class="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
-        data-testid="WalletBottomSheetMenu__header"
+        class="container flex justify-between items-center py-7 px-14 mx-auto"
       >
-        <div
-          class="container flex justify-between items-center py-7 px-14 mx-auto"
-        >
-          <div>
-            <span
-              class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
-            >
-              Your Wallets
-            </span>
-            <span
-              class="ml-1 font-bold text-theme-neutral-700"
-              data-testid="WalletBottomSheetMenu__counter"
-            >
-              2
-            </span>
-          </div>
-          <div
-            class="inline-flex items-center -mr-4 space-x-1"
+        <div>
+          <span
+            class="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200"
           >
-            <button
-              class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
-              data-testid="WalletBottomSheetMenu__toggle"
+            Your Wallets
+          </span>
+          <span
+            class="ml-1 font-bold text-theme-neutral-700"
+            data-testid="WalletBottomSheetMenu__counter"
+          >
+            2
+          </span>
+        </div>
+        <div
+          class="inline-flex items-center -mr-4 space-x-1"
+        >
+          <button
+            class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-neutral-400 dark:text-theme-neutral-200"
+            data-testid="WalletBottomSheetMenu__toggle"
+          >
+            <span>
+              Show
+            </span>
+            <span
+              class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
             >
-              <span>
-                Show
-              </span>
-              <span
-                class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 fRZiNh"
+              <div
+                class="sc-bdfBwQ TENjd"
+                height="10"
+                width="10"
               >
-                <div
-                  class="sc-gsTCUz jsttWF"
-                  height="10"
-                  width="10"
-                >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
-                </div>
-              </span>
-            </button>
-          </div>
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
+            </span>
+          </button>
         </div>
       </div>
+    </div>
+    <div
+      aria-hidden="true"
+      class="custom-scroll"
+      data-testid="Collapse"
+      style="height: 0px; opacity: 0; overflow: hidden;"
+    >
       <div
-        aria-hidden="true"
-        class="custom-scroll"
-        data-testid="Collapse"
-        style="height: 0px; opacity: 0; overflow: hidden;"
+        class="py-8 bg-theme-background"
       >
         <div
-          class="py-8 bg-theme-background"
+          class="container px-14 mx-auto"
+          data-testid="WalletTable"
         >
           <div
-            class="container px-14 mx-auto"
-            data-testid="WalletTable"
+            class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+            role="table"
           >
-            <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-              role="table"
+            <table
+              cellpadding="0"
+              class="table-auto"
             >
-              <table
-                cellpadding="0"
-                class="table-auto"
-              >
-                <thead>
-                  <tr
-                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
-                    role="row"
-                  >
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top "
-                      >
-                        <div>
-                          Address
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-gsTCUz fJUgCy"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Wallet Type
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end"
-                      >
-                        <div>
-                          Balance
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-gsTCUz fJUgCy"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end"
-                      >
-                        <div>
-                          Fiat Value
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-gsTCUz fJUgCy"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
+              <thead>
+                <tr
+                  class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                  role="row"
                 >
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
-                    data-testid="TableRow"
+                  <th
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
                   >
-                    <td>
+                    <div
+                      class="flex flex-inline align-top "
+                    >
+                      <div>
+                        Address
+                      </div>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ervoKt space-x-4"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                        data-testid="table__Sort"
                       >
                         <div
-                          class="-space-x-2"
+                          class="sc-bdfBwQ iABjnS"
+                          height="12"
+                          width="15"
                         >
-                          <div
-                            aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 cCXJLZ border-theme-primary-100 text-theme-primary-400"
-                            data-testid="NetworkIcon-ARK-ark.devnet"
-                          >
-                            <div
-                              class="sc-gsTCUz fHxsLl"
-                              data-testid="NetworkIcon__icon"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                ark.svg
-                              </svg>
-                            </div>
-                          </div>
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ihJEcZ"
-                            data-testid="Avatar"
-                          >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="inline-flex items-center"
-                        >
-                          <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                            data-testid="address__wallet-name"
-                          >
-                            ARK Wallet 1
-                          </span>
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D8rr7B1d6 … VBMs6YUYD
-                          </span>
+                          <svg>
+                            sort.svg
+                          </svg>
                         </div>
                       </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gFTSdP justify-center text-sm font-bold text-center align-middle"
-                      >
-                        <div
-                          class="inline-flex items-center space-x-2"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gFTSdP font-semibold justify-end"
-                      >
-                        <span
-                          data-testid="Amount"
-                        >
-                          33.75089801 DARK
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clVsER justify-end text-theme-neutral-light"
-                      >
-                        <span
-                          data-testid="Amount"
-                        >
-                          0 BTC
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
-                    data-testid="TableRow"
+                    </div>
+                  </th>
+                  <th
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
                   >
-                    <td>
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        Wallet Type
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-end"
+                    >
+                      <div>
+                        Balance
+                      </div>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                        data-testid="table__Sort"
                       >
                         <div
-                          class="-space-x-2"
+                          class="sc-bdfBwQ iABjnS"
+                          height="12"
+                          width="15"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                    style="cursor: pointer;"
+                    title="Toggle SortBy"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-end"
+                    >
+                      <div>
+                        Fiat Value
+                      </div>
+                      <div
+                        class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                        data-testid="table__Sort"
+                      >
+                        <div
+                          class="sc-bdfBwQ iABjnS"
+                          height="12"
+                          width="15"
+                        >
+                          <svg>
+                            sort.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
+                  data-testid="TableRow"
+                >
+                  <td>
+                    <div
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ervoKt space-x-4"
+                    >
+                      <div
+                        class="-space-x-2"
+                      >
+                        <div
+                          aria-label="ARK Devnet"
+                          class="Circle-uw7h4j-0 cCXJLZ border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
-                            aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
-                            data-testid="NetworkIcon-ARK-ark.devnet"
+                            class="sc-bdfBwQ iyevwF"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
                           >
-                            <div
-                              class="sc-gsTCUz fHxsLl"
-                              data-testid="NetworkIcon__icon"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                ark.svg
-                              </svg>
-                            </div>
-                          </div>
-                          <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                            data-testid="Avatar"
-                          >
-                            <div
-                              class="w-full h-full"
-                            >
-                              <img
-                                alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                                title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                              />
-                            </div>
+                            <svg>
+                              ark.svg
+                            </svg>
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ihJEcZ"
+                          data-testid="Avatar"
                         >
-                          <span
-                            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                            data-testid="address__wallet-name"
+                          <div
+                            class="w-full h-full"
                           >
-                            ARK Wallet 2
-                          </span>
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            D5sRKWckH … yC3cvJtwb
-                          </span>
+                            <img
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            />
+                          </div>
                         </div>
                       </div>
-                    </td>
-                    <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center text-sm font-bold text-center align-middle"
+                        class="inline-flex items-center"
+                      >
+                        <span
+                          class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                          data-testid="address__wallet-name"
+                        >
+                          ARK Wallet 1
+                        </span>
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          D8rr7B1d6 … VBMs6YUYD
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gFTSdP justify-center text-sm font-bold text-center align-middle"
+                    >
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gFTSdP font-semibold justify-end"
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        33.75089801 DARK
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clVsER justify-end text-theme-neutral-light"
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        0 BTC
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="TableRow__TableRowStyled-sc-1br46dw-0 gcoTSY group"
+                  data-testid="TableRow"
+                >
+                  <td>
+                    <div
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                    >
+                      <div
+                        class="-space-x-2"
                       >
                         <div
-                          class="inline-flex items-center space-x-2"
-                        />
+                          aria-label="ARK Devnet"
+                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            data-testid="NetworkIcon__icon"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </td>
-                    <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL font-semibold justify-end"
+                        class="inline-flex items-center"
                       >
                         <span
-                          data-testid="Amount"
+                          class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                          data-testid="address__wallet-name"
                         >
-                          57.68 DARK
+                          ARK Wallet 2
                         </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end text-theme-neutral-light"
-                      >
                         <span
-                          data-testid="Amount"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                          data-testid="address__wallet-address"
                         >
-                          0 BTC
+                          D5sRKWckH … yC3cvJtwb
                         </span>
                       </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center text-sm font-bold text-center align-middle"
+                    >
+                      <div
+                        class="inline-flex items-center space-x-2"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL font-semibold justify-end"
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        57.68 DARK
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end text-theme-neutral-light"
+                    >
+                      <span
+                        data-testid="Amount"
+                      >
+                        0 BTC
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </aside>
-  </div>
+    </div>
+  </aside>
 </DocumentFragment>
 `;

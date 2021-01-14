@@ -2,63 +2,61 @@
 
 exports[`TransactionSender should not render delegate icon 1`] = `
 <div>
-  <div>
+  <div
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    data-testid="TransactionDetail"
+  >
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-      data-testid="TransactionDetail"
+      class="flex-1 space-y-2"
     >
       <div
-        class="flex-1 space-y-2"
+        class="text-sm font-semibold text-theme-neutral-700"
+      >
+        Sender
+      </div>
+      <div
+        class="font-semibold"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-700"
+          class="inline-flex items-center"
         >
-          Sender
-        </div>
-        <div
-          class="font-semibold"
-        >
-          <div
-            class="inline-flex items-center"
+          <span
+            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+            data-testid="address__wallet-address"
           >
-            <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              test-address
-            </span>
-          </div>
+            test-address
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center -space-x-2"
+    >
+      <div
+        class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+      >
+        <div
+          class="sc-bdfBwQ catSEV"
+          height="25"
+          width="25"
+        >
+          <svg>
+            delegate.svg
+          </svg>
         </div>
       </div>
       <div
-        class="flex items-center -space-x-2"
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+        data-testid="Avatar"
       >
         <div
-          class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+          class="w-full h-full"
         >
-          <div
-            class="sc-gsTCUz kzizsx"
-            height="25"
-            width="25"
-          >
-            <svg>
-              delegate.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-          data-testid="Avatar"
-        >
-          <div
-            class="w-full h-full"
-          >
-            <img
-              alt="test-address"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
-              title="test-address"
-            />
-          </div>
+          <img
+            alt="test-address"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+            title="test-address"
+          />
         </div>
       </div>
     </div>
@@ -68,56 +66,54 @@ exports[`TransactionSender should not render delegate icon 1`] = `
 
 exports[`TransactionSender should not render with alias 1`] = `
 <div>
-  <div>
+  <div
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    data-testid="TransactionDetail"
+  >
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-      data-testid="TransactionDetail"
+      class="flex-1 space-y-2"
     >
       <div
-        class="flex-1 space-y-2"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
-        <div
-          class="text-sm font-semibold text-theme-neutral-700"
-        >
-          Sender
-        </div>
-        <div
-          class="font-semibold"
-        >
-          <div
-            class="inline-flex items-center"
-          >
-            <span
-              class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-              data-testid="address__wallet-name"
-            >
-              test-alias
-            </span>
-            <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              test-address
-            </span>
-          </div>
-        </div>
+        Sender
       </div>
       <div
-        class="flex items-center -space-x-2"
+        class="font-semibold"
       >
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-          data-testid="Avatar"
+          class="inline-flex items-center"
         >
-          <div
-            class="w-full h-full"
+          <span
+            class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+            data-testid="address__wallet-name"
           >
-            <img
-              alt="test-address"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
-              title="test-address"
-            />
-          </div>
+            test-alias
+          </span>
+          <span
+            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+            data-testid="address__wallet-address"
+          >
+            test-address
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center -space-x-2"
+    >
+      <div
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+        data-testid="Avatar"
+      >
+        <div
+          class="w-full h-full"
+        >
+          <img
+            alt="test-address"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+            title="test-address"
+          />
         </div>
       </div>
     </div>
@@ -127,50 +123,48 @@ exports[`TransactionSender should not render with alias 1`] = `
 
 exports[`TransactionSender should render 1`] = `
 <div>
-  <div>
+  <div
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    data-testid="TransactionDetail"
+  >
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-      data-testid="TransactionDetail"
+      class="flex-1 space-y-2"
     >
       <div
-        class="flex-1 space-y-2"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
-        <div
-          class="text-sm font-semibold text-theme-neutral-700"
-        >
-          Sender
-        </div>
-        <div
-          class="font-semibold"
-        >
-          <div
-            class="inline-flex items-center"
-          >
-            <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              test-address
-            </span>
-          </div>
-        </div>
+        Sender
       </div>
       <div
-        class="flex items-center -space-x-2"
+        class="font-semibold"
       >
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-          data-testid="Avatar"
+          class="inline-flex items-center"
         >
-          <div
-            class="w-full h-full"
+          <span
+            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+            data-testid="address__wallet-address"
           >
-            <img
-              alt="test-address"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
-              title="test-address"
-            />
-          </div>
+            test-address
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex items-center -space-x-2"
+    >
+      <div
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+        data-testid="Avatar"
+      >
+        <div
+          class="w-full h-full"
+        >
+          <img
+            alt="test-address"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+            title="test-address"
+          />
         </div>
       </div>
     </div>

@@ -2,37 +2,35 @@
 
 exports[`TransactionSuccessful should render 1`] = `
 <DocumentFragment>
-  <div>
-    <section
-      class="space-y-8"
-      data-testid="TransactionSuccessful"
+  <section
+    class="space-y-8"
+    data-testid="TransactionSuccessful"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
     >
-      <div
-        class="flex justify-between items-end bg-theme-background"
-      >
-        <div>
-          <h1
-            class="mb-0 md:text-4xl"
-            data-testid="header__title"
-          >
-            Transaction Sent
-          </h1>
-        </div>
-      </div>
-      <svg
-        class="w-full"
-      >
-        transaction-successful.svg
-      </svg>
-      <p
-        class="text-theme-secondary-text"
-      >
-        Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
-      </p>
       <div>
-        <div />
+        <h1
+          class="mb-0 md:text-4xl"
+          data-testid="header__title"
+        >
+          Transaction Sent
+        </h1>
       </div>
-    </section>
-  </div>
+    </div>
+    <svg
+      class="w-full"
+    >
+      transaction-successful.svg
+    </svg>
+    <p
+      class="text-theme-secondary-text"
+    >
+      Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
+    </p>
+    <div>
+      <div />
+    </div>
+  </section>
 </DocumentFragment>
 `;

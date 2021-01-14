@@ -2,28 +2,24 @@
 
 exports[`Collapse should render 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      aria-hidden="true"
-      data-testid="Collapse"
-      style="height: 0px; opacity: 0; overflow: hidden;"
-    >
-      Test
-    </div>
+  <div
+    aria-hidden="true"
+    data-testid="Collapse"
+    style="height: 0px; opacity: 0; overflow: hidden;"
+  >
+    Test
   </div>
 </DocumentFragment>
 `;
 
 exports[`Collapse should render visible 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      aria-hidden="false"
-      data-testid="Collapse"
-      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-    >
-      Test
-    </div>
+  <div
+    aria-hidden="false"
+    data-testid="Collapse"
+    style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+  >
+    Test
   </div>
 </DocumentFragment>
 `;

@@ -2,46 +2,44 @@
 
 exports[`LayoutControls should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="flex items-center space-x-1"
+  >
     <div
-      class="flex items-center space-x-1"
+      class="group"
+      data-testid="LayoutControls__grid"
     >
       <div
-        class="group"
-        data-testid="LayoutControls__grid"
+        class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
+        data-testid="LayoutControls__grid--icon"
       >
         <div
-          class="LayoutControls__ControlButton-j2iwgi-0 cVIIOS"
-          data-testid="LayoutControls__grid--icon"
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
         >
-          <div
-            class="sc-gsTCUz fHxsLl"
-            height="20"
-            width="20"
-          >
-            <svg>
-              grid-view.svg
-            </svg>
-          </div>
+          <svg>
+            grid-view.svg
+          </svg>
         </div>
       </div>
+    </div>
+    <div
+      class="group"
+      data-testid="LayoutControls__list"
+    >
       <div
-        class="group"
-        data-testid="LayoutControls__list"
+        class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
+        data-testid="LayoutControls__list--icon"
       >
         <div
-          class="LayoutControls__ControlButton-j2iwgi-0 bqLaED"
-          data-testid="LayoutControls__list--icon"
+          class="sc-bdfBwQ iyevwF"
+          height="20"
+          width="20"
         >
-          <div
-            class="sc-gsTCUz fHxsLl"
-            height="20"
-            width="20"
-          >
-            <svg>
-              list-view.svg
-            </svg>
-          </div>
+          <svg>
+            list-view.svg
+          </svg>
         </div>
       </div>
     </div>

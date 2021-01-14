@@ -2,236 +2,234 @@
 
 exports[`PluginHeader should render as installed 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="w-full bg-theme-background"
+    data-testid="plugin-details__header"
+  >
     <div
-      class="w-full bg-theme-background"
-      data-testid="plugin-details__header"
+      class="flex w-full"
     >
+      <img
+        alt="Plugin"
+        class="w-44 h-44 rounded-lg"
+        src="placeholder.png"
+      />
       <div
-        class="flex w-full"
+        class="flex flex-col justify-center pl-8 w-full"
       >
-        <img
-          alt="Plugin"
-          class="w-44 h-44 rounded-lg"
-          src="placeholder.png"
-        />
         <div
-          class="flex flex-col justify-center pl-8 w-full"
+          class="flex justify-between items-center"
         >
           <div
-            class="flex justify-between items-center"
+            class="flex flex-col"
+          >
+            <span
+              class="text-2xl font-bold"
+            >
+              ARK Explorer
+            </span>
+            <span
+              class="text-medium text-theme-neutral"
+            >
+              Use the ARK Mainnet explorer directly within the wallet
+            </span>
+          </div>
+          <div
+            class="flex"
+          >
+            <button
+              class="Button-mdtvtf-0 cvPqli"
+              data-testid="PluginHeader__button--open"
+              type="button"
+            >
+              Open
+            </button>
+            <button
+              class="Button-mdtvtf-0 cvPqli ml-3"
+              data-testid="PluginHeader__button--update"
+              type="button"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  update.svg
+                </svg>
+              </div>
+            </button>
+            <button
+              class="Button-mdtvtf-0 ifPnXw ml-3"
+              data-testid="PluginHeader__button--warning"
+              type="button"
+            >
+              <div
+                class="sc-bdfBwQ iyevwF"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  report.svg
+                </svg>
+              </div>
+            </button>
+            <button
+              class="Button-mdtvtf-0 ifPnXw ml-3"
+              data-testid="PluginHeader__button--uninstall"
+              type="button"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  trash.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
+        >
+          <div
+            class="flex"
           >
             <div
               class="flex flex-col"
             >
               <span
-                class="text-2xl font-bold"
+                class="font-bold text-theme-neutral-light"
               >
-                ARK Explorer
+                Author
               </span>
-              <span
-                class="text-medium text-theme-neutral"
+              <div
+                class="flex items-center"
               >
-                Use the ARK Mainnet explorer directly within the wallet
-              </span>
-            </div>
-            <div
-              class="flex"
-            >
-              <button
-                class="Button-mdtvtf-0 cvPqli"
-                data-testid="PluginHeader__button--open"
-                type="button"
-              >
-                Open
-              </button>
-              <button
-                class="Button-mdtvtf-0 cvPqli ml-3"
-                data-testid="PluginHeader__button--update"
-                type="button"
-              >
-                <div
-                  class="sc-gsTCUz cXMmJt"
-                  height="1em"
-                  width="1em"
+                <span
+                  class="font-bold text-theme-neutral-600"
                 >
-                  <svg>
-                    update.svg
-                  </svg>
-                </div>
-              </button>
-              <button
-                class="Button-mdtvtf-0 ifPnXw ml-3"
-                data-testid="PluginHeader__button--warning"
-                type="button"
-              >
+                  ARK Ecosystem
+                </span>
                 <div
-                  class="sc-gsTCUz fHxsLl"
-                  height="20"
-                  width="20"
+                  class="ml-3"
                 >
-                  <svg>
-                    report.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      official-ark-plugin.svg
+                    </svg>
+                  </div>
                 </div>
-              </button>
-              <button
-                class="Button-mdtvtf-0 ifPnXw ml-3"
-                data-testid="PluginHeader__button--uninstall"
-                type="button"
-              >
-                <div
-                  class="sc-gsTCUz cXMmJt"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    trash.svg
-                  </svg>
-                </div>
-              </button>
+              </div>
             </div>
           </div>
           <div
-            class="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="flex px-6"
           >
             <div
-              class="flex"
+              class="flex flex-col undefined"
             >
-              <div
-                class="flex flex-col"
+              <span
+                class="font-bold text-theme-neutral-light"
               >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Author
-                </span>
+                Category
+              </span>
+              <span
+                class="font-bold text-theme-neutral-600"
+              >
+                Utility
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex px-6 -ml-5"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <span
+                class="font-bold text-theme-neutral-light"
+              >
+                URL
+              </span>
+              <span
+                class="font-bold text-theme-primary"
+              >
+                github.com
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex col-span-2 justify-between px-6 -ml-8"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <span
+                class="font-bold text-theme-neutral-light"
+              >
+                Rating
+              </span>
+              <div
+                class="flex items-center"
+              >
                 <div
-                  class="flex items-center"
-                >
-                  <span
-                    class="font-bold text-theme-neutral-600"
-                  >
-                    ARK Ecosystem
-                  </span>
-                  <div
-                    class="ml-3"
-                  >
-                    <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        official-ark-plugin.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex px-6"
-            >
-              <div
-                class="flex flex-col undefined"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Category
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  Utility
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex px-6 -ml-5"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  URL
-                </span>
-                <span
-                  class="font-bold text-theme-primary"
-                >
-                  github.com
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex col-span-2 justify-between px-6 -ml-8"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Rating
-                </span>
-                <div
-                  class="flex items-center"
+                  class="pr-1 text-theme-warning-400"
                 >
                   <div
-                    class="pr-1 text-theme-warning-400"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
+                    <svg>
+                      star.svg
+                    </svg>
                   </div>
-                  <span
-                    class="font-bold text-theme-neutral-600"
-                  >
-                    4.6
-                  </span>
                 </div>
-              </div>
-              <div
-                class="flex flex-col text-right"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Version
-                </span>
                 <span
                   class="font-bold text-theme-neutral-600"
                 >
-                  v.1.3.8
+                  4.6
                 </span>
               </div>
             </div>
             <div
-              class="flex pl-6"
+              class="flex flex-col text-right"
             >
-              <div
-                class="flex flex-col text-right"
+              <span
+                class="font-bold text-theme-neutral-light"
               >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Size
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  4.2 Mb
-                </span>
-              </div>
+                Version
+              </span>
+              <span
+                class="font-bold text-theme-neutral-600"
+              >
+                v.1.3.8
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex pl-6"
+          >
+            <div
+              class="flex flex-col text-right"
+            >
+              <span
+                class="font-bold text-theme-neutral-light"
+              >
+                Size
+              </span>
+              <span
+                class="font-bold text-theme-neutral-600"
+              >
+                4.2 Mb
+              </span>
             </div>
           </div>
         </div>
@@ -243,206 +241,204 @@ exports[`PluginHeader should render as installed 1`] = `
 
 exports[`PluginHeader should render properly 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="w-full bg-theme-background"
+    data-testid="plugin-details__header"
+  >
     <div
-      class="w-full bg-theme-background"
-      data-testid="plugin-details__header"
+      class="flex w-full"
     >
+      <img
+        alt="Plugin"
+        class="w-44 h-44 rounded-lg"
+        src="placeholder.png"
+      />
       <div
-        class="flex w-full"
+        class="flex flex-col justify-center pl-8 w-full"
       >
-        <img
-          alt="Plugin"
-          class="w-44 h-44 rounded-lg"
-          src="placeholder.png"
-        />
         <div
-          class="flex flex-col justify-center pl-8 w-full"
+          class="flex justify-between items-center"
         >
           <div
-            class="flex justify-between items-center"
+            class="flex flex-col"
+          >
+            <span
+              class="text-2xl font-bold"
+            >
+              ARK Explorer
+            </span>
+            <span
+              class="text-medium text-theme-neutral"
+            >
+              Use the ARK Mainnet explorer directly within the wallet
+            </span>
+          </div>
+          <div
+            class="flex"
+          >
+            <button
+              class="Button-mdtvtf-0 cvPqli"
+              data-testid="PluginHeader__button--install"
+              type="button"
+            >
+              Install
+            </button>
+            <button
+              class="Button-mdtvtf-0 ifPnXw ml-3"
+              data-testid="PluginHeader__button--warning"
+              type="button"
+            >
+              <div
+                class="sc-bdfBwQ iyevwF"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  report.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
+        >
+          <div
+            class="flex"
           >
             <div
               class="flex flex-col"
             >
               <span
-                class="text-2xl font-bold"
+                class="font-bold text-theme-neutral-light"
               >
-                ARK Explorer
+                Author
               </span>
-              <span
-                class="text-medium text-theme-neutral"
+              <div
+                class="flex items-center"
               >
-                Use the ARK Mainnet explorer directly within the wallet
-              </span>
-            </div>
-            <div
-              class="flex"
-            >
-              <button
-                class="Button-mdtvtf-0 cvPqli"
-                data-testid="PluginHeader__button--install"
-                type="button"
-              >
-                Install
-              </button>
-              <button
-                class="Button-mdtvtf-0 ifPnXw ml-3"
-                data-testid="PluginHeader__button--warning"
-                type="button"
-              >
-                <div
-                  class="sc-gsTCUz fHxsLl"
-                  height="20"
-                  width="20"
+                <span
+                  class="font-bold text-theme-neutral-600"
                 >
-                  <svg>
-                    report.svg
-                  </svg>
+                  ARK Ecosystem
+                </span>
+                <div
+                  class="ml-3"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      official-ark-plugin.svg
+                    </svg>
+                  </div>
                 </div>
-              </button>
+              </div>
             </div>
           </div>
           <div
-            class="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="flex px-6"
           >
             <div
-              class="flex"
+              class="flex flex-col undefined"
             >
-              <div
-                class="flex flex-col"
+              <span
+                class="font-bold text-theme-neutral-light"
               >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Author
-                </span>
+                Category
+              </span>
+              <span
+                class="font-bold text-theme-neutral-600"
+              >
+                Utility
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex px-6 -ml-5"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <span
+                class="font-bold text-theme-neutral-light"
+              >
+                URL
+              </span>
+              <span
+                class="font-bold text-theme-primary"
+              >
+                github.com
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex col-span-2 justify-between px-6 -ml-8"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <span
+                class="font-bold text-theme-neutral-light"
+              >
+                Rating
+              </span>
+              <div
+                class="flex items-center"
+              >
                 <div
-                  class="flex items-center"
-                >
-                  <span
-                    class="font-bold text-theme-neutral-600"
-                  >
-                    ARK Ecosystem
-                  </span>
-                  <div
-                    class="ml-3"
-                  >
-                    <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        official-ark-plugin.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex px-6"
-            >
-              <div
-                class="flex flex-col undefined"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Category
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  Utility
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex px-6 -ml-5"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  URL
-                </span>
-                <span
-                  class="font-bold text-theme-primary"
-                >
-                  github.com
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex col-span-2 justify-between px-6 -ml-8"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Rating
-                </span>
-                <div
-                  class="flex items-center"
+                  class="pr-1 text-theme-warning-400"
                 >
                   <div
-                    class="pr-1 text-theme-warning-400"
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
                   >
-                    <div
-                      class="sc-gsTCUz cXMmJt"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
+                    <svg>
+                      star.svg
+                    </svg>
                   </div>
-                  <span
-                    class="font-bold text-theme-neutral-600"
-                  >
-                    4.6
-                  </span>
                 </div>
-              </div>
-              <div
-                class="flex flex-col text-right"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Version
-                </span>
                 <span
                   class="font-bold text-theme-neutral-600"
                 >
-                  v.1.3.8
+                  4.6
                 </span>
               </div>
             </div>
             <div
-              class="flex pl-6"
+              class="flex flex-col text-right"
             >
-              <div
-                class="flex flex-col text-right"
+              <span
+                class="font-bold text-theme-neutral-light"
               >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Size
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  4.2 Mb
-                </span>
-              </div>
+                Version
+              </span>
+              <span
+                class="font-bold text-theme-neutral-600"
+              >
+                v.1.3.8
+              </span>
+            </div>
+          </div>
+          <div
+            class="flex pl-6"
+          >
+            <div
+              class="flex flex-col text-right"
+            >
+              <span
+                class="font-bold text-theme-neutral-light"
+              >
+                Size
+              </span>
+              <span
+                class="font-bold text-theme-neutral-600"
+              >
+                4.2 Mb
+              </span>
             </div>
           </div>
         </div>

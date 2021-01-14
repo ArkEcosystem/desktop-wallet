@@ -1,14 +1,17 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
+import { container } from "./plugin-container";
 import { PluginController } from "./plugin-controller";
 import { PluginControllerRepository } from "./plugin-controller-repository";
+import { PluginServiceRepository } from "./plugin-service-repository";
 
 describe("Plugin Controller subject", () => {
 	let profile: Profile;
 	let subject: PluginControllerRepository;
 
 	beforeEach(() => {
+		container.set("services", new PluginServiceRepository());
 		subject = new PluginControllerRepository();
 		profile = env.profiles().findById(getDefaultProfileId());
 	});

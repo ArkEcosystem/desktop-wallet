@@ -2,75 +2,71 @@
 
 exports[`ListDivided should render an empty list divided 1`] = `
 <DocumentFragment>
-  <div>
-    <span
-      data-testid="list-divided__empty"
-    >
-      empty
-    </span>
-  </div>
+  <span
+    data-testid="list-divided__empty"
+  >
+    empty
+  </span>
 </DocumentFragment>
 `;
 
 exports[`ListDivided should render an list divided with items 1`] = `
 <DocumentFragment>
-  <div>
-    <ul
-      class="sc-gsTCUz fEYMbl"
-      data-testid="list-divided__items"
+  <ul
+    class="sc-bdfBwQ eJLBrZ"
+    data-testid="list-divided__items"
+  >
+    <li
+      class="flex flex-col w-full "
+      data-testid="list-divided-item__wrapper"
     >
-      <li
-        class="flex flex-col w-full "
-        data-testid="list-divided-item__wrapper"
+      <div
+        class="flex justify-between flex-col items-start"
+        data-testid="list-divided-item__inner-wrapper"
       >
         <div
-          class="flex justify-between flex-col items-start"
-          data-testid="list-divided-item__inner-wrapper"
+          class="flex flex-col space-y-2 w-full"
         >
           <div
-            class="flex flex-col space-y-2 w-full"
+            class="flex justify-between items-center space-x-5"
           >
-            <div
-              class="flex justify-between items-center space-x-5"
-            >
-              <span
-                class=""
-                data-testid="list-divided-item__label"
-              >
-                New Profile
-              </span>
-            </div>
             <span
-              class="text-sm font-medium text-theme-neutral"
-              data-testid="list-divided-item__label--description"
+              class=""
+              data-testid="list-divided-item__label"
             >
-              Select Profile Image
+              New Profile
             </span>
           </div>
+          <span
+            class="text-sm font-medium text-theme-neutral"
+            data-testid="list-divided-item__label--description"
+          >
+            Select Profile Image
+          </span>
         </div>
+      </div>
+      <div
+        class=""
+        data-testid="list-divided-item__content"
+      >
         <div
-          class=""
-          data-testid="list-divided-item__content"
+          class="flex flex-row mt-2"
         >
           <div
-            class="flex flex-row mt-2"
+            class="flex justify-center items-center mr-6 w-24 h-24 rounded border-2 border-dashed border-theme-neutral"
+          />
+          <div
+            class="relative w-24 h-24 rounded bg-theme-neutral"
           >
-            <div
-              class="flex justify-center items-center mr-6 w-24 h-24 rounded border-2 border-dashed border-theme-neutral"
+            <img
+              alt="random avatar"
+              class="object-cover rounded"
+              src="https://randomuser.me/api/portraits/men/3.jpg"
             />
-            <div
-              class="relative w-24 h-24 rounded bg-theme-neutral"
-            >
-              <img
-                alt="random avatar"
-                class="object-cover rounded"
-                src="https://randomuser.me/api/portraits/men/3.jpg"
-              />
-            </div>
           </div>
         </div>
-      </li>
-    </ul>
-  </div>
+      </div>
+    </li>
+  </ul>
 </DocumentFragment>
 `;

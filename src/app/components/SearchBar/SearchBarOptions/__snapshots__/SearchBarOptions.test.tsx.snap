@@ -2,29 +2,27 @@
 
 exports[`SearchBarOptions should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="flex items-center pr-8 my-1"
+    data-testid="SearchBarOptions"
+  >
     <div
-      class="flex items-center pr-8 my-1"
-      data-testid="SearchBarOptions"
+      class="relative"
     >
-      <div
-        class="relative"
+      <span
+        data-testid="dropdown__toggle"
       >
         <span
-          data-testid="dropdown__toggle"
+          class="flex font-semibold cursor-pointer select-none"
         >
-          <span
-            class="flex font-semibold cursor-pointer select-none"
+          Type
+          <svg
+            class="inline-block ml-2 w-2 text-black"
           >
-            Type
-            <svg
-              class="inline-block ml-2 w-2 text-black"
-            >
-              chevron-down.svg
-            </svg>
-          </span>
+            chevron-down.svg
+          </svg>
         </span>
-      </div>
+      </span>
     </div>
   </div>
 </DocumentFragment>
@@ -32,29 +30,27 @@ exports[`SearchBarOptions should render 1`] = `
 
 exports[`SearchBarOptions should render with selected option 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="flex items-center pr-8 my-1"
+    data-testid="SearchBarOptions"
+  >
     <div
-      class="flex items-center pr-8 my-1"
-      data-testid="SearchBarOptions"
+      class="relative"
     >
-      <div
-        class="relative"
+      <span
+        data-testid="dropdown__toggle"
       >
         <span
-          data-testid="dropdown__toggle"
+          class="flex font-semibold cursor-pointer select-none"
         >
-          <span
-            class="flex font-semibold cursor-pointer select-none"
+          TESTING LABEL
+          <svg
+            class="inline-block ml-2 w-2 text-black"
           >
-            TESTING LABEL
-            <svg
-              class="inline-block ml-2 w-2 text-black"
-            >
-              chevron-down.svg
-            </svg>
-          </span>
+            chevron-down.svg
+          </svg>
         </span>
-      </div>
+      </span>
     </div>
   </div>
 </DocumentFragment>

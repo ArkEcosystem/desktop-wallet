@@ -2,80 +2,78 @@
 
 exports[`TotalAmountBox should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
+  >
     <div
-      class="rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
+      class="relative p-4"
     >
       <div
-        class="relative p-4"
+        class="flex divide-x divide-theme-neutral-300 dark:divide-theme-neutral-800"
       >
         <div
-          class="flex divide-x divide-theme-neutral-300 dark:divide-theme-neutral-800"
+          class="flex flex-col w-1/2 justify-center px-4 py-2"
         >
-          <div
-            class="flex flex-col w-1/2 justify-center px-4 py-2"
+          <span
+            class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
           >
-            <span
-              class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
-            >
-              Transaction Amount
-            </span>
-            <span
-              class="mt-1 text-lg font-semibold"
-              data-testid="total-amount-box__transaction-amount"
-            >
-              1 ARK
-            </span>
-          </div>
-          <div
-            class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
+            Transaction Amount
+          </span>
+          <span
+            class="mt-1 text-lg font-semibold"
+            data-testid="total-amount-box__transaction-amount"
           >
-            <span
-              class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
-            >
-              Transaction Fee
-            </span>
-            <span
-              class="mt-1 text-lg font-semibold"
-              data-testid="total-amount-box__transaction-fee"
-            >
-              0.00000001 ARK
-            </span>
-          </div>
+            1 ARK
+          </span>
         </div>
         <div
-          class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+          class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
         >
-          <div
-            class="py-2 ml-px bg-theme-background text-theme-neutral-900 dark:text-theme-neutral-600"
+          <span
+            class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
           >
-            <div
-              class="sc-gsTCUz cXMmJt"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                plus.svg
-              </svg>
-            </div>
-          </div>
+            Transaction Fee
+          </span>
+          <span
+            class="mt-1 text-lg font-semibold"
+            data-testid="total-amount-box__transaction-fee"
+          >
+            0.00000001 ARK
+          </span>
         </div>
       </div>
       <div
-        class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-300 dark:bg-theme-neutral-800"
+        class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
       >
-        <span
-          class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
+        <div
+          class="py-2 ml-px bg-theme-background text-theme-neutral-900 dark:text-theme-neutral-600"
         >
-          Total Amount
-        </span>
-        <span
-          class="text-2xl font-bold"
-          data-testid="total-amount-box__total"
-        >
-          1.00000001 ARK
-        </span>
+          <div
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              plus.svg
+            </svg>
+          </div>
+        </div>
       </div>
+    </div>
+    <div
+      class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-300 dark:bg-theme-neutral-800"
+    >
+      <span
+        class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
+      >
+        Total Amount
+      </span>
+      <span
+        class="text-2xl font-bold"
+        data-testid="total-amount-box__total"
+      >
+        1.00000001 ARK
+      </span>
     </div>
   </div>
 </DocumentFragment>

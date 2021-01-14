@@ -2,28 +2,26 @@
 
 exports[`TransactionFee should render 1`] = `
 <div>
-  <div>
+  <div
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    data-testid="TransactionDetail"
+  >
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-      data-testid="TransactionDetail"
+      class="flex-1 space-y-2"
     >
       <div
-        class="flex-1 space-y-2"
+        class="text-sm font-semibold text-theme-neutral-700"
       >
-        <div
-          class="text-sm font-semibold text-theme-neutral-700"
+        Transaction Fee
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <span
+          data-testid="Amount"
         >
-          Transaction Fee
-        </div>
-        <div
-          class="font-semibold"
-        >
-          <span
-            data-testid="Amount"
-          >
-            0.00000001 DARK
-          </span>
-        </div>
+          0.00000001 DARK
+        </span>
       </div>
     </div>
   </div>

@@ -2,313 +2,311 @@
 
 exports[`ReviewBox should render properly 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="w-full"
+  >
     <div
-      class="w-full"
+      class="flex flex-col"
     >
       <div
-        class="flex flex-col"
+        class="flex items-center text-2xl whitespace-nowrap"
       >
         <div
-          class="flex items-center text-2xl whitespace-nowrap"
+          class="sc-bdfBwQ eZPcdm mr-1 -mt-1"
+          height="19"
+          width="34"
         >
-          <div
-            class="sc-gsTCUz jSFRIO mr-1 -mt-1"
-            height="19"
-            width="34"
-          >
-            <svg>
-              stars-outline.svg
-            </svg>
-          </div>
-          <span
-            class="font-bold"
-          >
-            Avg. Rating: 4.3 
-            <span
-              class="font-bold text-theme-neutral-light"
-            >
-               / 5
-            </span>
-          </span>
+          <svg>
+            stars-outline.svg
+          </svg>
         </div>
         <span
-          class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
+          class="font-bold"
         >
-          Out of 347 reviews
+          Avg. Rating: 4.3 
+          <span
+            class="font-bold text-theme-neutral-light"
+          >
+             / 5
+          </span>
         </span>
+      </div>
+      <span
+        class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
+      >
+        Out of 347 reviews
+      </span>
+      <div
+        class="space-y-6"
+      >
         <div
-          class="space-y-6"
+          class="flex flex-col"
         >
           <div
-            class="flex flex-col"
+            class="flex justify-between"
+            data-testid="5-stars__rating-row"
           >
             <div
-              class="flex justify-between"
-              data-testid="5-stars__rating-row"
+              class="flex items-center space-x-1 text-theme-warning-400"
             >
               <div
-                class="flex items-center space-x-1 text-theme-warning-400"
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
               >
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
+                <svg>
+                  star.svg
+                </svg>
               </div>
-              <span
-                class="font-bold"
-              >
-                156
-              </span>
-            </div>
-            <div
-              class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
-            >
               <div
-                class="sc-dlfnbm bgGkxj h-2 rounded-lg bg-theme-warning-400"
-                data-testid="5-stars__rating-count"
-                width="44.95677233429395"
-              />
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
             </div>
+            <span
+              class="font-bold"
+            >
+              156
+            </span>
           </div>
           <div
-            class="flex flex-col"
+            class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="flex justify-between"
-              data-testid="4-stars__rating-row"
-            >
-              <div
-                class="flex items-center space-x-1 text-theme-warning-400"
-              >
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="font-bold"
-              >
-                194
-              </span>
-            </div>
+              class="sc-gsTCUz iMjkco h-2 rounded-lg bg-theme-warning-400"
+              data-testid="5-stars__rating-count"
+              width="44.95677233429395"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="flex justify-between"
+            data-testid="4-stars__rating-row"
+          >
             <div
-              class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
+              class="flex items-center space-x-1 text-theme-warning-400"
             >
               <div
-                class="sc-dlfnbm gsKJLw h-2 rounded-lg bg-theme-warning-400"
-                data-testid="4-stars__rating-count"
-                width="55.907780979827095"
-              />
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
             </div>
+            <span
+              class="font-bold"
+            >
+              194
+            </span>
           </div>
           <div
-            class="flex flex-col"
+            class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="flex justify-between"
-              data-testid="3-stars__rating-row"
-            >
-              <div
-                class="flex items-center space-x-1 text-theme-warning-400"
-              >
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="font-bold"
-              >
-                25
-              </span>
-            </div>
+              class="sc-gsTCUz igQXkr h-2 rounded-lg bg-theme-warning-400"
+              data-testid="4-stars__rating-count"
+              width="55.907780979827095"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="flex justify-between"
+            data-testid="3-stars__rating-row"
+          >
             <div
-              class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
+              class="flex items-center space-x-1 text-theme-warning-400"
             >
               <div
-                class="sc-dlfnbm ejhYrM h-2 rounded-lg bg-theme-warning-400"
-                data-testid="3-stars__rating-count"
-                width="7.204610951008646"
-              />
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
             </div>
+            <span
+              class="font-bold"
+            >
+              25
+            </span>
           </div>
           <div
-            class="flex flex-col"
+            class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="flex justify-between"
-              data-testid="2-stars__rating-row"
-            >
-              <div
-                class="flex items-center space-x-1 text-theme-warning-400"
-              >
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="font-bold"
-              >
-                42
-              </span>
-            </div>
+              class="sc-gsTCUz hwiWgb h-2 rounded-lg bg-theme-warning-400"
+              data-testid="3-stars__rating-count"
+              width="7.204610951008646"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="flex justify-between"
+            data-testid="2-stars__rating-row"
+          >
             <div
-              class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
+              class="flex items-center space-x-1 text-theme-warning-400"
             >
               <div
-                class="sc-dlfnbm gdXZrO h-2 rounded-lg bg-theme-warning-400"
-                data-testid="2-stars__rating-count"
-                width="12.103746397694524"
-              />
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
             </div>
+            <span
+              class="font-bold"
+            >
+              42
+            </span>
           </div>
           <div
-            class="flex flex-col"
+            class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="flex justify-between"
-              data-testid="1-stars__rating-row"
-            >
-              <div
-                class="flex items-center space-x-1 text-theme-warning-400"
-              >
-                <div
-                  class="sc-gsTCUz caGmQN"
-                  height="13"
-                  width="13"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="font-bold"
-              >
-                7
-              </span>
-            </div>
+              class="sc-gsTCUz jLkDQx h-2 rounded-lg bg-theme-warning-400"
+              data-testid="2-stars__rating-count"
+              width="12.103746397694524"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="flex justify-between"
+            data-testid="1-stars__rating-row"
+          >
             <div
-              class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
+              class="flex items-center space-x-1 text-theme-warning-400"
             >
               <div
-                class="sc-dlfnbm lhASwZ h-2 rounded-lg bg-theme-warning-400"
-                data-testid="1-stars__rating-count"
-                width="2.0172910662824206"
-              />
+                class="sc-bdfBwQ eRnpCh"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
             </div>
+            <span
+              class="font-bold"
+            >
+              7
+            </span>
+          </div>
+          <div
+            class="mt-1 w-full h-2 rounded-lg bg-theme-neutral-200"
+          >
+            <div
+              class="sc-gsTCUz bwdpUa h-2 rounded-lg bg-theme-warning-400"
+              data-testid="1-stars__rating-count"
+              width="2.0172910662824206"
+            />
           </div>
         </div>
       </div>

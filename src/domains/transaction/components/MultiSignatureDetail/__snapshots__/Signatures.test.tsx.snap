@@ -2,110 +2,108 @@
 
 exports[`Signatures should render 1`] = `
 <div>
-  <div>
-    <div
-      data-testid="Signatures"
+  <div
+    data-testid="Signatures"
+  >
+    <h3
+      class="mb-0"
     >
-      <h3
-        class="mb-0"
-      >
-        Signatures
-      </h3>
-      <div
-        class="flex"
-      >
-        <div>
+      Signatures
+    </h3>
+    <div
+      class="flex"
+    >
+      <div>
+        <div
+          class="mb-2 text-sm font-semibold text-theme-neutral"
+        >
+          You
+        </div>
+        <div
+          class="pr-6 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+        >
           <div
-            class="mb-2 text-sm font-semibold text-theme-neutral"
+            class="relative"
+            data-testid="Signatures__participant-status"
           >
-            You
-          </div>
-          <div
-            class="pr-6 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-          >
-            <div
-              class="relative"
-              data-testid="Signatures__participant-status"
-            >
-              <div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                      title="03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc"
-                    />
-                  </div>
-                </div>
-              </div>
-              <span
-                class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
-                data-testid="Signatures__waiting-badge"
+            <div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="Avatar"
               >
                 <div
-                  class="sc-gsTCUz cmyhNZ"
-                  height="12"
-                  width="12"
+                  class="w-full h-full"
                 >
-                  <svg>
-                    status-pending.svg
-                  </svg>
+                  <img
+                    alt="03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                    title="03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc"
+                  />
                 </div>
-                <span />
-              </span>
+              </div>
             </div>
+            <span
+              class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
+              data-testid="Signatures__waiting-badge"
+            >
+              <div
+                class="sc-bdfBwQ fdfkzt"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  status-pending.svg
+                </svg>
+              </div>
+              <span />
+            </span>
           </div>
         </div>
-        <div>
+      </div>
+      <div>
+        <div
+          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
+        >
+          Other
+        </div>
+        <div
+          class="flex ml-2 space-x-4"
+        >
           <div
-            class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
+            class="relative"
+            data-testid="Signatures__participant-status"
           >
-            Other
-          </div>
-          <div
-            class="flex ml-2 space-x-4"
-          >
-            <div
-              class="relative"
-              data-testid="Signatures__participant-status"
-            >
-              <div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                      title="03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51"
-                    />
-                  </div>
-                </div>
-              </div>
-              <span
-                class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
-                data-testid="Signatures__signed-badge"
+            <div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="Avatar"
               >
                 <div
-                  class="sc-gsTCUz cmyhNZ"
-                  height="12"
-                  width="12"
+                  class="w-full h-full"
                 >
-                  <svg>
-                    checkmark.svg
-                  </svg>
+                  <img
+                    alt="03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51"
+                  />
                 </div>
-                <span />
-              </span>
+              </div>
             </div>
+            <span
+              class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+              data-testid="Signatures__signed-badge"
+            >
+              <div
+                class="sc-bdfBwQ fdfkzt"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  checkmark.svg
+                </svg>
+              </div>
+              <span />
+            </span>
           </div>
         </div>
       </div>
@@ -116,110 +114,108 @@ exports[`Signatures should render 1`] = `
 
 exports[`Signatures should render with final signature 1`] = `
 <div>
-  <div>
-    <div
-      data-testid="Signatures"
+  <div
+    data-testid="Signatures"
+  >
+    <h3
+      class="mb-0"
     >
-      <h3
-        class="mb-0"
-      >
-        Signatures
-      </h3>
-      <div
-        class="flex"
-      >
-        <div>
+      Signatures
+    </h3>
+    <div
+      class="flex"
+    >
+      <div>
+        <div
+          class="mb-2 text-sm font-semibold text-theme-neutral"
+        >
+          You
+        </div>
+        <div
+          class="pr-6 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+        >
           <div
-            class="mb-2 text-sm font-semibold text-theme-neutral"
+            class="relative"
+            data-testid="Signatures__participant-status"
           >
-            You
-          </div>
-          <div
-            class="pr-6 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
-          >
-            <div
-              class="relative"
-              data-testid="Signatures__participant-status"
-            >
-              <div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                      title="03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc"
-                    />
-                  </div>
-                </div>
-              </div>
-              <span
-                class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
-                data-testid="Signatures__signed-badge"
+            <div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="Avatar"
               >
                 <div
-                  class="sc-gsTCUz cmyhNZ"
-                  height="12"
-                  width="12"
+                  class="w-full h-full"
                 >
-                  <svg>
-                    checkmark.svg
-                  </svg>
+                  <img
+                    alt="03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                    title="03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc"
+                  />
                 </div>
-                <span />
-              </span>
+              </div>
             </div>
+            <span
+              class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+              data-testid="Signatures__signed-badge"
+            >
+              <div
+                class="sc-bdfBwQ fdfkzt"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  checkmark.svg
+                </svg>
+              </div>
+              <span />
+            </span>
           </div>
         </div>
-        <div>
+      </div>
+      <div>
+        <div
+          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
+        >
+          Other
+        </div>
+        <div
+          class="flex ml-2 space-x-4"
+        >
           <div
-            class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
+            class="relative"
+            data-testid="Signatures__participant-status"
           >
-            Other
-          </div>
-          <div
-            class="flex ml-2 space-x-4"
-          >
-            <div
-              class="relative"
-              data-testid="Signatures__participant-status"
-            >
-              <div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                      title="03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51"
-                    />
-                  </div>
-                </div>
-              </div>
-              <span
-                class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
-                data-testid="Signatures__signed-badge"
+            <div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 lgFOpw"
+                data-testid="Avatar"
               >
                 <div
-                  class="sc-gsTCUz cmyhNZ"
-                  height="12"
-                  width="12"
+                  class="w-full h-full"
                 >
-                  <svg>
-                    checkmark.svg
-                  </svg>
+                  <img
+                    alt="03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51"
+                  />
                 </div>
-                <span />
-              </span>
+              </div>
             </div>
+            <span
+              class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+              data-testid="Signatures__signed-badge"
+            >
+              <div
+                class="sc-bdfBwQ fdfkzt"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  checkmark.svg
+                </svg>
+              </div>
+              <span />
+            </span>
           </div>
         </div>
       </div>

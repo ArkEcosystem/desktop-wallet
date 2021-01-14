@@ -2,40 +2,38 @@
 
 exports[`TransactionConfirmations should render when confirmed 1`] = `
 <div>
-  <div>
+  <div
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    data-testid="TransactionDetail"
+  >
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-      data-testid="TransactionDetail"
+      class="flex-1 space-y-2"
     >
       <div
-        class="flex-1 space-y-2"
+        class="text-sm font-semibold text-theme-neutral-700"
+      >
+        Confirmations
+      </div>
+      <div
+        class="font-semibold"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-700"
+          class="flex space-x-3"
         >
-          Confirmations
-        </div>
-        <div
-          class="font-semibold"
-        >
-          <div
-            class="flex space-x-3"
-          >
-            <span>
-              Well confirmed
-            </span>
-            <span>
-              <div
-                class="sc-gsTCUz gbSRoN text-theme-success"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  status-ok.svg
-                </svg>
-              </div>
-            </span>
-          </div>
+          <span>
+            Well confirmed
+          </span>
+          <span>
+            <div
+              class="sc-bdfBwQ iSzUah text-theme-success"
+              height="22"
+              width="22"
+            >
+              <svg>
+                status-ok.svg
+              </svg>
+            </div>
+          </span>
         </div>
       </div>
     </div>
@@ -45,37 +43,35 @@ exports[`TransactionConfirmations should render when confirmed 1`] = `
 
 exports[`TransactionConfirmations should render when not confirmed 1`] = `
 <div>
-  <div>
+  <div
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    data-testid="TransactionDetail"
+  >
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
-      data-testid="TransactionDetail"
+      class="flex-1 space-y-2"
     >
       <div
-        class="flex-1 space-y-2"
+        class="text-sm font-semibold text-theme-neutral-700"
+      >
+        Confirmations
+      </div>
+      <div
+        class="font-semibold"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-700"
+          class="flex space-x-3"
         >
-          Confirmations
-        </div>
-        <div
-          class="font-semibold"
-        >
+          <span>
+            Not confirmed
+          </span>
           <div
-            class="flex space-x-3"
+            class="sc-bdfBwQ iSzUah text-theme-warning"
+            height="22"
+            width="22"
           >
-            <span>
-              Not confirmed
-            </span>
-            <div
-              class="sc-gsTCUz gbSRoN text-theme-warning"
-              height="22"
-              width="22"
-            >
-              <svg>
-                status-pending.svg
-              </svg>
-            </div>
+            <svg>
+              status-pending.svg
+            </svg>
           </div>
         </div>
       </div>

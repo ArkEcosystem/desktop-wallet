@@ -1,66 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CreateContact should not render if not open 1`] = `
-<DocumentFragment>
-  <div />
-</DocumentFragment>
-`;
+exports[`CreateContact should not render if not open 1`] = `<DocumentFragment />`;
 
 exports[`CreateContact should render create contact modal 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
     <div
-      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+      class="fixed z-50 w-full h-full bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
     >
       <div
-        class="fixed z-50 w-full h-full bg-black opacity-50"
-        data-testid="modal__overlay"
-      />
-      <div
-        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-xl bg-theme-background shadow-2xl "
-        data-testid="modal__inner"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
       >
-        <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        <button
+          class="Button-mdtvtf-0 gVVPUs w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
         >
-          <button
-            class="Button-mdtvtf-0 gVVPUs w-11 h-11"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="sc-gsTCUz jEpOBt"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </button>
-        </div>
-        <div
-          class="relative"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Add Contact
-          </h2>
           <div
-            class="flex-1"
+            class="sc-bdfBwQ bfBhNR"
+            height="14"
+            width="14"
           >
-            <div
-              class="mt-1 text-theme-secondary-text"
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Add Contact
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div
+            class="mt-1 text-theme-secondary-text"
+          >
+            Enter your contacts name and addresses and add them to your list.
+          </div>
+          <div
+            class="mt-8"
+          >
+            <form
+              class="space-y-8"
+              data-testid="contact-form"
             >
-              Enter your contacts name and addresses and add them to your list.
-            </div>
-            <div
-              class="mt-8"
-            >
-              <form
-                class="space-y-8"
-                data-testid="contact-form"
+              <fieldset
+                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+              >
+                <label
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  data-testid="FormLabel"
+                  for="name"
+                >
+                  Name
+                  <div
+                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                    data-testid="FormLabel__required"
+                  />
+                </label>
+                <input
+                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  data-testid="contact-form__name-input"
+                  name="name"
+                  value=""
+                />
+              </fieldset>
+              <div
+                class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
               >
                 <fieldset
                   class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
@@ -68,166 +87,141 @@ exports[`CreateContact should render create contact modal 1`] = `
                   <label
                     class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
                     data-testid="FormLabel"
-                    for="name"
+                    for="network"
                   >
-                    Name
+                    Cryptoasset
                     <div
                       class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                       data-testid="FormLabel__required"
                     />
                   </label>
-                  <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
-                    data-testid="contact-form__name-input"
-                    name="name"
-                    value=""
-                  />
-                </fieldset>
-                <div
-                  class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
-                >
-                  <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
-                  >
-                    <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                      data-testid="FormLabel"
-                      for="network"
+                  <div>
+                    <div
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-owns="ContactForm__network-menu"
+                      data-testid="SelectNetwork"
+                      role="combobox"
                     >
-                      Cryptoasset
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
+                      <label
+                        for="ContactForm__network-input"
+                        id="ContactForm__network-label"
                       />
-                    </label>
-                    <div>
                       <div
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-owns="ContactForm__network-menu"
-                        data-testid="SelectNetwork"
-                        role="combobox"
+                        class="InputGroup-sc-1obbdqe-3 bgPpWR"
+                        data-testid="SelectNetworkInput"
                       >
-                        <label
-                          for="ContactForm__network-input"
-                          id="ContactForm__network-label"
-                        />
                         <div
-                          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-                          data-testid="SelectNetworkInput"
+                          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
                         >
                           <div
-                            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
-                          >
-                            <div
-                              class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
-                              data-testid="SelectNetworkInput__network"
-                            />
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-controls="ContactForm__network-menu"
-                            aria-labelledby="ContactForm__network-label"
-                            autocomplete="off"
-                            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
-                            data-testid="SelectNetworkInput__input"
-                            id="ContactForm__network-input"
-                            placeholder="Enter a cryptoasset name"
-                            value=""
+                            class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                            data-testid="SelectNetworkInput__network"
                           />
                         </div>
-                      </div>
-                      <ul
-                        aria-labelledby="ContactForm__network-label"
-                        class="hidden"
-                        id="ContactForm__network-menu"
-                        role="listbox"
-                      />
-                    </div>
-                  </fieldset>
-                  <fieldset
-                    class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
-                    data-testid="ContactForm__address"
-                  >
-                    <label
-                      class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
-                      data-testid="FormLabel"
-                      for="address"
-                    >
-                      Address
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
-                    </label>
-                    <div
-                      class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
-                    >
-                      <input
-                        class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
-                        data-testid="contact-form__address-input"
-                        name="address"
-                        type="text"
-                      />
-                      <div
-                        class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
-                      >
-                        <button
-                          class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
-                          data-testid="InputAddress__qr-button"
-                          type="button"
-                        >
-                          <div
-                            class="sc-gsTCUz fHxsLl"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              qr-code.svg
-                            </svg>
-                          </div>
-                        </button>
+                        <input
+                          aria-autocomplete="list"
+                          aria-controls="ContactForm__network-menu"
+                          aria-labelledby="ContactForm__network-label"
+                          autocomplete="off"
+                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                          data-testid="SelectNetworkInput__input"
+                          id="ContactForm__network-input"
+                          placeholder="Enter a cryptoasset name"
+                          value=""
+                        />
                       </div>
                     </div>
-                  </fieldset>
-                  <div
-                    class="mt-4"
-                  >
-                    <button
-                      class="Button-mdtvtf-0 eVVyXU w-full"
-                      data-testid="contact-form__add-address-btn"
-                      disabled=""
-                      type="button"
-                    >
-                      Add Address
-                    </button>
+                    <ul
+                      aria-labelledby="ContactForm__network-label"
+                      class="hidden"
+                      id="ContactForm__network-menu"
+                      role="listbox"
+                    />
                   </div>
-                </div>
-                <div
-                  class="flex w-full justify-end"
+                </fieldset>
+                <fieldset
+                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                  data-testid="ContactForm__address"
                 >
-                  <div
-                    class="space-x-3"
+                  <label
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                    data-testid="FormLabel"
+                    for="address"
                   >
-                    <button
-                      class="Button-mdtvtf-0 ifPnXw"
-                      data-testid="contact-form__cancel-btn"
-                      type="button"
+                    Address
+                    <div
+                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                      data-testid="FormLabel__required"
+                    />
+                  </label>
+                  <div
+                    class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                      data-testid="contact-form__address-input"
+                      name="address"
+                      type="text"
+                    />
+                    <div
+                      class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV my-px mr-4"
                     >
-                      Cancel
-                    </button>
-                    <button
-                      class="Button-mdtvtf-0 eVVyXU"
-                      data-testid="contact-form__save-btn"
-                      disabled=""
-                      type="submit"
-                    >
-                      Save
-                    </button>
+                      <button
+                        class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-400"
+                        data-testid="InputAddress__qr-button"
+                        type="button"
+                      >
+                        <div
+                          class="sc-bdfBwQ iyevwF"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            qr-code.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
                   </div>
+                </fieldset>
+                <div
+                  class="mt-4"
+                >
+                  <button
+                    class="Button-mdtvtf-0 eVVyXU w-full"
+                    data-testid="contact-form__add-address-btn"
+                    disabled=""
+                    type="button"
+                  >
+                    Add Address
+                  </button>
                 </div>
-              </form>
-            </div>
+              </div>
+              <div
+                class="flex w-full justify-end"
+              >
+                <div
+                  class="space-x-3"
+                >
+                  <button
+                    class="Button-mdtvtf-0 ifPnXw"
+                    data-testid="contact-form__cancel-btn"
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="Button-mdtvtf-0 eVVyXU"
+                    data-testid="contact-form__save-btn"
+                    disabled=""
+                    type="submit"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

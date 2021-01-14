@@ -2,48 +2,46 @@
 
 exports[`MnemonicVerificationProgress should render tabs 1`] = `
 <DocumentFragment>
-  <div>
-    <ul
-      class="flex space-x-2"
+  <ul
+    class="flex space-x-2"
+  >
+    <button
+      class="MnemonicVerificationOptions__OptionButton-sc-175bail-0 MnemonicVerificationProgress__TabStyled-wy5xj6-0 fgehmS eBSOqm"
+      data-testid="MnemonicVerificationProgress__Tab"
+      disabled=""
     >
-      <button
-        class="MnemonicVerificationOptions__OptionButton-sc-175bail-0 MnemonicVerificationProgress__TabStyled-wy5xj6-0 fgehmS eBSOqm"
-        data-testid="MnemonicVerificationProgress__Tab"
-        disabled=""
+      <span
+        class="text-lg text-theme-success"
       >
-        <span
-          class="text-lg text-theme-success"
+        <div
+          class="sc-bdfBwQ fcykxB"
+          height="28"
+          width="28"
         >
-          <div
-            class="sc-gsTCUz jddDKp"
-            height="28"
-            width="28"
-          >
-            <svg>
-              status-ok.svg
-            </svg>
-          </div>
-        </span>
-      </button>
-      <button
-        class="MnemonicVerificationOptions__OptionButton-sc-175bail-0 MnemonicVerificationProgress__TabStyled-wy5xj6-0 fgehmS bTrCdF"
-        data-testid="MnemonicVerificationProgress__Tab"
-        disabled=""
-      >
-        <span>
-          The 2nd word
-        </span>
-      </button>
-      <button
-        class="MnemonicVerificationOptions__OptionButton-sc-175bail-0 MnemonicVerificationProgress__TabStyled-wy5xj6-0 fgehmS lhZlqI"
-        data-testid="MnemonicVerificationProgress__Tab"
-        disabled=""
-      >
-        <span>
-          The 3rd word
-        </span>
-      </button>
-    </ul>
-  </div>
+          <svg>
+            status-ok.svg
+          </svg>
+        </div>
+      </span>
+    </button>
+    <button
+      class="MnemonicVerificationOptions__OptionButton-sc-175bail-0 MnemonicVerificationProgress__TabStyled-wy5xj6-0 fgehmS bTrCdF"
+      data-testid="MnemonicVerificationProgress__Tab"
+      disabled=""
+    >
+      <span>
+        The 2nd word
+      </span>
+    </button>
+    <button
+      class="MnemonicVerificationOptions__OptionButton-sc-175bail-0 MnemonicVerificationProgress__TabStyled-wy5xj6-0 fgehmS lhZlqI"
+      data-testid="MnemonicVerificationProgress__Tab"
+      disabled=""
+    >
+      <span>
+        The 3rd word
+      </span>
+    </button>
+  </ul>
 </DocumentFragment>
 `;

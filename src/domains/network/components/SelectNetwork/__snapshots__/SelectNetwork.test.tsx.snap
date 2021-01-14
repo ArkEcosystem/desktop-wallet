@@ -3,50 +3,48 @@
 exports[`SelectNetwork should render 1`] = `
 <div>
   <div>
-    <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-1-menu"
+      data-testid="SelectNetwork"
+      role="combobox"
+    >
+      <label
+        for="downshift-0-input"
+        id="downshift-1-label"
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-1-menu"
-        data-testid="SelectNetwork"
-        role="combobox"
+        class="InputGroup-sc-1obbdqe-3 bgPpWR"
+        data-testid="SelectNetworkInput"
       >
-        <label
-          for="downshift-0-input"
-          id="downshift-1-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectNetworkInput"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
         >
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
-          >
-            <div
-              class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
-              data-testid="SelectNetworkInput__network"
-            />
-          </div>
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-1-menu"
-            aria-labelledby="downshift-1-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
-            data-testid="SelectNetworkInput__input"
-            id="downshift-0-input"
-            placeholder="Enter a cryptoasset name"
-            value=""
+            class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+            data-testid="SelectNetworkInput__network"
           />
         </div>
+        <input
+          aria-autocomplete="list"
+          aria-controls="downshift-1-menu"
+          aria-labelledby="downshift-1-label"
+          autocomplete="off"
+          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+          data-testid="SelectNetworkInput__input"
+          id="downshift-0-input"
+          placeholder="Enter a cryptoasset name"
+          value=""
+        />
       </div>
-      <ul
-        aria-labelledby="downshift-1-label"
-        class="hidden"
-        id="downshift-1-menu"
-        role="listbox"
-      />
     </div>
+    <ul
+      aria-labelledby="downshift-1-label"
+      class="hidden"
+      id="downshift-1-menu"
+      role="listbox"
+    />
   </div>
 </div>
 `;
@@ -54,50 +52,48 @@ exports[`SelectNetwork should render 1`] = `
 exports[`SelectNetwork should render with networks 1`] = `
 <div>
   <div>
-    <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-5-menu"
+      data-testid="SelectNetwork"
+      role="combobox"
+    >
+      <label
+        for="downshift-4-input"
+        id="downshift-5-label"
+      />
       <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-5-menu"
-        data-testid="SelectNetwork"
-        role="combobox"
+        class="InputGroup-sc-1obbdqe-3 bgPpWR"
+        data-testid="SelectNetworkInput"
       >
-        <label
-          for="downshift-4-input"
-          id="downshift-5-label"
-        />
         <div
-          class="InputGroup-sc-1obbdqe-3 bgPpWR"
-          data-testid="SelectNetworkInput"
+          class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
         >
           <div
-            class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
-          >
-            <div
-              class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
-              data-testid="SelectNetworkInput__network"
-            />
-          </div>
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-5-menu"
-            aria-labelledby="downshift-5-label"
-            autocomplete="off"
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
-            data-testid="SelectNetworkInput__input"
-            id="downshift-4-input"
-            placeholder="Enter a cryptoasset name"
-            value=""
+            class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+            data-testid="SelectNetworkInput__network"
           />
         </div>
+        <input
+          aria-autocomplete="list"
+          aria-controls="downshift-5-menu"
+          aria-labelledby="downshift-5-label"
+          autocomplete="off"
+          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+          data-testid="SelectNetworkInput__input"
+          id="downshift-4-input"
+          placeholder="Enter a cryptoasset name"
+          value=""
+        />
       </div>
-      <ul
-        aria-labelledby="downshift-5-label"
-        class="hidden"
-        id="downshift-5-menu"
-        role="listbox"
-      />
     </div>
+    <ul
+      aria-labelledby="downshift-5-label"
+      class="hidden"
+      id="downshift-5-menu"
+      role="listbox"
+    />
   </div>
 </div>
 `;

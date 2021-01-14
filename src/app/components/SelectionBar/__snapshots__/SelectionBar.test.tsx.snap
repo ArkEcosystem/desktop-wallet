@@ -2,38 +2,34 @@
 
 exports[`SelectionBar should render 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
-      data-testid="SelectionBar"
-      role="radiogroup"
-    />
-  </div>
+  <div
+    class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
+    data-testid="SelectionBar"
+    role="radiogroup"
+  />
 </DocumentFragment>
 `;
 
 exports[`SelectionBarOption should render 1`] = `
 <DocumentFragment>
-  <div>
-    <button
-      aria-checked="true"
-      class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-      data-testid="SelectionBarOption"
-      role="radio"
-      type="button"
-    >
-      Test 1
-    </button>
-    <button
-      aria-checked="false"
-      class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-      data-testid="SelectionBarOption"
-      role="radio"
-      type="button"
-    >
-      Test 2
-    </button>
-    ,
-  </div>
+  <button
+    aria-checked="true"
+    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+    data-testid="SelectionBarOption"
+    role="radio"
+    type="button"
+  >
+    Test 1
+  </button>
+  <button
+    aria-checked="false"
+    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 hBCAui relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+    data-testid="SelectionBarOption"
+    role="radio"
+    type="button"
+  >
+    Test 2
+  </button>
+  ,
 </DocumentFragment>
 `;

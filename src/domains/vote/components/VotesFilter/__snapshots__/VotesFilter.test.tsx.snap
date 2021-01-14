@@ -2,31 +2,29 @@
 
 exports[`VotesFilter should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="VotesFilter"
+  >
     <div
-      data-testid="VotesFilter"
+      class="relative"
     >
-      <div
-        class="relative"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <span
-          data-testid="dropdown__toggle"
+        <div
+          class="cursor-pointer"
         >
           <div
-            class="cursor-pointer"
+            class="sc-bdfBwQ iyevwF"
+            height="20"
+            width="20"
           >
-            <div
-              class="sc-gsTCUz fHxsLl"
-              height="20"
-              width="20"
-            >
-              <svg>
-                filters.svg
-              </svg>
-            </div>
+            <svg>
+              filters.svg
+            </svg>
           </div>
-        </span>
-      </div>
+        </div>
+      </span>
     </div>
   </div>
 </DocumentFragment>
@@ -34,76 +32,74 @@ exports[`VotesFilter should render 1`] = `
 
 exports[`VotesFilter should render default 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="VotesFilter"
+  >
     <div
-      data-testid="VotesFilter"
+      class="relative"
     >
-      <div
-        class="relative"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <span
-          data-testid="dropdown__toggle"
-        >
-          <div
-            class="cursor-pointer"
-          >
-            <div
-              class="sc-gsTCUz fHxsLl"
-              height="20"
-              width="20"
-            >
-              <svg>
-                filters.svg
-              </svg>
-            </div>
-          </div>
-        </span>
         <div
-          class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+          class="cursor-pointer"
         >
           <div
-            data-testid="dropdown__content"
+            class="sc-bdfBwQ iyevwF"
+            height="20"
+            width="20"
           >
-            <div>
-              <div
-                class="py-4 px-6 w-64"
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <div>
+            <div
+              class="py-4 px-6 w-64"
+            >
+              <label
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--all"
               >
-                <label
-                  class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-                  data-testid="VotesFilter__option--all"
+                <span>
+                  <input
+                    checked=""
+                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    color="success"
+                    name="all"
+                    type="checkbox"
+                  />
+                </span>
+                <span>
+                  All
+                </span>
+              </label>
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--current"
+              >
+                <span>
+                  <input
+                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    color="success"
+                    name="current"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="pt-px"
                 >
-                  <span>
-                    <input
-                      checked=""
-                      class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
-                      color="success"
-                      name="all"
-                      type="checkbox"
-                    />
-                  </span>
-                  <span>
-                    All
-                  </span>
-                </label>
-                <label
-                  class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-                  data-testid="VotesFilter__option--current"
-                >
-                  <span>
-                    <input
-                      class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
-                      color="success"
-                      name="current"
-                      type="checkbox"
-                    />
-                  </span>
-                  <span
-                    class="pt-px"
-                  >
-                    Current Votes
-                  </span>
-                </label>
-              </div>
+                  Current Votes
+                </span>
+              </label>
             </div>
           </div>
         </div>
@@ -115,76 +111,74 @@ exports[`VotesFilter should render default 1`] = `
 
 exports[`VotesFilter should render with current option selected 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="VotesFilter"
+  >
     <div
-      data-testid="VotesFilter"
+      class="relative"
     >
-      <div
-        class="relative"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <span
-          data-testid="dropdown__toggle"
-        >
-          <div
-            class="cursor-pointer"
-          >
-            <div
-              class="sc-gsTCUz fHxsLl"
-              height="20"
-              width="20"
-            >
-              <svg>
-                filters.svg
-              </svg>
-            </div>
-          </div>
-        </span>
         <div
-          class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+          class="cursor-pointer"
         >
           <div
-            data-testid="dropdown__content"
+            class="sc-bdfBwQ iyevwF"
+            height="20"
+            width="20"
           >
-            <div>
-              <div
-                class="py-4 px-6 w-64"
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <div>
+            <div
+              class="py-4 px-6 w-64"
+            >
+              <label
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--all"
               >
-                <label
-                  class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-                  data-testid="VotesFilter__option--all"
+                <span>
+                  <input
+                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    color="success"
+                    name="all"
+                    type="checkbox"
+                  />
+                </span>
+                <span>
+                  All
+                </span>
+              </label>
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--current"
+              >
+                <span>
+                  <input
+                    checked=""
+                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    color="success"
+                    name="current"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="pt-px"
                 >
-                  <span>
-                    <input
-                      class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
-                      color="success"
-                      name="all"
-                      type="checkbox"
-                    />
-                  </span>
-                  <span>
-                    All
-                  </span>
-                </label>
-                <label
-                  class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-                  data-testid="VotesFilter__option--current"
-                >
-                  <span>
-                    <input
-                      checked=""
-                      class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
-                      color="success"
-                      name="current"
-                      type="checkbox"
-                    />
-                  </span>
-                  <span
-                    class="pt-px"
-                  >
-                    Current Votes
-                  </span>
-                </label>
-              </div>
+                  Current Votes
+                </span>
+              </label>
             </div>
           </div>
         </div>
@@ -196,77 +190,75 @@ exports[`VotesFilter should render with current option selected 1`] = `
 
 exports[`VotesFilter should render with disabled current option 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="VotesFilter"
+  >
     <div
-      data-testid="VotesFilter"
+      class="relative"
     >
-      <div
-        class="relative"
+      <span
+        data-testid="dropdown__toggle"
       >
-        <span
-          data-testid="dropdown__toggle"
-        >
-          <div
-            class="cursor-pointer"
-          >
-            <div
-              class="sc-gsTCUz fHxsLl"
-              height="20"
-              width="20"
-            >
-              <svg>
-                filters.svg
-              </svg>
-            </div>
-          </div>
-        </span>
         <div
-          class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+          class="cursor-pointer"
         >
           <div
-            data-testid="dropdown__content"
+            class="sc-bdfBwQ iyevwF"
+            height="20"
+            width="20"
           >
-            <div>
-              <div
-                class="py-4 px-6 w-64"
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="Dropdown__Wrapper-ocz1je-0 hArGtU mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl undefined"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <div>
+            <div
+              class="py-4 px-6 w-64"
+            >
+              <label
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                data-testid="VotesFilter__option--all"
               >
-                <label
-                  class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-                  data-testid="VotesFilter__option--all"
+                <span>
+                  <input
+                    checked=""
+                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    color="success"
+                    name="all"
+                    type="checkbox"
+                  />
+                </span>
+                <span>
+                  All
+                </span>
+              </label>
+              <label
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md text-theme-neutral-400"
+                data-testid="VotesFilter__option--current"
+              >
+                <span>
+                  <input
+                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    color="success"
+                    disabled=""
+                    name="current"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="pt-px"
                 >
-                  <span>
-                    <input
-                      checked=""
-                      class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
-                      color="success"
-                      name="all"
-                      type="checkbox"
-                    />
-                  </span>
-                  <span>
-                    All
-                  </span>
-                </label>
-                <label
-                  class="flex items-center block px-2 pb-1 space-x-3 rounded-md text-theme-neutral-400"
-                  data-testid="VotesFilter__option--current"
-                >
-                  <span>
-                    <input
-                      class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
-                      color="success"
-                      disabled=""
-                      name="current"
-                      type="checkbox"
-                    />
-                  </span>
-                  <span
-                    class="pt-px"
-                  >
-                    Current Votes
-                  </span>
-                </label>
-              </div>
+                  Current Votes
+                </span>
+              </label>
             </div>
           </div>
         </div>

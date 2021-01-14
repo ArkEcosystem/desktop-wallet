@@ -3,7 +3,6 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { render } from "@testing-library/react";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { i18n } from "app/i18n";
-import { PluginProviders } from "app/PluginProviders";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -17,9 +16,7 @@ import { StubStorage } from "tests/mocks";
 const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
 	<I18nextProvider i18n={i18n}>
 		<EnvironmentProvider env={env}>
-			<ConfigurationProvider>
-				<PluginProviders>{children}</PluginProviders>
-			</ConfigurationProvider>
+			<ConfigurationProvider>{children}</ConfigurationProvider>
 		</EnvironmentProvider>
 	</I18nextProvider>
 );
