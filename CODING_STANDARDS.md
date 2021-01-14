@@ -12,14 +12,13 @@ Names should **not** be _Obscure_ or _Abbreviated_. This excludes size units lik
 
 ### File Names
 
-| Name               | Convention                    | Example              |
-| :----------------- | :---------------------------- | :------------------- |
-| Index file         | `index.(tsx,ts)`              | `index.ts`           |
-| React component    | `ComponentName.(tsx,ts)`      | `Button.tsx`         |
-| Test file          | `ComponentName.test.(tsx,ts)` | `Button.test.tsx`    |
-| TypeScript types   | `File.models.ts`              | `Button.models.ts`   |
-| Styles (CSS-in-JS) | `ComponentName.styles.ts`     | `Button.styles.ts`   |
-| Storybook          | `ComponentName.stories.tsx`   | `Button.stories.tsx` |
+| Name               | Convention                    | Example            |
+| :----------------- | :---------------------------- | :----------------- |
+| Index file         | `index.(tsx,ts)`              | `index.ts`         |
+| React component    | `ComponentName.(tsx,ts)`      | `Button.tsx`       |
+| Test file          | `ComponentName.test.(tsx,ts)` | `Button.test.tsx`  |
+| TypeScript types   | `File.models.ts`              | `Button.models.ts` |
+| Styles (CSS-in-JS) | `ComponentName.styles.ts`     | `Button.styles.ts` |
 
 ### HTML
 
@@ -202,10 +201,6 @@ Components should be grouped into folders logically. If they are only used once 
         SomeOtherComponentOnlyUsedOnce.story.ts
         SomeOtherComponentOnlyUsedOnce.test.tsx
 ```
-
-#### **Storybook**
-
-Components should be built and tested with a `ComponentName.stories.tsx` and have a `README.md` file included if the components are distributed.
 
 #### **Test**
 
