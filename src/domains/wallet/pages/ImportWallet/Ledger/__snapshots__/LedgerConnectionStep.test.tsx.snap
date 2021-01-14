@@ -25,10 +25,10 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       </div>
     </div>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
         data-testid="FormLabel"
         for="network"
       >
@@ -79,7 +79,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -97,7 +97,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       </div>
     </fieldset>
     <div
-      class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
         class="flex items-center justify-center text-theme-success-600"
@@ -119,7 +119,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
         class="flex flex-col space-y-2"
       >
         <p
-          class="leading-relaxed break-words dark:text-theme-neutral-500"
+          class="leading-relaxed break-words dark:text-theme-secondary-500"
         >
           Successfully connected
         </p>
@@ -154,10 +154,10 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       </div>
     </div>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
         data-testid="FormLabel"
         for="network"
       >
@@ -208,7 +208,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -226,7 +226,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       </div>
     </fieldset>
     <div
-      class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+      class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
     >
       <div
         class="flex items-center justify-center text-theme-danger-400"
@@ -248,7 +248,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
         class="flex flex-col space-y-2"
       >
         <p
-          class="leading-relaxed break-words dark:text-theme-neutral-500"
+          class="leading-relaxed break-words dark:text-theme-secondary-500"
         >
           Failed
         </p>

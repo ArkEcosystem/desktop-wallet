@@ -6,20 +6,20 @@ exports[`WalletHeader should render 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
+      class="py-8 border-b bg-theme-secondary-900 border-theme-secondary-900 dark:border-theme-secondary-800"
     >
       <div
         class="container flex items-center px-14 mx-auto"
       >
         <div
-          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
+          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
         >
           <div
             class="flex -space-x-1"
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-neutral-dark text-theme-secondary-text"
+              class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -34,7 +34,7 @@ exports[`WalletHeader should render 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ybSGn"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ivYGqc"
               data-testid="Avatar"
             >
               <div
@@ -80,7 +80,7 @@ exports[`WalletHeader should render 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="sc-bdfBwQ ijAwew hover:text-theme-neutral"
+                    class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                     height="21"
                     width="13"
                   >
@@ -94,7 +94,7 @@ exports[`WalletHeader should render 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="sc-bdfBwQ dGcmIA hover:text-theme-neutral"
+                    class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                     height="21"
                     width="17"
                   >
@@ -137,7 +137,7 @@ exports[`WalletHeader should render 1`] = `
             class="my-auto"
           >
             <button
-              class="Button-mdtvtf-0 gVVPUs w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+              class="Button-mdtvtf-0 gVVPUs w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
               data-testid="WalletHeader__star-button"
               type="button"
             >
@@ -157,7 +157,7 @@ exports[`WalletHeader should render 1`] = `
             </button>
           </div>
           <button
-            class="Button-mdtvtf-0 cvPqli my-auto"
+            class="Button-mdtvtf-0 dqPArR my-auto"
             data-testid="WalletHeader__send-button"
             type="button"
           >
@@ -174,7 +174,7 @@ exports[`WalletHeader should render 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <button
-                  class="Button-mdtvtf-0 eXKKLD text-left"
+                  class="Button-mdtvtf-0 gDMsOH text-left"
                   type="button"
                 >
                   <div
@@ -203,20 +203,20 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
+      class="py-8 border-b bg-theme-secondary-900 border-theme-secondary-900 dark:border-theme-secondary-800"
     >
       <div
         class="container flex items-center px-14 mx-auto"
       >
         <div
-          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
+          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
         >
           <div
             class="flex -space-x-1"
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-neutral-dark text-theme-secondary-text"
+              class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -231,7 +231,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ybSGn"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ivYGqc"
               data-testid="Avatar"
             >
               <div
@@ -277,7 +277,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="sc-bdfBwQ ijAwew hover:text-theme-neutral"
+                    class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                     height="21"
                     width="13"
                   >
@@ -291,7 +291,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="sc-bdfBwQ dGcmIA hover:text-theme-neutral"
+                    class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                     height="21"
                     width="17"
                   >
@@ -323,7 +323,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                 0 BTC
               </span>
               <span
-                class="inline-flex items-center ml-2 text-theme-danger"
+                class="inline-flex items-center ml-2 text-theme-danger-500"
               >
                 <div
                   class="sc-bdfBwQ exFKrJ rotate-180"
@@ -352,7 +352,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             class="my-auto"
           >
             <button
-              class="Button-mdtvtf-0 gVVPUs w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+              class="Button-mdtvtf-0 gVVPUs w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
               data-testid="WalletHeader__star-button"
               type="button"
             >
@@ -372,7 +372,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             </button>
           </div>
           <button
-            class="Button-mdtvtf-0 cvPqli my-auto"
+            class="Button-mdtvtf-0 dqPArR my-auto"
             data-testid="WalletHeader__send-button"
             type="button"
           >
@@ -389,7 +389,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <button
-                  class="Button-mdtvtf-0 eXKKLD text-left"
+                  class="Button-mdtvtf-0 gDMsOH text-left"
                   type="button"
                 >
                   <div
@@ -418,20 +418,20 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
+      class="py-8 border-b bg-theme-secondary-900 border-theme-secondary-900 dark:border-theme-secondary-800"
     >
       <div
         class="container flex items-center px-14 mx-auto"
       >
         <div
-          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
+          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
         >
           <div
             class="flex -space-x-1"
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-neutral-dark text-theme-secondary-text"
+              class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -446,7 +446,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ybSGn"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ivYGqc"
               data-testid="Avatar"
             >
               <div
@@ -492,7 +492,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="sc-bdfBwQ ijAwew hover:text-theme-neutral"
+                    class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                     height="21"
                     width="13"
                   >
@@ -506,7 +506,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="sc-bdfBwQ dGcmIA hover:text-theme-neutral"
+                    class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                     height="21"
                     width="17"
                   >
@@ -538,7 +538,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                 0 BTC
               </span>
               <span
-                class="inline-flex items-center ml-2 text-theme-success"
+                class="inline-flex items-center ml-2 text-theme-success-600"
               >
                 <div
                   class="sc-bdfBwQ exFKrJ"
@@ -567,7 +567,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             class="my-auto"
           >
             <button
-              class="Button-mdtvtf-0 gVVPUs w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+              class="Button-mdtvtf-0 gVVPUs w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
               data-testid="WalletHeader__star-button"
               type="button"
             >
@@ -587,7 +587,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             </button>
           </div>
           <button
-            class="Button-mdtvtf-0 cvPqli my-auto"
+            class="Button-mdtvtf-0 dqPArR my-auto"
             data-testid="WalletHeader__send-button"
             type="button"
           >
@@ -604,7 +604,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <button
-                  class="Button-mdtvtf-0 eXKKLD text-left"
+                  class="Button-mdtvtf-0 gDMsOH text-left"
                   type="button"
                 >
                   <div
@@ -633,20 +633,20 @@ exports[`WalletHeader should show modifiers 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800"
+      class="py-8 border-b bg-theme-secondary-900 border-theme-secondary-900 dark:border-theme-secondary-800"
     >
       <div
         class="container flex items-center px-14 mx-auto"
       >
         <div
-          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800"
+          class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
         >
           <div
             class="flex -space-x-1"
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-neutral-dark text-theme-secondary-text"
+              class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -661,7 +661,7 @@ exports[`WalletHeader should show modifiers 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ybSGn"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ivYGqc"
               data-testid="Avatar"
             >
               <div
@@ -694,7 +694,7 @@ exports[`WalletHeader should show modifiers 1`] = `
                   data-testid="WalletHeader__ledger"
                 >
                   <div
-                    class="sc-bdfBwQ fpbFeh hover:text-theme-neutral"
+                    class="sc-bdfBwQ fpbFeh hover:text-theme-secondary-500"
                     height="16"
                     width="16"
                   >
@@ -707,7 +707,7 @@ exports[`WalletHeader should show modifiers 1`] = `
                   data-testid="WalletHeader__multisig"
                 >
                   <div
-                    class="sc-bdfBwQ iyevwF hover:text-theme-neutral"
+                    class="sc-bdfBwQ iyevwF hover:text-theme-secondary-500"
                     height="20"
                     width="20"
                   >
@@ -734,7 +734,7 @@ exports[`WalletHeader should show modifiers 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="sc-bdfBwQ ijAwew hover:text-theme-neutral"
+                    class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                     height="21"
                     width="13"
                   >
@@ -748,7 +748,7 @@ exports[`WalletHeader should show modifiers 1`] = `
                   data-testid="clipboard__wrapper"
                 >
                   <div
-                    class="sc-bdfBwQ dGcmIA hover:text-theme-neutral"
+                    class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                     height="21"
                     width="17"
                   >
@@ -791,7 +791,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             class="my-auto"
           >
             <button
-              class="Button-mdtvtf-0 gVVPUs w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+              class="Button-mdtvtf-0 gVVPUs w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
               data-testid="WalletHeader__star-button"
               type="button"
             >
@@ -811,7 +811,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             </button>
           </div>
           <button
-            class="Button-mdtvtf-0 cvPqli my-auto"
+            class="Button-mdtvtf-0 dqPArR my-auto"
             data-testid="WalletHeader__send-button"
             type="button"
           >
@@ -828,7 +828,7 @@ exports[`WalletHeader should show modifiers 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <button
-                  class="Button-mdtvtf-0 eXKKLD text-left"
+                  class="Button-mdtvtf-0 gDMsOH text-left"
                   type="button"
                 >
                   <div

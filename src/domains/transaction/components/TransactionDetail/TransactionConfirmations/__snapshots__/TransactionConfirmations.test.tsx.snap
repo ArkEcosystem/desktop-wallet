@@ -3,14 +3,14 @@
 exports[`TransactionConfirmations should render when confirmed 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Confirmations
       </div>
@@ -25,7 +25,7 @@ exports[`TransactionConfirmations should render when confirmed 1`] = `
           </span>
           <span>
             <div
-              class="sc-bdfBwQ iSzUah text-theme-success"
+              class="sc-bdfBwQ iSzUah text-theme-success-600"
               height="22"
               width="22"
             >
@@ -44,14 +44,14 @@ exports[`TransactionConfirmations should render when confirmed 1`] = `
 exports[`TransactionConfirmations should render when not confirmed 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Confirmations
       </div>
@@ -65,7 +65,7 @@ exports[`TransactionConfirmations should render when not confirmed 1`] = `
             Not confirmed
           </span>
           <div
-            class="sc-bdfBwQ iSzUah text-theme-warning"
+            class="sc-bdfBwQ iSzUah text-theme-warning-600"
             height="22"
             width="22"
           >

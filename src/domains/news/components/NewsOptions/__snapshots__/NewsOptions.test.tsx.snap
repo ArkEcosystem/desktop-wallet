@@ -3,7 +3,7 @@
 exports[`NewsOptions should render 1`] = `
 <DocumentFragment>
   <div
-    class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
+    class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
     data-testid="NewsOptions"
   >
     <div
@@ -13,13 +13,13 @@ exports[`NewsOptions should render 1`] = `
         class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
       >
         <input
-          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
+          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
           data-testid="NewsOptions__search"
           maxlength="32"
           placeholder="Search"
         />
         <div
-          class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-neutral-600"
+          class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
           height="18"
           width="18"
         >
@@ -29,7 +29,7 @@ exports[`NewsOptions should render 1`] = `
         </div>
       </div>
       <div
-        class="Divider-sc-19q4mlo-0 bKsVMa border-theme-neutral-300 dark:border-theme-neutral-800"
+        class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
         type="horizontal"
       />
       <div
@@ -44,13 +44,13 @@ exports[`NewsOptions should render 1`] = `
             Category
           </h5>
           <button
-            class="text-xs font-semibold focus:outline-none text-theme-neutral-800"
+            class="text-xs font-semibold focus:outline-none text-theme-secondary-800"
           >
             Select All
           </button>
         </div>
         <p
-          class="text-sm text-theme-neutral"
+          class="text-sm text-theme-secondary-500"
         >
           Select your categories
         </p>
@@ -69,7 +69,7 @@ exports[`NewsOptions should render 1`] = `
               value=""
             />
             <div
-              class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
+              class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
             >
               #Technical
             </div>
@@ -85,7 +85,7 @@ exports[`NewsOptions should render 1`] = `
               value=""
             />
             <div
-              class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
+              class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
             >
               #Marketing
             </div>
@@ -101,7 +101,7 @@ exports[`NewsOptions should render 1`] = `
               value=""
             />
             <div
-              class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
+              class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
             >
               #Community
             </div>
@@ -117,7 +117,7 @@ exports[`NewsOptions should render 1`] = `
               value=""
             />
             <div
-              class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
+              class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
             >
               #Emergency
             </div>
@@ -125,7 +125,7 @@ exports[`NewsOptions should render 1`] = `
         </div>
       </div>
       <div
-        class="Divider-sc-19q4mlo-0 bKsVMa border-theme-neutral-300 dark:border-theme-neutral-800"
+        class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
         type="horizontal"
       />
       <div
@@ -137,7 +137,7 @@ exports[`NewsOptions should render 1`] = `
           Filter Assets
         </h5>
         <p
-          class="text-sm text-theme-neutral"
+          class="text-sm text-theme-secondary-500"
         >
           Your current selections
         </p>
@@ -156,7 +156,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="NetworkOption__ARK"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                  class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
                 >
                   <div
                     class="sc-bdfBwQ iyevwF"
@@ -168,7 +168,7 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <span />
                   </span>
@@ -179,7 +179,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="NetworkOption__ETH"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                  class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
                 >
                   <div
                     class="sc-bdfBwQ iyevwF"
@@ -191,7 +191,7 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <span />
                   </span>
@@ -202,7 +202,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="NetworkOption__BTC"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                  class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
                 >
                   <div
                     class="sc-bdfBwQ iyevwF"
@@ -214,7 +214,7 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <span />
                   </span>
@@ -225,7 +225,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="NetworkOption__LSK"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+                  class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
                 >
                   <div
                     class="sc-bdfBwQ iyevwF"
@@ -237,7 +237,7 @@ exports[`NewsOptions should render 1`] = `
                     </svg>
                   </div>
                   <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <span />
                   </span>
@@ -247,7 +247,7 @@ exports[`NewsOptions should render 1`] = `
           </div>
         </div>
         <button
-          class="Button-mdtvtf-0 eVVyXU w-full"
+          class="Button-mdtvtf-0 kgwVKi w-full"
           data-testid="NewsOptions__submit"
           disabled=""
           type="button"
