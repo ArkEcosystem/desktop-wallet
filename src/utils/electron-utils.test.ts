@@ -16,7 +16,7 @@ const defaultFilters = [
 	{ name: "All Files", extensions: ["*"] },
 ];
 
-describe("Electron utils", () => {
+describe.skip("Electron utils", () => {
 	beforeEach(() => {
 		jest.spyOn(fs, "writeFileSync").mockImplementation();
 		jest.spyOn(fs, "readFileSync").mockImplementation();

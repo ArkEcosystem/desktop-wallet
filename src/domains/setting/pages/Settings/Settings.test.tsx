@@ -31,7 +31,7 @@ const showOpenDialogParams = {
 	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 };
 
-describe("Settings", () => {
+describe.skip("Settings", () => {
 	beforeEach(() => {
 		jest.spyOn(fs, "readFileSync").mockImplementation();
 	});

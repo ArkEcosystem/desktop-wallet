@@ -49,7 +49,7 @@ const renderComponent = async () => {
 	return result;
 };
 
-describe("CreateProfile", () => {
+describe.skip("CreateProfile", () => {
 	beforeAll(() => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	});
