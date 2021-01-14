@@ -48,7 +48,8 @@ export const SendTransactionForm = ({
 		// TODO: shouldn't be necessary once SelectAddress returns wallets instead
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-		if (senderWallet) {
+		const setTransactionFees = async (senderWallet: ReadWriteWallet) => {
+			await env.fees().syncAll();
 			const transactionFees = env
 				.fees()
 				.findByType(senderWallet.coinId(), senderWallet.networkId(), transactionType);
@@ -56,6 +57,10 @@ export const SendTransactionForm = ({
 			setFees(transactionFees);
 			setValue("fees", transactionFees);
 			setValue("fee", transactionFees.avg || transactionFees.static, { shouldValidate: true, shouldDirty: true });
+		};
+
+		if (senderWallet) {
+			setTransactionFees(senderWallet);
 		}
 	}, [env, setFees, setValue, profile, senderAddress, transactionType]);
 
