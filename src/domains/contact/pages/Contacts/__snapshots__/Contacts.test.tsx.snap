@@ -203,7 +203,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -237,12 +237,12 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -413,9 +413,9 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-bdfBwQ iABjnS"
-                            height="12"
-                            width="15"
+                            class="sc-bdfBwQ gvFuTp"
+                            height="5"
+                            width="10"
                           >
                             <svg>
                               sort.svg
@@ -486,12 +486,12 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -518,7 +518,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -542,7 +542,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -574,7 +574,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2 text-sm font-bold justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
                       >
                         <div
                           class="Circle-uw7h4j-0 cLIJTV border-black"
@@ -595,7 +595,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       >
                         <div
                           class="relative"
@@ -623,12 +623,12 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -655,7 +655,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -679,7 +679,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -711,14 +711,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2 text-sm font-bold justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
                       class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       >
                         <div
                           class="relative"
@@ -746,17 +746,17 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
                       />
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -780,7 +780,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -812,29 +812,29 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2 text-sm font-bold justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
                       class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       />
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
                       />
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -858,7 +858,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -890,24 +890,24 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2 text-sm font-bold justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       />
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
                     data-testid="TableRow"
                   >
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dlRuyJ space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 gMOims space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -934,7 +934,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm justify-center"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -958,7 +958,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-4"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kiWPH"
@@ -990,14 +990,14 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 dBYoWL space-x-2 text-sm font-bold justify-center"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm space-x-2 text-sm font-bold justify-center"
                       />
                     </td>
                     <td
                       class=""
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kGFkbp justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       >
                         <div
                           class="relative"
@@ -1238,7 +1238,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -1272,12 +1272,12 @@ exports[`Contacts without contacts should render empty 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg

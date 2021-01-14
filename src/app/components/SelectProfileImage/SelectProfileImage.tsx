@@ -21,7 +21,7 @@ const UploadButtonWrapper = styled.div`
 		${tw`h-full w-full`}
 
 		&:not(:focus):hover:enabled {
-			${tw`bg-theme-neutral-900 opacity-85`};
+			${tw`bg-theme-neutral-900 dark:bg-theme-neutral-600 opacity-85`};
 		}
 	}
 `;
@@ -41,7 +41,7 @@ const ProfileImageStyled = styled.div`
 		${tw`block`};
 
 		div {
-			${tw`bg-theme-neutral-900 opacity-85`};
+			${tw`bg-theme-neutral-900 dark:bg-black opacity-85`};
 		}
 	}
 `;
@@ -118,7 +118,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 					</div>
 				) : (
 					<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
-						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-primary-contrast">
+						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-neutral-400 dark:border-theme-neutral-700">
 							<div className="overflow-hidden h-full rounded-full">
 								<UploadButtonWrapper>
 									<Button

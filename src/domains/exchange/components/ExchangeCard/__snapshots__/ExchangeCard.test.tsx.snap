@@ -3,14 +3,14 @@
 exports[`AddExchangeCard should render 1`] = `
 <div>
   <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun flex col-span-2"
+    class="Cardstyles__Wrapper-sc-1uddqgb-0 detPlY flex col-span-2"
     data-testid="Card"
   >
     <div
       class="flex items-center p-2 font-semibold text-theme-primary"
     >
       <div
-        class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-contrast"
+        class="sc-bdfBwQ fPrsah p-4 mr-4 rounded-lg bg-theme-primary-100 dark:border-theme-neutral-800"
         height="1em"
         width="1em"
       >
@@ -30,14 +30,14 @@ exports[`AddExchangeCard should render 1`] = `
 exports[`BlankExchangeCard should render when blank 1`] = `
 <div>
   <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+    class="Cardstyles__Wrapper-sc-1uddqgb-0 detPlY"
     data-testid="Card"
   >
     <div
-      class="flex items-center p-2 font-semibold text-theme-primary-contrast"
+      class="flex items-center p-2 font-semibold text-theme-primary-contrast dark:text-theme-neutral-800"
     >
       <div
-        class="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-contrast"
+        class="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-100 dark:border-theme-neutral-800"
       />
       Exchange Name
     </div>
@@ -51,7 +51,7 @@ exports[`BlankExchangeCard should render when blank 1`] = `
 exports[`ExchangeCard should render 1`] = `
 <div>
   <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun"
+    class="Cardstyles__Wrapper-sc-1uddqgb-0 detPlY"
     data-testid="Card"
   >
     <div

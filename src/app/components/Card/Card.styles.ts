@@ -6,6 +6,6 @@ export const Wrapper = styled.div<{ isSelected?: boolean; onClick?: any }>`
 		typeof onClick === "function" && tw`cursor-pointer hover:border-theme-background hover:shadow-xl`}
 	${({ isSelected }) =>
 		isSelected
-			? tw`bg-theme-success-contrast border-theme-success-600 hover:border-theme-success-contrast`
-			: tw`bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800`}
+			? tw`bg-theme-success-100 border-theme-success-600 hover:border-theme-success-100`
+			: tw`bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800`}
 `;

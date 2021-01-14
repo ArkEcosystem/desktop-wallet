@@ -16,13 +16,6 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION: "Do you really want to reset this profile? Once reset, you will not be able to restore it.",
 		SUCCESS: "Your profile was reset successfully",
 	},
-	MODAL_REPOSITORIES: {
-		TITLE: "Repository",
-		BitBucket: "Bitbucket",
-		GitHub: "GitHub",
-		GitLab: "GitLab",
-		Npm: "NPM",
-	},
 	MODAL_HISTORY: {
 		TITLE: "History",
 		TYPES: {
@@ -49,28 +42,6 @@ export const translations: { [key: string]: any } = {
 		VALIDATION: {
 			NAME_EXISTS: "A profile with this name already exists",
 		},
-	},
-	PAGE_MY_REGISTRATIONS: {
-		TITLE: "My Registrations",
-		SUBTITLE: "You can register a Delegate, Business and Bridgechain.",
-		NO_REGISTRATIONS_MESSAGE: "Register Business, Bridgechain and Delegate in the most convenient way.",
-		ADDRESS: "Address",
-		BLOCKCHAIN: "Blockchain",
-		BLOCKCHAIN_NAME: "Blockchain Name",
-		BUSINESS: "Business",
-		BUSINESS_NAME: "Business Name",
-		PLUGINS: "Plugins",
-		PLUGIN_NAME: "Plugin Name",
-		DELEGATE: "Delegate",
-		DELEGATE_NAME: "Delegate Name",
-		FORGED_AMOUNT: "Forged Amount",
-		HISTORY: "History",
-		RANK: "Rank",
-		REPOSITORY: "Repository",
-		SEED: "Seed",
-		STATUS: "Status",
-		VOTES: "Votes",
-		WEBSITE: "Website",
 	},
 	PAGE_WELCOME: {
 		TITLE: "Welcome to the <1/> ARK Desktop Wallet",

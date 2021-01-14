@@ -3,30 +3,30 @@
 exports[`ReviewRating should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex"
+    class="flex items-center"
     data-testid="ReviewRating"
   >
     <div
-      class="relative my-auto"
+      class="relative"
     >
       <div
         class="overflow-hidden absolute"
         style="width: 12.5%;"
       >
         <svg
-          class="text-theme-warning-400 w-5"
+          class="text-theme-warning-400 w-4"
         >
           star.svg
         </svg>
       </div>
       <svg
-        class="text-theme-neutral w-5"
+        class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
       >
         star.svg
       </svg>
     </div>
     <span
-      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+      class="ml-1"
     >
       1.5
     </span>
@@ -37,20 +37,20 @@ exports[`ReviewRating should render 1`] = `
 exports[`ReviewRating should render dash if no rating 1`] = `
 <DocumentFragment>
   <div
-    class="flex"
+    class="flex items-center"
     data-testid="ReviewRating"
   >
     <div
-      class="relative my-auto"
+      class="relative"
     >
       <svg
-        class="text-theme-neutral w-5"
+        class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
       >
         star.svg
       </svg>
     </div>
     <span
-      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+      class="ml-1"
     >
       -
     </span>
@@ -66,30 +66,30 @@ exports[`ReviewRating should render dash if no rating 1`] = `
 exports[`ReviewRating should render with total 1`] = `
 <DocumentFragment>
   <div
-    class="flex"
+    class="flex items-center"
     data-testid="ReviewRating"
   >
     <div
-      class="relative my-auto"
+      class="relative"
     >
       <div
         class="overflow-hidden absolute"
         style="width: 12.5%;"
       >
         <svg
-          class="text-theme-warning-400 w-5"
+          class="text-theme-warning-400 w-4"
         >
           star.svg
         </svg>
       </div>
       <svg
-        class="text-theme-neutral w-5"
+        class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-4"
       >
         star.svg
       </svg>
     </div>
     <span
-      class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+      class="ml-1"
     >
       1.5
     </span>

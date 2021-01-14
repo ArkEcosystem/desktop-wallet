@@ -65,7 +65,7 @@ export const FilterWallets = ({
 								<span className="inline-block mr-2 font-semibold">
 									{walletDisplayOptions.find((option) => option.value === walletsDisplayType)?.label}
 								</span>
-								<Icon name="ChevronDown" width={12} height={12} />
+								<Icon name="ChevronDown" width={8} height={5} />
 							</div>
 						}
 					/>
