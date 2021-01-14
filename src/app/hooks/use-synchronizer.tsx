@@ -1,6 +1,6 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { matchPath } from "react-router-dom";
 import { restoreProfilePassword } from "utils/migrate-fixtures";
@@ -98,17 +98,12 @@ const useProfileWatcher = () => {
 	}, [profileId, env, allProfilesCount]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-export const useProfileSynchronizer = () => {
-	const { env, persist } = useEnvironmentContext();
+const useProfileJobs = (profile?: Profile) => {
+	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
-	const profile = useProfileWatcher();
-	const [restoredProfiles, setRestoredProfiles] = useState<String[]>([]);
-	const [syncedProfiles, setSyncedProfiles] = useState<String[]>([]);
-	const { setConfiguration } = useConfiguration();
 
 	const walletsCount = profile?.wallets().count();
-
-	const jobs = useMemo(() => {
+	return useMemo(() => {
 		if (!profile) return [];
 
 		const syncDelegates = {
@@ -141,42 +136,84 @@ export const useProfileSynchronizer = () => {
 
 		return [syncWallets, syncFees, syncDelegates, syncExchangeRates, syncNotifications];
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
+};
 
+type ProfileSyncState = {
+	restoredProfiles: string[];
+	syncedProfiles: string[];
+};
+
+export const useProfileSyncState = (profile?: Profile) => {
+	const { profileIsSyncing } = useConfiguration();
+	const { current } = useRef<ProfileSyncState>({ restoredProfiles: [], syncedProfiles: [] });
+
+	const shouldRestore = () => {
+		if (!profile || !__DEMO__) return false;
+		return !current.restoredProfiles.includes(profile.id?.());
+	};
+
+	const shouldSync = () => profile && !current.syncedProfiles.includes(profile.id?.());
+
+	const isSyncCompleted = () => !shouldRestore() && !shouldSync() && profileIsSyncing;
+
+	return {
+		shouldRestore,
+		shouldSync,
+		isSyncCompleted,
+		restoredProfiles: current.restoredProfiles,
+		syncedProfiles: current.syncedProfiles,
+	};
+};
+
+export const useProfileSynchronizer = () => {
+	const { persist } = useEnvironmentContext();
+	const { setConfiguration } = useConfiguration();
+	const profile = useProfileWatcher();
+
+	const { shouldRestore, shouldSync, isSyncCompleted, restoredProfiles, syncedProfiles } = useProfileSyncState(
+		profile,
+	);
+
+	const jobs = useProfileJobs(profile);
 	const { start, runAll } = useSynchronizer(jobs);
 
 	useEffect(() => {
-		const shouldRestore = (profile?: Profile) => {
-			if (!profile || !__DEMO__) return false;
-
-			return !restoredProfiles.includes(profile.id?.());
-		};
-
-		const shouldSync = (profile?: Profile) => profile && !syncedProfiles.includes(profile.id?.());
-
 		const syncProfile = async (profile?: Profile) => {
 			if (!profile) return;
 
-			if (shouldRestore(profile)) {
-				setRestoredProfiles([...restoredProfiles, profile.id()]);
-
-				setConfiguration({ profileIsSyncing: true });
+			if (shouldRestore()) {
+				restoredProfiles.push(profile.id());
 
 				// Perform restore to make migrated wallets available in profile.wallets()
 				await profile.restore();
 				restoreProfilePassword(profile);
 				await persist();
+			}
 
+			if (shouldSync()) {
+				syncedProfiles.push(profile.id());
+				await runAll();
+			}
+
+			if (isSyncCompleted()) {
 				setConfiguration({ profileIsSyncing: false });
+				// Start background jobs after initial sync
+				start();
 			}
-
-			if (shouldSync(profile)) {
-				setSyncedProfiles([...syncedProfiles, profile.id()]);
-				runAll();
-			}
-
-			start();
 		};
 
 		syncProfile(profile);
-	}, [jobs, profile, runAll, start, restoredProfiles, persist, setConfiguration, syncedProfiles]);
+	}, [
+		jobs,
+		profile,
+		runAll,
+		start,
+		persist,
+		setConfiguration,
+		isSyncCompleted,
+		restoredProfiles,
+		shouldRestore,
+		shouldSync,
+		syncedProfiles,
+	]);
 };
