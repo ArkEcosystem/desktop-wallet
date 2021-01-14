@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 	}
 
 	button {
-		${tw`py-2 px-4 text-theme-primary-500`}
+		${tw`py-2 px-4`}
 	}
 `;
 
@@ -37,7 +37,7 @@ const PaginationButton = styled.div`
 	}
 
 	&.current-page {
-		${tw`bg-theme-primary-light dark:bg-theme-neutral-600 text-theme-primary-500 dark:text-theme-neutral-200`}
+		${tw`bg-theme-primary-200 dark:bg-theme-neutral-600 text-theme-primary-500 dark:text-theme-neutral-200`}
 	}
 `;
 
@@ -124,7 +124,7 @@ export const Pagination = ({
 				</Button>
 			)}
 
-			<div className="flex px-2 rounded bg-theme-primary-contrast dark:bg-theme-neutral-800">
+			<div className="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-neutral-800">
 				{paginationButtons[0] !== 1 && (
 					<PaginationSearchButton>
 						<span>...</span>
