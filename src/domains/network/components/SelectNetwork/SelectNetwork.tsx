@@ -110,7 +110,7 @@ export const SelectNetwork = ({
 		// Selection is made but not me. Show me disabled
 		/* istanbul ignore next */
 		if (selectedItem && selectedItem.extra?.displayName !== network.extra?.displayName)
-			return "text-theme-neutral-400";
+			return "text-theme-secondary-400";
 
 		// Initial state. Nothing entered, nothing selected
 		if (!inputValue) return undefined;
@@ -119,7 +119,7 @@ export const SelectNetwork = ({
 		if (isMatch(inputValue, network)) return undefined;
 
 		// Disabled otherwise
-		return "text-theme-neutral-400";
+		return "text-theme-secondary-400";
 	};
 
 	return (

@@ -113,7 +113,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 									onSearch={() => console.log("search")}
 									extra={<SearchBarPluginFilters />}
 								/>
-								<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+								<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
 								<Button
 									onClick={() => setInstallPlugin(true)}
 									data-testid="PluginsCategory_header--install"

@@ -7,5 +7,5 @@ export const Wrapper = styled.div<{ isSelected?: boolean; onClick?: any }>`
 	${({ isSelected }) =>
 		isSelected
 			? tw`bg-theme-success-100 border-theme-success-600 hover:border-theme-success-100`
-			: tw`bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800`}
+			: tw`bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800`}
 `;

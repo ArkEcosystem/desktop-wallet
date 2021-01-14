@@ -18,7 +18,7 @@ export function FormHelperText({ children, ...props }: FormHelperTextProps) {
 	}
 
 	if (children) {
-		return <p className="text-sm text-theme-neutral-500">{children}</p>;
+		return <p className="text-sm text-theme-secondary-500">{children}</p>;
 	}
 
 	return null;

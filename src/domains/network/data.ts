@@ -185,8 +185,8 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 	ETH: {
 		"eth.mainnet": {
 			displayName: "Ethereum",
-			borderClass: "border-theme-neutral-800",
-			textClass: "text-theme-neutral-800",
+			borderClass: "border-theme-secondary-800",
+			textClass: "text-theme-secondary-800",
 			iconName: "ETH",
 		},
 	},

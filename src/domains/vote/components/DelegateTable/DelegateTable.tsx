@@ -232,11 +232,11 @@ export const DelegateTable = ({
 				<div className="container flex-1 px-8 mx-auto">
 					<div className="flex justify-between">
 						<div className="flex ml-3 font-semibold">
-							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+							<div className="px-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800">
 								<div className="inline-flex">
 									<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
 									<div className="flex flex-col">
-										<div className="text-theme-neutral-500">
+										<div className="text-theme-secondary-500">
 											{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}
 										</div>
 										<div className="text-theme-text" data-testid="DelegateTable__footer--address">
@@ -246,12 +246,12 @@ export const DelegateTable = ({
 								</div>
 							</div>
 
-							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+							<div className="px-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800">
 								<div className="inline-flex">
 									<Circle
 										className={`mr-2 bg-theme-background ${
 											selectedVotes.length === 0
-												? "border-theme-neutral-500 text-theme-neutral-500"
+												? "border-theme-secondary-500 text-theme-secondary-500"
 												: "border-theme-text text-theme-text"
 										}`}
 										size="lg"
@@ -259,11 +259,11 @@ export const DelegateTable = ({
 										<Icon name="Vote" className="text-xl" />
 									</Circle>
 									<div className="flex flex-col">
-										<div className="text-theme-neutral-500">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
+										<div className="text-theme-secondary-500">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
 										<div
 											className={
 												selectedVotes.length === 0
-													? "text-theme-neutral-500"
+													? "text-theme-secondary-500"
 													: "text-theme-text"
 											}
 											data-testid="DelegateTable__footer--votes"
@@ -274,12 +274,12 @@ export const DelegateTable = ({
 								</div>
 							</div>
 
-							<div className="px-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+							<div className="px-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800">
 								<div className="inline-flex">
 									<Circle
 										className={`mr-2 bg-theme-background ${
 											selectedUnvotes.length === 0
-												? "border-theme-neutral-500 text-theme-neutral-500"
+												? "border-theme-secondary-500 text-theme-secondary-500"
 												: "border-theme-text text-theme-text"
 										}`}
 										size="lg"
@@ -287,11 +287,13 @@ export const DelegateTable = ({
 										<Icon name="Unvote" className="text-xl" />
 									</Circle>
 									<div className="flex flex-col">
-										<div className="text-theme-neutral-500">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
+										<div className="text-theme-secondary-500">
+											{t("VOTE.DELEGATE_TABLE.UNVOTES")}
+										</div>
 										<div
 											className={
 												selectedUnvotes.length === 0
-													? "text-theme-neutral-500"
+													? "text-theme-secondary-500"
 													: "text-theme-text"
 											}
 											data-testid="DelegateTable__footer--unvotes"
@@ -311,7 +313,7 @@ export const DelegateTable = ({
 										<Icon name="VoteCombination" className="text-xl" />
 									</Circle>
 									<div className="flex flex-col">
-										<div className="text-theme-neutral-500">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
+										<div className="text-theme-secondary-500">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
 										<div className="text-theme-text" data-testid="DelegateTable__footer--total">
 											{getTotalVotes()}/{maxVotes}
 										</div>

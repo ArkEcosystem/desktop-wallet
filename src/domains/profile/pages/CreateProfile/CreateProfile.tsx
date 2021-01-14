@@ -72,7 +72,7 @@ export const CreateProfile = () => {
 					<div className="text-theme-secondary-text">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
 					<Form
-						className="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="px-10 pt-8 pb-10 mt-10 space-y-4 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
 						context={form}
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"

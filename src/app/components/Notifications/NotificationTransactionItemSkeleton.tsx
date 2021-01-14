@@ -11,7 +11,7 @@ export const NotificationTransactionItemSkeleton = () => {
 	return (
 		<TableRow
 			data-testid="NotificationTransactionItemSkeleton"
-			className="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+			className="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 		>
 			<TableCell variant="start" innerClassName="space-x-3" isCompact>
 				<div className="flex items-center -space-x-1">
@@ -27,7 +27,7 @@ export const NotificationTransactionItemSkeleton = () => {
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end" isCompact>
-				<span className="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800">
+				<span className="flex items-center px-2 space-x-1 h-7 rounded border border-theme-secondary-300 dark:border-theme-secondary-800">
 					<Skeleton height={16} width={amountWidth} />
 					<Skeleton height={16} width={35} />
 				</span>

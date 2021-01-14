@@ -67,5 +67,5 @@ Range.defaultProps = {
 	min: 1,
 	max: 100,
 	step: 1,
-	colors: ["var(--theme-color-primary-600)", "var(--theme-color-neutral-400)"],
+	colors: ["var(--theme-color-primary-600)", "var(--theme-color-secondary-400)"],
 };

@@ -48,7 +48,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 				<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}>
 					<div className="flex items-center space-x-1 font-semibold">
 						<span>{minParticipants}</span>
-						<span className="text-theme-neutral-500">
+						<span className="text-theme-secondary-500">
 							{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", { length: participants.length })}
 						</span>
 					</div>

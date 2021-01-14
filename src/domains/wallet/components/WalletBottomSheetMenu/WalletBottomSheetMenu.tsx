@@ -14,7 +14,7 @@ const Backdrop = ({ isVisible, className }: { isVisible: boolean; className: str
 		{isVisible && (
 			<motion.div
 				data-testid="Backdrop"
-				className={`${className} fixed inset-0 bg-theme-neutral-900`}
+				className={`${className} fixed inset-0 bg-theme-secondary-900`}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 0.5 }}
 				exit={{ opacity: 0 }}
@@ -109,16 +109,16 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 			<aside data-testid="WalletBottomSheetMenu" className={`${zIndexClass} sticky bottom-0 w-full`}>
 				<div
 					data-testid="WalletBottomSheetMenu__header"
-					className="flex items-center bg-theme-neutral-900 dark:bg-theme-neutral-800"
+					className="flex items-center bg-theme-secondary-900 dark:bg-theme-secondary-800"
 				>
 					<div className="container flex justify-between items-center py-7 px-14 mx-auto">
 						<div>
-							<span className="text-lg font-bold text-theme-neutral-400 dark:text-theme-neutral-200">
+							<span className="text-lg font-bold text-theme-secondary-400 dark:text-theme-secondary-200">
 								{t("WALLETS.PAGE_WALLET_DETAILS.YOUR_WALLETS")}
 							</span>
 							<span
 								data-testid="WalletBottomSheetMenu__counter"
-								className="ml-1 font-bold text-theme-neutral-700"
+								className="ml-1 font-bold text-theme-secondary-700"
 							>
 								{wallets.length}
 							</span>
@@ -127,7 +127,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 							{isOpen && (
 								<button
 									data-testid="WalletBottomSheetMenu__filters"
-									className="flex items-center py-1 px-5 font-medium border-r text-theme-neutral-400 dark:text-theme-neutral-200 border-theme-neutral-800 dark:border-theme-neutral-600 focus:outline-none"
+									className="flex items-center py-1 px-5 font-medium border-r text-theme-secondary-400 dark:text-theme-secondary-200 border-theme-secondary-800 dark:border-theme-secondary-600 focus:outline-none"
 								>
 									<Icon name="Filters" width={16} height={20} />
 								</button>
@@ -135,7 +135,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 							<CollapseToggleButton
 								data-testid="WalletBottomSheetMenu__toggle"
 								isOpen={isOpen}
-								className="text-theme-neutral-400 dark:text-theme-neutral-200"
+								className="text-theme-secondary-400 dark:text-theme-secondary-200"
 								onClick={() => setIsOpen(!isOpen)}
 							/>
 						</div>

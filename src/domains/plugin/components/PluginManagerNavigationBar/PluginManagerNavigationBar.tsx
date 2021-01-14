@@ -31,7 +31,7 @@ export const PluginManagerNavigationBar = ({
 	return (
 		<NavWrapper
 			data-testid="PluginManagerNavigationBar"
-			className="sticky top-20 md:top-24 bg-theme-neutral-100 dark:bg-theme-neutral-800"
+			className="sticky top-20 md:top-24 bg-theme-secondary-100 dark:bg-theme-secondary-800"
 		>
 			<div className="container flex justify-between items-center px-14 mx-auto">
 				<div>
@@ -49,14 +49,14 @@ export const PluginManagerNavigationBar = ({
 									>
 										<span>{menuItem.title}</span>
 										{menuItem.count && (
-											<span className="ml-1 text-theme-neutral-500 dark:text-theme-neutral-700">
+											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
 												{menuItem.count}
 											</span>
 										)}
 									</button>
 
 									{index < menu.length - 1 && (
-										<div className="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300 dark:border-theme-neutral-800" />
+										<div className="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800" />
 									)}
 								</li>
 							))}
@@ -73,10 +73,10 @@ export const PluginManagerNavigationBar = ({
 						}`}
 					>
 						<span>{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}</span>
-						<span className="ml-1 text-theme-neutral-500 dark:text-theme-neutral-700">8</span>
+						<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">8</span>
 					</button>
 
-					<div className="my-auto mx-8 w-px h-10 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 					<LayoutControls
 						data-testid="PluginManagerControls"

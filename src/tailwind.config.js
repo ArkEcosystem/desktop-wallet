@@ -36,6 +36,17 @@ module.exports = {
 			"theme-primary-800": "var(--theme-color-primary-800)",
 			"theme-primary-900": "var(--theme-color-primary-900)",
 
+			"theme-secondary-50": "var(--theme-color-secondary-50)",
+			"theme-secondary-100": "var(--theme-color-secondary-100)",
+			"theme-secondary-200": "var(--theme-color-secondary-200)",
+			"theme-secondary-300": "var(--theme-color-secondary-300)",
+			"theme-secondary-400": "var(--theme-color-secondary-400)",
+			"theme-secondary-500": "var(--theme-color-secondary-500)",
+			"theme-secondary-600": "var(--theme-color-secondary-600)",
+			"theme-secondary-700": "var(--theme-color-secondary-700)",
+			"theme-secondary-800": "var(--theme-color-secondary-800)",
+			"theme-secondary-900": "var(--theme-color-secondary-900)",
+
 			"theme-success-50": "var(--theme-color-success-50)",
 			"theme-success-100": "var(--theme-color-success-100)",
 			"theme-success-200": "var(--theme-color-success-200)",
@@ -79,17 +90,6 @@ module.exports = {
 			"theme-hint-700": "var(--theme-color-hint-700)",
 			"theme-hint-800": "var(--theme-color-hint-800)",
 			"theme-hint-900": "var(--theme-color-hint-900)",
-
-			"theme-neutral-50": "var(--theme-color-neutral-50)",
-			"theme-neutral-100": "var(--theme-color-neutral-100)",
-			"theme-neutral-200": "var(--theme-color-neutral-200)",
-			"theme-neutral-300": "var(--theme-color-neutral-300)",
-			"theme-neutral-400": "var(--theme-color-neutral-400)",
-			"theme-neutral-500": "var(--theme-color-neutral-500)",
-			"theme-neutral-600": "var(--theme-color-neutral-600)",
-			"theme-neutral-700": "var(--theme-color-neutral-700)",
-			"theme-neutral-800": "var(--theme-color-neutral-800)",
-			"theme-neutral-900": "var(--theme-color-neutral-900)",
 		},
 		extend: {
 			opacity: {
@@ -178,7 +178,7 @@ module.exports = {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
 			},
 			borderColor: (theme) => ({
-				default: theme("colors.theme-neutral-400"),
+				default: theme("colors.theme-secondary-400"),
 			}),
 			boxShadow: {
 				xs: `0 0 0 1px rgba(var(--theme-shadow-color), var(--theme-shadow-opacity-xs))`,

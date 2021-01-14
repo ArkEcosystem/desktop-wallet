@@ -5,10 +5,10 @@ import Skeleton from "react-loading-skeleton";
 export const DelegateRowSkeleton = () => (
 	<tr
 		data-testid="DelegateRowSkeleton"
-		className="border-b border-dotted last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+		className="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 	>
 		<td className="py-5">
-			<Circle className="bg-theme-neutral-200 border-theme-neutral-300 dark:border-theme-neutral-800" />
+			<Circle className="bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800" />
 		</td>
 
 		<td className="py-5">

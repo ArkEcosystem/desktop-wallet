@@ -28,7 +28,7 @@ export const ControlButton = styled.div<{ isActive?: boolean }>`
 						}
 					`,
 			  ]
-			: tw`text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400`};
+			: tw`text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400`};
 `;
 
 export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedViewType }: LayoutControlsProps) => (

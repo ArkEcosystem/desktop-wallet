@@ -23,7 +23,7 @@ type FilterProps = {
 const Stars = ({ length = 5, value }: any) => {
 	const stars = Array.from({ length });
 	return (
-		<span className="flex text-theme-neutral-400">
+		<span className="flex text-theme-secondary-400">
 			{stars.map((_, index: number) => (
 				<span key={index} className={`${index < value ? "text-theme-warning-300" : ""} mr-1`}>
 					<Icon name={`${index < value ? "Star" : "StarOutline"}`} width={20} height={20} />
@@ -38,7 +38,7 @@ const RatingsCheckboxes = ({ ratings, suffixLabel, value, onChange }: any) => (
 		{ratings &&
 			ratings.map((rating: number) => (
 				<label
-					className="block flex items-center px-2 pb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-100"
+					className="block flex items-center px-2 pb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
 					key={rating}
 				>
 					<span>
@@ -80,7 +80,7 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 			{categories &&
 				categories.map((category: Category, index: number) => (
 					<label
-						className="block flex items-center px-2 pb-1 mb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-100"
+						className="block flex items-center px-2 pb-1 mb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
 						key={index}
 					>
 						<span>
@@ -157,7 +157,7 @@ export const SearchBarPluginFilters = ({
 				}
 			>
 				<div className="py-4 px-6 w-64">
-					<label className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-100">
+					<label className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100">
 						<span>
 							<Checkbox
 								name="claim"
@@ -170,7 +170,7 @@ export const SearchBarPluginFilters = ({
 						<span className="mt-1 ml-1">Claimed</span>
 					</label>
 
-					<div className="mt-3 mb-4 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="mt-3 mb-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800" />
 					<div className="mb-1 font-semibold text-theme-secondary-text">{categoriesLabel}</div>
 					<CategoryCheckboxes
 						categories={categories}
@@ -178,7 +178,7 @@ export const SearchBarPluginFilters = ({
 						onChange={onChangeCategory}
 					/>
 
-					<div className="my-4 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="my-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 					<div className="font-semibold text-theme-secondary-text">{ratingsLabel}</div>
 					<RatingsCheckboxes
@@ -188,7 +188,7 @@ export const SearchBarPluginFilters = ({
 						onChange={onChangeRating}
 					/>
 
-					<div className="my-4 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="my-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800" />
 					<div
 						data-testid="SearchBarPluginFilters-reset"
 						onClick={onResetFilters}

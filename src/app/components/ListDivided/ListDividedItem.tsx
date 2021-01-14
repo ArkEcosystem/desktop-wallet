@@ -41,7 +41,7 @@ export const ListDividedItem = ({
 				</div>
 				{labelDescription && (
 					<span
-						className={`${labelDescriptionClass || "text-sm font-medium text-theme-neutral-500"}`}
+						className={`${labelDescriptionClass || "text-sm font-medium text-theme-secondary-500"}`}
 						data-testid="list-divided-item__label--description"
 					>
 						{labelDescription}

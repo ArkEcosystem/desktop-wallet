@@ -39,7 +39,7 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 					</AvatarWrapper>
 				) : (
 					<div
-						className="w-11 h-11 rounded-full bg-theme-neutral-100"
+						className="w-11 h-11 rounded-full bg-theme-secondary-100"
 						data-testid="profile-card__user--avatarImage"
 					>
 						<img
@@ -52,7 +52,7 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 				)}
 
 				<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
-					<p className="text-sm font-semibold text-theme-neutral-700">{t("COMMON.NAME")}</p>
+					<p className="text-sm font-semibold text-theme-secondary-700">{t("COMMON.NAME")}</p>
 					<p className="font-semibold text-theme-text" data-testid="profile-card__user--name">
 						<ProfileNameWrapper>{profile.name()}</ProfileNameWrapper>
 					</p>
@@ -60,9 +60,9 @@ export const ProfileCardContent = ({ profile }: { profile: Profile }) => {
 			</div>
 			<div className="flex items-center">
 				<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right">
-					<p className="text-sm font-semibold text-theme-neutral-700">{t("COMMON.TOTAL_BALANCE")}</p>
+					<p className="text-sm font-semibold text-theme-secondary-700">{t("COMMON.TOTAL_BALANCE")}</p>
 					{profile.usesPassword() ? (
-						<span className="font-semibold text-theme-neutral-700">{t("COMMON.NOT_AVAILABLE")}</span>
+						<span className="font-semibold text-theme-secondary-700">{t("COMMON.NOT_AVAILABLE")}</span>
 					) : (
 						<Amount
 							className="font-semibold text-theme-text"

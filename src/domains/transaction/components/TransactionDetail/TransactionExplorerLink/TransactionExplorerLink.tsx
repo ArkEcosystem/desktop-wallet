@@ -25,7 +25,7 @@ export const TransactionExplorerLink = ({ id, link, variant, ...props }: Transac
 					<TruncateMiddle text={id} maxChars={30} className="text-theme-primary-700" />
 				</Link>
 
-				<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
+				<span className="flex text-theme-primary-300 dark:text-theme-secondary-600">
 					<Clipboard data={id}>
 						<Icon name="Copy" />
 					</Clipboard>

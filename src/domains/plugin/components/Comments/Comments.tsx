@@ -26,7 +26,7 @@ const Votes = ({ votes }: any) => {
 	let voteDiffColor;
 
 	if (voteDiff === 0) {
-		voteDiffColor = "text-theme-neutral-400";
+		voteDiffColor = "text-theme-secondary-400";
 	} else {
 		voteDiffColor = voteDiff > 0 ? "text-theme-success-600" : "text-theme-danger-600";
 	}
@@ -49,9 +49,9 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 
 	return (
 		<div className="w-full">
-			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral-500">
+			<div className="flex items-center mt-5 text-sm font-semibold text-theme-secondary-500">
 				<span className="text-theme-text">{t("COMMON.SORT_BY")}:</span>
-				<div className="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-400">
+				<div className="flex items-center ml-2 space-x-3 divide-x divide-theme-secondary-400">
 					{["Best", "Date", "Most Popular"].map((sortType: string, index: number) => (
 						<span className={`cursor-pointer ${index > 0 ? "pl-3" : null}`} key={index}>
 							{sortBy.type === sortType ? (
@@ -74,7 +74,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 				{comments.map(({ author, score, date, comment, votes, replies }, index: number) => (
 					<div className="flex flex-col mt-5" key={index}>
 						<div className="flex justify-between items-center">
-							<div className="flex relative items-center divide-x divide-theme-neutral-400">
+							<div className="flex relative items-center divide-x divide-theme-secondary-400">
 								<span className="pr-3 text-lg font-semibold">{author}</span>
 
 								<div className="flex items-center px-3 text-sm font-semibold text-theme-warning-400">
@@ -82,7 +82,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 									<span className="ml-1 text-theme-secondary-text">{score}</span>
 								</div>
 
-								<span className="pl-3 text-sm font-semibold text-theme-neutral-500">
+								<span className="pl-3 text-sm font-semibold text-theme-secondary-500">
 									<TimeAgo date={date} />
 								</span>
 							</div>
@@ -91,7 +91,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 						</div>
 
 						<div className="mt-2">
-							<p className="text-theme-neutral-600">{comment}</p>
+							<p className="text-theme-secondary-600">{comment}</p>
 							{replies &&
 								replies.map((reply: any, index: number) => (
 									<Reply key={`reply-${index}`} date={reply.date} content={reply.content} />

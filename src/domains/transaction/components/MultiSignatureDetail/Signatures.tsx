@@ -88,9 +88,9 @@ export const Signatures = ({
 
 			<div className="flex">
 				<div>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.YOU")}</div>
+					<div className="mb-2 text-sm font-semibold text-theme-secondary-500">{t("COMMON.YOU")}</div>
 
-					<div className="pr-6 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+					<div className="pr-6 mr-2 border-r border-theme-secondary-300 dark:border-theme-secondary-800">
 						<ParticipantStatus
 							transactionId={transactionId}
 							publicKey={wallet.publicKey()!}
@@ -100,7 +100,7 @@ export const Signatures = ({
 				</div>
 
 				<div>
-					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.OTHER")}</div>
+					<div className="mb-2 ml-2 text-sm font-semibold text-theme-secondary-500">{t("COMMON.OTHER")}</div>
 					<div className="flex ml-2 space-x-4">
 						{publicKeys.map((publicKey) => (
 							<ParticipantStatus

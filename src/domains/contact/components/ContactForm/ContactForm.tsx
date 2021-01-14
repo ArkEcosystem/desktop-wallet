@@ -21,7 +21,7 @@ type AddressListItemProps = {
 const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	<div
 		data-testid="contact-form__address-list-item"
-		className="flex items-center py-4 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
+		className="flex items-center py-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
 	>
 		<div className="mr-4">
 			<div className="flex items-center -space-x-1">

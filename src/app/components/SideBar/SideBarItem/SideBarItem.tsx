@@ -21,7 +21,7 @@ export const SideBarItem = withRouter(
 			>
 				<li
 					className={`rounded-lg py-5 pl-10 pr-8 h-15 flex items-center ${
-						isActive ? "text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-neutral-800" : ""
+						isActive ? "text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800" : ""
 					}`}
 				>
 					{isActive && <div className="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600" />}
@@ -31,7 +31,7 @@ export const SideBarItem = withRouter(
 							className={`mr-3 ${
 								isActive
 									? "text-theme-primary-600"
-									: "text-theme-primary-300 dark:text-theme-neutral-600"
+									: "text-theme-primary-300 dark:text-theme-secondary-600"
 							}`}
 						>
 							<Icon name={icon} width={20} height={20} />

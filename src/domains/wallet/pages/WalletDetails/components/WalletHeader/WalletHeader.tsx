@@ -178,18 +178,22 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 	return (
 		<>
 			<header data-testid="WalletHeader">
-				<div className="py-8 border-b bg-theme-neutral-900 border-theme-neutral-900 dark:border-theme-neutral-800">
+				<div className="py-8 border-b bg-theme-secondary-900 border-theme-secondary-900 dark:border-theme-secondary-800">
 					<div className="container flex items-center px-14 mx-auto">
-						<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-neutral-800">
+						<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800">
 							<div className="flex -space-x-1">
 								<NetworkIcon
 									coin={wallet.coinId()}
 									network={wallet.networkId()}
 									size="lg"
-									className="border-theme-neutral-700 text-theme-secondary-text"
+									className="border-theme-secondary-700 text-theme-secondary-text"
 									noShadow
 								/>
-								<Avatar size="lg" address={wallet.address()} shadowColor="--theme-color-neutral-900" />
+								<Avatar
+									size="lg"
+									address={wallet.address()}
+									shadowColor="--theme-color-secondary-900"
+								/>
 							</div>
 
 							<div className="flex overflow-hidden flex-col">
@@ -206,7 +210,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 												<span data-testid="WalletHeader__ledger">
 													<Icon
 														name="Ledger"
-														className="hover:text-theme-neutral-500"
+														className="hover:text-theme-secondary-500"
 														width={16}
 														height={16}
 													/>
@@ -219,7 +223,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 												<span data-testid="WalletHeader__multisig">
 													<Icon
 														name="Multisig"
-														className="hover:text-theme-neutral-500"
+														className="hover:text-theme-secondary-500"
 														width={20}
 														height={20}
 													/>
@@ -241,7 +245,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 										>
 											<Icon
 												name="CopyAddress"
-												className="hover:text-theme-neutral-500"
+												className="hover:text-theme-secondary-500"
 												width={13}
 												height={21}
 											/>
@@ -253,7 +257,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 										>
 											<Icon
 												name="CopyKey"
-												className="hover:text-theme-neutral-500"
+												className="hover:text-theme-secondary-500"
 												width={17}
 												height={21}
 											/>
@@ -305,7 +309,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 								<Button
 									size="icon"
 									variant="transparent"
-									className="w-11 h-11 text-theme-secondary-text hover:text-theme-neutral-500"
+									className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
 									data-testid="WalletHeader__star-button"
 									onClick={handleStar}
 								>

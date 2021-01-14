@@ -11,7 +11,7 @@ export const SecondStep = ({ transferred, total, percent }: DownloadProgress) =>
 		<section data-testid="WalletUpdate__second-step">
 			<div className="flex w-2/5 mx-auto items-center">
 				<div className="flex-1">
-					<p className="text-sm font-semibold text-theme-neutral-400">
+					<p className="text-sm font-semibold text-theme-secondary-400">
 						{percent ? t("COMMON.DOWNLOADED") : t("COMMON.DOWNLOADING")}
 					</p>
 

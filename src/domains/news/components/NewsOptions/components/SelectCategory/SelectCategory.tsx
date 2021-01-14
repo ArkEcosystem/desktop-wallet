@@ -16,7 +16,7 @@ const Input = styled.input`
 `;
 
 const CustomButton = styled.div`
-	${tw`p-2 px-5 font-semibold text-center transition-colors duration-200 border-2 rounded-md border-theme-primary-100 dark:border-theme-neutral-800 text-theme-primary-200 dark:text-theme-neutral-800`}
+	${tw`p-2 px-5 font-semibold text-center transition-colors duration-200 border-2 rounded-md border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-200 dark:text-theme-secondary-800`}
 	${Input}:checked + & {
 		${tw`border-theme-success-600 text-theme-success-600`}
 	}

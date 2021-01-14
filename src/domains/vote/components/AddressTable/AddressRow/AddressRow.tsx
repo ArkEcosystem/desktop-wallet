@@ -37,7 +37,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 		}
 	};
 
-	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
+	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-secondary-600");
 
 	useEffect(() => {
 		const loadVotes = () => {
@@ -77,7 +77,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 	return (
 		<TableRow
 			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-secondary-800" : "--theme-color-secondary-100")
 			}
 			onMouseLeave={() => setShadowColor("")}
 		>
@@ -134,8 +134,12 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 					)
 				) : (
 					<>
-						<Circle size="lg" className="border-theme-neutral-300 dark:border-theme-neutral-800" noShadow />
-						<span className="text-theme-neutral-400">{t("COMMON.NOT_AVAILABLE")}</span>
+						<Circle
+							size="lg"
+							className="border-theme-secondary-300 dark:border-theme-secondary-800"
+							noShadow
+						/>
+						<span className="text-theme-secondary-400">{t("COMMON.NOT_AVAILABLE")}</span>
 					</>
 				)}
 			</TableCell>
@@ -170,7 +174,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 				</>
 			) : (
 				<TableCell>
-					<div className="font-bold text-theme-neutral-400">
+					<div className="font-bold text-theme-secondary-400">
 						<span className="text-theme-secondary-text">{hasVotes ? votes.length : "0"}</span>
 						<span>/{maxVotes}</span>
 					</div>

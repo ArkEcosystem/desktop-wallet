@@ -62,16 +62,16 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 								<Circle
 									key={index}
 									size="lg"
-									className="relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+									className="relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
 								>
 									<Icon name="ARK" width={20} height={20} />
-									<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
+									<Badge className="border-theme-secondary-300 dark:border-theme-secondary-800" />
 								</Circle>
 							))}
 
 							<Circle
 								size="lg"
-								className="relative m-3 border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+								className="relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
 							>
 								<div className="text-xs text-theme-primary-500">+443</div>
 							</Circle>

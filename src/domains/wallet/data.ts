@@ -335,7 +335,7 @@ export const networks = [
 		name: "Ethereum",
 		coin: "ETH",
 		network: "mainnet",
-		className: "text-theme-neutral-800 border-theme-neutral-600",
+		className: "text-theme-secondary-800 border-theme-secondary-600",
 	},
 	{
 		icon: "LSK",

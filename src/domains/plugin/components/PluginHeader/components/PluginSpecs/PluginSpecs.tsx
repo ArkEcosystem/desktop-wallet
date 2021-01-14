@@ -27,8 +27,8 @@ type GridItemProps = {
 
 const GridItem = ({ label, value, textDirection }: GridItemProps) => (
 	<div className={`flex flex-col ${textDirection && `text-${textDirection}`}`}>
-		<span className="font-bold text-theme-neutral-400">{label}</span>
-		<span className="font-bold text-theme-neutral-600">{value}</span>
+		<span className="font-bold text-theme-secondary-400">{label}</span>
+		<span className="font-bold text-theme-secondary-600">{value}</span>
 	</div>
 );
 
@@ -50,12 +50,12 @@ export const PluginSpecs = ({ author, category, url, rating, version, size }: Pr
 	const { t } = useTranslation();
 
 	return (
-		<div className="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-neutral-300 border-theme-neutral-300 dark:border-theme-neutral-800">
+		<div className="grid grid-cols-5 grid-flow-col pt-8 mt-8 text-sm border-t border-dashed divide-x divide-theme-secondary-300 border-theme-secondary-300 dark:border-theme-secondary-800">
 			<GridCol>
 				<div className="flex flex-col">
-					<span className="font-bold text-theme-neutral-400">{t("COMMON.AUTHOR")}</span>
+					<span className="font-bold text-theme-secondary-400">{t("COMMON.AUTHOR")}</span>
 					<div className="flex items-center">
-						<span className="font-bold text-theme-neutral-600">{author}</span>
+						<span className="font-bold text-theme-secondary-600">{author}</span>
 						<div className="ml-3">
 							<Icon name="OfficialArkPlugin" />
 						</div>
@@ -67,18 +67,18 @@ export const PluginSpecs = ({ author, category, url, rating, version, size }: Pr
 			</GridCol>
 			<GridCol padding="px-6 -ml-5">
 				<div className="flex flex-col">
-					<span className="font-bold text-theme-neutral-400">{t("COMMON.URL")}</span>
+					<span className="font-bold text-theme-secondary-400">{t("COMMON.URL")}</span>
 					<span className="font-bold text-theme-primary-600">{url}</span>
 				</div>
 			</GridCol>
 			<GridCol colSpan={2} justify="between" padding="px-6 -ml-8">
 				<div className="flex flex-col">
-					<span className="font-bold text-theme-neutral-400">{t("COMMON.RATING")}</span>
+					<span className="font-bold text-theme-secondary-400">{t("COMMON.RATING")}</span>
 					<div className="flex items-center">
 						<div className="pr-1 text-theme-warning-400">
 							<Icon name="Star" />
 						</div>
-						<span className="font-bold text-theme-neutral-600">{rating}</span>
+						<span className="font-bold text-theme-secondary-600">{rating}</span>
 					</div>
 				</div>
 				<GridItem label={t("COMMON.VERSION")} value={`v.${version}`} textDirection="right" />

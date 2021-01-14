@@ -28,7 +28,7 @@ type PaginationProps = {
 };
 
 const PaginationButton = styled.div`
-	${tw`text-theme-primary-500 dark:text-theme-neutral-200 cursor-pointer px-2 text-base inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear justify-center`}
+	${tw`text-theme-primary-500 dark:text-theme-secondary-200 cursor-pointer px-2 text-base inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear justify-center`}
 
 	&:not(:disabled):hover {
 		${tw`bg-theme-primary-600 text-white rounded`}
@@ -37,12 +37,12 @@ const PaginationButton = styled.div`
 	}
 
 	&.current-page {
-		${tw`bg-theme-primary-200 dark:bg-theme-neutral-600 text-theme-primary-500 dark:text-theme-neutral-200`}
+		${tw`bg-theme-primary-200 dark:bg-theme-secondary-600 text-theme-primary-500 dark:text-theme-secondary-200`}
 	}
 `;
 
 const PaginationSearchButton = styled.div`
-	${tw`relative text-theme-primary-500 p-3 cursor-pointer flex flex-nowrap items-center dark:text-theme-neutral-200`}
+	${tw`relative text-theme-primary-500 p-3 cursor-pointer flex flex-nowrap items-center dark:text-theme-secondary-200`}
 
 	&:hover {
 		${tw`bg-theme-primary-600 text-white rounded`}
@@ -124,7 +124,7 @@ export const Pagination = ({
 				</Button>
 			)}
 
-			<div className="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-neutral-800">
+			<div className="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800">
 				{paginationButtons[0] !== 1 && (
 					<PaginationSearchButton>
 						<span>...</span>

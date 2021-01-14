@@ -14,6 +14,18 @@
 	--theme-color-primary-800: #0b4dc7;
 	--theme-color-primary-900: #173e85;
 
+	--theme-color-secondary-rgb: 165, 173, 185;
+	--theme-color-secondary-50: #fcfdfd;
+	--theme-color-secondary-100: #f7fafb;
+	--theme-color-secondary-200: #eef3f5;
+	--theme-color-secondary-300: #dbdee5;
+	--theme-color-secondary-400: #c4c8cf;
+	--theme-color-secondary-500: #a5adb9;
+	--theme-color-secondary-600: #7e8a9c;
+	--theme-color-secondary-700: #637282;
+	--theme-color-secondary-800: #3c4249;
+	--theme-color-secondary-900: #212225;
+
 	--theme-color-success-rgb: 40, 149, 72;
 	--theme-color-success-50: #f6fdf8;
 	--theme-color-success-100: #edf7f0;
@@ -61,26 +73,14 @@
 	--theme-color-hint-700: #2c3191;
 	--theme-color-hint-800: #1b1f5a;
 	--theme-color-hint-900: #0c0d27;
-
-	--theme-color-neutral-rgb: 165, 173, 185;
-	--theme-color-neutral-50: #fcfdfd;
-	--theme-color-neutral-100: #f7fafb;
-	--theme-color-neutral-200: #eef3f5;
-	--theme-color-neutral-300: #dbdee5;
-	--theme-color-neutral-400: #c4c8cf;
-	--theme-color-neutral-500: #a5adb9;
-	--theme-color-neutral-600: #7e8a9c;
-	--theme-color-neutral-700: #637282;
-	--theme-color-neutral-800: #3c4249;
-	--theme-color-neutral-900: #212225;
 }
 
 .theme-light {
 	--theme-background-color: var(--theme-white);
-	--theme-secondary-background-color: var(--theme-color-neutral-100);
+	--theme-secondary-background-color: var(--theme-color-secondary-100);
 
-	--theme-text-color: var(--theme-color-neutral-900);
-	--theme-secondary-text-color: var(--theme-color-neutral-700);
+	--theme-text-color: var(--theme-color-secondary-900);
+	--theme-secondary-text-color: var(--theme-color-secondary-700);
 
 	--theme-scrollbar-color: var(--theme-color-primary-100);
 	--theme-scrollbar-hover-color: var(--theme-color-primary-200);
@@ -102,14 +102,14 @@
 }
 
 .theme-dark {
-	--theme-background-color: var(--theme-color-neutral-900);
+	--theme-background-color: var(--theme-color-secondary-900);
 	--theme-secondary-background-color: var(--theme-black);
 
-	--theme-text-color: var(--theme-color-neutral-200);
-	--theme-secondary-text-color: var(--theme-color-neutral-500);
+	--theme-text-color: var(--theme-color-secondary-200);
+	--theme-secondary-text-color: var(--theme-color-secondary-500);
 
-	--theme-scrollbar-color: var(--theme-color-neutral-700);
-	--theme-scrollbar-hover-color: var(--theme-color-neutral-700);
+	--theme-scrollbar-color: var(--theme-color-secondary-700);
+	--theme-scrollbar-hover-color: var(--theme-color-secondary-700);
 
 	--theme-shadow-color: 18, 18, 19;
 

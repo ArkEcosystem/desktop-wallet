@@ -105,7 +105,7 @@ export const ChartContent = ({
 	const [legend, setLegend] = useState(defaultValue);
 
 	return (
-		<Wrapper data-testid="line-chart-wrapper" className="text-theme-neutral-300 dark:text-theme-neutral-800 pb">
+		<Wrapper data-testid="line-chart-wrapper" className="text-theme-secondary-300 dark:text-theme-secondary-800 pb">
 			<ChartLegend legend={legend} lines={lines} period={period} onPeriodClick={onPeriodClick} />
 			<RechartsLine
 				width={width}

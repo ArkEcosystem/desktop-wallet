@@ -23,7 +23,7 @@ export const TransactionSender = ({ address, alias, isDelegate, ...props }: Tran
 				<div className="flex items-center -space-x-2">
 					{isDelegate && (
 						<Circle
-							className="border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+							className="border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
 							size="lg"
 						>
 							<Icon name="Delegate" width={25} height={25} />

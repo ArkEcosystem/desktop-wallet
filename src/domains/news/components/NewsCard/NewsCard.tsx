@@ -34,7 +34,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coverI
 								</h4>
 								<div className="flex items-center space-x-4">
 									<p
-										className="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
+										className="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
 										data-testid="NewsCard__author"
 									>
 										{author?.name}, {author?.title}
@@ -43,7 +43,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coverI
 									<Divider type="vertical" />
 
 									<p
-										className="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
+										className="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
 										data-testid="NewsCard__date-created"
 									>
 										<TimeAgo date={createdAt} />
@@ -76,7 +76,7 @@ export const NewsCard = ({ text, category, author, created_at: createdAt, coverI
 					</p>
 
 					{coverImage && (
-						<div className="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-100 dark:border-theme-neutral-800">
+						<div className="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-100 dark:border-theme-secondary-800">
 							<img src={coverImage} alt="ARK Banner" />
 						</div>
 					)}

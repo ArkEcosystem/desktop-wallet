@@ -60,7 +60,7 @@ const SearchWalletListItem = ({
 			</TableCell>
 
 			{showFiatValue && (
-				<TableCell innerClassName="text-theme-neutral-400 justify-end">
+				<TableCell innerClassName="text-theme-secondary-400 justify-end">
 					<Amount value={convertedBalance} ticker={exchangeCurrency} />
 				</TableCell>
 			)}

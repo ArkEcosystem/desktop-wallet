@@ -29,7 +29,7 @@ const CustomCard = styled(Card)`
 `;
 
 const StateStyle = styled.div`
-	${tw`inline-flex items-center justify-center w-4 h-4 text-transparent border-2 rounded-full border-theme-primary-100 dark:border-theme-neutral-800`}
+	${tw`inline-flex items-center justify-center w-4 h-4 text-transparent border-2 rounded-full border-theme-primary-100 dark:border-theme-secondary-800`}
 	${Input}:checked + ${CustomCard} & {
 		${tw`border-transparent bg-theme-success-600 text-theme-success-100`}
 	}

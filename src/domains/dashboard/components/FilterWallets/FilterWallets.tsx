@@ -29,7 +29,7 @@ export const FilterWallets = ({
 				<div className="font-semibold text-theme-secondary-text">
 					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.TITLE")}
 				</div>
-				<div className="mt-1 text-sm text-theme-neutral-500">
+				<div className="mt-1 text-sm text-theme-secondary-500">
 					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.DESCRIPTION")}
 				</div>
 			</div>
@@ -45,7 +45,7 @@ export const FilterWallets = ({
 				}}
 			/>
 
-			<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
+			<div className="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 			<div className="flex flex-col">
 				<div className="flex justify-between items-center">
@@ -71,14 +71,14 @@ export const FilterWallets = ({
 					/>
 				</div>
 
-				<div className="pr-12 mt-1 text-sm text-theme-neutral-500">
+				<div className="pr-12 mt-1 text-sm text-theme-secondary-500">
 					{t("DASHBOARD.FILTER_WALLETS.WALLETS.DESCRIPTION")}
 				</div>
 			</div>
 
 			{showToggleViews && (
 				<>
-					<div className="my-8 border-t border-dotted border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 					<div className="flex flex-col">
 						<div className="flex justify-between items-center">
@@ -93,7 +93,7 @@ export const FilterWallets = ({
 							/>
 						</div>
 
-						<div className="pr-12 mt-1 text-sm text-theme-neutral-500">
+						<div className="pr-12 mt-1 text-sm text-theme-secondary-500">
 							{t("DASHBOARD.FILTER_WALLETS.TRANSACTION_HISTORY.DESCRIPTION")}
 						</div>
 					</div>

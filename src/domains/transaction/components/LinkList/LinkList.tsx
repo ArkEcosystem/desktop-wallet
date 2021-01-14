@@ -36,10 +36,10 @@ const linkIcons: Record<string, string> = {
 };
 
 const LinkItem = ({ link }: { link: ProviderEntityLink }) => (
-	<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 first:border-0">
+	<div className="flex items-center py-4 border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800 first:border-0">
 		<div className="flex flex-1 justify-between">
 			<div>
-				<div className="text-sm font-semibold text-theme-neutral-500">{link.displayName}</div>
+				<div className="text-sm font-semibold text-theme-secondary-500">{link.displayName}</div>
 
 				<Link to={link.value} className="inline-block mt-1 font-semibold link">
 					{link.value}

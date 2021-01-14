@@ -25,7 +25,9 @@ export const SentStep = ({
 
 			<Image name="TransactionSuccessfulBanner" domain="transaction" className="my-4 w-full" />
 
-			<p className="text-theme-neutral-700">{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_3.DESCRIPTION")}</p>
+			<p className="text-theme-secondary-700">
+				{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_3.DESCRIPTION")}
+			</p>
 
 			<div className="mt-4">
 				<Signatures publicKeys={participants} transactionId={transaction.id()} wallet={wallet} />
