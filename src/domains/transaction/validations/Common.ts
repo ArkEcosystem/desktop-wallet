@@ -6,6 +6,7 @@ export const common = (t: any) => ({
 		validate: {
 			valid: (fee?: string | number) => {
 				const feeSatoshi = BigNumber.make(fee || 0);
+				console.log("validating feee", fee);
 
 				if (!network?.coin()) {
 					return true;
@@ -35,6 +36,13 @@ export const common = (t: any) => ({
 				if (feeSatoshi.isGreaterThan(fees?.max)) {
 					return t("TRANSACTION.VALIDATION.FEE_ABOVE_MAXIMUM", {
 						max: BigNumber.make(fees.max).toHuman(),
+						coinId: network.coin(),
+					});
+				}
+
+				if (feeSatoshi.isZero() || feeSatoshi.isNegative()) {
+					return t("TRANSACTION.VALIDATION.FEE_BELOW_MINIMUM", {
+						min: 0,
 						coinId: network.coin(),
 					});
 				}

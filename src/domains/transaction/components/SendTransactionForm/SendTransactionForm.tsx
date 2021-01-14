@@ -34,10 +34,10 @@ export const SendTransactionForm = ({
 	const { network, senderAddress } = watch();
 
 	const [fees, setFees] = useState<Contracts.TransactionFee>({
-		static: "5",
+		static: "0",
 		min: "0",
-		avg: "1",
-		max: "2",
+		avg: "0",
+		max: "0",
 	});
 
 	// getValues does not get the value of `defaultValues` on first render
