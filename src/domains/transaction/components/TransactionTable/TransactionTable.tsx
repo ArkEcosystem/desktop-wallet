@@ -36,6 +36,7 @@ export const TransactionTable = memo(
 			{
 				Header: t("COMMON.DATE"),
 				accessor: (transaction: ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
+				sortDescFirst: true,
 				cellWidth: "w-50",
 			},
 			{

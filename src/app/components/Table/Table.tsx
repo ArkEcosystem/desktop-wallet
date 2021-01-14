@@ -26,6 +26,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 			data: tableData,
 			columns: tableColumns,
 			autoResetSortBy: false,
+			disableSortRemove: true,
 		},
 		useSortBy,
 	);
@@ -33,14 +34,6 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 	const renderChildNode = (data: any, index: number) => {
 		if (typeof children === "function") return children(data, index);
 		return <tr />;
-	};
-
-	const getSortIconName = (isSorted: boolean, isSortedDesc: boolean) => {
-		if (isSorted) {
-			return isSortedDesc ? "ChevronDown" : "ChevronUp";
-		}
-
-		return "Sort";
 	};
 
 	return (
@@ -57,7 +50,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 								{headerGroup.headers.map((column: any, thIndex: number) => (
 									<th
 										key={thIndex}
-										className={`relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold ${
+										className={`group relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold ${
 											column.className?.includes("no-border") ? "" : "hasBorder"
 										} ${
 											column.minimumWidth
@@ -72,16 +65,20 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 											<div>{column.render("Header")}</div>
 											{column.canSort && (
 												<div
-													className="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
-													data-testid={`table__${getSortIconName(
-														column.isSorted,
-														column.isSortedDesc,
-													)}`}
+													className={`${
+														column.isSorted || "opacity-0 group-hover:opacity-100"
+													} flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark transition-opacity`}
 												>
 													<Icon
-														name={getSortIconName(column.isSorted, column.isSortedDesc)}
-														width={column.isSorted ? "0.75rem" : 10}
-														height={column.isSorted ? "0.75rem" : 5}
+														name="ChevronDown"
+														className={`transition-transform ${
+															(column.isSorted && column.isSortedDesc) ||
+															(!column.isSorted && column.sortDescFirst)
+																? ""
+																: "transform rotate-180"
+														}`}
+														width={8}
+														height={5}
 													/>
 												</div>
 											)}
