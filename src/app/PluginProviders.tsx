@@ -29,12 +29,12 @@ export const services = [
 	new ThemePluginService(),
 ];
 
-export const PluginProviders = ({ children }: Props) => (
-	<PluginManagerProvider
-		manager={pluginManager}
-		/* istanbul ignore next */
-		services={isTest ? [] : services}
-	>
-		<HttpPluginProvider manager={pluginManager}>{children}</HttpPluginProvider>
-	</PluginManagerProvider>
-);
+export const PluginProviders = ({ children }: Props) => {
+	/* istanbul ignore next */
+	const servicesData = isTest ? [] : services;
+	return (
+		<PluginManagerProvider manager={pluginManager} services={servicesData}>
+			<HttpPluginProvider manager={pluginManager}>{children}</HttpPluginProvider>
+		</PluginManagerProvider>
+	);
+};

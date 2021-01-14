@@ -63,7 +63,7 @@ describe.skip("CreateProfile", () => {
 	});
 
 	afterAll(() => {
-		jest.clearAllMocks();
+		jest.resetAllMocks();
 	});
 
 	it("should render", async () => {
