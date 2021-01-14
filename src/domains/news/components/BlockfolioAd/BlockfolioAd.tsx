@@ -22,13 +22,13 @@ export const BlockfolioAd = () => {
 				alt="Blockfolio Banner"
 			/>
 
-			<div className="absolute left-10 top-24">
-				<div className="flex flex-col space-y-5 text-theme-background">
+			<div className="absolute left-10 top-16">
+				<div className="flex flex-col space-y-5 text-white">
 					<Link to="https://blockfolio.com/" showExternalIcon={false} isExternal>
-						<SvgCollection.Blockfolio className="-mx-8 text-theme-background" width={238} height={47} />
+						<SvgCollection.Blockfolio className="-mx-8 text-white" width={238} height={47} />
 					</Link>
 					<p className="w-3/4 text-lg font-medium">
-						{"The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free."}
+						The world&apos;s most popular Bitcoin &amp; cryptocurrency portfolio tracker. 100% free.
 					</p>
 				</div>
 
