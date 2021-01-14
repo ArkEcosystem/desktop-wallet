@@ -1,5 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
-import { runUnknownCode } from "plugins/loader";
+import { runUnknownCode } from "plugins/loader/vm";
 
 import { Box } from "../components/shared/Box";
 import { PluginRawInstance } from "../types";

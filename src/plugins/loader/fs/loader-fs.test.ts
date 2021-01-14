@@ -3,7 +3,7 @@ import path from "path";
 
 import { PluginLoaderFileSystem } from "./loader-fs";
 
-describe.skip("PluginLoaderFileSystem", () => {
+describe("PluginLoaderFileSystem", () => {
 	let subject: PluginLoaderFileSystem;
 	let root: string;
 

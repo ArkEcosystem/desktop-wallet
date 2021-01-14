@@ -1,5 +1,4 @@
 import electron from "electron";
-import fs from "fs";
 
 import {
 	exitApp,
@@ -16,16 +15,12 @@ const defaultFilters = [
 	{ name: "All Files", extensions: ["*"] },
 ];
 
-describe.skip("Electron utils", () => {
-	beforeEach(() => {
-		jest.spyOn(fs, "writeFileSync").mockImplementation();
-		jest.spyOn(fs, "readFileSync").mockImplementation();
-	});
+jest.mock("fs", () => ({
+	writeFileSync: jest.fn(),
+	readFileSync: jest.fn(),
+}));
 
-	afterAll(() => {
-		jest.clearAllMocks();
-	});
-
+describe("Electron utils", () => {
 	describe("setThemeSource", () => {
 		it("should set theme source", () => {
 			setThemeSource("theme");

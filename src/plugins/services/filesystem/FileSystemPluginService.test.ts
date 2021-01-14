@@ -1,6 +1,5 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import electron from "electron";
-import fs from "fs";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginAPI } from "plugins/types";
 import { env } from "utils/testing-library";
@@ -13,7 +12,12 @@ const config = {
 	"desktop-wallet": { permissions: ["FILESYSTEM"] },
 };
 
-describe.skip("FileSystemPluginService", () => {
+jest.mock("fs", () => ({
+	writeFileSync: jest.fn(),
+	readFileSync: jest.fn(() => "test"),
+}));
+
+describe("FileSystemPluginService", () => {
 	let profile: Profile;
 	let manager: PluginManager;
 	let ctrl: PluginController;
@@ -34,7 +38,6 @@ describe.skip("FileSystemPluginService", () => {
 		let content: any;
 
 		jest.spyOn(electron.remote.dialog, "showOpenDialog").mockResolvedValue({ filePaths: ["/test.txt"] });
-		jest.spyOn(fs, "readFileSync").mockReturnValue("test");
 
 		const fixture = (api: PluginAPI) => {
 			api.filesystem()
@@ -56,8 +59,9 @@ describe.skip("FileSystemPluginService", () => {
 	it("should save file", async () => {
 		const content = "test";
 
-		jest.spyOn(electron.remote.dialog, "showSaveDialog").mockResolvedValue({ filePath: "/test.txt" });
-		const writeSpy = jest.spyOn(fs, "writeFileSync").mockImplementation();
+		const saveSpy = jest
+			.spyOn(electron.remote.dialog, "showSaveDialog")
+			.mockResolvedValue({ filePath: "/test.txt" });
 
 		const fixture = (api: PluginAPI) => {
 			api.filesystem().askUserToSaveFile(content);
@@ -71,6 +75,6 @@ describe.skip("FileSystemPluginService", () => {
 
 		await new Promise((r) => setTimeout(r, 200));
 
-		expect(writeSpy).toHaveBeenCalled();
+		expect(saveSpy).toHaveBeenCalled();
 	});
 });

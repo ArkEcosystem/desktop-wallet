@@ -5,7 +5,6 @@ import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
-import fs from "fs";
 import os from "os";
 import React from "react";
 import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
@@ -49,7 +48,11 @@ const renderComponent = async () => {
 	return result;
 };
 
-describe.skip("CreateProfile", () => {
+jest.mock("fs", () => ({
+	readFileSync: jest.fn(() => "avatarImage"),
+}));
+
+describe("CreateProfile", () => {
 	beforeAll(() => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	});
@@ -58,12 +61,6 @@ describe.skip("CreateProfile", () => {
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: ["filePath"],
 		}));
-
-		jest.spyOn(fs, "readFileSync").mockImplementation(() => "avatarImage");
-	});
-
-	afterAll(() => {
-		jest.resetAllMocks();
 	});
 
 	it("should render", async () => {
