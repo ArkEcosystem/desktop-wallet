@@ -25,12 +25,6 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected }
 			hasDivider: true,
 			options: types.core.map((type) => ({ label: getLabel(type), value: type })),
 		},
-		{
-			key: "magistrate",
-			title: t("TRANSACTION.MAGISTRATE"),
-			hasDivider: true,
-			options: types.magistrate.map((type) => ({ label: getLabel(type), value: type })),
-		},
 	];
 
 	const [selectedOption, setSelectedOption] = useState<DropdownOption>(defaultSelected || allOptions[0].options[0]);

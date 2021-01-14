@@ -207,29 +207,6 @@ export const translations: { [key: string]: any } = {
 		WECHAT: "Wechat",
 	},
 
-	ENTITY: {
-		NAME: "Entity Name",
-		DISPLAY_NAME: "Display Name",
-		INVALID_NAME: "Invalid Entity Name",
-		INVALID_DESCRIPTION: "Invalid Entity Description",
-	},
-
-	PAGE_REGISTRATION: {
-		TITLE: "Register {{ title }}",
-		FIRST_STEP: {
-			TITLE: "Registration",
-			DESCRIPTION: "Select the type of registration and the address you want to register with.",
-		},
-		SECOND_STEP: {
-			TITLE: "Register Business",
-			DESCRIPTION: "Select the type of registration and the address you want to register with.",
-		},
-		THIRD_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Review the registration details before sending",
-		},
-	},
-
 	PAGE_DELEGATE_REGISTRATION: {
 		SECOND_STEP: {
 			TITLE: "Register Delegate",
@@ -283,20 +260,12 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_RESIGN_REGISTRATION: {
-		ENTITY_NAME: "Entity Name",
-		ENTITY_TYPE: "Entity Type",
 		FIRST_STEP: {
 			DELEGATE: {
 				TITLE: "Delegate Resignation",
 				DESCRIPTION: "Resign your delegate for always.",
 				WARNING:
 					"Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.",
-			},
-			ENTITY: {
-				TITLE: "Entity Resignation",
-				DESCRIPTION: "Resign your entity for always.",
-				WARNING:
-					"Keep in mind that you cannot restore your entity after the resignation has been registered on the blockchain.",
 			},
 		},
 		SECOND_STEP: {
@@ -305,21 +274,6 @@ export const translations: { [key: string]: any } = {
 		},
 		FOURTH_STEP: {
 			TITLE: "Delegate Resignation",
-		},
-	},
-
-	PAGE_UPDATE_REGISTRATION: {
-		FIRST_STEP: {
-			BUSINESS: {
-				TITLE: "Update Business",
-				DESCRIPTION: "Select the type of registration and the address you want to register with.",
-				WARNING:
-					"Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.",
-			},
-		},
-		SECOND_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Check the information again before Update",
 		},
 	},
 
