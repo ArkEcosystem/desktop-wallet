@@ -34,19 +34,19 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 						<div className="flex -space-x-2">
 							<Circle
 								size="lg"
-								className="bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+								className="bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
 							/>
 							<Circle
 								size="lg"
-								className="bg-theme-background border-theme-primary-contrast dark:border-theme-neutral-800"
+								className="bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
 							/>
 						</div>
 
-						<div className="mt-auto text-lg font-bold text-theme-primary-contrast dark:text-theme-neutral-800">
+						<div className="mt-auto text-lg font-bold text-theme-primary-100 dark:text-theme-neutral-800">
 							{t("COMMON.BALANCE")}
 						</div>
 
-						<span className="mt-1 text-xs font-semibold truncate text-theme-primary-contrast dark:text-theme-neutral-800">
+						<span className="mt-1 text-xs font-semibold truncate text-theme-primary-100 dark:text-theme-neutral-800">
 							{t("COMMON.ADDRESS")}
 						</span>
 					</div>

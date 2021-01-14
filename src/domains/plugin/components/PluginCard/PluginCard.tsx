@@ -34,7 +34,6 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 	return (
 		<div data-testid={`PluginCard--${plugin.id}`}>
 			<Card
-				className="border-theme-primary-contrast hover:border-theme-background"
 				onClick={onClick}
 				actions={plugin.isInstalled ? actions : undefined}
 				onSelect={(action: any) => {
@@ -60,14 +59,12 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 						</div>
 					</div>
 
-					<div className="flex space-x-4 text-sm text-theme-neutral-light">
+					<div className="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700">
 						<div className="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
 							{plugin.author}
 						</div>
 
-						<div>
-							<ReviewRating rating={plugin.rating} />
-						</div>
+						<ReviewRating rating={plugin.rating} />
 					</div>
 				</div>
 			</Card>

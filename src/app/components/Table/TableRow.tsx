@@ -9,17 +9,18 @@ type TableRowProps = {
 	border?: boolean;
 	children: React.ReactNode;
 	onClick?: TableRowFunction;
+	isSelected?: boolean;
 	onMouseEnter?: TableRowFunction;
 	onMouseLeave?: TableRowFunction;
 } & React.HTMLProps<any>;
 
 const TableRowStyled = styled.tr<TableRowProps>(getStyles);
 
-export const TableRow = ({ onClick, onMouseEnter, onMouseLeave, border, children }: TableRowProps) => (
+export const TableRow = ({ border, children, isSelected, onClick, onMouseEnter, onMouseLeave }: TableRowProps) => (
 	<TableRowStyled
 		data-testid="TableRow"
-		className="group"
 		border={border}
+		isSelected={isSelected}
 		onClick={onClick}
 		onMouseEnter={onMouseEnter}
 		onMouseLeave={onMouseLeave}

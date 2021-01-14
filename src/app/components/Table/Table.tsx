@@ -80,8 +80,8 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 												>
 													<Icon
 														name={getSortIconName(column.isSorted, column.isSortedDesc)}
-														width={column.isSorted ? "0.75rem" : 15}
-														height={column.isSorted ? "0.75rem" : 12}
+														width={column.isSorted ? "0.75rem" : 10}
+														height={column.isSorted ? "0.75rem" : 5}
 													/>
 												</div>
 											)}

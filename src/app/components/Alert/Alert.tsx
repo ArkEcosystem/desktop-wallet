@@ -64,7 +64,7 @@ export const Alert = ({ variant, title, size, children }: AlertProps) => (
 					{title}
 				</p>
 			)}
-			{children && <p className="leading-relaxed break-words">{children}</p>}
+			{children && <p className="leading-relaxed break-words dark:text-theme-neutral-500">{children}</p>}
 		</div>
 	</AlertWrapper>
 );

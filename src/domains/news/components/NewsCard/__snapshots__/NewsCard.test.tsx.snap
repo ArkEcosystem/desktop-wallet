@@ -6,7 +6,7 @@ exports[`NewsCard should render 1`] = `
     data-testid="NewsCard"
   >
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun bg-theme-background"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 detPlY bg-theme-background"
       data-testid="Card"
     >
       <div
@@ -45,7 +45,7 @@ exports[`NewsCard should render 1`] = `
                 class="flex items-center space-x-4"
               >
                 <p
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
                   data-testid="NewsCard__author"
                 >
                   Travis Walker, Co-Founder
@@ -55,7 +55,7 @@ exports[`NewsCard should render 1`] = `
                   type="vertical"
                 />
                 <p
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
                   data-testid="NewsCard__date-created"
                 >
                   <span
@@ -116,7 +116,7 @@ exports[`NewsCard should render with cover image 1`] = `
     data-testid="NewsCard"
   >
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun bg-theme-background"
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 detPlY bg-theme-background"
       data-testid="Card"
     >
       <div
@@ -155,7 +155,7 @@ exports[`NewsCard should render with cover image 1`] = `
                 class="flex items-center space-x-4"
               >
                 <p
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
                   data-testid="NewsCard__author"
                 >
                   Travis Walker, Co-Founder
@@ -165,7 +165,7 @@ exports[`NewsCard should render with cover image 1`] = `
                   type="vertical"
                 />
                 <p
-                  class="text-sm font-semibold text-theme-neutral"
+                  class="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
                   data-testid="NewsCard__date-created"
                 >
                   <span
@@ -212,7 +212,7 @@ exports[`NewsCard should render with cover image 1`] = `
           </a>
         </p>
         <div
-          class="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-contrast"
+          class="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-100 dark:border-theme-neutral-800"
         >
           <img
             alt="ARK Banner"

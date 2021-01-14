@@ -11,12 +11,12 @@ export function MnemonicList({ mnemonic }: Props) {
 				<li
 					data-testid="MnemonicList__item"
 					key={index}
-					className="relative py-3 px-3 rounded border border-theme-neutral-light"
+					className="relative py-3 px-3 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
 				>
-					<span className="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral">
+					<span className="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral-800">
 						{index + 1}
 					</span>
-					<span className="font-medium text-theme-neutral-800">{word}</span>
+					<span className="font-medium">{word}</span>
 				</li>
 			))}
 		</ul>

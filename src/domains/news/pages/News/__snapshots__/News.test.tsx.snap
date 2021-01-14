@@ -204,7 +204,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -238,12 +238,12 @@ exports[`News should filter results based on category query and asset 1`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -321,7 +321,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   data-testid="NewsCard"
                 >
                   <div
-                    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun bg-theme-background"
+                    class="Cardstyles__Wrapper-sc-1uddqgb-0 detPlY bg-theme-background"
                     data-testid="Card"
                   >
                     <div
@@ -346,7 +346,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                               class="flex items-center space-x-4"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral"
+                                class="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
                                 data-testid="NewsCard__author"
                               >
                                 Travis Walker, Co-Founder
@@ -356,7 +356,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                                 type="vertical"
                               />
                               <p
-                                class="text-sm font-semibold text-theme-neutral"
+                                class="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
                                 data-testid="NewsCard__date-created"
                               >
                                 <span
@@ -417,7 +417,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   class="relative"
                 >
                   <div
-                    class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-contrast"
+                    class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <span
                       class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary"
@@ -427,14 +427,14 @@ exports[`News should filter results based on category query and asset 1`] = `
                   </div>
                   <img
                     alt="Blockfolio Banner"
-                    class="w-full rounded-lg border-2 border-theme-primary-contrast"
+                    class="w-full rounded-lg border-2 border-theme-primary-100 dark:border-theme-neutral-800"
                     src="blockfolio-banner.png"
                   />
                   <div
-                    class="absolute left-10 top-24"
+                    class="absolute left-10 top-16"
                   >
                     <div
-                      class="flex flex-col space-y-5 text-theme-background"
+                      class="flex flex-col space-y-5 text-white"
                     >
                       <a
                         class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -443,7 +443,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         to="https://blockfolio.com/"
                       >
                         <svg
-                          class="-mx-8 text-theme-background"
+                          class="-mx-8 text-white"
                           height="47"
                           width="238"
                         >
@@ -491,14 +491,14 @@ exports[`News should filter results based on category query and asset 1`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="Pagination__Wrapper-x7juhx-0 hyaceY"
+                  class="Pagination__Wrapper-x7juhx-0 chOylR"
                   data-testid="Pagination"
                 >
                   <div
-                    class="flex px-2 rounded bg-theme-primary-contrast"
+                    class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+                      class="Pagination__PaginationButton-x7juhx-1 dMKNhr current-page"
                     >
                       1
                     </div>
@@ -510,7 +510,7 @@ exports[`News should filter results based on category query and asset 1`] = `
               class="flex-none w-2/6"
             >
               <div
-                class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-contrast"
+                class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
                 data-testid="NewsOptions"
               >
                 <div
@@ -526,9 +526,9 @@ exports[`News should filter results based on category query and asset 1`] = `
                       placeholder="Search"
                     />
                     <div
-                      class="sc-bdfBwQ iyevwF mr-4 text-theme-neutral"
-                      height="20"
-                      width="20"
+                      class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-neutral-600"
+                      height="18"
+                      width="18"
                     >
                       <svg>
                         search.svg
@@ -551,7 +551,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         Category
                       </h5>
                       <button
-                        class="text-xs font-semibold focus:outline-none text-theme-neutral"
+                        class="text-xs font-semibold focus:outline-none text-theme-neutral-800"
                       >
                         Select All
                       </button>
@@ -576,7 +576,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           value=""
                         />
                         <div
-                          class="SelectCategory__CustomButton-k7qbth-1 eCTePs"
+                          class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
                         >
                           #Technical
                         </div>
@@ -593,7 +593,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           value=""
                         />
                         <div
-                          class="SelectCategory__CustomButton-k7qbth-1 eCTePs"
+                          class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
                         >
                           #Marketing
                         </div>
@@ -610,7 +610,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           value=""
                         />
                         <div
-                          class="SelectCategory__CustomButton-k7qbth-1 eCTePs"
+                          class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
                         >
                           #Community
                         </div>
@@ -627,7 +627,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           value=""
                         />
                         <div
-                          class="SelectCategory__CustomButton-k7qbth-1 eCTePs"
+                          class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
                         >
                           #Emergency
                         </div>
@@ -988,7 +988,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-contrast dark:border-theme-neutral-800"
+                    class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-neutral-800"
                   >
                     <span
                       class="text-theme-secondary-text dark:text-theme-neutral-800"
@@ -1022,12 +1022,12 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </span>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+                      class="Badge__Wrapper-sc-1d7juq8-0 ekVStG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
                     >
                       <div
-                        class="sc-bdfBwQ TENjd transition-transform "
-                        height="10"
-                        width="10"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
+                        height="5"
+                        width="8"
                       >
                         <svg>
                           chevron-down.svg
@@ -1105,7 +1105,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                   data-testid="NewsCard"
                 >
                   <div
-                    class="Cardstyles__Wrapper-sc-1uddqgb-0 ewOdun bg-theme-background"
+                    class="Cardstyles__Wrapper-sc-1uddqgb-0 detPlY bg-theme-background"
                     data-testid="Card"
                   >
                     <div
@@ -1144,7 +1144,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                               class="flex items-center space-x-4"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral"
+                                class="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
                                 data-testid="NewsCard__author"
                               >
                                 Travis Walker, Co-Founder
@@ -1154,7 +1154,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                                 type="vertical"
                               />
                               <p
-                                class="text-sm font-semibold text-theme-neutral"
+                                class="text-sm font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
                                 data-testid="NewsCard__date-created"
                               >
                                 <span
@@ -1214,7 +1214,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                   class="relative"
                 >
                   <div
-                    class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-contrast"
+                    class="flex absolute top-0 right-4 text-center rounded-b-xl bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <span
                       class="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary"
@@ -1224,14 +1224,14 @@ exports[`News should filter results based on category query and asset 2`] = `
                   </div>
                   <img
                     alt="Blockfolio Banner"
-                    class="w-full rounded-lg border-2 border-theme-primary-contrast"
+                    class="w-full rounded-lg border-2 border-theme-primary-100 dark:border-theme-neutral-800"
                     src="blockfolio-banner.png"
                   />
                   <div
-                    class="absolute left-10 top-24"
+                    class="absolute left-10 top-16"
                   >
                     <div
-                      class="flex flex-col space-y-5 text-theme-background"
+                      class="flex flex-col space-y-5 text-white"
                     >
                       <a
                         class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
@@ -1240,7 +1240,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         to="https://blockfolio.com/"
                       >
                         <svg
-                          class="-mx-8 text-theme-background"
+                          class="-mx-8 text-white"
                           height="47"
                           width="238"
                         >
@@ -1288,49 +1288,49 @@ exports[`News should filter results based on category query and asset 2`] = `
                 class="flex justify-center w-full"
               >
                 <div
-                  class="Pagination__Wrapper-x7juhx-0 hyaceY"
+                  class="Pagination__Wrapper-x7juhx-0 chOylR"
                   data-testid="Pagination"
                 >
                   <div
-                    class="flex px-2 rounded bg-theme-primary-contrast"
+                    class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-neutral-800"
                   >
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 gpUeNS current-page"
+                      class="Pagination__PaginationButton-x7juhx-1 dMKNhr current-page"
                     >
                       1
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+                      class="Pagination__PaginationButton-x7juhx-1 dMKNhr"
                     >
                       2
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+                      class="Pagination__PaginationButton-x7juhx-1 dMKNhr"
                     >
                       3
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+                      class="Pagination__PaginationButton-x7juhx-1 dMKNhr"
                     >
                       4
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+                      class="Pagination__PaginationButton-x7juhx-1 dMKNhr"
                     >
                       5
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+                      class="Pagination__PaginationButton-x7juhx-1 dMKNhr"
                     >
                       6
                     </div>
                     <div
-                      class="Pagination__PaginationButton-x7juhx-1 gpUeNS"
+                      class="Pagination__PaginationButton-x7juhx-1 dMKNhr"
                     >
                       7
                     </div>
                     <div
-                      class="Pagination__PaginationSearchButton-x7juhx-2 fUIqyP"
+                      class="Pagination__PaginationSearchButton-x7juhx-2 bUpgdG"
                     >
                       <span>
                         ...
@@ -1375,7 +1375,7 @@ exports[`News should filter results based on category query and asset 2`] = `
               class="flex-none w-2/6"
             >
               <div
-                class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-contrast"
+                class="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
                 data-testid="NewsOptions"
               >
                 <div
@@ -1391,9 +1391,9 @@ exports[`News should filter results based on category query and asset 2`] = `
                       placeholder="Search"
                     />
                     <div
-                      class="sc-bdfBwQ iyevwF mr-4 text-theme-neutral"
-                      height="20"
-                      width="20"
+                      class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-neutral-600"
+                      height="18"
+                      width="18"
                     >
                       <svg>
                         search.svg
@@ -1436,7 +1436,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           value=""
                         />
                         <div
-                          class="SelectCategory__CustomButton-k7qbth-1 eCTePs"
+                          class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
                         >
                           #Technical
                         </div>
@@ -1453,7 +1453,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           value=""
                         />
                         <div
-                          class="SelectCategory__CustomButton-k7qbth-1 eCTePs"
+                          class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
                         >
                           #Marketing
                         </div>
@@ -1470,7 +1470,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           value=""
                         />
                         <div
-                          class="SelectCategory__CustomButton-k7qbth-1 eCTePs"
+                          class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
                         >
                           #Community
                         </div>
@@ -1487,7 +1487,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           value=""
                         />
                         <div
-                          class="SelectCategory__CustomButton-k7qbth-1 eCTePs"
+                          class="SelectCategory__CustomButton-k7qbth-1 dYFyrC"
                         >
                           #Emergency
                         </div>

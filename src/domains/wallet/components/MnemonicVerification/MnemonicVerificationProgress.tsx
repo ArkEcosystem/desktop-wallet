@@ -8,9 +8,11 @@ import { getOrdinalIndicator } from "./utils/evaluateOrdinalIndicator";
 
 const TabStyled = styled(OptionButton)<{ isActive: boolean; isComplete: boolean; isPending: boolean }>`
 	${tw`flex-1 flex items-center justify-center pointer-events-none transition-colors duration-200`};
-	${({ isActive }) => isActive && tw`font-medium bg-theme-success-contrast border-theme-success`};
-	${({ isComplete }) => isComplete && tw`border-transparent bg-theme-success-200`};
-	${({ isPending }) => isPending && tw`border-theme-primary-contrast text-theme-primary`};
+	${({ isActive }) =>
+		isActive && tw`font-semibold bg-theme-success-100 dark:bg-theme-success-900 border-theme-success-600`};
+	${({ isComplete }) => isComplete && tw`border-transparent bg-theme-success-200 dark:bg-theme-success-600`};
+	${({ isPending }) =>
+		isPending && tw`font-medium border-theme-primary-100 dark:border-theme-neutral-800 text-theme-primary`};
 	min-height: 56px;
 `;
 
@@ -41,7 +43,7 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 			isPending={isPending}
 		>
 			{isComplete ? (
-				<span className="text-lg text-theme-success">
+				<span className="text-lg text-theme-success dark:text-theme-neutral-200">
 					<Icon name="StatusOk" width={28} height={28} />
 				</span>
 			) : (
