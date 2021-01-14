@@ -142,7 +142,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 						)}
 					</div>
 
-					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}</p>
+					<p className="text-sm text-theme-neutral-500">{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}</p>
 
 					<div className="flex flex-wrap -mx-1">
 						{categories.map((category, index) => (
@@ -163,7 +163,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 				<div className="flex flex-col space-y-3">
 					<h5 className="font-semibold">{t("NEWS.NEWS_OPTIONS.FILTER_ASSETS")}</h5>
-					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
+					<p className="text-sm text-theme-neutral-500">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
 						<FilterNetwork networks={coins} hideViewAll onChange={(_, networks) => setCoins(networks)} />

@@ -15,7 +15,7 @@ export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
 
 	return (
 		<Card className="flex col-span-2" onClick={onAddExchange}>
-			<div className="flex items-center p-2 font-semibold text-theme-primary">
+			<div className="flex items-center p-2 font-semibold text-theme-primary-600">
 				<Icon name="Plus" className="p-4 mr-4 rounded-lg bg-theme-primary-100 dark:border-theme-neutral-800" />
 
 				{t("EXCHANGE.ADD_EXCHANGE")}
@@ -29,7 +29,7 @@ export const BlankExchangeCard = () => {
 
 	return (
 		<Card>
-			<div className="flex items-center p-2 font-semibold text-theme-primary-contrast dark:text-theme-neutral-800">
+			<div className="flex items-center p-2 font-semibold text-theme-primary-100 dark:text-theme-neutral-800">
 				<div className="mr-4 w-12 h-12 rounded-lg border-2 border-theme-primary-100 dark:border-theme-neutral-800" />
 
 				{t("EXCHANGE.EXCHANGE_NAME")}
@@ -43,7 +43,7 @@ export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProp
 
 	return (
 		<Card isSelected={isSelected} onClick={onClick} actions={options}>
-			<div className="flex items-center p-2 font-semibold text-theme-primary">
+			<div className="flex items-center p-2 font-semibold text-theme-primary-600">
 				<div className="mr-4">
 					<div className="w-12 h-12">
 						<Image name="ChangeNowLogo" domain="exchange" />

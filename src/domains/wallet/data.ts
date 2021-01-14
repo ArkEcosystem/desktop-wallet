@@ -314,14 +314,14 @@ export const networks = [
 		name: "ARK Ecosystem",
 		coin: "ARK",
 		network: "ark.devnet",
-		className: "text-theme-danger-400 border-theme-danger-light",
+		className: "text-theme-danger-400 border-theme-danger-200",
 	},
 	{
 		icon: "BIND",
 		name: "Compendia",
 		coin: "BIND",
 		network: "compendia.devnet",
-		className: "text-theme-danger-400 border-theme-danger-light",
+		className: "text-theme-danger-400 border-theme-danger-200",
 	},
 	{
 		icon: "BTC",
@@ -342,13 +342,13 @@ export const networks = [
 		name: "Lisk",
 		coin: "LSK",
 		network: "mainnet",
-		className: "text-theme-primary border-theme-primary-400",
+		className: "text-theme-primary-600 border-theme-primary-400",
 	},
 	{
 		icon: "XRP",
 		name: "Ripple",
 		coin: "XRP",
 		network: "mainnet",
-		className: "text-theme-primary-dark border-theme-primary-500",
+		className: "text-theme-primary-700 border-theme-primary-500",
 	},
 ];

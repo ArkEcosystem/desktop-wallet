@@ -236,7 +236,9 @@ export const DelegateTable = ({
 								<div className="inline-flex">
 									<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
 									<div className="flex flex-col">
-										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}</div>
+										<div className="text-theme-neutral-500">
+											{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}
+										</div>
 										<div className="text-theme-text" data-testid="DelegateTable__footer--address">
 											<Address address={selectedWallet} maxChars={24} />
 										</div>
@@ -249,7 +251,7 @@ export const DelegateTable = ({
 									<Circle
 										className={`mr-2 bg-theme-background ${
 											selectedVotes.length === 0
-												? "border-theme-neutral text-theme-neutral"
+												? "border-theme-neutral-500 text-theme-neutral-500"
 												: "border-theme-text text-theme-text"
 										}`}
 										size="lg"
@@ -257,10 +259,12 @@ export const DelegateTable = ({
 										<Icon name="Vote" className="text-xl" />
 									</Circle>
 									<div className="flex flex-col">
-										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
+										<div className="text-theme-neutral-500">{t("VOTE.DELEGATE_TABLE.VOTES")}</div>
 										<div
 											className={
-												selectedVotes.length === 0 ? "text-theme-neutral" : "text-theme-text"
+												selectedVotes.length === 0
+													? "text-theme-neutral-500"
+													: "text-theme-text"
 											}
 											data-testid="DelegateTable__footer--votes"
 										>
@@ -275,7 +279,7 @@ export const DelegateTable = ({
 									<Circle
 										className={`mr-2 bg-theme-background ${
 											selectedUnvotes.length === 0
-												? "border-theme-neutral text-theme-neutral"
+												? "border-theme-neutral-500 text-theme-neutral-500"
 												: "border-theme-text text-theme-text"
 										}`}
 										size="lg"
@@ -283,10 +287,12 @@ export const DelegateTable = ({
 										<Icon name="Unvote" className="text-xl" />
 									</Circle>
 									<div className="flex flex-col">
-										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
+										<div className="text-theme-neutral-500">{t("VOTE.DELEGATE_TABLE.UNVOTES")}</div>
 										<div
 											className={
-												selectedUnvotes.length === 0 ? "text-theme-neutral" : "text-theme-text"
+												selectedUnvotes.length === 0
+													? "text-theme-neutral-500"
+													: "text-theme-text"
 											}
 											data-testid="DelegateTable__footer--unvotes"
 										>
@@ -305,7 +311,7 @@ export const DelegateTable = ({
 										<Icon name="VoteCombination" className="text-xl" />
 									</Circle>
 									<div className="flex flex-col">
-										<div className="text-theme-neutral">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
+										<div className="text-theme-neutral-500">{t("VOTE.DELEGATE_TABLE.TOTAL")}</div>
 										<div className="text-theme-text" data-testid="DelegateTable__footer--total">
 											{getTotalVotes()}/{maxVotes}
 										</div>

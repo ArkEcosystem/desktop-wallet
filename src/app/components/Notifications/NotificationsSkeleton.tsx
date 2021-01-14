@@ -11,7 +11,7 @@ export const NotificationsSkeleton = ({ title }: NotificationsSkeletonProps) => 
 		<div>
 			<Icon name="Placeholder" width={200} height={80} />
 		</div>
-		<div className="my-3 border-2 border-b border-theme-neutral-contrast" />
+		<div className="my-3 border-2 border-b border-theme-neutral-100" />
 		<div>
 			<Icon name="Placeholder" width={200} height={80} />
 		</div>

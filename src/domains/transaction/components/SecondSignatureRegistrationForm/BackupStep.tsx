@@ -74,7 +74,7 @@ export const BackupStep = () => {
 					<span className="text-lg font-semibold text-theme-secondary-text">
 						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
 					</span>
-					<p className="text-sm text-theme-neutral">
+					<p className="text-sm text-theme-neutral-500">
 						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.DESCRIPTION")}
 					</p>
 				</div>

@@ -32,7 +32,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
 		<AnchorStyled
 			data-testid="Link"
 			isExternal={isExternal!}
-			className="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+			className="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
 			rel={isExternal ? "noopener noreferrer" : rel}
 			ref={ref}
 			onClick={(event) => {

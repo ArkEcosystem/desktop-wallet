@@ -96,22 +96,22 @@ export const WalletVote = ({ wallet, onButtonClick }: WalletVoteProps) => {
 					</div>
 
 					<div className="flex flex-col justify-between mr-8 ml-4 h-full">
-						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.DELEGATE")}</span>
+						<span className="text-sm font-semibold text-theme-neutral-500">{t("COMMON.DELEGATE")}</span>
 
 						<Address walletName={delegate.username()} />
 					</div>
 
 					<div className="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800">
-						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.STATUS")}</span>
+						<span className="text-sm font-semibold text-theme-neutral-500">{t("COMMON.STATUS")}</span>
 
 						{rank ? (
 							<Tooltip content={`#${rank}`} placement="right">
 								<span>
-									<Icon name="StatusOk" className="text-theme-success" width={20} height={20} />
+									<Icon name="StatusOk" className="text-theme-success-600" width={20} height={20} />
 								</span>
 							</Tooltip>
 						) : (
-							<Icon name="StatusPending" className="text-theme-warning" width={20} height={20} />
+							<Icon name="StatusPending" className="text-theme-warning-600" width={20} height={20} />
 						)}
 					</div>
 

@@ -25,7 +25,7 @@ export const InputCounter = React.forwardRef<HTMLInputElement, Props>((props: Pr
 			/>
 			<InputAddonEnd
 				data-testid="InputCounter__counter"
-				className="px-2 text-sm pointer-events-none text-theme-neutral"
+				className="px-2 text-sm pointer-events-none text-theme-neutral-500"
 			>
 				{length}/{props.maxLengthLabel}
 			</InputAddonEnd>

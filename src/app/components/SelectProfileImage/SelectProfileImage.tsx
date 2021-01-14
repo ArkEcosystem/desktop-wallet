@@ -65,7 +65,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 	return (
 		<div className={`group space-y-2 ${className}`}>
 			{showLabel && (
-				<span className="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text">
+				<span className="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text">
 					{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
 				</span>
 			)}
@@ -128,7 +128,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 									>
 										<Icon
 											name="Upload"
-											className="text-theme-primary dark:text-theme-neutral-200"
+											className="text-theme-primary-600 dark:text-theme-neutral-200"
 											width={24}
 											height={18}
 										/>

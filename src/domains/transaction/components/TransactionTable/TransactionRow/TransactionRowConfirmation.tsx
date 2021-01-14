@@ -35,8 +35,8 @@ export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: 
 	};
 
 	const iconStyle = {
-		confirmed: "text-theme-success",
-		pending: "text-theme-warning",
+		confirmed: "text-theme-success-600",
+		pending: "text-theme-warning-600",
 		actionRequired: "text-theme-danger-400",
 	};
 

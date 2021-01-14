@@ -29,7 +29,7 @@ export const FilterWallets = ({
 				<div className="font-semibold text-theme-secondary-text">
 					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.TITLE")}
 				</div>
-				<div className="mt-1 text-sm text-theme-neutral">
+				<div className="mt-1 text-sm text-theme-neutral-500">
 					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.DESCRIPTION")}
 				</div>
 			</div>
@@ -71,7 +71,7 @@ export const FilterWallets = ({
 					/>
 				</div>
 
-				<div className="pr-12 mt-1 text-sm text-theme-neutral">
+				<div className="pr-12 mt-1 text-sm text-theme-neutral-500">
 					{t("DASHBOARD.FILTER_WALLETS.WALLETS.DESCRIPTION")}
 				</div>
 			</div>
@@ -93,7 +93,7 @@ export const FilterWallets = ({
 							/>
 						</div>
 
-						<div className="pr-12 mt-1 text-sm text-theme-neutral">
+						<div className="pr-12 mt-1 text-sm text-theme-neutral-500">
 							{t("DASHBOARD.FILTER_WALLETS.TRANSACTION_HISTORY.DESCRIPTION")}
 						</div>
 					</div>

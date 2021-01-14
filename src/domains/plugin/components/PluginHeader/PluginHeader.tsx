@@ -56,7 +56,7 @@ export const PluginHeader = ({ name, author, category, url, rating, version, siz
 					<div className="flex justify-between items-center">
 						<div className="flex flex-col">
 							<span className="text-2xl font-bold">{name}</span>
-							<span className="text-medium text-theme-neutral">
+							<span className="text-medium text-theme-neutral-500">
 								Use the ARK Mainnet explorer directly within the wallet
 							</span>
 						</div>

@@ -98,7 +98,7 @@ export const SecondStep = ({ profile }: { profile: Profile }) => {
 					/>
 				</div>
 
-				<div className="pr-12 mt-1 text-sm text-theme-neutral">
+				<div className="pr-12 mt-1 text-sm text-theme-neutral-500">
 					{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.DESCRIPTION")}
 				</div>
 			</div>

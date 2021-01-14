@@ -24,7 +24,7 @@ export const LedgerWaitingDevice = ({
 	return (
 		<Modal title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")} isOpen={isOpen} onClose={() => onClose(false)}>
 			<div className="mt-8 space-y-8">
-				<div className="text-center text-theme-neutral-dark" data-testid="LedgerWaitingDevice-description">
+				<div className="text-center text-theme-neutral-700" data-testid="LedgerWaitingDevice-description">
 					{t("WALLETS.MODAL_LEDGER_WALLET.CONNECT_DEVICE")}
 				</div>
 

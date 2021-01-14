@@ -39,7 +39,7 @@ const LinkItem = ({ link }: { link: ProviderEntityLink }) => (
 	<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 dark:border-theme-neutral-800 first:border-0">
 		<div className="flex flex-1 justify-between">
 			<div>
-				<div className="text-sm font-semibold text-theme-neutral">{link.displayName}</div>
+				<div className="text-sm font-semibold text-theme-neutral-500">{link.displayName}</div>
 
 				<Link to={link.value} className="inline-block mt-1 font-semibold link">
 					{link.value}
@@ -76,14 +76,14 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 							name="ChevronUp"
 							width={10}
 							height={10}
-							className="flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
+							className="flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
 						/>
 					) : (
 						<Icon
 							name="ChevronDown"
 							width={10}
 							height={10}
-							className="flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+							className="flex justify-center items-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
 						/>
 					)}
 				</div>

@@ -60,7 +60,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 					</div>
 				) : (
 					<div className="flex mx-auto w-6 h-6">
-						<div className="m-auto text-theme-neutral">
+						<div className="m-auto text-theme-neutral-500">
 							<Icon name="Dash" width={15} height={15} />
 						</div>
 					</div>

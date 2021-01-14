@@ -46,7 +46,7 @@ export const Splash = ({ year }: any) => {
 								}
 								strokeWidth={2}
 								size={40}
-								progressColor="var(--theme-color-primary)"
+								progressColor="var(--theme-color-primary-600)"
 							/>
 						</div>
 					</div>

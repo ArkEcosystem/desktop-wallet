@@ -135,7 +135,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 				) : (
 					<>
 						<Circle size="lg" className="border-theme-neutral-300 dark:border-theme-neutral-800" noShadow />
-						<span className="text-theme-neutral-light">{t("COMMON.NOT_AVAILABLE")}</span>
+						<span className="text-theme-neutral-400">{t("COMMON.NOT_AVAILABLE")}</span>
 					</>
 				)}
 			</TableCell>
@@ -148,7 +148,11 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 					<TableCell innerClassName="justify-center">
 						{hasVotes && (
-							<Icon name="Msq" className="text-xl text-theme-primary" data-testid="AddressRow__profile" />
+							<Icon
+								name="Msq"
+								className="text-xl text-theme-primary-600"
+								data-testid="AddressRow__profile"
+							/>
 						)}
 					</TableCell>
 
@@ -156,7 +160,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 						{hasVotes && (
 							<Icon
 								name="StatusOk"
-								className="text-theme-success"
+								className="text-theme-success-600"
 								width={22}
 								height={22}
 								data-testid="AddressRow__status"
@@ -166,7 +170,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 				</>
 			) : (
 				<TableCell>
-					<div className="font-bold text-theme-neutral-light">
+					<div className="font-bold text-theme-neutral-400">
 						<span className="text-theme-secondary-text">{hasVotes ? votes.length : "0"}</span>
 						<span>/{maxVotes}</span>
 					</div>

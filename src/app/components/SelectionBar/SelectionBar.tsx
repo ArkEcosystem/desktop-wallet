@@ -20,7 +20,7 @@ const SelectionBarOptionStyled = styled.button`
 		padding: 0.6875rem 1.25rem 0.625rem;
 	}
 	&[aria-checked="true"] {
-		${tw`text-theme-success border-theme-success bg-theme-success-contrast font-semibold`}
+		${tw`text-theme-success-600 border-theme-success-600 bg-theme-success-100 font-semibold`}
 	}
 	& + &:after {
 		content: "";

@@ -14,7 +14,7 @@ export const SearchBarFilters = ({ networks, onNetworkChange, onViewAllNetworks 
 			<div className="py-8 px-11 w-128">
 				<div className="mb-8">
 					<div className="mb-3 font-semibold text-theme-secondary-text">Filter Cryptoasset</div>
-					<div className="text-sm text-theme-neutral">Select the types of cryptoassets</div>
+					<div className="text-sm text-theme-neutral-500">Select the types of cryptoassets</div>
 				</div>
 				<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
 			</div>

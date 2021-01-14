@@ -26,16 +26,16 @@ const Votes = ({ votes }: any) => {
 	let voteDiffColor;
 
 	if (voteDiff === 0) {
-		voteDiffColor = "text-theme-neutral-light";
+		voteDiffColor = "text-theme-neutral-400";
 	} else {
-		voteDiffColor = voteDiff > 0 ? "text-theme-success" : "text-theme-danger-dark";
+		voteDiffColor = voteDiff > 0 ? "text-theme-success-600" : "text-theme-danger-600";
 	}
 
 	return (
 		<div className="flex items-center space-x-2 font-semibold">
 			<span className={voteDiffColor}>{voteDiff > 0 ? `+${voteDiff}` : voteDiff}</span>
-			<Icon className="text-theme-primary-light" name="ChevronUp" width={15} height={15} />
-			<Icon className="text-theme-primary-light" name="ChevronDown" width={15} height={15} />
+			<Icon className="text-theme-primary-200" name="ChevronUp" width={15} height={15} />
+			<Icon className="text-theme-primary-200" name="ChevronDown" width={15} height={15} />
 		</div>
 	);
 };
@@ -49,9 +49,9 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 
 	return (
 		<div className="w-full">
-			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral">
+			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral-500">
 				<span className="text-theme-text">{t("COMMON.SORT_BY")}:</span>
-				<div className="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-light">
+				<div className="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-400">
 					{["Best", "Date", "Most Popular"].map((sortType: string, index: number) => (
 						<span className={`cursor-pointer ${index > 0 ? "pl-3" : null}`} key={index}>
 							{sortBy.type === sortType ? (
@@ -74,7 +74,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 				{comments.map(({ author, score, date, comment, votes, replies }, index: number) => (
 					<div className="flex flex-col mt-5" key={index}>
 						<div className="flex justify-between items-center">
-							<div className="flex relative items-center divide-x divide-theme-neutral-light">
+							<div className="flex relative items-center divide-x divide-theme-neutral-400">
 								<span className="pr-3 text-lg font-semibold">{author}</span>
 
 								<div className="flex items-center px-3 text-sm font-semibold text-theme-warning-400">
@@ -82,7 +82,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 									<span className="ml-1 text-theme-secondary-text">{score}</span>
 								</div>
 
-								<span className="pl-3 text-sm font-semibold text-theme-neutral">
+								<span className="pl-3 text-sm font-semibold text-theme-neutral-500">
 									<TimeAgo date={date} />
 								</span>
 							</div>

@@ -243,7 +243,7 @@ export const Votes = () => {
 					title={t("VOTE.VOTES_PAGE.TITLE")}
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 					extra={
-						<div className="flex items-center space-x-8 text-theme-primary-light">
+						<div className="flex items-center space-x-8 text-theme-primary-200">
 							<HeaderSearchBar
 								placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
 								onSearch={setSearchQuery}

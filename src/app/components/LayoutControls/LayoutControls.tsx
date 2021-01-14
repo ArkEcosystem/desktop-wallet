@@ -12,7 +12,7 @@ export const ControlButton = styled.div<{ isActive?: boolean }>`
 	${tw`flex items-center justify-center transition-colors duration-200 relative w-11 h-9 cursor-pointer`}
 
 	&:after {
-		${tw`transition-opacity duration-200 absolute inset-x-0 bg-theme-danger-contrast dark:bg-theme-danger-700 rounded opacity-0 group-hover:opacity-100`}
+		${tw`transition-opacity duration-200 absolute inset-x-0 bg-theme-danger-100 dark:bg-theme-danger-700 rounded opacity-0 group-hover:opacity-100`}
 		content: "";
 		height: 3px;
 		bottom: -3px;

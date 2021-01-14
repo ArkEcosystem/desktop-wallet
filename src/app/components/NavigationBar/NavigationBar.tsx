@@ -115,7 +115,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 const ButtonWrapper = styled.div`
 	${css`
 		button {
-			${tw`w-12 h-12 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-neutral-600 not-disabled:(hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200)`};
+			${tw`w-12 h-12 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-neutral-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200)`};
 		}
 	`};
 `;

@@ -17,7 +17,7 @@ export const SearchBar = ({ placeholder, className, children, onSearch }: Search
 	const { t } = useTranslation();
 
 	return (
-		<div data-testid="SearchBar" className={`bg-theme-neutral-contrast px-10 pt-8 pb-8 ${className}`}>
+		<div data-testid="SearchBar" className={`bg-theme-neutral-100 px-10 pt-8 pb-8 ${className}`}>
 			<div className="flex items-center py-6 px-10 rounded shadow-xl bg-theme-background">
 				{children ? children : <Icon name="Search" className="mr-8 w-4 text-theme-neutral-300" />}
 

@@ -73,7 +73,7 @@ const RecipientListItem = ({
 			</td>
 
 			<td className="py-6">
-				<div className="mb-1 text-sm font-semibold text-theme-neutral">
+				<div className="mb-1 text-sm font-semibold text-theme-neutral-500">
 					<span>
 						{label || t("COMMON.RECIPIENT")} #{listIndex}
 					</span>
@@ -89,7 +89,7 @@ const RecipientListItem = ({
 
 			{showAmount && (
 				<td className="py-6">
-					<div className="mb-1 text-sm font-semibold text-right text-theme-neutral">
+					<div className="mb-1 text-sm font-semibold text-right text-theme-neutral-500">
 						<span>{t("COMMON.AMOUNT")}</span>
 					</div>
 					<div className="font-bold text-right text-theme-neutral-800">

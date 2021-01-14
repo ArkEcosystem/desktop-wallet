@@ -111,13 +111,13 @@ export const WalletListItem = ({
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
-			<TableCell variant={hasActions ? "middle" : "end"} innerClassName="justify-end text-theme-neutral-light">
+			<TableCell variant={hasActions ? "middle" : "end"} innerClassName="justify-end text-theme-neutral-400">
 				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
 			</TableCell>
 
 			{hasActions && (
 				<TableCell variant="end">
-					<div className="text-theme-neutral-light hover:text-theme-neutral">
+					<div className="text-theme-neutral-400 hover:text-theme-neutral-500">
 						<Dropdown options={actions} onSelect={handleAction} />
 					</div>
 				</TableCell>

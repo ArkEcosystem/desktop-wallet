@@ -75,7 +75,7 @@ export const FormStep = ({
 							value={minParticipants ?? 0}
 							onChange={handleInput}
 						/>
-						<InputAddonEnd className="pr-4 pointer-events-none text-theme-neutral-light">
+						<InputAddonEnd className="pr-4 pointer-events-none text-theme-neutral-400">
 							{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
 								length: Math.max(2, participants?.length || 0),
 							})}

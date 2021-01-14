@@ -16,14 +16,12 @@ export const ThirdStep = () => {
 				<div className="flex-1">
 					<div className="flex flex-col justify-around h-full">
 						<div>
-							<p className="text-sm font-semibold text-theme-neutral-light">{t("COMMON.PLUGIN")}</p>
+							<p className="text-sm font-semibold text-theme-neutral-400">{t("COMMON.PLUGIN")}</p>
 							<p className="text-lg font-semibold text-theme-black">ARK Explorer</p>
 						</div>
 						<div className="flex justify-between">
 							<span>
-								<p className="text-sm font-semibold text-theme-neutral-light">
-									{t("COMMON.DOWNLOADED")}
-								</p>
+								<p className="text-sm font-semibold text-theme-neutral-400">{t("COMMON.DOWNLOADED")}</p>
 								<p className="font-bold text-theme-secondary-text">{t("COMMON.COMPLETED")}</p>
 							</span>
 							<div className="">
@@ -31,15 +29,15 @@ export const ThirdStep = () => {
 									size="lg"
 									className="relative z-10 bg-theme-background border-theme-neutral-300 dark:border-theme-neutral-800"
 								>
-									<span className="text-theme-success">
+									<span className="text-theme-success-600">
 										<Icon name="Checkmark" width={28} height={28} />
 									</span>
 								</Circle>
 								<Circle
 									size="lg"
-									className="relative z-0 -ml-1 bg-theme-background border-theme-success"
+									className="relative z-0 -ml-1 bg-theme-background border-theme-success-600"
 								>
-									<span className="text-xs font-semibold text-theme-success">100%</span>
+									<span className="text-xs font-semibold text-theme-success-600">100%</span>
 								</Circle>
 							</div>
 						</div>

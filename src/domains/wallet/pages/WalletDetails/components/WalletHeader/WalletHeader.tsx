@@ -186,7 +186,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 									coin={wallet.coinId()}
 									network={wallet.networkId()}
 									size="lg"
-									className="border-theme-neutral-dark text-theme-secondary-text"
+									className="border-theme-neutral-700 text-theme-secondary-text"
 									noShadow
 								/>
 								<Avatar size="lg" address={wallet.address()} shadowColor="--theme-color-neutral-900" />
@@ -206,7 +206,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 												<span data-testid="WalletHeader__ledger">
 													<Icon
 														name="Ledger"
-														className="hover:text-theme-neutral"
+														className="hover:text-theme-neutral-500"
 														width={16}
 														height={16}
 													/>
@@ -219,7 +219,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 												<span data-testid="WalletHeader__multisig">
 													<Icon
 														name="Multisig"
-														className="hover:text-theme-neutral"
+														className="hover:text-theme-neutral-500"
 														width={20}
 														height={20}
 													/>
@@ -241,7 +241,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 										>
 											<Icon
 												name="CopyAddress"
-												className="hover:text-theme-neutral"
+												className="hover:text-theme-neutral-500"
 												width={13}
 												height={21}
 											/>
@@ -253,7 +253,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 										>
 											<Icon
 												name="CopyKey"
-												className="hover:text-theme-neutral"
+												className="hover:text-theme-neutral-500"
 												width={17}
 												height={21}
 											/>
@@ -280,7 +280,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 									{!!currencyDelta && (
 										<span
 											className={`inline-flex items-center ml-2 ${
-												currencyDelta > 0 ? "text-theme-success" : "text-theme-danger"
+												currencyDelta > 0 ? "text-theme-success-600" : "text-theme-danger-500"
 											}`}
 										>
 											<Icon
@@ -305,7 +305,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 								<Button
 									size="icon"
 									variant="transparent"
-									className="w-11 h-11 text-theme-secondary-text hover:text-theme-neutral"
+									className="w-11 h-11 text-theme-secondary-text hover:text-theme-neutral-500"
 									data-testid="WalletHeader__star-button"
 									onClick={handleStar}
 								>

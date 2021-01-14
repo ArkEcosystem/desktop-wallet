@@ -25,10 +25,6 @@ module.exports = {
 			"theme-text": "var(--theme-text-color)",
 			"theme-secondary-text": "var(--theme-secondary-text-color)",
 
-			"theme-primary": "var(--theme-color-primary)",
-			"theme-primary-contrast": "var(--theme-color-primary-contrast)",
-			"theme-primary-dark": "var(--theme-color-primary-dark)",
-			"theme-primary-light": "var(--theme-color-primary-light)",
 			"theme-primary-50": "var(--theme-color-primary-50)",
 			"theme-primary-100": "var(--theme-color-primary-100)",
 			"theme-primary-200": "var(--theme-color-primary-200)",
@@ -40,10 +36,6 @@ module.exports = {
 			"theme-primary-800": "var(--theme-color-primary-800)",
 			"theme-primary-900": "var(--theme-color-primary-900)",
 
-			"theme-success": "var(--theme-color-success)",
-			"theme-success-contrast": "var(--theme-color-success-contrast)",
-			"theme-success-dark": "var(--theme-color-success-dark)",
-			"theme-success-light": "var(--theme-color-success-light)",
 			"theme-success-50": "var(--theme-color-success-50)",
 			"theme-success-100": "var(--theme-color-success-100)",
 			"theme-success-200": "var(--theme-color-success-200)",
@@ -55,10 +47,6 @@ module.exports = {
 			"theme-success-800": "var(--theme-color-success-800)",
 			"theme-success-900": "var(--theme-color-success-900)",
 
-			"theme-warning": "var(--theme-color-warning)",
-			"theme-warning-contrast": "var(--theme-color-warning-contrast)",
-			"theme-warning-dark": "var(--theme-color-warning-dark)",
-			"theme-warning-light": "var(--theme-color-warning-light)",
 			"theme-warning-50": "var(--theme-color-warning-50)",
 			"theme-warning-100": "var(--theme-color-warning-100)",
 			"theme-warning-200": "var(--theme-color-warning-200)",
@@ -70,10 +58,6 @@ module.exports = {
 			"theme-warning-800": "var(--theme-color-warning-800)",
 			"theme-warning-900": "var(--theme-color-warning-900)",
 
-			"theme-danger": "var(--theme-color-danger)",
-			"theme-danger-contrast": "var(--theme-color-danger-contrast)",
-			"theme-danger-dark": "var(--theme-color-danger-dark)",
-			"theme-danger-light": "var(--theme-color-danger-light)",
 			"theme-danger-50": "var(--theme-color-danger-50)",
 			"theme-danger-100": "var(--theme-color-danger-100)",
 			"theme-danger-200": "var(--theme-color-danger-200)",
@@ -85,10 +69,6 @@ module.exports = {
 			"theme-danger-800": "var(--theme-color-danger-800)",
 			"theme-danger-900": "var(--theme-color-danger-900)",
 
-			"theme-hint": "var(--theme-color-hint)",
-			"theme-hint-contrast": "var(--theme-color-hint-100)",
-			"theme-hint-dark": "var(--theme-color-hint-600)",
-			"theme-hint-light": "var(--theme-color-hint-200)",
 			"theme-hint-50": "var(--theme-color-hint-50)",
 			"theme-hint-100": "var(--theme-color-hint-100)",
 			"theme-hint-200": "var(--theme-color-hint-200)",
@@ -100,10 +80,6 @@ module.exports = {
 			"theme-hint-800": "var(--theme-color-hint-800)",
 			"theme-hint-900": "var(--theme-color-hint-900)",
 
-			"theme-neutral": "var(--theme-color-neutral)",
-			"theme-neutral-contrast": "var(--theme-color-neutral-contrast)",
-			"theme-neutral-dark": "var(--theme-color-neutral-dark)",
-			"theme-neutral-light": "var(--theme-color-neutral-light)",
 			"theme-neutral-50": "var(--theme-color-neutral-50)",
 			"theme-neutral-100": "var(--theme-color-neutral-100)",
 			"theme-neutral-200": "var(--theme-color-neutral-200)",
@@ -202,7 +178,7 @@ module.exports = {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
 			},
 			borderColor: (theme) => ({
-				default: theme("colors.theme-neutral-light"),
+				default: theme("colors.theme-neutral-400"),
 			}),
 			boxShadow: {
 				xs: `0 0 0 1px rgba(var(--theme-shadow-color), var(--theme-shadow-opacity-xs))`,

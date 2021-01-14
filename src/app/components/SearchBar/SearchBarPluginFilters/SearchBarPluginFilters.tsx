@@ -38,7 +38,7 @@ const RatingsCheckboxes = ({ ratings, suffixLabel, value, onChange }: any) => (
 		{ratings &&
 			ratings.map((rating: number) => (
 				<label
-					className="block flex items-center px-2 pb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+					className="block flex items-center px-2 pb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-100"
 					key={rating}
 				>
 					<span>
@@ -80,7 +80,7 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 			{categories &&
 				categories.map((category: Category, index: number) => (
 					<label
-						className="block flex items-center px-2 pb-1 mb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+						className="block flex items-center px-2 pb-1 mb-1 space-x-2 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-100"
 						key={index}
 					>
 						<span>
@@ -157,7 +157,7 @@ export const SearchBarPluginFilters = ({
 				}
 			>
 				<div className="py-4 px-6 w-64">
-					<label className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast">
+					<label className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-100">
 						<span>
 							<Checkbox
 								name="claim"

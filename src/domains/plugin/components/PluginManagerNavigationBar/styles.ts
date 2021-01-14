@@ -6,7 +6,7 @@ export const defaultStyle = `
         border-bottom: 3px solid transparent;
 
         &:hover, &.active {
-            border-bottom-color: var(--theme-color-primary);
+            border-bottom-color: var(--theme-color-primary-600);
             color: var(--theme-text-color);
         }
 

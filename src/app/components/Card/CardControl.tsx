@@ -21,7 +21,7 @@ const Input = styled.input`
 const CustomCard = styled(Card)`
 	${tw`transition-colors duration-200`}
 	${Input}:checked + & {
-		${tw`bg-theme-success-contrast border-theme-success`}
+		${tw`bg-theme-success-100 border-theme-success-600`}
 	}
 	${Input}:disabled + & {
 		${tw`cursor-not-allowed`}
@@ -31,7 +31,7 @@ const CustomCard = styled(Card)`
 const StateStyle = styled.div`
 	${tw`inline-flex items-center justify-center w-4 h-4 text-transparent border-2 rounded-full border-theme-primary-100 dark:border-theme-neutral-800`}
 	${Input}:checked + ${CustomCard} & {
-		${tw`border-transparent bg-theme-success text-theme-success-contrast`}
+		${tw`border-transparent bg-theme-success-600 text-theme-success-100`}
 	}
 `;
 
