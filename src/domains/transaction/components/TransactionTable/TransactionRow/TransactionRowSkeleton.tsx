@@ -25,15 +25,15 @@ export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn, ...
 
 	return (
 		<TableRow>
-			<TableCell variant="start" noHover>
+			<TableCell variant="start">
 				<Skeleton width={16} height={16} />
 			</TableCell>
 
-			<TableCell noHover>
+			<TableCell>
 				<Skeleton height={16} width={150} />
 			</TableCell>
 
-			<TableCell noHover>
+			<TableCell>
 				<div className="flex items-center mr-4 -space-x-1">
 					<Circle className="border-transparent" size="lg">
 						<Skeleton circle height={44} width={44} />
@@ -46,15 +46,15 @@ export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn, ...
 				<Skeleton height={16} width={recipientWidth} />
 			</TableCell>
 
-			<TableCell innerClassName="justify-center" noHover>
+			<TableCell innerClassName="justify-center">
 				<span className="flex items-center space-x-2">{infoIcons}</span>
 			</TableCell>
 
-			<TableCell innerClassName="justify-center" noHover>
+			<TableCell innerClassName="justify-center">
 				<Skeleton circle width={22} height={22} />
 			</TableCell>
 
-			<TableCell innerClassName="justify-end" noHover>
+			<TableCell innerClassName="justify-end">
 				<span className="flex items-center px-2 space-x-1 h-7 rounded border border-theme-neutral-300 dark:border-theme-neutral-800">
 					<Skeleton height={16} width={amountWidth} />
 					<Skeleton height={16} width={35} />
@@ -62,13 +62,13 @@ export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn, ...
 			</TableCell>
 
 			{showSignColumn && (
-				<TableCell variant="end" innerClassName="justify-end" noHover>
+				<TableCell variant="end" innerClassName="justify-end">
 					<Skeleton height={44} width={100} />
 				</TableCell>
 			)}
 
 			{showCurrencyColumn && (
-				<TableCell variant="end" innerClassName="justify-end" noHover>
+				<TableCell variant="end" innerClassName="justify-end">
 					<span className="flex items-center space-x-1">
 						<Skeleton height={16} width={currencyWidth} />
 						<Skeleton height={16} width={35} />
