@@ -19,7 +19,7 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="text-theme-secondary-text hover:text-theme-primary">
+		<div className="text-theme-secondary-text hover:text-theme-primary-600">
 			<div className="flex items-center mb-2 space-x-2">
 				<div className="font-normal transition-colors duration-100 text-md">
 					{t("TRANSACTION.SINGLE_OR_MULTI")}
@@ -246,7 +246,7 @@ export const AddRecipient = ({
 										});
 										singleRecipientOnChange(remainingBalance.toString(), recipientAddress);
 									}}
-									className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
+									className="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
 								>
 									{t("TRANSACTION.SEND_ALL")}
 								</button>
@@ -278,7 +278,7 @@ export const AddRecipient = ({
 			</SubForm>
 
 			{!isSingle && addedRecipients.length > 0 && (
-				<div className="mt-3 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
+				<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 					<RecipientList
 						recipients={addedRecipients}
 						isEditable={true}

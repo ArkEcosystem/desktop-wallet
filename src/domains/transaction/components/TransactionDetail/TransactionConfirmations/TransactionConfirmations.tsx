@@ -15,7 +15,7 @@ export const TransactionConfirmations = ({ isConfirmed, confirmations }: Transac
 	const { t } = useTranslation();
 
 	const renderConfirmationStatus = (isConfirmed: boolean, confirmations: BigNumber) => {
-		const confirmationStatusStyle = isConfirmed ? "text-theme-success" : "text-theme-warning";
+		const confirmationStatusStyle = isConfirmed ? "text-theme-success-600" : "text-theme-warning-600";
 
 		if (isConfirmed) {
 			return (

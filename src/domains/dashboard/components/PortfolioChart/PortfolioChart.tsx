@@ -34,7 +34,7 @@ export const PortfolioChart = memo(({ profile, isVisible = true, showChartAnimat
 
 			{!profile.balance().isZero() && (
 				<>
-					<div className="pt-6 mb-2 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="pt-6 mb-2 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 					<PercentageBar title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")} data={percentages} />
 				</>

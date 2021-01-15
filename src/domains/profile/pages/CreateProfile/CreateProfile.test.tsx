@@ -12,10 +12,6 @@ import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
 
-jest.mock("fs", () => ({
-	readFileSync: jest.fn(() => "avatarImage"),
-}));
-
 let env: Environment;
 let showOpenDialogMock: jest.SpyInstance;
 
@@ -51,6 +47,10 @@ const renderComponent = async () => {
 	await waitFor(() => expect(result.getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 	return result;
 };
+
+jest.mock("fs", () => ({
+	readFileSync: jest.fn(() => "avatarImage"),
+}));
 
 describe("CreateProfile", () => {
 	beforeAll(() => {

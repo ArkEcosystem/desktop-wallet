@@ -39,7 +39,7 @@ export const FilterNetwork = ({ networks = [], onChange, onViewAll, hideViewAll,
 
 	return (
 		<div data-testid="FilterNetwork">
-			{title && <div className="mb-2 text-sm font-bold text-theme-neutral-400">{title}</div>}
+			{title && <div className="mb-2 text-sm font-bold text-theme-secondary-400">{title}</div>}
 
 			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
 

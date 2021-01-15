@@ -14,19 +14,19 @@
 }
 
 .tippy-box[data-theme~="light"] {
-	background-color: var(--theme-color-neutral-900);
+	background-color: var(--theme-color-secondary-900);
 	color: var(--theme-white);
 }
 
 .tippy-box[data-theme~="light"] .tippy-arrow {
-	color: var(--theme-color-neutral-900);
+	color: var(--theme-color-secondary-900);
 }
 
 .tippy-box[data-theme~="dark"] {
-	background-color: var(--theme-color-neutral-700);
-	color: var(--theme-color-neutral-200);
+	background-color: var(--theme-color-secondary-700);
+	color: var(--theme-color-secondary-200);
 }
 
 .tippy-box[data-theme~="dark"] .tippy-arrow {
-	color: var(--theme-color-neutral-700);
+	color: var(--theme-color-secondary-700);
 }

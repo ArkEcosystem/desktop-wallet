@@ -142,7 +142,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 				</SubForm>
 			</FormProvider>
 
-			<div className="mt-3 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
+			<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 				<RecipientList
 					recipients={participants}
 					assetSymbol={wallet.network().ticker()}

@@ -13,7 +13,7 @@ exports[`ListDivided should render an empty list divided 1`] = `
 exports[`ListDivided should render an list divided with items 1`] = `
 <DocumentFragment>
   <ul
-    class="sc-bdfBwQ eJLBrZ"
+    class="sc-bdfBwQ egSpFB"
     data-testid="list-divided__items"
   >
     <li
@@ -38,7 +38,7 @@ exports[`ListDivided should render an list divided with items 1`] = `
             </span>
           </div>
           <span
-            class="text-sm font-medium text-theme-neutral"
+            class="text-sm font-medium text-theme-secondary-500"
             data-testid="list-divided-item__label--description"
           >
             Select Profile Image
@@ -53,10 +53,10 @@ exports[`ListDivided should render an list divided with items 1`] = `
           class="flex flex-row mt-2"
         >
           <div
-            class="flex justify-center items-center mr-6 w-24 h-24 rounded border-2 border-dashed border-theme-neutral"
+            class="flex justify-center items-center mr-6 w-24 h-24 rounded border-2 border-dashed border-theme-secondary-500"
           />
           <div
-            class="relative w-24 h-24 rounded bg-theme-neutral"
+            class="relative w-24 h-24 rounded bg-theme-secondary-500"
           >
             <img
               alt="random avatar"

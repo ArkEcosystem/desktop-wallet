@@ -2,22 +2,19 @@
 
 exports[`App should close splash screen if not demo 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="RouterView__Wrapper-sef01e-0"
-      data-testid="RouterView__wrapper"
+  <div>
+    <main
+      data-testid="Main"
     >
+      <div
+        class="Toastify"
+      />
       <div
         class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 dKKWCT"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -86,7 +83,7 @@ exports[`App should close splash screen if not demo 1`] = `
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
                   <button
-                    class="Button-mdtvtf-0 ifPnXw mt-2 md:mt-0"
+                    class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
                     type="button"
                   >
                     Create Profile
@@ -97,8 +94,8 @@ exports[`App should close splash screen if not demo 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;
 
@@ -113,7 +110,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dKKWCT"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
       >
         <div
           class="px-4 sm:px-6 lg:px-10"
@@ -169,7 +166,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
               </p>
             </div>
             <button
-              class="Button-mdtvtf-0 cvPqli mt-8"
+              class="Button-mdtvtf-0 dqPArR mt-8"
               data-testid="ApplicationError__button--reload"
               type="button"
             >
@@ -185,22 +182,19 @@ exports[`App should render application error if the app fails to boot 1`] = `
 
 exports[`App should render mock 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="RouterView__Wrapper-sef01e-0"
-      data-testid="RouterView__wrapper"
+  <div>
+    <main
+      data-testid="Main"
     >
+      <div
+        class="Toastify"
+      />
       <div
         class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 dKKWCT"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -272,7 +266,7 @@ exports[`App should render mock 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -303,7 +297,7 @@ exports[`App should render mock 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Name
                               </p>
@@ -326,7 +320,7 @@ exports[`App should render mock 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Total balance
                               </p>
@@ -353,7 +347,7 @@ exports[`App should render mock 1`] = `
                               class="flex overflow-hidden justify-center w-4"
                             >
                               <div
-                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                 height="1em"
                                 width="1em"
                               >
@@ -371,7 +365,7 @@ exports[`App should render mock 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -402,7 +396,7 @@ exports[`App should render mock 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Name
                               </p>
@@ -425,12 +419,12 @@ exports[`App should render mock 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Total balance
                               </p>
                               <span
-                                class="font-semibold text-theme-neutral-700"
+                                class="font-semibold text-theme-secondary-700"
                               >
                                 N/A
                               </span>
@@ -451,7 +445,7 @@ exports[`App should render mock 1`] = `
                               class="flex overflow-hidden justify-center w-4"
                             >
                               <div
-                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                 height="1em"
                                 width="1em"
                               >
@@ -470,7 +464,7 @@ exports[`App should render mock 1`] = `
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
                   <button
-                    class="Button-mdtvtf-0 ifPnXw mt-2 md:mt-0"
+                    class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
                     type="button"
                   >
                     Create Profile
@@ -481,29 +475,26 @@ exports[`App should render mock 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`App should render splash screen 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="RouterView__Wrapper-sef01e-0"
-      data-testid="RouterView__wrapper"
+  <div>
+    <main
+      data-testid="Main"
     >
+      <div
+        class="Toastify"
+      />
       <div
         class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 dKKWCT"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -575,7 +566,7 @@ exports[`App should render splash screen 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -606,7 +597,7 @@ exports[`App should render splash screen 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Name
                               </p>
@@ -629,7 +620,7 @@ exports[`App should render splash screen 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Total balance
                               </p>
@@ -656,7 +647,7 @@ exports[`App should render splash screen 1`] = `
                               class="flex overflow-hidden justify-center w-4"
                             >
                               <div
-                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                 height="1em"
                                 width="1em"
                               >
@@ -674,7 +665,7 @@ exports[`App should render splash screen 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -705,7 +696,7 @@ exports[`App should render splash screen 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Name
                               </p>
@@ -728,12 +719,12 @@ exports[`App should render splash screen 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Total balance
                               </p>
                               <span
-                                class="font-semibold text-theme-neutral-700"
+                                class="font-semibold text-theme-secondary-700"
                               >
                                 N/A
                               </span>
@@ -754,7 +745,7 @@ exports[`App should render splash screen 1`] = `
                               class="flex overflow-hidden justify-center w-4"
                             >
                               <div
-                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                 height="1em"
                                 width="1em"
                               >
@@ -773,7 +764,7 @@ exports[`App should render splash screen 1`] = `
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
                   <button
-                    class="Button-mdtvtf-0 ifPnXw mt-2 md:mt-0"
+                    class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
                     type="button"
                   >
                     Create Profile
@@ -784,105 +775,104 @@ exports[`App should render splash screen 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`App should render the offline screen if there is no internet connection 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  <div>
+    <main
+      data-testid="Main"
     >
-      <nav
-        aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 dKKWCT"
-      >
-        <div
-          class="px-4 sm:px-6 lg:px-10"
-        >
-          <div
-            class="flex relative justify-between h-20 md:h-24"
-          >
-            <div
-              class="flex items-center my-auto"
-            >
-              <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
-              >
-                <svg
-                  width="48"
-                >
-                  ark-logo.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
       <div
-        class="flex flex-col flex-1 "
-      >
-        <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
-        >
-          <div
-            class="container py-16 px-14 mx-auto"
-          >
-            <div
-              class="sm:mx-auto sm:w-full sm:max-w-md"
-            >
-              <svg>
-                cannot-connect-banner.svg
-              </svg>
-            </div>
-            <div
-              class="mt-8"
-              data-testid="Offline__text"
-            >
-              <h2
-                class="text-2xl font-bold"
-              >
-                Cannot Connect
-              </h2>
-              <p
-                class="text-theme-secondary-text"
-              >
-                Check your internet connection if it doesn't work, check it again.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</DocumentFragment>
-`;
-
-exports[`App should render welcome screen after splash screen 1`] = `
-<DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="RouterView__Wrapper-sef01e-0"
-      data-testid="RouterView__wrapper"
-    >
+        class="Toastify"
+      />
       <div
         class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
         <nav
           aria-labelledby="main menu"
-          class="NavigationBar__NavWrapper-sc-1qsoskw-0 dKKWCT"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+        >
+          <div
+            class="px-4 sm:px-6 lg:px-10"
+          >
+            <div
+              class="flex relative justify-between h-20 md:h-24"
+            >
+              <div
+                class="flex items-center my-auto"
+              >
+                <div
+                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                >
+                  <svg
+                    width="48"
+                  >
+                    ark-logo.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="flex flex-col flex-1 "
+        >
+          <div
+            class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+          >
+            <div
+              class="container py-16 px-14 mx-auto"
+            >
+              <div
+                class="sm:mx-auto sm:w-full sm:max-w-md"
+              >
+                <svg>
+                  cannot-connect-banner.svg
+                </svg>
+              </div>
+              <div
+                class="mt-8"
+                data-testid="Offline__text"
+              >
+                <h2
+                  class="text-2xl font-bold"
+                >
+                  Cannot Connect
+                </h2>
+                <p
+                  class="text-theme-secondary-text"
+                >
+                  Check your internet connection if it doesn't work, check it again.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`App should render welcome screen after splash screen 1`] = `
+<DocumentFragment>
+  <div>
+    <main
+      data-testid="Main"
+    >
+      <div
+        class="Toastify"
+      />
+      <div
+        class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+      >
+        <nav
+          aria-labelledby="main menu"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
         >
           <div
             class="px-4 sm:px-6 lg:px-10"
@@ -954,7 +944,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -985,7 +975,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Name
                               </p>
@@ -1008,7 +998,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Total balance
                               </p>
@@ -1035,7 +1025,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="flex overflow-hidden justify-center w-4"
                             >
                               <div
-                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                 height="1em"
                                 width="1em"
                               >
@@ -1053,7 +1043,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     data-testid="ProfileCard"
                   >
                     <div
-                      class="Cardstyles__Wrapper-sc-1uddqgb-0 hacCmA"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
                       data-testid="Card"
                     >
                       <div
@@ -1084,7 +1074,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Name
                               </p>
@@ -1107,12 +1097,12 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
                             >
                               <p
-                                class="text-sm font-semibold text-theme-neutral-700"
+                                class="text-sm font-semibold text-theme-secondary-700"
                               >
                                 Total balance
                               </p>
                               <span
-                                class="font-semibold text-theme-neutral-700"
+                                class="font-semibold text-theme-secondary-700"
                               >
                                 N/A
                               </span>
@@ -1133,7 +1123,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               class="flex overflow-hidden justify-center w-4"
                             >
                               <div
-                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                 height="1em"
                                 width="1em"
                               >
@@ -1152,7 +1142,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                   class="flex flex-col justify-center mt-8 md:space-x-3 md:flex-row"
                 >
                   <button
-                    class="Button-mdtvtf-0 ifPnXw mt-2 md:mt-0"
+                    class="Button-mdtvtf-0 cyPweQ mt-2 md:mt-0"
                     type="button"
                   >
                     Create Profile
@@ -1163,7 +1153,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;

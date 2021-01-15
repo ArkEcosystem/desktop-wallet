@@ -35,7 +35,7 @@ const RecipientListItem = ({
 	if (variant === "condensed") {
 		return (
 			<tr
-				className="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+				className="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 				data-testid="recipient-list__recipient-list-item"
 			>
 				<td className="py-4 w-12">
@@ -65,7 +65,7 @@ const RecipientListItem = ({
 
 	return (
 		<tr
-			className="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+			className="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 			data-testid="recipient-list__recipient-list-item"
 		>
 			<td className="py-6 w-14">
@@ -73,7 +73,7 @@ const RecipientListItem = ({
 			</td>
 
 			<td className="py-6">
-				<div className="mb-1 text-sm font-semibold text-theme-neutral">
+				<div className="mb-1 text-sm font-semibold text-theme-secondary-500">
 					<span>
 						{label || t("COMMON.RECIPIENT")} #{listIndex}
 					</span>
@@ -89,10 +89,10 @@ const RecipientListItem = ({
 
 			{showAmount && (
 				<td className="py-6">
-					<div className="mb-1 text-sm font-semibold text-right text-theme-neutral">
+					<div className="mb-1 text-sm font-semibold text-right text-theme-secondary-500">
 						<span>{t("COMMON.AMOUNT")}</span>
 					</div>
-					<div className="font-bold text-right text-theme-neutral-800">
+					<div className="font-bold text-right text-theme-secondary-800">
 						<Amount ticker={assetSymbol!} value={amount!} showSign />
 					</div>
 				</td>

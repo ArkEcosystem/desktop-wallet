@@ -8,7 +8,7 @@ const Input = styled.input`
 const Handle = styled.div<{ disabled?: boolean }>`
 	height: 5px;
 	width: 30px;
-	${tw`inline-flex rounded-full relative bg-theme-primary-100 dark:bg-theme-neutral-800`}
+	${tw`inline-flex rounded-full relative bg-theme-primary-100 dark:bg-theme-secondary-800`}
 
 	${({ disabled }) => (disabled ? tw`cursor-not-allowed` : tw`cursor-pointer`)}
 `;
@@ -21,10 +21,10 @@ const HandleInner = styled.span<{ disabled?: boolean }>`
 
 	${({ disabled }) =>
 		disabled
-			? tw`bg-theme-primary-100 dark:bg-theme-neutral-800`
+			? tw`bg-theme-primary-100 dark:bg-theme-secondary-800`
 			: css`
 					${Input} ~ ${Handle} & {
-						${tw`bg-theme-neutral-400 dark:bg-theme-neutral-600`}
+						${tw`bg-theme-secondary-400 dark:bg-theme-secondary-600`}
 					}
 
 					${Input}:checked ~ ${Handle} & {

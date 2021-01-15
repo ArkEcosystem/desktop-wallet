@@ -243,14 +243,14 @@ export const Votes = () => {
 					title={t("VOTE.VOTES_PAGE.TITLE")}
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 					extra={
-						<div className="flex items-center space-x-8 text-theme-primary-light">
+						<div className="flex items-center space-x-8 text-theme-primary-200">
 							<HeaderSearchBar
 								placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
 								onSearch={setSearchQuery}
 								onReset={() => setSearchQuery("")}
 								debounceTimeout={100}
 							/>
-							<div className="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+							<div className="mr-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
 							{!selectedAddress ? (
 								<div data-testid="Votes__FilterWallets">
 									<Dropdown

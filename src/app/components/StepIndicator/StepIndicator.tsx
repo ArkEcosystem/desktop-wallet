@@ -15,7 +15,7 @@ const StepStyled = styled.li<{ isActive: boolean }>`
 					${tw`bg-theme-warning-300`}
 			  `
 			: css`
-					${tw`bg-theme-primary-100 dark:bg-theme-neutral-800`}
+					${tw`bg-theme-primary-100 dark:bg-theme-secondary-800`}
 			  `}
 `;
 

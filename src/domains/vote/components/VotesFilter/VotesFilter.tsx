@@ -22,7 +22,7 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 			>
 				<div className="py-4 px-6 w-64">
 					<label
-						className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+						className="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
 						data-testid="VotesFilter__option--all"
 					>
 						<span>
@@ -43,8 +43,8 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 						<label
 							className={`flex items-center block px-2 pb-1 space-x-3 rounded-md ${
 								totalCurrentVotes > 0
-									? "cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
-									: "text-theme-neutral-400"
+									? "cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+									: "text-theme-secondary-400"
 							}`}
 							data-testid="VotesFilter__option--current"
 						>

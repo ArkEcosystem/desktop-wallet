@@ -16,7 +16,7 @@ exports[`WalletUpdate should render 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -72,14 +72,14 @@ exports[`WalletUpdate should render 1`] = `
               class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
             >
               <button
-                class="Button-mdtvtf-0 ifPnXw mt-2 sm:mt-0"
+                class="Button-mdtvtf-0 cyPweQ mt-2 sm:mt-0"
                 data-testid="WalletUpdate__cancel-button"
                 type="button"
               >
                 Update Later
               </button>
               <button
-                class="Button-mdtvtf-0 cvPqli"
+                class="Button-mdtvtf-0 dqPArR"
                 data-testid="WalletUpdate__update-button"
                 type="button"
               >
@@ -124,7 +124,7 @@ exports[`WalletUpdate should render 2st step 1`] = `
         class="flex-1"
       >
         <p
-          class="text-sm font-semibold text-theme-neutral-light"
+          class="text-sm font-semibold text-theme-secondary-400"
         >
           Downloading
         </p>
@@ -154,7 +154,7 @@ exports[`WalletUpdate should render 2st step 1`] = `
                 cy="25"
                 fill="transparent"
                 r="22.5"
-                stroke="var(--theme-color-success)"
+                stroke="var(--theme-color-success-600)"
                 stroke-dasharray="141.3716694115407"
                 stroke-dashoffset="113.09733552923255"
                 stroke-linecap="round"
@@ -183,7 +183,7 @@ exports[`WalletUpdate should render 2st step with progress status 1`] = `
         class="flex-1"
       >
         <p
-          class="text-sm font-semibold text-theme-neutral-light"
+          class="text-sm font-semibold text-theme-secondary-400"
         >
           Downloaded
         </p>
@@ -218,7 +218,7 @@ exports[`WalletUpdate should render 2st step with progress status 1`] = `
                 cy="25"
                 fill="transparent"
                 r="22.5"
-                stroke="var(--theme-color-success)"
+                stroke="var(--theme-color-success-600)"
                 stroke-dasharray="141.3716694115407"
                 stroke-dashoffset="113.09733552923255"
                 stroke-linecap="round"
@@ -229,7 +229,7 @@ exports[`WalletUpdate should render 2st step with progress status 1`] = `
               <text
                 data-testid="CircularProgressBar__percentage"
                 dy="0.3em"
-                fill="var(--theme-color-success)"
+                fill="var(--theme-color-success-600)"
                 font-size="0.8rem"
                 font-weight="600"
                 text-anchor="middle"

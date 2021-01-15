@@ -5,7 +5,7 @@ const baseStyles = () => tw`flex items-center`;
 const getBorder = (border?: boolean, borderPosition?: "top" | "bottom" | "both") =>
 	border
 		? [
-				tw`border-dashed border-theme-neutral-300 dark:border-theme-neutral-800`,
+				tw`border-dashed border-theme-secondary-300 dark:border-theme-secondary-800`,
 				borderPosition === "both"
 					? tw`border-t border-b`
 					: borderPosition === "top"

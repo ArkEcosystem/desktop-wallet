@@ -130,14 +130,14 @@ export const LinkCollection = ({
 							name="ChevronUp"
 							width={10}
 							height={10}
-							className="flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary"
+							className="flex justify-center items-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
 						/>
 					) : (
 						<Icon
 							name="ChevronDown"
 							width={10}
 							height={10}
-							className="flex justify-center items-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+							className="flex justify-center items-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
 						/>
 					)}
 				</div>

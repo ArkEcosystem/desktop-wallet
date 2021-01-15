@@ -6,7 +6,7 @@ exports[`SelectProfileImage should render 1`] = `
     class="group space-y-2 undefined"
   >
     <span
-      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text"
+      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
     >
       Profile Image
     </span>
@@ -14,21 +14,21 @@ exports[`SelectProfileImage should render 1`] = `
       class="flex flex-row"
     >
       <div
-        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-neutral-400 dark:border-theme-neutral-700"
+        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
       >
         <div
           class="overflow-hidden h-full rounded-full"
         >
           <div
-            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 eETCkr"
+            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
           >
             <button
-              class="Button-mdtvtf-0 ifPnXw"
+              class="Button-mdtvtf-0 cyPweQ"
               data-testid="SelectProfileImage__upload-button"
               type="button"
             >
               <div
-                class="sc-bdfBwQ cdgnVS text-theme-primary dark:text-theme-neutral-200"
+                class="sc-bdfBwQ cdgnVS text-theme-primary-600 dark:text-theme-secondary-200"
                 height="18"
                 width="24"
               >

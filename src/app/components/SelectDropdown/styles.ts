@@ -3,8 +3,8 @@ import tw, { styled } from "twin.macro";
 export const SelectToggleButton = styled.button`
 	& {
 		min-height: 50px;
-		${tw`inline-block w-full px-4 py-3 pr-12 text-left transition-colors duration-200 border rounded outline-none appearance-none bg-theme-background text-theme-neutral`}
-		${tw`border-theme-neutral-300 dark:border-theme-neutral-800`}
+		${tw`inline-block w-full px-4 py-3 pr-12 text-left transition-colors duration-200 border rounded outline-none appearance-none bg-theme-background text-theme-secondary-500`}
+		${tw`border-theme-secondary-300 dark:border-theme-secondary-800`}
 	}
 
 	&:focus {
@@ -12,18 +12,18 @@ export const SelectToggleButton = styled.button`
 	}
 
 	&:disabled {
-		${tw`border-theme-neutral-300 dark:border-theme-neutral-800 bg-theme-neutral-contrast text-theme-secondary-text`}
+		${tw`border-theme-secondary-300 dark:border-theme-secondary-800 bg-theme-secondary-100 text-theme-secondary-text`}
 	}
 
 	&.is-open {
-		${tw`border-theme-primary`}
-		box-shadow: 0 0 0 1px var(--theme-color-primary);
+		${tw`border-theme-primary-600`}
+		box-shadow: 0 0 0 1px var(--theme-color-primary-600);
 	}
 
 	&.is-invalid {
-		${tw`border-theme-danger`}
+		${tw`border-theme-danger-500`}
 		&.is-open {
-			box-shadow: 0 0 0 1px var(--theme-color-danger);
+			box-shadow: 0 0 0 1px var(--theme-color-danger-500);
 		}
 	}
 
@@ -42,7 +42,7 @@ export const SelectOptionsList = styled.ul`
 	}
 
 	.select-list-option {
-		${tw`px-10 border-0 text-theme-neutral-800 dark:text-theme-neutral-200 cursor-pointer transition`};
+		${tw`px-10 border-0 text-theme-secondary-800 dark:text-theme-secondary-200 cursor-pointer transition`};
 
 		&__label {
 			${tw`py-4 `};
@@ -50,7 +50,7 @@ export const SelectOptionsList = styled.ul`
 
 		&:not(:last-child) {
 			.select-list-option__label {
-				${tw`border-b border-theme-neutral-300 dark:border-theme-neutral-800`};
+				${tw`border-b border-theme-secondary-300 dark:border-theme-secondary-800`};
 			}
 		}
 
@@ -72,10 +72,10 @@ export const SelectOptionsList = styled.ul`
 		}
 
 		&:hover {
-			${tw`-mt-px bg-theme-neutral-200 dark:bg-theme-primary-600 text-theme-primary dark:text-theme-neutral-200`};
+			${tw`-mt-px bg-theme-secondary-200 dark:bg-theme-primary-600 text-theme-primary-600 dark:text-theme-secondary-200`};
 
 			.select-list-option__label {
-				${tw`border-b border-theme-neutral-200 dark:border-theme-primary-600`};
+				${tw`border-b border-theme-secondary-200 dark:border-theme-primary-600`};
 			}
 		}
 

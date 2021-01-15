@@ -21,10 +21,6 @@ jest.mock("react-router-dom", () => ({
 	}),
 }));
 
-jest.mock("fs", () => ({
-	readFileSync: jest.fn(() => "avatarImage"),
-}));
-
 let profile: Profile;
 let showOpenDialogMock: jest.SpyInstance;
 
@@ -33,6 +29,10 @@ const showOpenDialogParams = {
 	properties: ["openFile"],
 	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 };
+
+jest.mock("fs", () => ({
+	readFileSync: jest.fn(() => "avatarImage"),
+}));
 
 describe("Settings", () => {
 	beforeAll(() => {
