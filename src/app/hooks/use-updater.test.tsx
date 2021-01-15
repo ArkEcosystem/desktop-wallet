@@ -1,29 +1,31 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
+import electron from "electron";
 import React from "react";
 import { env, waitFor } from "utils/testing-library";
 
 import { useUpdater } from "./use-updater";
 
-jest.mock(`electron`, () => {
-	let isUpdateCalled = false;
-	let updateDownloadedCalls = 0;
+describe("useUpdater hook", () => {
+	beforeAll(() => {
+		let isUpdateCalled = false;
+		let updateDownloadedCalls = 0;
 
-	return {
-		ipcRenderer: {
-			invoke: (event: string) => {
-				if (event === "updater:check-for-updates") {
-					const response = {
-						cancellationToken: isUpdateCalled ? null : "1",
-						updateInfo: { version: "3.0.0" },
-					};
-					isUpdateCalled = true;
-					return response;
-				}
-				return true;
-			},
-			on: (evt: any, callback: (evt: any, data?: any) => void) => {
+		jest.spyOn(electron.ipcRenderer, "invoke").mockResolvedValue((event: string) => {
+			if (event === "updater:check-for-updates") {
+				const response = {
+					cancellationToken: isUpdateCalled ? null : "1",
+					updateInfo: { version: "3.0.0" },
+				};
+				isUpdateCalled = true;
+				return response;
+			}
+			return true;
+		});
+
+		jest.spyOn(electron.ipcRenderer, "on").mockImplementation(
+			(evt: any, callback: (evt: any, data?: any) => void) => {
 				if (evt === "updater:download-progress") {
 					callback(evt, { total: 10, percent: 30, transferred: 3 });
 				}
@@ -33,14 +35,13 @@ jest.mock(`electron`, () => {
 					callback(evt);
 				}
 			},
-			handle: jest.fn(),
-			send: jest.fn(),
-			removeListener: jest.fn(),
-		},
-	};
-});
+		);
+	});
 
-describe("useUpdater hook", () => {
+	afterAll(() => {
+		jest.clearAllMocks();
+	});
+
 	it("should handle cancel", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useUpdater(), { wrapper });

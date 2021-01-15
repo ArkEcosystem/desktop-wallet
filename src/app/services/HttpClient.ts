@@ -1,7 +1,7 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
-import { md5 } from "hash-wasm";
 import fetch from "isomorphic-fetch";
 import { SocksProxyAgent } from "socks-proxy-agent";
+import hash from "string-hash";
 import { Primitive } from "type-fest";
 
 import { Cache } from "./Cache";
@@ -39,7 +39,7 @@ export class HttpClient extends Http.Request {
 			url = `${url}?${new URLSearchParams(data.query as any)}`;
 		}
 
-		const cacheKey: string = await md5(`${method}.${url}.${JSON.stringify(data)}`);
+		const cacheKey: string = hash(`${method}.${url}.${JSON.stringify(data)}`).toString();
 
 		return this.cache.remember(cacheKey, async () => {
 			let response;

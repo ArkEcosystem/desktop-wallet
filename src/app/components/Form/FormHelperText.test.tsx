@@ -34,8 +34,8 @@ describe("FormHelperText", () => {
 	});
 
 	it("should not render if nothing is provided", () => {
-		const { asFragment } = render(<FormHelperText />);
-		expect(asFragment()).toMatchInlineSnapshot("<DocumentFragment />");
+		const { container } = render(<FormHelperText />);
+		expect(container).toMatchInlineSnapshot(`<div />`);
 	});
 
 	it("should read data from context", () => {

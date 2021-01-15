@@ -2,16 +2,13 @@
 
 exports[`App should close splash screen if not demo 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="RouterView__Wrapper-sef01e-0"
-      data-testid="RouterView__wrapper"
+  <div>
+    <main
+      data-testid="Main"
     >
+      <div
+        class="Toastify"
+      />
       <div
         class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
@@ -97,8 +94,8 @@ exports[`App should close splash screen if not demo 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;
 
@@ -185,16 +182,13 @@ exports[`App should render application error if the app fails to boot 1`] = `
 
 exports[`App should render mock 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="RouterView__Wrapper-sef01e-0"
-      data-testid="RouterView__wrapper"
+  <div>
+    <main
+      data-testid="Main"
     >
+      <div
+        class="Toastify"
+      />
       <div
         class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
@@ -481,23 +475,20 @@ exports[`App should render mock 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`App should render splash screen 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="RouterView__Wrapper-sef01e-0"
-      data-testid="RouterView__wrapper"
+  <div>
+    <main
+      data-testid="Main"
     >
+      <div
+        class="Toastify"
+      />
       <div
         class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
@@ -784,99 +775,98 @@ exports[`App should render splash screen 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`App should render the offline screen if there is no internet connection 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="flex relative flex-col min-h-screen bg-theme-secondary-background"
+  <div>
+    <main
+      data-testid="Main"
     >
-      <nav
-        aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
+      <div
+        class="Toastify"
+      />
+      <div
+        class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
-        <div
-          class="px-4 sm:px-6 lg:px-10"
+        <nav
+          aria-labelledby="main menu"
+          class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
         >
           <div
-            class="flex relative justify-between h-20 md:h-24"
+            class="px-4 sm:px-6 lg:px-10"
           >
             <div
-              class="flex items-center my-auto"
+              class="flex relative justify-between h-20 md:h-24"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
+                class="flex items-center my-auto"
               >
-                <svg
-                  width="48"
+                <div
+                  class="NavigationBar__LogoContainer-sc-1qsoskw-2 dCvhsI"
                 >
-                  ark-logo.svg
+                  <svg
+                    width="48"
+                  >
+                    ark-logo.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="flex flex-col flex-1 "
+        >
+          <div
+            class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
+          >
+            <div
+              class="container py-16 px-14 mx-auto"
+            >
+              <div
+                class="sm:mx-auto sm:w-full sm:max-w-md"
+              >
+                <svg>
+                  cannot-connect-banner.svg
                 </svg>
+              </div>
+              <div
+                class="mt-8"
+                data-testid="Offline__text"
+              >
+                <h2
+                  class="text-2xl font-bold"
+                >
+                  Cannot Connect
+                </h2>
+                <p
+                  class="text-theme-secondary-text"
+                >
+                  Check your internet connection if it doesn't work, check it again.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </nav>
-      <div
-        class="flex flex-col flex-1 "
-      >
-        <div
-          class="Section__SectionWrapper-sc-8cjvre-0 Aphxw flex flex-col flex-1 justify-center text-center"
-        >
-          <div
-            class="container py-16 px-14 mx-auto"
-          >
-            <div
-              class="sm:mx-auto sm:w-full sm:max-w-md"
-            >
-              <svg>
-                cannot-connect-banner.svg
-              </svg>
-            </div>
-            <div
-              class="mt-8"
-              data-testid="Offline__text"
-            >
-              <h2
-                class="text-2xl font-bold"
-              >
-                Cannot Connect
-              </h2>
-              <p
-                class="text-theme-secondary-text"
-              >
-                Check your internet connection if it doesn't work, check it again.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`App should render welcome screen after splash screen 1`] = `
 <DocumentFragment>
-  <main
-    data-testid="Main"
-  >
-    <div
-      class="Toastify"
-    />
-    <div
-      class="RouterView__Wrapper-sef01e-0"
-      data-testid="RouterView__wrapper"
+  <div>
+    <main
+      data-testid="Main"
     >
+      <div
+        class="Toastify"
+      />
       <div
         class="flex relative flex-col min-h-screen bg-theme-secondary-background"
       >
@@ -1163,7 +1153,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
           </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </DocumentFragment>
 `;

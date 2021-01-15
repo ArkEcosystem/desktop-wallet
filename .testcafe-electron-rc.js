@@ -1,4 +1,4 @@
 module.exports = {
 	mainWindowUrl: "./build/index.html",
-	appPath: "./src/electron/index.js",
+	appPath: "./build/electron/index.js",
 };

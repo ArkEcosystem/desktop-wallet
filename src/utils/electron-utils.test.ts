@@ -10,15 +10,15 @@ import {
 	setThemeSource,
 } from "./electron-utils";
 
-jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
-	readFileSync: jest.fn(),
-}));
-
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },
 	{ name: "All Files", extensions: ["*"] },
 ];
+
+jest.mock("fs", () => ({
+	writeFileSync: jest.fn(),
+	readFileSync: jest.fn(),
+}));
 
 describe("Electron utils", () => {
 	describe("setThemeSource", () => {
