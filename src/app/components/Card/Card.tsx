@@ -29,7 +29,7 @@ export const Card = ({ children, addonIcons, actions, onClick, onSelect, isSelec
 						<div className="flex overflow-hidden justify-center w-4">
 							<Icon
 								name="Settings"
-								className="p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-danger-400"
+								className="p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
 							/>
 						</div>
 					}

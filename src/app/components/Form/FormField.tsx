@@ -11,13 +11,13 @@ type FormFieldProps = {
 
 export const FormFieldStyled = styled.fieldset<{ isInvalid: boolean }>`
 	&:hover .FormLabel {
-		${({ isInvalid }) => !isInvalid && tw`text-theme-primary`};
+		${({ isInvalid }) => !isInvalid && tw`text-theme-primary-600`};
 	}
 	.FormLabel {
-		${({ isInvalid }) => isInvalid && tw`text-theme-danger`};
+		${({ isInvalid }) => isInvalid && tw`text-theme-danger-500`};
 	}
 	&:focus-within .FormLabel {
-		${({ isInvalid }) => (isInvalid ? tw`text-theme-danger` : tw`text-theme-primary`)}
+		${({ isInvalid }) => (isInvalid ? tw`text-theme-danger-500` : tw`text-theme-primary-600`)}
 	}
 `;
 

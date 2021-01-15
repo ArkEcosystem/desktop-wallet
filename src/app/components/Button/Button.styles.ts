@@ -14,15 +14,15 @@ const baseStyle = [
 const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
 	if (disabled) {
 		return variant === "transparent"
-			? tw`disabled:(text-theme-neutral-400 dark:text-theme-neutral-700)`
-			: tw`disabled:(bg-theme-neutral-200 text-theme-neutral-light dark:bg-theme-neutral-800 dark:text-theme-neutral-700)`;
+			? tw`disabled:(text-theme-secondary-400 dark:text-theme-secondary-700)`
+			: tw`disabled:(bg-theme-secondary-200 text-theme-secondary-400 dark:bg-theme-secondary-800 dark:text-theme-secondary-700)`;
 	}
 
 	switch (variant) {
 		case "primary":
-			return tw`bg-theme-primary hover:bg-theme-primary-700 text-white`;
+			return tw`bg-theme-primary-600 hover:bg-theme-primary-700 text-white`;
 		case "secondary":
-			return tw`bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-neutral-800 text-theme-primary-600 dark:text-theme-neutral-200 hover:text-white`;
+			return tw`bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white`;
 		case "danger":
 			return tw`bg-theme-danger-100 dark:bg-theme-danger-400 hover:bg-theme-danger-400 dark:hover:bg-theme-danger-500 text-theme-danger-400 dark:text-white hover:text-white`;
 		default:

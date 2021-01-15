@@ -19,15 +19,15 @@ export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) 
 				{isSelected ? (
 					<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">
 						<Icon name={iconName} width={20} height={20} />
-						<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
+						<Badge className="bg-theme-success-500 text-theme-success-100" icon="Checkmark" />
 					</Circle>
 				) : (
 					<Circle
 						size="lg"
-						className="relative border-theme-neutral-300 dark:border-theme-neutral-800 text-theme-neutral-300"
+						className="relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
 					>
 						<Icon name={iconName} width={20} height={20} />
-						<Badge className="border-theme-neutral-300 dark:border-theme-neutral-800" />
+						<Badge className="border-theme-secondary-300 dark:border-theme-secondary-800" />
 					</Circle>
 				)}
 			</Tooltip>

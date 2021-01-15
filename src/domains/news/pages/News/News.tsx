@@ -109,7 +109,7 @@ export const News = ({ itemsPerPage }: Props) => {
 					<div className="flex-none w-4/6">
 						{!isLoading && news.length === 0 && (
 							<EmptyResults
-								className="rounded-lg border-2 border-theme-primary-100 dark:border-theme-neutral-800"
+								className="rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
 								title={t("COMMON.EMPTY_RESULTS.TITLE")}
 								subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
 							/>

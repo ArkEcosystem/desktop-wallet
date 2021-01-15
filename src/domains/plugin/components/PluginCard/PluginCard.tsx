@@ -50,7 +50,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 						<Image name="ChangeNowLogo" domain="exchange" />
 					</PluginImageContainer>
 
-					<div className="flex items-center mb-2 space-x-2 text-lg text-theme-primary">
+					<div className="flex items-center mb-2 space-x-2 text-lg text-theme-primary-600">
 						<div>{plugin.name}</div>
 
 						<div>
@@ -59,8 +59,8 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 						</div>
 					</div>
 
-					<div className="flex space-x-4 text-sm text-theme-neutral-500 dark:text-theme-neutral-700">
-						<div className="pr-4 border-r border-theme-neutral-300 dark:border-theme-neutral-800">
+					<div className="flex space-x-4 text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+						<div className="pr-4 border-r border-theme-secondary-300 dark:border-theme-secondary-800">
 							{plugin.author}
 						</div>
 

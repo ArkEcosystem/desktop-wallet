@@ -45,8 +45,13 @@ describe("Formatted Address", () => {
 
 	it("should render with custom class for address", () => {
 		const { getByTestId } = render(
-			<Address addressClass="text-theme-primary" address={sampleAddress} walletName="Sample Wallet" size="lg" />,
+			<Address
+				addressClass="text-theme-primary-600"
+				address={sampleAddress}
+				walletName="Sample Wallet"
+				size="lg"
+			/>,
 		);
-		expect(getByTestId("address__wallet-address")).toHaveClass("text-theme-primary");
+		expect(getByTestId("address__wallet-address")).toHaveClass("text-theme-primary-600");
 	});
 });

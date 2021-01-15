@@ -123,7 +123,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 							)}
 
 							{showWalletRegistrations && (
-								<div className="flex-1 pl-12 first:pl-0 even:border-l border-theme-neutral-300 dark:border-theme-neutral-800">
+								<div className="flex-1 pl-12 first:pl-0 even:border-l border-theme-secondary-300 dark:border-theme-secondary-800">
 									<WalletRegistrations wallet={activeWallet} />
 								</div>
 							)}

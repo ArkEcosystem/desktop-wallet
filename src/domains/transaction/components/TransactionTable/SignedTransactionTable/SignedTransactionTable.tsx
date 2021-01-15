@@ -136,14 +136,14 @@ const Row = ({
 	return (
 		<TableRow
 			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-secondary-800" : "--theme-color-secondary-100")
 			}
 			onMouseLeave={() => setShadowColor("")}
 			onClick={() => onRowClick?.(transaction)}
 		>
 			<TableCell variant="start">
 				<Tooltip content={transaction.id()}>
-					<span className="text-theme-neutral-300 dark:text-theme-neutral-800">
+					<span className="text-theme-secondary-300 dark:text-theme-secondary-800">
 						<Icon name="Id" />
 					</span>
 				</Tooltip>

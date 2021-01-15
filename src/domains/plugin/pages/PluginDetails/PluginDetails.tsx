@@ -74,7 +74,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 					</div>
 
 					<div
-						className="p-8 mb-auto ml-32 rounded-xl border-2 border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="p-8 mb-auto ml-32 rounded-xl border-2 border-theme-secondary-300 dark:border-theme-secondary-800"
 						data-testid="plugin-details__review-box"
 					>
 						<ReviewBox averageScore={averageRating} ratings={ratings} totalAvaliations={totalAvaliations} />

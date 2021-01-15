@@ -61,7 +61,7 @@ export const FeaturedPlugins = ({ isOpen, plugins, onClose }: FeaturedPluginsPro
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={plugins}>
 					{(rowData: any) => (
-						<tr className="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800">
+						<tr className="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 							<td className="w-16">
 								<Image name="ChangeNowLogo" domain="exchange" className="w-12 h-12" />
 							</td>

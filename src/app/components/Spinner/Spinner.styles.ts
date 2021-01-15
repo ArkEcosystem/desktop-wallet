@@ -10,7 +10,7 @@ const baseStyle = [
 			}
 		}
 		animation: spin 1.2s linear infinite;
-		border: 5px solid var(--theme-color-neutral-200);
+		border: 5px solid var(--theme-color-secondary-200);
 	`,
 ];
 

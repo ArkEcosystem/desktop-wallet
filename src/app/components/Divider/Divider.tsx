@@ -13,5 +13,5 @@ export const Divider = styled.div<DividerProps>(getStyles);
 
 Divider.defaultProps = {
 	type: "horizontal",
-	className: "border-theme-neutral-300 dark:border-theme-neutral-800",
+	className: "border-theme-secondary-300 dark:border-theme-secondary-800",
 };

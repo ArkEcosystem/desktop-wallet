@@ -14,7 +14,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -61,11 +61,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -79,7 +79,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           Wallet Address
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -95,7 +95,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -109,7 +109,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           Balance
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -125,7 +125,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -145,12 +145,12 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                                 class="flex items-center space-x-3"
                               >
                                 <span
-                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                  class="text-theme-primary-300 dark:text-theme-secondary-700"
                                 >
                                   Search
                                 </span>
                                 <div
-                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-neutral-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
                                   height="18"
                                   width="18"
                                 >
@@ -170,7 +170,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -221,7 +221,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             Sample Wallet
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6 … VBMs6YUYD
@@ -245,7 +245,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       >
                         <button
-                          class="Button-mdtvtf-0 ifPnXw"
+                          class="Button-mdtvtf-0 cyPweQ"
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
@@ -255,7 +255,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -306,7 +306,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             ARK Wallet 2
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D5sRKWckH … yC3cvJtwb
@@ -330,7 +330,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       >
                         <button
-                          class="Button-mdtvtf-0 ifPnXw"
+                          class="Button-mdtvtf-0 cyPweQ"
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >
@@ -364,7 +364,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -411,11 +411,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -429,7 +429,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           Wallet Address
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -445,7 +445,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -459,7 +459,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           Balance
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -475,7 +475,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -489,7 +489,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           Fiat Value
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -505,7 +505,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold  "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -525,12 +525,12 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                                 class="flex items-center space-x-3"
                               >
                                 <span
-                                  class="text-theme-primary-300 dark:text-theme-neutral-700"
+                                  class="text-theme-primary-300 dark:text-theme-secondary-700"
                                 >
                                   Search
                                 </span>
                                 <div
-                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-neutral-600"
+                                  class="sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
                                   height="18"
                                   width="18"
                                 >
@@ -550,7 +550,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -601,7 +601,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             Sample Wallet
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D8rr7B1d6 … VBMs6YUYD
@@ -622,7 +622,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-neutral-light justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-400 justify-end"
                       >
                         <span
                           data-testid="Amount"
@@ -636,7 +636,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       >
                         <button
-                          class="Button-mdtvtf-0 ifPnXw"
+                          class="Button-mdtvtf-0 cyPweQ"
                           data-testid="SearchWalletListItem__select-0"
                           type="button"
                         >
@@ -646,7 +646,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -697,7 +697,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             ARK Wallet 2
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             D5sRKWckH … yC3cvJtwb
@@ -718,7 +718,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-neutral-light justify-end"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 knQiUm text-theme-secondary-400 justify-end"
                       >
                         <span
                           data-testid="Amount"
@@ -732,7 +732,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-end"
                       >
                         <button
-                          class="Button-mdtvtf-0 ifPnXw"
+                          class="Button-mdtvtf-0 cyPweQ"
                           data-testid="SearchWalletListItem__select-1"
                           type="button"
                         >

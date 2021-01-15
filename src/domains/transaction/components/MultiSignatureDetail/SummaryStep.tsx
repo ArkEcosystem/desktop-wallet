@@ -165,7 +165,7 @@ export const SummaryStep = ({
 				<div className="flex items-center space-x-3">
 					<TruncateMiddle text={transaction.id()} maxChars={30} className="text-theme-text" />
 
-					<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
+					<span className="flex text-theme-primary-300 dark:text-theme-secondary-600">
 						<Clipboard data={transaction.id()}>
 							<Icon name="Copy" />
 						</Clipboard>
@@ -173,7 +173,7 @@ export const SummaryStep = ({
 				</div>
 			</TransactionDetail>
 
-			<div className="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-neutral-300 dark:border-theme-neutral-800">
+			<div className="px-10 pt-6 -mx-10 mt-4 text-black border-t border-theme-secondary-300 dark:border-theme-secondary-800">
 				<Signatures transactionId={transaction.id()} publicKeys={participants} wallet={wallet} />
 			</div>
 		</section>

@@ -5,7 +5,7 @@ import tw, { styled } from "twin.macro";
 import { Icon } from "../Icon";
 
 const ToggleIcon = styled.span<{ isOpen: boolean }>`
-	${tw`w-4 h-4 inline-flex items-center justify-center rounded-full transition duration-200 transform bg-theme-primary-100 dark:bg-theme-neutral-800 text-theme-primary-600 dark:text-theme-neutral-200`}
+	${tw`w-4 h-4 inline-flex items-center justify-center rounded-full transition duration-200 transform bg-theme-primary-100 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200`}
 	${({ isOpen }) => (isOpen ? tw`bg-theme-primary-600 text-theme-primary-100 rotate-180` : "")}
 `;
 
@@ -22,7 +22,7 @@ export const CollapseToggleButton = ({ isOpen, className, label, alternativeLabe
 		<button
 			data-testid="CollapseToggleButton"
 			className={`flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 ${
-				className || "text-theme-neutral"
+				className || "text-theme-secondary-500"
 			}`}
 			{...props}
 		>
