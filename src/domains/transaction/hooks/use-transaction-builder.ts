@@ -24,7 +24,7 @@ const prepareLedger = async (input: Contracts.TransactionInputs, wallet: ReadWri
 	const id = await signFn(data, { unsignedBytes: true, unsignedJson: false });
 	const unsignedTransaction = wallet.transaction().transaction(id);
 
-	const path = formatLedgerDerivationPath(slip44, index!);
+	const path = formatLedgerDerivationPath({ coinType: slip44, account: index });
 	const bytes = Buffer.from(unsignedTransaction.toString(), "hex");
 
 	const signature = await wallet.coin().ledger().signTransactionWithSchnorr(path, bytes);

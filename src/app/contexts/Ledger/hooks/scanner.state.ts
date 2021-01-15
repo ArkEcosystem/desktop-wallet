@@ -4,31 +4,34 @@ import { pull, sortBy, uniq, uniqBy } from "@arkecosystem/utils";
 import { LedgerData } from "../utils";
 
 type State = {
+	derivationModes: string[];
+	currentDerivationModeIndex: number;
 	page: number;
-	selected: number[];
-	loading: number[];
+	selected: string[];
+	loading: string[];
 	wallets: LedgerData[];
-	failed: number[];
+	failed: string[];
 };
 
 type Action =
-	| { type: "load"; payload: LedgerData[] }
+	| { type: "load"; payload: LedgerData[]; derivationModes?: string[] }
 	| { type: "next" }
 	| { type: "success"; payload: LedgerData[] }
 	| { type: "failed" }
 	| { type: "selectAll" }
-	| { type: "toggleSelect"; index: number }
+	| { type: "toggleSelect"; path: string }
 	| { type: "toggleSelectAll" };
 
-const indexMapper = (item: LedgerData) => item.index;
+const pathMapper = (item: LedgerData) => item.path;
 
 export const scannerReducer = (state: State, action: Action): State => {
 	switch (action.type) {
 		case "load":
 			return {
 				...state,
-				loading: action.payload.map(indexMapper),
-				wallets: uniqBy([...state.wallets, ...action.payload], indexMapper),
+				derivationModes: action.derivationModes || [],
+				loading: action.payload.map(pathMapper),
+				wallets: uniqBy([...state.wallets, ...action.payload], pathMapper),
 			};
 		case "next":
 			return {
@@ -40,14 +43,16 @@ export const scannerReducer = (state: State, action: Action): State => {
 			const { wallets, loading } = state;
 			const { payload } = action;
 
-			const payloadIndexes = payload.map(indexMapper);
+			const payloadIndexes = payload.map(pathMapper);
 
 			let nextWallets = [];
+			const hasNew = loading.length > payload.length;
+			const hasMoreDerivationModes = state.derivationModes.length - 1 > state.currentDerivationModeIndex;
 
 			/* istanbul ignore next */
-			if (loading.length > payload.length) {
-				const loadingWallets = wallets.filter((item) => loading.includes(item.index));
-				const newWallets = loadingWallets.filter((item) => !payloadIndexes.includes(item.index));
+			if (hasNew) {
+				const loadingWallets = wallets.filter((item) => loading.includes(item.path));
+				const newWallets = loadingWallets.filter((item) => !payloadIndexes.includes(item.path));
 
 				for (const data of newWallets) {
 					data.balance = BigNumber.ZERO;
@@ -57,15 +62,20 @@ export const scannerReducer = (state: State, action: Action): State => {
 				nextWallets.push(...newWallets);
 			}
 
-			nextWallets = uniqBy([...nextWallets, ...payload, ...wallets], indexMapper);
+			nextWallets = uniqBy([...nextWallets, ...payload, ...wallets], pathMapper);
 
 			const nextSelected = uniq([...state.selected, ...payloadIndexes]);
-			const nextFailed = pull(state.failed, ...nextWallets.map(indexMapper));
+			const nextFailed = pull(state.failed, ...nextWallets.map(pathMapper));
+			const nextCurrent =
+				hasNew && hasMoreDerivationModes
+					? state.currentDerivationModeIndex + 1
+					: state.currentDerivationModeIndex;
 
 			return {
 				...state,
-				page: state.page + 1,
-				wallets: sortBy(nextWallets, indexMapper),
+				currentDerivationModeIndex: nextCurrent,
+				page: hasNew && hasMoreDerivationModes ? 0 : state.page + 1,
+				wallets: sortBy(nextWallets, pathMapper),
 				selected: nextSelected,
 				failed: nextFailed,
 				loading: [],
@@ -73,12 +83,12 @@ export const scannerReducer = (state: State, action: Action): State => {
 		}
 		case "toggleSelect": {
 			const current = state.selected;
-			const indexOf = state.selected.indexOf(action.index);
+			const indexOf = state.selected.indexOf(action.path);
 
 			if (indexOf >= 0) {
 				current.splice(indexOf, 1);
 			} else {
-				current.push(action.index);
+				current.push(action.path);
 			}
 
 			return { ...state, selected: [...current] };
@@ -87,7 +97,7 @@ export const scannerReducer = (state: State, action: Action): State => {
 			const { selected, wallets } = state;
 
 			if (!selected.length || wallets.length > selected.length) {
-				return { ...state, selected: wallets.map(indexMapper) };
+				return { ...state, selected: wallets.map(pathMapper) };
 			}
 
 			return { ...state, selected: [] };

@@ -79,12 +79,12 @@ describe("Use Ledger Scanner", () => {
 				<div>
 					<ul>
 						{wallets.map((x) => (
-							<li key={x.index}>
-								<p>{`Index: ${x.index}`}</p>
+							<li key={x.path}>
+								<p>{`Index: ${x.path}`}</p>
 								<p>{`Address: ${x.address}`}</p>
-								<p>{`Failed: ${isFailed(x.index)}`}</p>
-								<p>{`Selected: ${isSelected(x.index)}`}</p>
-								<p>{`Balance: ${isLoading(x.index) ? "Loading" : x.balance?.toFixed()}`}</p>
+								<p>{`Failed: ${isFailed(x.path)}`}</p>
+								<p>{`Selected: ${isSelected(x.path)}`}</p>
+								<p>{`Balance: ${isLoading(x.path) ? "Loading" : x.balance?.toFixed()}`}</p>
 							</li>
 						))}
 					</ul>
@@ -117,7 +117,7 @@ describe("Use Ledger Scanner", () => {
 		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
 	});
 
-	it("should scan until new", async () => {
+	it.only("should scan until new", async () => {
 		nock.cleanAll();
 
 		nock("https://dwallets.ark.io/api")
@@ -147,7 +147,7 @@ describe("Use Ledger Scanner", () => {
 			return (
 				<div>
 					{wallets.map((wallet) => (
-						<span key={wallet.index}>{wallet.address}</span>
+						<span key={wallet.path}>{wallet.address}</span>
 					))}
 				</div>
 			);

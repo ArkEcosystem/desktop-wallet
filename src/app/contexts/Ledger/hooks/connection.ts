@@ -34,11 +34,11 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 
 	const importLedgerWallets = useCallback(
 		async (wallets: LedgerData[], coin: Coins.Coin, profile: Profile) => {
-			for (const { address, index } of wallets) {
+			for (const { address, path } of wallets) {
 				const wallet = await profile
 					.wallets()
 					.importByAddress(address, coin.network().coin(), coin.network().id());
-				wallet.data().set(WalletFlag.LedgerIndex, index);
+				wallet.data().set(WalletFlag.LedgerIndex, path);
 			}
 			await persist();
 		},
@@ -66,7 +66,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 
 					await instance.ledger().connect(transport);
 					// Ensure that the app is accessible
-					await instance.ledger().getPublicKey(formatLedgerDerivationPath(slip44, 0));
+					await instance.ledger().getPublicKey(formatLedgerDerivationPath({ coinType: slip44 }));
 				};
 
 				await retry(connectFn, retryOptions);
