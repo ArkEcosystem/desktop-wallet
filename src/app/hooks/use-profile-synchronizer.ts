@@ -1,6 +1,6 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { useCallback,useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { matchPath } from "react-router-dom";
 import { restoreProfilePassword } from "utils/migrate-fixtures";
@@ -175,31 +175,26 @@ export const useProfileSynchronizer = () => {
 
 			if (shouldRestore()) {
 				setStatus("restoring");
-				console.log("restoring");
 
 				// Perform restore to make migrated wallets available in profile.wallets()
 				await profile.restore();
 				restoreProfilePassword(profile);
 				await persist();
-				console.log("restoreeeed");
 
 				setStatus("restored");
 			}
 
 			if (shouldSync()) {
-				console.log("syncing");
 				setStatus("syncing");
 
 				await runAll();
 
 				setStatus("synced");
-				console.log("synced");
 			}
 
 			if (isSyncCompleted() && profileIsSyncing) {
 				setConfiguration({ profileIsSyncing: false });
 				setStatus("completed");
-				// console.log("completed");
 
 				// Start background jobs after initial sync
 				start();

@@ -2,7 +2,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { render } from "@testing-library/react";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
-import { useProfileSynchronizer } from "app/hooks";
+import { useProfileSynchronizer } from "app/hooks/use-profile-synchronizer";
 import { i18n } from "app/i18n";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
@@ -14,30 +14,43 @@ import delegate from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6J
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
-const ProfileSynchronizer: React.FC = ({ children }: { children?: React.ReactNode }) => {
-	useProfileSynchronizer();
+const ProfileSynchronizer = ({ children }: { children?: React.ReactNode }) => {
+	const { profile, profileIsSyncing, status } = useProfileSynchronizer();
+	if (!profile?.id()) return <>{children}</>;
+
+	if (profileIsSyncing) return <></>;
+
 	return <>{children}</>;
 };
+
 const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
-		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env}>
-				<ConfigurationProvider>{children}</ConfigurationProvider>
-			</EnvironmentProvider>
-		</I18nextProvider>
-	);
+	<I18nextProvider i18n={i18n}>
+		<EnvironmentProvider env={env}>
+			<ConfigurationProvider>{children}</ConfigurationProvider>
+		</EnvironmentProvider>
+	</I18nextProvider>
+);
 
 const customRender = (component: React.ReactElement, options: any = {}) =>
 	render(component, { wrapper: WithProviders, ...options });
 
 const renderWithRouter = (
 	component: React.ReactElement,
-	{ routes = ["/"], history = createMemoryHistory({ initialEntries: routes }), withProviders = true } = {},
+	{
+		routes = ["/"],
+		history = createMemoryHistory({ initialEntries: routes }),
+		withProviders = true,
+		withProfileSynchronizer = true,
+	} = {},
 ) => {
+	const ProfileSynchronizerWrapper = ({ children }: { children: React.ReactNode }) =>
+		withProfileSynchronizer ? <ProfileSynchronizer>{children}</ProfileSynchronizer> : <>{children}</>;
+
 	const RouterWrapper = ({ children }: { children: React.ReactNode }) =>
 		withProviders ? (
 			<WithProviders>
 				<Router history={history}>
-					<ProfileSynchronizer>{children}</ProfileSynchronizer>
+					<ProfileSynchronizerWrapper>{children}</ProfileSynchronizerWrapper>
 				</Router>
 			</WithProviders>
 		) : (
