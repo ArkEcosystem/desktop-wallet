@@ -1,7 +1,5 @@
 import { useEnvironmentContext } from "app/contexts";
-import { useCallback, useEffect, useMemo, useRef } from "react";
-
-import { useUpdater } from "./";
+import { useCallback, useEffect, useRef } from "react";
 
 type Callback = () => Promise<void | any>;
 
@@ -9,12 +7,6 @@ type Job = {
 	callback: Callback;
 	interval: number;
 };
-
-enum Intervals {
-	Short = 30000,
-	Medium = 60000,
-	Long = 120000,
-}
 
 export const useSynchronizer = (jobs: Job[]) => {
 	const timers = useRef<number[]>([]);
@@ -53,19 +45,4 @@ export const useSynchronizer = (jobs: Job[]) => {
 	}, [timers]);
 
 	return { start, stop, runAll };
-};
-
-export const useEnvSynchronizer = () => {
-	const { notifyForUpdates } = useUpdater();
-
-	const jobs = useMemo(() => {
-		const syncWalletUpdates = {
-			callback: () => notifyForUpdates(),
-			interval: Intervals.Long,
-		};
-
-		return [syncWalletUpdates];
-	}, [notifyForUpdates]);
-
-	return useSynchronizer(jobs);
 };
