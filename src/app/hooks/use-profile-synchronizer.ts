@@ -1,11 +1,11 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { useEffect, useMemo, useRef } from "react";
+import { useCallback,useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { matchPath } from "react-router-dom";
 import { restoreProfilePassword } from "utils/migrate-fixtures";
 
-import { useSynchronizer } from "./";
+import { useNotifications } from "./notifications";
 
 type Callback = () => Promise<void | any>;
 
@@ -21,6 +21,45 @@ enum Intervals {
 }
 
 const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
+
+const useSynchronizer = (jobs: Job[]) => {
+	const timers = useRef<number[]>([]);
+	const { persist } = useEnvironmentContext();
+
+	const run = useCallback(
+		async (callback: Callback) => {
+			await callback();
+			await persist();
+		},
+		[persist],
+	);
+
+	const stop = useCallback(() => {
+		for (const timer of timers.current) {
+			clearInterval(timer);
+		}
+	}, []);
+
+	const start = useCallback(() => {
+		stop(); // Stop previous jobs in progress
+		for (const job of jobs) {
+			timers.current.push(setInterval(() => run(job.callback), job.interval));
+		}
+	}, [run, jobs, stop]);
+
+	const runAll = useCallback(() => Promise.allSettled(jobs.map((job) => run(job.callback))), [run, jobs]);
+
+	useEffect(() => {
+		const current = timers.current;
+		return () => {
+			for (const timer of current) {
+				clearInterval(timer);
+			}
+		};
+	}, [timers]);
+
+	return { start, stop, runAll };
+};
 
 const useProfileWatcher = () => {
 	const { env } = useEnvironmentContext();
@@ -46,7 +85,7 @@ const useProfileWatcher = () => {
 
 const useProfileJobs = (profile?: Profile) => {
 	const { env } = useEnvironmentContext();
-	// const { notifications } = useNotifications();
+	const { notifications } = useNotifications();
 
 	const walletsCount = profile?.wallets().count();
 	return useMemo(() => {
@@ -75,13 +114,13 @@ const useProfileJobs = (profile?: Profile) => {
 			interval: Intervals.Short,
 		};
 
-		// const syncNotifications = {
-		// 	callback: () => notifications.notifyReceivedTransactions({ profile }),
-		// 	interval: Intervals.Short,
-		// };
-		//
-		return [syncWallets, syncFees, syncDelegates, syncExchangeRates];
-	}, [env, profile, walletsCount]); // eslint-disable-line react-hooks/exhaustive-deps
+		const syncNotifications = {
+			callback: () => notifications.notifyReceivedTransactions({ profile }),
+			interval: Intervals.Short,
+		};
+
+		return [syncWallets, syncFees, syncDelegates, syncExchangeRates, syncNotifications];
+	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 type ProfileSyncState = {
@@ -119,7 +158,6 @@ export const useProfileSyncStatus = (profile?: Profile) => {
 };
 
 export const useProfileSynchronizer = () => {
-	console.log("using profile synchronizer");
 	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
