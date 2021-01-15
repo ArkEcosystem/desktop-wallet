@@ -21,7 +21,7 @@ const UploadButtonWrapper = styled.div`
 		${tw`h-full w-full`}
 
 		&:not(:focus):hover:enabled {
-			${tw`bg-theme-neutral-900 dark:bg-theme-neutral-600 opacity-85`};
+			${tw`bg-theme-secondary-900 dark:bg-theme-secondary-600 opacity-85`};
 		}
 	}
 `;
@@ -41,7 +41,7 @@ const ProfileImageStyled = styled.div`
 		${tw`block`};
 
 		div {
-			${tw`bg-theme-neutral-900 dark:bg-black opacity-85`};
+			${tw`bg-theme-secondary-900 dark:bg-black opacity-85`};
 		}
 	}
 `;
@@ -65,7 +65,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 	return (
 		<div className={`group space-y-2 ${className}`}>
 			{showLabel && (
-				<span className="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary text-theme-secondary-text">
+				<span className="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text">
 					{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
 				</span>
 			)}
@@ -94,7 +94,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 									<div className="flex justify-center items-center h-full">
 										<Icon
 											name="Upload"
-											className="text-white dark:text-theme-neutral-200"
+											className="text-white dark:text-theme-secondary-200"
 											width={24}
 											height={18}
 										/>
@@ -118,7 +118,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 					</div>
 				) : (
 					<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
-						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-neutral-400 dark:border-theme-neutral-700">
+						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700">
 							<div className="overflow-hidden h-full rounded-full">
 								<UploadButtonWrapper>
 									<Button
@@ -128,7 +128,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 									>
 										<Icon
 											name="Upload"
-											className="text-theme-primary dark:text-theme-neutral-200"
+											className="text-theme-primary-600 dark:text-theme-secondary-200"
 											width={24}
 											height={18}
 										/>

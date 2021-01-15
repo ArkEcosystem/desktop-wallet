@@ -93,7 +93,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 				<NetworkIcon size="lg" coin={wallet.coinId()} network={wallet.networkId()} />
 				<div className="flex">
 					<h2 className="mb-0 text-2xl font-bold">{networkExtendedData?.displayName}</h2>
-					<span className="ml-2 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700">
+					<span className="ml-2 text-2xl font-bold text-theme-secondary-500 dark:text-theme-secondary-700">
 						{wallets.length}
 					</span>
 				</div>

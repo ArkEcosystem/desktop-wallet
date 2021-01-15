@@ -144,7 +144,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 			onClose={() => onClose?.()}
 		>
 			<div className="mt-8">
-				<div className="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light">
+				<div className="flex flex-col pb-6 border-b border-dashed border-theme-secondary-400">
 					<div className="flex flex-col">
 						<div className="flex justify-between items-center">
 							<div className="text-lg font-semibold">
@@ -158,7 +158,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 							/>
 						</div>
 
-						<div className="pr-12 mt-1 text-sm text-theme-neutral">
+						<div className="pr-12 mt-1 text-sm text-theme-secondary-500">
 							{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY_JSON.DESCRIPTION")}
 						</div>
 					</div>

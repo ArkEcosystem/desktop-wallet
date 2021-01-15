@@ -6,7 +6,7 @@ exports[`Comments should render properly 1`] = `
     class="w-full"
   >
     <div
-      class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
+      class="flex items-center mt-5 text-sm font-semibold text-theme-secondary-500"
     >
       <span
         class="text-theme-text"
@@ -14,7 +14,7 @@ exports[`Comments should render properly 1`] = `
         Sort by:
       </span>
       <div
-        class="flex items-center ml-2 space-x-3 divide-x divide-theme-neutral-light"
+        class="flex items-center ml-2 space-x-3 divide-x divide-theme-secondary-400"
       >
         <span
           class="cursor-pointer null"
@@ -60,7 +60,7 @@ exports[`Comments should render properly 1`] = `
           class="flex justify-between items-center"
         >
           <div
-            class="flex relative items-center divide-x divide-theme-neutral-light"
+            class="flex relative items-center divide-x divide-theme-secondary-400"
           >
             <span
               class="pr-3 text-lg font-semibold"
@@ -86,7 +86,7 @@ exports[`Comments should render properly 1`] = `
               </span>
             </div>
             <span
-              class="pl-3 text-sm font-semibold text-theme-neutral"
+              class="pl-3 text-sm font-semibold text-theme-secondary-500"
             >
               <span
                 data-testid="timeago"
@@ -99,12 +99,12 @@ exports[`Comments should render properly 1`] = `
             class="flex items-center space-x-2 font-semibold"
           >
             <span
-              class="text-theme-neutral-light"
+              class="text-theme-secondary-400"
             >
               0
             </span>
             <div
-              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
               height="15"
               width="15"
             >
@@ -113,7 +113,7 @@ exports[`Comments should render properly 1`] = `
               </svg>
             </div>
             <div
-              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
               height="15"
               width="15"
             >
@@ -127,7 +127,7 @@ exports[`Comments should render properly 1`] = `
           class="mt-2"
         >
           <p
-            class="text-theme-neutral-600"
+            class="text-theme-secondary-600"
           >
             The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
           </p>
@@ -140,7 +140,7 @@ exports[`Comments should render properly 1`] = `
           class="flex justify-between items-center"
         >
           <div
-            class="flex relative items-center divide-x divide-theme-neutral-light"
+            class="flex relative items-center divide-x divide-theme-secondary-400"
           >
             <span
               class="pr-3 text-lg font-semibold"
@@ -166,7 +166,7 @@ exports[`Comments should render properly 1`] = `
               </span>
             </div>
             <span
-              class="pl-3 text-sm font-semibold text-theme-neutral"
+              class="pl-3 text-sm font-semibold text-theme-secondary-500"
             >
               <span
                 data-testid="timeago"
@@ -179,12 +179,12 @@ exports[`Comments should render properly 1`] = `
             class="flex items-center space-x-2 font-semibold"
           >
             <span
-              class="text-theme-success"
+              class="text-theme-success-600"
             >
               +28
             </span>
             <div
-              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
               height="15"
               width="15"
             >
@@ -193,7 +193,7 @@ exports[`Comments should render properly 1`] = `
               </svg>
             </div>
             <div
-              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
               height="15"
               width="15"
             >
@@ -207,7 +207,7 @@ exports[`Comments should render properly 1`] = `
           class="mt-2"
         >
           <p
-            class="text-theme-neutral-600"
+            class="text-theme-secondary-600"
           >
             It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
           </p>
@@ -215,7 +215,7 @@ exports[`Comments should render properly 1`] = `
             class="flex flex-col mt-3"
           >
             <div
-              class="flex items-center text-theme-neutral-light"
+              class="flex items-center text-theme-secondary-400"
             >
               <div
                 class="flex items-center w-10"
@@ -231,7 +231,7 @@ exports[`Comments should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="flex items-center space-x-3 divide-x divide-theme-neutral-light"
+                class="flex items-center space-x-3 divide-x divide-theme-secondary-400"
               >
                 <span
                   class="text-lg font-semibold text-theme-text"
@@ -239,7 +239,7 @@ exports[`Comments should render properly 1`] = `
                   Developer response
                 </span>
                 <span
-                  class="pl-3 text-sm font-semibold text-theme-neutral"
+                  class="pl-3 text-sm font-semibold text-theme-secondary-500"
                 >
                   <span
                     data-testid="timeago"
@@ -250,7 +250,7 @@ exports[`Comments should render properly 1`] = `
               </div>
             </div>
             <div
-              class="sc-gsTCUz hoNdtS mt-2 ml-10 text-theme-neutral-600"
+              class="sc-gsTCUz hoNdtS mt-2 ml-10 text-theme-secondary-600"
             >
               <a
                 href="#"
@@ -269,7 +269,7 @@ exports[`Comments should render properly 1`] = `
           class="flex justify-between items-center"
         >
           <div
-            class="flex relative items-center divide-x divide-theme-neutral-light"
+            class="flex relative items-center divide-x divide-theme-secondary-400"
           >
             <span
               class="pr-3 text-lg font-semibold"
@@ -295,7 +295,7 @@ exports[`Comments should render properly 1`] = `
               </span>
             </div>
             <span
-              class="pl-3 text-sm font-semibold text-theme-neutral"
+              class="pl-3 text-sm font-semibold text-theme-secondary-500"
             >
               <span
                 data-testid="timeago"
@@ -308,12 +308,12 @@ exports[`Comments should render properly 1`] = `
             class="flex items-center space-x-2 font-semibold"
           >
             <span
-              class="text-theme-neutral-light"
+              class="text-theme-secondary-400"
             >
               0
             </span>
             <div
-              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
               height="15"
               width="15"
             >
@@ -322,7 +322,7 @@ exports[`Comments should render properly 1`] = `
               </svg>
             </div>
             <div
-              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
               height="15"
               width="15"
             >
@@ -336,7 +336,7 @@ exports[`Comments should render properly 1`] = `
           class="mt-2"
         >
           <p
-            class="text-theme-neutral-600"
+            class="text-theme-secondary-600"
           >
             I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
           </p>
@@ -349,7 +349,7 @@ exports[`Comments should render properly 1`] = `
           class="flex justify-between items-center"
         >
           <div
-            class="flex relative items-center divide-x divide-theme-neutral-light"
+            class="flex relative items-center divide-x divide-theme-secondary-400"
           >
             <span
               class="pr-3 text-lg font-semibold"
@@ -375,7 +375,7 @@ exports[`Comments should render properly 1`] = `
               </span>
             </div>
             <span
-              class="pl-3 text-sm font-semibold text-theme-neutral"
+              class="pl-3 text-sm font-semibold text-theme-secondary-500"
             >
               <span
                 data-testid="timeago"
@@ -388,12 +388,12 @@ exports[`Comments should render properly 1`] = `
             class="flex items-center space-x-2 font-semibold"
           >
             <span
-              class="text-theme-danger-dark"
+              class="text-theme-danger-600"
             >
               -5
             </span>
             <div
-              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
               height="15"
               width="15"
             >
@@ -402,7 +402,7 @@ exports[`Comments should render properly 1`] = `
               </svg>
             </div>
             <div
-              class="sc-bdfBwQ dfWOLJ text-theme-primary-light"
+              class="sc-bdfBwQ dfWOLJ text-theme-primary-200"
               height="15"
               width="15"
             >
@@ -416,7 +416,7 @@ exports[`Comments should render properly 1`] = `
           class="mt-2"
         >
           <p
-            class="text-theme-neutral-600"
+            class="text-theme-secondary-600"
           >
             Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
           </p>
@@ -431,26 +431,26 @@ exports[`Comments should render properly 1`] = `
         data-testid="Pagination"
       >
         <div
-          class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-neutral-800"
+          class="flex px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
         >
           <div
-            class="Pagination__PaginationButton-x7juhx-1 dMKNhr current-page"
+            class="Pagination__PaginationButton-x7juhx-1 cPHHXv current-page"
           >
             1
           </div>
           <div
-            class="Pagination__PaginationButton-x7juhx-1 dMKNhr"
+            class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
           >
             2
           </div>
           <div
-            class="Pagination__PaginationButton-x7juhx-1 dMKNhr"
+            class="Pagination__PaginationButton-x7juhx-1 cPHHXv"
           >
             3
           </div>
         </div>
         <button
-          class="Button-mdtvtf-0 ifPnXw"
+          class="Button-mdtvtf-0 cyPweQ"
           data-testid="Pagination__next"
           type="button"
         >

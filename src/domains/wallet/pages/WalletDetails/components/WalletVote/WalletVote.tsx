@@ -43,20 +43,23 @@ export const WalletVote = ({ wallet, onButtonClick }: WalletVoteProps) => {
 					<div className="flex items-center -space-x-2">
 						<Circle
 							size="lg"
-							className="border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+							className="border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
 						>
 							<Icon name="Vote" width={21} height={21} />
 						</Circle>
 
 						<div className="flex -space-x-3">
 							<span className="inline-block">
-								<Circle size="lg" className="border-theme-neutral-500 dark:border-theme-neutral-700" />
+								<Circle
+									size="lg"
+									className="border-theme-secondary-500 dark:border-theme-secondary-700"
+								/>
 							</span>
 							{maxVotes > 1 && (
 								<span className="inline-block">
 									<Circle
 										size="lg"
-										className="border-theme-neutral-500 dark:border-theme-neutral-700"
+										className="border-theme-secondary-500 dark:border-theme-secondary-700"
 									/>
 								</span>
 							)}
@@ -96,22 +99,22 @@ export const WalletVote = ({ wallet, onButtonClick }: WalletVoteProps) => {
 					</div>
 
 					<div className="flex flex-col justify-between mr-8 ml-4 h-full">
-						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.DELEGATE")}</span>
+						<span className="text-sm font-semibold text-theme-secondary-500">{t("COMMON.DELEGATE")}</span>
 
 						<Address walletName={delegate.username()} />
 					</div>
 
-					<div className="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-neutral-300 dark:border-theme-neutral-800">
-						<span className="text-sm font-semibold text-theme-neutral">{t("COMMON.STATUS")}</span>
+					<div className="flex flex-col justify-between items-center pl-8 h-full border-l border-theme-secondary-300 dark:border-theme-secondary-800">
+						<span className="text-sm font-semibold text-theme-secondary-500">{t("COMMON.STATUS")}</span>
 
 						{rank ? (
 							<Tooltip content={`#${rank}`} placement="right">
 								<span>
-									<Icon name="StatusOk" className="text-theme-success" width={20} height={20} />
+									<Icon name="StatusOk" className="text-theme-success-600" width={20} height={20} />
 								</span>
 							</Tooltip>
 						) : (
-							<Icon name="StatusPending" className="text-theme-warning" width={20} height={20} />
+							<Icon name="StatusPending" className="text-theme-warning-600" width={20} height={20} />
 						)}
 					</div>
 
@@ -175,7 +178,7 @@ export const WalletVote = ({ wallet, onButtonClick }: WalletVoteProps) => {
 		<section data-testid="WalletVote">
 			<div className="flex mb-4">
 				<h2 className="mb-0 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.TITLE", { count: maxVotes })}</h2>
-				<span className="ml-1 text-2xl font-bold text-theme-neutral-500 dark:text-theme-neutral-700">
+				<span className="ml-1 text-2xl font-bold text-theme-secondary-500 dark:text-theme-secondary-700">
 					({votes.length}/{maxVotes})
 				</span>
 			</div>

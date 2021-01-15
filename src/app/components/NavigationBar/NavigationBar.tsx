@@ -65,8 +65,8 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 			dropdownClass="mt-8 -mr-4"
 			toggleContent={(isOpen: boolean) => (
 				<div className="my-0.5 ml-4 -space-x-2 cursor-pointer" data-testid="navbar__useractions">
-					<Circle className="border-theme-primary-100 dark:border-theme-neutral-800" size="lg">
-						<span className="text-theme-secondary-text dark:text-theme-neutral-800">
+					<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
+						<span className="text-theme-secondary-text dark:text-theme-secondary-800">
 							{exchangeCurrency && (
 								<Icon
 									name={exchangeCurrency}
@@ -98,7 +98,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 						</AvatarWrapper>
 
 						<Badge
-							className="bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-neutral-800 dark:border-theme-neutral-800 dark:text-theme-text"
+							className="bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500 dark:bg-theme-secondary-800 dark:border-theme-secondary-800 dark:text-theme-text"
 							position="right"
 							icon="ChevronDown"
 							iconClass={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
@@ -115,7 +115,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 const ButtonWrapper = styled.div`
 	${css`
 		button {
-			${tw`w-12 h-12 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-neutral-600 not-disabled:(hover:text-theme-primary-dark hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200)`};
+			${tw`w-12 h-12 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
 		}
 	`};
 `;
@@ -203,7 +203,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
 
-								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
+								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 								<div className="flex items-center">
 									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
@@ -221,7 +221,7 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									</Tooltip>
 								</div>
 
-								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
+								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 								<div className="flex overflow-hidden items-center rounded-lg">
 									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
@@ -239,12 +239,12 @@ export const NavigationBar = ({ title, profile, variant, menu, userActions }: Na
 									</Tooltip>
 								</div>
 
-								<div className="h-8 border-r border-theme-neutral-300 dark:border-theme-neutral-800" />
+								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 							</div>
 
 							<div className="flex items-center my-auto mr-4 ml-8">
 								<div className="text-right">
-									<div className="text-xs font-semibold text-theme-neutral-700">
+									<div className="text-xs font-semibold text-theme-secondary-700">
 										{t("COMMON.YOUR_BALANCE")}
 									</div>
 									<div className="text-sm font-bold text-theme-secondary-text dark:text-theme-text">

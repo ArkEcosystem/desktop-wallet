@@ -3,14 +3,14 @@
 exports[`TransactionRecipients should render a recipients array 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Recipients (2)
       </div>
@@ -33,11 +33,11 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -51,7 +51,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -65,7 +65,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -84,7 +84,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                     data-testid="recipient-list__recipient-list-item"
                   >
                     <td
@@ -139,7 +139,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                     data-testid="recipient-list__recipient-list-item"
                   >
                     <td
@@ -207,14 +207,14 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
 exports[`TransactionRecipients should render a single recipient 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Recipient
       </div>
@@ -254,14 +254,14 @@ exports[`TransactionRecipients should render a single recipient 1`] = `
 exports[`TransactionRecipients should render a single recipient with alias 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Recipient
       </div>
@@ -278,7 +278,7 @@ exports[`TransactionRecipients should render a single recipient with alias 1`] =
             test-alias
           </span>
           <span
-            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
             data-testid="address__wallet-address"
           >
             test-address

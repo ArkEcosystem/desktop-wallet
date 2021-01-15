@@ -16,14 +16,14 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => {
 		<>
 			<div>
 				<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.ABOUT")}</p>
-				<p className="mt-3 text-theme-neutral-600" data-testid="plugin-info__about">
+				<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__about">
 					{about}
 				</p>
 			</div>
 
 			<div className="mt-8">
 				<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.PERMISSIONS")}</p>
-				<p className="mt-3 text-theme-neutral-600" data-testid="plugin-info__permissions">
+				<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__permissions">
 					{permissions.join(", ")}
 				</p>
 			</div>
@@ -50,7 +50,7 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => {
 									<div
 										data-testid="plugin-info__screenshot"
 										key={idx}
-										className="w-1/3 h-56 rounded-lg bg-theme-neutral"
+										className="w-1/3 h-56 rounded-lg bg-theme-secondary-500"
 									/>
 								))}
 							</div>

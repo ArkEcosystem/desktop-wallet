@@ -12,7 +12,7 @@ const TabStyled = styled(OptionButton)<{ isActive: boolean; isComplete: boolean;
 		isActive && tw`font-semibold bg-theme-success-100 dark:bg-theme-success-900 border-theme-success-600`};
 	${({ isComplete }) => isComplete && tw`border-transparent bg-theme-success-200 dark:bg-theme-success-600`};
 	${({ isPending }) =>
-		isPending && tw`font-medium border-theme-primary-100 dark:border-theme-neutral-800 text-theme-primary`};
+		isPending && tw`font-medium border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-600`};
 	min-height: 56px;
 `;
 
@@ -43,7 +43,7 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 			isPending={isPending}
 		>
 			{isComplete ? (
-				<span className="text-lg text-theme-success dark:text-theme-neutral-200">
+				<span className="text-lg text-theme-success-600 dark:text-theme-secondary-200">
 					<Icon name="StatusOk" width={28} height={28} />
 				</span>
 			) : (

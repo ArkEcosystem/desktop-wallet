@@ -79,7 +79,7 @@ export const SecondStep = () => {
 					</p>
 				</div>
 
-				<Icon name="FilePassword" className="text-black dark:text-theme-neutral-600" width={40} height={40} />
+				<Icon name="FilePassword" className="text-black dark:text-theme-secondary-600" width={40} height={40} />
 			</div>
 
 			<div className="flex justify-end w-full">

@@ -66,13 +66,13 @@ exports[`VotesFilter should render default 1`] = `
               class="py-4 px-6 w-64"
             >
               <label
-                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
                 data-testid="VotesFilter__option--all"
               >
                 <span>
                   <input
                     checked=""
-                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    class="Checkbox-sc-17gwqiq-0 cZgJoF rounded-lg"
                     color="success"
                     name="all"
                     type="checkbox"
@@ -83,12 +83,12 @@ exports[`VotesFilter should render default 1`] = `
                 </span>
               </label>
               <label
-                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
                 data-testid="VotesFilter__option--current"
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    class="Checkbox-sc-17gwqiq-0 cZgJoF rounded-lg"
                     color="success"
                     name="current"
                     type="checkbox"
@@ -145,12 +145,12 @@ exports[`VotesFilter should render with current option selected 1`] = `
               class="py-4 px-6 w-64"
             >
               <label
-                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
                 data-testid="VotesFilter__option--all"
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    class="Checkbox-sc-17gwqiq-0 cZgJoF rounded-lg"
                     color="success"
                     name="all"
                     type="checkbox"
@@ -161,13 +161,13 @@ exports[`VotesFilter should render with current option selected 1`] = `
                 </span>
               </label>
               <label
-                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
                 data-testid="VotesFilter__option--current"
               >
                 <span>
                   <input
                     checked=""
-                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    class="Checkbox-sc-17gwqiq-0 cZgJoF rounded-lg"
                     color="success"
                     name="current"
                     type="checkbox"
@@ -224,13 +224,13 @@ exports[`VotesFilter should render with disabled current option 1`] = `
               class="py-4 px-6 w-64"
             >
               <label
-                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-neutral-contrast"
+                class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
                 data-testid="VotesFilter__option--all"
               >
                 <span>
                   <input
                     checked=""
-                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    class="Checkbox-sc-17gwqiq-0 cZgJoF rounded-lg"
                     color="success"
                     name="all"
                     type="checkbox"
@@ -241,12 +241,12 @@ exports[`VotesFilter should render with disabled current option 1`] = `
                 </span>
               </label>
               <label
-                class="flex items-center block px-2 pb-1 space-x-3 rounded-md text-theme-neutral-400"
+                class="flex items-center block px-2 pb-1 space-x-3 rounded-md text-theme-secondary-400"
                 data-testid="VotesFilter__option--current"
               >
                 <span>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 cLiiJm rounded-lg"
+                    class="Checkbox-sc-17gwqiq-0 cZgJoF rounded-lg"
                     color="success"
                     disabled=""
                     name="current"

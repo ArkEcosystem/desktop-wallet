@@ -16,7 +16,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -76,11 +76,11 @@ exports[`FeaturedPlugins should render a modal 1`] = `
               >
                 <thead>
                   <tr
-                    class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
                     role="row"
                   >
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -94,7 +94,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -108,7 +108,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                           Name
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -124,7 +124,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -138,7 +138,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                           Category
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -154,7 +154,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -168,7 +168,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                           Rating
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -184,7 +184,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -198,7 +198,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                           Version
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                          class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="table__Sort"
                         >
                           <div
@@ -214,7 +214,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                      class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                       colspan="1"
                       data-testid="table__th--5"
                       role="columnheader"
@@ -233,7 +233,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <td
                       class="w-16"
@@ -304,7 +304,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                             </svg>
                           </div>
                           <svg
-                            class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
+                            class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
                           >
                             star.svg
                           </svg>
@@ -325,7 +325,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       class="w-16"
                     >
                       <button
-                        class="Button-mdtvtf-0 ifPnXw"
+                        class="Button-mdtvtf-0 cyPweQ"
                         type="button"
                       >
                         Install
@@ -333,7 +333,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <td
                       class="w-16"
@@ -386,7 +386,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                             </svg>
                           </div>
                           <svg
-                            class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
+                            class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
                           >
                             star.svg
                           </svg>
@@ -407,7 +407,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       class="w-16"
                     >
                       <button
-                        class="Button-mdtvtf-0 ifPnXw"
+                        class="Button-mdtvtf-0 cyPweQ"
                         type="button"
                       >
                         Install
@@ -415,7 +415,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <td
                       class="w-16"
@@ -468,7 +468,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                             </svg>
                           </div>
                           <svg
-                            class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
+                            class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
                           >
                             star.svg
                           </svg>
@@ -489,7 +489,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       class="w-16"
                     >
                       <button
-                        class="Button-mdtvtf-0 ifPnXw"
+                        class="Button-mdtvtf-0 cyPweQ"
                         type="button"
                       >
                         Install
@@ -497,7 +497,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
+                    class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <td
                       class="w-16"
@@ -559,7 +559,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                             </svg>
                           </div>
                           <svg
-                            class="text-theme-neutral-500 dark:bg-theme-neutral-700 w-3"
+                            class="text-theme-secondary-500 dark:bg-theme-secondary-700 w-3"
                           >
                             star.svg
                           </svg>
@@ -580,7 +580,7 @@ exports[`FeaturedPlugins should render a modal 1`] = `
                       class="w-16"
                     >
                       <button
-                        class="Button-mdtvtf-0 ifPnXw"
+                        class="Button-mdtvtf-0 cyPweQ"
                         type="button"
                       >
                         Install

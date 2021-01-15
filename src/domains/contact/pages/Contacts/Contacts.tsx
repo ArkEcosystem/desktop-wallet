@@ -27,7 +27,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 			{showSearchBar && (
 				<>
 					<HeaderSearchBar onSearch={onSearch} />
-					<div className="pl-8 my-auto ml-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+					<div className="pl-8 my-auto ml-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
 				</>
 			)}
 

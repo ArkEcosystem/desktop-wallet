@@ -29,7 +29,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -51,21 +51,21 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             class="flex flex-col space-y-2"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-neutral-500"
+              class="leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 luNWb"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-700"
+              class="text-sm font-semibold text-theme-secondary-700"
             >
               Sender
             </div>
@@ -82,7 +82,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                   ARK Wallet 1
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   D8rr7B … s6YUYD
@@ -113,10 +113,10 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="username"
             >
@@ -128,22 +128,22 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             </label>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="thisisaveryveryverylongdelegatename"
             />
             <p
-              class="text-sm text-theme-danger"
+              class="text-sm text-theme-danger-500"
             >
               'Delegate Name' should have at most 20 characters
             </p>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="fee"
             >
@@ -164,7 +164,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -190,7 +190,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -204,13 +204,13 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="SelectionBar"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -219,7 +219,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -228,7 +228,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -274,7 +274,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -296,21 +296,21 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="flex flex-col space-y-2"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-neutral-500"
+              class="leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 luNWb"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-700"
+              class="text-sm font-semibold text-theme-secondary-700"
             >
               Sender
             </div>
@@ -327,7 +327,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   ARK Wallet 1
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   D8rr7B … s6YUYD
@@ -358,10 +358,10 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="username"
             >
@@ -372,17 +372,17 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
               />
             </label>
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value=""
             />
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="fee"
             >
@@ -403,7 +403,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -429,7 +429,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -443,13 +443,13 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="SelectionBar"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -458,7 +458,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -467,7 +467,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -521,7 +521,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Cryptoasset
               </div>
@@ -549,14 +549,14 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -573,7 +573,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                     ARK Wallet 1
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -601,14 +601,14 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Delegate Name
               </div>
@@ -621,19 +621,19 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
             class="mt-2"
           >
             <div
-              class="rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <div
                 class="relative p-4"
               >
                 <div
-                  class="flex divide-x divide-theme-neutral-300 dark:divide-theme-neutral-800"
+                  class="flex divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                 >
                   <div
                     class="flex flex-col w-1/2 justify-center px-4 py-2"
                   >
                     <span
-                      class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
+                      class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
                     >
                       Transaction Amount
                     </span>
@@ -648,7 +648,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                     class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
                   >
                     <span
-                      class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
+                      class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
                     >
                       Transaction Fee
                     </span>
@@ -664,7 +664,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                   class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
                 >
                   <div
-                    class="py-2 ml-px bg-theme-background text-theme-neutral-900 dark:text-theme-neutral-600"
+                    class="py-2 ml-px bg-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                   >
                     <div
                       class="sc-bdfBwQ fPrsah"
@@ -679,10 +679,10 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-neutral-300 dark:border-theme-neutral-800 justfiy-center bg-theme-neutral-300 dark:bg-theme-neutral-800"
+                class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-300 dark:bg-theme-secondary-800"
               >
                 <span
-                  class="TotalAmountBox__AmountLabel-sc-178fnso-0 hQhfMe"
+                  class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
                 >
                   Total Amount
                 </span>
@@ -731,7 +731,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -753,21 +753,21 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="flex flex-col space-y-2"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-neutral-500"
+              class="leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 luNWb"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-700"
+              class="text-sm font-semibold text-theme-secondary-700"
             >
               Sender
             </div>
@@ -784,7 +784,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   ARK Wallet 1
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   D8rr7B … s6YUYD
@@ -815,10 +815,10 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="username"
             >
@@ -829,17 +829,17 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               />
             </label>
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value=""
             />
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="fee"
             >
@@ -860,7 +860,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -886,7 +886,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="10"
-                            class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -900,13 +900,13 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="SelectionBar"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -915,7 +915,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -924,7 +924,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 </button>
                 <button
                   aria-checked="true"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -970,7 +970,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -992,21 +992,21 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="flex flex-col space-y-2"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-neutral-500"
+              class="leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 luNWb"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-700"
+              class="text-sm font-semibold text-theme-secondary-700"
             >
               Sender
             </div>
@@ -1023,7 +1023,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   ARK Wallet 1
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   D8rr7B … s6YUYD
@@ -1054,10 +1054,10 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           class="space-y-8"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="username"
             >
@@ -1068,17 +1068,17 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               />
             </label>
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="test_delegate"
             />
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="fee"
             >
@@ -1099,7 +1099,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1125,7 +1125,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -1139,13 +1139,13 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="SelectionBar"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1154,7 +1154,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1163,7 +1163,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1209,7 +1209,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -1231,21 +1231,21 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             class="flex flex-col space-y-2"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-neutral-500"
+              class="leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 luNWb"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-700"
+              class="text-sm font-semibold text-theme-secondary-700"
             >
               Sender
             </div>
@@ -1262,7 +1262,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                   ARK Wallet 1
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   D8rr7B … s6YUYD
@@ -1293,10 +1293,10 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           class="space-y-8"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="username"
             >
@@ -1308,22 +1308,22 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             </label>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="arkx"
             />
             <p
-              class="text-sm text-theme-danger"
+              class="text-sm text-theme-danger-500"
             >
               'Delegate Name' already exists
             </p>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="fee"
             >
@@ -1344,7 +1344,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1370,7 +1370,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -1384,13 +1384,13 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="SelectionBar"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1399,7 +1399,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1408,7 +1408,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1454,7 +1454,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           </div>
         </div>
         <div
-          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+          class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
         >
           <div
             class="flex items-center justify-center text-theme-warning-600"
@@ -1476,21 +1476,21 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             class="flex flex-col space-y-2"
           >
             <p
-              class="leading-relaxed break-words dark:text-theme-neutral-500"
+              class="leading-relaxed break-words dark:text-theme-secondary-500"
             >
               Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.
             </p>
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 luNWb"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj"
           data-testid="TransactionDetail"
         >
           <div
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-700"
+              class="text-sm font-semibold text-theme-secondary-700"
             >
               Sender
             </div>
@@ -1507,7 +1507,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                   ARK Wallet 1
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   D8rr7B … s6YUYD
@@ -1538,10 +1538,10 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           class="space-y-8"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 kOlxOw flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="username"
             >
@@ -1553,22 +1553,22 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             </label>
             <input
               aria-invalid="true"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="Input__username"
               name="username"
               value="<invalid>"
             />
             <p
-              class="text-sm text-theme-danger"
+              class="text-sm text-theme-danger-500"
             >
               The following characters are not allowed: '&lt;', '&gt;'
             </p>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
               data-testid="FormLabel"
               for="fee"
             >
@@ -1589,7 +1589,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                   class="InputGroup-sc-1obbdqe-3 bgPpWR"
                 >
                   <input
-                    class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                    class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     name="fee"
                     type="text"
@@ -1615,7 +1615,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                             aria-valuemax="10"
                             aria-valuemin="0"
                             aria-valuenow="2"
-                            class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                             data-testid="Range__thumb"
                             draggable="false"
                             role="slider"
@@ -1629,13 +1629,13 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 </div>
               </div>
               <div
-                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="SelectionBar"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1644,7 +1644,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"
@@ -1653,7 +1653,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 </button>
                 <button
                   aria-checked="false"
-                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                  class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                   data-testid="SelectionBarOption"
                   role="radio"
                   type="button"

@@ -219,7 +219,7 @@ describe("WalletListItem", () => {
 		fireEvent.mouseLeave(getByText(wallet.alias()));
 
 		expect(setState).toHaveBeenCalledWith(
-			theme === "dark" ? "--theme-color-neutral-800" : "--theme-color-neutral-100",
+			theme === "dark" ? "--theme-color-secondary-800" : "--theme-color-secondary-100",
 		);
 	});
 });

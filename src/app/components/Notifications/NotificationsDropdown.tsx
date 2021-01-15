@@ -35,12 +35,12 @@ export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
 						<Button
 							variant="transparent"
 							size="icon"
-							className="w-12 h-12 group text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-neutral-800 dark:hover:text-theme-neutral-200"
+							className="w-12 h-12 group text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200"
 							data-testid="navbar__buttons--notifications"
 						>
 							<Icon name="Notification" width={15} height={18} className="p-1" />
 							{hasUnread && (
-								<div className="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-neutral-800">
+								<div className="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800">
 									<div className="w-2 h-2 rounded-full bg-theme-danger-500" />
 								</div>
 							)}

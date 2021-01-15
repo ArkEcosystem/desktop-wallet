@@ -21,7 +21,7 @@ type AddressListItemProps = {
 const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	<div
 		data-testid="contact-form__address-list-item"
-		className="flex items-center py-4 border-b border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
+		className="flex items-center py-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
 	>
 		<div className="mr-4">
 			<div className="flex items-center -space-x-1">
@@ -56,7 +56,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 
 	return (
 		<div className="group">
-			<span className="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary text-theme-secondary-text">
+			<span className="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary-600 text-theme-secondary-text">
 				{t("CONTACTS.CONTACT_FORM.ADDRESSES")}
 			</span>
 

@@ -16,7 +16,7 @@ exports[`CreateContact should render create contact modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -58,10 +58,10 @@ exports[`CreateContact should render create contact modal 1`] = `
               data-testid="contact-form"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
                   data-testid="FormLabel"
                   for="name"
                 >
@@ -72,7 +72,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                   />
                 </label>
                 <input
-                  class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                  class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                   data-testid="contact-form__name-input"
                   name="name"
                   value=""
@@ -82,10 +82,10 @@ exports[`CreateContact should render create contact modal 1`] = `
                 class="SubForm__SubFormWrapper-c4tqfs-0 lkacNM"
               >
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
                     data-testid="FormLabel"
                     for="network"
                   >
@@ -115,7 +115,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                           class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
                         >
                           <div
-                            class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                            class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                             data-testid="SelectNetworkInput__network"
                           />
                         </div>
@@ -124,7 +124,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                           aria-controls="ContactForm__network-menu"
                           aria-labelledby="ContactForm__network-label"
                           autocomplete="off"
-                          class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
                           data-testid="SelectNetworkInput__input"
                           id="ContactForm__network-input"
                           placeholder="Enter a cryptoasset name"
@@ -141,11 +141,11 @@ exports[`CreateContact should render create contact modal 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                   data-testid="ContactForm__address"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
                     data-testid="FormLabel"
                     for="address"
                   >
@@ -159,7 +159,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                     class="InputGroup-sc-1obbdqe-3 bgPpWR max-w-20"
                   >
                     <input
-                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-12"
                       data-testid="contact-form__address-input"
                       name="address"
                       type="text"
@@ -189,7 +189,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                   class="mt-4"
                 >
                   <button
-                    class="Button-mdtvtf-0 eVVyXU w-full"
+                    class="Button-mdtvtf-0 kgwVKi w-full"
                     data-testid="contact-form__add-address-btn"
                     disabled=""
                     type="button"
@@ -205,14 +205,14 @@ exports[`CreateContact should render create contact modal 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="Button-mdtvtf-0 ifPnXw"
+                    class="Button-mdtvtf-0 cyPweQ"
                     data-testid="contact-form__cancel-btn"
                     type="button"
                   >
                     Cancel
                   </button>
                   <button
-                    class="Button-mdtvtf-0 eVVyXU"
+                    class="Button-mdtvtf-0 kgwVKi"
                     data-testid="contact-form__save-btn"
                     disabled=""
                     type="submit"

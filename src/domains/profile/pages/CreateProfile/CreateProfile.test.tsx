@@ -50,6 +50,10 @@ const renderComponent = async () => {
 	return result;
 };
 
+jest.mock("fs", () => ({
+	readFileSync: jest.fn(() => "avatarImage"),
+}));
+
 describe("CreateProfile", () => {
 	beforeAll(() => {
 		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });

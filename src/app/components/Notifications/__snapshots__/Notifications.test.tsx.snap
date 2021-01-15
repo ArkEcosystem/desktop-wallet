@@ -7,7 +7,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
     data-testid="NotificationsWrapper"
   >
     <div
-      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
+      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500"
     >
       Plugins
     </div>
@@ -35,12 +35,12 @@ exports[`Notifications should emit transactionClick event 1`] = `
             <td>
               <div>
                 <span
-                  class="font-bold text-md text-theme-neutral-600"
+                  class="font-bold text-md text-theme-secondary-600"
                 >
                   ARK Desktop Wallet
                 </span>
                 <span
-                  class="text-md text-theme-neutral-600"
+                  class="text-md text-theme-secondary-600"
                 >
                    
                   - update v2.5.6
@@ -69,12 +69,12 @@ exports[`Notifications should emit transactionClick event 1`] = `
             <td>
               <div>
                 <span
-                  class="font-bold text-md text-theme-neutral-600"
+                  class="font-bold text-md text-theme-secondary-600"
                 >
                   ARK Avatars
                 </span>
                 <span
-                  class="text-md text-theme-neutral-600"
+                  class="text-md text-theme-secondary-600"
                 >
                    
                   - update v4
@@ -97,7 +97,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
       class="mt-4"
     >
       <div
-        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
+        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-secondary-500"
       >
         Transactions
       </div>
@@ -113,7 +113,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
             role="rowgroup"
           >
             <tr
-              class="TableRow__TableRowStyled-sc-1br46dw-0 fqvyKk"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
               data-testid="TableRow"
             >
               <td>
@@ -184,7 +184,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
               </td>
             </tr>
             <tr
-              class="TableRow__TableRowStyled-sc-1br46dw-0 fqvyKk"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
               data-testid="TableRow"
             >
               <td>
@@ -268,7 +268,7 @@ exports[`Notifications should render with empty notifications 1`] = `
     class="styles__NotificationsWrapper-fnayqc-0 dHZvWm"
   >
     <div
-      class="p-6 mb-5 rounded-xl border-2 border-theme-neutral-300 dark:border-theme-neutral-800 text-md text-theme-secondary-text"
+      class="p-6 mb-5 rounded-xl border-2 border-theme-secondary-300 dark:border-theme-secondary-800 text-md text-theme-secondary-text"
     >
       You have no notifications at this time
     </div>
@@ -284,7 +284,7 @@ exports[`Notifications should render with empty notifications 1`] = `
       </div>
     </div>
     <div
-      class="my-3 border-2 border-b border-theme-neutral-contrast"
+      class="my-3 border-2 border-b border-theme-secondary-100"
     />
     <div>
       <div
@@ -308,7 +308,7 @@ exports[`Notifications should render with plugins 1`] = `
     data-testid="NotificationsWrapper"
   >
     <div
-      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
+      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500"
     >
       Plugins
     </div>
@@ -336,12 +336,12 @@ exports[`Notifications should render with plugins 1`] = `
             <td>
               <div>
                 <span
-                  class="font-bold text-md text-theme-neutral-600"
+                  class="font-bold text-md text-theme-secondary-600"
                 >
                   ARK Desktop Wallet
                 </span>
                 <span
-                  class="text-md text-theme-neutral-600"
+                  class="text-md text-theme-secondary-600"
                 >
                    
                   - update v2.5.6
@@ -370,12 +370,12 @@ exports[`Notifications should render with plugins 1`] = `
             <td>
               <div>
                 <span
-                  class="font-bold text-md text-theme-neutral-600"
+                  class="font-bold text-md text-theme-secondary-600"
                 >
                   ARK Avatars
                 </span>
                 <span
-                  class="text-md text-theme-neutral-600"
+                  class="text-md text-theme-secondary-600"
                 >
                    
                   - update v4
@@ -398,7 +398,7 @@ exports[`Notifications should render with plugins 1`] = `
       class="mt-4"
     >
       <div
-        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
+        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-secondary-500"
       >
         Transactions
       </div>
@@ -414,7 +414,7 @@ exports[`Notifications should render with plugins 1`] = `
             role="rowgroup"
           >
             <tr
-              class="TableRow__TableRowStyled-sc-1br46dw-0 fqvyKk"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
               data-testid="TableRow"
             >
               <td>
@@ -485,7 +485,7 @@ exports[`Notifications should render with plugins 1`] = `
               </td>
             </tr>
             <tr
-              class="TableRow__TableRowStyled-sc-1br46dw-0 fqvyKk"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
               data-testid="TableRow"
             >
               <td>
@@ -570,7 +570,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
     data-testid="NotificationsWrapper"
   >
     <div
-      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-neutral"
+      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500"
     >
       Plugins
     </div>
@@ -598,12 +598,12 @@ exports[`Notifications should render with transactions and plugins 1`] = `
             <td>
               <div>
                 <span
-                  class="font-bold text-md text-theme-neutral-600"
+                  class="font-bold text-md text-theme-secondary-600"
                 >
                   ARK Desktop Wallet
                 </span>
                 <span
-                  class="text-md text-theme-neutral-600"
+                  class="text-md text-theme-secondary-600"
                 >
                    
                   - update v2.5.6
@@ -632,12 +632,12 @@ exports[`Notifications should render with transactions and plugins 1`] = `
             <td>
               <div>
                 <span
-                  class="font-bold text-md text-theme-neutral-600"
+                  class="font-bold text-md text-theme-secondary-600"
                 >
                   ARK Avatars
                 </span>
                 <span
-                  class="text-md text-theme-neutral-600"
+                  class="text-md text-theme-secondary-600"
                 >
                    
                   - update v4
@@ -660,7 +660,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
       class="mt-4"
     >
       <div
-        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-neutral"
+        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-secondary-500"
       >
         Transactions
       </div>
@@ -676,7 +676,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
             role="rowgroup"
           >
             <tr
-              class="TableRow__TableRowStyled-sc-1br46dw-0 fqvyKk"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
               data-testid="TableRow"
             >
               <td>
@@ -747,7 +747,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               </td>
             </tr>
             <tr
-              class="TableRow__TableRowStyled-sc-1br46dw-0 fqvyKk"
+              class="TableRow__TableRowStyled-sc-1br46dw-0 gAOLvg"
               data-testid="TableRow"
             >
               <td>

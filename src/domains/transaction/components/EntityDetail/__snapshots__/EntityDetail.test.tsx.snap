@@ -16,7 +16,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -53,7 +53,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -70,7 +70,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -82,7 +82,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -111,14 +111,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -134,14 +134,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -153,14 +153,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -174,7 +174,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -187,14 +187,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -205,20 +205,20 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -240,14 +240,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -258,20 +258,20 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -313,7 +313,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -350,7 +350,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -367,7 +367,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -379,7 +379,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -408,14 +408,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -431,14 +431,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -450,14 +450,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -471,7 +471,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -484,14 +484,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -502,20 +502,20 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -537,14 +537,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -555,20 +555,20 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -610,7 +610,7 @@ exports[`EntityDetail should render a modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -647,7 +647,7 @@ exports[`EntityDetail should render a modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -664,7 +664,7 @@ exports[`EntityDetail should render a modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -676,7 +676,7 @@ exports[`EntityDetail should render a modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -705,14 +705,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -728,14 +728,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -747,14 +747,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -768,7 +768,7 @@ exports[`EntityDetail should render a modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -781,14 +781,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -799,20 +799,20 @@ exports[`EntityDetail should render a modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -834,14 +834,14 @@ exports[`EntityDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -852,20 +852,20 @@ exports[`EntityDetail should render a modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -907,7 +907,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -944,7 +944,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -967,7 +967,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -996,14 +996,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -1019,14 +1019,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -1038,14 +1038,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -1059,7 +1059,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -1072,14 +1072,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -1090,20 +1090,20 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1125,14 +1125,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -1143,20 +1143,20 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1198,7 +1198,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -1235,7 +1235,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -1252,7 +1252,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1264,7 +1264,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -1293,14 +1293,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -1316,14 +1316,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -1335,14 +1335,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -1356,7 +1356,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -1369,14 +1369,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -1387,20 +1387,20 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1422,14 +1422,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -1440,20 +1440,20 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1495,7 +1495,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -1532,7 +1532,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -1549,7 +1549,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1561,7 +1561,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -1590,14 +1590,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -1613,14 +1613,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -1632,14 +1632,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -1653,7 +1653,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -1666,14 +1666,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -1684,20 +1684,20 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1719,14 +1719,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -1737,20 +1737,20 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -1792,7 +1792,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -1829,7 +1829,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -1846,7 +1846,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -1858,7 +1858,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -1887,14 +1887,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -1910,14 +1910,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -1929,14 +1929,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -1950,7 +1950,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -1963,14 +1963,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -1981,20 +1981,20 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2016,14 +2016,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -2034,20 +2034,20 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2089,7 +2089,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -2126,7 +2126,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -2143,7 +2143,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -2155,7 +2155,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -2184,14 +2184,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -2207,14 +2207,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -2226,14 +2226,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -2247,7 +2247,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -2260,14 +2260,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -2278,20 +2278,20 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2313,14 +2313,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -2331,20 +2331,20 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2386,7 +2386,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -2423,7 +2423,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -2440,7 +2440,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -2452,7 +2452,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -2481,14 +2481,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -2504,14 +2504,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -2523,14 +2523,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -2544,7 +2544,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -2557,14 +2557,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -2575,20 +2575,20 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2610,14 +2610,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -2628,20 +2628,20 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2683,7 +2683,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -2720,7 +2720,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -2737,7 +2737,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -2749,7 +2749,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -2778,14 +2778,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -2801,14 +2801,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -2820,14 +2820,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -2841,7 +2841,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -2854,14 +2854,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -2872,20 +2872,20 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2907,14 +2907,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -2925,20 +2925,20 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -2980,7 +2980,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -3017,7 +3017,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -3034,7 +3034,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -3046,7 +3046,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -3075,14 +3075,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -3098,14 +3098,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -3117,14 +3117,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -3138,7 +3138,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -3151,14 +3151,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -3169,20 +3169,20 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3204,14 +3204,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -3222,20 +3222,20 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3277,7 +3277,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -3314,7 +3314,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -3331,7 +3331,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -3343,7 +3343,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -3372,14 +3372,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -3395,14 +3395,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -3414,14 +3414,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -3435,7 +3435,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -3448,14 +3448,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -3466,20 +3466,20 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3501,14 +3501,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -3519,20 +3519,20 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3574,7 +3574,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -3611,7 +3611,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -3628,7 +3628,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -3640,7 +3640,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -3669,14 +3669,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -3692,14 +3692,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -3711,14 +3711,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -3732,7 +3732,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                     Not confirmed
                   </span>
                   <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning"
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
                     height="22"
                     width="22"
                   >
@@ -3745,14 +3745,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -3763,20 +3763,20 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3798,14 +3798,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -3816,20 +3816,20 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -3871,7 +3871,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-neutral-800 dark:text-theme-neutral-600 dark:hover:bg-theme-neutral-700 dark:hover:text-theme-neutral-400"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
           class="Button-mdtvtf-0 gVVPUs w-11 h-11"
@@ -3908,7 +3908,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -3925,7 +3925,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
                     Test Wallet
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -3937,7 +3937,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-neutral-600 dark:text-theme-neutral-600"
+                class="Circle-uw7h4j-0 JkqUV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ catSEV"
@@ -3966,14 +3966,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Transaction Fee
               </div>
@@ -3989,14 +3989,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Timestamp
               </div>
@@ -4008,14 +4008,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Confirmations
               </div>
@@ -4030,7 +4030,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
                   </span>
                   <span>
                     <div
-                      class="sc-bdfBwQ iSzUah text-theme-success"
+                      class="sc-bdfBwQ iSzUah text-theme-success-600"
                       height="22"
                       width="22"
                     >
@@ -4044,14 +4044,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 ID
               </div>
@@ -4062,20 +4062,20 @@ exports[`EntityDetail should render as confirmed 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       ee4175091d9f4 … 9d09bcf3ecefe
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"
@@ -4097,14 +4097,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Block ID
               </div>
@@ -4115,20 +4115,20 @@ exports[`EntityDetail should render as confirmed 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 gwkapx inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-dark"
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
                       data-testid="TruncateMiddle"
                     >
                       71fd1a494ded5 … 972b8075d67e9
                     </span>
                   </a>
                   <span
-                    class="flex text-theme-primary-300 dark:text-theme-neutral-600"
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class="inline-block cursor-pointer"

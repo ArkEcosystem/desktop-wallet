@@ -34,8 +34,8 @@ export const TransactionAmount = ({
 		const tooltipContent = t(`TRANSACTION.${modeIconName.toUpperCase()}`);
 
 		const modeCircleStyle = isSent
-			? "border-theme-danger-contrast text-theme-danger dark:border-theme-danger-400 dark:text-theme-danger-400"
-			: "border-theme-success-300 text-theme-success dark:border-theme-success";
+			? "border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400"
+			: "border-theme-success-300 text-theme-success-600 dark:border-theme-success-600";
 
 		return (
 			<Tooltip content={tooltipContent}>
@@ -56,7 +56,7 @@ export const TransactionAmount = ({
 				<Amount ticker={currency} value={amount} isNegative={isSent} showSign />
 			</Label>
 			{exchangeCurrency && convertedAmount && (
-				<Amount ticker={exchangeCurrency} value={convertedAmount} className="ml-2 text-theme-neutral-light" />
+				<Amount ticker={exchangeCurrency} value={convertedAmount} className="ml-2 text-theme-secondary-400" />
 			)}
 		</TransactionDetail>
 	);

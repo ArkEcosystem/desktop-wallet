@@ -55,9 +55,9 @@ export const HeaderSearchBar = ({
 						children
 					) : (
 						<div className="flex items-center space-x-3">
-							<span className="text-theme-primary-300 dark:text-theme-neutral-700">{label}</span>
+							<span className="text-theme-primary-300 dark:text-theme-secondary-700">{label}</span>
 							<Icon
-								className="text-theme-primary-300 dark:text-theme-neutral-600"
+								className="text-theme-primary-300 dark:text-theme-secondary-600"
 								name="Search"
 								width={18}
 								height={18}
@@ -78,7 +78,7 @@ export const HeaderSearchBar = ({
 					{extra && (
 						<div className="flex items-center">
 							<div>{extra}</div>
-							<div className="mr-8 h-10 border-l border-theme-neutral-300 dark:border-theme-neutral-800" />
+							<div className="mr-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
 						</div>
 					)}
 
@@ -89,7 +89,7 @@ export const HeaderSearchBar = ({
 						type="button"
 					>
 						<Icon
-							className="p-1 -ml-1 text-theme-secondary dark:text-theme-neutral-600 hover:text-theme-primary"
+							className="p-1 -ml-1 text-theme-secondary dark:text-theme-secondary-600 hover:text-theme-primary-600"
 							name="CrossSlim"
 							width={12}
 							height={12}
@@ -106,7 +106,7 @@ export const HeaderSearchBar = ({
 					</div>
 
 					<Icon
-						className="text-color-primary-300 dark:text-theme-neutral-600 "
+						className="text-color-primary-300 dark:text-theme-secondary-600 "
 						name="Search"
 						width={18}
 						height={18}

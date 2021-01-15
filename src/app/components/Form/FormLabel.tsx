@@ -25,7 +25,7 @@ export function FormLabel(props: FormLabelProps) {
 	return (
 		<label
 			data-testid="FormLabel"
-			className="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+			className="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
 			htmlFor={fieldContext?.name}
 			{...labelProps}
 		>

@@ -6,13 +6,13 @@ exports[`SendTransactionForm should render 1`] = `
     class="space-y-8 SendTransactionForm"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
     >
       <div
         class="mb-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
           data-testid="FormLabel"
           for="network"
         >
@@ -43,7 +43,7 @@ exports[`SendTransactionForm should render 1`] = `
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -52,7 +52,7 @@ exports[`SendTransactionForm should render 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -69,13 +69,13 @@ exports[`SendTransactionForm should render 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
     >
       <div
         class="mb-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -91,18 +91,18 @@ exports[`SendTransactionForm should render 1`] = `
       >
         <div>
           <button
-            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
             <div
-              class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+              class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
             />
             <div
               class="inline-flex items-center"
             />
             <div
-              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-neutral-600"
+              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"
@@ -116,7 +116,7 @@ exports[`SendTransactionForm should render 1`] = `
             </div>
           </button>
           <input
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -127,10 +127,10 @@ exports[`SendTransactionForm should render 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
         data-testid="FormLabel"
         for="fee"
       >
@@ -151,7 +151,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="InputCurrency"
               name="fee"
               type="text"
@@ -177,7 +177,7 @@ exports[`SendTransactionForm should render 1`] = `
                       aria-valuemax="2e-8"
                       aria-valuemin="0"
                       aria-valuenow="0"
-                      class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                      class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                       data-testid="Range__thumb"
                       draggable="false"
                       role="slider"
@@ -191,13 +191,13 @@ exports[`SendTransactionForm should render 1`] = `
           </div>
         </div>
         <div
-          class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+          class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
           data-testid="SelectionBar"
           role="radiogroup"
         >
           <button
             aria-checked="true"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"
@@ -206,7 +206,7 @@ exports[`SendTransactionForm should render 1`] = `
           </button>
           <button
             aria-checked="false"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"
@@ -215,7 +215,7 @@ exports[`SendTransactionForm should render 1`] = `
           </button>
           <button
             aria-checked="false"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"
@@ -235,13 +235,13 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
     class="space-y-8 SendTransactionForm"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
     >
       <div
         class="mb-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
           data-testid="FormLabel"
           for="network"
         >
@@ -293,7 +293,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -310,13 +310,13 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
     >
       <div
         class="mb-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -332,7 +332,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
       >
         <div>
           <button
-            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -361,7 +361,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
               </span>
             </div>
             <div
-              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-neutral-600"
+              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"
@@ -375,7 +375,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             </div>
           </button>
           <input
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
@@ -386,10 +386,10 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
         data-testid="FormLabel"
         for="fee"
       >
@@ -410,11 +410,11 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="InputCurrency"
               name="fee"
               type="text"
-              value="0.71538139"
+              value="0"
             />
             <div
               class="absolute bottom-0 px-1 w-full"
@@ -434,9 +434,9 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
                   >
                     <div
                       aria-valuemax="6.63"
-                      aria-valuemin="0.00357"
-                      aria-valuenow="0.71538139"
-                      class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                      aria-valuemin="0"
+                      aria-valuenow="0"
+                      class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                       data-testid="Range__thumb"
                       draggable="false"
                       role="slider"
@@ -450,13 +450,13 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
           </div>
         </div>
         <div
-          class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+          class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
           data-testid="SelectionBar"
           role="radiogroup"
         >
           <button
             aria-checked="false"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"
@@ -464,8 +464,8 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
             Min
           </button>
           <button
-            aria-checked="true"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            aria-checked="false"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"
@@ -474,7 +474,7 @@ exports[`SendTransactionForm should select a sender & update fees 1`] = `
           </button>
           <button
             aria-checked="false"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"
@@ -494,13 +494,13 @@ exports[`SendTransactionForm should select fill out form 1`] = `
     class="space-y-8 SendTransactionForm"
   >
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
     >
       <div
         class="mb-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
           data-testid="FormLabel"
           for="network"
         >
@@ -531,7 +531,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-neutral-200 dark:border-theme-neutral-700 text-theme-neutral"
+                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                 data-testid="SelectNetworkInput__network"
               />
             </div>
@@ -540,7 +540,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
               aria-controls="SendTransactionForm__network-menu"
               aria-labelledby="SendTransactionForm__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               id="SendTransactionForm__network-input"
               placeholder="Enter a cryptoasset name"
@@ -557,13 +557,13 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs relative"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
     >
       <div
         class="mb-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -579,36 +579,18 @@ exports[`SendTransactionForm should select fill out form 1`] = `
       >
         <div>
           <button
-            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 cQudBj SelectAddress  "
+            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
             data-testid="SelectAddress__wrapper"
             type="button"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD mx-4"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                />
-              </div>
-            </div>
+              class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+            />
             <div
               class="inline-flex items-center"
-            >
-              <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                D8rr7B1d6TL6p … sKp1VBMs6YUYD
-              </span>
-            </div>
+            />
             <div
-              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-neutral-600"
+              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"
@@ -622,21 +604,21 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             </div>
           </button>
           <input
-            class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
             data-testid="SelectAddress__input"
             name="senderAddress"
             readonly=""
             type="text"
-            value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+            value=""
           />
         </div>
       </div>
     </fieldset>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
         data-testid="FormLabel"
         for="fee"
       >
@@ -657,11 +639,270 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
               data-testid="InputCurrency"
               name="fee"
               type="text"
-              value="0.71538139"
+              value="0.00000001"
+            />
+            <div
+              class="absolute bottom-0 px-1 w-full"
+            >
+              <div
+                class="flex flex-wrap justify-center"
+                data-testid="Range"
+              >
+                <div
+                  class="Range__Track-sc-10itqc2-0 sgjTD"
+                  data-testid="Range__track"
+                  style="transform: scale(1); cursor: pointer;"
+                >
+                  <div
+                    class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                    data-testid="Range__track__filled"
+                  >
+                    <div
+                      aria-valuemax="2e-8"
+                      aria-valuemin="0"
+                      aria-valuenow="1e-8"
+                      class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                      data-testid="Range__thumb"
+                      draggable="false"
+                      role="slider"
+                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                      tabindex="0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+          data-testid="SelectionBar"
+          role="radiogroup"
+        >
+          <button
+            aria-checked="false"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+            data-testid="SelectionBarOption"
+            role="radio"
+            type="button"
+          >
+            Min
+          </button>
+          <button
+            aria-checked="true"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+            data-testid="SelectionBarOption"
+            role="radio"
+            type="button"
+          >
+            Average
+          </button>
+          <button
+            aria-checked="false"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+            data-testid="SelectionBarOption"
+            role="radio"
+            type="button"
+          >
+            Max
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`SendTransactionForm should use static fees if avg is not available 1`] = `
+<div>
+  <div
+    class="space-y-8 SendTransactionForm"
+  >
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+    >
+      <div
+        class="mb-2"
+      >
+        <label
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          data-testid="FormLabel"
+          for="network"
+        >
+          Cryptoasset
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="SendTransactionForm__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="SendTransactionForm__network-input"
+            id="SendTransactionForm__network-label"
+          />
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+            data-testid="SelectNetworkInput"
+          >
+            <div
+              class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonStart-sc-1obbdqe-1 bsvVEG hMbbfK px-4"
+            >
+              <div
+                aria-label="ARK Devnet"
+                class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                data-testid="SelectNetworkInput__network"
+              >
+                <div
+                  class="sc-bdfBwQ iyevwF"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="SendTransactionForm__network-menu"
+              aria-labelledby="SendTransactionForm__network-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="SendTransactionForm__network-input"
+              placeholder="Enter a cryptoasset name"
+              value=""
+            />
+          </div>
+        </div>
+        <ul
+          aria-labelledby="SendTransactionForm__network-label"
+          class="hidden"
+          id="SendTransactionForm__network-menu"
+          role="listbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc relative"
+    >
+      <div
+        class="mb-2"
+      >
+        <label
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          data-testid="FormLabel"
+          for="senderAddress"
+        >
+          Sender
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+      </div>
+      <div
+        data-testid="sender-address"
+      >
+        <div>
+          <button
+            class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
+            data-testid="SelectAddress__wrapper"
+            type="button"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibFMMD mx-4"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                  title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-flex items-center"
+            >
+              <span
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D5sRKWckH4rE1 … AepgyC3cvJtwb
+              </span>
+            </div>
+            <div
+              class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
+            >
+              <div
+                class="sc-bdfBwQ iyevwF"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  user.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+          <input
+            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 hidden"
+            data-testid="SelectAddress__input"
+            name="senderAddress"
+            readonly=""
+            type="text"
+            value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
+          />
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+    >
+      <label
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+        data-testid="FormLabel"
+        for="fee"
+      >
+        Transaction Fee
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div
+        class="flex space-x-2"
+        data-testid="InputFee"
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="InputGroup-sc-1obbdqe-3 bgPpWR"
+          >
+            <input
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+              data-testid="InputCurrency"
+              name="fee"
+              type="text"
+              value="0"
             />
             <div
               class="absolute bottom-0 px-1 w-full"
@@ -681,9 +922,9 @@ exports[`SendTransactionForm should select fill out form 1`] = `
                   >
                     <div
                       aria-valuemax="6.63"
-                      aria-valuemin="0.00357"
-                      aria-valuenow="0.71538139"
-                      class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                      aria-valuemin="0"
+                      aria-valuenow="0"
+                      class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                       data-testid="Range__thumb"
                       draggable="false"
                       role="slider"
@@ -697,13 +938,13 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           </div>
         </div>
         <div
-          class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+          class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
           data-testid="SelectionBar"
           role="radiogroup"
         >
           <button
             aria-checked="false"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"
@@ -711,8 +952,8 @@ exports[`SendTransactionForm should select fill out form 1`] = `
             Min
           </button>
           <button
-            aria-checked="true"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            aria-checked="false"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"
@@ -721,7 +962,7 @@ exports[`SendTransactionForm should select fill out form 1`] = `
           </button>
           <button
             aria-checked="false"
-            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+            class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
             data-testid="SelectionBarOption"
             role="radio"
             type="button"

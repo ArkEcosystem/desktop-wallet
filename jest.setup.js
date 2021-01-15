@@ -12,6 +12,13 @@ jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
 
 	return {
+		ipcMain: {
+			handle: jest.fn(),
+			invoke: jest.fn(),
+			on: jest.fn(),
+			removeListener: jest.fn(),
+			send: jest.fn(),
+		},
 		ipcRenderer: {
 			handle: jest.fn(),
 			invoke: jest.fn(),
@@ -66,7 +73,9 @@ afterEach(() => {
 });
 
 afterAll(() => {
-	global.gc();
+	if (global.gc) {
+		global.gc();
+	}
 });
 
 window.scrollTo = jest.fn();

@@ -27,7 +27,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </div>
           </div>
           <div
-            class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+            class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
           >
             <div
               class="flex items-center justify-center text-theme-warning-600"
@@ -49,7 +49,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               class="flex flex-col space-y-2"
             >
               <p
-                class="leading-relaxed break-words dark:text-theme-neutral-500"
+                class="leading-relaxed break-words dark:text-theme-secondary-500"
               >
                 This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.
               </p>
@@ -59,11 +59,11 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4"
           >
             <li
-              class="relative py-3 px-3 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="relative py-3 px-3 rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="MnemonicList__item"
             >
               <span
-                class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral-800"
+                class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-800"
               >
                 1
               </span>
@@ -74,11 +74,11 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               </span>
             </li>
             <li
-              class="relative py-3 px-3 rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="relative py-3 px-3 rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="MnemonicList__item"
             >
               <span
-                class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral-800"
+                class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-800"
               >
                 2
               </span>
@@ -97,7 +97,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
               data-testid="clipboard__wrapper"
             >
               <button
-                class="Button-mdtvtf-0 ifPnXw"
+                class="Button-mdtvtf-0 cyPweQ"
                 data-testid="SecondSignature__copy"
                 type="button"
               >
@@ -117,7 +117,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </div>
           </div>
           <div
-            class="Divider-sc-19q4mlo-0 bKsVMa border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
             type="horizontal"
           />
           <div
@@ -132,7 +132,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
                 Download Your Passphrase
               </span>
               <p
-                class="text-sm text-theme-neutral"
+                class="text-sm text-theme-secondary-500"
               >
                 You can also download and safely store your passphrase.
               </p>
@@ -151,7 +151,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             class="flex justify-end w-full"
           >
             <button
-              class="Button-mdtvtf-0 ifPnXw flex items-center space-x-2"
+              class="Button-mdtvtf-0 cyPweQ flex items-center space-x-2"
               data-testid="SecondSignature__download"
               type="button"
             >
@@ -170,7 +170,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </button>
           </div>
           <div
-            class="Divider-sc-19q4mlo-0 bKsVMa border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
             type="horizontal"
           />
         </section>
@@ -213,7 +213,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
             </div>
           </div>
           <div
-            class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-neutral-100 dark:bg-theme-neutral-800 border-theme-neutral-300 dark:border-theme-neutral-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
+            class="Alert__AlertWrapper-sc-1rcd7no-0 sDOxJ flex overflow-hidden flex-col space-y-5 rounded-lg border bg-theme-secondary-100 dark:bg-theme-secondary-800 border-theme-secondary-300 dark:border-theme-secondary-800 sm:space-y-0 sm:space-x-5 sm:flex-row"
           >
             <div
               class="flex items-center justify-center text-theme-warning-600"
@@ -235,21 +235,21 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               class="flex flex-col space-y-2"
             >
               <p
-                class="leading-relaxed break-words dark:text-theme-neutral-500"
+                class="leading-relaxed break-words dark:text-theme-secondary-500"
               >
                 Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.
               </p>
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 luNWb"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj"
             data-testid="TransactionDetail"
           >
             <div
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-700"
+                class="text-sm font-semibold text-theme-secondary-700"
               >
                 Sender
               </div>
@@ -266,7 +266,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     ARK Wallet 1
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B … s6YUYD
@@ -297,10 +297,10 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
             class="space-y-8"
           >
             <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
                 data-testid="FormLabel"
                 for="fee"
               >
@@ -321,7 +321,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     class="InputGroup-sc-1obbdqe-3 bgPpWR"
                   >
                     <input
-                      class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 "
+                      class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -347,7 +347,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                               aria-valuemax="10"
                               aria-valuemin="0"
                               aria-valuenow="0"
-                              class="Range__Thumb-sc-10itqc2-2 RpEAg"
+                              class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                               data-testid="Range__thumb"
                               draggable="false"
                               role="slider"
@@ -361,13 +361,13 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="true"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -376,7 +376,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -385,7 +385,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
                     data-testid="SelectionBarOption"
                     role="radio"
                     type="button"
@@ -406,14 +406,14 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
 exports[`SecondSignatureRegistrationForm should render transaction details 1`] = `
 <DocumentFragment>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Transaction Type
       </div>
@@ -438,14 +438,14 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
     </div>
   </div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cSiXEj"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ByQkj"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Transaction Fee
       </div>

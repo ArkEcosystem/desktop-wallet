@@ -34,19 +34,19 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 						<div className="flex -space-x-2">
 							<Circle
 								size="lg"
-								className="bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
+								className="bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
 							/>
 							<Circle
 								size="lg"
-								className="bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
+								className="bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
 							/>
 						</div>
 
-						<div className="mt-auto text-lg font-bold text-theme-primary-100 dark:text-theme-neutral-800">
+						<div className="mt-auto text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800">
 							{t("COMMON.BALANCE")}
 						</div>
 
-						<span className="mt-1 text-xs font-semibold truncate text-theme-primary-100 dark:text-theme-neutral-800">
+						<span className="mt-1 text-xs font-semibold truncate text-theme-primary-100 dark:text-theme-secondary-800">
 							{t("COMMON.ADDRESS")}
 						</span>
 					</div>
@@ -66,7 +66,7 @@ export const WalletCard = ({ className, wallet, actions, onSelect }: WalletCardP
 		}
 	};
 
-	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
+	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-secondary-600");
 
 	const WalletIcon = ({ type }: { type: string }) => (
 		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>

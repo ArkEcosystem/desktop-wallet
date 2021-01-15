@@ -3,7 +3,7 @@
 exports[`SelectionBar should render 1`] = `
 <DocumentFragment>
   <div
-    class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-400 dark:border-theme-neutral-700"
+    class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
     data-testid="SelectionBar"
     role="radiogroup"
   />
@@ -14,7 +14,7 @@ exports[`SelectionBarOption should render 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
     data-testid="SelectionBarOption"
     role="radio"
     type="button"
@@ -23,7 +23,7 @@ exports[`SelectionBarOption should render 1`] = `
   </button>
   <button
     aria-checked="false"
-    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 ghqyIR relative items-center px-4 h-full border-transparent transition-colors duration-300 first:pl-6 last:pr-6 focus:outline-none border-b-3"
+    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
     data-testid="SelectionBarOption"
     role="radio"
     type="button"

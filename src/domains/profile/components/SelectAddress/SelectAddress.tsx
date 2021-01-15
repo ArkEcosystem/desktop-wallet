@@ -25,7 +25,7 @@ const ProfileAvatar = ({ address }: any) => {
 	if (!address)
 		return (
 			<Circle
-				className="mr-3 ml-4 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+				className="mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
 				size="sm"
 				noShadow
 			/>
@@ -62,7 +62,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 				>
 					<ProfileAvatar address={selectedAddress} />
 					<Address maxChars={30} address={selectedAddress} />
-					<div className="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-neutral-600">
+					<div className="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600">
 						{isVerified && (
 							<div className="rounded-full text-theme-success-400 bg-theme-success-100">
 								<Icon name="Checkmark" width={18} height={18} />
