@@ -18,21 +18,21 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 
 	return crumbs.length ? (
 		<div data-testid="breadcrumbs__wrapper" className={`flex items-center space-x-3 text-sm ${className || ""}`}>
-			<Icon name="ArrowLeft" className="text-theme-neutral-500" width={13} height={24} />
+			<Icon name="ArrowLeft" className="text-theme-secondary-500" width={13} height={24} />
 
 			{crumbs.map((crumb: Crumb, index: number) => (
 				<span key={index} className="space-x-3">
-					{isLast(index) && <span className="text-theme-neutral-700">{crumb.label}</span>}
+					{isLast(index) && <span className="text-theme-secondary-700">{crumb.label}</span>}
 
 					{!isLast(index) && crumb.route && (
 						<>
-							<NavLink to={crumb.route} className="text-theme-neutral-500 hover:underline">
+							<NavLink to={crumb.route} className="text-theme-secondary-500 hover:underline">
 								<span>{crumb.label}</span>
 							</NavLink>
 
 							<span>
 								<Divider
-									className="border-theme-neutral-300 dark:border-theme-neutral-800"
+									className="border-theme-secondary-300 dark:border-theme-secondary-800"
 									type="vertical"
 								/>
 							</span>

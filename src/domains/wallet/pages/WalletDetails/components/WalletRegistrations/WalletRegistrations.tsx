@@ -39,11 +39,11 @@ export const WalletRegistrations = ({ wallet }: WalletRegistrationsProps) => {
 					<div className="flex items-center -space-x-2">
 						<Circle
 							size="lg"
-							className="border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700"
+							className="border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
 						>
 							<Icon name="Delegate" className="text-xl" />
 						</Circle>
-						<Circle size="lg" className="border-theme-neutral-500 dark:border-theme-neutral-700" />
+						<Circle size="lg" className="border-theme-secondary-500 dark:border-theme-secondary-700" />
 					</div>
 
 					<div className="flex flex-1 justify-between">
@@ -66,7 +66,7 @@ export const WalletRegistrations = ({ wallet }: WalletRegistrationsProps) => {
 		const renderIcon = (icon: string, tooltip?: string, active?: boolean) => {
 			const iconStyle = active
 				? "border-theme-text text-theme-text"
-				: "border-theme-neutral-500 dark:border-theme-neutral-700 text-theme-neutral-500 dark:text-theme-neutral-700";
+				: "border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700";
 
 			const circle = (
 				<Circle size="lg" className={iconStyle}>
@@ -97,7 +97,7 @@ export const WalletRegistrations = ({ wallet }: WalletRegistrationsProps) => {
 				{(!delegate || !isSecondSignature || !isMultiSignature) && (
 					<div
 						data-testid="WalletRegistrations__inactive"
-						className="flex items-center pl-8 -space-x-2 border-l border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="flex items-center pl-8 -space-x-2 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
 					>
 						{!isSecondSignature && renderIcon("Key")}
 

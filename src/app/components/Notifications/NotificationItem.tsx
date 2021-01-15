@@ -28,8 +28,8 @@ export const NotificationItem = ({
 					containment={containmentRef?.current}
 				>
 					<div>
-						<span className="font-bold text-md text-theme-neutral-600">{name}</span>
-						<span className="text-md text-theme-neutral-600"> {body}</span>
+						<span className="font-bold text-md text-theme-secondary-600">{name}</span>
+						<span className="text-md text-theme-secondary-600"> {body}</span>
 					</div>
 				</VisibilitySensor>
 			</td>

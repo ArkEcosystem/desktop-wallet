@@ -7,7 +7,7 @@ exports[`Splash should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 dKKWCT"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bPGMtQ"
     >
       <div
         class="px-4 sm:px-6 lg:px-10"
@@ -77,7 +77,7 @@ exports[`Splash should render 1`] = `
                     cy="20"
                     fill="transparent"
                     r="19"
-                    stroke="var(--theme-color-neutral-800)"
+                    stroke="var(--theme-color-secondary-800)"
                     stroke-width="2"
                   />
                   <circle
@@ -85,7 +85,7 @@ exports[`Splash should render 1`] = `
                     cy="20"
                     fill="transparent"
                     r="19"
-                    stroke="var(--theme-color-primary)"
+                    stroke="var(--theme-color-primary-600)"
                     stroke-dasharray="119.38052083641213"
                     stroke-dashoffset="95.50441666912971"
                     stroke-linecap="round"
@@ -98,25 +98,25 @@ exports[`Splash should render 1`] = `
             </div>
           </div>
           <div
-            class="flex fixed right-0 left-0 bottom-5 justify-center items-center text-xs font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
+            class="flex fixed right-0 left-0 bottom-5 justify-center items-center text-xs font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
             data-testid="Splash__footer"
           >
             <div>
               2020 © ARK.io
             </div>
             <div
-              class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
               type="vertical"
             />
             <div>
               All Rights Reserved
             </div>
             <div
-              class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
               type="vertical"
             />
             <div
-              class="Splash__LogoContainer-sc-1ulyvw-0 dZtAMu"
+              class="Splash__LogoContainer-sc-1ulyvw-0 hJYohG"
             >
               <svg
                 width="18"
@@ -128,7 +128,7 @@ exports[`Splash should render 1`] = `
               An ARK.io Product
             </div>
             <div
-              class="Divider-sc-19q4mlo-0 gSJoMw border-theme-neutral-300 dark:border-theme-neutral-800"
+              class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
               type="vertical"
             />
             <div>

@@ -6,7 +6,7 @@ exports[`AddRecipient should render 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary"
+      class="text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
         class="flex items-center mb-2 space-x-2"
@@ -36,14 +36,14 @@ exports[`AddRecipient should render 1`] = `
         class="flex items-stretch select-buttons"
       >
         <button
-          class="Button-mdtvtf-0 fiUdIG flex-1"
+          class="Button-mdtvtf-0 lodmJN flex-1"
           data-testid="AddRecipient__single"
           type="button"
         >
           Single
         </button>
         <button
-          class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+          class="Button-mdtvtf-0 glOikE flex-1 border-l-0"
           data-testid="AddRecipient__multi"
           type="button"
         >
@@ -58,10 +58,10 @@ exports[`AddRecipient should render 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="recipientAddress"
           >
@@ -80,18 +80,18 @@ exports[`AddRecipient should render 1`] = `
                 class="absolute left-1"
               >
                 <div
-                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 type="text"
                 value=""
               />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -108,10 +108,10 @@ exports[`AddRecipient should render 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="amount"
           >
@@ -125,7 +125,7 @@ exports[`AddRecipient should render 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
@@ -136,7 +136,7 @@ exports[`AddRecipient should render 1`] = `
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
+                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -157,7 +157,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary"
+      class="text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
         class="flex items-center mb-2 space-x-2"
@@ -187,14 +187,14 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         class="flex items-stretch select-buttons"
       >
         <button
-          class="Button-mdtvtf-0 kTEMHs flex-1"
+          class="Button-mdtvtf-0 glOikE flex-1"
           data-testid="AddRecipient__single"
           type="button"
         >
           Single
         </button>
         <button
-          class="Button-mdtvtf-0 fiUdIG flex-1 border-l-0"
+          class="Button-mdtvtf-0 lodmJN flex-1 border-l-0"
           data-testid="AddRecipient__multi"
           type="button"
         >
@@ -209,10 +209,10 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="recipientAddress"
           >
@@ -231,18 +231,18 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                 class="absolute left-1"
               >
                 <div
-                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 type="text"
                 value=""
               />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -259,10 +259,10 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="amount"
           >
@@ -276,7 +276,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
@@ -287,7 +287,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
+                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -308,7 +308,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary"
+      class="text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
         class="flex items-center mb-2 space-x-2"
@@ -338,14 +338,14 @@ exports[`AddRecipient should render with single recipient data 1`] = `
         class="flex items-stretch select-buttons"
       >
         <button
-          class="Button-mdtvtf-0 fiUdIG flex-1"
+          class="Button-mdtvtf-0 lodmJN flex-1"
           data-testid="AddRecipient__single"
           type="button"
         >
           Single
         </button>
         <button
-          class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+          class="Button-mdtvtf-0 glOikE flex-1 border-l-0"
           data-testid="AddRecipient__multi"
           type="button"
         >
@@ -360,10 +360,10 @@ exports[`AddRecipient should render with single recipient data 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="recipientAddress"
           >
@@ -397,14 +397,14 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                 </div>
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 type="text"
                 value="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
               />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -421,10 +421,10 @@ exports[`AddRecipient should render with single recipient data 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="amount"
           >
@@ -438,7 +438,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
@@ -449,7 +449,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
+                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -470,7 +470,7 @@ exports[`AddRecipient should render without recipients 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary"
+      class="text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
         class="flex items-center mb-2 space-x-2"
@@ -500,14 +500,14 @@ exports[`AddRecipient should render without recipients 1`] = `
         class="flex items-stretch select-buttons"
       >
         <button
-          class="Button-mdtvtf-0 fiUdIG flex-1"
+          class="Button-mdtvtf-0 lodmJN flex-1"
           data-testid="AddRecipient__single"
           type="button"
         >
           Single
         </button>
         <button
-          class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+          class="Button-mdtvtf-0 glOikE flex-1 border-l-0"
           data-testid="AddRecipient__multi"
           type="button"
         >
@@ -522,10 +522,10 @@ exports[`AddRecipient should render without recipients 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="recipientAddress"
           >
@@ -544,18 +544,18 @@ exports[`AddRecipient should render without recipients 1`] = `
                 class="absolute left-1"
               >
                 <div
-                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 type="text"
                 value=""
               />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -572,10 +572,10 @@ exports[`AddRecipient should render without recipients 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="amount"
           >
@@ -589,7 +589,7 @@ exports[`AddRecipient should render without recipients 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
@@ -600,7 +600,7 @@ exports[`AddRecipient should render without recipients 1`] = `
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
+                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -627,10 +627,10 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="recipientAddress"
           >
@@ -649,18 +649,18 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                 class="absolute left-1"
               >
                 <div
-                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 type="text"
                 value=""
               />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -677,10 +677,10 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="amount"
           >
@@ -694,7 +694,7 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
@@ -705,7 +705,7 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
+                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >
@@ -726,7 +726,7 @@ exports[`AddRecipient should set available amount 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary"
+      class="text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
         class="flex items-center mb-2 space-x-2"
@@ -756,14 +756,14 @@ exports[`AddRecipient should set available amount 1`] = `
         class="flex items-stretch select-buttons"
       >
         <button
-          class="Button-mdtvtf-0 fiUdIG flex-1"
+          class="Button-mdtvtf-0 lodmJN flex-1"
           data-testid="AddRecipient__single"
           type="button"
         >
           Single
         </button>
         <button
-          class="Button-mdtvtf-0 kTEMHs flex-1 border-l-0"
+          class="Button-mdtvtf-0 glOikE flex-1 border-l-0"
           data-testid="AddRecipient__multi"
           type="button"
         >
@@ -778,10 +778,10 @@ exports[`AddRecipient should set available amount 1`] = `
         class="space-y-8"
       >
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="recipientAddress"
           >
@@ -800,18 +800,18 @@ exports[`AddRecipient should set available amount 1`] = `
                 class="absolute left-1"
               >
                 <div
-                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-neutral-200 dark:bg-theme-neutral-700 border-theme-neutral-200 dark:border-theme-neutral-700"
+                  class="Circle-uw7h4j-0 blBpcG mx-3 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
                 />
               </div>
               <input
-                class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
+                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-11 pl-14"
                 data-testid="SelectRecipient__input"
                 name="recipientAddress"
                 type="text"
                 value=""
               />
               <div
-                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-neutral-600"
+                class="flex absolute right-4 items-center space-x-3 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600"
                 data-testid="SelectRecipient__select-recipient"
               >
                 <div
@@ -828,10 +828,10 @@ exports[`AddRecipient should set available amount 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
-            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
             data-testid="FormLabel"
             for="amount"
           >
@@ -845,7 +845,7 @@ exports[`AddRecipient should set available amount 1`] = `
             class="InputGroup-sc-1obbdqe-3 bgPpWR"
           >
             <input
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pr-20"
               data-testid="AddRecipient__amount"
               name="amount"
               placeholder="Amount"
@@ -856,7 +856,7 @@ exports[`AddRecipient should set available amount 1`] = `
               class="InputGroup__InputAddon-sc-1obbdqe-0 InputGroup__InputAddonEnd-sc-1obbdqe-2 bsvVEG isvHuV"
             >
               <button
-                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary focus:outline-none"
+                class="pr-3 pl-6 mr-1 h-12 font-medium text-theme-primary-600 focus:outline-none"
                 data-testid="AddRecipient__send-all"
                 type="button"
               >

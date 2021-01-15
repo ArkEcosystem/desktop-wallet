@@ -17,11 +17,13 @@ const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 
 	return (
 		<div className="grid grid-cols-8 mt-8">
-			<div className="flex flex-col col-span-6 mr-5 h-32 rounded-lg border-2 border-theme-primary-100 dark:border-theme-neutral-800">
+			<div className="flex flex-col col-span-6 mr-5 h-32 rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800">
 				<div className="flex flex-col m-auto text-center">
 					<span className="font-semibold">{t("EXCHANGE.YOUR_EXCHANGE_LIST")}</span>
 
-					<span className="m-auto text-sm text-theme-neutral-500">{t("EXCHANGE.NO_EXCHANGES_MESSAGE")}</span>
+					<span className="m-auto text-sm text-theme-secondary-500">
+						{t("EXCHANGE.NO_EXCHANGES_MESSAGE")}
+					</span>
 				</div>
 			</div>
 

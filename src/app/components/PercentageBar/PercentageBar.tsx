@@ -43,7 +43,7 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => {
 	return (
 		<div>
 			<div className="flex space-x-3">
-				<div className="py-4 text-lg font-bold text-theme-neutral-800">{title}</div>
+				<div className="py-4 text-lg font-bold text-theme-secondary-800">{title}</div>
 				<div className="flex flex-1 justify-end space-x-3">
 					{percentageData &&
 						percentageData.map((item: BarItem, index: number) => (

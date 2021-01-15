@@ -15,12 +15,12 @@ exports[`Signatures should render 1`] = `
     >
       <div>
         <div
-          class="mb-2 text-sm font-semibold text-theme-neutral"
+          class="mb-2 text-sm font-semibold text-theme-secondary-500"
         >
           You
         </div>
         <div
-          class="pr-6 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+          class="pr-6 mr-2 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
         >
           <div
             class="relative"
@@ -43,7 +43,7 @@ exports[`Signatures should render 1`] = `
               </div>
             </div>
             <span
-              class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
+              class="Badge__Wrapper-sc-1d7juq8-0 cUrkoG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
               data-testid="Signatures__waiting-badge"
             >
               <div
@@ -62,7 +62,7 @@ exports[`Signatures should render 1`] = `
       </div>
       <div>
         <div
-          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
+          class="mb-2 ml-2 text-sm font-semibold text-theme-secondary-500"
         >
           Other
         </div>
@@ -127,12 +127,12 @@ exports[`Signatures should render with final signature 1`] = `
     >
       <div>
         <div
-          class="mb-2 text-sm font-semibold text-theme-neutral"
+          class="mb-2 text-sm font-semibold text-theme-secondary-500"
         >
           You
         </div>
         <div
-          class="pr-6 mr-2 border-r border-theme-neutral-300 dark:border-theme-neutral-800"
+          class="pr-6 mr-2 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
         >
           <div
             class="relative"
@@ -174,7 +174,7 @@ exports[`Signatures should render with final signature 1`] = `
       </div>
       <div>
         <div
-          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
+          class="mb-2 ml-2 text-sm font-semibold text-theme-secondary-500"
         >
           Other
         </div>

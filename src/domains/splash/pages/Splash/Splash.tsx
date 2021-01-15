@@ -14,7 +14,7 @@ import { version } from "../../../../../package.json";
 const { ARKLogo } = images.common;
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center mr-2 rounded-sm text-theme-background bg-theme-neutral-500 dark:bg-theme-neutral-700`};
+	${tw`flex items-center justify-center mr-2 rounded-sm text-theme-background bg-theme-secondary-500 dark:bg-theme-secondary-700`};
 	width: 18px;
 	height: 18px;
 `;
@@ -41,19 +41,19 @@ export const Splash = ({ year }: any) => {
 								value={20}
 								strokeColor={
 									shouldUseDarkColors()
-										? "var(--theme-color-neutral-800)"
+										? "var(--theme-color-secondary-800)"
 										: "var(--theme-color-success-200)"
 								}
 								strokeWidth={2}
 								size={40}
-								progressColor="var(--theme-color-primary)"
+								progressColor="var(--theme-color-primary-600)"
 							/>
 						</div>
 					</div>
 				</div>
 				<div
 					data-testid="Splash__footer"
-					className="flex fixed right-0 left-0 bottom-5 justify-center items-center text-xs font-semibold text-theme-neutral-500 dark:text-theme-neutral-700"
+					className="flex fixed right-0 left-0 bottom-5 justify-center items-center text-xs font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
 				>
 					<div>
 						{currentYear} {t("SPLASH.COPYRIGHT")}

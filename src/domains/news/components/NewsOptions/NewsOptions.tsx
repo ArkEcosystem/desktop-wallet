@@ -102,7 +102,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 	return (
 		<div
-			className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-neutral-800"
+			className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
 			data-testid="NewsOptions"
 		>
 			<div className="flex flex-col space-y-8">
@@ -120,7 +120,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 						}}
 					/>
 					<Icon
-						className="mr-4 text-theme-primary-300 dark:text-theme-neutral-600"
+						className="mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
 						name="Search"
 						width={18}
 						height={18}
@@ -135,14 +135,14 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 						{showSelectAllCategories && (
 							<button
 								onClick={handleSelectAllCategories}
-								className="text-xs font-semibold focus:outline-none text-theme-neutral-800"
+								className="text-xs font-semibold focus:outline-none text-theme-secondary-800"
 							>
 								{t("COMMON.SELECT_ALL")}
 							</button>
 						)}
 					</div>
 
-					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}</p>
+					<p className="text-sm text-theme-secondary-500">{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}</p>
 
 					<div className="flex flex-wrap -mx-1">
 						{categories.map((category, index) => (
@@ -163,7 +163,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 				<div className="flex flex-col space-y-3">
 					<h5 className="font-semibold">{t("NEWS.NEWS_OPTIONS.FILTER_ASSETS")}</h5>
-					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
+					<p className="text-sm text-theme-secondary-500">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
 						<FilterNetwork networks={coins} hideViewAll onChange={(_, networks) => setCoins(networks)} />

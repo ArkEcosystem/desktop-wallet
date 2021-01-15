@@ -46,7 +46,7 @@ export const WalletsControls = memo(
 
 		return (
 			<div data-testid="WalletControls" className="flex justify-end">
-				<div className="flex items-center pr-5 mr-5 border-r border-theme-primary-300 dark:border-theme-neutral-800">
+				<div className="flex items-center pr-5 mr-5 border-r border-theme-primary-300 dark:border-theme-secondary-800">
 					<LayoutControls
 						onSelectGridView={onClickGridView}
 						onSelectListView={onClickListview}
@@ -54,7 +54,7 @@ export const WalletsControls = memo(
 					/>
 				</div>
 
-				<div className="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-300 dark:border-theme-neutral-800">
+				<div className="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-300 dark:border-theme-secondary-800">
 					<Dropdown
 						dropdownClass="transform -translate-y-4"
 						toggleContent={

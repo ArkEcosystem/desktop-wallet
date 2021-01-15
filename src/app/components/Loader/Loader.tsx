@@ -21,8 +21,8 @@ export const Loader = ({ show }: LoaderProps) => {
 						size={100}
 						strokeWidth={3}
 						value={40}
-						progressColor="var(--theme-color-neutral-800)"
-						strokeColor="var(--theme-color-neutral-300)"
+						progressColor="var(--theme-color-secondary-800)"
+						strokeColor="var(--theme-color-secondary-300)"
 					/>
 				</div>
 
@@ -33,8 +33,8 @@ export const Loader = ({ show }: LoaderProps) => {
 						size={75}
 						strokeWidth={3}
 						value={30}
-						progressColor="var(--theme-color-neutral-800)"
-						strokeColor="var(--theme-color-neutral-300)"
+						progressColor="var(--theme-color-secondary-800)"
+						strokeColor="var(--theme-color-secondary-300)"
 					/>
 				</div>
 

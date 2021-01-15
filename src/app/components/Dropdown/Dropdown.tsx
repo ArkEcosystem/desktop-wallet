@@ -49,7 +49,7 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 		)}
 		<ul>
 			{title && (
-				<li className="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-neutral-500">
+				<li className="block px-8 pt-4 text-xs font-bold text-left uppercase whitespace-nowrap cursor-pointer text-theme-secondary-500">
 					{title}
 				</li>
 			)}
@@ -75,7 +75,7 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 		<ul data-testid="dropdown__options">
 			{(options as DropdownOption[]).map((option: DropdownOption, index: number) => (
 				<li
-					className="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-neutral-800 dark:text-theme-neutral-200 hover:bg-theme-neutral-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary dark:hover:text-theme-neutral-200"
+					className="block py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
 					key={index}
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
 					onClick={(e: any) => {

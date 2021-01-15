@@ -3,7 +3,7 @@
 exports[`TransactionVotes should render loading state 1`] = `
 <div>
   <div
-    class="flex justify-between items-center py-6 border-t border-dashed border-theme-neutral-300 dark:border-theme-neutral-800"
+    class="flex justify-between items-center py-6 border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
     data-testid="TransactionVotes__skeleton"
   >
     <div
@@ -41,14 +41,14 @@ exports[`TransactionVotes should render loading state 1`] = `
 exports[`TransactionVotes should render with unvotes 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Transaction Type
       </div>
@@ -73,14 +73,14 @@ exports[`TransactionVotes should render with unvotes 1`] = `
     </div>
   </div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Unvotes (1)
       </div>
@@ -91,7 +91,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
           class="-my-2"
         >
           <div
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <div
               class="py-4 space-x-4"
@@ -120,7 +120,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
                   test-username
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -138,14 +138,14 @@ exports[`TransactionVotes should render with unvotes 1`] = `
 exports[`TransactionVotes should render with votes 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Transaction Type
       </div>
@@ -170,14 +170,14 @@ exports[`TransactionVotes should render with votes 1`] = `
     </div>
   </div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Votes (1)
       </div>
@@ -188,7 +188,7 @@ exports[`TransactionVotes should render with votes 1`] = `
           class="-my-2"
         >
           <div
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <div
               class="py-4 space-x-4"
@@ -217,7 +217,7 @@ exports[`TransactionVotes should render with votes 1`] = `
                   test-username
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -235,14 +235,14 @@ exports[`TransactionVotes should render with votes 1`] = `
 exports[`TransactionVotes should render with votes and unvotes 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Transaction Type
       </div>
@@ -267,14 +267,14 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
     </div>
   </div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Votes (1)
       </div>
@@ -285,7 +285,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
           class="-my-2"
         >
           <div
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <div
               class="py-4 space-x-4"
@@ -314,7 +314,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                   test-username
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address
@@ -327,14 +327,14 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
     </div>
   </div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 Lofxx"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp"
     data-testid="TransactionDetail"
   >
     <div
       class="flex-1 space-y-2"
     >
       <div
-        class="text-sm font-semibold text-theme-neutral-700"
+        class="text-sm font-semibold text-theme-secondary-700"
       >
         Unvotes (1)
       </div>
@@ -345,7 +345,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
           class="-my-2"
         >
           <div
-            class="border-b border-dashed last:border-b-0 border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <div
               class="py-4 space-x-4"
@@ -374,7 +374,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                   test-username
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-neutral-500 dark:text-theme-neutral-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   test-address

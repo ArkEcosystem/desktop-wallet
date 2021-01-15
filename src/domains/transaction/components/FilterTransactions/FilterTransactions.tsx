@@ -43,10 +43,10 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected }
 						isOpen={isOpen}
 						label={
 							<>
-								<span className="text-theme-neutral-500 dark:text-theme-neutral-600">
+								<span className="text-theme-secondary-500 dark:text-theme-secondary-600">
 									{t("COMMON.TYPE")}:{" "}
 								</span>
-								<span className="text-theme-neutral-700 dark:text-theme-neutral-200">
+								<span className="text-theme-secondary-700 dark:text-theme-secondary-200">
 									{selectedOption?.label}
 								</span>
 							</>

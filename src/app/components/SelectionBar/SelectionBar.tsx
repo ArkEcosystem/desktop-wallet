@@ -9,7 +9,7 @@ export const SelectionBar = ({ children }: GroupProps) => (
 	<div
 		data-testid="SelectionBar"
 		role="radiogroup"
-		className="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-neutral-300 dark:border-theme-neutral-800"
+		className="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
 	>
 		{children}
 	</div>
@@ -20,12 +20,12 @@ const SelectionBarOptionStyled = styled.button`
 		padding: 0.6875rem 1.25rem 0.625rem;
 	}
 	&[aria-checked="true"] {
-		${tw`text-theme-success border-theme-success bg-theme-success-contrast font-semibold`}
+		${tw`text-theme-success-600 border-theme-success-600 bg-theme-success-100 font-semibold`}
 	}
 	& + &:after {
 		content: "";
 		width: 1px;
-		${tw`bg-theme-neutral-300 top-1/2 absolute left-0 block h-6 transform -translate-y-1/2`};
+		${tw`bg-theme-secondary-300 top-1/2 absolute left-0 block h-6 transform -translate-y-1/2`};
 	}
 `;
 

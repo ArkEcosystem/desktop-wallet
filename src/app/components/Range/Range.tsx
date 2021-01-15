@@ -13,9 +13,9 @@ const TrackFilled = styled.div`
 
 const Thumb = styled.div`
 	&:active {
-		${tw`bg-theme-primary`}
+		${tw`bg-theme-primary-600`}
 	}
-	${tw`m-0 transition-colors duration-100 w-4 h-4 rounded-full bg-theme-background border-3 border-theme-primary focus:outline-none focus:shadow-outline`}
+	${tw`m-0 transition-colors duration-100 w-4 h-4 rounded-full bg-theme-background border-3 border-theme-primary-600 focus:outline-none focus:shadow-outline`}
 `;
 
 type Props = {
@@ -67,5 +67,5 @@ Range.defaultProps = {
 	min: 1,
 	max: 100,
 	step: 1,
-	colors: ["var(--theme-color-primary)", "var(--theme-color-neutral-light)"],
+	colors: ["var(--theme-color-primary-600)", "var(--theme-color-secondary-400)"],
 };

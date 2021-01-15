@@ -52,7 +52,7 @@ export const TransactionRow = ({
 		<TableRow
 			onClick={onClick}
 			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-secondary-800" : "--theme-color-secondary-100")
 			}
 			onMouseLeave={() => setShadowColor("")}
 			{...props}

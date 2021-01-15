@@ -62,7 +62,7 @@ export const WalletListItem = ({
 		}
 	};
 
-	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-neutral-600");
+	const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-secondary-600");
 
 	const WalletIcon = ({ type }: { type: string }) => (
 		<Tooltip key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
@@ -77,7 +77,7 @@ export const WalletListItem = ({
 			isSelected={isSelected}
 			onClick={() => onClick?.(wallet.id())}
 			onMouseEnter={() =>
-				setShadowColor(shouldUseDarkColors() ? "--theme-color-neutral-800" : "--theme-color-neutral-100")
+				setShadowColor(shouldUseDarkColors() ? "--theme-color-secondary-800" : "--theme-color-secondary-100")
 			}
 			onMouseLeave={() => setShadowColor(defaultShadowColor)}
 		>
@@ -111,13 +111,13 @@ export const WalletListItem = ({
 				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
-			<TableCell variant={hasActions ? "middle" : "end"} innerClassName="justify-end text-theme-neutral-light">
+			<TableCell variant={hasActions ? "middle" : "end"} innerClassName="justify-end text-theme-secondary-400">
 				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
 			</TableCell>
 
 			{hasActions && (
 				<TableCell variant="end">
-					<div className="text-theme-neutral-light hover:text-theme-neutral">
+					<div className="text-theme-secondary-400 hover:text-theme-secondary-500">
 						<Dropdown options={actions} onSelect={handleAction} />
 					</div>
 				</TableCell>

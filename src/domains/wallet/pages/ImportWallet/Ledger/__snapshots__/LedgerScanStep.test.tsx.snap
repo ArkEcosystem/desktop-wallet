@@ -25,10 +25,10 @@ exports[`LedgerScanStep should render 1`] = `
       </div>
     </div>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 fNdAjs flex flex-col space-y-2"
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-neutral-700"
+        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
         data-testid="FormLabel"
         for="network"
       >
@@ -79,7 +79,7 @@ exports[`LedgerScanStep should render 1`] = `
               aria-controls="ImportWallet__network-menu"
               aria-labelledby="ImportWallet__network-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-0 hYmkQN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-400 dark:border-theme-neutral-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
+              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 pl-15"
               data-testid="SelectNetworkInput__input"
               disabled=""
               id="ImportWallet__network-input"
@@ -106,11 +106,11 @@ exports[`LedgerScanStep should render 1`] = `
       >
         <thead>
           <tr
-            class="border-b border-theme-neutral-300 dark:border-theme-neutral-800"
+            class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
             role="row"
           >
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -124,7 +124,7 @@ exports[`LedgerScanStep should render 1`] = `
                   Wallet
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="table__Sort"
                 >
                   <div
@@ -140,7 +140,7 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -154,7 +154,7 @@ exports[`LedgerScanStep should render 1`] = `
                   Balance
                 </div>
                 <div
-                  class="flex items-center ml-2 text-theme-neutral dark:text-theme-neutral-dark"
+                  class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="table__Sort"
                 >
                   <div
@@ -170,7 +170,7 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="relative text-sm text-left select-none text-theme-neutral border-theme-neutral-300 dark:text-theme-neutral-dark dark:border-theme-neutral-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -180,7 +180,7 @@ exports[`LedgerScanStep should render 1`] = `
               >
                 <div>
                   <input
-                    class="Checkbox-sc-17gwqiq-0 cLiiJm"
+                    class="Checkbox-sc-17gwqiq-0 cZgJoF"
                     color="success"
                     data-testid="LedgerScanStep__select-all"
                     type="checkbox"
@@ -194,7 +194,7 @@ exports[`LedgerScanStep should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
             data-testid="TableRow"
           >
             <td>
@@ -247,7 +247,7 @@ exports[`LedgerScanStep should render 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-center"
               >
                 <input
-                  class="Checkbox-sc-17gwqiq-0 cLiiJm"
+                  class="Checkbox-sc-17gwqiq-0 cZgJoF"
                   color="success"
                   type="checkbox"
                 />
@@ -255,7 +255,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
             data-testid="TableRow"
           >
             <td>
@@ -308,7 +308,7 @@ exports[`LedgerScanStep should render 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-center"
               >
                 <input
-                  class="Checkbox-sc-17gwqiq-0 cLiiJm"
+                  class="Checkbox-sc-17gwqiq-0 cZgJoF"
                   color="success"
                   type="checkbox"
                 />
@@ -316,7 +316,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
             data-testid="TableRow"
           >
             <td>
@@ -369,7 +369,7 @@ exports[`LedgerScanStep should render 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-center"
               >
                 <input
-                  class="Checkbox-sc-17gwqiq-0 cLiiJm"
+                  class="Checkbox-sc-17gwqiq-0 cZgJoF"
                   color="success"
                   type="checkbox"
                 />
@@ -377,7 +377,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 dfrDYk"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
             data-testid="TableRow"
           >
             <td>
@@ -430,7 +430,7 @@ exports[`LedgerScanStep should render 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 cnmhFM justify-center"
               >
                 <input
-                  class="Checkbox-sc-17gwqiq-0 cLiiJm"
+                  class="Checkbox-sc-17gwqiq-0 cZgJoF"
                   color="success"
                   type="checkbox"
                 />
@@ -442,7 +442,7 @@ exports[`LedgerScanStep should render 1`] = `
     </div>
     <div>
       <button
-        class="Button-mdtvtf-0 ifPnXw w-full"
+        class="Button-mdtvtf-0 cyPweQ w-full"
         data-testid="LedgerScanStep__view-more"
         type="button"
       >

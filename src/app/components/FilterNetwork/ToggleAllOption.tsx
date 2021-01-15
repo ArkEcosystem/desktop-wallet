@@ -14,7 +14,7 @@ export const ToggleAllOption = ({ onClick, isHidden = false, isSelected = false 
 		<Circle
 			size="lg"
 			data-testid="network__viewall"
-			className="relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-neutral-800"
+			className="relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800"
 			onClick={onClick}
 		>
 			<div className="text-sm font-semibold text-theme-primary-700">{t("COMMON.ALL")}</div>
@@ -23,7 +23,7 @@ export const ToggleAllOption = ({ onClick, isHidden = false, isSelected = false 
 				className={`${
 					isSelected
 						? "bg-theme-primary-700 border-theme-primary-700 text-white"
-						: "border-theme-primary-100 dark:border-theme-neutral-800 text-theme-primary-700"
+						: "border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-700"
 				}`}
 				icon="ChevronDown"
 				iconClass={`transition-transform ${isSelected ? "transform rotate-180" : ""}`}

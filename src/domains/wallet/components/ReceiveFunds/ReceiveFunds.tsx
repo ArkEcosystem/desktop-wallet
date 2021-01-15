@@ -69,7 +69,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				>
 					<div className="flex items-center space-x-2">
 						<Address address={address} maxChars={25} />
-						<span className="flex text-theme-primary-300 dark:text-theme-neutral-600">
+						<span className="flex text-theme-primary-300 dark:text-theme-secondary-600">
 							<Clipboard data={address}>
 								<Icon name="Copy" />
 							</Clipboard>
@@ -101,7 +101,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				{image && (
 					<img
 						src={image}
-						className="p-3 w-64 h-64 rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="p-3 w-64 h-64 rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
 					/>
@@ -110,21 +110,21 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 			{isFormOpen && (
 				<>
-					<div className="mx-auto mt-6 max-w-sm text-center text-theme-neutral-600">
+					<div className="mx-auto mt-6 max-w-sm text-center text-theme-secondary-600">
 						{t("COMMON.QR_CODE_HELP_TEXT")}
 					</div>
 
 					<div
-						className="flex overflow-hidden mt-8 font-medium rounded-lg border border-theme-neutral-300 dark:border-theme-neutral-800"
+						className="flex overflow-hidden mt-8 font-medium rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
 						data-testid="ReceiveFundsForm__uri"
 					>
-						<div className="p-6 bg-theme-neutral-200 dark:bg-theme-neutral-800">
+						<div className="p-6 bg-theme-secondary-200 dark:bg-theme-secondary-800">
 							<span className="text-theme-secondary-text">{t("COMMON.QR_SHORT")}</span>
 						</div>
 
-						<div className="flex overflow-hidden justify-between items-center pr-5 pl-6 space-x-4 w-full bg-theme-neutral-100 dark:bg-theme-background">
+						<div className="flex overflow-hidden justify-between items-center pr-5 pl-6 space-x-4 w-full bg-theme-secondary-100 dark:bg-theme-background">
 							<span className="truncate">{uri}</span>
-							<span className="flex text-theme-primary-300 dark:text-theme-neutral-600 hover:text-theme-primary-700">
+							<span className="flex text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700">
 								<Clipboard data={uri}>
 									<Icon name="Copy" width={12} height={15} className="p-1" />
 								</Clipboard>
