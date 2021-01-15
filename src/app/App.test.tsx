@@ -100,7 +100,7 @@ describe("App", () => {
 
 		jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(shouldUseDarkColors);
 
-		const { getByTestId, getByText } = renderWithRouter(<App />);
+		const { getByTestId, getByText } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
 			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
@@ -112,7 +112,7 @@ describe("App", () => {
 	it("should enter profile", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
-		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />);
+		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
 			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
