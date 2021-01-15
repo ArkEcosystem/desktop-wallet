@@ -76,10 +76,14 @@ describe("Dashboard", () => {
 			{
 				routes: [dashboardURL],
 				history,
+				withProfileSynchronizer: true,
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 2000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -100,6 +104,7 @@ describe("Dashboard", () => {
 			{
 				routes: [dashboardURL],
 				history,
+				withProfileSynchronizer: true,
 			},
 		);
 
@@ -140,6 +145,7 @@ describe("Dashboard", () => {
 			{
 				routes: [dashboardURL],
 				history,
+				withProfileSynchronizer: true,
 			},
 		);
 
@@ -162,6 +168,7 @@ describe("Dashboard", () => {
 			{
 				routes: [dashboardURL],
 				history,
+				withProfileSynchronizer: true,
 			},
 		);
 
