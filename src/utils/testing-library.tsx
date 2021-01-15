@@ -15,7 +15,7 @@ import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
 const ProfileSynchronizer = ({ children }: { children?: React.ReactNode }) => {
-	const { profile, profileIsSyncing, status } = useProfileSynchronizer();
+	const { profile, profileIsSyncing } = useProfileSynchronizer();
 	if (!profile?.id()) return <>{children}</>;
 
 	if (profileIsSyncing) return <></>;
@@ -40,7 +40,7 @@ const renderWithRouter = (
 		routes = ["/"],
 		history = createMemoryHistory({ initialEntries: routes }),
 		withProviders = true,
-		withProfileSynchronizer = true,
+		withProfileSynchronizer = false,
 	} = {},
 ) => {
 	const ProfileSynchronizerWrapper = ({ children }: { children: React.ReactNode }) =>
