@@ -82,7 +82,7 @@ describe("Dashboard", () => {
 
 		await waitFor(
 			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 2000 },
+			{ timeout: 4000 },
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
