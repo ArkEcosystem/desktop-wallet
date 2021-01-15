@@ -56,7 +56,6 @@ describe("SendTransactionForm", () => {
 		const { result: form } = renderHook(() => useForm());
 		form.current.register("fee");
 		form.current.register("senderAddress");
-		form.current.setValue("senderAddress", wallet.address());
 		form.current.setValue("fee", defaultFee);
 
 		let rendered: any;
@@ -72,6 +71,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
+			form.current.setValue("senderAddress", wallet.address());
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Fee

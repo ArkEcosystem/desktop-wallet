@@ -6,7 +6,6 @@ export const common = (t: any) => ({
 		validate: {
 			valid: (fee?: string | number) => {
 				const feeSatoshi = BigNumber.make(fee || 0);
-				console.log("validating feee", fee);
 
 				if (!network?.coin()) {
 					return true;
