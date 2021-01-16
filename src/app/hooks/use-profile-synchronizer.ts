@@ -14,8 +14,6 @@ enum Intervals {
 	Long = 120000,
 }
 
-const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
-
 const useProfileWatcher = () => {
 	const { env } = useEnvironmentContext();
 	const location = useLocation();
@@ -83,6 +81,7 @@ type ProfileSyncState = {
 };
 
 export const useProfileSyncStatus = (profile?: Profile) => {
+	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 	const { current } = useRef<ProfileSyncState>({
 		status: "idle",
 	});
@@ -94,20 +93,18 @@ export const useProfileSyncStatus = (profile?: Profile) => {
 	const isCompleted = () => current.status === "completed";
 
 	const shouldRestore = () => {
-		if (!profile || !__DEMO__) return false;
-
+		if (!profile || !isDemo) return false;
 		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
 	};
 
 	const shouldSync = () => profile && !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
-	const isSyncCompleted = () => profile && isSynced() && !isCompleted();
+	const shouldMarkCompleted = () => profile && isSynced() && !isCompleted();
 
 	return {
 		isIdle,
 		shouldSync,
 		shouldRestore,
-		isSyncCompleted,
-		status: () => current.status,
+		shouldMarkCompleted,
 		setStatus: (status: string) => (current.status = status),
 	};
 };
@@ -117,7 +114,7 @@ export const useProfileSynchronizer = () => {
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
 
-	const { shouldRestore, shouldSync, isSyncCompleted, setStatus, status } = useProfileSyncStatus(profile);
+	const { shouldRestore, shouldSync, shouldMarkCompleted, setStatus } = useProfileSyncStatus(profile);
 
 	const jobs = useProfileJobs(profile);
 	const { start, runAll } = useSynchronizer(jobs);
@@ -147,9 +144,9 @@ export const useProfileSynchronizer = () => {
 				setStatus("synced");
 			}
 
-			if (isSyncCompleted() && profileIsSyncing) {
-				setConfiguration({ profileIsSyncing: false });
+			if (shouldMarkCompleted() && profileIsSyncing) {
 				setStatus("completed");
+				setConfiguration({ profileIsSyncing: false });
 
 				// Start background jobs after initial sync
 				start();
@@ -164,12 +161,12 @@ export const useProfileSynchronizer = () => {
 		start,
 		persist,
 		setConfiguration,
-		isSyncCompleted,
+		shouldMarkCompleted,
 		shouldRestore,
 		shouldSync,
 		setStatus,
 		profileIsSyncing,
 	]);
 
-	return { profile, profileIsSyncing, status };
+	return { profile, profileIsSyncing };
 };
