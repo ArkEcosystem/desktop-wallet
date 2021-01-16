@@ -23,7 +23,7 @@ const useProfileWatcher = () => {
 	const allProfilesCount = env.profiles().count();
 
 	return useMemo(() => {
-		if (!profileId || env.profiles().count() === 0) return;
+		if (!profileId) return;
 		let response: Profile | undefined;
 
 		try {
@@ -80,7 +80,7 @@ type ProfileSyncState = {
 	status: string | null;
 };
 
-export const useProfileSyncStatus = (profile?: Profile) => {
+export const useProfileSyncStatus = () => {
 	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 	const { current } = useRef<ProfileSyncState>({
 		status: "idle",
@@ -93,12 +93,12 @@ export const useProfileSyncStatus = (profile?: Profile) => {
 	const isCompleted = () => current.status === "completed";
 
 	const shouldRestore = () => {
-		if (!profile || !isDemo) return false;
+		if (!isDemo) return false;
 		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
 	};
 
-	const shouldSync = () => profile && !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
-	const shouldMarkCompleted = () => profile && isSynced() && !isCompleted();
+	const shouldSync = () => !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
+	const shouldMarkCompleted = () => isSynced() && !isCompleted();
 
 	return {
 		isIdle,
@@ -114,7 +114,7 @@ export const useProfileSynchronizer = () => {
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const profile = useProfileWatcher();
 
-	const { shouldRestore, shouldSync, shouldMarkCompleted, setStatus } = useProfileSyncStatus(profile);
+	const { shouldRestore, shouldSync, shouldMarkCompleted, setStatus } = useProfileSyncStatus();
 
 	const jobs = useProfileJobs(profile);
 	const { start, runAll } = useSynchronizer(jobs);
