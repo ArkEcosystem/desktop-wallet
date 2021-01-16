@@ -107,13 +107,13 @@ exports[`Transactions should fetch more transactions 1`] = `
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       ID
@@ -121,7 +121,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -129,35 +129,35 @@ exports[`Transactions should fetch more transactions 1`] = `
                   title="Toggle SortBy"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       Date
                     </div>
                     <div
-                      class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      data-testid="table__Sort"
+                      class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ gvFuTp"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
                         height="5"
-                        width="10"
+                        role="img"
+                        width="8"
                       >
                         <svg>
-                          sort.svg
+                          chevron-down.svg
                         </svg>
                       </div>
                     </div>
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       Recipient
@@ -165,13 +165,13 @@ exports[`Transactions should fetch more transactions 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-center"
+                    class="flex flex-inline align-top justify-center "
                   >
                     <div>
                       Info
@@ -179,13 +179,13 @@ exports[`Transactions should fetch more transactions 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                   colspan="1"
                   data-testid="table__th--4"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-center"
+                    class="flex flex-inline align-top justify-center "
                   >
                     <div>
                       Status
@@ -193,7 +193,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                   colspan="1"
                   data-testid="table__th--5"
                   role="columnheader"
@@ -201,35 +201,35 @@ exports[`Transactions should fetch more transactions 1`] = `
                   title="Toggle SortBy"
                 >
                   <div
-                    class="flex flex-inline align-top justify-end"
+                    class="flex flex-inline align-top justify-end flex-row-reverse"
                   >
                     <div>
                       Amount
                     </div>
                     <div
-                      class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      data-testid="table__Sort"
+                      class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ gvFuTp"
+                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                         height="5"
-                        width="10"
+                        role="img"
+                        width="8"
                       >
                         <svg>
-                          sort.svg
+                          chevron-down.svg
                         </svg>
                       </div>
                     </div>
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
                   colspan="1"
                   data-testid="table__th--6"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-end float-right"
+                    class="flex flex-inline align-top justify-end float-right flex-row-reverse"
                   >
                     <div>
                       Currency
@@ -1604,13 +1604,13 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       ID
@@ -1618,7 +1618,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -1626,35 +1626,35 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   title="Toggle SortBy"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       Date
                     </div>
                     <div
-                      class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      data-testid="table__Sort"
+                      class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ gvFuTp"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
                         height="5"
-                        width="10"
+                        role="img"
+                        width="8"
                       >
                         <svg>
-                          sort.svg
+                          chevron-down.svg
                         </svg>
                       </div>
                     </div>
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       Recipient
@@ -1662,13 +1662,13 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-center"
+                    class="flex flex-inline align-top justify-center "
                   >
                     <div>
                       Info
@@ -1676,13 +1676,13 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                   colspan="1"
                   data-testid="table__th--4"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-center"
+                    class="flex flex-inline align-top justify-center "
                   >
                     <div>
                       Status
@@ -1690,7 +1690,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                   colspan="1"
                   data-testid="table__th--5"
                   role="columnheader"
@@ -1698,35 +1698,35 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   title="Toggle SortBy"
                 >
                   <div
-                    class="flex flex-inline align-top justify-end"
+                    class="flex flex-inline align-top justify-end flex-row-reverse"
                   >
                     <div>
                       Amount
                     </div>
                     <div
-                      class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      data-testid="table__Sort"
+                      class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ gvFuTp"
+                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                         height="5"
-                        width="10"
+                        role="img"
+                        width="8"
                       >
                         <svg>
-                          sort.svg
+                          chevron-down.svg
                         </svg>
                       </div>
                     </div>
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
                   colspan="1"
                   data-testid="table__th--6"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-end float-right"
+                    class="flex flex-inline align-top justify-end float-right flex-row-reverse"
                   >
                     <div>
                       Currency
@@ -2481,13 +2481,13 @@ exports[`Transactions should render 1`] = `
                 role="row"
               >
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       ID
@@ -2495,7 +2495,7 @@ exports[`Transactions should render 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
@@ -2503,35 +2503,35 @@ exports[`Transactions should render 1`] = `
                   title="Toggle SortBy"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       Date
                     </div>
                     <div
-                      class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      data-testid="table__Sort"
+                      class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ gvFuTp"
+                        class="sc-bdfBwQ kJrqvM transition-transform "
                         height="5"
-                        width="10"
+                        role="img"
+                        width="8"
                       >
                         <svg>
-                          sort.svg
+                          chevron-down.svg
                         </svg>
                       </div>
                     </div>
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top "
+                    class="flex flex-inline align-top  "
                   >
                     <div>
                       Recipient
@@ -2539,13 +2539,13 @@ exports[`Transactions should render 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                   colspan="1"
                   data-testid="table__th--3"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-center"
+                    class="flex flex-inline align-top justify-center "
                   >
                     <div>
                       Info
@@ -2553,13 +2553,13 @@ exports[`Transactions should render 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                   colspan="1"
                   data-testid="table__th--4"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-center"
+                    class="flex flex-inline align-top justify-center "
                   >
                     <div>
                       Status
@@ -2567,7 +2567,7 @@ exports[`Transactions should render 1`] = `
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                   colspan="1"
                   data-testid="table__th--5"
                   role="columnheader"
@@ -2575,35 +2575,35 @@ exports[`Transactions should render 1`] = `
                   title="Toggle SortBy"
                 >
                   <div
-                    class="flex flex-inline align-top justify-end"
+                    class="flex flex-inline align-top justify-end flex-row-reverse"
                   >
                     <div>
                       Amount
                     </div>
                     <div
-                      class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                      data-testid="table__Sort"
+                      class="opacity-0 group-hover:opacity-100 ml-auto mr-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                     >
                       <div
-                        class="sc-bdfBwQ gvFuTp"
+                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                         height="5"
-                        width="10"
+                        role="img"
+                        width="8"
                       >
                         <svg>
-                          sort.svg
+                          chevron-down.svg
                         </svg>
                       </div>
                     </div>
                   </div>
                 </th>
                 <th
-                  class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
                   colspan="1"
                   data-testid="table__th--6"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top justify-end float-right"
+                    class="flex flex-inline align-top justify-end float-right flex-row-reverse"
                   >
                     <div>
                       Currency

@@ -470,13 +470,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                         role="row"
                       >
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex flex-inline align-top hidden "
                           >
                             <div>
                               Logo
@@ -484,7 +484,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -492,29 +492,29 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Name
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -522,29 +522,29 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Author
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -552,29 +552,29 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Category
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -582,29 +582,29 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Rating
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
@@ -612,29 +612,29 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Version
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
@@ -642,35 +642,35 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Size
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--7"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top justify-center"
+                            class="flex flex-inline align-top justify-center "
                           >
                             <div>
                               Status
@@ -678,13 +678,13 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--8"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex flex-inline align-top hidden "
                           >
                             <div>
                               Actions
@@ -2278,13 +2278,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                         role="row"
                       >
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex flex-inline align-top hidden "
                           >
                             <div>
                               Logo
@@ -2292,7 +2292,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -2300,29 +2300,29 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Name
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -2330,29 +2330,29 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Author
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -2360,29 +2360,29 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Category
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -2390,29 +2390,29 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Rating
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
@@ -2420,29 +2420,29 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Version
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
@@ -2450,35 +2450,35 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Size
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--7"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top justify-center"
+                            class="flex flex-inline align-top justify-center "
                           >
                             <div>
                               Status
@@ -2486,13 +2486,13 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--8"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex flex-inline align-top hidden "
                           >
                             <div>
                               Actions
@@ -5178,13 +5178,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                         role="row"
                       >
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex flex-inline align-top hidden "
                           >
                             <div>
                               Logo
@@ -5192,7 +5192,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -5200,29 +5200,29 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Name
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -5230,29 +5230,29 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Author
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -5260,29 +5260,29 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Category
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -5290,29 +5290,29 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Rating
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
@@ -5320,29 +5320,29 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Version
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
@@ -5350,35 +5350,35 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Size
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--7"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top justify-center"
+                            class="flex flex-inline align-top justify-center "
                           >
                             <div>
                               Status
@@ -5386,13 +5386,13 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--8"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex flex-inline align-top hidden "
                           >
                             <div>
                               Actions
@@ -11709,13 +11709,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                         role="row"
                       >
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex flex-inline align-top hidden "
                           >
                             <div>
                               Logo
@@ -11723,7 +11723,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -11731,29 +11731,29 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Name
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -11761,29 +11761,29 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Author
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -11791,29 +11791,29 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Category
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -11821,29 +11821,29 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Rating
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
@@ -11851,29 +11851,29 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Version
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
@@ -11881,35 +11881,35 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top "
+                            class="flex flex-inline align-top  "
                           >
                             <div>
                               Size
                             </div>
                             <div
-                              class="flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="table__Sort"
+                              class="opacity-0 group-hover:opacity-100 ml-2 flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity"
                             >
                               <div
-                                class="sc-bdfBwQ gvFuTp"
+                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                                 height="5"
-                                width="10"
+                                role="img"
+                                width="8"
                               >
                                 <svg>
-                                  sort.svg
+                                  chevron-down.svg
                                 </svg>
                               </div>
                             </div>
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--7"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top justify-center"
+                            class="flex flex-inline align-top justify-center "
                           >
                             <div>
                               Status
@@ -11917,13 +11917,13 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                           </div>
                         </th>
                         <th
-                          class="relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
+                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder "
                           colspan="1"
                           data-testid="table__th--8"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex flex-inline align-top hidden "
                           >
                             <div>
                               Actions
