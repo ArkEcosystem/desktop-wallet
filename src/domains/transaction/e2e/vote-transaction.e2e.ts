@@ -119,5 +119,5 @@ test("should successfully send a vote transaction", async (t) => {
 	await t.click(Selector("[data-testid=SendVote__button--submit]"));
 
 	// Transaction successful
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 5000 });
 });

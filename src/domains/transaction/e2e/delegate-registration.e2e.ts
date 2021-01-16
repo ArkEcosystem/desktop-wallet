@@ -55,5 +55,5 @@ test("should successfully submit delegate registration", async (t) => {
 
 	await t.click(sendButton);
 
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 5000 });
 });

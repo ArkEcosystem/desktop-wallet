@@ -34,68 +34,6 @@ createFixture(`Single Transfer action`, [
 	),
 ]);
 
-test("should send transfer successfully with a multisig wallet", async (t) => {
-	// Navigate to profile page
-	await goToProfile(t);
-
-	// Import wallet
-	await importWalletByAddress(t, "DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq");
-
-	// Navigate to transfer page
-	await goToTransferPage(t);
-
-	// Select recipient
-	await t.click(Selector("[data-testid=SelectRecipient__select-recipient]"));
-	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
-	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
-
-	// Amount
-	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
-
-	// Review step
-	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
-		.ok();
-	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
-
-	// Transaction successful
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
-});
-
-test("should show an error if wrong mnemonic", async (t) => {
-	// Navigate to profile page
-	await goToProfile(t);
-
-	// Navigate to wallet page
-	await goToWallet(t);
-
-	// Navigate to transfer page
-	await goToTransferPage(t);
-
-	// Select recipient
-	await t.click(Selector("[data-testid=SelectRecipient__select-recipient]"));
-	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
-	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
-
-	// Amount
-	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
-
-	// Type smartbridge & go to step 2
-	await t.typeText(Selector("[data-testid=Input__smartbridge]"), "test smartbridge");
-	await t.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled")).notOk();
-	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
-	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
-		.ok();
-	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
-
-	// Type wrong mnemonic
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
-	await t.click(Selector("[data-testid=SendTransfer__button--submit]"));
-	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
-});
-
 test("should send transfer successfully", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
@@ -129,5 +67,67 @@ test("should send transfer successfully", async (t) => {
 	await t.click(Selector("[data-testid=SendTransfer__button--submit]"));
 
 	// Transaction successful
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok();
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 5000 });
+});
+
+test("should send transfer successfully with a multisig wallet", async (t) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
+	// Import wallet
+	await importWalletByAddress(t, "DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq");
+
+	// Navigate to transfer page
+	await goToTransferPage(t);
+
+	// Select recipient
+	await t.click(Selector("[data-testid=SelectRecipient__select-recipient]"));
+	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
+	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
+
+	// Amount
+	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
+
+	// Review step
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
+	await t
+		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
+		.ok();
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
+
+	// Transaction successful
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 10000 });
+});
+
+test("should show an error if wrong mnemonic", async (t) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
+	// Navigate to wallet page
+	await goToWallet(t);
+
+	// Navigate to transfer page
+	await goToTransferPage(t);
+
+	// Select recipient
+	await t.click(Selector("[data-testid=SelectRecipient__select-recipient]"));
+	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
+	await t.click(Selector("[data-testid=RecipientListItem__select-button]"));
+
+	// Amount
+	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
+
+	// Type smartbridge & go to step 2
+	await t.typeText(Selector("[data-testid=Input__smartbridge]"), "test smartbridge");
+	await t.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled")).notOk();
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
+	await t
+		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
+		.ok();
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
+
+	// Type wrong mnemonic
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
+	await t.click(Selector("[data-testid=SendTransfer__button--submit]"));
+	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
 });
