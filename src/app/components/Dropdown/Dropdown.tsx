@@ -1,6 +1,6 @@
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
-import { clickOutsideHandler } from "app/hooks";
+import { clickOutsideHandler, resizeDropdownsHandler } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
 import { Position, Size } from "types";
@@ -147,6 +147,7 @@ export const Dropdown = ({
 		e.preventDefault();
 		e.stopPropagation();
 	};
+
 	const hide = () => setIsOpen(false);
 
 	const select = (option: DropdownOption) => {
@@ -155,20 +156,30 @@ export const Dropdown = ({
 	};
 
 	const ref = useRef(null);
-	useEffect(() => clickOutsideHandler(ref, hide), [ref]);
+
+	useEffect(() => {
+		clickOutsideHandler(ref, hide);
+	}, [ref]);
+
+	useEffect(() => {
+		if (isOpen) {
+			resizeDropdownsHandler(ref);
+		}
+	}, [ref, isOpen]);
 
 	return (
 		<div ref={ref} className="relative">
-			<span data-testid="dropdown__toggle" onClick={toggle}>
+			<span className="dropdown__toggle" onClick={toggle}>
 				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
 			</span>
 
 			{isOpen && (
-				<Wrapper position={position} className={`${defaultClasses} ${dropdownClass}`}>
-					<div data-testid="dropdown__content">
-						{renderOptions(options, select)}
-						{children && <div>{children}</div>}
-					</div>
+				<Wrapper
+					position={position}
+					className={`dropdown__content opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
+				>
+					{renderOptions(options, select)}
+					{children && <div>{children}</div>}
 				</Wrapper>
 			)}
 		</div>

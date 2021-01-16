@@ -56,7 +56,7 @@ export const WalletsControls = memo(
 
 				<div className="flex relative items-center pr-5 mr-8 border-r text-theme-primary-400 border-theme-primary-300 dark:border-theme-secondary-800">
 					<Dropdown
-						dropdownClass="transform -translate-y-4"
+						dropdownClass="transform"
 						toggleContent={
 							<div className="group">
 								<ControlButton isActive={filterProperties.isFilterChanged}>
