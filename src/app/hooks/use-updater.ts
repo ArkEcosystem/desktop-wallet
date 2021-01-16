@@ -52,12 +52,19 @@ export const useUpdater = () => {
 	};
 
 	const notifyForUpdates: any = useCallback(async () => {
-		const { cancellationToken, updateInfo } = await ipcRenderer.invoke(IpcEvent.CHECK_UPDATES);
-		const hasNewerVersion = !!cancellationToken;
-		if (!hasNewerVersion) return;
+		try {
+			const { cancellationToken, updateInfo } = await ipcRenderer.invoke(IpcEvent.CHECK_UPDATES);
+			const hasNewerVersion = !!cancellationToken;
 
-		setUpdateVersion(updateInfo.version);
-		notifications.notifyWalletUpdate({ version: updateInfo.version });
+			if (!hasNewerVersion) {
+				return;
+			}
+
+			setUpdateVersion(updateInfo.version);
+			notifications.notifyWalletUpdate({ version: updateInfo.version });
+		} catch (error) {
+			console.log(`Checking for update failed: ${error.message}`);
+		}
 	}, [notifications]);
 
 	useEffect((): any => {
