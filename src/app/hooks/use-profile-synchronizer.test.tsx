@@ -90,7 +90,7 @@ describe("useProfileSynchronizer", () => {
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<div data-testid="ProfileRestored">test</div>
+				<div data-testid="RenderedContent">test</div>
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -99,7 +99,7 @@ describe("useProfileSynchronizer", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("ProfileRestored")).toBeInTheDocument(), { timeout: 4000 });
+		await waitFor(() => expect(getByTestId("RenderedContent")).toBeInTheDocument(), { timeout: 4000 });
 	});
 });
 

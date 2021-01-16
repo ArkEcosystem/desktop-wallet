@@ -133,7 +133,7 @@ describe("Wallet Transactions Hook", () => {
 
 		jest.advanceTimersByTime(50000);
 
-		await waitFor(() => expect(spyTransactions).toHaveBeenCalledTimes(2));
+		await waitFor(() => expect(spyTransactions).toHaveBeenCalledTimes(2), { timeout: 4000 });
 		await waitFor(() => expect(spySync).toHaveBeenCalledTimes(2));
 
 		spyTransactions.mockRestore();
