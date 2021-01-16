@@ -115,6 +115,8 @@ export const App = () => {
 	 */
 
 	/* istanbul ignore next */
+	/* istanbul ignore next */
+	const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
 	const storage = __DEV__ || __DEMO__ ? new StubStorage() : "indexeddb";
 	const [env] = useState(
 		() =>

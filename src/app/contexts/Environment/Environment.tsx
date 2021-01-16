@@ -22,7 +22,7 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 
 		// Force update
 		setState({});
-	}, [env]);
+	}, [env, isDemo]);
 
 	return (
 		<EnvironmentContext.Provider value={{ env, state, persist } as Context}>{children}</EnvironmentContext.Provider>
