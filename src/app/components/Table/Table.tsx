@@ -78,6 +78,7 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 													} flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity`}
 												>
 													<Icon
+														role="img"
 														name="ChevronDown"
 														className={`transition-transform ${
 															(column.isSorted && !column.isSortedDesc) ||
