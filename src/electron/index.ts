@@ -77,6 +77,7 @@ function createWindow() {
 		width: windowState.width,
 		height: windowState.height,
 		minWidth: 1024,
+		minHeight: 600,
 		x: windowState.x,
 		y: windowState.y,
 		backgroundColor: "#f7fafb",
