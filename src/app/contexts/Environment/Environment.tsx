@@ -8,15 +8,15 @@ type Props = {
 	env: Environment;
 };
 
-const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
 export const EnvironmentContext = React.createContext<any>(undefined);
 
 export const EnvironmentProvider = ({ children, env }: Props) => {
+	const isDemo = process.env.REACT_APP_BUILD_MODE === "demo";
 	const [state, setState] = React.useState<any>(undefined);
 
 	const persist = React.useCallback(async () => {
 		// e2e ci tests hang when persist is called
-		if (!__DEMO__) {
+		if (!isDemo) {
 			await env.persist();
 		}
 

@@ -79,4 +79,46 @@ describe("Environment Context", () => {
 		const profiles = await db.get<any>("profiles");
 		expect(Object.keys(profiles)).toHaveLength(1);
 	});
+
+	it("should not persist on demo", async () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+		const Details = () => {
+			const context = useEnvironmentContext();
+			const count = React.useMemo(() => context.env.profiles().count(), [context]);
+			return <h1>Counter {count}</h1>;
+		};
+
+		const Create = () => {
+			const { env, persist } = useEnvironmentContext();
+
+			const handleClick = async () => {
+				env.profiles().create("Test");
+				await persist();
+			};
+
+			return <button onClick={handleClick}>Create</button>;
+		};
+
+		const App = () => {
+			env.reset({ coins: { ARK }, httpClient, storage: db });
+
+			return (
+				<EnvironmentProvider env={env}>
+					<Details />
+					<Create />
+				</EnvironmentProvider>
+			);
+		};
+
+		const { getByRole } = render(<App />, { withProviders: false });
+
+		act(() => {
+			fireEvent.click(getByRole("button"));
+		});
+
+		await waitFor(() => expect(getByRole("heading")).toHaveTextContent("Counter 1"));
+
+		const profiles = await db.get<any>("profiles");
+		expect(profiles).toBeUndefined();
+	});
 });
