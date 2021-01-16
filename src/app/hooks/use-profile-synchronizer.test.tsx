@@ -2,7 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env,getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
+import { env, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
@@ -21,9 +21,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getByTestId("ProfileSynced")).toBeInTheDocument();
-		});
+		await waitFor(() => expect(getByTestId("ProfileSynced")).toBeInTheDocument(), { timeout: 4000 });
 	});
 
 	it("should not sync if not in profile's url", async () => {
@@ -40,9 +38,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getByTestId("RenderedContent")).toBeInTheDocument();
-		});
+		await waitFor(() => expect(getByTestId("RenderedContent")).toBeInTheDocument(), { timeout: 4000 });
 	});
 
 	it("should sync only valid profiles from url", async () => {
@@ -59,9 +55,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getByTestId("RenderedContent")).toBeInTheDocument();
-		});
+		await waitFor(() => expect(getByTestId("RenderedContent")).toBeInTheDocument(), { timeout: 4000 });
 	});
 
 	it("should restore profile", async () => {
@@ -82,8 +76,6 @@ describe("Dashboard", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getByTestId("ProfileRestored")).toBeInTheDocument();
-		});
+		await waitFor(() => expect(getByTestId("ProfileRestored")).toBeInTheDocument(), { timeout: 4000 });
 	});
 });

@@ -35,8 +35,6 @@ import { PluginProviders } from "./PluginProviders";
 import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
-/* istanbul ignore next */
-const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
@@ -66,7 +64,9 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			try {
-				if (__DEMO__ || __DEV__) {
+				/* istanbul ignore next */
+				const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
+				if (__DEMO__) {
 					migrateProfiles(env, fixtureData.profiles);
 					restoreProfilePasswords(env, TestingPasswords);
 				}

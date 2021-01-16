@@ -66,7 +66,10 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -95,7 +98,10 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
+		);
 
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 
@@ -126,8 +132,6 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
-
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 
 		act(() => {
@@ -154,7 +158,10 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
+		);
 
 		act(() => {
 			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
@@ -182,10 +189,13 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
-		});
+		await waitFor(
+			() => {
+				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
+			},
+			{ timeout: 4000 },
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
@@ -202,7 +212,7 @@ describe("Transactions", () => {
 	});
 
 	it("should show loading state if set", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Transactions isLoading={true} profile={profile} />
 			</Route>,
