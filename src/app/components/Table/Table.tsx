@@ -61,21 +61,29 @@ export const Table = ({ children, data, columns, hideHeader, className }: TableP
 										data-testid={`table__th--${thIndex}`}
 										{...column.getHeaderProps(column.getSortByToggleProps())}
 									>
-										<div className={`flex flex-inline align-top ${column.className || ""}`}>
+										<div
+											className={`flex flex-inline align-top ${column.className || ""} ${
+												column.className?.includes("justify-end") ? "flex-row-reverse" : ""
+											}`}
+										>
 											<div>{column.render("Header")}</div>
 											{column.canSort && (
 												<div
 													className={`${
-														column.isSorted || "opacity-0 group-hover:opacity-100"
-													} flex items-center ml-2 text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity`}
+														column.isSorted ? "" : "opacity-0 group-hover:opacity-100"
+													} ${
+														column.className?.includes("justify-end")
+															? "ml-auto mr-2"
+															: "ml-2"
+													} flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity`}
 												>
 													<Icon
 														name="ChevronDown"
 														className={`transition-transform ${
-															(column.isSorted && column.isSortedDesc) ||
-															(!column.isSorted && column.sortDescFirst)
-																? ""
-																: "transform rotate-180"
+															(column.isSorted && !column.isSortedDesc) ||
+															(!column.isSorted && !column.sortDescFirst)
+																? "transform rotate-180"
+																: ""
 														}`}
 														width={8}
 														height={5}
