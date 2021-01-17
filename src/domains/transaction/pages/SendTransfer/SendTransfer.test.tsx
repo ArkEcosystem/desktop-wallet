@@ -944,30 +944,10 @@ describe("SendTransfer", () => {
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
-			// Copy Transaction
-			const copyMock = jest.fn();
-			const clipboardOriginal = navigator.clipboard;
-
-			// @ts-ignore
-			navigator.clipboard = { writeText: copyMock };
-
-			fireEvent.click(getByTestId("SendTransfer__button--copy"));
-
-			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionMultipleFixture.data.id));
-
-			// @ts-ignore
-			navigator.clipboard = clipboardOriginal;
-
 			coinMock.mockRestore();
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
-
-			// Go back to wallet
-			const historySpy = jest.spyOn(history, "push");
-			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
-			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
-			historySpy.mockRestore();
 		});
 	});
 });
