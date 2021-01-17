@@ -81,7 +81,7 @@ const Main = () => {
 		};
 
 		boot();
-	}, [env, handleError, loadPlugins]);
+	}, [env, handleError, runAll, loadPlugins]);
 
 	const renderContent = () => {
 		if (showSplash) {
