@@ -1,9 +1,9 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
+import { restoreProfileTestPassword } from "migrations";
 import { useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { matchPath } from "react-router-dom";
-import { restoreProfilePassword } from "utils/migrate-fixtures";
 
 import { useNotifications } from "./notifications";
 import { useSynchronizer } from "./use-synchronizer";
@@ -130,7 +130,7 @@ export const useProfileSynchronizer = () => {
 
 				// Perform restore to make migrated wallets available in profile.wallets()
 				await profile.restore();
-				restoreProfilePassword(profile);
+				restoreProfileTestPassword(profile);
 				await persist();
 
 				setStatus("restored");

@@ -15,17 +15,15 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { ApplicationError, Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
+import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { ToastContainer } from "react-toastify";
-import fixtureData from "tests/fixtures/env/storage.json";
-import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 import { StubStorage } from "tests/mocks";
 import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
-import { migrateProfiles, restoreProfilePasswords } from "utils/migrate-fixtures";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
@@ -67,13 +65,11 @@ const Main = () => {
 				/* istanbul ignore next */
 				const __DEMO__ = process.env.REACT_APP_BUILD_MODE === "demo";
 				if (__DEMO__) {
-					migrateProfiles(env, fixtureData.profiles);
-					restoreProfilePasswords(env, TestingPasswords);
+					migrateProfileFixtures(env);
 				}
 
 				await env.verify();
 				await env.boot();
-
 				runAll();
 				await loadPlugins();
 			} catch (error) {
@@ -85,7 +81,7 @@ const Main = () => {
 		};
 
 		boot();
-	}, [env, handleError, runAll, loadPlugins]);
+	}, [env, handleError, loadPlugins]);
 
 	const renderContent = () => {
 		if (showSplash) {

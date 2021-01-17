@@ -1,7 +1,6 @@
 import MockDate from "mockdate";
 import { env } from "./src/utils/testing-library";
-import { migrateProfiles, restoreProfilePasswords } from "./src/utils/migrate-fixtures";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { migrateProfileFixtures, restoreProfileTestPassword } from "migrations";
 
 jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 	const { createTransportReplayer } = require("@ledgerhq/hw-transport-mocker");
@@ -50,7 +49,7 @@ jest.mock("electron", () => {
 });
 
 beforeAll(async () => {
-	migrateProfiles(env, fixtureData.profiles);
+	migrateProfileFixtures(env);
 
 	await env.verify();
 	await env.boot();
@@ -59,9 +58,11 @@ beforeAll(async () => {
 		env
 			.profiles()
 			.values()
-			.map((profile) => profile.restore()),
+			.map(async (profile) => {
+				await profile.restore();
+				return restoreProfileTestPassword(profile);
+			}),
 	);
-	restoreProfilePasswords(env);
 });
 
 beforeEach(() => {

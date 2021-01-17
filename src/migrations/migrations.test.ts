@@ -1,18 +1,16 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { httpClient } from "app/services";
 import fixtureData from "tests/fixtures/env/storage.json";
-import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 import { StubStorage } from "tests/mocks";
 import { env } from "utils/testing-library";
 
-import { migrateProfiles, restoreProfilePassword, restoreProfilePasswords } from "./migrate-fixtures";
+import { migrateProfileFixtures, restoreProfileTestPassword } from "./";
 
-describe("Migrate fixtures utils", () => {
+describe("Migrations", () => {
 	beforeAll(async () => {
 		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-		migrateProfiles(env, fixtureData.profiles);
-		restoreProfilePasswords(env, TestingPasswords);
+		migrateProfileFixtures(env);
 
 		await env.verify();
 		await env.boot();
@@ -41,25 +39,25 @@ describe("Migrate fixtures utils", () => {
 
 	it("should restore password for a signle profile if password is set in data", async () => {
 		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		migrateProfiles(env, fixtureData.profiles);
+		migrateProfileFixtures(env);
 
 		await env.verify();
 		await env.boot();
 
 		const subject = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		expect(subject.usesPassword()).toBe(true);
-		restoreProfilePassword(subject, TestingPasswords);
+		restoreProfileTestPassword(subject);
 		expect(subject.usesPassword()).toBe(true);
 
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		expect(profile.usesPassword()).toBe(true);
-		restoreProfilePassword(profile);
+		restoreProfileTestPassword(profile);
 		expect(profile.usesPassword()).toBe(true);
 	});
 
 	it("should not restore password for a passwordless profile", async () => {
 		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		migrateProfiles(env, fixtureData.profiles);
+		migrateProfileFixtures(env);
 
 		await env.verify();
 		await env.boot();
@@ -67,7 +65,7 @@ describe("Migrate fixtures utils", () => {
 		const profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
 
 		expect(profile.usesPassword()).toBe(false);
-		restoreProfilePassword(profile);
+		restoreProfileTestPassword(profile);
 		expect(profile.usesPassword()).toBe(false);
 	});
 });
