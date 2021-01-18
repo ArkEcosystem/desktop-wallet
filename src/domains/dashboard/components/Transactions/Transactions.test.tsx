@@ -226,4 +226,47 @@ describe("Transactions", () => {
 			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
 		});
 	});
+
+	it("should abort previous request", async () => {
+		nock.cleanAll();
+		const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
+
+		const scope = nock("https://dwallets.ark.io")
+			.get("/api/transactions")
+			.query(true)
+			.reply(200, () => ({
+				meta,
+				data: data.slice(0, 4),
+			}))
+			.get("/api/transactions")
+			.query((params) => !!params.senderId)
+			.delayBody(200)
+			.reply(200, () => ({
+				meta,
+				data: data.slice(0, 1),
+			}))
+			.get("/api/transactions")
+			.query((params) => !!params.recipientId)
+			.reply(200, () => ({
+				meta,
+				data: data.slice(0, 3),
+			}));
+
+		const { getAllByTestId, getByTestId, container } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={profile} isLoading={false} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(4), { timeout: 500 });
+
+		fireEvent.click(getByTestId("tabs__tab-button-sent"));
+		fireEvent.click(getByTestId("tabs__tab-button-received"));
+
+		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(3), { timeout: 500 });
+	});
 });
