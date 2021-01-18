@@ -40,31 +40,6 @@ createFixture(`Delegate Resignation action`, [
 	}),
 ]);
 
-test("should fail delegate resignation submission", async (t: any) => {
-	await goToProfile(t);
-
-	await importWallet(t, "passphrase");
-
-	await goToDelegateResignationPage(t);
-
-	const continueBtn = "[data-testid=SendDelegateResignation__continue-button]";
-
-	// Go to step 2
-	await t.hover(Selector(continueBtn));
-	await t.click(Selector(continueBtn));
-
-	// Go to step 3 (authentication)
-	await t.hover(Selector(continueBtn));
-	await t.click(Selector(continueBtn));
-
-	// Type wrong mnemonic
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
-	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
-
-	const sendButton = Selector("button").withText(translations.COMMON.SEND);
-	await t.expect(sendButton.hasAttribute("disabled")).ok();
-});
-
 test("should successfully submit delegate resignation", async (t) => {
 	await goToProfile(t);
 
@@ -90,5 +65,30 @@ test("should successfully submit delegate resignation", async (t) => {
 
 	await t.click(sendButton);
 
-	await t.expect(Selector("[data-testid=SendDelegateResignation__summary-step]").exists).ok();
+	await t.expect(Selector("[data-testid=SendDelegateResignation__summary-step]").exists).ok({ timeout: 5000 });
+});
+
+test("should fail delegate resignation submission", async (t: any) => {
+	await goToProfile(t);
+
+	await importWallet(t, "passphrase");
+
+	await goToDelegateResignationPage(t);
+
+	const continueBtn = "[data-testid=SendDelegateResignation__continue-button]";
+
+	// Go to step 2
+	await t.hover(Selector(continueBtn));
+	await t.click(Selector(continueBtn));
+
+	// Go to step 3 (authentication)
+	await t.hover(Selector(continueBtn));
+	await t.click(Selector(continueBtn));
+
+	// Type wrong mnemonic
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
+	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
+
+	const sendButton = Selector("button").withText(translations.COMMON.SEND);
+	await t.expect(sendButton.hasAttribute("disabled")).ok();
 });

@@ -62,6 +62,8 @@ export const Welcome = () => {
 	};
 
 	const handleRequestedAction = (profile: Profile, action: any) => {
+		closeSignInModal();
+
 		switch (action?.value) {
 			case "home":
 				navigateToProfile(profile.id());
@@ -73,8 +75,6 @@ export const Welcome = () => {
 				setDeletingProfileId(profile.id());
 				break;
 		}
-
-		closeSignInModal();
 	};
 
 	return (

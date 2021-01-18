@@ -770,40 +770,38 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               </div>
                             </div>
                           </div>
-                          <div>
-                            <div
-                              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                              data-testid="SelectionBar"
-                              role="radiogroup"
+                          <div
+                            class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+                            data-testid="SelectionBar"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="true"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
                             >
-                              <button
-                                aria-checked="true"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Min
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Average
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Max
-                              </button>
-                            </div>
+                              Min
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Average
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Max
+                            </button>
                           </div>
                         </div>
                       </fieldset>
@@ -1702,40 +1700,38 @@ exports[`SendTransfer should render 1st step (form) 1`] = `
               </div>
             </div>
           </div>
-          <div>
-            <div
-              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-              data-testid="SelectionBar"
-              role="radiogroup"
+          <div
+            class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+            data-testid="SelectionBar"
+            role="radiogroup"
+          >
+            <button
+              aria-checked="true"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
             >
-              <button
-                aria-checked="true"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Min
-              </button>
-              <button
-                aria-checked="false"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Average
-              </button>
-              <button
-                aria-checked="false"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Max
-              </button>
-            </div>
+              Min
+            </button>
+            <button
+              aria-checked="false"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Average
+            </button>
+            <button
+              aria-checked="false"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Max
+            </button>
           </div>
         </div>
       </fieldset>
@@ -2137,40 +2133,38 @@ exports[`SendTransfer should render 1st step (form) without test networks 1`] = 
               </div>
             </div>
           </div>
-          <div>
-            <div
-              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-              data-testid="SelectionBar"
-              role="radiogroup"
+          <div
+            class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+            data-testid="SelectionBar"
+            role="radiogroup"
+          >
+            <button
+              aria-checked="true"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
             >
-              <button
-                aria-checked="true"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Min
-              </button>
-              <button
-                aria-checked="false"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Average
-              </button>
-              <button
-                aria-checked="false"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Max
-              </button>
-            </div>
+              Min
+            </button>
+            <button
+              aria-checked="false"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Average
+            </button>
+            <button
+              aria-checked="false"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Max
+            </button>
           </div>
         </div>
       </fieldset>
@@ -2583,40 +2577,38 @@ exports[`SendTransfer should render 1st step with deeplink values and use them 1
               </div>
             </div>
           </div>
-          <div>
-            <div
-              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-              data-testid="SelectionBar"
-              role="radiogroup"
+          <div
+            class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+            data-testid="SelectionBar"
+            role="radiogroup"
+          >
+            <button
+              aria-checked="true"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
             >
-              <button
-                aria-checked="true"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Min
-              </button>
-              <button
-                aria-checked="false"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Average
-              </button>
-              <button
-                aria-checked="false"
-                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                data-testid="SelectionBarOption"
-                role="radio"
-                type="button"
-              >
-                Max
-              </button>
-            </div>
+              Min
+            </button>
+            <button
+              aria-checked="false"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Average
+            </button>
+            <button
+              aria-checked="false"
+              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+              data-testid="SelectionBarOption"
+              role="radio"
+              type="button"
+            >
+              Max
+            </button>
           </div>
         </div>
       </fieldset>
@@ -3955,40 +3947,38 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               </div>
                             </div>
                           </div>
-                          <div>
-                            <div
-                              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                              data-testid="SelectionBar"
-                              role="radiogroup"
+                          <div
+                            class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+                            data-testid="SelectionBar"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
                             >
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Min
-                              </button>
-                              <button
-                                aria-checked="true"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Average
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Max
-                              </button>
-                            </div>
+                              Min
+                            </button>
+                            <button
+                              aria-checked="true"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Average
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Max
+                            </button>
                           </div>
                         </div>
                       </fieldset>
@@ -4751,40 +4741,38 @@ exports[`SendTransfer should render registration form without selected wallet 1`
                               </div>
                             </div>
                           </div>
-                          <div>
-                            <div
-                              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                              data-testid="SelectionBar"
-                              role="radiogroup"
+                          <div
+                            class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+                            data-testid="SelectionBar"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="true"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
                             >
-                              <button
-                                aria-checked="true"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Min
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Average
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Max
-                              </button>
-                            </div>
+                              Min
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Average
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Max
+                            </button>
                           </div>
                         </div>
                       </fieldset>
@@ -5574,7 +5562,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 data-testid="InputCurrency"
                                 name="fee"
                                 type="text"
-                                value="0.71538139"
+                                value="0"
                               />
                               <div
                                 class="absolute bottom-0 px-1 w-full"
@@ -5593,9 +5581,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       data-testid="Range__track__filled"
                                     >
                                       <div
-                                        aria-valuemax="6.63"
-                                        aria-valuemin="0.00357"
-                                        aria-valuenow="0.71538139"
+                                        aria-valuemax="2e-8"
+                                        aria-valuemin="0"
+                                        aria-valuenow="0"
                                         class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                                         data-testid="Range__thumb"
                                         draggable="false"
@@ -5609,40 +5597,38 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               </div>
                             </div>
                           </div>
-                          <div>
-                            <div
-                              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                              data-testid="SelectionBar"
-                              role="radiogroup"
+                          <div
+                            class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+                            data-testid="SelectionBar"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="true"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
                             >
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Min
-                              </button>
-                              <button
-                                aria-checked="true"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Average
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Max
-                              </button>
-                            </div>
+                              Min
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Average
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Max
+                            </button>
                           </div>
                         </div>
                       </fieldset>
@@ -6449,40 +6435,38 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                               </div>
                             </div>
                           </div>
-                          <div>
-                            <div
-                              class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                              data-testid="SelectionBar"
-                              role="radiogroup"
+                          <div
+                            class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+                            data-testid="SelectionBar"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="true"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
                             >
-                              <button
-                                aria-checked="true"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Min
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Average
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                                type="button"
-                              >
-                                Max
-                              </button>
-                            </div>
+                              Min
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Average
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                              type="button"
+                            >
+                              Max
+                            </button>
                           </div>
                         </div>
                       </fieldset>

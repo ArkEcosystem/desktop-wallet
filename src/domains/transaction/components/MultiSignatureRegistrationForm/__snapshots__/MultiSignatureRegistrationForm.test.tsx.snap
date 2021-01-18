@@ -335,40 +335,38 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div
-                    class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
-                    data-testid="SelectionBar"
-                    role="radiogroup"
+                <div
+                  class="inline-flex overflow-hidden flex-shrink-0 items-center rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+                  data-testid="SelectionBar"
+                  role="radiogroup"
+                >
+                  <button
+                    aria-checked="true"
+                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
                   >
-                    <button
-                      aria-checked="true"
-                      class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Min
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Average
-                    </button>
-                    <button
-                      aria-checked="false"
-                      class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
-                      data-testid="SelectionBarOption"
-                      role="radio"
-                      type="button"
-                    >
-                      Max
-                    </button>
-                  </div>
+                    Min
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Average
+                  </button>
+                  <button
+                    aria-checked="false"
+                    class="SelectionBar__SelectionBarOptionStyled-sc-1twgklc-0 eATdsS relative px-5 border-transparent transition-colors duration-300 focus:outline-none border-b-3"
+                    data-testid="SelectionBarOption"
+                    role="radio"
+                    type="button"
+                  >
+                    Max
+                  </button>
                 </div>
               </div>
             </fieldset>
