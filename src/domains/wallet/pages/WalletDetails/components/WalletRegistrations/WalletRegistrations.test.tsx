@@ -18,14 +18,12 @@ describe("WalletRegistrations", () => {
 	});
 
 	it("should render loading state", () => {
-		const walletSpy = jest.spyOn(wallet, "hasSyncedWithNetwork").mockReturnValue(false);
-
-		const { asFragment, getByTestId } = render(<WalletRegistrations wallet={wallet} onButtonClick={jest.fn()} />);
+		const { asFragment, getByTestId } = render(
+			<WalletRegistrations wallet={wallet} onButtonClick={jest.fn()} isLoading />,
+		);
 
 		expect(getByTestId("WalletRegistrations__skeleton")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
-
-		walletSpy.mockRestore();
 	});
 
 	it("should render inactive icons without a delegate registration", () => {
