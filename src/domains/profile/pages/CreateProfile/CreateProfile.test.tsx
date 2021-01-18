@@ -1,18 +1,20 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
 import os from "os";
 import React from "react";
-import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
 
-let env: Environment;
+jest.mock("fs", () => ({
+	readFileSync: jest.fn(() => "avatarImage"),
+}));
+
 let showOpenDialogMock: jest.SpyInstance;
 
 const showOpenDialogParams = {
@@ -54,7 +56,7 @@ jest.mock("fs", () => ({
 
 describe("CreateProfile", () => {
 	beforeAll(() => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	});
 
 	beforeEach(() => {

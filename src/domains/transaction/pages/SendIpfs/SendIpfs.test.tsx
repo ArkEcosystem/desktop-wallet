@@ -170,6 +170,62 @@ describe("SendIpfs", () => {
 			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 			fireEvent.input(passwordInput, { target: { value: passphrase } });
 			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		});
+	});
+
+	it("should copy transaction and go back to wallet page", async () => {
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-ipfs`;
+
+		history.push(ipfsURL);
+
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
+					<SendIpfs />
+				</Route>,
+				{
+					routes: [ipfsURL],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`SendIpfs__form-step`)).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered!;
+
+		await act(async () => {
+			await waitFor(() =>
+				expect(rendered.getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()),
+			);
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+
+			// Hash
+			fireEvent.input(getByTestId("Input__hash"), {
+				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
+			});
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+
+			// Fee
+			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
+			fireEvent.click(fees[1]);
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+			// Step 2
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+			await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
+
+			// Step 3
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+			// Step 3
+			const passwordInput = getByTestId("AuthenticationStep__mnemonic");
+			fireEvent.input(passwordInput, { target: { value: passphrase } });
+			await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 			// Step 4
 			const signMock = jest

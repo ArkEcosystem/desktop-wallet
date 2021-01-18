@@ -1,4 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -61,10 +62,14 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 	}, [register]);
 
 	useEffect(() => {
-		const fees = env.fees().findByType(activeWallet.coinId(), activeWallet.networkId(), "delegateResignation");
+		const setTransactionFees = async (wallet: ReadWriteWallet) => {
+			await env.fees().syncAll();
+			const fees = env.fees().findByType(wallet.coinId(), wallet.networkId(), "delegateResignation");
+			setValue("fees", fees);
+			setValue("fee", fees?.avg);
+		};
 
-		setValue("fees", fees);
-		setValue("fee", fees?.avg);
+		setTransactionFees(activeWallet);
 	}, [env, setValue, activeWallet]);
 
 	const handleBack = () => {

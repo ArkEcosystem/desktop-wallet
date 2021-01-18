@@ -52,14 +52,15 @@ export const SendRegistration = ({ formDefaultValues }: SendRegistrationProps) =
 	);
 
 	const setFeesByRegistrationType = useCallback(
-		(type: string) => {
+		async (type: string) => {
+			await env.fees().syncAll();
 			const fees = getFeesByRegistrationType(type);
 
 			setValue("fees", fees);
 			/* istanbul ignore next */
 			setValue("fee", fees?.avg || fees?.static);
 		},
-		[getFeesByRegistrationType, setValue],
+		[getFeesByRegistrationType, setValue, env],
 	);
 
 	useEffect(() => {

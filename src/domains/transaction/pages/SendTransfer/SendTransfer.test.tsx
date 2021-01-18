@@ -507,14 +507,15 @@ describe("SendTransfer", () => {
 			);
 
 			// Amount
+			await waitFor(() => expect(getByTestId("AddRecipient__send-all")).toBeInTheDocument());
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
-			expect(getByTestId("AddRecipient__amount")).toHaveValue("33.03551662");
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			// Step 2
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
@@ -629,13 +630,13 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
-			expect(getByTestId("AddRecipient__amount")).toHaveValue("33.03551662");
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 			// Fee
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			// Step 2
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
@@ -698,7 +699,7 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
-			expect(getByTestId("AddRecipient__amount")).toHaveValue("33.03551662");
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -708,7 +709,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.71538139"));
 
 			// Step 2
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
@@ -782,7 +783,7 @@ describe("SendTransfer", () => {
 
 			// Amount
 			fireEvent.click(getByTestId("AddRecipient__send-all"));
-			expect(getByTestId("AddRecipient__amount")).toHaveValue("33.03551662");
+			await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 			// Smartbridge
 			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
@@ -792,7 +793,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			// Step 2
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
@@ -913,7 +914,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("SelectionBarOption");
 			fireEvent.click(fees[1]);
-			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 			// Step 2
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
@@ -943,30 +944,10 @@ describe("SendTransfer", () => {
 
 			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
-			// Copy Transaction
-			const copyMock = jest.fn();
-			const clipboardOriginal = navigator.clipboard;
-
-			// @ts-ignore
-			navigator.clipboard = { writeText: copyMock };
-
-			fireEvent.click(getByTestId("SendTransfer__button--copy"));
-
-			await waitFor(() => expect(copyMock).toHaveBeenCalledWith(transactionMultipleFixture.data.id));
-
-			// @ts-ignore
-			navigator.clipboard = clipboardOriginal;
-
 			coinMock.mockRestore();
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
-
-			// Go back to wallet
-			const historySpy = jest.spyOn(history, "push");
-			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
-			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
-			historySpy.mockRestore();
 		});
 	});
 });

@@ -66,7 +66,10 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -95,7 +98,10 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
+		);
 
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 
@@ -112,6 +118,35 @@ describe("Transactions", () => {
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
 	});
 
+	it("should filer by type and see empty screen", async () => {
+		const emptyProfile = env.profiles().create("test");
+		const emptyProfileURL = `/profiles/${emptyProfile.id()}/dashboard`;
+
+		const { getByRole, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={emptyProfile} />
+			</Route>,
+			{
+				routes: [emptyProfileURL],
+				history,
+			},
+		);
+
+		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(getByRole("button", { name: /Type/ }));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--core-0"));
+		});
+
+		await waitFor(() => expect(getByTestId("EmptyResults")).toBeInTheDocument());
+	});
+
 	it("should open detail modal on transaction row click", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -123,7 +158,10 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
+		);
 
 		act(() => {
 			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
@@ -143,7 +181,7 @@ describe("Transactions", () => {
 	it("should fetch more transactions", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={profile} />
+				<Transactions profile={profile} isLoading={false} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -151,10 +189,13 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent("View More");
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
-		});
+		await waitFor(
+			() => {
+				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
+				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
+			},
+			{ timeout: 4000 },
+		);
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
@@ -168,5 +209,21 @@ describe("Transactions", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show loading state if set", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions isLoading={true} profile={profile} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => {
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
+		});
 	});
 });

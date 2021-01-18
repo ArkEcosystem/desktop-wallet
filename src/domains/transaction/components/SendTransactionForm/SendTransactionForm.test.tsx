@@ -56,7 +56,6 @@ describe("SendTransactionForm", () => {
 		const { result: form } = renderHook(() => useForm());
 		form.current.register("fee");
 		form.current.register("senderAddress");
-		form.current.setValue("senderAddress", wallet.address());
 		form.current.setValue("fee", defaultFee);
 
 		let rendered: any;
@@ -72,6 +71,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
+			form.current.setValue("senderAddress", wallet.address());
 			await waitFor(() => expect(form.current.getValues("fee")).toEqual("71538139"));
 
 			// Fee
@@ -126,5 +126,58 @@ describe("SendTransactionForm", () => {
 
 			expect(rendered.container).toMatchSnapshot();
 		});
+	});
+
+	it("should use static fees if avg is not available", async () => {
+		const { result: form } = renderHook(() => useForm());
+		const mockFees = jest.spyOn(env.fees(), "findByType").mockReturnValue({
+			static: "10000000",
+			max: "663000000",
+			min: "357000",
+			//@ts-ignore
+			avg: undefined,
+		});
+
+		form.current.register("fee");
+		form.current.register("network");
+		form.current.register("senderAddress");
+		form.current.setValue("senderAddress", wallet.address());
+
+		for (const network of env.availableNetworks()) {
+			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
+				form.current.setValue("network", network, { shouldValidate: true, shouldDirty: true });
+
+				break;
+			}
+		}
+
+		let rendered: any;
+
+		await act(async () => {
+			rendered = render(
+				<FormProvider {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+				</FormProvider>,
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__wrapper")).toBeTruthy());
+		});
+
+		const { getByTestId } = rendered;
+
+		await act(async () => {
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("10000000"));
+
+			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
+			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+			const firstAddress = getByTestId("SearchWalletListItem__select-1");
+			fireEvent.click(firstAddress);
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+			expect(rendered.container).toMatchSnapshot();
+		});
+
+		mockFees.mockRestore();
 	});
 });
